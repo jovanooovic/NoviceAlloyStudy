@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 S: all x: Person, c: courses | x->c in courses implies x in Student
+inv1 C: all x: Person, c: Course | x->c in enrolled implies x in Student
+inv1 C: all x: Person, c: Course | x->c in enrolled implies x in Student
+inv2 C: all x: Person, c: Course | x->c in teaches implies x in Professor
+inv3 S: all c: Courses | some t: Teachers | x->t in teaches
+inv3 S: all c: Course | some t: Teachers | x->t in teaches
+inv3 S: all c: Course | some t: Teacher | x->t in teaches
+inv3 O: all c: Course | some p: Professor | c->p in teaches
+inv3 O: all c: Course | some p: Professor | c->p in teaches
+inv3 O: all c: Course | some p: Professor | p->c in teaches
+inv4 S: all c, q: Course, all p, j: Project | c->p in projects and q->j in projects implies q!=j
+inv4 S: all c, q: Course, all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 S: all c, q: Course, all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv3 O: all c: Course | some p: Professor | p->c in teaches
+inv3 O: all c: Course | some p: Professor | p->c in teaches
+inv4 U: all c, q: Course, p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 U: all c, q: Course | all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 B: all c, q: Course, p, j: Project | (c->p in projects and q->j in projects) implies p!=j
+inv4 S: one q: Course | all p: Project | c->p in projects
+inv4 B: one c: Course | all p: Project | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+inv4 B: one c: Course | all p: Project | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+inv5 U: all p: Project | some s: Student | s->p in projects
+inv5 U: all p: Project | some s: Person | s->p in projects implies s in Student
+inv5 U: all p: Project | all s: Person | s->p in projects implies s in Student
+inv5 U: all p: Project | some s: Student | s->p in projects
+

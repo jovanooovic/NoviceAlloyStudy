@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 S: all p : Person c:Course | p->c in enrolled implies p in Student
+inv1 S: all p : Person c : Course | p->c in enrolled implies p in Student
+inv1 S: all p : Person c : Course | p not in Student implies p->c not in enrolled
+inv1 C: all p : Person ,c : Course | p not in Student implies p->c not in enrolled
+inv1 T: all p : Person ,c : Course | p->c implies p in Student
+inv1 C: all p : Person ,c : Course | p->c in enrolled implies p in Student
+inv2 C: all p:Person,c:Course | p->c in teaches implies p in Professor
+inv3 B: all c:Course,p:Person | p->c in teaches
+inv3 B: all c:Course,p:Person | p->c in teaches
+inv3 B: all c:Course,p:Person | p->c in teaches
+inv3 C: all c:Course | some p : Person | p->c in teaches
+

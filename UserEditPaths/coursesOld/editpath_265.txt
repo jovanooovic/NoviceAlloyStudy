@@ -1,0 +1,51 @@
+NA H: THEME UPDATE
+inv1 C: no enrolled.Course - Student
+inv2 C: no teaches.Course - Professor
+inv3 S: no Couserse - Person.teaches
+inv3 S: no Courses - Person.teaches
+inv3 C: no Course - Person.teaches
+inv4 S: all p : Projects | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one (Course :> projects).p
+inv4 T: all p : Project | one (projects).p
+inv4 T: all p : Project | one (projects <: Course).p
+inv4 T: all p : Project | one (projects :> Course).p
+inv4 C: all p : Project | one (Course <: projects).p
+inv5 B: no Person.projects - Student
+inv5 T: no Person.projects - Student	  	all p : Project | some projects.p
+inv5 O: no Person.projects - Student	  	all p : Project | some (Person <: projects).p
+inv6 T: all s : Student | projects.(s.projects) in s.enrolled
+inv6 B: all s : Student | (Course <: projects).(s.projects) in s.enrolled
+inv6 B: all s : Student | (Course <: projects).(s.projects) in s.enrolled
+inv5 O: no Person.projects - Student	  	all p : Project | some (Person <: projects).p
+inv5 S: no projects.Projects - Student	  	all p : Project | some (Person <: projects).p
+inv5 T: no projects.Project - Student	  	all p : Project | some (Person <: projects).p
+inv5 C: no (Person <: projects).Project - Student	  	all p : Project | some (Person <: projects).p
+inv6 B: all s : Student | (Course <: projects).(s.projects) in s.enrolled
+inv7 S: all s : Student | all c : s.enrolled | lone p.projects.c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone s.projects.c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone s.projects.(c.projects)
+inv7 T: all s : Student | all c : s.enrolled | lone s.(Person <: projects).(c.(Course <: projects))
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone s.projects & c.projects
+inv8 T: no teaches.~enrolled in iden
+inv8 C: no teaches.~enrolled & iden
+inv8 C: no teaches.~enrolled & iden
+inv9 E: 
+inv9 B: no Professor & enrolled.Course
+inv10 S: no Couse.grades.Grade - Student
+inv10 C: no Course.grades.Grade - Student
+inv11 B: all s : Student | s in Course.grades.Grade implies s.enrolled in grades.s.Grade
+inv11 B: all s : Student | s in Course.grades.Grade implies s.enrolled in grades.Grade.s
+inv11 B: all s : Student | s in Course.grades.Grade iff s.enrolled in grades.Grade.s
+inv11 B: all s : Student | s in Course.grades.Grade iff grades.Grade.s in s.enrolled
+inv11 U: all s : Student | grades.Grade.s in s.enrolled
+inv12 S: all s : Student, c : Course | one s(c.grades)
+inv12 S: all s : Student, c : Course | one s(c.grades)
+inv12 S: all s : Student, c : Course | one s(c.grades)
+inv12 S: all s : Student, c : Course | one s(c.grades)
+inv12 B: all s : Student, c : Course | one s.(c.grades)
+inv12 B: all s : Student, c : s.enrolled | one s.(c.grades)
+inv12 U: all s : Student, c : s.enrolled | lone s.(c.grades)
+

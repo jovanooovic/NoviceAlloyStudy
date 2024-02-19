@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv6 U: all i: Influencer | i.posts.date in Day
+inv6 B: all i: Influencer, d: Day | i.posts.date in d
+inv7 T: all u : User | u.suggested - u.follows
+inv6 B: all d: Day | Influencer.posts.date in d
+inv6 B: all d: Day | d in Influencer.posts.date
+inv6 C: all d: Day | all i: Influencer | d in i.posts.date
+inv7 S: all u : User | u.sugested in u.follows.User.follows - u.follows
+inv7 T: all u : User | u.suggested in u.follows.User.follows - u.follows
+inv7 T: all u,y : User | u.suggested in u.follows.y.follows - u.follows
+inv7 T: all u,y : User | u.suggested in u.follows.y.follows - u.follows
+inv7 U: all u,y : User | u.suggested in u.follows.follows - u.follows
+inv7 U: all u : User | u.suggested in u.follows.follows - u.follows
+inv7 B: all u : User | u.follows.follows - u.follows in u.suggested
+inv7 U: all u : User | u.follows.follows - u.follows - u in u.suggested
+inv7 U: all u : User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 T: all u : User | u & suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies some u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies one u.suggested
+inv7 T: all u : User | u.suggested  implies (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested  in (u.follows.follows - u.follows - u)
+

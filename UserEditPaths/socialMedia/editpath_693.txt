@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: all p: Photo | (one u: User | p in u.posts)
+inv1 C: all p: Photo | (one u: User | p in u.posts)
+inv1 C: all p: Photo | (one u: User | p in u.posts)
+inv2 C: all u: User | u !in u.follows
+inv3 B: all p: Ad, u: User | p in u.sees
+inv3 O: all p: Ad, u: User | p in u.sees	all p: Photo - Ad, u: User | p in u.sees =>	some u2: User | p in u2.posts and u2 in u.follows
+inv3 C: all p : Photo - Ad, u1 : User | u1->p in sees	=> some u2 : User | u2->p in posts and u1->u2 in follows
+inv4 B: all u: User | some a: Ad | a in u.posts => (no p: Photo | p not in u.posts)
+inv4 B: all u: User | some a: Ad | a in u.posts => (no p: Photo - Ad | p not in u.posts)
+inv4 B: all u: User | some a: Ad | a in u.posts => (no p: Photo - Ad | p in u.posts)
+inv4 B: all u: User | some a: Ad | a in u.posts => (all p: Photo - Ad | p not in u.posts)
+inv4 C: all u: User | (some a: Ad | a in u.posts) => (all p: Photo - Ad | p not in u.posts)
+inv4 C: all a : Ad, p : Photo - Ad, u : User | u->a in posts => u->p not in posts
+inv5 U: all i: Influencer, u: User | u != i => i in u.follows
+inv6 C: all d: Day, i: Influencer | some p: Photo | p in i.posts and d in p.date
+inv7 U: all disj u1, u3 : User | (u3 in u1.suggested) iff	u3 not in u1.follows and (some u2: User | u2 in  u1.follows and u3 in u2.follows)
+inv7 C: all u1, u3 : User | (u1->u3 in suggested) <=>	(u1->u3 not in follows and u1 != u3) and	(some u2 : User | u1->u2 in follows and u2->u3 in follows)
+inv7 U: all disj u1, u3 : User | (u3 in u1.suggested) iff	(u3 not in u1.follows and (some u2: User | u2 in  u1.follows and u3 in u2.follows))
+inv7 S: all u1, u3 : User | (u3 in u1.suggested) iff	(u3 not in u1.followsand u1 != u3) and (some u2: User | u2 in  u1.follows and u3 in u2.follows)
+inv7 C: all u1, u3 : User | (u3 in u1.suggested) iff	(u3 not in u1.follows and u1 != u3) and (some u2: User | u2 in  u1.follows and u3 in u2.follows)
+inv8 U: all u: User, a: Ad | a in u.sees implies (some u2: User | u2 in u.follows or u2 in u.suggested)
+inv8 B: all v, u : User, a : Ad | (v->a in sees and u->a in posts)	=> (v->u in follows or v->u in suggested)
+inv1 C: all p: Photo | (one u: User | p in u.posts)
+

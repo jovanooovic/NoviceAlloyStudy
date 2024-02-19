@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+Inv8 T: adj.^adj
+Inv8 O: adj = adj.^adj
+Inv8 C: adj.^adj in adj
+Inv6 T: all n1, n2, n3: Node | n1->n2 and n3->n2 implies n1->n3 in adj
+Inv6 B: all n1, n2, n3: Node | n1->n2 in adj and n3->n2 in adj implies n1->n3 in adj
+Inv6 T: all n1, n2, n3: Node | n1.adj.n2 and n3.adj.n2 implies n1->n3 in adj
+Inv6 T: all n1, n2, n3: Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+Inv6 T: all n1, n2, n3: Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+Inv6 T: all n1, n2, n3: Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+Inv6 T: all n1, n2, n3: Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+Inv6 T: all n: Node | n.adj or n.~adj
+Inv6 T: all n: Node | n.adj in adj or n.~adj in adj
+Inv7 T: all n: Node | n.adj
+Inv7 T: all n: Node | n.adj.Node
+Inv6 B: some Node.adj or some Node.~adj
+Inv6 T: all n: Node | n.adj + (some Node.adj or some Node.~adj)
+Inv6 T: all n: Node | n.adj in (some Node.adj or some Node.~adj)
+Inv6 S: all n: Node | some Node.adj or some Node.~ad in adj)
+Inv6 T: all n: Node | some Node.adj or some Node.~adj in adj
+Inv6 B: all n: Node | some Node.adj or some Node.~adj
+Inv6 S: some Node.adj + some Node.~adj
+Inv6 B: some Node.adj and some Node.~adj
+

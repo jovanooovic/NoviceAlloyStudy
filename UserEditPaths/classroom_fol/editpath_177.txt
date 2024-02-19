@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv1 C: all p: Person | p in Student
+inv2 C: all p: Person | p not in Teacher
+inv3 C: all p: Person | not (p in Teacher and p in Student)
+inv4 B: all p: Person | (p not in Teacher and p not in Student)
+inv4 B: all p: Person | p not in Teacher and p not in Student
+inv4 C: all p: Person | p in Student or p in Teacher
+inv10 C: all c:Class,s:Student | some g:Group | c->s->g in Groups
+

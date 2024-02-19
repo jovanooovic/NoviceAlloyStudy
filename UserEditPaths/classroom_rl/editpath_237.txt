@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 C: Person = Student
+inv1 C: Person = Student
+inv1 C: Person = Student
+inv2 C: Teacher = none
+inv3 C: Student & Teacher = none
+inv4 E: 
+inv4 C: Person = Student + Teacher
+inv5 C: Teacher.Teaches != none
+inv6 C: all t: Teacher | t.Teaches != none
+inv7 C: Teacher.Teaches = Class
+inv8 O: all t: Teacher { one c: Class | t.Teaches = c }
+inv8 U: all t: Teacher { lone c: Class | t.Teaches = c }
+inv8 C: all t: Teacher, c1,c2: Class | c1 in t.Teaches and c2 in t.Teaches implies c1 = c2
+inv9 C: all c: Class, t1, t2: Teacher | c in t1.Teaches and c in t2.Teaches implies t1 = t2
+inv10 T: all c: Class, s: Student | c[s] in Group
+inv10 U: all c: Class, s: Student | c.Groups[s] in Group
+inv10 B: Class.Groups[Student] != none
+inv10 B: Class.Groups.Group != none
+inv10 O: all s: Student, c: Class { some g: Group | c.Groups.g = s }
+inv10 O: all s: Student, c: Class { one g: Group | c.Groups.g = s }
+inv10 T: all c: Class, s: Student | one Group in c.Groups[s]
+inv10 B: all c: Class, s: Student | Group in c.Groups[s]
+inv10 T: all s: Student, c: Class | c.~Groups.s in Group
+inv10 B: all s: Student { one g: Group | s->g in Class.Groups }
+inv10 O: all s: Student, c: Class { one g: Group | s->g in c.Groups }
+inv10 B: all s: Student - Teacher, c: Class { one g: Group | s->g in c.Groups }
+inv10 O: all s: Student, c: Class { one g: Group | s->g in c.Groups and s.Teaches = none }
+

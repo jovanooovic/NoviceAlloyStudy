@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+Inv1 T: (Node . ~Node) in iden
+Inv1 B: (adj . ~adj) in iden
+Inv1 S: all n1->n2 : adj | n1 in Node
+Inv1 S: all n1->n2 : Node.adj | n1 in Node
+Inv1 T: all n : Node.adj | ~n in Node.adj
+Inv1 T: all n : adj | ~n in Node.adj
+Inv1 T: all n : adj | ~n in adj
+Inv1 O: all n1, n2 : Node | n1->n2 in adj
+Inv1 C: all n1, n2 : Node | n1->n2 in adj implies n2->n1 in adj
+Inv2 C: all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 U: oriented	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 T: oriented	all n : Node | no n.Node	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 O: oriented	all n : Node | no n.adj	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 S: oriented	all n : Node | n not in adj*	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 S: oriented	all n : Node | n not in n.adj*	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 C: oriented	all n : Node | n not in n.(^adj)	}		pred oriented{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+Inv3 C: all n : Node | n not in n.(^adj)
+Inv3 C: all n : Node | n not in n.(^adj)
+Inv4 C: adj = (Node -> Node)
+Inv5 C: no adj & iden
+Inv6 S: +adj = (Node -> Node)
+Inv6 O: ^adj = (Node -> Node)
+Inv6 O: ^adj = (Node -> Node - iden)
+Inv6 O: ^adj = (Node -> Node - iden)
+Inv6 O: (Node -> Node - iden) in ^adj
+Inv6 S: ^(ajd + ~adj) = (Node -> Node)
+Inv6 O: ^(adj + ~adj) = (Node -> Node)
+Inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+Inv7 B: ^(adj + ~adj) = (Node -> Node )
+Inv7 C: (Node -> Node - iden) in ^adj
+Inv7 C: (Node -> Node - iden) in ^adj
+Inv8 O: no (adj . adj)
+Inv8 C: (adj . adj) in adj
+Inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+Inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+Inv7 C: (Node -> Node - iden) in ^adj
+

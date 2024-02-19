@@ -1,0 +1,6 @@
+NA H: THEME UPDATE
+Inv4 S: all c : Component | all p : c.parts | p not in nexts[c]
+Inv4 O: all c : Component | all p : c.parts | p.position not in nexts[c.position]
+Inv4 C: all c : Component | all p : c.parts | p in Component implies p.position not in nexts[c.position]
+Inv4 C: all c : Component | all p : (c.parts & Component) | p.position not in nexts[c.position]
+

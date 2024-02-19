@@ -1,0 +1,60 @@
+NA H: THEME UPDATE
+Inv1 S: all n : Node |
+Inv1 S: all n : Node |
+Inv1 S: all n : Node |
+Inv6 O: all x, y : Node | some (^adj).y & x
+Inv6 T: all x, y : Node | x & (^adj).y
+Inv6 O: all x, y : Node | some x & (^adj).y
+Inv6 O: all x, y : Node | some x & (^adj).y
+Inv6 T: all x, y : Node | some x.(^adj.y)
+Inv6 O: all x, y : Node | some x<:(^adj.y)
+Inv6 T: adj in ^Node
+Inv6 T: adj in Node.^adj
+Inv6 T: adj in Node.(^adj)
+Inv6 T: all n : Node | adj in n.(^adj)
+Inv6 T: all n : Node | adj in (^adj.n)
+Inv6 S: adj in (^adj.n)
+Inv6 T: adj in (^adj.Node)
+Inv6 B: all x, y : Node | ^adj.x in ^adj.y
+Inv6 T: all x, y : Node | ^adj<:x in ^adj<:y
+Inv6 B: all x, y : Node | ^adj.x in ^adj.y
+Inv6 B: all x, y : Node | ^adj.x in ^adj.y & x
+Inv6 O: all x, y : Node | x in ^adj.y & x
+Inv6 T: all x, y : Node | x in ^adj.y & y in ^adj.x
+Inv6 O: all x, y : Node | x in ^adj.y and y in ^adj.x
+Inv6 O: all x, y : Node | (x in ^adj.y) and (y in ^adj.x)
+Inv2 B: all x, y : Node | (x in ^adj.y) and (y in ^adj.x)
+Inv1 O: no adj
+Inv1 T: adj	in Node
+Inv1 U: Node in Node
+Inv1 O: no Node
+Inv2 B: some Node
+Inv2 B: some Node
+Inv1 O: lone Node
+Inv1 O: no adj
+Inv3 C: all n : Node | no (^adj).n & n
+Inv4 U: all n : Node | some n.(^adj)
+Inv4 U: all n : Node | some (^adj).n
+Inv4 U: all n : Node | some n.adj
+Inv4 U: all n : Node | some adj.n
+Inv4 U: all n : Node | some adj.n
+Inv4 U: all n : Node | some adj.n
+Inv1 B: all n : Node | some adj.n
+Inv2 B: all n : Node | some adj.n
+Inv6 S: all n : Node |
+Inv1 T: adj in Node
+Inv1 T: adj in Node
+Inv1 T: adj in Node.adj
+Inv1 U: adj in Node<:adj
+Inv6 E: 
+Inv7 S: *adj & Node
+Inv7 S: *adj
+Inv7 S: *adj in Node<:adj
+Inv7 S: *adj in Node.adj
+Inv7 S: *adj in Node
+Inv7 S: *adj in adj
+Inv6 E: 
+Inv7 T: *adj in Node.adj
+Inv7 T: all n : Node | some Node<:adj & n
+Inv7 T: all n : Node | some n<:adj & n
+

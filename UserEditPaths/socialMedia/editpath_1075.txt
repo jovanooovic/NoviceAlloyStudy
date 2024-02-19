@@ -1,0 +1,105 @@
+NA H: THEME UPDATE
+inv2 O: no follows.User
+inv2 O: no follows.User and no follows.Influencer
+inv1 T: all p,u : univ | lone (u.posts.p)
+inv1 U: all p : univ | lone (posts.p)
+inv1 U: all p : univ | lone (posts.p)
+inv1 T: all p : univ | lone (posts.p || ad.p)
+inv1 S: all p : univ | lone (posts.p) || lone (ad.p)
+inv1 T: all p : univ | lone (posts.p) || lone (Ad.p)
+inv1 S: all p : Photo | lone user.posts
+inv1 B: all p : Photo | lone User.posts
+inv1 T: all p : Photo | lone User.posts.p
+inv1 U: all p : Photo | lone posts.p
+inv1 U: all p : Photo | lone posts.p
+inv1 T: all p : Photo, u : User | lone u.posts.p
+inv1 U: all p : Photo | lone posts.p
+inv1 C: all p : Photo | one posts.p
+inv2 O: no follows.User
+inv2 O: no follows.User and no follows.Influencer
+inv2 O: no follows.User
+inv2 O: no follows.User
+inv2 O: no follows.User and no suggested.User
+inv2 S: no follows.User & no suggested.User
+inv2 B: no (follows.User & suggested.User)
+inv2 B: no (follows.User & suggested.User & follows.Influencer & suggested.Influencer)
+inv2 T: all u : User | u not in follows
+inv2 O: all u : User | u not in follows.User
+inv2 C: all u : User | u not in u.follows
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies (p in u2.posts and u2 in u1.follows)	all u : User, ad : Ad | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies (p in u2.posts and u2 in u1.follows)	all u : User, i : Influencer , ad : Ad | ad in u.sees and ad in i.sees
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.sees
+inv3 T: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows and not Ad.p	all u : User, ad : Ad | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows and p != Ad	all u : User, ad : Ad | ad in u.sees
+inv3 S: all p : Photo, u1,u2 : User | p in u1.sees implies p in u2.posts and u2 in u1.follows | p != Ad	all u : User, ad : Ad | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.sees
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in *(u.sees)
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.^sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.^sees
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in ^(u1.sees) implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in ^(u.sees)
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in *(u1.sees) implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in *(u.sees)
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all u : User, ad : Ad | ad in u.sees
+inv3 S: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad in User.sees
+inv3 S: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad | and in User.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad | ad in User.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad : Ad | ad in User.*sees
+inv3 O: all ad : Ad | ad in User.*sees	all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows
+inv3 S: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : Users | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.*sees
+inv3 S: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all follows.Ad
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad : univ | sees.ad
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad,u : univ | sees.ad
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad,u : univ | u.sees.ad
+inv3 S: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad,u : univ | ad in Ad immplies ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.*sees implies p in u2.posts and u2 in u1.follows	all ad,u : univ | ad in Ad implies ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad,u : univ | ad in Ad implies ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : univ | ad in Ad implies ad in User.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad | ad in User.sees
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in *(u.sees)
+inv3 T: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in ^(u.sees)
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows and p in u2.sees	all ad : Ad, u : User | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.*sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows and p in u2.sees	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows and p not in u2.sees	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all p : Photo, u : User | p in u.posts implies p not in u.sees	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all p : Photo, u : User | p in u.posts implies p not in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees	all p : Photo, u : User | p in u.posts implies p not in u.sees
+inv3 S: all p : Photo, u1,u2 : User : univ | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees	all p : Photo, u : User | p in u.posts implies p not in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees	all p : Photo, u : User | p in u.posts implies p not in u.sees
+inv4 S: some p : Photo, u : User | p in u.posts and p = Ad implies all x in u.posts | x = Ad
+inv4 S: some p : Photo, u : User | p in u.posts and p = Ad implies all x in u.posts x == Ad
+inv4 T: some p : Photo, u : User | p in u.posts and p = Ad implies none (u.posts - Ad)
+inv4 S: some p | p in Ad -> none User.posts - Ad
+inv4 B: some p : Photo, u : User | p in u.posts and p = Ad implies no u.posts - Ad
+inv4 S: some p : Photo, all u : User | p in u.posts and p = Ad implies no u.posts - Ad
+inv4 S: some p : Photo, | p in User.posts and p = Ad implies no User.posts - Ad
+inv4 B: some p : Photo | p in User.posts and p = Ad implies no User.posts - Ad
+inv4 B: some p : Photo | p in User.posts and p = Ad implies no User.posts - Ad
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows		all p : Photo, u : User | p in u.posts implies p not in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv2 O: all u : User | u not in u.follows and u not in u.suggested
+inv2 C: all u : User | u not in u.follows
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one posts.p
+inv3 O: all p : Photo, u1,u2 : User | p != Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+NA H: THEME UPDATE
+inv3 O: all p : Photo, u1,u2 : User | p not in Ad and p in u1.sees implies p in u2.posts and u2 in u1.follows	all ad : Ad, u : User | ad in u.sees
+inv3 O: all p : Photo, u1,u2 : User | (p not in Ad and p in u1.sees) implies (p in u2.posts and u2 in u1.follows)
+inv3 S: all p : Photo, u1,u2 : User | (p not in Ad and u->p in sees) implies (p in u2.posts and u2 in u1.follows)
+inv3 O: all p : Photo, u1,u2 : User | (p not in Ad and u1->p in sees) implies (p in u2.posts and u2 in u1.follows)
+inv3 B: all p : Photo, u1,u2 : User | (p not in Ad and p in u1.sees and p in u2.posts) implies (u2 in u1.follows)
+

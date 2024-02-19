@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 U: all p: Person, c: Course | p in c.enrolled implies p in Student
+inv1 C: all p: Person, c: Course | p in enrolled.c implies p in Student
+inv2 S: all p: Person, c: Course | p in teaches.c implies p in Teacher
+inv2 C: all p: Person, c: Course | p in teaches.c implies p in Professor
+inv3 C: all c: Course | some teaches.c
+inv4 T: all p: Project | one c: Course | p in projects.c
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 C: all p: Person, tp: Project | tp in p.projects implies p in Student	  all tp: Project | some s: Student | tp in s.projects
+inv6 B: all s: Student, tp: Project, c: Course | tp in s.projects and tp in c.projects implies s in enrolled.c
+inv7 B: all s: Student, tp1, tp2: Project, c1,c2 : Course | 	  tp1 in s.projects and tp2 in s.projects and tp1 in c1.projects and tp2 in c2.projects implies c1!=c2
+inv7 B: all s: Student, tp1, tp2: Project, c : Course | 	  tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects implies tp1!=tp2
+inv7 B: all s: Student, tp1, tp2: Project, c : Course | 	  (tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects) implies tp1!=tp2
+inv7 U: all s: Student, tp1, tp2: Project, c : Course | 	  (tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects) implies tp1=tp2
+inv8 S: all t: Teacher, c: Course | c in teaches.c implies c not in enrolled.c
+inv8 U: all t: Professor, c: Course | c in teaches.c implies c not in enrolled.c
+inv8 U: all t: Professor, c: Course | t in teaches.c implies t not in enrolled.c
+inv9 U: all t1, t2, c1,c2: Course | c1!=c2 and t1 in teaches.c1 and t2 in teaches.c1 and t1 in teaches.c2 implies t2 not in enrolled.c2
+inv9 U: all t1, t2, c1,c2: Course | c1!=c2 and t1!=t2 and t1 in teaches.c1 and t2 in teaches.c1 and t1 in teaches.c2 implies t2 not in enrolled.c2
+inv9 S: all t1, t2, c1,c2: Course | (t1!=t2 and t1 in teaches.c1 and t2 in teaches.c1) implies t1 in teaches.c2 implies t2 not in enrolled.c2 	  (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+inv9 U: all t1, t2, c1,c2: Course | (t1!=t2 and t1 in teaches.c1 and t2 in teaches.c1) implies t1 in teaches.c2 implies t2 not in enrolled.c2
+inv9 U: all t1, t2, c1,c2: Course | (t1!=t2 and t1 in teaches.c1 and t2 in teaches.c1) implies (t1 in teaches.c2 implies t2 not in enrolled.c2 )
+inv9 U: all t1, t2, c1: Course | (t1!=t2 and t1 in teaches.c1 and t2 in teaches.c1) implies (all c2: Course | t1 in teaches.c2 implies t2 not in enrolled.c2)
+inv9 B: all t1,t2: Professor, c1,c2: Course | c1!=c2 and t1 in teaches.c1 and t2 in teaches.c1 and t1 in teaches.c2 implies t2 not in enrolled.c2
+inv10 U: all p: Person, c: Course, g: Grade | g in c.grades.p implies p in Student
+inv10 T: all p: Person, c: Course, g: Grade | p in c.grades implies p in Student
+inv10 C: all p: Person, c: Course, g: Grade | p in c.grades.g implies p in Student
+inv11 C: all p: Person, c: Course, g: Grade | p in c.grades.g implies p in enrolled.c
+inv12 S: all p: Person, c: Course, lone g: Grade | p in c.grades.g
+inv12 C: all p: Person, c: Course | lone g: Grade | p in c.grades.g
+inv11 U: all s: Student, c: Course, g: Grade | s in c.grades.g implies s in enrolled.c
+

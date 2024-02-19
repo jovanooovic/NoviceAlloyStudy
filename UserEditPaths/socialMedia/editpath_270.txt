@@ -1,0 +1,56 @@
+NA H: THEME UPDATE
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | follows.x
+inv2 S: all x : User
+inv2 E: 
+inv2 T: all x : User | x.follows
+inv2 C: all x : User | x not in x.follows
+inv3 T: all x : User | x.sees not is a Ad
+inv3 T: all x : User | x.sees
+inv3 O: all x : User | x in x.sees
+inv3 O: all x : User | x in x.sees
+inv3 B: all x : User | all y : Ad | y not in x.sees
+inv3 B: all x : User | all y : Ad | x.sees not in y
+inv3 B: all x : User | all y : Ad | sees.x not in y
+inv3 B: all x : User | all y : Ad | x.sees not in y
+inv3 B: all x : User | some y : Ad | x.sees not in y
+inv3 B: all x : User | all y : Ad | x.sees not in y
+inv3 B: all x, y : User | all z : Ad | x.sees not in z and y in x.follows
+inv3 T: all x, y : User | all z : Ad | x.sees not in z and y in x.follows		all x : User | all y : Photo | x.sees in y and y is a Ad
+inv3 B: all x, y : User | all z : Ad | x.sees not in z and y in x.follows
+inv3 B: all x, y : User | all z : Ad | x.sees in z and y in x.follows
+inv3 B: all x, y : User | all z : Ad | x.sees not in z and y in x.follows
+inv3 E: 
+inv3 S: all x : User | all y Ad | y in x.sees
+inv3 S: all x : User | all y Ad | y in x.sees
+inv3 S: all x : User | all y Ad | y in x.sees
+inv3 B: all x, y : User | all z : Ad | x.sees not in z and y in x.follows
+inv3 B: all x, y : User | x.sees in y.posts
+inv3 O: all x, y : User | y in x.follows and x.sees in y.posts
+inv3 O: all x, y : User | y in x.follows and x.sees in y.posts
+inv3 O: all x, y : User | x.sees in y.posts and y in x.follows
+inv3 O: all x, y : User | x.sees in y.posts and y in x.follows		all x : Ad | all y : User | sees.x in y
+inv3 O: all x, y : User | x.sees in y.posts and y in x.follows		all x : Ad | all y : User | sees.x in univ
+inv3 S: all x, y : User | x.sees in y.posts and y in x.follows and x.sees is not Ad		all x : Ad | all y : User | sees.x in
+inv3 T: all x, y : User | x.sees in y.posts and y in x.follows and x.sees is not Ad
+inv3 T: all x, y : User | x.sees in y.posts and y in x.follows and all p : x.sees | p is not Ad
+inv3 T: all x, y : User | x.sees in y.posts and x.sees not is a Ad and y in x.follows
+inv3 T: all x, y : User | x.sees in y.posts and not x.sees is a Ad and y in x.follows
+inv3 O: all x, y : User | x.sees in y.posts and x.sees in Ad and y in x.follows
+inv3 O: all x, y : User | x.sees in y.posts and x.sees not in Ad and y in x.follows
+inv3 O: all x, z : User, y : Photo | y in x.sees implies (y in Ad or z in x.follows and y in z.posts)
+inv3 O: all x, z : User, y : Photo | y in x.sees implies (y in Ad or (z in x.follows and y in z.posts))
+inv3 C: all x : User, y : Photo | y in x.sees implies (y in Ad or y in x.follows.posts)
+inv4 S: all x : User, y : Photo | y in Ad and y in x.posts implies ()
+inv4 C: all x : User, y : Photo | y in Ad and y in x.posts implies (x.posts in Ad)
+inv5 S: all x : Influencers, y : User | follows.x in User
+inv4 C: all x : User, y : Photo | y in Ad and y in x.posts implies (x.posts in Ad)
+inv4 C: all x : User, y : Photo | y in Ad and y in x.posts implies (x.posts in Ad)
+inv5 U: all x : Influencer | follows.x in User
+inv5 T: all x : Influencer | follows.x in (User not in Influencer)
+inv5 B: all x : Influencer, y : User | y in follows.x
+inv5 U: all x : Influencer | follows.x in User
+inv5 B: all x : Influencer | follows.x in User and User not in Influencer
+inv5 U: all x : Influencer | follows.x in User
+NA H: THEME UPDATE
+

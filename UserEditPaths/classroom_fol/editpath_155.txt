@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | p in Student
+inv2 C: no Teacher
+inv3 C: all p:Person | p in Student implies p not in Teacher
+inv4 C: all p:Person | p not in Student implies p in Teacher
+inv4 O: all p:Person | p != Student implies p = Teacher
+inv4 O: all p:Person | p not in Student implies p = Teacher
+inv5 B: all t:Teacher | some c:Class | c in t.Teaches
+inv5 C: some c:Class, t:Teacher | c in t.Teaches
+inv6 C: all t:Teacher | some c:Class | c in t.Teaches
+inv7 C: all c:Class | some t:Teacher | c in t.Teaches
+inv8 C: all t:Teacher | lone t.Teaches
+inv9 C: all c:Class | lone t:Teacher | c in t.Teaches
+inv10 B: all c:Class, s:Student | s->Group in c.Groups
+inv10 T: all c:Class, s:Student | s.Group in c.Groups
+inv10 T: all c:Class, s:Student | c.s.Group in Groups
+inv10 T: all c:Class, s:Student | c.s->Group in Groups
+inv10 C: all c:Class, s:Student | some g:Group | c->s->g in Groups
+inv11 B: all c:Class | c->Person->Group in Groups implies Person in Teacher
+inv11 B: all c:Class | some p:Person | c->p->Group in Groups implies Person in Teacher
+inv11 B: all c:Class | some p:Person | c->p->Group in Groups implies p in Teacher
+inv11 B: all c:Class | some g:Group, p:Person | c->p->g in Groups implies p in Teacher
+inv11 E: 
+inv12 B: all t:Teacher | some g:Group | Class->t->g in Groups
+inv11 T: all c:Class | some g:Group, t:Teacher | c->Person->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->Person->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies t.c in Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies t->c in Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies c in t.Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher | c->Person->g in Groups implies c in t.Teaches
+inv12 B: all t:Teacher | some g:Group | Class->t->g in Groups
+inv13 C: all p1,p2:Person | p2 in p1.Tutors implies p1 in Teacher and p2 in Student
+

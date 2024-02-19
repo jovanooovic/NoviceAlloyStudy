@@ -1,0 +1,182 @@
+NA H: THEME UPDATE
+inv1 S: all Person & Student
+inv1 B: no Person & Student
+inv1 O: no Person + Student
+inv1 C: no Person - Student
+inv1 C: no Person - Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 T: Student + Teacher
+inv4 B: no Student + Teacher
+inv4 B: no Student - Teacher
+inv4 S: no Student + no Teacher
+inv4 S: no Student - Teacher & no Teacher - Student
+inv4 B: no Teacher - (Student - Teacher)
+inv4 B: one Teacher - (Student - Teacher)
+inv4 B: lone Teacher - (Student - Teacher)
+inv4 B: some Teacher - (Student - Teacher)
+inv4 O: some Student - Teacher & Teacher - Student
+inv4 U: no Student - Teacher & Teacher - Student
+inv4 O: one Student - Teacher & Teacher - Student
+inv4 O: some Student - Teacher & Teacher - Student
+inv4 U: lone Student - Teacher & Teacher - Student
+inv4 B: lone Student - Teacher + Teacher - Student
+inv4 B: one Student - Teacher + Teacher - Student
+inv4 B: some Student - Teacher + Teacher - Student
+inv4 B: no Student - Teacher + Teacher - Student
+inv4 U: no Student - Teacher & Teacher - Student
+inv4 B: no Student - Teacher + Teacher - Student
+inv4 B: no (Student - Teacher) + (Teacher - Student)
+inv4 U: no (Student - Teacher) & (Teacher - Student)
+inv4 B: no (Student - Teacher) - (Teacher - Student)
+inv4 B: no (Student - Teacher) + (Teacher - Student)
+inv4 B: no (Student + Teacher)
+inv4 B: no (Student & Teacher)
+inv4 C: no (Person - Student) & (Person - Teacher)
+inv5 S: some teaches
+inv5 U: some Teaches
+inv6 S: all t : Teacher | one t.teaches
+inv6 O: all t : Teacher | one t.Teaches
+inv6 B: all t : Teacher | no t.Teaches
+inv6 B: all t : Teacher | no t.^Teaches
+inv6 S: all t : Teacher | no t^.Teaches
+inv6 U: all t : Teacher | no t.~Teaches
+inv5 T: some c : Class | c.Teaches
+inv5 U: some c : Class | no c.Teaches
+inv5 S: some t : Class | some c.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 T: all t : Teacher | some c : Class | some t.c.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 S: all c : Class | some t.Teaches
+inv5 B: all t : Class | some t.Teaches
+inv5 O: some t : Class | some t.Teaches
+inv5 T: some c : Class | Teacher.Teaches
+inv5 T: some c : Class | c.Teacher.Teaches
+inv5 C: some c : Class | c in Teacher.Teaches
+inv5 C: some c : Class | c in Teacher.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 T: all t : Teacher | some Class in t.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 B: some c : Class | c in Teacher.Teaches
+inv6 B: all c : Class | c in Teacher.Teaches
+inv6 B: all t : Person | Class in t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv8 T: all c : Class | some c in Teacher.Teaches
+inv8 T: all c : Class | lone c in Teacher.Teaches
+inv8 T: all c : Class | lone (c in Teacher.Teaches)
+inv9 T: all c : Class | lone (c in Teacher.Teaches)
+inv8 B: all c : Class | lone Teaches.c
+inv8 T: all t : Teacher | lone t.Class
+inv8 T: all t : Teacher | lone Class.t
+inv8 U: all c : Class | lone c.Teaches
+inv8 B: all c : Class | lone Teaches.c
+inv8 B: some c : Class | lone Teaches.c
+inv7 C: all c : Class | c in Teacher.Teaches
+inv5 C: some c : Class | c in Teacher.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 T: all t : Teacher | t.Teaches & Class
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 C: all t : Teacher | some c : Class | c in t.Teaches
+inv6 S: all t : Teacher | some c in t.Teaches
+inv6 T: all t : Teacher | some Class in t.Teaches
+inv6 T: all t : Teacher | some (Class in t.Teaches)
+inv6 S: all t : Teacher | (some Class) in t.Teaches)
+inv6 T: all t : Teacher | (some Class) in t.Teaches
+inv6 B: some c : Class | c in Teacher.Teaches
+inv6 B: some c : Class | Teacher.Teaches in c
+inv6 U: all t : Teacher | no t.Teaches - Class
+inv6 U: all t : Teacher | no (t.Teaches - Class)
+inv8 E: 
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 S: all t : Teacher | Class in Teacher^.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 B: all t : Teacher | Class in t.^Teaches
+inv6 T: all t : Teacher | Class -> t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 B: all t : Teacher, c : Class | c in t.Teaches
+inv6 S: all t : Teacher | Teaches.c
+inv6 T: all t : Teacher | Teaches.t
+inv6 O: all t : Teacher | some Teaches.t
+inv6 B: some c : Class | some Teaches.c
+inv6 O: some c : Class | some c.Teaches
+inv6 T: all t : Teacher | some Class.t
+inv6 T: all t : Teacher | some t.Class
+inv6 T: all t : Teacher | some Class.t.Teaches
+inv6 T: all t : Teacher | some t.Teaches.Class
+inv6 S: all t : Teacher |
+inv6 S: all t : Teacher |
+inv7 C: all c : Class | c in Teacher.Teaches
+inv8 T: some t : Teacher | lone t.Class
+inv8 T: some t : Teacher | lone Class.t
+inv8 B: some t : Teacher | lone t.Teaches
+inv8 B: some t : Teacher | lone t.Teaches & Class
+inv8 O: some t : Teacher | lone t.Teaches + Class
+inv8 B: some t : Teacher | lone (t.Teaches & Class)
+inv8 T: some t : Teacher | lone (t.Teaches in Class)
+inv8 B: some t : Teacher | lone t.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 S: all c : Class | lone t.Teaches
+inv9 B: all c : Class | lone Teacher.Teaches
+inv9 B: all t : Teacher | lone Teacher.Teaches
+inv9 B: all t : Teacher | lone t.Teaches
+inv9 U: all t : Teacher | lone Teaches.t
+inv9 B: all t : Teacher | Class in Teacher.Teaches
+inv9 B: all t : Teacher | Class in t.Teaches
+inv9 B: all c : Class | lone Teacher.Teaches
+inv9 U: all c : Class | lone Teaches.Teacher
+inv9 O: Teaches.~Teaches in iden
+inv9 U: Teaches.^Teaches in iden
+inv9 O: Teaches.*Teaches in iden
+inv9 U: all c : Class | lone Teaches.Teacher
+inv10 T: all c : Class | no c.Student.Groups
+inv10 T: all c : Class | some c.Student.Groups
+inv10 T: all c : Class | some c in Student.Groups
+inv10 T: all c : Class | c in Student.Groups
+inv10 T: all c : Class | c in Person.Groups
+inv10 T: all c : Class | c in Person->Groups
+inv10 T: all c : Class | c.Groups in c.Person->c.Groups
+inv10 T: all c : Class | c.Groups in c.Student->c.Groups
+inv10 T: all c : Class | c.Groups in c.Student->Groups
+inv10 T: all c : Class | c.Groups in c.Tutors->c.Groups
+inv10 T: all c : Class | c in c.Student->c.Groups
+inv10 U: all c : Class | no Student.Groups
+inv10 B: all c : Class | no Student->Groups
+inv10 B: all c : Class | no Student->c.Groups
+inv10 T: all c : Class | Student->c.Groups
+inv10 B: all c : Class | some Student->c.Groups
+inv10 T: all c : Class | c in Student->c.Groups
+inv10 T: all c : Class | c in Student->Groups
+inv10 T: all c : Class | Student->c.Groups in c
+inv10 T: all c : Class | c in Student->Groups
+inv10 T: all c : Class | Student->Groups
+inv10 T: all c : Class | all s : Student | s in c.Groups
+inv10 T: all c : Class | all s : Student | c.Groups in s
+inv10 T: all c : Class | all s : Student | c in s->Groups
+inv10 T: all c : Class | all s : Student | s->Groups in c
+inv10 T: all c : Class | Student->Groups in c
+inv10 T: all c : Class | c.Student->Groups
+inv10 T: all c : Class | c & Student->Groups
+inv10 T: all c : Class | c->Groups
+inv10 T: all c : Class | c.Groups
+inv10 B: all c : Class | some c.Groups
+inv1 C: no Person - Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv5 C: some c : Class | c in Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv4 C: no (Person - Student) & (Person - Teacher)
+inv7 C: all c : Class | c in Teacher.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+

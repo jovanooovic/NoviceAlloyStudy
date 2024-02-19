@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+prop1 C: no Green
+prop2 S: all s : Sinal | eventually s in Green
+prop2 C: all s : Signal | eventually s in Green
+prop3 C: always pos = pos'
+prop4 B: all disj s1, s2 : Signal | s1.pos != s2.pos
+prop4 B: all disj s1, s2 : Signal | always s1.pos != s2.pos
+prop4 B: all disj s1, s2 : Signal-Entry | always s1.pos != s2.pos
+prop4 B: all disj s1, s2 : (Signal-(Entry+Exit)) | always s1.pos != s2.pos
+prop4 O: all disj t1, t2 : Train | always t1.pos != t2.pos
+prop1 C: no Green
+prop2 C: all s : Signal | eventually s in Green
+prop3 C: always pos = pos'
+prop4 O: all disj t1, t2 : Train | always t1.pos != t2.pos
+prop4 C: all t : Track | always lone t.~pos
+prop5 B: all t : Train {	((t.pos = Exit) implies (no t.pos'))	or	(t.pos' in t.pos.prox)	}
+prop5 B: always all t : Train {	((t.pos = Exit) implies (no t.pos'))	or	(t.pos' in t.pos.prox)	}
+prop6 O: always no (signal & signal')
+prop6 O: all t : Track | always t.signal != t.signal'
+prop6 O: all t : Track | always ((some t.signal) implies (t.signal != t.signal'))
+prop4 C: all t : Track | always lone t.~pos
+prop5 B: always all t : Train {	((t.pos = Exit) implies (no t.pos'))	or	(t.pos' in t.pos.prox)	}
+prop6 O: all t : Track | always ((some t.signal) implies (t.signal != t.signal'))
+prop7 B: eventually all t : Train | t.pos = Exit
+prop7 B: eventually all t : Train | no t.pos
+prop7 U: all t : Train | eventually no t.pos
+prop7 O: all t : Train | eventually always no t.pos
+prop7 O: all t : Train | eventually (always no t.pos)
+prop7 O: eventually all t : Train | (always no t.pos)
+prop7 B: eventually all t : Train | (t.pos = Exit) implies (no t.pos')
+prop9 B: all t : Train | eventually t.pos = Entry
+prop15 B: all t : Train | eventually t.pos != t.pos'
+prop15 U: all t : Train | (some t.pos) implies (eventually t.pos != t.pos')
+

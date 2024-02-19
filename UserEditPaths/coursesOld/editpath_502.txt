@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv1 C: enrolled in Student -> Course
+inv2 C: all p : Person | (some c: Course | p -> c in teaches) => (p in Professor)
+inv3 C: teaches in Person some -> Course
+inv4 C: Course <: projects in Course one -> Project
+inv5 C: Person <: projects in Student some -> Project
+inv6 S: all s: Student | all c : Course | ((all p: Project| s -> p in projects and c -> p in projects) => (student -> c in enrolled))
+inv6 B: all s: Student | all c : Course | ((all p: Project| s -> p in projects and c -> p in projects) => (s -> c in enrolled))
+

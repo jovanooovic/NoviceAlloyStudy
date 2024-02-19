@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+prop1 B: all t:Track | once t.signal != Green
+prop1 S: all t:Track | once Green no in t.signal
+prop1 B: all t:Track | once Green not in t.signal
+prop1 B: always(all t:Track | once(Green not in t.signal))
+prop1 B: once (all t:Track | t.signal = Green implies (before t.signal != Green))
+prop1 B: once (all t:Track | Green in t.signal implies (before Green not in t.signal))
+prop1 B: always (all t:Track&Entry | Green not in t.signal)
+prop1 B: always (all t:Track&Entry | always Green not in t.signal)
+prop1 B: always (all t:Track&Entry | once Green not in t.signal)
+prop1 B: once (all t:Track&Entry | Green not in t.signal)
+prop1 B: once (all t:Entry | Green not in t.signal)
+prop1 B: always (all t:Entry | Green not in t.signal)
+prop1 B: always (all t:Entry | Green not in signal.t)
+prop1 B: always (all t:Entry | Green not in t.signal)
+prop1 S: always (all t:track | Green in t.signal since Green not in t.signal)
+prop1 B: always (all t:Track | Green in t.signal since Green not in t.signal)
+prop1 B: always (all t:Track | Green not in t.signal until (Green in t.signal))
+prop1 U: (all t:Track | Green not in t.signal until (Green in t.signal))
+prop1 B: all t:Track | always (Green not in t.signal until (Green in t.signal))
+prop1 S: all t:Track, g:Green | g not in t.signal until (g in t.signal))
+prop1 B: always (all t:Track, g:Green | g not in t.signal until (g in t.signal))
+prop2 B: eventually (all t:Track | Green in t.signal)
+prop2 B: eventually (all t:Track | eventually Green in t.signal)
+prop2 B: eventually (all s:Signal | eventually Green in s)
+prop2 B: eventually (all s:Signal | Green in s)
+prop2 U: eventually (Green in Signal)
+prop2 T: eventually Green&Signal
+prop2 S: eventually all Green&Signal
+prop2 B: eventually some Green&Signal
+

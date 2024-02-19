@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 C: all t : Track | no t.succs iff t in Exit
+inv4 C: all t : Track | (all t1 : Track | t not in t1.succs) iff t in Entry
+inv5 S: all t : Track | (one t1 : Track | t in t1.succs and (one t2 : Track | t in t2.succs and t1 != t2)) iff t in Juction
+inv5 B: all t : Track | (one t1 : Track | t in t1.succs and (one t2 : Track | t in t2.succs and t1 != t2)) iff t in Junction
+inv5 B: all t : Track | (one t1 : Track | t in t1.succs and (one t2 : Track | t in t2.succs and t1 != t2)) iff t in Junction
+

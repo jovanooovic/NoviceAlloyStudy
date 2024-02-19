@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 S: all x : photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : not Influencer | one posts.x
+inv2 T: all x : not Influencer | one User.x
+inv2 T: all x : not Influencer |  User.x
+inv2 T: all x : not Influencer |  not User.x
+inv2 T: all x,y: not Influencer |  not User.x
+inv2 S: all x,y: user | x -> y follows
+inv2 S: all x,y: user | x -> y in follows
+inv2 S: all x : user | not follow.x
+inv2 S: all x : user | x not in x.follow
+inv1 C: all x : Photo | one posts.x
+inv3 S: all x : User | x in x.sees one  x.follows
+inv3 S: all x,y : User | x in x.sees one  y.follows
+

@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 B: one photo : Photo | one user : User | photo in user.posts
+inv3 S: user : User | ad : user.sees | ad in lone user.follows.posts
+inv3 S: user : User | ad : user.sees | ad in user.follows.posts
+inv3 S: one user : User | ad : user.sees | ad in user.follows.posts
+inv1 B: one photo : Photo | one user : User | photo in user.posts
+inv1 B: one photo : Photo | one user : User | photo in user.posts
+inv1 C: all x : Photo | one posts.x
+inv1 U: all x : Photo | some user : User | x in user.posts
+inv1 S: all x : Photo | some user : User | y->x in posts
+inv1 U: all x : Photo | some user : User | user->x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 B: one user : User | user not in user.follows
+inv2 C: all user : User | user not in follows.user
+

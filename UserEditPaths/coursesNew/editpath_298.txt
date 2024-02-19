@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: all p : Person | p not in Student implies p.enrolled=none
+inv2 C: all p : Person | p not in Professor implies p.teaches=none
+inv3 C: all c : Course | c.~(teaches)!=none
+inv4 C: all p : Project | one c : Course | c in p.~(projects)
+inv5 T: all p : Project | p.~(projects) in Student
+inv5 T: all p : Project | p.~(projects) in Student
+inv5 T: all p : Project | Person.p in Student
+inv5 U: all p : Project | all pr : Person | pr in p.~(projects) implies pr in Student
+inv5 B: all p : Project | all pr : Person | pr in p.~(projects) iff pr in Student
+inv5 S: all p : Project | all pr : Person | | all c : Course | (pr in p.~(projects) iff pr in Student) and (p.~(projects)!=none)
+inv5 S: all p : Project | all pr : Person | | all c : Course | (pr in p.~(projects) iff pr in Student) and (p.~(projects)!=none)
+inv6 B: all s : Student | s.enrolled.projects in s.projects
+inv6 B: all s : Person | s.enrolled.projects in s.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all c : Course | lone (c.projects.~(enrolled))
+inv7 B: all s : Student | lone (s.enrolled.projects)
+inv7 B: all s : Person | lone (s.enrolled.projects)
+inv7 B: all c : Course | all s1 : Student | all s2 : Student | (s1 in c.projects.~(enrolled) and s2 in c.projects.~(enrolled)) iff s1=s2
+inv7 T: all s : Student | lone(s.projects in s.enrolled.projects)
+inv7 B: all s : Student | lone(s.enrolled.projects)
+inv7 B: all s : Student | lone(s.enrolled.projects & s.projects)
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.grades[Person]
+inv8 B: all c : Course | all p : Professor | p in c.~(teaches) iff p not in c.grades[Person]
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades[Person] and p not in c.~(enrolled))
+inv8 S: all c : Course | all p : Professor | p not in c.~(enrolled))
+inv8 S: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.~(enrolled))
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades[Person] and p not in c.~(enrolled))
+inv8 T: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades and p not in c.~(enrolled))
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.~(enrolled)
+inv9 B: all c : Course | all p : Professor | p in c.~(teaches) implies c.~(enrolled) not in Professor
+inv10 T: all c : Course | all p : Person | p in grades[Person] implies p in Student
+inv10 T: all c : Course | all p : Person | p in grades[0] implies p in Student
+inv10 T: all c : Course | all p : Person | p in grades[p] implies p in Student
+

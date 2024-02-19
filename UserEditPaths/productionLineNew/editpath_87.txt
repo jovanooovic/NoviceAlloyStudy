@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 C: all w: Worker| w in (Human + Robot)
+inv2 C: all w: Worker| one ws:Workstation| w in ws.workers	all ws:Workstation| some ws.workers
+inv3 C: all c:Component| one ws:Workstation| ws in c.workstation
+inv4 U: all c:Component, m:Material| some c.parts and no m.parts
+inv4 C: all c:Component| some c.parts	all m:Material| no m.parts
+inv5 O: all ws:Workstation, h:Human,r:Robot| h in ws.workers iff r not in ws.workers
+inv5 C: all ws:Workstation, h:Human,r:Robot| h in ws.workers implies r not in ws.workers
+inv6 U: all c:Component| c not in c.parts
+inv6 O: all c:Component| c not in c.*parts
+inv6 C: all c:Component| c not in c.^parts
+inv6 O: all c:Component| c not in c.*parts
+inv6 C: all c:Component| c not in c.^parts
+inv7 S: all c:Component| some part: c.^parts| part in Dangerous implies c in Dangerous
+inv7 B: all c:Component| some p: c.^parts| p in Dangerous implies c in Dangerous
+inv7 U: all c:Component| some p: c.*parts| p in Dangerous implies c in Dangerous
+inv7 B: all c:Component| some p: c.^parts| p in Dangerous implies c in Dangerous
+inv7 O: all c:Component| all p: c.^parts| p in Dangerous implies c in Dangerous
+inv8 C: all c:Component| all ws:c.workstation| all w : ws.workers| c in Dangerous implies w not in Human
+inv9 S: all ws:Workstation-Begin| ws in Begin.^succ	no End.succ
+inv9 U: all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| ws!=begin implies ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| ws not in begin implies ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 O: all ws:Workstation| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 C: all ws:Workstation-end| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv10 S: all c:Component| c.ws in c.^parts.workstation.succ
+inv9 C: all ws:Workstation-end| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv10 B: all c:Component| c.workstation in c.^parts.workstation.succ
+inv10 B: all c:Component| c.workstation in c.^(parts.workstation.succ)
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+NA H: THEME UPDATE
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.^workstation.succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.^(workstation.succ)
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.^(parts.workstation.succ)
+

@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+prop1 O: before no (Signal & Green)
+prop1 O: before no Green
+prop1 C: historically no Green
+prop2 O: eventually Signal = Green
+prop2 O: eventually all s:Signal | s in Green
+prop2 C: all s:Signal | eventually s in Green
+prop3 S: always (all t:Trains, k:Tracks | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)
+NA H: THEME UPDATE
+prop2 C: all s:Signal | eventually s in Green
+prop3 U: always (all t:Train, k:Track | t.pos = k implies after t.pos = k)
+prop4 S: always (t1,t2:Train | no t1.pos = t2.pos)
+prop4 S: always (t1,t2:Train | t1.pos != t2.pos)
+prop4 S: always (t1,t2:Train | t1.pos not t2.pos)
+prop4 S: always (t1,t2:Train | t1->pos not t2->pos)
+prop4 E: 
+prop2 C: all s:Signal | eventually s in Green
+prop1 C: historically no Green
+prop4 S: always (all t1,t2:Train | t1.pos not t2.pos)
+prop1 C: historically no Green
+prop4 O: always (all t1,t2:Train | t1.pos != t2.pos)
+prop4 O: always (all disj t1,t2:Train | t1.pos != t2.pos)
+prop4 T: always (all disj t1,t2:Train | some (t1.pos and t2.pos) implies t1.pos != t2.pos)
+prop4 T: always (all disj t1,t2:Train | some (t1.pos and t2.pos) implies t1.pos != t2.pos)
+prop4 T: always (all disj t1,t2:Train | some (t1.pos :> Track and t2.pos :> Track) implies t1.pos != t2.pos)
+

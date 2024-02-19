@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv14 S: all p1, p2:Project, all s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 S: all p1, p2:Project, all s1, s2: Student | (p1 in s1.projects && p1 in s2.projects) && (p2 in s1.projects && p2 in s2.projects) => p1=p2
+inv14 S: all p1, p2:Project, all s1, s2: Student | p1+p2 in s1.projects && p1+p2 in s2.projects => p1=p2
+inv14 B: all p1, p2:Project, s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!= s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv9 S: all p1, p2: Professor, c1, c2: Course | p1c1 in p1.teaches && c1 in p2.teaches
+inv14 B: all p1, p2:Project, s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!=s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && c1 in p1.teaches && c1 in p2.teaches	  || c1 in p1.enrolled && c1 in p2.enrolled && c2 in p1.teaches => c2 in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && ((c1 in p1.teaches && c1 in p2.teaches)	  || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && ((c1 in p1.teaches && c1 in p2.teaches)	  || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && ((c1 in p1.teaches && c1 in p2.teaches) || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 in p2.enrolled
+inv9 E: 
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && c1 in p1.teaches && c1 in p2.teaches && c2 in p1.teaches => c2 in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && c1 in p1.teaches && c1 in p2.teaches => c2 in p1.teaches && c2 not in p2.enrolled
+inv9 U: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && c1 in p1.teaches && c1 in p2.teaches &&  c2 in p1.teaches => c2 not in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && ((c1 in p1.teaches && c1 in p2.teaches) || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 in p2.enrolled
+inv9 S: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && ((c1 in p1.teaches && c1 in p2.teaches) || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 not in in p2.enrolled
+inv9 B: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && ((c1 in p1.teaches && c1 in p2.teaches) || (c1 in p1.enrolled && c1 in p2.enrolled)) && c2 in p1.teaches => c2 not in p2.enrolled
+inv9 U: all p1, p2: Professor, c1, c2: Course | p1!=p2 && c1!=c2 && c1 in p1.teaches && c1 in p2.teaches &&  c2 in p1.teaches => c2 not in p2.enrolled
+inv5 C: all p: Person | some p.projects => p in Student				all p: Project | some s: Person | p in s.projects
+inv13 U: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max[Grade] => some p: Project | p in s.projects && p in c.projects
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!=s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, disj s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv9 U: all disj p1, p2: Professor, disj c1, c2: Course | c1 in p1.teaches && c1 in p2.teaches &&  c2 in p1.teaches => c2 not in p2.enrolled
+inv15 T: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2] && not larger[g1,g2]
+inv15 T: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2] && not larger[g1,g2]
+inv15 S: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 U: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 T: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2+1]
+inv15 T: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2]
+inv15 S: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not gt[sub[g1,g2], 1]
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2.prev || g1=g2 || g1=g2.next
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | c->p in projects && s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2.prev || g1=g2 || g1=g2.next
+

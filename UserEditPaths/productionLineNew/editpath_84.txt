@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all ws : Workstation | some w : Worker | w in ws.workers and (all w2 : Worker | one work : WorkStation | w2 in work.workers)
+inv2 C: all ws : Workstation | some w : Worker | w in ws.workers and (all w2 : Worker | one work : Workstation | w2 in work.workers)
+inv4 S: all c : Component | some c.parts	all c : Materials | no c.parts
+inv4 S: all c : Component | some c.parts	all c : Materials | no c.parts
+inv6 U: all c: Component | not c in c.parts
+inv6 U: all c: Component | not c in c.parts
+inv6 C: all c: Component | not c in c.^parts
+inv8 U: all c : Component | all x : workstation.c | no ( x.workers & Human)
+inv8 O: all c : Component | all x : c.workstation | no ( x.workers & Human)
+inv8 C: all c : Dangerous & Component | all x : c.workstation | no ( x.workers & Human)
+

@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 T: all p:Photo| one User.posts in p
+inv1 T: all p:Photo| one User in p.posts
+inv1 T: all p:Photo| one User in posts.p
+inv1 T: all p:Photo| one User.p in posts
+inv1 S: all u:User| one u.posts in p|
+inv1 T: all u:User| one u.posts in p
+inv1 O: all p:Photo| one p.posts
+inv1 C: all p:Photo| one posts.p
+inv1 T: all p:Photo| one p->p in posts
+inv1 S: all p:Photo, some u:User| one u->p in posts
+inv1 S: all p:Photo, some u:User| one p->u in posts
+inv1 S: all p:Photo, some u:User| one u->p in p.posts
+inv1 S: some u:User| one u->p in Photo.posts
+inv1 T: some u:User| one u->u in Photo.posts
+inv1 T: some u:User| one u in Photo.posts
+inv1 O: some u:User| u in Photo.posts
+inv1 B: some u:User| posts.Photo in u
+

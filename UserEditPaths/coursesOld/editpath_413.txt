@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv6 S: all s: Student
+inv5 T: (all p: Project | projects.p in Student) and (some pe: Person | pe -> p in projects )
+inv5 T: (all p: Project | projects.p in Student) and (some pe: Person | pe -> p in projects )
+inv5 S: (all p: Project | (Person <: projects.p ) in Student and (some pe: Person | pe -> p in projects )
+inv5 C: all p: Project | (Person <: projects.p)  in Student and some pe: Person | pe -> p in projects
+inv6 B: all s: Student, c: Course, p: Project | c -> p in projects implies s -> c in enrolled
+inv6 B: all s: Student, c: Course, p: Project | s -> p in projects and c -> p in projects implies s -> c in enrolled
+inv7 B: all s: Student, c: Course | lone p: Project | s -> c in enrolled and c -> p in projects implies s -> p in projects
+inv7 B: all s: Student, c: Course | lone p: Project | (s -> c in enrolled and c -> p in projects) implies s -> p in projects
+inv7 B: all s: Student, c: Course | lone p: Project | (s -> c in enrolled and c -> p in projects)
+inv7 U: all s: Student, c: Course, p1, p2: Project | s -> c in enrolled and c -> p1 in projects and c -> p2 in projects and s -> p1 in projects and s -> p2 in projects implies p1 = p2
+inv8 S: all t: Teacher | not (t -> t in teaches)
+inv8 S: all t: Teacher, s: Student | not (t -> s in teaches)
+inv8 S: all t: Teacher, s: Student | t -> s in teaches and t != s
+inv8 S: all t: Teacher, c: Course | t -> c in teaches and not(t -> c in enrolled)
+inv8 B: all t: Professor, c: Course | t -> c in teaches and not(t -> c in enrolled)
+inv8 U: all t: Professor, c: Course | t -> c in teaches implies not(t -> c in enrolled)
+inv9 B: all p1, p2: Professor, c: Course | p1 -> c in teaches implies not(p2 -> c in enrolled)
+inv9 B: all p1, p2: Professor, c: Course | p1 -> c in teaches and not(p2 -> c in enrolled)
+inv9 S: one p1:Profeesor | all p2: Professor, c: Course | p1 -> c in teaches and not(p2 -> c in enrolled)
+inv9 B: all pe: Person, p: Professor, c: Course | p -> c in teaches and pe -> c in enrolled implies p != pe and pe not in Professor
+inv9 B: all pe: Person, p: Professor, c: Course | p -> c in teaches and pe -> c in enrolled and p != pe implies pe not in Professor
+inv9 B: all p:Professor, c:Course, pe:Person | p->c in teaches and pe->c in enrolled and p!=pe implies pe not in Professor
+inv9 B: all pe: Person, p: Professor, c: Course | p -> c in teaches and pe -> c in enrolled and p != pe implies pe not in Professor
+

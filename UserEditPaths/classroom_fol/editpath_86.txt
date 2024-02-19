@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | p in Student
+inv1 C: all p:Person | p in Student
+inv2 C: all p:Person | p not in Teacher
+inv3 C: all s:Student,t:Teacher | s!=t
+inv4 C: all p:Person | p in Student or p in Teacher
+inv5 S: some c:Classe,p:Person | c->p
+inv9 T: all t1:Teacher,t2:Teacher,c:Class | (t1->c in Teacher and t2->c in Teacher) implies t1=t2
+inv9 C: all t1:Teacher,t2:Teacher,c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1=t2
+NA H: THEME UPDATE
+

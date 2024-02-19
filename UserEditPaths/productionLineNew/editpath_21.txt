@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv2 C: (all ws : Workstation | (some w : Worker | w in ws.workers)) and (all w :Worker | one ws : Workstation | ws in workers.w)
+inv3 S: all c : Component | one w : Workstation | ws in c.workstation
+inv3 C: all c : Component | one w : Workstation | w in c.workstation
+inv4 S: (all c : Components | some p: Product | p in c.parts) and (all m : Materials | no Product in m.parts)
+inv4 T: (all c : Component | some p: Product | p in c.parts) and (all m : Material | no Product in m.parts)
+inv4 C: (all c : Component | some p: Product | p in c.parts) and (all m : Material | no p : Product| p in m.parts)
+inv6 B: all c,e : Component | e in c.parts iff e!=c
+inv6 T: all c : Component | no c in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^(parts)
+NA H: THEME UPDATE
+

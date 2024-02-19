@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: all x : Photo | one posts.x	all x : Photo | one posts.x
+inv2 T: all x : User | no x.follows.x
+inv2 S: all x : User | not in x.follows
+inv2 C: all x : User | x not in x.follows
+inv2 T: all x : User | none x.follows.x
+inv4 S: all u : User, p : Photo | some u.posts & Ad implies u.(posts & Ad) == u.posts
+inv4 B: all u : User, p : Photo | some u.posts
+inv4 S: all u : User, p : Photo | some (u.posts & Ad) implies u.(posts & Ad) == u.posts
+inv4 S: all u : User, p : Photo | some (u.posts & Ad) implies u.(posts & Ad) == u.posts
+inv4 S: all u : User, p : Photo | some (u.posts & Ad) implies (u.posts & Ad) == u.posts
+inv4 S: all u : User, p : Photo | some (u.posts & Ad) implies (u.posts & Ad) == u.posts
+inv4 S: all u : User | some (u.posts & Ad) implies (u.posts & Ad) == u.posts
+

@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv12 T: all t: Teacher | t.Teaches.Groups
+inv12 C: all t: Teacher | some t.Teaches.Groups
+inv13 C: Tutors in Teacher -> Student
+inv13 C: Person.Tutors in Student and Tutors.Person in Teacher
+inv15 B: Teacher in ^Tutors.Person
+inv15 B: ^Tutors.Person in Teacher
+inv15 B: some ^Tutors.Person & Teacher
+inv15 S: all p: Person  some ^Tutors.p & Teacher
+inv15 C: all p: Person | some ^Tutors.p & Teacher
+inv14 U: all c: Class, s: Student | s in (c.Groups).Group  implies (Teaches.c & Teacher) in Tutors.s
+

@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv1 C: all w:Worker | w in Human or w in Robot
+inv2 S: (all ws: Workstation, w:Worker | w in ws.workers)	and	(all ws:Workstion | one w:Worker | w in ws.workers)
+inv1 C: all w:Worker | w in Human or w in Robot
+inv3 S: all c:Component | one ws:Workstation | w in c.workstation
+inv2 B: (all ws: Workstation, w:Worker | w in ws.workers)	and	(all ws:Workstation | one w:Worker | w in ws.workers)
+inv2 B: (all ws: Workstation, w:Worker | w in ws.workers)	and	(all w:Worker | all ws:Workstation | w in ws.workers)
+

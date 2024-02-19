@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker | one ws:Workstation | w in ws.workers
+inv3 T: all c : Component | one ws:Workstation| ws on c.workstation
+inv3 C: all c : Component | one ws:Workstation| ws in c.workstation
+inv4 B: all c : Component, m : Material | no c.parts and no m.parts
+inv4 U: all c : Component, m : Material | some c.parts and no m.parts
+inv4 U: all c : Component, m : Material | some c.^parts and no m.^parts
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv5 U: all ws : Workstation, w : Worker | ws.workers in Human implies not ws.workers in Robot and	ws.workers in Robot implies not ws.workers in Human
+inv5 U: all ws : Workstation | ws.workers in Human implies not ws.workers in Robot and	ws.workers in Robot implies not ws.workers in Human
+inv5 B: all ws : Workstation | (ws.workers in Human implies not ws.workers in Robot) and	(ws.workers in Robot implies not ws.workers in Human)
+inv5 B: all ws : Workstation | (ws.workers in Human implies not ws.workers in Robot) or	(ws.workers in Robot implies not ws.workers in Human)
+inv5 B: all ws : Workstation | (ws.workers in Human implies not (ws.workers in Robot)) or	(ws.workers in Robot implies not (ws.workers in Human))
+inv5 S: all ws : Workstation |  no (w.workers & Robot) or no (w.workers & Human)
+inv5 S: all ws : Workstation |  no (ws.workers & Robot) or no (ws.workers & Human)
+inv5 S: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 S: all ws : Workstation |  no (ws.workers & Robot) or no (ws.workers & Human)
+inv5 S: all ws : Workstation |  no (ws.workers & Robot) or no (ws.workers & Human)
+inv5 C: all ws : Workstation |  no (ws.workers & Robot) or no (ws.workers & Human)
+inv5 T: all ws : Workstation | no (Robot & Human in ws.workers)
+inv5 O: all ws : Workstation | (Robot & Human not in ws.workers)
+inv5 B: all ws : Workstation | (ws.workers in Human implies (ws.workers not in Robot)) or	(ws.workers in Robot implies (ws.workers not in Human))
+inv5 U: all ws : Workstation | (Human in ws.workers implies (Robot in ws.workers)) or	(Robot in ws.workers implies (Human in ws.workers))
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 C: all w: Workstation | no w.workers or (no w.workers & Robot) or (no w.workers & Human)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 U: all w: Workstation | no (w.workers & Robot & Human)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | c.parts in Dangerous implies c.^parts in Dangerous
+inv7 U: all c : Component | c.^parts in Dangerous <=> c.^parts in Dangerous
+inv7 O: all c : Component, d : Dangerous | d in c.^parts implies c in Dangerous
+inv8 S: all c : Components, h : Human | c in Dangerous implies h not in c.workstation.workers
+inv8 C: all c : Component, h : Human | c in Dangerous implies h not in c.workstation.workers
+inv9 S: all ws : Workstation | one b:Begin | one e:End | end in begin.succs
+inv9 S: all ws : Workstation | one b:Begin | one e:End | end in b.succs
+inv9 T: all ws : Workstation | end in begin.ws.succs and one end and one begin
+inv9 T: all ws : Workstation | end in begin.ws.succs
+inv9 T: all ws : Workstation | ws.end in ws.begin.succs
+inv9 T: all ws : Workstation | ws->end in ws.begin.succs
+inv9 S: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.succs
+inv9 T: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.ws.succs
+inv9 S: all ws : Workstation | one end : Workstation | one begin : Workstation | end in ws.succs
+inv9 B: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.succ
+inv9 U: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.*succ
+inv9 U: one end : Workstation | one begin : Workstation | end in begin.*succ
+inv9 B: all begin : Workstation, end : Workstation | end in begin.*succ
+inv9 S: all begin : Workstation, end : Workstation | begin not in begin.succs and end in begin.*succs
+

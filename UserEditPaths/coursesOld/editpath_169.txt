@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: all x : Professor | no ((Professor-x).enrolled & x.teaches)
+inv9 B: all disj x,y:Professor| x.enrolled not in y.teaches
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv1 C: enrolled.Course in Student
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv5 T: all s : Student , p : Project | projects.Project in Student
+inv5 U: all s : Student , p : Project | Person<:projects.Project in Student
+inv5 U: all s : Student  | Person<:projects.Project in Student
+inv5 U: all s : Student  | Person<:projects.Project in Student
+inv5 U: all s : Student | Person<:projects.Project in Student
+inv5 T: all s : Student | some Student in Person.projects
+inv5 T: all s : Student | some Person.projects & Student
+inv5 B: all s : Student | some Person.projects<:Person & Student
+inv5 T: all s : Student | some Person.projects & Student
+inv5 B: all s : Student | some Student.projects
+inv5 B: some Student.projects
+inv5 T: all s : Student | Student in Person.projects and some Student in Person.projects
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects
+inv5 T: all s : Student | Student in Person.projects and some Student & Person<:Person.projects
+inv5 S: all s : Student | Student in Person.projects and some Student & Person.project<:Person
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects<:Person
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects:>Person
+inv5 B: all s : Student | Student in Person.projects:>Person and some Student & Person.projects:>Person
+inv5 T: all s : Student | Student in Person.projects:>Person and some Student & Person.projects
+inv5 T: all x : Professor | no x.projects	  	some y : Project | Student & projects.y
+inv5 T: projects.Project & Student
+inv5 T: projects.Project in Student
+inv5 U: Person<:projects.Project in Student
+inv5 B: all p : Professor | Person<:projects.Project in Student and no p.projects
+inv6 S: all p : Student | s.projects<:Person iff p.enrolled.projects<:Course
+inv6 T: all p : Student | p.projects<:Person iff p.enrolled.projects<:Course
+inv6 U: all p : Student | p.projects<:Person in p.enrolled.projects<:Course
+inv6 U: all p : Student | p.projects in p.enrolled.projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Student-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Student-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Person-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & ((Student-x).enrolled).projects
+inv6 B: all x : Student | no x.projects & ((Person-x).enrolled).projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 U: all p : Student | p.projects in p.enrolled.projects
+NA H: THEME UPDATE
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+inv9 B: all disj  x,y : Professor | no y.enrolled & x.teaches
+inv9 B: all x : Professor, y : Professor-x | no y.enrolled & x.teaches
+inv9 B: all x : Professor, y : Professor-x | no (y.enrolled & x.teaches)
+

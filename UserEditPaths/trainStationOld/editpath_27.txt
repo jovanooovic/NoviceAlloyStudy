@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+prop1 C: no Green
+prop2 S: eventually (Green = Signal
+prop2 O: eventually (Green = Signal)
+prop2 C: all s : Signal | eventually s in Green
+prop3 U: all t : Train | t.pos = t.pos'
+prop4 C: always (all t : Track | lone pos.t)
+prop6 B: always (no Green & Green')
+prop6 T: always all s : Signal | Green
+prop3 U: all t : Train | t.pos = t.pos'
+prop3 S: always (t : Train | t.pos = t.pos')
+prop3 C: always (all t : Train | t.pos = t.pos')
+prop6 U: always (all s : Signal | s in Green implies s not in Green' or s not in Green implies s in Green')
+prop6 O: always Green' = Signal - Green
+prop7 E: 
+prop6 O: always Green' = Signal - Green
+prop6 S: always (all s : Signal | (s in Green implies eventually s not in Green) or (s not in Green implies s eventually s in Green))
+prop6 S: always (all s : Signal | (s in Green implies eventually s not in Green) or (s not in Green implies s eventually s in Green))
+prop6 S: always all s : Signal |	(s in Green implies eventually s not in Green) or	(s not in Green implies s eventually s in Green)
+prop6 S: always all s : Signal |	(s in Green implies (eventually s not in Green)) or	(s not in Green implies s eventually s in Green)
+prop6 S: always (all s : Signal |	(s in Green implies (eventually s not in Green)) or	(s not in Green implies s eventually s in Green)	)
+prop6 S: always (all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+prop6 T: always all s : Signal {	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	}
+prop6 T: always (all s : Signal {	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	})
+prop6 S: always (all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+prop6 E: 
+prop6 S: always all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+prop6 T: always all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green
+prop6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green)
+prop6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green))
+prop6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies eventually s in Green
+prop6 U: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies eventually s in Green)
+prop6 U: always (all s : Signal | (s in Green implies (eventually s not in Green)) or	s not in Green implies (eventually s in Green))
+prop6 B: always (eventually Green not in Green')
+prop6 U: all s : Signal | eventually (s in Green or s not in Green)
+

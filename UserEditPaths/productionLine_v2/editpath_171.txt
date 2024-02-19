@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv7 B: all c : Component | c.^parts in Dangerous iff c in Dangerous
+inv7 B: all c : Component | c.^parts in Dangerous => c in Dangerous
+inv7 T: all c : Component | c.^parts.c in Dangerous => c in Dangerous
+inv7 B: all c : Component | c.^parts in Dangerous => c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c : Component | parts.c in Dangerous => c in Dangerous
+inv7 T: parts.Dangerous in Dangerous	all c : Component | c.parts & Dangerous => c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c : Component | some c.parts & Dangerous => c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c : Component | some c.parts & Dangerous <=> c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c : Component | some c.parts & Dangerous => c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c : Component | some c.parts & Dangerous => c in Dangerous
+inv9 C: all w: Workstation- end | one w.succ	no end.succ	Workstation in begin.*succ
+

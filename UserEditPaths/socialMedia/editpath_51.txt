@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one posts.p
+inv8 B: all u : User | all ad: Ad | u->ad in sees
+inv8 S: all u : User | all ad: Ad | u->ad in sees and u2->ad in posts
+inv8 T: all u : User | all ad: Ad | u->ad in sees and posts.ad
+inv8 T: all u : User | all ad: Ad | u->ad in sees and u.follows.(posts.ad)
+inv8 B: all u : User | all ad: Ad | u->ad in sees and u->(posts.ad) in follows
+inv8 B: all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+

@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 T: all f:File | no f in Trash
+inv1 C: all f:File |  f not in Trash
+inv2 C: all f:File | f in Trash
+inv3 T: all f:File | some f in Trash
+inv3 C: some f:File |  f in Trash
+inv4 C: all f : File | f in Protected implies f not in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv6 C: all f,x,y:File | f ->x in link and f -> y in link implies x=y
+inv7 C: all f,x : File | f->x in link implies x not in Trash
+inv8 C: all f,x : File | f->x not in link
+inv9 C: all f,x,y:File | f->x in link implies x->y not in link
+inv10 T: all f,x:File | f->x in Trash implies x in Trash
+inv10 S: all f,x:File | f->x in link | f->x in Trash implies x in Trash
+inv10 T: all f,x:File | (f->x in link) in Trash
+inv10 T: all f,x:File | f->x in Trash
+inv10 T: all f,x:File | (f->x in link) in Trash
+

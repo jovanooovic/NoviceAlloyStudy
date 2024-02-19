@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv1 O: one Entry	one Exit
+inv1 C: some Entry	some Exit
+inv2 B: lone signals
+inv2 B: all t : Track | lone signals
+inv2 B: all t : Track | lone t.signals
+inv2 U: all s : Signal | lone s.~signals
+inv2 C: all s : Signal | one s.~signals
+inv3 S: no Exit.succ
+inv3 U: no Exit.succs
+inv3 S: all t : Track | t in Exit iff no t.exit
+inv3 C: all t : Track | t in Exit iff no t.succs
+inv4 C: all t : Track | t in Entry iff no t.~succs
+inv5 B: all t : Track | t in Junction iff some disj t1, t2 : Track | t1 & t2 in t.~succs
+inv5 B: all t : Track | t in Junction iff some disj t1, t2 : Track | (t1 & t2) in t.~succs
+inv5 B: all t : Track | t in Junction iff some disj t1, t2 : Track | (t1 & t2) in succs.t
+inv5 C: all t : Track | t in Junction iff some disj t1, t2 : Track | (t1 + t2) in succs.t
+inv5 C: all t : Track | t in Junction iff some disj t1, t2 : Track | (t1 + t2) in succs.t
+inv6 C: all e : Entry | some Speed & e.signals
+inv6 C: all e : Entry | some Speed & e.signals
+inv7 C: no ^succs & iden
+inv8 O: all e1 : Entry, e2 : Exit | e2 in e1.^succs
+inv8 O: all e1 : Entry, e2 : Exit | e2 in e1.^succs - e1
+inv8 B: Entry.^succs & Exit = Exit
+inv8 O: all e1 : Entry | all e2 : Exit | e2 in e1.^succs - e1
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 C: all e : Entry | Exit in e.^succs + e
+inv9 B: no Semaphore & (succs.Junction).signals
+inv9 T: no Semaphore in (succs.Junction).signals
+inv9 S: no Semaphore & (Tracks - succs.Junction).signals
+inv9 C: no Semaphore & (Track - succs.Junction).signals
+inv10 B: some Semaphore & (succs.Junction).signals
+inv10 C: all t : succs.Junction | some Semaphore & t.signals
+

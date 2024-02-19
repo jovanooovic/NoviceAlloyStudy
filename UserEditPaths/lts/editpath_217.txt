@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv7 T: let adj = {x,y : State | some e : Event | x->e->y in trans} | ^adj
+inv7 T: let adj = {x,y : State | some e : Event | x->e->y in trans} | ^adj
+inv4 B: let adj = {x,y : State | some e : Event | x->e->y in trans} | 	  	all i : Init, s : State | i->s in ^adj
+inv4 B: let adj = {x,y : State | some e : Event | x->e->y in trans} | 	  	all i : Init, s : State | i->s in *adj
+inv4 B: let adj = {x,y : State | some e : Event | x->e->y in trans} | 	  	all disj i : Init, s : State | i->s in ^adj
+inv4 B: let adj = {x,y : State | some e : Event | x->e->y in trans} | 	  	all disj i : Init, s : State | i->s + s->i in ^adj
+

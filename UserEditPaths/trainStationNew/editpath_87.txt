@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 C: some Entry and some Exit
+inv2 S: all s : Signal | one singals.s
+inv2 C: all s : Signal | one signals.s
+inv3 U: no Exit.succs
+inv3 B: no Exit.succs and no Exit.signals
+inv3 U: no Exit.succs
+inv3 S: Exit = Tracks-Tracks.succs						no Exit.succs
+inv3 S: Exit = Track-Tracks.succs						no Exit.succs
+inv3 B: Exit = Track-(Track.succs)						no Exit.succs
+inv3 T: Exit = Track-(all t : Track | some t.succs)						no Exit.succs
+inv3 S: Exit = Track-({ t : Track | some t.succs)						no Exit.succs
+inv3 C: Exit = Track-({ t : Track | some t.succs})						no Exit.succs
+inv4 B: Exit = Track-({ t : Track | no succs.t})
+inv4 B: Entry = Track-({ t : Track | no succs.t})
+inv4 C: Entry = Track-({ t : Track | some succs.t})
+inv4 C: Entry = { t : Track | no succs.t}
+inv5 S: Junction = { t : Track | no lone succs.t }
+inv5 T: Junction = { t : Track | no (lone succs.t) }
+inv5 C: Junction = Track-{ t : Track | lone succs.t }
+inv6 U: all e : Entry | e.signals in Signal
+inv6 T: all e : Entry | one e.signals in Signal
+inv6 B: all e : Entry | (one e.signals) and (e.signals in Signal)
+inv6 B: all e : Entry | one e.signals & Signal
+inv6 U: all e : Entry | some e.signals & Signal
+inv6 U: all e : Entry | some (e.signals & Signal)
+inv6 B: all e : Entry | one (e.signals & Signal)
+inv6 U: all e : Entry | some (e.signals & Signal)
+inv6 C: all e : Entry | some e.signals & Speed
+inv7 S: all t : Track | t not in t.^(tracks)
+inv7 C: all t : Track | t not in t.^(succs)
+inv7 C: all t : Track | t not in t.^succs
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 O: all e : Entry | Exit = (e.^succs & Exit)
+inv8 T: all e : Entry | Exit = { e : Entry | e.^succs & Exit}
+inv8 T: all e : Entry | Exit = { e : Entry | e.^succs & Exit}
+inv8 T: all e : Entry | Exit = e.{ e : Entry | e.^succs & Exit}
+inv8 O: all e : Entry | Exit = (e.^succs & Exit)
+

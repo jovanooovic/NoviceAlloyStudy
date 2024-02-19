@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+Inv1 B: User.visible = User.profile
+Inv1 C: all u: User | u.visible in u.profile
+Inv2 C: all u: User | u.profile.source in (u + Institution)
+Inv3 T: all u: User, s: Source, id: Id | lone (s.(u.profile).ids & id)
+Inv3 B: all disj w1, w2: Work | profile.w1 = profile.w2 and w1.source = w2.source implies no w1.ids & w2.ids
+Inv3 S: all u: User, all disj w1, w2: u.profile | w1.source = w2.source implies no w1.ids & w2.ids
+Inv3 C: all u: User, disj w1, w2: u.profile | w1.source = w2.source implies no w1.ids & w2.ids
+Inv4 B: all u: User, disj w1, w2: u.profile | w1.ids != w2.ids
+Inv4 B: all u: User, disj w1, w2: u.profile | no w1.ids & w2.ids
+Inv4 U: all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids
+Inv4 U: all u: User, disj w1, w2: u.visible | w1.ids != w2.ids
+Inv4 U: all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids
+Inv4 S: some ID	  all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids
+Inv4 B: some Id	  all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids
+Inv4 B: some Id	  all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids	}		fun workid : Work -> Id {	  ids
+Inv4 B: some Id	  all u: User, disj w1, w2: u.visible | no w1.ids & w2.ids	}		fun workid : Work -> some Id {	  ids
+Inv4 T: all u: User | no u.visible & same	}		fun same : Work -> Work {	  { disj w1, w2 : Work | w1.ids = w2.ids }
+Inv4 B: all u: User | no u.visible.same	}		fun same : Work -> Work {	  { disj w1, w2 : Work | w1.ids = w2.ids }
+Inv4 O: all u: User | no u.visible.same	}		fun same : Work -> Work {	  { disj w1, w2 : Work | some w1.ids & w2.ids }
+

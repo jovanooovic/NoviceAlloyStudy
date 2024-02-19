@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 B: all x : User | one posts.x
+inv1 S: all x : Image | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 C: no iden & follows
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 T: all x : User | all p : Photo | x.sees.p in x.follows.posts
+inv3 O: all x : User | all p : Photo | p in x.sees implies p in x.follows.posts
+inv4 S: all x : User | some x.posts & Ad implies all x.posts & Ad
+inv4 T: all x : User | some x.posts & Ad implies x.posts & Ad
+inv3 C: all x : User | x.sees-Ad in x.follows.posts
+inv4 C: all x : User | some x.posts & Ad implies x.posts-Ad = none
+inv5 T: all i : Influencer | all x : User | x.follows.i
+inv5 T: all i : Influencer | no i.follows-follows
+inv5 T: all i : Influencer | no follows.i-follows
+inv5 T: all x : Influencer | no follows.x-follows
+inv5 B: all x : Influencer | all y : User | x in y.follows
+inv5 T: all x : Influencer | no follows.x - follows
+inv5 U: all x : Influencer | no follows.x - User
+inv5 U: all x : Influencer | no x.follows - User
+inv5 B: all x : Influencer | follows.x = User
+

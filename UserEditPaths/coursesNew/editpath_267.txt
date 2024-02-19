@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+inv1 C: all p : Person | (p not in Student) implies (p.enrolled=none)
+inv2 C: all p : Person | (p not in Professor) implies (p.teaches=none)
+inv6 U: all s : Student | (s.projects - s.enrolled.projects)=none
+inv7 B: all s : Student | lone (s.enrolled.projects)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects)))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects)) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects))))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects)))))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects)) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects))) implies (p1=p2)
+inv7 S: all s : Student | all p1, p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects)))) implies (p1=p2)
+inv7 U: all s : Student, c : Course | lone ((s.projects) & (c.projects))
+inv7 S: all s : Student | c : Course | lone ((s.projects) & (c.projects))
+inv7 U: all s : Student | all c : Course | lone ((s.projects) & (c.projects))
+inv7 S: all s : Student | all p1 : Project | all p2 : Project | ((p1 in s.projects) and (p2 in s.projects) and (p1~(Course <: projects))=(p2.~(Course <: projects))) implies (p1=p2)
+inv7 U: all s : Student, c : Course | lone ((s.projects) & (c.projects))
+inv8 U: no p : Professor | p in  p.^teaches
+inv8 U: no p : Professor | p in  p.teaches
+inv8 U: no p : Professor | p in p.teaches
+inv8 B: no p : Professor | p in p.^(teaches.~enrolled)
+inv8 U: no p : Professor | p in p.(teaches.~enrolled)
+inv9 T: all p1,p2 : Professor | no p2 in p1.(teaches.~enrolled)
+inv9 B: all p1,p2 : Professor | p2 not in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | no p2 : Professor | p2 in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | no p2 : Professor | p2 in p1.^(teaches.~enrolled)
+inv9 B: no p1 : Professor | no p2 : Professor | p2 in p1.^(teaches.~enrolled)
+inv9 B: no p1,p2 : Professor | p2 in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | all p2 : Person | (p2 in p1.(teaches.~enrolled)) implies (p2 not in Professor)
+inv9 B: all p1,p2 : Professor | ((p1.teaches) & (p2.teaches) != none) implies ((p1 not in p2.(teaches.~enrolled)) and (p2 not in p1.(teaches.~enrolled)))
+inv10 S: all c : Course | ((p->g) in c.grades) implies (p in Student)
+inv10 C: all c : Course | all p : Person | all g : Grade | ((p->g) in c.grades) implies (p in Student)
+inv6 U: all s : Student | (s.projects - s.enrolled.projects)=none
+

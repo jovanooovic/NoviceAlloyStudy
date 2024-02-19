@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+Inv1 T: all w : Work | visible.w
+Inv1 B: all w : Work | some visible.w
+Inv1 C: all w : Work, u : User | w in u.visible implies w in u.profile
+Inv2 S: all w : Work, u : User | w in u.profile => w.source in {u, Institution}
+Inv1 C: all w : Work, u : User | w in u.visible implies w in u.profile
+Inv3 B: all w1, w2 : Work, u : User | (w1 in u.profile && w2 in u.profile) => (w1.ids != w2.ids || w1 = w2)
+Inv4 B: all w1, w2 : Work, u : User | (w1 in u.profile && w2 in u.profile && w1 in u.visible && w2 in u.visible) => w1 = w2
+Inv2 E: 
+Inv2 O: all w : Work, u:User, p : u + Institution |  w in u.profile implies w.source = p
+Inv2 B: all w : Work, u : User, i : Institution | w in u.profile implies (w.source = u or w.source = i)
+Inv3 O: all u : User, w1,w2 : u.profile | w1.ids != w2.ids
+Inv3 O: all u : User, w1,w2 : u.profile | w1.ids not in w2.ids and w2.ids not in w1.ids
+Inv3 O: all u : User, w1,w2 : u.profile | w1.ids not in w2.ids and w2.ids not in w1.ids
+Inv3 O: all u : User, w1,w2 : u.profile | w1.ids != w2.ids
+

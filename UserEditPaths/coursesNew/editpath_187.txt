@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 C: all x: Person, y: Course | y in x.enrolled implies x in Student
+inv2 C: all x: Person, y: Course | y in x.teaches implies x in Professor
+inv3 O: all x: Course | some y: Person | y in Professor and x in y.teaches
+inv4 C: all x: Project | one y: Course |  x in y.projects
+inv3 C: all x: Course | some teaches.x
+inv4 C: all x: Project | one y: Course |  x in y.projects
+inv4 T: all x: Project | one y: Course | one x in y.projects
+inv4 T: all x: Project | one y: Course | lone x in y.projects
+inv4 C: all x: Project | one y: Course | x in y.projects
+inv5 B: all x: Project | some y: Person | y not in Professor and y in Student and x in y.projects
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person | x in (Person <: projects).p implies x in Student
+inv6 U: all p:Project, s:Student | p in s.projects implies p in s.enrolled.projects
+inv7 B: all x: Student, y: Course | one z: Project | z in x.projects and z in y.projects
+inv7 U: all x: Student, y: Course | x in enrolled.y implies lone x.projects & y.projects
+inv8 U: all x: Professor, y: Course | x in enrolled.y implies x not in teaches.y
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+

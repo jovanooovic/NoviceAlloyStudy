@@ -1,0 +1,67 @@
+NA H: THEME UPDATE
+inv1 C: all w: Worker| w in Human or w in Robot
+inv1 C: all w: Worker| w in Human or w in Robot
+inv2 B: all w: Workstation| one k: Worker | k in w.workers
+inv2 U: all ws : Workstation | #ws.workers > 0	all w : Worker | some ws : Workstation | w in ws.workers
+inv2 C: all ws : Workstation | #ws.workers > 0	all w : Worker | one ws : Workstation | w in ws.workers
+inv3 S: all c : Componet | #c.workstation=1
+inv3 C: all c : Component | #c.workstation=1
+inv4 S: all c: Components, m: Material| #c.parts <0 and no m.parts
+inv4 B: all c: Component, m: Material| #c.parts <0 and no m.parts
+inv4 B: all c: Component, m: Material| #c.parts <1 and no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >=1 and no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >0 and no m.parts
+inv4 U: all c: Component, m: Material|  no m.parts
+inv4 U: all m: Material| no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >0 and no m.parts
+inv4 S: all c: Component, m: Material| iff(c not in Dangerous) #c.parts >0 and no m.parts
+inv4 B: all c: Component, m: Material| c not in Dangerous and #c.parts >0 and no m.parts
+inv4 S: all c: Component, m: Material| iff (c not in Dangerous) #c.parts >0 else #c.part =0 and no m.parts
+inv4 S: all c: Component, m: Material| iff (c not in Dangerous) #c.parts >0 else #c.part = 0 and no m.parts
+inv4 C: all c : Component | #c.parts > 0	all m : Material | #m.parts = 0
+inv5 S: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r in ws.workers => false
+inv5 B: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r in ws.workers
+inv5 O: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r not in ws.workers
+inv5 C: all ws : Workstation | all h : Human, r : Robot | h in ws.workers => r not in ws.workers
+inv6 U: all c: Component | c not in c.parts
+inv6 S: all c: Component | Componest not in c.parts
+inv6 U: all c: Component | Component not in c.parts
+inv6 S: all c : Component | c !in c.parts
+inv6 S: all c : Component | c not in c.parts
+inv6 U: all c : Component | c !in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 B: all c : Component, d: Dangerous | c not in c.parts and d not in c.parts
+inv6 B: all c : Component, d: Dangerous | c not in c.parts and d not in d.parts
+inv6 U: all c : Component, d: Dangerous | c not in c.parts
+inv6 U: all c : Component, d: Dangerous | c not in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 B: all c : Component | c not in c.parts	all c : Component | c.parts in Material
+inv6 B: all c : Component | c not in c.parts	all c : Component, d: Dangerous | d not in c.parts
+inv6 B: all c : Component | c not in c.parts	all c : Component, d: Dangerous | d not in c.parts	all c: Component | c.parts in Material
+inv6 B: all c : Component | c not in c.parts	all c : Component, d: Dangerous | d not in c.parts	all c: Component | c.parts in Material	all d: Dangerous | d.parts in Material
+inv6 B: all c : Component | c not in c.parts	all c : Component| Dangerous not in c.parts	all c: Component | c.parts in Material	all d: Dangerous | d.parts in Material
+inv6 B: all c : Component | c not in c.parts	all c : Component| Dangerous not in c.parts
+inv6 S: all c : Component | c not in c.parts	all c : Component| Dangerous not in c.parts and Componensts not in c.parts
+inv6 S: all c : Component | c not in c.parts	all c : Component| Dangerous not in c.parts and Componenst not in c.parts
+inv6 B: all c : Component | c not in c.parts	all c : Component| Dangerous not in c.parts and Component not in c.parts
+inv6 B: all c : Component| Dangerous not in c.parts and Component not in c.parts
+inv6 B: all c : Component + Dangerous| Dangerous not in c.parts and Component not in c.parts
+inv6 B: all c : Component + Dangerous| Dangerous not in c.parts
+inv6 B: all c : Component + Dangerous| Dangerous not in c.parts	all c : Component + Dangerous| Component not in c.parts
+inv6 B: all c : Component | Dangerous not in c.parts	all c : Component | Component not in c.parts
+inv6 U: all c : Component | c not in c.parts	all c : Component | Component not in c.parts
+inv6 B: all c : Component | c not in c.parts	all c : Component, d: Dangerous | d not in c.parts
+NA H: THEME UPDATE
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv6 C: all c: Component | not c in c.^parts
+inv7 B: all c: Component | Dangerous in c.^parts => some (c & Dangerous & Component)
+inv7 B: all c: Component | Dangerous in c.^parts implies some (c & Dangerous & Component)
+inv7 B: all c: Component | Dangerous in c.^parts implies c in Dangerous
+inv7 O: all p : Dangerous | all p2 : parts.p | p2 in Dangerous
+inv8 S: all c: Component & Dangerous, ws: c.workstations | no w.workers & Human
+inv8 S: all c: Component & Dangerous, ws: c.worckstations | no w.workers & Human
+inv8 S: all c: Component & Dangerous, ws: c.workstation | no w.workers & Human
+inv8 C: all c: Component & Dangerous, ws: c.workstation | no ws.workers & Human
+NA H: THEME UPDATE
+

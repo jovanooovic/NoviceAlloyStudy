@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv2 C: all p : Person , c : Course | no (p & Professor) implies c not in p.teaches
+inv1 S: all p : Person , c : Course | no (p & Students) implies c not in p.enrolled
+inv2 C: all p : Person , c : Course | no (p & Professor) implies c not in p.teaches
+inv1 C: all p : Person , c : Course | no (p & Student) implies c not in p.enrolled
+inv10 S: all p : Person, c : Courses | no (p & Students) implies p not in c.grades
+inv10 S: all p : Person, c : Courses| no (p & Students) implies p not in c.grades
+inv10 S: all p : Person, c : Course | no (p & Students) implies p not in c.grades
+inv10 T: all p : Person, c : Course | no (p & Student) implies p not in c.grades
+inv10 T: all p : Person - Student , c : Course | p not in c.grades
+inv10 C: all p : Person - Student , c : Course | p not in c.grades.Grade
+inv10 C: all p : Person - Student , c : Course | p not in c.grades.Grade
+inv6 B: all p : Person - Student , c : Course | p.projects not in c.projects
+inv6 S: all p : Person - Student , c : Course | pno (p.projects & c.projects)
+inv6 B: all p : Person - Student , c : Course | no (p.projects & c.projects)
+inv6 B: all p : Person - Student| p.projects not in p.enrolled.projects
+inv6 S: all s : Students , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 T: all s : Student , c : Course | no (s.enrolled & c) implies c not in (s.projects & c.projects)
+inv6 B: all s : Student , c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+

@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | no Professor in p.enrolled
+inv1 O: all p : Person | no p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv2 S: all s : Students | no s.teaches
+inv2 B: all s : Student | no s.teaches
+inv1 T: all p : Professor | p not in enrolled
+inv2 B: all s : Student | no s.teaches
+inv1 T: all p : Professor | p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Person | p.enrolled - Professor
+inv1 B: all p : Professor | no ~enrolled.p
+inv2 B: all s : Student | no s.teaches
+inv2 O: all p : Person | no p.teaches - Professor
+inv2 U: all p : Person | no p.~teaches - Professor
+inv1 T: all p : Professor | p not in enrolled
+inv1 U: all p : Professor | p not in enrolled.Person
+inv1 U: all p : Professor | p not in enrolled.Person
+inv1 U: all p : Professor | p not in ~enrolled.Person
+inv1 B: all p : Professor | p not in Course.~enrolled
+inv1 T: all p : Professor | Course.~enrolled
+inv1 B: all p : Professor | p not in Course.~enrolled
+inv1 T: all p : Professor |  Course.~enrolled & p
+inv1 B: all p : Professor | no Course.~enrolled & p
+inv1 B: all c : Course | Professor not in c.~enrolled
+inv1 T: all c : Course | c.~enrolled - Professor
+inv1 T: all c : Course | none c.~enrolled.Professor
+inv1 T: all c : Course | no c.~enrolled.Professor
+inv1 T: all c : Course, p : Professor | no c.~enrolled.p
+inv3 U: all p : Professor  | no p.teaches - Course
+inv3 B: all p : Professor, c : Course  | no p.teaches - c
+inv3 C: all c : Course  | some teaches.c
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+NA M: MOD BASE MODEL
+inv4 T: all p : Project | one Course.projects.p
+inv4 O: all p : Project | one p.projects
+inv4 T: all p : Project | one p.~projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+

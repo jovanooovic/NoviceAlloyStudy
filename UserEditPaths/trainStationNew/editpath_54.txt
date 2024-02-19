@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv2 C: signals in Track one -> Signal
+inv1 O: some Entry	one Exit
+inv1 B: succs in Track -> some Entry	succs in Track -> one Exit
+inv1 B: succs in Track -> some Entry	succs in Track -> one Exit
+inv1 S: succs in Track -> some Entry + one Exit
+inv1 T: all t:Track | some Entry in t.succs and one Exit in t.succs
+inv1 T: all t:Track | some Entry in t.succs and one Exit in t.succs
+inv3 U: no Exit.succs
+inv3 T: no Exit.succs and Exit.signals
+inv3 B: no Exit.succs	no Exit.signals
+inv4 U: no succs.Entry
+inv4 S: Track in begin.*succs
+inv4 B: Track in Entry.*succs
+inv4 B: Track in Entry.^succs
+inv4 B: one Entry	Track in Entry.*succs
+inv4 O: Track in Entry.*succs and no Entry->Entry
+inv5 T: Junction in *succs
+inv5 U: Junction in Track.*succs
+inv6 B: signals  in Entry -> some Signal
+inv6 O: signals  in Entry -> some Speed
+inv6 B: all t:Track, s:Signal | t->s in signals and t=Entry implies Speed in s
+inv1 O: some Entry	one Exit
+inv1 C: some Entry	some Exit
+inv3 U: no Exit.succs
+inv6 C: Entry in signals.Speed
+inv5 U: all t:Track | some t1, t2: Track | t1!=t2 and t in t1.succs and t in t2.succs iff t in Junction
+inv5 C: all t:Track | (some t1, t2: Track | t1!=t2 and t in t1.succs and t in t2.succs) iff t in Junction
+inv5 U: all t:Track | some t1, t2: Track | t1!=t2 and t in t1.succs and t in t2.succs implies t in Junction
+inv7 B: all t:Track | t in t.^succs
+inv7 C: all t:Track | t not in t.^succs
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 C: all e:Entry | Exit in e.*succs
+inv9 S: all t:track | Junction not in t.succ implies Semaphore not in t.signals
+inv9 S: all t:Track | Junction not in t.succ implies Semaphore not in t.signals
+inv9 B: all t:Track | Junction not in t.succs implies Semaphore not in t.signals
+inv9 B: all t:Track | Junction in t.succs implies Semaphore not in t.signals
+inv9 B: all t:Track | Junction not in t.succs iff Semaphore not in t.signals
+inv9 B: all t:Track | t.succs not in Junction implies t.signals not in Semaphore
+inv9 B: all t:Track | t.succs not in Junction iff t.signals not in Semaphore
+

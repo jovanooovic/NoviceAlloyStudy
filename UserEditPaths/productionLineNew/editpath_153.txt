@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 C: Worker in (Human+Robot)
+inv2 O: all w : Workstation | some w.workers	all w : Worker | one w.workers
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 C: (all c : Component | some c.parts) and (no Material.parts)
+inv5 T: all w : Workstation | not (w.workers & Human+Robot)
+inv5 O: all w : Workstation | no (w.workers & Human+Robot)
+inv5 S: no workers.Human & workers.Robot
+inv5 S: no workers.Human & workers.Robot
+inv5 S: no (workers.Human & workers.Robot)
+inv5 S: no workers.Human & workers.Robot
+inv5 E: 
+inv5 C: no workers.Human & workers.Robot
+inv6 U: all c : Component | c not in c.parts
+inv6 T: all c : Component | c not in ^(c.parts)
+inv6 T: all c : Component | c not in c.^(c.parts)
+inv6 C: all c : Component | c not in c.^parts
+inv7 O: all c : Component | some c.^parts & Dangerous implies c in Dangerous
+inv8 C: no ((Component & Dangerous).workstation.workers) & Human
+inv9 U: all w : Workstation | w not in w.^succ
+inv9 B: one begin.succ and one succ.end	all w : Workstation | w not in w.^succ
+inv9 S: one begin.succ and one succ.end	all w : Workstation | one w.succs and one succs.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation | one w.succ and one succ.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w or begin=end
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 B: one begin.succ and no succ.begin	one succ.end and no end.succ	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 U: all w : Workstation-begin | (w in begin.^succ) and (w not in w.^succ)	all w : Workstation-end | one w.succ
+inv9 C: all w : Workstation-begin | (w in begin.^succ)	all w : Workstation | (w not in w.^succ)	all w : Workstation-end | one w.succ
+inv9 C: all w : Workstation-begin | (w in begin.^succ)	all w : Workstation | w not in w.^succ	all w : Workstation-end | one w.succ
+inv10 S: no (c.workstation.^succ) & (c.parts.workstation)
+inv10 B: all c : Component | no (c.workstation.^succ) & (c.parts.workstation)
+inv10 B: all c : Component | no ((c.workstation.^succ) & (c.parts.workstation))
+inv10 B: all c : Component | no ((c.workstation.*succ) & (c.parts.workstation))
+

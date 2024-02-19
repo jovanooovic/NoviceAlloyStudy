@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo | one posts.p
+inv2 C: all u1,u2 : User | u1->u2 in follows implies u1 != u2
+inv2 C: all u : User | u not in follows.u
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv1 C: all p : Photo | one posts.p
+inv3 S: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u1->u2 in follows
+inv3 T: all u : User, p : Photo - Ad | sees.u implies posts.p = follows.u
+inv3 T: all u : User, p : Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u : User, p : Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.p implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.p implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 B: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u1->u2 in follows
+inv4 S: all u : User, p : Photo | (p in Ad and u->p in posts) implies all p in Ad
+inv4 S: all u : User, a : Ad | u->a in posts implies (all p : Photo | u->p posts implies p in Ad)
+inv4 C: all u : User, a : Ad | u->a in posts implies (all p : Photo | u->p in posts implies p in Ad)
+inv4 T: all u:User, ad:Ad | some u.posts in ad implies u.posts in ad
+inv4 C: all u : User, a : Ad | u->a in posts implies (all p : Photo | u->p in posts implies p in Ad)
+inv5 U: all i : Influencer | i->i not in follows
+inv5 O: all i : Influencer, u : User | u->i in follows and i->i not in follows
+inv5 B: all i : Influencer, u : User | u->i in follows
+inv5 U: all i : Influencer, u : User | i!=u implies u->i in follows
+inv5 U: all i : Influencer, u : User | i!=u implies u->i in follows
+inv6 C: all i : Influencer, d : Day | some p : Photo | i->p in posts and p->d in date
+inv6 C: all i : Influencer, d : Day | some p : Photo | i->p in posts and p->d in date
+inv7 O: all u1 : User, u2 : User, u3 : User | u1->u2 in suggested and u2->u1 not in follows and u3->u1 in follows and u2->u3 in follows
+inv7 S: }
+inv8 B: all u : User, poster : User, a : Ad | u->a in sees and poster->a in posts implies ( u->poster in follows or u->poster in suggested )
+

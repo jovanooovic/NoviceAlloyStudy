@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 S: all s:State | some t:trans
+inv1 S: all s:State, some t:trans | t in s
+inv1 T: all s:State | some t:trans | t in s
+inv1 S: all s:State | some t:trans in s.trans
+inv1 T: all s:State | some t:trans | t in s.trans
+inv2 C: one Init
+inv1 S: all s:State | some ss:State | e:Event | e->ss in s.trans
+inv1 S: all s:State | some s.trans		/*	There is a single initial state.	*/
+inv1 S: all s:State | some Event.(s.trans)		/*	There is a single initial state.	*/
+inv1 S: all s : State | some s.trans		/*	There is a single initial state.	*/
+inv1 S: all s : State | one s.trans		/*	There is a single initial state.	*/
+inv1 S: some State.trans		/*	There is a single initial state.	*/
+inv1 C: all s:State | some s.trans
+inv1 S: all s:State | some t:trans
+inv1 C: all s:State | some s.trans
+inv3 O: all s:State | lone s.trans
+inv3 B: all s:State | lone State.~(s.trans)
+inv3 C: all s:State | all e:Event| lone e.(s.trans)
+inv4 T: all s:State | s in Init.^trans
+inv4 T: all s:State | s in Init.(^trans)
+inv4 T: all s:State | s in Init.trans
+inv4 O: all s:State | s in Event.(Init.trans)
+inv4 O: all s:State | s in Event.^(Init.trans)
+inv4 T: all s:State | s in ^Event.(Init.trans)
+inv4 O: all s:State | s in Event.(Init.trans)
+inv4 T: all s:State | s in ^(Event.(Init.trans))
+inv4 U: all i:Init | i.trans in State.trans
+inv4 T: all i:Init | State in i.trans
+inv4 B: all i:Init | State in Event.(i.trans)
+inv4 B: all i:Init | State in Event.^(i.trans)
+inv4 T: all i:Init | State in Event.(i.^trans)
+inv4 T: all i:Init | State in Event.(^i.trans)
+inv4 B: all s:(State-Init) | s in Event.(Init.trans)
+inv4 B: all s:(State-Init) | s in Event.^(Init.trans)
+inv4 T: all s:(State-Init) | s in Event.(Init.^trans)
+inv4 B: all s:(State-Init) | s in Init.(Event.trans)
+inv5 U: all s:State | State.~(s.trans) in Event
+inv5 U: all s:State | State.(s.trans) in Event
+inv5 O: all s:State | Event in State.~(s.trans)
+inv5 O: all s:State | all e:Event | e in State.~(s.trans)
+inv5 U: State.~(State.trans) in Event
+

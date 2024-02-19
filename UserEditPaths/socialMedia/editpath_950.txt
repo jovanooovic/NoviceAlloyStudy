@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one u : User | u->p in posts
+inv2 S: u.follows != u
+inv2 S: u . follows != u
+inv2 U: all u : User |u . follows != u
+inv2 O: User.follows & User = none
+inv2 T: User.follows & User implies none
+inv2 O: User.follows & User in none
+inv2 O: User.follows not in User
+inv2 T: User.follows not User
+inv2 O: User.follows not in User
+inv2 B: User not in User.follows
+inv1 S: all:Photo | one posts.p
+inv1 S: all : Photo | one posts.p
+inv2 T: User.follows
+inv2 T: User.follows
+inv2 T: User.follows
+inv2 T: User.follows
+inv2 T: User.follows
+

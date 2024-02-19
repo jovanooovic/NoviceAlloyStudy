@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+Inv1 E: 
+Inv1 C: all c: Component | some c.parts
+Inv2 E: 
+Inv2 U: all c: Component | c not in c.parts
+Inv2 U: all c: Component | c not in c.parts
+Inv2 C: all c: Component | c not in c.^parts
+Inv3 E: 
+Inv3 T: all c: Component | some c.position.~position
+Inv3 S: all c: Component | some c.position.~rposition
+Inv3 S: all c: Component, c.position | some r: Robot | p in r.position
+Inv3 C: all c: Component, p: c.position | some r: Robot | p in r.position
+Inv4 T: all disj c1, c2: Component | c1.parts & c2.parts => c1.position = c2.position
+Inv4 B: all disj c1, c2: Component | some (c1.parts & c2.parts) => c1.position = c2.position
+Inv4 B: all disj c1, c2: Component | some (c1.parts & c2.^parts) => c1.position = c2.position
+Inv4 B: all disj c1, c2: Component | some (c1.parts & c2.parts) => c1.position = c2.position
+Inv4 B: all disj c1, c2: Component | all p: c1.parts, pos: c1.position | p in c2.parts implies c2.position = pos
+Inv4 C: all c: Component | all p: c.^parts | (p.position).lte[c.position]
+Inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+Inv4 S: all c: Component | p: c.^parts | p.position.lte[c.position]
+Inv4 C: all c: Component, p: c.^parts | (p.position).lte[c.position]
+Inv4 O: all c: Component, p: c.^parts | p.position in c.position.prev + c.position
+Inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+Inv4 O: all c: Component, p: c.^parts | p.position in c.position.prev + c.position
+Inv4 C: all c: Component, p: c.^parts | p.position in c.position.prevs + c.position
+

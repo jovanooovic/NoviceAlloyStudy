@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 S: all x : Photo | some y : User | y->x in posts	all x : Photo | post.x
+inv1 T: all x : Photo | some y : User | y->x in posts	all x : Photo | posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | none follows.x
+inv2 T: all y : User | none follows.y
+inv2 T: all x : User | none follows.x
+inv2 B: all x : User | lone follows.x
+inv2 B: one x : User | lone follows.x
+inv2 B: all x : User | lone follows.x
+inv2 O: all x : User | no follows.x
+inv2 B: one x : User | no follows.x
+inv2 B: all x : User | some follows.x
+inv2 B: all x : User + Influencer | some follows.x
+inv2 B: all x : User | some follows.x
+inv2 E: 
+inv2 B: all x : User | some follows.x
+inv2 C: all x : User | x not in follows.x
+inv3 U: all x : User, y : Ad | y not in follows.x
+inv3 U: all x : User, y : Ad | y not in follows.x
+inv3 U: all x : User, y : Ad | y not in x.follows
+inv3 U: all x : User - Ad | x not in sees.x
+inv3 O: all x : Photo - Ad, y : User | y not in sees.x
+inv3 U: all x : Photo - Ad, y : User | x not in sees.y
+inv3 O: all x : Photo - Ad, y : User | y not in sees.x
+inv2 C: all x : User | x not in x.follows
+inv3 O: all x : Photo, y : User | y not in sees.x
+inv3 B: all x : Ad, y : User | y not in sees.x
+inv3 T: all x : Photo, y : User | y some sees.x & y not in Ad.x
+inv3 T: all x : Photo, y : User | y some sees.x & y not in x.Ad
+inv3 T: all x : Photo, y : User | y some sees.x
+inv3 T: all x : Photo, y : User | x some sees.y
+inv3 T: all x : Photo, y : User | y some folows.x
+inv3 T: all x : Photo, y : User | y some follows.x
+NA H: THEME UPDATE
+

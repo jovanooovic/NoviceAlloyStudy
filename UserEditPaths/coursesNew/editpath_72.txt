@@ -1,0 +1,66 @@
+NA H: THEME UPDATE
+inv7 B: all s : Student | all disj p1, p2 : s.projects |  (Course<: projects).p1 != (Course<: projects).p2
+inv8 S: enrolled.(Professor.course)
+inv8 T: enrolled.(Professor.teaches)
+inv7 B: all s : Student | all disj p1, p2 : s.projects |  (Course<: projects).p1 != (Course<: projects).p2
+inv8 B: #enrolled.(Professor.teaches) = 1
+inv8 U: all p : Professor | p not in enrolled.(p.teaches)
+inv9 B: no Professor & enrolled.(Professor.teaches)
+inv9 B: no (Professor & enrolled.(Professor.teaches))
+inv9 T: no (Professor not in enrolled.(Professor.teaches))
+inv9 B: Professor not in enrolled.(Professor.teaches)
+inv9 B: no Professor & enrolled.(Professor.teaches)
+inv9 T: enrolled.teaches in Professor set -> none Professor
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches)
+inv8 U: all p : Professor | p not in enrolled.(p.teaches)
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches)
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches) and p2 not in enrolled.(p1.teaches)
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 E: 
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv10 E: 
+inv10 U: no grades.Professor
+inv10 U: no Course.grades.Professor
+inv10 U: no grades.Professor
+inv10 U: no Professor.grades
+inv10 O: no grades
+inv10 U: no grades.Professor
+inv10 U: no grades.Course
+inv10 O: no Course.grades
+inv10 U: no (Course.grades).Professor
+inv10 B: no Professor.(Course.grades)
+inv10 T: (Course.grades) in Student
+inv10 T: (Course.grades) in Student
+inv10 C: Course.grades.Grade in Student
+inv10 S: noCourse.grades.Grade & Professor
+inv10 B: no Course.grades.Grade & Professor
+inv10 C: Course.grades.Grade in Student
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: no Student & Professor	    all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv10 C: Course.grades.Grade in Student
+inv10 C: Course.grades.Grade in Student
+inv11 S: no Students.Course.grades
+inv11 T: no Student.Course.grades
+inv11 B: no Student.(Course.grades)
+inv11 O: no grades
+inv11 S: no grades.Grades
+inv11 O: no grades.Grade
+inv11 B: no (grades.Grade).Student
+inv11 U: (grades.Grade).Student in Course
+inv11 U: all s : Student | (grades.Grade).s in s.enrolled
+inv12 B: all s : Student | lone (grades.Grade).s
+inv12 B: all s : Student | lone s.enrolled.grades
+inv12 B: all s : Student | all c : s.enrolled | lone c.grades
+inv12 U: all s : Student | all c : s.enrolled | lone s.(c.grades)
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor |  p1.enrolled = p2.teaches
+inv9 B: no Professor.enrolled
+inv13 S: all c : course | all nerd : enrolled.course | (all dummy : enrolled.course | gte[nerd.(course.grade), nerd.(course.grade)])	    => 1 = 1
+inv13 S: all c : course | all nerd : enrolled.c | (all dummy : enrolled.c | gte[nerd.(c.grade), nerd.(c.grade)])	    => 1 = 1
+inv13 S: all c : Course | all nerd : enrolled.c | (all dummy : enrolled.c | gte[nerd.(c.grade), nerd.(c.grade)])	    => 1 = 1
+inv12 U: all s : Student | all c : s.enrolled | lone s.(c.grades)
+inv12 U: all s : Student | all c : s.enrolled | lone s.(c.grades)
+inv13 S: all c : Course | all nerd : enrolled.c | (all dummy : enrolled.c | gte[nerd.(c.grades), dummy.(c.grades)])	    => some n.projects & c.projects
+inv12 U: all s : Student | all c : s.enrolled | lone s.(c.grades)
+

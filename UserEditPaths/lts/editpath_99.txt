@@ -1,0 +1,97 @@
+NA H: THEME UPDATE
+inv1 C: all s: State | some s.trans
+inv2 T: all s: State | one s.~trans
+inv2 C: one Init
+inv3 O: lone State.trans
+inv3 O: all s: State | lone s.trans
+inv3 B: all s: State |one e: Event | lone s.trans.e
+inv3 B: all s: State |one e: Event | lone trans.e
+inv3 O: all s: State |one e: Event | lone s.trans->e
+inv3 T: all s: State |one e: Event | lone s->e in State
+inv3 B: all s: State |one e: Event | lone s->e
+inv4 S: all s: State | s^.trans
+inv4 S: Init^.trans
+inv4 S: Init^.trans
+inv4 T: Init.^trans
+inv4 T: Init.^trans in State
+inv4 T: State.^trans
+inv4 T: all s: State | all e: Event | one Init.^trans implies s->e->s
+inv1 S: some S.trans
+inv1 S: some S.trans
+inv1 B: some State.trans
+inv3 S: all s:State |one e: Event : lone e->s in trans
+inv3 T: all s:State |one e: Event | lone e->s in trans
+inv3 T: all s:State |one e: Event | lone trans.e in s.trans
+inv3 O: all s:State |one e: Event | lone s.trans
+inv3 B: all s:State |one e: Event | lone s.trans.e
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e->s
+inv3 T: all s:State |some e: Event | s.trans implies lone e in trans
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e->s
+inv3 T: all s:State |some e: Event | s.trans implies lone e->s
+inv6 S: s.trans in State
+inv6 T: State.trans in State
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv4 T: some e: Event | all s: State | Init.trans implies e->s in trans
+inv4 T: some e: Event | all s: State | Init.trans implies s
+inv4 T: some e: Event | all s: State | s in Init.^trans
+inv4 T: some e: Event | all s: State | s in Init.^trans.e
+inv4 T: some e: Event | all s: State | Init.trans and e->s in trans
+inv4 T: some e: Event | all s: State | Init.trans implies e->s
+inv4 T: some e: Event | Init.trans implies *trans.e
+inv5 T: all s: State | s.trans.s
+inv5 T: all s: State | s.trans.s
+inv4 T: all s: State | all e: Event | Init.trans.e
+inv4 T: all s: State | all e: Event | Init.trans
+inv4 T: all s: State | all e: Event | Init.trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in trans
+inv4 T: all s: State | all e: Event | Init.trans in trans implies e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies ~trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in State
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s in State
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans in trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in trans
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in State
+inv4 B: all s: State | all e: Event | e->s in Init.trans
+inv4 O: all s: State | some e: Event | e->s in Init.trans
+inv4 S: all s: State | some e: Event | all e->s in Init.trans
+inv5 T: all s1, s2: State | all e: Event |some n: State| e->n in s1.trans = e->n in s2.trans
+inv5 T: all s1, s2: State | all e: Event |some n: State| e->n in s1.trans & e->n in s2.trans
+inv5 U: all disj s1, s2: State | all e: Event |some n: State| e->n in s1.trans implies e->n in s2.trans
+inv5 T: all disj s1, s2: State | all e: Event |some n: State| e->n in s1.trans and e->n in s2.trans implies n.~trans.s1 = n.~trans.s2
+inv5 U: all disj s1, s2: State | all e: Event |some n: State| e->n in s1.trans and e->n in s2.trans implies e=e
+inv5 B: all disj s1, s2: State | all e1, e2: Event |some n: State| e1->n in s1.trans and e2->n in s2.trans implies e1=e2
+inv6 T: all e: Event | some trans.e in State.trans
+inv6 T: all e: Event | some trans.e in State.trans
+inv5 C: all s1,s2: State | s1.trans.State = s2.trans.State
+inv6 U: all e: Event | lone State.trans.e
+inv6 U: all e: Event | lone State.trans.e
+inv6 O: all e: Event | some State.trans.e
+inv6 T: all e: Event | some State.~trans.e
+inv6 U: all e: Event | some e->State
+inv6 T: all e: Event | some e->State in State.trans
+inv6 T: all e: Event | some e->State in trans
+inv6 U: all e: Event | some e->State
+inv6 C: State.trans.State = Event
+inv5 C: all s1,s2: State | s1.trans.State = s2.trans.State
+inv7 B: trans.State.Event = Init
+inv7 S: some s: State | sin s.^trans.State.Event = Init
+inv7 T: some s: State | s in s.^trans.State.Event = Init
+inv7 T: some trans.State.Event = Init
+inv7 B: Init = trans.State.Event
+inv4 B: Init = trans.State.Event
+

@@ -1,0 +1,63 @@
+NA H: THEME UPDATE
+inv1 T: all x: Track | some Entry in x && some Exit in x
+inv1 T: all x: Track | some Entry in x.succs && some Exit in x.succs
+inv1 T: all x: Track | some x.succs in Entry  && some x.succs in Exit
+inv1 B: all x: Track | x.succs in Entry  && x.succs in Exit
+inv1 B: all x: Track | some y : Entry, z: Exit | y in x.succs && z in x.succs
+inv1 B: all x: Track | some y : Entry, z : Exit | y in x.succs && z in x.succs
+inv2 S: all x: Signals | x in Track.signals
+inv2 U: all x: Signal | x in Track.signals
+inv2 S: all x: Signal | x in one Track.signals
+inv2 T: all x: Signal | one x in Track.signals
+inv2 B: all x: Signal, y : Track | x in y.signals
+inv2 C: all x: Signal | one y : Track | x in y.signals
+inv3 U: no Exit.^(succs)
+inv3 U: no Exit.succs
+inv3 B: no Exit.succs && no Exit.signals
+inv3 U: all x : Track | no x.succs implies x in Exit
+inv3 U: all x : Track | x in Exit implies no x.succs
+inv3 U: all x : Track | x in Exit implies no x.^succs
+inv3 U: all x : Track | x in Exit implies no x.^(succs)
+inv3 C: all x : Track | x in Exit <=> no x.^(succs)
+inv3 U: Track in Exit <=> no Track.^(succs)
+inv4 C: all x: Track | x in Entry <=> no ^(succs).x
+inv1 T: all x: Track | one x in Entry && one x in Exit
+inv1 T: all x: Entry, y : Exit | one x in Track && one y in Track
+inv1 U: all x: Entry, y : Exit | x in Track && y in Track
+inv1 C: some x: Entry, y : Exit | x in Track && y in Track
+inv5 B: all x: Track | x in Junction <=> #(^(succs).x) > 1
+inv5 C: all x: Track | x in Junction <=> #(succs.x) > 1
+inv6 T: all x: Track| some y: x.signals | x in Entry -> y in Speed
+inv6 O: all x: Track | some y: x.signals | x in Entry implies y in Speed
+inv6 T: all x: Track | x in Entry implies some x.signals in Speed
+inv6 O: all x: Track | some y: x.signals | x in Entry iff y in Speed
+inv6 C: all x: Entry | some y: x.signals | y in Speed
+inv7 C: all x: Track | x not in x.^(succs)
+inv8 B: all x : Entry | some y: Exit | y in x.^(succs)
+inv8 B: all x : Entry | some y: Exit-x | y in x.^(succs)
+inv8 B: all x : Entry | some y: Exit-Entry | y in x.^(succs)
+inv8 B: all x : Entry-Exit | some y: Exit-Entry | y in x.^(succs)
+inv8 U: all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => x.^(succs) in Entry
+inv8 U: all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => ^(succs).x in Entry
+inv8 C: all x : Track, y:Track-x | x in Entry && y in Exit => y in x.^(succs)
+inv9 B: all x : Track, y : Junction-x | y in x.succs => Semaphore in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.succs => Semaphore not in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^succs => Semaphore not in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^succs => Semaphore not in x.^signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^(succs) => Semaphore not in x.^(signals)
+inv9 B: all x : Track, y : Junction-x | y not in x.^(succs) => Semaphore not in x.^(signals):> Signal
+inv9 S: all x : Track | no t.succs & Junction => no t.signal & Semaphore
+inv9 S: all x : Track | no x.succs & Junction => no x.signal & Semaphore
+inv9 C: all x : Track | no x.succs & Junction => no x.signals & Semaphore
+inv10 B: all x: Track | Junction in x.succs implies Semaphore in x.signals
+inv10 B: all x: Track | Junction in x.^succs implies Semaphore in x.signals
+inv10 B: all x: Track | some y: x.signals | Junction in x.^succs implies y in Semaphore
+inv10 B: all x: Track | some y: x.signals | Junction in x.succs implies y in Semaphore
+inv10 B: all x: Track | some y: x.signals | x.^succs in Junction implies y in Semaphore
+inv10 B: all x: Track | some y: x.signals | x.^succs in Junction implies y in Semaphore
+inv10 B: all x: Track | some y: x.signals | x.succs in Junction implies y in Semaphore
+inv10 B: all x: Track | some s: Semaphore | Junction in x.^succs implies s in x.signals
+inv10 O: all x: Track, j: Junction | some s: Semaphore | j in x.^succs implies s in x.signals
+inv10 O: all x: Track, j: Junction | some s: Semaphore | j in x.succs implies s in x.signals
+NA H: THEME UPDATE
+

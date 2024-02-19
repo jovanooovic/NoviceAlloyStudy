@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv1 B: all x : User | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv3 S: x : User | x.sees - Ad in x.follows.posts
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x: User, y: Ad | all y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User, y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User | y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User, y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv4 S: all x : User | iff x.posts is Ad then
+inv4 S: all x : User | iff x.posts is Ad then
+inv4 S: all x : User | iff x.posts is Ad then
+inv4 S: all x : User | iff x.posts is Ad then
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv4 S: all x : User | iff x.posts is Ad
+inv4 T: all x : User | x.posts is Ad
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 T: all x : User | x.sees - Ad in x.follows.posts and all y : Ad | y in x in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees and y not in x.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees - x.follows.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv4 S: all x : User | one x.posts is Ad
+inv4 T: all x : User | one x.posts in Ad
+inv4 S: all x : User | all y : Ad | one x.posts = one y
+inv4 T: all x : User | all y : Ad | one x.posts = y
+inv4 O: all x : User | all y : Ad | x.posts = y
+inv4 T: all x : User | all y : Ad | one x.posts = y  -> x.posts = y
+inv4 T: all x : User | all y : Ad | x.posts = y  -> x.posts = y
+inv4 S: all x : User | all y : Ad | x.posts = y  x.posts = y
+inv4 S: all x : User | all y : Ad | x.posts = y, x.posts = y
+inv4 O: all x : User | all y : Ad | x.posts = y
+inv4 U: all x : User | all y : Ad | x.posts = y  implies x.posts = y
+inv4 T: all x : User | all y : Ad | one x.posts = y  implies x.posts = y
+inv4 B: all x : User | all y : Ad | one a : x.posts | a = y  implies x.posts = y
+inv4 S: all x : User | all y : Ad | one a : x.posts | iff a = y  implies x.posts = y
+inv4 B: all x : User | all y : Ad | one a : x.posts | a = y  implies x.posts = y
+inv4 B: all x : User | one a : x.posts | a in Ad  implies x.posts in Ad
+inv4 B: all x : User | one a : x.posts | a in Ad  iff x.posts in Ad
+inv4 T: all x : User | one a : x.posts | a in Ad  -> x.posts in Ad
+inv4 B: all x : User | some a : x.posts | a in Ad  implies x.posts in Ad
+inv4 B: all x : User | one a : x.posts | a in Ad  implies x.posts in Ad
+inv4 T: all x : User | one a : x.posts | a iff Ad  implies x.posts in Ad
+inv4 T: all x : User | one a : x.posts | (a iff Ad)  implies x.posts in Ad
+

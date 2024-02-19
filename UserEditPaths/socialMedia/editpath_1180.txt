@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv8 C: all u:User, a:Ad | u->a in sees implies (some u1: User | u1->a in posts and (u->u1 in follows or u->u1 in suggested))
+inv5 U: all i:Influencer, u:User | i!=u implies u->i in follows
+inv6 C: all d:Day, i:Influencer | some p:Photo | i->p in posts and p->d in date
+NA H: THEME UPDATE
+inv1 U: all u1, u2 : User, p : Photo | u1->p in posts and u2->p in posts implies u1 = u2
+inv1 C: all u1, u2 : User, p : Photo | u1->p in posts and u2->p in posts implies u1 = u2	all p:Photo | some u:User | u->p in posts
+inv5 U: all i:Influencer, u:User | i!=u implies u->i in follows
+

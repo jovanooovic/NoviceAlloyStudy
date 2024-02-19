@@ -1,0 +1,60 @@
+NA H: THEME UPDATE
+inv1 C: all w: Worker | w in Human or w in Robot
+inv2 U: all ws: Workstation, w: Worker | #ws.workers>0 && #w.~workers = 1
+inv2 B: all ws: Workstation, w: Worker | some ws.workers && w in ws.workers
+inv2 S: all ws: Workstation | w: Worker | some ws.workers && w in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && w in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && one ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && one w.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers && one w.~workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers && #w.~workers=1
+inv2 T: all ws: Workstation | all w: Worker | ws.workers>1 && #w.~workers=1
+inv2 B: all ws: Workstation | all w: Worker | #ws.workers>1 && #w.~workers=1
+inv2 B: all ws: Workstation | all w: Worker | #ws.workers>2 && #w.~workers=1
+inv2 U: all ws: Workstation | all w: Worker | #ws.workers> 0  && #w.~workers=1
+inv2 S: all ws: Workstation | some w: ws.workers	all w: Worker | one ws: w.workstation
+inv2 S: all ws: Workstation | some w: ws.workers	all w: Worker | one ws: w.workstation
+inv2 S: all ws: Workstation | some w: ws.workers && one ws.workers.~workers
+inv2 U: all ws: Workstation | all w: Worker | #ws.workers> 0  && #w.~workers=1
+inv2 O: all ws: Workstation | ws.workers != none && all w: ws.workers | w.workstation = ws
+inv2 U: all ws: Workstation  | #ws.workers> 0  && one ws.workers.~workers
+inv2 C: all w: Worker |	one ws: Workstation |	w in ws.workers	all ws: Workstation |	some w: Worker |	w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | one ws2: Workstation |#ws.workers> 0  &&  w in ws2.workers
+inv2 C: all ws: Workstation |  some ws.workers			all w: Worker | one ws: Workstation | w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers
+inv2 T: all ws: Workstation | all w: Worker | some ws.workers  &&  (one w) in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers  &&  w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers  &&  one w.~workers
+inv2 U: all ws: Workstation,  w: Worker | some ws.workers  &&  one w.~workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one w.~workers
+inv2 U: all ws: Workstation, w: Worker | some ws.workers  &&  one w.~workers
+inv2 S: all ws: Workstation | some ws.workers  &&  all  w: Worker one w.~workers
+inv2 C: all ws: Workstation | some ws.workers  &&  all  w: Worker | one w.~workers
+inv2 U: all ws: Workstation | all  w: Worker | some ws.workers  &&   one w.~workers
+inv2 U: all ws: Workstation, w: Worker | some ws.workers  &&   one w.~workers
+inv3 C: all c: Component | one c.workstation
+inv3 C: all c: Component | one ws: Workstation | c in ws.~workstation
+inv4 B: all c: Component | some c.parts && (all m: Material | #m.parts = none )
+inv4 B: all c: Component | all m: Material | some c.parts && #m.parts = none
+inv4 B: all c: Component | all m: Material | #c.parts>0 && #m.parts = none
+inv4 B: all p: Product, c: Component | p.parts in c && (all m: Material | #m.parts = none)
+inv4 B: all c: Component | all m: Material | #c.parts>0 && #m.parts = none
+inv4 B: all c: Component, p: c.parts-(c+Dangerous) | all m: Material | p in c && #m.parts = none
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv4 U: all c: Component | some c.parts && (all m: Material | no m.parts)
+inv4 C: all c: Component | some c.parts	(all m: Material | no m.parts)
+inv4 C: all c: Component | #c.parts>0	(all m: Material | no m.parts)
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 U: all c: Component |all m: Material | #c.parts>0 &&  no m.parts
+inv4 U: all c: Component, m: Material | #c.parts>0 &&  no m.parts
+inv4 U: all c: Component | #c.parts>0 &&  all m: Material | no m.parts
+inv4 C: all c: Component | #c.parts>0	all m: Material | no m.parts
+inv4 O: all c: Component | #c.parts>0	all m: Material | #m.parts = none
+inv4 C: all c: Component | #c.parts>0	all m: Material | #m.parts = 0
+inv5 B: all h: Human, r:Robot | h.~workers != r.workers
+inv5 B: all h: Human, r:Robot | h.~workers != r.~workers
+inv5 C: all h: Human, r:Robot, ws: Workstation | h in ws.workers => r not in ws.workers
+NA H: THEME UPDATE
+

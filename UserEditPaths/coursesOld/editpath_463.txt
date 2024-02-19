@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 T: no Professor in enrolled.Course
+inv1 S: no enrolled.Course - Students
+inv1 C: no enrolled.Course - Student
+inv2 S: no teacths.Course - Professor
+inv2 C: no teaches.Course - Professor
+inv3 T: all c : Course | some Professor in teaches.c
+inv3 O: all c : Course | some Professor & teaches.c
+inv4 C: (Course <: projects) in Course one -> set Project
+inv5 C: Person.projects - (Person - Student).projects = Project
+inv6 S: all s : Students | s.projects in s.enrolled.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all s : Student, c: Course | lone s.projects & c.projects
+inv8 S: all p : Professor | p.teach not in p.enrolled
+inv8 S: all p : Professor | p.teachs not in p.enrolled
+inv8 B: all p : Professor | p.teaches not in p.enrolled
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+inv9 T: all p : Professor, c : Course | no p.teaches.c & enrolled.c implies c in p.enrolled
+inv9 T: all p : Professor, c : Course | no p.teaches.Course & enrolled.c implies c in p.enrolled
+inv9 T: all p : Professor | no p.teaches.Course & p.enrolled.Course
+inv9 T: all p : Professor | no p.teaches.Course in p.enrolled.Course
+inv9 T: all p : Professor | p.teaches.Course  not in p.enrolled.Course
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+inv10 T: no Professor in Grades
+inv10 S: no Professor & Grades
+inv10 U: no Professor & Grade
+

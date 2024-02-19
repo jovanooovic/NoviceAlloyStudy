@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+prop1 S: Track.signal not in Red
+prop1 B: Track.signal not in Green
+prop1 O: all t : Track | t.signal not in Green
+prop1 U: all t : Track | iden in iden
+prop1 O: all t : Track | t.signal not in Green
+prop1 C: no Signal & Green
+prop1 C: no Signal & Green
+prop1 C: no Signal & Green
+prop2 O: always all s : Signal | eventually s in Green
+prop2 C: all s : Signal | eventually s in Green
+prop3 C: always all t : Train | t.pos = t.pos'
+prop4 O: always all disj t, t2 : Train | t.pos != t2.pos
+prop4 C: always all disj t, t2 : Train | some (t.pos) => t.pos != t2.pos
+prop4 C: always all disj t, t2 : Train | some (t.pos + t2.pos) => t.pos != t2.pos
+

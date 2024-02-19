@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 B: all t:Track | one ent:Entry | one ex:Exit | t in Entry and t in Exit
+inv1 S: all t:Track | t in one Entry and t in one Exit
+inv1 O: one t:Track | t in Entry and t in Exit
+inv1 B: one t:Track, s:Signal | t->s in signals implies t in Entry and t in Exit
+inv1 S: all t:Track, s:Signal | t->s in signals implies t in one Entry and t in one Exit
+inv2 C: all s:Signal | one t:Track | t->s in signals
+inv3 B: all t1,t2:Track | t1->t2 not in succs implies t2 in Exit
+inv3 B: all t1,t2:Track | t1->t2 not in succs implies t1 in Exit
+inv2 C: all s:Signal | one t:Track | t->s in signals
+inv3 B: all t1,t2:Track | t1->t2 not in succs implies t1 in Exit
+

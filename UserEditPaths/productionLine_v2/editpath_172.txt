@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: all w: Worker | w in Robot or w in Human
+inv2 U: all ws: Workstation, w: Worker | some ws.workers and some workers.w
+inv2 U: all ws: Workstation, w: Worker | some ws.workers
+inv2 U: all ws: Workstation, w: Worker | some ws.workers and w in Workstation.workers
+inv2 O: all ws: Workstation | some ws.workers	all w: Worker, ws1: Workstation, ws2: Workstation | w in ws1.workers implies w not in ws2.workers
+inv2 O: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | w in ws
+inv2 T: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | ws->w in ws.workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | ws->w in workers
+inv3 C: all c: Component | one ws: Workstation | c->ws in workstation
+inv4 S: all c: Component | some c.parts	all m: material | no m.parts
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv5 C: all ws: Workstation, w: Worker | w in ws.workers and w in Human implies no Robot&ws.workers
+inv6 U: all c: Component | c not in c.parts
+inv6 C: all c: Component | c not in c.^parts
+inv6 U: all c: Component | c not in c.parts
+inv6 C: all c: Component | c not in c.^parts
+inv7 S: all c: Component, p: Part | p in c.parts and p in Dangerous implies c in Dangerous
+inv7 S: all c: Component, p: Part | some c.parts&Dangerous implies c in Dangerous
+inv7 C: all c: Component | some c.parts&Dangerous implies c in Dangerous
+inv8 C: all c: Component, ws: Workstation | c in Dangerous and c->ws in workstation implies no ws.workers&Human
+

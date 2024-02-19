@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv5 O: some Teacher & Class
+inv5 S: some Teachs
+inv5 S: some Teachs
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 B: Person in Student
+inv2 B: Person in Student
+inv2 C: no Teacher
+inv3 T: Teacher iff not Student
+inv3 B: (Person in Teacher) iff not (Person in Student)
+inv3 T: no Student && Teacher
+inv3 T: no (Student && Teacher)
+inv3 T: not (Student && Teacher)
+inv3 C: no (Student & Teacher)
+inv4 T: no (Student or Teacher)
+inv4 B: no (Student + Teacher)
+inv4 B: no (Student & Teacher)
+inv4 O: (Person in Student) or (Person in Teacher)
+inv4 O: (Person in Student) iff not (Person in Teacher)
+inv4 S: always (all p:Person | (p in Student implies p not in Teacher) and (p in Teacher implies p not in Student)
+inv4 B: always (all p:Person | (p in Student implies p not in Teacher) and (p in Teacher implies p not in Student))
+inv4 B: always (all s:Student | s not in Teacher)		always (all t:Teacher | t not in Student)
+inv4 C: Person in (Student + Teacher)
+inv5 T: some Teacher in Teacher->Teaches
+inv5 T: some (Teacher in Teacher->Teaches)
+inv5 T: some (Teacher in Teaches)
+inv5 T: some (Teacher in Teaches)
+inv5 T: some (Teacher in Teaches)
+inv5 T: some (Teacher in Teaches)
+inv5 T: some (Teacher in Teaches.(~Teaches))
+inv5 E: 
+inv4 C: Person in (Student + Teacher)
+inv5 B: some t:Teacher | (all c:Class | t->c in Teaches)
+inv5 B: always (some t:Teacher | (all c:Class | t->c in Teaches))
+inv2 C: always (no Teacher)
+NA M: MOD BASE MODEL
+inv4 C: Person in (Student + Teacher)
+inv5 U: some Teacher->Class
+inv5 T: some (Teacher->Class in Teaches)
+

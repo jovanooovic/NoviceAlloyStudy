@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 B: all s:Student | one c:Course| c in s.enrolled
+inv1 B: all s:Student | one c:Course | c in s.enrolled
+inv1 B: all s:Student | one c:Course | c -> s in enrolled
+inv1 B: all s:Student | one c:Course | s -> c in enrolled
+inv1 B: all s:Student | one c:Course | c in s.enrolled
+inv1 T: enrolled & Student
+inv1 B: all p:Professor  | all c:Course | c not in p.enrolled
+inv1 B: all p:Professor  | some c:Course | c not in p.enrolled
+inv1 B: all p:Professor  | all c:Course | c not in p.enrolled
+inv1 O: all p:Person  | all c:Course | c not in p.enrolled
+inv1 S: all p:Professor, c:Course | c not in s.enrolled
+inv1 B: all p:Professor, c:Course | c not in p.enrolled
+inv1 C: all p:Person, c:Course |no(p & Student) implies c not in p.enrolled
+inv2 C: all p:Person, c:Course |no(p & Professor) implies c not in p.teaches
+inv3 S: all p:Person ,c:Courses| no(p & Student) implies c in p.teaches
+inv3 B: all p:Person ,c:Course| no(p & Student) implies c in p.teaches
+inv3 B: all p:Person ,c:Course| no (p & Student) implies c in p.teaches
+inv3 S: all p:Professer,c:Course| c in p.teaches
+inv3 B: all p:Professor,c:Course| c in p.teaches
+inv3 B: all p:Professor,c:Course| c in p.teaches
+inv3 O: all c:Course|some p:Professor | c in p.teaches
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 B: all p:Person , po:Project | no (p & Professor) implies po in p.projects
+inv5 B: all p:Person , po:Project | no (p & Student) implies po in p.projects
+inv5 B: all p:Person , po:Project | no (p & Professor) implies po in p.projects
+inv5 U: all  po:Project| some p:Person  | no (p & Professor) implies po in p.projects
+inv5 U: all  po:Project| some p:Person  | no (p & Student) implies po in p.projects
+inv5 U: all  po:Project| some p:Person  | no (p & Professor) implies po in p.projects
+

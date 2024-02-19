@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 C: all s : State | some s.trans
+inv1 C: all s : State | some s.trans
+inv2 C: one Init
+inv3 S: all s: state | f : Event | lone n: State | f->n in s.trans
+inv3 S: all s: state | set f : Event | lone n: State | f->n in s.trans
+inv3 S: all s: State | f : Event | lone n: State | f->n in s.trans
+inv3 S: all s: State | e : Event | lone n: State | e->n in s.trans
+inv3 C: all s: State | all e : Event | lone n: State | e->n in s.trans
+inv5 C: all s1, s2: State | s1.trans.State = s2.trans.State
+inv6 C: State.trans.State = Event
+

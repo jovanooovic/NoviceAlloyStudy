@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+prop1 O: before no (Signal & Green)
+prop1 O: before no Green
+prop1 C: historically no Green
+prop2 O: eventually Signal = Green
+prop2 O: eventually all s:Signal | s in Green
+prop2 C: all s:Signal | eventually s in Green
+prop3 S: always (all t:Trains, k:Tracks | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+prop3 T: always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)
+NA H: THEME UPDATE
+prop3 T: always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)
+prop3 T: always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)
+prop1 C: historically no Green
+prop2 C: all s:Signal | eventually s in Green
+prop3 S: always( all t:Train, some tk:Track | t->tk in pos implies after t->tk in pos)
+prop3 B: always( all t:Train | some tk:Track | t->tk in pos implies after t->tk in pos)
+prop3 U: always( all t:Train | some t.pos implies after t.pos' = t.pos)
+prop3 U: always( all t:Train | some t.pos implies t.pos' = t.pos)
+prop3 C: always( all t:Train | t.pos' = t.pos)
+prop4 U: all tk : Track | lone pos.tk
+prop4 U: all tk : Track | lone pos.tk :> Train
+prop4 U: all tk : Track | lone Train <: pos.tk
+prop4 U: all tk : Track | lone pos.tk
+prop4 C: always( all tk : Track | lone pos.tk )
+prop5 S: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+prop5 S: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+prop5 S: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+prop5 S: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => t.pos' = some ((t.pos).prox)	}
+prop5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => some tk : ((t.pos).prox) | t.pos' = tk	}
+prop5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+prop5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+prop5 B: all t:Train {	t.pos in Exit => t.pos' = t.pos - t.pos	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+prop5 B: all t:Train {	some t.pos =>{	t.pos in Exit => t.pos' = t.pos - t.pos	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}	}
+prop5 B: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+prop5 B: all t:Train {	some (t.pos & Exit) => t.pos' = (t.pos) - (t.pos)		}
+prop5 S: all t:Train {	some tk | t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+prop5 S: all t:Train {	some tk | t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+prop5 B: all t:Train {	some tk:t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+prop5 O: always(	all t:Train {	some tk:t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}	)
+prop5 S: always(	all t:Train {	some (t.pos & Exit) => t.pos' = t.pos - tk	some (t.pos && (Track-Exit)) => some tk2: tk.prox | t.pos' = tk2	}	)
+prop5 T: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos && (Track-Exit)) => some tk2: t.pos | t.pos' = tk2	}	)
+prop5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: t.pos | t.pos' = tk2	}	)
+prop5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: (t.pos).prox { t.pos' = tk2 }	}	)
+prop5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: (t.pos).prox | t.pos' = tk2	}	)
+prop5 B: always(	all t:Train {	t.pos in Exit => no t.pos'	t.pos in Entry => some tk2: (t.pos).prox | t.pos' = tk2	}	)
+prop5 B: always(	all t:Train {	t.pos in Exit => no t.pos'	t.pos in Entry => some tk2: (t.pos).prox | t.pos' = tk2	no t.pos => t.pos' = t.pos	}	)
+prop5 E: 
+prop6 O: always ( all s : Signal | (s in Green implies s' not in Green) and (s not in Green implies s' in Green) )
+prop6 U: always ( all s : Signal | (s in Green implies s' not in Green) or (s not in Green implies s' in Green) )
+prop6 S: always ( all s : Signal { s in Green => s' not in Green}	s not in Green => s' in Green)
+prop6 O: always ( all s : Signal { s in Green => s' not in Green	s not in Green => s' in Green	}	)
+prop6 O: always ( all s : Signal { s in Green => Green' = Green - s	s not in Green => Green' = Green + s	}	)
+prop6 C: always ( all s : Signal | (s in Green implies eventually s not in Green) and (s not in Green implies eventually s in Green) )
+NA H: THEME UPDATE
+

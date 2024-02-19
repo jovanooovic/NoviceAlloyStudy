@@ -1,0 +1,51 @@
+NA H: THEME UPDATE
+inv4 C: all p1 : Project | one c1 : Course | c1->p1 in projects
+inv5 U: (all p1: Project | some pr1: Student | pr1->p1 in projects)
+inv5 U: all p1: Project | some pr1: Student | pr1->p1 in projects
+inv5 C: (all p1: Project | some pr1: Student | pr1->p1 in projects)		(all p2: Project | all pr2: Person | pr2->p2 in projects implies pr2 in Student)
+inv5 C: (all p1: Project | some pr1: Student | pr1->p1 in projects)		(all p2: Project | all pr2: Person | pr2->p2 in projects implies pr2 in Student)
+inv7 S: all s1: Student
+inv7 S: all s1: Student
+inv7 S: all s1: Student
+inv7 S: all s1: Student
+inv1 C: all p1 : Person | all c1 : Course | p1->c1 in enrolled implies p1 in Student
+inv4 C: all p1 : Project | one c1 : Course | c1->p1 in projects
+inv5 C: (all p1: Project | some pr1: Student | pr1->p1 in projects)		(all p2: Project | all pr2: Person | pr2->p2 in projects implies pr2 in Student)
+inv7 E: 
+inv6 C: all s1: Person | all p1: Project | s1->p1 in projects implies (some c1: Course | c1->p1 in projects and s1->c1 in enrolled)
+inv6 U: all s1: Student | all p1: Project | s1->p1 in projects implies (some c1: Course | c1->p1 in projects and s1->c1 in enrolled)
+inv5 C: (all p1: Project | some pr1: Student | pr1->p1 in projects)		(all p2: Project | all pr2: Person | pr2->p2 in projects implies pr2 in Student)
+inv6 U: all s1: Student | all p1: Project | s1->p1 in projects implies (some c1: Course | c1->p1 in projects and s1->c1 in enrolled)
+inv7 B: all s1: Student | lone p1: Project | s1->p1 in projects implies (some c1: Course | c1->p1 in projects)
+inv8 U: all p1: Professor | all c1: Course | p1->c1 in teaches implies p1->c1 not in enrolled
+inv9 U: all p1, p2: Professor | all c1, c2: Course | (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies	  		p1->c2 in teaches implies p2->c2 not in enrolled
+inv8 U: all p1: Professor | all c1: Course | p1->c1 in teaches implies p1->c1 not in enrolled
+inv9 U: all p1, p2: Professor | all c1, c2: Course | (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies	  		p1->c2 in teaches implies p2->c2 not in enrolled
+inv10 E: 
+inv9 U: all p1, p2: Professor | all c1, c2: Course | (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies	  		p1->c2 in teaches implies p2->c2 not in enrolled
+inv10 C: all s1: Person | all c1: Course | all g1: Grade | (c1->s1->g1 in grades) implies s1 in Student
+inv11 S: all s1: Student | all c1: Course | all g1: grade | (c1->s1->g1 in grades) implies s1->c1 in enrolled
+inv11 S: all s1: Student | all c1: Course | all g1: grade | (c1->s1->g1 in grades) implies (s1->c1 in enrolled)
+inv11 U: all s1: Student | all c1: Course | all g1: Grade | (c1->s1->g1 in grades) implies s1->c1 in enrolled
+inv12 T: all s1: Student | all g1, g2: Grade | all c1: Course |	  	((s1->g1 in grades) and (s1->g2 in grades) and (c1->g1 in grades) and (c1->g2 in grades)) imples g1=g2
+inv12 T: all s1: Student | all g1, g2: Grade | all c1: Course |	  	((s1->g1 in grades) and (s1->g2 in grades) and (c1->g1 in grades) and (c1->g2 in grades)) implies g1=g2
+inv12 U: all s1: Student | all c1: Course | (s1->c1 in enrolled) implies (lone g1: Grade | c1->s1->g1 in grades)
+inv13 S: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects
+inv13 S: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects
+inv12 U: all s1: Student | all c1: Course | (s1->c1 in enrolled) implies (lone g1: Grade | c1->s1->g1 in grades)
+inv13 U: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects)
+inv14 E: 
+inv13 U: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects)
+inv14 U: all s1, s2: Student | all p1, p2: Project | (s1->p1 in projects and s2->p1 in projects and s1!=s1) implies	  		( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv13 U: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects)
+inv13 U: all s1: Student | all c1: Course | c1->s1 in grades.last implies (some p1: Project | c1->p1 in projects and s1->p1 in projects)
+inv14 B: all s1, s2: Student | all p1, p2: Project | (s1->p1 in projects and s2->p1 in projects and s1!=s2) implies	  		( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all s1, s2: Student | all p1, p2: Project | (s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies	  		( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv15 T: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			all g1, g2: Grade | (c1->s1->g1 in grades and c1->s2->g2) implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2)
+inv15 T: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			all g1, g2: Grade | (c1->s1->g1 in grades and c1->s2->g2) implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2)
+inv15 T: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			all g1, g2: Grade | (c1->s1->g1 in grades and c1->s2->g2) implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2)
+inv15 T: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			(all g1, g2: Grade | c1->s1->g1 in grades and c1->s2->g2 implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course |	  	(s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies	  	(all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv15 T: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			(all g1, g2: Grade | c1->s1->g1 in grades and c1->s2->g2 implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv15 B: all s1, s2: Student | all p1: Project | all c1: Course |	  		(s1->p1 in projects and s2->p1 in projects and s1!=s2 and c1->p1 in projects) implies	  			(all g1, g2: Grade | c1->s1->g1 in grades and c1->s2->g2 in grades implies 	  				(g1=prev[g2] or g2=prev[g1] or g1=g2))
+

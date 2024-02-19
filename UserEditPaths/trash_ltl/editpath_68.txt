@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+prop18 B: always (all f : File | f in Trash triggered f in Protected)
+prop18 O: always (all f : File | f in Trash triggered f not in Protected)
+prop18 O: always (all f : Protected | f in Trash triggered f not in Protected)
+prop18 B: always (all f : Protected | f in Trash triggered after f not in Protected)
+prop18 C: always (all f : Protected | f in Trash releases f in Protected)
+prop19 U: always (all f : Protected | f in Trash until f in Protected)
+prop19 C: always (all f : Protected | f in Protected until f in Trash)
+prop20 B: always (all  f : File | f not in Protected triggered f in Trash)
+prop20 O: always (all  f : File | f in Trash since f not in Protected)
+prop20 C: always (all  f : Trash | f in Trash since f not in Protected)
+

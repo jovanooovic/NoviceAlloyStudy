@@ -1,0 +1,62 @@
+NA H: THEME UPDATE
+Inv1 B: some parts
+Inv1 S: some Componet.parts
+Inv1 B: some Component.parts
+Inv1 B: some Component<:parts
+Inv1 B: some parts
+Inv1 U: all c : Component | some parts
+Inv1 C: all c : Component | some c.parts
+Inv2 T: all c : Component | no c.(c.parts)
+Inv1 C: all c : Component | some c.parts
+Inv2 O: all c : Component | no c.(c<:parts)
+Inv1 C: all c : Component | some c.parts
+Inv2 O: all c : Component | no c.(c<:parts)
+Inv2 T: all c : Component | c.parts in iden
+Inv2 B: all c : Component | c<:parts in iden
+Inv2 O: all c : Component | no c.(c<:parts)
+Inv2 U: all c : Component | no (c<:parts).c
+Inv2 T: all c : Component | no (c<:parts) & (parts.c)
+Inv2 T: all c : Component | no (c<:parts) & (parts<:c)
+Inv2 U: all c : Component | no (c<:parts).c
+Inv2 U: all c : Component | no c<:(parts.c)
+Inv2 T: all c : Component | no c.(parts.c)
+Inv2 U: all c : Component | no c<:(parts.c)
+Inv2 O: all c : Component | no c->parts->c
+Inv3 T: all c : Component | some p : Position | some c.p implies some Robot.p
+Inv3 T: all c : Component | some p : Position | some c.p implies some Robot.p
+Inv3 T: all c : Component | some p : Position | some c.p implies some Robot.p
+Inv3 T: all c : Component | some p : Position | some c.p implies some Robot.p
+Inv3 T: all c : Component | some p : Position | some c.p implies some Robot.p
+Inv3 E: 
+Inv3 T: all c : Component | some p : Position | some p.c implies some Robot.p
+Inv3 T: all c : Component | some p : Position | c.p implies some Robot.p
+Inv3 C: Component.position in Robot.position
+Inv3 C: Component.position in Robot.position
+Inv3 C: Component.position in Robot.position
+Inv2 O: all c : Component | no c->c
+Inv2 T: all c : Component | no c->c in parts
+Inv2 T: all c : Component | no c->c in parts
+Inv2 T: all c : Component | no c->c in parts
+Inv2 E: 
+Inv3 C: Component.position in Robot.position
+Inv2 T: all c : Component | no c->c in parts
+Inv3 C: Component.position in Robot.position
+Inv2 B: all c : Component | c->c in parts
+Inv2 U: all c : Component | c->c not in parts
+Inv2 T: all c : Component | c & ^parts.c not in parts
+Inv2 T: all c : Component | c & ^parts<:c not in parts
+Inv2 T: all c : Component | c.^parts & c not in parts
+Inv2 T: all c : Component | (c.^parts).c not in parts
+Inv2 S: no Componet.^parts
+Inv2 O: no Component.^parts
+Inv2 T: no (Component.^parts).Component
+Inv2 O: no (Component.^parts)<:Component
+Inv2 O: no (Component.*parts)
+Inv2 O: no (Component<:*parts)
+Inv2 O: all c : Component | no (c.*parts)
+Inv2 O: all c : Component | no (c.^parts)
+Inv4 B: Robot.position in Component.position
+Inv4 B: Robot.position = Component.position
+Inv1 C: all c : Component | some c.parts
+Inv3 C: Component.position in Robot.position
+

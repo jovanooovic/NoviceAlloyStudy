@@ -1,0 +1,120 @@
+NA H: THEME UPDATE
+inv1 S: all Station
+inv1 S: all Station
+inv1 S: all Station
+inv1 S: all Station
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv1 S: some t: Track | one t.succ and one succ.t
+inv1 B: some t: Track | one t.succs and one succs.t
+inv1 B: some t: Track | lone t.succs and lone succs.t
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv2 B: all s:Signal | one Track.signals
+inv2 C: all s:Signal | one signals.s
+inv3 U: all e:Exit | no e.succs
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | no succs.t implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | no t.succs implies t in Exit	all t:Track | t not in t.succs
+inv3 E: 
+inv3 U: all e:Exit | no e.succs
+inv3 S: all t:Tracks | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv6 S: all e:Entry | some e.signals.Spedd
+inv6 T: all e:Entry | some e.signals.Speed
+inv6 T: all e:Entry | some Speed.e.signals
+inv6 T: all e:Entry | some e.signals.Speed
+inv2 T: all s:Signal | one signals in Speed
+inv6 T: all e:Entry | some e.signals.Speed
+inv6 U: all e:Entry | some e.signals
+inv6 T: all e:Entry | some e.signals in Speed
+inv6 T: all e:Entry | some Speed in e.signals
+inv6 T: all e:Entry | some e.signals in Speed
+inv6 T: all e:Entry | some (e.signals in Speed)
+inv6 U: all e:Entry | some (signals.Speed)
+inv6 T: all e:Entry | some (e.signals.Speed)
+inv6 T: all e:Entry | some (signals.e.Speed)
+inv6 U: all e:Entry | some e.signals
+inv6 C: all e:Entry | some (e.signals & Speed)
+inv4 E: 
+inv4 U: all t:Track | no succs.t implies t in Entry
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv2 C: all s:Signal | one signals.s
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 O: one t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv2 C: all s:Signal | one signals.s
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 T: all t:Track | t not in t.succs^	all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | t not in t.^succs	all t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.^succs implies t in Exit
+inv3 U: all e:Exit | no e.succs
+inv4 T: all t:Track | none succs.t implies t in Entry
+inv4 T: all t:Track | none succs.t implies t in Entry
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: some t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 E: 
+inv2 C: all s:Signal | one signals.s
+inv3 S: all t:Track | some t.succ implies t not in Exit
+inv3 U: all t:Track | some t.succs implies t not in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | no t.~succs implies t in Exit
+inv3 B: all t:Track | no succs.t implies t in Exit
+inv3 B: all t:Track | no t.succs implies t in Exit and t not in Entry
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | t not in t.succs	all t:Track | no t.succs implies t in Exit
+inv3 U: no Exit.succs
+inv3 U: none = Exit.succs
+inv3 U: no Exit.succs
+inv6 C: all e:Entry | some (e.signals & Speed)
+inv6 U: all e:Entry | some (Speed)
+inv6 C: all e:Entry | some (e.signals & Speed)
+inv10 S: all t:Track | t.succ in Junction implies one (t.signal & Semaphore)
+inv10 S: all t:Track | t.succs in Junction implies one (t.signal & Semaphore)
+inv10 B: all t:Track | t.succs in Junction implies some (t.signals & Semaphore)
+inv10 B: all t:Track | t.succs in Junction implies one (t.signals & Semaphore)
+inv10 B: all t:Track | t.succs in Junction implies some (t.signals & Semaphore)
+inv10 B: all t:Track | t.~succs in Junction implies some (t.signals & Semaphore)
+inv10 B: all t:Track | t.succs in Junction implies some (t.signals & Semaphore)
+inv10 B: all t:Track | t.succs in Junction implies some (t.signals & Semaphore)
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in Exit + e
+inv8 B: all e:Entry | (e.^succs + e) in Exit
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in Exit	all t:Track | t in Entry implies t not in Exit
+inv8 B: all e:Entry | e.^succs in Exit	all e:Entry | e not in Exit
+inv8 O: all e:Entry | Exit = (e.^succs & Exit)
+inv8 O: all e:Entry | Exit in (e.^succs & Exit)
+inv8 O: all e:Entry | Exit in e.^succs
+inv1 S: sig Station in Track {}
+inv8 T: all e:Entry | e.^succs
+inv8 T: all e:Entry | e.^succs
+inv8 B: all e:Entry | e.^succs in Exit
+inv1 E: 
+inv1 S: sig Station in Track {}
+inv1 E: 
+inv8 B: all e:Entry | e.^succs in (Exit - e)
+inv8 B: all e:Entry | e.^succs in Exit
+inv3 U: no Exit.succs
+inv3 E: 
+inv3 S: all t:Track | t not in t.succ
+inv3 B: all t:Track | t not in t.succs
+inv3 B: all t:Track | t not in t.succs	all t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv10 B: all t:Track | t.succs in Junction implies some (t.signals & Semaphore)
+inv8 B: all e:Entry | e.^succs in Exit
+inv4 U: all t:Track | no succs.t implies t in Entry
+NA H: THEME UPDATE
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 C: some Exit	some Entry
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 C: all t:Track | no t.succs iff t in Exit
+inv4 C: all t:Track | no succs.t iff t in Entry
+

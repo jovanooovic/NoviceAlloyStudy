@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person in Student + Teacher
+inv5 C: some Teacher.Teaches
+inv6 C: all t:Teacher | some t.Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 C: all t:Teacher | lone t.Teaches
+inv9 O: all c:Class | lone c.~Teaches
+inv9 C: all c:Class,t1,t2:Teacher| t1->c in Teaches and t2->c in Teaches implies t1=t2
+inv10 C: all c:Class,s:Student | some g:Group | c->s->g in Groups
+inv11 C: all c:Class | some Person.(c.Groups) implies some t:Teacher | t->c in Teaches
+inv12 C: all t:Teacher | some t.Teaches.Groups
+inv13 C: Person.^~Tutors in Teacher and Person.^Tutors in Student
+inv15 C: all p:Person | some t:Teacher | t in p.^~Tutors
+NA H: THEME UPDATE
+

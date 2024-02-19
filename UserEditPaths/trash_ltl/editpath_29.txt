@@ -1,0 +1,51 @@
+NA H: THEME UPDATE
+prop1 C: historically no (Trash+Protected)
+prop2 U: historically no File
+prop1 C: historically no (Trash+Protected)
+prop1 C: historically no (Trash+Protected)
+prop2 U: (no File) until (some File)
+prop2 U: (historically no File) until (some File)
+prop2 U: historically no File until (some File)
+prop2 U: historically no File
+prop2 U: historically no (File+Trash+Protected)
+prop3 C: always some File
+prop2 C: historically no File and after some File
+prop3 C: always some File
+prop4 C: eventually some Trash
+prop5 B: eventually some Trash
+prop4 T: eventually some link in Trash
+prop4 T: all f:File | eventually some (f.link:> File).Trash
+prop4 T: all f:File | eventually some (f.link :> File).Trash
+prop4 T: all f:File | eventually some (f.link).Trash
+prop4 T: all f:File | eventually some (f.link)in Trash
+prop5 B: eventually some Trash
+prop4 T: all f:File | eventually some (f in Trash and f.link & Trash)
+prop4 T: eventually some link in Trash
+prop5 B: all f:File | eventually some (f.link & Trash)
+prop4 C: eventually some Trash
+prop6 B: all f:File | f in Trash triggered (always f in Trash)
+prop6 S: all f:File | (f in Trash) triggered (f always in Trash)
+prop6 B: all f:File | (f in Trash) triggered (f in Trash)
+prop6 U: all f:File | f in Trash implies always (f in Trash)
+prop6 U: all f:File | some (f & Trash) implies always (f in Trash)
+prop6 C: always (all t:Trash | after t in Trash)
+prop7 C: eventually some Protected
+prop8 B: always (all f:File | some f.link implies eventually f.link in Trash)
+prop8 B: all f:File | some f.link implies eventually f.link in Trash
+prop8 B: all f:File | some link.f implies eventually f in Trash
+prop8 T: all f:File | some File.link.f implies eventually f in Trash
+prop8 B: all f:File | some link.f implies eventually f in Trash
+prop8 B: all f:File | some link.f implies (eventually f in Trash)
+prop8 T: all f:File | link.f implies (eventually f in Trash)
+prop8 T: all f:File | link.f implies (eventually f in Trash)
+prop8 B: all f:File | some link.f implies (eventually f in Trash)
+prop8 T: all f:File | some link.f implies (eventually link in Trash)
+prop8 B: all f:File | some link.f implies eventually ( f in Trash)
+NA H: THEME UPDATE
+prop12 S: always (all f:File | eventually f in Trash implies (f not in Trash) releases (f in trash))
+prop12 B: always (all f:File | eventually f in Trash implies (f not in Trash) releases (f in Trash))
+prop12 B: eventually (all f:File | f in Trash implies (f not in Trash) releases (f in Trash))
+prop12 B: eventually (all f:File | f in Trash and (f not in Trash) releases (f in Trash))
+prop12 S: eventually (some f:File | (f in Trash) implies ((f not in Trash) releases (f in Trash))
+prop12 U: eventually (some f:File | (f in Trash) implies ((f not in Trash) releases (f in Trash)))
+

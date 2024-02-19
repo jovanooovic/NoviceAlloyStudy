@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 U: no Human&Robot
+inv1 U: all w:Worker| no Human&Robot
+inv1 U: all w:Worker| no Human&Robot
+inv1 C: all w:Worker| w in Human or w in Robot and (w not in Human or w not in Robot)
+inv2 S: all w:Workstation| #w.wokers>0	all w:Worker | #works.w=1
+inv2 S: all w:Workstation| #w.workers>0	all w:Worker | #works.w=1
+inv4 S: all c: Components | #c.parts>0	all c :Material | no c.parts
+inv2 C: all w:Workstation| #w.workers>0	all w:Worker | #workers.w=1
+inv3 C: all c :Component | #c.workstation=1
+inv4 C: all c: Component | #c.parts>0	all c :Material | no c.parts
+inv4 C: all c: Component | #c.parts>0	all c :Material | no c.parts
+inv5 O: all w:Workstation | w.workers in Human <=> w.workers not in Robot
+inv6 U: all c:Component | c not in c.parts
+inv6 C: all c:Component | c not in c.^parts
+inv7 O: all c:Component | #c.^parts&Dangerous>0 implies c in Dangerous
+inv7 O: all c:Component | #c.^parts&Dangerous>0 implies c in Dangerous
+inv7 O: all c:Component | #c.^parts&Dangerous>0 implies c in Dangerous
+inv8 O: all d:Dangerous | (d.workstation).workers in Robot
+inv9 U: all w:Workstation | (w in begin and w in end and no w.succ and no succ.w) or (w in begin and no succ.w and #w.succ=1) or (w in end and no w.succ and #succ.w=1) or (w not in end and w not in begin and #w.succ=1 and #succ.w=1)
+inv9 U: all w:Workstation | (w in begin and w in end and no w.succ and no succ.w) or (w in begin and w not in end and no succ.w and #w.succ=1) or (w in end and w not in begin and no w.succ and #succ.w=1) or (w not in end and w not in begin and #w.succ=1 and #succ.w=1)
+inv9 C: all w:Workstation | ((w in begin and w in end and no w.succ and no succ.w) or (w in begin and w not in end and no succ.w and #w.succ=1) or (w in end and w not in begin and no w.succ and #succ.w=1) or (w not in end and w not in begin and #w.succ=1 and #succ.w=1))and w not in w.^succ and w not in ^succ.w
+inv9 C: all w:Workstation | (( w in begin and #w.succ=1 and #succ.w=0  ) or ( w in end and #w.succ=0 and #succ.w=1   ) or ( #w.succ=1 and #succ.w=1 ) or (w in begin and w in end and #w.succ=0 and #succ.w=0)) and w not in w.^succ and w not in ^succ.w
+inv10 O: all c:Component | c.^parts.workstation in ^succ.(c.workstation)
+NA H: THEME UPDATE
+

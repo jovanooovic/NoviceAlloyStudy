@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 O: some Entry and one Exit
+inv1 O: some Entry	one Exit
+inv1 C: some Entry	some Exit
+inv1 C: some Entry and some Exit
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 U: all t:Track | t in Exit implies no t.succs
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv4 U: all e:Track | e in Entry implies no succs.e
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv5 U: all j:Track | j in Junction implies not lone succs.j
+inv4 U: all e:Track | e in Entry implies no succs.e
+inv6 C: all t:Track | t in Entry implies some s:Speed | s in t.signals
+inv7 C: all t:Track | t not in t.^succs
+inv8 O: all e:Track | e in Entry implies all x:Track | x in Exit and x in e.^succs
+inv9 B: all t: Track| Junction not in t.^succs implies no s: Semaphore| s in t.*signals
+inv10 B: all t: Track| Junction in succs.t implies some s: Semaphore| s in t.signals
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv3 U: all x:Track | no x.succs implies x in Exit
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv2 C: all s : Signal | one signals.s
+inv4 U: all e:Track | e in Entry implies no succs.e
+inv5 U: all j:Track | j in Junction implies not lone succs.j
+inv6 C: all t:Track | t in Entry implies some s:Speed | s in t.signals
+inv7 C: all t:Track | t not in t.^succs
+inv8 O: all e:Track | e in Entry implies all x:Track | x in Exit and x in e.^succs
+inv9 B: all t: Track| Junction not in t.^succs implies no s: Semaphore| s in t.*signals
+inv10 B: all t: Track| Junction in succs.t implies some s: Semaphore| s in t.signals
+inv10 B: all t: Track| Junction in succs.t implies some s: Semaphore| s in t.signals
+inv3 U: all x:Track | x in Exit implies no x.^succs
+inv3 C: all x:Track | x in Exit <=> no x.^succs
+inv4 C: all e:Track | e in Entry <=> no ^succs.e
+inv4 C: all e:Track | e in Entry <=> no ^succs.e
+inv5 B: all j:Track | j in Junction <=> not lone ^succs.j
+inv5 B: all j:Track | j in Junction <=> not (lone ^succs.j)
+

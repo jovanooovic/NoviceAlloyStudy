@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv2 C: one Init
+inv1 C: trans.State.Event = State
+inv3 B: Init.^{x,y: State | some (x.trans).y} = State
+inv4 C: Init.^{x,y: State | some (x.trans).y} = State
+inv4 C: Init.^{x,y: State | some (x.trans).y} = State
+inv3 U: all e : Event | lone trans.e
+inv3 U: all s: State, e: Event | lone s.trans.e
+inv3 U: all s: State | iden & (Event->State) in (s.trans).~(s.trans)
+inv3 U: all s: State | (iden & (Event->State)) in (s.trans).~(s.trans)
+inv3 B: all s: State | (iden & (Event->Event)) in (s.trans).~(s.trans)
+inv3 U: all s: State, e: Event | (iden & (s->e)) in (s.trans).~(s.trans)
+inv3 B: all s: State | (iden & (Event->Event)) in (s.trans).~(s.trans)
+inv3 T: all s: State | (~s.trans).(s.trans) in iden
+inv3 T: all s: State | (~s.trans).(s.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+inv4 C: Init.^{x,y: State | some (x.trans).y} = State
+inv3 O: ~(State.trans).(State.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+inv4 C: Init.^{x,y: State | some x.trans.y} = State
+inv5 C: all s, ss: State | s.trans.State = ss.trans.State
+inv5 C: all s, ss: State | s.trans.State = ss.trans.State
+inv6 C: Event in State.trans.State
+

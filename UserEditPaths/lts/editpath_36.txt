@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 C: all s : State | some s.trans
+inv2 B: one s : State | no trans.s
+inv2 B: one s : State | no trans.s
+inv1 C: all s : State | some s.trans
+inv2 B: one s : State | no trans.s
+inv2 C: one Init
+inv3 O: all s : State | lone s.trans
+inv3 C: all s : State, e : Event | lone s.trans[e]
+inv4 T: all i : Init, s : State | s in i.*trans[Event]
+inv4 B: all i : Init, s : State | s in i.*(trans[Event])
+inv3 S: all s : State, e : Event | lone s.trans[e]	}		fun tr : State -> State { { s1, s2 : State | s1->Event->s2 in trans
+inv4 S: all i : Init, s : State | s in i.*tr
+inv4 S: State in Init.*tr
+inv4 S: Init->State in *tr
+inv4 S: Init->State in *tr
+inv4 S: Init->State in ^tr
+inv4 S: State in Init.^tr
+inv5 O: all s1, s2 : State | s1.trans = s2.trans
+inv5 C: all s1, s2 : State | s1.trans.State = s2.trans.State
+inv6 C: all e : Event | some s : State | some s.trans[e]
+inv7 S: all s : Init.^tr | s.^tr in Init
+inv7 S: all s : Init.^tr | s.^tr in Init
+inv7 S: all s : Init.^tr | Init in s.^tr
+inv7 S: all s : Init.^tr | some i : Init | i in s.^tr
+NA H: THEME UPDATE
+

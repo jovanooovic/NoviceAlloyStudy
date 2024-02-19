@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all ws : Workstation | ws.workers != none and (all w : Worker | one ws : Workstation | w in wks.workers)
+inv2 C: all ws : Workstation | ws.workers != none and (all w : Worker | one ws : Workstation | w in ws.workers)
+inv3 T: all c : Component | one ws : Workstation | ws in c.Workstation
+inv3 C: all c : Component | one ws : Workstation | ws in c.workstation
+inv4 S: all c : Component | all m : Materials | c.parts != none and m.parts = none
+inv4 U: all c : Component | all m : Material | c.parts != none and m.parts = none
+inv4 C: (all c : Component | some p : Product | p in c.parts) and (all m : Material | no p : Product | p in m.parts)
+inv5 S: all ws : Workstation | all w1, w2 : Workers | (w1+w2) in ws.workers implies (w1+w2) in Human or (w1+w2) in Robot
+inv5 O: all ws : Workstation | all w1, w2 : Worker | (w1+w2) in ws.workers implies (w1+w2) in Human or (w1+w2) in Robot
+inv6 C: all c : Component | c not in c.^(parts)
+inv7 O: all c : Component | all d : Dangerous | d in c.^(parts) implies c in Dangerous
+inv8 O: all c : Component | all w : Worker | all ws : Workstation | c in Dangerous and w in c.workstation.workers implies  w in Robot
+inv8 O: all c : Component | all w : Worker | c in Dangerous and w in c.workstation.workers implies  w in Robot
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+

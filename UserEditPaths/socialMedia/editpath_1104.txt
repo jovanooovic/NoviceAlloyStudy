@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv2 C: all u : User | u not in u.follows
+inv2 B: User not in User.follows
+inv1 U: all p : Photo | p in User.posts
+inv1 B: all u : User | u in User.posts
+inv1 T: all u : User | u in User.posts.Photo
+inv1 S: all p : Photo , u1, u2 : User | p in u1.post and p in u2.post implies u1 = u2
+inv1 U: all p : Photo , u1, u2 : User | p in u1.posts and p in u2.posts implies u1 = u2
+inv1 U: all p : Photo , u1, u2 : User | (p in u1.posts and p in u2.posts implies u1 = u2) and p in User.posts
+inv1 B: all p : Photo | User in posts.p
+

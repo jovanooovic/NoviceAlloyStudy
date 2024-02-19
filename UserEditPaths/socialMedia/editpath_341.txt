@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 U: all p : Photo | some u : User | p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv3 S: all u1, u2 : User, s : u.sees | (s in u1.sees and s in u2.posts and u2 in u1.follows) or (s in Ad)
+inv3 S: all u1, u2 : User, s : u.sees | (s in u1.sees and s in u2.posts and u2 in u1.follows) or (s in Ad)
+inv3 O: all u1, u2 : User, s : u1.sees | (s in u2.posts and u2 in u1.follows) or (s in Ad)
+inv3 S: all u1, u2 : User, p : Photo | (p in u1.sees and p in u2.posts and u2 in u1.follows) or (s in Ad)
+inv3 O: all u1, u2 : User, p : Photo | (p in u1.sees and p in u2.posts and u2 in u1.follows) or (p in Ad)
+inv2 C: all u : User | u not in u.follows
+inv2 C: all u : User | u not in u.follows
+inv4 S: some u : User, p : Post | p in u.posts => all po : u.posts | po in Ad
+inv4 B: some u : User, p : Ad | p in u.posts => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : Ad | p in u.posts => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : u.posts | p in Ad => (all po : u.posts | po in Ad)
+inv4 B: all u : User | some p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 C: all u : User | all p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 C: all u : User, p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv5 B: all u : User, i : Influencer | i in u.follows
+inv7 U: all u : User, us : u.suggested | some u1 : User | us not in u.follows and u1 in u.follows and us in u1.follows
+inv7 U: all u : User, us : u.suggested | some u1 : User | us not in u.follows and u1 in u.follows and us in u1.follows and us != u
+inv8 O: all u, u1 : User, p : u.sees | p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees and p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees => p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 B: all u, u1 : User | some p : Photo | p in u.sees => p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 B: all u, u1 : User | some p : Photo | p in u.sees => p in u1.posts and u1 != u and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees => p in u1.posts and u1 != u and (u1 in u.follows or u1 in u.suggested)
+NA H: THEME UPDATE
+

@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 E: 
+inv1 E: 
+inv3 T: all s : State, e: Event | lone e.s.trans
+inv3 C: all s : State, e: Event | lone e.(s.trans)
+inv3 O: all s : State | lone Event.(s.trans)
+inv3 C: all s : State , e:Event | lone e.(s.trans)
+inv4 T: Init.^adj		}		/*	All the states have the same events available.	*/	fun adj: State -> State {	{ x,y : State | some (x.trans).y }
+inv4 S: Init in State.^adj
+inv4 S: Init in ^adj.State
+inv4 S: all s:State | Init in s.^adj
+inv4 S: all s:State | s in Init.^adj
+inv4 S: all s:State | s in Init.^adj
+inv5 B: all s,r :State | (r.trans).s = (s.trans).r
+inv5 C: all s,r :State | (r.trans).State = (s.trans).State
+inv6 O: all e: Event | some (trans.e).State
+inv6 O: all e: Event | some State.(trans.e)
+inv6 C: all e: Event | some (trans.State).e
+inv7 S: Init in State.*adj
+inv7 S: all s: in Init.^adj | some s.^adj & Init
+inv7 S: all s:  Init.^adj | some s.^adj & Init
+

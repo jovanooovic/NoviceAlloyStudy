@@ -1,0 +1,55 @@
+NA H: THEME UPDATE
+inv1 S: inv1: all i: Photo | i in posts.posts		}		pred inv1{		inv1: all i: Photo | i in posts.posts
+inv1 T: all i: Photo | i in posts.posts
+inv1 T: all i: Photo | i in posts.posts
+inv1 T: all i: Photo | i in (some u: User | i in u.posts)
+inv1 U: all i: Photo | some u: User | i in u.posts
+inv2 C: all u: User | u !in u.follows
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts + Ad))
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts + Ad))
+inv3 T: all u: User, p: Photo | p in u.sees => p in (follows.posts + Ad)
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts + Ad))
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts ++ Ad))
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts ++ Ad))
+inv3 T: all u: User, p: Photo | (p in u.sees) => (p in (follows.posts ++ Ad))
+inv3 S: User, p: Photo | (p in u.sees) => (p in follows.posts || p in Ad)
+inv3 S: User, p: Photo | (p in u.sees) -> (p in follows.posts || p in Ad)
+inv3 S: all User, p: Photo | (p in u.sees) -> (p in follows.posts || p in Ad)
+inv3 S: User, p: Photo | (p in u.sees) -> (p in follows.posts || p in Ad)
+inv3 T: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.posts ++ Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts ++ Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv1 U: all i: Photo | some u: User | i in u.posts
+inv2 C: all u: User | u !in u.follows
+inv1 U: all i: Photo | some u: User | i in u.posts
+inv3 E: 
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) implies (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, all p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all (u: User, p: Photo) | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts + Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts union Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts union Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts union Ad))
+inv3 S: all u: User, p: Photo | (p in u.sees) -> (p in (u.follows.<.posts union Ad))
+inv1 U: all i: Photo | some u: User | i in u.posts
+inv1 U: all i: Photo | some u: User | i in u.posts
+inv1 C: all i: Photo | one u: User | i in u.posts
+inv2 C: all u: User | u !in u.follows
+inv2 C: all u: User | u !in u.follows
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv1 C: all i: Photo | one u: User | i in u.posts
+inv2 C: all u: User | u !in u.follows
+inv3 E: 
+

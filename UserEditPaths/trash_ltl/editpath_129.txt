@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+prop1 C: no Trash and no Protected
+prop1 C: no Trash + Protected
+prop2 C: no File and after some File
+prop3 C: always some File
+prop4 T: eventually File & Trash
+prop4 C: eventually some (File & Trash)
+prop5 B: eventually some (File & Trash)
+prop6 U: all f : Trash | always f in Trash
+prop6 U: all f : File | f in Trash => always f in Trash
+prop6 U: all f : File | f' in Trash => always f' in Trash
+prop6 U: all f : File | once f in Trash => always f in Trash
+prop6 B: all f : File | f in Trash since f in Trash
+prop6 B: all f : File | (always f in Trash) since (f in Trash)
+prop6 B: no Trash or all f : File | (f in Trash) since (f in Trash)
+prop7 C: eventually some Protected
+prop9 O: always no Protected + Trash
+prop9 C: always no Protected & Trash
+prop10 U: Protected' = Protected
+prop10 C: always Protected' = Protected
+prop11 U: all f : File - Protected | after f in Protected
+prop11 U: all f : File - Protected - Trash | after f in Protected
+prop11 U: all f : (File - Protected) - Trash | after f in Protected
+prop11 U: all f : File | f not in Protected => f in Protected'
+prop11 U: all f : File | f not in Protected => after f in Protected
+prop11 B: all f : File | f not in Protected => after always f in Protected
+prop11 U: all f : File - Protected | f in Protected'
+prop12 B: all f : File | eventually f in Trash => always ( f in Trash and eventually f not in Trash)
+prop13 O: some f : File & Trash | once f not in Trash
+prop13 O: some f : Trash | once f not in Trash
+prop13 B: some f : File | eventually f in Trash => once f not in Trash
+prop13 C: all f : File | eventually f in Trash => once f not in Trash
+prop12 B: all f : File | eventually f in Trash => eventually f not in Trash
+prop12 B: all f : File | eventually f in Trash and eventually f not in Trash
+prop12 B: all f : File | eventually f in Trash iff eventually f not in Trash
+prop12 B: all f : File | eventually f in Trash => after eventually f not in Trash
+prop12 B: all f : File-Trash | eventually f in Trash => after eventually f not in Trash
+prop12 B: all f : File-Trash | eventually f in Trash => eventually after  f not in Trash
+prop5 O: some f : File | eventually File' = File - f
+prop5 S: File' = File - f
+prop5 O: some f : File | File' = File - f
+prop5 O: some f : File | eventually File = File - f
+prop5 T: some f : File | eventually some File' = File - f
+prop5 O: some f : File | eventually File' = File - f
+prop6 B: all f : File-Trash | eventually f in Trash => always f in Trash
+prop8 U: all f : link.File | eventually f in Trash
+

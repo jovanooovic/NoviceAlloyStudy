@@ -1,0 +1,138 @@
+open util/ordering[Grade]
+
+sig Person {
+	teaches : set Course,
+	enrolled : set Course,
+	projects : set Project
+}
+
+sig Professor,Student in Person {}
+
+sig Course {
+	projects : set Project,
+	grades : Person -> Grade
+}
+
+sig Project {}
+
+sig Grade {}
+
+// Specify the following properties
+// You can check their correctness with the different commands and
+// when specifying each property you can assume all the previous ones to be true
+
+pred inv1 {
+	// Only students can be enrolled in courses
+  
+  all x: Person, y: Course| x->y in enrolled implies x in Student
+
+}
+
+
+pred inv2 {
+	// Only professors can teach courses
+  all x:Person, y: Course| x->y in teaches implies x in Professor
+ 
+
+}
+
+
+pred inv3 {
+	// Courses must have teachers
+  
+  all x:Course| some z:Person | z->x in teaches
+
+}
+
+
+pred inv4 {
+	// Projects are proposed by one course
+  all p:Project | one c:Course | c->p in projects
+  
+}
+
+
+pred inv5 {
+	// Only students work on projects and 
+	// projects must have someone working on them
+  
+  all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+
+}
+
+
+pred inv6 {
+	// Students only work on projects of courses they are enrolled in
+  
+	all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+}
+
+
+pred inv7 {
+	// Students work on at most one project per course
+  
+  all x:Person, p,k:Project, c:Course| x->p in projects and x->k in projects implies x in Student and x->c in enrolled and c->p in projects and c->k in projects implies p=k
+
+}
+
+
+pred inv8 {
+	// A professor cannot teach herself
+  
+  all x:Person, c:Course| x in Professor and x->c in teaches implies x->c not in enrolled
+
+}
+
+
+pred inv9 {
+	// A professor cannot teach colleagues
+  
+  
+
+}
+
+
+pred inv10 {
+	// Only students have grades
+  
+  all x:Person, g:Grade, c:Course| c->x->g in grades implies x in Student
+
+}
+
+
+pred inv11 {
+	// Students only have grades in courses they are enrolled
+  
+	all x:Person, g:Grade, c:Course| c->x->g in grades and x in Student implies x->c in enrolled
+
+}
+
+
+pred inv12 {
+	// Students have at most one grade per course
+  
+  all x:Person, c:Course, g,k:Grade| x->c in enrolled and x in Student implies c->x->g in grades and c->x->k in grades implies k=g
+
+}
+
+
+pred inv13 {
+	// A student with the highest mark in a course must have worked on a project on that course
+  
+  
+
+}
+
+
+pred inv14 {
+	// A student cannot work with the same student in different projects
+
+  all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+  
+}
+
+
+pred inv15 {
+	// Students working on the same project in a course cannot have marks differing by more than one unit
+
+}

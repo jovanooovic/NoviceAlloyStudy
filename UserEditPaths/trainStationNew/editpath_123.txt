@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv6 S: all t : Track | some (t.signal & Speed)
+inv6 O: all t : Track | some (t.signals & Speed)
+inv6 O: all t : Track | one (t.signals & Speed)
+inv6 T: all t : Track | (t.signals & Speed)
+inv6 O: all t : Track | one (t.signals & Speed)
+inv6 O: all t : Track | some (t.signals & Speed)
+inv6 B: all t : Track | Speed in t.signals
+inv6 T: all t : Track, s : Signal | signals.Speed
+inv6 T: all t : Track | signals.Speed
+inv8 S: all t : Track | t in entry implies t.succ in exit
+inv8 S: all t : Track | t in Entry implies t.succ in Exit
+inv8 B: all t : Track | t in Entry implies t.succs in Exit
+inv8 O: all t : Track | t in Entry implies Exit in t.succs
+inv8 B: all t : Track | Entry in t implies Exit in t.succs
+inv8 O: all en : Entry, ex : Exit | ex in en.^succs
+inv8 S: all en : Entry, ex : Exit | all ex & en.^succs
+inv8 S: all en : Entry, ex : Exit | all (ex & en.^succs)
+inv8 O: all en : Entry, ex : Exit | ex in en.succs
+inv8 B: all en : Entry, ex : Exit | ex in en.~succs
+inv4 T: all en : Entry | en not in succs
+inv4 U: all en : Entry , t : Track| en not in t.succs
+inv4 U: all en : Entry , t : Track-Entry| en not in t.succs
+

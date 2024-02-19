@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 B: all x : Person | some y : Course | x in Student implies x in enrolled.y
+inv1 B: all x : Person | all y : Course | x in Professor implies x not in enrolled.y
+inv1 C: all x : Person | all y : Course | x not in Student implies x not in enrolled.y
+inv1 C: all x : Person | all y : Course | x not in Student implies x not in enrolled.y
+inv2 C: all x : Person | all y : Course | x not in Professor implies x not in teaches.y
+inv3 C: all x : Course | some y : Person | y in teaches.x
+inv4 C: all x : Project | one y : Course | y in projects.x
+inv5 S: all x : Project | all y : Person | y in projects.x implies
+inv5 U: all x : Project | some y : Person | y in projects.x implies y in Student
+inv5 U: all x : Project | some y : Person | y in projects.x implies y in Student	  all x : Project | some y : Person | y in projects.x
+inv5 U: all x : Project | some y : Person | y in projects.x and y in Student	  all x : Project | some y : Person | y in projects.x
+inv5 U: all x : Project | some y : Person | y in projects.x and y in Student
+inv5 B: all x : Project | all y : Person | y in projects.x and y in Student
+inv5 U: all x : Project | all y : Person | y in projects.x implies y in Student
+inv5 C: all x : Project | all y : Person | y in projects.x implies y in Student	  all x : Project | some y : Person | y in projects.x
+inv6 S: all x : Person | one y : course | (x in projects.x and y in projects.x) implies x in enrolled.y
+inv6 T: all x : Person | one y : Course | (x in projects.x and y in projects.x) implies x in enrolled.y
+inv6 T: all x : Person | one y : Course | (x in projects.x and y in projects.x) implies x in enrolled.y
+inv6 T: all x : Person | one y : Course | (x in Person.projects.x and y in Course.projects.x) implies x in enrolled.y
+inv6 T: all x : Person | one y : Course | (x in projects.x and y in projects.x) implies x in enrolled.y
+inv6 T: all x : Person | one y : Course | (x in Course<:projects.x and y in Person<:projects.x) implies x in enrolled.y
+inv6 B: all x : Person | one y : Course | (x in (Course<:projects).x and y in (Person<:projects).x) implies x in enrolled.y
+

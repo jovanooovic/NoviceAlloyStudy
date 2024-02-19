@@ -1,0 +1,6 @@
+NA H: THEME UPDATE
+inv1 C: some Exit and some Entry
+inv9 B: all t:Track, j:Junction | not t->j in succs => (not some s:Semaphore | t->s in signals)
+inv9 B: all t:Track| not some j:Junction | t->j in succs => (not some s:Semaphore | t->s in signals)
+inv9 C: all t:Track| (not some j:Junction | t->j in succs) => (not some s:Semaphore | t->s in signals)
+

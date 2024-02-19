@@ -1,0 +1,61 @@
+NA H: THEME UPDATE
+inv3 T: all e : Exit | none e.succs
+inv3 U: all e : Exit | no e.succs
+inv1 B: some Entry and lone Exit
+inv1 C: some Entry and some Exit
+inv1 C: some Entry && some Exit
+inv1 S: some Entry & some Exit
+inv2 S: all s : Signal | lone track.signals
+inv1 C: some Entry && some Exit
+inv2 U: all s : Signal | lone signals.s
+inv3 U: all e : Exit | no e.succs
+inv3 U: no Exit.succs
+inv3 U: no Exit.succs
+inv4 U: no succs.Entry
+inv2 U: all s : Signal | lone signals.s
+inv2 C: all s : Signal | one signals.s
+inv3 U: no Exit.succs
+inv3 B: no Exit.succs	no Exit.signals
+inv3 U: all t : Track | t not in Exit.succs
+inv3 U: all t : Track-Exit | t not in Exit.succs
+inv3 U: no Exit.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | lone e.succs
+inv3 U: all e : Exit | no e.succs
+inv2 T: all s : Signal| all t: Track | one t.signals.s
+inv2 T: all s : Signal, t: Track | one t.signals.s
+inv2 C: all s : Signal | one signals.s
+inv3 U: all e : Exit | lone e.succs
+inv3 U: all e : Exit | no e.succs
+inv5 B: some succs.Junction
+inv2 S: all s : Signal, t: Track | s in one t.signals
+inv5 T: succs.Junction
+inv2 C: all s : Signal | one signals.s
+inv3 U: all e : Exit | no e.succs
+inv2 C: all s:Signal | one t:Track | s in t.signals
+inv3 U: no Exit.succs
+inv2 C: all s : Signal | one signals.s
+inv2 C: all s : Signal | one signals.s
+inv3 U: all e : Exit | no e.succs
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv4 C: all t:Track | t in Entry <=> no ^(succs).t
+inv4 S: all t:Track | t in Entry <=> no ^(succs).t		}
+inv6 T: all e : Entry | some Speed in e.signals
+inv6 T: all e : Entry, s: Speed | some s in e.signals
+inv6 S: all e : Entry, some s: Speed |s in e.signals
+inv4 C: all t:Track | t in Entry <=> no ^(succs).t
+inv6 C: all e : Entry | some s: Speed |s in e.signals
+inv7 C: all t:Track | t not in t.^(succs)
+inv8 O: all en:Entry, ex: Exit | ex in en.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv5 E: 
+inv5 B: all disj t1,t2:Track | t1 in Junction implies t2 in ^(succs).t1
+inv5 S: all t1:Track | t1 in Junction implies #(^(succs).t)>1
+inv5 U: all t:Track | t in Junction implies #(^(succs).t)>1
+inv5 S: all t:Track | t in Junction <=> ^(succs).t)>1
+inv5 B: all t:Track | t in Junction <=> #(^(succs).t)>1
+inv5 T: all t:Track | t in Junction <=> #(^(succs).t) gt 1
+inv5 B: all t:Track | t in Junction <=> #(^(succs).t) > 1
+inv10 O: all t:Track, j:Junction | some s:Semaphore | j in t.succs implies s in t.signals
+inv10 O: all t:Track, j:Junction | some s:Semaphore | j in t.succs implies s in t.signals
+

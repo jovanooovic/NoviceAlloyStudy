@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+Inv1 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 in adj
+Inv1 B: adj.~adj in iden
+Inv1 B: ~adj.adj in iden
+Inv2 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 not in adj
+Inv3 C: no n:Node | n in n.^adj
+Inv4 C: no n:Node | Node not in n.adj
+Inv4 U: all n:Node | n in n.adj
+Inv4 C: all n:Node | Node in n.adj
+Inv5 C: no n:Node | n in n.adj
+Inv7 O: all n:Node | Node in n.adj
+Inv7 C: all n:Node | Node in n.*adj
+Inv8 T: all a1,a2,a3:adj | some a1.a2
+Inv8 S: all n1,n2,n3:Node | n1->n2 in trans and n2 -> n3 in trans implies n1->n3 in trans
+Inv8 C: all n1,n2,n3:Node | n1->n2 in adj and n2 -> n3 in adj implies n1->n3 in adj
+Inv8 C: all n1,n2,n3:Node | n1->n2 in adj and n2 -> n3 in adj implies n1->n3 in adj
+Inv6 O: all n:Node | Node in (n.adj + adj.n)
+Inv6 O: all n:Node | Node in (n.adj + adj.n).adj
+Inv6 O: all n:Node | Node in (n.adj + adj.n).^adj
+Inv6 O: all n:Node | Node in (n.adj + adj.n).*adj
+Inv6 O: all n:Node | Node in (n+ n.adj + adj.n).*adj
+Inv6 O: all n:Node | Node in (n+ n.*adj + *adj.n).*adj
+NA H: THEME UPDATE
+Inv1 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 in adj
+Inv2 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 not in adj
+Inv3 C: no n:Node | n in n.^adj
+Inv4 C: all n:Node | Node in n.adj
+Inv5 C: no n:Node | n in n.adj
+Inv7 C: all n:Node | Node in n.*adj
+Inv8 C: all n1,n2,n3:Node | n1->n2 in adj and n2 -> n3 in adj implies n1->n3 in adj
+NA H: THEME UPDATE
+Inv1 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 in adj
+Inv2 C: all n1,n2:Node | n1->n2 in adj implies n2->n1 not in adj
+Inv3 C: no n:Node | n in n.^adj
+Inv4 C: all n:Node | Node in n.adj
+Inv5 C: no n:Node | n in n.adj
+Inv6 O: all n:Node | Node in (n+ n.*adj + *adj.n).*adj
+Inv7 C: all n:Node | Node in n.*adj
+Inv8 C: all n1,n2,n3:Node | n1->n2 in adj and n2 -> n3 in adj implies n1->n3 in adj
+Inv6 O: all n:Node | Node in (n+ n.*adj + *adj.n).*adj
+Inv6 C: all n:Node | Node in (n+ n.*adj + *adj.n).*(adj+~adj)
+Inv6 C: all n:Node | Node in (n).*(adj+~adj)
+Inv6 C: all n:Node | Node in n.*(adj+~adj)
+NA H: THEME UPDATE
+

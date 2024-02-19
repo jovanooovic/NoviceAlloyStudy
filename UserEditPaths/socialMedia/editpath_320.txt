@@ -1,0 +1,77 @@
+NA H: THEME UPDATE
+inv1 B: all p : Photo | one User.posts
+inv1 T: all p : Photo | one User.p
+inv1 C: all p : Photo | one posts.p
+inv2 T: all u : User | u not in u.^(u)
+inv1 C: all p : Photo | one posts.p
+inv2 O: all u : User | u not in u.^(follows)
+inv2 T: all u : User | u not in follows
+inv2 C: all u : User | u not in u.follows
+inv2 S: follow.~follows iden
+inv2 T: follows.~follows iden
+inv3 T: all u : User, p : Photo | sees.p Photo - Ad
+inv3 T: all u : User, p : Photo | sees.p Photo - Ad
+inv3 T: all u : User, p : Photo | sees.p Photo - Ad
+inv3 T: all u : User, p : Photo | sees.p Photo - Ad
+inv2 B: follows.~follows in iden
+inv2 B: follows.~follows in iden.~follows
+inv3 T: all u : User | (Photo - Ad) & u.follows.posts
+inv3 T: all u : User | (Photo - Ad) & u.follows.posts
+inv2 C: no iden & follows
+inv3 T: all u : User, p : Photo - Ad | u.p & u.follows.posts
+inv3 T: all u : User, p : Photo - Ad | p & u.follows.posts
+inv3 B: all u : User, p : Photo - Ad | some u.follows.posts
+inv3 T: all u : User, p : Photo - Ad | u.sees & u.follows.posts
+inv3 O: all u : User, p : Photo - Ad | p = u.follows.posts
+inv3 T: all u : User, p : Photo - Ad | posts.p & u.follows.posts
+inv3 O: all u : User, p : Photo - Ad | some (posts.p & u.follows.posts)
+inv3 O: all u : User, p : (Photo - Ad) | some (posts.p & u.follows.posts)
+inv3 S: all u : User, p : Photo - Ad | all (posts.p & u.follows.posts)
+inv3 S: all u : User, p : Photo-Ad | posts.p & u.follows.posts)
+inv3 T: all u : User, p : Photo-Ad | posts.p & u.follows.posts
+inv3 O: all u : User, p : Photo-Ad | some posts.p & u.follows.posts
+inv3 O: all u : User, p : Photo-Ad | some (posts.p & u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | one (posts.p & u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | one (sees.p & u.follows.sees)
+inv3 O: all u : User, p : Photo - Ad | one (sees.p & u.follows.posts)
+inv3 U: all u : User, p : Photo - Ad | lone (sees.p & u.follows.posts)
+inv3 T: all u : User, p : Photo - Ad | posts.p & sees.u.follows.posts
+inv3 O: all u : User, p : Photo - Ad | some(posts.p & sees.u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | some(posts.p & u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | some(posts.p & u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | some(p.posts & u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | some(p.posts & sees.u.follows.posts)
+inv3 O: all u : User, p : Photo - Ad | some(p.posts & u.follows.posts)
+inv3 T: all u : User, p : Photo - Ad | u.follows.posts.p
+inv3 T: all u : User, p : Photo - Ad | u.posts.p
+inv3 T: all u : User, p : Photo - Ad | u & posts.p
+inv3 T: all u : User, p : Photo - Ad | u.follows & posts.p
+inv3 T: all u : User, p : Photo - Ad | u.follows & sees.p
+inv3 T: all u : User, p : Photo - Ad | u.follows.posts & sees.p
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts & sees.p)
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts & p.sees)
+inv3 T: all u : User, p : Photo - Ad | some (u.follows.posts & p.sees.u)
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts & p.sees.posts)
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts & p.sees)
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts & sees.p)
+inv3 B: all u : User, p : Photo - Ad | some (u.follows & sees.p)
+inv3 O: all u : User, p : Photo - Ad | some (u.follows.posts.sees & sees.p)
+inv3 T: all u : User | some (u.sees - Ad in u.follows.posts)
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv4 T: all u : User | Ad & u.posts
+inv4 T: all u : User | Ad & u.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv4 B: all u : User | lone (u.posts & Ad)
+inv4 B: all u : User | some (u.posts & Ad)
+inv4 S: all u : User | all (u.posts & Ad)
+inv4 S: all u : User |  (u.posts & Ad) + (u.posts & not Ad)
+inv4 T: all u : User | (u.posts & Ad) + (no u.posts & Ad)
+inv4 T: all u : User | (u.posts - Ad) + (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) or (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) + (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) + (u.posts - Ad)
+inv4 S: all u : User | (u.posts - Ad) + no (u.posts - Ad)
+inv4 T: all u : User | (no iden & posts - Ad) or (no u.posts - Ad)
+inv4 C: all u : User | u.posts in Ad or u.posts in Photo - Ad
+NA H: THEME UPDATE
+

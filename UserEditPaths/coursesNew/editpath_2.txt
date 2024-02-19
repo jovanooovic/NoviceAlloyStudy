@@ -1,0 +1,114 @@
+NA H: THEME UPDATE
+inv1 U: all p : Professor | p not in Course
+inv1 T: all p : Professor | p not in enrolled
+inv1 U: all p : Professor , c: Course | p not in c.enrolled
+inv1 U: all p : Professor | p not in Person.enrolled
+inv1 B: all p : Professor | p not in enrolled.Course
+inv1 C: no (Person-Student).enrolled
+inv1 B: no Professor.enrolled
+inv1 C: no (Person-Student).enrolled
+inv2 B: no (Person-Student).teaches
+inv2 C: no (Person-Professor).teaches
+inv3 S: all c : Courses , p : Person | lone p in c.teaches
+inv3 S: all c : Courses , p : Person | lone p in c.teaches
+inv3 T: all c : Course , p : Person | lone p in c.teaches
+inv3 T: all c : Course , p : Person | some p in c.teaches
+inv3 B: all c : Course , p : Person | p in c.teaches
+inv3 B: all c : Course , p : (Person-Student) | p in c.teaches
+inv3 B: all c : Course , p : Person | p in c.teaches
+inv3 S: all c : Course , some p : Person | p in c.teaches
+inv3 S: Courses in Professor.teaches
+inv3 O: Course in Professor.teaches
+inv3 O: Course = Professor.teaches
+inv4 T: all p : projects | p in Course
+inv4 S: all p : Projects | p in Course
+inv4 O: all p : Project | p in Course
+inv4 S: all p : Project | p in one Course
+inv4 U: all p : Project | p in Course.projects
+inv4 S: all p : Project , one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 T: Student.projects
+inv5 B: no Professor.projects
+inv5 S: no Professor.projects 	  all p : projects.Project
+inv5 S: no Professor.projects 	  all projects.Project
+inv5 T: no Professor.projects 	  projects.Project
+inv5 S: no (Person-Professor).projects && Project in Student.project
+inv5 B: no (Person-Professor).projects && Project in Student.projects
+inv5 C: no (Person-Student).projects && Project in Student.projects
+inv6 S: all s : Students | s.enrolled in Student.projects
+inv6 T: all s : Student | s.enrolled in Student.projects
+inv7 S: all s : Student | one s.project in Course
+inv7 T: all s : Student | one s.projects in Course
+inv8 U: all p : Professor | no p.teaches&p.enrolled
+inv9 T: all p : Professor | no p.teaches.Professor
+inv9 S: all c : Course, p : teachers.c | p.enrolled&(teaches.c).teaches=none
+inv9 S: all c : Course, p : teachers.c | p.enrolled&(teaches.c).teaches=none
+inv10 S: no (Person-Students).Grades
+inv10 S: no (Person-Student).Grades
+inv10 T: no (Person-Student).Grade
+inv10 C: all p : (Person-Student) | p not in Course.grades.Grade
+inv11 T: all s : Student | s.enrolled.Grade.grades
+inv11 B: all p : Student | p in p.enrolled.grades.Grade
+inv11 U: all p : Student | p not in (Course-(p.enrolled)).grades.Grade
+inv12 S: all p : Student | lone Courses.grades.Grade in Course.p
+inv12 T: all p : Student | lone Course.grades.Grade in Course.p
+inv12 T: all p : Student , c : p.enrolled | lone c.Grade.grades
+inv12 B: all p : Student , c : p.enrolled | lone c.grades.Grade
+inv12 B: all p : Student , c : p.enrolled | lone c.grades
+inv12 S: all p : Student , c : p.enrolled | lone p.c.grades
+inv12 S: all p : Student , c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 E: 
+inv12 E: 
+inv12 E: 
+inv12 E: 
+inv12 E: 
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 E: 
+inv12 E: 
+inv12 E: 
+inv12 E: 
+inv12 U: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 B: all p : Student, c : p.enrolled | lone (c.grades)
+inv7 T: all s : Student, c : s.enrolled | lone s.c.projects
+inv7 T: all s : Student, c : s.enrolled | lone s.(c.projects)
+inv7 T: all s : Student, c : s.enrolled | lone s.(c.projects)
+inv8 U: all p : Professor | p not in enrolled.(p.teaches)
+inv7 B: all s : Student, c : Course | lone c.projects
+inv9 B: all p : Professor | Professor not in enrolled.(p.teaches)
+inv9 B: all p : Professor | (Person-Student) not in enrolled.(p.teaches)
+inv9 B: all c : Course, p : teaches.c | p not in enrolled.c
+inv9 B: all c : Course, p : teaches.c | p not in enrolled.c&p
+inv7 U: all s : Student, c : s.enrolled | lone c.projects&s.projects
+inv9 T: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 T: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 T: all p : Professor| none enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)= none
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor|  teaches.(p.teaches)  not in enrolled.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches)  in teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor| teaches.(p.teaches) not in enrolled.(p.teaches)
+inv10 S: Course.grades.Grade not in (Person-Students)
+inv9 B: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)= none
+inv10 B: Course.grades.Grade not in (Person-Student)
+inv10 B: Course.grades.Grade in (Person-Professor)
+inv10 B: Course.grades.Grade not in (Person-Student)
+inv10 T: no Course.grades.Grade in (Person-Student)
+inv10 C: all p : (Person-Student) | p not in Course.grades.Grade
+inv11 S: all c : Course | p : c.grades.Grade | p in enrolled.c
+inv11 S: all c : Course | p : c.grades.Grade | p in enrolled.c
+inv11 S: all c : Course | p : c.grades.Grade | p in enrolled.c
+inv11 C: all c : Course , p : c.grades.Grade | p in enrolled.c
+inv12 S: all s : Student, c : s.enrolled  | lone c.Grades
+inv12 T: all s : Student, c : s.enrolled  | lone c.Grade
+inv12 B: all s : Student, c : s.enrolled  | lone c.grades
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 U: all s : Student, c : s.enrolled  | lone s.(c.grades)
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 U: all s : Student, c : s.enrolled  | lone s.(c.grades)
+

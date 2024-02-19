@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all x : Photo| #(posts.x) = 1
+inv2 C: all u : User | u not in u.follows
+inv3 C: all u : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv4 C: all u: User, p : Photo | p in u.posts and p in Ad => u.posts in Ad
+inv4 C: all u: User, p : u.posts |  p in Ad => u.posts in Ad
+inv5 B: all i : Influencer | #(follows.i) > 0
+inv5 B: all i : Influencer | #(follows.i) = #(Influencer + User )-1
+inv5 B: all i : Influencer | #(follows.i) = #(Influencer + User )
+inv6 U: all d:Day, i : Influencer| #(i.posts.date) > 0
+inv6 T: all d:Day, i : Influencer| some i.posts.date = d
+inv6 S: all d:Day, i : Influencer| some i.posts.date == d
+inv6 S: all  i : Influencer| all d:Day => some i.posts.date = d
+inv6 T: all d: Day,i:Influencer| some i.posts.date.d
+inv6 T: all d: Day, i:Influencer| some i.posts.date.d
+inv6 U: all d: Day, i:Influencer| some i.posts.date
+inv6 T: all d: Day, i:Influencer| some i.posts.date.d
+inv6 T: all d: Day, i:Influencer| some i.posts.d
+inv6 T: all d: Day, i:Influencer| some i.posts.date = d
+inv6 C: all d: Day, i:Influencer| #(i.posts.date & Day) = #Day
+inv6 C: all i:Influencer| #(i.posts.date & Day) = #Day
+inv7 U: all u,v :User |  v in u.suggested => v in u.follows.follows and v not in u.follows
+inv8 C: all u :User, p : Ad | p in u.sees => p in u.follows.posts or p in u.suggested.posts
+NA H: THEME UPDATE
+

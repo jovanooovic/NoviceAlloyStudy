@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all p: Worker | p in Human or p in Robot
+inv2 B: all p: Workstation | one p.workers	all x: Worker | x in Workstation.workers
+inv2 O: all p: Workstation | one p.workers	all x: Worker | one v: Workstation | x in v.workers
+inv2 O: all p: Workstation | one p.workers	all x: Worker | (one v: Workstation | x in v.workers)
+inv2 C: all p: Workstation | some p.workers	all x: Worker | (one v: Workstation | x in v.workers)
+inv2 C: all p: Workstation | some p.workers	all x: Worker | one v: Workstation | x in v.workers
+inv3 O: all x: Component | x in #(Workstation)
+inv3 O: all x: Component | one v: Workstation | x in v
+inv3 C: all x: Component | one x.workstation
+inv4 S: all x: Components | some x.parts	all y: Material | no y.parts
+inv4 C: all x: Component | some x.parts	all y: Material | no y.parts
+inv5 S: all x,y in Workstation.workers implies x = y
+inv5 S: all x,y in Workstation.workers implies x == y
+inv5 S: all x in Workstation.workers implies x in Human or x in Robot
+inv5 S: (all x in Workstation.workers) implies (x in Human or x in Robot)
+inv5 S: (all x: Workstation.workers) implies (x in Human or x in Robot)
+inv5 S: all x: Workstation.workers implies x in Human or x in Robot
+inv5 B: all x: Workstation.workers | x in Human or x in Robot
+inv5 S: all x,y: Workstation.workers | x,y in Human or x,y in Robot
+inv5 O: all x: Workstation | x.workers in Human or x.workers in Robot
+inv6 C: all x: Component | x not in x.^parts
+inv7 B: all x: Component | (x.parts in Dangerous) implies x in Dangerous
+inv7 B: all x: Component | (x.parts in Dangerous) implies (x in Dangerous)
+

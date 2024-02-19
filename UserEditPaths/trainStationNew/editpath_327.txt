@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs => t in Junction	all j: Junction | # succs.j > 1
+inv5 C: all t: Track | all disj t1, t2: Track | t in t1.succs && t in t2.succs => t in Junction	all j: Junction | # succs.j > 1
+inv9 C: all t: Track | no Junction & t.succs => no Semaphore & t.signals
+inv9 T: all t: Track | no Junction in t.succs => no Semaphore in t.signals
+inv9 T: all t: Track | no Junction in t.succs => no Semaphore & t.signals
+inv9 C: all t: Track | no Junction & t.succs => no Semaphore & t.signals
+inv10 C: all t: Track | some Junction & t.succs => some Semaphore & t.signals
+

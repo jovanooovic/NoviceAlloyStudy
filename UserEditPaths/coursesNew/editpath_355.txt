@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | some p.enrolled implies p is Student
+inv1 T: all p : Person | p.enrolled implies p is Student
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv2 C: all p : Person | some p.teaches implies p in Professor
+inv3 O: all c : Course | some t : Person - Student | c in t.teaches
+inv3 O: all c : Course | (some t : Person - Student | c in t.teaches)
+inv3 O: all c : Course | (some t : Professor | c in t.teaches)
+inv3 O: all c : Course | some t : Professor | c in t.teaches
+inv3 O: all c : Course | some t : Person-Student | c in t.teaches
+inv3 O: all c : Course | some t : Professor | c in t.teaches
+inv4 U: all p : Project | some c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: all p : Person-Student | no p.projects	  	all pr : Project | some s : Student | pr in s.projects
+inv5 O: all p : Person-Student | no p.projects	  	all pr : Project | some s : Person-Professor | pr in s.projects
+inv5 C: all p : Person-Student | no p.projects	  	all pr : Project | some s : Student | pr in s.projects
+inv5 B: all p : Professor | no p.projects	  	all pr : Project | some s : Student | pr in s.projects
+inv5 C: all p : Person-Student | no p.projects	  	all pr : Project | some s : Student | pr in s.projects
+inv5 C: all p : Person-Student | no p.projects	  	all pr : Project | some s : Student | pr in s.projects
+inv6 B: all s : Student, c : Course, p : Project | c in s.enrolled and p in s.projects implies p in c.projects
+inv6 B: all s : Student, p : Project | some c : Course | c in s.enrolled and p in s.projects implies p in c.projects
+inv6 B: all s : Student, p : Project | one c : Course | c in s.enrolled and p in s.projects implies p in c.projects
+inv6 B: all s : Student, p : s.projects | one c : Course | c in s.enrolled and p in c.projects
+inv6 S: all s : Student, p : Projects | one c : Course | p in s.Projects and c in s.enrolled and p in c.projects
+inv6 S: all s : Student, p : Projects | one c : Course | p in s.projects and c in s.enrolled and p in c.projects
+inv6 S: all s : Student, p : Projects | some c : Course | p in s.projects and c in s.enrolled and p in c.projects
+inv6 B: all s : Student, p : Project | some c : Course | p in s.projects and c in s.enrolled and p in c.projects
+inv6 B: all s : Student, p : Project | some c : Course | p in s.projects and c in s.enrolled implies p in c.projects
+inv6 B: all s : Student, p : Project | some c : Course | p in s.projects and c in s.enrolled and p in c.projects
+inv6 U: all s : Student, p : s.projects | some c : Course | c in s.enrolled implies p in c.projects
+inv6 U: all s : Student, p : s.projects | some c : Course | c in s.enrolled and p in c.projects
+inv7 B: all s : Student, c : s.enrolled, p : s.projects | one c.projects &  p
+inv7 U: all s : Student, c : s.enrolled, p : s.projects | lone c.projects &  p
+inv7 U: all s : Student, c : s.enrolled | lone c.projects &  s.projects
+inv7 U: all s : Student, c : s.enrolled | lone c.projects & s.projects
+inv8 U: all t : Professor | no t.enrolled & t.teaches
+inv9 U: all p : Professor, col : Professor - p | some col.teaches & p.teaches implies no col.enrolled & p.teaches
+inv10 T: all c : Course, p : Person, g : Grade | p->g implies p in Student
+inv10 C: all c : Course, p : Person, g : Grade | p->g in c.grades implies p in Student
+inv11 U: all s : Student, c : Course, g : Grade | c not in s.enrolled implies s->g not in c.grades
+inv12 T: all s : Student, c : Course, g : Grade | c in s.enrolled implies lone s->g in c.grades
+inv12 T: all s : Student, c : Course, g : Grade | c in s.enrolled implies (lone s->g in c.grades)
+inv12 S: all s : Student, c : Course, lone g : Grade | s->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+inv12 U: all s : Student, c : Course, g : Grade | s->g in c.grades implies lone g
+inv12 B: all s : Student, c : Course, g : Grade | s->g in c.grades and lone g
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+

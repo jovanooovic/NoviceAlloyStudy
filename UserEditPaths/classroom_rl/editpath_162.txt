@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 B: no Teacher
+inv1 U: Student in Person
+inv1 T: Person - Teacher
+inv2 S: No Teacher
+inv2 C: no Teacher
+inv2 C: no Teacher
+inv1 C: all p : Person | p in Student
+inv3 C: no (Teacher & Student)
+inv1 C: Person in Student
+inv1 C: all p : Person | p in Student	  	  	  Person in Student
+inv2 C: all p : Person | p not in Teacher	  	  	  	  no Teacher
+inv2 C: all p : Person | p not in Teacher	  	  	  	  no Teacher
+inv3 C: all p : Person | (p in Student implies p not in Teacher) or ( p in Teacher implies p not in Student) 	  	  	  	  no (Teacher & Student)
+inv4 C: Person = Student + Teacher
+inv4 C: all p : Person | p in Student or p in Teacher	  	  	  Person = Student + Teacher
+inv4 C: all p : Person | p in Student or p in Teacher	  	  	  Person = Student + Teacher
+inv5 B: all  t : Teacher | some t.Teaches
+inv5 B: all  t : Teacher | lone t.Teaches
+inv6 C: all  t : Teacher | some t.Teaches
+inv6 B: some Teacher.Teaches
+inv6 B: some Teacher.Teaches
+inv6 C: all  t : Teacher | some t.Teaches
+inv5 S: all c : Class |  teaches.c in Teacher
+inv6 C: all  t : Teacher | some t.Teaches
+inv5 B: all c : Class |  Teaches.c in Teacher
+inv5 B: some c : Class |  Teaches.c in Teacher
+inv5 C: some c : Class |  c in Teacher.Teaches
+inv7 U: all c : Class | some Teaches.c
+inv7 C: all c : Class | some (Teaches.c & Teacher)
+inv7 B: some (Teaches.Class & Teacher)
+inv7 C: all c : Class | some (Teaches.c & Teacher)
+inv8 C: all t : Teacher |  lone t.Teaches
+inv9 O: all c : Class |  lone Teaches.c
+inv9 O: all c : Class |  one Teaches.c
+inv8 C: all t : Teacher |  lone t.Teaches
+inv9 B: all c : Class |  no (Student & Teaches.c)
+inv9 B: no ( Teaches.Class - Teacher)
+

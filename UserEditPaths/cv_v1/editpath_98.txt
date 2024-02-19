@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+Inv2 S: all u : Use | some w : Work | u->w in profile implies (Institution in w.source or User in w.source)
+Inv2 B: all u : User | some w : Work | u->w in profile implies (Institution in w.source or User in w.source)
+Inv2 T: all u : User | some w : Work | u->w in profile implies (w->source in Institution or w->source in User)
+Inv2 B: all u : User | some w : Work | u->w in profile implies (w.source in Institution or w.source in User)
+Inv2 T: all u : User | some w : Work | u->w in profile implies some (w.source in Institution or w.source in User)
+Inv2 T: all u : User | some w : Work | u->w in profile implies some (w.source).Institution or (w.source).User
+Inv2 T: all u : User | some w : Work | u->w in profile implies some ((w.source).Institution or (w.source).User)
+Inv2 T: all u : User | some w : Work | u->w in profile implies some ((w<:source).Institution or (w<:source).User)
+Inv2 B: all u : User | some w : Work | u->w in profile implies some (w<:source).Institution or some (w<:source).User
+Inv3 T: Work.(User.profile) in iden
+Inv3 T: lone Work.(User.profile)
+Inv3 O: lone Work<:(User.profile)
+Inv3 T: lone Id in Work<:(User.profile)
+Inv3 T: lone Id.Work<:(User.profile)
+Inv3 T: lone Work.Id<:(User.profile)
+

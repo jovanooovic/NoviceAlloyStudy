@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 U: all p: Photo | some u: User | p in u.posts
+inv1 C: all p: Photo | one u: User | p in u.posts
+inv2 C: all u: User | u not in u.follows
+inv3 S: all p: Photo | all u: user |  p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User |  p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 S: all p: Photo | all u: User | p in u.sees implies p in u.follows or p in u.sees implies p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 C: all u: User | all p: Photo | p in u.sees implies (p in u.follows.posts or p in Ad)
+inv4 O: all u: User | all p: Photo |  p in Ad implies (u.posts in Ad)
+inv4 C: all u: User | all p: Photo |  p in u.posts and p in Ad implies (u.posts in Ad)
+inv5 B: all u: User | all x: User | u in Influencer implies (x in follows.u)
+inv5 B: all u: User | u in Influencer implies (u.follows = User - Influencer)
+inv5 B: all u: User | u in Influencer implies (follows.u = User - Influencer)
+inv5 C: all u: User | u in Influencer implies (follows.u = User - u)
+inv6 S: all d: Day | all u: User | all p: Photos | u in Influencer and p in u.posts implies (p in d*)
+inv6 S: all d: Day | all u: User | some p: Photos | u in Influencer and p in u.posts and p.date = d
+inv6 O: all d: Day | all u: User | some p: Photo | u in Influencer and p in u.posts and p.date = d
+inv6 O: all d: Day | all u: User | some p: Photo | u in Influencer and p in u.posts and d in p.date
+inv6 S: all d: Day | all u: User | u in Influencer and d in p.date
+inv6 O: all d: Day | all u: User | u in Influencer and d in u.posts.date
+inv6 C: all d: Day | all u: User | u in Influencer implies (d in u.posts.date)
+inv7 B: all u: User | all x: User | x in u.follows and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in u.follows.follows and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+inv6 C: all d: Day | all u: User | u in Influencer implies (d in u.posts.date)
+inv7 S: all u: User | all x: User | x in (u.follows.follows* - u.follows) implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+inv8 B: all x: User | all u: User | all p: Photo | (x in (u.follows) or x in (u.suggested)) implies u.posts in Ad
+inv8 B: all x: User | all u: User | all p: Photo | (x in (u.follows) or x in (u.suggested)) and (p in x.posts) implies (p in Ad)
+inv8 S: all u: User | all p: Photo | p in u.sees implies (p in Ad or (exists x: User | x in u.follows and p in x.posts))
+

@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+prop1 C: no Green
+prop2 O: eventually (all s:Signal | s in Green)
+prop2 C: all s:Signal | eventually s in Green
+prop3 S: always ()
+prop3 S: always ()
+prop4 C: always (pos.(~pos) in iden)
+prop4 C: always (pos.(~pos) in iden)
+prop3 C: always (all t:Train | (t.pos)' = t.pos)
+prop9 U: eventually (all t:Train | t.pos in Entry)
+prop9 U: all t:Train | eventually t.pos in Entry
+prop9 U: all t:Train | some t.pos implies eventually t.pos in Entry
+prop9 B: all t:Train | some t.pos and eventually t.pos in Entry
+prop10 C: always (all j:Junction | lone ((prox.j).signal&Green))
+prop11 S: always (t:Train | one t.pos implies once t.pos in Entry)
+prop11 U: always (all t:Train | one t.pos implies once t.pos in Entry)
+prop11 U: all t:Train | always one t.pos implies once t.pos in Entry
+prop15 B: all t:Train | eventually (t.pos)' != t.pos
+prop15 U: all t:Train | one t.pos implies eventually (t.pos)' != t.pos
+prop15 U: all t:Train | always one t.pos implies eventually (t.pos)' != t.pos
+prop14 S: always (all t:Train )
+prop4 C: always (pos.(~pos) in iden)
+prop5 S: always (all t:pos.Track | (t.pos)' in t.pos.next
+prop7 C: always (all t:pos.Track | eventually no t.pos)
+prop7 C: always (all t:pos.Track | eventually no t.pos)
+prop7 C: always (all t:pos.Track | eventually no t.pos)
+prop6 C: always (all s:Signal | (s in Green implies eventually s not in Green) and (s not in Green implies eventually s in Green))
+prop8 S: always ( all t:pos.Track.(signal-Green) | t.pos=(t.pos)' until t.pos.signal in Green
+prop8 T: always ( all t:pos.Track.(signal-Green) | t.pos=(t.pos)' until t.pos.signal in Green )
+prop8 T: always ( all t:pos.Track.(Signal-Green) | t.pos=(t.pos)' until t.pos.signal in Green )
+prop8 T: always ( all t:pos.Track.signal.(Signal-Green) | t.pos=(t.pos)' until t.pos.signal in Green )
+prop9 U: eventually (all t:Train | t.pos in Entry)
+prop11 U: always (all t:pos.Track | once t.pos in Entry)
+prop11 U: always (all t:pos.Track | once (t.pos in Entry))
+prop15 B: always eventually (some t:Train | (t.pos)' != t.pos)
+prop15 B: always eventually (some t:pos.Track | (t.pos)' != t.pos)
+prop15 B: always eventually (some t:Train | (t.pos)' != t.pos)
+prop16 U: always (all t:pos.Exit | (some t.pos) since t.pos in Entry)
+

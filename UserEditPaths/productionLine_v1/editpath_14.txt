@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+Inv1 C: all c:Component | some c.parts
+Inv2 U: all c:Component | c not in c.parts
+Inv2 T: all c:Component | c not in ^c.parts
+Inv2 C: all c:Component | c not in c.^parts
+Inv3 S: all c: Component , some r:Robot | r->(c.position) in position
+Inv3 S: all c: Component , some r:Robot | r->(c.position) in Robot<:position
+Inv3 T: all c: Component | some (c.position).~position
+Inv3 C: all c: Component | (c.position) in Robot.position
+Inv4 T: all c: Component | c.parts in c.^~next
+Inv4 T: all c: Component | c.parts in c.^~next
+Inv4 T: all c: Component | c.parts not in c.^~next
+Inv4 T: all c: Component | c.parts not in c.^next
+Inv4 B: all c: Component | (c.parts).position not in (c.position).^~next
+Inv4 O: all c: Component | (c.parts).position in (c.position).^~next
+Inv4 B: all c: Component | (c.parts).position not in (c.position).^next
+Inv4 B: all c: Component | ((c.parts):>Component).position not in (c.position).^next
+Inv4 B: all c: Component | ((c.parts) & Component).position not in (c.position).^next
+Inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next
+Inv4 O: all c: Component | ((c.^parts) & Component).position not in (c.position).*next
+Inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next
+Inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next or no c.^parts
+Inv4 U: all c: Component | ((c.^parts) & Component).position not in (c.position).^next or no (c.^parts & Component)
+

@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 T: all t:Track| some t in Entry	all t:Track| some t in Exit
+inv1 C: some t:Track|  t in Entry	some t:Track|  t in Exit
+inv2 C: all s:Signal| one signals.s
+inv3 C: all t:Track| t in Exit <=> no t.^(succs)
+inv4 T: all t:Entry| no (succs).^t
+inv4 S: all t:Entry| no (succs)^.t
+inv4 U: all t:Entry| no (succs).t
+inv4 S: all t:Task| t in Entry <=> no (succs).t
+inv4 C: all t:Track| t in Entry <=> no (succs).t
+inv5 B: all t:Track| t in Junction <=> some(succs.t)
+inv5 C: all t:Track| t in Junction <=> #(succs.t)>1
+inv6 U: all t:Track| t in Entry => some t.signals
+inv6 C: all t:Track| t in Entry => some (t.signals & Speed)
+inv7 C: all t:Track| t not in t.^(succs)
+inv8 S: all disj x,y:Track| x in Entry and y in End => y in x.^(succs)
+inv8 C: all disj x,y:Track| x in Entry and y in Exit => y in x.^(succs)
+inv9 C: all t:Track| no (Junction & t.succs) => no (Semaphore & t.signals)
+inv10 S: all t:Track| some(Junction & t.succs) => some(Sempahore & t.signals)
+inv10 C: all t:Track| some(Junction & t.succs) => some(Semaphore & t.signals)
+NA H: THEME UPDATE
+

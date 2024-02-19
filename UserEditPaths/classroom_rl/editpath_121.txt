@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | p in Student
+inv2 C: no p : Person | p in Teacher
+inv3 E: 
+inv3 C: no p : Person | p in Student and p in Teacher
+inv4 C: no p : Person | p not in Student and p not in Teacher
+inv6 C: all t : Teacher | some t.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv5 T: some c : Class | Person.c
+inv5 T: some c : Class | (Person.Teaches).c
+inv5 T: some c : Class, p : Person | (p.Teaches).c
+inv5 B: some c : Class, p : Person | (p.Teaches) = c
+inv5 O: some c : Class, p : Teacher | (p.Teaches) = c
+inv5 S: some c : Class, p : Teacher | p.(c.groups)
+inv5 T: some c : Class, p : Teacher | p.(c.Groups)
+inv5 T: some c : Class, p : Teacher | (c.Groups).p
+inv5 T: some c : Class | (Person.Teaches).c in Teacher
+inv5 T: some c : Class | (Person.Teaches).c in Teacher
+inv5 T: some c : Class | c.(Person.Teaches) in Teacher
+inv5 C: some c : Class, p : Person | c in (p.Teaches) and p in Teacher
+inv7 S: all c : Class | some t : Teacher
+inv7 S: all c : Class | some t : Teacher | c in p.Teaches
+inv7 S: all c : Class | some t : Teacher | c in p.Teaches
+inv5 C: some c : Class, p : Person | c in p.Teaches and p in Teacher
+inv5 C: some c : Class, p : Teacher | c in p.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 C: all c : Class | some t : Teacher | c in t.Teaches
+inv9 S: no c : Class | some disj t1,t2 | c in t1.Teaches and c in t2.Teaches
+inv9 C: no c : Class | some disj t1,t2 : Teacher | c in t1.Teaches and c in t2.Teaches
+

@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 S: all f : File
+inv1 C: all f : File | f not in Trash
+inv2 S: all f in File | f not in File
+inv2 O: all f : File | f not in File
+inv6 S: all f : File, t,u :  |w->t in working_on and w->u in working_on implies t=u
+inv5 S: all f : File |
+inv6 S: all f : File, t,u : File  |f->t in file and f->u in file implies t=u
+inv6 C: all f : File, t,u : File  |f->t in link and f->u in link implies t=u
+inv6 T: all f : File, t,u : link  |f->t in link and f->u in link implies t=u
+inv2 O: all f : File | f not in File
+inv2 O: all f : File | f not in File
+inv3 C: some f : File | f in Trash
+

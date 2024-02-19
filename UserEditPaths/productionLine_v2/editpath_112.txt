@@ -1,0 +1,51 @@
+NA H: THEME UPDATE
+inv1 S: all p : Worker implies p : Human | p : Robot
+inv1 T: all p : Worker implies p in Human | p in Robot
+inv1 S: all p : Workers implies p in Human | p in Robot
+inv1 S: all p in Workers implies p in Human | p in Robot
+inv1 C: Worker = Human + Robot
+inv1 C: Worker in Human + Robot
+inv1 C: all w:Worker | w in Human + Robot
+inv1 T: all w:Worker | w in Human or Robot
+inv1 C: all w:Worker | w in Human or w in Robot
+inv1 C: no Worker - Robot - Human
+inv2 U: workers in Workstation one -> Worker
+inv2 S: all w:Workers | one workers.w	all w:Workstation | some w.workers
+inv2 C: all w:Worker | one workers.w	all w:Workstation | some w.workers
+inv3 T: all c:Component | one c.Workstation
+inv3 T: all c:Component | one c.Workstation
+inv3 C: all c:Component | one c.workstation
+inv2 U: Workstation = workers.Worker
+inv2 C: all w:Worker | one workers.w		Workstation = workers.Worker
+inv4 S: all c:Component | some p:Product
+inv4 S: all c:Component | some p:Product
+inv3 T: all c:Component | one c.Workstation
+inv3 C: all c:Component | one c.workstation
+inv4 C: all c:Component | some c.parts	all m:Material | m.parts = none
+inv4 C: parts in Component -> some Product
+inv4 C: Component = parts.Product
+inv5 S: all w:Workstation, h:Human , r:Robot | h not in w.Workers or r not in w.Workers
+inv5 C: all w:Workstation, h:Human , r:Robot | h not in w.workers or r not in w.workers
+inv5 O: all w:Workstation | w.workers in Human or w.workers in Robot
+inv5 C: no workers.Human & workers.Robot
+inv5 C: no workers.Human & workers.Robot
+inv6 S: all c:Component : c not in c.^parts
+inv6 C: all c:Component | c not in c.^parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c not in c.^parts
+inv6 U: not iden in ^parts
+inv6 T: not iden & ^parts
+inv6 O: no iden & ^parts
+inv7 O: parts.Dangerous in Dangerous
+inv7 C: all c:Component | some c.parts & Dangerous implies c in Dangerous
+inv8 S: all c:Component, ws:c.worstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 S: all c:Component, ws:c.Worstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 T: all c:Component, ws:c.Workstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 C: all c:Component, ws:c.workstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 C: all c:Dangerous, ws:c.workstation, w:ws.workers | w not in Human
+inv8 C: all c:Dangerous, w:c.workstation.workers | w not in Human
+inv8 C: no Dangerous.workstation.workers & Human
+inv9 T: all w:Workstation-end | one w.succ	no end.succ	begin.*succ
+inv9 U: all w:Workstation-end | one w.succ	no end.succ	end in begin.*succ
+inv9 C: all w:Workstation-end | one w.succ	no end.succ	Workstation in begin.*succ
+

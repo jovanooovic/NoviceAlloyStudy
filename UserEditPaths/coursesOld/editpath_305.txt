@@ -1,0 +1,87 @@
+NA H: THEME UPDATE
+inv1 B: all s:Student| lone s.enrolled
+inv1 T: all s:Student| lone s.enrolled.Course
+inv1 B: all s:Student| lone s.enrolled
+inv1 U: all s:Student| no (Person-Student) & enrolled.Course
+inv1 C: no (Person-Student) & enrolled.Course
+inv2 C: no (Person-Professor) & teaches.Course
+inv3 S: all t:Teachers| lone t in Course
+inv3 T: all t:Professor| lone t in Course
+inv3 B: all t:Professor| lone t.teaches
+inv3 B: all  t:Professor | some t.teaches
+inv3 T: all  t:Professor, c:Course | some c.teaches.t
+inv3 T: all  t:Professor, c:Course | some t.teaches.c
+inv3 B: all  t:Professor| some t.teaches
+inv3 S: all  c:Courses, t:Professor | t->c in teaches
+inv3 B: all  c:Course, t:Professor | t->c in teaches
+inv3 B: all  c:Course, p:Person | p->c in teaches implies p in Professor
+inv3 C: all  c:Course | some teaches.c
+inv4 T: all p:Project | one projects.p
+inv4 O: all p:Project | one p.projects
+inv4 U: all p:Project | lone p.projects
+inv4 T: all p:Project | lone projects.p
+inv4 T: all c:Course | lone projects.c
+inv4 B: all c:Course | lone c.projects
+inv4 B: one c:Course | lone c.projects
+inv4 B: one c:Course | some c.projects
+inv4 B: one c:Course | one c.projects
+inv4 B: one c:Course | lone c.projects
+inv4 T: one c:Course |  c.projects
+inv4 B: one c:Course |  some c.projects
+inv4 S: one c1,c2:Course |  some c.projects implies c1 != c2
+inv4 B: one c1,c2:Course |  some c1.projects implies c1 != c2
+inv4 T: one c:Course , p1,p2=Project |  c.projects.p1 and c.projects.p2 implies p1!=p2
+inv4 T: one c:Course , p1,p2=Project |  projects.p1 and projects.p2 implies p1!=p2
+inv4 S: all p1,p2=Project |  projects.p1 and projects.p2 implies p1!=p2
+inv4 S: all p1, p2 :Projects | one c:Course| c->p1 in projects and c->p2 in projects implies p1!=p2
+inv4 B: all p1, p2 :Project | one c:Course| c->p1 in projects and c->p2 in projects implies p1!=p2
+inv4 B: all p1, p2 :Project | lone c:Course| c->p1 in projects and c->p2 in projects implies p1!=p2
+inv4 T: all p:Project | one projects.p
+inv4 T: all p:Project|one c:Course | one projects.p
+inv4 T: all p:Project|one c:Course | one c.projects.p
+inv4 T: all p:Project|one c:Course | one projects.p
+inv4 T: all p:Project, c:Course | one projects.p
+inv4 T: all p:Project, c:Course | one projects.p.c
+inv4 T: all p:Project, c:Course | one projects.c
+inv4 T: all c:Course | one projects.c
+inv4 T: all c:Course, p:Project | one (c.projects & projects.p)
+inv4 T: all p:Project | one (Course.projects & projects.p)
+inv4 T: all p:Project | one (Course.projects & Course.projects.p)
+inv4 S: all p:Project | one Course| p in c.projects
+inv4 T: all p:Project | one (Course.projects & Course.projects.p)
+inv4 B: all p:Project | one Course.projects
+inv4 T: all p:Project | one projects.p
+inv4 T: all p:Project | one Course.projects.p
+inv4 U: all p:Project | p in Course.projects
+inv4 S: all p:Project | p in Course.projects	  	all p1,p2:Project | p1 in Course.Projects and p2 in Course.Projects implies p1!=p2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2:Project | p1 in Course.projects and p2 in Course.projects implies p1!=p2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2:Project, c:Course | p1 in c.projects and p2 in c.projects implies p1!=p2
+inv4 S: all p:Project | p in Course.projects	  	all p:Project, c1,c2:Course | p1 in c1.projects and p2 in c2.projects implies c1!=c2
+inv4 O: all p:Project | p in Course.projects	  	all p:Project, c1,c2:Course | p in c1.projects and p in c2.projects implies c1!=c2
+inv4 U: all p:Project | p in Course.projects
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in Course.projects and p2 in Course.projects implies p1 != p2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 B: all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 T: all p:Project | one p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 T: all p:Project | p in Course.projects	  		    all c1,c2:Course, p:Project | p in c1.projects and c2.projects implies c1=c2
+inv4 C: all p:Project | p in Course.projects	  		    all c1,c2:Course, p:Project | p in c1.projects and p in c2.projects implies c1=c2
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 U: all p:Project | p in Course.projects
+inv4 O: all p:Project | p in Course.projects	  	all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2
+inv4 C: all p:Project | p in Course.projects	  		    all c1,c2:Course, p:Project | p in c1.projects and p in c2.projects implies c1=c2
+inv5 U: no (Person-Student) & projects.Project
+inv5 T: no (Person-Student) & projects.Project	  all p:Project, pe:Person | some p in pe
+inv5 O: no (Person-Student) & projects.Project	  all p:Project| some enrolled.p
+inv5 O: no (Person-Student) & projects.Project	  all p:Project| some p.enrolled
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| some p.enrolled
+inv5 T: no (Person-Student) & projects.Project	   all p:Person| some p.enrolled.Project
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| p in enrolled.Project
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| p in Project.enrolled
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| some p.projects
+inv5 O: no (Person-Student) & projects.Project	   all p:Project| some p.projects
+inv5 T: no (Person-Student) & projects.Project	   all p:Project| some projects.p
+inv5 C: no (Person-Student) & projects.Project	   all p:Project| some Person<:projects.p
+NA H: THEME UPDATE
+

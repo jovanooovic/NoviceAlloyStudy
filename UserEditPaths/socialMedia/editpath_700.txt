@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 B: all p : Photo | all u : User | u->p in posts
+inv1 B: all p : Photo | all u : User | u->p in posts
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv2 B: one u : User | u->u not in follows
+inv2 C: all u : User | u->u not in follows
+inv3 S: (all u1,u2 : User | all p : Photo | u1->u2 in follows | u1->p in sees | u2->p in posts | p not in Ad)	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2 : User | all p : Photo | u1->u2 in follows | u1->p in sees | u2->p in posts | p not in Ad)	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2 : User | all p : Photo | u1->p in sees implies (u2->p in posts | p not in Ad|u1->u2 in follows))	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2 : User | all p : Photo | u1->p in sees implies (u2->p in posts | p not in Ad|u1->u2 in follows)) and (all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv4 S: all u : User | all p : Photo | (u->p in posts) and (p in Ad) implies (all p2 : Photo | u->p2 in posts | p2 in Ad)
+inv4 S: all u : User | all p : Photo | (u->p in posts) and (p in Ad) implies (all p2 : Photo | u->p2 in posts | p2 in Ad)
+inv4 S: all u : User | all p,p2 : Photo | (u->p in posts) and (p in Ad) implies (u->p2 in posts | p2 in Ad)
+inv4 S: all u : User | all p,p2 : Photo | (u->p in posts) and (p in Ad) implies (u->p2 in posts | p2 in Ad)
+inv2 C: all u : User | u->u not in follows
+inv3 O: all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts)
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts)) and (all u3 : User | all p2 : Photo | p in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts)) (all u3 : User | all p2 : Photo | p in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts)) (all u3 : User | all p : Photo | p in Ad implies u3->p2 in sees)
+inv3 O: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts))
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts))	(all u3 : User | all p2 : Photo | p in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts))	and	(all u3 : User | all p2 : Photo | p in Ad implies u3->p2 in sees)
+inv3 O: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts))	and	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u1->p in sees and u2->p in posts))	and	(p in Ad implies u1->p in sees)
+inv3 O: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u2->p in posts and u1->p in sees))	and	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 O: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u2->p in posts))	and	(all u3 : User | all p2 : Photo | p2 in Ad implies u3->p2 in sees)
+inv3 O: (all u1,u2:User | all p:Photo | p not in Ad implies (u1->u2 in follows and u2->p in posts))
+inv3 O: (all u1,u2:User | all p:Photo | u1->p in sees implies (u1->u2 in follows and u2->p in posts and p not in Ad))
+inv3 S: (all u1,u2:User | all p:Photo | p not in Ad | u1->p in sees implies (u1->u2 in follows and u2->p in posts))
+inv3 S: all u1,u2:User | all p:Photo | p not in Ad | u1->p in sees implies (u1->u2 in follows and u2->p in posts)
+inv3 O: all u1,u2:User | all p:Photo | (p not in Ad) implies (u1->p in sees implies (u1->u2 in follows and u2->p in posts))
+

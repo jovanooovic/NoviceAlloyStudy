@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+Inv1 C: all disj n1,n2 : Node | n2 in n1.adj => n2 in adj.n1
+Inv2 C: all n : Node | n not in n.adj.adj
+Inv2 U: all n : Node | n not in n.adj
+Inv2 C: all n : Node | n not in n.adj.adj
+Inv2 C: all n : Node | n not in n.adj.adj	no (iden & adj.adj)
+Inv2 C: no (iden & adj.adj)
+Inv3 C: all n : Node | n not in n.^adj
+Inv3 C: all n : Node | n not in n.^adj		no (^adj & iden)
+Inv3 C: all n : Node | n not in n.^adj		no (^adj & iden)		iden - ^adj = iden
+Inv3 C: iden - ^adj = iden
+Inv3 C: all n : Node | n not in n.^adj		no (^adj & iden)		iden - ^adj = iden
+Inv3 O: all n : Node | n not in n.^adj		no (^adj & iden)		iden - ^adj != iden
+Inv3 C: all n : Node | n not in n.^adj		no (^adj & iden)		iden - ^adj = iden
+Inv4 B: all n : Node | n.adj = (Node - n)
+Inv4 B: all n : Node | n.adj = Node - n
+Inv4 U: all disj n1,n2 : Node | n1 in adj.n2
+Inv4 B: all n : Node | n.adj = Node - n
+Inv5 C: no iden & adj
+Inv5 S: no iden & adj		all n : Node | n not in n.ajd
+Inv5 C: no iden & adj		all n : Node | n not in n.adj
+Inv6 S: all disj n1, n2 : Node | n2 in n2.^({???custom relation???})
+Inv5 C: no iden & adj		all n : Node | n not in n.adj	}		fun undirectedEnclosure : Node -> Node {	{n1 : Node, n2 : Node | n2 in n1.adj or n1 in n2.adj}	}		pred undirected{	all disj n1,n2 : Node | n2 in n1.adj => n2 in adj.n1
+Inv5 C: no iden & adj		all n : Node | n not in n.adj	}		fun undirectedEnclosure : Node -> Node {	{n1 : Node, n2 : Node | n2 in n1.adj or n1 in n2.adj}	}		pred undirected{	all disj n1,n2 : Node | n2 in n1.adj => n2 in adj.n1
+Inv6 S: all disj n1, n2 : Node | n2 in n1.^(undirectedEnclosure)	}		pred undirected{	all disj n1,n2 : Node | n2 in n1.adj => n2 in adj.n1
+Inv7 C: all disj n1, n2 : Node | n2 in n1.^adj
+Inv8 S: all disj a,b,c : Node | (a in ajd.b and c in b.adj) => c in a.adj
+Inv8 U: all disj a,b,c : Node | (a in adj.b and c in b.adj) => c in a.adj
+Inv8 T: all  a,b,c : Node | a!= b !=c => (a in adj.b and c in b.adj) => c in a.adj
+Inv8 U: all  a,b,c : Node | (a!= b and  a !=c) => (a in adj.b and c in b.adj) => c in a.adj
+Inv8 U: all  a,b,c : Node | (a!= b and  a !=c) => (a in adj.b and c in b.adj) => c in a.adj
+Inv8 U: all  a,b,c : Node | (a!= b and  a !=c and b!=c) => (a in adj.b and c in b.adj) => c in a.adj
+

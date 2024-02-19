@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 S: all s: Student | s in c.~enrolled
+inv1 B: all s: Student | s in Course.~enrolled
+inv1 S: all s: Person | p not in Student => p not in Course.~enrolled
+inv1 C: all p: Person | p not in Student => p not in Course.~enrolled
+inv2 C: all p: Person | p not in Professor => p not in Course.~teaches
+inv3 B: all c: Course, p: Professor | p in c.~teaches
+inv3 U: all c: Course, p: Professor | #c.~teaches>0
+inv3 B: all p: Professor | #p.teaches > 0
+inv3 C: all c: Course | #c.~teaches > 0
+inv4 U: all pr: Project | pr in Course.projects
+inv4 S: all pr: Project | one Course | pr in Course.projects
+inv4 O: all pr: Project | one c : Course | pr in Course.projects
+inv4 C: all pr: Project | one c : Course | pr in c.projects
+

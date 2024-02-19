@@ -1,0 +1,6 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one posts.p
+inv3 O: all u : User | all p : Photo | u->p in sees implies ((one v : User | u->v in follows and v->p in posts) or (p in Ad))
+inv2 C: all u : User | u not in u.follows
+inv7 C: all u, v : User | u->v in suggested iff ( some z : User | z->v in follows and u->z in follows and u->v not in follows and v!=u)
+

@@ -1,0 +1,64 @@
+NA H: THEME UPDATE
+prop1 C: no Green
+prop2 O: eventually Green = Signal
+prop2 O: always(eventually Green = Signal)
+prop2 O: eventually Green = Signal
+prop2 O: eventually(historically Green = Signal)
+prop2 C: all s: Signal | eventually s in Green
+prop3 S: always all t: Train | after t.pois = t.pos
+prop3 U: always all t: Train | after t.pos = t.pos
+prop3 T: always pos
+prop3 T: always all t: Train, tk: Track | t.pos.tk in pos implies after t.pos.tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies after t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos or t->tk not in pos implies always t->tk not in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | one t.pos and t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos and t->tk not in pos implies always t->tk in pos
+prop3 O: always all t: Train, tk: Track | t->tk in pos or t->tk not in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos or t->tk not in pos implies always t->tk not in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+prop3 C: always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+prop3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+prop3 C: always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+prop3 U: always(Train->Track in pos implies always Train->Track in pos)
+prop3 U: always (Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos)
+prop3 U: always ((Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos))
+prop3 U: Train->Track in pos implies always Train->Track in pos and Train->Track not in pos implies always Train->Track not in pos
+prop3 U: (Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos)
+prop3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+prop3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+prop3 S: all (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+prop3 S: all (Train->Track in pos implies always Train->Track in pos) and (no (Train->Track) & pos implies always no (Train->Track) & pos)
+prop3 S: all (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+prop3 U: (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+prop4 T: all t: Train | always t.prox.~t.prox in iden
+prop4 T: all t: Train | always (t.prox.~t.prox) in iden
+prop4 B: all t: Train | always prox.~prox in iden
+prop4 B: always prox.~prox in iden
+prop4 B: always ~prox.prox in iden
+prop4 B: always prox.~prox in iden
+prop3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+prop4 B: always prox.~prox in iden
+prop3 U: always prox' = prox
+prop3 U: always prox = prox'
+prop3 U: always prox' = prox
+prop3 C: always pos' = pos
+prop4 C: always pos.~pos in iden
+prop5 U: all t: Train | after t.pos in t.pos + t.pos.prox
+prop5 B: always all t: Train | t.pos' in t.pos + t.pos.prox
+prop5 B: always all t: Train | t not in Exit implies t.pos' in t.pos + t.pos.prox
+prop5 U: always all t: Train | t.prox not in Exit implies t.pos' in t.pos + t.pos.prox
+prop5 U: always all t: Train | t.pos not in Exit implies t.pos' in t.pos + t.pos.prox
+prop5 B: always all t: Train | no t.pos & Exit implies t.pos' in t.pos + t.pos.prox
+prop5 B: always all t: Train | no t.pos & Exit implies t.pos' in t.pos + t.pos.prox
+prop4 C: always pos.~pos in iden
+

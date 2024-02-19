@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv5 B: some c: Class | all p: Person | p->c in Teaches
+inv5 U: some c: Class | some p: Person | p->c in Teaches
+inv5 U: some p: Person, c: Class | p->c in Teaches
+inv5 B: some p: Person | all c: Class | p->c in Teaches
+inv5 B: some t: Teacher | all c: Class | t->c in Teaches
+inv5 C: some t: Teacher, c: Class | t->c in Teaches
+inv5 C: some t: Teacher, c: Class | t->c in Teaches
+inv5 C: some t: Teacher, c: Class | t->c in Teaches
+inv6 B: all t: Teacher | all c: Class | t->c in Teaches
+inv6 C: all t: Teacher | some c: Class | t->c in Teaches
+inv7 C: all c: Class  | some t: Teacher| t->c in Teaches
+inv8 C: all t: Teacher | all c1,c2: Class | t->c1 in Teaches and t->c2 in Teaches => c1=c2
+inv8 C: all t: Teacher, c1,c2: Class | t->c1 in Teaches and t->c2 in Teaches => c1=c2
+inv9 C: all t1,t2: Teacher, c: Class | t1->c in Teaches and t2->c in Teaches => t1=t2
+inv10 T: all c: Class, s:Student | c->s in Groups
+inv10 B: all c: Class, s:Student, g:Group | c->s->g in Groups
+inv10 C: all c: Class, s:Student| some g:Group | c->s->g in Groups
+inv11 B: all c: Class, s:Student| some g:Group | c->s->g in Groups => some t: Teacher | t->c in Teaches
+inv11 U: all c: Class, s:Student, g:Group | c->s->g in Groups => some t: Teacher | t->c in Teaches
+inv11 B: all c: Class, s:Student, g:Group | some t: Teacher | c->s->g in Groups =>  t->c in Teaches
+inv11 B: all c: Class | some t: Teacher, s:Student, g:Group | c->s->g in Groups =>  t->c in Teaches
+inv11 C: all c: Class, p:Person, g:Group | c->p->g in Groups => some t: Teacher | t->c in Teaches
+inv12 B: all t:Teacher, g: Group, c:Class |c->t->g in Groups
+inv12 B: all t:Teacher, c:Class | some g: Group |c->t->g in Groups
+inv12 B: all t:Teacher, c:Class | some g: Group |c->t->g in Groups and t->c in Teaches
+inv12 T: all t:Teacher | some g:Group |t->g in Groups
+inv12 B: all t:Teacher | some g:Group, c: Class |c->t->g in Groups
+inv12 C: all t:Teacher | some g:Group, c: Class, p: Person |c->p->g in Groups and t->c in Teaches
+inv12 C: all t:Teacher | some g:Group, c: Class, p: Person |c->p->g in Groups and t->c in Teaches
+inv13 B: all s: Student, t:Teacher | t->s in Tutors
+inv13 O: all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p1 not in Student) and (p2 not in Teacher and p2 in Student)
+inv13 C: all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p2 in Student)
+inv13 C: all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p2 in Student)
+inv13 C: all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p2 in Student)
+inv14 B: all s: Student, c: Class, t: Teacher |t->c in Teaches and t->s in Tutors
+inv15 C: all p1 : Person | some p2, p3 : Person |	  (p2->p1 in Tutors) and ((p2 in Teacher) or	  (p3->p2 in Tutors) and ((p3 in Teacher) or	  (p1->p3 in Tutors) and  (p1 in Teacher)))
+inv13 C: all p1, p2: Person | p1->p2 in Tutors => (p1 in Teacher and p2 in Student)
+inv14 B: all s: Student, c: Class, t: Teacher |t->c in Teaches and t->s in Tutors
+inv14 B: all s: Student, c: Class, t: Teacher |t->c in Teaches and (t->s in Tutors or s->s in Tutors)
+inv14 B: all s: Student, c: Class, t: Teacher, g: Group | c->s->g in Groups => t->c in Teaches
+inv14 B: all s: Student, c: Class, t: Teacher, g: Group | c->s->g in Groups => t->c in Teaches and t->s in Tutors
+inv14 U: all s: Student, c: Class, t: Teacher, g: Group | c->s->g in Groups => t->c in Teaches => t->s in Tutors
+inv14 U: all s: Student, c: Class, t: Teacher, g: Group | c->s->g in Groups => (t->c in Teaches => t->s in Tutors)
+inv14 C: all s: Person, c: Class, t: Person, g: Group | c->s->g in Groups => (t->c in Teaches => t->s in Tutors)
+inv14 C: all s: Person, c: Class, t: Person, g: Group | c->s->g in Groups => (t->c in Teaches => t->s in Tutors)
+inv15 O: all p1, p2, p3: Person |	(p2->p1 in Tutors) and ((p2 in Teacher) or	  (p3->p2 in Tutors) and ((p3 in Teacher) or	  (p1->p3 in Tutors) and  (p1 in Teacher)))
+inv15 C: all p1: Person | some p2, p3: Person |	(p2->p1 in Tutors) and ((p2 in Teacher) or	  (p3->p2 in Tutors) and ((p3 in Teacher) or	  (p1->p3 in Tutors) and  (p1 in Teacher)))
+

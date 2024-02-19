@@ -1,0 +1,56 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 O: all s : Workstation | some w : Worker | w in s.workers	all s : Worker | some w : Workstation | s in workers.s
+inv2 O: all s : Workstation | some w : Worker | w in s.workers	all s : Worker | some w : Workstation | s in workers.w
+inv2 O: all s : Workstation | some w : Worker | w in s.workers	all s : Worker | some w : Workstation | s->w in workers
+inv2 U: all s : Workstation | some w : Worker | w in s.workers	all w : Worker | some s : Workstation | s->w in workers
+inv2 U: all s : Workstation | some w : Worker | w in s.workers	all w : Worker | some s : Workstation | s in workers.w
+inv2 U: all s : Workstation | some w : Worker | w in s.workers	all w : Worker | some s : Workstation | w in s.workers
+inv2 C: all s : Workstation | some w : Worker | w in s.workers	all w : Worker | one s : Workstation | s in workers.w
+inv2 C: all s : Workstation | some w : Worker | w in s.workers	all w : Worker | one s : Workstation | w in s.workers
+inv3 C: all c : Component | one w : Workstation | w in c.workstation
+inv4 U: all c : Component | some p : Product | p in c.parts
+inv4 S: all c : Component | some p : Product | p in c.parts	all m : Material | all p : Prodcut | p not in m.parts
+inv4 C: all c : Component | some p : Product | p in c.parts	all m : Material | all p : Product | p not in m.parts
+inv5 B: all s : Workstation | some w1, w2 : Worker | w1 in s.workers and w2 in s.workers and w1 in Human implies w2 not in Robot
+inv5 C: all s : Workstation | all w1, w2 : Worker | w1 in s.workers and w2 in s.workers and w1 in Human implies w2 not in Robot
+inv6 C: all c : Component | c not in c.^parts
+inv7 S: all c1, c2 : Component | c2 in Dangerous | c2 in c.^parts implies c2 in Dangerous
+inv7 S: all c1, c2 : Component | c2 in Dangerous and c2 in c.^parts implies c2 in Dangerous
+inv7 U: all c1, c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | some c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | some c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 B: all c1 : Component | all c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 U: all c1 : Component | some c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv8 B: all c : Component | c in Dangerous implies some r : Robot | some w : Workstation | r in w.workers and w in c.workstation
+inv9 S: all w : Worksation | one wb, we : Worksation | wb in w.^workstation and we in w.^workstation
+inv9 S: all w : Worksation | one wb, we : Workstation | wb in w.^workstation and we in w.^workstation
+inv9 O: all w : Workstation | one wb, we : Workstation | wb in w.^workstation and we in w.^workstation
+inv9 O: all w : Workstation | one wb, we : Workstation | wb in w.~^workstation and we in w.^workstation
+inv9 S: all w : Workstation | one wb, we : Workstation | wb in w~.^workstation and we in w.^workstation
+inv9 B: all w : Workstation | one wb, we : Workstation | wb in w.^succ and we in w.^succ
+inv9 B: all w : Workstation | one wb, we : Workstation | w in wb.^succ and we in w.^succ
+inv9 B: all w : Workstation | one wb, we : Workstation | w in wb.^succ and we in w.^succ and wb!=we
+inv9 B: all w : Workstation | one wb, we : Workstation | wb != w and w in wb.^succ and we in w.^succ and wb!=we
+inv9 O: all w : Workstation | all wb, we : Workstation | wb != w and w in wb.^succ and we in w.^succ and wb!=we
+inv9 S: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Worksation | w not in end implies one w.succ
+inv9 C: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one w.succ
+inv9 B: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | we in w.succ and we in end
+inv9 U: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | we in w.^succ and we in end
+inv9 S: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | some ws : Worksation| we in w.^succ and we in end and ws in w.succ
+inv9 U: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | some ws : Workstation| we in w.^succ and we in end and ws in w.succ
+inv9 U: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | some ws : Workstation| we in w.^succ and we in end and ws in w.succ and w != we
+inv9 O: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | some ws : Workstation| we in w.^succ and we in end and ws in w.succ and we in ws.^succ and w != we
+inv9 O: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one we : Workstation | some ws : Workstation| we in w.^succ and we in end and ws in w.succ and we in ws.^succ and w != we and ws != we and w != ws
+inv9 C: all w, wb : Workstation | wb in begin and w!=wb implies w in wb.^(succ)	all w : Workstation | w not in w.^succ		all w : Workstation | w not in end implies one w.succ
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv10 S: all c : Component | all p : Component | all w, wa : Workstation | w in c.worksation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+inv10 B: all c : Component | all p : Component | all w, wa : Workstation | w in c.workstation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+inv10 B: all c : Component | all p : Product | all w, wa : Workstation | w in c.workstation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+

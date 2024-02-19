@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 B: some State.trans
+inv2 C: one Init
+inv1 T: all s:State | s.trans
+inv1 C: all s:State | some s.trans
+inv3 T: all e: Event, s:State | e in s.trans
+inv3 B: all e: Event, s:State |some s2: State | e->s2 in s.trans
+inv3 O: all e: Event, s:State |one s2: State | e->s2 in s.trans
+inv3 U: all e: Event, s:State | some s1,s2:State |  (s.trans = e->s2 and s.trans = e->s1) implies s1=s2
+inv3 B: all s:State | some s1,s2:State, e:Event |  (s.trans = e->s2 and s.trans = e->s1) implies s1=s2
+inv3 C: all s:State | all e:Event| lone e.(s.trans)
+inv4 T: all s: State | s in Init.^trans
+inv4 B: all s:(State-Init) | s in Init.(Event.trans)
+inv4 B: all s:(State-Init) | s in Init.^(Event.trans)
+inv4 O: all s:State | s in Init.^(Event.trans)
+inv4 O: all s:State | s in Init.(Event.trans)
+inv4 T: all s:State | s in ^trans
+inv4 U: all s:State, s1:State, e:Event | lone s.trans.Event
+inv4 U: all s:State, s1:State, e:Event | lone s.trans.Event
+inv4 O: all s:State | s.^(s.trans) = State
+inv4 O: all s:State | Init.^(s.trans) = s
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv3 S: all s:State | some s.trans		/*	All states are reachable from an initial state.	*/
+inv3 S: all s:State | lone s.trans		/*	All states are reachable from an initial state.	*/
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv4 T: all s:State |some e:Event | Init.^(e->s)
+inv3 C: all s:State | all e:Event| lone e.(s.trans)
+inv4 S: all s:State |some e:Event | s in e.^(Initial.trans)
+inv4 S: all s:State |some e:Event | s in e.^(Initial.trans)
+inv4 O: all s:State |some e:Event | s in e.^(Init.trans)
+inv4 T: all s:State |some e:Event | s in Init.trans
+inv4 O: all s:State |some e:Event | e->s in Init.trans
+inv4 T: all s:State |some e:Event | e->s in Init.^trans
+inv4 O: all s:State |some e:Event | s in e.^(Init.trans)
+inv4 B: all s:State-Init |some e:Event | s in e.(Init.trans)
+inv4 B: all s:State-Init |some e:Event | s in e.(Init.trans)
+inv4 B: all s:State-Init |some e:Event | s in e.^(Init.trans)
+inv4 T: all s:State-Init |some e:Event | s in ^e.(Init.trans)
+

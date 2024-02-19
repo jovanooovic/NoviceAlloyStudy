@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+Inv1 C: all c : Component | some c.parts
+Inv2 C: all c : Component | c not in c.^parts
+Inv3 T: all c : Component | some position.(c.position)
+Inv3 U: all c : Component | some c.position
+Inv3 S: all c : Component | some Robot.position $ c.position
+Inv3 C: all c : Component | some Robot.position & c.position
+Inv4 T: all c : Component |  c.^parts not in c.^next.^parts
+Inv4 T: all c : Component |  c.^parts not in c.^next.^parts
+Inv4 T: all c : Component |  c.^parts not in (c.^next).^parts
+Inv4 T: all c : Component |  c.^parts not in (c.^next).^parts
+Inv4 T: all p : Position | Component.p.parts not in Component.(p.^next).parts
+Inv4 S: all p : Position | position.p).parts not in position.(p.^next).parts
+Inv4 S: all p : Position | position.p).parts not in position.(p.^next).parts
+Inv4 B: all p : Position | position.p.parts not in position.(p.^next).parts
+Inv4 B: all p : Position | position.p.^parts not in position.(p.^next).^parts
+Inv4 B: all p : Position | position.p.parts not in position.(p.^next).parts
+Inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+Inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+Inv4 T: all p : Position | no position.p.*parts & position.(p.^next).*parts
+Inv4 T: all p : Position | no position.p.*parts & position.(p.^next).*parts
+Inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+Inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+Inv4 T: all p : Position | no position.p.parts & position.(p.^next).*parts
+Inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+Inv4 B: all disj c1, c2 : Component | c1.parts in c2.parts implies c1.position in c2.position.*prev
+Inv4 S: all p : Position | no (position.p <: Components) & (position.(p.^next) <: Components)
+Inv4 U: all p : Position | no (position.p <: Component) & (position.(p.^next) <: Component)
+Inv4 B: all p : Position | no (position.p <: Component).parts & (position.(p.^next) <: Component).parts
+Inv4 O: all p : Position | no (position.p <: Component).parts & (position.(p.^next) <: Component).*parts
+Inv4 O: all p : Position | no (position.p <: Component).*parts & (position.(p.^next) <: Component).*parts
+Inv4 T: all p : Position | no (position.p).*parts & (position.(p.^next)).*parts
+Inv4 T: all p : Position | no (position.p).*parts & (position.(p.^next)).*parts	  	all c : Component | no c.parts.position
+Inv4 O: all c : Component | no c.parts.position
+Inv4 C: all c : Component | no c.^parts.position & c.position.^next
+Inv4 C: all c : Component | no c.^parts.position & c.position.^next
+Inv1 C: all c : Component | some c.parts
+Inv2 C: all c : Component | c not in c.^parts
+Inv3 C: all c : Component | some Robot.position & c.position
+Inv4 C: all c : Component | no c.^parts.position & c.position.^next
+

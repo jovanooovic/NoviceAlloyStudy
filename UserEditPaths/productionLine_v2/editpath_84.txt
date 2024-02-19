@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 S: Workers in (Human + Robot)
+inv1 C: Worker in (Human + Robot)
+inv2 U: some Workstation.workers	some workers.Worker
+inv2 U: some Workstation.workers	all w : Worker | workers.w in Workstation
+inv2 U: some Workstation.workers	all w : Worker | w in Workstation.workers
+inv2 U: some Workstation.workers	some workers.Worker	all w : Worker | lone workers.w
+inv2 S: some Workstation.workers	all w : Worker | lone workers.w and w in Workstation.worker
+inv2 U: some Workstation.workers	all w : Worker | lone workers.w and w in Workstation.workers
+inv2 U: some Workstation.workers	all w : Worker | lone workers.w and w in Workstation.workers
+inv2 U: some Workstation.workers	all w : Worker | lone workers.w
+inv2 U: some Workstation.workers	all w : Worker | one workers.w
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv4 C: no Material.parts	all c : Component | some c.parts
+inv5 B: all w : Workstation | (w.workers - Human) not in Robot and (w.workers - Robot) not in Human
+inv5 C: all r : Robot | r not in (workers.Human).workers	all h : Human | h not in (workers.Robot).workers
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 O: all c : Component | some (c.*parts & Dangerous) implies c in Dangerous
+inv8 O: all c : Component & Dangerous | c.workstation.workers in Robot
+inv9 O: all w : Workstation | lone w.succ	Workstation in begin.^succ	no end.succ
+inv9 O: all w : Workstation | lone w.succ	Workstation in begin.^succ	no end.succ	begin not in end
+inv9 B: Workstation in begin.^succ	no end.succ
+inv9 B: Workstation = begin.^succ	no end.succ
+inv9 O: all w : Workstation | w in begin.^succ and w not in w.^succ	no end.succ
+NA H: THEME UPDATE
+inv3 C: all c : Component | one c.workstation
+inv9 C: Workstation in begin.*succ	no end.^succ	all w : Workstation | lone w.succ
+inv10 O: all c : Component | c.parts in begin.*succ - c.workstation.*succ
+inv10 O: all c : Component | c.parts in begin.*succ - c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.*succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in (begin.*succ - c.workstation.*succ)
+NA H: THEME UPDATE
+

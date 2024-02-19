@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+Inv1 C: all c: Component | some c.parts
+Inv2 U: all c: Component | c not in c.parts
+Inv2 U: all c: Component | no c & c.parts
+Inv2 U: all c: Component | no (c & c.parts)
+Inv2 C: all c: Component | no (c & c.^parts)
+Inv2 C: all c: Component | c not in c.^parts
+Inv3 T: all c: Component | some position.(c.position)
+Inv3 T: all c: Component | some position.c.position
+Inv3 S: all c: Component | some (position<:Robot)(.c.position)
+Inv3 S: all c: Component | some (position<:(Robot->Position))(.c.position)
+Inv3 S: all c: Component | some (position<:(Robot->Position))(.c.position)
+Inv3 S: all c: Component | some position(.c.position)
+Inv3 T: all c: Component | some position(c.position)
+Inv3 T: all c: Component | some (Robot:>position).(c.position)
+Inv3 T: all c: Component | some (Robot:>position).(c.position)
+Inv3 T: all c: Component | some (Position:>position).(c.position)
+Inv3 T: all c: Component | some (position:>Position).(c.position)
+Inv3 S: all c: Component | some (position:>Position).(c.(Component:>position)
+Inv3 T: all c: Component | some (position:>Position).(c.(Component:>position))
+Inv3 T: all c: Component | some position.(c.position)
+Inv3 T: all c: Component | Robot.position & c.position
+Inv3 C: all c: Component | some Robot.position & c.position
+Inv3 C: all c: Component | some Robot.position & c.position
+Inv4 B: all c: Component | no c.parts.^parts
+Inv4 B: all c: Component | no c.parts.parts
+Inv4 S: all c: Component | c.parts.position = prevs[c.parts]
+Inv4 S: all c: Component | c.parts.position in prevs[c.parts]
+Inv4 S: all c: Component | c.^parts in prevs[c.parts]
+Inv4 O: all c: Component | c.^parts.position in prevs[c.parts.position] + c.position
+Inv4 O: all c: Component | c.^parts.position in (prevs[c.parts.position] + c.position)
+Inv4 O: all c: Component | c.^parts.position in (prevs[c.^parts.position] + c.position)
+Inv4 C: all c: Component | c.^parts.position in (prevs[c.position] + c.position)
+

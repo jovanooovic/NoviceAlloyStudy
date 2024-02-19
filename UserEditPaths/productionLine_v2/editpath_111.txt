@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 S: all w : Workers - Human - Robot | w not in Workers
+inv1 C: all w : Worker - Human - Robot | w not in Worker
+inv2 S: all w : Wokerstation | some wk : Workers | wk in w.workers	all wk : Wokers | one w : Workstation | wk in w.workers
+inv2 S: all w : Workestation | some wk : Worker | wk in w.workers	all wk : Woker | one w : Workstation | wk in w.workers
+inv2 S: all w : Workstation | some wk : Worker | wk in w.workers	all wk : Woker | one w : Workstation | wk in w.workers
+inv2 C: all w : Workstation | some wk : Worker | wk in w.workers	all wk : Worker | one w : Workstation | wk in w.workers
+inv3 S: all c : Compontent | one w : Workstation | w in c.workstation
+inv3 C: all c : Component | one w : Workstation | w in c.workstation
+inv4 S: all c : Component, p : Product | p in c.parts	all m : Materials, p : Product | p not in m.parts
+inv4 O: all c : Component, p : Product | p in c.parts	all m : Material, p : Product | p not in m.parts
+inv4 O: all c : Component, p : Product | p in c.parts	all d : Dangerous, p : Product | p in d.parts	all m : Material, p : Product | p not in m.parts
+inv4 C: all c : Component | some p : Product | p in c.parts	all m : Material, p : Product | p not in m.parts
+inv5 S: all w : Workstation, h: Humans, r: Robots | w.workers in h or w.workers in r
+inv5 O: all w : Workstation, h: Human, r: Robot | w.workers in h or w.workers in r
+inv6 S: all c1, c2 : Component | c1 == c2 implies c2 not in c1
+inv6 O: all c1, c2 : Component | c1 = c2 implies c2 not in c1
+inv6 U: all c1, c2 : Component | c1 = c2 implies c2 not in c1.parts
+inv5 O: all w : Workstation | w.workers in Human or w.workers in Robot
+inv6 U: all c : Component | c not in c.parts
+inv6 B: all c : Component | c.parts not in Component
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv7 O: all c : Component, p : Product | p in c.^parts and p in Dangerous implies c in Dangerous
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv9 B: all w : Workstation | one w2 : Workstation | w.^succ in w2
+inv9 B: all w : Workstation | one w2 : Workstation | w2!=w and w.^succ in w2
+inv9 B: all w : Workstation | lone w2 : Workstation | w2!=w and w.^succ in w2
+inv9 U: all w1, w2 : Workstation | w1 != w2 and w1 in begin implies w2 in w1.^succ
+inv9 B: all w : Workstation - end | one w2 : Workstation | w2 in w.^succ	all w : Workstation - begin | one w2 : Workstation | w in w2.^succ
+inv9 B: all w : Workstation - end | one w2 : Workstation | w2!=w and w2 in w.^succ	all w : Workstation - begin | one w2 : Workstation | w2!=w and w in w2.^succ
+

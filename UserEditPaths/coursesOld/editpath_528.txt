@@ -1,0 +1,104 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 O: all c: Course | (some p: Professor | p in teaches.c)
+inv4 C: all p: Project | (one c: Course | c in projects.p)
+inv5 S: all p: Projects | (some s: Student | s in projects.p)
+inv5 U: all p: Project | (some s: Student | s in projects.p)
+inv5 U: all p: Project | (some s: Person | s in projects.p and s in Student)
+inv5 T: all p: Project | projects.p in Student
+inv5 T: all p: Project | (Person <: projects).p in Student	  all p: Project | (some p: Person | p in projects.p)
+inv5 T: all p: Project | Student <: projects.p
+inv5 B: some Student <: projects
+inv5 B: some Student <: projects.Project
+inv5 S: some Projects.(Student <: projects)
+inv5 O: some Project.(Student <: projects)
+inv5 B: some (Student <: projects).Project
+inv5 O: some Project.(Student <: projects)
+inv5 B: some Project.~(Student <: projects)
+inv5 B: some s: Student | s in Project.~(Person <: projects)
+inv5 U: all p: Project | (some s: Student | s in p.~(Person <: projects))
+inv5 S: all p: Project | some s: Person | s in p.~(Person <: projects) and S in Student
+inv5 U: all p: Project | some s: Person | s in p.~(Person <: projects) and s in Student
+inv5 U: all p: Project | some s: Student | s in p.~(Student <: projects)
+inv5 O: all p: Project | some s: Student | p in p.~(Student <: projects)
+inv5 S: all p: Project | some p.~(Person <: projects)+Students
+inv5 U: all p: Project | some p.~(Person <: projects)+Student
+inv5 U: all p: Project | some p.~(Person <: projects)&Student
+inv5 B: some (Project.~(Person <: projects)&Student)
+inv5 T: all p : Project | some (p.~(Person <: projects) in Student)
+inv5 U: all p : Project | (some s: Student | s in p.~(Person <: projects) )
+inv5 U: all p : Project | some s: Student | s in p.~(Person <: projects)
+inv5 B: all p : Project | some s: Student | p.~(Person <: projects) in s
+inv5 S: all p : Project | some s.projects
+inv5 S: all p : Project | p.~(Person <: projects) in Student	  some Projects.~(Person <: projects)
+inv5 B: all p : Project | p.~(Person <: projects) in Student	  some Project.~(Person <: projects)
+inv5 C: all p : Project | p.~(Person <: projects) in Student	  all p: Project | some p.~(Person <: projects)
+inv5 C: all p : Project | p.~(Person <: projects) in Student and some p.~(Person <: projects)
+inv6 B: all s: Student | (all p: (s.enrolled).projects | p in s.projects)
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+NA H: THEME UPDATE
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 B: all s: Student | some c: Course | s.projects in c.projects
+inv7 B: all s: Student | some c: Course | c in s.enrolled and c.projects in s.projects
+inv7 B: all s: Student | some c: Course | c.projects in s.projects
+inv7 S: all s: Student, c:Course | some p: Projects | (s.enrolled).projects in s.projects
+inv7 B: all s: Student, c:Course | some p: Project | (s.enrolled).projects in s.projects
+inv7 T: all s: Student| some (s.enrolled).projects in s.projects
+inv7 S: all s: Student, c:Course | c->s in enrolled implies (some p: Projects | c->p in projects and s->p in projects)
+inv7 U: all s: Student, c:Course | c->s in enrolled implies (some p: Project | c->p in projects and s->p in projects)
+inv7 U: all s: Student, c:Course | c->s in enrolled implies (some p: Project | c->p in (Course <: projects) and s->p in (Person <: projects))
+inv7 S: all s: Student, c:Course | c->s in enrolled implies (some p: c.projects&s.projects)
+inv7 U: all s: Student, c:Course | c->s in enrolled implies (some p: Project | p in c.projects&s.projects)
+inv7 U: all s: Student, c:Course | c->s in enrolled implies (some p: Project | p in (c.projects)&(s.projects))
+inv7 U: all s: Student, c:Course | c->s in enrolled implies (some p: Project | p in c.(Course <: projects)&s.(Person <: projects))
+inv7 B: all s: Student, c:Course | s->c in enrolled implies (some p: Project | p in c.(Course <: projects)&s.(Person <: projects))
+inv7 B: all s: Student, c:Course | s->c in enrolled implies (some p: Project | p in c.projects and p in s.projects)
+inv7 B: all s: Student, c:Course | s->c in enrolled implies (one p: Project | p in c.projects and p in s.projects)
+inv7 U: all s: Student, c:Course | s->c in enrolled implies (lone p: Project | p in c.projects and p in s.projects)
+inv7 T: all s: Student, c:Course | s->c in enrolled implies (lone p: Project | p in c.projects.~(s.projects))
+inv7 U: all s: Student, c:Course | s->c in enrolled implies (lone p: Project | p in c.projects&s.projects)
+inv8 C: all p: Person, c:Course | p->c in teaches implies p->c not in enrolled
+inv8 C: all p: Person, c:Course | p->c in teaches implies p->c not in enrolled
+inv9 B: all p,p1: Person, c:Course | p->c in teaches and p1->c in teaches implies p1->c not in enrolled
+inv9 E: 
+inv9 B: all p: Person, c:Course, ps:Professor | p->c in teaches implies ps->c not in enrolled
+inv9 B: all p: Person, c,c1:Course, ps:Professor | p->c in teaches and ps->c1 in teaches implies ps->c not in enrolled
+inv9 T: all p: Person, c,c1:Course, ps:Professor | p->c in teaches and ps->c1 in teaches implies ps->c not in enrolled and p->c not enrolled
+inv9 B: all p: Person, c,c1:Course, ps:Professor | p->c in teaches and ps->c1 in teaches implies ps->c not in enrolled and p->c not in enrolled
+inv9 B: all p: Professor, c,c1:Course, ps:Professor | p->c in teaches and ps->c1 in teaches implies ps->c not in enrolled and p->c not in enrolled
+inv10 T: Grade.(~grades).Course in Student
+inv10 T: Course.grades in Student
+inv11 E: 
+inv10 C: Grade.~(Course.grades) in Student
+inv11 S: all c: Course | c in (s.enrolled)&(grades.Grade)
+inv11 T: all c: Course, s: Student | c in (s.enrolled)&(grades.Grade)
+inv11 B: all c: Course, s: Student | c in (s.enrolled)&((grades.Grade).s)
+inv11 U: all c: Course, s: Student | (grades.Grade).s in s.enrolled
+inv11 U: all s: Student | (grades.Grade).s in s.enrolled
+inv12 U: all s: Student, c:Course | s->c in enrolled implies (lone g: Grade | g in s.(c.grades))
+inv14 S: all s,s1: Student, p,p1: Project | p!=p1 ans s!=s1 and s->p in projects and s1->p in projects and s->p1 in projects implies s1->p1 not in projects
+inv14 U: all s,s1: Student, p,p1: Project | p!=p1 and s!=s1 and s->p in projects and s1->p in projects and s->p1 in projects implies s1->p1 not in projects
+inv9 S: all p,p1: Professor, c,c1:Course | p->c in teaches implies ps->c not in enrolled
+inv9 B: all p,p1: Professor, c,c1:Course | p->c in teaches implies p1->c not in enrolled
+inv9 O: all p,p1: Person, c,c1:Course | p->c in teaches implies p1->c not in enrolled
+inv9 O: all p,p1: Person, c:Course | p->c in teaches implies p1->c not in enrolled
+inv9 O: all p,p1: Person, c:Course | p->c in teaches and p!=p1 implies p1->c not in enrolled
+inv9 B: all p,p1: Professor, c:Course | p->c in teaches and p!=p1 implies p1->c not in enrolled
+inv9 B: enrolled.Course not in Student
+inv9 B: enrolled.Course not in Professor
+NA H: THEME UPDATE
+inv5 C: all p : Project | p.~(Person <: projects) in Student and some p.~(Person <: projects)
+inv5 T: all p : Project | p.~(Person :> projects) in Student and some p.~(Person <: projects)
+inv5 T: all p : Project | p.(Person :> projects) in Student and some p.~(Person <: projects)
+inv5 C: all p : Project | p.~(Person <: projects) in Student and some p.~(Person <: projects)
+inv5 S: all p : Project | some (Person :> projects .p)		all p: Project | (Person :> projects.p) in student
+inv5 C: all p : Project | some (Person :> projects .p)		all p: Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)		all p: Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | (Person <: p.~projects) in Student and some (Person <: p.~projects)
+inv5 C: all p : Project | (Person :> p.~projects) in Student and some (Person :> p.~projects)
+inv5 C: all p : Project | (Person :> p.~projects) in Student and some (Person :> p.~projects)
+inv5 C: all p : Project | (Person :> p.~projects) in Student and some (Person :> p.~projects)
+inv5 C: all p : Project | (Person <: p.~projects) in Student and some (Person <: p.~projects)
+inv5 C: all p : Project | p.~(Person <: projects) in Student and some p.~(Person <: projects)
+

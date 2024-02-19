@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv1 C: all x: Photo | one posts.x
+inv2 C: all x: User | x not in x.follows
+inv3 C: all x: User | all y: Photo-Ad | (y in x.sees) implies x in follows.posts.y
+inv3 O: all x: User | all y: Photo-Ad | (y in x.sees) implies y in follows.posts.y
+inv3 C: all x: User | all y: Photo-Ad | (y in x.sees) implies x in follows.posts.y
+inv4 C: all x : User | all y: Ad | all z : Photo-Ad | x in posts.y implies (x not in posts.z)
+inv5 B: all x : User | all y : Influencer | x in follows.y
+inv5 U: all x : User - Influencer | all y : Influencer | x in follows.y
+inv5 U: all x : User - Influencer | all y : Influencer | x in follows.y
+

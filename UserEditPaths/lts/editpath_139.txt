@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv2 C: one Init
+inv3 O: all s : State | lone s.trans
+inv3 B: all s : State | # s.trans <=1
+inv3 B: all s : State | #s.trans <=1
+inv3 U: all s : State | lone s.trans.Event
+inv3 C: all s : State | all e : Event | lone s.trans[e]
+inv3 O: all s : State | lone s.trans[Event]
+inv3 C: all s : State, e : Event | lone s.trans[e]
+inv4 T: all s : State | s in Init.*trans
+inv4 T: all s : State | s in Init.*(trans)
+inv4 T: all s : State | s in Init.^(trans)
+inv4 T: all s : State | s in Init.^(trans)
+inv4 T: all s : State | s in Init.^(trans)
+

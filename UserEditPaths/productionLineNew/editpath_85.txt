@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv3 S: all c : Component | one ws : Worstation | ws in c.workstation
+inv3 S: all c : Component | one ws : Worstation | ws in c.workstation
+inv3 S: all c : Component | one ws : Worstation | ws in c.workstation
+inv3 S: all c : Component | one ws : Worstation | ws in c.workstation
+inv2 C: (all ws : Workstation | some w : Worker | w in ws.workers)	and	(all w : Worker | one ws : Workstation | w in ws.workers)
+inv3 C: all c : Component | one ws : Workstation | ws in c.workstation
+inv3 C: all c : Component | one ws : Workstation | ws in c.workstation
+inv4 B: all c : Component | c in c.parts	and	all m: Material | m in m.parts
+inv4 B: all c : Component | some p:Product | c in p.parts	and	all m: Material | all p:Product |  c not in p.parts
+inv4 B: all c : Component | some p:Product | c in p.parts	and	all m: Material | no p:Product | c in p.parts
+inv4 S: (all c : Component | some p:Product | c in p.parts)	and	(all m: Material | no p:Product | c in p.parts)
+inv4 S: (all c : Component | some p:Product | c in p.parts)	and	(all m: Material | no p:Product | c in p.parts)
+inv4 B: (all c : Component | some p:Product | c in p.parts)	and	(all m: Material | no p:Product | m in p.parts)
+inv4 C: (all c : Component | some p : Product | c->p in parts)	and	(all m : Material | no p : Product | m->p in parts)
+inv5 O: all ws: Workstation | all w1,w2: Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 not in Human
+inv5 O: all ws: Workstation | all w1,w2: Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 not in Human
+inv5 O: all ws: Workstation | all w1,w2: Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 in Robot
+inv5 O: all ws: Workstation | all w1,w2: Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 in Human
+inv6 B: all c:Component | all p:Product | c in p.parts implies p not in Component
+

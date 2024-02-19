@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 S: all w : Workers | w in Human and w not in Robot
+inv1 O: all w : Worker | w in Human and w not in Robot
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 U: all a : Worker | all b : Workstation | some b.workers and some workers.a
+inv2 U: all a : Worker, b : Workstation | some b.workers and some workers.a
+inv2 C: all a : Workstation | some a.workers	all b : Worker | one workers.b
+inv3 C: all c : Component | one c.workstation
+inv4 S: all p : Product | p in Components implies some p.parts	all p : Product | p in Materials implies no p.parts
+inv4 C: all p : Product | p in Component implies some p.parts	all p : Product | p in Material implies no p.parts
+inv5 O: all w : Workstation | w.workers in Human or w.workers in Robot
+inv6 U: all p : Product | p in Component implies p not in p.parts
+inv6 C: all p : Product | p in Component implies p not in p.^parts
+inv6 O: all p : Product | p in Component implies p not in p.*parts
+inv6 C: all p : Product | p in Component implies p not in p.^parts
+inv7 B: all p : Product | p in Component and p in Dangerous implies p.^parts in Dangerous
+inv7 B: all p : Product | p in Component and p in Dangerous implies p.*parts in Dangerous
+inv7 B: all p : Product | p in Component and p in Dangerous implies p.parts in Dangerous
+inv7 B: all p : Product | p in Component and Dangerous in p implies Dangerous in p.parts
+inv7 B: all p : Product | p in Component and Dangerous in p implies Dangerous in p.^parts
+inv1 C: Worker = Human + Robot
+inv1 C: all w : Worker | w in Human or w in Robot
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | Dangerous in c.^parts implies c in Dangerous
+inv7 O: all c : Component, d : Dangerous | d in c.^parts implies c in Dangerous
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv8 B: all c : Component & Dangerous | c.workstation.workers not in Human
+NA H: THEME UPDATE
+inv1 S: all w : Woerker | w in Human or w in Robot
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all w : Worktation | some w.workers	all w : Worker | some workers.w
+inv2 S: all w : Worksation | some w.workers	all w : Worker | some workers.w
+inv2 U: all w : Workstation | some w.workers	all w : Worker | some workers.w
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 S: all p : Product | p in Material implies no p.parts	all p : Product | p in Components implies some p.parts
+inv4 C: all p : Product | p in Material implies no p.parts	all p : Product | p in Component implies some p.parts
+inv5 O: all w : Workstation, h : Human | h in w.workers implies w.workers in Human
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 T: all c : Component | some c.parts in Dangerous implies c in Dangerous
+inv7 O: all c : Component, d : Dangerous | d in c.parts implies c in d
+inv7 C: all c : Component, d : Dangerous | d in c.parts implies c in Dangerous
+inv7 C: all c : Component, d : Dangerous | d in c.parts implies c in Dangerous
+inv8 T: all c : Component & Dangerous | no c.workstation.workers in Human
+inv8 O: all c : Component & Dangerous | c.workstation.workers in Robot
+

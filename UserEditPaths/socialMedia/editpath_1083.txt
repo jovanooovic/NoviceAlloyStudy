@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv2 C: all x : User | x not in follows.x
+inv3 S: all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y	all x : Ad | all y : User | x in sees.y
+inv3 S: all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y	all x : Ad | all y : User | x in sees.y
+inv3 B: all x : Ad | all y : User | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+NA H: THEME UPDATE
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Photos | all y : Users | all z : Ad | (x in sees.y) implies ((x in Ad) or (some z : User | y in z.follows.posts)
+inv4 S: all x : User |
+inv4 S: all x : User |
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv4 S: all x : User | all y: Ad | all z : Photos-Ad | y in posts.x implies (z not in posts.x)
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv3 S: all y : Photo-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv4 U: all x : User | all y: Ad | all z : Photo-Ad | y in posts.x implies (z not in posts.x)
+inv4 C: all x : User | all y: Ad | all z : Photo-Ad | x in posts.y implies (x not in posts.z)
+

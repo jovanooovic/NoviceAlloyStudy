@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 S: all x: Course, y: Student | y in y.Enrolled && Professor not in Professor.enrroled
+inv1 B: all x: Course, y: Student | y in y.enrolled && Professor not in Professor.enrolled
+inv1 T: all c: Course | Student => Student.enrolled
+inv1 T: all c: Course | Student => Student.enrolled
+inv1 T: all c: Course | Student => Person.enrolled
+inv1 T: all c: Course | Student => Student in Person.enrolled
+inv1 B: all p: Person | p in Student => p in p.enrolled
+inv1 T: all p: Person | p in Student => p in enrolled
+inv1 T: all p: Person | p in Student => p in enrolled
+inv1 O: all p: Person | p in Student
+inv1 T: all p: Person | p in Student => #p.Course=1
+inv1 S: all s: Student | one s.Courses
+inv1 S: all s: Person |  p in Student
+inv1 S: all s: Person | p in Student
+inv1 O: all p: Person | p in Student
+inv1 T: all p: Person | p in Student => one p.Course
+inv1 B: all p: Person | p in Student => one p.enrolled
+inv1 T: all c: Course | all p: Person | p in c.grades => p in Student
+inv1 T: all c: Course | all p: Person | p in p.c => p in Student
+inv1 T: all c: Course | all p: Person | p in p.c
+inv1 E: 
+inv1 B: all c: Course | all p: Person | p not in Professor
+inv1 O: all c: Course | all p: Person | p not in Professor && p in Student
+inv1 O: all p: Person | p in Student
+inv1 U: all c: Course, p: Person | p in c.enrolled => p in Student
+inv1 U: all p: Person | p in p.enrolled => p in Student
+

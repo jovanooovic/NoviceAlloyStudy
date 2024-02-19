@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: no Worker-(Human+Robot)
+inv2 U: all ws: Workstation | some w: Worker | w in ws.workers
+inv2 C: all ws: Workstation | some w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv4 C: all c: Component | some c.parts	no Material.parts
+inv5 O: all ws: Workstation | some (Human & ws.workers) <=> no (Robot & ws.workers)
+inv6 C: all c: Component | c not in c.^parts
+inv7 O: all c: Component | some (Dangerous & c.^parts) => c in Dangerous
+inv8 C: all c: Component | c in Dangerous => no (c.workstation.workers & Human)
+inv9 S: all w: Workstation | w not in w.^succ	all all w, wb : Workstation | (wb in begin and w != wb) implies w in wb.^(succ)	all w : Workstation | w not in end implies some w.succ
+inv9 U: all w: Workstation | w not in w.^succ	all w, wb : Workstation | (wb in begin and w != wb) implies w in wb.^(succ)	all w : Workstation | w not in end implies some w.succ
+inv9 C: all w: Workstation | w not in w.^succ	all w, wb : Workstation | (wb in begin and w != wb) implies w in wb.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv10 B: all c1,c2 : Component, w1,w2 : Workstation | w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) => w1 in w2.^(succ)
+

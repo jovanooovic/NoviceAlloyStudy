@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv2 C: all u : User | u not in u.follows
+inv3 O: all u : User, p : Photo-Ad | p in u.sees implies p in u.follows.posts	all u : User, ad : Ad | ad in u.sees
+inv3 C: all u : User, p : Photo | p in u.sees implies p in u.follows.posts or p in Ad
+inv4 C: all u : User , ad : Ad | ad in u.posts implies u.posts in Ad
+inv5 U: all i : Influencer, u : User | u != i implies i in u.follows
+inv5 S: all i : Influencer - u, u : User | i in u.follows
+inv5 U: all u : User, i : Influencer - u | i in u.follows
+inv5 U: all i : Influencer, u : User | u != i implies i in u.follows
+inv6 C: all i : Influencer, d : Day | d in i.posts.date
+inv7 C: all u : User | u.suggested = (u.follows.follows-u.follows - u)
+inv7 C: all u : User | u.suggested = (u.follows.follows-u.follows - u)
+inv8 C: all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts
+inv8 C: all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts	all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts + u.suggested.posts
+inv8 C: all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts + u.suggested.posts
+

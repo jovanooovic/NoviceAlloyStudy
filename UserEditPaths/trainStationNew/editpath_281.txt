@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 O: one Entry	one Exit
+inv1 T: one Track.Entry	one Track.Exit
+inv1 T: one Entry in Track	one Exit in Track
+inv1 O: one t: Track | t in Entry	one t: Track | t in Exit
+inv1 S: all x:Track | one Entry in x | one Exit in x
+inv1 O: one t: Track | t in Entry and t in Track	one t: Track | t in Exit and t in Track
+inv1 C: some t: Track | t in Entry and t in Track	some t: Track | t in Exit and t in Track
+inv1 C: some t: Track | t in Entry	some t: Track | t in Exit
+inv2 S: Signal in Track.singals
+inv2 S: Signal in Track.singals
+inv2 U: Signal in Track.signals
+inv2 S: all x: Signal | x in one Track
+inv2 T: one Signal in Track
+inv2 S: all x: Signal | x in one Track
+inv2 B: some x: Signal | x in Track.signals
+inv2 S: some x: Signal | x in one Track.signals
+inv2 T: some x: Signal | one Track.signals.x
+inv2 U: all t: Track | t.signals in Track.signals
+inv2 S: all s: Signal | exactly one t: Track | s in t.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+inv3 U: all x: Exit | #(x.succs) = 0
+inv3 S: all x: Track | x in Exit | no x.succs
+inv3 U: all x: Exit | no x.succs
+inv2 C: all s: Signal | one t: Track | s in t.signals
+inv1 C: some t: Track | t in Entry	some t: Track | t in Exit
+inv3 U: all x: Track | #(x.succs) = 0 implies x in Exit
+inv3 U: all x: Track | #(x.succs) = 0 implies x in Exit
+inv3 S: all x: Exit implies no x.succs
+inv3 B: all x: Track - Exit | lone x.succs
+inv4 U: all x: Entry | x not in Track.succs
+inv4 U: all x: Entry | #(succs.x) = 0
+inv4 U: all x: Entry | x not in Track.succs
+inv5 S: all x: Junctions | some a,b: Tracks | x in (a.succs and x in b.succs)
+inv5 S: all x: Junction | some a,b: Tracks | x in (a.succs and x in b.succs)
+inv5 T: all x: Junction | some a,b: Track | x in (a.succs and x in b.succs)
+inv5 U: all x: Junction | some a,b: Track | x in a.succs and x in b.succs
+inv5 B: all x: Junction | some a,b: Track | x in a.succs.next and x in b.succs.next
+inv5 U: all x: Junction | some a,b: Track | x in a.succs and x in b.succs
+inv5 T: all x: Junction | #(succs.^x) > 1
+inv5 U: all x: Junction | #(succs.x) > 1
+inv3 S: all x: Track - Exit | lone x.succs	all x: Track | x not in x^.succs
+inv5 U: all x: Junction | #(succs.x) > 1
+

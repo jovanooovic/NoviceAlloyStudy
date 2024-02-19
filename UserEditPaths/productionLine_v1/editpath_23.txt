@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+Inv1 C: all c:Component | some c.parts
+Inv2 C: all c:Component | c not in c.^parts
+Inv2 U: all c:Component | c not in c.parts
+Inv2 C: all c:Component | c not in c.^parts
+Inv3 T: all c:Component, p:Position | some r:Robot | c.p in position implies r.p in Position
+Inv3 C: all c:Component | some r:Robot | c.position = r.position
+Inv4 T: all c:Component, p:c.parts | c.position < c.prevs
+Inv4 T: all c:Component, p:c.parts | c.position < c.prevs.position
+Inv4 T: all c:Component, p:c.parts | c.position < c.prevs.position
+Inv4 T: all c:Component, p:c.parts | c.position < p.position
+Inv4 T: all c:Component, p:c.parts | c.position > p.position
+Inv4 O: all c:Component, p:c.parts | p in Component implies c.position in p.position.nexts
+Inv4 C: all c:Component, p:c.parts | p in Component implies c.position in p.position.*next
+Inv4 C: all c:Component, p:c.parts & Component | c.position in p.position.*next
+Inv4 C: all c:Component | c.parts.position in c.position.*prev
+

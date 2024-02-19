@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+Inv1 C: no (adj - ~adj )
+Inv2 O: no (adj + ~adj)
+Inv2 C: no (adj & ~adj)
+Inv3 C: all n : Node | n not in n.^adj
+Inv4 U: all n1, n2 : Node | n1 in n2.^adj
+Inv4 C: all n : Node | n.adj = Node
+Inv5 C: all n:Node | n not in n.adj
+Inv7 C: all n : Node | Node = (n.^adj + n)
+Inv8 C: all n1,n2,n3 : Node | (n1->n2 in adj) and (n2->n3 in adj) implies (n1->n3 in adj)
+Inv6 O: all n : Node | Node = (n.^adj + n)
+Inv6 O: all n : Node | Node = (n.^adj + n.^(~adj) + n)
+

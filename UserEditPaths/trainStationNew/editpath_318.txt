@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 U: all t : Track | t.succs = none implies t in Exit
+inv3 B: all t : Track | t.succs = none implies t not in Entry and t not in Junction
+inv3 U: all t : Track | t.succs = none implies t in Exit
+inv3 C: all t : Track | t.succs = none <=> t in Exit
+inv4 U: all t1,t2 : Track | t2 in t1.succs implies t2 not in Entry
+inv4 B: some t1,t2 : Track | t2 in t1.succs implies t1 in Entry
+inv4 S: all t1,t2 in Track | t1 != t2 and t2 in t1.succs implies t1 in Entry
+inv4 B: all t1,t2 : Track | t1 != t2 and t2 in t1.succs implies t1 in Entry
+

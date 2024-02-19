@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+Inv1 T: all u : User |  profile.(u.visible)
+Inv1 B: all u : User | some profile.(u.visible)
+Inv1 S: all u : User | all profile.(u.visible)
+Inv1 O: all u : User | (u.visible) = u.profile
+Inv1 O: all u : User | u.visible = u.profile
+Inv2 O: all u : User | (u.profile) = (source.u + source.Institution)
+Inv1 T: all u : User | u.visible :> u.profile
+Inv1 C: all u : User | u.visible in u.profile
+Inv2 C: all u : User | (u.profile) in (source.u + source.Institution)
+Inv3 T: all u : User | source.(u.profile)
+Inv3 T: all u : User | (u.profile)
+Inv1 C: all u : User | u.visible in u.profile
+Inv1 U: User.visible in User.profile
+

@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv6 T: all d:Day | posts.date.d
+inv6 T: all d:Day | posts.date.d
+inv1 C: all p:Photo | one posts.p
+inv2 C: no (follows & iden)
+inv2 C: all u:User | u->u not in follows
+inv2 C: all u:User | u->u not in follows
+inv8 T: all x:User | x->Ad in sees implies some (follows or suggested)
+inv8 T: all x:User | x->Ad in sees implies some (x.follows or x.suggested)
+inv4 S: all u:User
+

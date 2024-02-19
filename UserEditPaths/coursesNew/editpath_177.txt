@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 O: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 U: all p : Person | (p not in Student implies #(enrolled) = 0) or (p in Student implies #(enrolled) > 0)
+inv1 S: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 S: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 O: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv2 S: all p : Person | all c : Course | c in p.teaches implies p in Professir
+inv2 C: all p : Person | all c : Course | c in p.teaches implies p in Professor
+inv3 B: all c1 : Course | all p1,p2 : Person | c1 in p1.enrolled implies c1 in p2.teaches
+inv3 B: all c1 : Course | all p1,p2 : Person | c1 in p1.enrolled and p1 in Student implies c1 in p2.teaches and p2 in Professor
+inv3 B: all p : Person | all c : Course | c in p.teaches implies p in Professor
+inv3 S: all c : Course |
+inv3 S: all c : Course |
+inv3 S: all c : Course |
+

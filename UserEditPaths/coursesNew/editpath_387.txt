@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv8 U: all x: Professor, y: Course | x in enrolled.y implies x not in teaches.y
+inv11 S: all x: Persona, y : Course | x in y.grades implies x in enrolled.y
+inv11 T: all x: Person, y : Course | x in y.grades implies x in enrolled.y
+inv11 T: all x: Person, y : Course | x in grades.y implies x in enrolled.y
+inv11 T: all x: Person, y : Course | x in enrolled.grades.y
+inv11 T: all x: Person, y : Course | x in grades.y
+inv11 T: all x: Person, y : Course | x in grades
+inv9 E: 
+inv9 E: 
+inv9 E: 
+inv9 E: 
+inv9 E: 
+inv9 U: all x, y: Professor | y not in teaches.x
+inv9 S: all x, y: Professor | x != implies y not in teaches.x
+inv9 U: all x, y: Professor | x != y  implies y not in teaches.x
+inv9 T: all x, y: Professor , z : Course | x != y  implies y not in x.teaches.z
+inv9 U: all x, y: Professor | y not in x.teaches
+inv9 S: all x: Professor | all y: Persona | some z : Course | x in teaches.z and y in enrolled.z implies y not in Professor
+inv9 B: all x: Professor | all y: Person | some z : Course | x in teaches.z and y in enrolled.z implies y not in Professor
+inv9 S: all x: Professor | all y: Person | some z : Course | x in teaches.z and y in enrolled.z implies y not in Professor and y in Studant
+inv9 B: all x: Professor | all y: Person | some z : Course | x in teaches.z and y in enrolled.z implies y not in Professor and y in Student
+

@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 S: all Person.Student
+inv1 S: all Person in Student
+inv1 T: all p: Person | p.Student
+inv1 T: all p: Person | p im Student
+inv1 C: all p: Person | p in Student
+inv2 C: no Teacher
+inv2 C: no Teacher
+inv3 B: all p: Person | p in Student or p in Teacher
+inv3 C: all p1, p2: Person | p1 in Student and p2 in Teacher implies p1 != p2
+inv3 S: none p: Person | p in Student and p in Teacher
+inv3 C: no p: Person | p in Student and p in Teacher
+inv4 C: all p: Person | p in Student or p in Teacher
+inv5 C: some Teacher.Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t: Teacher | some t.Teaches
+inv6 S: all Teacher.Teaches
+NA H: THEME UPDATE
+

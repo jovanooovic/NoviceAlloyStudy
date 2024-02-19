@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 O: all u:Photo | one p:Photo | p in u.posts
+inv1 B: all u:User | one p:Photo | p in u.posts
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv2 C: all u:User | u not in u.follows
+inv3 C: all u:User | all us:u.sees | us in u.follows.posts or us in Ad
+inv3 C: all u:User, p:Photo | p in u.sees implies (p not in Ad) implies p in u.follows.posts || p in Ad
+inv3 T: all u:User, p:Photo | p in u.sees implies (p not in Ad && u.follows.posts) || p in Ad
+inv3 T: all u:User, p:Photo | p in u.sees implies (p not in Ad and u.follows.posts) || p in Ad
+inv3 U: all u:User, p:Photo | p in u.sees implies p in u.follows.posts implies (p not in Ad) || p in Ad
+inv3 C: all u:User, p:Photo | p in u.sees implies (p not in Ad) implies p in u.follows.posts || p in Ad
+inv4 C: all u:User | all a:Ad | a in u.posts implies u.posts in Ad
+inv3 C: all u:User, p:Photo | p in u.sees => (p not in Ad) => (p in u.follows.posts || p in Ad)
+inv4 S: all u:User | (Ad in u.posts) => (u.posts in Ad)
+inv4 S: all u:User | (Ad in u.posts) => (u.posts = Ad)
+inv4 B: all u:User | (Ad in u.posts) => (u.posts = Ad)
+inv4 B: all u:User, a:Ad | a in u.posts implies u.posts not in Ad
+inv4 C: all u:User, a:Ad | a in u.posts implies u.posts in Ad
+inv5 B: all u:User, i:Influencer | i in u.follows
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+inv6 O: all i:Influencer, d:Day | d in i.posts
+inv6 C: all i:Influencer, d:Day | d in i.posts.date
+inv7 C: all u:User | u.suggested = (u.follows.follows) - (u.follows + u)
+inv8 O: all u:User, a:Ad | (a in u.sees) implies (a in u.follows or a in u.suggested)
+inv8 C: all u:User, a:Ad | (a in u.sees) implies (a in u.follows.posts or a in u.suggested.posts)
+

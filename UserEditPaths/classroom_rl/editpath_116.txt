@@ -1,0 +1,151 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 S: no Teachers
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person in (Student + Teacher)
+inv5 U: some Teaches
+inv5 U: some Teacher->Teaches
+inv5 U: some Teaches
+inv5 T: some Teacher.Class
+inv5 C: some Teacher.Teaches
+inv6 T: Teacher in Class.Teacher
+inv6 T: Teacher in ~Class.Teacher
+inv6 O: Teacher in Teaches.Teacher
+inv6 O: Teacher in ~Teaches.Teacher
+inv6 T: Teacher in ~Teaches
+inv6 O: Teacher in ~Teaches.Teacher
+inv6 O: Teacher in ~Teaches.Person
+inv6 T: Teacher & ~Teaches.Person in iden
+inv6 T: (Teacher & ~Teaches.Teacher) in iden
+inv6 B: ~Teaches.Teaches in iden
+inv6 B: Teaches.~Teaches in iden
+inv6 T: Teacher in Teaches.~Teaches
+inv6 T: iden Teacher in Teaches.~Teaches
+inv6 T: iden[Teacher] in Teaches.~Teaches
+inv6 T: all t : Teacher | some t->Class in Teaches
+inv6 B: all t : Teacher | t->Class in Teaches
+inv6 T: all t : Teacher | t->(some Class) in Teacher
+inv6 T: all t : Teacher | some t.Class
+inv6 C: all t : Teacher | some t.Teaches
+inv6 T: ~(Teacher.Teaches).(Teacher.Teaches) in iden
+inv7 B: #(Teacher->Class :> Class) = #Class
+inv7 B: #(Teaches :> Class) = #Class
+inv7 S: #(Teaches :> Class) == #Teaches
+inv7 U: #(Teaches :> Class) = #Teaches
+inv7 B: all c : Class | Teacher->c in Teaches
+inv7 T: all c : Class | some Teacher->c in Teaches
+inv7 T: all c : Class | (some Teacher)->c in Teaches
+inv7 B: ~Teaches.Teaches in iden
+inv7 T: ~(Teacher.Teaches).Teaches in iden
+inv7 B: some Teacher.Teaches
+inv7 C: #(~Teaches.Teacher) >= #Class
+inv7 B: Teacher in ~Teaches.Teacher
+inv7 B: Teacher in Teaches.Class
+inv7 C: Class in ~Teaches.Teacher
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 O: ~Teaches.Teaches in iden and Teaches.~Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 B: ~Teaches.Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 T: (Teacher.Teaches).~Teaches in iden
+inv9 T: Teacher & ((Teacher.Teaches).~Teaches) in iden
+inv9 T: iden(Teacher) & (Teaches.~Teaches) in iden
+inv9 T: iden[Teacher] & (Teaches.~Teaches) in iden
+inv9 O: (Teaches.~Teaches) in iden
+inv9 T: (Teaches.~Teaches).Teacher in iden
+inv9 T: Teacher.(Teaches.~Teaches) in iden
+inv9 O: (Teacher <: Teaches).~Teaches in iden
+inv9 U: (Teacher <: Teaches).~(Teaches :> Teacher) in iden
+inv9 O: (Teacher <: Teaches).~(Teaches) in iden
+inv9 S: ((Teacher + Students) <: Teaches).~(Teaches) in iden
+inv9 O: ((Teacher + Student) <: Teaches).~(Teaches) in iden
+inv9 O: (Teaches).~(Teaches) in iden
+inv9 O: all c : Class | lone (Teacher->c)
+inv9 O: all c : Class | #(Teacher->c) < 2
+inv9 O: all c : Class |  lone Teaches.c
+inv9 T: (Teacher <: Teaches)
+inv9 O: (Teacher <: Teaches).(~Teaches) in iden
+inv9 U: (Teacher <: Teaches).(~(Teaches :> Teacher)) in iden
+inv9 C: (Teacher <: Teaches).(~(Teacher <: Teaches)) in iden
+inv9 T: (Teacher <: Teaches).(~Teacher <: Teaches) in iden
+inv9 C: (Teacher <: Teaches).~(Teacher <: Teaches) in iden
+inv10 C: Class->Student in Groups.Group
+inv10 C: Class->Student in Groups.Group
+inv10 B: some Class->Student & Groups.Group
+inv11 B: all t : Teacher, c : Class | t->c in Teaches => some c.Groups
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 T: all c : Class | no Teaches.c => no c.Person.Groups.Group
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 S: all c : Class, some p : Person | no Teaches.c => c->p->Group
+inv11 S: all c : Class | some p : Person | no Teaches.c => c->p->Group
+inv11 S: all c : Class | some p : Person | no Teaches.c => c->p->Group)
+inv11 S: all c : Class | some p : Person | no Teaches.c => c->p->Group in Groups)
+inv11 B: all c : Class | some p : Person | no Teaches.c => c->p->Group in Groups
+inv11 B: all c : Class | some p : Person | no Teaches.c => c->p->Group not in Groups
+inv11 O: all c : Class | some t : Teacher | t->c not in Teaches => no c.Groups
+inv11 O: all c : Class | some t : Teacher | t->c not in Teaches => no Groups
+inv11 B: all c : Class | some t : Teacher | t->c not in Teaches => no Groups.c
+inv11 B: all c : Class | some t : Teacher | t->c in Teaches => some Groups
+inv11 B: all c : Class | some t : Teacher | t->c in Teaches => some c.Groups
+inv12 U: all t : Teacher | some c : Class | t->c in Teaches
+inv12 U: all t : Teacher | some c : Class | t->c in Teaches and some c->Person->Group
+inv12 C: all t : Teacher | some c : t.Teaches | some c.Groups
+inv13 C: all p : Person, t : p.Tutors | p->t in Tutors => p in Teacher && t in Student
+inv11 U: all c : Class | some c.Groups => some Teaches.c
+inv11 B: all c : Class | some Teaches.c => some c.Groups
+inv11 B: all c : Class | some Teaches.c => some c.Groups
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 B: all c : Class | no Teaches.c <=> no c.Groups
+inv15 T: Teacher in ^Tutors
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 B: all c : Class | no Teaches.c => no c->Person->Group
+inv11 T: all c : Class | no Teaches.c => c.Group not in Groups
+inv11 B: all c : Class | no Teaches.c => c->Person->Group not in Groups
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 T: all c : Class | no Teaches.c => c.Person.Group not in Groups
+inv11 T: all c : Class | no Teaches.c => (c.Person.Group not in Groups)
+inv11 B: all c : Class | no Teaches.c => (c->Person->Group not in Groups)
+inv11 U: all c : Class | no Teaches.c => no (c->Person->Group & Groups)
+inv11 U: all c : Class | no Teaches.c => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no Teacher & Teaches.c => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no (Teacher & Teaches.c) => no (c->Student->Group & Groups)
+inv11 S: all c : Class | no (Teacher & (Teacher <: Teaches.c) => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no (Teacher & (Teacher <: Teaches.c)) => no (c->Student->Group & Groups)
+inv11 S: all c : Class | no Teacher <: Teaches.c) => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no Teacher <: Teaches.c => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no (Teacher <: Teaches.c) => no (c->Student->Group & Groups)
+inv11 B: all c : Class | no (Teacher <: Teaches.c) => (c->Student->Group not in Groups)
+inv11 U: all c : Class | no (Teacher <: Teaches.c) => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no ((Teacher <: Teaches).c) => no (c->Student->Group & Groups)
+inv11 U: all c : Class | no (Teacher <: Teaches).c => no (c->Student->Group & Groups)
+inv11 C: all c : Class | no (Teacher <: Teaches).c => no c.Groups
+inv11 C: all c : Class | no (Teacher <: Teaches).c => no c.Groups
+inv11 U: all c : Class | no Teaches.c => no c.Groups
+inv11 C: all c : Class | no (Teacher <: Teaches).c => no c.Groups
+inv12 S: all t : Techer | some (t.Teaches.Groups)
+inv12 C: all t : Teacher | some (t.Teaches.Groups)
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv13 T: Teacher in (Teacher <: Teaches) and Student in (Teaches :> Student)
+inv13 C: Person.Tutors in Student and Tutors.Person in Teacher
+inv15 O: some t : Teacher | some ^Teaches.t
+inv15 B: some t : Teacher | some t.^Teaches
+inv15 T: some t : Teacher | t in (t.^Teaches).Teacher
+inv15 O: some t : Teacher | t in (^Teaches).Teacher
+inv15 O: some t : Teacher | t in Teacher.(^Teaches)
+inv14 B: all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.Teaches)
+inv14 B: all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.Tutors)
+inv14 B: all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.(Tutors :> Student))
+inv14 B: all c : Class, t : Teacher | t->c in Teaches => (all s : Student | c->s->Group in Groups => s in t.(Tutors :> Student))
+inv14 B: all c : Class, t : Teaches.c | all s : Student | some g : Group | c->s->g in Groups => s in t.Tutors
+inv14 B: all c : Class, t : Teaches.c | all s : Student | some g : Group | c->s->g in Groups and s in t.Tutors
+inv14 C: all c : Class, s : c.Groups.Group | (all t : Teaches.c | s in t.Tutors)
+inv14 U: all c : Class, s : c.Groups.Group | (all t : (Teacher <: Teaches.c) | s in t.Tutors)
+inv14 S: all c : Class, s : c.Groups.Group | (all t : (Teacher <: Teaches.c) | t->s Tutors)
+inv14 S: all c : Class, s : c.Groups.Group | (all t : (Teacher <: Teaches).c | t->s Tutors)
+inv14 T: all c : Class, s : c.Groups.Group | all t : (Teacher <: Teaches).c | t->s Tutors
+inv14 T: all c : Class, s : c.Groups.Group | all t : (Teaches).c | t->s Tutors
+inv14 T: all c : Class, s : c.Groups.Group | all t : (Teacher :> Teaches).c | t->s in Tutors
+inv14 U: all c : Class, s : c.Groups.Group | all t : (Teacher <: Teaches).c | t->s in Tutors
+inv14 C: all c : Class, s : c.Groups.Group | all t : Teaches.c | t->s in Tutors
+

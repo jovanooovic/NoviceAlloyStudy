@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 U: all w : Workstation | some t : Worker | w->t in workers
+inv2 U: all w : Workstation | some t : Worker | w->t in workers	all t : Worker | some w : Workstation | w->t in workers
+inv2 B: all w : Workstation | all t : Worker | w->t in workers
+inv2 U: all w : Workstation | some t : Worker | w->t in workers and	all t : Worker | some w : Workstation | w->t in workers
+inv2 C: (all w : Workstation | some t : Worker | w->t in workers) and (all t : Worker | one w : Workstation | w->t in workers)
+inv3 C: all c : Component | one w : Workstation | c->w in workstation
+inv4 C: (all c : Component | some p : Product | c->p in parts) and (all m : Material | all p : Product | m->p not in parts)
+inv5 C: all h : Human | all r : Robot | all w : Workstation | (w->h in workers implies w->r not in workers) or (w->r in workers implies w->h not in workers)
+inv6 S: all a,b : Component | a=b implies a->b not in partes
+inv6 U: all a,b : Component | a=b implies a->b not in parts
+inv6 S: all a,b : Component | a==b implies a->b not in parts
+inv6 U: all a,b : Component | a=b implies a->b not in parts
+inv6 U: all c : Component | all p : Product | p->c in parts implies p!=c
+inv7 C: all d : Dangerous | all c : Component | c->d in parts implies c in Dangerous
+inv6 U: all p : Product | all m : Material | all c : Component | (p->m in parts implies p not in Component) or (p->c in parts implies p not in Material)
+inv6 U: all a : Component | all b : Component | a->b in parts implies b->a not in parts
+inv6 U: all a : Component | all b : Component | (a->b in parts implies b->a not in parts) and (b->a in parts implies a->b not in parts)
+inv6 U: all a : Component | all b : Component | a=b implies (a->b not in parts and b->a not in parts)
+inv8 S: all c : Component | some d : Dangerous | c->d in parts implies (c->z in workers and z in Robot)
+inv8 B: all c : Component | some d : Dangerous | c->d in parts implies (some w : Worker | c->w in workers and w in Robot)
+inv8 B: all c : Component | some d : Dangerous | c->d in parts implies (all w : Worker | c->w in workers implies w in Robot)
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ)
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ and k in end)
+inv9 B: all w : Workstation | (w in begin implies (some k : Workstation | w->k in succ and k in end)) or (w in begin and w in end)
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ and (k in end or (k not in end and k not in begin)))
+

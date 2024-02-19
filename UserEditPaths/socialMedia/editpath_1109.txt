@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one posts.p
+inv2 S: no ident & follows
+inv2 C: no iden & follows
+inv3 O: all u : User | u.sees = Ad + u.follows.posts
+inv3 C: all u : User | u.sees in Ad + u.follows.posts
+inv4 C: (posts.Ad).posts in Ad
+inv5 B: follows.Influencer = User
+inv5 B: all i : Influencer | i.follows = User - i
+inv5 C: all i : Influencer | follows.i = User - i
+inv6 C: Influencer -> Day in posts.date
+inv7 B: suggested = follows.follows - follows
+inv7 C: suggested = follows.follows - follows - iden
+inv8 S: all u : User | (u.sees & Ad) in (u.followed + u.suggested).posts
+inv8 C: all u : User | (u.sees & Ad) in (u.follows + u.suggested).posts
+inv8 T: sees.(Ad & iden) = (suggested + follows).posts
+inv8 O: sees.(Ad->Ad & iden) = (suggested + follows).posts
+inv8 T: sees.(Ad->Ad & iden) = (suggested + follows).posts & Ad
+inv8 C: sees.(Ad->Ad & iden) in (suggested + follows).posts
+inv8 C: sees & (univ -> Ad) in (suggested + follows).posts
+

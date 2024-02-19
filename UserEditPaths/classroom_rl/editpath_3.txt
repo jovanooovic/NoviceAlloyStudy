@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person = Student + Teacher
+inv5 S: some c : Class, t : Teacher, g: Group c->t->g in groups
+inv5 S: some c : Class, t : Teacher, g: Group | c->t->g in groups
+inv5 B: some c : Class, t : Teacher, g: Group | c->t->g in Groups
+inv5 U: some Teaches
+inv5 B: Class->Teacher->Group in Groups
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and noy inv5o}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and noy inv5o
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5OK}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5OK
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5ok}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5ok
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv50K}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv50K
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5O}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5O
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5o
+inv5 S: Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o
+inv13 B: Teaches in Teacher->Student
+inv13 S: Teacher.Tutor = Person.Tutor and Student.Tutored = Person.Tutored
+inv13 S: Teacher.Tutors = Person.Tutors and Student.Tutored = Person.Tutored
+inv13 U: Teacher.Tutors = Person.Tutors and Tutors.Student = Tutors.Person
+inv13 T: Teacher.Tutors.Student = Tutors
+inv13 C: Teacher<:Tutors:>Student = Tutors
+inv13 S: Teacher<:Tutors:>+Student = Tutors
+inv13 E: 
+inv5 S: Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+

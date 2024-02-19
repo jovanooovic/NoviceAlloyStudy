@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 O: one Entry and one Exit
+inv1 O: some Entry and one Exit
+inv1 U: some Entry or one Exit
+inv1 O: some Entry and one Exit
+inv2 C: all s : Signal | one t : Track | t in signals.s
+inv3 S: all
+inv1 C: some Entry and some Exit
+inv3 S: all t:Track | no t.succs implies t in Sucessor
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 U: all t:Track | t in Exit implies no t.succs
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 B: all t:Track | no succs.t implies t in Exit
+inv3 C: all t:Track | no t.succs iff t in Exit
+inv4 S: all t : Track | no succs.t iff in Entry
+inv4 C: all t : Track | no succs.t iff t in Entry
+

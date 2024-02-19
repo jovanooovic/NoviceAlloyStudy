@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 S: all t:track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)
+inv1 T: all t:Track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)
+inv1 B: all t:Track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.*succs+*succs.t)>0 and #Entry&(t.*succs+*succs.t)>0
+inv2 S: all s:Signal |
+inv1 B: all t:Track | #Exit&(t.succs)>0 and #Entry&(t.succs)>0
+inv1 B: all t:Track | #Exit&(t.succs+succs.t)>0 and #Entry&(t.succs+succs.t)>0
+inv2 C: all s:Signal | #signals.s=1
+inv1 B: all t:Track | #Exit&(t.^succs)>0 and #Entry&(^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.*succs)>0 and #Entry&(*succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(*succs.t+t)>0
+inv3 U: all e:Exit | no e.succs
+inv3 S: all t:Track | t in Exit <=> no t.succ
+inv3 C: all t:Track | t in Exit <=> no t.succs
+inv4 S: all t:Track | t in Entry <=> no succ.t
+inv1 B: all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(^succs.t+t)>0
+inv4 C: all t:Track | t in Entry <=> no succs.t
+inv5 S: all t:Track | t in Junction <=> #succ.t>1
+inv5 S: all t:Track | t in Junction <=> #succ.t>1
+inv7 S: all t:track | t not in ^succs.t and t not in t.^succs
+inv1 U: all t:Track | #Entry > 0 and #Exit >0
+inv1 C: #Entry > 0 and #Exit >0
+inv4 C: all t:Track | t in Entry <=> no succs.t
+inv5 C: all t:Track | t in Junction <=> #succs.t>1
+inv6 B: all t:Track | #t.signals>0
+inv6 U: all t:Entry | #t.signals>0
+inv6 C: all t:Entry | #t.signals&Speed>0
+inv7 C: all t:Track | t not in ^succs.t and t not in t.^succs
+inv8 S: all e:Entry | Exit in e.^succ
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 C: all e:Entry | Exit in e.*succs
+inv9 S: all t:Track | no Junction&t.succ implies no t.singals#Semaphore
+inv9 S: all t:Track | no Junction&t.succs implies no t.singals#Semaphore
+inv9 T: all t:Track | no Junction&t.succs implies no t.signals#Semaphore
+inv8 C: all e:Entry | Exit in e.*succs
+inv9 C: all t:Track | no Junction&t.succs implies no t.signals&Semaphore
+inv10 C: all t:Track | not no Junction&t.succs implies not no t.signals&Semaphore
+NA H: THEME UPDATE
+

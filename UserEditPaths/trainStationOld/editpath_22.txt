@@ -1,0 +1,113 @@
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+prop1 C: no s:Green| s in Signal
+prop2 C: all s:Signal | eventually s in Green
+prop4 C: always all disj t1,t2:Train | no (t1.pos & t2.pos )
+prop5 E: 
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos.prox')	always (t.pos in Track-Exit  implies  t.pos' in t.pos.prox'  )	}
+prop5 U: all t:Train| {	always (t.pos in Exit  implies no t.pos.prox')		}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')		}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')		}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Track-Exit  implies  t.pos' in t.pos.prox  )	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Entry  implies  t.pos' in t.pos.prox  )	}
+prop5 B: always  all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Track-Exit  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Track-Exit  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Entry  implies  t.pos' in t.pos.prox)	}
+prop6 S: always (all s:Signal | eventually )
+prop6 S: always (all s:Signal | eventually )
+prop6 C: always (all s:(Signal-Green)  | eventually s in Green)	always (all s:Green  | eventually s in (Signal-Green))
+prop7 U: always (all t :Train|t in Entry implies  eventually  t.pos in Exit)
+prop7 U: always (all t :Train|t.pos in Entry implies  eventually  t.pos in Exit)
+prop8 B: all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') implies  ((t.pos.signal) in Green)
+prop8 B: all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') and  ((t.pos.signal) in Green)
+prop8 O: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') and  ((t.pos.signal) in Green))
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Entry  implies eventually t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Entry  implies eventually t.pos' in t.pos.prox)	}
+prop7 C: always ( all t:Train | some t.pos  implies eventually no t.pos )
+prop7 C: always ( all t:Train | some t.pos implies eventually no t.pos )
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Track  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies no t.pos')	always (t.pos in Track  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies eventually no t.pos')	always (t.pos in Track  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies eventually no t.pos')	always (t.pos in (Track-Exit)  implies  t.pos' in t.pos.prox)	}
+prop5 B: all t:Train| {	always (t.pos in Exit  implies eventually no t.pos)	always (t.pos in (Track-Exit)  implies  t.pos' in t.pos.prox)	}
+prop8 B: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') since  ((t.pos.signal) in Green))
+prop8 B: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies (some t.pos') implies  ((t.pos'.signal) in Green))
+prop8 S: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies some t.pos.rox and (some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |(t.pos.signal)  in (Signal-Green) implies some t.pos.prox and (some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |some t.pos and (t.pos.signal)  in (Signal-Green) implies some t.pos.prox and (some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |(some t.pos and  some t.pos.signal) and (t.pos.signal)  in (Signal-Green) implies some t.pos.prox and (some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |(some t.pos and  some t.pos.signal and some t.pos.prox) and (t.pos.signal)  in (Signal-Green) implies(some t.pos') since  ((t.pos'.signal) in Green))
+prop8 B: always (all t:Train |( (some t.pos and  some t.pos.signal and some t.pos.prox) and (t.pos.signal)  in (Signal-Green) ) implies(some t.pos') since  ((t.pos'.signal) in Green))
+prop8 S: always (all t:Train | (some t.pos and  some t.pos.signal and some t.pos.prox) and ((t.pos.signal)  in (Signal-Green)  implies (some t.pos') since  eventually((t.pos.signal) in Green))
+prop8 B: always (all t:Train | (some t.pos and  some t.pos.signal and some t.pos.prox) and ((t.pos.signal)  in (Signal-Green)  implies (some t.pos') since  eventually ((t.pos.signal) in Green)))
+prop8 B: always (all t:Train | (some t.pos.signal and some t.pos.prox) and ((t.pos.signal)  in (Signal-Green)  implies eventually (some t.pos) since  ((t.pos.signal) in Green)))
+prop8 O: always (all t:Train | (some t.pos.signal and some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies  (t.pos in t.pos.prox) since  ((t.pos.signal) in Green)))
+prop8 S: always (all t:Train | (some t.pos.signal and some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies ((t.pos in t.pos.prox) since  (t.pos.signal in Green))
+prop8 S: always (all t:Train | (some t.pos.signal and some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies ((t.pos in t.pos.prox) since  (t.pos.signal in Green) ))
+prop8 O: always (all t:Train | (some t.pos.signal and some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies ((t.pos in t.pos.prox) since  (t.pos.signal in Green) )))
+prop8 O: always (all t:Train | (some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies ((t.pos in t.pos.prox) since  (t.pos.signal in Green) )))
+prop8 B: always (all t:Train | (some t.pos.prox) and ( (t.pos.signal)  in (Signal-Green)  implies before ((t.pos in t.pos.prox) since  (t.pos.signal in Green) )))
+prop8 C: always ( all t:Train | some t.pos.signal and (t.pos.signal  in Signal-Green) implies t.pos' = t.pos )
+prop9 S: always ( all t:Train | eventually
+prop9 S: always ( all t:Train | eventually
+prop8 T: always ( all t:Train | some (t.pos.signal  in Signal-Green) implies t.pos' = t.pos )
+prop8 O: always ( all t:Train |  (t.pos.signal  in Signal-Green) implies t.pos' = t.pos )
+prop9 S: always ( all t:Train | eventually t.pos in Entry
+prop9 B: always ( all t:Train | eventually t.pos in Entry)
+prop9 S: always (no t:Trains | eventually no t.pos in Track-Entry)
+prop9 T: always (no t:Train | eventually no t.pos in Track-Entry)
+prop9 S: always (no t:Train | eventually no (t.pos in Track-Entry)
+prop9 T: always (no t:Train | eventually no (t.pos in Track-Entry))
+prop9 B: always ( all t:Train | eventually (t.pos in Entry))
+prop9 B: always ( all t:Train |some t.pos and eventually (t.pos in Entry))
+prop9 B: always ( all t:Train | eventually (t.pos in Entry))
+prop9 S: always ( all t:Train |some t.pos eventually (t.pos in Entry))
+prop9 S: always ( all t:Train |(some t.pos) eventually (t.pos in Entry))
+prop9 S: always ( all t:Train |(some t.pos) eventually (t.pos in Entry) )
+prop9 B: always ( all t:Train |(some t.pos) and eventually (t.pos in Entry) )
+prop9 B: always ( all t:Train |(no prox.t) and eventually (t.pos in Entry) )
+prop9 O: always ( all t:Train |before (no prox.t) and eventually (t.pos in Entry) )
+prop9 B: always ( all t:Train |eventually (before (no prox.t) and after (t.pos in Entry) ))
+prop9 S: eventually Trains.pos in Entry
+prop9 U: eventually Train.pos in Entry
+prop9 B: always eventually Train.pos in Entry
+prop9 U: always ( all t:Train |no t.pos implies  eventually (t.pos in Entry) )
+prop9 B: always ( all t:Train |no t.pos implies  eventually ( some t.pos and t.pos in Entry) )
+prop9 U: ( all t:Train |no t.pos implies  eventually ( some t.pos and t.pos in Entry) )
+prop9 U: (all t:Train |no t.pos implies  eventually ( some t.pos and t.pos in Entry) )
+prop9 U: (all t:Train | eventually ( some t.pos and t.pos in Entry) )
+prop9 S: (all t:Train |some (t.pos.prox & Entry ) eventually ( some t.pos and t.pos in Entry) )
+prop9 U: (all t:Train |some (t.pos.prox & Entry )implies  eventually ( some t.pos and t.pos in Entry) )
+prop9 U: always (all t:Train |some (t.pos.prox & Entry )implies  eventually ( some t.pos and t.pos in Entry) )
+prop9 S: (all t:Train |implies  eventually (some (t.pos.prox & Entry ) and some t.pos and t.pos in Entry) )
+prop9 B: (all t:Train | no t.pos implies  eventually (some (t.pos.prox & Entry ) and some t.pos and t.pos in Entry) )
+prop9 O: (all t:Train |    eventually (some (t.pos.prox & Entry ) and some t.pos and t.pos in Entry) )
+prop9 U: (all t:Train |  eventually ( some t.pos and t.pos in Entry) )
+prop9 S: all t:Train |  eventually ( some t.pos & Entry) )
+prop9 U: all t:Train |  eventually ( some t.pos & Entry)
+prop9 O: all t:Train |  eventually ( some t.pos & Entry)  and before no t.pos
+prop9 O: all t:Train | before no t.pos and eventually ( some t.pos & Entry)
+prop9 O: all t:Train | t.pos not in Entry and  before no t.pos and eventually ( some t.pos & Entry)
+prop9 U: all t:Train | t.pos not in Entry implies before no t.pos and eventually ( some t.pos & Entry)
+prop9 U: all t:Train | some Track and t.pos not in Entry implies before no t.pos and eventually ( some t.pos & Entry)
+prop9 U: all t:Train | some Track and (t.pos not in Entry implies before no t.pos and eventually ( some t.pos & Entry)   )
+prop9 O: all t:Train | some t.pos and (t.pos not in Entry implies before no t.pos and eventually ( some t.pos & Entry)   )
+prop10 S: always (all j:Junction | some prox.j and lone((prox.j).signal :>   Green )
+prop10 O: always (all j:Junction | some prox.j and lone((prox.j).signal :>   Green ))
+prop10 C: always (all j:Junction | lone((prox.j).signal :> Green))
+prop10 C: always (all j:Junction |  lone((prox.j).signal :> Green))
+prop10 C: always (all j:Junction |  lone((prox.j).signal :> Green))
+prop12 S: always ( all t:Train| historically some t.pos and
+prop11 O: always ( all t:Train| some t.pos and historically t.pos in Entry)
+prop11 O: always ( all t:Train| some t.pos and historically t.pos in Entry)
+prop11 O: always ( all t:Train| some t.pos and once t.pos in Entry)
+prop11 U: always ( all t:Train| some t.pos implies  once t.pos in Entry)
+prop11 C: always ( all t:Train | some t.pos implies once some t.pos :> Entry)
+prop11 T: always ( all t:Train| some t.pos implies  once some t.pos in Entry)
+prop11 T: always ( all t:Train| some t.pos implies  once some t.pos = Entry)
+prop11 C: always ( all t:Train| some t.pos implies  once some t.pos :> Entry)
+prop11 T: always ( all t:Train | some t.pos implies once  t.pos :> Entry)
+prop11 C: always ( all t:Train| some t.pos implies  once ( some t.pos and t.pos in Entry) )
+prop11 C: always ( all t:Train | some t.pos implies once some t.pos :> Entry)
+

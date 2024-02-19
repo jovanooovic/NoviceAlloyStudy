@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 T: all x: Photo | x in User.x
+inv1 U: all x: Photo | x in User.posts
+inv1 C: all p: Photo | one u: User | p in u.posts
+inv1 T: all p: Photo | one (p in User.posts)
+inv1 C: all p: Photo | one u: User | p in u.posts
+inv1 U: all x: Photo | x in (one User.posts)
+inv1 B: all x: Photo | x in (one User.posts) && #User.posts=1
+inv1 C: all x: Photo | one y: User | x in y.posts
+inv2 S: all x: user | no x.follow
+inv2 S: all x: user | no x.follows
+inv1 C: all x: Photo | one y: User | x in y.posts
+inv2 O: all x: User | no x.follows
+inv2 T: all x: User | no x in x.follows
+inv2 B: all i: Influencer | i.posts in i.sees
+inv2 U: all x: User | x not in x.posts
+inv2 C: all u: User | u not in u.follows
+inv1 C: all x: Photo | one y: User | x in y.posts
+inv2 C: all u: User | u not in u.follows
+inv3 O: all x: User | all p: Photo | x in x.sees
+inv3 T: all x: User | all p: Photo | one (x in x.sees)
+inv3 S: forall u: User, p: Photo |	(p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 S: forall u: User, p: Photo | (p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 S: all u: User, p: Photo | (p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 B: all u: User, p: Photo | (p in u.sees)
+inv3 B: all u: User, p: Photo | (p in u.sees) => (p in u.posts) or (p in Ad)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User | u.sees in u.posts
+inv3 E: 
+inv3 E: 
+

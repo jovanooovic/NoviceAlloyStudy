@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv4 S: all x : User | one x.posts in Adds -> all x.posts in Adds
+inv4 S: all x : User | one x.posts in Ad -> all x.posts in Ad
+inv4 S: all x : User | one (x.posts in Ad) -> all (x.posts in Ad)
+inv4 S: all x : User | one (x.posts & Ad) -> all (x.posts & Ad)
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies (all x.posts in Ad)
+inv3 S: all x : User | x.sees in (x.follws.posts + Ad)
+inv4 T: all x : User | one x.posts in Ad
+inv3 S: all x : User | x.sees in (x.foll0ws.posts + Ad)
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+inv4 E: 
+inv4 S: all x : User | one (x.posts & Ad) -> all (x.posts  Ad)
+inv4 B: all x : User | one (x.posts & Ad)
+inv4 S: all x : User | (one x.posts) in Ad implies (all x.posts) in Ad
+inv4 S: all x : User | (one x.posts in Ad) implies (all x.posts in Ad)
+inv4 T: all x : User | (one x.posts in Ad) implies ( x.posts in Ad)
+inv4 U: all x : User | (one x.posts & Ad) implies (x.posts in Ad)
+inv4 C: all x : User | (some x.posts & Ad) implies (x.posts in Ad)
+inv4 S: all x : User | (some x.posts & Ad) implies (all x.posts in Ad)
+inv4 C: all x : User | (some x.posts & Ad) implies (x.posts in Ad)
+inv5 T: all x : Influencer | follows.User
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 U: all x : User-Influencer | all y : Influencer | y in x.follows
+inv5 B: all x : Influencer | all y : User | x in y.follows
+inv5 B: all x : Influencer | all y : User | x in y.follows
+inv5 U: all x : Influencer | all y : User-x | x in y.follows
+inv7 S: all x : User | x.suggested in (x.follows.follows and not in x.follows)
+inv7 S: all x : User | x.suggested in (x.follows.follows and not in x.follows)
+inv7 U: all x : User | x.suggested in (x.follows.follows - x.follows)
+inv5 U: all x : Influencer | all y : User-x | x in y.follows
+inv7 B: all x : User | x.suggested in (x.follows.follows) and x.suggested not in x.follows
+inv7 B: all x : User | x.suggested in x.follows.follows and x.suggested not in x.follows
+inv7 S: all x : User | x.suggeste not in x.follows
+inv7 B: all x : User | x.suggested not in x.follows
+inv7 B: all x : User | x.suggested not in x.follows and x.suggested in x.follows.follows
+inv7 B: all x : User | x.suggested not in x.follows and x.suggested in x.follows.follows
+inv8 C: all x : User | x.sees&Ad in (x.follows.posts + x.suggested.posts)
+inv7 B: all x : User | x.suggested not in x.follows
+inv7 B: all x : User | x.suggested not in x.follows
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows-x
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows
+inv6 T: all x : Influencer | all y : Day | some x.posts in y
+inv6 T: all x : Influencer | all y : Day | some x.posts.date in y
+inv6 T: all x : Influencer | all y : Day | (some x.posts.date) in y
+inv6 C: all x : Influencer | all y : Day | some x.posts.date&y
+

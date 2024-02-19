@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 O: all s:State | one s . trans
+inv1 C: all s:State | some s . trans
+inv2 C: one Init
+inv3 T: trans in Event some -> one State
+inv3 T: trans in Event some -> one State
+inv3 O: State.trans in Event some -> one State
+inv3 O: State.trans in Event  -> one State
+inv3 O: all s:State, e:Event | some (s->e).trans
+inv3 O: all s:State, e:Event | some s.trans.e
+inv3 O: all s:State, e:Event | some s.trans.e
+inv3 B: all s:State, e:Event | some e.(s.trans)
+inv4 T: all s:State | s in Init.*trans
+inv4 B: all s:State | s in Init.*(s.trans)
+inv4 T: all s:State | s in Init.*(State.trans.State)
+inv4 T: all s:State | s in Init.*(State.trans.Event)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv4 T: all s:State | s in Init.*(Event.State.trans)
+inv5 O: not some disj s1, s2:State | (s1.trans) != (s2.trans)
+inv5 C: not some disj s1, s2:State | (s1.trans).State != (s2.trans).State
+inv6 T: all e:Event| some s:State | some s.~trans.e
+inv6 T: all e:Event| some s:State | some e.s.trans
+inv6 C: all e:Event| some s:State | some e.(s.trans)
+inv4 O: all s:State | s in Event.*(Init.trans)
+

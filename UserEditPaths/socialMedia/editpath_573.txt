@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv5 U: all x : User - Influencer | all y : Influencer | x in follows.y
+inv5 U: all u : User| all i : Influencer | u != i implies u in follows.i
+inv6 S: all i : Influencer | all d : Day | some p : Post | i in posts.p and d in p.day
+inv6 S: all i : Influencer | all d : Day | some p : Photo | i in posts.p and d in p.day
+inv6 C: all i : Influencer | all d : Day | some p : Photo | i in posts.p and d in p.date
+inv7 S: all u,y : User | x in suggested.y implies y in u.follows.follows and y not in u.follows
+inv7 U: all x,y : User | x in suggested.y implies y in x.follows.follows and y not in x.follows
+inv7 C: all x,y : User | x in suggested.y iff (y in x.follows.follows and y not in x.follows and x != y )
+inv7 U: all x,y : User | x in suggested.y implies (y in x.follows.follows and y not in x.follows and x != y )
+inv7 C: all x,y : User | x in suggested.y iff (y in x.follows.follows and y not in x.follows and x != y )
+inv7 B: all x,y : User | x in suggested.y iff (y in x.follows and y not in x.follows and x != y )
+inv8 S: all u : User | all a : ads | u in sees.a implies	( one y : User | y in posts.a and	(u in follows.y ) or	(y in suggested.x)	)
+inv8 S: all u : User | all a : Ad | u in sees.a implies	( one y : User | y in posts.a and	(u in follows.y ) or	(y in suggested.x)	)
+inv8 B: all u : User | all a : Ad | u in sees.a implies	( one y : User | y in posts.a and	(u in follows.y ) or	(y in suggested.u)	)
+inv8 B: all u : User | all a : Ad | u in sees.a implies	( some y : User | y in posts.a and	(u in follows.y ) or	(y in suggested.u)	)
+inv8 B: all u : User | all a : Ad | u in sees.a implies	( some y : User | a in posts.y and	(u in follows.y ) or	(y in suggested.u)	)
+inv8 B: all u : User | all a : Ad | u in sees.a implies	( some y : User | a in y.posts and	(u in follows.y ) or	(y in suggested.u)	)
+inv8 U: all u : User | all a : Ad | u in sees.a implies	( some y : User | a in y.posts and	(y in u.follows ) or	(y in u.suggested)	)
+inv8 C: all u : User | all a : Ad | u in sees.a implies	( some y : User | a in y.posts and(	(y in u.follows ) or	(y in u.suggested)	)	)
+

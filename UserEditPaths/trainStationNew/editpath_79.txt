@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 C: some Entry	some Exit
+inv2 C: all s : Signal | one signals.s
+inv3 C: all t : Track | t in Exit iff no t.succs
+inv4 C: all t : Track | t in Entry iff no succs.t
+inv5 C: all t : Track | t in Junction iff some p1, p2 : succs.t | p1 != p2
+inv6 C: all e : Entry | some e.signals & Speed
+inv7 C: no ^succs & iden
+inv8 C: all e : Entry | Exit in e.*succs
+inv9 E: 
+inv9 B: all t : Track | t.succs not in Junction implies no t.signals & Semaphore
+inv9 B: all t : Track | t.succs not in Junction iff no t.signals & Semaphore
+inv9 C: all t : Track | no t.succs & Junction implies no t.signals & Semaphore
+inv9 U: no Track.succs & Junction implies no Track.signals & Semaphore
+inv10 B: all t : Track | some t.succs & Junction implies Semaphore in t.signals
+inv10 O: all t : Track | some t.succs & Junction implies one Semaphore & t.signals
+inv10 S: all t : Track | some t.succs & Junction implies some t.signals & Semaphore	}
+inv10 S: all t : Track | some t.succs & Junction implies some t.signals & Semaphore	}
+inv10 S: all t : Track | some t.succs & Junction implies one t.signals & Semaphore	}
+inv10 O: all t : Track | some t.succs & Junction implies one t.signals & Semaphore
+inv10 C: all t : Track | some t.succs & Junction implies some t.signals & Semaphore
+inv10 O: all t : Track | some t.succs & Junction iff some t.signals & Semaphore
+inv10 C: all t : Track | some t.succs & Junction implies some t.signals & Semaphore
+

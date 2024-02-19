@@ -1,0 +1,65 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv8 U: all p: Professor | no p.teaches&p.enrolled
+inv12 U: all s: Student, c: Course | c in s.enrolled implies lone ~(c.grades).s
+inv14 U: all s1,s2: Student | s1 != s2 implies lone s1.projects&s2.projects
+inv14 U: all disj s1,s2: Student | lone s1.projects&s2.projects
+inv14 U: all disj s1,s2: Student | lone s1.projects&s2.projects
+inv13 B: all c: Course | some c.projects&c.grades.last.projects
+inv9 B: all disj p1,p2: Professor | p1.teaches in p2.teaches implies p1.teaches not in p2.enrolled
+inv9 B: all disj p1,p2: Professor | p1.teaches&p2.teaches not in p2.enrolled
+inv9 B: all disj p1,p2: Professor | some p1.teaches&p2.teaches implies p2.enrolled not in p1.teaches
+inv9 U: all disj p1,p2: Professor | some p1.teaches&p2.teaches implies no p2.enrolled&p1.teaches
+inv13 S: all c: Course | some c.grades.last.projects&c.ptojects
+inv13 B: all c: Course | some c.grades.last.projects&c.projects
+inv13 T: all c: Course | some c.grades.last implies c.grades.last.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 U: all c: Course, s: Student | s in c.grades.last implies some s.projects&c.projects
+inv13 S: all c: Course | s in c.grades.last implies some s.grades.last.projects&c.projects
+inv13 S: all c: Course | s in c.grades.last implies some c.grades.last.projects&c.projects
+inv13 U: all c: Course | some c.grades.last implies some c.grades.last.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 U: all c: Course, s: Student | s in c.grades.last implies some s.projects&c.projects
+inv15 T: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies s2 in s1.grades.next or s1 in s2.grades.next
+inv15 T: all c: Course, p: Project, s1,s2: Student | p in c.projects and p in s1.projects&s2.projects implies s2 in s1.grades.next or s1 in s2.grades.next
+inv15 T: all c: Course, p: Project, s1,s2: Student | p in c.projects and p in s1.projects and p ins2.projects implies s2 in s1.grades.next or s1 in s2.grades.next
+inv15 T: all c: Course, p: Project, s1,s2: Student | p in c.projects and p in s1.projects and p in s2.projects implies s2 in s1.grades.next or s1 in s2.grades.next
+inv15 B: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies s2 in c.grades.s1.next or s1 in c.grades.s2.next
+inv15 B: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies s2 in c.grades.s1.next or s2 in c.grades.s1.prev
+inv15 B: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (s2 in c.grades.s1.next or s2 in c.grades.s1.prev)
+inv15 U: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (s2 in c.grades.s1.next or s2 in c.grades.s1.prev or c.grades.s1.next=c.grades.s1.prev)
+inv15 B: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (s2 in c.grades.s1.next or s2 in c.grades.s1.prev)
+inv15 U: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (c.grades.s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 U: all c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (c.grades.s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 U: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (c.grades.s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 U: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (c.grades.s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 U: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (c.grades.s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 U: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in c.grades.s1.next or c.grades.s2 in c.grades.s1.prev)
+inv15 B: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in c.grades.s1.next or ~(c.grades).s2 in c.grades.s1.prev)
+inv15 B: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next or ~(c.grades).s2 in ~(c.grades).s1.prev)
+inv15 B: all disj c: Course, p: Project, s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all p: Project, disj s1,s2: Student | p in (s1.enrolled+s2.enrolled).projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all c: Courses, p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 B: all c: Course, p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 B: all c: Course, p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies ~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies ~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies ~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv13 T: all c: Course, s: Student | s.c.grades = last implies some s.projects&c.projects
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv15 S: all disj s1,s2: Student | some s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next+~(c.grades).s1.prev+~(c.grades).s1)
+inv13 U: all c: Course, s: Student | s.(c.grades) = last implies some s.projects&c.projects
+inv15 B: all c: Course, p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next + ~(c.grades).s1.prev + ~(c.grades).s1)
+inv15 B: all c: Course, p: Project, disj s1,s2: Student | p in c.projects&s1.projects&s2.projects implies (~(c.grades).s2 in ~(c.grades).s1.next + ~(c.grades).s1.prev + ~(c.grades).s1)
+inv15 S: all p: Project, disj s1,s2: Student | p in s1.projects&s2.projects implies (~(c.grades).s2 in ~(Course.grades).s1.next + ~(Course.grades).s1.prev + ~(Course.grades).s1)
+inv15 B: all p: Project, disj s1,s2: Student | p in s1.projects&s2.projects implies (~(Course.grades).s2 in ~(Course.grades).s1.next + ~(Course.grades).s1.prev + ~(Course.grades).s1)
+inv15 S: all p: Project, disj s1,s2: Student | p in s1.projects&s2.projects implies s2.(Course.grades) in s1.(Course.grades).next + s1.(Course.grades).prev + s1.(Course.grades))
+inv15 B: all p: Project, disj s1,s2: Student | p in s1.projects&s2.projects implies (~(Course.grades).s2 in ~(Course.grades).s1.next + ~(Course.grades).s1.prev + ~(Course.grades).s1)
+inv15 O: all c: Course, p: c.projects, disj s1,s2: (Person<:projects).p | s1.(c.grades) = s2.(c.grades) or s1.(c.grades) in s2.(c.grades).next+s2.(c.grades).prev
+inv15 O: all c: Course, p: c.projects, disj s1,s2: (Person<:projects).p | s1.(c.grades) = s2.(c.grades) || s1.(c.grades) in s2.(c.grades).next+s2.(c.grades).prev
+inv15 O: all c: Course, p: c.projects, disj s1,s2: (Person<:projects).p | s1.(c.grades) = s2.(c.grades) || s1.(c.grades) in s2.(c.grades).(next+prev)
+inv15 O: all c: Course, p: c.projects, disj s1,s2: (Person<:projects).p | (some s1.(c.grades) and some s2.(c.grades)) implies s1.(c.grades) = s2.(c.grades) || s1.(c.grades) in s2.(c.grades).(next+prev)
+

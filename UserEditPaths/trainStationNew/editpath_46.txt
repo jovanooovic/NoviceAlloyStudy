@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv1 C: some Exit	some Entry
+inv1 C: some Exit and some Entry
+inv2 S: all s:Signals | one signals.s
+inv1 C: some Exit and some Entry
+inv2 C: all s:Signal | one signals.s
+inv3 S: all t:Track | no t.succ implies t in Exit
+inv3 U: all t:Track | no t.succs implies t in Exit
+inv3 C: all t:Track | no t.succs <=> t in Exit
+inv4 C: all t:Track | no succs.t <=> t in Entry
+inv4 C: all t:Track | no succs.t <=> t in Entry
+inv5 B: all t:Track | some t.succs.succs <=> t in Junction
+inv5 B: all t:Track | some t.^succs <=> t in Junction
+inv5 S: all t:Track | some succs^.t <=> t in Junction
+inv5 B: all t:Track | some ^succs.t <=> t in Junction
+inv5 B: all t:Track | some ^succs.succs.t <=> t in Junction
+inv5 B: all t:Track | some *succs.succs.t <=> t in Junction
+inv3 U: all t:Exit | no t.succs
+inv5 B: all t:Track | some ^succs.succs.t <=> t in Junction	all t:Junction | some succs.t <=> t in Junction
+inv5 B: all t:Track | some *succs.succs.t <=> t in Junction
+inv5 C: all t:Track | some succs.t and not one succs.t <=> t in Junction
+inv6 C: all e:Entry | some s:Speed | e->s in signals
+inv6 O: signals in Entry -> one Speed
+inv6 B: signals in Entry one -> Speed
+inv6 O: signals in Entry -> some Speed
+inv6 B: signals in Entry some -> Speed
+inv6 O: signals in Entry -> some Speed
+inv6 O: signals in Entry some -> one Speed
+inv6 S: signals in Entry all -> one Speed
+inv6 O: signals in Entry -> one Speed
+inv6 O: signals in Entry -> some Speed
+inv6 C: all e:Entry | some s:Speed | e->s in signals
+NA H: THEME UPDATE
+

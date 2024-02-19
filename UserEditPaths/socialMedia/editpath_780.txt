@@ -1,0 +1,89 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one u: User| p in u.posts
+inv1 C: all p: Photo | one u: User| p in u.posts
+inv2 C: all u: User | u not in u.follows
+inv2 C: all u: User | u not in u.follows
+inv3 S: all Photo: p, all u: User| p in u.sees => p in u.follows.posts or p in Ad
+inv3 S: all Photo: p, all u: User| p in u.sees => p in u.follows.posts or p in Ad
+inv3 S: all Photo: p, all u: User | p in u.sees => p in u.follows.posts or p in Ad
+inv3 S: all Photo: p, u: User | p in u.sees => p in u.follows.posts or p in Ad
+inv3 C: all p: Photo, u: User | p in u.sees => p in u.follows.posts or p in Ad
+inv4 C: all u: User, a: Ad | a in u.posts => u.posts in Ad
+inv5 S: all i: Influencer, u:User| u!=i => u in i.follwoa
+inv5 S: all i: Influencer, u:User| u!=i => u in i.follwos
+inv5 B: all i: Influencer, u:User| u!=i => u in i.follows
+inv5 U: all i: Influencer, u:User| u!=i => i in u.follows
+inv6 B: all i: Influencer, d: Day| i.posts.date in d
+inv6 C: all i: Influencer, d: Day| d in i.posts.date
+inv7 S: all disj u,uu: User| u in uu.follows.follows and not in uu.follows => u in uu.sugestions
+inv7 S: all disj u,uu: User| u in uu.follows.follows and not in uu.follows => u in uu.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows => u in uu.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+inv7 B: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows => u in uu.suggested	all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+inv7 B: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows => u in uu.suggested	all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+inv7 B: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows => u in uu.suggested	all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows
+inv7 B: all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows
+inv8 S: all u: User| a: Add| a in user.sees implies a in u.follows.posts or u.suggested.posts
+inv8 S: all u: User| a: Add| a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 S: all u: User, a: Add| a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 T: all u: User, a: Ad | a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 T: all u: User, a: Ad | a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 C: all u: User, a: Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+inv7 S: all u: User| u.seggested in u.follows.follows - u => u.suggested not in u.follows
+inv7 B: all u: User| u.suggested in u.follows.follows - u => u.suggested not in u.follows
+inv7 B: all u: User| u.suggested in u.follows.follows - u => u.suggested not in u.follows
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - u => u.suggested not in u.follows
+inv7 B: all u: User, i: Influencer| u.suggested in u.follows.follows - i => u.suggested not in u.follows
+inv7 B: all u: User| u.suggested in u.follows.follows - Influencer => u.suggested not in u.follows
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - Influencer => u.suggested not in u.follows
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - Influencer => u.suggested not in u.follows	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - Influencer-u => u.suggested not in u.follows	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - Influencer - u => u.suggested not in u.follows	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows - u => u.suggested not in u.follows	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows and u not in u.suggested	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows and u not in u.suggested	all i: Influencer| no i.suggested
+inv7 T: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u-suggested	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested	all i: Influencer| no i.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested	all i: Influencer| no i.suggested	all i: Influencer, u: User| i not in u.suggested
+inv7 B: all u: User - Influencer| u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested	all i: Influencer, u: User| i not in u.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested	all i: Influencer, u: User| i not in u.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested		all i: Influencer | no i.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows => u.suggested not in u.follows	all u:User | u not in u.suggested		all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows => u in uu.suggested			all u:User | u not in u.suggested		all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User- Influencer| u in uu.follows.follows and u not in uu.follows => u in uu.suggested			all u:User | u not in u.suggested		all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested		all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested		all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested	all i: Influencer | none in i.suggested
+inv7 U: all disj u,uu: User| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested
+inv7 U: all disj u,uu: User-Influencer| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested
+inv7 S: all disj u,uu: User-Influencer| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested	all i: Influencer, u:user |i not in u.suggested
+inv7 B: all disj u,uu: User-Influencer| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested			all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested
+inv7 B: all disj u,uu: User-Influencer| u in uu.follows.follows and u not in uu.follows => u in uu.suggested			all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested
+inv7 B: all u: User| u.follows.follows in u.suggested
+inv7 B: all u:User | u not in u.suggested		all u: User| u.follows.follows in u.suggested
+inv7 B: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	all u: User| u.follows.follows in u.suggested
+inv7 T: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	all i: Influencer| none i.suggested	all u: User| u.follows.follows in u.suggested
+inv7 T: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	all i: Influencer| none i.suggested	all u: User| u.follows.follows in u.suggested
+inv7 B: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	all i: Influencer| none in  i.suggested	all u: User| u.follows.follows in u.suggested
+inv7 T: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	all i: Influencer| i.suggested = {}	all u: User| u.follows.follows in u.suggested
+inv7 S: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested	forall i: Influencer | i.suggested = {}	all u: User| u.follows.follows in u.suggested
+inv7 B: all u:User | u not in u.suggested	all i: Influencer, u: User |i not in u.suggested		all u: User| u.follows.follows in u.suggested
+inv7 B: all u: User | u in User.follows => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)
+inv7 B: all i: Influencer, u: User |i not in u.suggested	all u: User | u in User.follows => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)
+inv7 S: all i: Influencer, u: User |i not in u.suggested	all u: User | u in User.follows and => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)	all u: User | u not in u.suggested
+inv7 S: all i: Influencer, u: User |i not in u.suggested	all u: User | u in User.follows and => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)	all u: User | u not in u.suggested
+inv7 B: all i: Influencer, u: User |i not in u.suggested	all u: User | u in User.follows  => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)	all u: User | u not in u.suggested
+inv7 B: all i: Influencer, u: User |i not in u.suggested	all u: User | u in User.follows  => u in User.suggested	all u: User | not (u in User.follows) => not (u in User.suggested)	all u: User | u not in u.suggested and u.follows not in u.suggested
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one u: User| p in u.posts
+inv7 C: all u1, u3 : User | ( some u2 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3 ) iff u1->u3 in suggested
+inv8 C: all u: User, a: Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+inv7 C: all u1, u3 : User | ( some u2 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3 ) iff u1->u3 in suggested
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+NA H: THEME UPDATE
+

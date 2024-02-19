@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv4 C: all p : Project | one Course <: projects.p
+inv12 B: all s : Student | {c : Course, p : Person | some c.grades}.s in s.enrolled
+inv11 B: all s : Student | {c : Course, p : Person | some c.grades}.s in s.enrolled
+inv12 B: all s : Student | lone {c : Course, p : Person | some c.grades}.s
+inv12 S: all s : Student, all c : Course | lone s.c.grades
+inv12 T: all s : Student, c : Course | lone s.c.grades
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv13 S: all c : Course | some (c.grades.last).Grades.Person <: projects
+inv13 T: all c : Course | some (c.grades.last).Grade.Person <: projects
+inv13 T: all c : Course | some c.grades.last.Grade.(Person <: projects)
+inv13 B: all c : Course | some c.grades.last
+inv13 T: all c : Course | some c.grades.last.Grade
+inv13 B: all c : Course | some c.grades.Grade
+inv13 T: all c : Course | some c.grades.Grade.last
+inv13 B: all c : Course | some c.grades.last
+inv13 T: all c : Course | some c.grades.Grade.last
+inv13 B: all c : Course | some c.grades.last.(Person <: projects)
+inv13 B: all c : Course | one c.grades.last.(Person <: projects)
+inv13 B: all c : Course | some c.grades.last.(Person <: projects)
+inv13 B: all c : Course | some c.grades.first.(Person <: projects)
+inv13 B: all c : Course | some c.grades.last.(Person <: projects)
+inv14 B: all s1,s2 : Student | lone (s1+s2).enrolled
+inv14 T: all s1,s2 : Student | lone (s1+s2).Person <: projects
+inv14 B: all s1,s2 : Student | lone (s1+s2).(Person <: projects)
+inv14 O: all s1,s2 : Person | lone (s1+s2).(Person <: projects)
+inv14 O: all s1,s2 : Person | lone s1.(Person <: projects) & s2.(Person <: projects)
+inv14 B: all s1,s2 : Student | lone s1.(Person <: projects) & s2.(Person <: projects)
+inv14 U: all s1,s2 : Student | s1 != s2 implies lone s1.(Person <: projects) & s2.(Person <: projects)
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course |	  	(s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies	  	(all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv14 U: all s1,s2 : Student | s1 != s2 implies lone s1.(Person <: projects) & s2.(Person <: projects)
+inv13 B: all c : Course | some c.grades.last.(Person <: projects)
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv11 B: all s : Student | {c : Course, p : Person | some c.grades}.s in s.enrolled
+

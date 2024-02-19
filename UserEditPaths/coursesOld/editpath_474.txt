@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 C: all x: Person, y: Course | y in x.enrolled implies x in Student
+inv4 B: all x: Course | one  x.projects
+inv4 T: all x: Course | one  projects.x
+inv4 T: all x: Project | one  projects.x
+inv4 T: all x: Project | one  projects.x
+inv3 O: all x: Course | some y: Person | y in Professor and x in y.teaches
+inv4 O: all x: Project | one  x.projects
+inv4 T: all x: Project | one  projects.x
+inv4 T: all x: Project | one  Course.projects.x
+inv4 T: all x: Project | one projects.x
+NA M: MOD BASE MODEL
+inv4 S: all x: Project one y: course |  x in y.projects
+inv4 S: all x: Project| one y: course |  x in y.projects
+inv4 C: all x: Project| one y: Course |  x in y.projects
+inv4 C: all x: Project | one y: Course |  x in y.projects
+inv5 U: all x: Project | some y: Person | y in Student and x in y.projects
+inv5 B: all x: Project | some y: Person | y not in Professor and y in Student and x in y.projects
+inv6 S: all x: Students, y: Course | x in y.projects implies x in y.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x in y.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies y in x.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x -> y in enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x -> y in enrolled
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+inv5 B: all x: Project | some y: Person | y not in Professor and y in Student and x in y.projects
+inv4 C: all x: Project | one y: Course |  x in y.projects
+inv6 E: 
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+inv8 S: all x: Professor: x not in x.teaches
+inv8 S: all x: Professor | not in x.teaches
+inv8 U: all x: Professor |x not in x.teaches
+inv8 U: all x: Professor | x not in x.teaches
+inv8 U: all x: Professor, y: Course | x in enrolled.y implies x not in teaches.y
+

@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: no (Person-Professor) & teaches.Course
+inv3 S: all c:Course | some teaches.C
+inv3 C: all c:Course | some teaches.c
+inv4 T: one projects.Course
+inv4 U: all p:Project | p in Course.projects
+inv4 U: all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 T: one projects.Course
+inv4 U: all p:Project | p in Course.projects
+inv4 C: all p:Project | p in Course.projects		    all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv5 C: no (Person-Student) & projects.Project	  	  	all p:Project | some (Person <: projects.p)
+inv6 S: all p:Project, s:Student,C:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all p:Project, s:Student,c:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all p:Project, s:Student,c:Course | p in s.projects and p in c.projects implies c in s.enrolled
+inv7 U: all p1,p2:Project,s:Student,c:Course | p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects implies p1=p2
+inv8 U: all p:Professor,c:Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p1,p2:Professor,c1,c2:Course | c1 in p1.teaches and c1 in p2.teaches implies (c2 in p1.teaches implies c2 not in p2.enrolled)
+inv10 C: no (Person-Student) & Course.grades.Grade
+inv11 B: all c:Course,s:Student | s.grades in c.grades implies c in s.enrolled
+inv11 T: all c:Course,s:Student | s in c.grades implies c in s.enrolled
+inv11 U: all c:Course,s:Student,g:Grade | g in s.(c.grades) implies (c in s.enrolled)
+inv12 O: all c:Course | lone c.grades
+inv13 U: all s:Student,c:Course | s in c.grades.last implies (some p:Project | p in c.projects and p in s.projects)
+inv14 U: all s1,s2:Student,p1,p2:Project | s1 != s2 and p1 in s1.projects and p1 in s2.projects and p2 in s1.projects and p2 in s2.projects implies p1=p2
+inv15 B: all s1,s2:Student,p:Project,c:Course,g1,g2:Grade | p in s1.projects and p in s2.projects and p in c.projects implies g1 in s1.(c.grades) and g2 in s2.(c.grades) implies g1=prev[g2] or g1=g2
+inv15 B: all s1,s2 : Student,p:Project,c:Course,g1,g2 : Grade | p in s1.projects and p in s2.projects and p in c.projects implies	  	g1 in s1.(c.grades) and g2 in s2.(c.grades) implies g1=prev[g2] or g2=prev[g1] or g1=g2
+inv15 B: all s1,s2:Student,p:Project,c:Course,g1,g2:Grade | p in s1.projects and p in s2.projects and p in c.projects implies g1 in s1.(c.grades) and g2 in s2.(c.grades) implies g2=prev[g1] or g1=g2
+inv15 B: all s1,s2:Student,p:Project,c:Course,g1,g2:Grade | p in s1.projects and p in s2.projects and p in c.projects implies g1 in s1.(c.grades) and g2 in s2.(c.grades) implies g2=prev[g1] or g2=prev[g1] or g1=g2
+inv15 B: all s1,s2:Student,p:Project,c:Course,g1,g2:Grade | p in s1.projects and p in s2.projects and p in c.projects implies g1 in s1.(c.grades) and g2 in s2.(c.grades) implies g1=prev[g2] or g2=prev[g1] or g1=g2
+NA H: THEME UPDATE
+

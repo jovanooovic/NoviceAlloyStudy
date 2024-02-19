@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | one s1.projects&s2.projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student-Professor | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 S: all p1,p2: Projects | lone projects.p1&projects.p2
+inv14 T: all p1,p2: Project | lone projects.p1&projects.p2
+inv14 O: all p1,p2: Project | lone (Person<:projects).p1&(Person<:projects).p2
+inv14 B: all s1,s2: Student, p1,p2: Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects implies p2 not in s2.projects
+inv14 B: all s1,s2: Student, p: Project |p in s1.projects and p in s2.projects implies  s2 not in projects.(Project-p)
+inv14 S: all s1,s2: Student | lone s1.students&s2.students
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student-Professor | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Person-Professor | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 S: all s1: Student, some s2: Student | lone s1.projects&s2.projects
+inv14 B: all s1: Student | some s2: Student | lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+

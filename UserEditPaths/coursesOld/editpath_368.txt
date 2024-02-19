@@ -1,0 +1,58 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv3 C: all c : Course | some teaches.c
+inv2 C: all c : Course | teaches.c in Professor
+inv4 C: all p : Project | one (Course :> projects.p)
+inv5 E: 
+inv4 C: all p : Project | one (Course :> projects.p)
+inv5 U: all p : Project | some (Person :>projects.p)
+inv5 T: all p : Project | some (Person :>projects.p) in Student
+inv5 U: all p : Project | some (Student :> projects.p)
+inv5 U: all p : Project | some (Person :> projects.p)
+inv5 T: all p : Project | some (Person :> projects.p in Student)
+inv5 S: all p : Project | Person -> Project & some (projects.p)
+inv5 T: all p : Project | some Person -> Project & projects.p
+inv4 T: all p : Project | one (Course -> Project & projects.p)
+inv4 T: all p : Project | one (Course -> Project & projects.p)
+inv4 B: all p : Project | one (Course -> Project & projects)
+inv5 T: all p : Project | some Person -> Project & projects.p
+inv5 S: all p : Project | Person -> Project &
+inv4 C: all p : Project | one (Course :> projects.p)
+inv4 C: all p : Project | one (Course :> projects.p)
+inv4 C: all p : Project | one (Course :> projects.p)
+inv5 B: all p : Project | some (Person-Professor :> projects.p)
+inv5 B: all p : Project | some ((Person-Professor) :> projects.p)
+inv5 S: all p : Project |
+inv5 U: all p : Project | some (Person :> projects.p)
+inv5 B: all p : Project | some ((Person-Professor) :> projects.p)
+inv4 S: Course->Project &  one Course.projects
+inv4 C: all p : Project | one (Course :> projects.p)
+inv5 T: all p : Project | some ( Person :> projects.p)	    all p : Project | projects.p in Student
+inv5 C: all p : Project | some (Person :> projects.p)	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv6 T: all s : Student | (Person :> projects) in (Course :> (s.enrolled).projects)
+inv6 T: all s : Student |  (Course :> (s.enrolled).projects)
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv6 U: all s : Student | s.projects in (s.enrolled.projects)
+inv6 U: all s : Student | s.projects in (s.enrolled.projects)
+inv7 S: all s : Course| lone (c.projects)
+inv7 O: all s : Course| lone (s.projects)
+inv7 T: all s : Student , c:Course| lone (s.projects & projects.c)
+inv7 U: all s : Student , c:Course| lone (s.projects & c.projects)
+inv8 S: all t : Teacher | t not in (enrolled.(t.teaches))
+inv8 U: all t : Professor | t not in (enrolled.(t.teaches))
+inv8 U: all t : Professor | t not in (enrolled.(t.teaches))	    	   	    all p : Professor | no p.teaches & p.enrolled
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+inv9 S: all t : Professor |
+inv9 S: all t : Professor |
+inv9 T: all t : Professor | not (teaches.(t.teaches))  & (enrolled.(t.teaches))
+inv9 T: all t : Professor | not (teaches.(t.teaches))  & (enrolled.(t.teaches))
+inv9 T: all t : Professor | not (teaches.(t.teaches)) & (enrolled.(t.teaches))
+inv9 T: all t : Professor | not ((t.teaches)) & (enrolled.(t.teaches))
+inv9 T: all t : Professor | not ((t.teaches).teaches) & (enrolled.(t.teaches))
+inv9 T: all t : Professor | not ((t.teaches)) & (enrolled.(t.teaches))
+

@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all x: Photo | some y : User | y ->x in posts
+inv2 S: y: User | y->y in follows
+inv2 S: y: User | y->y in follows
+inv1 U: all x: Photo | some y : User | y ->x in posts
+inv1 C: all x: Photo | one posts.x
+inv2 S: User x | follows.x
+inv2 S: x: User | x -> follows.x
+inv2 T: all x: User | not follows.x
+inv2 O: all x: User | no follows.x
+inv2 B: one x: User | no follows.x
+inv2 C: all x: User | x not in follows.x
+

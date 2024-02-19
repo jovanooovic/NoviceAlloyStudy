@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 O: all image : Photo | one u : User | image in u
+inv1 C: all image : Photo | one u : User | image in u.posts
+inv2 S: all user : user | user not in user.follows
+inv2 C: all user : User | all f : user.follows | user not in f
+inv2 C: all user : User | user not in user.follows
+inv3 U: all ad : Ad - Photo | all user : User | all follow : user.follows | ad in user.sees implies ad in follow.posts
+inv3 B: all photo : Photo - Ad | all user : User | all follow : user.follows | photo in user.sees implies photo in follow.posts
+inv3 B: all photo : Photo - Ad | all user : User | all follow : user.follows | photo in user.sees implies photo in follow.posts
+inv4 S: all ad : Ad | all p: Photo - Ad |all u : User | | ad in u.posts implies p not in u.posts
+inv4 C: all ad : Ad | all p: Photo - Ad |all u : User | ad in u.posts implies p not in u.posts
+inv4 C: all ad : Ad | all p: Photo - Ad |all u : User | ad in u.posts implies p not in u.posts
+inv5 U: all i : Influencer | all u : User - Influencer | i in u.follows
+inv5 U: all i : Influencer | all u : User - i | i in u.follows
+inv6 S: all i : Influencer | all x,y : i.posts | x.date.next == y.date
+inv6 B: all i : Influencer | all x,y : i.posts | x.date.next = y.date
+inv6 B: all i : Influencer | all x,y : i.posts | x.date = y.date.next
+inv6 U: all i : Influencer | all x,y : i.posts | x.date != y.date.next
+inv6 B: all i : Influencer | all x,y : i.posts | x.date = y.date + 1
+inv6 B: all i : Influencer | all x,y : i.posts - Ad | x.date = y.date + 1
+inv7 S: all u : User | all sug : u.sug | sug in u.follows.follows
+inv7 S: all u : User | all sug : u.suggestions | sug in u.follows.follows
+inv7 U: all u : User | all sug : u.suggested | sug in u.follows.follows
+inv7 U: all u : User | all sug : u.suggested | sug in u.follows.follows and sug not in u.follows
+inv7 B: all u : User | all sug : u.suggested | sug in u.follows.follows and sug not in u.follows and sug not in u.follows.suggested
+inv7 B: all u : User | all sug : u.suggested | sug in u.follows.follows and sug not in u.follows and sug not in u.follows.suggested
+inv7 B: all u : User | all sug : u.suggested | sug in u.follows.follows and sug not in u.follows and sug not in u.follows.suggested
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad in f.posts or ad in s.posts and ad not in u.posts
+inv8 S: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts ad in f.posts or ad in s.posts and
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts and ad in f.posts or ad in s.posts
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts and (ad in f.posts or ad in s.posts)
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts implies (ad in f.posts or ad in s.posts)
+

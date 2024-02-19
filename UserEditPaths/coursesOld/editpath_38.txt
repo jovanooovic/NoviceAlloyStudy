@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 T: all s:Student | s.enrolled in s.Course
+inv1 C: no(Person-Student).enrolled
+inv2 S: all p : Professor | p in p.courses
+inv2 T: all p : Professor | p in p.Course
+inv2 S: all p : Professor | p in p.course
+inv2 S: all p : Professor |t:teaches p in p.teaches
+inv2 T: all p : Professor, t:teaches | p -> p in teaches
+inv2 S: all p : Professor, t : Teaches | p -> p in teaches
+inv2 B: all p : Professor | p -> p in teaches
+inv2 O: all p : Person | p ->p in teaches
+inv2 O: all p : Person | p.teaches in Professor
+inv2 O: all p : Person | p in p.teaches
+inv2 C: no(Person-Professor).teaches
+inv3 S: some Teacher
+inv3 S: some Teacher
+inv4 S: all p: Projects | one c : Course | c -> p in course
+inv4 S: all p: Project | one c : Course | c -> p in course
+inv3 S: all c : Courses | all p : Professor | c in p.teaches
+inv3 S: all c : Courses | all p : Professor | c in p.teaches
+inv3 T: all p : Professor | p.teaches
+inv3 T: all p : Professor | p => p.teaches
+inv3 S: all c : Courses | c in Professor.teaches
+inv4 S: all p: Project | one c : Course | c -> p in course
+inv4 S: all p: Project | one c : Course | c -> p in course
+inv4 S: all p: Project | one c : Course | c -> p in course
+inv4 S: all p: Project | one c : Course | c -> p in course
+inv2 C: no(Person-Professor).teaches
+inv3 O: all c : Course | c in Professor.teaches
+inv4 S: all p : Project | one courses.p
+inv4 S: all p : Project | one c : Course | c -> p in courses
+inv4 C: all p : Project | one c : Course | c -> p in projects
+inv5 T: no(Person-Professor).projects => projects in Person
+inv5 U: no(Person-Professor).projects => Project in Person.projects
+

@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+Inv1 T: all w : Work | source.profile
+Inv1 U: all w : Work.visible | one source.profile
+Inv1 T: Work.visible in source.profile
+Inv1 U: Work.visible in Source.profile
+Inv1 T: Work.visible in source.profile
+Inv4 S: all u : User, w1, w2 : Work | u.profile & visible.w1 & not visible.w2 implies w1 = w2
+Inv4 S: all u : User, w1, w2 : Work | u.profile & visible.w1 & not visible.w2 implies w1 = w2
+Inv1 T: visible.Work implies User.profile
+Inv1 T: profile.source & visible.Work implies User.profile
+Inv1 T: profile.source and visible.Work implies User.profile
+Inv1 T: profile.source and source.visible implies User.profile
+Inv1 T: profile.source and source.visible implies User.profile
+Inv1 T: profile.source and source.visible
+Inv1 T: source.profile and source.visible
+Inv1 T: profile.source and source.visible
+Inv1 T: User.visible implies User.profile
+Inv1 T: User.visible implies profile.User
+Inv3 T: ids-profile
+Inv3 T: ids-profile
+Inv1 T: (User.visible).profile
+Inv1 T: profile.(User.visible)
+Inv3 T: ids-profile
+Inv1 C: all u : User | u.visible in u.profile
+Inv2 C: all u : User | (u.profile) in (source.u + source.Institution)
+

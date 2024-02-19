@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 O: no Person & Teacher
+inv3 C: no Student & Teacher
+inv4 B: no Student + Teacher
+inv4 B: no (Student + Teacher)
+inv4 C: Person in Student + Teacher
+inv5 U: some Person.Teaches
+inv5 O: some Teacher <: Person.Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv6 O: Teacher in Teacher.Teaches
+inv6 T: Teacher in (Teacher.Teaches).~(Teacher.Teaches)
+inv6 S: id in (Teacher.Teaches).~(Teacher.Teaches)
+inv6 T: iden & Teacher in (Teacher.Teaches).~(Teacher.Teaches)
+inv6 T: (iden & Teacher) in (Teacher.Teaches).~(Teacher.Teaches)
+inv6 T: iden  in (Teacher.Teaches).~(Teacher.Teaches)
+inv7 B: all c : Class | some c.Groups
+inv7 B: Teacher in Teacher.Teaches
+inv7 B: Teacher in Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 C: all x : Teacher, y,z : Class | x->y in Teaches and x->z in Teaches implies y=z
+inv7 S: all t : Teacher | c : Class | t->c in Teaches
+inv7 B: all t : Teacher | some c : Class | t->c in Teaches
+inv7 O: some t : Teacher | all c : Class | t->c in Teaches
+inv7 C: all y : Class | some x : Teacher | x->y in Teaches
+inv9 S: all c : Class, x, y : Teacher | y->c in Teaches and x->c in Teaches implies x=Y
+inv8 C: all x : Teacher, y,z : Class | x->y in Teaches and x->z in Teaches implies y=z
+inv9 C: all c : Class, x, y : Teacher | y->c in Teaches and x->c in Teaches implies x=y
+inv9 C: all c : Class, x, y : Teacher | y->c in Teaches and x->c in Teaches implies x=y
+inv10 C: all x : Class, y : Student | some z : Group | x->y->z in Groups
+inv11 C: all x : Class | (some y : Person, z : Group | x->y->z in Groups) implies some v : Teacher | v->x in Teaches
+inv12 C: all x : Teacher | some y : Class, z : Group, v : Person | x->y in Teaches and y->v->z in Groups
+

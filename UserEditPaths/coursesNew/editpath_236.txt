@@ -1,0 +1,52 @@
+NA H: THEME UPDATE
+inv1 U: no enrolled.Professor
+inv1 B: no enrolled->Professor
+inv1 U: no enrolled.Professor
+inv1 T: no enrolled in Professor
+inv1 T: all p : enrolled | p in Student
+inv1 C: all p : Person - Student | no p.enrolled
+inv2 S: all p : Person - Teacher | no p.teaches
+inv2 C: all p : Person - Professor | no p.teaches
+inv3 S: all c : Course | some p : Professor | c in p.tecahes
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 T: all p : Person - Student | no p.projects		all p : Project | some s : Student | s.projects
+inv5 C: all p : Person - Student | no p.projects		all p : Project | some s : Student | p in s.projects
+inv6 U: all s : Student | all p : s.projects | p in s.enrolled.projects
+inv7 T: all s : Student | all c : s.enrolled | lone c.projects in s.projects
+inv7 U: all s : Student | all c : s.enrolled | lone p : c.projects | p in s.projects
+inv8 B: Professor.teaches & Professor.enrolled = none
+inv8 U: all p : Professor | p.teaches & p.enrolled = none
+inv9 E: 
+inv9 B: all p1, p2: Professor | p1.enrolled & p2.teaches != none implies p1.teaches & p2.teaches = none
+inv10 S: all p : Person - Student | no c : Courses | p in c.grades
+inv10 T: all p : Person - Student | no c : Course | p in c.grades
+inv10 T: all p : Person - Student | no c : Course | p.grades & c.grades != none
+inv10 T: all p : Person - Student | no c : Course | p->grades & c.grades != none
+inv10 T: all p : Person - Student | no c : Course | p.grades != none
+inv10 T: all p : Person - Student | no c : Course | c.grades != none
+inv10 T: all p : Person - Student | all c : Course | p->Grade & c.grades = none
+inv10 T: all p : Person - Student | all c : Course | p->Grade & c.grades = none
+inv10 T: all p : Person - Student | all c : Course | all g : c.grades | g not in p->Grade
+inv10 T: all p : Person - Student | all c : Course | all g1 : c.grades | all g2 : p->Grade | g1 != g2
+inv10 C: all c : Course | all p : Person | all g : Grade | p->g in c.grades implies p in Student
+inv11 S: all c : Course | all p : Person | all g : Grade | p->g in c.grades implies c in p.emrolled
+inv11 C: all c : Course | all p : Person | all g : Grade | p->g in c.grades implies c in p.enrolled
+inv12 U: all p : Person | all c : p.enrolled | lone g : Grade | p->g in c.grades
+inv13 S: all s : Students | all c in s.enrolled | no p : c.projects implies some sm : Student | c in sm.enrolled and c.s->Grade < c.sm->Grade
+inv13 S: all s : Students | all c in s.enrolled | no p : c.projects implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 S: all s : Students | all c in s.enrolled | no p : c.projects implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 S: all s : Students | all c : s.enrolled | no p in c.projects implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 S: all s : Student | all c : s.enrolled | no p in c.projects implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 S: all s : Student | all c : s.enrolled | p not in c.projects implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 S: all s : Student | all c : s.enrolled | s.projects & c.projects = none implies some sm : Student | c in sm.enrolled and s->c.grade < sm->c.grade
+inv13 T: all s : Student | all c : s.enrolled | s.projects & c.projects = none implies some sm : Student | c in sm.enrolled and s->c.grades < sm->c.grades
+inv13 U: all s : Student | all c : s.enrolled | s.projects & c.projects = none implies s != first
+inv13 S: all s : Student | all g : Grades | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and not first[g]
+inv13 T: all s : Student | all g : Grade | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and not first[g]
+inv13 T: all s : Student | all g : Grade | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and first[g]
+inv13 T: all s : Student | all g : Grade | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and not first[g]
+inv13 T: all s : Student | all g : Grade | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and not first[g]
+inv14 S: all p1, p2 : Project | all s1, s2 : Student | s1 != s2 and p1 in s1.projects and p1 in s2.projects and p2 in s1.projects and p2 in s2.projects implies p1 == p2
+inv13 T: all s : Student | all g : Grade | all c : s.enrolled | s.projects & c.projects = none implies s->g in c.grades and not first[g]
+

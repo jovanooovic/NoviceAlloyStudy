@@ -1,0 +1,79 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv1 U: no Trash.link
+inv1 U: all t: Trash | Trash.link = none
+inv1 U: all t: Trash | t.link = none
+inv1 U: all t: Trash | t.link != File
+inv2 S: all File in Trash
+inv2 C: File in Trash
+inv3 T: some File in Trash
+inv3 B: File in Trash
+inv3 S: some f: File in Trash
+inv3 C: some f: File | f in Trash
+inv3 C: some f: File | f in Trash
+inv4 C: no p: Protected| p in Trash
+inv5 S: all f:Files | all p:Protected | (f-p) in Trash
+inv4 C: no p: Protected| p in Trash
+inv5 B: all f:File | all p:Protected | (f-p) in Trash
+inv6 S: all f:File{	f.link = one File	}
+inv6 S: all f:File{	f.link = lone File	}
+inv6 S: all f:File | lone l: File | f.link = l	}
+inv6 U: all f:File | lone l: File | f.link = l
+inv6 O: all f:File | one l: File | f.link = l
+inv6 U: all f:File | lone l: File | f.link = l
+inv6 S: all f:File | lone l: File | f.link exactly l
+inv6 U: all f:File | lone l: File | f.link = l
+inv7 B: all f:File | f.link not in Trash
+inv7 B: all f:File | f.^link not in Trash
+inv7 B: no t:Trash | t.link != none
+inv7 T: no t:Trash{ t.link not none}
+inv7 T: no t:Trash{link not none}
+inv7 T: no t:Trash{Trash.link not none}
+inv7 S: all t:Trash | t.link = none}
+inv7 S: all t:Trash | t.link = none}
+inv7 B: all t:Trash | t.link = none
+inv7 S: all t:Trash | no f:File| t.link = f
+inv7 S: all t:Trash | no f:File | t.link = f
+inv7 S: all t:Trash | no f:File | t.link = f
+inv9 S: all f:File |
+inv8 C: all f:File | f.link = none
+inv7 B: all t:Trash | t.link = none
+inv9 B: all f:File | f.link != none
+inv10 U: all f:File | (f.link in Trash) => (f.link.link in Trash)
+inv10 S: (f.link in Trash) => (f.link.link in Trash)
+inv10 C: all f:File | (f in Trash) => (f.link in Trash)
+inv9 C: all f:File | f.link.link = none
+inv8 C: all f:File | f.link = none
+inv7 B: all t:Trash | t.link = none
+inv7 U: all f:File | (f.link != none) => f.link not in Trash
+inv7 B: all f:File | (f.link != none) => f not in Trash
+inv7 B: all f:File | (f in Trash) => f.link = none
+inv7 B: all f:File | (f in Trash) => (f.link = none)
+inv6 U: all f:File | lone l: File | f.link = l
+inv6 O: all f:File | f.link = none
+inv5 B: all f:File | all p:Protected | (f-p) in Trash
+inv4 C: no p: Protected| p in Trash
+inv3 C: some f: File | f in Trash
+inv2 C: File in Trash
+inv1 U: all t: Trash | t.link != File
+inv1 T: no File in Trash
+inv1 C: no f:File | f in Trash
+inv2 C: File in Trash
+inv3 C: some f: File | f in Trash
+inv4 C: no p: Protected| p in Trash
+inv5 B: all f:File | all p:Protected | (f-p) in Trash
+inv5 C: all f:(File-Protected) | f in Trash
+inv6 O: all f:File | f.link = none
+inv6 S: lone f:File
+inv6 B: lone f:File | f.link = f
+inv7 B: all f:File | (f in Trash) => (f.link = none)
+inv8 C: all f:File | f.link = none
+inv9 C: all f:File | f.link.link = none
+inv10 C: all f:File | (f in Trash) => (f.link in Trash)
+inv7 B: all f:File | (f in Trash) => (f.link = none)
+inv7 B: all f:File | f.link not in Trash
+inv7 O: no f:File | (f in Trash) => (f.link != none)
+inv7 E: 
+inv6 B: lone f:File | f.link = f
+inv7 B: all t:Trash | t.link = none
+

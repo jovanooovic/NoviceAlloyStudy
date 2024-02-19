@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+Inv1 B: some (User.profile & User.visible)
+Inv1 U: all w : Work | w in User.visible implies w in User.profile
+Inv1 C: all w : Work, u : User | w in u.visible implies w in u.profile
+Inv2 O: all u : User , s : u.profile | s.source = u or s.source = Institution
+Inv2 S: all u : User , s : u.profile | s.source = u or s.source = one Institution
+Inv2 C: all u : User , s : u.profile | some (s.source & u) or some (s.source & Institution)
+Inv3 T: all u1 : User , w1,w2 = u1.profile | w1.source = w2.source implies no (w1.ids & w2.ids)
+Inv3 O: all u1 : User , w1,w2 :u1.profile | w1.source = w2.source implies no (w1.ids & w2.ids)
+Inv3 O: all u1 : User , w1,w2 :u1.profile | some (w1.source & w2.source) implies no (w1.ids & w2.ids)
+Inv3 O: all u1 : (User + Institution) , w1,w2 :u1.profile | some (w1.source & w2.source) implies no (w1.ids & w2.ids)
+Inv3 O: all u1 : User , w1,w2 :u1.profile | one (w1.source & w2.source) implies no (w1.ids & w2.ids)
+Inv3 T: all u1 : User , w1,w2 :u1.profile |  (w1.source & w2.source) implies no (w1.ids & w2.ids)
+Inv3 B: one  u1 : User |all  w1,w2 :u1.profile | w1.source = w2.source implies no (w1.ids & w2.ids)
+Inv3 C: all u1 : User , disj w1,w2 :u1.profile | w1.source = w2.source implies no (w1.ids & w2.ids)
+Inv4 O: all u :User , v1,v2 : u.visible | v1 != v2
+Inv4 S: disj (User.visible)
+Inv4 S: all u :User, disj v1,v2 : u.visible
+Inv4 U: all u :User, disj v1,v2 : u.visible | v1 != v2
+Inv4 B: all u :User, disj v1,v2 : u.visible | no (v1.ids & v2.ids)
+Inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids)
+Inv4 B: all u :User, disj v1,v2 : u.visible | no (v1.ids & v2.ids)
+Inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids)
+Inv4 T: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and no (v1.source = v2.source)
+Inv4 S: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source)
+Inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source
+Inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source
+Inv4 U: all u :User, v1,v2 : u.visible | v1.source = v2.source implies no (v1.visible & v2.visible)
+Inv4 O: all u :User, v1,v2 : u.visible | v1.source = v2.source implies no (v1.ids & v2.ids)
+Inv4 O: all u :User, v1,v2 : u.visible |  no (v1.ids & v2.ids)
+Inv4 B: all u :User,disj v1,v2 : u.visible |  no (v1.ids & v2.ids)
+Inv4 B: all u :User,disj v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+Inv4 U: all u :User,disj v1,v2 : u.visible |  v1 != v2
+Inv4 O: all u :User, v1,v2 : u.visible |  v1 != v2
+Inv4 O: all u :User, v1,v2 : u.visible |  v1.ids not in v2.ids
+Inv4 O: all u :User, v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+Inv4 B: all u :User,disj v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+Inv4 O: all u :User, v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+

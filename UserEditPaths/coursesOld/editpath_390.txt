@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 O: all c:Course | some p:Professor | p->c in teaches
+inv4 S: all p:Projects | one c:Course | c->p in projects
+inv4 C: all p:Project | one c:Course | c->p in projects
+inv4 S: all p:Projects | one c:Course | c->p in projects
+inv4 C: all p:Project | one c:Course | c->p in projects
+inv5 U: all p:Project | some s:Student | s->p in projects
+inv5 S: (all p:Person, pj:Project | p -> pj in projects imples p in Student) and		(all pj:Project | some per:Person | per -> proj in projects)
+inv5 S: (all p:Person, pj:Project | p -> pj in projects imples p in Student) and (all pj:Project | some per:Person | per -> proj in projects)
+inv5 S: (all p:Person, pj:Project | p -> pj in projects implies p in Student) and (all pj:Project | some per:Person | per -> proj in projects)
+inv5 C: (all p:Person, pj:Project | p -> pj in projects implies p in Student) and (all pj:Project | some per:Person | per -> pj in projects)
+inv5 S: (all p:Person, pj:Project | p->pj in projects implies p in Student) and (all pj:Projects | some p:Person | p->pj in projects)
+inv5 C: (all p:Person, pj:Project | p->pj in projects implies p in Student) and (all pj:Project | some p:Person | p->pj in projects)
+inv6 S: (all st:Student, p:Project | st -> p implies (some c:Course | st -> c in enrolled and c->p in projects)
+inv6 T: all st:Student, p:Project | st -> p implies (some c:Course | st -> c in enrolled and c->p in projects)
+inv6 U: all stud:Student, p:Project | stud->p in projects implies (some c:Course | stud->c in enrolled and c->p in projects)
+

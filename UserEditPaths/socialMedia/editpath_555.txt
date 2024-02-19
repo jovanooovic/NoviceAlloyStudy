@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 S: all x:User | no x:follows(x)
+inv1 S: all x:Photo | one Photo:x
+inv2 S: all x:User | no x:follows(x)
+inv1 S: all x:Photo | one Photo:x
+inv1 S: all x:Photo | one Photo:x
+inv1 C: all x:Photo | one posts.x
+inv1 C: all x:Photo | one posts.x
+inv2 C: all x:User | x not in x.follows
+inv3 T: all x:User | x.follows.posts is x.sees
+inv3 O: all x:User | x.sees = x.follows.posts
+inv3 S: all x:User | x.sees = x.follows.posts + all y:Ad
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 S: all x:User | some y:Photo| y in Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Photo| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 S: all x:User | all y:Ad| let x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 T: all x:User | all y:Ad| x.sees(x.follows.posts) or x.sees(y)
+inv3 T: all x:User | all y:Ad| x.sees(x.follows.posts) || x.sees(y)
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | x not in x.follows	all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 O: all x:User | all y:x.sees| y in Ad and y in x.follows.posts
+inv3 C: all x:User | all y:x.sees| y in Ad or y in x.follows.posts
+inv4 S: all x:User | one x.posts:Ad => all x.posts:Ad
+inv4 S: all x:User | one x.posts:Ad => all x.posts:Ad
+inv4 S: all x:User | one y:x.posts | y in Ad implies all y in Ad
+inv4 T: all x:User | one y:x.posts | all z:x.posts | y in Ad implies z
+inv4 B: all x:User | one y:x.posts | all z:x.posts | y in Ad implies z in Ad
+inv4 U: all x:User | (one y:x.posts | y in Ad) implies (all z:x.posts | z in Ad)
+inv4 C: all x:User | (some y:x.posts | y in Ad) implies (all z:x.posts | z in Ad)
+inv5 S: all x:User | all y:Influencers | y in x.follows
+inv5 S: all x:User | all Influencers in x.follows
+inv5 S: all x:User | all y:Influencers | y in x.follows
+inv5 S: all x:User | (all y:Influencers | y in x.follows)
+inv5 S: all x:!Influencers | (all y:Influencers | y in x.follows)
+

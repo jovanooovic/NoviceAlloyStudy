@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 O: all p:Person | p not in Person
+inv1 C: all p:Person | p in Student
+inv2 C: all p:Person | p not in Teacher
+inv3 C: all p:Person | p in Student implies p not in Teacher
+inv4 C: all p:Person | p in Teacher or p in Student
+inv6 C: all t:Teacher | some c:Class | t->c in Teaches
+inv5 C: some t:Teacher | some c:Class | t->c in Teaches
+inv7 C: all c:Class | some t:Teacher | t->c in Teaches
+inv8 B: all c1,c2:Class | some t:Teacher | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 C: all c1,c2:Class | all t:Teacher | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 C: all c1,c2:Class,t:Teacher | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv9 C: all c:Class,t1,t2:Teacher | t1->c in Teaches and t2->c in Teaches implies t1=t2
+inv10 O: all c:Class,s:Student | some g:Group | s->c->g in Groups
+inv10 C: all c:Class,s:Student | some g:Group | c->s->g in Groups
+inv11 B: all c:Class | some g:Group, t:Teacher | c->t->g in Groups
+inv11 B: all c:Class | some g:Group, t:Teacher | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class, g:Group |some t:Teacher | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class|some t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class,t:Teacher ,g:Group | t->c not in Teaches implies c->t->g not in Groups
+inv11 B: all c:Class|some t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class|some t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv11 S: all c:Class|some t:Teacher, g:Group | t->c in Tutor implies c->t->g in Groups
+inv11 B: all c:Class|some t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv12 S: all t:Teacher | some t:Teacher, g:Group | c->t->g in Groups
+inv12 B: all t:Teacher | some c:Class, g:Group | c->t->g in Groups
+NA H: THEME UPDATE
+

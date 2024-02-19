@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+prop1 T: signal not in Green
+prop1 B: Track.signal not in Green
+prop1 C: no Green
+prop2 O: eventually all s: Signal | s in Green
+prop2 O: always all s: Signal | eventually s in Green
+prop2 C: all s: Signal | eventually s in Green
+prop3 T: always all t: Train | (before t.pos) = t.pos
+prop3 T: always all t: Train | (before t.pos) = (after t.pos)
+prop3 T: always all t: Train | t.pos implies after t.pos
+prop3 S: always all t: Train | {let x = t.pos} after t.pos = x
+prop3 T: always all t: Train | {let x = t.pos | Train} after t.pos = x
+prop3 T: always all t: Train | {let x = t.pos | t} after t.pos = x
+prop3 S: all t: Train | always t.pos = x
+prop3 T: all t: Train | always t.pos
+prop4 S: let T=Train.pos
+prop4 S: let T=[Train.pos]
+prop3 S: trains = {all t: Train | t.pos}	always all tt: Train | trains = tt.pos
+prop3 S: always trains = {all t: Train | t.pos}	always all tt: Train | trains = tt.pos
+prop3 S: always trains = {all t: Train | t}	always all tt: Train, t: trains | t.pos = tt.pos
+prop3 U: all t,tt:Track | t->tt in prox implies always t->tt in prox
+prop3 S: all t: Train tt: Track | t->tt in pos implies always t->tt in pos
+prop3 U: all t: Train, tt: Track | t->tt in pos implies always t->tt in pos
+prop3 U: always all t: Train, tt: Track | t->tt in pos implies always t->tt in pos
+prop3 C: always pos' = pos
+prop3 C: always pos' = pos
+prop4 C: always pos.~pos in iden
+prop5 B: always all t: Train | (t'.pos in t.prox) or (t.pos in Exit implies Train' = Train -t)
+prop5 O: always all t: Train | (t'.pos in t.prox)
+

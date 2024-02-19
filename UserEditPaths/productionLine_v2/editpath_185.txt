@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: not some w : Worker | not w in Human+Robot
+inv2 S: all
+inv2 S: all
+inv1 C: Worker = Human + Robot
+inv2 C: all w:Workstation | some w.workers	all w:Worker | one w.~workers
+inv3 B: workstation in Component one -> Worker
+inv3 O: workstation in Component  -> one Worker
+inv3 B: workstation in Component one -> Workstation
+inv3 C: workstation in Component -> one Workstation
+inv4 S: all c:Components | some p:	not some m : Material | m.parts
+inv4 S: all c:Components | some p:	not some m : Material | m.parts
+inv3 C: workstation in Component -> one Workstation
+inv4 S: all c:Components | some c.parts	all m : Material | no m.parts
+inv4 C: all c:Component | some c.parts	all m : Material | no m.parts
+inv4 S: all m : Material | no m.parts	Components in Product.parts
+inv4 B: all m : Material | no m.parts	Component in Product.parts
+inv4 T: all m : Material | no m.parts	Component in Product.parts.Component
+inv4 B: all m : Material | no m.parts	Component in Component.parts
+inv4 C: all m : Material | no m.parts	Component in parts.Product
+

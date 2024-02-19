@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv2 C: all u:User | u not in follows.u
+inv2 C: all u:User | u not in follows.u
+inv3 C: sees in (follows.posts + User->Ad)
+inv3 O: all u:User | u.sees - Ad in u.follows
+inv3 C: all u:User | u.sees - Ad in u.follows.posts
+inv3 C: all u:User | u.sees - Ad in u.follows.posts
+inv4 O: all u:User | u.posts = Ad
+inv4 C: all u:User | some u.posts & Ad implies u.posts in Ad
+inv4 C: all u:User | some u.posts & Ad implies u.posts in Ad
+inv5 B: all i:Influencer | User - i in User.follows
+inv5 U: all i:Influencer | User - i in follows.i
+inv6 C: all i:Influencer | Day in i.posts.date
+inv7 T: all u:User | u.suggested not in u.follows and u.follows.follows
+inv7 B: all u:User | (u.suggested not in u.follows) and ( u.suggested in u.follows.follows)
+inv7 B: all u:User | u.suggested = (u.follows.follows - u.follows)
+inv7 B: all u:User | u.suggested = (User-u.follows) + u.follows.follows
+inv7 C: all u:User | u.suggested =  u.follows.follows - u.follows - u
+inv8 C: all u:User | u.sees & Ad in u.follows.posts + u.suggested.posts
+

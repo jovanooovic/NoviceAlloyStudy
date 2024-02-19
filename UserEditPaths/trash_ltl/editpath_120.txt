@@ -1,0 +1,90 @@
+NA H: THEME UPDATE
+prop1 S: no Trash,	no Protected
+prop1 C: no Trash and no Protected
+prop2 U: after some File
+prop2 B: some File releases no File
+prop2 C: no File and after some File
+prop3 C: always some File
+prop4 O: some f : File | eventually f in Trash
+prop4 T: eventually Trash
+prop4 C: eventually some Trash
+prop3 C: always some File
+prop4 C: eventually some Trash
+prop5 B: some f : File | eventually some File - f
+prop5 O: some f : File | eventually File = File - f
+prop5 O: some f : File | eventually File' = File - f
+prop5 O: some f : File | eventually f not in File
+prop5 O: some f : File | eventually File' = File - f
+prop5 O: eventually (some f : File |  File' = File - f)
+prop5 C: eventually (some f : File | after f not in File)
+prop6 T: (always Trash) releases (File in Trash)
+prop6 T: (always Trash) releases some (File in Trash)
+prop6 C: always (Trash in Trash')
+prop7 C: eventually some Protected
+prop8 T: eventually (link in Trash)
+prop8 T: eventually (some x,y : File | x->y in Trash)
+prop8 B: eventually (some x : File | x.link in Trash)
+prop8 B: eventually (File.link in Trash)
+prop8 T: eventually (File<:link in Trash)
+prop8 B: eventually (File.link in Trash)
+prop8 T: eventually (File:>link in Trash)
+prop8 B: eventually (File.link in Trash)
+prop8 B: eventually (always File.link in Trash)
+prop8 B: eventually (File.link in Trash)
+prop8 B: eventually (File.link in Trash)
+prop8 B: eventually (some x,y : File | x->y in link implies x in Trash and y in Trash)
+prop8 B: eventually (some x,y : File | x->y in link implies (x in Trash and y in Trash))
+prop8 S: eventually (some f : File | f.link implies f in Trash))
+prop8 S: eventually (some f : File | some f.link implies f in Trash))
+prop8 B: eventually (some f : File | some f.link implies f in Trash)
+prop8 B: eventually (all f : File | some f.link implies f in Trash)
+prop8 B: always (some f : File | some f.link implies eventually f in Trash)
+prop8 C: always (all f : File | some f.link implies eventually f in Trash)
+prop9 T: always no Protected in Trash
+prop9 T: always (no Protected in Trash)
+prop9 B: always (Protected not in Trash)
+prop9 T: always Protected & Trash
+prop9 C: always no Protected & Trash
+prop10 U: Protected' = Protected
+prop10 U: Protected = Protected
+prop10 U: Protected' = Protected
+prop10 C: always Protected' = Protected
+prop11 B: after (all f : File | f in Protected)
+prop11 B: after File in Protected
+prop11 U: after ((File & Protected) in Protected)
+prop11 U: always after ((File & Protected) in Protected)
+prop11 B: always after ((File - Protected) in Protected)
+prop11 O: always ((File - Protected) in Protected)
+prop11 B: after ((File - Protected) in Protected)
+prop11 B: always after ((File - Protected) in Protected)
+prop11 B: always (after ((File - Protected) in Protected))
+prop11 C: always ( ((File - Protected) in Protected'))
+prop11 S: always ( ((File - Protected) in after Protected))
+prop11 C: always ((File - Protected) in Protected')
+prop12 C: eventually (some f : File | eventually always f in Trash)
+prop13 C: always (all f : File | f in Trash implies once f not in Trash)
+prop14 C: always (all f : File | f in Protected & Trash implies f not in Protected')
+prop15 S: always (all f : File | f after eventually f in Trash)
+prop15 S: always (all f : File | f eventually f in Trash)
+prop15 S: always (all f : File | f eventually f in Trash)
+prop15 C: always (all f : File | eventually f in Trash)
+prop15 C: always (all f : File | eventually f in Trash)
+prop16 T: always (historically Protected)
+prop16 T: (historically Protected)
+prop16 T: (historically Protected)
+prop16 B: (all f : File | historically f in Protected)
+prop16 O: always (all f : File | historically f in Protected)
+prop16 C: always (all f : Protected | historically f in Protected)
+prop17 U: always (all f : Trash | f not in Trash')
+prop17 C: always (all f : Trash | after f not in File)
+prop18 U: always (all f : Protected | f not in Protected implies f in Trash)
+prop18 O: always (all f : File | f in Protected triggered f in Trash)
+prop18 O: always (all f : File | f in Protected releases f in Trash)
+prop18 C: always (all f : Protected | f not in Protected' implies f in Trash)
+prop18 C: always (all f : Protected | f not in Protected' implies f in Trash)
+prop19 S: always (all f : Protected | )
+prop18 C: always (all f : Protected | f not in Protected' implies f in Trash)
+prop18 C: always (all f : Protected | f in Trash releases f in Protected)
+prop19 U: always (all f : Protected | f in Trash until f in Protected)
+prop19 C: always (all f : Protected | f in Protected until f in Trash)
+

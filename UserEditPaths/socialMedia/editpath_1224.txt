@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv8 C: all a : Ad , u : User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+inv7 S: all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and s !=U)
+inv7 C: all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and s !=u)
+inv6 C: all i : Influencer | i.posts.date = Day
+inv5 C: all i : Influencer | follows.i = (User-i)
+inv4 C: all u : User , a : Ad | a in u.posts implies u.posts in Ad
+NA H: THEME UPDATE
+

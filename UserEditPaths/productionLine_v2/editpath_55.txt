@@ -1,0 +1,60 @@
+NA H: THEME UPDATE
+inv1 C: Worker in Human + Robot
+inv1 C: Worker = (Human + Robot)
+inv1 C: Worker = (Human + Robot)
+inv2 U: some workers and some Worker.(~workers)
+inv2 O: Workstation = Workstation.workers
+inv2 S: (Workstation = workers.Workstation) and
+inv2 O: (Workstation = workers.Workstation)
+inv2 O: (Workstation = Worker.workers)
+inv2 U: (Workstation = workers.Worker)
+inv2 O: (Workstation = workers.Worker) and (Worker = workers.Workstation)
+inv1 C: Worker in Human + Robot
+inv1 C: Worker in Human + Robot
+inv2 E: 
+inv2 U: (Workstation = workers.Worker) and (Worker = Workstation.workers)
+inv2 O: (Workstation = workers.Worker) and (Worker = Worker.~workers)
+inv2 O: (Workstation = workers.Workstation) and (Worker = Worker.~workers)
+inv2 C: workers in Workstation one -> some Worker
+inv2 C: all w:Worker | one workers.w	all w:Workstation | some w.workers
+inv3 C: workstation in Component -> one Workstation
+inv3 C: all c:Component | one c.workstation
+inv4 O: no parts.Material and (Component = parts.Component)
+inv4 B: (no Material.parts) and (Component = Component.parts)
+inv4 S: all c: Components | some c.parts	all m:Material | m.parts = none
+inv4 C: all c: Component | some c.parts	all m:Material | m.parts = none
+inv4 C: parts in Component -> some Product
+inv4 C: parts.Product = Component
+inv5 O: all w:Workstation | w.workers in Human or w.workers in Robot
+inv5 C: no workers.Human & workers.Robot
+inv5 C: no workers.Human & workers.Robot
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c not in c.^parts
+inv6 C: all c:Component | c not in c.^parts
+inv7 B: all c:Component | c not in c.^parts
+inv7 B: no iden & ^parts
+inv6 O: no iden & ^parts
+inv7 O: parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 S: all c:Components | some c.parts & Dangerous
+inv7 C: all c:Component | some c.parts & Dangerous implies c in Dangerous
+inv8 S: (Workstation.workstation).workers in Robots
+inv8 U: (Workstation.workstation).workers in Robot
+inv8 U: (workstation.Component).workers in Robot
+inv8 O: ~workers.((~workstation).Component) in Robot
+inv8 O: ~workers.((~workstation).Dangerous) in Robot
+inv8 O: ~workers.~workstation.Dangerous in Robot
+inv8 C: no Dangerous.workstation.workers & Human
+inv8 C: no Dangerous.workstation.workers & Human
+inv9 U: no iden & ^succ
+inv9 S: all w:Workstation-end | one w.succ	no end.succ.
+inv9 U: all w:Workstation-end | one w.succ	no end.succ
+inv9 T: all w:Workstation-end | one w.succ	no end.succ	begin.*succ
+inv9 U: all w:Workstation-end | one w.succ	no end.succ	end in begin.*succ
+inv9 C: all w:Workstation-end | one w.succ	no end.succ	Workstation in begin.*succ
+

@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 B: no Student.enrolled
+inv1 B: no Professor.enrolled
+inv1 T: all p: Person | p.enrolled implies p in Student
+inv1 T: all p: Person | p in enrolled implies p in Student
+inv1 C: all p: Person | p in enrolled.Course implies p in Student
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: all c: Course | some teaches.c
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one Course.projects.p
+inv5 T: all p: Person | p.projects implies p in Student
+inv5 U: all p: Person | p in projects.Project implies p in Student
+inv5 B: all p: Person | p in Student
+inv5 B: some Person.projects
+inv5 T: all proj: Project | some p: Person | p->proj in Project
+inv5 S: all proj: Project | some p: Person | p->proj in project
+inv5 U: all proj: Project | some p: Person | p->proj in projects
+inv5 C: all p: Person | some p.projects implies p in Student		all proj: Project | some p: Person | p->proj in projects
+inv6 B: all s: Student | s.projects in s.enrolled
+inv6 B: all s: Student | some s.projects
+inv6 B: all s: Student | s.projects in s.enrolled
+inv6 T: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {
+inv6 S: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Courses
+inv6 B: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 B: all s: Student | (projects.(s.projects) & Course) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 T: all s: Student | (projects.(s.projects)) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 B: all s: Student | getProjectCourse[s.projects] in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 T: all s: Student | getProjectCourse[s.projects] in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p
+inv8 U: all p: Professor | p not in p.teaches
+inv8 S: all p: Professor | all c: p.teaches | one
+inv8 T: all p: Professor | all c: p.teaches | univ
+inv8 U: all p: Professor | all c: p.teaches | some univ
+inv8 U: all p: Professor & Student | no p.teaches & p.enrolled
+inv9 U: all p: Professor | no (teaches.(p.enrolled) & p.teaches)
+inv10 T: grades in Student -> Grade
+inv10 C: Course.grades in Student -> Grade
+inv10 C: Course.grades in Student -> Grade
+inv11 B: one Person.(Course.grades)
+inv11 T: Person.(grades)
+inv11 T: all c: Course | all grade: c.grades | no grade.Grade
+inv11 T: all c: Course | all grade: c.grades | no univ
+inv11 U: all c: Course | all grade: c.grades.Person | no univ
+inv11 O: all c: Course | all grade: Person.(c.grades) | no univ
+inv11 C: all c: Course | all p: (c.grades).Grade | c in p.enrolled
+inv12 U: all s: Student | all course: s.enrolled | lone (course.grades).Grade & s
+inv12 T: all s: Student | all course: s.enrolled | lone (course.grades) & s.Grade
+inv12 U: all s: Student | all course: s.enrolled | lone ((course.grades) & s -> Grade)
+

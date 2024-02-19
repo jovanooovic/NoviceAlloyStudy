@@ -1,0 +1,58 @@
+NA H: THEME UPDATE
+inv1 T: all p: Photo, u: User | u.posts.p
+inv1 T: all p: Photo, u: User | u.posts.p
+inv1 T: all u: User, p: Photo | u.posts.p
+inv1 T: all u: User, p: Photo | u.posts
+inv1 T: all u: User | u.posts
+inv1 T: all u : User | u.posts
+inv1 T: all p: Photo, u: User | p in Photo iff u.posts
+inv1 B: all p: Photo, u: User | p in u.posts
+inv1 S: all p: Photo, u: User | p in Photos iff p in u.posts
+inv1 B: all p: Photo, u: User | p in Photo iff p in u.posts
+inv1 S: all p: Photo, u: User | p in Photo if p in u.posts
+inv1 U: all p: Photo, u: User | u.posts in Photo
+inv1 U: all u: User | u.posts in Photo
+inv1 T: all p:Photo, u: User | p.Photo in u.post
+inv1 S: all p:Photo, u: User | p in Photo iff p in u.post
+inv1 B: all p:Photo, u: User | p in Photo iff p in u.posts
+inv1 T: all p:Photo, u: User | p.Photo in u.posts
+inv1 T: all p:Photo, u: User | u.posts in p.Photo
+inv1 T: all p:Photo | p in Photo iff posts.p
+inv1 T: all p:Photo | p in Photo iff posts.p
+inv1 T: all p:Photo | posts.p
+inv1 T: all p:Photo, u:User | p in Photo iff u.posts
+inv1 U: all p:Photo, u:User | p in Photo iff u.posts in Photo
+inv1 U: all p:Photo, u:User | u.posts in Photo
+inv2 T: User.~User
+inv2 T: User.~User in iden
+inv2 T: User.~User in iden
+inv2 T: User.~User in iden
+inv1 T: all p:Photo | posts.p
+inv2 T: User.~User in iden
+inv2 T: User.~User
+inv2 C: all x:User | x not in x.follows
+inv1 C: all p:Photo | one posts.p
+inv2 T: no User.follows.User
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 T: all u:User | u.sees in follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts or u.sees in Ad
+inv3 T: all u:User | u.sees in u.follows.posts or Ad
+inv3 T: all u:User | u.sees in (u.follows.posts or Ad)
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts & Ad
+inv3 C: all u:User | u.sees in u.follows.posts + Ad
+inv4 T: all p:Photo | posts.p
+inv4 S: all u:User, some p:Photo | p in u.posts & Ad implies none u.posts - Ad
+inv4 S: all u:User, some p:Photo | (p in u.posts & Ad) implies (none u.posts - Ad)
+inv4 S: all u:User, some p:Photo | (p in u.posts & Ad) implies u.posts - Ad
+inv4 S: all u:User, some p:Photo | p in u.posts & Ad
+inv4 B: all u:User | some p:Photo | p in u.posts & Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies u.posts - Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies none u.posts - Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies none (u.posts - Ad)
+inv4 T: all u:User | some p:Photo | none p in (u.posts - Ad)
+inv4 B: all u:User | some p:Photo | p in (u.posts - Ad)
+inv4 T: all u:User | some p:Photo | no p in (u.posts - Ad)
+inv4 B: all u:User | some p:Photo |  p not in (u.posts - Ad)
+

@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 S: all p:Person | s:Student | p.enrolled = s.enrolled
+inv1 B: all p:Professor | no p.enrolled
+inv1 B: no Professor.enrolled
+inv1 S: all p:Professor | p no in Person.enrolled
+inv1 S: all p:Professor | p.enrolled no in Person.enrolled
+inv1 S: Professor.enrolled no in Person.enrolled
+inv1 O: Professor.enrolled not in Person.enrolled
+inv1 S: all Professor.enrolled not in Person.enrolled
+inv1 T: no Professor.enrolled in Person.enrolled
+inv1 O: not Professor.enrolled in Person.enrolled
+inv1 B: all p:Professor | not p.enrolled in Person.enrolled
+inv1 S: all s:Student | all s.enrolled in Person.enrolled
+inv1 U: all s:Student | s.enrolled in Person.enrolled
+inv1 B: all s:Student | Person.enrolled in s.enrolled
+inv1 S: all Person.enrolled in Student.enrolled
+inv1 U: all p:Person | p.enrolled in Student.enrolled
+inv1 S: all p:Person | s:Student | p.enrolled in s.enrolled
+inv1 B: all p:Person | all s:Student | p.enrolled in s.enrolled
+inv1 B: all p:Person | not p.enrolled in Professor.enrolled
+inv1 B: all p:Person | not (p.enrolled in Professor.enrolled)
+inv1 B: all p:Person | not (Professor.enrolled in p.enrolled)
+inv1 B: all p:Professor | not (p.enrolled in Person.enrolled)
+inv1 S: all s:Student | all s.enrolled in Person.enrolled
+inv1 S: all Person.enrolled in Student.enrolled
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 S: all p:Person.enrolled | all p in Student.enrolled
+inv1 S: all (Person.enrolled in Student.enrolled)
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 U: Student.enrolled = Person.enrolled
+inv1 U: Student.enrolled = Person.enrolled
+inv2 U: Professor.teaches = Person.teaches
+inv1 S: all p:Person.enrolled | p in Students.enrolled
+inv1 S: all p:Person | p.enrolled in Students.enrolled
+inv2 E: 
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+NA H: THEME UPDATE
+

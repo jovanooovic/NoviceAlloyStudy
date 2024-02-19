@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 T: all  p : Person.Professor | p not in enrolled.p
+inv1 U: all  p : Professor | p not in enrolled.p
+inv1 T: all  p : Professor | all c : p.enrolled | not p.teaches.c
+inv1 B: all  p : Professor | all t : p.teaches | t not in p.enrolled
+inv1 U: all  p : Professor | p not in p.enrolled
+inv1 S: all  p : Professor | p.enrolled = NULL
+inv1 U: all  p : Professor | p not in p.enrolled
+inv1 S: all  p : Person | all c : Course | c in p.enrolled -> P is Student
+inv1 T: all  p : Person | all c : Course | c in p.enrolled -> p is Student
+inv1 T: all  p : Person | all c : Course | c in p.enrolled -> p.Student
+inv1 T: all  p : Person | all c : Course | c in p.enrolled -> p = Student
+inv1 C: all p : Person | all c : Course | 	  	c in p.enrolled  implies (p in Student)
+inv2 C: all p : Person | all c : Course | 	  	c in p.teaches  implies (p in Professor)
+inv3 S: all c : Course | implies (some p : Professor | c in p.teaches)
+inv3 S: all c : Course implies (some p : Professor | c in p.teaches)
+inv3 S: c : Course implies (some p : Professor | c in p.teaches)
+

@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv8 C: (all t,u : File | t->u not in link)
+inv7 U: (all t,u : File | t in Trash or u in Trash implies t->u not in link)
+inv7 O: (all t,u : File | t->u in link implies (t not in Trash and u not in Trash))
+inv7 U: (all t,u : File | t->u in link implies (t not in Trash or u not in Trash))
+inv7 B: (all t,u : File | t->u in link implies t in Protected and u in Protected)
+inv7 B: (all t,u : File | t->u in link implies (t in Protected and u in Protected))
+inv7 S: (all t,u : File | t in Trash or u in Trash implies t->u not in link)		/* There are no links. */
+inv7 U: (all t,u : File | t in Trash or u in Trash implies t->u not in link)
+inv7 O: (all t,u : File | (t in Trash or u in Trash) implies t->u not in link)
+inv8 C: (all t,u : File | t->u not in link)
+inv7 O: (all t,u : File | t->u in link implies (t not in Trash and u not in Trash))
+inv7 B: (some t,u : File | t->u in link implies (t not in Trash and u not in Trash))
+inv7 T: (all t,u : File | t->u in link implies t->u not in Trash)
+inv7 T: (all t,u : File | t->u in link implies t->u not in Trash)
+inv7 B: (all t,u : File | t->u in link implies t not in Trash)
+inv7 C: (all t,u : File | t->u in link implies u not in Trash)
+inv10 S: (some x,y : File |
+

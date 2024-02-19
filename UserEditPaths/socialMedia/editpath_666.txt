@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 S: posts in User one => Photo
+inv1 C: posts in User one ->Photo
+inv2 C: no follows & iden
+inv3 C: all p:Photo-Ad, u1:User | u1->p in sees => (some u2:User | u1->u2 in follows and u2->p in posts)
+inv4 B: all u:User | some a:Ad | u->a in posts => (not some p:Photo-Ad | u->p in posts)
+inv3 C: all p:Photo-Ad, u1:User | u1->p in sees =>	(some u2:User | u1->u2 in follows and u2->p in posts)
+inv4 S: all u:User | some p:Photo-Ad | u->p in posts => u.post in Ad
+inv4 B: all u:User | some p:Photo-Ad | u->p in posts => u.posts in Ad
+inv4 B: all u:User | some p:Ad | u->p in posts => u.posts in Ad
+inv4 C: all u:User | (some p:Ad | u->p in posts) => u.posts in Ad
+inv5 B: all i:Influencer | follows.i = User
+inv5 T: all i:Influencer | follows.i = (User.i)
+inv5 C: all i:Influencer | follows.i = (User-i)
+inv6 T: all i:Influencer, d:Day | some p:i.posts | p.date
+inv5 C: all i:Influencer | follows.i = (User-i)
+inv7 S: all u1:User, u2:u1.follows | (some u3:u2.follows | not u1->u3 in follows) =>  u1->u3 in suggested
+inv6 C: all i:Influencer, d:Day | some p:i.posts | d in p.date
+inv7 B: all u1:User, u2:u1.follows | some u3:u2.follows | not u1->u3 in follows =>  u1->u3 in suggested
+inv7 B: all u1,u2,u3:User | u1->u2 in follows and u2->u3 in follows and not u1->u3 in follows => u1->u3 in suggested
+inv7 O: all u1,u2,u3:User | u1->u2 in follows and u2->u3 in follows and not u1->u3 in follows <=> u1->u3 in suggested
+inv7 B: all u1,u3:User | u1->u3 in suggested <=>  some u2:User | u1->u2 in follows and u2->u3 in follows and not u1->u3 in follows
+inv7 C: all u1,u3:User | u1->u3 in suggested <=> (some u2:User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3)
+inv8 T: all u:User, a:Ad|u->a in sees => (some u2:follows+suggested | u2->a in posts)
+inv8 S: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u1->u2 in follows + suggested)
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u->u2 in follows + suggested)
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:u.follows+u.suggested | u2->a in posts )
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u->u2 in follows + suggested)
+

@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+Inv1 C: all n1,n2: Node | (n1 in n2.adj <=> n2 in n1.adj)
+Inv2 C: all n1,n2: Node | (n1 in n2.adj => not (n2 in n1.adj))
+Inv1 C: all n1,n2: Node | (n1 in n2.adj => n2 in n1.adj)
+Inv3 C: no n1: Node | n1 in n1.^adj
+Inv4 U: all disj n1,n2: Node | (n1 in n2.^adj)
+Inv4 S: all disj n1,n2: Node | (n1 == n2) || (n1 in n2.^adj)
+Inv4 S: all disj n1,n2: Node | ((n1 == n2) || (n1 in n2.^adj))
+Inv4 U: all disj n1,n2: Node | ((n1 in n2.*adj))
+Inv4 U: all disj n1,n2: Node | ((n1 in n2.*adj) and (n2 in n1.*adj))
+Inv4 U: all n1,n2: Node | ((n1 in n2.*adj) and (n2 in n1.*adj))
+Inv5 O: no n1: Node | n1 in n1.^adj
+Inv5 O: no n1: Node | n1 in n1.*adj
+Inv4 S: all n1,n2: Node | (n1,n2) in *adj
+Inv4 S: all n1,n2: Node | (n1,n2) in *adj
+Inv4 C: all n1,n2: Node | n1 in n2.adj
+Inv5 O: no n1: Node | n1 in n1.^adj
+Inv5 O: no n1: Node | n1 in n1.*adj
+Inv5 O: no n1: Node | n1 in n1.^adj
+Inv5 B: all disj n1,n2: Node | not ((n2 in n1.adj) and (n1 in n2.^adj))
+Inv5 O: all n1,n2: Node | not ((n2 in n1.adj) and (n1 in n2.^adj))
+Inv6 S: all n1, n2: Node | n1 in n2.*r
+Inv6 S: all n1, n2: Node | n1 in n2.*r
+Inv6 O: all n1, n2: Node | n1 in n2.*adj
+Inv6 O: all n1, n2: Node | n1 in n2.(adj + ~adj)
+Inv6 O: all disj n1, n2: Node | n1 in n2.(adj + ~adj)
+Inv6 C: all n1, n2: Node | n1 in n2.*(adj + ~adj)
+Inv6 C: all n1, n2: Node | n1 in n2.*(adj + ~adj)
+Inv7 C: all n1, n2: Node | n1 in n2.*adj
+Inv8 B: all n1, n2: Node | n2 in n1.adj => n1 in n2.*adj
+Inv8 B: all n1, n2: Node | n2 in n1.adj => n1 in n2.^adj
+Inv8 C: all n1, n2, n3: Node | ((n2 in n1.adj) and (n3 in n2.adj)) => n3 in n1.adj
+Inv7 C: all n1, n2: Node | n1 in n2.*adj
+Inv6 C: all n1, n2: Node | n1 in n2.*(adj + ~adj)
+Inv6 C: all n1, n2: Node | n1 in n2.*(adj + ~adj)
+Inv5 O: no n1: Node | n1 in n1.^adj
+Inv5 O: all n1: Node | not (n1 in n1.^adj)
+Inv5 C: no n1: Node | n1 in n1.adj
+Inv4 C: all n1,n2: Node | n1 in n2.adj
+Inv3 C: no n1: Node | n1 in n1.^adj
+Inv2 C: all n1,n2: Node | (n1 in n2.adj => not (n2 in n1.adj))
+Inv1 C: all n1,n2: Node | (n1 in n2.adj => n2 in n1.adj)
+Inv1 C: (adj in ~adj) and (~adj in adj)
+Inv1 C: adj = ~adj
+Inv1 C: adj = ~adj
+Inv2 C: no (adj & ~adj)
+

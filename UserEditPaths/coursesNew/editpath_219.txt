@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 B: all p: Person, c: Course | p = Student => ~enrolled[c] = p
+inv1 B: all p: Person, c: Course | p != Student => ~enrolled[c] != p
+inv1 B: all p: Person, c: Course | p != Student => p in c.~enrolled
+inv1 C: all p: Person, c: Course | p not in Student => p not in c.~enrolled
+inv1 S: all p: Person, c: Course | p not in Student => p not in enrolled[C]
+inv1 S: all p: Person, c: Course | p not in Student => p not in enrolled[C]
+inv1 U: all p: Person, c: Course | p not in Student => p not in enrolled[c]
+inv1 U: all p: Person, c: Course | p not in Student => p not in enrolled[c]
+inv1 C: all p: Person, c: Course | p not in Student => p not in ~enrolled[c]
+inv2 T: all p: Person, c:Course | p not in Professor => p not c.~teaches
+inv2 T: all p: Person, c: Course | p not in Professor => p not c.~teaches
+inv2 T: all p: Person, c: Course | p not in Professor => p not c.~teaches
+inv2 C: all p: Person, c: Course | p not in Professor => p not in c.~teaches
+inv3 C: all c: Course | #c.~teaches>0
+inv3 C: all c: Course | #c.~teaches>0
+inv4 B: all p: Project, c: Course | p in c.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 B: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects
+inv5 B: all s: Student, p: Person, pr: Project | p != s && s in pr.~projects
+inv5 B: all s: Student, p: Person, pr: Project | p in s && s in pr.~projects
+inv5 T: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all pr: Project, s: Student | #(s in pr.~projects)>0
+inv5 T: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all pr: Project, s: Student | some pr.~projects
+inv5 T: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all pr: Project, s: Student | some pr.~projects
+inv5 B: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all pr: Project, s: Student | some s.projects
+inv5 B: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all s: Student | some s.projects
+inv5 B: all s: Student, p: Person, pr: Project | p = s && s in pr.~projects	  	all s: Student | #s.projects>0
+inv5 T: all p: Person, pr: p.projects | p not Student => p not in pr	  	all s: Student | #s.projects>0
+inv5 B: all p: Person, pr: p.projects | p not in Student => p not in pr	  	all s: Student | #s.projects>0
+inv5 B: all p: Person, pr: Project | p not in Student => p not in pr.~projects	  	all s: Student | #s.projects>0
+inv5 B: all p: Person, pr: Project | p not in Student => p not in pr.~projects	  	all s: Person | #s.projects>0
+inv5 T: all p: Person, pr: Project | p not in Student => p not in pr.~projects	  	all s: Project | #s.~projects>0
+inv5 B: all p: Person, pr: Project | p not in Student => p not in pr.~projects	  	all s: Project | #s.~projects.~enrolled>0
+inv4 C: all p: Project | one c: Course | p in c.projects
+

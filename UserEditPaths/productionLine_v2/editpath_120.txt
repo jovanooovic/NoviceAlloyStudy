@@ -1,0 +1,52 @@
+NA H: THEME UPDATE
+inv1 U: all w : Worker | w in Human implies w not in Robot
+inv1 U: all w : Worker | w in Human implies w not in Robot	all w : Worker | w in Robot implies w not in Human
+inv1 C: all w : Worker | w in Human or w in Robot	all w : Worker | w in Human implies w not in Robot	all w : Worker | w in Robot implies w not in Human
+inv1 C: all w : Worker | w in Human or w in Robot	all w : Worker | w in Human implies w not in Robot	all w : Worker | w in Robot implies w not in Human
+inv1 C: all w : Worker | w in Human or w in Robot	all w : Worker | w in Human implies w not in Robot	all w : Worker | w in Robot implies w not in Human
+inv1 C: all w : Worker | w in Human or w in Robot	all w : Worker | w in Human implies w not in Robot	all w : Worker | w in Robot implies w not in Human
+inv2 U: all w : Workstation | some w.workers	Workstation.workers = Worker
+inv2 U: Workstation.workers = Worker
+inv2 U: all w : Workstation | some w.workers	Workstation.workers = Worker
+inv2 U: all w : Workstation | some w.workers	all w : Worker | one Workstation.workers&w
+inv2 U: all w : Workstation | some w.workers	all w : Worker | all disj w1,w2 : Workstation | w in w1.workers and w in w2.workers implies w1=w2
+inv2 C: all w : Workstation | some w.workers	Workstation.workers = Worker	all w : Worker | all disj w1,w2 : Workstation | w in w1.workers and w in w2.workers implies w1=w2
+inv3 C: all c : Component | one c.workstation
+inv3 C: all c : Component | one c.workstation
+inv4 C: all c : Component | some c.parts	all c : Material | no c.parts
+inv4 C: all c : Component | some c.parts	all c : Material | no c.parts
+inv5 O: all w : Workstation | no w.workers-Human or no w.workers-Robot
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv9 B: one begin.succ	all w : Workstation | w not in begin and w not in end implies one w.succ	no end.succ
+inv9 B: one begin.succ	begin.succ != end	all w : Workstation | w not in begin and w not in end implies one w.succ	no end.succ	begin != end
+inv10 B: all c : Component | some c.workstation implies no c.parts
+inv9 T: begin not in begin.^succ	end begin.^succ	no end.succ	all w : Workstation - end | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ
+inv9 O: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end - begin | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ	all w : Workstation - begin | begin not in w.^succ
+inv9 C: begin not in begin.^succ	begin.^succ = Workstation-begin	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ	all w : Workstation - begin | begin not in w.^succ
+inv10 B: all c : Component | some c.workstation implies no c.parts
+inv10 B: all c : Component | begin in c.workstation implies no c.parts
+inv10 B: all c : Component | begin in c.workstation implies no c.parts&Component
+inv10 B: all c : Component | begin in c.^workstation implies no c.parts&Component
+inv10 B: all c : Component | begin in c.workstation implies no c.^parts&Component
+inv10 O: all c : Component | c in Component.parts implies no c.workstation
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv7 B: all c : Product | c.^parts in Dangerous implies c in Dangerous
+inv7 B: all c : Product | c.^parts not in Dangerous implies c not in Dangerous	all c : Product | c.^parts in Dangerous implies c in Dangerous
+inv7 B: all c : Product | c.parts in Dangerous implies c in Dangerous
+

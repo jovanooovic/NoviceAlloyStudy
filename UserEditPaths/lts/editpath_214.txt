@@ -1,0 +1,86 @@
+NA H: THEME UPDATE
+inv1 S: all s: State | some s.trans
+inv1 C: all s: State | some s.trans
+inv2 C: one Init
+inv3 S: all s: State | lone State.trans.s
+inv2 C: one Init
+inv3 B: all s: State | lone State.trans.s
+inv3 S: all s: State | all e: Event | lone s.tran[e]
+inv3 S: all s: State | all e: Event | lone s.tran[e]
+inv3 S: all s: State | all e: Event | lone s.tran[e]
+inv3 C: all s: State | all e: Event | lone s.trans[e]
+inv4 T: State in Init.^trans
+inv4 T: State in Init.trans.^Event
+inv4 T: State in ^(Init.trans.Event)
+inv4 O: State in Init.^(trans.Event)
+inv4 T: State in Init.trans.^(trans.Event)
+inv4 O: State in Init.^(trans.Event)
+inv4 T: State in Init.^(trans)
+inv4 O: State in Init.^(Event.trans)
+inv4 O: State in Init.^(Event.trans)
+inv4 O: State in Init.^(Event.trans)
+inv4 S: State in Init.^(trans[Etat])
+inv4 O: State in Init.^(trans[Event])
+inv4 T: State in Init.^trans
+inv4 T: State in ^(Init.trans)
+inv4 S: for s: State | some e: Event | (Init.trans).e
+inv5 S: all s1, s2: State | s1.(trans.State) = s2.(trans.State)
+inv5 C: all s1, s2: State | s1.(trans.State) = s2.(trans.State)
+inv4 S: for s: State | some e: Event | (Init.trans).^(Event->State)
+inv4 O: some (Init.trans).^(Event->State) & iden
+inv4 O: some (Init.trans).^(Event->State) & iden
+inv4 T: some (Init.trans)[Event].^trans & iden
+inv4 T: some (Init.trans)[Event].^trans & iden
+inv6 B: some State.trans.State
+inv6 C: Event in State.trans.State
+inv4 S: ((init.trans)^[Event]).trans[Event]
+inv4 S: State in ((init.trans)^[Event]).trans[Event]
+inv4 S: State in ((init.trans)[Event]).trans[Event]
+inv4 O: State in ((Init.trans)[Event]).trans[Event]
+inv4 T: State in (Init.trans)^(~(Init.trans))
+inv4 T: State in (Init.trans).^(~(Init.trans))
+inv4 U: State in Init.^(trans.State.Event->State)
+NA H: THEME UPDATE
+inv4 O: State in Init.trans.Event
+inv4 O: State in Init.trans[Event]
+inv4 B: State in Init.trans[Event] + Init
+inv4 B: State in (Init.trans[Event] + Init)
+inv4 T: State in (Init.trans[Event] + ~Init.trans[Event])
+inv4 O: State in (Init.trans[Event] + trans[Event].State)
+inv4 O: State in (Init.trans[Event] + trans[Event].Init)
+inv4 T: State in (Init.trans[Event] + State.trans[Event].Init)
+inv4 S: all s: State | some i: Init | i in  Event.(trans.s)
+inv4 S: all s: State | some i: Init | i in  Event.(trans.s)
+inv4 S: all s: State | some i: Init | i in  Event.(trans.s)
+inv4 O: all s: State | some i: Init | i in Event.(trans.s)
+inv4 O: all s: State | some i: Init | i in trans.(trans.s.Event).Event
+inv4 U: State in State.trans[Event]
+inv4 U: State in State.trans[Event]
+inv4 O: State in Init.trans[Event]
+inv4 O: State in Init.trans[Event]
+inv4 O: State in Init.trans[Event]
+inv4 S: State in Event.^(Init.trans).
+inv4 O: State in Event.^(Init.trans)
+NA M: MOD BASE MODEL
+inv4 T: State in Init.trans.trans
+inv4 S: State in Init.trans..trans
+inv4 T: State in Init.trans.Event.trans
+inv4 T: State in Init.Event.trans.trans
+inv4 T: State in Event.Event(Init.State.State)
+inv4 T: State in Event.Event(Init.trans.trans)
+inv4 S: State in Event.(Event(Init.trans.trans))
+inv4 O: State in Event.(Event.(Init.trans.trans))
+inv4 T: State in ~(Init.trans.trans).^Event
+inv4 T: State in ~(Event.(Init.trans.trans)).^Event
+inv4 S: for s: State | some i: Init | i in trans.s.Event
+inv4 S: for s: State | some i: Init | i in trans.s.Event
+inv4 O: all s: State | some i: Init | i in trans.s.Event
+inv4 S: let r = {State->(State.trans.e) | e in Event} | 		 		State in Init.^r
+inv4 S: let r = {State->(State.trans.e) | e in Event} | 		 		State in Init.^r
+inv4 S: let r = {State->(State.trans.e)| all: e in Event} | 		 		State in Init.^r
+inv4 S: let r = {State->(State.trans.e)| all e: Event} | 		 		State in Init.^r
+inv4 S: let r = {all e: Event | State->(State.trans.e)} | 		 		State in Init.^r
+inv4 T: let r = {all e: Event | State->(State.trans.e)} | 		 		State in Init.^r
+inv4 T: let r = all e: Event | State->(State.trans.e) | 		 		State in Init.^r
+inv4 T: let r = all e: Event | State->(State.trans.e) | 		 		State in Init.^r
+

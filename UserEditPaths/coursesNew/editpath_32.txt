@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv1 C: all s:Person-Student | no s.enrolled
+inv2 S: all p:Person-Professor | no s.teaches
+inv2 C: all p:Person-Professor | no p.teaches
+inv3 B: all c:Course | some Professor.teaches
+inv3 O: all c:Course | c in Professor.teaches
+inv4 U: all p:Project | p in Course.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 C: all p:Person-Student | no p.projects		all p:Project | p in Student.projects
+inv5 U: all p:Project | p in Student.projects
+inv5 T: all p:Project | p in Student-Professor.projects
+inv5 B: all p:Project | p in (Student-Professor).projects
+inv5 C: all p:Person-Student | no p.projects		all p:Project | p in Student.projects
+inv6 S: all s:Student, p:s.projects | p in s.courses.projects
+inv5 C: all p:Person-Student | no p.projects		all p:Project | p in Student.projects
+inv6 U: all s:Student, p:s.projects | p in s.enrolled.projects
+inv7 U: all s:Student, c:s.enrolled | lone (s.projects & c.projects)
+inv8 U: all p:Professor | no (p.teaches & p.enrolled)
+inv8 U: all p:Professor | no (p.teaches & p.enrolled)
+inv9 U: all p:Professor, p2:Professor-p | (some (p.teaches & p2.teaches)) => (no p.teaches & p2.enrolled)
+inv9 U: all p:Professor, p2:Professor-p | (some (p.teaches & p2.teaches)) => (no p.teaches & p2.enrolled)
+inv10 T: all c:Course | c.grades in Student
+inv9 U: all p:Professor, p2:Professor-p | (some (p.teaches & p2.teaches)) => (no p.teaches & p2.enrolled)
+inv10 U: all c:Course | c.grades.1 in Student
+inv10 S: all c:Course | c.grades.left in Student
+inv10 S: all c:Course | c.grades.p in Student
+inv10 S: all c:Course | c.grades.p->g in Student
+inv10 U: all c:Course | c.grades.Person in Student
+inv10 S: all c:Course | c.grades.[Person] in Student
+inv10 U: all c:Course | c.grades.Person in Student
+inv10 O: all c:Course | c.grades[Person] in Student
+inv10 T: all c:Course | c.grades in Student
+inv10 B: all c:Course | c.grades[Student] in Student
+inv10 C: all c:Course, s:Person-Student | no c.grades[s]
+inv11 U: all s:Student | no (Course-s.enrolled).grades[s]
+inv12 U: all s:Student, c:s.enrolled | lone c.grades[s]
+inv13 T: all c:Course | one s1:Student | (no s2:Student-s1 | (c.grades[s2] > c.grades[s1])) => one c.grades[s1]
+

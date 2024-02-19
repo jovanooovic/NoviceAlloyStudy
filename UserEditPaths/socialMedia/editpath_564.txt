@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one u: User | p in u.posts
+inv2 S: all u: User | u not in u.folllows
+inv2 C: all u: User | u not in u.follows
+inv3 B: all u,u1: User, p: Photo| p in u.sees and p in u1.posts implies u1 in u.follows
+inv3 B: all u,u1: User, p: Photo| p not in Ad and p in u.sees and p in u1.posts implies u1 in u.follows
+inv4 C: all u: User | u.posts in Ad or u.posts in Photo-Ad
+inv5 B: all u: User | all i: Influencer | i in u.follows
+inv5 U: all i: Influencer | User - i in follows.i
+inv6 C: all i: Influencer | all d: Day | some p: Photo | p in i.posts and d in p.date
+

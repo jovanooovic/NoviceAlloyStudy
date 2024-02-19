@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 O: no Student & Student
+inv3 C: all p:Person | p in Teacher implies p not in Student
+inv3 O: no Person & Teacher
+inv3 C: no Student & Teacher
+inv4 B: no (Student + Teacher)
+inv4 C: Person in Student + Teacher
+inv5 C: some p:Teacher,c:Class | p->c in Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t:Teacher|some c:Class | t->c in Teaches
+inv6 C: Teacher in Class.~Teaches
+inv6 C: Teacher in Teaches.Class
+inv7 C: Class in Teacher.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 C: all t:Teacher, c1,c2:Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 C: ~(Teacher<:Teaches).(Teacher<:Teaches) in iden
+NA H: THEME UPDATE
+

@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: no f: File | f in Trash
+inv2 C: File = Trash
+inv3 C: some f: File | f in Trash
+inv4 C: no f: Protected | f in Trash
+inv5 O: File - Protected = Trash
+inv5 C: all f: File - Protected |f in Trash
+inv6 S: all f, f', f'': File | f.link = f'' and f'.link = f'' implies f = f'
+inv6 C: link in File -> lone File
+inv7 T: no l: link | l in File -> Trash
+inv7 B: no f: File | File.link = f
+inv7 U: no f: Trash | File.link = f
+inv7 B: no f: File | Trash.link = f
+inv7 S: no f,f': Trash | f.link = f'
+inv7 S: no f, f' : Trash | f.link = f'
+inv7 B: File -> File = File -> Trash
+inv7 B: File -> File = Trash -> File
+inv8 T: link = none
+inv8 C: link = none -> none
+inv7 B: link[Trash] = none
+inv7 C: link.Trash = none
+inv9 E: 
+inv9 T: link.link = none
+inv9 T: link.link = none
+inv9 C: link.link = none -> none
+inv10 C: all l: Trash | l.link in Trash
+

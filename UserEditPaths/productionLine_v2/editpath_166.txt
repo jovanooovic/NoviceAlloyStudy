@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: Worker = Human + Robot
+inv2 S: works in Workstation one -> some Worker
+inv2 C: workers in Workstation one -> some Worker
+inv3 C: workstation in Component -> one Workstation
+inv4 C: all c:Component | some c.parts	no Material . parts
+inv4 C: parts . Product = Component
+inv5 C: no (workers . Human & workers . Robot)
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | some d:Dangerous | d in c.^parts => c in Dangerous
+inv7 O: all c : Component, d:Dangerous | d in c.^parts => c in Dangerous
+inv8 C: no (Dangerous.workstation &workers . Human)
+inv9 T: begin . ^ succ . end
+inv9 T: (begin . ^ succ) . end
+inv9 T: (begin . ^ succ) . end
+inv10 T: Component . parts . workstation
+inv10 O: no Component . parts . workstation
+inv10 B: no Component . parts . workstation . ~succ
+inv10 B: Component . workstation not in Component . parts . workstation . succ
+

@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 B: all p : Person | some c : Course | c in p.enrolled implies p in Student
+inv1 C: all p : Person - Student | no p.enrolled
+inv2 C: all p : Person - Professor | no p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 S: all p : Projects | one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 S: all p : Person - Student | no p.projects	  	all p : Projects | some s : Student | p in s.projects
+inv5 C: all p : Person - Student | no p.projects	  	all p : Project | some s : Student | p in s.projects
+inv6 B: all s : Student, p : Project | some c : Course | p in s.projects and p in c.projects implies c in s.enrolled
+inv6 B: all s : Student, p : Project, c : Course | p in s.projects and p in c.projects implies c in s.enrolled
+inv8 U: all p : Professor, c : Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p : Professor | (all col : Professor - p, c : Course | c in p.teaches implies c not in col.enrolled)
+inv9 B: all p : Professor, c : Course | c in p.teaches implies (all col : Professor - p | c not in col.enrolled)
+inv10 T: all p : Person - Student, c : Course | p not in c.grades
+inv10 C: all p : Person - Student, c : Course, g : Grade | p->g not in c.grades
+inv11 U: all s : Student, c : Course, g : Grade | s->g in c.grades implies c in s.enrolled
+inv12 B: all s : Student, c : Course | one g : Grade | s->g in c.grades
+inv12 O: all s : Person, c : Course | one g : Grade | s->g in c.grades
+inv12 C: all s : Person, c : Course | lone g : Grade | s->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+inv7 B: all s : Student, c : Course | one p : Project | c in s.enrolled and p in s.projects and p in c.projects
+inv7 U: all s : Student, c : Course | c in s.enrolled implies (lone p : s.projects | p in c.projects)
+inv9 S: all p, col: Professor, c : Course | (c in p.teaches and c in col.teaches) implies (none co : Course | co in p.teaches and c in col.enrolled)
+inv9 S: all p, col: Professor, c : Course | (c in p.teaches and c in col.teaches) implies (none co : Course | co in p.teaches and c in col.enrolled)
+inv9 B: all p, col: Professor, c : Course | (c in p.teaches and c in col.teaches) implies (no co : Course | co in p.teaches and c in col.enrolled)
+inv9 B: all p, col: Professor | some c : Course | (c in p.teaches and c in col.teaches) implies (all co : Course | co in p.teaches implies co not in col.teaches)
+inv9 B: all p, col: Professor | some c : Course | (c in p.teaches and c in col.teaches) implies (all co : Course | co in p.teaches implies co not in col.enrolled)
+inv9 B: all p, col: Professor | some c1, c2 : Course | (c1 in p.teaches and c2 in col.teaches) implies (all co : Course | co in p.teaches implies co not in col.enrolled)
+inv9 B: all p, col: Professor | some c : Course | (c in p.teaches and c in col.teaches) implies (all co : Course | co in p.teaches implies co not in col.enrolled)
+inv9 B: all p: Professor, col : Professor - p | some c : Course | (c in p.teaches and c in col.teaches) implies (all co : Course | co in p.teaches implies co not in col.enrolled)
+inv9 B: all p: Professor, col : Professor - p | some c : Course | (c in p.teaches and c in col.teaches) implies no p.teaches & col.enrolled
+inv9 U: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches))
+inv9 S: all p : Professor, col : Professor - p | some c : Course | c in col.teaches and c in p.teaches implies no (col.enrolled & p.teaches))
+inv9 S: all p : Professor, col : Professor - p | some c : Course | c in col.teaches and c in p.teaches implies no (col.enrolled & p.teaches))
+inv9 B: all p : Professor, col : Professor - p | some c : Course | c in col.teaches and c in p.teaches implies no (col.enrolled & p.teaches)
+inv9 B: all p : Professor | all col : Professor - p | some c : Course | c in col.teaches and c in p.teaches implies no (col.enrolled & p.teaches)
+inv9 B: all p : Professor | (all col : Professor - p | some c : Course | c in p.teaches and c in col.teaches implies no (col.enrolled & p.teaches))
+inv9 B: all p : Professor | (all col : Professor - p | some c : Course | ( c in p.teaches and c in col.teaches) implies no (col.enrolled & p.teaches))
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+inv14 U: all s: Student, col : Student - s | lone (s.projects & col.projects)
+inv14 U: all s: Student, col : Student - s | lone p : Project | p in s.projects and p in col.projects
+inv9 U: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches))
+

@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | (p & Professor) implies none p.enrolled
+inv1 T: all p : Person | (p & Student) => some p.enrolled
+inv1 T: all p : Person | (p & Student) implies some p.enrolled
+inv1 T: all p : Person | (p & Student) implies some p.enrolled
+inv1 B: no (Student & Professor).enrolled
+inv1 B: no Professor.enrolled
+inv1 C: all x : Person | all y : Course | x in enrolled.y implies x in Student
+inv1 B: all p:Person | (p in Student => some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 B: all p:Person | (p in Professor implies no p.enrolled)
+inv1 B: all p : Person | (p in Professor implies no p.enrolled)
+inv1 B: all p:Person | (p in Student => some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 T: all p:Person | (p in Student implies set p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 C: all x : Person | all y : Course | x in enrolled.y implies x in Student
+inv2 C: all x : Person | all y : Course | x in teaches.y implies x in Professor
+inv3 C: all x : Course | some teaches.x
+inv4 O: all x : Project | one x.projects
+inv4 O: all x : Project | one y : Course | y in x.projects
+inv4 C: all x : Project | one y : Course | x in y.projects
+inv5 T: all p : Person | (p in Student => some p.projects) and (p in Professor => no p.projects)	    all prj:Project | some prj.Person
+inv5 T: all p : Person | (p in Student implies some p.projects) and (p in Professor implies no p.projects)	    all prj:Project | some prj.Person
+inv5 C: all x : Project | all y : Person | x in y.projects implies y in Student	  all x : Project | some y : Person | x in y.projects
+inv5 T: all x : Project | all y : Person | x in y.projects implies y in Student	  	all x : Project | some projects.x
+inv5 C: all x : Project | all y : Person | x in y.projects implies y in Student	  	all x : Project | some y : Person | x in y.projects
+inv6 B: all x :Student | all y : Project | one z : Course | 	  			y in x.projects implies (y in z.projects and z in x.enrolled)
+inv6 B: all x :Student | all y : Project |	  			y in x.projects implies (one z : Course | y in z.projects and z in x.enrolled)
+inv7 S: all x : Student | all y : Course | y in x.enrolled implies lone s.projects.c.projects
+inv7 T: all x : Student | all y : Course | y in x.enrolled implies lone x.projects.y.projects
+inv7 U: all x : Student | all y : Course | y in x.enrolled implies (lone z : Project | z in x.projects and z in y.projects)
+inv8 U: all x : Professor | x not in x.teaches
+inv8 U: all x : Professor | all y : Course | x in teaches.y implies x not in enrolled.y
+inv9 U: all p:Professor | no p.teaches & p
+inv9 B: all p1,p2 : Professor | (some p1.teaches & p2.teaches) implies (no p1.enrolled & p2.teaches )
+inv10 U: all x : Student | all y : Course | some x.(y.grades) implies x in Student
+inv10 U: all x : Student | all y : Course | some x.enrolled.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some x.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some y.grades[x] implies x in Student
+inv11 C: all x : Person | all y : Course | some y.grades[x] implies y in x.enrolled
+inv12 C: all x : Person | all y : Course | lone y.grades[x]
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies y in x.enrolled
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 U: all x : Person | all y : Course | x in y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 O: all x : Person | all y : Course | x in y.grades.last implies (one p : Project | p in y.projects and p in x.projects)
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+

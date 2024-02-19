@@ -1,0 +1,74 @@
+NA H: THEME UPDATE
+inv1 C: Worker in (Human + Robot)
+inv2 C: all w : Workstation | some w . workers	all w : Worker | one workers . w
+inv3 C: all c : Component | one c . workstation
+inv4 C: all c : Component | some c . parts	all m : Material | no m . parts
+inv5 O: all w : Workstation | (w . workers in Human) or (w . workers in Robot)
+inv6 O: no (parts . ~parts & iden)
+inv6 B: no (parts & iden)
+inv6 B: no c : Component | c . parts in c
+inv6 U: no c : Component | c in (c . parts)
+inv6 C: no c : Component | c in (c . ^parts)
+inv7 C: all c : Component, d : Dangerous | d in (c . parts) => c in Dangerous
+inv8 O: all c : Component | (c . workstation . workers) in Robot
+inv8 O: all c : Component | (c in Dangerous) => (c . workstation . workers) in Robot
+inv9 B: succ in Workstation one -> one Workstation	(begin . *succ) in Workstation
+inv9 O: succ in Workstation one -> one Workstation	(begin . *succ) in Workstation	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	(begin . *succ) in Workstation	all w : Workstation | w not in (w . ^succ)	end not in begin
+NA M: MOD BASE MODEL
+inv9 U: (begin . *succ) in Workstation	all w : Workstation | w not in (w . ^succ)
+inv9 U: (begin . *succ) in Workstation
+inv9 U: (begin . *succ) in Workstation	all w : Workstation | w not in (w . ^succ)
+inv9 U: Workstation in (begin . *succ)	all w : Workstation | w not in (w . ^succ)
+inv9 U: (begin . *succ) in Workstation	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv4 C: all c : Component | some c . parts	Material . parts = none
+inv4 C: all c : Component | some c . parts	Material . parts = none
+inv4 O: Component in parts . Component	Material . parts = none
+inv4 C: parts . Product = Component
+inv9 U: Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv5 B: workers . ~workers in iden
+inv1 C: Worker in (Human + Robot)
+inv2 C: all w : Workstation | some w . workers	all w : Worker | one workers . w
+inv3 C: all c : Component | one c . workstation
+inv4 C: parts . Product = Component
+inv5 O: all w : Workstation | (w . workers in Human) or (w . workers in Robot)
+inv6 C: no c : Component | c in (c . ^parts)
+inv7 C: all c : Component, d : Dangerous | d in (c . parts) => c in Dangerous
+inv8 O: all c : Component | (c in Dangerous) => (c . workstation . workers) in Robot
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no end & begin	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	all w : Workstation | w not in (w . ^succ)
+inv7 O: all c : Component, d : Dangerous | d in (c . ^parts) => c in Dangerous
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	no (succ . begin)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	no (end . succ)	no (succ . begin)	all w : Workstation | w not in (w . ^succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)	no (succ . begin)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	no (succ . begin)	all w : Workstation | w not in (w . ^succ)
+inv9 O: succ in Workstation one -> one Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 U: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)		all w : Workstation | w not in (w . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 U: succ in Workstation lone -> lone Workstation		no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)	all w : Workstation | w not in (w . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv6 U: no c : Component | c in (c . parts)
+inv7 C: all c : Component, d : Dangerous | d in (c . parts) => c in Dangerous
+inv10 B: all c : Component, p : Product | (p in c . parts) => (c . workstation) in (p . workstation . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) => (c . workstation) in (p . workstation . ^succ)
+inv7 O: all c : Component | some (Dangerous & (c . ^parts)) => c in Dangerous
+inv7 C: all c : Component | some (Dangerous & (c . parts)) => c in Dangerous
+inv7 O: all c : Component | some (Dangerous & (c . ^parts)) => c in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation . ^~succ) in (p . workstation)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . *succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv10 B: all c, p : Component | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+

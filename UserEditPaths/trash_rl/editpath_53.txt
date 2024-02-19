@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv7 T: all f: File | no f in Trash
+inv7 O: all f: File | f !in Trash
+inv7 T: all f: File | no f.link in Trash
+inv7 O: all f: File | no f.link
+inv7 B: all f: File | f.link !in Trash
+inv7 T: all f: File | f.link => f.link !in Trash
+inv7 T: all f: File | f.link => (f.link !in Trash)
+inv7 T: all f: File | f.link => (f !in Trash)
+inv7 T: all l: link| l = l
+inv7 B: all f: File | link.f !in Trash
+inv8 C: no link
+inv9 S: all x,y: File: x.link != y.link
+inv9 S: x,y: File: x.link != y.link
+inv9 B: all f: File | one link.f
+inv9 B: #link = 1
+inv9 S: x,y:link| x!=y
+inv9 S: disj link
+inv9 S: all l: link | disj l
+inv9 O: all a,b : File| a.link != b.link
+inv9 B: all a,b : File| a != b => no (a.link & b.link)
+inv9 B: all a,b : File| a != b => no (link.a & link.b)
+inv9 B: all a,b : File| a != b => a.link != b.link
+inv9 O: all a,b : File|a.link != b.link
+inv9 U: all f: File,disj a,b: f.link | a!= b
+inv9 S: all disj a, l: link| a != l		/* If a link is deleted, so is the file it links to. */
+inv9 S: no link		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f: File| one link.f		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f: File| one f.link		/* If a link is deleted, so is the file it links to. */
+inv9 B: all f: File | one link.f
+

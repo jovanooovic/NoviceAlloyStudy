@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 B: all c : Course, p : Person |  c in p.enrolled
+inv1 B: all c : Course, p : Student |  c in p.enrolled
+inv1 B: no Professor.enrolled
+inv1 B: no Professor.enrolled	  	some Student.enrolled
+inv1 B: no Professor.enrolled	  	some Student.enrolled
+inv1 B: no Professor.enrolled	  	some Student.enrolled	  	all s:Student, p:Professor | s not in p
+inv1 B: some Student.enrolled
+inv1 B: all p : Person | (p in Professor) implies (no p.enrolled)
+inv1 B: no Professor.enrolled	  	no Student.teaches
+inv1 B: no Professor.enrolled	  	no Student.teaches	  	all p:Professor, s:Student | p not in Student and s not in Professor
+

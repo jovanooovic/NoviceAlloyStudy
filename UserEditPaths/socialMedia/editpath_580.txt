@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one u: User | u -> p in posts	all p: Photo | one posts.p
+inv3 S: all u: User, p : Photo | u -> p in sees =>	p in Ad || some f : User | u->f in follows && f->p in posts		all u: User, p: Photo | u -> p in sees => p in Ad+u.follows.pos
+inv3 S: all u: User, p : Photo | u -> p in sees =>	p in Ad || some f : User | u->f in follows && f->p in posts		all u: User, p: Photo | u -> p in sees => p in Ad+u.follows.pos
+inv3 S: all u: User, p : Photo | u -> p in sees =>	p in Ad || some f : User | u->f in follows && f->p in posts		all u: User, p: Photo | u -> p in sees => p in Ad+u.follows.pos
+inv3 S: all u: User, p : Photo | u -> p in sees =>	p in Ad || some f : User | u->f in follows && f->p in posts		all u: User, p: Photo | u -> p in sees => p in Ad+u.follows.pos
+inv1 C: all p: Photo | one u: User | u -> p in posts
+inv1 C: all p: Photo | one u: User | u -> p in posts
+inv4 C: all u: User | some (u.posts&Ad) => no (u.posts-Ad)
+inv5 S: all u:User | some i: Influencer => u.follows&i
+inv5 S: all u:User | some i: Influencer => u.follows&i
+inv5 C: all u: User | u.follows&Influencer = Influencer-u
+inv2 C: all u: User | u not in u.follows
+

@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 E: 
+inv1 S: all x : Photo | some y : user | y->x in posts
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 S: all x : Photo | some y : User | y->x in posts	all x : PHoto | all y,z : User | y->x in posts and x->y in posts implies y=x
+inv1 S: all x : Photo | some y : User | y->x in posts	all x : PHoto | all y,z : User | y->x in posts and x->y in posts implies y=x		all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | not x.follows.x
+inv1 C: all x : Photo | one posts.x
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv2 T: all x : User | x not follows.x
+inv2 T: all x : User | not follows.x
+inv2 T: all x : User | not x.follows.x
+inv2 T: all x : User | x not follows.x
+inv2 S: all x : User | follows.all - x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | x no follows.x
+inv2 O: all x : User | no follows.x
+inv2 S: all x : User | no y follows.x | y = x
+inv2 S: all x : User | no y follows.x implies y = x
+inv2 S: all x, y : User | no y follows.x implies y = x
+inv2 S: all x : User, y : User | no y follows.x implies y = x
+inv2 S: y : User	all x : User| no y follows.x implies y = x
+inv2 S: all x and y : User| no y follows.x implies y = x
+inv2 S: all x and y : User| no y follows.x implies y == x
+inv2 S: all x : User | no x follows.x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | no x in follows.x
+inv2 S: x : User | not follows.x
+inv2 S: x : User | not (some follows.x)
+inv2 S: x : User | no (follows.x)
+inv2 O: all x : User | no (follows.x)
+inv2 S: all x : User | not in (follows.x)
+inv2 C: all x : User | x not in (follows.x)
+inv3 S: all x : Ad and all y : User | all y sees.x
+inv3 S: all x : Ad and y : User | all y sees.x
+inv3 S: all x : Ad and y : User | y sees.x
+inv3 S: all x : Ad and y : User | y in sees.x
+inv3 T: all x : User | x sees.y implies y not Ad
+inv3 T: all x : User | all y : Ad | x sees.y implies y not Ad
+inv3 T: all x : User | all y : Ad | x sees.y implies y not in Ad
+inv3 T: all x : User | all y : Photo | x sees.y implies y not in Ad
+

@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo| one posts.p
+inv2 T: all u1,u2:User | u1.follows.u2 implies u1!=u2
+inv2 T: all u1,u2:User | u1 in follows implies u1!=u2
+inv2 C: all u1,u2:User | u1 in u2.follows implies u1!=u2
+inv3 T: all u1,u2:User, p:Photo | p.posts.u1 implies p not in Ad	all p:Photo , a: Ad , u:User | u.sees.p implies p in Ad
+inv3 T: all u1,u2:User, p:Photo | p in u1.posts implies p not in Ad	all p:Photo , a: Ad , u:User | u.sees.p implies p in Ad
+inv3 B: all u1,u2:User, p:Photo | p in u1.posts implies p not in Ad	all p:Photo , a: Ad , u:User | p in u.sees implies p in Ad
+inv3 B: all u1,u2:User, p:Photo | p in u1.posts implies p not in Ad	all p:Photo , a: Ad , u:User | p in u.sees implies p in a
+inv3 B: all u1 , u2 : User , p : Photo | u1->p in posts implies p not in Ad and u2->p in sees implies u2->u1 in follows
+

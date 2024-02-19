@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv12 S: all disj s1,s2:Student | lone s1.projetcs & s2.projects
+inv12 B: all disj s1,s2:Student | lone s1.projects & s2.projects
+inv14 U: all disj s1,s2:Student | lone s1.projects & s2.projects
+inv14 U: all disj s1,s2:Student | lone s1.projects & s2.projects
+inv13 S: all s:Student | first.(s.c.grades) implies (c.projects &s.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) implies (c.projects &s.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) implies (c.projects &s.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) =s implies (c.projects & s.projects)
+inv13 S: all c:Course,s:first.(s.c.grades) | (c.projects & s.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) implies (c.projects & s.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) implies (s.projects in c.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) iff (s.projects & c.projects)
+inv13 T: all s:Student,c:Course | first.(s.c.grades) & s implies (s.projects & c.projects)
+inv13 T: all s:Student,c:Course | (first.(s.c.grades) & s) implies (s.projects & c.projects)
+inv13 S: all s:Student,c:Course | (first.(s.c.grades) & s) implies (s.projects & c.projects)
+

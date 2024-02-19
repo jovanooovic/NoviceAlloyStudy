@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+Inv1 U: User.visible in User.profile
+Inv1 C: all u:User | u.visible in u.profile
+Inv2 S: all u:User, w:(user.profile + user.visible) | w.source in Institution
+Inv2 S: all u:User| all w:(user.profile + user.visible) | w.source in Institution
+Inv2 S: Work.source in (User+Instituition)
+Inv2 U: Work.source in (User+Institution)
+Inv2 S: all u:User, w:(user.profile + user.visible) | w in (u+Institution)
+Inv2 O: all u:User, w:(u.profile + u.visible) | w in (u+Institution)
+Inv2 O: all u:User, w:(u.profile + u.visible) | w in (u+Institution)
+Inv2 S: all u:User, all w:(u.profile) | (w.source) in (u + Institution)
+Inv2 C: all u:User | all w:(u.profile) | (w.source) in (u + Institution)
+Inv3 B: all w:(User.profile) | lone w.ids
+Inv3 B: all w:Work | lone w.ids
+Inv4 T: all u:User | all w:(u.visible) | lone w.ids in (u.visible)
+Inv4 T: all u:User | all w:(u.visible) | lone w.ids in (u.visible).ids
+Inv4 B: all u:User | all w:(u.visible) | lone w.ids
+Inv4 U: all u:User | all w:(u.visible) | (w.ids) in (u.visible).ids
+

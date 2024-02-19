@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+Inv1 C: all u:User | u.visible in u.profile
+Inv2 C: all u:User | no ((u.profile.source) - Institution - u)
+Inv3 S: all disj w1,w2 : Work | w1.id != w2.id
+Inv3 B: all disj w1,w2 : Work | w1.ids != w2.ids
+Inv3 O: all u:User , disj w1,w2:(u.profile) | w1.ids = w1.ids-w2.ids
+Inv3 O: all u:User , disj w1,w2:(u.profile) | w1.ids = w1.ids-w2.ids
+Inv3 O: all u:User , disj w1,w2:(u.profile) | (w1.ids = w1.ids-w2.ids) and (w2.ids = w2.ids-w1.ids)
+Inv4 T: all w:Work | (w in User.profile and w in User.visible) implies (one w in User.visible)
+Inv4 T: all w:Work | (w in User.profile & w in User.visible) implies (one w in User.visible)
+Inv4 T: all w:Work | ((w in User.profile) & (w in User.visible)) implies (one w in User.visible)
+Inv4 T: all w:Work | ((w in User.profile) & (w in User.visible)) implies ( w in User.visible)
+Inv4 B: all w:Work | ((w in User.profile)) implies ( w in User.visible)
+Inv4 U: all w:Work | ((w in User.profile) and (w in User.visible)) implies ( w in User.visible)
+

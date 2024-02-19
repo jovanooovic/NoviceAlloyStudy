@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | all c:Course | c in p.enrolled implies p in Student
+inv1 C: all p:Person | all c:Course | c in p.enrolled implies p in Student
+inv2 C: all p:Person | all c:Course | c in p.teaches implies p in Professor
+inv3 C: all c:Course | some p:Person | c in p.teaches
+inv3 C: all c:Course | some p:Person | c in p.teaches
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 B: (all s:Student | all p:Project | p in s.projects) and	    (all p:Project | some pe:Person | p in pe.projects)
+inv5 B: all s:Student | all p:Project | p in s.projects and	    all p:Project | some pe:Person | p in pe.projects
+inv5 C: (all p:Person | all pr:Project | pr in p.projects implies p in Student)	    and	    (all pr:Project | some p:Person | pr in p.projects)
+inv5 C: (all p:Person | all pr:Project | pr in p.projects implies p in Student)	    and	    (all pr:Project | some p:Person | pr in p.projects)
+inv6 B: all s:Student | all p:Project | p in s.projects implies s.enrolled.projects in p
+inv6 U: all s:Student | all p:Project | p in s.projects implies p in s.enrolled.projects
+inv6 U: all s:Student | all p:Project | p in s.projects implies p in s.enrolled.projects
+inv6 U: all s:Student | all p:Project | p in s.projects implies p in s.enrolled.projects
+inv7 B: all s:Student | all p:Project | p in s.projects implies(some c:Course | c in s.enrolled and p in c.projects)
+inv7 U: all s: Student | (all c : s.enrolled | lone (c.projects &  s.projects)  )
+inv8 U: all p:Professor | all c:Course | c in p.teaches implies c not in p.enrolled
+inv9 S: all p1,p2 | all c:Course | c in p1.teaches implies c not in p2.teaches
+inv8 U: all p:Professor | all c:Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p1,p2:Professor | all c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 S: all p1:Professor |all p2:Professor-p | all c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all p1:Professor |all p2:Professor-p1 | all c:Course | c in p1.teaches implies c not in p2.enrolled
+inv10 T: all p:Person | all g:Grade | g in Course.p.grades implies p in Student
+inv10 C: all p:Person | all g:Grade, c:Course | p->g in c.grades implies p in Student
+inv10 C: all p:Person | all g:Grade, c:Course | p->g in c.grades implies p in Student
+inv11 U: all s:Student | all g:Grade , c:Course | s->g in c.grades implies c in s.enrolled
+inv12 B: all s:Student | lone g:Grade | all c:Course | s->g in c.grades
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv13 T: all s:Student | all c:Course , g:Grade | s->g in c.grades.grades implies(some p:Project | p in c.projects)
+inv13 T: all s:Student | all c:Course , g:Grade | s->g in c.grades.last implies(some p:Project | p in c.projects)
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv13 U: all s:Student | all c:Course | s in c.grades.last implies(some p:Project | p in c.projects and p in c.projects)
+inv13 U: all s:Student | all c:Course | s in c.grades.last implies(some p:Project | p in c.projects and p in s.projects)
+inv13 T: all s:Student | all c:Course, g:Grade | s->g in c.grades.last implies(some p:Project | p in c.projects and p in s.projects)
+inv13 T: all s:Student | all c:Course, g:Grade | s->g in c.grades.last implies(some p:Project | p in c.projects and p in s.projects)
+inv13 E: 
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv14 B: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects and p2 in s1.projects implies p2 not in s2.projects
+inv14 B: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects implies( (p2 in s1.projects) or (p2 not in s2.projects) )
+inv14 B: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects and s1 != s2 and p1 != p2 implies( (p2 in s1.projects) or (p2 not in s2.projects) )
+inv14 B: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects implies( (p2 not in s1.projects) or (p2 not in s2.projects) )
+inv14 U: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects and s1 != s2 and p1 != p2 implies( (p2 not in s1.projects) or (p2 not in s2.projects) )
+

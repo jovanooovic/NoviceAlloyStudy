@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+Inv1 C: all c: Component | some c.parts
+Inv1 C: all c: Component | some c.parts
+Inv2 C: all c: Component | c not in c.^parts
+Inv3 S: all c: Component | Robot/position[c.position]
+Inv3 T: all c: Component | position[c.position]
+Inv3 T: all c: Component | some position.(c.position)
+Inv3 T: all c: Component | some position.(c.position)
+Inv3 S: all c: Component | some (Robot/position).(c.position)
+Inv3 T: all c: Component | let p = c.position | position.p
+Inv3 T: all c: Component | let p = c.position | some position.p
+Inv3 C: all c: Component | let p = c.position | some Robot <: position.p
+Inv2 C: all c: Component | c not in c.^parts
+Inv4 T: all c: Component | let parts = p.parts | gt[parts.Position, c.position]
+Inv4 T: all c: Component | let parts = p.parts | lt[parts.position, c.position]
+Inv4 S: all c: Component | all p: p.parts | lt[p.position, c.position]
+Inv4 S: all c: Component | all p: p.parts | lte[p.position, c.position]
+Inv2 C: all c: Component | c not in c.^parts
+Inv4 S: all c: Component | let parts = c.parts | lte[p.position, c.position]
+Inv2 C: all c: Component | c not in c.^parts
+Inv4 O: all c: Component | let parts = c.parts | lte[parts.position, c.position]
+

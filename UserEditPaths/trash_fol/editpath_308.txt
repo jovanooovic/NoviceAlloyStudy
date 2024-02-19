@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 B: all f:File | f in Trash
+inv1 C: all f:File | f not in Trash
+inv2 C: all f:File | f in Trash
+inv3 C: some f:File | f in Trash
+inv4 C: all f:Protected | f not in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv6 C: all f,g,h:File | f->g in link and f->h in link implies g=h
+inv7 C: all f:File | isLink[f] implies f not in Trash	}		pred isLink[f:File]{	some g:File | g->f in link
+inv8 C: all f:File | not isLink[f]	}		pred isLink[f:File]{	some g:File | g->f in link
+inv9 E: 
+inv9 E: 
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+inv10 C: all f:Trash,g:File | f->g in link implies g in Trash
+inv1 C: no Trash
+inv2 C: File in Trash
+inv3 C: some Trash
+inv4 C: no Protected & Trash
+inv5 C: (File - Protected) in Trash
+inv6 C: ~link . link in iden
+inv8 C: no File.link
+inv9 C: no link.link
+inv10 O: no Trash.link
+inv10 T: no Trash.link.File
+inv10 C: Trash.link in Trash
+

@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 S: all c: Course | x in c.~enrolled implies x in Student
+inv1 C: all c: Course, p: Person | p in c.~enrolled implies p in Student
+inv2 S: all c: Courses, p: Person | p in c.~teaches implies p in Professor
+inv1 C: all c: Course, p: Person | p in c.~enrolled implies p in Student
+inv2 C: all c: Course, p: Person | p in c.~teaches implies p in Professor
+inv2 C: all c: Course, p: Person | p in c.~teaches implies p in Professor
+inv3 C: all c: Course | some c.~teaches
+inv4 T: all p: Project | one p.~projects
+inv4 S: all p: Project, one c: Course | p in c.projects
+inv3 C: all c: Course | some c.~teaches
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 S: all p: Projects | some s: Student | p in s.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 U: all p: Project | some s: Student | p in s.projects
+inv5 B: all p: Project | some s: Person | p in s.projects and s not in Professor
+inv5 U: all p: Project | some s: Person | p in s.projects and s in Student
+inv5 B: all p: Project | some s: Person | p in s.projects and s in Student and s not in Professor
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 B: all s: Student | one p: Project | p in s.projects and p in s.enrolled.projects
+inv7 T: all s: Student | one s.projects.~projects
+inv7 T: all s: Student | one c: Course | c in s.enrolled and s.projects and c.projects
+inv7 B: all s: Student | one c: Course | c in s.enrolled and s.projects in c.projects
+inv7 S: all s: Student, c: Course | lone p: Projects | c in s.enrolled and p in s.projects and p in c.projects
+inv7 U: all s: Student, c: Course | lone p: Project | c in s.enrolled and p in s.projects and p in c.projects
+inv7 U: all s: Student, c: Course | lone p: Project | c in s.enrolled and p in s.projects and p in c.projects
+inv8 U: all p: Professor | p not in p.enrolled.~teaches
+inv8 U: all p: Professor | p not in p.enrolled.~teaches
+inv9 B: all p: Professor | p.teaches.~enrolled not in Professor
+inv10 S: all p: Person | p->g in grades implies p in Student
+inv10 T: all p: Person, g: Grade | p->g in grades implies p in Student
+inv9 B: all p: Professor | p.teaches.~enrolled not in Professor
+inv10 C: all p: Person, g: Grade | p->g in Course.grades implies p in Student
+inv10 C: all p: Person, g: Grade | p->g in Course.grades implies p in Student
+inv11 O: all p: Person, g: Grade, c: Course | p->g in c.grades implies p in Student and c in p.enrolled
+

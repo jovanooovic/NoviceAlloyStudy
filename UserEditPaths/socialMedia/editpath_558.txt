@@ -1,0 +1,5 @@
+NA H: THEME UPDATE
+inv7 B: all x : User | x.suggested = x.follows.follows - x.follows
+inv7 C: all x : User | x.suggested = x.follows.follows - x.follows - x
+inv8 C: all x : User, y : Ad | y in x.sees implies (y in x.follows.posts or y in x.suggested.posts)
+

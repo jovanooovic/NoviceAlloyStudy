@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 S: all person : univ | all courses : Courses | person->courses in enrolled implies person in Student
+inv1 C: all person : univ | all courses : Course | person->courses in enrolled implies person in Student
+inv1 C: all professor : Person - Student | no professor.enrolled
+inv1 S: all professor : univ | professor in Professor implies no professor->courses in enrolled
+inv1 B: all professor : univ | professor in Professor implies no professor.enrolled
+inv1 B: all professor : Professor | no professor.enrolled
+inv1 C: all person : univ | all courses : Course | person->courses in enrolled implies person in Student
+inv2 C: all student : Person - Professor | no student.teaches
+inv2 C: all student : Person - Professor | no student.teaches
+inv3 O: all course : Course | some professor : Professor | professor->course in teaches
+inv4 S: all project : Projects | one course : Course | course->project in projects
+inv3 O: all course : Course | some professor : Professor | professor->course in teaches
+inv4 C: all project : Project | one course : Course | course->project in projects
+inv4 C: all project : Project | one course : Course | course->project in projects
+inv4 C: all project : Project | one course : Course | course->project in projects
+inv5 B: some person : Person - Professor | all project : Project | person->project in projects
+inv5 S: some student : Student | all project : Project | person->project in projects
+inv5 B: some student : Student | all project : Project | student->project in projects
+inv5 U: all project : univ | project in Project implies some student : Student | student->project in projects
+inv5 S: all projects : Project | some student : Student | all professor : Professor | student->project in projects and no professor.projects
+inv5 B: all project : Project | some student : Student | all professor : Professor | student->project in projects and no professor.projects
+inv5 C: all project : Project | some student : Student | student->project in projects	  	all professor : Person - Student | no professor.projects
+inv5 B: all project : Project | some student : Student | all professor : Professor | student->project in projects and no professor.projects
+inv5 B: all project : Project | some student : Student | all professor : Professor | (student->project in projects) and (no professor.projects)
+inv5 U: all project : Project | some student : Student | all professor : Person - Student | (student->project in projects) and (no professor.projects)
+inv5 B: all project : Project | some student : Student | student->project in projects	  	all professor : Professor | no professor.projects
+inv5 C: all project : Project | some student : Student | student->project in projects	  	all professor : Person - Student | no professor.projects
+inv5 C: all project : Project | some student : Student | student->project in projects	  	all professor : Person - Student | no professor.projects
+inv6 U: all student : Student | all project : Project | student->project in projects implies some course : Course | course->project in projects and student->course in enrolled
+inv6 U: all student : Student | all project : Project | student->project in projects implies some course : Course | course->project in projects and student->course in enrolled
+inv7 B: all student : Student | one project : Project | all course : Course | student->course in enrolled and course->project in projects implies project in student.projects
+inv7 B: all student : Student | lone project : Project | all course : Course | student->course in enrolled and course->project in projects implies project in student.projects
+inv7 B: all student : Student | lone project : Project | all course : Course | student->course in enrolled and course->project in projects implies student->project in projects
+inv7 U: all student : Student | all course : Course | student->course in enrolled implies lone project : Project | student->project in projects and course->project in projects
+inv7 U: all student : Student | all course : Course | student->course in enrolled implies lone project : Project | student->project in projects and course->project in projects
+inv9 U: all professor : Professor | all person : Person | professor->person in teaches implies person in Student
+inv9 T: all professor : Professor | all colleague : Professor | professor != colleague implies no professor->colleague in teaches
+inv9 U: all professor : Professor | all colleague : Professor | professor != colleague implies colleague not in professor.teaches
+inv9 U: all professor : Professor | all colleague : Professor | professor != colleague implies colleague not in professor.teaches
+inv9 E: 
+inv9 E: 
+inv9 E: 
+inv8 U: all professor : Professor | professor not in professor.teaches
+inv8 U: all professor : Professor | all student : Student | all course : Course | professor->course in teaches and student->course in enrolled implies professor!=student
+inv9 S: all professor : Professor | none colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 S: all professor : Professor | none colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 B: all professor : Professor | all colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 S: all professor : Professor | all course : Course | professor->course in teaches implies none colleague : Professor | colleagues->course in enrolled
+

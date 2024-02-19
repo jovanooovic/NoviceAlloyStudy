@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 T: Person.enrolled	  	no Person.teaches	  	no Person.proects
+inv1 B: Person.enrolled in Course	  	no Person.teaches
+inv1 B: Person.enrolled in Course	  	no Professor
+inv1 T: Person.enrolled in Course -> Person = Student
+inv1 T: all p:Person.enrolled in Course |	  		p = Student
+inv1 S: all p:Person.enrolled in Course |	  		p == Student
+inv1 T: all p:Person.enrolled in Course |	  		p.Student
+inv1 U: no (Professor <: Person.enrolled)
+inv1 B: no (Professor <: enrolled)
+inv1 T: all p:Person.enrolled in Course|	  		p->Student
+inv1 S: no e:enrolled | p:Professor in Course
+inv1 S: no e:enrolled | p:Professor in e.Course
+inv1 T: not one Professor.enrolled in Course
+inv1 T: all c:Course |		  		not one Professor.enrolled.c
+inv1 T: all c:Course |		  		not one c.Professor.enrolled
+inv1 T: all c:Course |		  		not one Professor.enrolled in c
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv1 T: all c:Course |		  		not one Professor.enrolled in c
+inv1 T: all c:Course |		  		not one Professor.enrolled.c
+inv1 T: all c:Course |		  		no Professor.enrolled.c
+inv1 S: no Professor.enrolled.c
+inv1 T: no Professor.enrolled.Course
+

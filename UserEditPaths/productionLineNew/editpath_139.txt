@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 C: all x:Worker | x in Human or x in Robot
+inv2 U: all x:Worker | one workers.x
+inv2 C: all x:Workstation | some x.workers	all x:Worker | one workers.x
+inv2 C: all x:Workstation | some x.workers	all x:Worker | one workers.x
+inv4 S: all x:Product | some x.parts	all x:Materials | no x.parts
+inv3 C: all x:Component | one x.workstation
+inv4 O: all x:Product | some x.parts	all x:Material | no x.parts
+inv4 C: all x:Component | some x.parts	all x:Material | no x.parts
+inv5 C: all x:Human, y:Robot | no workers.x & workers.y
+inv6 U: all x:Component | x not in x.parts
+inv6 T: all x:Component | x not in x.parts or x.parts.parts
+inv6 E: 
+inv7 B: all x:Component | x in Dangerous implies x.parts in Dangerous
+inv7 B: all x:Product | x in Dangerous implies x.parts in Dangerous
+inv7 B: all x:Component | x in Dangerous implies x.parts in Dangerous
+inv10 B: all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 B: all x:Component | x.parts.workstation not in  x.workstation and x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 S: all x:component | x.parts.workstation !=  x.workstation	all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 B: all x:Component | x.parts.workstation !=  x.workstation	all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv9 U: all x:Workstation | x in begin or one succ.x
+inv9 U: all x:Workstation | x in begin or one succ.x and x not in x.succ
+inv9 U: all x:Workstation | x in begin or one succ.x and x not in succ.x
+inv9 U: all x:Workstation | x not in succ.x	all x:Workstation | x in begin or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | (not x in begin iff x in end) or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | (not (x in begin iff x in end)) or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | ((x in begin and x not in end) or one succ.x)
+inv9 O: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | (x in begin and x not in end)
+inv9 U: all x:Workstation | x not in succ.x and lone succ.x
+inv9 B: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | one Workstation implies x in begin and x in end	all x:Workstation | (not (x in begin iff x in end)) or x in succ.x
+inv9 U: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | (one Workstation implies x in begin and x in end) or (not (x in begin iff x in end)) or x in succ.x
+inv8 B: all x:Component | x in Dangerous implies x.workstation.workers not in Human
+

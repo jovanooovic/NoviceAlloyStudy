@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+Inv1 B: all c : Component | lone (c.parts)
+Inv1 C: all c : Component | some (c.parts)
+Inv2 O: all c : Component | no c.parts.*parts
+Inv2 C: all c : Component | c not in  c.parts.*parts
+Inv3 C: all c: Component | some (c.position & Robot.position)
+Inv4 U: all c: Component , p : c.parts | p not in nexts[p.position]
+Inv4 U: all c: Component , p : c.parts | p not in nexts[c.position]
+Inv4 O: all c: Component , p : c.parts | p.position not in nexts[c.position]
+Inv4 C: all c: Component , p : (c.parts & Component) | p.position not in nexts[c.position]
+NA M: MOD BASE MODEL
+

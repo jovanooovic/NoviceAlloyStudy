@@ -1,0 +1,62 @@
+NA H: THEME UPDATE
+inv1 U: all person : Person| person in person.enrolled implies person not in Professor
+inv1 U: all person : Person| person in person.enrolled implies person not in Professor
+inv1 C: all person : Person | all course: Course | course in person.enrolled implies person in Student
+inv2 C: all person : Person | all course: Course | course in person.teaches implies person in Professor
+inv3 C: all course : Course | course in Person.teaches
+inv4 U: all p: Project | all course1, course2 : Course | (p in course1.projects and p in course2.projects) implies course1 = course2
+inv4 C: all p: Project | one course : Course | p in course.projects
+inv5 U: all person : Person | all project: Project | project in person.projects implies person in Student
+inv5 B: all person : Student | all project: Project | project in person.projects
+inv5 B: all person : Person | all project: Project | project in person.projects and person in Student
+inv5 S: all person : Person - Student | all project: Project | project in person.projects = non
+inv5 T: all person : Person - Student | all project: Project | project in person.projects = none	  	all person : Student | all project: Project | project in person.projects
+inv5 B: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in person.projects
+inv5 S: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in Sttudent.projects
+inv5 U: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in Student.projects
+inv5 C: all person : Person - Student | person.projects = none	  	all project: Project | project in Student.projects
+inv6 T: all person : Student | all projects : Project | projects in person.projects implies projects in person.enrolled.projects
+inv6 T: all person : Student | all projects : Project | projects in person.projects implies projects in person.enrolled.projects
+inv6 T: all person : Student | all projects : Project | all course : Course | (projects in person.projects and projects in course.projects) implies course in person.enrolled
+inv6 B: all person : Student | all project : Project | all course : Course | (project in person.projects and project in course.projects) implies course in person.enrolled
+inv7 T: all person : Student | lone project : Project | all course : Course | project in person.projects implies projects in course.projects
+inv7 B: all person : Student | lone project : Project | all course : Course | project in person.projects implies project in course.projects
+inv7 B: all person : Student | lone project : Project | all course : Course | project in person.projects and project in course.projects
+inv8 U: all person : Professor | person not in person.teaches
+inv8 S: all person : Professor | all course : Course | course in person.teaches implies course not in person.enrolled
+inv8 S: all person : Professor | all course : Course | course in person.teaches implies course not in person.enrolled
+inv8 U: all person : Professor | all course : Course | course in person.teaches implies course not in person.enrolled
+inv9 S: all person1, person2 : Person | all course : Course | (person1 in Professor and course in person2.enrolled and course in person1.teaches) person2 in Student
+inv9 S: all person1, person2 : Person | all course : Course | (person1 in Professor and course in person2.enrolled and course in person1.teaches) 		person2 in Student
+inv9 B: all person1, person2 : Person | all course : Course | (person1 in Professor and course in person2.enrolled and course in person1.teaches) 		implies person2 in Student
+inv10 U: all person : Person | all course : Course | person->Grade in course.grades implies person in Student
+inv10 U: all person : Person | all course : Course | (person->Grade in course.grades) implies person in Student
+inv10 C: all person : Person | all course : Course | all grade : Grade |(person->grade in course.grades) implies person in Student
+inv11 U: all person : Student | all course : Course | all grade : Grade | (person->grade in course.grades) implies course in person.enrolled
+inv7 U: all person : Student | all project1, project2 : Project | all course : Course | ((project1 + project2) in person.projects and (project1 + project2) in course.projects) implies project1 = project2
+inv9 B: all person1, person2 : Person | all course : Course | (person1 in Professor and course in person2.enrolled and course in person1.teaches)     implies person2 in Student
+inv11 U: all person : Student | all course : Course | all grade : Grade | (person->grade in course.grades) implies course in person.enrolled
+inv12 U: all grade1, grade2: Grade | all person: Student | all course : Course | (person->grade1 + person->grade2) in course.grades implies grade1 = grade2
+inv9 B: all person1, person2 : Person | all course : Course | (person1 in Professor and course in person2.enrolled and course in person1.teaches)     implies person2 in Student
+inv14 B: all student1, student2 : Student | all project1, project2: Project |((project1 + project2 ) in student1.projects and (project1 + project2 ) in student2.projects)implies project1 = project2
+inv12 U: all grade1, grade2: Grade | all person: Student | all course : Course | (person->grade1 + person->grade2) in course.grades implies grade1 = grade2
+inv9 O: all person1, person2 : Person | all course1, course2 : Course | (course1 in person1.teaches and course2 in person2.teaches) implies (course2 not in person1.enrolled and course1 not in person2.enrolled)
+inv9 B: all person1, person2 : Professor | all course1, course2 : Course | (course1 in person1.teaches and course2 in person2.teaches) implies (course2 not in person1.enrolled and course1 not in person2.enrolled)
+inv9 S: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 in Student)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 in Student and person1 in Professor)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies ( course not in person2.teaches)
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv14 B: all student1, student2 : Student | all project1, project2: Project |((project1 + project2 ) in student1.projects and (project1 + project2 ) in student2.projects)implies project1 = project2
+inv9 B: all person1, person2 : Person| all course: Course | (course in person1.teaches and course in person2.enrolled) implies (person2 not in Professor)
+inv14 S: all student1, student2 : Student | all project1, project2: Project |((project1 + project2 ) in student1.projects and (project1 + project2 ) in student2.projects and studen1 != student2) implies (project1 = project2)
+inv14 U: all student1, student2 : Student | all project1, project2: Project |((project1 + project2 ) in student1.projects and (project1 + project2 ) in student2.projects and student1 != student2) implies (project1 = project2)
+inv9 S: all p1,p2 : Professor | all c1:Course |	      (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled))
+inv9 S: all p1,p2 : Professor | all c1:Course |	      (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled))
+inv9 S: all p1,p2 : Professor | all c1:Course | (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	    (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled))
+inv9 U: all p1,p2 : Professor | all c1:Course | (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	    (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+inv13 U: all s : Student | all c : Course |	  	s in c.grades.last implies (some p : Project | p in c.projects and p in s.projects)
+

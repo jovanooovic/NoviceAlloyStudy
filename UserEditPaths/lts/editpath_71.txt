@@ -1,0 +1,52 @@
+NA H: THEME UPDATE
+inv1 C: all s:State | some s.trans:>State
+inv2 T: lone State in Init
+inv2 U: lone Init
+inv2 C: one Init
+inv3 T: all s:State, e:Event | lone s.trans <: e
+inv3 U: all s:State, e:Event | lone s <: trans.e
+inv3 U: all s:State, e:Event | lone s <: trans.e
+inv3 C: all s:State, e:Event | lone e <: s.trans
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some (s.^~trans):>Init
+inv4 T: all s:State | some (s.Event.^~trans):>Init
+inv4 B: all s:State | some s.trans :> Init
+inv4 T: all s:State | some s.^trans :> Init
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some s.Event.^~trans :> Init
+inv5 S: all s:State, e:Event | all s->e in trans
+inv5 T: all s:State, e:Event | some s->e in trans
+inv4 T: all s:State | some (s.Event).^~trans :> Init
+inv6 O: all e:Event | some e.trans :> State
+inv6 T: all e:Event | some State.e.State
+inv6 T: all e:Event | some State.e
+inv6 T: all e:Event | some State->e in trans
+inv6 O: all e:Event | some (State.trans).e
+inv6 O: all e:Event | some (State.trans).e
+inv6 C: all e:Event | some e.(State.trans)
+inv6 C: all e:Event | some e.(State.trans)
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 T: all s:State | some Init <: (Event.s)
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 O: all s:State | some Init <: (trans.Event.s)
+inv7 T: all s:State | some trans.s implies s.~^trans :> Init
+inv7 T: all s:State | some trans.s implies (s.~^trans) :> Init
+inv5 S: all s:State, e:Events | some e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+inv6 T: all e:Event | e.(State.trans)
+inv5 B: all s:State, e:Event | lone e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+NA H: THEME UPDATE
+inv5 C: all disj s1,s2 :State |  no ((s1.trans).State) -((s2.trans).State) and no ((s2.trans).State) - ((s1.trans).State)
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )	  	^adj
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )	  	^adj
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )
+inv4 S: let adj =  {x,y:State | some e:Event | x->e->y in trans}
+inv4 S: let adj =  ({x,y:State | some e:Event | x->e->y in trans})
+inv7 T: all s:State | some trans.s implies (s.trans).^Event :> Init
+inv7 T: all s:State | some trans.s implies ^((s.trans).Event) :> Init
+inv7 T: all s:State | some trans.s implies ^(s.trans) :> Init
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+

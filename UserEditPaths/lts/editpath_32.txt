@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+inv4 S: all s:State | some i:Init | s in i.^succ
+inv4 S: all s:State | some i:Init | s in i.^succ
+inv4 S: x implies all s:State | some i:Init | s in i.^succ	}		pred x{		all s1,s2:State | s1->s2 in succ iff some y:Event | s1->y->s2 in trans
+inv4 S: x implies (all s:State | some i:Init | s in i.^succ)	}		pred x{		all s1,s2:State | s1->s2 in succ iff some y:Event | s1->y->s2 in trans
+inv4 S: x and (all s:State | some i:Init | s in i.^succ)	}		pred x{		all s1,s2:State | s1->s2 in succ iff some y:Event | s1->y->s2 in trans
+inv4 S: (all s:State | some i:Init | s in i.^succ)
+

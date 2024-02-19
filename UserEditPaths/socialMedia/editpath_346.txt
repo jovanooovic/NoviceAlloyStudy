@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 B: all u1,u2 : User |some  p : Photo | p in u1.posts implies p not in u2.posts
+inv1 B: all u1,u2 : User |one  p : Photo | p in u1.posts implies p not in u2.posts
+inv1 B: all u1,u2 : User |some  p : Photo | p in u1.posts implies p not in u2.posts
+inv1 B: all u1,u2 : User |all  p : Photo | u1->p in posts implies u2->p not in posts
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in u1.posts implies u1->p not in u2.pontos
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in posts.u2 implies u1->p not in pontos.u2
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in u1->posts implies u1->p not in u2->pontos
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in u1->posts implies p not in u2->pontos
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in u1->posts implies p not in u2.pontos
+inv1 T: all u1,u2 : User |all  p : Photo | u1->p in u1->posts implies p not in pontos.u2
+inv1 S: all u1,u2 : User |all  p : Photo | u1->p in posts implies p not in pontos.u2
+

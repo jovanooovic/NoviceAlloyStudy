@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: all x : Photo | one posts.x
+inv2 E: 
+inv2 S: all x : User | none follow.x == x
+inv2 S: all x : User | none follows.x == x
+inv2 T: all x : User | none follows.x
+inv2 U: all x : User | x.follows != x
+inv2 U: all x : User | x.follows != x
+inv2 C: all x : User | x not in x.follows
+inv3 S: all x : User | all y : Photos | some z : User | y in z.posts and y in x.follows
+inv3 O: all x : User | all y : Photo | some z : User | y in z.posts and y in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and y in x.follows	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and z in x.follows	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and z in x.follows and y in x.sees	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: all x : User | x.sees in (x.follows.posts - Ad)
+inv3 O: inv2 and	all x : User | x.sees in (x.follows.posts - Ad)	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv1 and inv2 and	all x : User | x.sees in (x.follows.posts - Ad)	}		pred inv2{		all x : User | x not in x.follows		}		pred inv1{		all x : Photo | one posts.x
+inv3 S: all x : User | x.sees in x.follows.posts or x.sees == Ad
+inv3 T: all x : User | x.sees in x.follows.posts or x.sees -> Ad
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad
+inv3 O: inv2 and	all x : User | x.sees in x.follows.posts or x.sees in Ad	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad and  x not in x.follows
+inv3 O: all x : User | x.sees in (x.follows.posts - Ad) or x.sees in Ad
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv4 S: all x : User | x.posts in Photos or x.posts in Ad
+inv4 U: all x : User | x.posts in Photo or x.posts in Ad
+inv4 C: all x : User | x.posts in (Photo - Ad) or x.posts in Ad
+inv5 B: all x : Influencer | all y : User | x in y.follows
+inv5 U: all x : Influencer | all y : (User - Influencer) | x in y.follows
+

@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv1 C: Person = Student
+inv3 C: no (Teacher & Student)
+inv4 B: no (Teacher + Student)
+inv4 S: all (Teacher + Student)
+inv4 B: some (Teacher + Student)
+inv4 C: Person in (Teacher + Student)
+inv5 T: some g:Group | Groups.g in Teacher
+inv5 T: some g:Group | Groups.g in Teacher
+inv5 C: some Teacher.Teaches
+inv6 S: all Teacher in Teaches.Class
+inv6 C: Teacher in Teaches.Class
+inv7 C: Class in Teacher.Teaches
+inv8 T: one (Teacher in Teaches.Class)
+inv7 C: Class in Teacher.Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 C: all t: Teacher | lone t.Teaches
+inv9 O: all c: Class | lone Teaches.c
+inv9 B: all c: Class | some Teaches.c
+inv9 O: all c: Class | one Teaches.c
+inv9 O: all c: Class | lone Teaches.c
+inv9 C: all c: Class | lone (Teaches.c & Teacher)
+inv10 B: all c:Class | some c.Groups
+inv10 T: all c:Class, s: Student | s in c.Groups
+inv10 T: all c:Class | Student in c.Groups
+inv10 B: all c:Class, g:Group | Student in c.Groups.g
+inv10 B: all c:Class, g:Group | Student->g in c.Groups
+inv10 B: all c:Class, g:Group | (Student->g) in c.Groups
+inv10 O: all c:Class | some g:Group | (Student->g) in c.Groups
+inv10 B: all c:Class | (Student->Group) in c.Groups
+inv10 B: all c:Class, s:Student, g:Group | (s->g) in c.Groups
+inv10 C: all c:Class, s:Student | some g:Group | (s->g) in c.Groups
+inv10 S: all s: Student | some g: Group | (s->g) in c.Groups
+inv10 B: all s: Student | some g: Group | (s->g) in Class.Groups
+inv10 B: all c: Class | (Student->Group) in c.Groups
+inv10 T: all c: Class | some (Student->Group) in c.Groups
+inv10 T: all c: Class | (Student->(some Group)) in c.Groups
+inv10 B: all c: Class | (Student->Group) in c.Groups
+inv10 C: all c: Class | Student in (c.Groups).Group
+

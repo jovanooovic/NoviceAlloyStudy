@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+Inv1 S: all w : Work | w in User.visible implies w in User.Profile
+Inv1 U: all w : Work | w in User.visible implies w in User.profile
+Inv1 C: all w : Work, u : User | w in u.visible implies w in u.profile
+Inv2 O: all u : User , w : Work | w in u.profile implies (w.source = u or w.source = Institution)
+Inv2 B: all u : User , w : Work, i : Institution | w in u.profile implies (w.source = u or w.source = i)
+Inv2 B: all u : User , w : Work, i : Institution | always(w in u.profile implies (w.source = u or w.source = i))
+Inv2 S: all u : User, i : Institution, w : u.profile | always( w.source =u or w.source = Institucion)
+Inv2 B: all u : User, i : Institution, w : u.profile | always( w.source =u or w.source = Institution)
+Inv2 B: one u : User | all i : Institution, w : u.profile | always( w.source =u or w.source = Institution)
+Inv2 O: all w : Work , u : User | w in u.profile implies always (w.source = u or w.source = Institution)
+Inv2 O: all disj w : Work , u : User | w in u.profile implies always (w.source = u or w.source = Institution)
+Inv3 O: all w1,w2: Work | w1.source = w2.source implies always no (w1.ids + w2.ids)
+Inv3 O: all w1,w2: Work | no (w1.ids + w2.ids)
+Inv4 S: all u : User |
+Inv3 O: all w1,w2: Work | no (w1.ids & w2.ids)
+Inv3 O: all w1,w2: Work | w1.source = w2.source implies always no (w1.ids & w2.ids)
+Inv4 T: all disj w:Work | w in profile
+Inv4 B: all disj w:Work | w in User.profile
+

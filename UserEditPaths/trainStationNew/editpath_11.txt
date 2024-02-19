@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 T: all t:Track | (some t in Entry) and (some t in Exit)
+inv1 C: some Entry && some Exit
+inv2 O: all si:Signal | one t:Track | t in si
+inv2 S: all si:Signal | one t:Track | s in t.signals
+inv2 C: all si:Signal | one t:Track | si in t.signals
+inv3 S: all t:Tracks | t in Exit <=> t.^(succs)
+inv3 T: all t:Track | t in Exit <=> t.^(succs)
+inv3 T: all t:Track | t in Exit <=> t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+inv6 C: all e:Entry | some s:Speed | s in e.signals
+inv7 C: all t:Track | t not in t.^(succs)
+inv8 C: Entry->Exit in *succs
+inv8 C: all disj t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1:Track ,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1:Track | all t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv10 O: all t:Track, j:Junction | some s:Semaphore | j in t.succs => s in t.signals
+inv5 B: all t : Track | t in Junction <=> #(^(succs).t)>=1
+inv5 B: all t : Track | t in Junction iff #(^(succs).t)>=1
+

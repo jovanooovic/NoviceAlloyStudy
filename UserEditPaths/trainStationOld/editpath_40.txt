@@ -1,0 +1,51 @@
+NA H: THEME UPDATE
+prop1 S: no Red
+prop1 C: no Green
+prop2 O: eventually Signal = Green
+prop2 O: always(eventually Signal = Green)
+prop2 C: all s : Signal - Green | eventually s in Green
+prop3 B: no pos
+prop3 B: no Train.pos
+prop3 O: always (no Train.pos)
+prop3 U: Train.pos' = Train.pos
+prop3 U: always (Train.pos' = Train.pos)
+prop3 U: all t : Train , p : t.pos | always (t.pos = p)
+prop3 U: always(all t : Train , p : t.pos | always (t.pos = p))
+prop3 B: no Train.pos.prox
+prop3 B: always (no Train.pos.prox)
+prop3 C: always(all t : Train  | always (t.pos' = t.pos))
+prop4 U: pos.~pos in iden
+prop4 T: Train.pos.~pos in iden
+prop4 T: all t : Train, p : t.pos | pos.~p in iden
+prop4 T: all t : Train | t.~pos in iden
+prop4 T: all t : Train | t.pos.~pos in iden
+prop4 T: Train.pos in iden
+prop4 T: all t : Train | t.pos in iden
+prop4 T: all t : Train | t.~pos in iden
+prop4 B: all t1,t2 : Train | no (t1.pos & t2.pos)
+prop4 O: always (all t1,t2 : Train | no (t1.pos & t2.pos))
+prop4 C: always (all disj t1,t2 : Train | no (t1.pos & t2.pos))
+prop4 C: always (all disj t1,t2 : Train | no (t1.pos & t2.pos))
+prop5 B: all t : Train.pos | some (t & Exit) implies  no t'
+prop5 B: all t : Train | some (t.pos & Exit) implies  Train' = Train - t
+prop5 B: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) else( t.pos' in t.pos.prox)
+prop5 T: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) else( t.pos' & t.pos.prox)
+prop5 S: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) ( else( t.pos' & t.pos.prox))
+prop5 S: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t)  else( t.pos' & t.pos.prox))
+prop5 T: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t)  else( t.pos' & t.pos.prox)
+prop5 T: all t : Train | some (t.pos & Exit) implies  (Train' = (Train - t) and no t.pos')  else( t.pos' & t.pos.prox)
+prop5 T: all t : Train | no (t.pos & Exit) implies (t.pos' & t.pos.prox)
+prop5 B: all t : Train | no (t.pos & Exit) implies (t.pos' in t.pos.prox)
+prop5 B: all t : Train | no (t.pos & Exit) implies (t.pos' in t.pos.prox) else (Train' = Train - t)
+prop5 B: all t : Train | t.pos' != t.pos
+prop5 S: all t : Train | t.pos' != t.pos | no Green
+prop5 B: all t : Train | t.pos' != t.pos implies t.pos' in t.pos.prox
+prop5 B: all t : Train | t.pos' != t.pos and no (t.pos & Exit) implies (t.pos' in t.pos.prox)
+prop5 B: all t : Train | t.pos' != t.pos and no (t.pos & Exit) implies (t.pos' in t.pos.prox)	all t : Train | t.pos' != t.pos implies Train' = Train - t
+prop6 O: all t : Track |always( t.signal' != t.signal)
+prop6 O: all s : Signal | no (s & Green) implies s' = Green else s' not in Green
+prop6 O: all  s : Signal | always (no (s & Green) implies s' = Green else s' not in Green)
+prop6 O: always (all  s : Signal |  no (s & Green) implies s' = Green else s' not in Green)
+prop6 B: always (all  s : Signal |  no (s & Green) implies s' = Green else s'!=Green)
+prop6 O: always (all  s : Signal |  no (s & Green) implies s'  in  Green else s' not in Green)
+

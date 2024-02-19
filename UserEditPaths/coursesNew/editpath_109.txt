@@ -1,0 +1,70 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv2 C: all c : Course | teaches.c in Professor
+inv3 C: all c : Course | some teaches.c
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | projects.p
+inv4 T: all p : Project | some projects.p
+inv4 T: all p : Project | no projects.p
+inv4 T: all p : Project | one projects.p
+inv4 C: all p : Project | one (Course <: projects).p
+inv4 C: all p : Project | one Course <: projects.p
+inv5 U: all p : Project | Person <: projects.p in Person
+inv5 U: all p : Project | Person <: projects.p in Person and some Person <: projects.p
+inv5 U: all p : Project | (Person <: projects.p in Person) and (some Person <: projects.p)
+inv5 U: all p : Project | Person <: projects.p in Person		all p : Project | some Person <: projects.p
+inv5 C: all p : Project | Person <: projects.p in Student		all p : Project | some Person <: projects.p
+inv5 C: all p : Project | Person <: projects.p in Student and some Person <: projects.p
+inv5 C: all p : Project | Person <: projects.p in Student and some Person <: projects.p
+inv6 S: all s : Student | Courses <: projects.Student | s.Person <: projects in s.enrolled
+inv6 S: all s : Student | Courses <: projects.s.Person <: projects in s.enrolled
+inv6 T: all s : Student | Course <: projects.s.Person <: projects in s.enrolled
+inv6 U: all s : Student | (Course <: projects).s.(Person <: projects) in s.enrolled
+inv6 B: all s : Student | (Course <: projects).(s.(Person <: projects)) in s.enrolled
+inv6 B: all s : Student | Course <: projects.(s.(Person <: projects)) in s.enrolled
+inv6 T: all s : Student | Course <: projects.s.Person <: projects in s.enrolled
+inv6 T: all s : Student | Course <: projects.s.(Person <: projects) in s.enrolled
+inv6 B: all s : Student | Course <: projects.(s.(Person <: projects)) in s.enrolled
+inv8 S: all p : Professor | t.teaches not in t.enrolled
+inv6 B: all s : Student | Course <: projects.(s.(Person <: projects)) in s.enrolled
+inv6 B: all s : Student | Course <: projects.(s.(Person <: projects)) in s.enrolled
+inv6 B: all s : Student | Course <: projects.(s.(Person <: projects)) in s.enrolled
+inv7 E: 
+inv9 B: all p : Professor | p.teaches not in Professor.enrolled
+inv9 B: all p : Professor | Professor.enrolled not in p.teaches
+inv9 B: all p : Professor | Professor.enrolled-p not in p.teaches
+inv9 B: all p : Professor | Professor.enrolled not in p.teaches
+inv9 B: all p : Professor | (Professor-p).enrolled not in p.teaches
+inv9 B: all p : Professor | no (Professor-p).enrolled & p.teaches
+inv9 B: all p : Professor | no (Professor).enrolled & p.teaches
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 S: no ourse.{c : Course, p : Person | some c.grades} & Student
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Student
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Professor
+inv10 B: no (Course.{c : Course, p : Person | some c.grades} & Professor)
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Professor
+inv10 C: all p1 : Person | all c1 : Course | all g1 : Grade|	  	(c1->p1->g1 in grades) implies (p1 in Student)
+inv10 B: Course.{c : Course, p : Person | some c.grades} in Professor
+inv10 T: {p : Person | {c : Course, p : Person | some c.grades}.p} in Professor
+inv10 T: {p : Person | ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 T: {p : Person | ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 B: {p : Person | some ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} in Professor
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 U: Professor.{c : Course, p : Person | some c.grades} in Student
+inv10 U: Person.{c : Course, p : Person | some c.grades} in Student
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 T: {p : Person, g : Grade | some grades.g} in Student
+inv10 O: {p : Person, g : Grade | some grades.g}.Grade in Student
+inv10 S: all p : Person {p : Person, g : Grade | some grades.g} in Student
+inv10 T: all p : Person | {p : Person, g : Grade | some grades.g} in Student
+inv10 S: all p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+inv10 S: p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+inv10 O: all p : Person, g : Grade | p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+

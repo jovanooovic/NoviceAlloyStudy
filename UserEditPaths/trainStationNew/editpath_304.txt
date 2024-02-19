@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 O: one Entry and one Exit
+inv1 C: #Entry > 0 and #Exit > 0
+inv2 C: all s : Signal | one signals.s
+inv3 T: all e : Exit | none e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 S: all t : Track | no e.succs implies t in Exit
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit - (Entry + Junction) | no e.succs
+inv3 B: all e : Exit | no succs.e
+

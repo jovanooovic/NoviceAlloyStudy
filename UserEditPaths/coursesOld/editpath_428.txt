@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 O: Person.enrolled in Student
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv2 S: teachs.Course in Professor
+inv2 C: teaches.Course in Professor
+inv1 C: enrolled.Course in Student
+inv3 S: Person.teachs = Course
+inv3 C: Person.teaches = Course
+inv4 O: one Project.projects
+inv4 S: for all p : Project | one p.projects
+inv4 S: for all p : Project | one projects.p
+inv4 S: for all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one Course.(projects.p)
+inv4 T: all p : Project | one Course.(projects.p)
+inv4 C: all p : Project | one Course & (projects.p)
+inv5 T: no Professor.projects	  all p : Project | some projects.p
+inv5 B: no Professor.projects	  all p : Project | some Person & projects.p
+inv5 B: no Professor.projects	  all p : Project | some Student & projects.p
+inv5 O: no Person & Student	  no Professor.projects	  all p : Project | some Student & projects.p
+inv5 B: no Professor.projects	  all p : Project | some Student & projects.p
+inv5 B: no Professor & projects.Project	  all p : Project | some Student & projects.p
+inv5 C: Person & projects.Project in Student	  all p : Project | some Student & projects.p
+

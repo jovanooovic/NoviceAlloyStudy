@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | #p.enrolled>0 implies p in Student
+inv2 C: all p : Person | #p.teaches>0 implies p in Professor
+inv3 S: Courses = Person.teaches
+inv3 C: Course = Person.teaches
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 C: all p: Person | #(p.projects)>0 implies p in Student	  	Project = Person.projects
+inv6 S: all s: Student | s.projects = s.courses.projects
+inv6 B: all s: Student | s.projects = s.enrolled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 B: all s: Student | #s.projects = #s.enrolled
+inv7 S: all s: Student | all p: s.projects |  p in one s.enrolled.projects
+inv7 B: all s: Student | all p: s.projects | one c : s.enrolled | p in c.projects
+inv8 U: all p: Professor | p not in p.teaches
+inv8 U: all p: Professor | p not in p.teaches
+inv8 U: all p: Professor | p not in p.teaches
+inv8 U: all p: Professor | #(p.teaches & p.enrolled) = 0
+inv9 B: all p: Professor | #(p.teaches & Professor.enrolled) = 0
+inv9 B: #(Professor.teaches & Professor.enrolled) = 0
+inv10 T: all a : Course.grades | a in Student
+inv10 S: all a : Course.grades | left a in Student
+inv10 T: all a : Course.grades | a in Student
+inv14 S: all s: Student |
+inv14 S: all s: Student |
+inv7 U: all s: Student | all p: s.enrolled | lone (p.projects &  s.projects)
+

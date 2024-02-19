@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: all f : Person | f in Student
+inv2 C: all f : Person | f not in Teacher
+inv3 C: no (Student & Teacher)
+inv4 B: all f : Person | f not in (Student + Teacher)
+inv4 C: all f : Person | f in (Student + Teacher)
+inv5 B: all f : Person | #(f.Teaches) > 1
+inv5 C: some c : Class, t : Teacher | c in t.Teaches
+inv7 B: all c : Class, t : Teacher | c in t.Teaches
+inv6 S: all t : Teacher
+inv7 B: all c : Class, t : Teacher | c in t.Teaches
+inv7 B: all c : Class, t : Teacher | t->c in Teaches
+inv7 C: all c : Class | c in Teacher.Teaches
+inv8 C: all t : Teacher | #(t.Teaches) < 2
+inv9 T: all c : Class | #(Teaches->c & Teaches) < 2
+inv9 E: 
+inv9 T: all c : Class | #(Teaches->c & Teaches) < 2
+inv9 T: all c : Class | #(Teaches->c & Teacher) < 2
+inv9 T: all c : Class | #(Teacher->c & Teacher) < 2
+inv9 T: all c : Class | #(Teacher->c & Teacher) < 2
+inv9 C: all c : Class | #(Teacher->c & Teaches) < 2
+

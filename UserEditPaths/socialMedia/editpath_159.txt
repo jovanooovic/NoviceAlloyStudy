@@ -1,0 +1,88 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo | one u:User | u->p in posts
+inv2 C: all u1,u2:User | u1->u2 in follows => u1!=u2
+inv3 B: all u1:User | some p:Photo, u2:User | (u1->p in sees and p not in Ad) => u1->u2 in follows
+inv3 B: all u1:User | some p:Photo, u2:User | (u1->p in sees and p not in Ad and u2->p in posts) => u1->u2 in follows
+inv3 B: all u1:User | some p:Photo, u2:User | (u1->p in sees and p not in Ad) => u1->u2 in follows and u2->p in posts
+inv3 B: all u1:User | some p:Photo| (u1->p in sees and p not in Ad) => (some u2:User| u1->u2 in follows and u2->p in posts)
+inv3 C: all u1:User, p:Photo | (u1->p in sees and p not in Ad) => (some u2:User | u1->u2 in follows and u2->p in posts)
+inv4 S: all u:User | u->p
+inv4 S: all u:User | u->p
+inv4 S: all u:User | u->p
+inv1 U: posts in User lone -> Photo
+inv1 C: posts in User lone -> Photo	posts in User some -> Photo
+inv1 C: posts in User one -> Photo
+inv1 C: posts in User one -> Photo	}	check Injectividade {	(all p:Photo, u1, u2:User | u1->p in posts and u2->p in posts => u1=u2)	iff	(posts in User lone -> Photo)
+inv1 C: posts in User one -> Photo	}	check Injectividade {	(all p:Photo, u1, u2:User | u1->p in posts and u2->p in posts => u1=u2)	iff	(posts in User lone -> Photo)
+inv3 C: all u1:User, p:Photo | (u1->p in sees and p not in Ad) => (some u2:User | u1->u2 in follows and u2->p in posts)
+inv4 E: 
+inv5 E: 
+inv4 T: all u:User, p:Photo | u->p in posts and p in Ad => (u->p => p in Ads)
+inv4 S: all u:User, p:Photo | u->p in posts and p in Ad => (u->p in posts => p in Ads)
+inv5 E: 
+inv5 E: 
+inv6 E: 
+inv6 E: 
+inv6 E: 
+inv6 E: 
+inv6 S: all i:Influencer,
+inv6 E: 
+inv6 T: all i:Influencer, d:Day | some p:Photo | i->p and p->d in date
+inv7 E: 
+inv7 S: all u1, u2:User | u1->u2 in follows => ()
+inv4 C: all u:User, p:Photo | u->p in posts and p in Ad => (all p2:Photo | u->p2 in posts => p2 in Ad)
+inv7 S: all u1, u2:User | u1->u2 in follows => ()
+inv4 C: all u:User, p:Photo | u->p in posts and p in Ad => (all p2:Photo | u->p2 in posts => p2 in Ad)
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv5 U: all i:Influencer, u:User | u!=i => u->i in follows
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv7 S: all u1, u3:User | u1->u3 in suggested => some u2:User | u2!=u1 u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows
+inv8 E: 
+inv7 U: all u1, u3:User | u1->u3 in suggested => some u2:User | u2!=u1 and u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+NA M: MOD BASE MODEL
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv7 S: all u1, u2, u3:User | u1->u3 in suggested iff u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows	all u:User | u->u not in suggested and u2!=u1 and u1!=u3 and
+inv7 S: all u1, u2, u3:User | u1->u3 in suggested iff u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows	all u:User | u->u not in suggested and u2!=u1 and u1!=u3
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 E: 
+inv8 S: all u1:User, a:Ad | u->a in sees => (some u2:User | u2->a in posts and (u1->u2 in follows or u1->u2 in suggested))
+NA M: MOD BASE MODEL
+inv8 S: all, v, u:User, a:Ad | v->a in sees and u->a in posts implies v->u in follows or v->u in suggested
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+

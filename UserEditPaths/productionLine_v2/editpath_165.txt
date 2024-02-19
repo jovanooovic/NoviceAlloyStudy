@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all w: Workstation | some : wo : Worker | wo in w.workers	and	all wo : Worker | one w: Workstation | wo in w.workers
+inv2 C: all w: Workstation | some wo : Worker | wo in w.workers	and	all wo : Worker | one w: Workstation | wo in w.workers
+inv3 C: all c : Component | one ws : Workstation | ws in c.workstation
+inv4 S: all c : Componente | some c.parts	and	all m : Material | no m.parts
+inv4 U: all c : Component | some c.parts	and	all m : Material | no m.parts
+inv4 C: all c : Component | some c.parts		all m : Material | no m.parts
+inv5 T: all w : Worker | all ws: Workstation | ws.workers in Robot implies no ws.workers in Human
+inv5 T: all w : Worker | all ws: Workstation | ws.workers & Robot implies no ws.workers & Human
+inv4 C: all c : Component | some c.parts		all m : Material | no m.parts
+inv4 U: all c : Component | some c.parts	and	all m : Material | no m.parts
+inv4 C: (all c : Component | some c.parts)	and	(all m : Material | no m.parts)
+inv2 C: all w: Workstation | some wo : Worker | wo in w.workers	and	all wo : Worker | one w: Workstation | wo in w.workers
+inv4 C: (all c : Component | some c.parts)	and	(all m : Material | no m.parts)
+inv5 T: all w : Worker | all ws: Workstation | ws.workers & Robot implies no ws.workers & Human
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv6 S: all c : Components | no c in c.parts
+inv6 T: all c : Component | no c in c.parts
+inv6 U: all c : Component | not c in c.parts
+inv6 C: all c : Component | not c in c.^parts
+inv8 B: all ws: Workstation | all c : Component & Dangerous | ws in c.workstation implies no (ws.workers & Robot)
+

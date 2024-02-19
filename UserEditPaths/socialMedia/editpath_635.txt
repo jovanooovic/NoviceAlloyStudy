@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 S: all p : Photo, u : User | p in lone u.posts|
+inv1 S: all p : Photo, u : User | p in some u.posts
+inv1 S: all p : Photo, u : User | p in some u->posts
+inv1 B: all p : Photo, u : User | u->p in posts
+inv1 S: all p : Photo, u : User | u->p in some posts
+inv1 S: all p : Photo, one u : User | u->p in posts
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv2 S: all u : User  u not in u->follows|
+inv2 S: all u : User | u not in u->follows|
+inv2 T: all u : User | u not in u->follows
+inv2 C: all u : User | u not in u.follows
+inv3 B: all u1,u2 : User | all p : Photo | u1->p in sees implies u1->u2 in follows
+inv3 B: all u1,u2 : User | all p : Photo | u1->p in sees implies u1->u2 in follows	all u : User | all a : Ad | a in u.sees
+inv3 O: all u1,u2 : User | all p : Photo | u1->p in sees implies p in u2.posts and u2 in u1.follows	all u : User | all a : Ad | a in u.sees
+inv3 O: all u1 : User| some u2 : User | all p : Photo | u1->p in sees implies p in u2.posts and u2 in u1.follows	all u : User | all a : Ad | a in u.sees
+inv3 T: all u1 : User| some u2 : User | all p : Photo | u1->p in sees implies p in Ad or u2.posts and u2 in u1.follows
+inv3 O: all u1 : User| some u2 : User | all p : Photo | u1->p in sees implies p in Ad or p in u2.posts and u2 in u1.follows
+inv3 O: all u1 : User| some u2 : User | all p : Photo | u1->p in sees implies p in Ad or (p in u2.posts and u2 in u1.follows)
+

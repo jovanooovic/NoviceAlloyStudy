@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 B: all u:User, p:Photo | p in u.posts
+inv1 B: one u:User, p:Photo | p in u.posts
+inv1 B: one u:User| all p:Photo | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv2 C: all u:User | u not in u.follows
+inv3 B: all u:User, p:Photo | p in u.follows.sees	all u:User, a: Ad  | a in u.sees
+inv3 O: all u:User, p:Photo | p in u.sees implies p in u.follows.posts	all u:User, a: Ad  | a in u.sees
+inv3 B: all u:User, p:Photo | p in u.follows.sees	all u:User, a: Ad  | a in u.sees
+inv3 C: all u:User, p:Photo-Ad | p in u.sees implies p in u.follows.posts+Ad
+inv3 O: all u:User, p:Photo | p in u.sees implies p in u.follows.posts
+inv3 C: all u:User, p:Photo-Ad | p in u.sees implies p in u.follows.posts+Ad
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 T: all u:User, a: Ad | a in u.posts implies u.posts.a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts = a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts = Ad
+inv4 T: all u:User, a: Ad | a in u.posts implies a
+inv4 S: all u:User, a: Ad | a in u.posts => u.posts in ad
+inv4 C: all u:User, a: Ad | a in u.posts => u.posts in Ad
+inv4 C: all u:User, a: Ad | a in u.posts implies u.posts in Ad
+inv5 B: all u: User, i:Influencer | i in u.follows
+inv5 S: all u: User-i, i:Influencer | u in i.follows
+inv5 S: all u: User-i, i:Influencer | i in u.follows
+inv5 S: all u: User-i, i:Influencer | u in follows.i
+inv5 S: all u: User-i| all i: Influencer | u in follows.i
+inv5 S: all u: User-i| all i:Influencer | u in follows.i
+inv5 B: all u: User| all i: Influencer | u in follows.i
+inv5 U: all i: Influencer | all u: User-i | u in follows.i
+inv5 U: all i: Influencer | all u: User-i | i in u.follows
+inv6 S: all i: Influencer, d: Day, p: Photo | p in i.posts.day
+inv6 T: all i: Influencer, d: Day, p: Photo | p in i.posts.d
+inv6 B: all i: Influencer, d: Day, p: Photo | p in i.posts implies p in d
+inv6 B: all i: Influencer, d: Day, p: Photo | p in i.posts implies p in Day
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 C: all u:User, a: Ad | a in u.posts implies u.posts in Ad
+inv6 T: all i: Influencer, d: Day, p: Photo | p in i.posts => p.date
+inv6 C: all i: Influencer, d: Day | d in i.posts.date
+inv8 T: all u: User, a: Ad| a in u.sees => u in u.follows or u.suggested
+inv8 B: all u: User, a: Ad| a in u.sees => u in u.follows or u in u.suggested
+inv8 B: all u: User, a: Ad| a in u.sees implies u in u.follows or u in u.suggested
+inv8 O: all u: User, a: Ad| a in u.sees implies a in u.follows.posts or u in u.suggested.posts
+inv8 C: all u: User, a: Ad| a in u.sees implies a in u.follows.posts or a in u.suggested.posts
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u )
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u )
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u )
+

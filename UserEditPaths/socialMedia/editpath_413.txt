@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: all y : Photo | one x : User | x->y in posts
+inv7 O: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and x!=z)
+inv7 B: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and x!=z)	implies x->z in suggested
+inv7 B: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and y!=z)	implies x->z in suggested
+inv7 U: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and y!=z)	implies y->z in suggested
+inv7 U: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and y!=z and y!=x and x!=z)	implies y->z in suggested
+inv7 U: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and y!=z and y!=x and x!=z)	implies y->z in suggested
+inv7 B: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows)	implies y->z in suggested
+inv7 U: all x,y,z : User |	(y->x in follows and x->z in follows and y->z not in follows and y!=z)	implies y->z in suggested
+inv7 S: all x,z : User |y->z in suggested implies	(some y :User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+inv7 U: all x,z : User |x->z in suggested implies	(some y : User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+inv7 U: all x,z : User | x->z in suggested implies	(some y : User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+inv7 U: all x,z : User | x->z in suggested implies	(one y : User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+inv7 U: all x,z : User | x->z in suggested implies	(some y : User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+inv7 U: all x,z : User | (x->z in suggested and x!=z) implies	(some y : User | x->y in follows and y->z in follows and x->z not in follows)
+inv7 C: all u1, u3 : User | ( some u2 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 	!= u3 ) iff u1->u3 in suggested
+inv7 B: all x,z : User | (x->z in suggested and x!=z) iff	(some y : User | x->y in follows and y->z in follows and x->z not in follows)
+inv7 C: all x,z : User | (x->z in suggested) iff	(some y : User | x->y in follows and y->z in follows and x->z not in follows and x!=z)
+

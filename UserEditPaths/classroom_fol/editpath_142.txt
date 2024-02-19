@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | p in Student
+inv2 C: all p : Person | p not in Teacher
+inv3 B: not (all p : Person | p in Student and p in Teacher)
+inv3 C: not (some p : Person | p in Student and p in Teacher)
+inv4 S: all p : Person | p not in Sudent and p not in Teacher
+inv4 B: all p : Person | p not in Student and p not in Teacher
+inv4 C: all p : Person | p in Student or p in Teacher
+inv5 C: some t : Teacher, c : Class | t->c in Teaches
+inv6 C: all t : Teacher | some c : Class | t->c in Teaches
+inv7 C: all c : Class | some t : Teacher | t->c in Teaches
+inv8 C: all t : Teacher, c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1 = c2
+inv9 C: all t1,t2 : Teacher, c : Class | t1->c in Teaches and t2->c in Teaches implies t1 = t2
+inv10 C: all c : Class, s : Student | some g : Group | c->s->g in Groups
+inv11 S: all c : Class	  		| (some p : Person, g : Group | c->p->g in Groups) implies			  (some t : Teacher | c->t->g in Groups)
+inv11 B: all c : Class	  		| (some p : Person, g : Group | c->p->g in Groups) implies			  (some t : Teacher, g : Group | c->t->g in Groups)
+inv11 C: all c : Class, p : Person, g : Group	  		| c->p->g in Groups implies			  (some t : Teacher | t->c in Teaches )
+inv13 S: all p1, p2	  		| p1->p2 in Tutors implies p1 in Teacher and p2 in Teacher
+inv13 E: 
+inv13 S: all p1, p2	  		| p1->p2 in Tutors implies p1 in Teacher and p2 in Teacher
+inv13 B: all p1, p2 : Person	  		| p1->p2 in Tutors implies p1 in Teacher and p2 in Teacher
+inv13 C: all p1, p2 : Person	  		| p1->p2 in Tutors implies p1 in Teacher and p2 in Student
+inv14 U: all c : Class, t : Teacher, s : Student, g : Group	  		| t->c in Teaches and c->s->g in Groups implies t->s in Tutors
+inv14 U: all c : Class, t : Teacher, s : Student, g : Group	  		| (t->c in Teaches and c->s->g in Groups) implies t->s in Tutors
+inv14 U: all c : Class, t : Teacher, s : Person, g : Group	  		| (t->c in Teaches and c->s->g in Groups) implies t->s in Tutors
+inv14 B: all s : Student, c : Class, g : Group, t : Teacher	  		| c->s->g in Groups implies t->s in Tutors
+inv14 B: all s : Student, c : Class, g : Group, t : Teacher	  		| t->s in Tutors
+inv14 B: all s : Student, c : Class, g : Group, t : Teacher	  		| t->s in Tutors
+inv14 B: all s : Student, c : Class, g : Group, t : Teacher	  		| t->s in Tutors and t->t in Tutors
+inv14 B: all s : Student, c : Class, g : Group, t : Teacher	  		| t->s in Tutors
+inv15 S: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		| (p2->p1 in Tutors and p2 in Teacher) or	  		| (p3->p2 in Tutors and p2->p1 Tutors and p3 in Teacher)
+inv15 S: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		| (p2->p1 in Tutors and p2 in Teacher) or	  		| (p3->p2 in Tutors and p2->p1 Tutors and p3 in Teacher)
+inv15 S: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		  (p2->p1 in Tutors and p2 in Teacher) or	  		  (p3->p2 in Tutors and p2->p1 Tutors and p3 in Teacher)
+inv15 S: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		  (p2->p1 in Tutors and p2 in Teacher) or 	  		  (p3->p2 in Tutors and p2->p1 Tutors and p3 in Teacher)
+inv15 S: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		  (p2->p1 in Tutors and p2 in Teacher) or 	  		  (p3->p2 in Tutors and p2->p1 Tutors and p3 in Teacher)
+inv15 B: all p1,p2,p3 : Person	  		| p1 in Teacher or	  		  (p2->p1 in Tutors and p2 in Teacher) or 	  		  (p3->p2 in Tutors and p2->p1 in Tutors and p3 in Teacher)
+

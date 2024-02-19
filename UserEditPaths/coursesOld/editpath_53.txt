@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 C: all person: Person | all course: Course | course in person.enrolled implies person in Student
+inv2 C: all person: Person | all course: Course | course in person.teaches implies person in Professor
+inv3 B: all course: Course | all prof: Professor | course in prof.teaches
+inv3 O: all course: Course | course in Professor.teaches
+inv4 U: all p: Project | all c1, c2: Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 B: all p: Person - Student | p.projects = none	  		  	all p: Project | all s:Student | p in s.projects
+inv5 C: all p: Person - Student | p.projects = none	  	all p: Project | p in Student.projects
+inv6 B: all s: Student | all p: Project | all c: Course | p in c.projects implies c in s.enrolled
+inv6 B: all s: Student | all p: Project | all c: Course | p in c.projects and p in s.projects implies c in s.enrolled
+inv7 U: all s: Student | all p1, p2: Project | all c: Course | (p1+p2) in c.projects and (p1+p2) in s.projects implies p1=p2
+inv8 U: all p: Professor | all c: Course | c in p.teaches implies c not in p.enrolled
+

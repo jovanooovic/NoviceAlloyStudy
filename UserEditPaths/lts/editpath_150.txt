@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv4 S: State in ^fromState[Init]	}		/*	All the states have the same events available.	*/	fun fromState[s1: State] : set State {  		s1.trans[Event]
+inv1 E: 
+inv1 E: 
+inv1 E: 
+inv4 S: State in fromState[Init]
+inv4 S: State in fromState[Init].fromState
+inv4 S: State in fromState[Init].^fromState	}		/*	All the states have the same events available.	*/	fun fromState[s: set State] : set State {  		s.trans[Event]
+inv4 S: State in (fromState[Init]).^fromState	}		/*	All the states have the same events available.	*/	fun fromState[s: set State] : set State {  		s.trans[Event]
+inv4 S: State in (fromState[Init]).fromState
+inv4 S: State in Init.lookupState
+inv4 S: State in Init.^lookupState	}		/*	All the states have the same events available.	*/	fun lookupState[s: set State] : set State {  		s.trans[Event]
+inv4 T: State in ^(lookupState[Init])	}		/*	All the states have the same events available.	*/	fun lookupState[s: set State] : set State {  		s.trans[Event]
+inv4 S: State in Init.^lookupState	}		/*	All the states have the same events available.	*/	fun lookupState[s: set State] : set State {  		s.trans[Event]
+inv3 S: }		fun lookupState: set State -> set State {  		s.trans[Event]
+inv3 S: }		fun lookupState: set State -> set State {  		{s1, s2: set State | s2 = s1.trans[Event]}
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.^lookupState	}		/*	All the states have the same events available.	*/	fun lookupState[s: set State] : set State {  		s.trans[Event]
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init + Init.^lookupState
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.^lookupState
+inv3 S: }		fun lookupState: State -> State {  		{s1, s2: State | some e: Event | s2 = s1.trans[e]}
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.lookupState
+inv4 S: State in State.lookupState
+inv4 S: State in Init.^lookupState
+NA H: THEME UPDATE
+inv4 S: State in Init.^lookupState
+inv4 S: State in Init.^lookupState
+inv4 C: State in Init.^{s1, s2: State | s2 in s1.trans[Event]}
+

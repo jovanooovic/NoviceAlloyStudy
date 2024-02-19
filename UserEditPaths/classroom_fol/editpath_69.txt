@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv12 T: all t:Teacher | some c:Class,p:Student,g:Group | t-c in Teaches and c-p-g in Groups
+inv1 C: all p:Person | p in Student
+inv3 C: no p:Person | p in Teacher and p in Student
+inv11 C: all c:Class | (some p:Person,g:Group | c->p->g in Groups) implies (some t:Teacher | t->c in Teaches)
+inv14 C: all s:Person,c:Class | (some g:Group | c->s->g in Groups) implies (all t:Person | t->c in Teaches implies t->s in Tutors)
+inv15 E: 
+NA H: THEME UPDATE
+inv1 C: all p:Person | p in Student
+

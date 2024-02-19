@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 S: all c:Courses| c.grades.Person in Student
+inv1 U: all c:Course| c.grades.Person in Student
+inv1 T: all c:Course| c.grades->Person in Student
+inv1 T: all c:Course| c.grades in Student
+inv1 U: all p:Person| Course.grades.p in Student
+inv1 C: all p:Person| p in enrolled.Course implies p in Student
+inv1 S: P.enrolled.Course in Student
+inv1 T: Person.enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: all c:Course| some teaches.c
+inv3 B: some teaches.Course
+inv4 T: all p:Project| one projects.p
+inv4 T: all p:Project| one projects.p
+inv4 C: all p:Project| one c:Course| p in c.projects
+inv5 C: all p:Person| #p.projects >=1 implies p in Student 	  	all p:Project| some s:Student| p in s.projects
+inv5 C: all p:Person| some p.projects implies p in Student 	  	all p:Project| some s:Student| p in s.projects
+inv6 B: all p:Project| all s:Student| p in s.enrolled.projects
+inv6 U: all s:Student| s.projects in s.enrolled.projects
+NA H: THEME UPDATE
+

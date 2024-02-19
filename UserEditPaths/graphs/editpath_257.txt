@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+Inv1 U: Node.adj = adj.Node
+Inv1 T: all a:Node.adj | ~a in adj
+Inv1 T: all a:adj | ~a in adj
+Inv1 S: all n1, n2 : Node | n1->n2 in adg <=> n2->n1 in adg
+Inv1 C: all n1, n2 : Node | n1->n2 in adj <=> n2->n1 in adj
+Inv1 T: all a:adj | ~a
+Inv1 T: all a:adj | ~a in adj
+Inv2 S: all n1, n2 : Node | n1->n2 in adj =>
+Inv1 C: all n1, n2 : Node | n1->n2 in adj => n2->n1 in adj
+Inv2 C: all n1, n2 : Node | n1->n2 in adj => n2->n1 not in adj
+Inv3 C: all n:Node | n not in n.^adj
+Inv4 T: Node -> Node
+Inv4 C: adj = Node -> Node
+Inv5 C: all n:Node | n->n not in adj
+Inv6 O: all n:Node | Node in n.^adj
+Inv6 O: all n:Node | Node in n.*adj
+Inv6 O: all n:Node | Node in n.^adj
+Inv6 O: all n:Node | Node in n.*adj
+Inv6 O: all n1, n2 : Node | n1->n2 in adj => n2->n1 in adj	all n:Node | Node in n.*adj
+Inv6 O: all n1, n2 : Node | n1->n2 in adj => n2->n1 in adj	all n:Node | Node in n.*adj
+Inv6 O: all n:Node | Node in n.*adj
+Inv6 O: all n:Node | Node in n.*adj
+Inv6 U: all n:Node | n in Node.*adj
+Inv6 U: all n:Node | n in n.*adj
+Inv6 O: all n:Node | Node-n in n.*adj
+Inv6 O: all n:Node | Node in n.*adj
+Inv7 C: all n:Node | Node in n.*adj
+Inv7 C: all n:Node | Node in n.*adj
+Inv8 C: all n1, n2, n3:Node | n1->n2 in adj and n2->n3 in adj => n1->n3 in adj
+Inv8 U: all n1, n2, n3:Node | n1->n2 in adj and n2->n3 in adj => n1->n2 in adj
+Inv8 C: all n1, n2, n3:Node | n1->n2 in adj and n2->n3 in adj => n1->n3 in adj
+

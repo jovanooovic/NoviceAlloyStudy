@@ -1,0 +1,42 @@
+NA H: THEME UPDATE
+inv1 U: no Human & Robot
+inv1 B: Workstation.workers & Human = Workstation.workers || Workstation.workers & Robot = Workstation.workers
+inv1 B: all w : Workstation | w.workers in Human || w.workers in Robot
+inv1 B: Workstation.workers in Human || Workstation.workers in Robot
+inv2 U: all w : Workstation | some w.workers	all w : Worker | some workers.w
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv3 O: all c : Component | one workstation.c
+inv3 C: all c : Component | one c.workstation
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv1 O: Worker in Human || Worker in Robot
+inv5 O: all w : Workstation | w.workers in Human || w.workers in Robot
+inv6 S: all c : Components | c not in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 C: all c : Component | some Dangerous & c.parts => c in Dangerous
+inv8 B: all w : Workstation | Dangerous in workstation.w => w.workers in Robot
+inv8 O: all w : Workstation | some Dangerous & workstation.w => w.workers in Robot
+inv9 U: end in begin.*succ	all w : Workstation | w not in w.^succ
+inv9 O: end in begin.*succ	all w : Workstation | w not in w.^succ && some succ.w
+inv9 U: end in begin.*succ	all w : Workstation | w not in w.^succ && (w != begin => some succ.w)
+inv9 U: end in begin.*succ	no end.succ	all w : Workstation | w not in w.^succ && (w != begin => some succ.w)
+inv9 U: no succ.begin	no end.succ	all w : Workstation | w != begin => one succ.w	all w : Workstation | w != end => one w.succ
+inv9 C: no succ.begin	no end.succ	all w : Workstation | w != begin => one succ.w	all w : Workstation | w != end => one w.succ	all w : Workstation | w not in w.^succ
+inv9 C: no end.succ	all w : Workstation | w != begin => one succ.w	all w : Workstation | w != end => one w.succ	all w : Workstation | w not in w.^succ
+inv9 C: all w : Workstation | w != begin => one succ.w	all w : Workstation | w != end => one w.succ	all w : Workstation | w not in w.^succ
+inv9 U: all w : Workstation | w != end => one w.succ	all w : Workstation | w not in w.^succ
+inv10 B: all c : Component, p : c.parts |	p in Component => p.workstation not in c.workstation.*succ
+inv1 C: Worker in Human+Robot
+inv1 E: 
+inv1 E: 
+inv1 C: Worker in Human+Robot
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv5 O: all w : Workstation | w.workers in Human || w.workers in Robot
+inv6 C: all c : Component | c not in c.^parts
+inv7 C: all c : Component | some Dangerous & c.parts => c in Dangerous
+inv8 O: all w : Workstation | some Dangerous & workstation.w => w.workers in Robot
+inv9 C: all w : Workstation | w != begin => one succ.w	all w : Workstation | w != end => one w.succ	all w : Workstation | w not in w.^succ
+inv10 B: all c : Component, p : c.parts |	p in Component => p.workstation not in c.workstation.*succ
+

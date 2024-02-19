@@ -1,0 +1,71 @@
+NA H: THEME UPDATE
+inv1 U: all u1, u2 : User, p : Photo | u1->p in posts and u2->p in posts => u1 = u2
+inv1 U: all u1, u2 : User, p : Photo | u1->p in posts and u2->p in posts => u1 = u2
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv2 C: not some u : User | u->u in follows
+inv2 C: not some u : User | u->u in follows
+inv3 C: all p : Photo, u1 : User | p not in Ad and u1->p in sees => (	some u2 : User | u2->p in posts and u1->u2 in follows)
+inv4 C: not some a : Ad, p : Photo, u : User | p not in Ad and u->a in posts and u->p in posts
+inv5 U: all i : Influencer, u : User | u not in Influencer => u->i in follows
+inv5 B: all i : Influencer, u : User | u->i in follows
+inv5 U: all i : Influencer, u : User | u != i => u->i in follows
+inv6 S: not some d : Day, i : Influencer | not some p : Photo | i->p in posts and p->d in Date
+inv6 C: not some d : Day, i : Influencer | not some p : Photo | i->p in posts and p->d in date
+inv1 S: all p : Photo | some u : User | u->p in post and (all u2 : User | u2->p in posts => u = u2)
+inv1 C: posts in User one -> Photo
+inv1 C: posts in User one -> Photo
+inv1 C: posts in User one -> set Photo
+inv7 S: all s, u : User | u->s in sugested => (some f : User | u->f in follows)
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows)
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows)
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows) and u->s not in follows
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows) and u->s not in follows
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv8 S: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->s in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv3 C: all p : Photo - Ad, u1 : User | u1->p in sees => (	some u2 : User | u2->p in posts and u1->u2 in follows)
+inv4 C: not some a : Ad, p : Photo - Ad, u : User | u->a in posts and u->p in posts
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (u->v in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | (v->a in sees and u->a in posts) => (v->u in follows or v->u in suggested)
+inv7 B: all s, u : User | u->s in suggested => (some f : User | u->f in follows and s->f in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | (s != u and u->s in suggested) => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows)
+inv4 C: all a : Ad, p : Photo - Ad, u : User | u->a in posts implies u->p not in posts
+inv8 B: all v, u : User, a : Ad | (v->a in sees and u->a in posts) => (v->u in follows or v->u in suggested)
+inv7 U: all s, u : User | u->s in suggested => (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows)
+inv7 U: all s, u : User | (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows) => u->s in suggested
+inv7 U: all s, u : User | u->s in suggested => (s != u and u->s not in follows and (some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	s != u and	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	s != u and	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	(s != u) and	(u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))
+inv6 B: all d : Day, i : Influencer | all p : Photo | i->p in posts and p->d in date
+inv6 C: all d : Day, i : Influencer | some p : Photo | i->p in posts and p->d in date
+inv7 B: all s, u : User |	((u->s not in follows) and	(some f : User | u->f in follows and f->s in follows)) =>	u->s in suggested
+inv7 U: all s, u : User |	((u != s) and	(u->s not in follows) and	(some f : User | u->f in follows and f->s in follows)) =>	u->s in suggested
+inv7 U: all s, u : User | ((u != s) and (u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))	=> (u->s in suggested)
+inv7 B: all s, u : User | ((u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))	=> (u->s in suggested)	all s, u : User | u->s in suggested => u != s
+inv7 S: all u1, u2, u3 | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 S: all u1, u2, u3 : Users | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 O: all u1, u2, u3 : User | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 O: all u1, u2, u3 : User | (u1 != u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 B: all u1, u2, u3 : User | u1 != u3 => ((u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested))
+inv7 O: all u1, u2, u3 : User | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 B: all u1, u2, u3 : User | (u1->u3 in suggested) => (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 B: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u3->u2 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3)
+inv7 C: all u1, u3 : User | (u1->u3 in suggested) <=> (u1->u3 not in follows and u1 != u3 and some u2 : User | u1->u2 in follows and u2->u3 in follows)
+inv3 C: all p : Photo - Ad, u1 : User | u1->p in sees	=> some u2 : User | u2->p in posts and u1->u2 in follows
+inv7 C: all u1, u3 : User | (u1->u3 in suggested) <=>	(u1->u3 not in follows and u1 != u3) and	(some u2 : User | u1->u2 in follows and u2->u3 in follows)
+

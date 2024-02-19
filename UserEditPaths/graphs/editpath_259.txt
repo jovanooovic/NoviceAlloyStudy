@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+Inv1 S: all adj1, adj2 | adj1 = adj2 implies that adj2=adj1
+Inv1 S: adj1 = adj2 implies that adj2=adj1
+Inv1 U: adj = adj
+Inv1 S: all adj1, adj2 : Node | x->adj1 and x->adj2 implies adj1 = adj2
+Inv1 B: all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies v1 = v2
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv1 S: v1.adj = v2.adj
+Inv1 T: adj.adj
+Inv1 S: all adj.adj
+Inv1 B: no adj.adj
+Inv1 B: some adj.adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv2 T: all v1, v2 : Node | v1->v2 in adj implies no v2->v1 in adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv1 O: no adj & adj
+Inv1 O: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj	no adj & adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v1->v1 in adj
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v1->v1 in adj and v2->v2 in adj)
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v2->v1 in adj and v2->v2 in adj)
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv3 T: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 implies not v1 = v3
+Inv3 U: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies not v1 = v3
+Inv3 B: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies v1 = v3
+

@@ -1,0 +1,48 @@
+NA H: THEME UPDATE
+inv1 S: all p:(Person - Professor) | p in enroled.Course
+inv1 B: all p:(Person - Professor) | p in enrolled.Course
+inv1 C: no (Person-Student).enrolled
+inv2 C: no  (Person-Professor).teaches
+inv3 T: all c:Course | some c in Professor.teaches
+inv3 O: all c:Course | c in Professor.teaches
+inv4 S: all p:Projects | p in Course.projects
+inv4 U: all p:Project | p in Course.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 U: no (Person-Student).projects
+inv5 C: no (Person-Student).projects		all p:Project | p in Person.projects
+inv6 S: all s:Student, c:s.enrolled | p in c.projects
+inv6 B: all s:Student, c:s.enrolled, p:s.projects | p in c.projects
+inv6 B: all s:Student, p:s.projects | p in s.enrolled
+inv6 U: all s:Student, p:s.projects | p in s.enrolled.projects
+inv7 B: all s:Student | lone s.enrolled.projects
+inv7 B: all s:Student, e:s.enrolled | lone e.projects
+inv7 T: all s:Student, p:s.projects | one p in s.enrolled.projects
+inv7 U: all s:Student, c:s.enrolled | lone c.projects & s.projects
+inv8 U: all p:Professor | no p.enrolled & p.teaches
+inv10 S: all g : Grade, p:Person | g in p.enrolled(p.grades)
+inv10 T: all g:Grade, p:Person | g in p.enrolled.grades
+inv8 U: all p:Professor | no p.enrolled & p.teaches
+inv10 B: all g:Grade, p:Person | g in p.(p.enrolled.grades)
+inv10 B: all g:Grade, s:Student | g in s.(s.enrolled.grades)
+inv9 B: all p1,p2:Professor, e1: p1.enrolled, e2: p2.enrolled| e1 in p2.teaches implies e2 not in p1.teaches
+inv9 S: all p1,p2:Professor | #(p1.enrolled & p2.teaches) > 0 implies #(p1.teaches & p2.enrolled) == 0
+inv9 S: all p1,p2:Professor | #(p1.enrolled & p2.teaches) != 0 implies #(p1.teaches & p2.enrolled) == 0
+inv9 S: all p1,p2:Professor | #(p1.enrolled & p2.teaches) != 0 & #(p1.teaches & p2.enrolled) == 0
+inv9 B: all p1,p2:Professor | some (p1.enrolled & p2.teaches) implies no (p1.teaches & p2.enrolled)
+inv9 B: all p:Professor | all s:enrolled.(p.teaches) | p not in enrolled.(s.teaches)
+inv9 T: all p:Professor | all s:enrolled.(p.teaches) | no p.enrolled.(s.teaches)
+inv9 T: all p:Professor | all s:enrolled.(p.teaches) | p.enrolled.(s.teaches) = none
+inv9 S: all p:Professor | enrolled.(p.teaches) & teaches.(s.teaches) = none
+inv9 B: all p:Professor | enrolled.(p.teaches) & teaches.(p.teaches) = none
+inv10 B: all g:Grade, s:Student | g in s.(s.enrolled.grades)
+inv10 S: all s:Student | g in s.enrolled.grades.Grade
+inv10 B: all g:Grade, s:Student | g in s.enrolled.grades.Grade
+inv10 B: all g:Grade, s:Student | g in s.enrolled.grades.Person
+inv10 O: all g:Grade | g in Student.enrolled.grades.Person
+inv10 T: all s:Student | s.enrolled.grades.Grade
+inv10 T: all p:(Person-Student) | p not in enrolled.grades.Grade
+inv10 S: all p:(Person-Student) | p not in Corse.grades.Grade
+inv10 C: all p:(Person-Student) | p not in Course.grades.Grade
+inv11 B: all p:(Person-Student) | no p.teaches.grades
+inv11 C: all c: Course, p: c.grades.Grade | p in enrolled.c
+

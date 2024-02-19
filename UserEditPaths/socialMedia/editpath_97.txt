@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv1 U: all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x=y
+inv1 C: all y : univ | y in Photo implies some x : User | x->y in posts	all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x = y
+inv1 C: all y : Photo | some x : User | x->y in posts	all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x = y
+inv2 C: all x,y : User | x->y in follows implies x != y
+inv2 C: all x : User | x not in x.follows
+inv3 B: all u1, u2 : User | all p : univ | p not in Ad and u1->p in posts and u2->p in sees implies u2->u1 in follows	all u1, u2 : User | all p : univ | u1->p in posts and u2->p in sees and u2->u1 not in follows implies p in Ad
+inv3 B: all x : Photo | x not in Ad implies all y,z : User | y->x in posts and z->x in sees implies z->y in follows
+inv3 B: all u1, u2 : User | all p : univ | p not in Ad and u1->p in posts and u2->p in sees implies u2->u1 in follows
+inv4 T: all x : User | some a : Ad | a in x.posts implies none x.posts-Ad
+inv3 B: all u1, u2 : User | all p : univ | p not in Ad and u1->p in posts and u2->p in sees implies u2->u1 in follows
+inv4 B: all x : User | some a : Ad | a in x.posts implies no x.posts-Ad
+inv4 B: all x : User | some a : Ad | x->a in posts implies lone x.posts-Ad
+inv4 B: all x : User | some a : Ad | x->a in posts implies no x.posts-Ad
+inv4 C: all x : User | all a : Ad | a in x.posts implies no x.posts-Ad
+inv5 B: all u : User | u.follows&Influencer = Influencer
+inv5 U: all u : User | u not in Influencer implies u.follows&Influencer = Influencer
+inv5 U: all u : User-Influencer | u.follows&Influencer = Influencer
+inv5 B: all u : User | u.follows&Influencer = Influencer
+inv5 O: all u : User | u.follows&Influencer-u = Influencer
+inv5 O: all u : User | u.follows&(Influencer-u) = Influencer
+inv5 U: all u : User - Influencer | u.follows&Influencer = Influencer
+inv5 U: all u : User | u.follows & Influencer-u = Influencer-u
+inv6 S: all p : Photo | i->Influencer in posts implies p.date&Day = Day
+inv6 B: all p : Photo | Influencer->p in posts implies p.date&Day = Day
+inv6 U: all i : Influencer | all p : Photo | i->p in posts implies no p.date-Day
+inv6 B: all i : Influencer | all p : Photo | i->p in posts implies p.date&Day = Day
+inv6 O: all i : Influencer | i.posts&Photo&Day = Day
+inv6 C: all i : Influencer | (i.posts&Photo).date&Day = Day
+inv8 S: all u : User | all a : Ad | a in u.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv8 B: all u,a,p : univ | u in User and a in Ad and u->a in sees and p in User and p->a in posts implies u->p in follows or u->p in suggested
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.follows.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested and u2 not in u1.follows implies u2 in u1.^follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.*follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows-u1 and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows and u2 not in u1.follows and u1 != u2
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.*follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.*follows and u2 not in u1.follows and u1 != u2
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows and u2 not in u1.follows and u1 != u2
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User| u2 in u1.suggested implies u1 != u2	all u1, u2 : User| u2 in u1.suggested implies u2 in u1.^follows and u2 not in u1.follows
+inv7 B: all u1, u2, u3 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows implies u1->u3 in suggested
+inv7 S: all u : User | u.suggested in u.^follows and and u.suggested not in u.follows
+inv7 B: all u : User | u.suggested in u.^follows and u.suggested not in u.follows
+inv7 B: all u : User | u.suggested in u.^follows and u.suggested not in u.follows+u
+inv7 B: all u : User | u.suggested in u.^follows-u and u.suggested not in u.follows+u
+inv7 B: all u : User | u.suggested in u.*follows and u.suggested not in u.follows+u
+inv7 B: all u : User | u.suggested in u.*follows-u and u.suggested not in u.follows+u
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv3 B: all u1, u2 : User | all p : univ | p not in Ad and u1->p in posts and u2->p in sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User | all p : univ | u1->p in posts and u2->p in sees and u2->u1 not in follows implies p in Ad
+

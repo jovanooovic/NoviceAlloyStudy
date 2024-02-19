@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv1 S: all p:Person : p in Student
+inv1 C: all p:Person | p in Student
+inv2 S: all p:Person | p not in Teachers
+inv2 C: all p:Person | p not in Teacher
+inv2 C: all p:Person | p not in Teacher
+inv3 B: all p:Person | p in Student or p in Teacher
+inv3 B: all p:Person | p in Student implies p in Teacher
+inv3 C: all p:Person | p in Student implies p not in Teacher
+inv4 S: none p:Person | p not in Student or p not in Teacher
+inv4 S: none p:Person | p not in Student and p not in Teacher
+inv4 C: all p:Person | p in Student or p in Teacher
+inv5 O: some t:Teacher | t in Class
+inv5 O: some c:Class | c in Teacher
+inv5 O: some c:Class, t:Teacher | c->t in Teaches
+inv5 O: some c:Class, t:Teacher | c->t in Teaches
+inv5 C: some c:Class, t:Teacher | t->c in Teaches
+inv6 S: all t:Teacher | some c:Class | t->c in Teache
+inv6 C: all t:Teacher | some c:Class | t->c in Teaches
+NA H: THEME UPDATE
+inv1 C: all p:Person | p in Student
+inv2 C: all p:Person | p not in Teacher
+inv3 B: all p:Person | p in Student or p in Teacher
+inv3 S: all p:Person | p in Student | p in Teacher
+inv3 C: all p:Person | p in Student implies p not in Teacher
+inv4 C: all p:Person | p in Student or p in Teacher
+inv5 C: some c:Class, t:Teacher | t->c  in Teaches
+inv6 S: all t:Teacher, some c:Class | t->c in Teacher
+inv6 S: all t:Teacher, some c:Class | t->c in Teaches
+inv6 S: all t:Teacher; some c:Class | t->c in Teaches
+inv6 C: all t:Teacher | some c:Class | t->c in Teaches
+inv7 C: all c:Class | some t:Teacher | t->c in Teaches
+NA H: THEME UPDATE
+

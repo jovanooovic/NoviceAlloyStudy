@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv1 S: all p: photo| one u:User| p in u.posts
+inv1 C: all p: Photo| one u:User| p in u.posts
+inv2 C: all u:User| u not in u.follows
+inv3 O: all u:User | u.sees in u.follows.posts or u.sees in Ad
+inv3 O: all u:User | u.posts not in Ad	all u:User | u.sees in u.follows.posts or u.sees in Ad
+inv3 O: all u:User | u.sees in u.follows.posts or u.sees in Ad
+inv3 O: all u:User, p: Photo | p in u.sees => p in u.follows.posts or u.sees in Ad
+inv3 C: all u:User, p: Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv4 S: all u:User, a:Ad | a in u.post -> u.post in Ad
+

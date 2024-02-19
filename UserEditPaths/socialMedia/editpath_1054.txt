@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 B: one posts.Photo
+inv1 B: one posts . Photo
+inv1 S: all posts . Photo
+inv1 C: all p : Photo | one posts . p
+inv2 T: no User in User.follows
+inv2 T: no User in User.follows
+inv2 C: no follows & iden
+inv1 C: all p : Photo | one posts . p
+inv1 C: all p : Photo | one posts . p
+inv2 C: no (follows & iden)
+inv3 O: all u : User | u.sees in Ad or u.sees = u.follows.posts
+inv3 O: all u : User | u.sees in Ad or u.sees in u.follows.posts
+inv3 C: all u : User | u.sees in (u.follows.posts + Ad)
+inv3 O: sees in follows.posts
+inv3 T: sees in follows.posts + (User + Ad)
+inv3 T: sees in (follows.posts + (User + Ad))
+inv3 T: sees :> follows.posts
+inv3 B: some (sees & follows.posts)
+inv3 S: Ad + sees & follows.posts)
+inv3 T: Ad + (sees & follows.posts)
+inv3 T: sees.(Photo-Ad) & follows.posts.Photo
+inv3 T: sees.(Photo-Ad) & follows.posts.Photo
+inv3 B: some sees.(Photo-Ad) & follows.posts.Photo
+inv3 T: sees :> follows.posts.Photo + Ad
+inv3 T: sees :> (follows.posts.Photo + Ad)
+inv3 B: some sees :> (follows.posts.Photo + Ad)
+inv3 S: all sees :> (follows.posts.Photo + Ad)
+inv3 B: some sees :> (follows.posts.Photo + Ad)
+inv3 T: some sees :> (follows.posts.Photo + Influencer.Ad)
+inv3 O: some sees :> (follows.posts.Photo + posts.Ad)
+inv3 O: some sees :> (follows.posts.(Photo + Ad))
+inv3 O: some sees :> (follows.posts.Photo + posts.Ad)
+inv3 B: some sees.Photo :> (follows.posts.Photo - Ad)
+inv3 T: some sees in follows.posts
+inv3 O: sees in follows.posts
+inv3 S: sees.Photo in follows.posts.Photo + Influecer.posts
+inv3 S: sees.Photo in User.follows.posts + Influecer.posts
+inv3 O: sees.Photo in User.follows.posts + Influencer.posts
+inv3 B: User.sees in User.follows.posts + Influencer.posts
+inv3 B: User.sees in (User.follows.posts + Influencer.posts)
+inv3 U: User.sees - Ad in User.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+

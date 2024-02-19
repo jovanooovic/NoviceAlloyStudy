@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 C: Worker in Human+Robot
+inv2 T: all w : Workstation | some w.workers	all w : Worker | one Workstation.w
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 B: some Component.parts	no Material.parts
+inv4 T: some Component.parts-iden	no Material.parts
+inv4 T: some Component:>parts - iden	no Material.parts
+inv4 S: some Components(Component:>parts - iden)	no Material.parts
+inv4 T: some Component.(Component:>parts - iden)	no Material.parts
+inv4 C: all c : Component | some c.parts	no Material.parts
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv5 O: all w : Workstation | w.workers in Human iff w.workers not in Robot
+inv5 O: all w : Workstation | w.workers in Human iff w.workers not in Robot
+inv6 B: parts not in iden
+inv6 B: no parts & iden
+inv6 O: no ^parts & iden
+inv6 C: all c : Component | c not in c.^parts
+inv6 O: all c : Component | c not in c.*parts
+inv6 O: no *parts & iden
+inv6 O: no ^parts & iden
+inv7 C: all c : Component | c in parts.Dangerous implies c in Dangerous
+inv8 C: no Dangerous.workstation.workers & Human
+inv8 C: all d : Dangerous | d not in workstation.workers.Human
+inv8 C: all d : Dangerous | d not in workstation.workers.Human
+inv9 T: no Workstation.^succ & iden
+inv9 U: no ^succ & iden
+inv9 O: all w : Workstation | w in begin.^succ	no ^succ & iden
+inv9 O: all w : Workstation | w in begin.^succ	no ^succ & iden	no end.succ
+

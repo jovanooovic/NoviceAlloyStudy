@@ -1,0 +1,108 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | #p.enrolled > 0 implies p in Student
+inv2 C: all p : Person | #p.teaches > 0 implies p in Professor
+inv3 C: all c : Course | #teaches.c > 0
+inv4 T: all p : Project | #projects.p = 1
+inv4 T: all p : Project | #projects.p = 1
+inv4 T: all p : Project | #projects.p = 1
+inv4 C: all p : Project | #Course<:projects.p = 1
+inv4 B: all p : Project | #Person<:projects.p = 1
+inv4 C: all p : Project | #projects.p:>Course = 1
+inv5 C: all p : Project | Person:>projects.p in Student and #Person:>projects.p >=1
+inv5 T: all p : Project | Student:>projects.p and #Person:>projects.p >=1
+inv5 U: all p : Project |  #Student:>projects.p >=1
+inv5 C: all p : Project | Person:>projects.p in Student and #Student:>projects.p >=1
+inv6 S: all s : Students | s.projects in s.Course.projects
+inv6 T: all s : Student | s.projects in s.Course.projects
+inv6 T: all s : Student | s.projects in s.Course.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+NA H: THEME UPDATE
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Person, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Student, c : Course |  #c.projects&p.projects<2
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv8 U: all p:Professor,c:Course | c in p.teaches implies c not in p.enrolled
+inv8 U: all p:Professor,c:p.teaches |  c not in p.enrolled
+inv8 U: all p:Professor,c:Course | c in p.teaches implies c not in p.enrolled
+inv9 T: all disj p,p1:Professor | p.teaches&p1.teaches>0 implies (#p.enrolled&p1.teaches=0 and  #p1.enrolled&p.teaches=0)
+inv9 U: all disj p,p1:Professor | #p.teaches&p1.teaches>0 implies (#p.enrolled&p1.teaches=0 and  #p1.enrolled&p.teaches=0)
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->* in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->_ in c.grades implies p in Student
+inv10 U: all p:Person ,c:Course | p->Grade in c.grades implies p in Student
+inv10 C: all p:Person ,c:Course | #p->Grade&c.grades>0 implies p in Student
+inv11 U: all s : Student,c:Course | #s->Grade&c.grades>0 implies c in s.enrolled
+inv12 U: all s : Student,c:Course | #s->Grade&c.grades<2
+inv11 U: all s : Student,c:Course | #s->Grade&c.grades>0 implies c in s.enrolled
+inv12 U: all s : Student,c:Course | #s->Grade&c.grades<2
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | c.grades[0]
+inv13 T: all s : Student, c :Course | s in Person implies c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | s in c.grades{0}
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in first.c.grades implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in c.first.grades implies #s.projects&c.projects>0
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 U: all s : Student, c :Course | s in c.grades.last implies #s.projects&c.projects>0
+inv14 U: all disj s1,s2:Student , p:Project | #s1&s2<2
+inv14 U: all disj s1,s2:Student  | #s1.projects&s2.projects<2
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( (Course:>projects.p).grades.s1 - (Course:>projects.p).grades.s1 <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( (Course:>projects.p).grades.s1 - (Course:>projects.p).grades.s1 <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.s1) - ((Course:>projects.p).grades.s1) <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.s1)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.last)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.first)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.last)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.last.first)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.last.last)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades.s1)  <= 1    )
+inv15 S: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades&s1->Grades)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades&s1->Grade)  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades&s1->Grade).last  <= 1    )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies ( ((Course:>projects.p).grades&s1->Grade).first  <= 1    )
+inv12 U: all s : Student,c:Course | #s->Grade&c.grades<2
+inv12 U: all s : Student,c:Course | #c.grades.s<2
+inv13 U: all s : Student, c :Course | s in last implies #s.projects&c.projects>0
+inv15 S: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) all g: (Course:>projects.p).grades | ((s1 in g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((s1 in g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((s1 in g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades   | ((s1 in g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((s1 in g ) implies ( s2 in g.prev or s2 in g.next))   and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((s1 in g ) implies ( s2 in   g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((  s1 in g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((s1 in   g ) implies ( s2 in g.prev or s2 in g.next)) and ((s2 in g ) implies ( s1 in g.prev or s1 in g.next) )
+inv15 T: all disj s1,s2:Student ,p:Project| ( p in s1.projects and p in s2.projects) implies all g: (Course:>projects.p).grades | ((#s1->Grade&g>0 ) implies ( #s2->Grade&g.prev>0 or #s2->Grade&g.next>0)) and ((#s2->Grade&g>0 ) implies ( #s1->Grade&g.prev>0 or #s1->Grade&g.next>0))
+inv13 T: all s : Student, c :Course | s in c.grades implies #s.projects&c.projects>0
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p| ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades.prevs[s1->Grade&c.grades].first ) or  ( s1 in c.grades.prevs[s2->Grade&c.grades].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p| ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades.prevs[s1->Grade&c.grades].first ) or  ( s1 in c.grades.prevs[s2->Grade&c.grades].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p| ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades.prevs[s1->Grade&c.grades].first ) or   ( s1 in c.grades.prevs[s2->Grade&c.grades].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p| ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades.prevs [s1->Grade&c.grades].first ) or ( s1 in c.grades.prevs[s2->Grade&c.grades].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p| ( p in s1.projects and p in s2.projects) implies ( (s2 in   c.grades.prevs[s1->Grade&c.grades].first ) or ( s1 in c.grades.prevs[s2->Grade&c.grades].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  c.grades.prevs[e1].first ) or ( s1 in c.grades.prevs[e2].first )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  c.grades.prev[e1].first ) or ( s1 in c.grades.prevs[e2].first )   )
+inv15 T: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  c.grades.prev[e1].first ) or ( s1 in c.grades.prev[e2].first )   )
+inv15 T: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  c.grades.prev[e1] ) or ( s1 in c.grades.prev[e2] )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  e1.prev ) or ( s1 e2.prev )   )
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in  e1.prev ) or ( s1 e2.prev ))
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in e1.prev ) or ( s1 e2.prev ))
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades[e1].prev ) or ( s1 e2.prev ))
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades[e1].prev ) or ( s1 c.grades[e2].prev ))
+inv15 S: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in c.grades.prevs[e1].first ) or ( s1 c.grades[e2].prev ))
+inv15 T: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, g : c.grades, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in g ) or ( s1 in g ))
+inv15 T: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, g : c.grades, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in g ) or ( s1 in g ))
+NA H: THEME UPDATE
+inv15 T: all disj s1,s2:Student ,p:Project, c: Course:>projects.p, g : c.grades, e1: s1->Grade&c.grades, e2: s2->Grade&c.grades | ( p in s1.projects and p in s2.projects) implies ( (s2 in g ) or ( s1 in g ))
+inv14 U: all disj s1,s2:Student  | #s1.projects&s2.projects<2
+inv10 C: all p:Person ,c:Course | #p->Grade&c.grades>0 implies p in Student
+inv10 U: all p:Person ,c:Course | #c.grades.p>0 implies p in Student
+inv10 U: all p:Person ,c:Course | #c.grades.Person>0 implies p in Student
+inv10 T: all p:Person ,c:Course | c.grades.Person implies p in Student
+

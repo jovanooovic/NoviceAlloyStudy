@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv1 T: all p:Photo | p in posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | lone u:User | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv2 S: all u:User | u no in u.follows
+inv2 C: all u:User | u not in u.follows
+inv3 C: all u:User,p:Photo | p in u.sees implies (some u2:User | u2 in u.follows and p in u2.posts) or p in Ad
+inv4 B: all u:User | one p:Ad | p in u.posts implies u.posts in Ad
+inv4 S: all u:User | one p:Ad | p in u.posts implies (all p:Photos | p in u.posts implies p in Ad)
+inv4 B: all u:User | one p:Ad | p in u.posts implies (all p:Photo | p in u.posts implies p in Ad)
+inv4 B: all u:User | some p:Ad | p in u.posts implies (all p:Photo | p in u.posts implies p in Ad)
+inv4 C: all u:User | (some p:Ad | p in u.posts) implies (all p:Photo | p in u.posts implies p in Ad)
+inv4 S: all u:User | (some p:Ad | p in u.posts implies) u.posts in Ad
+inv4 C: all u:User | (some p:Ad | p in u.posts ) implies u.posts in Ad
+inv5 S: all u:User,i:Influencer | u not in Influecer and i in u.follows
+inv5 O: all u:User,i:Influencer | u not in Influencer and i in u.follows
+inv5 O: all u:User,i:Influencer | i!=u  and i in u.follows
+inv5 U: all u:User,i:Influencer | i!=u  implies i in u.follows
+inv6 C: all d:Day,i:Influencer | d in i.posts.date
+inv7 B: all u1,u2,u3:User | u3 not in u1.follows and u3 in u2.follows and u2 in u1.follows implies u3 in u1.suggested
+inv7 B: all u1,u2:User | u2 in u1.suggested iff (all u3:User | u2 in u3.follows and u3 in u1.follows and u2 not in u1.follows)
+inv7 B: all u1,u2:User | u2 in u1.suggested iff (all u3:User | u2 in u3.follows and u3 in u1.follows and u2 not in u1.follows and u1!=u2)
+inv7 B: all u1,u2:User | u2 in u1.suggested iff (all u3:User | u2 not in u1.follows and u1!=u2 and u2 in u3.follows and u3 in u1.follows)
+inv7 C: all u1,u2:User | u2 in u1.suggested iff (some u3:User | u2 not in u1.follows and u1!=u2 and u2 in u3.follows and u3 in u1.follows)
+inv8 S: all u:User,a:Ad | a in u.sees implies (a
+inv7 U: all u1,u2:User | u2 in u1.suggested implies (some u3:User | u2 not in u1.follows and u1!=u2 and u2 in u3.follows and u3 in u1.follows)
+inv7 C: all u1,u2:User | u2 in u1.suggested iff (some u3:User | u2 not in u1.follows and u1!=u2 and u2 in u3.follows and u3 in u1.follows)
+inv8 T: all u:User,a:Ad | a in u.sees implies (some u1:User | a in u1.posts and u1 in u.follows or u.suggested)
+inv8 C: all u:User,a:Ad | a in u.sees implies (some u1:User | a in u1.posts and u1 in u.follows + u.suggested)
+

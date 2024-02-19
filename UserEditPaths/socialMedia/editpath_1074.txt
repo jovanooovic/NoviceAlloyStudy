@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 T: all x:Photo | one x.User
+inv1 O: all x:Photo | one x.posts
+inv1 S: all x:Photo | x in one posts.User
+inv1 S: all x:Photo | x in one posts.User
+inv1 S: all x:Photo | x in one posts.User
+inv1 T: all x:Photo | one x.User
+inv1 C: all x:Photo | one y:User | x in y.posts
+inv2 C: all u:User | u not in u.follows
+inv3 S: all x: Photo - Ad | all u:User | x in u.sees implies some p.User | p in u.follows and x in p.posts
+inv3 S: all x: Photo - Ad | all u:User | x in u.sees implies some p.User | p in u.follows and x in p.posts	all a: Ad | all u: User | a in u.sees
+inv3 S: all x: Photo - Ad | one u:User | x in u.sees implies some p.User | p in u.follows and x in p.posts	all a: Ad | all u: User | a in u.sees
+inv3 B: all x: Photo - Ad | one u:User | x in u.sees implies some p:User | p in u.follows and x in p.posts	all a: Ad | all u: User | a in u.sees
+inv3 O: all x: Photo - Ad | all u:User | x in u.sees implies some p:User | p in u.follows and x in p.posts	all a: Ad | all u: User | a in u.sees
+inv3 O: all x: Photo - Ad | all u:User | x in u.sees implies some p:User | p in u.follows and x in p.posts	all a: Ad | all u: User | a in u.sees
+inv5 B: all x: Influencer | x in User.follows
+inv5 B: all x: Influencer | all u: User | x in u.follows
+inv3 S: all x: Photo - Ad | all u:User | x in u.sees implies (some p:User) | (p in u.follows) and (x in p.posts)	all a: Ad | all u: User | a in u.sees
+inv3 O: all x: Photo - Ad | all u:User | x in u.sees implies some p:User | (p in u.follows) and (x in p.posts)	all a: Ad | all u: User | a in u.sees
+inv3 C: all x: Photo - Ad | all u:User | x in u.sees implies some p:User | (p in u.follows) and (x in p.posts)
+inv5 U: all x: Influencer | all u: User - x | x in u.follows
+inv6 C: all x: Influencer | (x.posts).date = Day
+inv7 U: all x,y: User | y in x.suggested implies some p: User | (y in p.follows) and (y not in x.follows) and (p in x.follows)
+inv7 S: all x: User | all y: x.follows | p:User in x.suggested implies (p in y.follows) and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | (p in (x.follows).follows) and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows - x.follows - x and (p not in x.follows)
+inv7 S: all x: User | x.suggested = (x.follows).follows - x.follows - x
+inv7 S: all x: User | x.suggested = (x.follows).follows-x.follows-x
+inv7 U: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 U: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows - x.follows - x and (p not in x.follows)
+inv7 C: all x: User | x.suggested = (x.follows).follows - x.follows - x
+inv8 C: all x: User | all y: Ad | y in x.sees implies some p: User | p in (x.follows + x.suggested) and y in p.posts
+

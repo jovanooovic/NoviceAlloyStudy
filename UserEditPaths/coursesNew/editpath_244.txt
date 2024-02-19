@@ -1,0 +1,55 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | #p.enrolled > 0 implies p in Student
+inv2 C: all p : Person | #p.teaches > 0 implies p in Professor
+inv3 C: all c : Course | #teaches.c > 0
+inv4 T: all p : Project | #projects.p = 1
+inv4 T: all p : Project | #projects.p = 1
+inv4 T: all p : Project | #projects.p = 1
+inv4 C: all p : Project | #Course<:projects.p = 1
+inv4 B: all p : Project | #Person<:projects.p = 1
+inv4 C: all p : Project | #projects.p:>Course = 1
+inv5 C: all p : Project | Person:>projects.p in Student and #Person:>projects.p >=1
+inv5 T: all p : Project | Student:>projects.p and #Person:>projects.p >=1
+inv5 U: all p : Project |  #Student:>projects.p >=1
+inv5 C: all p : Project | Person:>projects.p in Student and #Student:>projects.p >=1
+inv6 S: all s : Students | s.projects in s.Course.projects
+inv6 T: all s : Student | s.projects in s.Course.projects
+inv6 T: all s : Student | s.projects in s.Course.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+NA H: THEME UPDATE
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Person, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Student, c : Course | p.enrolled in c implies #c.projects&p.projects<2
+inv7 U: all p : Student, c : Course |  #c.projects&p.projects<2
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv8 U: all p:Professor,c:Course | c in p.teaches implies c not in p.enrolled
+inv8 U: all p:Professor,c:p.teaches |  c not in p.enrolled
+inv8 U: all p:Professor,c:Course | c in p.teaches implies c not in p.enrolled
+inv9 T: all disj p,p1:Professor | p.teaches&p1.teaches>0 implies (#p.enrolled&p1.teaches=0 and  #p1.enrolled&p.teaches=0)
+inv9 U: all disj p,p1:Professor | #p.teaches&p1.teaches>0 implies (#p.enrolled&p1.teaches=0 and  #p1.enrolled&p.teaches=0)
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->* in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->_ in c.grades implies p in Student
+inv10 U: all p:Person ,c:Course | p->Grade in c.grades implies p in Student
+inv10 C: all p:Person ,c:Course | #p->Grade&c.grades>0 implies p in Student
+inv11 U: all s : Student,c:Course | #s->Grade&c.grades>0 implies c in s.enrolled
+inv12 U: all s : Student,c:Course | #s->Grade&c.grades<2
+inv11 U: all s : Student,c:Course | #s->Grade&c.grades>0 implies c in s.enrolled
+inv12 U: all s : Student,c:Course | #s->Grade&c.grades<2
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | c.grades[0]
+inv13 T: all s : Student, c :Course | s in Person implies c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | s in c.grades{0}
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in first.c.grades implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in c.first.grades implies #s.projects&c.projects>0
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 U: all s : Student, c :Course | s in c.grades.last implies #s.projects&c.projects>0
+NA H: THEME UPDATE
+

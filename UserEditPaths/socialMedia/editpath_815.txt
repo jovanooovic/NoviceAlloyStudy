@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv2 C: all u : User | u not in u.follows
+inv1 S: all u, y : User | u.post = Y.post implies u = y
+inv1 S: all u,y : User | all p : Photos | (p in u.posts and p in y.posts) implies u = y
+inv1 U: all u,y : User | all p : Photo | (p in u.posts and p in y.posts) implies u = y
+inv1 C: all u,y : User | all p : Photo | (p in u.posts and p in y.posts) implies u = y	all p : Photo | p in User.posts
+inv1 C: all u,y : User | all p : Photo | (p in u.posts and p in y.posts) implies u = y	all p : Photo | p in User.posts
+inv3 B: all u,y : User | all a : Ad | a in u.sees
+inv3 S: all p : Photo - Ad | all x,y : User | (p in u.sees and p in y.posts) implies y in u.follows
+inv3 B: all p : Photo - Ad | all u,y : User | (p in u.sees and p in y.posts) implies y in u.follows
+inv3 B: all u : User | all a : Ad | a in u.sees	all p : Photo - Ad | all u,y : User | (p in u.sees and p in y.posts) implies y in u.follows
+inv4 S: all u : User | all a in Ad | a in u.posts implies u.posts in Ad
+inv4 C: all u : User | all a : Ad | a in u.posts implies u.posts in Ad
+inv5 B: all i : Influencer | all u : User | i in u.follows
+inv5 O: all i : Influencer | all u : User | i in u.follows	all i : Influencer | i not in i.follows
+inv5 U: all i : Influencer | all u : User - i | i in u.follows
+inv5 O: all i : Influencer | i not in i.follows	all i : Influencer | all u : User | i in u.follows
+inv5 U: all i : Influencer | all u : User - i | i in u.follows
+inv5 U: all i : Influencer | all u : User - i | i in u.follows
+inv6 C: all i : Influencer | Day in i.posts.date
+inv7 S: all u, y, z : User | u in y.follows and y in z.follows implies z in u.suggested| z not in u.follows
+inv7 S: all u, y, z : User | (u in y.follows and y in z.follows) implies z in u.suggested | z not in u.follows
+inv7 S: all u, y, z : User | (u in y.follows and y in z.follows) implies z in u.suggested | z not in u.follows
+inv7 B: all u, y, z : User | ((u in y.follows and y in z.follows) and z not in u.follows) implies z in u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in 			u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in 			u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 B: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 U: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) implies z in u.suggested
+inv7 S: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  in u.suggested
+inv7 O: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  z in u.suggested
+inv7 B: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows) <=>  (u != z and z in u.suggested)
+inv7 C: all u, y : User | y in u.suggested <=> (y != u and y not in u.follows and y in u.follows.follows)
+inv8 S: all u : User | a : Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)
+inv7 C: all u, y : User | y in u.suggested <=> (y != u and y not in u.follows and y in u.follows.follows)
+inv8 C: all u : User | all a : Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)
+

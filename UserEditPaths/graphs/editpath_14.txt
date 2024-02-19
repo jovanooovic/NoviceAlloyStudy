@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+Inv1 C: all n:Node | adj.n in n.adj
+Inv1 C: all n:Node | adj.n in n.adj
+Inv1 C: all n:Node | n.adj in adj.n
+Inv1 T: all n:Node | n.adj
+Inv1 T: all n:Node | n.adj or adj.n
+Inv1 B: all n:Node | some adj.n
+Inv2 B: all n:Node | n.adj not in adj.n
+Inv2 B: all n:Node | adj.n not in n.adj
+Inv2 T: all n:Node | n.adj not adj.n
+Inv2 T: all n:Node | no n.adj in adj.n
+Inv2 B: all n:Node | not n.adj in adj.n
+Inv2 B: all n:Node | not (n.adj in adj.n)
+Inv2 B: all n:Node | n.adj not in adj.n
+Inv2 S: no adj & -adj
+Inv2 C: no adj & ~adj
+Inv1 C: adj = ~adj
+Inv3 C: all a:Node | a not in a.^adj
+Inv3 B: adj not in adj.^adj
+Inv3 C: all a:Node | a not in a.^adj
+Inv4 C: all n:Node , a:Node | n->a in adj
+Inv4 U: all n:Node | n in adj.n
+Inv4 U: all n:Node | n in n.adj
+Inv4 T: all n:Node | n->(adj.n)
+Inv4 U: all n:Node | n in Node.adj
+Inv4 U: all n:Node | n in adj.Node
+Inv4 S: all n:Node | n in adj.Node & b in Node.adj
+Inv4 T: all n:Node | n in adj.Node & n in Node.adj
+Inv4 C: adj = Node->Node
+Inv5 C: all n:Node | n->n not in adj
+Inv5 O: no adj.Node & Node.adj
+Inv5 O: adj = Node->Node - iden
+Inv5 T: Node->Node - iden
+Inv5 C: no iden & adj
+Inv6 T: adj = Node.^adj or Node.~^adj
+Inv6 T: adj = Node.^adj || Node.~^adj
+Inv6 T: adj = Node.^adj + Node.~^adj
+Inv6 T: adj = Node.^adj + Node.^adj
+Inv6 T: adj = Node.^adj
+Inv6 O: all a:Node, b:Node | b in a.^adj || b in a.~^adj
+Inv6 T: all b:Node | b in ^(adj + ~adj)
+Inv6 T: all a:Node, b:Node | b in ^(a.adj + a.~adj)
+Inv6 O: all a:Node, b:Node | b in a.^(adj + ~adj)
+

@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 S: teaches.Course in Teacher
+inv2 C: teaches.Course in Professor
+inv3 C: Course in Person.teaches
+inv4 B: all p : Project | one Course.projects
+inv4 T: all p : Project | one projects.p
+inv4 C: all p : Project | one Course <: projects.p
+inv5 T: projects.Project in Student	  	Project in Person.projects
+inv5 O: Person <: projects.Project in Student	  	Project in Person <: Person.projects
+inv5 C: Person <: projects.Project in Student	  	Project in Person.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 T: all s : Student | all c : s.enrolled | lone s.enrolled & c.projects
+inv7 U: all s : Student | all c : s.enrolled | lone s.enrolled & Course <: c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone s.enrolled & c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects)
+inv7 U: all s : Student | all c : s.enrolled | lone (s.enrolled & c.(Course <: projects))
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv8 U: no teaches & iden
+inv8 C: no teaches.~enrolled & iden
+inv7 S: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects))
+inv7 T: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects)
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Person | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj a, b : Professor | t1->t2 not in teaches.~teaches
+inv9 S: all t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv10 C: Course.grades.Grade in Student
+inv9 B: all t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 B: all t1, t2 : Professor | t1 != t2 implies t1->t2 not in teaches.~teaches
+inv9 S: all t1, t2 : Professor | t1->t2 in teaches.~teaches iff enrolled.(t1.reaches)
+inv9 T: all t1, t2 : Professor | t1->t2 in teaches.~teaches iff enrolled.(t1.teaches)
+inv9 S: all t1, t2 : Professor | (t1->t2 in teaches.~teaches iff) t2 not in enrolled.(t1.teaches)
+inv9 B: all t1, t2 : Professor | (t1->t2 in teaches.~teaches ) iff t2 not in enrolled.(t1.teaches)
+NA H: THEME UPDATE
+

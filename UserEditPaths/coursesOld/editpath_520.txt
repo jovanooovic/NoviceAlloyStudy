@@ -1,0 +1,46 @@
+NA H: THEME UPDATE
+inv1 S: all p : Person | p in enrroled.Course implies p in Student
+inv1 S: all p : Person | p in enroled.Course implies p in Student
+inv1 C: all p : Person | p in enrolled.Course implies p in Student
+inv1 T: Person.enrolled.Course in Student
+inv2 S: all p : Person | p in teaches.Course implies p in Teacher
+inv2 C: all p : Person | p in teaches.Course implies p in Professor
+inv1 C: no ((Person - Student).enrolled)
+inv2 B: no ((Person - Professor).enrolled)
+inv2 C: no ((Person - Professor).teaches)
+inv3 T: all c : Course | Professor.teaches.c
+inv3 B: all c : Course | Professor in teaches.c
+inv1 S: enrolled.Couse in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course in Person.teaches
+inv3 O: Course in Professor.teaches
+inv4 B: Project in Person.projects
+inv4 U: Project in Course.projects
+inv4 T: one Project in Course.projects
+inv4 T: one (Project in Course.projects)
+inv4 B: lone Project & Course.projects
+inv4 B: one Project & Course.projects
+inv4 U: all p : Project | one p & Course.projects
+inv4 U: all p : Project | one (p & Course.projects)
+inv5 T: projects.Course in Student
+inv5 T: all p : Person | p.projects.Course in Student
+inv5 T: Person <: projects.Course in Student
+inv5 T: (Person & projects.Course) in Student
+inv5 T: some p : Person | p.projects.Course in Student
+inv5 T: projects.Course in Student
+inv4 S: all p : Projects | one Course.Projects & p
+inv4 U: all p : Project | one Course.projects & p
+inv4 T: all p : Project | one Course.p implies projects.p
+inv4 T: all p : Project | one Course.p implies projects.p
+inv4 T: all p : Project | one p implies projects.p
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 S: no (Person - Students).projects
+inv5 U: no (Person - Student).projects
+inv5 C: no (Person - Student).projects	  	all p : Project | some pe : Person | p in pe.projects
+inv6 T: all s : Student, c : Course, p : Project | p in s.projects implies some s.enrolled in c.projects
+inv6 B: all s : Student, p : Project | p in s.projects implies s in enrolled.p
+inv6 B: all s : Student, p : Project | p in s.projects
+inv6 B: all s : Student, p : Project | p in s.projects implies s in p.enrolled
+NA H: THEME UPDATE
+

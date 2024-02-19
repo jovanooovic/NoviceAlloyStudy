@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 B: all t:Track | some e:Entry,x:Exit | t->e in succs and t->x in succs
+inv1 T: all t:Track | some e:Entry,x:Exit | t->e in Track and t->x in succs
+inv1 S: all t:Track | some e:Entry, x:Exit
+inv1 T: all j:Junction | some e:Entry, x:Exit | e->j in Track and j->x in Track
+inv1 B: all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs
+inv1 B: all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs
+inv1 B: all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs and e!=j and j!=x
+inv2 E: 
+inv2 E: 
+inv2 E: 
+inv1 T: all j:Junction | some e:Entry, x:Exit | e!=j and j!=x implies e->j in Track and j->x in Track
+inv1 B: all j:Junction | some e:Entry, x:Exit | e!=j and j!=x implies e->j in succs and j->x in succs
+inv1 B: all j:Junction | some e:Entry, x:Exit | e->j in succs and j->x in succs
+inv1 B: all j:Junction | j in Track implies some e:Entry, x:Exit | e->j in succs and j->x in succs
+inv1 B: all j:Junction | j in Track implies some e:Entry, x:Exit | e!=j and j!=x implies e->j in succs and j->x in succs
+

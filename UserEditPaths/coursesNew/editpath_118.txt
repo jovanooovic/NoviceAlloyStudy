@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 C: all p: Person | some p.enrolled implies p in Student
+inv2 C: all p: Person | some p.teaches implies p in Professor
+inv3 C: all c: Course | some teaches.c
+inv4 S: all p: project | p in Course.projects
+inv4 U: all p: Project | p in Course.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 T: all p: Person | some p.projects implies p in Student	  	all p: Project | some projects.p
+inv5 U: all p: Person | some p.projects implies p in Student
+inv5 C: all p: Person | some p.projects implies p in Student	  	  	all p: Project | some (Person<:projects).p
+inv5 T: all p: Person | some p.projects implies p in Student	  	  	all p: Project | some (projects).p
+inv5 C: all p: Person | some p.projects implies p in Student	  	  	all p: Project | some (Person<:projects).p
+inv6 U: all s: Student | all p: s.projects | p in s.enrolled.projects
+inv7 U: all s: Student | all c: s.enrolled | lone (c.projects & s.projects)
+inv8 C: all p: Person | no (p.teaches & p.enrolled)
+inv9 B: all p: Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled))
+inv9 B: all p: Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled)-p)
+inv9 B: all p: Professor | no ((enrolled.(p.teaches) & enrolled.(p.enrolled))-p)
+inv9 B: all p: Professor | no (((enrolled.(p.teaches)-p) & (enrolled.(p.enrolled)-p)))
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled.p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all s: enrolled.(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all s: teaches.(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all c: teaches.(p.teaches) | no (c.enrolled & p.teaches)
+inv10 B: all s: Student| some grades.s
+inv10 B: all s: Student | (s.enrolled).grades[s] != none
+inv10 B: all s: Student | some (s.enrolled).grades[s]
+inv10 B: all s: Student | some (s.enrolled).grades.s
+inv10 B: all s: Student | some c: Course | c.grades[s] != none
+inv10 B: all s: Student | some c: Course | some c.grades[s]
+inv10 U: all p: Person | some grades[p] implies p in Student
+inv10 U: all p: Person | some grades.p implies p in Student
+

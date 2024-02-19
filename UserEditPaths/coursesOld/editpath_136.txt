@@ -1,0 +1,93 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course in Person.teaches
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 T: projects in Course -> one Project
+inv4 T: Course.projects in Course -> one Project
+inv4 T: Course.projects -> one Project
+inv4 T: projects in Course -> one Project
+inv4 B: Course <: projects in Course -> one Project
+inv4 B: Course <: projects in Course -> one Project
+inv4 O: Course <: projects in Course one -> one Project
+inv4 S: Course <: projects in one Course -> one Project
+inv4 B: Course <: projects in Course -> one Project
+inv5 B: no Professor.projects	  	Project in Person.projects
+inv5 T: no Project in Professor.projects	  	Project in Person.projects
+inv5 U: Project in Student.projects
+inv5 U: Project in Student.projects
+inv5 U: Project = Student.projects
+inv5 U: no (Person - Student).projects
+inv5 O: no (Person - Student).projects	  	some Project.projects
+inv5 T: no (Person - Student).projects	  	Project in projects
+inv5 C: no (Person - Student).projects	  	Project in Student.projects
+inv6 B: all s : Student | s.projects in s.enrolled
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 E: 
+inv8 C: all c : Course | no teaches.c & enrolled.c
+inv9 B: no Professor.enrolled
+inv9 B: no Professor.enrolled
+inv10 U: no (Person - Student).grades
+inv10 T: no Course.(Person - Student).grades
+inv10 T: Course.grades in Student
+inv10 C: Course.grades.Grade in Student
+inv11 S: all c : Course | c.grades.Grade in enrolled.C
+inv10 C: Course.grades.Grade in Student
+inv11 C: all c : Course | c.grades.Grade in enrolled.c
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course in Person.teaches
+inv3 C: Course = Person.teaches
+inv3 C: Course in Person.teaches
+inv4 B: Course <: projects in Course -> one Project
+inv4 B: (Course <: projects) in Course -> one Project
+inv4 C: (Course <: projects) in Course one -> set Project
+inv4 S: all p : Projects | one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: no (Person - Student).projects	  	Project in Student.projects
+inv5 C: Person <: projects in Student some -> Project
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all s : Student | all c: s.enrolled | lone s.projects & c.projects
+inv7 U: all s : Student, c: s.enrolled | lone s.projects & c.projects
+inv8 C: all c : Course | no teaches.c & enrolled.c
+inv9 B: no Professor.enrolled
+inv9 B: no (Professor + (Professor & Student)).enrolled
+inv9 T: all p : Professor, c : p.teaches | no (c.~teaches - p) & (p.teaches - enrolled)
+inv9 U: all p : Professor, c : p.teaches | no (c.~teaches - p) & (p.teaches.~enrolled)
+inv10 C: Course.grades.Grade in Student
+inv11 C: all c : Course | c.grades.Grade in enrolled.c
+inv12 E: 
+inv12 S: all c : Course | c.grades in lone Person -> Grade
+inv12 B: all c : Course | c.grades in Person lone -> Grade
+inv12 O: all c : Course | c.grades in Person lone -> one Grade
+inv12 O: all c : Course | c.grades in Person lone -> lone Grade
+inv12 C: all c : Course | c.grades in Person -> lone Grade
+inv12 C: all c : Course | c.grades in Person -> lone Grade
+inv12 O: all c : Course | c.grades in Person -> one Grade
+inv12 C: all c : Course | c.grades in Person -> lone Grade
+inv14 T: all s : Student | s.projects[projects] in Student lone -> lone Student
+inv14 T: all s : Student | s.projects in Student lone -> lone Student
+inv14 T: all s : Student | s.projects[Course <: projects] in Student lone -> lone Student
+inv14 T: all s : Student | s.projects[Person <: projects] in Student lone -> lone Student
+inv12 C: all c : Course | c.grades in Person -> lone Grade
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 T: all s1, s2 : disj Student | lone s1.projects & s2.projects
+inv14 U: all disj s1, s2 : Student | lone s1.projects & s2.projects
+NA M: MOD BASE MODEL
+inv10 U: iden in iden
+inv10 C: grades in Course -> Student -> Grade
+inv12 C: all c : Course | c.grades in Person -> lone Grade
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[s.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = min[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies one c.projects & s.projects
+inv13 B: all c : Course, s : Student |( (c in s.enrolled) and (s.(c.grades) = max[Student.(c.grades)])) implies one (c.projects & s.projects)
+inv13 B: all c : Course, s : Student | ((c in s.enrolled) and (s.(c.grades) = max[Student.(c.grades)])) implies some (c.projects & s.projects)
+inv14 U: all disj s1, s2 : Student | lone s1.projects & s2.projects
+inv15 B: all c : Course, pj : c.projects, disj s1, s2 : pj.~(Student <: projects) |	  		no s1.(c.grades) or no s2.(c.grades) or s1.(c.grades) = s2.(c.grades) or 			s1.(c.grades).prev = s2.(c.grades) or s2.(c.grades).prev = s1.(c.grades)
+

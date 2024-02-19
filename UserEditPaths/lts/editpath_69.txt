@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 O: all x : State | some x.trans.Event
+inv1 C: all x : State | some x.trans
+inv2 U: all x, y : Init | x = y
+inv2 U: all x, y : Init | x = y and some x
+inv2 U: all x, y : Init | some x implies x = y
+inv2 C: one Init
+inv3 U: all x : Event, y : State | lone y.trans.x
+inv3 O: all  y : State | lone y.trans
+inv3 U: all  y : Event | lone trans.y
+inv3 U: all x : State, y : Event | lone x.trans.y
+inv3 U: all x : State, y : Event | lone (x.trans).y
+inv3 T: all x : State, y : Event | lone x.trans.y.State
+inv3 U: all x : State, y : Event | lone x.trans.y
+inv3 O: all x : State | lone x.trans
+inv3 U: all x : State, y : Event | lone (x.trans).y
+inv3 S: all x, z, v : State, y : Event,  | x->y->z in trans and x->y->v in trans implies z=v
+inv3 C: all x, z, v : State, y : Event  | x->y->z in trans and x->y->v in trans implies z=v
+inv4 B: all x : Init | State in x.trans.Event
+inv4 B: all x : Init | State in (x.trans).Event
+inv4 T: all x : Init | State in *(x.trans)
+inv4 B: all x : Init, y : Event | State in y.*(x.trans)
+inv4 B: all x : Init, y : Event | State in x.*(trans.y)
+inv4 B: all x  : Event | State in Init.*(trans.x)
+inv4 B: all x  : Event | State in Init.(*(trans.x))
+inv4 B: all x  : Event | State in *(Init.trans).x
+

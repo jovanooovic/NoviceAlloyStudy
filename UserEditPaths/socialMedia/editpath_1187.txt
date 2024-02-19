@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+inv7 C: suggested = (follows . follows) - follows - iden
+inv8 T: all u : User | u.sees.Ad = (follows+suggested).posts.Ad
+inv8 T: all u : User | u.sees :> Ad = (follows+suggested).posts :> Ad
+inv8 O: sees :> Ad = (follows+suggested).posts :> Ad
+inv8 T: all u : User | u.sees.Ad in (follows+suggested).posts.Ad
+inv8 T: all u : User | u.sees.Ad in (follows+suggested).posts.Ad
+inv8 U: sees.Ad in (follows+suggested).posts.Ad
+inv8 C: sees :> Ad in (follows+suggested).posts :> Ad
+

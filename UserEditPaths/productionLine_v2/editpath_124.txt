@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 S: Workers = (Human - Robot) + (Robot - Human)
+inv1 C: Worker = (Human - Robot) + (Robot - Human)
+inv1 C: (Human + Robot) <: Worker = Worker
+inv1 C: Human <: Worker = Worker - (Robot <: Worker)
+inv1 C: Human <: Worker = Worker - (Robot <: Worker)
+inv1 C: (Human <: Worker) = Worker - (Robot <: Worker)
+inv1 C: (Human & Worker) = Worker - (Robot & Worker)
+inv1 C: (Human + Robot) & Worker = Worker
+inv1 C: no ((Human <: Worker) & (Robot <: Worker))	Human + Robot = Worker
+inv1 C: Human + Robot = Worker
+inv2 S: workers in Workstation one -> some Worker	all w,x : Worksations | w != x -> no (w.workers & x.workers)
+inv2 S: workers in Workstation one -> some Worker	all w,x : Worksation | w != x -> no (w.workers & x.workers)
+inv2 S: workers in Workstation one -> some Worker	all w,x : Worksation | w != x implies no (w.workers & x.workers)
+inv2 C: workers in Workstation one -> some Worker	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv3 O: workstation in Component one -> one Workstation
+inv3 C: workstation in Component set -> one Workstation
+inv4 B: some (Component <: parts)	no (Material <: parts)
+inv4 O: (Component <: parts) in Component one -> some Product	no (Material <: parts)
+inv4 C: (Component <: parts) in Component set -> some Product	no (Material <: parts)
+NA H: THEME UPDATE
+

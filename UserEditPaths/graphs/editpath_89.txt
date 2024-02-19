@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+Inv1 T: adj & ~adj
+Inv1 C: adj = ~adj
+Inv2 C: no adj & ~adj
+Inv3 S: all
+Inv2 B: adj != ~adj
+Inv2 C: no adj & ~adj
+Inv3 O: all n : Node | no n.(*adj)
+Inv3 O: all n : Node | no n & n.(*adj)
+Inv3 O: all n : Node | no n.(^adj)
+Inv3 C: all n : Node | no n.(^adj) & n
+Inv3 O: all n : Node | no n.(*adj)
+Inv3 O: all n : Node | no n.(*adj) & n
+Inv4 C: adj = Node -> Node
+Inv5 O: all n : Node | no n->n
+Inv5 C: all n : Node | n->n not in adj
+Inv6 U: all n : Node | some n.*(adj + ~adj)
+Inv6 C: all n : Node | Node in n.*(adj + ~adj)
+Inv7 C: all n : Node | Node in n.*adj
+Inv8 C: all x, y, z : Node | x->y in adj and y->z in adj implies x->z in adj
+

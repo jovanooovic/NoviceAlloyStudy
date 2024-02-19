@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+Inv1 U: all w:Work | w in User.visible implies w in User.profile
+Inv1 C: all w:Work,u:User | w in u.visible implies w in u.profile
+Inv1 U: all w:Work | w in User.visible:>Work implies w in User.profile:>Work
+Inv1 T: all w:Work | User.visible:>w and User.profile:>w
+Inv1 C: all w:Work,u:User | w in u.visible implies w in u.profile
+Inv2 O: all w:Work,u:User | w in u.profile implies u in w.ids
+Inv2 O: all w:Work,u:User | w in u.profile implies u in w.source
+Inv2 C: all w:Work,u:User | w in u.profile implies (u in w.source or w.source in Institution)
+Inv2 C: all w:Work,u:User | w in u.profile implies u in w.source or w.source in Institution
+Inv3 O: all w1,w2:Work | (w1 in User.profile and w2 in User.profile) implies w1.ids != w2.ids
+Inv3 O: all w1,w2:Work | (w1 in User.profile and w2 in User.profile) implies w1.ids not in w2.ids
+Inv3 O: all w1,w2:Work | (w1 in Source.profile and w2 in Source.profile) implies w1.ids not in w2.ids
+Inv4 T: all w:Work | one w in Source.visible
+Inv3 S: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id in w1.ids) implies id not in w2.ids
+Inv3 S: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id in w1.ids) implies id1 not in w2.ids
+Inv3 O: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id1 in w1.ids) implies id1 not in w2.ids
+Inv3 B: all id1:Id, w1,w2:Work | (w1.source != w2.source and id1 in w1.ids) implies id1 not in w2.ids
+

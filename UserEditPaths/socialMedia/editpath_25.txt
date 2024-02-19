@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv6 S: all d : Day | all i : Influencer | one day.posts.i
+inv6 S: all d : Day | all i : Influencer | one day.i.posts
+inv6 O: all d : Day | all i : Influencer | one date.i.posts
+inv6 O: all d : Day | all i : Influencer | one date.posts.i
+inv6 S: all d : Day | all i : Influencer | some d2 p.date | d2 = d
+inv6 S: all d : Day | all i : Influencer | some d2 : i.posts.date | d2 = d
+inv6 C: all d : Day | all i : Influencer | some d2 : i.posts.date | d2 = d
+inv7 S: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=y
+inv6 C: all d : Day | all i : Influencer | some d2 : i.posts.date | d2 = d
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and s !=x
+

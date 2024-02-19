@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 S: all p : photo | p.postes
+inv1 S: all p : Photo | p.postes
+inv1 T: all p : Photo | p.posts
+inv1 T: all p : Photo | User.posts.p
+inv1 S: all p : Photo | one p.posted
+inv1 S: all p : Photo | one posted.p
+inv1 C: all p : Photo | one posts.p
+inv2 S: all u : user | no u follows.u
+inv2 S: all u : user | no u follows.u
+inv2 S: all u : User | no u follows.u
+inv2 T: all u : User | not follows in follows.u
+inv2 C: all u : User | u not in follows.u
+inv2 C: all u : User | u not in follows.u
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+inv4 T: all u : User | u.posts Ad & Ad
+inv4 O: all u : User | u.posts in Ad & Ad
+inv4 C: all u : User | u.posts in Ad or no u.posts & Ad
+

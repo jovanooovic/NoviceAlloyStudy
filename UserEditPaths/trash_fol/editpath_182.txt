@@ -1,0 +1,96 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv2 C: all f : File | f in Trash
+inv3 S: some f : File | s in Trash
+inv3 S: some f : File | s in Trash
+inv3 C: some f : File | f in Trash
+inv4 O: no Protected + Trash
+inv4 B: Protected not in Trash
+inv4 O: no Protected + Trash
+inv4 O: no (Protected + Trash)
+inv4 C: no (Protected & Trash)
+inv5 T: all f : not Protected | f in Trash
+inv5 S: all f : f not Protected | f in Trash
+inv5 S: all f : not Prepared | f in Trash
+inv5 T: all f : not Protected | f in Trash
+inv5 S: all f : File | f not in Prepared && f in Trash
+inv5 O: all f : File | f not in Protected && f in Trash
+inv5 B: all f : File | f not in Protected && (f in Trash || f in File)
+inv5 O: all f : File | f not in Protected && f in Trash
+inv5 T: all f : File | f not in Protected -> f in Trash
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv6 B: all f : File | #(link.f) > 0
+inv6 T: all f : File | (link.f) > 0
+inv6 T: link.File > 0
+inv6 B: #(link.File) > 0
+inv6 T: all f : File | f -> link > 0
+inv6 T: File.link > 0
+inv6 B: #(File.link) > 0
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | not no f.link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | some link
+inv6 B: all f : File | some link.f
+inv6 B: all f : File | some link.f
+inv6 B: some File.link
+inv6 B: all f : File | some f->link
+inv7 C: all f : File | no (f.link & Trash)
+inv8 C: all f : File | no f.link
+inv9 C: all l : File.link | no l.link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | #(f.link) > 0
+inv10 B: all l : File.link | l in Trash implies no l.link
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 B: all l : File.link | l in Trash implies no (l.link & Trash)
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 U: all link : File.link | link in Trash implies (all l : link | l in Trash)
+inv10 U: all l : File.link | l in Trash implies (all l1 : l | l1 in Trash)
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 B: all f : File | f.link in Trash implies no f.link
+inv6 B: all f : File | #(f.link) > 0
+inv10 S: all l : File.link | l in Trash implies (all f : File | f == l and l in Trash)
+inv10 S: all l : File.link | l in Trash implies (all f : File | (f == l) and (l in Trash))
+inv10 B: all l : File.link | l in Trash implies (all f : File | (f = l) and (l in Trash))
+inv10 B: all l : File.link | l in Trash implies (all f : File | (f = l) and (l in Trash))
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 O: all l : File.link | l in Trash and l.link in Trash
+inv10 S: all l : File.link |
+inv10 S: all l : File.link | l in Trash implies ( all li : l.links | li in Trash )
+inv10 U: all l : File.link | l in Trash implies ( all li : l.link | li in Trash )
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv10 U: all l : File.link | (l in Trash implies ( l.link in Trash ))
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv10 S: all l : File.link | (l in Trash implies (all li : l.links | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l.link | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l.link | li in Trash))
+inv10 S: all f,l : File, f.link | l in Trash implies f in Trash
+inv10 U: all f : File | (all l : f.link | l in Trash implies l.link in Trash)
+inv10 B: inv4[]	all f : File | (all l : f.link | l in Trash implies l.link in Trash)	}		pred inv4{	no (Protected & Trash)
+inv10 U: all f : File | (all l : f.link | l in Trash implies l.link in Trash)
+inv10 U: all f : File | (all l : f.link | f in Trash implies l.link in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | #(f.link) >= 1
+inv6 U: all f : File | (all l : f.link | some f->l)
+inv6 S: all f : File | some f->Link
+inv6 B: all f : File | some f->f.link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | some link.f
+inv6 C: all f : File | #(f.link) < 2
+inv1 C: no Trash
+inv2 C: all f : File | f in Trash
+inv3 C: some f : File | f in Trash
+inv4 C: no (Protected & Trash)
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv6 C: all f : File | #(f.link) < 2
+inv7 C: all f : File | no (f.link & Trash)
+inv8 C: all f : File | no f.link
+inv9 C: all l : File.link | no l.link
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+NA H: THEME UPDATE
+

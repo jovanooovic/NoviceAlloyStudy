@@ -1,0 +1,7 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv10 C: all p: Person - Student | all c: Course | no p.(c.grades)
+inv9 U: all p1,p2 : Professor | p1 != p2 and some p1.teaches & p2.teaches	  			implies no p1.teaches & p2.enrolled
+inv8 C: no teaches & enrolled
+inv7 U: all s : Student | all c: s.enrolled | lone (c.projects & s.projects)
+

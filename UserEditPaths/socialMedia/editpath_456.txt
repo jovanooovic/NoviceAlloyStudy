@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 S: all p: Photo | posts(x, p) implies x in User
+inv1 S: all p: Photo, u: User | one u.posts(p)
+inv1 T: all p: Photo, u: User | u.posts(p)
+inv1 S: all p: Photo, u: User | p in u.Posts
+inv1 B: all p: Photo, u: User | p in u.posts
+inv1 S: one p in Posts
+inv1 S: one photo in Posts
+inv1 S: one p: Photo in Posts
+inv1 T: all p: Photo | one p in Posts
+inv1 B: all p: Photo, u1 : User, u2: User | p in u1.posts implies p not in u2.posts
+inv1 C: all p: Photo | one posts.p
+inv2 O: all u: User | u not in u.^(follows)
+inv2 C: all u: User | u not in u.follows
+inv3 B: all p: Photo, u: User, u2: User | p not in Ad and p in u2.posts and p in u.sees implies u2 in u.follows	all p: Photo, u: User | p in Ad implies p in u.sees
+inv4 C: all p: Photo, u: User | p in Ad and p in u.posts implies u.posts in Ad
+inv4 B: all p: Photo, u: User | p in Ad and p in u.posts implies u.posts not in Ad
+inv4 C: all p: Photo, u: User | p in Ad and p in u.posts implies u.posts in Ad
+inv5 B: all u1: User, u2: User | u1 in Influencer implies u1 in u2.follows
+inv5 O: all u1: User, u2: User | u1 in Influencer implies u1 in u2.follows and u2 not in u2.follows
+inv5 B: all u1: User | u1 in Influencer implies User-u1.follows = u1
+inv6 U: all u: User, p: Photo | u in Influencer and p in u.posts implies p.date in Day
+inv6 B: all u: User, p: Photo | u in Influencer implies u.posts in Day
+inv6 U: all u: User, p: Photo | u in Influencer implies u.posts.date in Day
+inv6 U: all u: User | u in Influencer implies u.posts.date in Day
+inv8 B: all u1 : User, u2 : User, p: Photo | p in Ad and p in u1.sees and p in u2.posts implies u2 in u1.follows or u2 in u1.suggested
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u3 in u1.follows implies u2 in u3.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 != u1 and u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 T: all u1: User, u2: User, u3 : User | u2 != u1 != u3 and u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 U: all u1: User, u2: User, u3 : User | u2 != u1 and u2 != u3 and u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u3 in u2.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u2 in u3.follows implies u3 in u1.follows and u2 not in u1.follows
+inv7 B: all u1: User, u2: User, u3 : User | u2 in u1.suggested and u3 in u2.follows implies u3 in u1.follows and u2 not in u1.follows
+

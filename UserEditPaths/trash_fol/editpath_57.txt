@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv6 E: 
+inv1 C: no Trash
+inv1 C: no Trash
+inv1 C: no Trash
+inv5 T: all f:File | f not in Protected -> f in Trash		}		run inv5 for 3		/* A file links to at most one file. */		pred inv5{	all f:File | f not in Protected -> f in Trash
+inv1 C: no Trash
+NA M: MOD BASE MODEL
+inv7 B: all f:File | some f1:(File - f) | f.link not in f1.link
+inv1 C: no Trash
+inv1 C: no Trash
+inv1 C: no Trash
+inv1 C: no Trash
+inv1 C: no Trash
+inv2 C: all f:File | f in Trash
+inv1 C: no Trash
+inv10 B: all l:File.link | l in Trash implies (l not in File)
+inv1 C: no Trash
+inv2 C: all f:File | f in Trash
+inv3 C: some f:File | f in Trash
+inv4 C: all f:Protected | f not in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv6 C: all f:File | #(f.link) <= 1
+inv7 B: all f:File | f.link not in Trash
+inv7 C: all f:File.link | f not in Trash
+inv7 C: all l:File.link | l not in Trash
+inv8 C: all f:File | #(f.link) <= 0
+inv8 C: all f:File | #(f.link) <= 0
+inv9 B: all f:File | some f1:File | f != f1 and f.link not in f1.link
+inv9 B: all f:File | some f1:(File - f) | f.link not in f1.link
+inv9 B: all f:File | some f1:(File - f) | f.link not in f1.link		all l1:File.link | some l2:File.link | l1 not in l2
+inv9 B: all l1:File.link | some l2:File.link | l1 not in l2
+

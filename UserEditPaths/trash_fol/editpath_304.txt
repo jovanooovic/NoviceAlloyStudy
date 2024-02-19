@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 C: all t:Trash | t not in File
+inv1 C: all t:Trash | t not in File
+inv2 C: all f:File | f in Trash
+inv1 C: all t:Trash | t not in File
+inv3 C: some f:File | f in Trash
+inv4 S: all f:Files | f not in Trash
+inv4 O: all f:File | f not in Trash
+inv4 C: all p:Protected | p not in Trash
+inv5 B: all f:File | Protected - f in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv6 O: lone File.link
+inv6 U: all f:File | some a:File | some b:File | f->a in link and f->b in link implies a=b
+inv6 S: all f:File | some a:File | some b:File | f->a in link and f->b in link implies a==b
+inv6 U: all f:File | some a:File | some b:File | f->a in link and f->b in link implies a=b
+inv6 U: all f:File | some a:File | some b:File | f->a in link and f->b in link implies a=b
+inv6 C: all f:File, a,b:File | f->a in link and f->b in link implies a=b
+inv7 S: all f:File, a,b:File, c:Trash |
+inv8 S: all f1,f2:Files | f1->f2 not in link
+inv8 C: all f1,f2:File | f1->f2 not in link
+inv7 T: all f1,f2:File, t:Trash | f1->f2 in link implies f1 and f2 not in Trash
+inv7 T: all f1,f2:File| f1->f2 in link implies f1 and f2 not in Trash
+inv7 B: all f1,f2:File| f1->f2 in link implies f1 not in Trash
+inv7 S: all f1,f2:File| f1->f2 in link implies f1,f2 not in Trash
+inv7 T: all f1,f2:File| f1->f2 in link implies (f1 and f2 not in Trash)
+inv7 T: all f1,f2:File| f1->f2 in link implies (f1 and f2 in File-Trash)
+inv7 B: all f1,f2:File| f1->f2 in link implies (f1 in File-Trash)
+inv7 O: all f1,f2:File| f1->f2 in link implies (f1 not in Trash) and (f2 not in Trash)
+inv7 O: all f1,f2:File| f1->f2 in link implies ((f1 not in Trash) and (f2 not in Trash))
+inv7 S: all (f1->f2):link | (f1 not in Trash) and (f2 not in Trash)
+inv9 C: all f1,f2,f3:File | f1->f2 in link implies f2->f3 not in link
+inv7 E: 
+inv8 C: all f1,f2:File | f1->f2 not in link
+inv9 C: all f1,f2,f3:File | f1->f2 in link implies f2->f3 not in link
+inv7 T: all f1,f2:File| f1->f2 in link implies f2 not int Trash
+inv7 O: all f1,f2:File| f1->f2 in link implies ((f1 not in Trash) and (f2 not in Trash))
+inv7 C: all f1,f2:File| f1->f2 in link implies f2 not in Trash
+inv10 B: all f1,f2:File | f1->f2 not in link implies f2 in Trash
+

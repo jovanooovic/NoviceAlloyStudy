@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv1 S: all p:person | p in Professor => p.enrolled == 0
+inv1 S: all p:person | p in Professor => p.enrolled == 0
+inv1 S: all p:person-Student |p.enrolled == 0
+inv1 S: all p:person | p in Professor => p.enrolled = 0
+inv1 B: all p:Person | p in Professor => p.enrolled = 0
+inv1 U: all p:Person | p.enrolled = 0 => p in Professor
+inv1 O: all p:Person-Student | p.enrolled = 0
+inv1 T: all p:Person-Student |  not p.enrolled
+inv1 C: all p:Person-Student | no p.enrolled
+inv1 B: all p:Person | p in Professor => no p.enrolled
+inv1 C: all p:Person-Student | no p.enrolled
+inv2 C: all p:Person-Professor | no p.teaches
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 C: all p:Project |one c:Course | p in c.projects
+inv5 U: all p:Project | some s:Student | p in s.projects
+inv5 C: all p:Person-Student | no p.projects	  all p:Project | some s:Student | p in s.projects
+inv6 B: all s:Student, p:Project | some c:Course | p in s.projects => c in s.enrolled && p in c.projects
+inv7 B: all s:Student, c:s.enrolled | one p:Project | p in s.projects && p in c.projects
+inv7 U: all s:Student, c:s.enrolled | lone p:Project | p in s.projects && p in c.projects
+inv7 U: all s:Student, c:s.enrolled | lone p:Project | p in s.projects && p in c.projects
+inv8 U: all p:Professor, c:p.teaches | c not in p.enrolled
+inv8 U: all p:Professor, c:Course | c in p.teaches => c not in p.enrolled
+inv9 U: all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => pp not in p.enrolled
+inv9 U: all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p, c:Course | some (c in p.teaches && c in pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p, c:Course | some (p.teaches && pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+inv9 T: all p:Professor, pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+inv9 T: all p:Professor | all pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+

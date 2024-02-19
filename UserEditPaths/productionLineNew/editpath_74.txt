@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv1 C: all w:Worker | (w in Human) or (w in Robot)
+inv2 B: all ws:Workstation, w:Worker | (w in ws.workers)
+inv2 B: all ws:Workstation, w:Worker | (some w.workstation) and (some ws.workers)
+inv2 O: all ws:Workstation | some ws.workers &&	all w:Worker | one w.workstation
+inv2 S: all ws:Workstation | some ws.workers and (all w:Workers | one w.workstation)
+inv2 O: all ws:Workstation | some ws.workers and (all w:Worker | one w.workstation)
+inv2 T: all ws:Workstation, w:Worker | some w in ws.workers
+inv2 U: all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 C: workers in Workstation one -> some Worker
+inv2 S: all w:Worker, ws:Workstation | some w -> one ws in ws.workers		workers in Workstation one -> some Worker
+inv2 S: all w:Worker, ws:Workstation | some w -> one ws in ws.workers
+inv2 C: all ws: Workstation | some w: Worker | ws -> w in workers	and	all w:Worker | one ws:Workstation | ws -> w in workers
+inv3 S: all c: Component | one w:Workstation | c -> ws in workstation
+inv3 C: all c: Component | one ws:Workstation | c -> ws in workstation
+inv4 U: all c:Component | some p:Product | c -> p in parts	and	all m:Material | no p:Product | m -> p in parts
+inv4 C: (all c:Component | some p:Product | c -> p in parts)	and	(all m:Material | no p:Product | m -> p in parts)
+inv2 C: (all ws: Workstation | some w: Worker | ws -> w in workers)	and	(all w:Worker | one ws:Workstation | ws -> w in workers)
+inv4 C: (all c:Component | some p:Product | c -> p in parts)	and	(all m:Material | no p:Product | m -> p in parts)
+inv5 O: all ws:Workstation | all w1,w2: Worker | (ws -> w1 in workers and ws -> w2 in workers and w1 in Human) implies (w2 in Human)
+inv5 O: all ws:Workstation | all w1,w2: Worker |	(ws -> w1 in workers and ws -> w2 in workers and w1 in Human) implies (w2 in Human)
+inv6 U: all c:Component | c not in c.parts
+inv6 C: all c:Component | c not in c.^(parts)
+inv7 S: all c:Component | all p:Product | p in Dangerous and i in c.^(parts) implies c in Dangerous
+inv7 O: all c:Component | all p:Product | p in Dangerous and p in c.^(parts) implies c in Dangerous
+inv8 C: all c:Component | all ws:Workstation | c in Dangerous and ws in c.workstation implies (all h:Human | h not in ws.workers)
+inv9 U: all w,wb:Workstation | (wb in begin and wb!=w) implies w in wb.^(succ)
+inv9 C: all w,wb:Workstation | (wb in begin and wb!=w) implies w in wb.^(succ)	all w: Workstation | w not in w.^(succ)	all w: Workstation | w not in end implies one w.succ
+inv10 B: all c1,c2 : Component | all w1,w2 : Workstation |	w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies	w1 in w2.^(succ)
+NA H: THEME UPDATE
+

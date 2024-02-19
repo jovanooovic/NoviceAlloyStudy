@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 B: one posts.Photo
+inv1 B: one posts.Photo & User
+inv1 C: all x:Photo | one posts.x
+inv2 T: all x:User | no x.follows.x
+inv2 T: all x:User | no x->x not in follows
+inv2 C: all x:User | x->x not in follows
+inv2 C: all x:User | x not in x.follows
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts
+inv3 T: all x:Photo,y:User| y.sees in y.follows.posts	all x:Ad,y:User| y.sees & x
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts and y.sees not in Ad
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts and y.sees in Ad
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts or y.sees in Ad
+inv3 O: all x:Photo,y:User| x!= Ad and x in y.sees implies x in y.follows.posts
+inv3 O: all x:Photo,y:User| x!=Ad and x in y.sees implies some z:User| z.posts = x and z in x.follows
+inv3 O: all x:Photo,y:User| x not in Ad and x in y.sees implies some z:User| x in z.posts and z in x.follows
+inv3 C: all x:Photo,y:User| x not in Ad and x in y.sees implies some z:User| x in z.posts and z in y.follows
+inv3 C: all x:Photo,y:User| x not in Ad and x in y.sees implies x in y.follows.posts
+inv4 C: all x:User,y:Ad| y in x.posts implies x.posts in Ad
+inv5 C: all x:Influencer| follows.x = User - x
+inv6 C: all x:Day,y:Influencer| x in y.posts.date
+inv6 C: all x:Influencer| x.posts.date = Day
+inv7 U: all x:User| x.suggested in x.follows.follows
+inv7 B: all x:User| x.suggested in x.follows.follows and x.suggested not in x.follows
+inv7 U: all x:User| x.suggested in x.follows.follows and (all y:x.suggested| y not in x.follows)
+inv7 C: all x,y:User| y in x.suggested iff ( y in x.follows.follows and y not in x.follows and x!=y)
+inv7 U: all disj x,y:User| y in x.suggested iff ( y in x.follows.follows and y not in x.follows)
+inv8 C: all x:Ad,y:User| x in y.sees implies x in (y.follows.posts + y.suggested.posts)
+inv8 C: all x:Ad,y:User| x in y.sees implies x in y.follows.posts or x in y.suggested.posts
+

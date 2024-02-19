@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv4 S: all c : Components | c in Components.~parts	no Material & Products.~parts
+inv4 S: all c : Component | c in Component.~parts	no Material & Products.~parts
+inv4 O: all c : Component | c in Component.~parts	no Material & Product.~parts
+inv4 T: all c : Component | c in Component.~parts		all m : Material | no m in Component.~parts
+inv4 B: all c : Component | c in Component.~parts		all m : Material | m not in Component.~parts
+inv4 B: all c : Component | c in Component.~parts		all m : Material | m not in Component.~parts
+inv4 O: all c : Component | c in Component.~parts		all m : Material | m not in Product.~parts
+inv4 C: all c : Component | c in Product.~parts		all m : Material | m not in Product.~parts
+inv4 C: all c : Component | c in Product.~parts	no Material & Product.~parts
+inv5 S: no (worksers - Robot->Robot - Human->Human)
+inv5 O: no (workers - Robot->Robot - Human->Human)
+inv5 T: all w : Workstation | some Robot in w.workers implies no Human in w.workers and some Human in w.workers implies no Robot in w.workers
+inv5 U: all w : Workstation | some Robot & w.workers implies no Human & w.workers and some Human & w.workers implies no Robot & w.workers
+inv5 C: all w : Workstation | no Robot->Human & w.workers->w.workers
+inv6 B: no parts & iden
+inv6 O: no *parts
+inv6 T: no ^parts in iden
+inv6 B: ^parts not in iden
+inv6 O: no ^parts & iden
+inv7 T: all c : Component | some c.^parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv7 O: all c : Component | some c.^parts & Dangerous implies c in Dangerous
+inv8 C: no Human & (Component & Dangerous).workstation.workers
+inv9 U: all w : Workstation | w not in w.^succ
+inv9 S: one Workstation & Begin	one Workstation & End	all w : Workstation | w not in w.^succ
+inv9 U: one Workstation & begin	one Workstation & end	all w : Workstation | w not in w.^succ
+inv9 B: one Workstation & begin	one Workstation & end	no Workstation & begin & end	all w : Workstation | w not in w.^succ
+inv9 U: one Workstation & begin	one Workstation & end		all w : Workstation | w not in w.^succ
+inv9 T: one Workstation & begin	one Workstation & end	all w : Workstation | w in ^succ
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | w in ^succ.Workstation
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | one w & ^succ.Workstation
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+inv9 T: one Workstation & begin	one Workstation & end	no begin in Workstation.^succ	no end in ^succ.Workstation	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+inv9 B: one Workstation & begin	one Workstation & end	begin not in Workstation.^succ	end not in ^succ.Workstation	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+inv10 T: all c : Component | ^(c.parts) in workstation.((^succ).Workstation - ^(c.workstation.succ))
+inv10 T: all c : Component | (c.parts) in workstation.((^succ).Workstation - ^(c.workstation.succ))
+

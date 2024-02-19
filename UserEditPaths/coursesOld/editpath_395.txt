@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv9 B: all p : Professor | all c: Course | p->c in teaches implies all s : Person |  p->c in enrolled implies p not in Professor
+inv9 B: all p : Professor | all c: Course | p->c in teaches implies all s : Person |  s->c in enrolled implies s not in Professor
+inv10 S: all c: Course | all p: Person | all g: Grades | c->p->g in grades implies p in Student
+inv10 C: all c: Course | all p: Person | all g: Grade | c->p->g in grades implies p in Student
+inv11 C: all c: Course | all p: Person | all g: Grade | c->p->g in grades implies p->c in enrolled
+inv11 U: all c: Course | all p: Student | all g: Grade | c->p->g in grades implies p->c in enrolled
+inv12 S: all c: Course | all p: Student | all g1: Grade | all g1: Grade |c->p->g1 in grades and c->p->g2 in grades implies g1=g2	}
+inv12 S: all c: Course | all p: Student | all g1: Grade | all g1: Grade |c->p->g1 in grades and c->p->g2 in grades implies g1=g2
+inv12 U: all c: Course | all p: Student | all g1: Grade | all g2: Grade |c->p->g1 in grades and c->p->g2 in grades implies g1=g2
+

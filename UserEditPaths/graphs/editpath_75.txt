@@ -1,0 +1,77 @@
+NA H: THEME UPDATE
+Inv1 S: all adj1, adj2 | adj1 = adj2 implies that adj2=adj1
+Inv1 S: adj1 = adj2 implies that adj2=adj1
+Inv1 U: adj = adj
+Inv1 S: all adj1, adj2 : Node | x->adj1 and x->adj2 implies adj1 = adj2
+Inv1 B: all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies v1 = v2
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv1 S: v1.adj = v2.adj
+Inv1 T: adj.adj
+Inv1 S: all adj.adj
+Inv1 B: no adj.adj
+Inv1 B: some adj.adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv2 T: all v1, v2 : Node | v1->v2 in adj implies no v2->v1 in adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv1 O: no adj & adj
+Inv1 O: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj	no adj & adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv1 C: all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v1->v1 in adj
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v1->v1 in adj and v2->v2 in adj)
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v2->v1 in adj and v2->v2 in adj)
+Inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+Inv3 T: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 implies not v1 = v3
+Inv3 U: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies not v1 = v3
+Inv3 B: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies v1 = v3
+Inv3 S: v1.adj and v2.adj implies v1 = v2
+Inv3 T: adj.adj implies not adj = adj
+Inv3 B: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies v1 = v3 & v1
+Inv3 B: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies v1 = v3 & v3
+Inv3 U: all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies v1 = v2 & v1
+Inv3 U: all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies not v1 = v2 & v1
+Inv1 T: adj & adj
+Inv1 B: some adj & adj
+Inv1 T: not adj + adj
+Inv1 O: no adj + adj
+Inv1 O: no adj & adj
+Inv2 C: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj	no adj & ~adj
+Inv2 C: no adj & ~adj
+Inv1 T: adj
+Inv1 U: no adj - adj
+Inv1 C: no adj - ~adj
+Inv1 T: adj in Node
+Inv1 C: no adj - ~adj
+Inv3 U: all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies not v1 = v2 & v1
+Inv3 S: all v : Node | no v.adj & x
+Inv3 U: all v : Node | no v.adj & v
+Inv3 C: all v : Node | no v.^adj & v
+Inv3 C: all v : Node | no v.(^adj) & v
+Inv4 B: no ^adj & adj
+Inv4 B: no *adj & adj
+Inv4 B: no ~adj & adj
+Inv4 B: no ~adj + adj
+Inv4 S: no v.~adj + v
+Inv4 O: all v : Node | no v.~adj + v
+Inv3 C: all v : Node | no v.(^adj) & v
+Inv5 S: adj = not Node -> ~Node
+Inv5 S: adj = no Node -> ~Node
+Inv5 S: adj = no Node -> ~Node
+Inv5 S: adj = no Node -> ~Node
+Inv5 S: adj = no Node -> ~Node
+Inv5 S: adj = no Node -> Node
+Inv5 T: adj = Node -> ~Node
+Inv5 C: all v : Node | not v->v in adj
+Inv5 C: all v : Node | not v->v in adj
+Inv7 T: all v1, v2 : Node | v1->v2 in adj & v2->v1 in adj
+Inv7 S: all v : Node | Node in x.*adj
+Inv7 C: all v : Node | Node in v.*adj
+Inv8 T: all v1,v2,v3:Node | v1->v2 in adj and v2->v3 in adj implies v1->v3
+Inv8 C: all v1,v2,v3:Node | v1->v2 in adj and v2->v3 in adj implies v1->v3 in adj
+Inv6 T: all x : Node | Node in x.*(no adj - ~adj)
+Inv1 T: adj + ~adj
+Inv1 C: no adj - ~adj
+Inv1 C: no adj - ~adj
+

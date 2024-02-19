@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv1 S: all x : Worker | x in ((Robot | Human) - (Robot & Human))
+inv1 C: all x : Worker | x in ((Robot + Human) - (Robot&Human))
+inv1 C: all x : Worker | x in Robot+Human and x not in Robot&Human
+inv1 S: all x : Worker | x in Robot|Human and x not in Robot&Human
+inv1 C: all x : Worker | x in Robot + Human - Robot&Human
+inv1 C: all x : Worker | x in Robot + Human
+inv3 C: all x: Component | one y: Workstation | y in x.workstation
+inv4 T: all x : Product | x in (Component-Material).parts and no x in (Material-Component).parts
+inv4 B: all x : Product | x in (Component-Material).parts and x not in (Material-Component).parts
+inv4 B: some x : Product | x in Component.parts and x not in Material.parts
+inv4 B: some Component.parts and no Material.parts
+inv5 S: a
+inv2 O: some Workstation.workers && one workstation.Worker
+inv2 B: some Workstation.workers && one workers.Worker
+inv2 U: all x: Workstation | some (x.workers)
+inv2 C: all x: Workstation | some (x.workers)	all y: Worker | one (workers.y)
+inv2 U: all x: Workstation, y: Worker | some (x.workers) && one (workers.y)
+inv2 C: all x: Workstation | some (x.workers) && all y: Worker | one (workers.y)
+inv6 U: all x: Component | x not in x.parts
+inv4 U: all x: Component | some (x.parts) && all y: Material | no (y.parts)
+inv4 U: all x: Component | some (x.parts) || all y: Material | no (y.parts)
+inv4 S: all x: Product | x in Component -> some (x.parts) || x in Material -> no (y.parts)
+inv4 S: all x: Product | (x in Component && some x.parts) || (x in Material && no y.parts)
+inv4 C: all x: Product | (x in Component && some x.parts) || (x in Material && no x.parts)
+inv6 C: all x: Component | x not in x.^parts
+inv7 C: all x: Component, y: x.parts | y in Dangerous implies x in Dangerous
+inv8 S: all x: Component | x in Dangerous -> no x.workstation.workers in Human
+inv8 T: all x: Dangerous | no x.workstation.workers in Human
+inv8 B: all x: Dangerous | x.workstation.workers not in Human
+inv8 O: all x: Dangerous | x.workstation.workers in Robot
+inv5 O: all x: Workstation | x.workers in Human or x.workers in Robot
+inv8 O: all x: Dangerous | x.workstation.workers in Robot
+inv9 S: all x: Workstation-end-begin | no ^(succs).begin and no end.^(succs) and one x.^(succs)
+inv9 U: all x: Workstation-end-begin | no ^(succ).begin and no end.^(succ) and one x.^(succ)
+inv9 S: all x: Workstation-end-begin-x | no ^(succ).begin and no end.^(succ) and one x.^(succ)
+inv9 U: all x: Workstation-end-begin | no ^(succ).begin and no end.^(succ) and one x.^(succ)-x
+inv9 U: all x: Workstation-end-begin | no ^(succ).begin and no end.^(succ) and one x.^(succ) and x.^(succ) not in x
+inv9 U: all x: Workstation-end-begin | no ^(succ).begin and no end.^(succ) and one x.^(succ) and x not in x.^(succ)
+NA H: THEME UPDATE
+

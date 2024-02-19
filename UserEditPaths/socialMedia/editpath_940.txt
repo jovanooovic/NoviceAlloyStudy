@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one u: User | p in u.posts
+inv2 S: all u: user | u not in u.follows
+inv2 C: all u: User | u not in u.follows
+inv3 B: all a: Ad, u: User | a in u.sees
+inv3 B: all a: Ad, u: User | a in u.sees	all p: Photo-Ad, u1,u2: User | p in u1.posts and p in u2.sees implies u1 in u2.follows
+inv3 B: all p: Photo-Ad, u1,u2: User | p in u1.posts and p in u2.sees implies u1 in u2.follows
+inv4 S: all u: User, all p: Photo, all a: Ad | p in u.posts and p not in Ad implies a not in u.posts
+inv4 S: all u: User, all p: Photo, all a: Ad | p in u.posts and p not in Ad implies a not in u.posts
+inv4 S: all u: User, all p: Photo, all a: Ad | p in u.posts and p not in Ad
+inv4 O: all u: User, p: Photo, a: Ad | p in u.posts and p not in Ad
+inv4 C: all u: User, p: Photo, a: Ad | p in u.posts and p not in Ad implies a not in u.posts
+inv5 B: all u: User, i: Influencer | i in u.follows
+inv5 O: all u: User, i: Influencer | i in u.follows and i!=u
+NA H: THEME UPDATE
+inv5 O: all u: User, i: Influencer | i in u.follows and i!=u
+inv4 C: all u: User, p: Photo, a: Ad | p in u.posts and p not in Ad implies a not in u.posts
+inv5 O: all u: User, i: Influencer | i in u.follows and i!=u
+

@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 S: all c : Curso | enrolled.c = Student
+inv1 O: all c : Course | enrolled.c = Student
+inv1 C: all c : Course | enrolled.c in Student
+inv1 S: enrolled.c in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Person.teaches = Course
+inv3 U: Person.teaches in Course
+inv3 C: Person.teaches in Course and Course in Person.teaches
+inv3 C: Person.teaches = Course
+inv3 O: Professor.teaches = Course
+inv4 C: all p : Project | one c : Course | p in c.projects
+NA H: THEME UPDATE
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 T: some (Person<:projects).Project in Student
+inv5 B: some (Person<:projects).Project and (Person<:projects).Project in Student
+inv5 B: (some (Person<:projects).Project) and ((Person<:projects).Project in Student)
+inv5 S: ((Person<:projects).Project in Student) and (all p : Project | some s : Student | p in s.projetcs)
+inv5 C: ((Person<:projects).Project in Student) and (all p : Project | some s : Student | p in s.projects)
+inv6 S: cursos dos projetos tem de estar nos cursos enrolled	  	(Course<:projects).Project in (Student<:projects).Project
+inv6 B: (Course<:projects).Project in (Student<:projects).Project
+inv6 S: cursos dos projetos tem de estar nos cursos enrolled	  	all s : Student, c : Course | c in s.projects implies c in s.enrolled
+inv6 T: all s : Student, c : Course | c in s.projects implies c in s.enrolled
+inv6 T: (Student.projects).Course in Student.enrolled
+inv6 T: (Student.projects).Course in Student.enrolled
+inv6 B: (Course<:projects).(Student.projects) in Student.enrolled
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone s.projects&c.projects
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+NA H: THEME UPDATE
+inv14 U: all disj s1,s2: Student | lone s1.projects&s2.projects
+

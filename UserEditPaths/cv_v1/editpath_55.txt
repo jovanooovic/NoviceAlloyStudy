@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+Inv3 O: all i : Id | lone ids.Id
+Inv3 O: all i : Id | lone ids.Id
+Inv3 O: one ids.(~source.ids)
+Inv2 C: all x : User | x.profile.source in Institution + x
+Inv1 C: visible in profile
+Inv3 O: one ids.(~source.ids)
+Inv3 O: all s: Source | one ids.(s.(~source.ids))
+Inv3 B: ~ids.ids in iden
+Inv3 O: ids.~ids in iden
+Inv3 O: all s: Source | (source.s<:ids).~(source.s<:ids) in iden
+Inv3 O: all s: Source | ((source.s & User.profile)<:ids).~((source.s & User.profile)<:ids) in iden
+Inv3 C: all s: Source, u:User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+Inv3 C: all s: Source, u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+Inv3 T: all s: Source, u: User| ((source.s & u.profile).ids).~((source.s & u.profile).ids) in iden
+Inv3 C: all s: Source, u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+Inv4 B: profile.~visible in iden
+Inv4 B: (profile.~visible).(~(profile.~visible)) in iden
+Inv4 S: all p: Profile | (p.~visible).(~(p.~visible)) in iden
+Inv4 T: lone (User->Work) in visible
+Inv4 O: lone (User->Work) & visible
+Inv4 S: all u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+Inv4 B: all u: User| (u.profile<:ids).~(u.profile<:ids) in iden
+Inv4 B: all u: User| ((u.profile)<:ids).~(u.profile<:ids) in iden
+

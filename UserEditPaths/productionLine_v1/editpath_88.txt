@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+Inv1 C: all c:Component| some c.parts
+Inv2 U: all c:Component | c not in c.parts
+Inv2 C: all c:Component | c not in c.^parts
+Inv3 T: all c:Component | some Robot.~(c.position)
+Inv3 T: all c:Component | some Robot.(c.position)
+Inv3 U: all c:Component | some (c.position)
+Inv3 T: all c:Component | some (c.position).Robot
+Inv3 T: all c:Component | some (c.position).~position
+Inv3 T: all c:Component | some (c.position).Robot
+Inv3 T: all c:Component | some Robot.(c.position)
+Inv3 U: all c:Component | some (c.position)
+Inv3 C: all c:Component |  (c.position) in Robot.position
+Inv4 T: all c:Component | (c.^parts).position
+Inv4 T: all c:Component | (c.^parts)
+Inv4 T: all c:Component | (c.^parts).position
+Inv4 B: all c:Component | one (c.^parts).position
+Inv4 B: all c:Component | lone (c.^parts).position
+Inv4 O: all c:Component | one (c.position) + (c.^parts).position
+Inv4 O: all c:Component | one ((c.position) + (c.^parts).position)
+Inv4 O: all c:Component | (c.position) = (c.^parts).position
+Inv4 S: all c:Component | (c.position) == (c.^parts).position
+Inv4 O: all c:Component | (c.position) = (c.^parts).position
+Inv4 O: all c:Component |  one ((c.position) + (c.^parts).position)
+Inv4 U: all c:Component |  one ((c.position))
+Inv4 B: all c:Component |  no ((c.position)- (c.parts).position)
+Inv4 O: all c:Component |  one ((c.position) + (c.parts).position)
+

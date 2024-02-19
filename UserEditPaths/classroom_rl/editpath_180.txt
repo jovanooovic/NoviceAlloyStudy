@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv15 C: all p : Person | some (p.^(~Tutors) & Teacher)
+inv1 C: no (Person-Student)
+inv2 C: no Teacher
+inv3 C: (Student-Teacher) = Student
+inv4 C: no ((Person-Student)-Teacher)
+inv5 C: some (Teacher.Teaches)
+inv6 C: all t : Teacher | some t.Teaches
+inv7 C: Class = Teacher.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 C: all c : Class | lone ((c.~Teaches) & Teacher)
+inv10 C: all c : Class, s : Student | some g : Group | c->s->g in Groups
+inv11 C: all c : Class | (some(c.Groups)) implies (some((c.(~Teaches) & Teacher)))
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv13 C: (no (Person-Teacher).Tutors) and (no (Tutors.(Person-Student)))
+inv14 U: all c : Class, g : Group, t : Teacher, s : Student | {	    ((t->c in Teaches) and (c->s->g in Groups)) implies (t->s in Tutors)  	  }
+inv15 C: all p : Person | some (p.^(~Tutors) & Teacher)
+

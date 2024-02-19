@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 C: all w:Worker | w in Human or w in Robot
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one workers.w
+inv3 C: all c: Component | one c.workstation
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv5 O: all w : Workstation | w.workers in Human or w.workers in Robot
+inv6 C: all c : Component | c not in c.^parts
+inv7 C: all c : Component | all p : Product | p in Dangerous and p in c.parts implies c in Dangerous
+inv8 O: all c : Component | all w : Workstation | c in Dangerous and w in c.workstation implies w.workers in Robot
+inv9 C: all b, w : Workstation | b in begin and b != w implies w in b.^succ	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one w.succ
+inv10 B: all c1,c2 : Component | all w1,w2 : Workstation | w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies w1 in w2.^(succ)
+

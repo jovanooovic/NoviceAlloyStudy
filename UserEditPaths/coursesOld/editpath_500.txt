@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 T: all p : Person | p.enrolled not null implies p in Student
+inv1 T: all p : Person | p.enrolled not none implies p in Student
+inv1 T: all p : Person |none p.enrolled  implies p not in Student
+inv1 B: all p : Person |p in enrolled.Course  implies p not in Student
+inv1 S: all p : Person |p in enrolled.Course iif p not in Student
+inv1 B: all p : Person |p in enrolled.Course iff p not in Student
+inv1 O: all p : Person |p in enrolled.Course iff p in Student
+inv1 C: all p : Person |p in enrolled.Course implies p in Student
+inv1 O: all p : Person |p in enrolled.Course iff p in Student
+inv2 C: all p : Person |p in teaches.Course implies p in Professor
+inv12 U: all s: Student , c : Course| lone c.grades.s
+inv12 U: all s: Student , c : Course| lone ~(c.grades).s
+inv14 B: all s1,s2 : Student , p1,p2: Project | p1 in s1.projects and p1 in s2.projects implies (p2 not in s1.projects) or (p2 not in s2.projects)
+inv14 S: all s1,s2 : Person , p1,p2: Project |s1 in Student and s2 in Student p1 in s1.projects and p1 in s2.projects implies (p2 not in s1.projects) or (p2 not in s2.projects)
+inv14 B: all s1,s2 : Person , p1,p2: Project |s1 in Student and s2 in Student and p1 in s1.projects and p1 in s2.projects implies (p2 not in s1.projects) or (p2 not in s2.projects)
+inv4 U: all p : Project | p in Course.projects
+inv4 T: all p : Project | one p in Course.projects
+inv4 S: all p : Project and c : Course | p in c.projects implies p not in (Course-c).projects
+inv4 U: all p : Project ,c : Course | p in c.projects implies p not in (Course-c).projects
+inv4 U: all p : Project ,c : Course | p in c.projects implies p not in (Course-c).projects or  p not in c.projects implies p in (Course-c).projects
+inv4 U: all p : Project ,c : Course | p in c.projects implies p not in (Course-c).projects and  p not in c.projects implies p in (Course-c).projects
+inv4 T: all p : Project ,c : Course | p in c.projects implies p not in (Course-c).projects and one p in c.projects
+inv4 U: all p : Project ,c : Course | p in c.projects iff p not in (Course-c).projects
+inv4 T: all p : Project ,c : Course | one p in Course.projects
+

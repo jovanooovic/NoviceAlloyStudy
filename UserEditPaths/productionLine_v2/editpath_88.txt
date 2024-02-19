@@ -1,0 +1,62 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 T: all w:Worker | w in workers implies w in Human or w in Robot
+inv1 U: all w:Worker | w in Workstation.workers implies w in Human or w in Robot
+inv1 T: all w:Worker | w in (Workstation <: workers) implies w in Human or w in Robot
+inv1 U: all w:Worker,wr:Workstation | w in wr.workers implies w in Human or w in Robot
+inv1 C: all w:Worker | w in Human or w in Robot
+inv1 C: all w:Worker | w in Human or w in Robot
+inv2 U: all wt:Workstation | some wt.workers
+inv2 U: all wt:Workstation | some wt.workers	all w:Worker | some Workstation.workers
+inv2 T: all wt:Workstation | some wt.workers	all w:Worker | some w in Workstation.workers
+inv2 U: all wt:Workstation | some wt.workers	all w:Worker | w in Workstation.workers
+inv2 U: all wt:Workstation | some wt.workers	all w:Worker | w in Workstation.workers
+inv2 T: all wt:Workstation,w:Worker | some (w in wt.workers)
+inv2 U: all wt:Workstation | some w:Worker | (w in wt.workers)
+inv2 U: all wt:Workstation | some w:Worker | (w in wt.workers)
+inv2 U: all wt:Workstation | some w:Worker | (w in wt.workers)	all w:Worker | some wt:Workstation | (w in wt.workers)
+inv2 T: all wt:Workstation | some w:Worker | (w in wt.workers)	all w:Worker | some wt:Workstation | one (w in wt.workers)
+inv2 C: all wt:Workstation | some w:Worker | (w in wt.workers)	all w:Worker | one wt:Workstation | (w in wt.workers)
+inv2 C: all wt:Workstation | some w:Worker | (w in wt.workers)	all w:Worker | one wt:Workstation | (w in wt.workers)
+inv3 C: all c:Component | one wt:Workstation | wt in c.workstation
+inv3 C: all c:Component | one wt:Workstation | wt in c.workstation
+inv4 B: all c:Component | lone c.parts
+inv4 S: all c:Component | lone c.parts	all m:Material | no c.parts
+inv4 B: all c:Component | lone c.parts	all m:Material | no m.parts
+inv4 C: all c:Component | some c.parts	all m:Material | no m.parts
+inv5 S: all wt:worktation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: all wt:Workstation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: no (Workstation.workers-Human) & (Workstation.workers-Robot)
+inv5 U: all wt:Workstation | no (wt.workers & Human) & (wt.workers & Robot)
+inv5 T: all wt:Workstation | (wt.workers & Human) & (wt.workers & Robot)
+inv5 T: all wt:Workstation | (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: all wt:Workstation | (wt.workers-Human) & (wt.workers-Robot) = none
+inv5 B: all wt:Workstation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 S: all wt:Workstation,w:Worker | w in wt.Workers and w in Human implies no wt.Workers-Human
+inv5 O: all wt:Workstation,w:Worker | w in wt.workers and w in Human implies no wt.workers-Human
+inv6 U: all c:Component | c not in c.parts
+inv6 T: all c:Component | c not in ^c.parts
+inv6 C: all c:Component | c not in c.^parts
+inv7 E: 
+inv7 S: all c:Components | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c:Component | c.parts in Dangerous implies c in Dangerous
+inv7 T: all c:Component | some c.parts in Dangerous implies c in Dangerous
+inv7 T: all c:Component | (some c.parts in Dangerous) implies c in Dangerous
+inv7 B: all c:Component | c.parts in Dangerous implies c in Dangerous
+inv7 T: all c:Component | (some c.parts in Dangerous) implies c in Dangerous
+inv7 S: all c:Component,p:Parts | p in c.parts implies c in Dangerous
+inv7 O: all c:Component,p:Product | p in c.parts implies c in Dangerous
+inv7 C: all c:Component,p:Product | p in c.parts and p in Dangerous implies c in Dangerous
+inv8 S: all p:Product,wt:Workstation | wt in p.workstation and p in Dangerous implies wt.workes in Robot
+inv8 O: all p:Product,wt:Workstation | wt in p.workstation and p in Dangerous implies wt.workers in Robot
+NA H: THEME UPDATE
+inv9 E: 
+inv10 E: 
+inv10 B: all c1,c2:Component,w1,w2:Workstation | w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies w1 in w2.^(succ)
+inv9 O: all w,wb : Workstation | (wb in begin) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+NA H: THEME UPDATE
+inv1 C: all w:Worker | w in Human or w in Robot
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+

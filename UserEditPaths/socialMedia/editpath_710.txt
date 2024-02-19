@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | not one follows.x	all x : User | all y : User | y.follows.x
+inv2 T: all x : User | not one follows.x	all x : User | all y : User | y.follows and x.follows
+inv2 T: all x : User | not follows.x
+inv2 T: all x : User | not x -> follows.x
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 S: all x : User | not some follows.x	all y : User | some follows.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | not some follows.x	all x : User | all y : User | some y.follows.x
+inv2 T: all x : User | not some follows.x	all x, y : User | some y.follows.x
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 S: all x : User | some not follows.x
+inv2 S: follows in User -> User | x.follows | follows.x
+inv2 S: follows in User -> User | x.follows | follows.x
+inv2 S: all x : User | some not follows.x
+inv2 O: all x : User | not some follows.x
+inv2 S: all x : User | not in follows.x
+inv2 T: all x : User | x not in follows
+inv2 T: all x : User | x not follows.x
+inv2 C: all x : User | x !in follows.x
+inv2 C: all x : User | x !in x.follows
+inv3 T: all x, y : User | x sees y.posts -> x.follows.y
+inv3 T: all x, y : User | x sees y.posts -> x.follows.y
+inv3 T: all x, y : User | x sees y.posts -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in x.follows
+inv3 T: all x, y : User | y.posts in sees.x -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in follows.x
+inv3 T: all x, y : User | posts.y in sees.x -> y in follows.x
+inv3 T: all x, y : User |  x.sees.posts.y -> y in follows.x
+inv3 T: all x, y : User |  x.sees.y.posts -> y in follows.x
+inv3 T: all x, y : User |  y in follows.x -> y.posts in x.sees
+inv3 T: all x, y : User |  y in follows.x -> posts.y in x.sees
+inv3 T: all x, y : User |  y in x.follows -> posts.y in x.sees
+inv3 S: all x, y : User |  y in x.follows | posts.y in x.sees
+inv3 S: all x, y : User |  y in x.follows | y.posts in x.sees
+inv3 S: all x, y : User |  y in x.follows | x.sees in y.posts
+inv3 S: all x : User | all y : User |  y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User |  y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts
+

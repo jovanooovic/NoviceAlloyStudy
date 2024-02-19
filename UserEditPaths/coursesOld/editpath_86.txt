@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 T: all p:Person, c:Course | c in p.Course implies p in Student
+inv1 C: all p:Person, c:Course | c in p.enrolled implies p in Student
+inv2 C: all p:Person, c:Course | c in p.teaches implies p in Professor
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 S: all c1,c2 : Course | c1.project = c2.project implies c1=c2
+inv4 B: all c1,c2 : Course | c1.projects = c2.projects implies c1=c2
+inv4 U: all c1,c2 : Course,p:Project | p in c1.projects and p in c2.projects implies c1=c2
+inv4 S: all p:Projects | one c:Course | p in c.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 S: all p:Projects, pe:Person | p in pe.projects implies pe not in Professor	  all p:Projects | some s:Student | p in s.projects
+inv5 S: all p:Project, pe:Person | p in pe.projects implies pe not in Professor	  all p:Projects | some s:Student | p in s.projects
+inv5 S: all p:Project, pe:Person | p in pe.projects implies pe not in Professor	  all p:Projects | some s:Student | p in s.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 B: all p:Project, pe:Person | p in pe.projects implies pe not in Professor	  all p:Project | some s:Student | p in s.projects
+inv5 C: all p:Project, pe:Person | p in pe.projects implies pe in Student	  all p:Project | some s:Student | p in s.projects
+inv6 S: all s:Student, p:Project, c:Course | p in s.projects implies
+inv7 E: 
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Person, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv5 C: all p:Project, pe:Person | p in pe.projects implies pe in Student	  all p:Project | some s:Student | p in s.projects
+inv6 B: all s:Person, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Person, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled and s not in Professor
+inv6 B: all s:Person, p:Project, c:Course | p in s.projects implies p in c.projects and c in s.enrolled and s in Student-Professor
+inv8 E: 
+inv14 E: 
+

@@ -1,0 +1,54 @@
+NA H: THEME UPDATE
+inv1 B: no (Professor & enrolled.Course)
+inv1 O: all x : Person | x in enrolled.Course <=> x in Student
+inv1 C: all x : Person | x in enrolled.Course => x in Student
+inv1 B: all x : Person | no (Professor & enrolled.Course)
+inv1 B: no (Professor & enrolled.Course)
+inv1 C: all x : Person | x in enrolled.Course => x in Student
+inv2 T: all x : Person | x in enrolled.teaches => x in Professor
+inv2 C: all x : Person | x in teaches.Course => x in Professor
+inv3 E: 
+inv3 C: all c : Course | some teaches.c
+inv4 T: all p : Project | one projects.p
+inv4 S: all p : Project | Course <: one projects.p
+inv4 S: all p : Project | Course :> one projects.p
+inv4 S: all p : Project | Course :> one projects.p
+inv4 C: all p : Project | one Course :> projects.p
+inv4 C: all p : Project | one Course <: projects.p
+inv5 T: all x : Person | x in Person <: projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in (Person <: projects.Course) => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in (Person :> projects.Course) => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in Person <: projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in Person <: projects => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in projects => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in projects => x in Student	  	all p : Project | some Person <: projects.p
+inv5 C: all p : Person | some p.projects => p in Student	  	all p : Project | some Person <: projects.p
+inv6 S: all x : Student | Courses <: projects.(p.projects) in p.enrolled
+inv6 S: all x : Student | Courses <: projects.(p.projects) in p.enrolled
+inv6 S: all x : Student | Course <: projects.(p.projects) in p.enrolled
+inv6 B: all x : Student | Course <: projects.(x.projects) in x.enrolled
+NA H: THEME UPDATE
+inv7 T: all s : Student | Course <: Course.projects
+inv7 S: all s : Student | lone Course.projects.(project.s)
+inv7 T: all s : Student | lone Course.projects.(projects.s)
+inv7 U: all c : Course, s : Student | lone (c.projects & s.projects)
+inv8 U: all c : Course, p : Professor | p in teaches.c => p not in enrolled.c
+inv9 B: all p : Professor, c : Course | p in teaches.c => no (enrolled.c & Professor)
+inv10 C: Course.grades.Grade in Student
+inv11 S: all s : Student, c : Course | s in c.grades.Grades => c in s.enrolled
+inv11 U: all s : Student, c : Course | s in c.grades.Grade => c in s.enrolled
+inv12 U: all c : Course, s : Student | lone s.(c.grades)
+inv13 S: all s : Student, c : Course, g : Grade | g = max[s.(c.grades)] => one (s.projects & c.projects) s.projects)
+inv13 S: all s : Student, c : Course, g : Grade | max[s.(c.grades)] => one (s.projects & c.projects) s.projects)
+inv13 S: all s : Student, c : Course, g : Grade | max[s.(c.grades)] => one (s.projects & c.projects) s.projects)
+inv13 S: all s : Student, c : Course, g : Grade | s = c.grades.max[Student.(c.grades)] => one (s.projects & c.projects) s.projects)
+inv13 T: all s : Student, c : Course, g : Grade | s = c.grades.max[Student.(c.grades)] => one (s.projects & c.projects)
+inv13 T: all s : Student, c : Course | s = c.grades.max[Student.(c.grades)] => one (s.projects & c.projects)
+inv13 B: all s : Student, c : Course | s = c.grades.(max[Student.(c.grades)]) => one (s.projects & c.projects)
+inv13 B: all s : Student, c : Course | s = c.grades.(max[Student.(c.grades)]) => one (s.projects & c.projects)
+inv13 B: all s : Student, c : Course | s = c.grades.(max[Student.(c.grades)]) => lone (s.projects & c.projects)
+NA H: THEME UPDATE
+inv9 B: all p : Professor, c : Course | p in teaches.c => no (enrolled.c & Professor)
+inv13 B: all s : Student, c : Course | s.(c.grades) = last => one (s.projects & c.projects)
+

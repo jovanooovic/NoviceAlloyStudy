@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv4 B: all x : User | some a : Ad | x-> a in posts implies all z : Photo | x->z in posts implies z in Ad
+inv4 C: all x : User | all a : Ad | x -> a in posts implies all z : Photo | x -> z in posts implies z in Ad
+inv5 O: all i : Influencer, u : User | u -> i in follows	all i, j : Influencer | i -> j in follows and i != j
+inv1 C: all p: Photo | one x : User | x -> p in posts
+inv2 C: all x, y: User | x -> y in follows implies x != y
+inv3 B: all x : User, y: Photo | x -> y in sees implies (y in Ad or all v: User | v -> y in posts implies x -> v in follows)
+inv4 C: all x : User | all a : Ad | x -> a in posts implies all z : Photo | x -> z in posts implies z in Ad
+inv5 U: all i: Influencer, u: User | u != i implies u->i in follows
+inv6 S: all i: Influncer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | some p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | one p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all d: Day, p: Photo | p -> d in date implies all i: Influencer | i->p in posts
+inv6 B: all i: Influencer | some p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | one p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 T: all i: Influencer, d: Day | some p: Photo | i -> p and p->d in date
+inv6 T: all i: Influencer, d: Day | some p: Photo | i -> p and p -> d in date
+inv6 C: all i: Influencer, d: Day | some p: Photo | i -> p in posts and p -> d in date
+inv7 O: all x, y, z: User | x -> y in suggested iff x -> z in follows and z -> y in follows and not x -> y in follows
+inv7 B: all x, y: User | y -> x in suggested iff (all z: User | x -> z in follows and z -> y in follows and not x -> y in follows)
+inv7 B: all x, y: User | x -> y in suggested iff (some z: User | x -> z in follows and z -> y in follows and not x -> y in follows)
+inv7 C: all x, y: User | x -> y in suggested iff (x != y and some z: User | x -> z in follows and z -> y in follows and not x -> y in follows)
+

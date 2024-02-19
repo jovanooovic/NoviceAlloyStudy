@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 B: all x:User, p:Photo| x->p in posts
+inv1 B: one x:User| some p:Photo| x->p in posts
+inv1 S: all p:Photo| x.posts
+inv1 S: all u:Photo| x.posts
+inv2 B: all x :User| x->x in follows
+inv2 B: all x :User| x->x in follows
+inv1 C: all u:Photo| one posts.u
+inv2 C: all x :User| x->x not in follows
+inv3 O: all x,u:User, p:Photo| x->p in sees implies x->u in follows and u->p in posts
+inv3 O: all x,u:User, p:Photo-Ad| x->p in sees implies x->u in follows and u->p in posts
+inv3 C: all x:User, p:Photo-Ad| x->p in sees implies (some u:User| x->u in follows and u->p in posts)
+inv4 C: all x:User, a:Ad| x->a in posts implies x.posts in Ad
+inv5 U: all x:Influencer, u:User-x| u->x in follows
+inv5 U: all x:Influencer, u:User-x| u->x in follows
+inv6 C: all d:Day, u:Influencer| some p:Photo| u->p in posts and p->d in date
+inv7 E: 
+inv6 C: all d:Day, u:Influencer| some p:Photo| u->p in posts and p->d in date
+inv7 S: all x:User,t:User-x,k:User-x-t| x->k in suggested implies x->t in follows and t->k in follows and
+inv7 S: all x:User,t:User-x,k:User-t| x->k in suggested implies x->t in follows and t->k in follows and x!=K
+inv7 U: all x:User,t:User-x,k:User-t| x->k in suggested implies x->t in follows and t->k in follows and x!=k
+inv7 B: all x:User,t:User-x,k:User-t| k->x in suggested implies x->t in follows and t->k in follows and x->k not in follows
+inv8 B: all x:User, t:User-x, a:Ad| x->a in sees and t->a in posts implies x->t in follows or x->t in suggested
+inv8 B: all x:User, t:User, a:Ad| x->a in sees and t->a in posts implies x->t in follows or x->t in suggested
+

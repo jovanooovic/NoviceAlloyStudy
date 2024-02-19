@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv1 U: all x,y : User, p : Photo | p in x.posts and p in y.posts implies x = y
+inv1 C: all x,y : User, p : Photo | p in x.posts and p in y.posts implies x = y	all p : Photo | some x : User | p in x.posts
+inv2 C: all p : User | no p & p.follows
+inv1 U: all x,y : User, p : Photo | p in x.posts and p in y.posts implies x = y
+inv1 U: all x,y : User, p : Photo | p in x.posts and p in y.posts implies x = y
+inv6 C: all i : Influencer | i.posts.date = Day
+inv3 C: all p : User | p.sees in p.follows.posts + Ad
+inv3 O: all p : User | p.sees in p.follows.posts & Ad
+

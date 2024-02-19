@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv1 C: enrolled in Student -> Course
+inv4 C: Course <: projects in Course one -> Project
+inv5 C: all p:Project | some s:Student | s->p in projects	  	all p:Project, s:Person | s->p in projects implies s in Student
+inv5 C: Person <: projects in Student some -> Project
+NA H: THEME UPDATE
+inv6 U: all s:Student, p:Project | s -> p in projects implies (some c:Course | s -> c in enrolled and c -> p in projects)
+inv6 B: all s:Student | some p:Project, c:Course | s.projects = c.projects
+inv6 T: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 T: all s:Student | projects in s some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	(enrolled in Student some -> Course and Course <: projects in Course -> Project)
+inv8 C: all p:Person, c:Course | p -> c in enrolled implies p -> c not in teaches
+inv8 O: Person.teaches & Person.enrolled = none
+inv8 C: all p:Person | p.teaches & p.enrolled = none
+inv6 B: all s:Student, c:Course | s.projects & c.projects != none
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (s.projects & c.projects != none)
+inv6 S: all s:Student, c:Course | c in s.enrolled implies (some p:Proejct | p in s.projects and p in c.projects)
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Person, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Student, p:Project | some c:Course | c in s.enrolled implies (p in s.projects and p in c.projects)
+inv6 B: all s:Student, p:Project | some c:Course | c in s.enrolled implies (p in s.projects and p in c.projects)
+inv7 T: all s:Student | some p:Project | lone p in s.projects
+inv9 S: all t:Teacher, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled implies p not in Teacher)
+inv9 B: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled implies p not in Professor)
+inv9 S: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled p not in Professor)
+inv9 B: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled and p not in Professor)
+inv10 T: all c:Course, p:Person | p in c.grades implies p not in Professor
+inv10 T: all c:Course, p:Person | c -> p grades implies p not in Professor
+inv10 T: all c:Course, p:Person | c -> p in grades implies p not in Professor
+inv10 T: all c:Course, p:Person, g:Grade | c -> p in g implies p not in Professor
+inv10 B: all c:Course, p:Person, g:Grade | c -> p -> g in grades implies p not in Professor
+inv10 B: all c:Course, g:Grade | some p:Person | c -> p -> g in grades implies p not in Professor
+inv10 B: all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all o: Person - Student - Professor | all c: o.enrolled | no c.grades[o]
+inv10 B: no p: Person | p in Professor & Student	    all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all o: Person - Student - Professor | all c: o.enrolled | no c.grades[o]
+inv10 B: no p: Person | p in Professor & Student	    all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all c: Course | no c.enrolled implies all p: Professor | no c.grades[p]
+inv10 B: no p: Person | p in Professor & Student
+inv10 B: no p:Person | p in Professor & Student	  	all p:Person | p.enrolled != none
+

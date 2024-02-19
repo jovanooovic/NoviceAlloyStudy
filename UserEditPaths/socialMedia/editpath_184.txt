@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv3 S: all u:User, p:Photo | lone (follows.posts.u & not Ad.p)
+inv3 T: all u:User, p:Photo | lone (follows.posts.u & p.Photo-Ad)
+inv3 T: all u:User, p:Photo| lone (follows.posts.u & p-Ad.u)
+inv3 T: all u:User, p: univ | lone (follows.posts.u & p.Photo-Ad)
+inv3 T: all u:univ, p: univ | lone (follows.posts.u & p.Photo-Ad)
+inv3 S: all: u:User | u.sees-Ad in u.follows.posts
+inv3 S: all: u:User | u.sees-Ad in follows.posts.u
+inv3 S: all: u:User | u.sees-Ad in u.follows.posts
+inv3 S: all: u:User | u.sees - Ad in u.follows.posts
+

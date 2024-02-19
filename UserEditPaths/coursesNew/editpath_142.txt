@@ -1,0 +1,46 @@
+NA H: THEME UPDATE
+inv1 S: all x : Person | all y : Course | x in enrolled.y implies x in student
+inv1 C: all x : Person | all y : Course | x in enrolled.y implies x in Student
+inv2 C: all x : Person | all y : Course | x in teaches.y implies x in Professor
+inv3 S: all x : course | some y : person | y in teaches.x
+inv3 C: all x : Course | some y : Person | y in teaches.x
+inv4 C: all x : Project | one y : Course | y in projects.x
+inv5 U: all x : Project | some y : Person | x in y.projects implies y in Student
+inv5 U: all x : Project | some y : Person | x in y.projects implies y in Student	  all x : Project | some y : Person | x in y.projects
+inv5 U: all x : Project | some y : Person | y in Student and x in y.projects	  all x : Project | some y : Person | x in y.projects
+inv5 O: all x : Project | all y : Person | y in Student and x in y.projects	  all x : Project | some y : Person | x in y.projects
+inv5 U: all x : Project | some y : Person | x in y.projects implies y in Student	  all x : Project | some y : Person | x in y.projects
+inv5 C: all x : Project | all y : Person | x in y.projects implies y in Student	  all x : Project | some y : Person | x in y.projects
+inv6 O: all x : Person | all y : Project | x in projects.y implies (one z : Course | x in enrolled.z and y in z.projects)
+inv7 B: all x : Person | all y : Project | x in projects.y implies ( one z : Course | y in z.projects )
+inv7 B: all x : Person | all y : Project | x in projects.y implies 	  			( one z : Course | y in z.projects )
+inv7 S: all x : Student | all y : course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in prjects.z )
+inv7 S: all x : Student | all y : Course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in prjects.z )
+inv7 B: all x : Student | all y : Course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in projects.z )
+inv7 U: all x : Student | all y : Course | x in enrolled.y implies 	  	( lone z : Project | x in projects.z and y in projects.z )
+inv8 S: all x : Professor | for all y : Course | x in teaches.y implies x not in enrolled.y
+inv8 U: all x : Professor | all y : Course | x in teaches.y implies x not in enrolled.y
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies ( 	  	none k : Course | (x in teaches.k and y in enrolled.k)	    	and 	    	 k : Course | (y in teaches.k and x in enrolled.k)	  		  )
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k)	    		and 	    	(y in teaches.k and x in enrolled.k)	  		  )
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies 	  ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)	  )
+inv9 S: all x,y : Professor | all z : Course | (x in teaches.z and y in teaches.z) implies 	  ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)	  )
+inv9 S: all x,y : Professor | all z : Course | (x in teaches.z and y in teaches.z) implies 	  	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)
+inv9 U: all p1,p2 : Professor | p1!=p2 and (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+inv9 B: all p1,p2 : Professor | (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+NA H: THEME UPDATE
+inv9 B: all p1,p2 : Professor | (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+inv10 T: all x : Grade | one y : Student | y->x in grades
+inv10 S: all x : Person | all y : Course | x.(c.grades) implies x in Student
+inv10 T: all x : Person | all y : Course | x.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some x.(y.grades) implies x in Student
+inv11 C: all x : Person | all y : Course | some x.(y.grades) implies x in enrolled.y
+inv12 S: all x : Person | all y : Course | one x(y.course)
+inv12 S: all x : Person | all y : Course | one x.(y.course)
+inv12 O: all x : Person | all y : Course | one x.(y.grades)
+inv12 T: all x : Person | all y : Course | one z : Grade | x in enrolled.y and z in y.grades
+inv12 T: all x : Person | all y : Course | one z : Grade | (x in enrolled.y) and (z in y.grades)
+inv12 C: all x : Person | all y : Course | lone x.(y.grades)
+inv13 T: all x,y : Person | all z : Course | x.(z.grades) > y.(z.grades) implies one k : Project | x in projects.k
+inv13 T: all x,y : Person | all z : Course | x.(z.grades) > y.(z.grades) implies (one k : Project | x in projects.k)
+inv13 T: all x,y : Person | all z : Course | x.(z.grades) > y.(z.grades) implies (one k : Project | x in projects.k)
+

@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person, c : Course | c in p.enrolled => p in Student
+inv2 B: all p : Student | no p.teaches
+inv2 B: all s: Student, p : Person | no s.teaches && some p.teaches
+inv2 B: all p: Student | no p.teaches
+inv2 B: all p: Person| p in Student implies no p.teaches
+inv2 U: all p: Person| p in Student implies no teaches.p
+inv2 T: all p: Student| p.teaches
+inv2 B: all p: Student| no p.teaches
+inv2 U: all p: Student| no teaches.p
+inv2 B: all p: Student| no p.teaches
+inv2 B: all s: Student| no s.teaches
+inv2 C: all p : Person | some p.teaches implies p in Professor
+inv2 O: all s : Student| no s.teaches	  	all p : Person | some p.teaches implies p in Professor
+inv2 S: all p : Person, c : Course | p->c in teaches mplies p in Professor
+inv2 C: all p : Person, c : Course | p->c in teaches implies p in Professor
+inv2 U: all p : Person, c : Course | c->p in teaches implies p in Professor
+inv2 C: all p : Person | some p.teaches implies p in Professor	  	all p : Person, c : Course | p->c in teaches implies p in Professor
+inv2 C: all p : Person | some p.teaches implies p in Professor	  	all p : Person, c : Course | p->c in teaches implies p in Professor	  	all p : Person, c : Course | c in p.teaches => p in Professor
+NA H: THEME UPDATE
+inv1 C: all p : Person, c : Course | c in p.enrolled => p in Student
+inv2 C: all p : Person | some p.teaches implies p in Professor
+

@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 C: all p,c : univ | p in Person and c in Course and p->c in enrolled implies p in Student
+inv2 S: all p,c : univ | p in Person and c in Course and p->c in teaches implies p in Teacher
+inv2 C: all p,c : univ | p in Person and c in Course and p->c in teaches implies p in Professor
+inv3 S: all c : Couser | some p : Professor | p->c in teaches
+inv3 O: all c : Course | some p : Professor | p->c in teaches
+inv4 S: all p : Project | some c : Course | c->p in projects and all c1,c2 : Course | c1->p in projects and c2-> in projects implies c1=c2
+inv4 C: all p : Project | some c : Course | c->p in projects and all c1,c2 : Course | c1->p in projects and c2->p in projects implies c1=c2
+inv5 T: all p : Project | some s : Student | s->p in projects and all per : Person | per->p in projects implies per is Student
+inv5 C: all p : Project | some s : Student | s->p in projects and all per : Person | per->p in projects implies per in Student
+inv6 S: all s,p in univ | s in Student and p in Project and s->p in projects implies all c : Course | c->p in projects implies s->c in enrolled
+inv6 T: all s,p : univ | s in Student and p in Project and s->p in projects implies all c : Course | c->p in projects implies s->c in enrolled
+inv6 T: all s,p : univ | s in Student and p in Project and s->p in projects implies all c : Course | c->p in projects implies s->c in enrolled
+inv6 T: all s,p : univ | s in Student and p in Project and s->p in projects implies all c : Course | c->p in projects implies s->c in enrolled
+inv6 T: all s,p : univ | s in Student and p in Project and s->p in projects implies all c : Course | c->p in projects implies s->c in enrolled
+inv8 U: all p : Professor | p->p not in teaches
+inv8 U: all p : Professor | not p->p in teaches
+inv8 U: all p : univ | p in Professor implies not p->p in teaches
+inv8 U: all p,c : univ | p in Professor and c in Course and p->c in teaches implies not p->c in enrolled
+inv7 T: all s,p,c : univ | s in Student and p In Project and c in Course and s->p in projects and c->p in projects implies all p1,p2 : Project | s->p1 in projects and s->p2 in projects implies p1 =p2
+inv7 T: all s,p,c : univ | s in Student and p In Project and c in Course and s->p in projects and c->p in projects implies all p1,p2 : Project | s->p1 in projects and s->p2 in projects implies p1=p2
+inv7 T: all s,p,c : univ | s in Student and p In Project and c in Course and s->p in projects and c->p in projects implies all p1,p2 : univ | p1 in Project and p2 in Project and s->p1 in projects and s->p2 in projects implies p1=p2
+inv7 T: all s,p,c : univ | s in Student and p In Project and c in Course and s->p in projects and c->p in projects implies all p1,p2 : univ | p1 in Project and p2 in Project and s->p1 in projects and s->p2 in projects implies p1=p2
+inv7 T: all s,p,c : univ | s in Student and p in Project and c in Course and s->p in projects and c->p in projects implies all p1,p2 : univ | p1 in Project and p2 in Project and s->p1 in projects and s->p2 in projects implies p1=p2
+inv10 S: grades : Person -> Grade			  	all p,c,g : univ | p in Person and c in Course and g in Grade and c->p->g in grades implies p in Student
+inv10 C: all p,c,g : univ | p in Person and c in Course and g in Grade and c->p->g in grades implies p in Student
+inv11 C: all p,c,g : univ | p in Person and c in Course and g in Grade and c->p->g in grades implies p->c in enrolled
+inv12 C: all p,c,g1,g2 : univ | p in Person and c in Course and g1 in Grade and g2 in Grade and c->p->g1 in grades and c->p->g2 in grades implies g1=g2
+

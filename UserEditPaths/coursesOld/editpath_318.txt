@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv9 B: not some disj p1, p2:Professor, c:Course | p1->c in teaches and p2->c in enrolled
+inv8 U: all p:Professor | no (p.teaches & p.enrolled)
+inv9 B: not some disj p1, p2:Professor, c:Course | p1->c in teaches and p2->c in enrolled
+inv9 B: all disj p1, p2:Professor, c:Course | p1->c in teaches => p2->c not in enrolled
+inv9 B: all p1, p2:Professor, c:Course | p1->c in teaches => p2->c not in enrolled
+inv9 B: all disj p1, p2:Professor, c:Course | p1->c in teaches => p2->c not in enrolled
+inv9 B: all p1, p2:Professor, c:Course | p1->c in teaches and p1!=p2 => p2->c not in enrolled
+inv9 B: all t1, t2:Professor, c:Course | t1->c in teaches and t1!=t2 => t2->c not in enrolled
+inv9 B: all t1, t2:Professor, c:Course | t1->c in teaches and t1!=t2 => t2->c not in enrolled
+inv9 U: all p:Professor | no (p.teaches.enrolled)
+inv9 B: all p:Professor | no (p.teaches.~enrolled)
+inv9 B: all p:Professor | no (p.teaches.~enrolled)
+inv9 B: all p:Professor | no (p.teaches.~enrolled)
+inv9 B: all p:Professor | no (p.teaches.~enrolled)
+inv10 T: grades in Student->Grade
+inv10 C: grades in Course->Student->Grade
+inv10 C: grades in Course->Student->Grade
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 T: all c:Course, s:Student, g:Grade | no s.enrolled.c.grades
+inv11 T: all c:Course, s:Student, g:Grade | no s.enrolled.c.grades
+inv11 U: all s:Student | grades.Grade.s in (s.enrolled)
+inv11 U: all s:Student | grades.Grade.Course in (s.enrolled)
+inv11 T: all s:Student | grades.Grade.s.Person in (s.enrolled)
+inv11 U: all s:Student | grades.Grade.s in (s.enrolled)
+inv12 B: all s:Student, c:Course | s->c in enrolled => c.grades in s one -> Grade
+inv12 B: all s:Student, c:Course | s->c in enrolled => c.grades in s lone -> Grade
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone c.grades . s
+inv12 T: all s:Student, c:Course | s->c in enrolled => lone s.c.grades
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone s.~(c.grades)
+

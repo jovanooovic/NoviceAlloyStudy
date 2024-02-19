@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: all a : Photo | one b : User | a in b.posts
+inv2 C: all a, b : User | b in a.follows implies a != b
+inv3 B: all a, c : User, b : Photo | ((b not in Ad) and (b in a.sees) and (b in c.posts)) implies c in a.follows		all a : User, b : Ad | b in a.sees
+inv3 B: (all a, c : User, b : Photo | ((b not in Ad) and (b in a.sees) and (b in c.posts)) implies c in a.follows) or (all a : User, b : Ad | b in a.sees)
+inv3 B: (all a, c : User, b : Photo | ((b not in Ad) and (b in a.sees) and (b in c.posts)) implies c in a.follows) and (all a : User, b : Ad | b in a.sees)
+inv3 O: all a : User, b : Photo | b in a.sees implies b in Ad or (all c : User | b in c.posts and c in a.follows)
+inv3 B: all a : User, b : Photo | b in a.sees implies b in Ad or (all c : User | b in c.posts implies c in a.follows)
+inv4 C: all a : User, b : Photo | b in Ad and b in a.posts implies (all c : Photo | c in a.posts implies c in Ad)
+inv5 U: all a : Influencer, b : User | a != b implies a in b.follows
+inv6 C: all a : Influencer, b : Day | some c : Photo | c in a.posts and b in c.date
+inv7 B: all a, b, c : User | b in c.follows and b not in a.follows and c in a.follows implies b in a.suggested
+inv7 O: all a, b, c : User | b in a.suggested iff b in c.follows and c in a.follows and b not in a.follows
+inv7 S: all a, b : User | b in a.suggested iff a != b and some c : User | b in c.follows and c in a.follows and b not in a.follows
+inv7 C: all a, b : User | b in a.suggested iff a != b and (some c : User | b in c.follows and c in a.follows and b not in a.follows)
+inv8 B: all a, b : User, c : Ad | c in a.sees implies (b in a.follows or b in a.suggested)
+inv8 B: all a : User, c : Ad | c in a.sees implies (all b : User |b in a.follows or b in a.suggested)
+inv8 B: all a : User, c : Ad | c in a.sees implies (all b : User |b in a.follows or b in a.suggested and c in b.posts)
+inv8 O: all a : User, c : Ad | c in a.sees implies (all b : User |(b in a.follows or b in a.suggested) and c in b.posts)
+inv8 B: all a : User, c : Ad | c in a.sees implies (all b : User | c in b.posts implies (b in a.follows or b in a.suggested))
+NA H: THEME UPDATE
+

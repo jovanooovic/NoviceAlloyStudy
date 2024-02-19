@@ -1,0 +1,73 @@
+NA H: THEME UPDATE
+inv1 O: some (Entry & Junction) and some ( Exit & Junction)
+inv1 O: some (Entry & Junction)	some ( Exit & Junction)
+inv1 S: some type.Entry	some type.Exit
+inv1 S: some x:Track | x->Entry in type	some x:Track| x->Exit in type
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv1 O: some (Entry & Junction)	some ( Exit & Junction)
+inv1 O: some (Entry & Junction)	some (Exit & Junction)
+inv2 S: all s:Signals | one signals.s
+inv1 O: some (Entry & Junction)	some (Exit & Junction)
+inv2 C: all s:Signal | one signals.s
+inv3 S: no (Exit & suucs)
+inv3 T: all x:Exit | succs.x
+inv3 T: all x:Exit, y:Track | no x.succs.y
+inv3 U: all x:Exit | no x.succs
+inv3 B: all x:Exit | no succs.x
+inv3 B: all x:Exit | no succs.x
+inv1 C: some Entry and some Exit
+inv1 C: some Entry	some Exit
+inv1 C: some Entry and some Exit
+inv2 C: all s:Signal | one signals.s
+inv2 C: all s:Signal | one signals.s
+inv2 C: all s:Signal | one signals.s
+inv2 C: all s:Signal | one signals.s
+inv3 B: no succs.Exit
+inv3 U: no Exit.succs
+inv1 C: some Entry and some Exit
+inv2 C: all s:Signal | one signals.s
+inv3 U: no Exit.succs
+inv3 T: all y: Track | no Exit.succs.y
+inv3 B: all y: Track | no succs.y
+inv3 B: all y: Track | no y.succs
+inv6 O: some (Entry & Speed)
+inv6 T: all x: Entry | x.signals.Speed
+inv6 B: Entry->Speed in signals
+inv6 S: all Entry->Speed in signals
+inv6 B: all x: Speed | Entry->x in signals
+inv6 B: some (Entry & signals.Speed)
+inv6 B: all x:Entry | x->Speed in signals
+inv6 B: all x:Entry, y:Speed | x->y in signals
+inv6 S: all x:Entry | some y: signals.y | Speed.y
+inv6 S: all x:Entry | some y: signals.y | y in Speed
+inv6 T: all x:Entry | some y: signals | y in Speed
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv8 B: one (Entry & Exit)
+inv8 B: all x:Entry | some y: Exit | x->y in succs
+inv6 B: all x:Entry | x->Speed in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv8 B: all x:Entry | some y: Exit | x->y in succs
+inv8 O: all x:Entry, y: Exit | x->y in succs
+inv9 B: all x: Junction | x->Semaphore not in signals
+inv9 S: all x: Tracks-Junction | x->Semaphore not in signals
+inv9 S: all x: Tracks-Junction | x->Semaphore not in signals
+inv9 B: all x: Track-Junction | x->Semaphore not in signals
+inv10 S: succs.Junctions->Semaphore in signals
+inv10 S: succs.Junctions->Semaphore in signals
+inv10 B: succs.Junction->Semaphore in signals
+inv10 B: Junction.succs->Semaphore in signals
+inv10 E: 
+inv3 U: all x:Exit, y: Track | x->y not in succs
+inv3 B: all x:Exit, y: Track | y->x not in succs
+inv3 U: all x:Exit | x->Track not in succs
+inv3 U: all x:Exit | all y: Track | x->y not in succs
+inv3 B: all x:Exit | all y: Track | y->x not in succs
+inv3 U: all x:Exit | no x.succs
+inv3 B: all x:Exit | no succs.x
+

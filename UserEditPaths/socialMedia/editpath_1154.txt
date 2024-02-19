@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 S: all p:Photo | one u:user | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv2 C: all u:User | u not in u.follows
+inv3 S: all u:User p:u.sees | p in u.follows.posts
+inv3 O: all u:User | all p:u.sees | p in u.follows.posts
+inv3 S: all u:User | all p:u.sees | p in u.follows.posts	all a:Ad
+inv3 T: all u:User, p:Photo| p in u.sees -> p in u.follows.posts
+inv3 T: all u:User, p:Photo| p in u.sees -> p in u.follows.posts
+inv3 T: all u:User, p:Photo| p in u.sees -> p in u.follows.posts
+inv3 O: all u:User, p:Photo| p in u.sees => p in u.follows.posts
+inv3 S: all u:User p:u.sees | p in u.follows.posts
+inv3 O: all u:User , p:u.sees | p in u.follows.posts
+inv3 C: all u:User , p:u.sees | p in u.follows.posts or p in Ad
+inv3 C: all u:User | all p:u.sees | p in u.follows.posts or p in Ad
+inv4 T: all u:User | some p:u.posts | p in Ad -> u.posts in Ad
+inv4 B: all u:User | some p:u.posts | p in Ad => u.posts in Ad
+inv4 C: all u:User , a:Ad | a in u.posts => u.posts in Ad
+inv5 B: all u : User , i:Influencer | i in u.follows
+inv5 T: all u : User , i:Influencer | u!=i => i i in u.follows
+inv5 U: all u : User , i:Influencer | u!=i => i in u.follows
+inv6 C: all i:Influencer, d:Day | d in i.posts.date
+inv7 U: all u:User, s:u.suggested | s not in u.follows && s in u.follows.follows
+inv8 T: all u:User , a:Ad | a in u.sees => a in u.follows.posts or u.suggested.posts
+inv8 T: all u:User , a:Ad | a in u.sees => a in u.follows.posts or u.suggested.posts
+inv8 T: all u:User , a:Ad | a in u.sees => a in u.follows.posts or u.suggested.posts
+inv8 C: all u:User , a:Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+inv7 S: all u:User, uu:User| uu in u.sugests => uu not in u.follows && uu in u.follows.follows
+inv7 U: all u:User, uu:User| uu in u.suggested => uu not in u.follows && uu in u.follows.follows
+inv7 U: all disj u:User, uu:User| uu in u.suggested => uu not in u.follows && uu in u.follows.follows
+inv7 B: all u:User, uu:User|  uu not in u.follows && uu in u.follows.follows => uu in u.suggested
+

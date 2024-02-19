@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 E: 
+inv3 T: no Person in Student+Teacher
+inv3 C: no Student & Teacher
+inv4 T: Student or Teacher
+inv4 C: Person - Student in Teacher
+inv4 O: (Person in Student) or (Person in Teacher)
+inv4 T: Student or Teacher
+inv4 B: Person - Teacher = Person
+inv4 O: Person - Teacher = Student
+inv4 C: Person - Teacher in Student
+inv5 U: some Teaches
+inv5 C: some Teacher.Teaches
+inv6 S: all Teacher in Teaches
+inv6 S: all Teacher in ~Teaches
+inv6 S: all Teacher in Teacher.Teaches
+inv6 S: all Teacher in Class.~Teaches
+inv6 S: (all t:Teacher ) some t.Teaches
+inv6 S: (all t:Teacher ) some t.Teaches
+inv6 S: (all t:Teacher ){ some t.Teaches }
+inv6 C: all t:Teacher{ some t.Teaches }
+inv6 S: all t:Teacher some t.Teaches
+inv6 C: all t:Teacher | some t.Teaches
+inv7 S: all c:Class, some t:Teacher | t in c.~Teaches
+inv7 C: all c:Class{ some t:Teacher | t in c.~Teaches }
+inv8 C: all t:Teacher{ lone c:Class | c in t.Teaches}
+inv8 T: Teacher -> lone Class
+inv8 T: Person -> lone Class
+inv8 T: Person -> lone Class
+inv8 T: Teaches -> lone Class
+inv8 T: Person -> lone Teaches
+inv8 T: Person -> lone Teaches
+inv8 T: Person -> lone Teaches
+inv8 T: Person -> lone Teaches
+inv7 C: all c:Class{ some t:Teacher | t in c.~Teaches }
+

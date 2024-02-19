@@ -1,0 +1,78 @@
+NA H: THEME UPDATE
+inv14 B: all s : Student | some s.(Class.Groups)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches.c)
+inv14 S: all s : Student, t : Teacher, c : Class | some s.(c.Groups) & some t.(Teaches.c)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) & t.(Teaches.c)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches.c) implies s.(t.Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t.Teaches).c implies s.(t.Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some c.(t.Teaches) implies s.(t.Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches.c) implies s.(t.Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches) implies s.(t.Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches) implies s.(t<:Tutors)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some t.(Teaches) implies s.(t:>Tutors)
+inv14 B: all s : Student, t : Teacher, c : Class | some s.(c.Groups)
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c)
+inv14 B: all s : Student, t : Teacher, c : Class | some s.(c.Groups)
+inv14 B: all s,t : Person, c : Class | some s.(c.Groups)
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and c.(t.Teaches)
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and some c.(t.Teaches)
+inv14 B: all s,t : Person, c : Class | some s.(c.Groups) and some (t.Teaches)
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and some (t.Teaches) in c
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and some t.(Teaches.c)
+inv14 B: all s,t : Person, c : Class | some s.(c.Groups) and some t.Teaches
+inv14 S: all s,t : Person, c : Class | (some s.(c.Groups) and (t<:Teaches).c
+inv14 S: all s,t : Person, c : Class | (some s.(c.Groups) and some (t<:Teaches).c
+inv14 B: all s,t : Person, c : Class | some s.(c.Groups) and some (t<:Teaches).c
+inv14 T: all s,t : Person, c : Class | some s.(c<:Groups) and (t<:Teaches).c
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and (t<:Teaches).c
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and  (t<:Teaches).c
+inv14 B: all s,t : Person, c : Class | some s.(c.Groups) and some (t<:Teaches).c
+inv14 T: all s,t : Person, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies (t<:Tutors).s
+inv14 C: all s,t : Person, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c<:Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c:>Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t.Tutors).s
+inv14 S: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (tTeaches).c implies some (t.Tutors).s
+inv14 T: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t.Teaches).c implies some (t.Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all s : Student, c : Class | some s.(c.Groups) and some (Teacher<:Teaches).c implies some (Teacher<:Tutors).s
+inv14 B: all s : Student, t : Teacher | some s.(Class.Groups) and some (t<:Teaches).Class implies some (t<:Tutors).s
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 U: all t : Teacher, c : Class | some Student.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).Student
+inv14 U: all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 S: Student in (c.Groups) and some (t<:Teaches).c implies some (t<:Tutors).s
+inv14 S: Student in (c.Groups) and Class in (t<:Teaches) implies Student in (t<:Tutors)
+inv14 T: Student in (Class.Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher<:Tutors)
+inv14 T: Student in (Class.Groups) and Class in (Teacher.Teaches) implies Student in (Teacher.Tutors)
+inv14 T: Student in (Class<:Groups) and Class in (Teacher.Teaches) implies Student in (Teacher.Tutors)
+inv14 T: Student in (Class<:Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher.Tutors)
+inv14 T: Student in (Class<:Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher<:Tutors)
+inv14 T: Student in (Class<:Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher:>Tutors)
+inv14 T: Student in (Class:>Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher:>Tutors)
+inv14 T: Student in Student.(Class:>Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher:>Tutors)
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches) implies Student in (Teacher:>Tutors)
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher.Teaches).Class implies Student in (Teacher:>Tutors)
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher.Teaches).Class implies Student in (Teacher.Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 T: Student in Student.(Class<:Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher:>Tutors).Student
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in Student.(Teacher:>Tutors)
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies some Student.(Teacher:>Tutors)
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies some (Teacher:>Tutors).Student
+inv14 T: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher:>Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 T: Student in Student.(Class:>Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 T: Student in Student.(Class<:Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in (Class.Groups).Student and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Class.(Groups.Student) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 T: some Student in Class.(Groups.Student) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 U: Student in Student.(Class.Groups) and Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+inv14 B: Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student
+

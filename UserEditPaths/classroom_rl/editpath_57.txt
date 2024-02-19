@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv14 C: all p : Person, c : Class | some p.(c.Groups) implies Teaches.c in Tutors.p
+inv14 C: all p : Person, c : Class | some p.(c.Groups) implies Teaches.c in Tutors.p
+inv14 C: all c : Class, p : Person | some p.(c.Groups) implies Teaches.c in Tutors.p
+inv14 C: all c : Class, p : Person | some p.(c.Groups) implies Teaches.c->p in Tutors
+inv14 C: all c : Class, p : Person | some p.(c.Groups) implies Teaches.c in Tutors.p
+inv14 C: all c : Class, p : Person | some p.(c.Groups) implies (Teaches.c in Tutors.p)
+inv14 C: all c : Class, p : Person | p in (c.Groups).Group implies Teaches.c in Tutors.p
+inv14 U: all c : Class, p : Student | p in (c.Groups).Group implies Teaches.c in Tutors.p
+inv14 C: all c:Class,p:Person | p in (c.Groups).Group implies Teaches.c -> p in Tutors
+

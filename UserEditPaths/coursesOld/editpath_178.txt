@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv5 C: all p : Project | (some (Person<:projects).p) and ((Person<:projects).p in Student)
+inv1 U: all p : Person | enrolled.p in Student
+inv2 T: all p : Person | p.teaches implies p in Professor
+inv2 T: all p : Person, c: Course| p.teaches.c implies p in Professor
+inv2 T: all p : Person | some c: Course| p.teaches.c implies p in Professor
+inv2 C: all p : Person | some p.teaches implies p in Professor
+inv3 S: all c : Course | some teches.c
+inv3 C: all c : Course | some teaches.c
+inv4 C: all p : Project | one (Course<:projects).p
+inv6 B: all s : Student | s.(Person<:projects).~(Course<:projects) in s.enrolled
+inv6 T: all s : Student, p : s.projects | p~(Course<:projects) in s.enrolled
+inv6 B: all s : Student, p : s.projects | p.~(Course<:projects) in s.enrolled
+inv6 B: all s : Student, p : s.projects | p.~(Course<:projects) in s.enrolled
+inv7 B: all s : Student, p : s.projects | lone p.~(Course<:projects)
+inv7 U: all s : Student, p : s.projects | lone p.~(Course<:projects).enrolled
+inv7 B: all s : Student, p : s.projects | lone p.~(Course<:projects)
+inv7 B: all s : Student, p : s.projects | lone p.~(Course<:projects) & s.enrolled
+inv7 S: all s : Student, p : s.projects | lone
+inv7 S: all s : Student, p : s.projects | lone
+inv6 B: all s : Student, p : s.projects | p.~(Course<:projects) in s.enrolled
+inv7 U: all s : Student | lone (s.~(Course<:projects) & s.enrolled)
+inv6 B: all s : Student, p : s.projects | p.~(Course<:projects) in s.enrolled
+inv7 U: all s : Student | lone (s.~(Course<:projects) & s.enrolled)
+

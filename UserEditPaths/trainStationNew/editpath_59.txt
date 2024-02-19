@@ -1,0 +1,46 @@
+NA H: THEME UPDATE
+inv1 C: some Entry	some Exit
+inv2 S: Signals in Signals -> one Track
+inv2 S: Signals in signals -> one Track
+inv2 T: Signal in signals -> one Track
+inv2 C: signals in Track one -> set Signal
+inv3 U: no (Exit.succs)
+inv3 C: Track - succs.Track = Exit
+inv4 T: Entry = Track - ^(succs.Track)
+inv4 B: Entry = Track - ^succs.Track
+inv4 T: Entry = Track - ~(succs.Track)
+inv4 C: Entry = Track - ~succs.Track
+inv5 S: Junction = some (Track.succ)
+inv5 S: Junction = some ~succs.Track
+inv5 T: Junction = #(~succs.Junction) > 1
+inv5 B: #(~succs.Junction) > 1
+inv5 B: #(~succs.Track) > 1 implies Track in Junction
+inv5 B: #(~succs.Track) > 2 implies Track in Junction
+inv5 B: all t : Track | #(~succs.t) > 1 implies t in Junction
+inv5 T: all t : Track | #(~succs.t) > 1 implies t.Junction
+inv5 B: all t : Track | #(~succs.t) > 1 implies t in Junction
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction
+inv5 B: all t : Track | #(t.succs) > 1 implies t in Junction
+inv5 B: all t : Track | not lone (~succs.Track) implies t in Junction
+inv5 B: all t : Track | not lone (~succs.t) implies t in Junction
+inv5 C: Junction = { t : Track | not lone succs.t }
+inv6 B: Speed in Entry.signals
+inv6 O: signals in Entry set -> one Speed
+inv6 C: Entry in signals.Speed
+inv6 C: all e:Entry | some s:Speed | s in e.signals
+inv7 S: succ not in ^succ
+inv7 O: succs not in ^succs
+inv7 B: succs not in (^succs & ~succs)
+inv7 C: no (iden & ^succs)
+inv8 C: Entry -> Exit in *succs
+inv9 C: no (Track - succs.Junction).signals :> Semaphore
+inv9 C: no (Track - succs.Junction).signals :> Semaphore
+inv10 B: one (Track - ^succs.Junction).signals :> Semaphore
+inv10 B: one (Track - ~succs.Junction).signals :> Semaphore
+inv10 T: all t : Track | one s : Semaphore | t.~succs.Junction => s in t.signals
+inv10 B: all t : Track | one s : Semaphore | Junction in t.succs => s in t.signals
+inv10 O: all t : Track, j : Junction | one s : Semaphore | j in t.succs => s in t.signals
+inv10 B: all t : Track | some s : Semaphore | Junction in t.succs => s in t.signals
+inv10 O: all t : Track, j : Junction | some s : Semaphore | j in t.succs => s in t.signals
+NA H: THEME UPDATE
+

@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 T: not Trash
+inv1 T: all f : File, t : Trash | t->f not in File
+inv1 B: no link
+inv1 U: all t : Trash , f : File | t->f not in link
+inv2 E: 
+inv1 U: all t : Trash , f : File | f->t not in link
+inv1 U: all t : Trash , f : File | t->f not in link
+inv3 O: some t : Trash, p : Protected, f : File | t->f in link implies p->f not in link
+inv1 S: all w : File | implies w not in Trash
+inv3 E: 
+inv1 U: all w : File | w not in Trash or w in Protected
+inv1 O: all w : File | w not in Trash and w in Protected
+inv1 S: all w : File | implies w not in Trash and w in Protected
+inv1 C: all w : File | w not in Trash
+inv2 C: all w : File | w in Trash
+inv3 C: some w : File | w in Trash
+inv4 C: all w : File | w in Protected implies w not in Trash
+inv5 C: all w : File | w not in Protected implies w in Trash
+inv6 T: all f1,f2,f3 : File, l : link | f1->f2 in link and f1->f3 in link implies f2=f3
+inv6 C: all f1,f2,f3 : File | f1->f2 in link and f1->f3 in link implies f2=f3
+inv7 O: all f1,f2 : File | f1->f2 in link implies f1 not in Trash and f2 not in Trash
+inv7 U: all f1,f2 : File | f1->f2 in link implies f1 not in Trash and f2 not in Trash and f2->f1 in link implies f1 not in Trash and f2 not in Trash
+inv7 T: all l : link | l not in Trash
+inv8 C: all f1,f2 : File | f1->f2 not in link
+inv7 T: all f : File | f in Trash implies f not in link
+inv7 U: all f1,f2 : File | f1 in Trash or f2 in Trash implies f1->f2 not in link
+inv7 B: all f1,f2 : File | f1->f2 in link implies f1 not in Trash
+inv7 C: all f1,f2 : File | f1->f2 in link implies f2 not in Trash
+inv9 C: all f1,f2,f3 : File | f1->f2 in link implies f2->f3 not in link
+inv10 O: all f1,f2 : File | f1->f2 in link implies f2 in Trash
+inv10 B: all f1,f2 : File | f1->f2 in link implies f1 in Trash
+inv10 T: all f1,f2 : File | f1->f2 in link implies f1 and f2 in Trash
+inv10 O: all f1,f2 : File | f1->f2 in link implies f1 in Trash and f2 in Trash
+inv10 B: all f1,f2 : File | f1->f2 in link and f2 in Trash implies f1 in Trash
+inv10 O: all f1,f2 : File | (f1 -> f2 in link) implies f2 in Trash
+inv10 T: all f1,f2 : File | f1->f2 in Trash implies f2 in Trash
+inv10 C: all f1,f2 : File | f1->f2 in link and f1 in Trash implies f2 in Trash
+

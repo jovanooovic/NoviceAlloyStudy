@@ -1,0 +1,76 @@
+NA H: THEME UPDATE
+inv3 T: no Person in (Student & Teacher)
+inv4 T: no Person in (Student + Teacher)
+inv1 C: all p : Person | p in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 T: no Person in (Student & Teacher)
+inv3 C: all p : Person | p not in (Student & Teacher)
+inv3 B: Person not in (Student & Teacher)
+inv3 C: all p : Person | p not in (Student & Teacher)
+inv4 B: all p : Person | p not in (Student + Teacher)
+inv4 C: all p : Person | p in (Student + Teacher)
+inv5 U: some c : Class | some Teaches.c
+inv5 T: some c : Class | some c.Teacher
+inv5 O: some c : Class | some c.Teaches
+inv5 C: some c : Class, t : Teacher | c in t.Teaches
+inv5 C: some c : Class | c in Teacher.Teaches
+inv6 C: all t : Teacher | #t.Teaches > 0
+inv6 B: some Teacher.Teaches
+inv6 C: all t : Teacher | #t.Teaches > 0
+inv7 U: all c : Class | #Teaches.c > 0
+inv7 C: all c : Class | (#Teaches.c & Teacher) > 0
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 C: all c : Class | (#Teaches.c & Teacher) < 2
+inv13 S: Person.Tutors in Students and Tutors.Person in Teacher
+inv13 C: Person.Tutors in Student and Tutors.Person in Teacher
+inv10 T: all c : Class | all s : c.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Person | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 T: all c : Class | all s : c.Groups.Student | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups.Person | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups | #s.Student > 0
+inv10 T: all c : Class | all g : c.Groups | #g->Student > 0
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) = 1)
+inv11 B: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) >= 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 B: all c : Class | (#(Teaches.c & Teacher) > 0) implies (#c.Groups > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv12 U: all t : Teacher | some t->Class.Groups
+inv12 T: all t : Teacher | some t.Class.Groups
+inv12 U: all t : Teacher | some Class.Groups->t
+inv12 B: some Class.Groups->Teacher
+inv12 B: all t : Teacher | #Class.Groups->t > 0
+inv14 T: all c : Class, s : c.Groups->Person | c in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person | s :> Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person | s <: Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c->Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person.Group | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Student | s in Teaches.c.Tutors
+NA H: THEME UPDATE
+inv11 B: all c : Class | (#c.Groups > 0) <=> (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0)
+inv11 T: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0) ' #c.Groups = 0
+inv11 O: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0) else #c.Groups = 0
+

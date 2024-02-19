@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 B: all p : Photo | all u : User | u->p in posts
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv2 T: all u1 : User | u1 not in follows
+inv2 C: all u1 : User | u1->u1 not in follows
+inv3 S: all u1,u2 : User | all p : Photos | (u1->p in sees and u2->p in posts and p not in Ad) implies u1->u2 in follows
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in sees and u2->p in posts and p not in Ad) implies u1->u2 in follows
+inv4 C: all u : User | all p1 : Ad |all p2 : Photo| (u->p1 in posts and u->p2 in posts )implies p2 in Ad
+inv4 C: all u : User | all p1 : Ad |all p2 : Photo| (u->p1 in posts and u->p2 in posts )implies p2 in Ad
+inv5 B: all i : Influencer | all u : User | u->i in follows
+inv5 B: all i : Influencer | all u : User | i->u in follows
+inv5 U: all i : Influencer | all u : User | u not in Influencer implies u->i in follows
+inv5 S: all u:User | u not in Influencer implies (all i:Influencer | u->i in follows
+inv5 S: all u:User | u not in Influencer implies (all i:Influencer | u->i in follows
+inv5 U: all u:User | u not in Influencer implies (all i:Influencer | u->i in follows)
+inv5 S: all i:Influencer, u:User | i!=u implies u->i in follows
+inv5 U: all i:Influencer, u:User | i!=u implies u->i in follows
+inv5 B: all i:Influencer, u:User | u->i in follows
+inv5 U: all i:Influencer, u:User | u!=i implies u->i in follows
+inv5 U: all i:Influencer, u:User | u not in Influencer  implies u->i in follows
+inv5 U: all i : Influencer | all u : User | i!=u implies u->i in follows
+inv6 U: all i:Influencer , d:Day | some p : Photo | i->p in posts implies p->d in date
+inv6 B: all i:Influencer , d:Day | some p : Photo | i->p in posts implies d->p in date
+inv6 C: all i:Influencer , d:Day | some p : Photo | i->p in posts and p->d in date
+inv8 B: all u1,u2 : User, a:Ad | (u1->a in sees and u2->a in posts and u1!=u2) implies (u1->u2 in follows or u1->u2 in suggested)
+inv8 B: all u1,u2 : User, a:Ad | (u1->a in sees and u2->a in posts ) implies (u1->u2 in follows or u1->u2 in suggested)
+

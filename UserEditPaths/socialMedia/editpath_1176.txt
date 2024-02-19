@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 T: all p:Photo | one u : User | u.posts(p)
+inv1 S: all p:Photo | for u : User | u.posts(p)
+inv1 S: all p:Photo | for u : User => u.posts(p)
+inv1 S: all p:Photo |	for u : User => u.posts(p)
+inv1 S: all p:Photo |		for u : User => u.posts(p)
+inv1 S: all p:Photo |	one u : User => u.posts(p)
+inv1 S: all p:Photo | one u : User => u.posts(p)
+inv1 S: all p:Photo | one u : User
+inv1 S: all p:Photo | one u : User
+inv1 S: all p:Photo | one u : User => u.posts(p),
+inv1 S: all p:Photo | one u : User => p in u.posts
+inv1 S: all p:Photo | one u : User =>	p in u.posts
+inv1 S: all p:Photo | one u : User =>	p in u->posts
+inv1 T: all p:Photo | one u : User |	p in u->posts
+inv1 T: all p:Photo | one u : User | p in u->posts
+inv1 T: all p:Photo | (one u : User | p in u->posts)
+inv1 T: all p : Photo | one u : User | p in u->posts
+inv1 S: all p : Photo | one u : User  p in u->posts
+inv1 S: all p : Photo | one u : User && p in u->posts
+inv1 S: all p : Photo | one u : User && p in u->posts}
+

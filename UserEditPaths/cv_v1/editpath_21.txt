@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+Inv1 C: all u : User | u.visible in u.profile
+Inv2 O: all u : User | (u.profile + u.visible).source in (u + Institution)
+Inv3 U: all u : User.profile, disj x,y : u.ids | x = y => x = y
+Inv3 T: all u : User | ~(u.profile.ids).(u.profile.ids) in iden
+Inv3 T: all u : User | ~(u.profile.ids).(u.profile.ids) in iden
+Inv3 B: ~(profile.ids).(profile.ids) in iden
+Inv3 B: (profile.ids).~(profile.ids) in iden
+Inv3 O: iden in (profile.ids).~(profile.ids)
+Inv3 O: iden in ~(profile.ids).(profile.ids)
+Inv3 B: iden & (Id->Id) in ~(profile.ids).(profile.ids)
+Inv3 B: ~(profile.ids).(profile.ids) in iden
+Inv3 B: (profile.ids).~(profile.ids) in iden
+Inv3 T: all w : source.Source | w
+Inv3 T: all w : source.Source | w->ids
+Inv3 T: all w : source.Source | w.ids
+Inv3 B: all w : source.Source, w1,w2 : w.ids | w1 = w2
+Inv3 B: all w : source.Source, disj w1,w2 : w.ids | w1 = w2
+Inv3 T: all w : source.Source, disj w1,w2 : w.ids | no w1 = w2
+Inv3 U: all w : source.Source, disj w1,w2 : w.ids | w1 not = w2
+Inv4 T: all u : User, w : u.profile | lone u->w & u.visible
+Inv4 U: all u : User, w : u.profile | lone u->w & visible
+Inv4 U: all u : User, w : u.profile | lone w & u.visible
+Inv4 B: all u : User, disj id1, id2 : u.visible.ids | lone ids.id1
+Inv4 U: all u : User, id : u.visible.ids | lone u.visible.ids & id
+Inv4 T: ids
+Inv4 B: ~ids.ids in iden
+Inv4 B: ~ids.ids in iden
+Inv4 U: all u : User | ~(u.visible <: ids.ids).(u.visible <: ids.ids) in iden
+Inv4 B: all u : User | ~(u.visible <: ids).(u.visible <: ids) in iden
+Inv4 U: all u : User | (u.visible <: ids).~(u.visible <: ids) in iden
+Inv4 O: all u : User | iden in (u.visible <: ids).~(u.visible <: ids)
+Inv4 O: all u : User | iden in ~(u.visible <: ids).(u.visible <: ids)
+Inv4 U: all u : User, w : u.profile | lone w & u.visible
+Inv4 U: all u : User, id : u.profile.ids | lone id & u.visible.ids
+Inv4 U: all u : User, id : u.profile.ids | #(id & u.visible.ids) < 2
+Inv4 U: all u : User, id : u.profile.ids, w1, w2 : Work | w1->id + w2->id in visible.ids => w1 = w2
+Inv4 T: all u : User, id : u.profile.ids, w1, w2 : Work | w1->id + w2->id in u.visible => w1 = w2
+
