@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all x : Photo | some y : user | y-> x in posts
+inv1 U: all x : Photo | some y : User | y-> x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 C: all x : User | x not in follows.x
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 T: all x : User | x.sees in x.follows.posts or Ad
+inv3 S: all x : User | all y: x.sees | y in x.follows.posts or y : Ad
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv4 U: all x : Ad | x.posts.posts in Ad
+inv4 U: all x : Ad | x.posts.posts in x
+inv5 B: all x : Influencer, y : User | x in y.follows
+inv4 U: all x : Ad | x.posts.posts in x
+inv4 T: all x : Ad | x.posts.posts is Ad
+inv4 U: all x : Ad | x.posts.posts in Ad
+inv4 U: all x : Ad | x.posts.posts in x
+inv6 S: all x : Influencers, y : Day | some x.posts.day = y
+inv6 S: all x : Influencer, y : Day | some x.posts.day = y
+inv6 T: all x : Influencer, y : Day | some x.posts.date = y
+inv6 T: all x : Influencer, y : Day | some x.posts.date = y
+inv4 U: all x : Ad | x.posts.posts in x
+inv4 T: all x : Ad | x.posts.posts -> Ad
+inv4 S: all x : Ad | x.posts.posts in some Ad
+inv4 T: all x : Ad | Ad(x.posts.posts)
+inv4 S: all x : Ad | all x.posts.posts : Ad
+inv4 S: all x : Ad | x.posts.posts in some Ad
+inv5 B: all x : Influencer, y : User | x in y.follows
+inv4 T: all x : Ad | x.posts.posts € Ad
+

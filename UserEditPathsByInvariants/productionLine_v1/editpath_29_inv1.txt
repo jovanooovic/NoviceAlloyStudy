@@ -1,0 +1,10 @@
+inv1 S: all c:Component | c.parts != empty
+inv1 U: all c:Component | c.parts != 0
+inv1 U: all c:Component | c.parts in univ
+inv1 U: all c:Component | c.parts in univ
+inv1 B: all c:Component | c.parts in (univ-c.parts)
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv1 C: all c:Component | some p:Product | p in c.parts
+

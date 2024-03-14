@@ -1,0 +1,8 @@
+inv4 O: all u:User, a:Ad | a in u.posts implies (all p:Photo | p in u.posts and p in Ad)
+inv4 B: all u:User | one a:Ad | a in u.posts implies (all p:Photo | p in u.posts and p in Ad)
+inv4 C: all u:User, p:Photo | p in Ad and u in posts.p implies (all ph:Photo | u in posts.ph implies ph in Ad)
+inv4 O: all u:User, a:Ad | a in u.posts implies (all p:Photo | p in u.posts and p in Ad)
+inv4 C: all u:User, a:Ad | a in u.posts implies (all p:Photo | p in u.posts implies p in Ad)
+inv4 B: all u:User| one a:Ad | a in u.posts implies (all p:Photo | p in u.posts implies p in Ad)
+inv4 C: all u:User, p:Photo | p in Ad and u in posts.p implies (all ph:Photo | u in posts.ph implies ph in Ad)
+

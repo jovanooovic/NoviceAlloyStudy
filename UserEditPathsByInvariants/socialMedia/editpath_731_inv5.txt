@@ -1,0 +1,16 @@
+inv5 B: all i : Influencer | i in User.follows
+inv5 B: all i : Influencer | i in User.follows
+inv5 B: all i : Influencer | i in User.follows
+inv5 B: all i : Influencer | i in User.follows and i not in i.follows
+inv5 B: all i: Influencer | i in User.follows
+inv5 B: all i: Influencer | i in User.follows and i not in i.follows
+inv5 U: all i: Influencer | all user: User - Influencer | i in user.follows
+inv5 B: all i: Influencer | all user: User| i in user.follows
+inv5 B: all i: Influencer | all user: User| i in user.follows
+inv5 O: all i: Influencer | all user: User| i in user.follows and i not in i.follows
+inv5 B: all i: Influencer | all user: User| i not in user.suggested
+inv5 B: all i: Influencer | all user: User| i in user.follows
+inv5 U: all i: Influencer | all user: User - Influencer| i in user.follows
+inv5 B: all i: Influencer | all user: User | i in user.follows
+inv5 U: all i: Influencer | all user: User - i | i in user.follows
+

@@ -1,0 +1,105 @@
+~(link.link)
+-- div,1
+all f,g,h :File | f->g
+-- div,1
+no f:File | f.link.link
+-- div,1
+all f,g,h:File | f->g->h in link
+-- div,2
+all f,g,h:File | no f->g->h in link
+-- div,1
+all f,u,t: File |f->t->u not in link
+-- div,1
+link.~link in iden & link not in iden
+-- div,1
+all l:link, f:File | f->l not in link
+-- div,1
+no f:File | f in File.link and f.link
+-- div,1
+all f:File | f.link implies no f.*link
+-- div,1
+all f:File | f.link implies not f.*link
+-- div,3
+all f:File | f in link implies no f.*link
+-- div,1
+all f:File | f.link implies no f.link.link
+-- div,1
+all f:File | f in link implies not f.*link
+-- div,1
+all f,u,t: File |f->t->u not in link->link
+-- div,1
+all f:File | f.link implies not f.link.link
+-- div,1
+all f,g:File| f->g in link implies g in link
+-- div,1
+all f,g:File| f->g in link implies not g.link
+-- div,1
+all f, f1, f2 : File | f->f1->f2 not in link.link
+-- div,1
+not some f1,f2,f3:File | f1->f2 in link and f2->f3
+-- div,1
+all l1, l2, l3 : File | l1->l2 in link && l2->l3 link
+-- div,3
+all f,g,h:File | f->g in link implies no g->h in link
+-- div,1
+all f, f1, f2 : File | f->f1 . f1->f2 not in link.link
+-- div,1
+all f1, f2 : File | f1->f2 in link implies f2 not in link
+-- div,1
+all x, y, z : File | x->y in link implies y->z not in File
+-- div,2
+all f1, f2:File | no (f2 in f1.link) and no (f1 in f2.link)
+-- div,1
+all f,x,y :File |f->x in link implies (f->x)->y not in link
+-- div,1
+all f1,f2,f3 : File | no (f1 -> f2 in link and f2 -> f3 in link)
+-- div,1
+all x : File | all y : File | all z : File | x->y in link and y->z implies y!=z
+-- div,1
+all f1, f2, f3 : File | f1->f2 in link and f1->f3 in link implies f2=f3 not in link
+-- div,1
+all f:File | not isLinked[isLinked[f]]
+}
+
+/* If a link is deleted, so is the file it links to. */
+
+pred isLinked(f:File){
+some f2:File | f2->f in link
+-- div,1
+all f1,f2:File | isLinked[f1] implies f1->f2 not link
+}
+
+/* If a link is deleted, so is the file it links to. */
+
+pred isLinked(f:File){
+some f2:File | f2->f in link
+-- div,1
+all f1,f2 : File | (isLink[f1] and f1->f2) implies not isLink[f2]
+}
+
+/* If a link is deleted, so is the file it links to. */
+
+pred isLink[f1:File]{
+some f2 : File | f1->f2 in link
+-- div,1
+all f1,f2 : File | (isLink[f1] and f1->f2) implies not isLink[f2]
+}
+
+
+/* If a link is deleted, so is the file it links to. */
+
+pred isLink[f1:File]{
+some f2 : File | f1->f2 in link
+-- div,1
+all x, y, z : File | isLinked[y] implies isLink[z]
+}
+
+pred isLink{
+some g:File | f->g in link
+}
+
+/* If a link is deleted, so is the file it links to. */
+
+pred isLinked[f:File]{
+some g:File | g->f in link
+-- div,1

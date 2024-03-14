@@ -1,0 +1,15 @@
+inv9 S: all ws : Workstation | one b:Begin | one e:End | end in begin.succs
+inv9 S: all ws : Workstation | one b:Begin | one e:End | end in b.succs
+inv9 T: all ws : Workstation | end in begin.ws.succs and one end and one begin
+inv9 T: all ws : Workstation | end in begin.ws.succs
+inv9 T: all ws : Workstation | ws.end in ws.begin.succs
+inv9 T: all ws : Workstation | ws->end in ws.begin.succs
+inv9 S: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.succs
+inv9 T: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.ws.succs
+inv9 S: all ws : Workstation | one end : Workstation | one begin : Workstation | end in ws.succs
+inv9 B: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.succ
+inv9 U: all ws : Workstation | one end : Workstation | one begin : Workstation | end in begin.*succ
+inv9 U: one end : Workstation | one begin : Workstation | end in begin.*succ
+inv9 B: all begin : Workstation, end : Workstation | end in begin.*succ
+inv9 S: all begin : Workstation, end : Workstation | begin not in begin.succs and end in begin.*succs
+

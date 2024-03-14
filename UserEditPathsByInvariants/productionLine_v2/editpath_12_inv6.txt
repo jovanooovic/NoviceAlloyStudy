@@ -1,0 +1,9 @@
+inv6 S: Component in parts.*(Component, Product)
+inv6 T: Component in parts.*(Product)
+inv6 T: all c1,c2: Component | c1 in parts.*(c2)
+inv6 S: all c1,c2: Component | c1 in parts.*(c2,Product)
+inv6 T: all c : Component | c in parts.*Product
+inv6 C: all c : Component | c not in c.^parts
+inv6 O: no iden & ^parts
+inv6 O: no iden & ^parts
+

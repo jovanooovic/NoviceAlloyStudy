@@ -1,0 +1,5 @@
+inv13 T: all s : Student |all c : Course |all p : Project | s in c.grades.Grade.last implies p in s.projects and p in c.projects
+inv13 T: all s : Student |all c : Course |all p : Project | s in c.grades.Grade.last implies c.projects&s.projects != none
+inv13 T: all s : Student |all c : Course | s in c.grades.Grade.last implies c.projects&s.projects != none
+inv13 U: all s : Student |all c : Course | s in c.grades.last implies c.projects&s.projects != none
+

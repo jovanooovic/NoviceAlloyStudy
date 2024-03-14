@@ -1,0 +1,7 @@
+inv5 S: Junctions = Track - Track.succs
+inv5 T: all j : Junction | no (lone succs.j)
+inv5 T: all j : Junction | no (lone succs.j)
+inv5 B: all j : Junction | (lone succs.j)
+inv5 U: all j : Junction | not (lone succs.j)
+inv5 C: Junction = Track.{t1 : Track, t2 : Track | t1->t2 in succs and (not lone succs.t2)}
+

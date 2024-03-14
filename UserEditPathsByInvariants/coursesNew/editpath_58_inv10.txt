@@ -1,0 +1,4 @@
+inv10 S: all p : Person | (p in Student => (p.grades = p.grades) and (p in Professor => p.grades = none)))
+inv10 T: all p : Person | (p in Student => (p.grades = p.grades) and (p in Professor => (p.grades = none)))
+inv10 T: all p : Person | #(p.grades != 0) => p in Student
+

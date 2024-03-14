@@ -1,0 +1,6 @@
+inv3 C: all s : State, e : Event | lone (e <: s.trans)
+inv3 T: all s : State, e : Event | lone (e <: s.trans)	}		fun onlyStates[s : State] : set State->State {		{ aux : Event.(s.trans) | s -> aux }
+inv3 T: all s : State, e : Event | lone (e <: s.trans)	}		fun onlyStates[s : State] : set State->State {		{ aux : Event.(s.trans) | s -> aux }
+inv3 T: all s : State, e : Event | lone (e <: s.trans)	}		fun onlyStates : set State->State {		{ aux : Event.(Init.trans) | Init -> aux }
+inv3 T: all s : State, e : Event | lone (e <: s.trans)	}		fun onlyStates : set (State->State) {		{ aux : Event.(Init.trans) | Init -> aux }
+

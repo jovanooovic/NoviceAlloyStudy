@@ -1,0 +1,13 @@
+inv13 S: all c : Courses | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some grade : c.grades | gte[Person.grade,nota] ) implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course, nota : Person.(c.grades) | some grade : c.grades | gte[Person.grade,nota]  implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+

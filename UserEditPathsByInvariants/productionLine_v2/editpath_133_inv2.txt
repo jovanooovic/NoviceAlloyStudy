@@ -1,0 +1,5 @@
+inv2 T: all w : Workstation, t: workers | some w.workers and workers in w.workers
+inv2 T: all w : Workstation, t: workers | (some w.workers) and (workers in w.workers)
+inv2 T: all w : Workstation, t: Worker | (some w.workers) and (workers in w.workers)
+inv2 B: all w : Workstation, t: Worker | (some w.workers) and (t in w.workers)
+

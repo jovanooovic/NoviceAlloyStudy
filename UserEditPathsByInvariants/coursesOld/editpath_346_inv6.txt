@@ -1,0 +1,6 @@
+inv6 B: all p : Project | all s : Person | s->p in projects and (all c : Course | c->p in projects and s->c in enrolled)
+inv6 B: all p : Project | all s : Person | s->p in projects and (all c : Course | c->p in projects and s->c in enrolled)
+inv6 B: all p : Project | all s : Person | s->p in projects implies (all c : Course | c->p in projects and s->c in enrolled)
+inv6 C: all p : Project | all s : Person | s->p in projects implies (some c : Course | c->p in projects and s->c in enrolled)
+inv6 C: all p : Project | all s : Person | s->p in projects implies (some c : Course | c->p in projects and s->c in enrolled)
+

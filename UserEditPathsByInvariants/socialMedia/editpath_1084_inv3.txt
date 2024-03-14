@@ -1,0 +1,7 @@
+inv3 S: all u : User, p : Photo | u->p in sees -> some f : User | u->f in follows	User in sees.Ad
+inv3 T: all u : User, p : Photo | u->p in sees -> (some f : User | u->f in follows)	User in sees.Ad
+inv3 T: all u : User, p : Photo | some f : User | u->p in sees -> u->f in follows	User in sees.Ad
+inv3 B: all u : User, p : Photo | some f : User | u->p in sees => u->f in follows	User in sees.Ad
+inv3 B: all u : User, p : Photo | some f : User |	u->f in follows && f->p in posts => u->p in sees	User in sees.Ad
+inv3 C: all u : User, p : Photo | u->p in sees => p in Ad || (some f : User | f->p in posts && u->f in follows)
+

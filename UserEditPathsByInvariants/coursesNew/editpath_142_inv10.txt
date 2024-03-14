@@ -1,0 +1,5 @@
+inv10 T: all x : Grade | one y : Student | y->x in grades
+inv10 S: all x : Person | all y : Course | x.(c.grades) implies x in Student
+inv10 T: all x : Person | all y : Course | x.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some x.(y.grades) implies x in Student
+

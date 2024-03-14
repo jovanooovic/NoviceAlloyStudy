@@ -1,0 +1,29 @@
+na H: THEME UPDATE
+inv1 C: (adj & ~adj) = adj
+inv2 C: no (adj & ~adj)
+inv3 C: all n : Node | n not in n.^adj
+inv4 C: all n1, n2 : Node | n1->n2 in adj
+inv5 C: all n : Node | n->n not in adj
+inv6 O: all n1, n2 : Node | n2 in (n1.(^adj))
+inv6 B: Node in Node.(^adj)
+inv6 B: Node in (Node.(^adj) + Node.(^(~adj)))
+inv7 B: Node in Node.(^adj)
+inv8 T: all n1, n2, n3 : Node | ((n1->n2 in adj) & (n2->n3 in adj)) implies (n1->n3 in adj)
+inv8 T: all n1, n2, n3 : Node | ((n1->n2 in adj) & (n2->n3 in adj)) implies (n1->n3 in adj)
+inv8 T: all n1, n2, n3 : Node | (n1->n2 in adj & n2->n3 in adj) implies (n1->n3 in adj)
+inv8 T: all n1, n2, n3 : Node | (n1->n2 in adj & n2->n3 in adj) implies (n1->n3 in adj)
+inv4 C: all n1, n2 : Node | n1->n2 in adj
+inv5 C: all n : Node | n->n not in adj
+inv6 B: Node in (Node.(^adj) + Node.(^(~adj)))
+inv7 B: Node in Node.(^adj)
+inv6 B: Node = (Node.(^adj) + Node.(^(~adj)))
+inv6 B: Node = (Node.(^adj) + Node.(^(~adj)))
+inv6 U: one Node or (Node = (Node.(^adj) + Node.(^(~adj))))
+inv7 U: one Node or (Node = Node.(^adj))
+na M: MOD BASE MODEL
+inv1 C: (adj & ~adj) = adj
+inv2 C: no (adj & ~adj)
+inv3 C: all n : Node | n not in n.^adj
+inv4 C: all n1, n2 : Node | n1->n2 in adj
+inv5 C: all n : Node | n->n not in adj
+

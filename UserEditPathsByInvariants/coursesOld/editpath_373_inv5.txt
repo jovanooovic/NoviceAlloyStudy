@@ -1,0 +1,9 @@
+inv5 T: all p : Project | projects.p <: Person and projects.p in Student
+inv5 T: all p : Project | projects.p in Student
+inv5 U: all p : Project | projects.p <: Student in Student
+inv5 T: all p : Project | projects.p <: Project in Student and some projects.p <: Project
+inv5 T: all p : Project | projects.p <: Project in Student 	  	some projects.Project <: Person
+inv5 B: all p : Project | projects.p <: Person in Student 	  	some projects.Project <: Person
+inv5 B: some projects.Project <: Person		all p : Project | projects.p <: Person in Student
+inv5 C: all p : Project | some projects.p <: Person		all p : Project | projects.p <: Person in Student
+

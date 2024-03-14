@@ -1,0 +1,26 @@
+inv4 S: Project in one Course.projects
+inv4 B: Project in (one Course.projects)
+inv4 S: Project not in (some Course.projects)
+inv4 U: Project in Course.projects
+inv4 B: Project in (one Course.projects)
+inv4 B: Project in Course.projects => Project in (one Course.projects)
+inv4 B: Project in (one Course.projects)
+inv4 B: lone (Project & Course.projects)
+inv4 U: Project in Course.projects
+inv4 B: Project in (one Course.projects)
+inv4 B: all p: Project, c: one Course | p in c.projects
+inv4 T: Project in (one Course).projects
+inv4 B: lone (Project & Course.projects)
+inv4 B: Project in (one Course.projects)
+inv4 O: Project in (one Course.projects)	  			all c: Course, p: c.projects | p not in (Course-c).projects
+inv4 U: all c: Course, p: c.projects | p not in (Course-c).projects
+inv4 U: Project in Course.projects
+inv4 B: Project in (one Course.projects)
+inv4 B: Project in (one Course.projects)
+inv4 U: all p: Project, c: Course | p in c.projects => p not in (Course-c).projects
+inv4 B: all p: Project, c: one Course | p in c.projects
+inv4 U: all p: Project, c: Course | p in c.projects => p not in (Course-c).projects
+inv4 U: all p: Project, c: Course | p in c.projects => p not in (Course-c).projects
+inv4 U: all p: Project, c1: Course, c2: Course | c1 != c2 && p in c1.projects => p not in c2.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+

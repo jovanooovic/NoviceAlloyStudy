@@ -1,0 +1,7 @@
+inv1 O: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 U: all p : Person | (p not in Student implies #(enrolled) = 0) or (p in Student implies #(enrolled) > 0)
+inv1 S: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 S: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 O: all p : Person | p not in Student implies #(enrolled) = 0
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+

@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 S: all h:Human,r:Robot | implies Worker
+inv1 U: all h:Human,r:Robot |  h in Worker and r in Worker
+inv1 U: all h:Human,r:Robot |  h in Worker or r in Worker
+inv1 T: all h:Human,r:Robot |  h & Worker or r & Worker
+inv1 U: all h:Human,r:Robot |  h in Worker and r in Worker
+inv2 B: all w:Worker,ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv1 U: all h:Human,r:Robot |  h in Worker and r in Worker
+inv1 O: all w:Worker |  w in Human & Robot
+inv1 C: all w:Worker |  w in Human or w in Robot
+inv2 T: all w:Worker | some w in Workstation.workers	all ww:Workstation | some (ww.workers)
+inv2 S: all w:Worker,ww:Workstation | w in some(ww.workers)	all ww:Workstation | some (ww.workers)
+inv2 S: all w:Worker,some ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv2 S: all w:Worker,one ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv2 S: all w:Worker,one ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv2 S: all w:Worker,one ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv2 C: all w:Worker | one ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv3 U: all c:Component | lone(c.workstation)
+inv3 C: all c:Component | one(c.workstation)
+inv4 T: all p:Product | p in Component implies some(p.parts)	all p:Product | p in Material implies none(p.parts)
+inv4 T: all p:Product | p in Component implies some(p.parts)	all p:Product | p in Material implies none(p.parts)
+inv4 C: all p:Product | p in Component implies some(p.parts)	all p:Product | p in Material implies no(p.parts)
+inv5 T: all ww:Workstation | Human & ww.workers implies no(Robot & ww.workers)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers&Robot)
+inv5 S: all ww:Workstation | disj Human,Worker in ww.workers
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers &Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers &Robot)
+inv2 U: all w:Worker | some ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv2 C: all w:Worker | one ww:Workstation | w in ww.workers	all ww:Workstation | some (ww.workers)
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers & Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers & Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers & Robot)
+inv5 C: all ww:Workstation | some (ww.workers & Human) implies no (ww.workers & Robot)
+inv6 U: all c:Component |  c not in c.parts
+inv6 U: all c:Component |  no(c & c.parts)
+inv6 T: all c:Component |  no(c & ^(c.parts))
+inv6 T: all c:Component |  no(c & (^c.parts))
+inv6 T: all c:Component |  no(c & ^(c.parts))
+inv6 C: all c:Component |  no(c & (c.^parts))
+inv7 S: all p:Product | p in Components and some(p.parts & Dangerous) implies p in Dangerous
+inv7 C: all p:Product | p in Component and some(p.parts & Dangerous) implies p in Dangerous
+inv8 C: all c:Component| c in Dangerous implies no(c.workstation.workers & Human)
+inv6 U: all c:Component |  no(c & (c.parts))
+

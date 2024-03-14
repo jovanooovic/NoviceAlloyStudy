@@ -1,0 +1,12 @@
+inv9 U: all x:Workstation | x in begin or one succ.x
+inv9 U: all x:Workstation | x in begin or one succ.x and x not in x.succ
+inv9 U: all x:Workstation | x in begin or one succ.x and x not in succ.x
+inv9 U: all x:Workstation | x not in succ.x	all x:Workstation | x in begin or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | (not x in begin iff x in end) or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | (not (x in begin iff x in end)) or one succ.x
+inv9 B: all x:Workstation | x not in succ.x	all x:Workstation | ((x in begin and x not in end) or one succ.x)
+inv9 O: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | (x in begin and x not in end)
+inv9 U: all x:Workstation | x not in succ.x and lone succ.x
+inv9 B: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | one Workstation implies x in begin and x in end	all x:Workstation | (not (x in begin iff x in end)) or x in succ.x
+inv9 U: all x:Workstation | x not in succ.x and lone succ.x	all x:Workstation | (one Workstation implies x in begin and x in end) or (not (x in begin iff x in end)) or x in succ.x
+

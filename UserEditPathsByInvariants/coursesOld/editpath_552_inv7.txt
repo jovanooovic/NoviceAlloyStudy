@@ -1,0 +1,9 @@
+inv7 S: all s: Student, some p: project | lone s.(projects.p)
+inv7 S: all s: Student, some p: Project | lone s.(projects.p)
+inv7 S: all s: Student, some p: Project | lone (s.enrolled & projects.p)
+inv7 B: all s: Student, p: Project | lone (s.enrolled & projects.p)
+inv7 B: all s: Student | lone s.enrolled.projects
+inv7 B: lone Student.enrolled.projects
+inv7 T: lone Student.enrolled.projects in Project
+inv7 B: lone Student.enrolled.projects
+

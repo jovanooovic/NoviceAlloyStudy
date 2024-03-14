@@ -1,0 +1,35 @@
+Pairs,4
+,,"*parts not in iden",1
+,,"^parts not in iden",3
+
+Pairs,1
+,,"(^parts).~(^parts) in iden",1
+
+Pairs,1
+,,"(^parts).~(^parts) not in iden",1
+
+Pairs,1
+,,"all c : Component | c->c in parts",1
+
+Pairs,1
+,,"Component not in Component.(^parts)",1
+
+Pairs,1
+,,"all c : Component | c<:parts in iden",1
+
+Pairs,1
+,,"all disj c,c1:Component | no (c.parts & c1.parts)",1
+
+Pairs,1
+,,"all c,c1 : Component, p : Position | c->p + c1->p in position => c = c1",1
+
+Pairs,2
+,,"all c:Component | c.parts in (univ-c)
+    all c1,c2:Component | c2 in c1.parts => c2.parts in (univ - c1.parts)",2
+
+Pairs,1
+,,"all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and c->p + c1->p in position => c = c1",1
+
+Pairs,1
+,,"all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and (c->p + c1->p in position => c = c1 )",1
+

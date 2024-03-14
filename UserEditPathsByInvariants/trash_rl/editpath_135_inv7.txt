@@ -1,0 +1,15 @@
+inv7 T: all f: File | no f.link in Trash
+inv7 B: all f: File | f.link not in Trash
+inv7 B: no f: File | f.link in Trash
+inv7 T: no t: Trash | t.link
+inv7 T: no t: Trash | ~t.link
+inv7 T: no t: Trash | ^t.link
+inv7 B: no f: File | f.link in Trash
+inv7 B: no f: File | f.link in Trash
+inv7 T: all f: File | no f.link in Trash
+inv7 B: all f: File | f.link not in Trash
+inv7 B: all f: File | f.link in Trash
+inv7 O: no f: File | f in Trash
+inv7 B: no f,g: File | f.link = g implies g not in Trash
+inv7 B: no f: File | f.link in Trash
+

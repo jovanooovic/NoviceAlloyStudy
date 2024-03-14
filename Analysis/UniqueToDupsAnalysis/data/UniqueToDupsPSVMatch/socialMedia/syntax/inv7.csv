@@ -1,0 +1,448 @@
+"}",1
+"all u: User |",9
+"all x : User |",3
+"no User.sugested",1
+"no user.sugested",1
+"all u, s : User |",2
+"all u1, u2, u3 : User",2
+"all s : User.suggested |",1
+"all u, s: User | u in u.follow",1
+"all dist u1: User | u1 in User",1
+"all u:User | u.suggested in u.^(follows).",1
+"all u1, u2:User | u1->u2 in follows => ()",2
+"all x : User | x.suggeste not in x.follows",1
+"all u1, u2, u3 : User | u2 in u1.follows im",1
+"all u: Users| u.suggested in u.follows.follows",1
+"User:u | User-u & not u.follows in u.suggested",1
+"User:u | User-u & not u.follows in suggested.u",1
+"all u : User | all u.follows.follows & u.follows",1
+"all u : User | u.suggested in u.followed.followed",1
+"all u : User | suggested = one (u.follows).follows",1
+"all u : User | no (u.suggested & u.follows) and ...",7
+"all u:User | s: u.suggested | s in u.follows.follows",1
+"User:u | u.suggested = u.follows.follows - u.follows",1
+"all u:User | sugested = u.follows.follows - u.follows",1
+"all u : Users | u.suggested = (u.follows).follows - u",1
+"all u: User | s: u.suggested | s in u.follows.follows",1
+"all x: User | x.suggested in x->y.follows - x.follows",1
+"all u : User | u.suggested in u.follows.(follows - id)",1
+"all u : User| set s in u.sugested | u not in follows.s",1
+"all x : User | x.follows not in x.suggested",1
+"User:u | u.suggested = u.follows.follows - u.follows -u",1
+"all u : User| set s in u.suggested | u not in follows.s",1
+"all u : User| all s in u.suggested | u not in follows.s",1
+"all u1 | u1.suggested in u1.follows.follows - u1.follows",1
+"all u:Users| u.suggested = u.follows.follows - u.follows",1
+"all: x:User | x.suggested-x.follows in x.follows.follows",1
+"all u:User | u.suggested = (a.follows.follows -a.follows)",1
+"all u : User | all sug : u.sug | sug in u.follows.follows",1
+"all u:User = u.suggested = (u.follows.follows - u.follows)",2
+"all u : User | u.sugested in u.follows.follows - u.follows",1
+"all u : user | u.suggested = u.follows.follows - u.follows",1
+"all u:User| u:suggested = u.follows.follows - u.follows - u",1
+"disj u,s:User | s in u.suggested iff s in u.follows.follows",1
+"all u:Users| u.suggested = u.follows.follows - u.follows - u",6
+"all u1,u2 | u2 in u1.suggested implies not(u2 in u1.follows)",1
+"all x:User | u.suggested = u.follows.follows - u.follows - u",1
+"all u: User | u.suggested = u.followed.followed - u.followed",1
+"all u : User | u.suggested in u.followed.followed - u.follows",1
+"all u:User | u1.suggested = u.follows.follows - u.follows - u",1
+"all u : User | u.suggested = u.follows.follows - u  u.follows",1
+"all x, z : User | x in suggested.z iff x != z",1
+"all x,y: User | x.suggested in x^.follows.follows - x.follows",1
+"all u : user | u.suggested = u.follows.follows - u.follows - u",1
+"all u : User | (u.suggested in (u.follows.follows - u.follows)",2
+"all u : User | u.Suggested = u.follows.follows - u.follows - u",1
+"all x : User | y in x.suggested implies y in x.follows.follows",1
+"all u:User| (u.follows.follows & u.follows)-[u] in u.suggested",1
+"all u: User | u.suggested = u.follows.follows - u - u.follows)",1
+"all u : User | u.suggested in (u.follows).follows - u.follows)",1
+"all u: User| u.suggested = (u.follows.follows - ( u.follows +u)",1
+"all u,s:User | s in u1.suggested implies s in u.follows.follows",1
+"all u : User | u.sugested in u.follows.User.follows - u.follows",1
+"disj u,s:User | s in u.suggested implies s in u.follows.follows",1
+"all x : User | x.suggested = (x.follows.follows - x.follows + u)",1
+"all x0,x1:User | x2 in x0.suggested implies x2 not in x0.follows",1
+"all u: User | u.suggested = (u.follows.follows - (u.follows + u)",1
+"all x : User | u.suggested = (u.follows.follows - u.follows - u)",1
+"all u : User | all sug : u.suggestions | sug in u.follows.follows",1
+"all u: User| u.suggested in u.follows.follows and not in u.follows",1
+"all s, u : User, | s in u.suggested implies s in u.follows.follows",1
+"all u: User | u.suggested in u.follows.follows && not in u.follows",1
+"all u: User | u.suggested not in u.follows && in u.follows.follows",1
+"all x : User | suggest.x in ( follows.follows.x and not follows.x)",1
+"all u: User| u.suggested in (u.follows.follows && not in u.follows)",1
+"all x : User | all y : x.follows | (x in y.follows + y.suggested)
++",3
+"no x, y : User | x in y.follows => y in not x.suggested + x.follows",1
+"all u: User | u.suggested not in u.follows and in u.follows.follows",1
+"all u : User | u.suggested = (u.follows.follows - (u.follows + u)))",1
+"all u: User | u.follows.follows in u.suggested and not in u.follows",1
+"all u : User | u.suggested in u.follows.follows and not in u.follows",1
+"all u: User | u.suggested in u.follows.follows and  not in u.follows",1
+"all u:User | u.suggested not in u.follows |  u.suggested in u.follows",2
+"all x : User | (x.suggested in (x.follows.follows & not in x.follows)",1
+"all disj u : User | u.suggesqted in u.follows.follows - u.follows - u",1
+"all u : User | suggested =  (u -> ((u.follows).follows - (u.follows))",1
+"all u: User | u.suggested = {u' : u' in u.follows.follows - u.follows}",1
+"all x : User | x.suggested in (x.follows.follows and not in x.follows)",3
+"all u : User | u.suggested in u.follows.follows - u.follows - u u.sees",1
+"all s, u : User | u->s in sugested => (some f : User | u->f in follows)",1
+"all u : User , p : User-x | p in u.suggested iff p in x.follows.follows",1
+"all u : User , p : User-x | p in u.suggested iff p in u.follows.follows",1
+"all u: User | all f : u.sugested | u in f implies u in u.follows.follows",1
+"all u1:User | u2:u1.follows | u3:u2.follows-u1.follows | u3 in u1.follows",1
+"all s, f, nf : univ | all u: User | u.follows in f and nf in not u.follows",1
+"all u1:User | u2:u1.follows | u3:u2.follows-u1.follows | u3 in u1.suggested",2
+"all x, y : user | x not in y.follows and y in x.follows => x in y.suggested",1
+"all u: User | s: u.suggested | s not in u.follows and s in u.follows.follows",1
+"all u : User | u.suggested in u.^follows and and u.suggested not in u.follows",1
+"all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows",4
+"all u : User | u.suggested in  u.follows.follows |  u.suggested  in u.follows",1
+"all x : User | suggested.x in follows.follows.x and suggested.x not follows.x)",1
+"all u : User, sugg in u.suggested | u not in sugg && u.follows.follows in sugg",1
+"all u : User| u.suggested in  u.follows.follows |  u.suggested not in u.follows",3
+"all u : User | u.suggested not in u.follows and u.suggsted in u.follows.follows",1
+"all: x:User | x.suggested in x.follows.follows and x.suggested not in x.follows",1
+"all u : User |all s : u.suggested| s in  u.follows.follows | s not in u.follows",1
+"all u1, u2 : User | u1 in suggested.u2 => u1 in ^follows.u2",1
+"all u : User | u.suggested in  u.follows.follows |  u.suggested not in u.follows",1
+"all x : User | x.suggested implies (x in x.follows.follows and not in x.follows)",1
+"all e: User, o: User - e, s: User - (e + o) | s in o.follows => s in u.suggested",1
+"all u, x : User | all s: u.follows | x in u.suggested implies x in s.follows and",1
+"all u,u1,u2:User | u1 in suggested.u implies u1 in u2follows and u2 in follows.u",1
+"all u: User | u.suggested in u.follows.follows-u.follows",3
+"all disj e: User, o: User | (e in s && s in o && e not in o) => e in o.suggested",1
+"all e: User, o: User - u, s: User - (e + o) | s in o.follows => s in u.suggested",1
+"all x: User | all f : u.follows.follows | f not in x.follows => f  in x.suggested",1
+"| all s: u.suggested | some f: u.follows  | s in f.follows and s not in u.follows",1
+"all user : User | user in user.suggested => user.follows.follows != user.folowers",1
+"all x : User | (x.suggested in x.follows.follows) & no (x.suggested in x.follows)",1
+"all u1,u2 : User | u2 in u1.suggested <=> and u2!=u1 and u2 in u1.follows.follows",1
+"all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+}",1
+"all u1:User | some u2:User | u1 -> u2 not in follows imples u1 -> u2 in suggested",1
+"all u: User| u.seggested in u.follows.follows - u => u.suggested not in u.follows",1
+"all a,b : User | a in b.follows.follows && a not in b.follows <-> a in b.suggested",1
+"all u: User | u.suggested in u.follows.follows - u.follows & no u.suggested & iden",1
+"all x,y : User | iff y in x.follows and x not in y.follows implies x in y.sugested",1
+"all u: User | all u1: u.follows | all u.suggested not in u1.follows - u.follows - u",1
+"all u: User |
+all u2 in (u.follows.follows - u.follows - {u}) | u2 in (u.suggested)",1
+"all x : User | all u : x.follows.follows| u in x.suggested if u not in x + x.follows",1
+"all x,y : User | iff (y in x.follows and x not in y.follows) implies x in y.sugested",2
+"all u: User |
+all v: User |
+v in u.suggested if
+(v in (follows.follows) - u.follows)",1
+"all u : user | all s : u.suggested | (s not in u.follows) and s in u.follows.follows",1
+"all disj u,s:User | s in u.suggested implies s in u.follows.follows",1
+"all x,y : User | iff (y in x.follows and x not in y.follows) implies x in y.suggested",1
+"all u,i : User | x in suggested.i iff (x not in follows.i and x in follows.follows.i)",1
+"all x: User | x.suggested = (x.follows).follows-x.follows-x",4
+"all x, y:User | x in y.suggested implies x not in y.follows and x in y.folows.follows",1
+"all u, s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows",1
+"all u : User | all s : u.suggested | (s not u.follows) and (s in (u.follows).follows)",1
+"all u : User | u.suggested in u.follows.follows - u.follows - u",2
+"all u:User, uu:User| uu in u.sugests => uu not in u.follows && uu in u.follows.follows",1
+"all u : User| set s in u.sugested | u not in follows.s and some follows.u in follows.s",1
+"all x,y : User | iff (y in x.follows) and (x not in y.follows) implies x in y.suggested",1
+"all u, s : User | u->s in suggested => u != s && u->s not in follows",1
+"all x1, x2 | x2 & x1.suggested implies x2 & x1.follows.follows and x2 not in x1.follows",1
+"all u : User| all s in u.suggested | u not in follows.s and some follows.u in follows.s",1
+"all u,y : User | x in suggested.y implies y in u.follows.follows and y not in u.follows",1
+"all u1,u2,u3 : Users | u3 in u1.suggested implies u3 in u2.follows and u2 in u1.follows",1
+"all u : User| set s in u.suggested | u not in follows.s and some follows.u in follows.s",1
+"all disj u,uu: User| u in uu.follows.follows and not in uu.follows => u in uu.suggested",1
+"all disj u,uu: User| u in uu.follows.follows and not in uu.follows => u in uu.sugestions",1
+"all u : User | no u.suggested & u.follows
+all u : user | u.suggested = u.follows.follows",2
+"all u1, u2 : User | u2 in u1.suggested => u2 in u.follows.follows and u2 not in u.follows",1
+"all u1, u2 : User | (u1 not in follows.u2 and u2 in u1^follows) implies u2 in u1.suggested",2
+"all disj u1, u2 : User | u2 in u1.follows.follows => u2 in u1.suggested",2
+"all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=y",3
+"all u : User | all s : u.suggested D| all f : u.follows | (s not in f) and (s in f.follows)",1
+"all e,s,o: User | (e in s.follow && s in o.follow && e not in o.follow) => o in e.suggested",1
+"all u1 : User| all u2 : User| u1.follows not in u2.follows implies u1.follows in u2.suggest",1
+"all u: User | all x: User | x in (u.follows.follows* - u.follows) implies (x in u.suggested)",1
+"all u : User, p : User - u | p in u.suggested | p in u.follows.follows and p not in u.follows",1
+"all u1 : User | all u2: u1.follow.follow | u2 not in u1.follows implies (u2 in u1.suggested )",1
+"all u1, u2 : User | u2 in u1.suggested implies u2 not in u.follows && u2 in u.follows.follows",1
+"all u1, u2 : User | u2 in u1.suggested implies u2 not in u1.follows && u2 in u.follows.follows",1
+"all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) implies (u3 in suggested.u1)",1
+"all e: User - (s+o), o: User - (e + s), s: User - (e + o) | s in o.follows => s in e.suggested",1
+"all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)",6
+"all u,i : User | u in suggested.i iff (u not in follows.i and u in follows.follows.i and x!=i)",1
+"all x,x1:User | x1 in x.suggested implies x in x1.follows and (x1 not in x.follows) and x =! x1",1
+"all disj u1,u2 : User | (u2 in u1.follows.follows && u2 not in u1.follows) => u2 in u.suggested",1
+"all s, u : User, | s in u.suggested implies (some f : User | f in u.follows and s in f.follows)",1
+"all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and s !=U)",1
+"all e: User - (o + s), o: User - (e + s), s: User - (e + o) | s in o.follows => s in e.suggested",3
+"all u: User | u in User.suggesteds implies (u not in User.follows and u in User.follows.follows)",1
+"all u : User , p : User-u | p in u.suggested implies (p in u.follows.follows p not in u.follows)",1
+"all e: User, o - (o + s): User - (e + s), s: User - (e + o) | s in o.follows => s in e.suggested",1
+"all u1,u3 | u1->u3 in suggested implies (some u2:User | u1->u2 in follows and u2->u3 in follows)",1
+"all u : User s : User| s in u.suggested implies (s in (u.follows).follows and s not in u.follows)",1
+"all x:User,t:User-x,k:User-x-t| x->k in suggested implies x->t in follows and t->k in follows and",1
+"all u1, u2: User | u2 in u1.suggested implies (u2 in u1.follows.follows and u2 not in u1.followa)",1
+"all u1:User, u2:u1.follows | (some u3:u2.follows | not u1->u3 in follows) =>  u1->u3 in suggested",1
+"all x0,x1,x3:User | x1 in x0.suggested and x3 in x0.folows implies x1 not in x0.follows and x0!=x1",1
+"all u1,u2 : User | u2 in u1.suggested implies (u2 not in u1.followed and u2 in u1.follows.follows)",1
+"all u,s:Users | u -> s in suggested implies (some f:User | u -> f in follows and f -> s in follows)",1
+"all x : User | all y : x.suggested | (y not in x.follws+x) and (some z: x.follows | y in z.follows)",1
+"all u : User | all s : u.suggested D| all f : u.follows | (s not in u.follows) and (s in f.follows)",1
+"all u : User | all others : followed.u.followed | others not in followed.u => others in suggested.u",1
+"all u, y, z : User | u in y.follows and y in z.follows implies z in u.suggested| z not in u.follows",1
+"disj all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and u!=s)",1
+"disj all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)",1
+"all x : User | all y : x.suggested | (y not in z.follws+x) and (some z: x.follows | y in z.follows)",1
+"all u, f, s: User | (f in u.follow and s in f.follow and s not in u.follow) implies s in u.suggested",1
+"all u1 : User, u2 : User | u2 in u1.suggested implies u2 not in u.follows && u2 in u.follows.follows",1
+"all u:User | some s: u.suggested | s in u.follows.follows and s!=u",2
+"all x:User,t:User-x,k:User-t| x->k in suggested implies x->t in follows and t->k in follows and x!=K",1
+"all u: User, y: User| y in u.suggested iff y not in u.follows && y in u.follows.follows && x not in y",1
+"all u1,u2 : User | u1 in u2.follows.follows and u1 not in u2.follows and u1!=u3 => u1 in u2.suggested",1
+"all u : User | all s: u.suggested | some f: u.follows  | s in f.follows and s not in u.follows nd s!=u",1
+"all u, y, z : User | (u in y.follows and y in z.follows) implies z in u.suggested | z not in u.follows",2
+"all u : User | u.suggested in ((u.follows).follows) and no u.suggested&u and no u.suggeste&(u.follows)",1
+"all u1, u2 : User | u1 != u2 | u2 in u1.suggested => u2 in u1.follows.follows and u2 not in u1.follows",1
+"all u, f, s: User | (f in u.follow and s in f.follows and s not in u.follows) implies s in u.suggested",1
+"all u1, u2: User | u2 in u1.suggested <==> u2 not in u1.follows and u2!=u1 and u2 in u1.follows.follows",1
+"all u1: User u2: User - u1  | u2 in u1.follows.follows && u2 not in u1.follows =>  (u2) in u1.suggested",1
+"all x : User | (((not no x.suggested)) implies (x.suggested in x.follows.follows or x in x.suggested)))",1
+"all s: User, f: User | some s: User | u->s in suggested implies (u->f in follows and f->s in suggested)",1
+"all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in u.suggested",2
+"all u, y : User | y in u.suggested implies (some follows.y & u.follows) and (no y & u.follows) and x!=y",1
+"all user1, user2, user3 : User | (user1 in user2.suggested) implies (   and user1 not in user2.follows)",2
+"all u:User | some f:User-u | f in u.suggested implies f in (((u.follows).follows) and f not in u.follows",1
+"u1,u2,u3:User| u3 in u1.suggested implies u3 in u2.follows and u2 in u1.follows and u3 not in u1.follows",2
+"all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.followed and s in ufoll.follows",1
+"all x: User | all y: x.follows | p:User in x.suggested implies (p in y.follows) and (p not in x.follows)",1
+"all u1, u2: User | u2 in u.suggested implies u2 in u1.follows.follows && u2 != u1 && u2 not in u.follows",1
+"all u1, u2: User | u2 in u.suggested implies u2 in u1.follows.follows && u2 != u1 && u2 not in u1.follows",1
+"all u : User | all u2 : User - u.follows |
+u2 in u.suggested =>
+(some u3 in u.follows | u2 in u3.follows)",1
+"all s : Suggested | all u : User | s in u.suggested implies s not in u.follows and s in u.follows.follows",1
+"All u1,u2 : User | u2 in u1.suggested <=> (u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows",1
+"all x, y,z:User| x-> z in suggested implies( x->y in follows and y-> z in follows and x->znot in follows)",1
+"all u1,u2 : User | u2 in u1.suggested <=> (u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows",2
+"all u1, u2, u3 | (u1->u2 in follows && u2->u3 in follows && not u1->u3 in follows) => u1->u3 in suggested",1
+"all u, f, s: User | (f in user.follow and s in f.follow and s not in u.follow) implies s in user.suggested",1
+"u1, u2, u3: User | u3 in u2.suggest and u3 in u1.follows implies u1 in u2.follows and u3 not in u2.follows",2
+"all u : User | all s : u.suggested | some ufoll : u.followed | s not in u.followed and s in ufoll.followed",1
+"All u1,u2 : User | u2 in u1.suggested <=> (u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows)",2
+"all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in 			u.suggested",2
+"all u1, u2 : User | u2 in u.suggested implies u2 in u1.follows.follows && u2 != u1 && u2 not in u1.follows",1
+"all u1,u2,u3:User | (u1->u2 in follows  and u2->u3 in follows u1->u3 not in follows) => u1->u3 in suggested",1
+"all u1,u2 : User | u1 != u2 and u2 in u1.suggested implies u2 no in u1.follows and u2 in u1.follows.follows",1
+"all u : Users | all s : u.suggested | some ufoll : u.followed | s not in u.followed and s in ufoll.followed",1
+"all u1:User, u2:User, u3:User | u3 in u1.suggested implies (u3 not in u.follows and u3 in u.follows.follows)",1
+"all u : Users | all s : u.suggested | s not in u.followed and some ufoll in u.followed | s in ufoll.followed",2
+"all u1,u2 : User | u2 in u1.suggested implies (u1!=u2 and u2 in u1.follows.suggest and u2 not in u1.follows)",1
+"all u : Users | all s : u.suggested | some ufoll in u.followed | s not in u.followed and s in ufoll.followed",2
+"all u1, u2: User | u2 in u.suggested implies (u2 in u1.follows.follows and u1 != u2 and u2 not in u1.follows)",1
+"all u1, u2, u3 : User | u3 in u1.suggested => u3 not in u1.follows and u3 in u2.follows and u2 in u1.folllows",1
+"all x0,x1:User | x1 in x0.suggested implies some x3:User x1 not in x0.follows and x0!=x1 and x1 in x3.follows",2
+"all u1,u2,u3:Users | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows",1
+"All u1,u2 : User | u2 in u1.suggested <=> (u1 != u2 and u2 not in u1.follows and u2 not in u1.follows.follows)",1
+"all u : User | all u2 : User - u.follows |
+u2 in u.suggested implies
+(some u3 in u.follows | u2 in u3.follows)",1
+"u1, u2, u3: User | (u3 in u2.suggest and u3 in u1.follows) implies (u1 in u2.follows and u3 not in u2.follows)",1
+"all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  in u.suggested",1
+"all u1, u2, u3 | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+<=> (u1->u3 in suggested)",1
+"all u : Users | all s : u.suggested | s not in u.followed and (some ufoll in u.followed | s in ufoll.followed)",1
+"all u1 : User, u2: User | u2 in u.suggested implies u2 in u1.follows.follows && u2 != u1 && u2 not in u1.follows",1
+"all u : User | all v : User | v in suggested[u] => (v in follows[w] and w in follows[u] and not v in follows[u])",1
+"u1, u2, u3: User | (u3 in u2.suggested and u3 in u1.follows) implies (u1 in u2.follows and u3 not in u2.follows)",1
+"all u1, u2 : User | u2 in u1.follows.follows && u2 not in u1.follows => u2 in u1.suggested",3
+"all s:User, u:User | (u in suggested.s) iff (u != s and u not in follows.s and u in follows.v and v in follows.s)",1
+"all u1, u2, u3 : Users | u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows => u1 -> u3 in sees",1
+"all x : User | all suggested.x not in follows.x and all suggested.x in follows.follows.x and x not in suggested.x",1
+"all u1, u2 : User - Influencer | u2 in u1.suggested implies and u2 in u1.follows.follows and u2 not in u1.follows",1
+"all x, y : User | x in y.suggested implies x not in y.follows and some z: User | z in x.follows and yi n z.follows",1
+"all x: User | all z: User-x| x in z.suggested => x not in z.follows && some y: z.follows | x in y.follows && x!=y)",1
+"all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows and s <> u",1
+"all usr1, usr2:User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested",2
+"all user1, user2, user3 : User | user2 in user1.follows and user3 in user2.follows implied user3 in user1.suggested",1
+"all usr1,usr2 : User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested",2
+"all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows implies x2 in x0.suggested x0!=x2",1
+"all s : User.suggested | all u2: u1.follows.follows | (u2 not in u1.follows and u1!=u2) implies (u2 in u1.suggested)",1
+"(all u1 : User | all u2 : User | all u3 : User |
+(u2 in u1.follows and u3 in u2.follows))
+implies u3 in u1.suggested",1
+"all User u1, u2, u3 | (u3 in u1.suggested) implies ((u2 in u1.follows and u3 in u2.follows) and u3 not in u1.follows)",4
+"all u : User | u not in u.suggested and all sug : u.suggested | sugg not in u.suggested and sugg in u.follows.follows",1
+"all u1 : User | all u2 : User | all u3 : User | ?? | u2 in u1.suggested implies u3 in u1.follows and u2 in u3.follows",1
+"no suggested & iden
+disj u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 not in u1.follows) iff u3 in u1.suggested",1
+"all u1,u2-u1,u3-u1-u2:User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows",1
+"all u : User | all u_followed : follows.u | all sugg : follows.u_followed | sug not in follows.u => sug in u.suggested",1
+"all disj u1, u2 : User | u2 in u1.follows.follows && u2 not in u1.follows => u2 in u1.suggested",2
+"all u,u2:User |all sug:u.suggested | u2 in u.follows => u2.follows.follows in sug",1
+"all u : User, sugg in u.suggested | u not in sugg && all uf : u.follows | uf not in sugg and sugg in u.follows.follows",2
+"all x, z : User | x in suggested.z iff x != z and z not in x.follows and z in x.follows.follows",2
+"all u1, u2, u3 : Users | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+<=> (u1->u3 in suggested)",1
+"all u1,u2,u3 : User-u1 | (not (u3 in u1.follows) and u3 in u2.follows and u2 in u1.follows) implies u3 in u1.suggested",1
+"all u1, u2, u3 : Users | u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows => u1 -> u3 in suggested",1
+"all u, i : User | i in u.suggested implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and U!=o",1
+"all u : Users | all u_followed : follows.u | all sugg : follows.u_followed | sug not in follows.u => sug in u.suggested",1
+"no suggested & iden
+disj u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 not in u1.follows) iff (u3 in u1.suggested)",1
+"all u1, u2, u3 : User | (u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows) => u1 -> u3 in suggested",1
+"all u1, u2, u3 : User | u2 in u1.followers and u3 in u2.followers and u3 not in u1.followers implies u3 in u1.suggested",1
+"all x,z : User | x->z in suggested iff(x!=z and x->z not in follows and some y:User| x->y in follows and y->z in follows",1
+"all distinct u1, u2, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows",1
+"all x,y : User | y in x.suggested implies x != y and x not in follows.y some z : User | y in z.follows and x in follows.z",2
+"all u : Users | all u_followed in follows.u | all sugg in follows.u_followed | sug not in follows.u => sug in u.suggested",1
+"all u1, u2, u3 : User | (u1 -> u2 in follows and u2 -> u3 follows and not (u1 -> u3 in follows)) => u1 -> u3 in suggested",1
+"all a, b : User | b in a.suggested iff a != b and some c : User | b in c.follows and c in a.follows and b not in a.follows",1
+"all x : User | u not in u.follows + u.suggested
+all x : User | all u : x.follows.follows - x.follows - x| u in x.suggested",1
+"all u1, u2 : User | (u1!=u2 and u1 in u2.follows.follows) implies (u1 in u2.suggested and u1!=u2 and u1 not in u2.followed)",1
+"all x,y : User | y in x.suggested implies x != y and (x not in follows.y) some z : User | y in z.follows and x in follows.z",1
+"all u1,u2,u3 : User | u3 in u1.suggested && u1 != u3 && implies u3 in u2.follows && u2 in u1.follows && u3 not in u1.follows",1
+"all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in i1.follows",1
+"all disj u1,u2: User | u2 in u1.follows.follows && u2 not in u1.follows => u.suggested = ((u.follows).(follows)) - u.follows",1
+"all u1, u3 : User | some u2 | u1->u3 in suggested implies (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)",1
+"all x,y: User | y in x.suggested <=> ( some z: User | y in z.follows && z in x.follows && y not in x.follows) && x!=y && y!=z",1
+"all u : User | all s: u.follows | all y: s.follows | y not in u.follows implies y in u.suggested and u!=s,y  and s!=u and s!=y",1
+"all x:User | x not in x.suggested all x, y:User | y in x.suggested iff y not in x.follows and y in x.follows.follows and x!=ys",1
+"all x,z : User |y->z in suggested implies
+(some y :User | x->y in follows and y->z in follows and x->z not in follows and x!=z)",1
+"all u1, u2 : User | u2 in u1.suggested => u2 in u1.follows.follows and u2 != u1 and u2 not in u1.follows",5
+"all u1 : User | all u2 : User-u1 | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.follows.follows and u2 not u1)",1
+"all u1, u2 : User | u2 in u1.suggested => u2 in u1.follows.follows and u2 not in u1 and u2 not in u1.follows",1
+"all u1,u2: user | u1->u2 in suggested implies (some u3:User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows)",1
+"all x,y : User | y in x.suggested implies (z != x) and (x not in follows.y) and some z : User | y in z.follows and x in follows.z",1
+"all u1: User, u2: User-u1, u3: User-u3 | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows",1
+"all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)",3
+"all u,y: User | y in u.suggested iff (u != y and
+( y not in u.follows) and
+(some z : User | (y in z.follows) and (z in u.follows))",2
+"all u1,u2,u3 : User | u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows implies u3 in u1.suggested",1
+"all x: User | x not in x.sugegested
+all x, z: User | x!=z and z in x.suggested implies z not in x.follows and z in x.follows.follows",1
+"all x: User | x not in x.sugegested all x, z: User | x!=z and z in x.suggested implies z not in x.follows and z in x.follows.follows",1
+"all u1, u2, u3 : User | u1!=u2 and u2!=u3 and u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows <==> u3 in u1.suggested",1
+"all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested and not x->y in suggesdted",1
+"all u:User, u2:User | u2 in u.suggested iff ((some u3:User | u3 in u.follows && u2 in u3.follows) && u!=u2 && u2 is not in u.follows)",1
+"all u:User, u2:User | u2 in u.suggested iff ( (some u3:User | u3 in u.follows && u2 in u3.follows) && u3!=u2 && u2 is not in u.follows)",1
+"all u,y: User | y in u.suggested implies  (u != y and ( y not in u.follows) and (some z : User | (y in z.follows) and (z in u.follows))",1
+"all u,y: User | y in u.suggested implies  (u != y and
+( y not in u.follows) and
+(some z : User | (y in z.follows) and (z in u.follows))",1
+"all u1, u2 : User | u2 in u1.follows implies u2 not in u1.suggested | u2 in u1.suggested implies (u2 in u1.follows.follows and u2 != u1)",1
+"all s, u : User | (u != s and u->s in suggested) implies (set u1 : User | u->u1 in follows and u1->s in follows and u->s not in follows)",1
+"all u, u2, u3 : User | u3 in u2.follows and u in u2.follows and u3 not in u.follows and u!=u2! and u!=u3 and u2!=u3 => u3 in u.suggested",1
+"all u1 : User | all u2 : User | all u3 : User | u2 in u1.suggested implies u2 not in u1.folloes and u3 in u1.follows and u2 in u3.follows",1
+"all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (set u3: User | u3 in u1.follows and u2 in u3.follows) and u2 != u1",1
+"all u1:User, u2:User | u1 -> u2 in suggested implies (some u3:User | u1 -> u3 in follows and u3 -> u2 in follows and u1 -> not in follows)",1
+"all u, i : User | i in u.suggested i not in u.follows  implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and u!=o",1
+"all u1, u3:User | u1->u3 in suggested => some u2:User | u2!=u1 u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows",1
+"all u1, u3 : User | (u3 in u1.suggested) iff
+(u3 not in u1.followsand u1 != u3) and (some u2: User | u2 in  u1.follows and u3 in u2.follows)",1
+"all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and no (u.follows y) implies u -> y in suggested",2
+"all x,y : User | x!=y and y in x.suggested implies (x not in follows.y) and
+( some z : User | z in follows.y and z in x.follows and z!=y) and",1
+"all x,y : User | x!=y and y in x.suggested implies (x not in follows.y) and
+( some x : User | z in follows.y and z in x.follows and z!=y) and",1
+"all u1, u3 : User | u1 -> u3 in suggested => (some u2:User | u1 -> u2 in follows and u2->u3 in follows and u1 -> u3 not in follows and u1 != u3",1
+"all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows",2
+"all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y and not in follows iff u -> y in suggested",1
+"all i :
+all u,s : User | u->s in suggested and u!=s implies some u2 : User | u2!=u and u2->s in follows and u->u2 in follows and u->s not in follows",2
+"all user : User | user in User.suggested implies (user in User.follows.follows and user not in user.suggested and user.sugested not in user.follows)",1
+"all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows - x.follows - x and (p not in x.follows)",1
+"all u1 : User | all u2 : User | all u3 : User |
+(u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows and u1 not u3)
+implies u3 in u1.suggested",1
+"all u1, u2 : User | (u1 != u2 and u1->u2 in suggested) iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows)
+all a user",1
+"all u1, u3 | some u2 : User | (u1 -> u2 in follows and u2 -> u3 in follows and not u1 -> u3 in follows and u1 != u2 and u2 != u3) <=> u1 -> u3 in suggested",1
+"all u1,u2 : User | (u1 != i2 and u2 in u1.suggested) implies (u2 not in u1.follows and u1 != u2 and (all u3 : User | u3 in u2.follows and u1 in u3.follows))",1
+"all u1, u3 : User | some u2 | (u1->u2 in follows && u2->u3 in follows && not u1->u3 in follows && u1 != u2 && u2 != u3 && u1 != u3) <=> (u1->u3 in suggested)",1
+"all u:User | u not in u.suggested
+all i: Influencer, u: User |i not in u.suggested
+forall i: Influencer | i.suggested = {}
+all u: User| u.follows.follows in u.suggested",1
+"all u1, u2, u3:User | u1->u3 in suggested iff u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows
+all u:User | u->u not in suggested and u2!=u1 and u1!=u3",1
+"all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y and y-> x not in follows and not in follows iff u -> y in suggested",1
+"all u1:User-Influecer , u2:User-(u1+Influecer) , u3:User-(u1+u2+Influecer) | u1->u3 in suggested implies u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows",1
+"all user : User | set suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)",1
+"all u:User | u->u not in suggested
+all u1, u2, u3: User | u1 != u2 and u1!=u3 and au1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested",1
+"all u1, u2, u3:User | u1->u3 in suggested iff u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows
+all u:User | u->u not in suggested and u2!=u1 and u1!=u3 and",1
+"all u1,u2:User | u1->u2 in suggested iff (some u3:User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1!=u2)",1
+"all u1,u2 : User | (u1 in u2.suggested implies (u1 in ( u2.follows.follows - u2.follows) and u1!=u2)) and  ( (u1 in ( u2.follows.follows - u2.follows) implies (u1 in u2.suggested)",1
+"all u1,u2 : User | (u1 in u2.suggested implies (u1 in ( u2.follows.follows - u2.follows) and u1!=u2)) and  ( (u1 in ( u2.follows.follows - u2.follows) implies (u1 in u2.suggested))",1
+"all u1, u2 : User | u2 in suggested.u1 implies (some u3 : User | u3 in follows.u2 and u1 in follows.u3 and u1 not in follows.u2 and u2 != u3 and u1 != u2)",3
+"all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+
+
+all u : User | s != u and s in f.follows and s not in u.follows => s in u.suggested",1
+"all u:User | some s: u.suggested | s in u.follows.follows and s!=u
+all disj u,s:User | s in u.suggested iff s in u.follows.follows",1
+"all u1,u2 : User | u2 in u1.suggested implies u1 != u2
+all u1,u2 : User | u2 in u1.suggested implies u2 not in u1.follows
+all u1,u2 : User | u2 in u1.suggested implies u2 in u1.follows.follows)",1
+"all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+
+
+all u : User | all s : User | s != u and s in f.follows and s not in u.follows => s in u.suggested",1
+"all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows and user->followed in follows and not user->suggest in suggested",2
+"all disj u,uu: User-Influencer| u in uu.follows.follows and u not in uu.follows and u not in Influencer => u in uu.suggested
+
+
+all u:User | u not in u.suggested
+all i: Influencer, u:user |i not in u.suggested",1
+"all i: Influencer, u: User |i not in u.suggested
+all u: User | u in User.follows and => u in User.suggested
+all u: User | not (u in User.follows) => not (u in User.suggested)
+all u: User | u not in u.suggested",2
+"all u1,u2 : User | (u2 in u1.suggested implies (u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows)) and ((u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows) imlpies u2 in u1.suggested)",2
+"all u : User | u not in u.follows + u.suggested
+all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x
+all x : User | all u : x.follows.follows - u - x.follows | u in x.suggested",1
+"all u,u2,u3:User | u2 in u.follows and u3 in u2.follows and u3 not in u.follows and u != u2 and u != u3 implies u3 in u.suggested
+all u:User | u not in u.suggested
+all u,u2:User | u2 in u.follows implies u2 not in u.seggested",1
+"all user : User | user not in user.suggested
+all user1, user2, user3 : User | user1 != user2 != user and ((user3 not in user1.follows) and (user3 in user2.follows) and (user2 in user1.follows)) implies user3 in user1.suggested",1
+"all disj x, y, z: User | x->y in follows and y->z in follows and x->z not in follows implies x->z in suggested
+all disj x, z : User some y: User | x->z in suggested implies x->z not in follows and x->y in follows and y->z in follows",1
+"all disj x,y,z : User | x->y in follows and y->z in follows and x->z not in follows implies x->z in suggested
+all x,y : User | x->y in suggested implies x != y and x->y not in follows and some z : user | x->z in follows and z->y in follows",1
+"all u1, u2, u3 : User | (u2 not in u1.follows and u3 in u1.follows and u2 in u3.follows) implies u2 in u1.suggested
+all u : User | u not in u.suggested
+all u : User | all i : Influencer | i not in u.suggested
+all u : User | all i : Influencer |",2
+"all u1, u2 : User | u2 in u1.suggested implies u2 not in (u1.follows)+u1
+all u1, u2 : User | u2 in u1.suggested implies u2 in u1.follows.follows1
+all u1,u2 : User | u2 in u1.suggested <=> u2 not in u1.follows and u2!=u1 and u2 in u1.follows.follows",1
+"all disj x, y, z: User | x->y in follows and y->z in follows and x->z not in follows implies x->z in suggested
+all disj x, z : User |some y: User | x->z in suggested impliesx!=y and y!=z and x->z not in follows and x->y in follows and y->z in follows",1
+"all user : User | user not in user.suggested
+all user1, user2 : User + Influencer | ((user2 in user1.follows) implies user2 not in user1.suggested
+all user1, user3 : User + Influencer | user3 in user1.suggested implies (user3 in user1.follows.follows)",1
+"all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+all u : User | u not in suggested.u
+all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+all u6 : User | (none u6.follows) implies (none u6.suggested)",3
+"all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+all u : User | u not in suggested.u
+all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+all u6 : User | (none u6.follows) implies (none suggested.u6)",2
+"all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+all u : User | u not in suggested.u
+all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+all u6 : User | (none u6.follows) implies (u6.suggested none)",1
+"all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+all u : User | u not in suggested.u
+all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+all u6 : User | (none u6.follows) implies (none u6.suggested none)",1

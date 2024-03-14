@@ -1,0 +1,23 @@
+inv5 B: all x,y:User | x in Influencer implies x in y.follows
+inv5 S: all x:User| x in Influencer implies x in all y:User | y.follows
+inv5 B: all x:User| x in Influencer implies all y:User | x in y.follows
+inv5 O: all x,y:User | x in Influencer implies x in y.follows and x!=y
+inv5 B: all x,y:User | x in Influencer implies x in y.follows
+inv5 B: all x,y:User | x in Influencer implies x in y.follows
+inv5 B: all x:User,y:User | x in Influencer implies x in y.follows
+inv5 B: all x:Influencer,y:User | x in y.follows
+inv5 B: all x:Influencer,y:User | x in y.follows or x in y.suggested
+inv5 O: all x:Influencer,y:User | x in y.follows and x != y
+inv5 S: all x:Influencer,y:User | x in y.follows
+inv5 B: all x:Influencer,y:User | x in Influencer implies x in y.follows
+inv5 B: all x:Influencer,y:User | x in Influencer implies x in y.follows
+inv5 B: some x:Influencer | all y:User | x in y.follows
+inv5 B: all x:Influencer, y:User | x in y.follows
+inv5 B: all x:Influencer, y:User | x in y.follows
+inv5 B: all x:Influencer, y:User | y->x in follows
+inv5 B: all x:Influencer, y:User | x in follows.y
+inv5 B: all x:Influencer, y:User | x in follows.y
+inv5 B: all x:Influencer, y:User | x!=y implies x in follows.y
+inv5 U: all x:Influencer, y:User | x!=y implies x in y.follows
+inv5 U: all x:Influencer, y:User | x!=y implies x in y.follows
+

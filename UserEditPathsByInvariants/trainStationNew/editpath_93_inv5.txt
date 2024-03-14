@@ -1,0 +1,10 @@
+inv5 T: Track.^succs
+inv5 T: #Track.succs.Junction > 2
+inv5 B: all j : Junction | #(succs.j) > 2
+inv5 B: all j : Junction | #(succs.j) > 2
+inv5 S: all j : Junction | #(succs.j) > 2	all t : Track | #(succs.j) > 2 implies t in Junction
+inv5 B: all j : Junction | #(succs.j) > 2	all t : Track | #(succs.t) > 2 implies t in Junction
+inv5 C: all j : Junction | #(succs.j) > 1	all t : Track | #(succs.t) > 1 implies t in Junction
+inv5 B: #(succs.Junction) > 1	all t : Track | #(succs.t) > 1 implies t in Junction
+inv5 C: all j : Junction | #(succs.j) > 1	all t : Track | #(succs.t) > 1 implies t in Junction
+

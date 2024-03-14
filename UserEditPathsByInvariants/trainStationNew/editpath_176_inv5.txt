@@ -1,0 +1,24 @@
+inv5 B: all x:Track| some succs.x implies x in Junction
+inv5 B: all x:Track| some succs.x implies x in Junction
+inv5 B: all x:Track| some succs.x implies x in Junction
+inv5 B: all x:Track| some succs.x implies x in Junction
+inv5 B: all x,y,z:Track| x->y in succs and z->y in succs implies y in Junction
+inv5 S: all x,y:Track, y:Track-x| x->y in succs and z->y in succs implies y in Junction
+inv5 U: all x,y:Track, z:Track-x| x->y in succs and z->y in succs implies y in Junction
+inv5 B: some x,y:Track|all z:Track| x->y in succs and z->y in succs implies y in Junction
+inv5 T: some x,y:Track|all z:Track| x->y in succs and z->y in succs and x not y implies y in Junction
+inv5 B: some x:Track, y:Track-x|all z:Track| x->y in succs and z->y in succs  implies y in Junction
+inv5 B: some x:Track, y:Track-Exit|all z:Track| x->y in succs and z->y in succs  implies y in Junction
+inv5 B: some x:Track, y:Track|all z:Track| x->y in succs and z->y in succs and x!=y implies y in Junction
+inv5 B: some x,y:Track|all z:Track| x->y in succs and z->y in succs and x!=y implies y in Junction
+inv5 B: some x,y:Track|all z:Track| x->y in succs and z->y in succs and x!=z implies y in Junction
+inv5 B: some x,y:Track-Exit|all z:Track| x->y in succs and z->y in succs and x!=z implies y in Junction
+inv5 B: some x,y:Track|all z:Track| x->y in succs and z->y in succs and x!=z implies y in Junction
+inv5 B: some x,z:Track|all y:Track| x->y in succs and z->y in succs and x!=z implies y in Junction
+inv5 B: some x,z:Track|all y:Track| y in Junction implies x->y in succs and z->y in succs and x!=z
+inv5 B: some x,z:Track|all y:Track| y in Junction implies x->y in succs and z->y in succs and x!=z
+inv5 B: all x:Track-Junction| one succs.x	some succs.Junction
+inv5 O: all x:Track-Junction| one succs.x	some x,z:Track|all y:Track| y in Junction implies x->y in succs and z->y in succs and x!=z
+inv5 B: some x,z:Track|all y:Track| y in Junction implies x->y in succs and z->y in succs and x!=z
+inv5 B: some x,z:Track|all y:Track| y in Junction implies x->y in succs and z->y in succs and x!=z
+

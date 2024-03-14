@@ -1,0 +1,22 @@
+Pairs,115
+,,"Class->Student in Groups.Group",4
+,,"all c: Class | Student in c.Groups.Group",12
+,,"all s:Student,c:Class | some s.(c.Groups)",9
+,,"all c:Class,s:Student | some s.(c.Groups)",39
+,,"all c:Class,s:Student | some s <: c.Groups",2
+,,"all c : Class | (c . Groups . Group) & Student = Student",5
+,,"all c: Class, s : Student | s in c.Groups.Group",2
+,,"all c:Class | all s:Student | some s.(c.Groups)",11
+,,"all c : Class, s : Student | some s->Group & c.Groups",1
+,,"all c:Class |all s:Student | some s <: c.Groups",3
+,,"all c:Class,s:Student | some g:Group | s->g in c.Groups",3
+,,"all x:Class, p:Student| some g:Group | x->p->g in Groups",1
+,,"all c:Class,s:Student | some g:Group | c->s->g in Groups",12
+,,"all s: Student, c: Class | some g : Group | c->s->g in Groups",1
+,,"all c: Class | all s: Student | some g: Group | s in c.Groups.g",1
+,,"all c:Class | all s:Student | some g:Group | s->g in c.Groups",1
+,,"all c:Class |all s:Student|some g:Group |c->s->g in Groups",7
+,,"all c : Class | all s: Student | some (s.(c.Groups))
+  
+  all s : Student | all c : Class | some (s.(c.Groups))",1
+

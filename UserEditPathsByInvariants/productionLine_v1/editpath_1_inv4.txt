@@ -1,0 +1,13 @@
+inv4 O: all c : Component | c.parts.position = c.position
+inv4 B: all c : Component | Robot->(c.parts.position) in position
+inv4 O: all c : Component | c.parts.position = c.position
+inv4 O: all c : Component | (c.parts & Component).position = c.position
+inv4 T: all c : Component | c.parts.position implies (after (c.position))
+inv4 O: all c : Component | (c.parts & Component).position = c.position
+inv4 O: all c : Component | ((c.parts & Component).position = c.position) or no (c.parts & Component)
+inv4 B: all c : Component | c.position not in c.parts.position.^next
+inv4 B: all c : Component | (c.position) not in (c.parts.position.^next)
+inv4 C: all c : Component | no(nexts[c.position] & c.parts.position)
+inv4 C: all c : Component | no (nexts[c.position] & c.parts.position)
+inv4 C: all c : Component | no (nexts[c.position] & c.parts.position)
+

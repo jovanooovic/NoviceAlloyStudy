@@ -1,0 +1,9 @@
+inv10 T: all c:Course, p:Person | p in c.grades
+inv10 T: all c:Course, p:Person | p in c.grades implies p not in Professor
+inv10 T: all c:Course, p:Person | p in c.grades implies p not in Professor
+inv10 S: all c:Course, p:Person,g:Grade | g in p1.enrolled.grades implies p not in Professor
+inv10 T: all c:Course, p:Person,g:Grade | g in p.enrolled.grades implies p not in Professor
+inv10 T: all c:Course, p:Person,g:Grade | g in p.enrolled -> grades implies p not in Professor
+inv10 T: all c:Course, p:Person,g:Grade | g in p.enrolled.grades implies p not in Professor
+inv10 T: all c:Course, p:Person,g:Grade | g in p.(enrolled.grades) implies p not in Professor
+

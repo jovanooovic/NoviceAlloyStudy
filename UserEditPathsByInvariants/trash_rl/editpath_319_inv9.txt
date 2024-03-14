@@ -1,0 +1,39 @@
+inv9 O: all f1, f2 : File | no f1.link & f2.link
+inv9 U: all f1, f2 : File | no f1.link & link.f1
+inv9 O: all f1, f2 : File | no link.f1 & link.f1
+inv9 O: all f1, f2 : File | no link.f1 & link.f2
+inv9 T: all f1, f2 : File | no link.f1 & f1.f2
+inv9 U: all f1, f2 : File | no link.f1 & f1.link
+inv9 U: all f1 : File | no link.f1 & f1.link
+inv9 S: all f1 : File | no link^.f1 & f1.link
+inv9 S: all f1 : File | no link^.f1 & f1^.link
+inv9 S: all f1 : File | no link^f1 & f1^link
+inv9 O: all f1, f2 : File | no f1.link -> f2.link
+inv9 S: all f1 : File | not in f1.link
+inv9 S: all f1 : File | not in f1.^link
+inv9 S: all f1 : File | not in f1^link
+inv9 T: all f1, f2, f3 : File |  f1.link implies no f2.link
+inv9 T: all f1, f2, f3 : File | f1.link - f2.link
+inv9 T: all f1, f2 : File | f1.link - f2.link
+inv9 S: all f1, f2 : File | f1.link & no f2.link
+inv9 T: all f1, f2 : File | f1.link - f2.link
+inv9 S: all f1.link - f2.link
+inv9 T: all f1, f2 : File | f1.link - f2.link
+inv9 T: all f1, f2 : File | f1.link -> f2.link
+inv9 O: all f1, f2 : File | no f1.link -> f2.link
+inv9 O: all f1, f2 : File | no f1.link & f2.link
+inv9 O: all f1, f2 : File | no f1.link + f2.link
+inv9 B: all f1, f2 : File | no f1.link - f2.link
+inv9 B: all f1, f2 : File | no f1.link - f2.^link
+inv9 O: all f1, f2 : File | no f1.link & f2.^link
+inv9 O: all f1, f2 : File | no f1.link & f2.*link
+inv9 C: all f1, f2 : File | no f1.link & f2.~link
+inv9 C: all f1, f2 : File | no f1.link & f2.~link
+inv9 C: all f1, f2 : File | no f1.link & f2.~link
+inv9 S: no f.link.link
+inv9 C: all f : File | no f.link.link
+inv9 S: all f1, f2 : File | no f1.link & f2~.link
+inv9 C: all f1, f2 : File | no f1.link & f2.~link
+inv9 C: all f : File | no f.link.link
+inv9 C: all f : File | no f.link.link
+

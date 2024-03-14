@@ -1,0 +1,63 @@
+inv17 U: all f: File | always f in Trash implies after f not in File
+inv17 U: all f: File | always f in Trash implies always after f not in File
+inv17 B: all f: File | always eventually f in Trash implies always after f not in File
+inv17 U: all f: File | eventually always f in Trash implies always after f not in File
+inv17 U: all f: File | once always f in Trash implies always after f not in File
+inv17 B: all f: File | once f in Trash implies always after f not in File
+inv17 B: all f: File | once f in Trash implies always f' not in File
+inv17 S: all f: File | once f in Trash implies always triggered f' not in File
+inv17 S: all f: File | once f in Trash implies always triggered f' in File
+inv17 S: all f: File | once f in Trash implies always releases f' in File
+inv17 S: all f: File | once f in Trash implies releases f' in File
+inv17 S: all f: File | always f in Trash implies releases f' in File
+inv17 B: all f: File | always f in Trash releases f' in File
+inv17 B: all f: File | always f in Trash releases f' not in File
+inv17 B: all f: File | once f in Trash releases f' not in File
+inv17 B: all f: File | once f in Trash releases f' in File
+inv17 B: all f: File | once f in Trash releases always f' in File
+inv17 B: all f: File | once f in Trash releases always f' not in File
+inv17 B: all f: File |always  (once f in Trash releases f' not in File)
+inv17 S: all f: File |always (since f in Trash releases f' not in File)
+inv17 B: all f: File |always (eventually f in Trash releases f' not in File)
+inv17 B: all f: File |always (eventually f in Trash releases f' in File)
+inv17 B: all f: File |always (eventually f in Trash implies always f' not in File)
+inv17 U: all f: File |always f in Trash implies always f' not in File
+inv17 U: all f: File |always f in Trash implies always f' not in File and f' not in Trash
+inv17 U: all f: File |always f in Trash implies always f' not in File and f' not in Trash and f' not in Protected
+inv17 B: all f: File |once f in Trash implies always f' not in File and f' not in Trash and f' not in Protected
+inv17 B: all f: File |always (once f in Trash ) implies always f' not in File and f' not in Trash and f' not in Protected
+inv17 B: all f: File |always (eventually f in Trash ) implies always f' not in File and f' not in Trash and f' not in Protected
+inv17 B: all f: File |always (eventually f in Trash) implies always after f not in File and f' not in Trash and f' not in Protected
+inv17 B: all f: File |always (eventually f in Trash) implies always after f not in File
+inv17 B: all f: File |always (eventually f in Trash) implies after f not in File
+inv17 T: all f: File |always (eventually f in Trash) implies after File -f
+inv17 B: all f: File |always (eventually f in Trash) implies after File = File-f
+inv17 B: all f: File |always (eventually f in Trash) implies after File' = File-f
+inv17 B: all f: File |always (eventually f in Trash) implies File' = File-f
+inv17 B: all f: File |always (eventually f in Trash) implies File' = File - f
+inv17 B: all f: File |always ((eventually f in Trash) implies File' = File - f)
+inv17 B: all f: File |always ((eventually f in Trash) implies always File' = File - f)
+inv17 S: all f: File |always ((eventually f in Trash) implies triggered File' = File - f)
+inv17 B: all f: File |always ((eventually f in Trash) triggered File' = File - f)
+inv17 B: all f: File |always ((eventually f in Trash) implies File' = File - f)
+inv17 B: all f: File |always ( f in Trash implies File' = File - f)
+inv17 U: all f: File |eventually (always f in Trash implies File' = File - f)
+inv17 U: all f: File |once (always f in Trash implies File' = File - f)
+inv17 U: all f: File |eventually (f in Trash implies File' = File - f)
+inv17 B: all f: File |eventually (once f in Trash implies File' = File - f)
+inv17 U: all f: File |eventually (before f in Trash implies File' = File - f)
+inv17 U: all f: File |eventually (before f in Trash implies File = File - f)
+inv17 U: all f: File |eventually (before f in Trash implies f not in File)
+inv17 U: all f: File |eventually (before f in Trash implies always f not in File)
+inv17 U: all f: File |eventually (always f in Trash implies always f not in File)
+inv17 U: all f: File |eventually (f in Trash implies always f not in File)
+inv17 B: all f: File |eventually (once f in Trash implies always f not in File)
+inv17 B: all f: File |eventually (always f' not in File since f in Trash)
+inv17 B: all f: File |(always f' not in File since f in Trash)
+inv17 B: all f: File |(always f' not in File since eventually f in Trash)
+inv17 B: all f: File |(always File' = File - f since eventually f in Trash)
+inv17 B: all f: File |always (File' = File - f since eventually f in Trash)
+inv17 B: all f: File | (File' = File - f since eventually f in Trash)
+inv17 B: all f: File | always (File' = File - f since eventually f in Trash)
+inv17 B: all f: File | always (File' = File - f since f in Trash)
+

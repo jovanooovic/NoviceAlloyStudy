@@ -1,0 +1,15 @@
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | t2 != t && c not in t2.enrolled)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies not (some t2 : Professor | c in t2.enrolled)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies not (all t2 : Professor | c in t2.enrolled)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | c in t2.teaches && c not in t2.enrolled)
+inv9 U: all t : Professor, c : Course | c in t.teaches implies no enrolled.t
+inv9 B: all t : Professor, c : Course | c in t.teaches implies no t.enrolled
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | c not in t2.enrolled && t2!= t)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | c not in t2.enrolled or t2!= t)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | c not in t2.enrolled and t2!= t)
+inv9 B: all t : Professor, c : Course | c in t.teaches implies (all t2 : Professor | c not in t2.enrolled and t2!= t and c not in t2.teaches)
+inv9 S: all t1,t2 : Professor, c : Course | c in t.teaches && c in t2.teaches implies (all t2 : Professor | c not in t2.enrolled and t2!= t1 and c not in t2.teaches)
+inv9 B: all t1,t2 : Professor, c : Course | c in t1.teaches && c in t2.teaches implies (all t2 : Professor | c not in t2.enrolled and t2!= t1 and c not in t2.teaches)
+inv9 B: all t1,t2 : Professor | some t1.teaches & t2.teaches implies no (t1.teaches & t2.enrolled)
+inv9 B: all t1,t2 : Professor | some (t1.teaches & t2.teaches) implies no (t1.teaches & t2.enrolled)
+

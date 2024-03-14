@@ -1,0 +1,10 @@
+inv5 S: all x: Junctions | some a,b: Tracks | x in (a.succs and x in b.succs)
+inv5 S: all x: Junction | some a,b: Tracks | x in (a.succs and x in b.succs)
+inv5 T: all x: Junction | some a,b: Track | x in (a.succs and x in b.succs)
+inv5 U: all x: Junction | some a,b: Track | x in a.succs and x in b.succs
+inv5 B: all x: Junction | some a,b: Track | x in a.succs.next and x in b.succs.next
+inv5 U: all x: Junction | some a,b: Track | x in a.succs and x in b.succs
+inv5 T: all x: Junction | #(succs.^x) > 1
+inv5 U: all x: Junction | #(succs.x) > 1
+inv5 U: all x: Junction | #(succs.x) > 1
+

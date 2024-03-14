@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | p in Student
+inv2 C: no Teacher
+inv3 O: all p : Person | p not in Teacher && p not in Student
+inv3 B: all p : Person | not (p not in Teacher && p not in Student)
+inv3 U: all p : Person | p in Student => p not in Teacher && p in Teacher => p not in Student
+inv3 C: all p : Person | p in Student => p not in Teacher || p in Teacher => p not in Student
+inv4 B: all p : Person | p not in Student && p not in Teacher
+inv4 B: all p : Person | p not in Student || p not in Teacher
+inv4 B: all p : Person | p not in Student && p not in Teacher
+inv4 B: all p : Person | p not in (Student + Teacher)
+inv4 S: all p : Person | p not in (Student + Teacher) and no p.teaches
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches and no p.Tutors
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches and no p.Tutors
+inv5 S: some p : person | p.Teaches
+inv5 T: some p : Person | p.Teaches
+inv5 B: all p : Person | some p.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 U: some Teacher
+inv5 O: some Teacher and all t : Teacher | some t.Teaches
+inv5 T: all g : Class.Groups | some g.Person in Teacher
+inv5 T: all g : Class.Groups | some g in Teacher
+inv5 T: all g : Class.Groups | some g->Person in Teacher
+

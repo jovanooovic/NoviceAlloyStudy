@@ -1,0 +1,11 @@
+inv6 T: all a,b:Node | a.^adj + b.^adj
+inv6 T: all a,b:Node | a.^adj + b.^adj in iden
+inv6 T: all a,b:Node | a.^adj + b.^adj in iden
+inv6 B: all a,b:Node | a.^adj + b.^adj = a+b
+inv6 O: all a,b:Node | a.^adj + b.^adj = Node
+inv6 T: all a,b:Node | a.^adj + b.^adj = a->b in adj
+inv6 O: all a,b:Node | a->b in adj
+inv6 B: all a,b:Node | a->b in adj implies b->a in adj
+inv6 T: all a,b:Node | a.^b in adj implies b->a in adj
+inv6 T: all a,b:Node | a.^b in adj implies b->a in adj
+

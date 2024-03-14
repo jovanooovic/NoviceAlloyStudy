@@ -1,0 +1,9 @@
+inv11 O: grades.Grade in enrolled
+inv11 C: grades.Grade in ~enrolled
+inv11 U: all s:Student | (grades.Grade).s in s.enrolled
+inv11 S: all c.Course | c.(grades.Grade) in enrolled.c
+inv11 C: all c:Course | c.(grades.Grade) in enrolled.c
+inv11 O: all c:Course,p:Person,g:Grade | c->p->g in grades implies c->p in enrolled
+inv11 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies p->c in enrolled
+inv11 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies c->p in ~enrolled
+

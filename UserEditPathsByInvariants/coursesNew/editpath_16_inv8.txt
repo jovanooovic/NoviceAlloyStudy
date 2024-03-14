@@ -1,0 +1,5 @@
+inv8 U: all t : Person | no t & teaches.t
+inv8 U: all t : Professor | no t & teaches.t
+inv8 U: all t : Professor | no t & enrolled.teaches.t
+inv8 C: all t : Person | no t.teaches & t.enrolled
+

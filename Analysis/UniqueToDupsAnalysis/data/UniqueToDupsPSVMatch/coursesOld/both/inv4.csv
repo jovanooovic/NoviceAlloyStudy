@@ -1,0 +1,93 @@
+"no Course <: projects",1
+"one Course <: projects",3
+"some Course <: projects",1
+"lone Course <: projects",2
+"one Course.projects",3
+"one (Course<:projects).Project",3
+"one Project.~(Course <: projects)",2
+"lone Project.~(Course <: projects)",1
+"Course.projects in Person",2
+"(Course <: projects).Project = Course",1
+"Project in Person.projects",1
+"~(Course<:projects).(Course<:projects) in iden",1
+"one (Course & projects.Project)",3
+"one Project & Course.projects",2
+"Course <: projects in Course -> one Project",5
+"lone Project & Course.projects",3
+"#(Course <: projects).Project = #Project",1
+"one Person <: projects.Project",1
+"one Course<:projects.Project",2
+"Project in (one Course.projects)",7
+"all p:Project | one Course",1
+"all c:Course | one c.projects",8
+"one y:Course | one y.projects",1
+"all proj:Project | one Course<:projects",1
+"all x: Course | one x.projects",3
+"one c:Course | one c.projects",1
+"all c:Course | lone c.projects",9
+"one c:Course | lone c.projects",2
+"one c:Course | some c.projects",2
+"all c: Course | some c.projects",2
+"one Course & (Course<:projects.Project)",3
+"all p : Project | one p.~(Person<:projects)",1
+"all p: Course.projects | p in Course",1
+"all p:Project | one Course.projects",8
+"all p: Course.projects | Project in p",1
+"all p : Project | p in Person.projects",1
+"all p: Project | one (Course<:projects).Project",1
+"all p : Project |lone Course.projects",3
+"one c:Course | Project in c.projects",2
+"all p : Project | one Project.~(Course <: projects)",1
+"all p : Project | one (p & Person.projects)",1
+"all p : Project , c : Course | one c.projects",1
+"all x : Course | one projects.Project <: Course",1
+"all p: Project, c: Course | p in c.projects",4
+"all p : Project | one (Course->Project & projects)",2
+"all c, c1 : Course | no c.projects & c1.projects",1
+"one c1,c2:Course |  some c1.projects implies c1 != c2",1
+"one c:Course | all p:Person | p.projects in c",1
+"all c : Course | all p : Project | p in c.projects",1
+"all p : Project | all c : Course | p in c.projects",1
+"all c : Course | one p : Project | p in c.projects",3
+"one c:Course | all p:Project | p in c.projects",18
+"Project in Course.projects => Project in (one Course.projects)",1
+"one c:Course |all p: Project |c->p in projects",10
+"all c : Course | some p : Project | p in c.projects",1
+"all p:Project|all c:Course|c->p in projects",2
+"one c : Course | some p : Project | p in c.projects",1
+"all pro: Project | #Course.projects.{Project<:iden} = 1",2
+"all c1,c2 : Course | c1.projects = c2.projects implies c1=c2",2
+"all p:Project | one c:Course | Project in c.projects",1
+"all proj: Project | all c: Course | proj in c.projects",1
+"all p : Project | p in Course.projects and p not in Person.projects",1
+"all p : Project , c : Course | one c.projects and p in c.projects",1
+"all p : Project | one (p & Course.projects) and no (p & Person.projects)",2
+"all p : Project | all c : Course | p in c.projects implies lone(c.projects)",2
+"one c:Course | all p1,p2:Project | c->p1 in projects and c->p2 in projects",1
+"all c, q: Course, p, j: Project | (c->p in projects and q->j in projects) implies p!=j",1
+"all p: Project, c1, c2: Course | p in c1.projects && p in c1.projects => c1=c2",3
+"all p1, p2: Project, c: Course | p1 in c.projects and p2 in c.projects implies p1=p2",1
+"all p1,p2 : Project , c:Course |p1 in c.projects and p2 in c.projects implies p1 != p2",1
+"some c1,c2: Course, p: Project | p in c1.projects and p in c2.projects implies c1=c2",1
+"all c1, c2: Course, p1,p2: Project | p1 in c1.projects and p2 in c2.projects implies p1!=p2",2
+"all p1,p2 : Project | all c : Course | p1 in c.projects and p2 in c.projects implies p1 = p2",3
+"all c1,c2: Course | some p: Project | p in c1.projects and p in c2.projects implies c1=c2",1
+"all p:Project | one c1,c2:Course | c1->p in projects and c2->p in projects implies c1=c2",3
+"all p1, p2 :Project | one c:Course| c->p1 in projects and c->p2 in projects implies p1!=p2",1
+"all c1,c2: Course | some p:Project | c1->p in projects and c2->p in projects implies c1=c2",1
+"some c1,c2: Course | all p:Project | c1->p in projects and c2->p in projects implies c1=c2",2
+"some c1,c2: Course | some p:Project | c1->p in projects and c2->p in projects implies c1=c2",1
+"all c1, c2 : Course | some tp : Project | tp in c1.projects and tp in c2.projects implies c1 = c2",1
+"all p1, p2 :Project | lone c:Course| c->p1 in projects and c->p2 in projects implies p1!=p2",1
+"all p: Project | all c: Course | p in c.projects
+	all c: Course | #c.projects = 1",1
+"all c1, c2: Course | some p1,p2: Project | (p1 in c1.projects and p2 in c2.projects) implies p1!=p2",1
+"all p : Project | p in Course.projects
+	one c : Course | all p : Project | p in c.projects",1
+"all p : Project | p in Course.projects
+	all c : Course | one p : Project | p in c.projects",1
+"all p: Project | p in Course.projects
+	all p1, p2: Project, c: Course | p1 in c.projects and p2 in c.projects implies p1=p2",1
+"all p:Project | one c1,c2:Course | no p1:Person | c1->p in projects and c2->p in projects implies c1=c2 and p1->p in projects",1
+"all p : Project | p in Course.projects
+	all p1,p2 : Project | all c : Course | (p1 in c.projects and p2 in c.projects) implies p1 = p2",1

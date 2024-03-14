@@ -1,0 +1,14 @@
+inv5 S: all p : Project, some s : Student | p in s.projects
+inv5 U: all p : Project | some s : Student | p in s.projects
+inv5 U: all p : Project | (some s : Student | p in s.projects)
+inv5 U: all p : Project | (all s : Person | p in s.projects => s in Student)
+inv5 S: all p : Person | (p in Student => (p.projects = p.projects) and (p in Professor => (p.projects = none))), all p : Project | (some s : Student | p in s.projects)
+inv5 S: all p : Person | (p in Student => (p.projects = p.projects) and (p in Professor => (p.projects = none))), all p : Project | (some s : Student | p in s.projects)
+inv5 S: all p : Person | (p in Student => (p.projects = p.projects)) and (p in Professor => (p.projects = none)),	    all p : Project | (some s : Student | p in s.projects)
+inv5 S: all p : Person | (p in Student => (p.projects = p.projects)) & (p in Professor => (p.projects = none)),	    all p : Project | (some s : Student | p in s.projects)
+inv5 T: all p : Project | (some s : Student | p in s.projects) 	    all p : Person | (p in Student => (p.projects = p.projects)) & (p in Professor => (p.projects = none))
+inv5 B: all p : Project | (some s : Student | p in s.projects) 	    all s : Student | (s.projects != none)
+inv5 T: all p : Project | (some s : Student | p in s.projects) 	    all p : Person | (p.projects != none) & (all c : p.teaches | c !in p.enrolled)
+inv5 B: all p : Project | (some s : Student | p in s.projects) 	    all p : Person | (p.projects != none) and (all c : p.teaches | c !in p.enrolled)
+inv5 E:
+

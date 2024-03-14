@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 O: some e : Entry | some ex : Exit | all t : Track | e in t and ex in t
+inv1 B: all e : Entry | all ex : Exit | all t : Track | e in t and ex in t
+inv1 U: all e : Entry | all ex : Exit | e in Track and ex in Track
+inv1 C: some e : Entry | some ex : Exit | e in Track and ex in Track
+inv1 C: some e : Entry | some ex : Exit | e in Track and ex in Track
+inv2 O: all s : Signal | s in Track
+inv2 U: all s : Signal | s in Track.signals
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv3 B: some e : Exit | all t : Track | e in t.signals => no t.succs
+inv3 S: all t : Tracks | t in Exit <=> no t.^succs
+inv3 C: all t : Track | t in Exit <=> no t.^succs
+inv4 C: all t : Track | t in Entry <=> t not in Track.^succs
+

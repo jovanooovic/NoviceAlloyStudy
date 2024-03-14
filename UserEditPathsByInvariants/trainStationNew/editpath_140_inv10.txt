@@ -1,0 +1,17 @@
+inv10 B: all t: Track| t.succs in Junction => Semaphore in t.signals
+inv10 T: all t: Track| t.succs in Junction and t.succs not Exit => Semaphore in t.signals
+inv10 B: all t: Track| (t.succs in Junction and t.succs not in Exit) => Semaphore in t.signals
+inv10 B: all t: Track| some t1: Junction| t1 in t.succs => Semaphore in t.signals
+inv10 T: all t: Track| some t1: Junction| t1 in t.succs => one Semaphore in t.signals
+inv10 B: all t: Track| some t1: Junction| t1 not in t.succs => Semaphore not in t.signals
+inv10 B: all t: Track| all t1: Junction| t1 not in t.succs => Semaphore not in t.signals
+inv10 B: all t: Track| all t1: Junction| t1 in t.succs => Semaphore in t.signals
+inv10 B: all t: Track - Exit| all t1: Junction| t1 in t.succs => Semaphore in t.signals
+inv10 B: all t: Track| all t1: Junction - Exit| t1 in t.succs => Semaphore in t.signals
+inv10 T: all t: Track| all t1: Junction | t1 in t.succs and t1 not Exit => Semaphore in t.signals
+inv10 S: all t: Track| all t1: Junction | (t1 in t.succs and t1 not Exit) => Semaphore in t.signals
+inv10 B: all t: Track| all t1: Junction | (t1 in t.succs and t1 not in Exit) => Semaphore in t.signals
+inv10 B: all t: Track| t.succs in Junction => t.signals in Semaphore
+inv10 B: all t: Track| t.succs not in Junction => t.signals not in Semaphore
+inv10 B: all t: Track| t.succs not in Junction => Semaphore not in t.signals
+

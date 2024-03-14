@@ -1,0 +1,45 @@
+"all c : Class",1
+"all c:Class, s:Student |",1
+"all c:Class | some s.Groups",1
+"all s:Students, c:Class | s.c.Groups",1
+"all c:Class,s:Student | s in c.groups",1
+"all c:Class | Student = c.Groups.group",1
+"all x : Class, y in Student | y in Group",3
+"all s:Students, c:Class | some s.c.Groups",1
+"all c : Class | s : Student | s.(c.Groups)",1
+"all c : Class | S : Student | s.(c.Groups)",1
+"all c:Class, S:Student | some s.(c.Groups)",1
+"All c : Class | S : Student | s.(c.Groups)",2
+"all c : Class | s : Student | some s.(c.Groups)",1
+"all c:Class , g:Group | all s:Student | g:Groups",1
+"all x : Class | all y : Students | x->y in Group",1
+"all c:Class, s:Student | (some g:Group | c->s->g",1
+"all x : Class, s : Student | (some g : Group | x-",3
+"(all c : Class | some g : Groups | s->g in Groups)",1
+"all c:Class,s:Student,some g:Group | c->s->g in Groups",1
+"all c:Class s:Student| some g:Group | c->s->g in Groups",1
+"all c:Class,s:Student| sone g:Group | c->s->g in Groups",1
+"all c:Class.s:Student | some g:Group | c->s->g in Groups",1
+"all c:Class, s:Student | (some g:Group | c->s->g in Groups",1
+"all s :Students|some g:Group | g in Class and s->g in Groups",1
+"all x : Class , y : Student | some g : Group | x,y,c in Groups",1
+"all c : Class, s : Student, some g : Group | c->s->g in Groups",1
+"all c : Class, s : Student | some g : Group | c->p->g in Groups",1
+"all c : Class, s : Student | some g : Group | c->g->p in Groups",1
+"all x : Class, s : Student | some g : Group | x->p->g in Groups",1
+"all x : Class , y : Student | some g : Group | x->y->c in Groups",1
+"all c:Class | all s :Student| some g:Group |  c-> (p->g)in Groups",1
+"all c : Class, all s : Student, some g : Group | c->s->g in Groups",1
+"all c : Class, all s : Student | some g : Group | c->s->g in Groups",1
+"all c : Class | all s : Student | some g : Group | c->p->g in Groups",1
+"(all s : Student | some g : Group | all c : Class |  c->s) in Groups)",1
+"all c : Class, s : Student
+  		| some g : group
+  			| c->s->g in Groups",2
+"all c:Class ,g:Group | (all p:Person | p is Student and (p->g) in Groups",1
+"all c:Class ,g:Group | (all p:Person | p is Student and (p->g) in Groups )",1
+"all c:Class | (all p:Person | p is Student and (some g:Group | (p->g) in Groups ))",2
+"all c:Class,s:Student|some g:Group| c->s->g in Groups",2
+"all x : Class | (some p : Person, g : Group x->p->g in Groups) -> ( some t : Teacher | t->x in Teaches)",2
+"all x : Class | (some p : Person, g : Group  x->p->g in Groups) -> 
+(some t : Teacher | t->x in Teaches)",3

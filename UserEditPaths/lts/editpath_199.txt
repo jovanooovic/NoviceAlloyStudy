@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 U: ((State.trans).Event) in State
+inv3 U: (Event.(State.trans)) in State
+inv3 S: all s:State,e:event | lone e.(s.trans)
+inv3 C: all s:State,e:Event | lone e.(s.trans)
+inv4 T: State in Init.^trans
+inv4 T: State in Event.(Init.^trans)
+inv4 T: State in {x:State | some (Init.^trans).x}
+inv4 O: State in {x:State | some ^(Init.trans).x}
+inv4 O: State in {x:State | some Init.^(trans.x)}
+

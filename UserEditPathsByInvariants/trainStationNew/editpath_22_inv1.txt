@@ -1,0 +1,12 @@
+inv1 S: all t : Track & Entry | some	all t : Track & Exit | some
+inv1 U: all t : Track & Entry | some t	all t : Track & Exit | some t
+inv1 U: all t1 : Track & Entry | all t2 : Track & Exit | some t1 and some t2
+inv1 B: all t : Track | some t & Entry	all t : Track | some t & Exit
+inv1 T: all t : Track | some t && Entry	all t : Track | some t && Exit
+inv1 B: all t : Track | some t & Entry	all t : Track | some t & Exit
+inv1 B: all t1,t2 : Track | t1 != t2 implies some t1 & Entry and some t2 & Exit
+inv1 C: some t : Track | t in Entry	some t : Track | t in Exit
+inv1 O: some t : Track | t in Entry and t in Exit
+inv1 C: some t1,t2 : Track | t1 in Entry and t2 in Exit
+inv1 C: some t : Track | t in Entry	some t : Track | t in Exit
+

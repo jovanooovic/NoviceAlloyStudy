@@ -1,0 +1,5 @@
+inv6 B: all s: Student | all c: Course | all p: Project | s->p in projects and s->c in enrolled => c->p in projects
+inv6 B: all s: Student | all c: Course | all p: Project | c->p in projects => s->p in projects and s->c in enrolled
+inv6 S: all s: Student | all p: Project | c->p in projects => some c: Course | s->p in projects and s->c in enrolled
+inv6 U: all s: Student | all p: Project | s->p in projects => (some c: Course | s->c in enrolled and c->p in projects)
+

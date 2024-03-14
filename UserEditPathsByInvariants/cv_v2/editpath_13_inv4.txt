@@ -1,0 +1,11 @@
+inv4 B: all u : User, disj id1, id2 : u.visible.ids | no (id1.~ids & id2.~ids)
+inv4 O: all u : User, id : u.visible.ids | one (id.~ids)
+inv4 T: all u : User, id : u.visible.ids | one (id.~(u.visible.ids))
+inv4 T: all u : User, id : u.visible.ids | one ((u.visible.ids).id)
+inv4 U: all u : User, id : u.visible.ids | one ((u.visible.ids) & id)
+inv4 O: all u : User, id : u.visible.ids | one (id.~ids)
+inv4 B: all u : User, id : u.visible.ids | one (id.~ids & u.visible)
+inv4 O: all u : User, id : u.visible.ids | one (id.~ids & u.profile)
+inv4 B: all u : User, id : u.visible.ids | one (id.~ids & u.visible)
+inv4 O: all u : User, id : u.visible.ids | one (id.~ids & u.profile)
+

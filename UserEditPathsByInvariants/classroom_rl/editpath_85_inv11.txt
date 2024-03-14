@@ -1,0 +1,22 @@
+inv11 T: all c:Class,t:Teacher | c.Groups
+inv11 T: all c:Class,t:Teacher | c.Groups
+inv11 T: all c:Class,t:Teacher | c.Groups
+inv11 T: all c:Class,t:Teacher | c.Groups
+inv11 T: all c:Class,t:Teacher | c.Groups
+inv11 T: Class.Groups implies Teacher.Teaches
+inv11 T: all c:Class,t:Teacher|c.Groups implies t.Teaches
+inv11 T: all c:Class,t:Teacher | c.Groups and t.Teaches
+inv11 T: all c:Class,t:Teacher | c.Groups.Group implies t.Teaches
+inv11 T: all c:Class,t:Teacher | c.Groups implies t.Teaches in Class
+inv11 T: all c:Class,t:Teacher | c.Groups  implies t.Teaches in c
+inv11 T: all c:Class,t:Teacher | c.Groups  implies t.Teaches = c
+inv11 T: all c:Class,t:Teacher | c.Groups.Group  implies t.Teaches = c
+inv11 B: all c:Class,t:Teacher | t.Teaches = c
+inv11 S: all c:Class,t:Teacher | c.Groups|t.Teaches = c
+inv11 S: all c:Class,t:Teacher | c.Groups in group|t.Teaches = c
+inv11 B: all c:Class,t:Teacher | lone t.Teaches
+inv11 B: all c:Class,t:Teacher | some t.Teaches
+inv11 T: all c:Class,t:Teacher | some t.Teaches implies c.Groups
+inv11 T: all c:Class,t:Teacher | some t.Teaches implies c.Groups.Group
+inv11 B: all c:Class,t:Teacher | some t.Teaches implies some c.Groups.Group
+

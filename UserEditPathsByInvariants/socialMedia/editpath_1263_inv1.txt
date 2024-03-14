@@ -1,0 +1,8 @@
+inv1 U: all photo: Photo | all user1, user2: User | photo in user1.posts and photo in user2.posts implies user1=user2
+inv1 U: all photo: Photo | all user1, user2: User | photo in User.posts and photo in user1.posts and photo in user2.posts implies user1=user2
+inv1 U: all photo: Photo | all user1, user2: User | photo in User.posts and photo in user1.posts and photo in user2.posts implies user1 = user2
+inv1 U: all photo: Photo | photo in User.posts
+inv1 E:
+inv1 S: all photo: Photo | photo in User.posts	all photo: Photo | all user1, user2: User | photo in user1.posts and photo in user2.posts implies user1 = user 2
+inv1 C: all photo: Photo | photo in User.posts	all photo: Photo | all user1, user2: User | photo in user1.posts and photo in user2.posts implies user1 = user2
+

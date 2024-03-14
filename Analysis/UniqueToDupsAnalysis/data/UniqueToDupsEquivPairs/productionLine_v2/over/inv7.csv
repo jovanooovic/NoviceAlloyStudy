@@ -1,0 +1,65 @@
+Pairs,2
+,,"parts.Dangerous = Dangerous",2
+
+Pairs,48
+,,"parts.Dangerous in Dangerous",14
+,,"^parts.Dangerous in Dangerous",13
+,,"all d : Dangerous | parts.d in Dangerous",4
+,,"all d : Dangerous | d.^(~parts) in Dangerous",1
+,,"all d : Dangerous, c : ^parts.d | c in Dangerous",1
+,,"all p : Product | p in Dangerous implies (parts.p) in Dangerous",1
+,,"all p: Product | p in Dangerous implies ^parts.p in Dangerous",1
+,,"all c : Product | c in Dangerous implies c.^~parts in Dangerous",1
+,,"all p : Product | p in Dangerous implies p.^~parts in Dangerous",5
+,,"all p:Product | some Dangerous&p.^parts implies p in Dangerous",1
+,,"all p:Product | (some d:Dangerous | d in p.^parts) implies p in Dangerous",1
+,,"parts.Dangerous in Dangerous
+all c : Component | some c.parts & Dangerous => c in Dangerous",5
+
+Pairs,1
+,,"all c : Component | no (c.parts & Dangerous)",1
+
+Pairs,70
+,,"all c:Component | c in *parts.Dangerous => c in Dangerous",1
+,,"all c:Component | c in ^parts.Dangerous => c in Dangerous",2
+,,"all c:Component | some Dangerous & c.^parts => c in Dangerous",13
+,,"all c:Component | some c.^parts & Dangerous => c in Dangerous",10
+,,"all c : Component | some (c.*parts & Dangerous) implies c in Dangerous",2
+,,"all c : Component, d:Dangerous | d in c.^parts => c in Dangerous",2
+,,"all c : Component , p : c.^(parts) | p in Dangerous implies c in Dangerous",2
+,,"all c : Component | all d : Dangerous | d in c.^parts implies c in Dangerous",7
+,,"all c: Component | all p: c.^parts | p in Dangerous implies c in Dangerous",1
+,,"all c : Component | all cc : c.^parts | cc in Dangerous => c in Dangerous",1
+,,"all c: Component, p: Product | p in c.^parts and p in Dangerous => c in Dangerous",7
+,,"all c: Component, p: Product | p in Dangerous && p in c.^(parts) => c in Dangerous",4
+,,"all c : Component | all p : Product | p in c.^parts and p in Dangerous implies c in Dangerous",1
+,,"all p : Product |all c : Component | p in Dangerous and p in c.^parts implies c in Dangerous",2
+,,"all c: Component | all p: Product| p in Dangerous and p in c.^(parts) implies c in Dangerous",11
+,,"all com : Component | all p : Product | p in Dangerous and p in com.^(parts) implies com in Dangerous",1
+,,"all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous",3
+
+Pairs,2
+,,"all c:Component | some c.^parts & Dangerous iff c in Dangerous",2
+
+Pairs,1
+,,"all c:Component,p:Product | p in c.parts implies c in Dangerous",1
+
+Pairs,2
+,,"all c : Component, p : Product | p in Dangerous implies c in Dangerous",1
+,,"all c : Component | all p : Product | p in Dangerous implies c in Dangerous",1
+
+Pairs,6
+,,"all c: Component | c in Dangerous <=> some p: c.parts | p in Dangerous",6
+
+Pairs,1
+,,"parts.Dangerous in Dangerous
+all c : Component | parts.c in Dangerous => c in Dangerous",1
+
+Pairs,1
+,,"parts.Dangerous in Dangerous
+all c:Component | c.parts in Dangerous implies c in Dangerous",1
+
+Pairs,1
+,,"parts.Dangerous in Dangerous
+all c : Component | some c.parts & Dangerous <=> c in Dangerous",1
+

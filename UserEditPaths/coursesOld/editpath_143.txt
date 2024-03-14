@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 B: all p : Person | some c : Course | p in Student implies p -> c in enrolled
+inv1 B: all p : Person | some c : Course | p -> c in enrolled implies p in Student
+inv1 C: all p : Person | all c : Course | p -> c in enrolled implies p in Student
+inv1 C: all p : Person, c : Course | p -> c in enrolled implies p in Student
+inv2 C: all p : Person, c : Course | p -> c in teaches implies p in Professor
+inv3 B: all c : Course, p : Professor | p -> c in teaches
+inv3 O: all c : Course | some p : Professor | p -> c in teaches
+inv4 S: one c : Course | all p : Projects | c -> p in projects
+inv4 B: one c : Course | all p : Project | c -> p in projects
+inv4 C: all p : Project | one c : Course | c -> p in projects
+inv5 T: (all p: Person, pr : Project | p -> pr in projects implies p in Student) and all pr1 : Project | some s : Student | pr1 -> s in projects
+inv5 T: (all p: Person, pr : Project | p -> pr in projects implies p in Student) and (all pr1 : Project | some s : Student | pr1 -> s in projects)
+inv5 C: (all p: Person, pr : Project | p -> pr in projects implies p in Student) and (all pr1 : Project | some s : Student | s -> pr1 in projects)
+inv6 E: 
+inv6 S: all s: Student, p: Project | s -> p in projects implies some c: Course | s -> c in enrolled and c -> p in projects 	s
+inv6 S: all s: Student, p: Project | s -> p in projects implies some c: Course | s -> c in enrolled and c -> p in projects 	s
+inv6 U: all s: Student, p: Project | s -> p in projects implies some c: Course | s -> c in enrolled and c -> p in projects
+inv7 B: all c : Course, s : Student | lone p : Project | s -> c in enrolled implies s -> p in projects and c -> p in projects
+inv7 U: all c : Course, s : Student | s -> c in enrolled implies lone p : Project | s -> p in projects and c -> p in projects
+inv7 U: all c : Course, s : Student | s -> c in enrolled implies lone p : Project | s -> p in projects and c -> p in projects
+inv8 U: all p : Professor, c : Course | p -> c in teaches implies p -> c not in enrolled
+inv9 B: all c1, c2 : Course, p1, p2 : Professor | p1 -> c1 in teaches and p2 -> c1 in teaches and p2 -> c2 in enrolled implies p1 -> c2 not in teaches
+inv10 S: all p : Person, c : Course, g : Grade | p in Student implies c -> s -> g in grades
+inv10 B: all p : Person, c : Course, g : Grade | p in Student implies c -> p -> g in grades
+inv10 C: all p : Person, c : Course, g : Grade |  c -> p -> g in grades implies p in Student
+NA H: THEME UPDATE
+

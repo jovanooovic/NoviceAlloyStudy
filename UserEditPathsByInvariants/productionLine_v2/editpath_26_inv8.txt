@@ -1,0 +1,4 @@
+inv8 S: all c : Component | some d : Dangerous | c->d in parts implies (c->z in workers and z in Robot)
+inv8 B: all c : Component | some d : Dangerous | c->d in parts implies (some w : Worker | c->w in workers and w in Robot)
+inv8 B: all c : Component | some d : Dangerous | c->d in parts implies (all w : Worker | c->w in workers implies w in Robot)
+

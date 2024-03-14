@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 O: no Person-Student & Course.enrolled
+inv1 O: no Person-Student.enrolled
+inv1 C: no (Person-Student).enrolled
+inv2 C: no (Person-Professor).teaches
+inv3 C: all c: Course | c in Person.teaches
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 C: no (Person-Student).projects and all p: Project | p in Person.projects
+inv6 U: all s: Student, p: s.projects | p in s.enrolled.projects
+inv7 U: all s: Student, c: s.enrolled | lone (c.projects & s.projects)
+inv8 U: all p: Professor | p not in p.teaches
+inv8 U: all p: Professor | no (p.teaches & p.enrolled)
+inv9 U: all p1, p2: Professor | p1 != p2 and some (p1.teaches & p2.teaches) => no (p1.teaches & p2.enrolled) and no (p2.teaches & p1.enrolled)
+inv10 C: no (Person-Student) & Course.grades.Grade
+inv11 U: all s: Student | no (Course-(s.enrolled)).grades.Grade & s
+inv12 U: all s: Student, c: s.enrolled | lone (s & c.grades.Grade)
+inv12 U: all s: Student, c: s.enrolled | lone c.grades.s
+inv12 U: all s: Student, c: s.enrolled | lone (c.grades.Grade & s)
+inv12 U: all s: Student, c: s.enrolled | lone g: Grade | s in c.grades.g
+inv13 U: all s: Student, c: s.enrolled | s in c.grades.last => some (s.projects & c.projects)
+inv14 B: all s1, s2: Student | s1 != s2 and lone (s1.projects & s2.projects)
+inv14 U: all s1, s2: Student | s1 != s2 => lone (s1.projects & s2.projects)
+inv15 B: all s1, s2: Student, p: Project, c: Course, g1, g2: Grade | s1 != s2 and p in s1.projects and p in s2.projects and p in c.projects and g1 in s1.(c.grades) and g2 in s2.(c.grades) => g1 = prev[g2] or g2 = prev[g1] or g1 = g2
+

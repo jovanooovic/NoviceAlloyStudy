@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv3 C: all s : State, e : Event | lone e.(s.trans)
+inv4 B: State  in Init
+inv4 B: State in Init
+inv4 S: all State in Init
+inv4 T: all i : Init | i.trans
+inv4 T: all i : Init | Event.(i.trans)
+inv4 T: all s1,s2 : State | some e : Event | s1->e->s2  in trans	  	State in Init.(^(all s1,s2 : State | some e : Event | s1->e->s2  in trans))
+inv4 S: all s1,s2 : State | some e : Event | s1->e->s2  in trans	  	State in Init.(^( s1,s2 : State | some e : Event | s1->e->s2  in trans))
+inv4 C: State in Init.(^{s1,s2 : State | some e : Event | s1->e->s2  in trans})
+inv4 S: let t = { all s1,s2 : State | some e : Event | s1->e->s2  in trans } |	  	State in Init.(^t})
+inv4 S: let t = { s1,s2 : State | some e : Event | s1->e->s2  in trans } |	  	State in Init.(^t})
+inv4 S: let t = { all s1,s2 : State | some e : Event | s1->e->s2  in trans } |	  	State in Init.(^t})
+inv4 T: let t = { all s1,s2 : State | some e : Event | s1->e->s2  in trans } |	  	State in Init.(^t)
+inv4 C: let t = { s1,s2 : State | some e : Event | s1->e->s2  in trans } |	  	State in Init.(^t)
+

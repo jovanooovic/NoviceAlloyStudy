@@ -1,0 +1,8 @@
+inv7 S: all s : Suggested | all u : User | s in u.suggested implies s not in u.follows and s in u.follows.follows
+inv7 U: all u : User | all s : u.suggested | s not in u.follows and s in u.follows.follows
+inv7 U: all u : User | all s : u.suggested | s in u.suggested implies s not in u.follows and s in u.follows.follows and s not in u
+inv7 C: all u:User | u.suggested = u.follows.follows - u.follows - u
+inv7 B: all u:User | u.suggested = u.follows.follows - u.follows
+inv7 C: all u:User | u.suggested = u.follows.follows - u.follows - u
+inv7 C: all u:User | u.suggested = u.follows.follows - u.follows - u
+

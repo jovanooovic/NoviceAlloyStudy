@@ -1,0 +1,32 @@
+"all",1
+"all s : States",1
+"all s : State |",1
+"all s : State | e.(s.trans)",1
+"all x : State | State in s->Event",1
+"all s : State | some Event(s.trans)",2
+"all s,s1:Stat|  s.trans in s1.trans",1
+"all s : State | s.trans = State.trasn",1
+"all s : State | Event in s.(trasn.Event)",1
+"all s:State, e:Event | all s->e in trans",1
+"all s : State | Event in s.(State->Event",1
+"all s:State, e:Events | some e.(s.trans)",1
+"all s:State | all e:Event | all e<:s.trans",1
+"all disj s, s1 | s.trans.State = s1.trans.State",1
+"all disj s, s1 : s.trans.State = s1.trans.State",1
+"all s,r : States | (s.trans).State = (r.trans).State",1
+"all s1, s2 : State | one e.(s1.trans) & e.(s2.trans)",1
+"all s1, s2: State | s1.(trans.State) = s2.(trans.State)",1
+"all x, y : State | e : Event | some x->e implies some y->e",1
+"all s1, s2: State | getEventsOfState[s1] = getEventsOfState[s2]",1
+"all s1,s2:State|e:Event | some e.(s1.trans) implies some e.(s2.trans)",1
+"all x, y : State | somne e : Event | x->e->y in trans implies y->e->y in trans",1
+"all x : State | x.trans in Event
+
+/*
+Each event is available in at least a state.
+*/",1
+"all x : State | some x.trans in Event
+
+/*
+Each event is available in at least a state.
+*/",1

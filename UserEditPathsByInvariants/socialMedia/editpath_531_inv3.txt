@@ -1,0 +1,12 @@
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv3 S: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u in User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User-Influencer | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad)
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad and p not in u1.posts)
+inv3 O: all u1:User | all p:u1.sees | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad and p not in u1.posts)
+inv3 O: all u1:User | all p:u1.sees | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad)
+

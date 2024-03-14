@@ -1,0 +1,5 @@
+inv5 B: all t : Teacher | some c : Class | teaches_class[t,c]	}		pred teaches_class[t : Teacher, c : Class]{	  	t->c in Teaches
+inv5 B: all t : Teacher | (some c : Class | teaches_class[t,c])	}		pred teaches_class[t : Teacher, c : Class]{	  	t->c in Teaches
+inv5 C: some c : Class | (some t : Teacher | teaches_class[t,c])	}		pred teaches_class[t : Teacher, c : Class]{	  	t->c in Teaches
+inv5 C: some c : Class, t : Teacher | t->c in Teaches
+

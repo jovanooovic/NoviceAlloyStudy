@@ -1,0 +1,28 @@
+Pairs,4
+,,"Trash = none",1
+,,"all t : Trash | Trash = 0",1
+,,"all t:Trash | t not in File",1
+,,"all f:Trash | f not in File",1
+
+Pairs,1
+,,"no File.link",1
+
+Pairs,1
+,,"no File-Protected",1
+
+Pairs,2
+,,"no Trash && no Protected",2
+
+Pairs,1
+,,"some f : File | f in Trash",1
+
+Pairs,2
+,,"all f:File, t:Trash | f in t",1
+,,"all f:File | all t:Trash | f in t",1
+
+Pairs,1
+,,"all Trash :File|File in Trash",1
+
+Pairs,1
+,,"all Trash :File|File in Trash and File not in Protected",1
+

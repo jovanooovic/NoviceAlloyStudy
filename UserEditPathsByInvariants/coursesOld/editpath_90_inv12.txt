@@ -1,0 +1,5 @@
+inv12 T: all s1: Student | all g1, g2: Grade | all c1: Course |	  	((s1->g1 in grades) and (s1->g2 in grades) and (c1->g1 in grades) and (c1->g2 in grades)) imples g1=g2
+inv12 T: all s1: Student | all g1, g2: Grade | all c1: Course |	  	((s1->g1 in grades) and (s1->g2 in grades) and (c1->g1 in grades) and (c1->g2 in grades)) implies g1=g2
+inv12 U: all s1: Student | all c1: Course | (s1->c1 in enrolled) implies (lone g1: Grade | c1->s1->g1 in grades)
+inv12 U: all s1: Student | all c1: Course | (s1->c1 in enrolled) implies (lone g1: Grade | c1->s1->g1 in grades)
+

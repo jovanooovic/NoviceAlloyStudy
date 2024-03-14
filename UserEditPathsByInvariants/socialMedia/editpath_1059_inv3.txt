@@ -1,0 +1,26 @@
+inv3 S: all x : User | x.sees in p: Photo - Ad
+inv3 S: all x : User | x.sees in , p: Photo - Ad
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 T: all x : User | x.sees in x.follows.posts not Ad
+inv3 T: all x : User | x.sees in x.follows.posts=(Photo-Ad)
+inv3 T: all x : User | x.sees in x.follows.posts in (Photo-Ad)
+inv3 T: all x : User | x.sees in (x.follows.posts in (Photo-Ad))
+inv3 S: all x : User | x.sees in x.follows.posts or x.sees = (Photo + Add)
+inv3 B: all x : User | x.sees in x.follows.posts or x.sees = (Photo + Ad)
+inv3 U: all x : User | x.sees in x.follows.posts or x.sees in (Photo + Ad)
+inv3 O: all x : User | x.sees in x.follows.posts and x.sees in (Photo + Ad)
+inv3 T: all x : User | x.sees in x.follows.posts in (Photo - Ad) or x.sees in (Photo + Ad)
+inv3 T: all x : User | x.sees in x.follows.posts=(Photo - Ad) or x.sees in (Photo + Ad)
+inv3 S: all x : User | x.sees in x.follows.posts or in (Photo + Ad)
+inv3 U: all x : User | x.sees in x.follows.posts or x.sees in (Photo + Ad)
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 T: all x : User | x.sees in x.follows.posts and not Ad
+inv3 S: all x : User | x.sees in x.follows.posts and not in Ad
+inv3 B: all x : User | x.follows.posts in (Photo - Ad)
+inv3 O: all x : User | x.follows.posts in (Photo - Ad) and x.sees in x.follows.posts
+inv3 S: all x : User | x.sees in x.follows.posts and not in Ad
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad
+inv3 S: all x : User | x.sees in (x.follws.posts + Ad)
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+

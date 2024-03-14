@@ -1,0 +1,18 @@
+inv6 O: some (Entry & Speed)
+inv6 T: all x: Entry | x.signals.Speed
+inv6 B: Entry->Speed in signals
+inv6 S: all Entry->Speed in signals
+inv6 B: all x: Speed | Entry->x in signals
+inv6 B: some (Entry & signals.Speed)
+inv6 B: all x:Entry | x->Speed in signals
+inv6 B: all x:Entry, y:Speed | x->y in signals
+inv6 S: all x:Entry | some y: signals.y | Speed.y
+inv6 S: all x:Entry | some y: signals.y | y in Speed
+inv6 T: all x:Entry | some y: signals | y in Speed
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 B: all x:Entry | x->Speed in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+inv6 C: all x:Entry | some y: Speed | x->y in signals
+

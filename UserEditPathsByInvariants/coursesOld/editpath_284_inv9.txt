@@ -1,0 +1,49 @@
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Person, c:Course | p in Professor and p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Person, c:Course | p in Professor and p->c in teaches implies some r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Person | some c:Course | p in Professor and p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: some p:Person | some c:Course | p in Professor and p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Person | some c:Course | p in Professor and p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Person | some c:Course | p in Professor and p->c in teaches implies all r:Person | r in Professor implies r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies some r:Professor | r->c not in enrolled
+inv9 U: all p:Professor, c:Course | p->c in teaches implies some r:Professor | r!=p implies r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies some r:Professor | r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies some r:Professor | r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all pe:Person | pe->c in enrolled implies pe in Student
+inv9 B: all p:Professor, r:Professor, c:Course | p->c in teaches and r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Professor | p!= r and r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Professor | p!= r implies r->c not in enrolled
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 S: some p:Professor some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: some p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: some p:Professor, c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: some p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled and r->c not in teaches
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r in Student
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r in Student
+inv9 B: some p:Professor | all c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r in Student
+inv9 B: some p:Professor, c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r in Student
+inv9 B: some p:Professor, c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r not in Professor
+inv9 B: all p:Professor, c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r not in Professor
+inv9 B: some p:Professor, c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r not in Professor
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Person | r->c in enrolled implies r not in Professor
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 T: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r not in enrolled.^c
+inv9 U: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r not in c.^enrolled
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c not in enrolled
+inv9 U: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r not in c.enrolled
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r not in enrolled.c
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c in teaches and r not in enrolled.c
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c in teaches and r->c not in enrolled
+inv9 B: all p:Professor | all c:Course | p->c in teaches implies all r:Professor | r->c in teaches and r->c not in enrolled and p->c not in enrolled
+inv9 B: all p:Professor | some c:Course | p->c in teaches implies all r:Professor | r->c in teaches and r->c not in enrolled and p->c not in enrolled
+inv9 T: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies p2 not in enrolled
+inv9 U: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies all c:Course | p->c in teaches implies p2->c not in enrolled
+inv9 U: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies all c:Course | p->c in teaches implies p2->c not in enrolled
+inv9 U: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies all c:Course | p->c in teaches implies p2->c not in enrolled
+

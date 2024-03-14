@@ -1,0 +1,200 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u not in follows.u
+inv5 O: all i : Influencer, u : User | u in follows.i && i not in follows.i
+inv5 S: all i : Influencer, u : User | u in follows.i | i not in follows.i
+inv5 O: all i : Influencer, u : User | u in follows.i && i != u
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : User, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv2 C: all u : User | u not in follows.u
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 O: all i : Influencer, u : User | u in follows.i && i not in follows.i
+inv4 E: 
+inv3 E: 
+inv3 B: all u1, u2 : User, p : Photo , a : Ad| (p != a && u1 in sees.p && u2 in posts.p) implies u1 in follows.u2		all a : Ad, u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad| (u1 != u2 && p != a && u1 in sees.p && u2 in posts.p) implies u1 in follows.u2		all a : Ad, u : User | u in sees.a
+inv4 S: all u : User | some a : Ad | u in posts.a implies all posts.u in Ad
+inv4 B: all u : User | some a : Ad | u in posts.a implies posts.u in Ad
+inv4 B: all u : User | some a : Ad | u in posts.a implies posts.u in Ad
+inv4 B: all u : User | some a : Ad | (u in posts.a) implies (posts.u in Ad)
+inv4 S: all u : User, some a : Ad | (u in posts.a) implies (posts.u in Ad)
+inv3 B: all u1, u2 : User, p : Photo , a : Ad| (p != a && u1 in sees.p && u2 in posts.p) implies u1 in follows.u2		all a : Ad, u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad| (p != a && u1 in sees.p && u2 in posts.p) implies u1 in follows.u2		all a : Ad, u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)		all a : Ad, u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)		all a : Ad | all u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all a : Ad | all u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all a : Ad | all u : User | u in sees.a && a in sees.u
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all a : Ad | all u : User | (u in sees.a) && (a in sees.u)
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all a : Ad | all u : User | (u in sees.a) && (a in u.sees)
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | (u in sees.a) && (a in u.sees)
+inv3 T: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u -> a
+inv3 T: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u->a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)
+inv3 O: all u1, u2 : User, p : Photo , a : Ad | (p != a && u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, p : Photo | u in sees.p && p in Ad
+inv3 O: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, p : Photo | u in sees.p && p in Ad
+NA H: THEME UPDATE
+inv1 U: all p : Photo | some posts.p
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u not in follows.u
+inv2 C: all u : User | u not in follows.u
+inv3 B: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)
+inv3 B: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u in sees.a
+inv2 C: all u : User | u not in follows.u
+inv2 C: all u : User | u not in follows.u
+inv3 B: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p) implies (u2 in follows.u1)		all u : User, a : Ad | u in sees.a
+inv3 O: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p && u2 in follows.u1)		all u : User, a : Ad | u in sees.a
+inv3 O: all u1, u2 : User, p : Photo | (u1 in posts.p && u2 in sees.p && u2 in follows.u1 && u1 != u2)		all u : User, a : Ad | u in sees.a
+inv3 O: all u1, u2 : User, p : Photo | (u1 in sees.p && u2 in posts.p && u1 in follows.u2 && u1 != u2)		all u : User, a : Ad | u in sees.a
+inv3 O: all u1, u2 : User, p : Photo | (u1 in sees.p) && (u2 in posts.p) && (u1 in follows.u2) && (u1 != u2)		all u : User, a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies u1 in follows.u2		all u : User, a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)		all u : User, a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)	all u : User | all a : Ad | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)	all a : Ad, u : User | u in sees.a
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)
+inv4 B: all u : User | some a : Ad | (u in posts.a) implies (posts.u in Ad)
+inv4 B: all u : User | some a : Ad | (u in posts.a) implies (posts.u in Ad)
+inv4 U: all u : User, a : Ad | (u in posts.a) implies (posts.u in Ad)
+inv4 B: all u : User | some a : Ad | (u in posts.a) implies (u.posts in Ad)
+inv4 C: all u : User, a : Ad | (u in posts.a) implies (u.posts in Ad)
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all u : User, i : Influencer| u in follows.i
+inv5 B: all u : User, i : Influencer| u in follows.i && i in follows.i
+inv5 B: all u : User, i : Influencer| (u in follows.i) && (i in follows.i)
+inv5 O: all u : User, i : Influencer| (u in follows.i) && (i not in follows.i)
+inv5 O: all u : User, i : Influencer | (u in follows.i) && (i not in follows.i)
+inv5 U: all i : Influencer, u : User-Influencer | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | i in u.follows
+inv5 S: all u : User, i : Influencer | u.follows all u
+inv5 T: all u : User, i : Influencer | u.follows i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | i in follows.u
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv6 O: all i : Influencer, d : Day | some p : Photo | d in date.p
+inv6 B: all i : Influencer, d : Day, p : Photo | d in date.p
+inv6 B: all i : Influencer, d : Day, p : Photo | d in p.date
+inv6 B: all i : Influencer, d : Day, p : Photo | d in p.date && i in posts.p
+inv6 C: all i : Influencer, d : Day | some p : Photo | d in p.date && i in posts.p
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv5 T: all u : User.Influencer, i : Influencer | u in follows.i
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv5 U: all u : User-Influencer, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 O: all u : User, i : Influencer | u in follows.i && u != i
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 S: all u : User, i : Influencer | u in follows.i &&
+inv5 S: all u : User, i : Influencer | u in follows.i &&
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u1 in suggested.u3)
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u3 in follows.u2)) implies (u3 in suggested.u1)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1) && u1 != u2 && u2 != u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)	all u4 : User | u4 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)	all u4 : User | u4 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u2 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u2 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4 && u4 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies ((u5 not in suggested.u4) && (u4 not in suggested.u4))
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies u5 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u1, u3 : User | (u1 in follows.u3) implies (u3 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u1, u3 : User | (u1 in follows.u3) implies (u1 not in suggested.u3)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none suggested.u6)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none suggested.u6)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (u6.suggested none)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested none)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5 && u5 not in suggested.u4)
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows in suggested.u1
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows in suggested.u1	all u : User | u not in suggested.u
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows-u1 in suggested.u1	all u : User | u not in suggested.u
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows-u1 in suggested.u1
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-u1 in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies ((u2.follows)-u1 in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-(u1+u2) in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-u1 in suggested.u1)
+inv8 S: all u1, u2 : User, a : Ad | (u1 in posts.a && u2 in sees.a) implies (u2 follows.u1 || u2 in suggested.u1)
+inv8 B: all u1, u2 : User, a : Ad | (u1 in posts.a && u2 in sees.a) implies (u2 in follows.u1 || u2 in suggested.u1)
+inv5 B: all i : Influencer | i in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u not in follows.u
+inv3 B: all u1, u2 : User, p : Photo-Ad | (u1 in sees.p && u2 in posts.p) implies (u1 in follows.u2)
+inv4 C: all u : User, a : Ad | (u in posts.a) implies (u.posts in Ad)
+inv5 E: 
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv7 E: 
+inv8 B: all u1, u2 : User, a : Ad | (u1 in posts.a && u2 in sees.a) implies (u2 in follows.u1 || u2 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u3 in suggested.u1)
+inv1 U: all p : Photo | lone posts.p
+inv1 U: all p : Photo | some posts.p
+inv1 C: all p : Photo | one posts.p
+inv2 B: all u : User | u in follows.u
+inv2 C: all u : User | u not in follows.u
+inv5 B: all i : Influencer | some follows.i
+inv5 B: all i : Influencer | one follows.i
+inv5 T: all i : Influencer | User follows.i
+inv5 B: all i : Influencer | User in follows.i
+inv5 U: all i : Influencer | follows.i in User
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1	all u3 : User | u3 not in suggested.u3
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u1 not in suggested.u2	all u3 : User | u3 not in suggested.u3
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u1 not in suggested.u2	all u : User | u not in suggested.u
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv4 C: all u : User, a : Ad | (u in posts.a) implies (u.posts in Ad)
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv5 S: all i : Influencer, u : User-Influencers | u in follows.i
+inv5 S: all i : Influencer, u : User-Influencers | u in follows.i
+inv5 U: all i : Influencer, u : User-Influencer | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 T: all i : Influencer | set follows.i
+inv5 B: all i : Influencer | some follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | one follows.i
+inv5 B: all i : Influencer | one follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 B: all i : Influencer | all u : User | u in follows.i
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.i)
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.u)
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.u) && (i not in suggested.i)
+inv5 B: all i : Influencer, u : User | (u in follows.i) && (u not in suggested.u) && (i not in suggested.i)
+inv5 B: all i : Influencer | (i not in suggested.i)
+inv5 B: all i : Influencer | i not in suggested.i
+

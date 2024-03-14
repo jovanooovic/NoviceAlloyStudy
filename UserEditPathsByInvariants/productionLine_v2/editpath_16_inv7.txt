@@ -1,0 +1,7 @@
+inv7 B: all d:Dangerous | Dangerous in d.^parts
+inv7 B: all d:Dangerous | Dangerous = d.^parts
+inv7 B: all d:Dangerous | all p:Product | p in d.^parts => p in Dangerous
+inv7 S: all c:Components | some Dangerous & c.^parts => c in Dangerous
+inv7 O: all c:Component | some Dangerous & c.^parts => c in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+

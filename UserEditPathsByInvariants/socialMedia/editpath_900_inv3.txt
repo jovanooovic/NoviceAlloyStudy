@@ -1,0 +1,7 @@
+inv3 T: all x: User | not x.sees or x in x.follows
+inv3 B: all x: User | no x.sees or x in x.follows
+inv3 B: all x: User | no x.sees or x in x.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all a: Ad, u: User | a in u.sees
+inv3 O: all u: User, p: Photo | p in u.sees && p not in Ad => (some f: u.follows | p in f.posts)	all a: Ad, u: User | a in u.sees
+inv3 O: all x: User | no x.sees or x in x.follows	all u: User, p: Photo | p in u.sees && p not in Ad => (some f: u.follows | p in f.posts)	all a: Ad, u: User | a in u.sees
+

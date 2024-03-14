@@ -1,0 +1,7 @@
+inv14 B: all s1, s2 : Student | all p1, p2 : Project | p1 in s1.projects&s2.projects and p2 in s1.projects implies p2 not in s2.projects
+inv14 B: all s1, s2 : Student | all p1, p2 : Project | p1 in s1.projects and p1 in s2.projects and p2 in s1.projects implies p2 not in s2.projects
+inv14 B: all s1, s2 : Student | all p1, p2 : Project | p1+p2 in s1.projects and p1 in s2.projects and s1!=s2 implies p2 not in s2.projects
+inv14 U: all s1, s2 : Student | all p1, p2 : Project | p1+p2 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies p2 not in s2.projects
+inv14 U: all s1, s2 : Student | all p1, p2 : Project | p1 in s1.projects&s2.projects and p2 in s1.projects and s1!=s2 and p1!=p2 implies p2 not in s2.projects
+inv14 U: all s1, s2 : Student | all p1, p2 : Project | p1 in s1.projects&s2.projects and p2 in s1.projects and s1!=s2 and p1!=p2 implies p2 not in s2.projects
+

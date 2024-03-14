@@ -1,0 +1,10 @@
+inv4 S: all u : User | some Ad in u.posts implies all Ad in u.posts
+inv4 S: all u : User | some Ad in u.posts implies all Ad in u.posts
+inv4 S: all u : User | all a : Ad | some u.posts.a implies all u.posts in Ad
+inv4 S: all u : User | some u.posts.Ad implies all u.posts.Ad
+inv4 T: all u : User | some (u.posts & Ad) implies none (u.posts-Ad)
+inv4 T: all u : User | some (u.posts & Ad) implies none u.posts-Ad
+inv4 C: all u : User | some (u.posts & Ad) implies u.posts-Ad = none
+inv4 S: all u : User | some (u.posts & Ad) implies (none u.posts-Ad)
+inv4 C: all u : User | some (u.posts & Ad) implies (no u.posts-Ad)
+

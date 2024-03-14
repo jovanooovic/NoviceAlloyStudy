@@ -1,0 +1,23 @@
+inv13 B: all c : Course | last[c.grades] in enrolled.c
+inv13 T: all c : Course | last[c.grades].Person in projects.c
+inv13 T: all c : Course | last[c.grades].Person in projects.c <: Person
+inv13 T: all c : Course | Person.(last[c.grades]) in enrolled.c
+inv13 T: all c : Course | (last[c.grades]).Person in enrolled.c
+inv13 T: all c : Course | last[c.grades].Person in enrolled.c
+inv13 T: all c : Course | Grade.last[c.grades] in enrolled.c
+inv13 T: all c : Course | Grade.(last[c.grades]) in enrolled.c
+inv13 T: all c : Course | (last[c.grades]).Grade in enrolled.c
+inv13 B: all c : Course | (last[c.grades]) in enrolled.c
+inv13 B: all c : Course | (last[c.grades]).projects in c.projects
+inv13 S: all c : Course, c : Pesron | p=(last[c.grades]).projects implies p in enrolled.c
+inv13 U: all c : Course, p : Person | p=(last[c.grades]).projects implies p in enrolled.c
+inv13 B: all c : Course | (last[c.grades]).projects in enrolled.c
+inv13 T: all c : Course | (last[c.grades]).projects in projects.c
+inv13 B: all c : Course | (last[c.grades]).projects in c.projects
+inv13 T: all c : Course | (last[c.grades]).projects & Student in c.projects
+inv13 B: all c : Course | (last[c.grades]).projects & Student.projects in c.projects
+inv13 T: all c : Course | (last[c.grades]) in c.projects.Project
+inv13 T: all c : Course | (last[c.grades]) in (c.projects).Project
+inv13 T: all c : Course | (last[c.grades]) in (c.projects).Project <: Person
+inv13 C: all c : Course | (last[c.grades]) in projects.(c.projects) <: Person
+

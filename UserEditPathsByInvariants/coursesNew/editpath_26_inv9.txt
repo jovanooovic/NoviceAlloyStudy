@@ -1,0 +1,28 @@
+inv9 S: all c: Course, p: Professor | c in p.teaches => c.grades[p] not Professor
+inv9 S: all c: Course, p: Professor | c in p.teaches => c.grades[p] not Professor
+inv9 T: all c: Course, p: Professor | c in p.teaches => c.grades[p] not Professor
+inv9 B: all c: Course, p: Professor | c in p.teaches => c.grades[p] not in Professor
+inv9 T: all c: Course, p: Professor | c in p.teaches => Professor not in c.grades
+inv9 B: all p : Professor | all c : Course | c in p.teaches => no (p.teaches & p.enrolled)
+inv9 S: all p : Professor, Student | all c : Course | c in p.teaches => no (p.teaches & p.enrolled)
+inv9 S: all p : Professor, Student | all c : Course | c in p.teaches => no (p.teaches & p.enrolled)
+inv9 B: all p : Person | all c : Course | c in p.teaches => no (p.teaches & p.enrolled)
+inv9 T: all p : Professor | all c : Course | c in p.teaches => no (p.teaches & p.enrolled) in c
+inv9 T: all p : Professor | all c : Course | c in p.teaches => no (p.teaches & p.enrolled) in c
+inv9 T: all p : Professor | all c : Course | c in p.teaches => no (p.teaches & p.enrolled) in c
+inv9 T: all p : Professor | all c : Course | (c in p.teaches => no (p.teaches & p.enrolled) in c)
+inv9 S: all p : Professor |	all c1, c2 : Course |	c1 in p.teaches and c2 in p.enrolled and c1 = c2 => false
+inv9 B: all p : Professor |	all c1, c2 : Course |	c1 in p.teaches and c2 in p.enrolled and c1 = c2
+inv9 E:
+inv9 T: all c: Course, p: Professor | c in p.teaches => no p.grades[p] in ~c.grades
+inv9 T: all c: Course, p: Professor | c in p.teaches => p not in ~c.grades
+inv9 T: all c: Course, p: Professor | c in p.teaches => p not in c.~grades
+inv9 S: all c: Course, p: Professor |p not in c~.grades
+inv9 S: all c: Course, p: Professor |p not in c.grades~
+inv9 T: all c: Course, p: Professor |p not in ~c.grades
+inv9 T: all c: Course, p: Professor |p not in c.~grades
+inv9 T: all c: Course, p: Professor | c in p.teaches => no q: Professor | q in c.grades && q in p.teaches && q != p
+inv9 S: all c: Course, p,q: Professor | c in p.teaches => no q | q in c.grades && q in p.teaches && q != p
+inv9 T: all c: Course, p,q: Professor | c in p.teaches => no q: Professor | q in c.grades && q in p.teaches && q != p
+inv9 T: all c: Course, p,q: Professor | c in p.teaches => no q: Professor | q in c.grades && q in p.teaches && q != p
+

@@ -1,0 +1,7 @@
+inv10 S: all f1, f2:File | f1 -> f2 in link | f1 in Trash and f2 in Trash
+inv10 O: all f1, f2:File | f1 -> f2 in link implies (f1 in Trash and f2 in Trash)
+inv10 S: all f1, f2:File | f1 -> f2 in link and (f1 in Trash implies and f2 in Trash)
+inv10 S: all f1, f2:File | f1 -> f2 in link and f1 in Trash implies and f2 in Trash
+inv10 C: all f1, f2:File | f1 -> f2 in link and f1 in Trash implies f2 in Trash
+inv10 C: all f1, f2:File | (f1 -> f2 in link and f1 in Trash) implies f2 in Trash
+

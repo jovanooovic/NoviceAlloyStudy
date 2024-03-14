@@ -1,0 +1,5 @@
+inv10 B: all x1,x2 : Track | all y : Junction | some z : Semaphore | x2 in x1.^succs and y in x1.^succs and y in x2.^succs implies z in x1.signals
+inv10 S: all x1 : Track | all y : Junction | some z : Semaphore | y in x.^succs implies z in x.signals
+inv10 O: all x1 : Track | all y : Junction | some z : Semaphore | y in x1.^succs implies z in x1.signals
+inv10 O: all x1 : Track | all y : Junction | some z : Semaphore | y in x1.succs implies z in x1.signals
+

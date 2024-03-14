@@ -1,0 +1,8 @@
+inv13 U: all s: Student , t:Teacher | t.Tutors in Student and Tutors.s in Teacher
+inv13 T: all s: Student , t:Teacher | t.Tutors.s
+inv13 U: all s: Student , t:Teacher | t.Tutors in Student and Tutors.s in Teacher
+inv13 B: all t:Teacher , s:Student | t->s in Tutors
+inv13 S: all p1,p2 | p1.Tutors in Student and Tutors.p2 in Teacher
+inv13 C: all p1,p2:Person | p1.Tutors in Student and Tutors.p2 in Teacher
+inv13 C: all p1,p2:Person | p1.Tutors in Student and Tutors.p2 in Teacher
+

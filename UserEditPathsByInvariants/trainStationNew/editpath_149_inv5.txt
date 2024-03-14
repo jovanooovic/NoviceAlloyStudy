@@ -1,0 +1,38 @@
+inv5 B: all j : Junction | #(succs.j) = 2
+inv5 U: all j : Junction | #(succs.j) > 1
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction
+inv5 B: all t : Track | #(succs.t) > 1 implies t = Junction
+inv5 B: all t : Track | #(succs.t) > 0 implies t in Junction
+inv5 U: all t : Track | #(succs.t) > 2 implies t in Junction
+inv5 B: all t : Track | #(succs.t) > 1 implies t in (Track - Exit - Entry)
+inv5 U: all t : Track | #(succs.t) > 1 implies t in (Track & Junction)
+inv5 B: all t : Track | #(succs.t) > 1 implies t in (Junction - Entry - Exit)
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction and t not in (Track - Junction)
+inv5 B: all t : Track | some a : (Track - t), b : (Track - t - a) | t in a.succs and t in b.succs
+inv5 B: all t : Track | some a : (Track - t), b : (Track - t - a) | t in a.succs and t in b.succs implies t in Junction
+inv5 B: all t : Track | some a : (Track - t), b : (Track - t - a) | (t in a.succs and t in b.succs) implies t in Junction
+inv5 B: all t : Track | some a : (Track - t), b : (Track - t - a) | (t in a.succs and t in b.succs) implies t in Junction
+inv5 B: all t : Track | some a : (Track - t), b : (Track - t - a) | (t in a.succs and t in b.succs) implies t in Junction
+inv5 B: all t : Track | #(t.succs) > 1 implies t in Junction
+inv5 B: all t : Track | #(t.succs) > 1 implies t not in (Track - Junction) and t in Junction
+inv5 B: all t : Track | #(t.succs) > 1 implies (t not in (Track - Junction) and t in Junction)
+inv5 B: all t : Junction | #(t.succs) > 1
+inv5 U: all t : Junction | #(succs.t) > 1
+inv5 U: all t : Track - Junction | not #(succs.t) > 1
+inv5 U: all t : Track - Junction | lone succs.t
+inv5 U: all t : Track - Junction | lone succs.t
+inv5 U: all t : Track - Junction | lone succs.t
+inv5 B: all t : Track | #(succs.t) > 1 implies t in (Junction - Exit - Entry)
+inv5 B: all t : Track | #(succs.t) > 1 implies t in (Junction - (Junction & Entry & Exit ))
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction and t not in (Entry + Exit - Junction)
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction and t not in (Track - Junction)
+inv5 B: all t : Track | #(succs.t) > 1 implies t in (Junction - Entry - Exit)
+inv5 C: all t : Track | #(succs.t) > 1 iff t in Junction
+inv5 U: all j : Junction | not lone succs.j
+inv5 C: Junction = { t : Track | not lone succs.t   }
+inv5 S: Junction = Track.(Track set -> not lone Track)
+inv5 S: Junction = Track.(Track set -> not lone Track)
+inv5 S: Junction = Track.{Track set -> not lone Track}
+inv5 S: Junction = Track.(succs & Track set -> not lone Track)
+inv5 S: Junction = Track.(succs & Track set -> lone Track)
+

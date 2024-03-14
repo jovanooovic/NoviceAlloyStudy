@@ -1,0 +1,16 @@
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled.cour
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 E:
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 S: all p: Professor | cour: p.enrolled | col: teaches.cour | no col.enrolled in cour
+inv9 T: all p: Professor , cour: p.enrolled , col: teaches.cour | no col.enrolled in cour
+inv9 B: all p: Professor , cour: p.teaches , col: teaches.cour |  col.enrolled in cour
+inv9 B: all p: Professor , cour: p.teaches , col: teaches.cour |  cour not in col.enrolled
+inv9 B: all p: Professor |all cour: p.teaches | all col: teaches.cour |  cour not in col.enrolled
+inv9 U: all p: Professor |all cour: p.teaches | all col: teaches.p.teaches |  cour not in col.enrolled
+inv9 B: all p: Professor |all cour: p.teaches | all col: teaches.cour |  cour not in col.enrolled
+inv9 B: all p1, p2 : Professor | all c: Course | c in p1.teaches and c in p2.teaches implies no p1.teaches & p2.enrolled
+

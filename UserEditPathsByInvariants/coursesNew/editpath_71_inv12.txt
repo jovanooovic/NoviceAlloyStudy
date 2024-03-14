@@ -1,0 +1,7 @@
+inv12 O: all x:Person, c:Course| one g:Grade| c->x->g in grades and x in Student
+inv12 T: all x:Person, c:Course, g:Grade| x->c in enrolled and x in Student implies one c->x->g in grades
+inv12 O: all x:Person, c:Course|one g:Grade| x->c in enrolled and x in Student implies c->x->g in grades
+inv12 B: all x:Person, c:Course|some g:Grade| x->c in enrolled and x in Student implies c->x->g in grades
+inv12 U: all x:Person, c:Course, g,k:Grade| x->c in enrolled and x in Student implies c->x->g in grades and c->x->k in grades implies k=g
+inv12 U: all x:Person, c:Course, g,k:Grade| x->c in enrolled and x in Student implies c->x->g in grades and c->x->k in grades implies k=g
+

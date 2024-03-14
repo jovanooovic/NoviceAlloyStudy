@@ -1,0 +1,8 @@
+inv14 B: all s,t : Student | one p : Project | s != t implies s->p in projects and t->p in projects
+inv14 B: all s,t : Student | lone p : Project | s != t implies s->p in projects and t->p in projects
+inv14 B: all s,t : Student | lone p : Project | s != t implies s->p in Student <: projects and t->p in Student <: projects
+inv14 U: all s,t : Student | s != t implies lone (s.projects & t.projects)
+inv14 B: all s,t : Student | lone (s.projects & t.projects)
+inv14 U: all s,t : Student | s != t implies lone (s.projects & t.projects)
+inv14 U: all s : Student, t : Student - s | lone (s.projects & t.projects)
+

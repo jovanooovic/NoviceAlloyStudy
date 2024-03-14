@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv2 B: all w: Workstation | all w1: Worker | w->w1 in workers
+inv2 B: one w: Workstation | all w1: Worker | w->w1 in workers
+inv3 C: all c: Component | one w: Workstation | c->w in workstation
+inv4 S: all p,z: Products | p->z in parts implies p in Component
+inv4 U: all p,z: Product | p->z in parts implies p in Component
+inv4 U: all p,z: Product | p->z in parts implies p in Component
+inv4 B: all p,z: Product | p->z in parts implies z in Component
+inv4 S: all m: Material, c: Components | m->c in parts
+inv4 B: all m: Material, c: Component | m->c in parts
+inv4 B: all c,m: Component | m->c in parts
+inv4 B: all p,z: Product | p->z in parts implies z in Component
+

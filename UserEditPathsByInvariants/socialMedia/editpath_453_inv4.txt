@@ -1,0 +1,12 @@
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 T: all u:User, a: Ad | a in u.posts implies u.posts.a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts = a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts = Ad
+inv4 T: all u:User, a: Ad | a in u.posts implies a
+inv4 S: all u:User, a: Ad | a in u.posts => u.posts in ad
+inv4 C: all u:User, a: Ad | a in u.posts => u.posts in Ad
+inv4 C: all u:User, a: Ad | a in u.posts implies u.posts in Ad
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 O: all u:User, a: Ad | a in u.posts implies u.posts in a
+inv4 C: all u:User, a: Ad | a in u.posts implies u.posts in Ad
+

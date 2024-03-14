@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 S: all w: WorkStation, work: Worker | work in w.workers implies work in Human or work in Robot
+inv1 U: all w: Workstation, work: Worker | work in w.workers implies work in Human or work in Robot
+inv1 C: all work: Worker | work in Human or work in Robot
+inv2 C: all w: Workstation | some w.workers	all w: Workstation, wo: Worker | one workers.wo
+inv2 C: all w: Workstation | some w.workers	all w: Worker | one workers.w
+inv3 B: all w: Workstation | one workstation.w
+inv3 S: all c: Component, w: Workstation | w in c.workstation one workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.c
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.w
+inv3 U: all c: Component, w: Workstation | w in c.workstation implies some workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies lone workstation.w
+inv3 C: all c: Component | one w: Workstation | c->w in workstation
+inv2 O: all w: Workstation | some wo: Worker | w->wo in workers		all w: Worker | one work: Workstation | work->w in workstation
+inv2 C: all w: Workstation | some wo: Worker | w->wo in workers		all w: Worker | one work: Workstation | work->w in workers
+inv4 U: all p: Product | no p.parts implies p in Material
+inv4 S: all p: Product | no p.parts implies p in Material	all p: Product | some p.parts implies p in Components
+inv4 C: all p: Product | no p.parts implies p in Material	all p: Product | some p.parts implies p in Component
+inv5 B: all ws: Workstation, w: Worker | w in ws.workers implies ((w in Human and w not in Robot) or (w in Robot and w not in Human))
+inv5 O: all ws: Workstation, w1: Worker, w2: Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies (w2 in Human)
+inv6 U: all c: Component | c not in c.parts
+inv6 C: all c: Component | c not in c.^parts
+inv6 C: all c: Component | c not in c.^(parts)
+inv7 C: all c: Component, d: Dangerous | d in c.parts implies c in Dangerous
+inv8 T: all c: Component | c in Dangerous implies c.workstation
+inv8 B: all c: Component | c in Dangerous implies Human not in c.workstation
+inv8 B: all c: Component | c in Dangerous implies Human not in c.workstation.workers
+inv8 U: all c: Component, w: Workstation, h: Human | c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 S: all c: Component, w: Workstatio | c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 B: all c: Component, w: Workstation | c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 C: all c: Component, w: Workstation, h: Human | c in Dangerous and w in c.workstation implies h not in w.workers
+

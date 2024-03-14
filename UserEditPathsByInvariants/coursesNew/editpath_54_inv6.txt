@@ -1,0 +1,5 @@
+inv6 B: all s : Student | no s.projects - s.enrolled
+inv6 T: all s : Student | no s.enrolled - s.projects
+inv6 B: all s : Student | no s.enrolled - s.(Person<:projects)
+inv6 U: all s : Student | no s.projects - s.enrolled.projects
+

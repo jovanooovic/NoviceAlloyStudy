@@ -1,0 +1,20 @@
+Pairs,136
+,,"Teacher in Teaches.Class",11
+,,"Teacher in Class.~Teaches",13
+,,"all t:Teacher | some t.Teaches",21
+,,"all t : Teacher | (#t.Teaches)>0",1
+,,"all t:Teacher | t.Teaches != none",2
+,,"all t:Teacher | some c:Class | c in t.Teaches",2
+,,"all x : Teacher | some y : Class | x->y in Teaches",5
+,,"all x: Teacher | some c: Class | x->c in Teaches",3
+,,"all t:Teacher| some x:Class| t->x in Teaches",2
+,,"all p:Teacher | some c:Class | p->c in Teaches",6
+,,"all t:Teacher|some c:Class | t->c in Teaches",63
+,,"all p:Person | p in Teacher => some c:Class | p->c in Teaches",5
+,,"all p:Teacher | some c:Class | p in Teacher implies p->c in Teaches",1
+,,"all t : Teacher | (some c : Class | teaches_class[t,c])
+}
+
+pred teaches_class[t : Teacher, c : Class]{
+  	t->c in Teaches",1
+

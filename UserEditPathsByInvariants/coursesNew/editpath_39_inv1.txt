@@ -1,0 +1,6 @@
+inv1 S: all p: person | p in Professor => p in p.teaches
+inv1 B: all p: Person | p in Professor => p in p.teaches
+inv1 B: all p: Person, c: Course | p in Student => p in c.~enrolled
+inv1 B: all p: Person, c: Course | p in Student => p in c.~enrolled
+inv1 B: all p: Person, c: Course | p = Student => p in c.~enrolled
+

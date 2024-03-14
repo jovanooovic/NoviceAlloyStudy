@@ -1,0 +1,11 @@
+inv9 B: all t : Teacher | one Groups.Group.t
+inv9 O: all t : Teacher | one ( t & Groups.Group.Teacher)
+inv9 O: all t : Teacher | one ( t & Groups.Group.Teacher)
+inv9 B: all t : Teacher | one ( t & Class.Groups.Group)
+inv9 B: all t : Teacher | one t.Teaches
+inv9 B: all t : Teacher | lone t.Teaches
+inv9 B: all t : Teacher | one t.Teaches
+inv9 O: all c : Class |  one (Teacher & Teaches.c)
+inv9 O: all c : Class |  one (Teacher & Teaches.c)
+inv9 C: all c : Class |  lone (Teacher & Teaches.c)
+

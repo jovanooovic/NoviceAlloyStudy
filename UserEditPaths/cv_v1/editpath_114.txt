@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv3 E: 
+inv3 S: all s: Source, u: User | w: u.profile | w.source = s | #(w.ids) = #w
+inv3 S: all s: Source, u: User | w: u.profile | w.source = s | #(w.ids) = #(w)
+inv3 S: all s: Source, u: User | w: u.profile | w.source = s
+inv3 B: all s: Source, u: User, w: u.profile | w.source = s
+inv3 S: all s: Source, u: User, w: u.profile | w.source = s | #(w.ids) = #(w)
+inv3 S: all s: Source, u: User, w: u.profile | w.source = s | #(w.ids)
+inv3 S: all s: Source, u: User, w: u.profile | w.source = s | #(w.source.ids) = #(w)
+inv3 B: one Work.ids
+inv3 B: all w: Work | one w.ids
+inv3 B: all w: Work | #(w.ids) <= 1
+inv3 B: all u: User | one u.profile.ids
+inv3 B: all u: User, w1, w2: u.profile | w1.source = w2.source => w1.ids = w2.ids
+inv3 O: all u: User, w1, w2: u.profile | w1.source = w2.source => no w1.ids & w2.ids
+inv3 C: all u: User, disj w1, w2: u.profile | w1.source = w2.source => no w1.ids & w2.ids
+inv4 E: 
+inv4 U: all u: User, disj w1, w2: u.visible | no w1 & w2
+inv4 U: all u: User, disj w1, w2: u.visible | no (w1.ids & w2.ids)
+inv4 B: all u: User, w: u.visible | one w.ids
+inv4 B: all u: User, disj w1, w2: u.visible | one w1.ids and one w2.ids and no w1.ids & w2.ids
+inv4 B: all u: User, disj w1, w2: u.visible | one w1.ids and one w2.ids and (no (w1.ids & w2.ids))
+inv4 T: all u: User, disj w1, w2: u.visible | w1.ids = w2.ids => w1.ids not in u.profile.Work.ids
+inv4 U: all u: User, disj w1, w2: u.visible | w1.ids = w2.ids => w1.ids not in u.profile.ids
+inv4 U: all u: User, disj w1, w2: u.visible | w1.ids = w2.ids => no (w1 + w2) & u.profile
+inv4 U: all u: User, disj w1, w2: u.visible | w1.ids = w2.ids => no ((w1 + w2) & u.profile)
+inv4 U: all u: User, disj w1, w2: u.visible | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 U: all u: User, disj w1, w2: u.visible | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 U: all u : User, disj x,y : u.visible | x not in y.^((u.profile <: ids).~(u.profile <: ids))
+inv4 U: all u : User, disj x,y : u.visible | x not in y.^((u.profile <: ids).~(u.profile <: ids))
+inv4 U: all u: User, disj w1, w2: u.visible | w1 not in w2.^((u.profile <: ids).~(u.profile <: ids))
+inv4 B: all disj w1, w2: User.visible | no w1.ids & w2.ids
+inv4 B: all disj w1, w2: User.visible | no (w1.ids & w2.ids)
+inv4 S: all u: User, all disj w1, w2: u.profile | some (w1.ids & w2.ids) => no (w1.ids & w2.ids & User.visible)
+inv4 U: all u: User, disj w1, w2: u.profile | some (w1.ids & w2.ids) => no (w1.ids & w2.ids & User.visible)
+inv4 U: all u : User, disj w1, w2 : u.visible | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 B: all u : User, disj w1, w2 : u.profile | w1 + w2 in User.visible => no w1.ids & w2.ids
+inv4 B: all u : User, disj w1, w2 : u.profile | no (w1.ids & w2.ids & User.visible.ids)
+

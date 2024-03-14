@@ -1,0 +1,5 @@
+inv7 S: all x : Componet | x.(*parts) & Dangerous implies x in Dangerous
+inv7 T: all x : Component | x.(*parts) & Dangerous implies x in Dangerous
+inv7 T: all x : Component | (x.(*parts) & Dangerous) implies (x in Dangerous)
+inv7 O: all x : Component | some (x.(*parts) & Dangerous) implies (x in Dangerous)
+

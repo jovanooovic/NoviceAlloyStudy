@@ -1,0 +1,5 @@
+inv6 B: all x:Person, y:Course, z:Project | x->y not in enrolled implies x->z not in projects
+inv6 B: all x:Student, y:Course, z:Project | x->y not in enrolled implies x->z not in projects
+inv6 U: all x:Student, y:Project | x->y in projects implies some z:Course | x->z in enrolled
+inv6 T: no (enrolled & Student)
+

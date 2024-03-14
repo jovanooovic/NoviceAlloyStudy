@@ -1,0 +1,22 @@
+inv9 T: begin.(^succ - ^(succ).end) = end
+inv9 O: begin.(^succ - (^succ :> end)) = end
+inv9 B: one (begin.^succ :> end)
+inv9 T: one (begin.^succ :> end - iden)
+inv9 B: one (begin.^succ :> end - begin)
+inv9 U: lone (begin.^succ :> end - begin)
+inv9 B: no (begin & end) and lone (begin.^succ :> end - begin)
+inv9 B: no (Workstation & begin & end) and lone (begin.^succ :> end - begin)
+inv9 B: no (Workstation & begin & end) and one (begin.^succ :> end - begin)
+inv9 U: begin != end implies one (begin.^succ :> end - begin)
+inv9 S: no (Workstations & begin & end) implies one (begin.^succ :> end - begin)
+inv9 U: no (Workstation & begin & end) implies one (begin.^succ :> end - begin)
+inv9 U: Workstation :> begin != Workstation :> end implies one (begin.^succ :> end - begin)
+inv9 T: (begin.^succ :> (end - begin))
+inv9 B: one (begin.^succ :> (end - begin))
+inv9 U: lone (begin.^succ :> (end - begin))
+inv9 T: lone (begin.^succ :> end - iden)
+inv9 U: lone ((begin.^succ :> end) - begin)
+inv9 U: lone ((begin.^succ :> (end + begin)) - begin)
+inv9 B: one ((begin.^succ :> (end + begin)) - begin)
+inv9 U: lone ((begin.^succ :> (end + begin)) - begin)
+

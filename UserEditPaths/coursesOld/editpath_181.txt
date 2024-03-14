@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 T: all t: Person | t.teaches => t in Professor
+inv1 T: (Person-Student) & enrolled.Course
+inv1 S: NO (Person-Student) & enrolled.Course
+inv1 C: no (Person-Student) & enrolled.Course
+inv1 C: enrolled.Course in Student
+inv2 T: no (Person-Student) & enrolled.teaches
+inv2 T: (Person-Student) & enrolled.teaches
+inv2 T: no (Person-Student) & enrolled.teaches
+inv2 T: no (Person-Student) & teaches
+inv2 B: no (Person-Student) & teaches.Course
+inv2 T: (Person-Student) & teaches.Course
+inv2 C: no (Person-Professor) & teaches.Course
+inv3 O: Course in Professor.teaches
+inv4 S: all p: Project | one c: Course | x->c in projects
+inv4 T: all p: Project | one c: Course | p->c in projects
+inv4 T: all x: Project | one c: Course | x->c in projects
+inv4 T: all x: Project | one c: Course | x=>c in projects
+inv4 T: all x: Project | one c: Course | x->c in projects
+inv4 C: all x: Project | one c: Course | c->x in projects
+inv5 B: (Person-Professor) in projects.Project
+inv5 T: some (Person-Professor) in projects.Project
+inv5 T: no (Person-Student) in projects.Project
+inv5 B: (Person-Student) in projects.Project
+inv5 B: (Person-Professor) in projects.Project
+inv5 S: no (Person-student) & projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv5 B: (Person-Professor) in projects.Project
+inv5 T: projects.Project in Student
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 O: (Person<:projects).Project in Student 	  	all p: Project | some s: Student | s.projects=p
+inv5 C: (Person<:projects).Project in Student 	  	all p: Project | some s: Student | p in s.projects
+inv6 B: Project in Student.enrolled.projects
+inv6 S: Project in Student.enrolled.Courses.projects
+inv6 T: Project in Student.enrolled.Course.projects
+inv6 B: Project in Student.enrolled.projects
+inv6 B: Course.projects in Student.enrolled.projects
+

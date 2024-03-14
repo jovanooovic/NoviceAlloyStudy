@@ -1,0 +1,12 @@
+inv3 O: all user : User | user.sees in user.follows.posts
+inv3 O: all user : User | user.sees in user.follows.posts	all ad : Ad | ad in User.sees
+inv3 O: all user : User , p : Photo | p in user.sees => p in user.follows.posts	all ad : Ad | ad in User.sees
+inv3 C: all user : User , p : Photo | p in user.sees => p in user.follows.posts		or p in Ad
+inv3 S: all user : User | user.sees in user.follows.posts	or p : Photo | p in Ad
+inv3 S: all user : User , photo in Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 S: all user : User | photo in Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 S: all user : User | photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 O: all user : User | all photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 O: all user : User, photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 C: all user : User, photo : Photo | photo in user.sees => photo in user.follows.posts	or photo in Ad
+

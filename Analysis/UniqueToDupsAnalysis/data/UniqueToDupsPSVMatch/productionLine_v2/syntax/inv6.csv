@@ -1,0 +1,73 @@
+"no id & parts",1
+"c : Component | c in c.^parts",2
+"c : Component | c in ~c.^parts",2
+"c : Component | c in (c.^parts)",1
+"all c:Component | c not in c.part",1
+"Components not in Component.parts",1
+"Component not in Compoent.^(parts)",1
+"let c:Component | c not in c.parts",1
+"all w : workstation | w.works.Human",1
+"all c:Component : c not in c.^parts",1
+"all c:Components | c not in c.*parts",1
+"all c : Component ! c not in c.parts",1
+"all c1 : Components | c not in parts",1
+"all c : Components | no c in c.parts",1
+"Components not in *(components.Parts)",1
+"all c : Component | c not in c.parts^",1
+"all c: Components | c not in c.^parts",2
+"all c:Component | c->c not in *.parts",2
+"all c : Components | c not in c.parts",3
+"all c : Compenent | c not in c.^parts",1
+"all c : Component | c not in c.parts*",1
+"all c : Component | c not in c.parts+",1
+"all c:Component | c->c not in c^.parts",1
+"all c:Component | c->c not in c*.parts",1
+"all c : Components | c not in c.^parts",1
+"all c: Components | c not in c.^(parts)",1
+"all c1,c2:Component | c2 not in c.parts",1
+"all c: Component: c not in c.^(c.parts)",1
+"all c : Components | c not in c.^(parts)",1
+"Component in parts.*(Component, Product)",1
+"all c1 : Component | c not in c.^(parts)",1
+"all c1,c2 : Component |c not in c.^(parts)",1
+"all c: Component | no (c.parts.(~parts) & p)",1
+"all c,d : Component | c.parts not in (d.parts.^)",3
+"all c1,c2: Component | c1 in parts.*(c2,Product)",1
+"all c: Components | c not in c^(Component.parts)",1
+"all c: Components | c not in c.^(Component.parts)",1
+"all a,b : Component | a==b implies a->b not in parts",1
+"all a,b : Component | a=b implies a->b not in partes",1
+"all c1, c2 : Component | c1 == c2 implies c2 not in c1",1
+"all c: Component, p: Produt| c->p in parts implies c!=p",1
+"all c: Components | c not in c.parts.^(Component.parts)",2
+"all c : Component | p : Product | c.parts not in p.parts",1
+"all c,p : c in Component and p in Product and c->p in parts implies p!=c",1
+"all c : Component, part : Product | c->part in parts and part not in Component",1
+"all c1,c2 : Component | all p : Product | (c1->p in parts and c2->p in parts) implies (c1==c2)",1
+"all c1,c2 : Components | all p : Product | (c1->p in parts and c2->p in parts) implies (c1=c2)",1
+"all disj c,p : univ | c in Component and p in Product and c->p in parts implies all par : Product | p->par in parts implies par!=c and",1
+"all c1 | not path[c1,c1]
+
+}
+
+pred path [c1 : Component,c2:Component]{
+(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and path[c3,c2])",1
+"all c1 : Component | not path[c1,c1]
+
+}
+
+pred path [c1 : Component,c2:Component]{
+(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and path[c3,c2])",2
+"all c1 : Component | not path[c1,c1]
+
+}
+
+pred path [c1 : Component,c2:Component]{
+all c3 : Component | c1->c3 in parts implies (c3->c2 not in parts) and path[c3,c2]",2
+"all c1 : Component | not path[c1,c1]
+
+}
+
+pred path [c1 : Component,c2:Component]{
+(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and
+path[c3,c2])",1

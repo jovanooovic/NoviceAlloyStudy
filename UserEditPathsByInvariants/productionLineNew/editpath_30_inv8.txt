@@ -1,0 +1,7 @@
+inv8 S: all c : Component | Dangerous in c implies c.workstation.workers = c.workstation.workers & Robots
+inv8 B: all c : Component | Dangerous in c implies c.workstation.workers = c.workstation.workers & Robot
+inv8 B: all c : Component | Dangerous in c implies no c.workstation.workers & Human
+inv8 B: all c : Component | Dangerous in c.^parts implies no c.workstation.workers & Human
+inv8 B: all c : Component | Dangerous in c implies no c.workstation.workers & Human
+inv8 C: all c : Component & Dangerous | no c.workstation.workers & Human
+

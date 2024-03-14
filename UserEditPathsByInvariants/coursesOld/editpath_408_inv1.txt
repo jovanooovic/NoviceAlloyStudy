@@ -1,0 +1,10 @@
+inv1 C: all x : Person, y: Course | x->y in enrolled implies x in Student
+inv1 T: no Professor in erolled.Person
+inv1 U: no enrolled.Professor
+inv1 U: all x : Professor | no enrolled.x
+inv1 B: all x : Professor | no x.enrolled
+inv1 B: all x : Professor | no x.enrolled
+inv1 C: all y : Course | enrolled.y in Student
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+

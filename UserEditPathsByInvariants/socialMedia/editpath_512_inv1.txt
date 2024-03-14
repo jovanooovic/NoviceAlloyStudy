@@ -1,0 +1,13 @@
+inv1 U: Photo in User.posts
+inv1 T: Photo in posts
+inv1 T: Photo in User->posts
+inv1 T: Photo in User->Photo
+inv1 U: Photo in User.posts
+inv1 U: Photo = User.posts
+inv1 B: Photo-Ad = User.posts
+inv1 U: Photo+Ad = User.posts
+inv1 U: Photo+Ad = User.posts + Influencer.posts
+inv1 U: all p:Photo,u1,u2:User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 U: posts in User->Photo
+inv1 C: posts in User one->Photo
+

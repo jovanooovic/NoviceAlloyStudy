@@ -1,0 +1,11 @@
+inv1 S: Workers = (Human - Robot) + (Robot - Human)
+inv1 C: Worker = (Human - Robot) + (Robot - Human)
+inv1 C: (Human + Robot) <: Worker = Worker
+inv1 C: Human <: Worker = Worker - (Robot <: Worker)
+inv1 C: Human <: Worker = Worker - (Robot <: Worker)
+inv1 C: (Human <: Worker) = Worker - (Robot <: Worker)
+inv1 C: (Human & Worker) = Worker - (Robot & Worker)
+inv1 C: (Human + Robot) & Worker = Worker
+inv1 C: no ((Human <: Worker) & (Robot <: Worker))	Human + Robot = Worker
+inv1 C: Human + Robot = Worker
+

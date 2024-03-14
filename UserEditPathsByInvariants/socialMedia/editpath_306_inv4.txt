@@ -1,0 +1,12 @@
+inv4 S: all x : User | all p : x.posts | all p in Ad iff one p in Ad
+inv4 S: all x : User | all p : x.posts | all p in Ad iff one p in Ad
+inv4 S: all x : User | all p : x.posts |one p2: x.posts| all p in Ad iff p2 in Ad
+inv4 S: all x : User | all p : x.posts |all p in Ad iff one p in Ad
+inv4 S: all x : User | all p : x.posts |(all p in Ad) iff (one p in Ad)
+inv4 T: all x : User | all p : x.posts |( p in Ad) iff (one p in Ad)
+inv4 T: all x : User | all p : x.posts |( p in Ad) iff (some p in Ad)
+inv4 S: all x : User | all p : x.posts |(all p in Ad) iff (some p in Ad)
+inv4 S: all x : User | some p : x.posts.Ad |all p in Ad
+inv4 S: all x : User | some p : x.posts in Ad |all p in Ad
+inv4 C: all x : User | (some p : x.posts| p in Ad) implies (all z:x.posts| z in Ad)
+

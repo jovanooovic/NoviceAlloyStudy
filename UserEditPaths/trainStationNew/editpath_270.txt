@@ -1,0 +1,143 @@
+NA H: THEME UPDATE
+inv1 C: some entry, exit: univ | entry in Entry and exit in Exit
+inv1 S: some entry, exit: Entry, Exit
+inv1 S: some entry : Entry and some exit: Exit
+inv1 S: some entry, exit | Entry | Exit
+inv1 T: some entry : Entry | some exit : Exit | entry and exit
+inv1 C: some entry, exit : univ | entry in Entry and exit in Exit
+inv2 T: all sinal : univ | sinal in Signal implies one track : Track | track->sinal
+inv1 C: some entry, exit : univ | entry in Entry and exit in Exit
+inv2 C: all sinal : univ | sinal in Signal implies one track : Track | track->sinal in signals
+inv3 S: all exit : univ | exit in Exit implies none track : Track | track->exit in succs
+inv3 S: all exit : univ | exit in Exit implies none track : Track | track->exit in succs
+inv3 T: all exit : univ | exit in Exit implies none exit.*(succs)
+inv3 T: all exit : univ | exit.succs
+inv3 T: all exit : univ | exit in Exit implies none exit.succs
+inv3 S: all exit : univ | exit in Exit implies none track : Track | track in exit.^(succs)
+inv3 S: all exit : univ | exit in Exit implies none track : Track | track in exit.succs
+inv3 O: all exit : univ | exit in Exit
+inv3 B: all exit : univ | exit in Exit implies all track : Track | track in exit.succs
+inv3 U: all exit : univ | exit in Exit implies all track : Track | track not in exit.succs
+inv3 T: all exit : univ | exit in Exit implies none exit.succs
+inv3 T: all exit : univ | exit in Exit implies none Track in exit.succs
+inv3 U: all exit : univ | exit in Exit implies none in exit.succs
+inv3 S: all exit : univ | exit in Exit implies none in exit.succs^
+inv3 T: all exit : univ | exit in Exit implies none in succs
+inv3 U: all exit : univ | exit in Exit implies none in exit.succs
+inv3 U: all exit : univ | exit in Exit implies none in exit.*(succs)
+inv3 T: all exit : univ | exit in Exit implies exit.*(succs)
+inv3 S: all exit : univ | exit in Exit implies in exit.*(succs)
+inv3 B: all exit : univ | exit in Exit implies all track : Track | track in exit.*(succs)
+inv3 S: all exit : univ | exit in Exit implies none track : Track | track in exit.*(succs)
+inv3 B: all exit : univ | exit in Exit implies all track : Track | track in exit.*(succs)
+inv3 T: all exit : univ | exit in Exit implies none exit.*(succs)
+inv3 U: all exit : univ | exit in Exit implies none in exit.*(succs)
+inv3 U: all exit : univ | exit in Exit implies none in exit.^(succs)
+inv3 U: all exit : univ | exit in Exit implies #exit.succs = 0
+inv3 U: all exit : univ | exit in Exit implies no exit.succs
+inv3 U: all exit : Exit | no exit.succs
+inv3 T: all exit : Exit | all entry : Entry | all junction : Junction | entry and junction not in exit.succs
+inv3 T: all exit, entry, junction : univ | exit in Exit and entry in Entry and junction in Junction implies (entry and junction) not in exit.succs
+inv3 U: all exit, entry, junction : univ | exit in Exit and entry in Entry and junction in Junction implies entry not in exit.succs and junction not in exit.succs
+inv3 T: all exit : univ | exit in Exit implies none ^exit
+inv3 T: all exit : univ | exit in Exit implies none ^exit.succs
+inv3 T: all exit : univ | exit in Exit implies none exit.^(succs)
+inv3 U: all exit : univ | exit in Exit implies no exit.^(succs)
+inv3 U: all exit : univ | exit in Exit implies no exit.^(succs)
+inv5 B: all junction : univ | junction in Junction implies #junction.succs>1
+inv5 B: all junction : univ | junction in Junction implies #junction.^(succs)>1
+inv3 T: all exit : univ | exit in Exit implies exit.^(succs)
+inv5 B: all junction : univ | junction in Junction implies #junction.^(succs)>1
+inv3 U: all exit : univ | exit in Exit implies #exit.^(succs)=0
+inv3 U: all exit : univ | exit in Exit implies no exit.^(succs)
+inv3 U: all track : univ | track in Track and no track.^(succs) implies track in Exit
+inv3 U: all track : univ | track in Track and no track.^(succs) implies track in Exit
+inv5 B: all track : univ | track in Track and #track.^(succs)> 1 implies track in Junction
+inv5 B: all track : univ | track in Track and #track.^(succs)> 1 implies track in Junction and track not in Exit and track not in Entry
+inv3 S: all exit : univ | exit in Exit implies no succ.exit
+inv5 E: 
+inv4 U: all entry : univ | entry in Entry implies no succs.entry
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv6 S: all entry : Entry | some sinal : Signal | entry->signal and signal in Speed
+inv6 S: all entry : Entry | some sinal : Signal | entry->signal in signals and signal in Speed
+inv6 S: all entry : Entry | some sinal : Signal | entry->sinal in signals and signal in Speed
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv6 C: all entry : univ | entry in Entry implies some speed : Speed | entry->speed in signals
+inv6 C: all entry : univ | entry in Entry implies some speed : Speed | entry->speed in signals
+inv7 C: all track : univ | track in Track implies track not in track.^(succs)
+inv3 T: all track : univ | track in Track and none track.succs implies track in Exit
+inv3 T: all track : univ | track in Track and none track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.^succs implies track in Exit
+inv3 B: all track : univ | track in Track and no track.^succs implies track in Exit and track not in Junction and track not in Entry
+inv3 U: all t: Exit | no t.succs
+inv3 S: all exit : Exit | no exit.succs and some junction : Junction
+inv3 U: all exit : univ | exit in Exit implies no exit.succs
+inv3 B: all exit : univ | exit in Exit implies no exit.succs and some junction:Junction | exit in junction.succs
+inv3 S: all exit : univ | exit in Exit implies no exit.succs and some tracks: Track | exit in track.succs
+inv3 B: all exit : univ | exit in Exit implies no exit.succs and some track: Track | exit in track.succs
+inv3 B: all exit : univ | exit in Exit implies no exit.succs and some track: Track | track->exit in succs
+inv3 U: all exit : univ | exit in Exit implies no exit.succs
+inv3 T: all track : univ | track in Track implies none track.succs
+inv3 B: all track : univ | track in Track implies no track.succs
+inv3 T: all track : univ | none track.succs implies track in Exit
+inv3 T: all track : univ | track in Track and none track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv8 O: all entry : univ | entry in Entry implies all exit : Exit | exit in entry.^succs
+inv8 S: all entry : univ | entry in Entry implies all exit : Exit | exit in entry.succs^
+inv8 O: all entry : univ | entry in Entry implies all exit : Exit | exit in entry.^succs
+inv8 S: all entry : Entry | exit : Exit | exit in entry.^succs
+inv8 O: all entry : Entry | all exit : Exit | exit in entry.^succs
+inv8 B: all entry : Entry | all exit : Exit | entry in exit.^succs
+inv8 O: all entry : Entry | all exit : Exit | exit in entry.^succs
+inv8 O: all entry : Entry | all exit : Exit | exit in entry.^succs or exit in entry.succs
+inv8 C: all entry : Entry | all exit : Exit | exit in entry.^succs or exit=entry
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit or track in Entry
+inv3 B: all track : univ | track in Track and no track.succs implies track in Exit and track in Entry
+inv3 B: all track : univ | track in Track and no track.succs implies track in Exit and track in Entry and track in Junction
+inv3 U: all track : univ | track in Track and no track.succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.^succs implies track in Exit
+inv3 S: all track : univ | track in Track and no track.^succs implies track in Exit and track not in track.^succ
+inv3 U: all track : univ | track in Track and no track.^succs implies track in Exit and track not in track.^succs
+inv8 O: all entry : Entry | all exit : Exit | exit in entry.^succs
+inv8 C: all entry : Entry | all exit : Exit | exit in entry.^succs or exit=entry
+inv3 U: all exit : univ | exit in Exit implies no exit.^succs
+inv3 U: all track : univ | track in Track and track not in track.^succs and no track.^succs implies track in Exit
+inv3 U: all track : univ | track in Track and no track.^succs implies track in Exit
+inv3 U: all exit : univ | exit in Exit implies no exit.succs or (exit in Junction or exit in Entry)
+inv3 U: all exit : univ | exit in Exit implies no exit.^succs or (exit in Junction or exit in Entry)
+inv3 E: 
+inv3 U: all exit : Exit | no exit.succs
+inv3 B: all track : Track | no track.succs
+inv3 U: all track : Track | no track.succs implies track in Exit
+inv3 U: all track : Track | no track.succs implies track in Exit and track not in track.^succs
+inv3 B: all track : Track | no track.succs implies track in Exit and track not in Entry
+inv3 B: all track : Track | no track.succs implies track in Exit and track not in Entry and track not in Junction
+inv3 B: all track : Track | no track.succs implies track in Exit and some entry : Entry | track!=entry
+inv3 B: all track : Track | no track.succs implies track in Exit and all entry : Entry | track!=entry
+inv3 B: all track : Track | no track.^succs implies track in Exit and all entry : Entry | track!=entry
+inv3 S: all track : Track | no track.^succs implies track in Exit and all entry : Entry | all junction : Junction | track!=entry and junction!=exit
+inv3 B: all track : Track | no track.^succs implies track in Exit and all entry : Entry | all junction : Junction | track!=entry and junction!=track
+inv3 O: all track : univ | no track.^succs and track not in Junction and track not in Entry implies track in Exit
+inv4 U: all entry : univ | entry in Entry implies no succs.entry
+inv4 S: all entry : univ | entry in Tracks and no succs.entry implies entry in Entry
+inv4 U: all entry : univ | entry in Track and no succs.entry implies entry in Entry
+inv4 U: all entry : univ | entry in Track and no succs.entry and entry not in entry.^succs implies entry in Entry
+inv4 B: all entry : Entry | no entry.^succs
+inv4 B: all entry : Entry | no entry.^succs
+inv4 B: all entry : Entry | no entry.^succs and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv4 U: all entry : Entry | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv4 B: all entry : Track | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv1 C: some entry, exit : univ | entry in Entry and exit in Exit
+inv2 C: all sinal : univ | sinal in Signal implies one track : Track | track->sinal in signals
+inv4 B: all entry : Track | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv5 E: 
+inv6 C: all entry : univ | entry in Entry implies some speed : Speed | entry->speed in signals
+inv7 C: all track : univ | track in Track implies track not in track.^(succs)
+inv8 C: all entry : Entry | all exit : Exit | exit in entry.^succs or exit=entry
+inv8 C: all entry : Entry | all exit : Exit | exit in entry.^succs or exit=entry
+inv9 B: all track : Track | all junction : Junction | junction not in track.succs implies all signal : Semaphore | signal not in track.signals
+inv9 B: all track : Track | all junction : Junction | junction not in track.succs implies all signal : Semaphore | signal not in track.^signals
+

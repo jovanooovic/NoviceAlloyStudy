@@ -1,0 +1,6 @@
+inv9 B: all x : Track | no Junction & x.succs or one Semaphore & x.signals
+inv9 B: all x : Track | no Junction & x.succs or some Semaphore & x.signals
+inv9 T: all x : Track | no Junction & x.succs implies Semaphore & x.signals
+inv9 B: all x : Track | no Junction & x.succs implies some Semaphore & x.signals
+inv9 C: all x : Track | no Junction & x.succs implies no Semaphore & x.signals
+

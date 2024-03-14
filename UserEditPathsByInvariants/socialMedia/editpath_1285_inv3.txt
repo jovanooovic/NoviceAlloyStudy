@@ -1,0 +1,10 @@
+inv3 S: all x: User | all y : Photo - Add | x.sees = x.follows.posts
+inv3 O: all x: User | x.sees = x.follows.posts
+inv3 S: all x: User | x.sees = x.follows.posts | all x.posts != Ad
+inv3 S: all x: User | all y: Photos - Ad | x.sees = x.follows.posts | x.follows.posts = y
+inv3 S: all x: User | all y: Photos - Ad | x.sees = x.follows.posts and x.follows.posts = y
+inv3 S: all x: User | all y: Photos - Ad | x.sees = x.follows.posts and x.follows.posts = x.y
+inv3 C: all x: User | x.sees - Ad in x.follows.posts
+inv3 O: all x: User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 C: all x: User | x.sees - Ad in x.follows.posts
+

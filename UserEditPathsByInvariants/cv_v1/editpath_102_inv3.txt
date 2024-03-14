@@ -1,0 +1,8 @@
+inv3 E:
+inv3 B: all s:User . profile . source | one (source . s) . ids
+inv3 B: all s:User . profile . source | lone (source . s) . ids
+inv3 B: all s:Source | lone (source . s) . ids
+inv3 B: all s:Source | one (source . s) . ids
+inv3 B: all s:Source, w:Work | w in (source . s) => one w.ids
+inv3 B: all s:Source, w:Work | w in (source . s) <=> one w.ids
+

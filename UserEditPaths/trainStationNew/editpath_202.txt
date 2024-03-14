@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 C: some t,a:Track| t in Entry and a in Exit
+inv2 C: all s:Signal|one t:Track| t->s in signals
+inv3 U: all t,a:Track| t in Exit implies t->a not in succs
+inv3 T: all t,a:Track| t in Exit implies t.succs not in succs
+inv3 T: all t,a:Track| t in Exit implies t.succs
+inv3 U: all t,a:Track| t in Exit implies no t.succs
+inv3 B: all t,a:Track| t in Exit implies a->t not in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+NA H: THEME UPDATE
+inv6 O: all t:Track| some s:Speed| t in Entry implies t->s in signals	all t:Track| some s:Speed| t in Entry implies t->s in signals
+inv6 O: all t:Track| some s:Speed| t in Entry implies t->s in signals
+inv4 B: all t,a:Track| t in Entry implies a->t in succs
+inv3 B: all t,a:Track| a->t in succs implies t in Exit
+inv3 B: all t,a:Track| a->t not in succs implies t in Exit
+inv3 B: all t,a:Track| a->t not in succs and t->a in succs implies t in Exit
+inv3 B: all t,a:Track| t->a not in succs and a->t in succs implies t in Exit
+inv3 B: all t:Track,a:Track-t| t->a not in succs and a->t in succs implies t in Exit
+inv3 B: all t:Track,a:Track-t| a->t not in succs and t->a in succs implies t in Exit
+inv7 B: some t,a:Track| t in Entry and a in Exit and a->t in succs
+inv7 B: some t,a:Track| t in Entry and a in Exit and t->a in succs
+inv7 B: some t,a:Track| t in Entry and a in Exit implies t->a in succs
+inv7 B: some t,a:Track| t in Entry and a in Exit implies a->t in succs
+inv7 B: all t,a:Track| t in Entry and a in Exit implies a->t in succs
+inv1 C: some t,a:Track| t in Entry and a in Exit
+inv2 C: all s:Signal|one t:Track| t->s in signals
+inv7 B: all t,a:Track| t in Entry and a in Exit implies a->t in succs
+inv6 O: all t:Track| some s:Speed| t in Entry implies t->s in signals
+inv7 B: all t,a:Track| t in Entry and a in Exit implies a->t in succs
+inv6 O: all t:Track| some s:Speed| t in Entry implies t->s in signals
+inv10 O: all x,y:Track |some s:Signal| x->y in succs and y in Junction implies x->s in signals and s in Semaphore
+inv9 B: all x,y:Track |some s:Signal| x->y not in succs and y in Junction implies x->s not in signals and s in Semaphore
+inv9 B: all x,y:Track |some s:Signal| x->y in succs and y in Junction implies x->s in signals and s in Semaphore
+inv3 B: all x,y:Track| x->y not in succs implies x in Exit
+inv3 B: all x,y:Track| x->y not in succs and x->x not in succs implies x in Exit
+inv5 B: all x,y,z:Track| x in Junction implies y->x in succs and z->x in succs
+inv5 B: all x,y,z:Track| x in Junction implies y->x in succs and z->x in succs and x->x not in succs
+inv6 O: all t:Track| some s:Speed| t in Entry implies t->s in signals
+inv7 B: all t,a:Track| t in Entry and a in Exit implies a->t in succs
+NA H: THEME UPDATE
+

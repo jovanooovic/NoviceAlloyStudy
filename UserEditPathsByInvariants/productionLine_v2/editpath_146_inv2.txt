@@ -1,0 +1,23 @@
+inv2 S: all wb : Worstation | (wb.workers & Worker)
+inv2 T: all wb : Workstation | (wb.workers & Worker)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and (w & workers)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and one (w & workers)
+inv2 B: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and one (w & wb.workers)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 S: all wb : Workstation | w : Worker | some (wb.workers & Worker) and wb->w in workers
+inv2 S: all wb : Workstation | w : Worker | some (wb.workers & Worker) and wb->w
+inv2 B: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and wb->w in workers
+inv2 U: all wb : Workstation | all w : Worker | some (wb.workers & Worker)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | workers.w
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | workers.w
+inv2 U: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 S: all wb : Workstationn | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 B: all wb : Workstation | one (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | (w in Workstation.workers)
+inv2 O: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | (w in Workstation.workers)	all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)
+inv2 O: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)	all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)
+

@@ -1,0 +1,18 @@
+inv12 T: all p: Person, c: Course | lone (c.grades.Grade).p
+inv12 T: all p: Person, c: Course | lone (c.grades.Grade.p)
+inv12 B: all p: Person, c: Course | p in (c.grades.Grade) implies (c.grades.Grade)-p = none
+inv12 B: all p: Person, c: Course | p in (c.grades.Grade) and c in p.enrolled implies (c.grades.Grade)-p = none
+inv12 U: all p: Person, c: Course | lone c.grades.p
+inv12 S: all p: Person, c: Course | lone c.grades.Name
+inv12 S: all p: Person, c: Course | lone (c.grades.Grades-p)
+inv12 B: all p: Person, c: Course | lone (c.grades.Grade-p)
+inv12 B: all p: Person, c: Course, g: Grade | p->g in c.grades
+inv12 T: all p: Person, c: Course, g: Grade | p->g in c.grades implies (c.grades - p->g = none)
+inv12 T: all p: Person, c: Course, g: Grade | p->g in c.grades implies (c.grades - (p->g) = none)
+inv12 B: all p: Person, c: Course, g: Grade | p->g in c.grades implies (c.grades.Grade - p = none)
+inv12 B: all p: Person, c: Course, g: Grade | c in p.enrolled and p->g in c.grades implies (c.grades.Grade - p = none)
+inv12 T: all p: Person, c: Course, g: Grade | c in p.enrolled implies lone p->g in c.grades
+inv12 B: all p: Person, c: Course, g: Grade | c in p.enrolled implies lone c.grades.Grade-p
+inv12 U: all p: Person, c: Course, g: Grade | c in p.enrolled implies (lone g: Grade | c->p->g in grades)
+inv12 U: all p: Person, c: Course | c in p.enrolled implies (lone g: Grade | c->p->g in grades)
+

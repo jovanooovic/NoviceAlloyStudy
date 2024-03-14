@@ -1,0 +1,7 @@
+inv9 T: all t : Teacher | not t.Teaches
+inv9 O: all t : Teacher | no t.Teaches
+inv9 O: all c : Class | lone Teaches.c
+inv9 T: all c : Class | no (lone Teaches.c)
+inv9 U: all c : Class | lone c.Teaches
+inv9 O: all c : Class | lone Teaches.c
+

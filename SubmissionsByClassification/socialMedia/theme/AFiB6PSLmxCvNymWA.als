@@ -1,0 +1,75 @@
+sig User {
+	follows : set User,
+	sees : set Photo,
+	posts : set Photo,
+	suggested : set User
+}
+
+sig Influencer extends User {}
+
+sig Photo {
+	date : one Day
+}
+sig Ad extends Photo {}
+
+sig Day {}
+
+// Specify the following properties
+// You can check their correctness with the different commands and
+// when specifying each property you can assume all the previous ones to be true
+
+pred inv1 {
+	// Every image is posted be one user
+  
+  	all x: Photo | one posts.x
+ 	
+
+}
+
+
+pred inv2 {
+	// An user cannot follow itself.
+  	all x: User | not x in x.follows 
+
+}
+
+
+pred inv3 {
+	// An user only sees (non ad) photos posted by followed users. 
+	// Ads can be seen by everyone.
+  	all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies y in x.follows 
+  
+
+}
+
+
+pred inv4 {
+	// If an user posts an ad then all its posts should be labelled as ads 
+
+}
+
+
+pred inv5 {
+	// Influencers are followed by everyone else
+  all x: User | all y : Influencer | x!= y implies x in follows.y 
+
+}
+
+
+pred inv6 {
+	// Influencers post every day
+  
+
+}
+
+
+pred inv7 {
+	// Suggested are other users followed by followed users, but not yet followed
+	
+}
+
+
+pred inv8 {
+	// An user only sees ads from followed or suggested users
+
+}

@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 T: all i : univ | i->Photo implies i->User
+inv1 T: all i : univ | i in  Photo -> i in User
+inv1 O: all i : univ | i in  Photo implies i in User
+inv1 S: all i : univ | i in  Photo implies some x : univ | posts(x,y)
+inv1 U: all i : univ | i in  Photo implies some x : univ | x->i in posts
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p,y : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x==y
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x==y
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x : univ | x->p in posts
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x=y
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x=y
+inv2 C: all a,b : User | a->b in follows implies a!=b
+inv5 O: all i : univ | i in Influencer implies all e : univ | e->i in follows
+inv5 B: all i : univ | i in Influencer implies some e : univ | e->i in follows
+inv5 O: all i : univ | i in Influencer implies all e : univ | e->i in follows
+inv5 B: all i : univ | i in Influencer implies all e : User | e->i in follows
+inv5 B: all i : univ | i in Influencer implies some e : User | e->i in follows
+inv5 B: all i : univ | i in Influencer implies all e : User | e->i in follows
+inv6 S: all i : univ | i in Influencer implies some x : univers |
+inv5 B: all i : univ | i in Influencer implies all e : User | i->e in follows
+inv6 S: all i : univ | i in Influencer implies some x : univers | i->x in posts
+inv6 B: all i : univ | i in Influencer implies some x : univ | i->x in posts
+

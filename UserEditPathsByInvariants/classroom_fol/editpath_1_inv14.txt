@@ -1,0 +1,39 @@
+inv14 E:
+inv14 E:
+inv14 S: all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->c in Tutors
+inv14 B: all s : Student | some c : Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->c in Tutors
+inv14 S: all s : Student | s in Class implies some t : Teacher | t->c in Tutors
+inv14 U: all s : Student | s in Class implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | s in Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | s in Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | c : Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | (c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | (c : Class, g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | (some c : Class, g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors
+inv14 U: all s : Student | s in Class implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | (some c : Class, g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student, c : Class | some g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student, c : Class | some g : Group | c->s->g in Groups implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student, c : Class, g : Group | c->s->g in Groups implies some t : Teacher | t->s in Tutors
+inv14 T: all s : Student, c : Class, g : Group | c->s implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | some c : Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors
+inv14 S: all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies p in Student and some t : Teacher | t->s in Tutors
+inv14 S: all c : Class | (some p : Student, g : Group | c->p->g in Groups) implies some t : Teacher | t->s in Tutors
+inv14 S: all c : Class | some s : Student, g : Group | c->p->g in Groups implies some t : Teacher | t->s in Tutors
+inv14 B: all c : Class | some s : Student, g : Group | c->s->g in Groups implies some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors and t->c in Teaches
+inv14 B: all s : Student | some c : Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors and t->c in Teaches
+inv14 U: all s : Student | s in Class implies some t : Teacher, c : Class | t->s in Tutors and t->c in Teaches
+inv14 B: all s : Student | some t : Teacher, c : Class | t->s in Tutors and t->c in Teaches
+inv14 B: all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors
+inv14 B: all s : Student | some t : Teacher, c : Class | t->s in Tutors implies t->c in Teaches
+inv14 B: all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors
+inv14 S: all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors | g : Group | c->s->g in Groups
+inv14 S: all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors | some g : Group | c->s->g in Groups
+inv14 B: all s : Student | some t : Teacher, c : Class, g : Group | (t->c in Teaches implies t->s in Tutors) and c->s->g in Groups
+inv14 B: all s : Student | some t : Teacher, c : Class, g : Group | t->c in Teaches implies t->s in Tutors and c->s->g in Groups
+inv14 B: all s : Student | some t : Teacher, c : Class, g : Group | t->c in Teaches implies t->s in Tutors
+inv14 B: all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors
+

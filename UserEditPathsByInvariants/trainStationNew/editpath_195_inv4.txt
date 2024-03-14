@@ -1,0 +1,9 @@
+inv4 B: all t : Track | (t.succs)=none iff t in Exit
+inv4 T: all t : Track | (^t.succs)=none iff t in Exit
+inv4 B: all t : Track | (t.^(~succs))=none iff t in Exit
+inv4 B: all t : Track | (t.(~succs))=none iff t in Exit
+inv4 T: all t1 : Track | all t2 : Track | no t1 in t2.succs iff t1 in Entry
+inv4 T: all t1 : Track | all t2 : Track | (no t1 in t2.succs) iff t1 in Entry
+inv4 O: all t1 : Track | all t2 : Track | (t1 not in t2.succs) iff t1 in Entry
+inv4 C: all t1 : Track | (succs.t1)=none iff t1 in Entry
+

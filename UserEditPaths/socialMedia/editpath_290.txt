@@ -1,0 +1,42 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo| one posts.p
+inv2 C: all u: User | u not in follows.u
+inv3 S: all u: User | x.sees-Ad in x.follows.posts
+inv3 S: all u: User | x.sees-Ad in x.follows.posts
+inv3 S: all u: User | x.sees-Ad in u.follows.posts
+inv3 C: all u: User | u.sees-Ad in u.follows.posts
+inv4 B: one p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv5 B: all u: User | all i: Influencer | i in u.follows
+inv5 B: all u: User | all i: Influencer | u in follows.i
+inv5 U: all u: User | all i: Influencer | u in follows.i or u=i
+inv6 C: all i : Influencer | Day = i.posts.date
+inv6 C: all i : Influencer | Day = i.posts.date
+inv6 C: all i : Influencer | Day = i.posts.date
+inv7 B: all u: User | u.follows not in u.suggested and u.suggested = u.follows.follows
+inv7 B: all u: User | u.follows not in u.suggested and u.suggested = u.follows.follows
+inv7 B: all u: User | u.suggested = u.follows.follows - u.follows
+inv7 B: all u: User | u.suggested = (u.follows.follows - u.follows)
+inv7 B: all u: User | u.suggested = u.follows.follows - u.follows
+inv7 C: all u: User | u.suggested = u.follows.follows - u.follows -u
+inv7 C: all u: User | u.suggested = u.follows.follows - u.follows - u
+inv8 S: all u: User | all p: Photo | p in Ad and u.sees.p =>
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+NA M: MOD BASE MODEL
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv3 C: all u: User | u.sees-Ad in u.follows.posts
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv4 C: all p: Photo | p in Ad => (posts.p).posts in Ad
+inv4 C: all p: Ad | (posts.p).posts in Ad
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv8 B: all u: User | all p: Ad | u in sees.p => posts.p in u.suggested + u.follows
+inv7 C: all u: User | u.suggested = u.follows.follows - u.follows - u
+NA H: THEME UPDATE
+

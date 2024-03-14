@@ -1,0 +1,7 @@
+inv7 S: all s:Student,c:Course | one p:Project | p in s.project
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects implies p in c
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects implies p in c.projects
+inv7 T: all s:Student,c:Course | one p:Project | lone p.Course in s.projects
+inv7 T: all s:Student,c:Course | one p:Project | lone p in s.projects
+

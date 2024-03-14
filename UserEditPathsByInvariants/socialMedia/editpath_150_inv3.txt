@@ -1,0 +1,11 @@
+inv3 S: Ad in Users.sees
+inv3 S: Ad in User.see
+inv3 B: Ad in User.sees
+inv3 S: Some u1,u2: User | all p: Photo | p in u1.sees and p in u2.posts implies u1 follows u2
+inv3 S: Some u1,u2: User | all p: Photo | p in u1.sees and p in u2.posts implies u2 in u1.follows
+inv3 B: some u1,u2: User | all p: Photo | (p in u1.sees and p in u2.posts) implies u2 in u1.follows
+inv3 B: some u1,u2: User | all p: Photo | (p in u1.sees and p in u2.posts and p not in Ad) implies u2 in u1.follows
+inv3 B: all u1,u2: User | all p: Photo | (p in u1.sees and p in u2.posts and p not in Ad) implies u2 in u1.follows
+inv3 B: all u1,u2: User | all p: Photo | (p in u1.sees and p in u2.posts and p not in Ad) implies u2 in u1.follows
+inv3 B: all u1,u2: User | all p: Photo | (p in u1.sees and p in u2.posts and p not in Ad) implies u2 in u1.follows
+

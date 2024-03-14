@@ -1,0 +1,5 @@
+inv2 T: all p : Person | p.teaches implies p in Professor
+inv2 T: all p : Person, c: Course| p.teaches.c implies p in Professor
+inv2 T: all p : Person | some c: Course| p.teaches.c implies p in Professor
+inv2 C: all p : Person | some p.teaches implies p in Professor
+

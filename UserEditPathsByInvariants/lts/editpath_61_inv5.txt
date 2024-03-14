@@ -1,0 +1,8 @@
+inv5 T: all s:State | s.(State.~trans) in Event
+inv5 T: all s:State | s.(State.~trans) in Event
+inv5 U: all s:State | s.~(State.trans) in Event
+inv5 B: all s:State | Event in s.~(State.trans)
+inv5 O: all s:State | Event in State.~(s.trans)
+inv5 U: all s:State | Event.~(s.trans) in Event
+inv5 O: all s:State | Event in Event.~(s.trans)
+

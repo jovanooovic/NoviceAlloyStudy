@@ -1,0 +1,13 @@
+inv2 S: all w:Worker| s:Workstation | w in s.workers and s.worker != none
+inv2 S: all w:Worker| s:Workstation | w in s.workers and #s.worker > 0
+inv2 S: all w:Worker| s:Workstation | w in s.workers	all s:Workstation| some s.workers
+inv2 S: all w:Workers | s:Workstation | w in s.workers	all s:Workstation| some s.workers
+inv2 S: all w : Workers | s : Workstation | w in s.workers	all s : Workstation | some s.workers
+inv2 S: all w : Workers | all s : Workstation | w in s.workers	all s : Workstation | some s.workers
+inv2 B: all w : Worker | all s : Workstation | w in s.workers	all s : Workstation | some s.workers
+inv2 B: all w : Worker | all s : Workstation | w in s.workers
+inv2 T: all w : Worker | all s : Workstation | w in s.workers and s.workers
+inv2 B: all w : Worker | all s : Workstation | w in s.workers and some s.workers
+inv2 B: all w : Worker | all s : Workstation | w in s.workers <=> some s.workers
+inv2 C: all s : Workstation | some s.workers	all w : Worker | one s : Workstation | w in s.workers
+

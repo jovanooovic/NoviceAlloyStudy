@@ -1,0 +1,13 @@
+inv2 S: x,y : User | x->y in follows and x!=y
+inv2 S: x, y : User | x->y in follows and x=y
+inv2 O: all x: User, y: User | x->y in follows and x != y
+inv2 O: all x: User | all y: User | x->y in follows and x != y
+inv2 T: all x: User, y: User | no x.y in follows and x != y
+inv2 O: all x: User, y: User | x->y in follows and x != y
+inv2 O: all x: User, y: User | x->y in follows - iden
+inv2 S: all x: Users | x->u not in follows
+inv2 S: all x: Users | x->x not in follows
+inv2 C: all x: User | x->x not in follows
+inv2 O: all x, y: User | x->y in follows - iden
+inv2 C: all x, y: User | x->y in follows implies x!=y
+

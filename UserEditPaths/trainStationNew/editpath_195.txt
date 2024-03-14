@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv3 U: all t : Track | (t.succs)=none implies t in Exit
+inv3 C: all t : Track | (t.succs)=none iff t in Exit
+inv4 B: all t : Track | (t.succs)=none iff t in Exit
+inv4 T: all t : Track | (^t.succs)=none iff t in Exit
+inv4 B: all t : Track | (t.^(~succs))=none iff t in Exit
+inv4 B: all t : Track | (t.(~succs))=none iff t in Exit
+inv4 T: all t1 : Track | all t2 : Track | no t1 in t2.succs iff t1 in Entry
+inv4 T: all t1 : Track | all t2 : Track | (no t1 in t2.succs) iff t1 in Entry
+inv4 O: all t1 : Track | all t2 : Track | (t1 not in t2.succs) iff t1 in Entry
+inv1 C: some (Entry & Track)	some (Exit & Track)
+inv2 C: all s : Signal | one signals.s
+inv4 C: all t1 : Track | (succs.t1)=none iff t1 in Entry
+inv5 B: all t1 : Track | some (succs.t1) implies t1 in Junction
+inv5 B: all t1 : Track | some (succs.t1) iff t1 in Junction
+inv5 C: all t1 : Track | not lone (succs.t1) iff t1 in Junction
+inv6 C: all e : Entry | some sp : Speed | sp in e.signals
+inv7 C: no t : Track | t in t.^(~succs)
+inv8 O: all en : Entry | all ex : Exit | ex in en.succs
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | (j not in t.succs) implies (s not in t.signals)
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | (j not in t.succs) iff (s not in t.signals)
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | (t not in j.succs) implies (s not in t.signals)
+

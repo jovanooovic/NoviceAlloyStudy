@@ -1,0 +1,4 @@
+inv2 T: all w : Workstation | #w.workers > 0	all p : Worker | one w : Workstation | p in workstation.workers
+inv2 C: all ws : Workstation | ws.workers != none	all w : Worker | one ws : Workstation | w in ws.workers
+inv2 C: all ws : Workstation | ws.workers != none	all w : Worker | one ws : Workstation | w in ws.workers
+

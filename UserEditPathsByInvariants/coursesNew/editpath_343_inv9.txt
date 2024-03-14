@@ -1,0 +1,8 @@
+inv9 S: all p : Professor | some c : Professor - c | p.teaches = c.teaches implies no (p.teaches and c.enrolled)
+inv9 T: all p : Professor | some c : Professor - p | p.teaches = c.teaches implies no (p.teaches and c.enrolled)
+inv9 T: all p : Professor | some c : Professor - p | (p.teaches = c.teaches) implies no (p.teaches and c.enrolled)
+inv9 T: all p : Professor | some c : Professor - p | (p.teaches and c.teaches) implies no (p.teaches and c.enrolled)
+inv9 T: all p : Professor | some c : Professor - p | some (p.teaches and c.teaches) implies no (p.teaches and c.enrolled)
+inv9 B: all p : Professor | some c : Professor - p | some (p.teaches & c.teaches) implies no (p.teaches & c.enrolled)
+inv9 U: all p : Professor | all c : Professor - p | some (p.teaches & c.teaches) implies no (p.teaches & c.enrolled)
+

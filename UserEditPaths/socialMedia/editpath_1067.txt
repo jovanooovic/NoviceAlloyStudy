@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one p.~posts
+inv2 C: all u: User | u not in u.follows
+inv3 B: all u: User, p: Photo | p.~sees in u.follows
+inv3 B: all u: User, p: Photo | p.~sees in u.~follows
+inv3 B: all u: User, p: Photo | u in u.follows => u in p.~sees
+inv3 S: all u: User, p: Photo | p.~sees in u.follows		all p: Photo | p in ad => p.sees in u
+inv3 S: all u: User, p: Photo | p.~sees in u.follows		all p: Photo | p = ad => p.sees in u
+inv3 B: all u: User, p: Photo - Ad | p.~sees in  u.follows
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => u in p.~sees
+inv3 T: all u: User, p: Photo - Ad | u in u.follows => u in p.~sees	all u: User | u.sees = u.follows.Photo
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => u in p.~sees	all u: User | u.sees = u.follows.sees
+inv3 B: all u: User | u.sees = u.follows.sees
+inv3 B: all u: User | u.sees in u.follows.sees
+inv3 S: all u: User | u.sees in 'u.follows.sees
+inv3 B: all u: User | u.sees in u'.follows.sees
+inv3 B: all u: User, o: User | u.sees in o.follows.sees
+inv3 B: all u: User, o: User, p: Ad | u.sees in (o.follows.sees - p)
+inv3 B: all u: User, p: Photo - Ad | u not in u.follows => u not in p.~sees
+inv3 O: all u: User,o, p: Photo - Ad | u not in o.follows => u not in p.~sees
+inv3 S: all u: User, p: Photo - Ad | u not in o.follows => u not in p.~sees
+inv3 B: all u: User, p: Photo - Ad | u not in u.follows => u not in p.~sees
+inv3 B: all u: User, p: Photo - Ad | u not in u.follows => u not in p.~sees or u in Ad.~sees
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => ((u not in p.~sees) or (u in Ad.~sees))
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => (u in p.~sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => (u in p.~posts.~sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => (u in p.~posts.sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.follows => (p in p.~posts.sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.posts.~sees => (p in p.~posts.sees or u in Ad.~sees)
+inv3 S: all u: User, p: Photo - Ad | u in u.follow.posts.~sees => (p in p.~posts.sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.follows.posts.~sees => (p in p.~posts.sees or u in Ad.~sees)
+inv3 B: all u: User, p: Photo - Ad | u in u.follows.posts.~sees
+inv3 B: all u: User | u in u.follows.posts.~sees
+NA H: THEME UPDATE
+inv3 S: all u: User, p: Photo - Ad | u in u.follows.posts.~sees => ( or u in Ad.~sees)
+

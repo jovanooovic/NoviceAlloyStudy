@@ -1,0 +1,16 @@
+inv15 T: ^Tutors
+inv15 T: some Teacher in ^Tutors
+inv15 T: all s : Student | s.^Tutors
+inv15 S: all s : Student | some t : Teacher t.(s.^Tutors)
+inv15 T: all s : Student | some t : Teacher | t.(s.^Tutors)
+inv15 T: all s : Student | some Teacher in s.^Tutors
+inv15 B: all s : Student | some t : Teacher | t in s.^Tutors
+inv15 S: all s : Student | some Teacher & in s.^Tutors
+inv15 B: all s : Person | some Teacher & s.^Tutors
+inv15 B: all s : Person | some Teacher & s.*Tutors
+inv15 C: all s : Person | some Teacher & ^Tutors.s
+inv15 B: some Teacher & ^Tutors.Person
+inv15 S: ^Tutors.Person & some Teacher
+inv15 U: all s : Person | some Teacher & ^Tutors.Person
+inv15 C: all s : Person | some Teacher & ^Tutors.s
+

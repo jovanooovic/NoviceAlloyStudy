@@ -1,0 +1,5 @@
+inv3 T: all u : User, s : u.sees | s.User in u.follows
+inv3 S: all u : User, s : u.sees | s.user in u.follows
+inv3 B: all u1, u2 : User, p : Photo | p in u1.sees and p in u2.posts => u2 in u1.follows
+inv3 B: all u1, u2 : User, p : Photo | (p in u1.sees and p in u2.posts => u2 in u1.follows) or p in u1.sees and p in Ad
+

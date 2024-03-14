@@ -1,0 +1,7 @@
+inv1 S: all x : Worker | x in ((Robot | Human) - (Robot & Human))
+inv1 C: all x : Worker | x in ((Robot + Human) - (Robot&Human))
+inv1 C: all x : Worker | x in Robot+Human and x not in Robot&Human
+inv1 S: all x : Worker | x in Robot|Human and x not in Robot&Human
+inv1 C: all x : Worker | x in Robot + Human - Robot&Human
+inv1 C: all x : Worker | x in Robot + Human
+

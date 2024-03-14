@@ -1,0 +1,44 @@
+inv1 U: no enrolled.Professor
+inv1 B: no Professor.enrolled
+inv1 T: no Professor.enrolled in Person
+inv1 S: all p: Person | p.enrollled implies p in Student
+inv1 T: all p: Person | p.enrolled implies p in Student
+inv1 B: all p: Professor | no p.enrolled
+inv1 B: all p: Professor | no p.enrolled & p.teaches
+inv1 B: no (Person.teaches & Person.enrolled)
+inv1 S: no Professor.enrolled.Couse
+inv1 T: no Professor.enrolled.Course
+inv1 B: enrolled.Course = Person - Professor
+inv1 O: enrolled.Course = Student
+inv1 B: Professor = Person - enrolled.Course
+inv1 B: no Professor & enrolled.Course
+inv1 B: no (Professor & enrolled.Course)
+inv1 T: no Professor in enrolled.Course
+inv1 B: Professor not in enrolled.Course
+inv1 B: no (Person.teaches & Person.enrolled)
+inv1 O: enrolled.Course = Student
+inv1 B: no Professor.enrolled
+inv1 T: not (some p: Professor | p.enrolled)
+inv1 U: not (some p: Professor | p in Person.enrolled)
+inv1 B: no Professor.enrolled
+inv1 T: all p: Person | p.enrolled implies p in Student
+inv1 T: no Professor.(enrolled.Course)
+inv1 B: no Professor.enrolled
+inv1 O: enrolled.Course = Student
+inv1 B: enrolled.Course = Person - Professor
+inv1 O: Person.enrolled = Person - Professor
+inv1 O: Person.enrolled = Student
+inv1 T: no p : Professor | p.enrolled
+inv1 B: no p : Professor | p.enrolled in Course
+inv1 B: all p : Professor | p.enrolled not in Course
+inv1 B: all p : Professor | p not in enrolled.Course
+inv1 O: all p : Person | p in enrolled.Course implies p in Student and p not in Professor
+inv1 O: all p : Person | p in enrolled.Course implies (p in Student and p not in Professor)
+inv1 O: all p : Person | p.enrolled in Course implies (p in Student and p not in Professor)
+inv1 B: all p : Person | p.enrolled in Course implies p not in Professor
+inv1 B: all p : Student | p.enrolled in Course implies p not in Professor
+inv1 B: all p : Student | p.enrolled in Course implies p != Professor
+inv1 O: all p : Person | p.enrolled in Course implies p = Student
+inv1 O: all p : Person | p.enrolled in Course implies p = Student
+inv1 C: all c: Course | enrolled.c in Student
+

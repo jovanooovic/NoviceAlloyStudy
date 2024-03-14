@@ -1,0 +1,16 @@
+inv7 S: all u, y, z : User | u in y.follows and y in z.follows implies z in u.suggested| z not in u.follows
+inv7 S: all u, y, z : User | (u in y.follows and y in z.follows) implies z in u.suggested | z not in u.follows
+inv7 S: all u, y, z : User | (u in y.follows and y in z.follows) implies z in u.suggested | z not in u.follows
+inv7 B: all u, y, z : User | ((u in y.follows and y in z.follows) and z not in u.follows) implies z in u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in 			u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in 			u.suggested
+inv7 S: all u, y, z : User | (y : u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 B: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows) implies z in u.suggested
+inv7 U: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) implies z in u.suggested
+inv7 S: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  in u.suggested
+inv7 O: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  z in u.suggested
+inv7 B: all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows) <=>  (u != z and z in u.suggested)
+inv7 C: all u, y : User | y in u.suggested <=> (y != u and y not in u.follows and y in u.follows.follows)
+inv7 C: all u, y : User | y in u.suggested <=> (y != u and y not in u.follows and y in u.follows.follows)
+

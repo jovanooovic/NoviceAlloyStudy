@@ -1,0 +1,5 @@
+inv4 T: all u:User, v:u.visible | one v in u.profile
+inv4 T: all u:User, v:u.visible | one (v in u.profile)
+inv4 T: all u:User| all v:u.visible | one (v in u.profile)
+inv4 T: all u:User| all v:u.visible | one (v.^ids in u.profile)
+

@@ -1,0 +1,7 @@
+inv4 T: all w:Work | (w in User.profile and w in User.visible) implies (one w in User.visible)
+inv4 T: all w:Work | (w in User.profile & w in User.visible) implies (one w in User.visible)
+inv4 T: all w:Work | ((w in User.profile) & (w in User.visible)) implies (one w in User.visible)
+inv4 T: all w:Work | ((w in User.profile) & (w in User.visible)) implies ( w in User.visible)
+inv4 B: all w:Work | ((w in User.profile)) implies ( w in User.visible)
+inv4 U: all w:Work | ((w in User.profile) and (w in User.visible)) implies ( w in User.visible)
+

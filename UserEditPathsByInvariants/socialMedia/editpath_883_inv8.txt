@@ -1,0 +1,5 @@
+inv8 S: all u1, u2: User, a: Ad | u1->a in sees => (u2->a in posts and u1->u2 in follows or u1->u2 in sugggested)
+inv8 S: all u1, u2: User, a: Ad | u1->a in sees => (u2->a in posts and (u1->u2 in follows or u1->u2 in sugggested))
+inv8 O: all u1, u2: User, a: Ad | u1->a in sees => (u2->a in posts and (u1->u2 in follows or u1->u2 in suggested))
+inv8 B: all u1, u2: User, a: Ad | u1->a in sees and u2->a in posts => u1->u2 in follows+suggested
+

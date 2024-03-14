@@ -1,0 +1,10 @@
+inv1 T: (Node . ~Node) in iden
+inv1 B: (adj . ~adj) in iden
+inv1 S: all n1->n2 : adj | n1 in Node
+inv1 S: all n1->n2 : Node.adj | n1 in Node
+inv1 T: all n : Node.adj | ~n in Node.adj
+inv1 T: all n : adj | ~n in Node.adj
+inv1 T: all n : adj | ~n in adj
+inv1 O: all n1, n2 : Node | n1->n2 in adj
+inv1 C: all n1, n2 : Node | n1->n2 in adj implies n2->n1 in adj
+

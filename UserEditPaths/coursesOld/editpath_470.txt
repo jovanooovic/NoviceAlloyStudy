@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Person, c : Course | p.c iff Student
+inv1 T: all p : Person, c : Course | c in p.enrolled iff Student
+inv1 T: all p : Person, c : Course | c in p.enrolled iff ~p=Student
+inv1 U: all p : Person | no p.enrolled & Professor
+inv3 B: all c : Course, p : Professor | p in c.grades.Grade
+inv3 B: all c : Course | Professor in c.grades.Grade
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+inv2 C: all p : Person, c : Course | c in p.teaches implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+inv4 B: all c1,c2 : Course | c1.projects = c2.projects implies c1=c2
+inv4 U: all c1,c2 : Course, p : Project | p in c1.projects and p in c2.projects implies c1=c2
+inv3 T: all p : Person, c : Course | p in c.grades.Grade~teaches implies p in Professor
+inv3 U: all p : Person, c : Course | p in c.grades.Grade.~teaches implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.grades.Grade implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+inv6 B: all s : Student, p : Project, c : Course | p in s.projects and p in c.projects implies c in s.enrolled
+NA H: THEME UPDATE
+

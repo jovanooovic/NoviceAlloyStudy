@@ -1,0 +1,21 @@
+inv3 O: all u: User | all p: u.sees | p not in Photo
+inv3 T: all u: User | all p: Photo in u.sees | p not in Photo
+inv3 B: all u: User | all p: u.sees | p not in Ad
+inv3 S: all u: User | all p: u.sees | (some f: in u.follows -> f.posts(p)) || p in Ad
+inv3 S: all u: User | all p: u.sees | (some f: in u.follows -> p in f.posts) || p in Ad
+inv3 S: all u: User | all p: u.sees | (some f: in u.follows -> p in f.posts) disj p in Ad
+inv3 S: all u: User | all p: u.sees | (some f: in u.follows -> p in f.posts) or p in Ad
+inv3 S: all u: User | all p: u.sees | (some f: in u.follows -> p in f.posts)
+inv3 S: all u: User | all p: u.sees | some f: in u.follows -> p in f.posts
+inv3 O: all u: User | all p: u.sees | p in Ad
+inv3 S: all u: User | all p: u.sees | p in Ad or p in u.follows.*
+inv3 S: all u: User | all p: u.sees | p in Ad or p in u.follows.*.posts
+inv3 S: all u: User | all p: u.sees | p in Ad or some f: in u.follows -> f.posts.p
+inv3 S: all u: User | all p: u.sees | p in Ad or (some f: in u.follows | f -> p)
+inv3 S: all u: User | all p: u.sees | { some f: in u.follows | f.posts.p } or p in Ad
+inv3 S: all u: User | all p: u.sees | some f: in u.follows | f -> p
+inv3 S: all u: User | all p: u.sees | some f: in u.follows | p in f.posts
+inv3 O: all u: User | all p: u.sees | some f: u.follows | p in f.posts
+inv3 C: all u: User | all p: u.sees | (some f: u.follows | p in f.posts) or p in Ad
+inv3 C: all u: User | all p: u.sees | (some f: u.follows | p in f.posts) or p in Ad
+

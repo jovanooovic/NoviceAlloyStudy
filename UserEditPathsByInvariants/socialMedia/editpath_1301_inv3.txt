@@ -1,0 +1,20 @@
+inv3 E:
+inv3 S: all u:User | all p:Photos,follow:User | p in u.sees and follow in u.follows and p in follow.posts	all u:User | all ad:Ad | ad in u.sees
+inv3 O: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows and p in follow.posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p -> follow.posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts	all u:User | all ad:Ad | ad in u.sees
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts
+inv3 T: all u:User | all p:Photo,follow:User | p in u.sees and follow in u.follows implies p in follow->posts
+inv3 E:
+inv3 E:
+inv3 E:
+inv3 B: all u:User | all p:Photo | p in User.sees and u in User.follows implies (p in u.posts)
+

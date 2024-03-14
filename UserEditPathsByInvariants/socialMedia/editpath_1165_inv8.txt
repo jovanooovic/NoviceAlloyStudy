@@ -1,0 +1,6 @@
+inv8 S: all u : User, ad : Ad | ad in u.sees = (u.follows.pots + (u.follows.follows - (u.follows + u)) )
+inv8 T: all u : User, ad : Ad | ad in u.sees = (u.follows.posts + (u.follows.follows - (u.follows + u)) )
+inv8 T: all u : User, ad : Ad | ad in u.sees iff (u.follows.posts + u.suggested.posts )
+inv8 O: all u : User, ad : Ad | ad in u.sees iff ad in (u.follows.posts + u.suggested.posts )
+inv8 C: all u : User, ad : Ad | ad in u.sees => ad in (u.follows.posts + u.suggested.posts )
+

@@ -1,0 +1,18 @@
+inv3 B: all x : User | all y : Ad | y not in x.sees
+inv3 T: all x : User | all y : x.sees| y not in Ad -> y in x.follows
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (y in x.follows)
+inv3 S: all x : User | all y : x.sees | (y not Ad) -> (y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y != Ad) -> (y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y iff not Ad) -> (y in x.follows)
+inv3 S: all x : User | all y : x.sees | (y not iff Ad) -> (y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (y.posts in x.follows)
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (posts.y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (posts.y in x.follows)
+inv3 T: all x : User | all y : x.sees | (y not in Ad) -> (User.y in x.follows)
+inv3 S: all x : User | all y : x.sees | (y not in Ad) -> (all z: (y in z.posts) in x.follows)
+inv3 T: all x : User | all y : x.sees | some k : x.follows | (y not in Ad) -> (y in k.posts)
+inv3 B: all x : User | all y : x.sees | some k : x.follows | (y not in Ad) or (y in k.posts)
+inv3 O: all x : User | all y : x.sees | some k : x.follows | (y in Ad) or (y in k.posts)
+inv3 C: all x : User | all y : x.sees | (y in Ad) or (some k : x.follows | y in k.posts)
+

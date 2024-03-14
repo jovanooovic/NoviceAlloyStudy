@@ -1,0 +1,7 @@
+inv2 U: all u : User | follows.u != u
+inv2 U: all u : User+Influencer | follows.u != u
+inv2 U: all u : User | follows.u != u
+inv2 U: all u : User | follows.u != u	all i : Influencer | follows.i != i
+inv2 U: all u : User | follows.u != u	all i : Influencer | follows.i != i
+inv2 C: all u : User | u not in follows.u
+

@@ -1,0 +1,11 @@
+inv4 O: all c : Component, p : c.parts | p not in c.^parts
+inv4 B: all c : Component, p : c.parts | p not in c.parts.^parts
+inv4 T: all c : Component, p : c.parts | not p.*parts
+inv4 B: all c : Component, p : Product | p in c.parts implies p not in c.parts.^parts
+inv4 T: all c : Component, p : c.parts | p.position < c.position
+inv4 S: all c : Component, p : c.parts | c.position <= p.position.one
+inv4 S: all c: Component | all p: c.parts | c.position <= p.position.one
+inv4 T: all c : Component, p : c.parts | c.position <= p.position
+inv4 T: all c : Component, p : c.parts | c.position < p.position
+inv4 O: all c : Component, p : c.parts | p.position in c.position.prev
+

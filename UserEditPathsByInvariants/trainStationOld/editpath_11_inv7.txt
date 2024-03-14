@@ -1,0 +1,5 @@
+inv7 B: all t:Train | t.pos in (Entry + Exit) implies eventually t.pos not in (Entry + Exit)
+inv7 U: all t:Train | some t.pos :> (Entry+Exit) implies eventually no t.pos :> (Entry+Exit)
+inv7 U: always ( all t:Train | some t.pos :> (Entry+Exit) implies eventually no t.pos :> (Entry+Exit) )
+inv7 C: always ( all t:Train | some t.pos :> Track implies eventually no t.pos :> Track )
+

@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 S: all u:User|#(u.post)=1
+inv1 B: all u:User|#(u.posts)=1
+inv1 S: all u:User|u.posts in Phosto
+inv1 U: all u:User|u.posts in Photo
+inv1 B: all u:User| one u.posts
+inv1 C: all p :Photo|one u:User| p in u.posts
+inv1 B: all p :Photo|one u:User|some u.posts
+inv1 B: one u:User|#(u.posts)>=1
+inv1 B: one u:User|some u.posts
+inv2 O: all u:User| no u.follows
+inv2 C: all u:User|  u not in u.follows
+inv3 S: all p:Photo| some (sees.p & post.p).follows
+inv3 B: all p:Photo| some (sees.p & posts.p).follows
+

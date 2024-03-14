@@ -1,0 +1,24 @@
+inv4 T: always one Train in Track
+inv4 S: always one Train in one Track
+inv4 T: always one Train.pos in Track
+inv4 T: always all t: Train | always one Train in Track
+inv4 T: always all t: Train | always one Train.pos in Track
+inv4 B: always all t: Train | always lone Train.pos
+inv4 B: always lone Train.pos
+inv4 O: always lone pos.Track
+inv4 O: always one pos.Track
+inv4 T: always one pos.Track in Track
+inv4 T: always all t1, t2: Train | some tr1,tr2: Track | t1.pos.tr1 and t2.pos.tr2 implies t1=t2
+inv4 B: always all t1, t2: Train | some tr1,tr2: Track | t1.pos in tr1 and t2.pos in tr1 implies t1=t2
+inv4 B: always all t1, t2: Train | some tr1: Track | t1.pos in tr1 and t2.pos in tr1 implies t1=t2
+inv4 B: always all t1, t2: Train | some tr1: Track | always (t1.pos in tr1 and t2.pos in tr1 implies t1=t2)
+inv4 B: always all t1, t2: Train | lone tr1: Track | always (t1.pos in tr1 and t2.pos in tr1 implies t1=t2)
+inv4 T: always all t1, t2: Train | lone tr1: Track | always t1.pos.tr1 & t2.pos.tr2 in none
+inv4 T: always all t1, t2: Train | lone tr1: Track | always no t1.pos.tr1 & t2.pos.tr2
+inv4 T: always all t1, t2: Train | lone tr1: Track | always no t1.pos.tr1 & t2.pos.tr1
+inv4 T: always all t1, t2: Train | lone tr1: Track | always (no t1.pos.tr1 & t2.pos.tr1)
+inv4 B: always all t1, t2: Train | always lone tr1: Track | always (no t1.pos & t2.pos)
+inv4 O: always all t1, t2: Train | always (no t1.pos & t2.pos)
+inv4 T: always all t1, t2: Train | always t1.pos & t2.pos implies t1=t2
+inv4 T: always all t1, t2: Train | always (t1.pos & t2.pos implies t1=t2)
+

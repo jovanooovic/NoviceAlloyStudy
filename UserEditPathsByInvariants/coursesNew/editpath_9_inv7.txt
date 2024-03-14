@@ -1,0 +1,9 @@
+inv7 S: all u:User, c: Curso | c in u.enrroled => lone c.project in u.projects
+inv7 S: all u:User, c: Curso | c in u.enrroled => lone c.project in u.projects
+inv7 S: all u:Student, c: Curso | c in u.enrroled => lone c.project in u.projects
+inv7 S: all u:Student, c: Course | c in u.enrroled => lone c.project in u.projects
+inv7 S: all u:Student, c: Course | c in u.enrolled => lone c.project in u.projects
+inv7 T: all u:Student, c: Course | c in u.enrolled => lone c.projects in u.projects
+inv7 T: all u:Student, c: Course | c in u.enrolled => lone (c.projects in u.projects)
+inv7 U: all u:Student, c: Course | c in u.enrolled => lone (c.projects & u.projects)
+

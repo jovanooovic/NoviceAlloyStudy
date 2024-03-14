@@ -1,0 +1,12 @@
+inv7 S: some t:Teacher | all t.Teaches
+inv7 S: some t:Teacher | all t.Teaches
+inv7 T: all c:Class | some Teaches.c in Teacher
+inv7 B: all c:Class | Teaches.c in Teacher
+inv7 T: all c:Class |  some (Teaches.c in Teacher)
+inv7 T: all c:Class |  (some Teaches.c in Teacher)
+inv7 U: all c:Class |  some Teaches.c
+inv7 T: all c:Class | ( some Teaches.c ) in Teacher
+inv7 B: all c:Class | ( Teaches.c ) in Teacher
+inv7 T: all c:Class | ( Teaches.c )some Teacher
+inv7 C: all c:Class | some ( Teaches.c  & Teacher)
+

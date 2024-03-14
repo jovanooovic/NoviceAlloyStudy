@@ -1,0 +1,55 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Teacher & Student
+inv4 T: Teacher or Student
+inv4 T: no Teacher or Student
+inv4 T: not Teacher or Student
+inv4 C: Person = Student + Teacher
+inv5 C: some Teacher.Teaches
+inv6 T: Teacher.Teaches
+inv6 S: all Teacher.Teaches
+inv6 T: Teacher.Teaches
+inv6 T: all t:Teacher | t.Teaches
+inv6 C: all t:Teacher | some t.Teaches
+inv7 B: some Teaches.Class
+inv7 B: some Class.~Teaches
+inv7 B: some Class.(~Teaches)
+inv6 C: Teacher in Class.~Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 C: all t:Teacher | lone t.Teaches
+inv9 T: lone Class in Teacher.Teaches
+inv9 O: all c:Class | lone c.~Teaches
+inv9 O: all c:Class | lone Teaches.c
+inv9 O: all c:Class | lone c.~Teaches
+inv9 S: all c:Class | lone t:teacher | t in c.~Teaches
+inv9 C: all c:Class | lone t:Teacher | t in c.~Teaches
+inv9 C: all c:Class | lone t:Teacher | t in c.~Teaches
+inv10 C: all c:Class, s:Student | some s.(c.Groups)
+inv10 S: all c:Class, s:Student | some s.(c.Groups)
+inv10 S: all c:Class, s:Student | some s.(c.Groups)
+NA M: MOD BASE MODEL
+inv9 C: all c:Class | lone t:Teacher | t in c.~Teaches
+inv10 C: all c:Class, s:Student | some s.(c.Groups)
+inv11 T: all c:Class | c.Groups implies (c in Teacher.Teaches)
+inv11 T: all c:Class | c.Groups implies c in Teacher.Teaches
+inv11 S: all c:Class | some mc.Groups implies c in Teacher.Teaches
+inv11 C: all c:Class | some c.Groups implies c in Teacher.Teaches
+inv11 O: all c:Class | some c.Groups iff some t:Teacher| c in t.Teaches
+inv12 T: all t:Teacher | some c:Class | c.Groups in t.Teaches
+inv12 T: all t:Teacher | some c:Class | some c.Groups in t.Teaches
+inv12 T: all t:Teacher | some c:Class | some c.Groups implies t.Teaches
+inv12 U: all t:Teacher | some c:Class | some c.Groups iff c in t.Teaches
+inv12 B: all t:Teacher | all g:Group | t.Tutors in g.~(Class.Groups)
+inv12 B: all t:Teacher | some g:Group | t.Tutors in g.~(Class.Groups)
+inv12 T: all t:Teacher | some g:Group | t.Teaches in g.~(Class.g)
+inv12 B: all t:Teacher | some t.Tutors
+inv13 B: Student in Teacher.Teaches and Teacher in Student.~Teaches
+inv13 B: Student in Teacher.Teaches
+inv13 B: Student in Teacher.Tutors
+inv13 B: Student in Teacher.Tutors and Teacher in Student.~Tutors
+inv13 U: Teacher.Tutors in Student and Student.~Tutors in Teacher
+inv13 B: Student in Person.Tutors and Teacher in Person.~Tutors
+inv13 C: Person.Tutors in Student and Person.~Tutors in Teacher
+

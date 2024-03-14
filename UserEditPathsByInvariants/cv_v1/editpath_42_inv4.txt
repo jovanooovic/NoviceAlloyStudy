@@ -1,0 +1,7 @@
+inv4 T: one User.visible in User.profile
+inv4 T: all w1, w2: Work | one User.profile.ids = User.visible.ids
+inv4 B: User.profile.ids = User.visible.ids
+inv4 B: one User.visible.ids
+inv4 B: User.visible.ids = User.profile.ids implies one User.visible.ids
+inv4 B: User.visible.ids in User.profile.ids implies one User.visible.ids
+

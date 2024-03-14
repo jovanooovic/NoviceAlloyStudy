@@ -1,0 +1,8 @@
+inv7 S: all f : File | some l : f.link | f->l in links
+inv7 B: all f : File | some l : f.link | f->l in link
+inv7 B: all f : File | some f1 : File | f->f1 in link
+inv7 B: all f : File | some f1 : File | f != f1 and f->f1 in link
+inv7 B: all f : File | some f1 : File | f->f1 in link
+inv7 C: all f : File | all l : f.link | l not in Trash
+inv7 C: all f : File, l : f.link | l not in Trash
+

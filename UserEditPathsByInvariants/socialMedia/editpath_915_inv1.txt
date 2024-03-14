@@ -1,0 +1,15 @@
+inv1 E:
+inv1 C: all p : Photo | one posts.p
+inv1 C: all x : Photo | one posts.x
+inv1 C: ~posts in Photo set  -> one  User
+inv1 C: ~posts in Photo -> one  User
+inv1 C: ~posts in (Photo -> one User)
+inv1 T: posts in (one User -> Photo)
+inv1 T: posts in (one User -> set Photo)
+inv1 C: ~posts in (Photo -> one User)
+inv1 S: posts in (one User -> some Photo)
+inv1 T: posts in (one User -> Photo)
+inv1 C: ~posts in (Photo -> one User)
+inv1 S: ~posts in (some Photo -> one User)
+inv1 C: posts in (User one -> Photo)
+

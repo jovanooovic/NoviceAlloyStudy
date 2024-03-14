@@ -1,0 +1,14 @@
+inv1 O: posts in User one -> one Photo
+inv1 O: posts in User one -> lone Photo
+inv1 B: posts in User lone -> one Photo
+inv1 O: posts in User one -> one Photo
+inv1 U: all p:Photo | p in User.posts
+inv1 S: all p:Photo, u:user | p in u.posts
+inv1 B: all p:Photo, u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 B: some p:Photo | some u:User | p in u.posts
+inv1 S: all posts in User one -> one Photo
+inv1 O: posts in User one -> one Photo
+inv1 B: posts in User -> one Photo
+inv1 C: posts in User one -> Photo
+

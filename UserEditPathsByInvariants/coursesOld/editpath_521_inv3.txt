@@ -1,0 +1,6 @@
+inv3 O: all c : Course | some p : Professor | p->c in teaches	  	teaches.Course & Course = Course
+inv3 O: all c : Course | some p : Professor | p->c in teaches	  	Professor.teaches & Course = Course
+inv3 O: all c : Course | some p : Professor | p->c in teaches	  	no Professor.teaches - Course
+inv3 O: all c : Course | some p : Professor | p->c in teaches	  	no Professor.teaches - Course
+inv3 O: all c : Course | some p : Professor | p->c in teaches	  	no Course - Professor.teaches
+

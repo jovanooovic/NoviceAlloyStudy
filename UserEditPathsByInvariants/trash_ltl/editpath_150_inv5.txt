@@ -1,0 +1,12 @@
+inv5 B: eventually some Trash
+inv5 O: eventually some f:File | File' = File -f
+inv5 O: eventually some f:File | f not in Protected and File' = File -f
+inv5 B: eventually no Trash
+inv5 O: some f : File| f not in Trash and eventually f not in File
+inv5 O: eventually some f : File| f in Trash and f not in File'
+inv5 O: eventually some f : File| f in Trash and File' = File - f
+inv5 O: eventually some f : File| f in Trash and File' = File - f and Trash' = Trash - f
+inv5 O: eventually some f : Trash| File' = File - f and Trash' = Trash - f
+inv5 O: eventually some f : Trash| f not in File'
+inv5 C: eventually some f : File| f not in File'
+

@@ -1,0 +1,30 @@
+inv7 E:
+inv7 T: all c : Course | Student.(projects.c <: Course)
+inv7 T: all c : Course | lone Student.(projects.c <: Course) <: Person
+inv7 T: all c : Course | lone Student.(projects.c <: Course)
+inv7 T: all c : Course, s : Student | lone s.(projects.c <: Course)
+inv7 T: all c : Course, s : Student | lone (s.(projects.c <: Course)) <: Person
+inv7 T: all c : Course, s : Student | lone (s.(c.projects <: Course)) <: Person
+inv7 T: all c : Course, s : Student | lone c.(s.projects) <: Person
+inv7 T: all c : Course, s : Student | lone c.(s.projects <: Person)
+inv7 T: all c : Course, s : Student | lone c.(s.projects <: Person) <: Course
+inv7 T: all s : Student | lone projects.(s.projects <: Person) <: Course
+inv7 S: all s : Student, all c : Course | lone projects.(c.projects <: Course)
+inv7 S: all s : Student, all c : Course | lone projects.(c.projects <: Course) <: Person
+inv7 T: all c : Course| lone projects.(c.projects <: Course) <: Person
+inv7 T: all c : Course| lone projects.(c.projects <: Course) <: Person
+inv7 T: all c : Course| lone (projects.(c.projects <: Course) <: Person)
+inv7 T: all c : Course| lone (projects.(c.projects <: Course) <: Person)
+inv7 T: all c : Course | one (projects.(c.projects <: Course) <: Person)
+inv7 B: all c : Course | lone (projects.(c.projects) <: Person)
+inv7 S: all s : Student | lone projects.(s.projects) <: COurse
+inv7 B: all s : Student | lone projects.(s.projects) <: Course
+inv7 B: all c : Course | lone (projects.(c.projects) <: Person)	  	all s : Student | lone projects.(s.projects) <: Course
+inv7 B: all s : Student | lone projects.(s.projects) <: Course
+inv7 S: all s : Student, all c : Course | lone s.projects & c.projects
+inv7 S: all s : Student, all c : Course | lone s.projects && c.projects
+inv7 T: all s : Student, c : Course | lone s.projects && c.projects
+inv7 T: all s : Student, c : Course | lone s.projects and c.projects
+inv7 T: all s : Student, c : Course | lone (s.projects and c.projects)
+inv7 U: all s : Student, c : Course | lone (s.projects & c.projects)
+

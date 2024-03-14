@@ -1,0 +1,7 @@
+inv7 B: all u : User | u.follows.follows - u.follows in u.suggested
+inv7 B: all u : User | (u.follows.follows - u.follows) in u.suggested
+inv7 U: all u,u2 : User | u2 in u.suggested => u2 in u.follows.follows - u.follows
+inv7 U: all disj u,u2 : User | u2 in u.suggested => u2 in u.follows.follows - u.follows
+inv7 U: all disj u,u2 : User | u2 in u.suggested => u2 in u.follows.follows and u2 not in u.follows
+inv7 U: all disj u,u2 : User | u2 in u.suggested => (u2 in u.follows.follows and u2 not in u.follows)
+

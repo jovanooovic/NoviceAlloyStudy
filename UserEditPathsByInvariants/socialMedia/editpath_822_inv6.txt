@@ -1,0 +1,7 @@
+inv6 B: all d : Day | all i : Influencer | all p : i.posts | all dp : p.date | no dp - d
+inv6 T: all d : Day | all i : Influencer | all p : i.posts | #p >= d
+inv6 T: all d : Day | all i : Influencer | all p : i.posts | #i.posts >= d
+inv6 U: all d : Day | all i : Influencer | all p : i.posts | #(i.posts) >= #d
+inv6 S: all d : Day | all i : Influencer | all p : i.posts |
+inv6 C: all i : Influencer , d : Day | d in i.posts.date
+

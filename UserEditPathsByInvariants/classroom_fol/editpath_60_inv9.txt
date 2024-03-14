@@ -1,0 +1,21 @@
+inv9 O: all c:Class | lone Teaches.c
+inv9 T: all c:Class | some t:Teacher | lone t in Teaches.c
+inv9 C: all c:Class,t1,t2:Teacher | t1->c in Teaches and t2->c in Teaches implies t1=t2
+inv9 O: all c:Class | lone Teaches.c
+inv9 O: all c:Class | lone c.~Teaches
+inv9 O: all c:Class |some t:Teacher | lone c.~Teaches and lone t.Teaches
+inv9 C: all c:Class,t1,t2:Teacher | t1->c in Teaches and t2->c in Teaches implies t1=t2
+inv9 O: all c:Class | lone Teaches.c
+inv9 B: all t:Teacher | lone t.Teaches
+inv9 B: all t:Teacher | lone t.Teaches and lone t.Groups
+inv9 S: all t:Teacher | lone t.Teaches & lone t.Groups
+inv9 B: all t:Teacher | (lone t.Teaches) and (lone t.Groups)
+inv9 B: all t:Teacher | (lone t.Teaches) and (lone t->Groups)
+inv9 T: all t:Teacher,c:Class | (lone t.Teaches) and (lone c->t in Groups)
+inv9 O: all c:Class | lone Teaches.c
+inv9 B: all t:Teacher | lone t.Teaches
+inv9 B: all t:Teacher | one t.Teaches
+inv9 B: all t:Teacher | lone t.Teaches
+inv9 B: all t:Teacher | lone t.Teaches and (no Student & Teacher)
+inv9 B: all t:Teacher | lone t.Teaches
+

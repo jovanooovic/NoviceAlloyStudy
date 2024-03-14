@@ -1,0 +1,13 @@
+inv4 B: all x : User | one z: x.posts | z in Ad => ( all p : x.posts | p in Ad)
+inv4 B: all x : User | some z: x.posts | z in Ad => ( all p : x.posts | p in Ad)
+inv4 S: all x : User | ( all p : x.posts | p in Ad) || (all p : x.posts | p in not Ad)
+inv4 S: all x : User | ( all p : x.posts | p in Ad) or (all p : x.posts | p in not Ad)
+inv4 C: all x : User | ( all p : x.posts | p in Ad) or (all p : x.posts | p not in Ad)
+inv4 U: all x : User |  x.posts in Ad or x.posts not in Ad
+inv4 C: all x : User | ( all p : x.posts | p in Ad) or (all p : x.posts | p not in Ad)
+inv4 C: all x : User | (some p: x.posts | p in Ad) => (all z: x.posts | z in Ad)
+inv4 C: all x : User | (some p: x.posts | p in Ad) => (all z: x.posts | z in Ad)
+inv4 C: all x : User | (some p: x.posts | p in Ad) => (all z: x.posts | z in Ad)
+inv4 C: all x : User | (some p: x.posts | p in Ad) => (all z: x.posts | z in Ad)
+inv4 C: all x : User | (some p: x.posts | p in Ad) => (all z: x.posts | z in Ad)
+

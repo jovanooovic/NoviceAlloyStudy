@@ -1,0 +1,28 @@
+Pairs,1
+,,"File != File",1
+
+Pairs,5
+,,"File in Trash",1
+,,"link.File + File in Trash",1
+,,"link.Trash + File in Trash",1
+,,"File in Trash and File.link in Trash",1
+,,"all f:File | f.*link in Trash",1
+
+Pairs,6
+,,"File.link in Trash",2
+,,"File.link & File in Trash",1
+,,"all f:File | f.link in Trash",2
+,,"all f,g : File | f.link in Trash and g.link in Trash",1
+
+Pairs,4
+,,"link in Trash->Trash",4
+
+Pairs,2
+,,"all t : Trash, f : File | no f.link",2
+
+Pairs,1
+,,"all f,g:File | f in Trash implies f->g not in link",1
+
+Pairs,1
+,,"all f: File | (some f.^link & Trash) and (f in Trash)",1
+

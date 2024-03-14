@@ -1,0 +1,11 @@
+inv13 O: all f : File | (f in Trash) releases (f not in Trash)
+inv13 O: always all f : File | (f in Trash) releases (f not in Trash)
+inv13 B: always all f : File | (f in Trash) until (f not in Trash)
+inv13 B: always all f : File | (f not in Trash) until (f in Trash)
+inv13 C: all f : File | (f in Trash) implies (once (f not in Trash))
+inv13 B: (File in Trash) implies (once (File not in Trash))
+inv13 C: all f : File | (f in Trash) implies (once (f not in Trash))
+inv13 C: all f : File | (f in Trash) implies (once f not in Trash)
+inv13 C: all f : File | (f in Trash) implies (once f not in Trash)
+inv13 C: all f : File | (f in Trash) implies (once f not in Trash)
+

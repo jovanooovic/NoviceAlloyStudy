@@ -1,0 +1,14 @@
+inv4 T: all disj c1, c2: Component | c1.parts & c2.parts => c1.position = c2.position
+inv4 B: all disj c1, c2: Component | some (c1.parts & c2.parts) => c1.position = c2.position
+inv4 B: all disj c1, c2: Component | some (c1.parts & c2.^parts) => c1.position = c2.position
+inv4 B: all disj c1, c2: Component | some (c1.parts & c2.parts) => c1.position = c2.position
+inv4 B: all disj c1, c2: Component | all p: c1.parts, pos: c1.position | p in c2.parts implies c2.position = pos
+inv4 C: all c: Component | all p: c.^parts | (p.position).lte[c.position]
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+inv4 S: all c: Component | p: c.^parts | p.position.lte[c.position]
+inv4 C: all c: Component, p: c.^parts | (p.position).lte[c.position]
+inv4 O: all c: Component, p: c.^parts | p.position in c.position.prev + c.position
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+inv4 O: all c: Component, p: c.^parts | p.position in c.position.prev + c.position
+inv4 C: all c: Component, p: c.^parts | p.position in c.position.prevs + c.position
+

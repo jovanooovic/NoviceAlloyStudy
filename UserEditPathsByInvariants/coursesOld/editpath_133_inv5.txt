@@ -1,0 +1,8 @@
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 T: some (Person<:projects).Project in Student
+inv5 B: some (Person<:projects).Project and (Person<:projects).Project in Student
+inv5 B: (some (Person<:projects).Project) and ((Person<:projects).Project in Student)
+inv5 S: ((Person<:projects).Project in Student) and (all p : Project | some s : Student | p in s.projetcs)
+inv5 C: ((Person<:projects).Project in Student) and (all p : Project | some s : Student | p in s.projects)
+

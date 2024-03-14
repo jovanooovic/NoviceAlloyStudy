@@ -1,0 +1,10 @@
+inv4 T: all x : Product | x in (Component-Material).parts and no x in (Material-Component).parts
+inv4 B: all x : Product | x in (Component-Material).parts and x not in (Material-Component).parts
+inv4 B: some x : Product | x in Component.parts and x not in Material.parts
+inv4 B: some Component.parts and no Material.parts
+inv4 U: all x: Component | some (x.parts) && all y: Material | no (y.parts)
+inv4 U: all x: Component | some (x.parts) || all y: Material | no (y.parts)
+inv4 S: all x: Product | x in Component -> some (x.parts) || x in Material -> no (y.parts)
+inv4 S: all x: Product | (x in Component && some x.parts) || (x in Material && no y.parts)
+inv4 C: all x: Product | (x in Component && some x.parts) || (x in Material && no x.parts)
+

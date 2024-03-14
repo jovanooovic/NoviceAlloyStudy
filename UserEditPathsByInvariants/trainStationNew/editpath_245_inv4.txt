@@ -1,0 +1,10 @@
+inv4 B: all t: Track | t != Entry => t.succs not in Entry
+inv4 B: all t: Track | t not in Entry => t.succs not in Entry
+inv4 B: all t: Track | t not in Entry => t.^(succs) not in Entry
+inv4 B: all t: Track | t not in Entry <=> t.^(succs) not in Entry
+inv4 B: all t: Track | t not in Entry <=> Entry not in t.^(succs)
+inv4 B: all t: Track | t not in Entry => Entry not in t.^(succs)
+inv4 S: all t: Track | t in Entry iff #succs.t == 0
+inv4 C: all t: Track | t in Entry iff #succs.t = 0
+inv4 C: all t: Track | t in Entry iff #succs.t = 0
+

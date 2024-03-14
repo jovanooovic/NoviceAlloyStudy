@@ -1,0 +1,10 @@
+inv9 U: all p : Professor | no (p.teaches & Professor)
+inv9 U: no (Professor.teaches & Professor)
+inv9 U: all disj p1, p2 : Professor, c : Course | (p1 + p2) in teaches.c => p1 not in p2.teaches and p2 not in p1.teaches
+inv9 E:
+inv9 U: all disj p1,p2 : Professor | (p1 + p2) in enrolled.Course => p1 not in p2.teaches and p2 not in p1.teaches
+inv9 B: no enrolled.Course & Professor
+inv9 S: all p : Professor | no (p.teach & Professor)
+inv9 U: all p : Professor | no (p.teaches & Professor)
+inv9 B: all p : Professor, c : Course | c = p.teaches => enrolled.c not in Professor
+

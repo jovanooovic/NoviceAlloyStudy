@@ -1,0 +1,22 @@
+inv1 S: all s : Student
+inv1 U: all s : Student | s.enrolled in Course
+inv1 S: all p : Person | p.enrolled in Course iff p == Student
+inv1 S: all person : Person | professor : Professor | person-professor in Course
+inv1 S: all person : Person | professor : Professor | person - professor in Course
+inv1 S: all person : Person | professor : Professor | person - professor in p.enrolled
+inv1 S: all person : Person | professor : Professor | person - professor in person.enrolled
+inv1 S: all person : Person | professor : Professor | (person - professor) in person.enrolled
+inv1 S: all s,p : Person | pr : Professor | s != pr implies s in p.enrolled
+inv1 U: all p : Person | all t : Professor| no (p.enrolled & t)
+inv1 B: all p : Professor| no (p.enrolled)
+inv1 B: all p : Professor| no ( p.enrolled )
+inv1 T: all p : Professor| not ( p.enrolled )
+inv1 T: all p : Professor| none ( p.enrolled )
+inv1 B: all p : Professor | no ( p.enrolled )
+inv1 S: all p : Professor | none in p.enrolled )
+inv1 B: all p : Professor | all c : Course | c not in p.enrolled
+inv1 S: all p : Person | all s : Student | all c : Course | c in p.enrolled iff p == s
+inv1 S: all p : Person | all s : Student | all c : Course | c in s.erolled
+inv1 B: all p : Person | all s : Student | all c : Course | c in s.enrolled
+inv1 B: all p : Professor | all s : Student | all c : Course | c in s.enrolled iff p = s
+

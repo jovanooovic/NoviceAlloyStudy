@@ -1,0 +1,7 @@
+inv5 T: all p : Person,x:Project | p.projects => p in Student and #(projects.x)>0
+inv5 T: all p : Person, x:Project | p.projects => p in Student and #(projects.x)>0
+inv5 T: all p : Person, x:Project | p.projects => p in Student and #projects.x > 0
+inv5 T: all p : Person, x:Project | #p.projects >0 => p in Student and #projects.x > 0
+inv5 U: all p : Person, x:Project | #p.projects >0 => p in Student and #projects.x & Person> 0
+inv5 C: all p : Person, x:Project | #p.projects >0 => p in Student 	  all p:Project | #(projects.p & Person)> 0
+

@@ -1,0 +1,8 @@
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | lone u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | some u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+

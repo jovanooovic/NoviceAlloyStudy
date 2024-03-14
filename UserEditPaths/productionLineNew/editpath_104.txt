@@ -1,0 +1,48 @@
+NA H: THEME UPDATE
+inv1 C: Worker - Human = Robot	Worker - Robot = Human
+inv2 S: all ws : Workstation | some w : Worker | #ws.workers > 0	all w : Worker
+inv2 C: all ws : Workstation | some w : Worker | #ws.workers > 0	all w : Worker | one ws : Workstation | w in ws.workers
+inv2 C: all ws : Workstation | #ws.workers > 0	all w : Worker | one ws : Workstation | w in ws.workers
+inv3 S: all c : Components | #c.workstation = 1
+inv3 C: all c : Component | #c.workstation = 1
+inv4 C: all c : Component | #c.parts > 0	all m : Material | #m.parts = 0
+inv5 O: all ws : Workstation | ws.workers in Robot or ws.workers in Human
+inv6 U: all c : Component | c not in c.parts
+inv6 O: all c : Component | c not in c.*parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 T: all c : Component | #(c.parts in Dangerous) > 0 implies c in Dangerous
+inv7 T: all c : Component | #(c.^parts in Dangerous) > 0 implies c in Dangerous
+inv7 T: all c : Component | #(Dangerous in c.^parts) > 0 implies c in Dangerous
+inv7 B: all c : Component | Dangerous in c.^parts implies some ( c & Dangerous & Component )
+inv7 S: all c : Component | Dangerous in c.^parts implies some in ( c & Dangerous & Component )
+inv7 B: all c : Component | Dangerous in c.^parts implies some ( c & Dangerous & Component )
+inv7 B: all c : Component | Dangerous in c.^parts implies some (c & Dangerous & Component)
+inv7 B: all c : Component | Dangerous in c.^parts implies c in Dangerous
+inv8 O: all c : Component | c in Dangerous implies #c.workstation.workers-Robot = 0
+inv8 O: all c : Component | c in Dangerous implies c.workstation.workers in Robot
+inv9 B: begin.^succ = Workstation
+inv9 U: begin.*succ = Workstation
+inv9 B: begin.^succ = Workstation or begin = end
+inv9 B: begin.^succ = Workstation
+inv9 U: begin.*succ = Workstation
+inv9 U: #begin.*succ = #Workstation
+inv9 B: #begin.*succ = 1
+inv9 S: all w1, w2 : Worstation | w2 in w1.*succ implies w1 not in w2.*succ
+inv9 O: all w1, w2 : Workstation | w2 in w1.*succ implies w1 not in w2.*succ
+inv9 B: #succ = #Workstation - 1
+inv9 T: no succ.begin	all w : Workstation | succ.w
+inv9 U: no succ.begin	all ws : Workstation-begin | one w : Workstation | ws in w.succ
+inv9 U: no succ.begin	#(begin.*succ) = #Workstation
+inv9 U: no succ.begin	no end.succ	#(begin.*succ) = #Workstation
+inv9 U: no succ.begin	no end.succ	#(begin.*succ) = #Workstation	all w : Workstation | w not in w.succ
+inv9 U: all w : Workstation-end | one ws: Workstation-w | ws in w.succ
+inv9 B: all w : Workstation | one ws: Workstation-w | ws in w.succ
+inv9 O: no end.succ	all w : Workstation | one ws: Workstation-w | ws in w.succ
+inv9 U: #(*succ.end) = #Workstation
+inv9 B: #(*succ.end) = #Workstation	all w : Workstation | one s : Workstation | s = w.succ
+inv9 B: #(*succ.end) = #Workstation	all w : Workstation | some s : Workstation | s = w.succ
+inv9 U: #(*succ.end) = #Workstation	#(begin.*succ) = #Workstation
+inv9 B: #(*succ.end) = #Workstation	#(begin.*succ) = #Workstation	all w : Workstation | #w.succ=1
+inv9 U: #(*succ.end) = #Workstation	#(begin.*succ) = #Workstation	all w : Workstation-end | # w.succ = 1
+inv9 U: #(*succ.end) = #Workstation	#(begin.*succ) = #Workstation	all w : Workstation-end | # w.succ = 1	all w: Workstation | w not in w.succ
+

@@ -1,0 +1,9 @@
+inv5 S: all w : Workstation, work : Workers | w->work in workers and work in Human implies work not in robots
+inv5 S: all w : Workstation, work : Workers | w->work in workers and work in Human implies work not in robots
+inv5 S: all w : Workstation, work : Worker | w->work in workers and work in Human implies work not in robots
+inv5 U: all w : Workstation, work : Worker | w->work in workers and work in Human implies work not in Robot
+inv5 U: all w : Workstation, work : Worker | (w->work in workers and work in Human implies work not in Robot) and (w->work in workers and work in Robot implies work not in Human)
+inv5 S: all h : Human, r : Robot, w : Worksation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)
+inv5 C: all h : Human, r : Robot, w : Workstation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)
+inv5 C: all h : Human, r : Robot, w : Workstation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)
+

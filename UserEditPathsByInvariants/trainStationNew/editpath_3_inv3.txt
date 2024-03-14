@@ -1,0 +1,44 @@
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 U: no Exit.succs
+inv3 T: Exit => no Track.succs
+inv3 U: no Exit.succs
+inv3 U: all e: Exit | no e.succs
+inv3 B: no (Track.succs & Exit)
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 U: all t: Track & Exit| no t.succs
+inv3 B: no Track.succs & Exit
+inv3 B: no (Track.succs & Exit)
+inv3 U: all t: Track & Exit | no t.succs
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 T: all t: Track | t is Exit => no t.succs
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 U: no Track.succs & Exit.succs
+inv3 U: all t: Track | no t.succs => t in Exit
+inv3 B: all t: Track | no t.succs => t in Exit	Track not in Track.^succs
+inv3 B: some Track-Exit
+inv3 T: some (Track-Exit).Exit
+inv3 B: some (Track-Exit).succs
+inv3 U: all t: Track | no t.succs => t in Exit
+inv3 U: all t: Track | no t.succs and t not in t.succs => t in Exit
+inv3 U: all t: Track | no t.succs => t in Exit
+inv3 U: all t: Track | no t.succs => t in Exit and t not in Track-Exit
+inv3 B: all t: Track | no t.succs => t in Exit and t not in Entry
+inv3 U: all t: Track | t in Exit => lone t.succs
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 B: all t: Track | t in Exit => t not in Junction and no t.succs
+inv3 S: all t: Track | t in Exit => t not in Junction+Enret and no t.succs
+inv3 B: all t: Track | t in Exit => t not in Junction+Entry and no t.succs
+inv3 B: all t: Track | no t.succs => t in Exit and t not in Junction+Entry
+inv3 B: all t: Track | no t.succs => t in Exit and t not in Junction+Entry	all t: Track | t not in t.succs
+inv3 S: Tracks.succs = Exit.succs
+inv3 B: Track.succs = Exit.succs
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 B: all t: Track | t in Exit => no t.succs	all t: Track | t in Exit => t not in Junction	all t: Track | t in Exit => t not in Entry
+inv3 B: all t: Track | t in Exit => no t.succs	no (Entry & Junction & Exit)
+inv3 B: Track = Junction+Entry+Exit	all t: Track | t in Exit => no t.succs
+inv3 B: Track = Junction+Entry+Exit	no Exit & Junction	no Entry & Junction	no Entry & Exit	all t: Track | t in Exit => no t.succs
+inv3 B: Track = Junction+Entry+Exit	all t: Track | t in Exit => no t.succs
+inv3 O: Track = Junction+Entry+Exit	all t: Track | t in Exit <=> no t.succs
+inv3 C: all t: Track | t in Exit <=> no t.succs
+inv3 C: all t: Track | t in Exit <=> no t.succs
+

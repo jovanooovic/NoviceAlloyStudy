@@ -1,0 +1,9 @@
+inv13 S: all c : Course | gt(c.grades)
+inv13 E:
+inv13 E:
+inv13 S: all s : Student, c: Course, g: Grade | s->g == max(c.grades) implies (some p: Project | p in s.projects && p in c.projects)
+inv13 T: all s : Student, c: Course, g: Grade | s->g = max(c.grades) implies (some p: Project | p in s.projects && p in c.projects)
+inv13 T: all c: Course | some s1: Student | all s2: Student - s1, g: Grade | some p: Project| s1->g > s2->g implies some(s.projects & c.projects)
+inv13 T: all c: Course | some s1: Student | all s2: Student, g: Grade | some p: Project| s1->g > s2->g implies some(s.projects & c.projects)
+inv13 T: all c: Course | some p1: Person - Professor | all p2: Person - Professor - p1, g: Grade | some p: Project| p1->g > p2->g implies some(s.projects & c.projects)
+

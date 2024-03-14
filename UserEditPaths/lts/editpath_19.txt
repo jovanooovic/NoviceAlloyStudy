@@ -1,0 +1,48 @@
+NA H: THEME UPDATE
+inv1 C: all s: State | some s.trans
+inv2 C: one Init
+inv3 O: all s: State | lone s.trans
+inv3 C: all s: State, e: Event | lone s.trans[e]
+inv4 T: all s: State | some (*trans.s & Init)
+inv4 T: all s: State | some (*trans[Event].s & Init)
+inv4 B: all s: State | some (*(trans[Event]).s & Init)
+inv5 O: all s: State | Event <: trans = trans
+inv5 O: all s: State | Event <: trans = trans
+inv5 U: all s: State | Event <: s.trans = s.trans
+inv6 O: all e: Event | some trans[e]
+inv6 C: all e: Event | some State.trans[e]
+inv7 T: all s: State | some s.*trans[Event] & Init
+inv7 T: all s: State | some (s.*trans[Event] & Init)
+inv7 B: all s: State | some (s.*(trans[Event]) & Init)
+inv7 S: all s: State | some (s.*(trans..Event) & Init)
+inv7 T: all s: State | some (s.*(s.trans.Event) & Init)
+inv4 T: all s: State | some (*{ss: State, e: Event | ss.trans.e}.s & Init)
+inv4 T: all s: State | some (*{ss: State, e: Event | ss.trans}.s & Init)
+inv4 T: all s: State | some (*{ss: State | ss.trans.Event}.s & Init)
+inv4 T: all s: State | some (*{ss: State | ss.trans}.s & Init)
+inv4 T: all s: State | some (*{s1, s2: State | some s1.trans[Event].s2}.s & Init)
+inv4 U: all s: State | some (*{s1, s2: State | s2 in s1.trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1 in s2.trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->s2 in trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->s2 in trans.Event}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->Event->s2 in trans}.s & Init)
+inv4 U: all s: State | some (*{s1, s2: State | some (s1 <: trans :> s2)}.s & Init)
+inv4 U: all s: State | some ((*{s1, s2: State | some (s1 <: trans :> s2)}.s & Init))
+inv4 S: all s: State | some (*{s1, s2: State | some (s2 <: trans :> s1}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | some (s2 <: trans :> s1)}.s & Init)
+inv4 T: Init.*trans = State
+inv4 U: Init.*{s1, s2: State | some e: Event | s1->e->s2 in trans} = State
+inv4 U: Init.*{s1, s2: State | some e: Event | s1->e->s2 in trans} = State
+inv4 T: Init.*{s1, s2: State | s1.trans.s2} = State
+inv4 U: Init.*{s1, s2: State | some s1.trans.s2} = State
+inv4 C: Init.^{s1, s2: State | some s1.trans.s2} = State
+inv5 C: all s1, s2: State | s1.trans.State = s2.trans.State
+inv7 O: all s: State | s in Init.^{s1, s2: State | some s1.trans.s2} implies Init in s.^{s1, s2: State | some s1.trans.s2}
+inv7 O: all s: State | s in Init.*{s1, s2: State | some s1.trans.s2} implies Init in s.*{s1, s2: State | some s1.trans.s2}
+inv7 U: all s: State | s in Init.*{s1, s2: State | some s1.trans.s2} implies some (Init & s.*{s1, s2: State | some s1.trans.s2})
+inv7 C: all s: State | s in Init.^{s1, s2: State | some s1.trans.s2} implies some (Init & s.^{s1, s2: State | some s1.trans.s2})
+inv7 S: fun edge : State -> State {	    s1, s2: State | some s1.trans.s2	  }		  all s: State | s in Init.^edge implies some (Init & s.^edge)
+inv6 S: all e: Event | some State.trans[e]	}		/*	The LTS is reversible, ie, from a reacheable state it is always possible 	to return to an initial state.	*/	fun edge : State -> State {	  s1, s2: State | some s1.trans.s2
+inv6 T: all e: Event | some State.trans[e]	}		/*	The LTS is reversible, ie, from a reacheable state it is always possible 	to return to an initial state.	*/	fun edge : State -> State {	  all s1, s2: State | some s1.trans.s2
+inv7 S: all s: State | s in Init.^edge implies some (Init & s.^edge)
+

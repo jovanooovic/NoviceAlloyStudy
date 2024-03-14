@@ -1,0 +1,15 @@
+inv9 B: all p:Professor | all c:Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p:Person | all c:Course | c in p.enrolled implies p not in Professor
+inv9 B: all p:Professor | all c:Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p1,p2:Professor | all c1,c2:Course | c1 in p1.teaches and c2 in p2.enrolled implies c1!=c2 and p1 != p2
+inv9 S: all p1
+inv9 B: all p1:Professor | all c:Course | c in p1.teaches implies c not in  p1.enrolled
+inv9 B: all p1,p2:Professor | all c:Course | c in p1.teaches implies c not in  p2.enrolled
+inv9 B: all p1,p2:Professor | one c:Course | c in p1.teaches implies c not in  p2.enrolled
+inv9 B: all p1,p2:Professor | all c:Course | c in p1.teaches implies c not in  p2.enrolled
+inv9 B: all p1,p2:Professor | all c1,c2:Course | c1 in p1.teaches implies c1 not in  p2.enrolled
+inv9 B: all p1,p2:Professor | all c1,c2:Course | c1 in p1.teaches implies c2 not in  p2.enrolled
+inv9 B: all p1,p2:Professor | all c1:Course | c1 in p1.teaches implies c1 not in  p2.enrolled
+inv9 B: all p1:Professor | all p:Person |  all c1:Course | c1 in p1.teaches implies c1 not in p.enrolled and p in Professor
+inv9 B: all p:Person | all p1:Professor |  all c1:Course | c1 in p1.teaches and c1 in p.enrolled implies p not in Professor
+

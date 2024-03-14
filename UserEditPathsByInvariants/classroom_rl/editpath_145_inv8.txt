@@ -1,0 +1,5 @@
+inv8 T: all t : Teacher, c, c1 : Class | t->c in Teaches & t->c1 in Teaches => c = c1
+inv8 T: all t : Teacher, c, c1 : Class | t->c in Teaches & t->c1 in Teaches => c in c1
+inv8 O: all t : Teacher, c, c1 : Class | (t->c + t->c1) in Teaches => c != c1
+inv8 C: all t : Teacher, c, c1 : Class | (t->c + t->c1) in Teaches => c = c1
+

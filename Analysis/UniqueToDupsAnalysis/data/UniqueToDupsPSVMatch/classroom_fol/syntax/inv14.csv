@@ -1,0 +1,129 @@
+"all s:Student | some c:Class |",1
+"some c:Class ,g:Groups | all s :Students | g in c",1
+"all x: Class, p: Student | some t: Teacher | x->p->",1
+"some s :Student | some c:class | some g:Group  c->s->g in Groups",1
+"some s :Student | some c:class | some g:Group | c->s->g in Groups",2
+"all s : Student | in Class implies some t : Teacher | t->s in Tutors",2
+"all s : Student | s in Class implies some t : Teacher | t->c in Tutors",1
+"all p1,p2:Person | p1->p2 in Tutor => (p1 in Teacher and p2 in Student)",2
+"some c:Class ,g:Groups ,t:Teacher| all s :Student | (c->(s->g) in Groups",1
+"all c:Class,s:Students,t:Teachers | t->c in Teaches implies t->s in Tutors",1
+"all s:Student | (some c:Class | some t:Teacher | t->c in Teaches) | t->s in Tutors",1
+"all s:Student | some c:Class | some t:Teacher | t->c in Teaches and t-> in Tutors)",1
+"all s:Student | some c:Class | (some t:Teacher | t->c in Teaches and t-> in Tutors)",1
+"all s:Student | some c:Class | some t:Teacher | t->c in Teaches and t->s in Tutors)",1
+"all s:Student | (some c:Class | some:Teacher t->c in Teaches) implies s->t in Tutors",1
+"all s:Student | (some c:Class | some t:Teacher | t->c in Teaches) and t->s in Tutors",1
+"all s:Student | some c:Class | some t:Teacher t->c in Teaches implies s->t in Tutors",1
+"all s:Student,c:Class,t:Teacher | s in c.Groups.Group",1
+"all s:Student | (some c:Class | some t:Teacher t->c in Teaches) implies s->t in Tutors",1
+"all s:Student | (some c:Class | some t:Teacher | t->c in Teaches) implies s->t in Tutors",1
+"all s:Student | some c:Class | (some t:Teacher | t->c in Teaches) implies s->t in Tutors",1
+"all c:Class,s:Student,s:Teacher |some g:Group| s in c.Groups.Group and c->t->g in Groups",1
+"all s : Student, c : Class | some t : Teacher | c->s->g in Groups implies t->s in Tutors",1
+"all s:Student | (some c:Class | some t:Teacher | s->t in Tutors) implies t->c in Teaches",1
+"some s :Student | some c:class | some g:Group c->s->g in Groups and (some t:Teacher t->c)",1
+"all p : Person | p in Class implies some t : Teacher | t->c in Teaches and t->p in Tutors",1
+"some s :Student | some c:class | some g:Group| c->s->g in Groups and (some t:Teacher t->c)",1
+"all c : Class, p1, p2 : Person | (p1 in Teacher and p1->c Teaches) implies (p1->p2 in Tutors)",1
+"some c:Class ,g:Groups ,t:Teacher| all s :Students | c->(s->g) in Groups implies t->s in Tutors",1
+"all p:Person,c:Class,t:Teacher | (some g:Group | c->p->g in Groups) and t->c in Teaches implies",1
+"all p : Student, some t : Teacher | (some c: Class, some g: Group | c->g->p) and t->p in Tutors",1
+"all p1 : Student, some t : Teacher | (all c: Class, some g: Group | c->g->p1) => t->p1 in Tutors",1
+"all p:Person,c:Class,t:Teacher | (some g:Group | c->p->g in Groups) and t->c in Teaches) implies",1
+"all p1 : Student, some t : Teacher | (some c: Class, some g: Group | c->g->p1) and t->p1 in Tutors",1
+"all p1 : Student | some t : Teacher | (some c: Class, some g: Group | c->g->p1) and t->p1 in Tutors",1
+"all sStudent,t:Teacher | (some g:Group | c->s>g in Groups) and t->c in Teaches implies t->p in Tutors",1
+"all s : Student | c : Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors",1
+"all s : Student | (c : Class, g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors",1
+"all p,t : Person | c : Class, g : Group | t->p in Tutors implies t->c in Teaches and c->p->g in Groups",1
+"all s : Student | s in Class, g : Group | c->s->g  in Groups implies some t : Teacher | t->s in Tutors",2
+"all s : Student | (c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors",1
+"all s:Studen, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors",1
+"all c : Class | some s : Student, g : Group | c->p->g in Groups implies some t : Teacher | t->s in Tutors",1
+"all s : Student, c : Class | some g : Group | c->s->g in Groups) implies some t : Teacher | t->s in Tutors",1
+"all s:Student | some c:Class,g:Group, t:Teacher | c->s->g in Groups and t->c in Teachers => t->s in Tutors",1
+"all c : Class | (some p : Student, g : Group | c->p->g in Groups) implies some t : Teacher | t->s in Tutors",1
+"all c:Class,s:Student,t:Teacher |(some g:Group | c->s->g in Groups) | t->c in Teaches implies t->s in Tutors",2
+"all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->c in Tutors",1
+"all s:Student,c:Class,t:Teacher | s in c.Groups.Group and t->c in Teaches",1
+"all t : Teacher, c : Class, p : Person | t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors",1
+"all t : Teacher, c : class, p : Person : t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors",1
+"all t : Teacher, c : class, p : Person | t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors",1
+"all c : Class, p1, p2 : Person {
+    (p1 in Teacher and p1->c Teaches)
+    implies
+    (p1->p2 in Tutors)
+  }",2
+"all s:Student,t:Teacher | (some c:Class,g:Group | c->s->g in Groups) and t->c in Teaches implies t->s in Tutors",1
+"all s:Student,c:Class,t:Teacher | (some g:Group | c->s->g in Groups) and t->c in Teaches implies t->p in Tutors",1
+"all s:Student,c:Class,t:Teacher | (some g:Group | c->s->g in Groups) and t->c in Teaches implies t->s in Tutors)",1
+"(all s:Student(some g:Group, c:Class, t:Teacher | c->s->g in Groups and t->c in Teaches) implies t->s in Tutors)",1
+"some s :Student | some c:Class | some g:Group | c->s->g in Groups and some t:Teacher t->c implies t->s in Tutors",1
+"some s :Student | some c:class | some g:Group c->s->g in Groups and (some t:Teacher t->c) implies t->s in Tutors",1
+"some s:Student, g:Group, c:Class | some t:Teacher | c->s->g in Groups and t->c in Teaches implies t->s in Tutors)",1
+"some s :Student | some c:class | some g:Group | c->s->g in Groups and (some t:Teacher t->c) implies t->s in Tutors",1
+"some s :Student | some c:Class | some g:Group | c->s->g in Groups and (some t:Teacher t->c) implies t->s in Tutors",1
+"all p : Person | some c : Class, g : Group, t : Teacher | (c->s->g in Groups and t->c in Teaches) and t->s in Tutors",1
+"all s: Student | some t:Teacher | (some c:Class, g:Group | c->s->g in Groups) and t->c in Teaches and t->s in Tutors",1
+"all p : Student, c : Class, g : Group | (c->s->g in Groups => all t : Teacher | (t->c in Teaches => t->s in Tutors))",1
+"all s : Student, c : Class | (some g : Group |  c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors",1
+"all s:Student,c:Class | all t:Teachers | (some g:Group | c->s->g in Groups) and t->c in Teaches implies t->s in Tutors",1
+"all s : Student, c : Class | (some g : Group  |  c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors",1
+"all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors | g : Group | c->s->g in Groups",1
+"all x : Person, y : Class, v : Teacher | (some z : Group | y->x->z in Groups) and v->y in Teaches implies v->x in Tutor",1
+"all s:Student,c:Class | (some g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors",1
+"all s : Student, c : Class, g : Group, t : Teache | c -> s -> g in Groups and t -> c in Teaches implies t -> s in Tutors",1
+"all p : Person | (some t : Teacher, c : Class, g : Group | t->p in Tutors) implies t->c in Teaches and c->p->g in Groups",1
+"all s:Student | (some c:Class,g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)",1
+"all p : Person | some c : Class, g : Group | c->p->g in Groups | some q : Person | q->c in Teaches implies q->p in Tutors",2
+"all t : Teacher, c : Class, s : Student, g : Group | t -> c in Teaches and c -> s -> g in Groups implies t -> p in Tutors",1
+"all s: Student | some t:Teacher, some c:Class | (some g:Group | c->s->g in Groups) and t->c in Teaches and t->s in Tutors",1
+"all p : Person | (some t : Teacher, c : Class, g : Group | t->p in Tutors) implies (t->c in Teaches and c->p->g in Groups)",1
+"all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies p in Student and some t : Teacher | t->s in Tutors",1
+"all s : Student, c : Class, g : Group | (c -> s -> g in Groups => some t : Teacher | t -> c in Teaches and t -> s in Tutors",1
+"all s : Student | some t : Teacher, c : Class | t->c in Teaches implies t->s in Tutors | some g : Group | c->s->g in Groups",1
+"all s : Student, c : Class, g : Group | (c -> s -> g in Groups and some t : Teacher | t -> c in Teaches) => t -> s in Tutors",1
+"all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t->p in Tutors and t : Teacher | t->c in Teaches",2
+"all p1, p2 : Person, c : Class | (some g : Group | c -> p2 -> g in Groups) and p1 -> c in Teaches implies p1 -> p2 in Tutors)",2
+"all p : Person | (some c : Class, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches and t->p in Tutors",1
+"some s :Student | some c:Class | some g:Group | (c->s->g in Groups and some t:Teacher| t->c in Teaches) implies t->s in Tutors",1
+"all t : Teacher | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups) implies t->s in Tutors",1
+"all s:Person | (some c:Class, g:Group | c -> s -> g in Groups) implies (some t:Person | t -> c in Teaches and t -> s in Tutors)",1
+"all x : Person, y : Class | (some z : Group | y->x->z in Groups) and (all u : Teacher | u->y in Teaches) implies u->x in Tutors",1
+"all t : Teacher | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups) implies t-> s in Tutors",1
+"(all s :Student | some c:Class | some g:Group | c->s->g in Groups) and (some t:Teacher| t->c in Teaches implies t->s in Tutors)",1
+"all s : Student | (some c : Class, g : Group | c->s->g  in Groups) implies some t : Teacher | t->s in Tutors and t->c in Teaches",1
+"all p : Person, c : Class | some g : Group | c->p->g in Groups implies
+  some t : Teacher | t->c in Teches implies t->p in Tutors",1
+"all s : Student | some t : Teacher (| some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors",1
+"all s : Student, c : Class, t : Teacher | (some g : Group | c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors)",1
+"all x : Person | some y : Class | (some z : Group | c->x->z in Groups) implies all u : Teacher | u->y in Teaches and u->x in Tutors",1
+"all ps : Person | some c : Class, some g : Group | some t : teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors",1
+"all s : Student, c : Class, g : Group | some t : teacher | 
+  		c -> t -> g in Groups and t -> c in Teaches implies t -> s in Tutors",1
+"all ps : Person | some c : Class, some g : Group | some t : Teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors",2
+"all s : Student, c : Class | (some g : Group  c -> s -> g in Groups) and (some t : Teacher | t -> c in Teaches and t -> s in Tutors)",1
+"all s : Student | some g : Group, c : Class, t : Teacher | 
+  		(c -> s -> g in Groups and t -> c in Teaches) and (p2 -> p1 in Tutors)",1
+"all s : Student | (some c : Class, g : Group, t : Teacher |   
+  		c -> s -> g in Groups and t -> c in Teaches implies t -> s in Tutors",1
+"all s : Student | some t : Teacher, c : class | all  g : Group | 
+  		c -> t -> g in Groups and t -> c in Teaches) and t -> s in Tutors",1
+"all s : Student, c : Class, g : Group | some p : Person | c->s->g in Groups and t->c in Teaches and t in Teacher implies t->s in Tutors",1
+"all s : Student | some t : Teacher, c : class | all  g : Group | 
+  		(c -> t -> g in Groups and t -> c in Teaches) and t -> s in Tutors",1
+"all s : Student, c : Class, g : Group | c->s->g in Groups and (some t . Person | t->c in Teaches and t in Teacher implies t->s in Tutors)",1
+"all s : Student, c : Class | (some g : Group  c -> s -> g in Groups)  and (some t : Teacher | t -> c in Teaches implies t -> s in Tutors)",1
+"all s : Student | (some c : Class, g : Group, t : Teacher |   
+  		c -> s -> g in Groups and t -> c in Teaches) implies (t -> s in Tutors)",1
+"all s : Student, all c : Class, g : Group | some t : Teacher | 
+  		(c -> s -> g in Groups and t -> c in Teaches) implies (t -> s in Tutors)",1
+"all p : Person, all t: Teacher |  (some c : Class, g : Group |   
+  		c -> p -> g in Groups and t -> c in Teaches) implies (t -> p in Tutors)",1
+"all s : Student, all c : Class, g : Group | some t : Teacher |  
+  		(c -> s -> g in Groups and t -> c in Teaches) implies (t -> s in Tutors)",1
+"all s : Student, c : Class | ((some g : Group  c -> s -> g in Groups)  and (some t : Teacher | t -> c in Teaches))  implies (t -> s in Tutors)",1
+"all p : Person | some t : Teacher |  (some c : Class, g : Group |  
+  		c -> p -> g in Groups and t -> c in Teaches) implies (t -> s in Tutors)",1
+"all s : Person, c : Class | (some g : Group | c->s->g in Groups) implies (all t : Teacher | t->c in Teaches and t->s in Tutors)",1

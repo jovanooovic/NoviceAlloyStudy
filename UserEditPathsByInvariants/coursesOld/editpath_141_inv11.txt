@@ -1,0 +1,6 @@
+inv11 S: all s : Student | all c : Courses | all g : Grade | (c->p->g in grades) implies (p->c in enrolled)
+inv11 S: all s : Student | all c : Course| all g : Grade | (c->p->g in grades) implies (p->c in enrolled)
+inv11 S: all s : Student | all c : Course| all g : Grade | (c->s->g in grades) implies (p->c in enrolled)
+inv11 U: all s : Student | all c : Course| all g : Grade | (c->s->g in grades) implies (s->c in enrolled)
+inv11 U: all s : Student | all c : Course| all g : Grade | (c->s->g in grades) implies (s->c in enrolled)
+

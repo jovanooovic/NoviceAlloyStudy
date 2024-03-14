@@ -1,0 +1,12 @@
+inv5 U: all p:Person, pj: Project | no (p & Student) implies pj not in p.projects
+inv5 T: all pj:Project | some s:Student | s.projects & pj
+inv5 T: all pj:Project | some s:Student.projects | s.Project & pj
+inv5 T: all pj:Project | some s:Student.projects | s & pj
+inv5 T: all pj:Project | some s:Student | s.pj
+inv5 B: all pj:Project | some s:Student | s.projects = pj
+inv5 B: all pj:Project | lone s:Student | s.projects = pj
+inv5 B: all pj:Project, p:Professor | lone s:Student | s.projects = pj and p.projects != pj
+inv5 B: all pj:Project | lone s:Student | s.projects = pj
+inv5 B: all pj:Project, pr:Professor | lone s:Student | s.projects = pj and pr.projects != pj
+inv5 B: all pj:Project, pr:Professor | lone s:Student | s.projects = pj and pr.projects != pj and pr.teaches.projects != pj
+

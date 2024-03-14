@@ -1,0 +1,22 @@
+inv8 T: all c : Class | some c in Teacher.Teaches
+inv8 T: all c : Class | lone c in Teacher.Teaches
+inv8 T: all c : Class | lone (c in Teacher.Teaches)
+inv8 B: all c : Class | lone Teaches.c
+inv8 T: all t : Teacher | lone t.Class
+inv8 T: all t : Teacher | lone Class.t
+inv8 U: all c : Class | lone c.Teaches
+inv8 B: all c : Class | lone Teaches.c
+inv8 B: some c : Class | lone Teaches.c
+inv8 E:
+inv8 T: some t : Teacher | lone t.Class
+inv8 T: some t : Teacher | lone Class.t
+inv8 B: some t : Teacher | lone t.Teaches
+inv8 B: some t : Teacher | lone t.Teaches & Class
+inv8 O: some t : Teacher | lone t.Teaches + Class
+inv8 B: some t : Teacher | lone (t.Teaches & Class)
+inv8 T: some t : Teacher | lone (t.Teaches in Class)
+inv8 B: some t : Teacher | lone t.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+

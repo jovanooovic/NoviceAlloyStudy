@@ -1,0 +1,22 @@
+inv7 B: all u1, u2 : User | u1 in suggested.u2 implies (some u3 : User | u3 in follows.u1 and u3 in follows.u2 and u1 not in follows.u2 and u1 != u2 and u2 not in follows.u1)
+inv7 B: all u1, u2 : User | u1 in suggested.u2 implies (some u3 : User | u3 in follows.u1 and u3 in follows.u2 and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1 in suggested.u2 implies (some u3 : User | u3 in follows.u1 and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1->u2 in suggested implies (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1 in suggested.u2 iff (some u3 : User | u1 in follows.u3 and u2 in follows.u3 and u1 not in follows.u2 and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 C: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u1->u2 not in follows)
+inv7 C: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1 not in follows.u2 and u1 != u2 and u1 not in follows.u2)
+inv7 C: all u1, u2 : User | u1 in suggested.u2 iff (some u3 : User | u1 in follows.u3 and u3 in follows.u2 and u1 not in follows.u2 and u1 != u2 and u1 not in follows.u2)
+inv7 B: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 B: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 C: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2)
+inv7 C: all u1, u2 : User | u1 in suggested.u2 iff (some u3 : User | u1 in follows.u3 and u3 in follows.u2 and u1 not in follows.u2 and u1 != u2)
+inv7 C: all u1, u2 : User | u1 in suggested.u2 iff (some u3 : User | u1 in follows.u3 - follows.u2 and u3 in follows.u2 and u1 != u2)
+inv7 B: all u1, u2 : User | u1 in suggested.u2 iff (some u3 : User | u1 in follows.u3 - follows.u2 and u3 in follows.u2 )
+inv7 B: all u : User | u.suggested = u.follows.follows
+inv7 B: all u : User | u.suggested = u.follows.follows - u
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u)
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u)
+

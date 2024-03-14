@@ -1,0 +1,8 @@
+inv5 O: (Person<:projects).Person in Student	  	some (Person<:projects).Person
+inv5 C: all p:Person, pr:Project | p->pr in Person<:projects => p in Student	  	all pr:Project | some p:Person | p->pr in Person<:projects
+inv5 U: all p:Person, pr:Project | p->pr in Person<:projects => p in Student	  		  	(Person<:projects).Project in Student
+inv5 B: all p:Person, pr:Project | p->pr in Person<:projects => p in Student	  		  	some (Person<:projects).Project
+inv5 C: (Person<:projects).Project in Student	  	all pr:Project | some p:Person | p->pr in Person<:projects
+inv5 C: (Person<:projects).Project in Student	  	Person<:projects in Person some -> Project
+inv5 C: (Person<:projects).Project in Student	  	Person<:projects in Person some -> Project
+

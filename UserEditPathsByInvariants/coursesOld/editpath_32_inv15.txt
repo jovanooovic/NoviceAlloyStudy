@@ -1,0 +1,7 @@
+inv15 S: all disj s1, s2 Student | some s1.projects & s2.projects implies all m1 : s1.(Course.grades), m2 : s2.(Course.grades) | m1 in m2 + m2.prev + m2.next
+inv15 S: all disj s1, s2 Student | some s1.projects & s2.projects implies all m1 : s1.(Course.grades), m2 : s2.(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+inv15 S: all disj s1, s2 Student | some s1.projects & s2.projects implies all m1 : s1.(Course.grades), m2 : s2.(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+inv15 B: all disj s1, s2 : Student | some s1.projects & s2.projects implies all m1 : s1.(Course.grades), m2 : s2.(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+inv15 S: all disj s : Student | all m1 : s2.(Course.grades), m2 : (s.projects.~projects - s).(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+inv15 B: all disj s : Student | all m1 : s.(Course.grades), m2 : (s.projects.~projects - s).(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+

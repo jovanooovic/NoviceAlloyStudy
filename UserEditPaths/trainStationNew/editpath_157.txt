@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv2 C: signals in Track one -> Signal
+inv3 C: all t:Track | no t.succs iff t in Exit
+inv4 C: all t:Track | no t & Track.succs iff t in Entry
+inv5 E: 
+inv5 T: all t:Track | (some p1,p2:Track | p1 != p2 and p1 in t & Track.succs and p2 in p2 in t & Track.succs) iff t in Junction
+inv5 B: all t:Track | (some p1,p2:Track | p1 != p2 and p1 in t & Track.succs and p2 in t & Track.succs) iff t in Junction
+inv5 U: all t:Track | (some p1,p2:Track | p1 != p2 and p1 in t & Track.succs and p2 in t & Track.succs) implies t in Junction
+inv5 S: all t1:Tracks | some t2,t3:Tracks | t1 in t2.succs and t1 in t2.succs and t1 != t2 iff t in Junction
+inv5 S: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs and t1 != t2 iff t in Junction
+inv5 U: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs and t1 != t2 iff t1 in Junction
+inv5 U: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t1 != t2 iff t1 in Junction
+inv5 U: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2 != t3 iff t1 in Junction
+inv5 U: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2 != t3 implies t1 in Junction
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies t1 in Junction
+inv5 B: all t1:Track | all t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies t1 in Junction
+inv5 B: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies t1 in Junction
+inv5 B: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs iff t1 in Junction
+inv5 S: all t1,t2,t3:Track | t2 != t3 t1 in t2.succs and t1 in t3.succs iff t1 in Junction
+inv5 O: all t1,t2,t3:Track | t2 != t3 and t1 in t2.succs and t1 in t3.succs iff t1 in Junction
+inv5 T: all t1,t2,t3:Track | t1 != t2 != t3 and t1 in t2.succs and t1 in t3.succs iff t1 in Junction
+inv5 O: all t1,t2,t3:Track | t1 != t2 and t2 != t3 and t1 in t2.succs and t1 in t3.succs iff t1 in Junction
+inv6 T: some Entry.signals.Speed
+inv6 B: some Entry.signals & Speed
+inv6 S: all Entry.signals & Speed
+inv6 B: some Entry.signals & Speed
+inv6 O: signals.Speed = Entry
+inv6 C: Entry in signals.Speed
+inv8 S: Exit in Entry.succ
+inv8 B: Exit in Entry.succs
+inv8 B: Exit in Entry.*succs
+inv8 C: all e:Entry | Exit in e.*succs
+inv9 C: all t:Track | no Junction & t.succs implies no t.signals & Semaphore
+inv10 C: all t:Track | some Junction & t.succs implies some t.signals & Semaphore
+inv5 S: all t:Track | (some t1,t2:Track | t1 != t2 t in t1.succs and t in t2.succs) iff t in Junction
+inv5 C: all t:Track | (some t1,t2:Track | t1 != t2 and t in t1.succs and t in t2.succs) iff t in Junction
+

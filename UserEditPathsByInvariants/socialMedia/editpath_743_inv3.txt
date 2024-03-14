@@ -1,0 +1,15 @@
+inv3 T: all x : User | all y : sees.x | y is Photo -> y in x.follows
+inv3 T: all x : User | all y : sees.x | y is Photo -> post.y in x.follows
+inv3 T: all x : User | all y : sees.x | y is Photo -> y.post in x.follows
+inv3 T: all x : User | all y : sees.x | y not is Ad -> y.post in x.follows
+inv3 T: all x : User | all y : sees.x | y not is Ad -> y.post in follows.x
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+inv3 T: all x : User | all y : sees.x | y not is Ad implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+inv3 T: all x : User | all y : sees.x | y is Photo implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+inv3 T: all x : User | all y : sees.x | y is Photo implies y.post in follows.x	all x : User | all y : Ad | x.sees.y
+

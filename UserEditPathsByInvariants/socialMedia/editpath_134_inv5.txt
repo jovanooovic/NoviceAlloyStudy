@@ -1,0 +1,17 @@
+inv5 B: all inf : Influencer | all u1 : User | inf in u1.follows implies u1 not in Influencer
+inv5 B: all inf : Influencer | all u1 : User | inf in follows.u1 implies u1 not in Influencer
+inv5 B: all inf : Influencer | all u1 : User | inf in u1.follows implies u1 not in Influencer
+inv5 B: all inf : Influencer | all u1 : User | inf in u1.follows implies (u1 not in Influencer)
+inv5 U: all inf : Influencer | all u1 : User | inf in u1.follows and u1 not in Influencer implies (u1 not in Influencer)
+inv5 S: (all inf : Influencer | all u1 : User | inf in u1.follows and u1 not in Influencer) implies (u1 not in Influencer)
+inv5 S: rall inf : Influencer | all u1 : User | inf in u1.follows and u1 not in Influencer implies (u1 not in Influencer)
+inv5 U: all inf : Influencer | all u1 : User | inf in u1.follows and u1 not in Influencer implies (u1 not in Influencer)
+inv5 O: all inf : Influencer | all u1 : User | inf in u1.follows and u1 not in Influencer
+inv5 B: all inf : Influencer | no inf.follows
+inv5 B: all inf : Influencer | no follows.inf
+inv5 B: all inf : Influencer | no inf.follows
+inv5 B: all inf : Influencer | all u1 : User | inf in u1.follows implies u1 not in Influencer
+inv5 B: all inf : Influencer | all u1 : User | inf in u1.follows implies u1 not in Influencer
+inv5 U: (User->Influencer - iden) in follows
+inv5 E:
+

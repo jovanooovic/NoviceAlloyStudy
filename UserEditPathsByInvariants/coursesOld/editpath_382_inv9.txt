@@ -1,0 +1,6 @@
+inv9 B: all p1:Professor, c:Course, p:Person | p1->c in teaches and p->c in enrolled implies ( p not in Professor and p != p1 )
+inv9 B: all p1,p2:Professor, c:Course| p1->c in teaches and p2->c in enrolled implies  p1 != p2
+inv9 B: all p1,p2:Professor, c1,c2:Course| p1->c1 in teaches and p2->c2 in enrolled implies p1 != p2 and c1 != c2
+inv9 B: all p1,p2:Professor, c1,c2:Course| p1->c1 in teaches and p2->c2 in enrolled and p1 != p2 implies c1 != c2
+inv9 B: all p1,p2:Professor, c1,c2:Course| p1->c1 in teaches and p2->c2 in enrolled and p1 != p2 implies c1 != c2
+

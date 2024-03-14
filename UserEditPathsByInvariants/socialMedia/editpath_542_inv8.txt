@@ -1,0 +1,5 @@
+inv8 S: all a : Ad | all u : User | u in sees.a implies u in follows.posts.a or posts.a in u.suggested)
+inv8 S: all a : Ad | all u : User | u in sees.a implies u in follows.posts.a or posts.a in u.suggested)
+inv8 C: all u: User | (u.sees & Ad) in (u.follows + u.suggested).posts
+inv8 C: all u : User | all a : Ad | u in sees.a implies	( some y : User | a in y.posts and	(	(y in u.follows ) or	(y in u.suggested)	)	)
+

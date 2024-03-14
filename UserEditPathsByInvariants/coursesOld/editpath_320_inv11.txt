@@ -1,0 +1,11 @@
+inv11 U: all s:Student | no (Course-s.enrolled) & Course.grades.Grade
+inv11 U: no (Person-Student) & Course.grades.Grade & Course
+inv11 T: all s:Student,c:Course,g:Grade | g in s.enrolled.Course implies g in s.enrolled.Course
+inv11 T: all s:Student,c:Course,g:Grade | g in s.grades implies g in s.grades
+inv11 T: all s:Student,c:Course,g:Grade | g in s.enrolled.grades implies g in s.enrolled.grades
+inv11 S: all s:Student | no Course.grade & (Course-s.enrolled)
+inv11 T: all s:Student | no Course.grades & (Course-s.enrolled)
+inv11 U: all s:Student | no Course.grades.Grade & (Course-s.enrolled)
+inv11 T: all s:Student | no Course.^grades.Grade & (Course-s.enrolled)
+inv11 T: all s:Student | no Course.~grades.Grade & (Course-s.enrolled)
+

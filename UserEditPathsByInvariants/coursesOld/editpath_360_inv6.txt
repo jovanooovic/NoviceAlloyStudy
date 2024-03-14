@@ -1,0 +1,9 @@
+inv6 B: (Person-Professor).projects in (Student-Professor).enrolled.projects
+inv6 U: (Person-Professor).projects in (Person-Professor).enrolled.projects
+inv6 B: all s: Student | s.projects = s.enrolled.projects
+inv6 B: all s: (Person-Student) | s.projects = s.enrolled.projects
+inv6 B: all s: (Person-Professor) | s.projects = s.enrolled.projects
+inv6 B: all s: (Person - Professor) | s.projects = s.enrolled.projects
+inv6 B: all s: Student | s.projects = s.enrolled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+

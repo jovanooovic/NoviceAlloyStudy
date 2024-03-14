@@ -1,0 +1,10 @@
+inv3 E:
+inv3 S: all u : User | some u2:User | all ph : Photo | ph in u.sees implies	(	(ph not in Ad and (ph in u2.posts and u2 in u1.follows))	or	(ph in Ad)	)
+inv3 O: all u : User | some u2:User | all ph : Photo | ph in u.sees implies	(	(ph not in Ad and (ph in u2.posts and u2 in u.follows))	or	(ph in Ad)	)
+inv3 B: all u : User | some u2:User | all ph : Photo | ph in u.sees implies	(	(ph not in Ad and (ph in u2.posts and u in u2.follows))	or	(ph in Ad)	)
+inv3 O: all u : User | some u2:User | all ph : Photo | ph in u.sees implies	(	(ph not in Ad and (ph in u2.posts and u2 in u.follows))	or	(ph in Ad)	)
+inv3 O: all u : User | some u2:User | all ph : Photo - Ad | ph in u.sees implies		(ph in u2.posts and u2 in u.follows)
+inv3 S: all u : User | all ph : Photo - Ad | ph in u.sees implies ph in u.follows.post
+inv3 C: all u : User | all ph : Photo - Ad | ph in u.sees implies ph in u.follows.posts
+inv3 C: all u : User | all ph : Photo  | ph in u.sees implies	( ph not in Ad and ph in u.follows.posts) or ph in Ad
+

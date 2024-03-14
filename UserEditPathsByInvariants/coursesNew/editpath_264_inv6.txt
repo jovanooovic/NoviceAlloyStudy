@@ -1,0 +1,4 @@
+inv6 O: all x: Person| all p: Project | p in x.projects implies (some c: Course| p in c.projects and x in c.enrolled)
+inv6 C: all s1 : Person | all p1 : Project | 	  	s1->p1 in projects implies (some c1 : Course | c1->p1 in projects and s1->c1 in enrolled)
+inv6 C: all x: Person| all p: Project | p in x.projects implies (some c: Course| p in c.projects and c in x.enrolled)
+

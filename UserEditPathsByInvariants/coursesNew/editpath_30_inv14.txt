@@ -1,0 +1,9 @@
+inv14 S: all x,y:Person, p:Project| x-> p in projects and y-> p in projects implies x->not in
+inv14 S: all x,y:Person, p:Project| x-> p in projects and y-> p in projects implies x->not in
+inv14 S: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects implies y not in
+inv14 S: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects implies x-> i in project and y -> i not in projects
+inv14 O: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects implies x-> i in projects and y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects and y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+

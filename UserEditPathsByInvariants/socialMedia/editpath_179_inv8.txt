@@ -1,0 +1,11 @@
+inv8 C: all u : User | all a : Ad | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+inv8 B: all u : User | all a : Ad | some (u.follows.posts + u.suggested.posts) & u.sees
+inv8 T: all u : User | all a : Ad | (u.follows.posts + u.suggested.posts) & u.sees
+inv8 S: all u : User | all a : Ad | u->a in sees implies ((one v : User | v->a in posts and (u->v in follows) or (u->v in suggested))
+inv8 B: all u : User | all a : Ad | u->a in sees implies one v : User | v->a in posts and (u->v in follows) or (u->v in suggested)
+inv8 B: all u : User | all a : Ad | u->a in sees implies one v : User | v->a in posts and (u->v in follows) or (v->u in suggested)
+inv8 B: all u : User | all a : Ad | u->a in sees implies (one v : User | v->a in posts and (u->v in follows) or (v->u in suggested))
+inv8 B: all u : User | all a : Ad | u->a in sees implies (one v : User | v->a in posts and ((u->v in follows) or (v->u in suggested)))
+inv8 O: all u : User | all a : Ad | u->a in sees implies (one v : User | v->a in posts and ((u->v in follows) or (u->v in suggested)))
+inv8 C: all u : User | all a : Ad | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+

@@ -1,0 +1,7 @@
+inv8 T: all a:Node , b:Node | b in a.next*adj
+inv8 T: all a:Node , b:Node, c:Node | a->b->c in adj implies a->c in adj
+inv8 T: all a:Node , b:Node, c:Node | a->b->c in adj implies a->c in adj
+inv8 T: all a:Node , b:Node, c:Node | a->b in adj & b->c in adj implies a->c in adj
+inv8 T: all a:Node , b:Node, c:Node | (a->b in adj & b->c in adj) implies a->c in adj
+inv8 C: all a:Node , b:Node, c:Node | (a->b in adj && b->c in adj) implies a->c in adj
+

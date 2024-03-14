@@ -1,0 +1,4 @@
+inv3 T: all u: User | all s: u.sees | s in follows.posts
+inv3 O: all u: User | all s: u.sees | s in u.follows.posts
+inv3 C: all u: User | all s: u.sees | (s in u.follows.posts) or s in Ad
+

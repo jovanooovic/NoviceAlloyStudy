@@ -1,0 +1,32 @@
+inv10 B: all l : File.link | l in Trash implies no l.link
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 B: all l : File.link | l in Trash implies no (l.link & Trash)
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 U: all link : File.link | link in Trash implies (all l : link | l in Trash)
+inv10 U: all l : File.link | l in Trash implies (all l1 : l | l1 in Trash)
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 B: all f : File | f.link in Trash implies no f.link
+inv10 S: all l : File.link | l in Trash implies (all f : File | f == l and l in Trash)
+inv10 S: all l : File.link | l in Trash implies (all f : File | (f == l) and (l in Trash))
+inv10 B: all l : File.link | l in Trash implies (all f : File | (f = l) and (l in Trash))
+inv10 B: all l : File.link | l in Trash implies (all f : File | (f = l) and (l in Trash))
+inv10 U: all l : File.link | l in Trash implies l.link in Trash
+inv10 O: all l : File.link | l in Trash and l.link in Trash
+inv10 S: all l : File.link |
+inv10 S: all l : File.link | l in Trash implies ( all li : l.links | li in Trash )
+inv10 U: all l : File.link | l in Trash implies ( all li : l.link | li in Trash )
+inv10 U: all l : File.link | (l in Trash implies ( l.link in Trash ))
+inv10 S: all l : File.link | (l in Trash implies (all li : l.links | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l.link | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l | li in Trash))
+inv10 U: all l : File.link | (l in Trash implies (all li : l.link | li in Trash))
+inv10 S: all f,l : File, f.link | l in Trash implies f in Trash
+inv10 U: all f : File | (all l : f.link | l in Trash implies l.link in Trash)
+inv10 B: inv4[]	all f : File | (all l : f.link | l in Trash implies l.link in Trash)	}		pred inv4{	no (Protected & Trash)
+inv10 U: all f : File | (all l : f.link | l in Trash implies l.link in Trash)
+inv10 U: all f : File | (all l : f.link | f in Trash implies l.link in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+inv10 C: all f : File | (all l : f.link | f in Trash implies l in Trash)
+

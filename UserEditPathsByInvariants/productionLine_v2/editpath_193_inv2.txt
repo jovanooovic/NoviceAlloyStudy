@@ -1,0 +1,6 @@
+inv2 B: #Workstation.workers > 1	all worker: Worker | one ws: Workstation | worker in ws.workers
+inv2 U: #Workstation.workers >= 1	all worker: Worker | one ws: Workstation | worker in ws.workers
+inv2 T: all ws: Workstation | not none ws.workers	all worker: Worker | one ws: Workstation | worker in ws.workers
+inv2 C: all ws: Workstation | not no ws.workers	all worker: Worker | one ws: Workstation | worker in ws.workers
+inv2 C: all ws: Workstation | some ws.workers		all w: Worker | one w.~workers
+

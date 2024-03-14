@@ -1,0 +1,56 @@
+"^Tutors",1
+"Teacher in ^Tutors",1
+"^Tutors in Teacher",1
+"^Tutors.Teacher",1
+"^(~Tutors) in Teacher",1
+"Person.^Tutors.Teacher",1
+"^Tutors :> Teacher",1
+"some Teacher in ^Tutors",1
+"Person.(^Tutors).Teacher",2
+"some (^Tutors & Teacher)",1
+"all s : Student | s.^Tutors",1
+"Person.(^Tutors) -> Teacher",2
+"all p : Person | p.^(~Tutors)",1
+"some t:Teacher | t in ^Teaches",1
+"(^Tutors).Person & Teacher",1
+"all p : Person | p <: ^ Tutors",1
+"some (Person.(^Tutors).Teacher)",1
+"all p : Person | p <: (* Tutors)",1
+"all p:Person | Teacher.p.^Tutors",1
+"all p : Person | p <: (^ Tutors)",1
+"all p : Person | Teacher.^Tutors.p",1
+"all s : Student | s.^Tutors.Teacher",1
+"all p : Person | ^Tutors.p & Teacher",1
+"all s:Person | (^Tutors.s & Teacher)",1
+"all p : Person | p.^Tutors & Teacher",2
+"all p : Person | p.(^Tutors) -> Teacher",1
+"all s:Student |some Teacher & s.^Teacher",1
+"all s : Student | some s.^Tutors.Teacher",1
+"all s : Student | Teacher in s . ^Teacher",1
+"all s:Student |some Teacher in s.^Teaches",1
+"all s : Person | some Tutors.^s & Teacher",2
+"all p : Person | some (Teacher.^Tutors.p)",2
+"all p : Person | (p.*Tutors.p) in Teacher",1
+"all p:Person | (some Teacher) in p.^Tutors",1
+"all s:Student | some Teacher in s.^Teacher",1
+"all p:Person | some Teacher in (p.^Tutors)",1
+"all p : Person | some (p.(^Tutors).Person)",1
+"all p:Person | some (Teacher in p.^Tutors)",1
+"all p : Person | some ^Tutors.p in Teacher",2
+"all p : Person | some Teacher & ^Teacher.p",1
+"all p: Person | some (Tutors.*p & Teacher)",1
+"all s : Student | some Teacher in s.^Tutors",1
+"all p : Person | some (p.(^Tutors).Teacher)",2
+"all s : Person | some (Tutors.^s & Teacher)",1
+"all p : Person | some (p.^(Tutors).Teacher)",1
+"some t : Teacher | t in (t.^Teaches).Teacher",1
+"all s:Person | some  (^(Tutors.s) & Teacher)",1
+"all p : Person |  some (p.(^Tutors).Teacher)",1
+"all p : Person | some (Teacher & ^Teacher.p)",1
+"all s : Student | some Teacher in s . ^Tutors",2
+"all s : Student | some Teacher in s . ^Teacher",1
+"all s : Student | some t : Teacher | t.(s.^Tutors)",1
+"all p : Person | some t : Teacher | p.^(~Tutors).t",1
+"all p:Person | some Tutors.p implies (Teacher<:^Tutors.p)",1
+"all p:Person | some Tutors.p implies (^Tutors.p:>Teacher)",1
+"all p : Person | some t : Teacher | p in Tutors or p->t in Tutors or p->t in Tutors.Tutors",1

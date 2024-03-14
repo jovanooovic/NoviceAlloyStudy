@@ -1,0 +1,81 @@
+"some Teachs",2
+"Teacher.class",1
+"all p:Person |",1
+"some t.Teaches",1
+"all p:Teacher |",1
+"all x in Teacher",1
+"some x : Person |",4
+"all Teaches.Class",1
+"some Teacher.teaches",2
+"t : Teacher | some c in Class",1
+"some c:Classe,p:Person | c->p",1
+"some t:Teacher | some g:Group",1
+"all p:Person | some Teaches.c",1
+"all p:Person | c->p in Teaches",1
+"some c: Classes | c in Teaches",1
+"all t : Teacher | t->c in Teaches",1
+"all t : Teacher | t->_ in Teaches",1
+"all t:teacher | f1->f2 in Teaches",2
+"some c:Class, some t:Teacher | t->c",1
+"some c:Class; some t:Teacher | t->c",1
+"some t : Teacher | t.teaches in Class",4
+"all t : Teacher some c : Class | t->c",1
+"all t : Teacher, some c : Class | t->c",1
+"t : Teacher | t implies some c in Class",1
+"all p:Person | p in Person",1
+"some c: Class | all t: Teacher | c->t->g",1
+"some c: Class | some t: Teacher | t.class",1
+"all t:Person| t in Teacher and in t Class",1
+"t : Teacher | some c in Class implies t->c",1
+"all t:Teacher, c:Class | t -> c in teaches",1
+"some c : Class | p : Person | p in teacher",1
+"all c : Class | t : Teacher | t->c Teaches",1
+"some c : Class, t : Teacher | some c->t->G",1
+"some p:Person,c:Class | p in Teacher implies",1
+"some c: Class | all t: Teacher | t.teaches.c",1
+"all c:Class,lone t:Teacher | t->c in Teaches",1
+"some t : Teacher, c : Class | t->c in teaches",1
+"all t:Teacher, some c:Class | t->c in Teaches",1
+"all c : Class | t : Teacher | t->c in Teaches",1
+"some c:Class | some t:Teacher | p-> in Teaches",1
+"some c:Class | some t:Teachers | p-> in Teaches",1
+"some c : Class | some p : Person | p in teacher",1
+"some c : Class, t : Teacher | t.teahes in Class",2
+"some c: Class | all t: Teacher | p->c in Teaches",1
+"all p:Person | some c : Classe | p->c in Teaches",2
+"all t:Teacher and some c:Class | t->c in Teaches",1
+"some c : Class, t : Teacher | t.teaches in Class",1
+"some t: Teacher | some c:class | t->c in Teaches",1
+"all t: Teacher | some c: Class | some t.Teaches c",1
+"all x : Teacher | some y : Class | x->Y in Teaches",1
+"some c : Class, some t : Teacher | t->c in Teaches",2
+"some t : Teacher, some c : Class | t->c in teaches",1
+"some c : Class, some t : Teacher | c->t in Teaches",1
+"some t : Teacher, some c : Class | t->c in Teaches",5
+"all t: Teacher | some c: Class | some t.Teaches c.t",1
+"some c : Classes | some t : Teacher | p->c in Groups",1
+"all c : Class | some t : TEacher | t -> c in Teaches",1
+"t : Teacher | some c in Class implies t->c in Teaches",2
+"all f1,f2:File | f1->f2 in link implies f2 not in Trash",1
+"some c:Class, p:Person | p in Teacher and c in p.teaches",1
+"some c:Class, p:Person | p->c in teaches and p in Teacher",1
+"all p:Person | p in Teacher some c:Class | p->c in Teaches",1
+"all x : Person, c : Class | x->c in Teaches",1
+"some c : Class | t : Teacher, g : Group | c -> t -> g in Groups",1
+"some c : Class, some t : Teacher, some g : Group | c->t->g in Groups",1
+"some p : Person | p in Teacher and some c : Class |  p->c in teaches",1
+"some c:Class | hasTeacher[c]
+}
+
+pred hasTeacher[c:Class]{
+	all g:Group | group_has_teacher[g]",1
+"some c:Class | hasTeacher[c] 
+}
+
+pred hasTeacher[c:Classes]{
+	all g:Group | group_has_teacher[g]",1
+"some c:Classes | hasTeacher[c] 
+}
+
+pred hasTeacher[c:Classes]{
+	all g:Group | group_has_teacher[g]",1

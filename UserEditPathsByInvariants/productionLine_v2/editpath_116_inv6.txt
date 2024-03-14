@@ -1,0 +1,5 @@
+inv6 U: all c:Component | c->c not in parts
+inv6 U: all c:Component | some p:Product | c->p in parts implies p!=c
+inv6 U: all c:Component | c->c not in parts
+inv6 U: all c:Component, p:Product | c->p in parts implies c->c not in parts
+

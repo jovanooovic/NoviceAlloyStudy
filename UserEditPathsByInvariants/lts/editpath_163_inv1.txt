@@ -1,0 +1,9 @@
+inv1 O: all s1, s2:State | some e:Event | s1->e->s2 in trans
+inv1 S: all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1 not s2)
+inv1 O: all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1 != s2)
+inv1 T: all s1, s2:State | some e:Event | (s1->e->s2 in trans and e not in iden)
+inv1 T: all s1, s2:State | some e:Event | (s1->e->s2 in trans and e not in iden)
+inv1 T: all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1.~s2 not in iden)
+inv1 O: all s1, s2:State | some e:Event | s1->e->s2 in trans
+inv1 B: all s1, s2:State | some e:Event | s1->e->s2 in trans implies s1!=s2
+

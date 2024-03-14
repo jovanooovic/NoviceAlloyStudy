@@ -1,0 +1,122 @@
+NA H: THEME UPDATE
+inv1 T: all p : Photo | lone (p in User.posts)
+inv1 T: all p : Photo | one (p in User.posts)
+inv1 C: all p : Photo | one posts.p
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv1 C: all p : Photo | one u : User | u in posts.p
+inv2 C: all u : User | u not in u.follows
+inv3 B: all u : User | u.follows.posts in (Photo-Ad)
+inv3 C: all u : User | (u.sees)-Ad in u.follows.posts
+inv4 C: all u : User | u.posts in (Photo-Ad) or u.posts in (Ad)
+inv4 C: all u : User | u.posts in Photo-Ad or u.posts in Ad
+inv5 S: all i : Influencer | (follows.u) in univ
+inv4 C: all u : User | u.posts in (Photo-Ad) or u.posts in Ad
+inv5 U: all i : Influencer | (follows.i) in univ
+inv5 U: all i : Influencer | (follows.i) in User
+inv5 U: all i : Influencer | i not in i.follows and (follows.i) in User
+inv5 U: all i : Influencer | (follows.i) in User
+inv5 B: all i : Influencer | (follows.i) in User and User in follows.i
+inv5 T: all i : Influencer | follows.i in User.univ
+inv5 U: all i : Influencer | follows.i in User
+inv5 T: all i : Influencer | follows.i & User in iden
+inv5 T: all i : Influencer | (follows.i & User) in iden
+inv5 T: all i : Influencer | (follows.i.User) in iden
+inv5 B: all i : Influencer | (follows.i -> User) in iden
+inv5 T: all i : Influencer | (follows.i -> User-i) in iden
+inv5 T: all i : Influencer | (follows.i -> User-Influencer) in iden
+inv5 S: all i : Influencer | u not in u.follows and (follows.i -> User) in iden
+inv5 B: all i : Influencer | i not in i.follows and (follows.i -> User) in iden
+inv5 B: all i : Influencer | (follows.i -> User) in iden
+inv5 U: all i : Influencer , u: User | u->i in follows implies u in User
+inv5 S: all i : Influencer | follows.i in User+Influecer
+inv5 U: all i : Influencer | follows.i in User+Influencer
+inv5 U: all i : Influencer | follows.i in User
+inv5 S: all u : User | user.follows in Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 U: all i : Influencer | i.follows in User
+inv5 T: all u : User | u.follows.Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User-Influencer | u.follows in Influencer
+inv5 B: all u : User | (u.follows -> Influencer) in iden
+inv5 U: all i : Influencer | follows.i in User
+inv5 B: all i : Influencer | follows.i in User-Influencer
+inv5 U: all i : Influencer | follows.i in User
+inv4 C: all u : User | u.posts in (Photo-Ad) or u.posts in Ad
+inv5 U: all i : Influencer | follows.i in User
+inv5 T: all u : User | (u.follows.Influencer -> Influencer) in iden
+inv5 T: all u : User | ((u.follows).Influencer -> Influencer) in iden
+inv5 T: all u : User | ((u.(follows.Influencer)) -> Influencer) in iden
+inv5 B: all u : User | (u.follows -> Influencer) in iden
+inv5 T: all u : User | ((u.follows.Influencer) -> Influencer) in iden
+inv5 S: all u : User | u.follows.Influecer in Influencer
+inv5 S: all u : User | u.follows.Influecer in Influencer
+inv5 T: all u : User | u.follows.Influencer in Influencer
+inv5 T: all u : User | u.(follows.Influencer) in Influencer
+inv5 T: all u : User | (u.follows).Influencer in Influencer
+inv5 T: all u : User | u.follows.Influencer
+inv5 T: all u : User | (u.follows)-(User-Influencer)
+inv5 B: all i : Influencer | follows.i = User
+inv5 S: all i : Influencer | follows.i = User\i
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv4 C: all u : User | u.posts in (Photo-Ad) or u.posts in Ad
+inv3 C: all u : User | (u.sees)-Ad in u.follows.posts
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv6 E: 
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv6 O: all d : Day | (posts.(date.d)) = Influencer
+inv6 O: all d : Day | (posts.date.d) = Influencer
+inv6 C: all d : Day | Influencer in (posts.date.d)
+inv6 C: all d : Day | Influencer in (posts.date.d)
+inv8 U: all u : User | posts.((u.sees)-Photo) in (u.follows + u.suggested)
+inv8 U: all u : User | posts.((u.sees)-Photo) in (u.follows + u.suggested)+{u}
+inv8 U: all u : User | posts.((u.sees)-Photo) in (u.follows + u.suggested)
+inv8 U: all u : User | posts.((u.sees)-Photo) in (u.follows + u.suggested)
+inv8 B: all u : User | posts.((u.sees)) in (u.follows + u.suggested)
+inv8 U: all u : User | posts.u.sees in (u.follows + u.suggested)
+inv8 B: all u : User | posts.(u.sees) in (u.follows + u.suggested)
+inv8 U: all u : User | (posts.u).sees in (u.follows + u.suggested)
+inv8 B: all u : User | posts.(u.sees) in (u.follows + u.suggested)
+inv3 C: all u : User | (u.sees)-Ad in u.follows.posts
+inv8 B: all u : User , a : Ad | a in u.sees implies posts.a in (u.follows + u.suggested)
+inv8 B: all u : User | posts.(u.sees) in (u.follows + u.suggested)
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv8 B: all u : User | posts.(u.sees) in (u.follows + u.suggested)
+inv7 E: 
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in (u.follows).follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv8 B: all u : User | posts.(u.sees) in (u.follows + u.suggested)
+inv6 C: all d : Day | Influencer in (posts.date.d)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows)
+inv7 U: all u : User |  (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.follows not in u.suggested  ) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv6 C: all d : Day | Influencer in (posts.date.d)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 T: all u : User | u.suggested is none or(u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 T: all u : User | none u.suggested or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 U: all u : User |  u.suggested in none or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 U: all u : User |  u.suggested = none or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 U: all u : User | u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 B: all u : User | u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 B: all u : User | u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in (u.follows.follows)-{u}
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested in User-{u} and u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u.suggested not in u.follows
+inv7 B: all u : User |  u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User |   u.follows not in u.suggested and u not in u.suggested
+inv7 B: all u : User |  u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u not in u.suggested and u.suggested not in u.follows and u.suggested in u.follows.follows
+

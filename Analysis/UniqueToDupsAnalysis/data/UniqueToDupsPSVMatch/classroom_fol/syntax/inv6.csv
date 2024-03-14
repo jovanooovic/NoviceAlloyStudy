@@ -1,0 +1,33 @@
+"all t : Teacher",2
+"all t : Teacher |",2
+"all Teaches.Teaches",1
+"all Teacher.Teaches",3
+"all t:Teacher | t->c",1
+"all t : Teacher | some c :",2
+"all t:Teacher | t->c , c:Class",1
+"all t: Teacher | all t.Teaches",1
+"all t:Teacher | some t.Teasches",1
+"Teachs in Teacher -> some Class",1
+"all t:Teacher | t->some c : Class",1
+"all t:Teacher some c: Class| t->c",1
+"id in (Teacher.Teaches).~(Teacher.Teaches)",1
+"all t:Teacher,some c:Class | t->c in Teaches",2
+"all t:Teacher; some c:Class | t->c in Teaches",1
+"all t:Teacher, some c:Class | t->c in Teacher",1
+"all t:Teacher ,some c:Class | t->c in Teaches",2
+"all t:Teacher, some c:Class | t->c in Teaches",4
+"all t:Teacher | some c:Class | t->c in Teache",1
+"all t : Teacher, c : class | t -> c in Teaches",1
+"all t:Teacher | (some c:Class) t->c in Teaches",1
+"all t : Teacher, some c : Class | t->c in Class",1
+"all t: Teacher | some t.Teaches | c.Groups in t",1
+"all t : Teacher | some c : Class t->c in Teaches",1
+"all t : Teacher, some x : Class | t->x in Teaches",2
+"all t : Teacher, some c : Class | t->c in Teaches",4
+"all t : Teacher | some c : Class | t->c in teaches",1
+"(all t : Teacher | some c : Class | t-> in Teaches)",2
+"all p:Person,c:Class | p in Teacher implies t->c in Teaches",1
+"all p:Person | p in Teach => some c:Class | p->c in Teaches",1
+"all p:Person,some c:Class | p in Teacher implies p->c in Teaches",2
+"all p:Person, some c:Class | p in Teacher implies p->c in Teaches",1
+"all p:Person, | some c:Class | p in Teacher implies p->c in Teaches",1

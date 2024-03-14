@@ -1,0 +1,9 @@
+inv4 B: all u: User, w1, w2 : u.profile | w1 = w2 implies not (w1 in u.visible && w2 in u.visible)
+inv4 B: all u: User, w1, w2 : u.profile | w1 = w2 implies not (w1 in u.visible && w2 in u.visible)
+inv4 U: all u: User, disj w1, w2 : u.profile | w1 = w2 implies not (w1 in u.visible && w2 in u.visible)
+inv4 U: all u: User, disj w1, w2 : u.profile | some (w1.ids & w2.ids) implies not (w1 in u.visible && w2 in u.visible)
+inv4 E:
+inv4 S: all u: User, disj w1, w2 : u.profile | (some (w1.ids & w2.ids) && (w1.source != w2.souce) )implies not (w1 in u.visible && w2 in u.visible)
+inv4 U: all u: User, disj w1, w2 : u.profile | (some (w1.ids & w2.ids) && (w1.source != w2.source) )implies not (w1 in u.visible && w2 in u.visible)
+inv4 U: all u: User, disj w1, w2 : u.profile | (some (w1.ids & w2.ids) && (w1.source in Institution && w2.source in User) )implies not (w1 in u.visible && w2 in u.visible)
+

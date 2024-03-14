@@ -1,0 +1,6 @@
+inv3 E:
+inv3 U: all u: User, p: Photo | (p in u.sees implies u.~posts in u.follows)
+inv3 U: all u: User, p: Photo | (p in u.sees implies u.~posts in u.follows) or p in Ad
+inv3 B: all u: User, p: Photo | (p in u.sees implies p.~posts in u.follows) or p in Ad
+inv3 B: all u: User, p: Photo | (p in u.sees implies p.~posts in u.follows) or p in Ad
+

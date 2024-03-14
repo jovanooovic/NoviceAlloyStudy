@@ -1,0 +1,7 @@
+inv1 B: all t:Track | some e:Entry, ex:Exit | t in Entry and t in Exit
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in (^succs).t and ex in t.^(succs)
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in (^succs).t and ex in t.^(succs)
+inv1 C: some Exit and some Entry
+inv1 C: some Exit and some Entry
+inv1 C: some Exit and some Entry
+

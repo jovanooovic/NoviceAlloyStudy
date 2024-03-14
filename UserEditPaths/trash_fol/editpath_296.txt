@@ -1,0 +1,54 @@
+NA H: THEME UPDATE
+inv1 C: all f : File | f not in Trash
+inv2 C: all f : File | f in Trash
+inv2 C: all f : File | f in Trash
+inv3 C: some f : File | f in Trash
+inv5 S: all F : File | f in Trash and F not in
+inv4 S: all f : Proteced | f not in Trash
+inv4 S: all f : Proteced | f not in Trash
+inv4 C: all f : Protected | f not in Trash
+inv5 S: all f : Files | f not in Protected and f in Files
+inv5 S: all f : Files, p : Protected | P not in Trash and f in Trash
+inv5 S: all f : Files | f in Trash implies f not in Protected
+inv5 B: all f : File | f in Trash implies f not in Protected
+inv5 O: all f : File | f not in Protected and f in Trash
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv6 S: all x, y, z : File | x->y in Link and x->z implies y=z
+inv6 T: all x, y, z : File | x->y in link and x->z implies y=z
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv6 C: all x, y, z : File | x->y in link and x->z in link implies y = z
+inv7 T: all x, y : File | x->y and y not in Trash
+inv7 O: all x, y : File | x->y in link and y not in Trash
+inv7 O: all x, y : File | x->y in link and y not in Trash and x not in Trash
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies (x not in Trash and y not in Trash)
+inv7 S: all x, y : File | x->y in and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies (x not in Trash and y not in Trash)
+inv7 S: all x, y : File | x->y in link implies (x (not in Trash) and y (not in Trash))
+inv7 O: all x, y : File | x->y in link implies ((x not in Trash) and (y not in Trash))
+inv7 S: all x, y : File | x->y in link implies x not in Trash) and y not in Trash
+inv8 C: all x, y : File | x->y not in link
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash
+inv8 C: all x, y : File | x->y not in link
+inv7 O: all x, y : File | x->y in link and x not in Trash
+inv7 S: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : Link]{	some g : File | f->g in link
+inv7 B: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | f->g in link
+inv7 O: all f : File | isLink[f] and f not in Trash	}		pred isLink[f : File]{	some g : File | f->g in link
+inv7 C: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | g->f in link
+inv9 S: all x, y |
+inv7 C: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | g->f in link
+inv7 S: all f : File | isLink[f] implies f not in Trash
+inv9 T: all x, y, z : File | x->y in link implies y->z not in File
+inv9 T: all x, y, z : File | x->y in link implies y->z not in File
+inv9 C: all x, y, z : File | x->y in link implies y->z not in link
+inv10 C: all x, y : File | x->y in link and x in Trash implies y in Trash
+NA H: THEME UPDATE
+

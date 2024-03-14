@@ -1,0 +1,7 @@
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 O: all e : Entry | Exit = (e.^succs & Exit)
+inv8 T: all e : Entry | Exit = { e : Entry | e.^succs & Exit}
+inv8 T: all e : Entry | Exit = { e : Entry | e.^succs & Exit}
+inv8 T: all e : Entry | Exit = e.{ e : Entry | e.^succs & Exit}
+inv8 O: all e : Entry | Exit = (e.^succs & Exit)
+

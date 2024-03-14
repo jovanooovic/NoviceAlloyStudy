@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 B: all p : Professor | no p.enrolled
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv2 C: all p : Person | some p.teaches implies p in Professor
+inv3 S: all c : Course | some t : Professor | c in professor.teaches
+inv3 S: all c : Course | some t : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 U: all p : Project | some c : Course | p in c.projects
+inv5 S: all p : Person | some p.projects implies p in Students	  	all p : Project | some s : Student | p in s.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all p : Project | some s : Student | p in s.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 S: all s : Students | all c : s.enrolled | lone c.projects & s.projects
+inv7 U: all s : Student | all c : s.enrolled | lone c.projects & s.projects
+inv8 U: all p : Professor | all c : p.teaches | c not in p.enrolled
+inv9 U: all p : Professor | all c : teaches.p.teaches | no c.enrolled & p.teaches
+inv9 B: all p : Professor | all c : teaches.(p.teaches) | no c.enrolled & p.teaches
+inv9 T: all p : Professor | all c : teaches.(p.teaches) | not c.enrolled & p.teaches
+inv9 B: all p : Professor | all c : teaches.(p.teaches) | no c.enrolled & p.teaches
+NA H: THEME UPDATE
+

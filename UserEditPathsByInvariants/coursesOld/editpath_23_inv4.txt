@@ -1,0 +1,30 @@
+inv4 U: all p : Project | one (Course.projects)&p
+inv4 U: all p : Project | one (Course.projects)&p
+inv4 T: Course.projects.~(Course.projects) in iden
+inv4 T: Course.projects.~(Course.projects) in iden
+inv4 T: projects.~(projects) in iden
+inv4 T: projects.~(projects) in iden
+inv4 T: all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one p.(Course.projects)
+inv4 T: all p : Project | one p in (Course.projects)
+inv4 U: all p : Project | one (Course.projects)-(Project-p)
+inv4 T: projects.~(projects) in iden
+inv4 T: Course.projects.~(Course.projects) = iden
+inv4 T: Course.projects*Course.~(Course.projects)*Course = iden
+inv4 T: Course.projects->Course.~(Course.projects)->Course = iden
+inv4 T: ((Course.projects)->Course).~(Course.projects)->Course = iden
+inv4 O: ((Course.projects)->Course).~((Course.projects)->Course) = iden
+inv4 T: Course.projects.~(Course.projects) in iden
+inv4 C: Course <: projects in Course one -> Project
+inv4 T: Course<:projects.~(Course<:projects)
+inv4 T: (Course<:projects).~(Course<:projects)
+inv4 O: (Course<:projects).~(Course<:projects) = iden
+inv4 U: (Course<:projects).~(Course<:projects) in iden
+inv4 T: all p : Project | one p in Course<:projects
+inv4 T: all p : Project | one p in (Course<:projects)
+inv4 T: all p : Project | one p in Course.(Course<:projects)
+inv4 B: ~(Course<:projects).(Course<:projects) in iden
+inv4 U: all p : Project | lone (Course<:projects).p
+inv4 C: all p : Project | one (Course<:projects).p
+inv4 U: (Course<:projects).~(Course<:projects) in iden
+

@@ -1,0 +1,30 @@
+inv13 T: all disj s1, s2 : Student |	  		all c : s1.enrolled & s2.enrolled |	  			(s1.(c.grades) > s2.(c.grades)) implies some s1.projects & c.projects
+inv13 S: all disj s1, s2 : Student |	  		all c : s1.enrolled & s2.enrolled |	  			(s1.(c.grades).larger( s2.(c.grades))) implies some s1.projects & c.projects
+inv13 T: all disj s1, s2 : Student |	  		all c : s1.enrolled & s2.enrolled |	  			(s1.(c.grades).larger[s2.(c.grades)]) implies some s1.projects & c.projects
+inv13 T: all s : Student |	  		all c : s.enrolled |	  			max[Student.(c.grades)] = (s -> s.(c.grades)) implies some s.projects & c.projects
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			max[Student.(c.grades)] = s.(c.grades) implies some s.projects & c.projects
+inv13 U: all s : Student |	  		all c : s.enrolled |	  			max = s.(c.grades) implies some s.projects & c.projects
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			max[Student.(c.grades)] = s.(c.grades) implies some s.projects & c.projects
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(max[Student.(c.grades)] = s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(max[Student.(c.grades)] in s.(c.grades)) implies (some s.projects & c.projects)
+inv13 T: all s : Student |	  		all c : s.enrolled |	  			(max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 T: all s : Student |	  		all c : s.enrolled |	  			((max[Student.(c.grades)]) & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects or no c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies ((some s.projects & c.projects) or (no c.projects))
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects or no c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)			all c : Course |			some c.grades implies some c.projects
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some c.projects and some s.projects & c.projects)
+inv13 C: grades.(max[Grade]) in projects.~projects
+inv13 T: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (s.projects & Course.projects)
+inv13 T: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (s.projects & Course.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & Course.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			(some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & Course.projects)
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			((some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & Course.projects))
+inv13 B: all s : Student |	  		all c : s.enrolled |	  			((some max[Student.(c.grades)] & s.(c.grades)) implies (some s.projects & c.projects))
+inv13 U: all s : Student |	  		all c : s.enrolled |	  			((some max[Grade] & s.(c.grades)) implies (some s.projects & c.projects))
+

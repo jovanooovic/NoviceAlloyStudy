@@ -1,0 +1,24 @@
+inv5 T: Project.~projects in Student	  	all p : Project | some p.~projects
+inv5 T: Project.~projects in Student	  	all p : Project | some p.~projects
+inv5 B: Project.~(Person<:projects) in Student	  	all p : Project | some p.~(Course<:projects)
+inv5 B: all p : Project | p.~(Person<:projects) in Student	  	all p : Project | some p.~(Course<:projects)
+inv5 B: all p : Project | p.~(Person<:projects) in Student	  	all p : Project | some p.~(Course<:projects)
+inv5 B: Project.~(Person<:projects) in Student	  	some Project.~(Course<:projects)
+inv5 B: Project.~(Person<:projects) in Student	  	some Project.~(Course<:projects)
+inv5 B: no Project.~(Person<:projects) & Professor	  	some Project.~(Course<:projects)
+inv5 B: no Project.~(Person<:projects) & Professor
+inv5 B: no (Project.~(Person<:projects) & Professor)
+inv5 B: no (Project.~(Person<:projects) & Professor)
+inv5 T: no Professor in Student	  	no (Project.~(Person<:projects) & Professor)
+inv5 B: no Professor & Student	  	no (Project.~(Person<:projects) & Professor)
+inv5 B: all p : Project | no (p.~(Person<:projects) & Professor)
+inv5 B: Project.~(Person<:projects) not in Professor
+inv5 B: Project.~(Person<:projects) not in Professor	  	some Project.~(Course<:projects)
+inv5 B: Project.~(Person<:projects) in Student	  	some Project.~(Course<:projects)
+inv5 S: Project.~(Person<:projects) in Student and not in Professor	  	some Project.~(Course<:projects)
+inv5 B: Project.~(Person<:projects) in Student and Project.~(Person<:projects) not in Professor	  	some Project.~(Course<:projects)
+inv5 B: Project.~(Person<:projects) in Student	  	all p : Project | no p.~(Person<:projects) & Professor	  	some Project.~(Course<:projects)
+inv5 B: no Student - Professor	  	Project.~(Person<:projects) in Student	  	all p : Project | no p.~(Person<:projects) & Professor	  	some Project.~(Course<:projects)
+inv5 U: all p : Project | some p.~(Person<:projects)
+inv5 C: Project.~(Person<:projects) in Student	  	all p : Project | some p.~(Person<:projects)
+

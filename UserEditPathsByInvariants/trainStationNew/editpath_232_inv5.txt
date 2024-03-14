@@ -1,0 +1,11 @@
+inv5 B: some succs.Junction
+inv5 T: succs.Junction
+inv5 E:
+inv5 B: all disj t1,t2:Track | t1 in Junction implies t2 in ^(succs).t1
+inv5 S: all t1:Track | t1 in Junction implies #(^(succs).t)>1
+inv5 U: all t:Track | t in Junction implies #(^(succs).t)>1
+inv5 S: all t:Track | t in Junction <=> ^(succs).t)>1
+inv5 B: all t:Track | t in Junction <=> #(^(succs).t)>1
+inv5 T: all t:Track | t in Junction <=> #(^(succs).t) gt 1
+inv5 B: all t:Track | t in Junction <=> #(^(succs).t) > 1
+

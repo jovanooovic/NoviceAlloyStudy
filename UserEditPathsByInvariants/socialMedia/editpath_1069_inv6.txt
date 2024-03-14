@@ -1,0 +1,13 @@
+inv6 S: all i: Influncer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | some p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | one p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer, p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all d: Day, p: Photo | p -> d in date implies all i: Influencer | i->p in posts
+inv6 B: all i: Influencer | some p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 B: all i: Influencer | one p: Photo | i -> p in posts implies all d: Day | p->d in date
+inv6 T: all i: Influencer, d: Day | some p: Photo | i -> p and p->d in date
+inv6 T: all i: Influencer, d: Day | some p: Photo | i -> p and p -> d in date
+inv6 C: all i: Influencer, d: Day | some p: Photo | i -> p in posts and p -> d in date
+

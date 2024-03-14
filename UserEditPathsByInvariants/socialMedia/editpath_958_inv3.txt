@@ -1,0 +1,11 @@
+inv3 B: all x : Photo-Ad | all y, z : User | y -> x in sees and z -> x in posts implies y -> z in follows
+inv3 B: sees.(~posts) in follows
+inv3 T: all u : User | u.follows.posts in sees
+inv3 T: all u : User | follows.u.posts in sees
+inv3 B: all u : User | u -> u.sees.(~posts) in follows
+inv3 T: all u : User | u.follows.posts
+inv3 B: all x : Photo-Ad | all y, z : User | y -> x in sees and z -> x in posts implies y -> z in follows
+inv3 B: all x : Photo-Ad | all y, z : User | y in sees.x and z in posts.x implies y -> z in follows
+inv3 B: all x : Photo-Ad | all y, z : User | y in sees.x and z in posts.x implies y in follows.z
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+

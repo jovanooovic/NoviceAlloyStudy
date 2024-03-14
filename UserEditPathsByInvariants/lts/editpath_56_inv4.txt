@@ -1,0 +1,14 @@
+inv4 E:
+inv4 O: State in Init.^(Event.trans)
+inv4 B: State in Init.*(Event.trans)
+inv4 U: Init.*(Event.trans) in State
+inv4 B: all e : Event | State in Init.*(e.trans)
+inv4 O: State = Init.^(Event.trans)
+inv4 B: all e : Event | State = Init.^(e.trans)
+inv4 O: State in Init.^(Event.trans)
+inv4 O: all s : State | s in Init.^(Event.trans)
+inv4 B: all s : State | s in Init.*(Event.trans)
+inv4 B: some Event.^(Init.trans)
+inv4 T: State->State in Init->^(Event.trans)
+inv4 O: State in Init.^(Event.trans)
+

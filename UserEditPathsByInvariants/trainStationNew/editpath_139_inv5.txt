@@ -1,0 +1,8 @@
+inv5 U: all t : Track | #(t & Track.succs) > 1 => t in Junction
+inv5 B: all t : Track | some disj p1, p2 : Track |	p1 + p2 in succs.t => t in Junction
+inv5 U: all t : Track | all disj p1, p2 : Track |	p1+p2 in succs.t => t in Junction
+inv5 S: all j : Juction | #succs.j > 1	all t : Track | all disj p1, p2 : Track |	p1+p2 in succs.t => t in Junction
+inv5 C: all j : Junction | #succs.j > 1	all t : Track | all disj p1, p2 : Track |	p1+p2 in succs.t => t in Junction
+inv5 U: all j : Junction | #succs.j > 1
+inv5 C: all j : Junction | #succs.j > 1	all t : Track | all disj p1, p2 : Track |	p1+p2 in succs.t => t in Junction
+

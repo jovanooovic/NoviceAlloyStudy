@@ -1,0 +1,8 @@
+inv2 S: some x : User ~follows x
+inv2 S: some x : User | some y : User | x != y | x->y in follows
+inv2 T: all x : User | no x in follows.x
+inv2 T: all x : User | no x in follows.x
+inv2 T: all x : User | no x in x.follows
+inv2 T: all x : User | no x in follows
+inv2 C: all x : User | x not in follows.x
+

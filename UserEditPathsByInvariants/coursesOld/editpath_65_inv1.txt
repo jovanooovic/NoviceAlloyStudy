@@ -1,0 +1,16 @@
+inv1 T: all p : Person | Professor.p implies none p.enrolled
+inv1 T: all p : Professor | none p.enrolled
+inv1 T: all p : Professor | none p.enrolled
+inv1 S: all p : Professor | zero p.enrolled
+inv1 B: all p : Professor | some p.enrolled
+inv1 B: all p : Professor | one p.enrolled
+inv1 T: all p : Professor | none p.enrolled
+inv1 T: all p : Professor | not p.enrolled
+inv1 T: all p : Professor | none p.enrolled
+inv1 B: all p : Professor | lone p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv1 S: all p : Person | c : Courses | c in p.enrolled implies Student.p
+inv1 S: all p : Person | c : Courses | c in p.enrolled implies p in Student
+inv1 S: all p : Person | c : Course | c in p.enrolled implies p in Student
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+

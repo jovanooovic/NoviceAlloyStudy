@@ -1,0 +1,11 @@
+inv1 U: all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2
+inv1 U: all p:Photo | some u:User | u -> p in posts
+inv1 U: all p:Photo | some u:User | u -> p in posts
+inv1 U: all p:Photo | some u:User | u -> p in posts
+inv1 U: all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2
+inv1 O: all p:Photo | some u:User | p-> u in posts	all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2
+inv1 C: all p:Photo | some u:User | u -> p in posts	all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2
+inv1 U: all p:Photo | some u:User | u -> p in posts
+inv1 C: all p:Photo | some u:User | u -> p in posts	all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2
+inv1 C: posts in User one -> Photo
+

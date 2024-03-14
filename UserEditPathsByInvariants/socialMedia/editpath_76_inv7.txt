@@ -1,0 +1,36 @@
+inv7 E:
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in (u.follows).follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows)
+inv7 U: all u : User |  (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.follows not in u.suggested  ) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 B: all u : User | (u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 T: all u : User | u.suggested is none or(u.suggested not in u.follows) and (u.suggested in u.follows.follows)
+inv7 T: all u : User | none u.suggested or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 U: all u : User |  u.suggested in none or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 U: all u : User |  u.suggested = none or ((u.suggested not in u.follows) and (u.suggested in u.follows.follows))
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 U: all u : User | u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 B: all u : User | u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows
+inv7 B: all u : User | u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in (u.follows.follows)-{u}
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested in User-{u} and u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u.suggested not in u.follows
+inv7 B: all u : User |  u.suggested not in u.follows and u not in u.suggested
+inv7 B: all u : User |   u.follows not in u.suggested and u not in u.suggested
+inv7 B: all u : User |  u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User |  u not in u.suggested and u.suggested not in u.follows and u.suggested in u.follows.follows
+

@@ -1,0 +1,7 @@
+inv10 U: (Student <: Class.Groups.Group) in Student
+inv10 T: all s : Student, c : Class | c.Groups.s
+inv10 T: all s : Student, c : Class | c.s.Groups
+inv10 T: all s : Student, c : Class | s.(c.Groups)
+inv10 T: all s : Student, c : Class | s.(c.Groups)
+inv10 C: all s : Student, c : Class | some s.(c.Groups)
+

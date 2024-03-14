@@ -1,0 +1,8 @@
+inv11 S: all s : Students, C : Course, g : Grade | s->g implies c in a.enrolled.grades
+inv11 T: all s : Student, C : Course, g : Grade | s->g implies c in a.enrolled.grades
+inv11 T: all s : Student, C : Course, g : Grade | s->g implies c in a.enrolled
+inv11 T: all s : Student, C : Course, g : Grade | s->g implies c in s.enrolled
+inv11 T: all s : Student, C : Course, g : Grade | s->g implies c in s.enrolled.grades
+inv11 S: all s : Student, C : Course, g : Grade | s->g in c.grades implies c in s.enrolled
+inv11 U: all s : Student, c : Course, g : Grade | s->g in c.grades implies c in s.enrolled
+

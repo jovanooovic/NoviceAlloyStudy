@@ -1,0 +1,11 @@
+inv5 B: all u: User, i: Influencer | i in u.follows
+inv5 B: all u: User + Influencer, i: Influencer | i in u.follows
+inv5 B: all u: User, i: Influencer | i in u.follows
+inv5 B: all u: User+Influencer, i: Influencer | i in u.follows
+inv5 B: all i: Influencer | i in User.follows
+inv5 B: all u: User | Influencer in u.follows
+inv5 B: all disj u: User | Influencer in u.follows
+inv5 U: all disj u: User - Influencer | Influencer in u.follows
+inv5 B: all disj u: User | Influencer in u.follows
+inv5 U: all u: User, i: Influencer | u != i => i in u.follows
+

@@ -1,0 +1,6 @@
+inv3 C: all c:Component | one ws:Workstation | c->ws in workstation
+inv3 S: all c:Component | one c->ws.workstation
+inv3 C: all c:Component | one c.workstation
+inv3 B: one Component.workstation
+inv3 C: all c:Component | one c.workstation
+

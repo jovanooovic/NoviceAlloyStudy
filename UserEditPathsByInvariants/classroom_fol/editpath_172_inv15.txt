@@ -1,0 +1,34 @@
+inv15 S: Teacher in Person.Teaches*
+inv15 S: Teacher in Person.Teaches*
+inv15 U: Teacher in Person.*Teaches
+inv15 U: Teacher in Person.*Teaches
+inv15 U: Teacher in Person.*Tutors
+inv15 T: Teacher in *(Person.Tutors)
+inv15 U: Teacher in Person.*(Tutors)
+inv15 U: Teacher in Person.^(Tutors)
+inv15 E:
+inv15 E:
+inv15 S: no
+inv15 T: none
+inv15 S: Person & not Person
+inv15 O: all p : Person | p != p
+inv15 B: all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher))
+inv15 E:
+inv15 B: some Tutors	  all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher))
+inv15 B: some Tutors =>	  (all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher)))
+inv15 B: all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher))
+inv15 B: some Tutors 	  all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher))
+inv15 B: some Tutors 	  all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher )
+inv15 B: some Tutors 	  all t1, t2: Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher )
+inv15 B: some Tutors 	  all t1, t2, t3 : Person | (t1->t2 in Tutors) => (t1 in Teacher or t2 in Teacher or (t2->t3 in Tutors and t3 in Teacher))
+inv15 S: Teacher in Person.*tutors
+inv15 U: Teacher in Person.*Tutors
+inv15 O: all p : Person | p != p
+inv15 U: Teacher in Person.*Tutors
+inv15 U: some Tutors =>	  Teacher in Person.*Tutors
+inv15 U: Teacher in Person.*Tutors
+inv15 B: all p: Person | Teacher in p.*Tutors
+inv15 B: all p: Person | Teacher in p.*Tutors
+inv15 B: all p: Person | Teacher in p.^Tutors
+inv15 B: all p: Person | Teacher in p.*Tutors
+

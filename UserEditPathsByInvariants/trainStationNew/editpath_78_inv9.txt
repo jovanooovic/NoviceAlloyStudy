@@ -1,0 +1,14 @@
+inv9 B: all t, t1: Track | all s: Semaphore | t1 not in t.succs implies s not in t.signals
+inv9 S: all t: Track | all t1: t.succs | t1 not in Junction implies s not in t.signals
+inv9 B: all t: Track | all t1: t.succs | t1 not in Junction implies all s: Semaphore | s not in t.signals
+inv9 B: all t: Track | all t1: t.succs | t1 not in Junction implies all s: t.signals | s not in Semaphore
+inv9 B: all t: Track | t.succs not in Junction implies all s: t.signals | s not in Semaphore
+inv9 B: all t: Track | t.succs not in Junction implies t.signals not in Semaphore
+inv9 B: all t: Track | t.*(succs) not in Junction implies t.signals not in Semaphore
+inv9 U: all t: Track | t.*(succs) not in Junction implies t.*(signals) not in Semaphore
+inv9 U: all t: Track | t.succs not in Junction implies t.*(signals) not in Semaphore
+inv9 B: all t: Track | t.succs not in Junction implies t.signals not in Semaphore
+inv9 B: all t: Track | (t.succs not in Junction implies t.signals not in Semaphore) and (t.signals not in Semaphore implies t.succs not in Junction)
+inv9 S: all t: Track | t.succs not in Junction implies t.signals not in Semaphore
+inv9 S: all t: Track | t.succs not in Junction implies t.signals not in Semaphore
+

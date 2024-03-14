@@ -1,0 +1,45 @@
+"Teacher.Tutors",1
+"Tutors.Student",1
+"Tutors.Teacher",1
+"Teacher in Tutors",2
+"Tutors in Teacher",1
+"no(Student & Tutors)",1
+"Person.Tutors & Student",1
+"Person.Tutors:>Student",1
+"Teacher.Tutors.Student = Tutors",1
+"all t:Tutors | Teacher.t.Student",1
+"(Teacher <: Tutors) :> Student",1
+"Teacher <: Tutors :> Student",1
+"Person.Tutors in Teacher->Student",1
+"Teacher.Tutors and Tutors.Student",3
+"Tutors.Teacher & Student.Tutors",1
+"Teacher.Tutors + Tutors.Student",1
+"all t:Teacher, s:Student | t.Tutors.s",1
+"Teacher.Tutors & Tutors.Student",1
+"Person.Tutors.univ in Teacher->Student",1
+"all s: Student , t:Teacher | t.Tutors.s",1
+"all t, s : Person | t.Teaches & s.Tutors",1
+"Teacher<:Person.Tutors:>Student",1
+"all t : Teacher, s : Student | t.Tutors.s",1
+"Tutors in Teacher.Tutors & Tutors.Student",1
+"Person.Tutors in Student and Teacher.Teaches",1
+"all t : Teacher, s : Student | some t.Tutors.s",1
+"Tutors.Person in Teacher and Tutors in Student",1
+"all s:Student , t:Teacher | (some Tutors.s) :>t",1
+"all t, s : Person | t in Teacher & s in Student",1
+"Person.Tutors.univ in Teacher.univ->Student.univ",1
+"Person.Tutors & Student
+  Tutors.Person & Teacher",1
+"Person.Tutors in Student and Teacher.Tutors.Person",1
+"Person.Tutors & Student and Tutors.Person & Teacher",1
+"Person.Tutors & Student and
+  Tutors.Person & Teacher",1
+"all s:Student , t:Teacher | some Tutors.s :>t in Teacher",1
+"(Person.Tutors in Student) and (Person.Student in Teacher)",2
+"all t : Teacher, s : Student | s in t.Tutors & t in Tutors.Person",1
+"all t,s:Person | Tutors.s:>t implies t in Teacher and s in Student",2
+"Teacher in (Teacher <: Teaches) and Student in (Teaches :> Student)",1
+"all p : Person, t : Teacher, s : Student | s in t.Tutors & t in Tutors.p",1
+"all p : Person, t : Teacher | t->p in Tutors => t in Teacher & p in Student",1
+"all t, s : Person | (t.Tutors & s.Tutors) implies (t in Teacher & s in Student)",1
+"all p1:Person, p2:Person | p1 in Tutors.Person implies p1 in Teacher && p2 in Tutors implies p2 in Student",1

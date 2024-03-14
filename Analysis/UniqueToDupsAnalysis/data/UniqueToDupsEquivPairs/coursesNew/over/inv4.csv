@@ -1,0 +1,19 @@
+Pairs,14
+,,"all x:Project | one x.projects",4
+,,"all p : Project | one p.projects",5
+,,"all x:Project | x in Course",1
+,,"all p : Project | p in Course",1
+,,"all p : Project | p in (one Course)",1
+,,"all x : Project | one y : Course | y in x.projects",1
+,,"all p : Project | some c : Course| c in p.projects",1
+
+Pairs,2
+,,"all g:Grade | one ( (Course <: projects).g)",1
+,,"one course : Course | some projects : Project | projects in course",1
+
+Pairs,1
+,,"all pr: Project | one c : Course | pr in Course.projects",1
+
+Pairs,1
+,,"one course : Course | all projects : Project | projects in course",1
+

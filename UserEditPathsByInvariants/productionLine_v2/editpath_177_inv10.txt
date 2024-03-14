@@ -1,0 +1,10 @@
+inv10 B: all c: Component, p: c.parts, w: c.workstation | c.parts in w
+inv10 B: all c: Component, p: c.parts, w: c.workstation | c.parts.workstation = w
+inv10 B: all c: Component, p: c.parts, w: c.workstation | p.workstation = w
+inv10 S: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.worstation | w2 in w1.^succs
+inv10 S: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.workstation | w2 in w1.^succs
+inv10 B: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.workstation | w2 in w1.^succ
+inv10 B: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.workstation | w1 in w2.^succ
+inv10 B: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.workstation | w2 in w1.^succ
+inv10 B: all c1: Component, c2: c1.^parts, w1: c1.workstation, w2: c2.workstation | w1 in w2.^succ
+

@@ -1,0 +1,9 @@
+inv6 T: no Student.(Course-enrolled).projects
+inv6 T: no (Student.(Course-enrolled).projects)
+inv6 U: no ((Course-Student).enrolled.projects)
+inv6 B: no (Student.enrolled.projects & (Course-Student).projects)
+inv6 T: no (Student.enrolled.projects in (Course-Student).projects)
+inv6 B: all s: Student, c: Course | c not in s.enrolled => s.projects not in c.projects
+inv6 B: all s: Student, c: Course | c not in s.enrolled => s.projects != c.projects
+inv6 B: all s: Student, c: Course | c not in s.enrolled => no (s.projects & c.projects)
+

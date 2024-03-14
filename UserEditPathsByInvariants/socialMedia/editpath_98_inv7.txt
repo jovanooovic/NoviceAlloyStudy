@@ -1,0 +1,14 @@
+inv7 B: all x : User | all s : x.follows.follows | s in x.suggested and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and s != x
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.follows.follows | s in x.suggested => s not in x.follows
+inv7 U: all x : User | all s : x.follows.follows | s in x.suggested => (s not in x.follows and s != x)
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and s != x
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x != s
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=s
+inv7 U: all x : User + Influencer  | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=s
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=s
+

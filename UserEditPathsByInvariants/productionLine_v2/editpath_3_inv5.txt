@@ -1,0 +1,14 @@
+inv5 S: all w : Workstation | (Robot in w.worker implies no Human in w.worker) and (Human in w.worker implies no Robot in w.worker)
+inv5 T: all w : Workstation | (Robot in w.workers implies no Human in w.workers) and (Human in w.workers implies no Robot in w.workers)
+inv5 T: all w : Workstation | (Robot in w.workers implies no(Human in w.workers)) and (Human in w.workers implies no(Robot in w.workers))
+inv5 T: all w : Workstation | Robot in w.workers implies no(Human in w.workers)	all w : Workstation | Human in w.workers implies no(Robot in w.workers)
+inv5 B: all w : Workstation | Robot in w.workers implies Human not in w.workers	all w : Workstation | Human in w.workers implies Robot not in w.workers
+inv5 B: all w : Workstation | Robot in w.workers implies Human not in w.workers	all w : Workstation | Human in w.workers implies Robot not in w.workers
+inv5 B: all w : Workstation | Robot in w.workers implies Human not in w.workers	all w : Workstation | Human in w.workers implies Robot not in w.workers
+inv5 B: all w : Workstation | Robot in w.workers implies Human not in w.workers	all w : Workstation | Human in w.workers implies Robot not in w.workers
+inv5 C: all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers	all w : Workstation | all r : Robot | all h : Human | h in w.workers implies r not in w.workers
+inv5 O: all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers	all w : Workstation | all r : Robot | all h : Human | h in w.workers implies r not in w.workers	all w : Workstation | w.workers=w.workers&Robot
+inv5 O: all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers	all w : Workstation | all r : Robot | all h : Human | h in w.workers implies r not in w.workers	all w : Workstation | w.workers=w.workers&Robot or w.workers=w.workers&Human
+inv5 O: all w : Workstation | w.workers=w.workers&Robot or w.workers=w.workers&Human
+inv5 C: all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers
+

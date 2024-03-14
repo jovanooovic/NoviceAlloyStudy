@@ -1,0 +1,6 @@
+inv10 S: all x:Person, g:Grades| x->g in grades implies x in Student
+inv10 T: all x:Person, g:Grade| x->g in grades implies x in Student
+inv10 T: all x:Person, g:Grade, c:Course| x->c in enrolled and c->g in grades implies x in Student
+inv10 U: all x:Person, g:Grade, c:Course| x->c in enrolled and c->x->g in grades implies x in Student
+inv10 C: all x:Person, g:Grade, c:Course| c->x->g in grades implies x in Student
+

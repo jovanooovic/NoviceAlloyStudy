@@ -1,0 +1,46 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo | one posts.p
+inv2 C: all u:User | u->u not in follows
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv4 B: all u:User | Ad in u.posts implies u.posts in Ad
+inv4 T: all u:User | some Ad in u.posts implies u.posts in Ad
+inv4 T: all u:User | some Ad && u.posts implies u.posts in Ad
+inv4 T: all u:User | some Ad && u.posts implies u.posts in Ad
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv4 T: all u:User | some u.posts && Ad implies u.posts in Ad
+inv4 T: all u:User | some u.posts && Ad implies u.posts in Ad
+inv4 C: all u: User | some u.posts & Ad implies u.posts in Ad
+inv4 T: all u: User | some u.posts && Ad implies u.posts in Ad
+inv4 C: all u: User | some Ad & u.posts implies u.posts in Ad
+inv5 B: all u:User | Influencer in u.follows
+inv5 O: all u:User | Influencer in u.follows-User
+inv5 U: all i:Influencer | User-i in follows.i
+inv2 T: all u:User | not u.follows.u
+inv2 T: all u:User | u not follows.u
+inv2 T: all u:User | u->u not follows
+inv2 T: all u:User | u->u not follows
+inv2 T: all u:User | u->u not follows
+inv1 C: all p:Photo | one posts.p
+inv2 C: all u:User | u->u not in follows
+inv2 C: all u:User | u not in follows.u
+inv2 C: all u:User | u not in u.follows
+inv2 T: all u:User | not u.follows.u
+inv2 C: all u:User | u not in follows.u
+inv5 U: all i:Influencer | User-i in follows.i
+inv5 U: all i:Influencer | User-i in follows.i
+inv6 B: all i:Influencer, d:Day | date.d in i.posts
+inv6 C: all i:Influencer | Day in i.posts.date
+inv7 S: User:u | User-u & not u.follows in suggested.u
+inv7 S: User:u | User-u & not u.follows in u.suggested
+inv7 S: User:u | u.suggested = u.follows.follows - u.follows
+inv7 S: User:u | u.suggested = u.follows.follows - u.follows -u
+inv7 C: all u:User | u.suggested = u.follows.follows - u.follows - u
+inv8 T: all u:User | u.sees in Ad implies Ad in u.follows or u.suggested
+inv8 T: all u:User | u.sees in Ad implies Ad in u.follows or u.suggested
+inv8 T: all u:User | Ad in u.sees implies Ad in u.follows or u.suggested
+inv8 T: all u:User | Ad in u.sees implies Ad in (u.follows.posts or u.suggested.posts)
+inv8 T: all u:User | Ad & u.sees in (u.follows.posts or u.suggested.posts)
+inv8 C: all u:User | Ad & u.sees in (u.follows.posts + u.suggested.posts)
+inv8 T: all u:User | Ad in u.sees in (u.follows.posts + u.suggested.posts)
+

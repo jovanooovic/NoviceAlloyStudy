@@ -1,0 +1,11 @@
+inv2 T: all x : User | no x in follows.x
+inv2 S: all x : User | all follows.x implies no x
+inv2 S: all x : User | all follows.x : implies no x
+inv2 S: all x : User | all follows.x : no x
+inv2 S: all x : User | all follows.x : no x
+inv2 S: all x : User | all follows.x and no x
+inv2 C: all x,y : User | y->x in follows implies y!=x
+inv2 T: all x : User | no x in follows.x
+inv2 C: all x : User | x not in follows.x
+inv2 C: all x : User | x not in x.follows
+

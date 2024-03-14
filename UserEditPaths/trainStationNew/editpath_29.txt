@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 T: all track : Track | lone (Entry in track.succs and Exit in track.succs)
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv2 S: one signal: Signals, track:Track | signal => track
+inv2 T: one signal: Signal, track:Track | signal => track
+inv2 S: all signal: Signal,one track:Track | signal in track.signals
+inv2 C: all signal: Signal | one track:Track | signal in track.signals
+inv3 S: all exit : Exit | exit.succs = null
+inv4 C: all t : Track | t in Entry <=> t not in Track.^(succs)
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv5 T: all t : Track | t in Junction <=> lone t in Track
+inv6 S: all entry : Entry | some s : Speed| s in entry.signal
+inv6 C: all entry : Entry | some s : Speed| s in entry.signals
+

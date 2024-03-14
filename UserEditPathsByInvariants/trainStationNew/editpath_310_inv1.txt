@@ -1,0 +1,6 @@
+inv1 T: some Track.Exit and some Track.Entry
+inv1 S: all t:Track | some x:Exit, e:entry | x in t.^succs and e in t.^succs
+inv1 B: all t:Track | some x:Exit, e:Entry | x in t.^succs and e in t.^succs
+inv1 B: all t:Track | some t.succs implies some x:Exit, e:Entry | x in t.^succs and e in t.^succs
+inv1 B: all t:Track.succs | some x:Exit, e:Entry | x in t.^succs and e in t.^succs
+

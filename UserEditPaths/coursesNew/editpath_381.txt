@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv15 U: all x:Student, y:Course | x in y.enrolled implies lone x.projects.grades[y] & x.projects.grades[y]+1 & x.projects.grades[y]-1
+inv9 B: all x: Professor, y: Course | x in teaches.y implies no z: Person | z in teaches.y and z in Professor and z not in x
+inv9 B: all x: Professor, y: Course | x in teaches.y implies no z: Person | z in teaches.y and z in Professor and z != x
+inv9 B: all x: Professor, y: Course | x in teaches.y implies no z: Person | z in enrolled.y and z in Professor and z != x
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+NA M: MOD BASE MODEL
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor and z in Student
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+

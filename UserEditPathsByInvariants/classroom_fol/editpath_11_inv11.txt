@@ -1,0 +1,19 @@
+inv11 B: all c : Class | some t : Teacher | all g : Group | c->t->g in Groups
+inv11 B: all c : Class | all g : Group | some t : Teacher | c->t->g in Groups
+inv11 O: all c : Class | all g : Group | some t : Teacher | c->t->g in Groups and t->g in Teaches
+inv11 O: all c : Class | all g : Group | some t : Teacher | c->t->g in Groups and t->c in Teaches
+inv11 B: all c : Class | all g : Group | some t : Teacher | c->t->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some g : Group | some t : Teacher | c->t->g in Groups implies t->c in Teaches
+inv11 T: all c : Class | some g : Group | some t : Teacher | c->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some g : Group | some t : Teacher | c->t->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some t : Teacher | some g : Group | c->t->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some g : Group | some t : Teacher | c->t->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some g : Group | some t : Teacher | some p : Person | c->p->g in Groups implies t->c in Teaches
+inv11 B: all c : Class | some g : Group | all t, p : Person | c->p->g in Groups implies (t->c in Teaches and t in Teacher)
+inv11 B: all c : Class | some g : Group | all t : Person | c->t->g in Groups implies (t->c in Teaches and t in Teacher)
+inv11 T: all c : Class | some g : Group | all t, p : Person | (c->p->g in Groups and t->g in Group) implies (t->c in Teaches and t in Teacher)
+inv11 B: all c : Class | some g : Group | all t, p : Person | (c->p->g in Groups and c->t->g in Groups) implies (t->c in Teaches and t in Teacher)
+inv11 B: all c : Class | some g : Group | some t, p : Person | (c->p->g in Groups and c->t->g in Groups) implies (t->c in Teaches and t in Teacher)
+inv11 B: all c : Class | some g : Group | some t, p : Person | (c->p->g in Groups) implies (t->c in Teaches and t in Teacher)
+inv11 B: all c : Class | some g : Group | some t, p : Person | (c->p->g in Groups) implies (t->c in Teaches and t in Teacher)
+

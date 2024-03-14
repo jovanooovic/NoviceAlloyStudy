@@ -1,0 +1,6 @@
+inv5 O: all s:State | Event->State in s.trans
+inv5 B: all e:Event | Event->State in State.trans
+inv5 B: all e:Event | e->State in State.trans
+inv5 O: all s1,s2 :State | Event->s2 in s1.trans
+inv5 C: all s1,s2 :State | (s1.trans).State = (s2.trans).State
+

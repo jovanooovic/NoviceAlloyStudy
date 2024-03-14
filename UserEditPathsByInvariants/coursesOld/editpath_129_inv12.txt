@@ -1,0 +1,17 @@
+inv12 S: all s : Student | all c : Course | lone (s.course.grades)
+inv12 B: all s : Student | all c : Course | lone (s.enrolled.grades)
+inv12 T: all s : Student | all c : Course | all g1,g2 : Grade | c->s->g1 in grades and c->s->g2 implies g1 = g2
+inv12 U: all s : Student | all c : Course | all g1,g2 : Grade | c->s->g1 in grades and c->s->g2 in grades implies g1 = g2
+inv12 S: all s : Student | all c : Course | lone (p->s & c.grades)
+inv12 U: all s : Student | all c : Course | all g : Grade | lone (s->g & c.grades)
+inv12 B: all s : Student | all c : Course | all g : Grade | one (s->g & c.grades)
+inv12 U: all s : Student | all c : Course | all g : Grade | lone (s->g & c.grades)
+inv12 U: all p : Person | all c : Course | all g : Grade | lone (p->g & c.grades)
+inv12 U: all s : Student | all c : Course | all g : Grade | lone ((s->g) & c.grades)
+inv12 U: all s : Student | all c : Course | all g : Grade | lone (s->g & c.grades)
+inv12 U: all s : Student | all c : Course | all g1,g2 : Grade | c->s->g1 in grades and c->s->g2 in grades implies g1 = g2
+inv12 U: all s : Student | all c : Course | all g : Grade | s in enrolled.c implies lone (s->g & c.grades)
+inv12 U: all p1 : Student | all c1 : Course |	  	(p1->c1 in enrolled) implies (lone g1 : Grade | c1->p1->g1 in grades)
+inv12 B: all s : Student | all c : Course | lone g : Grade | s in enrolled.c implies lone (s->g & c.grades)
+inv12 U: all s : Student | all c : Course | all g : Grade | lone (s->g & c.grades)
+

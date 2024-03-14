@@ -1,0 +1,5 @@
+inv3 U: all u1,u2:User, p:Photo-Ad | u1 in p.sees and p in u2.posts implies u1 in u2.follows
+inv3 B: all u1,u2:User, p:Photo-Ad | u1 in sees.p and p in u2.posts implies u1 in u2.follows
+inv3 B: all u1,u2:User, p:Photo-Ad | u1 in sees.p and u2 in posts.p implies u1 in u2.follows
+inv3 B: all u1,u2:User, p:Photo-Ad | u1 in sees.p and u2 in posts.p implies u2 in u1.follows
+

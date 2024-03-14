@@ -1,0 +1,6 @@
+inv8 T: all u:User, a:Ad|u->a in sees => (some u2:follows+suggested | u2->a in posts)
+inv8 S: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u1->u2 in follows + suggested)
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u->u2 in follows + suggested)
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:u.follows+u.suggested | u2->a in posts )
+inv8 C: all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u->u2 in follows + suggested)
+

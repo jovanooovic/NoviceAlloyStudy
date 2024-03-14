@@ -1,0 +1,5 @@
+inv1 B: all u:User, p:Photo | p in u.posts
+inv1 B: one u:User, p:Photo | p in u.posts
+inv1 B: one u:User| all p:Photo | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+

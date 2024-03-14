@@ -1,0 +1,8 @@
+inv12 B: always all f:File | eventually f in Trash
+inv12 B: always all f:File | eventually f in Trash && eventually f not in Trash
+inv12 B: always all f:File | eventually f in Trash && historically f not in Trash
+inv12 S: always all f:File | eventually f in Trash && f in Trash until
+inv12 B: always all f:File | eventually f in Trash && f in Trash until f not in Trash
+inv12 B: always all f:File | eventually f in Trash && (f in Trash until f not in Trash)
+inv12 B: always all f:File | eventually f in Trash implies (f in Trash until f not in Trash)
+

@@ -1,0 +1,8 @@
+inv4 S: all u:user | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+inv4 O: all u:User | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.visible | no (w1.ids & w2.ids)
+inv4 O: all u:User | all disj w1,w2 : u.(visible + profile) | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.(visible) | no (w1.ids & w2.ids)
+inv4 O: all u:User | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.profile | w1.ids != w2.ids
+

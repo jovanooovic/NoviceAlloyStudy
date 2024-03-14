@@ -1,0 +1,84 @@
+Pairs,9
+,,"no Student.teaches",4
+,,"all s:Student | no s.teaches",5
+
+Pairs,3
+,,"no (Person-Student).teaches",3
+
+Pairs,1
+,,"Professor in teaches.Course",1
+
+Pairs,2
+,,"enrolled.Course in Professor",1
+,,"all p1 : Person | all c1 : Course | p1->c1 in enrolled implies p1 in Professor",1
+
+Pairs,1
+,,"no enrolled.Course-Professor",1
+
+Pairs,1
+,,"no Person-Student & teaches.Course",1
+
+Pairs,1
+,,"no ((Person - Professor).enrolled)",1
+
+Pairs,1
+,,"all p : Professor | p.teaches = none",1
+
+Pairs,2
+,,"no (Person-Student) & teaches.Course",2
+
+Pairs,1
+,,"all c : Course | teaches.c in Student",1
+
+Pairs,1
+,,"all p : Professor | p -> p in teaches",1
+
+Pairs,1
+,,"Course.~teaches = Student - Professor",1
+
+Pairs,1
+,,"all p : enrolled.Course | p in Professor",1
+
+Pairs,1
+,,"all x:Course, y:Professor | y->x not in enrolled",1
+
+Pairs,1
+,,"all p : Professor | all c : Course | p->c in teaches",1
+
+Pairs,1
+,,"all i : univ | i in Professor implies some teaches.i",1
+
+Pairs,1
+,,"all x:Course, y:Person-Professor | y->x not in enrolled",1
+
+Pairs,1
+,,"all p : Person | (some p.enrolled implies p in Professor)",1
+
+Pairs,1
+,,"all p : Person | all c : Course | c in p.teaches => p in Student",1
+
+Pairs,1
+,,"all p: Person ,c: Course| p not in Student and (p -> c in teaches)",1
+
+Pairs,1
+,,"all p : Person, c : Course | c in p.enrolled implies p in Professor",1
+
+Pairs,4
+,,"all i : univ | i in Professor and i!=Student implies some teaches.i",4
+
+Pairs,2
+,,"all p: Person ,c: Course| p not in Professor or (p -> c in teaches)",2
+
+Pairs,1
+,,"all p : Person, c : Course | p->c in enrolled implies p in Professor",1
+
+Pairs,1
+,,"all c:Course | some p:Person | p->c in teaches implies p in Professor",1
+
+Pairs,1
+,,"not some p:Person | some c:Course | p not in Student and p->c in teaches",1
+
+Pairs,1
+,,"all x : Course, y : Person - Professor | y->x not in enrolled
+  	no (Person - Professor) & enrolled.Course",1
+

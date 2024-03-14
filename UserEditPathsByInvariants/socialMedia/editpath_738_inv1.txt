@@ -1,0 +1,13 @@
+inv1 T: all i : univ | i->Photo implies i->User
+inv1 T: all i : univ | i in  Photo -> i in User
+inv1 O: all i : univ | i in  Photo implies i in User
+inv1 S: all i : univ | i in  Photo implies some x : univ | posts(x,y)
+inv1 U: all i : univ | i in  Photo implies some x : univ | x->i in posts
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p,y : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x==y
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x==y
+inv1 S: all i : univ | i in  Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x : univ | x->p in posts
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x=y
+inv1 U: all i : univ | i in Photo implies some x : univ | x->i in posts	all p : univ | p in Photo implies some x,y : univ | x->p in posts and y->p in posts implies x=y
+

@@ -1,0 +1,10 @@
+inv11 S: all s: Student, c: s.enrolled | no ((Course-c). & c.grades)
+inv11 B: all s: Student, c: s.enrolled | no ((Course-c).grades & c.grades)
+inv11 B: Student in Student.enrolled.grades.Grade
+inv11 B: Student not in (Person-Student).enrolled.grades.Grade
+inv11 S: all s: Student, c: Course | c not in s.enrolled => no (student.enrolled.grades.grade & c.grades.grade)
+inv11 S: all s: Student, c: Course | c not in s.enrolled => no (.enrolled.grades.grade & c.grades.grade)
+inv11 S: all s: Student, c: Course | c not in s.enrolled => no (s.enrolled.grades.grade & c.grades.grade)
+inv11 B: all s: Student, c: Course | c not in s.enrolled => no (s.enrolled.grades.Grade & c.grades.Grade)
+inv11 U: all s: Student, c: Course | c not in s.enrolled => s not in c.grades.Grade
+

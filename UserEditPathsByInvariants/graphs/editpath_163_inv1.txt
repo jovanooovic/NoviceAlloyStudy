@@ -1,0 +1,18 @@
+inv1 T: adj & ~adj
+inv1 T: adj & ~adj
+inv1 T: (adj & ~adj) in Node
+inv1 S: all adj & ~adj
+inv1 T: adj & ~adj
+inv1 B: no adj & ~adj
+inv1 B: some adj & ~adj
+inv1 S: all adj & ~adj
+inv1 B: one adj & ~adj
+inv1 S: one adj & one ~adj
+inv1 S: one adj + one ~adj
+inv1 B: all n : Node | one n.adj
+inv1 T: all n : Node | one n.adj and n.(~adj)
+inv1 B: all n : Node | one n.adj & n.(~adj)
+inv1 T: all n : Node | (one n.adj )&(one n.(~adj))
+inv1 S: all n : Node | one n.adj & one n.(~adj)
+inv1 C: all n1, n2 : Node | n1->n2 in adj implies n2->n1 in adj
+

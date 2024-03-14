@@ -1,0 +1,5 @@
+inv5 T: all w : Workstation | no ((Human in w.workers) & (Robot in w.workers))
+inv5 T: all w : Workstation | ((Human in w.workers) & (Robot in w.workers)) = none
+inv5 T: all w : Workstation, h : Human | h in w.workers implies no Robot in w.workers
+inv5 C: all w : Workstation, h : Human | h in w.workers implies (Robot & w.workers) = none
+

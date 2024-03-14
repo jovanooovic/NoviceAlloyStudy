@@ -1,0 +1,8 @@
+inv10 S: all p : Professor | all g : grade | p->g not in grades
+inv10 S: all p : Professor | all g : grade | p->g not in Course.grades
+inv10 T: all p : Professor | all g : Grade | p->g not in grades
+inv10 T: all p : Professor | all g : Grade | p.g not in grades
+inv10 T: all p : Professor | all g : Grade | p*g not in grades
+inv10 B: all p : Professor | all g : Grade | p->g not in Course.grades
+inv10 C: all p : Person | all g : Grade | p->g in Course.grades implies p in Student
+

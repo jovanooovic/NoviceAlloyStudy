@@ -1,0 +1,4 @@
+inv8 C: all u : User , a : Ad | a in u.sees => a in u.follows.posts + u.suggested.posts
+inv8 O: all u : User , a : Ad | a in u.sees <=> a in u.follows.posts + u.suggested.posts
+inv8 C: all u : User , a : Ad | a in u.sees => a in u.follows.posts + u.suggested.posts
+

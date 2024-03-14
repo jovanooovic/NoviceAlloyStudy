@@ -1,0 +1,17 @@
+"none Entry & Exit",1
+"all t: Track | t.*(succs)",1
+"all t : Track | no succs.^t",1
+"all t : Track | no succs.*t",1
+"all t:Track | no t in t.(^succs)",1
+"all t : Track | no t in t.^succs",1
+"all t: Track | t not in ^t.succs",1
+"all t: Track | no t in t.*(succs)",1
+"all t : Track | t not in ^t.succs",1
+"all t: Track | t not in ^(t.succs)",1
+"all t : Track | no t in t.^(succs)",1
+"Track.^succs & Track.^succs = iden",1
+"all t:Track | t not int t.^(succs)",1
+"all t : Track | no t.^(succs) & iden",1
+"all t : Track | no (t.^(succs)) & iden",1
+"all t: Track | all s: t.succs | succs.^t not in s.succs",1
+"all x1,x2 : Track | x1 in x2.succs implies x1 x2 not in x1.^succs",1

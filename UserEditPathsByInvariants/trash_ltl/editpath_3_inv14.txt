@@ -1,0 +1,7 @@
+inv14 B: after (all f:Protected | f in Trash implies f not in Protected)
+inv14 B: after (all f:File| f in Trash&Protected implies f not in Protected)
+inv14 B: all f:File | f in Protected&Trash until f not in Protected
+inv14 B: all f:File | f in Protected&Trash releases f not in Protected
+inv14 S: all f:File | f in Protected&Trash after f not in Protected
+inv14 B: File in Protected&Trash  implies after File not in Protected
+

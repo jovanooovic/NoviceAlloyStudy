@@ -1,0 +1,7 @@
+inv11 B: all x : Class | some y : Teacher | some g : Group | x->y->g in Groups
+inv11 B: some x : Class | some y : Teacher | some g : Group | x->y->g in Groups
+inv11 B: some x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 B: all x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 B: some x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 C: all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches
+

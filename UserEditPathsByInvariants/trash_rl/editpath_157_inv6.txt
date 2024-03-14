@@ -1,0 +1,11 @@
+inv6 S: all f:File | f.lone
+inv6 C: all f:File | lone f.link
+inv6 B: link.~link in iden
+inv6 T: link.~link
+inv6 C: all f:File | lone f.link
+inv6 B: link.~link in iden
+inv6 B: (	all f:File| f->f not in link )and( link.~link in iden )
+inv6 T: no (all f:File| f->f in link ) and( link.~link in iden )
+inv6 T: (no (all f:File| f->f in link )) and( link.~link in iden )
+inv6 T: (no (some f:File| f->f in link )) and( link.~link in iden )
+

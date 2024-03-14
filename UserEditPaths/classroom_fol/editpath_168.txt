@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | p & Student
+inv1 C: all p : Person | p in Student
+inv2 C: all p : Person | p not in Teacher
+inv3 S: Student disj Teacher
+inv3 C: all p : Person | (p in Student implies p not in Teacher) and (p in Teacher implies p not in Student)
+inv4 B: all p : Person | p not in Student and p not in Teacher
+NA M: MOD BASE MODEL
+inv2 C: no Teacher
+inv4 B: no Student and no Teacher
+inv4 B: no Student and no Teacher and some Person
+inv4 S: all p : Person |
+inv4 S: all p : Person |
+inv3 C: all p : Person | p not in (Student & Teacher)
+inv3 C: no (Student & Teacher)
+inv4 B: no Student and no Teacher
+inv4 B: (no Student) and (no Teacher) and no ( Student & Teacher )
+inv4 B: no Student and no Teacher and some Person
+inv4 B: no Student and no Teacher
+inv4 S: all p : Person | p not in Student and p not in Teacer
+inv4 B: all p : Person | p not in Student and p not in Teacher
+inv5 B: all t : Teacher | #(t.Teaches) > 0
+inv5 B: all t : Teacher | some (t.Teaches)
+inv4 B: no (Person & Student) and no (Person & Teacher)
+inv4 T: no Student and no Teacher and Group.Person not in Student and Group.Person not in Teacher
+inv4 T: no Student and no Teacher and Group.Person not in Student and Group.Person not in Teacher
+inv4 B: no Student and no Teacher
+inv4 B: all p : Person | p not in Student and p not in Teacher and no p.Teaches and no p.Tutors
+inv4 B: no Student and no Teacher and no Class
+inv4 B: no Student and no Teacher and no Class
+inv4 B: no Student and no Teacher and no Class and no Group
+inv4 O: no Person
+

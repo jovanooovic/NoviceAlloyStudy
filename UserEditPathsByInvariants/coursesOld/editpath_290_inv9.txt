@@ -1,0 +1,7 @@
+inv9 T: all disj p1, p2 : Professor | p1.teaches != p2.teaches or (grades.Grade).teaches.p2
+inv9 T: all disj p1, p2 : Professor | p1.teaches != p2.teaches or (grades.Grade).teaches.p2
+inv9 T: all disj p1, p2 : Professor | p1.teaches != p2.teaches or (p1.teaches & enrolled.p2)
+inv9 T: all disj p1, p2 : Professor | p1.teaches != p2.teaches or (p1.teaches & enrolled.p2)
+inv9 T: all p : Professor | p.teaches.~enrolled & p.teaches.~teaches
+inv9 B: all p : Professor | no p.teaches.~enrolled & p.teaches.~teaches
+

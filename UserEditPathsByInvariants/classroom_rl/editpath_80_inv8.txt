@@ -1,0 +1,6 @@
+inv8 O: all t:Teacher { one c:Class | c in t.Teaches }
+inv8 B: all c:Class { one t:Teacher | c in t.Teaches }
+inv8 O: all t:Teacher { one c:Class | t in c.~Teaches }
+inv8 O: all t:Teacher { one c:Class | c in t.Teaches }
+inv8 C: all t:Teacher { lone c:Class | c in t.Teaches }
+

@@ -1,0 +1,83 @@
+Pairs,3
+,,"no pos",1
+,,"no Train.pos",2
+
+Pairs,11
+,,"no prox",2
+,,"no Track.prox",1
+,,"always no prox",2
+,,"no prox.Track.prox",1
+,,"always(no Track.prox)",2
+,,"always (no Track.^prox)",1
+,,"always (no Track.prox and no prox.Track)",1
+,,"no Entry.prox and no Exit.prox and no Track.prox",1
+
+Pairs,1
+,,"one Train.pos",1
+
+Pairs,1
+,,"always no Green",1
+
+Pairs,2
+,,"no Train.pos.prox",1
+,,"all t : Train , x : t.pos | no x.prox",1
+
+Pairs,2
+,,"always pos.~pos in iden",1
+,,"always all t : Track | lone pos.t",1
+
+Pairs,1
+,,"always Exit in Train.pos",1
+
+Pairs,1
+,,"always Entry = Train.pos",1
+
+Pairs,3
+,,"always Train.pos in Entry",1
+,,"all t : Train | always t.pos in Entry",2
+
+Pairs,1
+,,"always Entry in Train.pos",1
+
+Pairs,1
+,,"always (no Train.pos.prox)",1
+
+Pairs,3
+,,"always( all t:Train | one t.pos)",2
+,,"always all t : Train | always one t.pos",1
+
+Pairs,1
+,,"always Entry & Exit in Train.pos",1
+
+Pairs,2
+,,"always Entry + Exit in Train.pos",2
+
+Pairs,1
+,,"all t : Train | always no Green & t.pos.signal",1
+
+Pairs,1
+,,"all t : Train | always t.pos in Entry or t.pos in Exit",1
+
+Pairs,1
+,,"all t : Train | always t.pos in Entry or always t.pos in Exit",1
+
+Pairs,2
+,,"always all t: Train | some tr: Track | t in tr implies t' in tr",1
+,,"always all t: Train | some tr: Track | t in pos.tr implies t' in pos.tr",1
+
+Pairs,2
+,,"always all t: Train | always one t.pos implies after t in t.pos",1
+,,"always all t: Train | always one t.pos implies after t' in t.pos",1
+
+Pairs,4
+,,"always all t: Train | one tr: Track | t in pos.tr implies t' in pos.tr",1
+,,"always all t: Train | one tr: Track | always (t in pos.tr implies t' in pos.tr)",1
+,,"always all t: Train | one tr: Track | always t in pos.tr implies t' in pos.tr",1
+,,"always all t: Train | always one tr: Track | always (t in pos.tr implies t' in pos.tr)",1
+
+Pairs,1
+,,"always all t: Train |one tr: Track | t.pos in tr implies after t.pos in tr",1
+
+Pairs,1
+,,"always( all t:Train | some tk:Track | t->tk in pos implies after t->tk in pos)",1
+

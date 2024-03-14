@@ -1,0 +1,5 @@
+inv8 O: all ent : Entry | all ext : Exit | ext in ent.^succs
+inv8 O: all ent : Entry | all ext : Exit | ext in ent.^succs and ext != ent
+inv8 C: all t1, t2 : Track | t1 != t2 and t1 in Entry and t2 in Exit implies t2 in t1.^succs
+inv8 C: all ent : Entry | all ext : Exit | ext != ent implies ext in ent.^succs
+

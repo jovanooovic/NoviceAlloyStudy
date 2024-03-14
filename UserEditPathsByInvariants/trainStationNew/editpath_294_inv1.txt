@@ -1,0 +1,13 @@
+inv1 O: one e:Entry | one ex:Exit | e in Track and ex in Track
+inv1 E:
+inv1 O: all t:Track | some en:Entry | en->t in succs	one e:Exit | all t:Track | e->t not in succs
+inv1 B: all t:Track | some en:Entry | en->t in succs	all t:Track | one e:Exit | e->t not in succs
+inv1 B: all t:Track | some en:Entry | en->t in succs	all t:Track | one e:Exit | e!=t and e->t not in succs
+inv1 B: all t:Track | some en:Entry | en!=t and en->t in succs	all t:Track | one e:Exit | e!=t and e->t not in succs
+inv1 B: all t:Track | some en:Entry | en->t in succs	all t:Track | one ex:Exit | t->ex in succs
+inv1 B: all t:Track | some en:Entry | one ex:Exit | en->t in succs and t->ex in succs
+inv1 B: all t:Track | some en:Entry | en->t in succs	all t:Track | one ex:Exit | t->ex in succs
+inv1 B: all t:Track | some en:Entry | en->t in succs	all t:Track | one ex:Exit | t->ex in succs
+inv1 O: some en:Entry | some t:Track | one ex:Exit | en->t in succs and t->ex in succs
+inv1 O: some e:Entry | some ex:Exit | some t:Track | e->t in succs and t->ex in succs
+

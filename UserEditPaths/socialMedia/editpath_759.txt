@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv2 T: all u:User | u not u.follows
+inv2 C: all u:User | u not in u.follows
+inv3 S: all u:User, p:Photo | (p in u.sees and p not in Ad) implies p in u.follows.posts and	(all p1:Photo | p1 in ad implies p1 in u.sees)
+inv3 O: all u:User, p:Photo | (p in u.sees and p not in Ad) implies p in u.follows.posts and	(all p1:Photo | p1 in Ad implies p1 in u.sees)
+inv3 O: all u:User, p:Photo | (p in u.sees and p not in Ad implies p in u.follows.posts) and	(all p1:Photo | p1 in Ad implies p1 in u.sees)
+inv3 C: all u:User, p:Photo | p in u.sees implies (p not in Ad and p in u.follows.posts) or (p in Ad)
+inv4 B: all u:User | one p:Photo | p in Ad and p in u.posts implies u.posts in Ad
+inv4 B: all u:User | one p:Photo | p in Ad and p in u.posts implies (all p1:Photo | p1 in u.posts implies p1 in Ad)
+inv4 B: all u:User | one p:Photo | (p in u.posts and p in Ad) implies (all p1:Photo | p1 in u.posts and p1 in Ad)
+inv4 B: all u:User | one p:Photo | (p in u.posts and p in Ad) implies (all p1:Photo | p1 in u.posts implies p1 in Ad)
+inv4 S: all u:User | one p:Photo | p in Ad and p in u.posts implies u.posts in Ad
+inv4 B: all u:User | one p:Photo | p in Ad and p in u.posts implies u.posts in Ad
+inv4 C: all u:User | all p:Photo | p in Ad and p in u.posts implies u.posts in Ad
+inv6 S: all i:Influencer | one d:Date | d in i.posts
+inv5 U: all i:Influencer, u:User | i in u.follows or i=u
+inv5 U: all i:Influencer, u:User | i in u.follows or i=u
+inv6 S: all i:Influener | one d:Day | d in i.posts
+inv6 O: all i:Influencer | one d:Day | d in i.posts
+inv6 B: all i:Influencer, p:Photo | one d:Day | p in i.posts implies d in p
+inv6 B: all i:Influencer, p:Photo | one d:Day | p in i.posts.date implies d in p
+inv6 C: all i:Influencer, d:Day | d in i.posts.date
+inv7 C: all u:User | u.suggested = (u.follows.follows - u -u.follows)
+inv8 T: all u:User, a:Ad | a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 C: all u:User, a:Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)
+NA H: THEME UPDATE
+

@@ -1,0 +1,7 @@
+inv5 S: all u:User,u2:User | u = Influencer implies u2 in u.followers
+inv5 S: all u:User,u2:User | u == Influencer implies u2 in u.followers
+inv5 S: all u:User,u2:User | u == Influencer implies u in u2.follows
+inv5 B: all u:User,u2:User | u in Influencer implies u in u2.follows
+inv5 U: all u:User,u2:User | u in Influencer and u != u2 implies u in u2.follows
+inv5 U: all u,u2:User | u in Influencer and u != u2 implies u in u2.follows
+

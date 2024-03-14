@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv10 O: iden in ~(Student <: Class.Groups) . (Student <: Class.Groups)
+inv10 S: for c Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)
+inv10 S: for c: Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)
+inv10 O: all c: Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)
+inv10 O: iden in ~(Student <: Class.Groups) . (Student <: Class.Groups)
+inv11 S: all c : Class | no c.~Teaches :> Teachers implies no Groups
+inv11 S: all c : Class | no (c.~Teaches :> Teachers) implies no Groups
+inv11 O: all c : Class | no (c.~Teaches :> Teacher) implies no Groups
+inv11 C: all c : Class | no (c.~Teaches :> Teacher) implies no c.Groups
+inv11 U: no (~Teaches :> Teacher) implies no Groups
+inv11 U: all c : Class | no (~Teaches :> Teacher) implies no c.Groups
+inv11 U: all c : Class | no (~Teaches :> Teacher) implies no c.Groups
+inv11 C: all c : Class | no (c.~Teaches :> Teacher) implies no c.Groups
+inv12 B: some Teacher.Teaches.Groups
+inv12 S: all t : Teacher | some+ t.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv12 S: iden in  ~(Teatcher <: Teaches.Groups) . (Teatcher <: Teaches.Groups)
+inv12 T: iden in  ~(Teacher <: Teaches.Groups) . (Teacher <: Teaches.Groups)
+inv12 T: iden in  (~Teaches.~Groups :> Teacher) . (Teacher <: Teaches.Groups)
+inv12 O: iden in  (~Teaches :> Teacher) . (Teacher <: Teaches)
+

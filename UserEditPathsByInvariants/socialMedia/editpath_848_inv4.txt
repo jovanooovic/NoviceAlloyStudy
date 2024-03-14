@@ -1,0 +1,8 @@
+inv4 T: all x : User, a : Ad, p : Photo | a in x.posts implies no p in x.posts
+inv4 C: all x : User, a : Ad, p : Photo-Ad | a in x.posts implies p not in x.posts
+inv4 C: all x : User, a : Ad, p : Photo-Ad | a in x.posts implies p not in x.posts
+inv4 B: all x : User, a : Ad, p : Photo-Ad | a in x.posts implies x.posts not in Ad
+inv4 B: all x : User, a : Ad, p : Photo-Ad | a in x.posts implies Ad not in x.posts
+inv4 T: all x : User, p : Photo-Ad | some Ad in x.posts implies p not in x.posts
+inv4 C: all x : User, a : Ad, p : Photo-Ad | a in x.posts implies p not in x.posts
+

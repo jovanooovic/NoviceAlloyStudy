@@ -1,0 +1,9 @@
+inv12 T: all s: Student, c: Course | c in s.enrolled => one s in c.grades.Grade
+inv12 B: all s: Student, c1, c2: Course | c1=c2 => s in c1.grades.Grade && s not in c2.grades.Grade
+inv12 B: all s: Student, c1, c2: Course | c1=c2 => s not in c1.grades.Grade || s not in c2.grades.Grade
+inv12 B: all s1, s2: Student, c: Course | s1 in c.grades.Grade && s2 in c.grades.Grade => s1!=s2
+inv12 B: all s1, s2: Student, c: Course | s1+s2 in c.grades.Grade && s2 in c.grades.Grade => s1!=s2
+inv12 B: all s: Student | lone g: Grade | s->g in Course.grades
+inv12 U: all s: Student, c:Course | lone g: Grade | s->g in c.grades
+inv12 U: all s: Student, c:Course | lone g: Grade | s->g in c.grades
+

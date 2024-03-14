@@ -1,0 +1,9 @@
+inv5 S: all p:Person-Professor | (some c:Project | lone p in projects.p
+inv5 T: all p:Person-Professor | (some c:Project | lone p in projects.p)
+inv5 T: all x:Person-Student | no x.projects	  		all x:Project |all u:Person |some x in u.projects
+inv5 T: all x:Person-Student | no x.projects	  		all x:Project |all u:Person |some x in u.projects
+inv5 T: all x:Person-Student | no x.projects	  		all x:Project |all u:Person |some x in u.projects
+inv5 T: all x:Person-Student | no x.projects	  		all x:Project |all u:Person |some x in u.projects
+inv5 T: all x:Person-Student | no x.projects	  		all x:Project |some u:Student |some x in u.projects
+inv5 C: all x:Person-Student | no x.projects	  		all x:Project |some u:Student | x in u.projects
+

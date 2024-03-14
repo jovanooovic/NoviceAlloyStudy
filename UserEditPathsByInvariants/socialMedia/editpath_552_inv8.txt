@@ -1,0 +1,5 @@
+inv8 S: all u:User, ad:Ad | s->p sees implies ((f->p in posts and u->f in follows) or (s->p in posts and u->s in suggested))
+inv8 S: all u:User, ad:Ad, f:Influencer, s:User | u->p sees implies ((f->p in posts and u->f in follows) or (s->p in posts and u->s in suggested))
+inv8 T: all u:User, ad:Ad, f:Influencer, s:User | u->ad sees implies ((f->ad in posts and u->f in follows) or (s->ad in posts and u->s in suggested))
+inv8 S: all u.User | u
+

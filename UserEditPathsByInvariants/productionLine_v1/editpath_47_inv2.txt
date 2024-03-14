@@ -1,0 +1,8 @@
+inv2 U: all c : Component | c not in c.parts
+inv2 U: all c : Component | c not in c.parts
+inv2 B: all c,c1 : Component, p : Position | c->p + c1->p in position => c = c1
+inv2 T: all c,c1 : Component, p : Position | c not in c->parts and c1 not in c1->parts and c->p + c1->p in position => c = c1
+inv2 T: all c,c1 : Component, p : Position | (c not in c->parts) and (c1 not in c1->parts) and c->p + c1->p in position => c = c1
+inv2 B: all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and c->p + c1->p in position => c = c1
+inv2 B: all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and (c->p + c1->p in position => c = c1 )
+

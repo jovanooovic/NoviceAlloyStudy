@@ -1,0 +1,8 @@
+inv3 S: all u : User | x in sees.u and x not in Ad => some otherUser : User | x in otherUser.post and otherUser in follows.u
+inv3 S: all u : User | x in sees.u and x not in Ad => some otherUser : User | x in otherUser.post and otherUser in follows.u
+inv3 E:
+inv3 S: all u : User | x in sees.u and x not in Ad => x in follows.u.posts
+inv3 U: all u : User | all x : sees.u | x not in Ad => x in follows.u.posts
+inv3 U: all u : User | all x : sees.u | x not in Ad => x in follows.u.posts
+inv3 C: all u : User | all x : u.sees | x not in Ad => x in u.follows.posts
+

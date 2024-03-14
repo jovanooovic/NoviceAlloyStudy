@@ -1,0 +1,15 @@
+inv7 B: all s:Student | lone s.enrolled.projects
+inv7 B: all p:Project, s:Student | p in s.projects implies lone (Course <: projects).p
+inv7 B: all p:Project, s:Student | p in s.projects implies one (Course <: projects).p
+inv7 B: all p:Project, s:Student | p in s.projects implies lone (Course <: projects).p
+inv7 S: all p:Project, s:Student |
+inv7 S: all p:Project, s:Student |
+inv7 B: all p:Project, s:Student | one s.enrolled.projects & s.projects
+inv7 B: all s:Student | lone s.enrolled.projects & s.projects
+inv7 B: all s:Student, c:Course , p:Project| p in s.projects implies one (Course <: projects).p
+inv7 T: all s:Student, c:Course , p:Project| p in s.projects implies lone p in c.projects
+inv7 B: all s:Student, c:Course , p:Project| p in s.projects implies p in c.projects
+inv7 B: all s:Student, c:Course , p:Project| p in s.projects implies p = s.projects & s.enrolled.projects
+inv7 B: all s:Student, p:Project| p in s.projects implies p = s.projects & s.enrolled.projects
+inv7 E:
+

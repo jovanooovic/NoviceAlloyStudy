@@ -1,0 +1,7 @@
+inv12 S: always (all f:File | eventually f in Trash implies (f not in Trash) releases (f in trash))
+inv12 B: always (all f:File | eventually f in Trash implies (f not in Trash) releases (f in Trash))
+inv12 B: eventually (all f:File | f in Trash implies (f not in Trash) releases (f in Trash))
+inv12 B: eventually (all f:File | f in Trash and (f not in Trash) releases (f in Trash))
+inv12 S: eventually (some f:File | (f in Trash) implies ((f not in Trash) releases (f in Trash))
+inv12 U: eventually (some f:File | (f in Trash) implies ((f not in Trash) releases (f in Trash)))
+

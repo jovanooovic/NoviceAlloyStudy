@@ -1,0 +1,8 @@
+inv13 S: all c : Course | gt(c.grades)
+inv13 E:
+inv13 S: all x,y : Student | all g,h : Grade | all c : Course | all p: x.project| x->g in c.grades and y->h in c.grades and x->g > y->h implies p in c.projects
+inv13 T: all x,y : Student | all g,h : Grade | all c : Course | all p: x.projects| x->g in c.grades and y->h in c.grades and x->g > y->h implies p in c.projects
+inv13 T: one x : Student | all y : Student - x | all g,h : Grade | all c:Course | all p: x.projects| x->g in c.grades and y->h in c.grades and g > h implies p in c.projects
+inv13 T: all x : Student, g : Grade | all p : x.projects | all c : Course | x->g in c.grades and x->g = max(c.grades) implies p in c.projects
+inv13 E:
+

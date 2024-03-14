@@ -1,0 +1,12 @@
+inv6 B: all s : Student | all p : Project | all c : Course | p in c.projects and c in s.enrolled
+inv6 B: all s : Student | all p : Project | some c : Course | p in c.projects and c in s.enrolled
+inv6 B: all s : Student | (all p : Project | (some c : Course | p in c.projects and c in s.enrolled))
+inv6 B: all s : Student | (all p : Project | (some c : Course | c in s.enrolled and p in c.projects ))
+inv6 S: all s : Student | (all p : u.projects | (some c : Course | c in s.enrolled and p in c.projects ))
+inv6 U: all s : Student | (all p : s.projects | (some c : Course | c in s.enrolled and p in c.projects ))
+inv6 B: all s : Student | (all p : s.projects | (all c : Course | c in s.enrolled and p in c.projects ))
+inv6 U: all s : Student | (all p : s.projects | (some c : Course | c in s.enrolled and p in c.projects ))
+inv6 U: all s : Student | all p : s.projects | some c : Course | c in s.enrolled and p in c.projects
+inv6 B: all s : Student | all p : Project | some c : Course | p in s.projects and c in s.enrolled and p in c.projects
+inv6 U: all s : Student | all p : s.projects | some c : Course | c in s.enrolled and p in c.projects
+

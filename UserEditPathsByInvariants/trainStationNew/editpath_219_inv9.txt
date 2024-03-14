@@ -1,0 +1,10 @@
+inv9 B: all x : Track, y : Junction-x | y in x.succs => Semaphore in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.succs => Semaphore not in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^succs => Semaphore not in x.signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^succs => Semaphore not in x.^signals
+inv9 B: all x : Track, y : Junction-x | y not in x.^(succs) => Semaphore not in x.^(signals)
+inv9 B: all x : Track, y : Junction-x | y not in x.^(succs) => Semaphore not in x.^(signals):> Signal
+inv9 S: all x : Track | no t.succs & Junction => no t.signal & Semaphore
+inv9 S: all x : Track | no x.succs & Junction => no x.signal & Semaphore
+inv9 C: all x : Track | no x.succs & Junction => no x.signals & Semaphore
+

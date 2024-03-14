@@ -1,0 +1,71 @@
+NA H: THEME UPDATE
+inv1 S: all h : Workers | h in (Human + Robots)
+inv1 S: all h : Worker | h in (Human + Robots)
+inv1 C: all h : Worker | h in (Human + Robot)
+inv2 B: all w : Worker, wt : Workstation | #(wt.workers) > 1
+inv2 B: all w : Worker, wt : Workstation | #(wt.workers) > 1 and w in wt.workers
+inv2 B: all w : Worker, wt : Workstation | #(wt.workers) > 1 and #(workers.w) > 1
+inv2 B: all w : Worker, wt : Workstation | #(wt.workers) > 1 and #(workers.w) = 1
+inv2 B: all w : Worker, wt : Workstation | #(wt.workers) = 1 and #(workers.w) = 1
+inv2 S: all w : Worker, wt : Workstation | #(wt.workers) == 1 and #(workers.w) = 1
+inv2 U: all w : Worker, wt : Workstation | #(wt.workers) > 0 and #(workers.w) > 0
+inv2 U: all w : Worker | #(workers.w) > 0	all  wt : Workstation | #(wt.workers) > 0
+inv2 C: all w : Worker | #(workers.w) = 1	all  wt : Workstation | #(wt.workers) > 0
+inv3 C: all c : Component | #(c.workstation) = 1
+inv3 C: all c : Component | #(c.workstation) = 1
+inv4 C: all m : Material | no m.parts	all c : Component | some c.parts
+inv5 E: 
+inv5 C: all  wt : Workstation | (wt.workers in Worker - Human) or (wt.workers in Worker - Robot)
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv5 C: all  wt : Workstation | (wt.workers in Worker - Human) or (wt.workers in Worker - Robot)
+inv7 O: all c : Component | no ((c + c.*parts) & Dangerous) or ((c + c.*parts) in Dangerous)
+inv7 O: all c : Product | no ((c + c.*parts) & Dangerous) or ((c + c.*parts) in Dangerous)
+inv7 O: all p : Product | no (p.*parts & Dangerous) or (p.*parts in Dangerous)
+inv7 O: all p : Product | (no p.*parts & Dangerous) or (p.*parts in Dangerous)
+inv7 O: all p : Product | (no (p.*parts & Dangerous)) or (p.*parts in Dangerous)
+inv7 B: all p : Product | p in Dangerous => p.^parts in Dangerous
+inv7 B: all p : Product | p in Dangerous => p.parts in Dangerous
+inv7 O: all p : Product | p in Dangerous => parts.p in Dangerous
+inv8 B: all c : Component | c in Dangerous => c.workstation.workers not in Human
+inv9 E: 
+inv9 S: all
+inv9 E: 
+inv9 U: all w : Workstation | w in begin => no succ.w
+inv9 U: all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ
+inv9 U: all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ	all w : Workstation | w not in begin + end => one w.succ
+inv9 U: all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ	all w : Workstation | w not in w.^succ and w not in begin + end => one w.succ
+inv9 U: all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ	all w : Workstation | (w not in w.^succ) and w not in begin + end => one w.succ
+inv9 U: all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ	all w : Workstation | (w not in w.^succ) and (w not in begin + end) => one w.succ
+inv9 U: all w : Workstation | w not in w.^succ	all w : Workstation | w in begin => no succ.w	all w : Workstation | w in end => no w.succ	all w : Workstation | (w not in begin + end) => one w.succ
+inv9 C: all w : Workstation | w not in w.^succ	all w : Workstation | no w.succ => w in end	all w : Workstation | no succ.w => w in begin	all w : Workstation | (w not in end) => one w.succ
+inv10 E: 
+inv10 B: all c : Component | c.parts not in succ.c.workstation
+inv10 B: all c : Component | c.parts not in succ.(c.workstation)
+inv9 C: all w : Workstation | w not in w.^succ	all w : Workstation | no w.succ => w in end	all w : Workstation | no succ.w => w in begin	all w : Workstation | (w not in end) => one w.succ
+inv10 B: all c : Component | c.parts not in succ.(c.workstation)
+inv10 B: all c : Component | c.parts.workstation not in succ.(c.workstation)
+inv10 B: all p : Product | p.parts.workstation not in succ.(p.workstation)
+inv10 B: all p : Product | one p.workstation	all p : Product | p.parts.workstation not in succ.(p.workstation)
+inv10 B: all p : Product | one p.workstation	all p : Product | p.parts.workstation not in succ.(p.workstation)
+inv10 B: all m : Material | one parts.m	all p : Product | p.parts.workstation not in succ.(p.workstation)
+inv10 B: all m : Material | some parts.m	all p : Product | p.parts.workstation not in succ.(p.workstation)
+inv10 B: all m : Material | some parts.m	all c : Component | c.parts.workstation not in succ.(c.workstation)
+inv10 B: all c : Component | c.parts.workstation not in succ.(c.workstation)
+inv10 S: all c : Component | (c.parts - Materials).workstation not in succ.(c.workstation)
+inv10 B: all c : Component | (c.parts - Material).workstation not in succ.(c.workstation)
+inv10 B: all c : Component | c.parts.workstation not in succ.(c.workstation)
+inv10 T: all c : Component | c.parts.workstation not in succ.*(c.workstation)
+inv10 B: all c : Component | c.parts.workstation not in succ.(c.workstation)
+inv10 B: all c : Component | c.*parts.workstation not in succ.(c.workstation)
+inv10 B: all c : Component | c.^parts.workstation not in succ.(c.workstation)
+inv10 T: all c : Component | c.^parts.workstation not in succ.^(c.workstation)
+inv10 B: all c : Component | c.^parts.workstation not in ^succ.(c.workstation)
+inv10 B: all c : Component | no c.^parts.workstation or (c.^parts.workstation not in ^succ.(c.workstation))
+inv10 B: all c : Component | no c.^parts.workstation or ((c.^parts - Material).workstation not in ^succ.(c.workstation))
+inv10 B: all c : Component | no c.^parts.workstation or (((c.^parts) - Material).workstation not in ^succ.(c.workstation))
+inv10 B: all c : Component | no c.^parts.workstation or ((c.^parts & Component).workstation not in ^succ.(c.workstation))
+inv10 B: all m : Material | some parts.m	all c : Component | no c.^parts.workstation or ((c.^parts & Component).workstation not in ^succ.(c.workstation))
+inv10 B: all c : Component | no c.^parts.workstation or ((c.^parts & Component).workstation not in ^succ.(c.workstation))
+inv10 B: all c : Component | no c.^parts.workstation or ((c.^parts & Component).workstation not in *succ.(c.workstation))
+

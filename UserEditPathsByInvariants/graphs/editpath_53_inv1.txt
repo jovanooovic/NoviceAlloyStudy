@@ -1,0 +1,6 @@
+inv1 T: all n: Node | n.adj = ~(n.adj)
+inv1 S: n.adj = ~(n.adj)
+inv1 T: all n: Node{n.adj = ~(n.adj)}
+inv1 S: all n: Node	n.adj = ~(n.adj)
+inv1 C: all n1, n2: Node | n1 in n2.adj => n2 in n1.adj
+

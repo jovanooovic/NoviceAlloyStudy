@@ -1,0 +1,5 @@
+inv14 B: all x,y:Student | lone z:Project | z in x.projects and z in y.projects
+inv14 T: all x,y:Student | lone z:Project | lone (z in x.projects & z in y.projects)
+inv14 B: all x,y:Student | all z:Project | z in x.projects and z in y.projects and x!=y
+inv14 U: all x,y:Student | lone z:Project | z in x.projects and z in y.projects and x!=y
+

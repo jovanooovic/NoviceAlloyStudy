@@ -1,0 +1,16 @@
+inv7 B: some n: Node | n.*adj = Node
+inv7 U: no Node or some n: Node | n.*adj = Node
+inv7 B: lone n: Node | n.*adj = Node
+inv7 S: n: Node | n.*adj = Node
+inv7 B: one n: Node | n.*adj = Node
+inv7 B: lone n: Node | n.*adj = Node
+inv7 B: no Node or one n: Node | n.*adj = Node
+inv7 U: Node.^adj + Node.iden = Node
+inv7 S: set n: Node | n.*adj = Node
+inv7 S: n: Node | n.*adj = Node
+inv7 B: some { n: Node | n.*adj = Node }
+inv7 U: no Node or (some n: Node | n.*adj = Node)
+inv7 U: no Node or (some {n: Node | n.*adj = Node})
+inv7 U: no Node or (some {n: one Node | n.*adj = Node})
+inv7 C: all n: Node | n.*adj = Node
+

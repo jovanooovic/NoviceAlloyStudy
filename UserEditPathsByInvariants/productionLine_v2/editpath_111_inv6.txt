@@ -1,0 +1,7 @@
+inv6 S: all c1, c2 : Component | c1 == c2 implies c2 not in c1
+inv6 O: all c1, c2 : Component | c1 = c2 implies c2 not in c1
+inv6 U: all c1, c2 : Component | c1 = c2 implies c2 not in c1.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 B: all c : Component | c.parts not in Component
+inv6 C: all c : Component | c not in c.^parts
+

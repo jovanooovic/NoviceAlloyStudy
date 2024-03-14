@@ -1,0 +1,18 @@
+inv6 U: all c : Component, p : Product | c in Product and c->c not in parts
+inv6 U: all c : Component | c in Product and c->c not in parts
+inv6 O: all c : Component, p : Product | c in Product and c->p in parts and p not in Component
+inv6 O: all c : Component | no (c.parts)
+inv6 O: all c : Component, p : Product | c in Product and c->p in parts and p not in Component
+inv6 B: all c : Component, p : Product | c in Product and c->p in parts implies p not in Component
+inv6 B: all c : Component, p : Product | c in Product and c->p in parts
+inv6 U: all c : Component | c->c not in parts
+inv6 S: all c : Component, part : Product | c->part in parts and part not in Component
+inv6 O: all c : Component, pa : Product | c->pa in parts and pa not in Component
+inv6 O: all c : Component, pa : Product | c in Product and c->pa in parts and pa not in Component
+inv6 B: all c : Component, pa : Product |c->pa in parts implies pa not in Component
+inv6 B: all c : Component, pa : Product | c->pa in parts implies pa not in Component
+inv6 U: all c : Component | c->c not in parts
+inv6 U: all c : Component | c in Product and c->c not in parts
+inv6 O: all c : Component, p : Product | c in Product and c->p in parts and p not in Component
+inv6 U: all c : Component | c->c not in parts
+

@@ -1,0 +1,15 @@
+inv3 S: all u : User, a : Add | u.follows.posts - a in u.sees and a in u.sees
+inv3 B: all u : User, a : Ad | u.follows.posts - a in u.sees and a in u.sees
+inv3 B: all u : User, a : Ad | u.follows.posts - a - u.posts in u.sees and a in u.sees
+inv3 B: all u : User, a : Ad | u.follows.posts in u.sees and a in u.sees
+inv3 B: all u : User, a : Ad | u.follows.posts in u.sees and a in u.sees and u.posts not in u.sees
+inv3 B: all u : User, a : Ad | u.posts not in u.sees
+inv3 B: all u : User, a : Ad | u.sees= u.follows.posts
+inv3 B: all u : User, a : Ad | u.sees = u.follows.posts + a
+inv3 B: all u : User, a : Ad | u.follows.posts in u.sees
+inv3 T: all u : User, a : Ad | u.follows.posts in u.sees and Ad
+inv3 B: all u : User, a : Ad | u.follows.posts in u.sees + Ad
+inv3 U: all u : User, a : Ad | u.sees in u.follows.posts + Ad
+inv3 S: all u : User, | u.sees in u.follows.posts + Ad
+inv3 C: all u : User | u.sees in u.follows.posts + Ad
+

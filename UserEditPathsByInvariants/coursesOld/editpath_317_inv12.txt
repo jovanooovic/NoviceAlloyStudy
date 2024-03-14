@@ -1,0 +1,15 @@
+inv12 U: all c : Course | all p : Student | lone p&c.grades.Grade
+inv12 B: all c : Course | lone p : Student | p in c.grades.Grade
+inv12 T: all c : Course | all p : Student | c in p.enrolled implies lone p in c.grades.Grade
+inv12 U: all c : Course | all p : Student | c in p.enrolled implies lone p&c.grades.Grade
+inv12 B: all c : Course | all p1,p2 : Student | p1+p2 in c.grades.Grade implies p1!=p2
+inv12 B: all c : Course | all p : Student | c in p.enrolled implies p in c.grades.Grade		all c : Course | all p1,p2 : Student | p1+p2 in c.grades.Grade implies p1!=p2
+inv12 B: all c : Course | all p1,p2 : Student | p1+p2 in c.grades.Grade implies p1!=p2
+inv12 B: all c : Course | all p : Student | c in p.enrolled implies p in c.grades.Grade		all c : Course | all p1,p2 : Student | p1+p2 in c.grades.Grade implies p1!=p2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | (s->g1 + s->g2) in c.grades implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | (g1 + g2) in c.grades.s implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | (g1 + g2) in s.(c.grades) implies g1=g2
+inv12 T: all g1,g2 : Grade | all s : Student | all c : Course | g1+g2 in s.c.grades implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | g1+g2 in s.(c.grades) implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | g1+g2 in s.(c.grades) implies g1=g2
+

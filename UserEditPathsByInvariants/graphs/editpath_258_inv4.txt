@@ -1,0 +1,17 @@
+inv4 U: all n : Node | n in n.*adj
+inv4 T: all n : Node | n.*adj
+inv4 T: Node.*adj
+inv4 T: all n: Node | n.*adj
+inv4 T: all n: Node | n.*adj in adj
+inv4 U: all n: Node | n in n.*adj
+inv4 T: all n: Node | n.adj
+inv4 T: all n1, n2: Node | n1->n2 && n2->n1 in adj
+inv4 U: all n1, n2: Node | n1->n2 & n2->n1 in adj
+inv4 T: all n1, n2: Node | n1->n2 implies n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 S: all n1, n2: Node | n1->n2 + n2->n1 in adj	all Node.adj
+inv4 U: all disj n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj	all n: Node | Node = n.adj
+inv4 S: all n1, n2: Node | n1->n2 + n2->n1 in adj	Node = n.adj
+

@@ -1,0 +1,9 @@
+inv3 T: trans in Event some -> one State
+inv3 T: trans in Event some -> one State
+inv3 O: State.trans in Event some -> one State
+inv3 O: State.trans in Event  -> one State
+inv3 O: all s:State, e:Event | some (s->e).trans
+inv3 O: all s:State, e:Event | some s.trans.e
+inv3 O: all s:State, e:Event | some s.trans.e
+inv3 B: all s:State, e:Event | some e.(s.trans)
+

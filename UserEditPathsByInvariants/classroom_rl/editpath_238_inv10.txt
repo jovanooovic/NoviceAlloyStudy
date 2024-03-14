@@ -1,0 +1,7 @@
+inv10 T: all c:Class | all s:Student | s->c in Groups
+inv10 T: all c:Class | all s:Student | c->s in Groups
+inv10 S: all c:Class | all s:Student | c->s->g in Groups
+inv10 C: all c:Class | all s:Student | some g:Group | c->s->g in Groups
+inv10 O: all c:Class | all s:Student | some g:Group | s->s->g in Groups
+inv10 C: all c:Class | all s:Student | some g:Group | c->s->g in Groups
+

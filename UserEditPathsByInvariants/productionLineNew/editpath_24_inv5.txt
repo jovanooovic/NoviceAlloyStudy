@@ -1,0 +1,4 @@
+inv5 U: all wh : Workstation | #(wh.workers & Human & Robot) = 0
+inv5 S: all wh : Workstation, w1 : wh.workers, w2 : wh.workrs | (w1 in Human and w2 in Human) or (w1 in Robot and w2 in Robot)
+inv5 O: all wh : Workstation, w1 : wh.workers, w2 : wh.workers | (w1 in Human and w2 in Human) or (w1 in Robot and w2 in Robot)
+

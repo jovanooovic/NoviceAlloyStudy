@@ -1,0 +1,90 @@
+"}
+
+fun lookupState: set State -> set State {  
+	s.trans[Event]",1
+"lone State.transº.Event",1
+"one State -> lone Event",1
+"some State -> lone Event",1
+"all s : State | e.s.trans",1
+"all s:State | all e:Event |",1
+"all e:event, s:State | lone e",1
+"all s : State | lone e : Event",1
+"all s: State | lone State.trans.s",1
+"all s,s' : State |lone s.trans.s'",1
+"all s:State | all Event in s.trans",1
+"all s : State -> lone s.trans.Event",3
+"all s: State, e: Event | lone s.tans.e",1
+"all s:State,e:event | lone e.(s.trans)",1
+"all s: State | e: Event | lone e.trans.s",1
+"all s: State, e: Event | lone s.trans~.e",1
+"all s:State | lone s.trans
+
+/*
+All states are reachable from an initial state.
+*/",1
+"all s:State | some s.trans
+
+/*
+All states are reachable from an initial state.
+*/",1
+"all s:State, all e:Event | lone s.trans.e",1
+"always (all s: State | lone s.state.State)",1
+"all s: State, e: Event | lone I e.~s.trans",1
+"all s: State, e: Event | lone I e.(s.trans)",1
+"all s:State, all e:Event | lone s->e->State",1
+"all s: State | all e: Event | lone s.tran[e]",1
+"all s : State, e : evento | lone e.(s.trans)",1
+"all s: State | all e: Event | lone s.tran[e]",2
+"all s: State | e: Event | lone s.trans.State",1
+"all s1,s2:State, all e:Event | lone s1->e->s2",2
+"all s:State, all e:Event | lone s.trans.Event",1
+"all s1,s2 : State, e : Event |  one s.trans.s",1
+"all s:State all e:Event | lone e->s in s.trans",1
+"all s:State |one e: Event : lone e->s in trans",1
+"all s:State, e:Event | lone t:Trans | t in e->s",1
+"all s:State | all  e1:Event | e1.(s.trans)=lone",1
+"all s : State, e | ~(s.trans).(s.trans) in iden",1
+"all s:State, all e:Event | lone e->s in s.trans",1
+"all s : State |all (a,b),(x,y) : s.trans | b!=y",2
+"all s:State | all  e1:Event | (e1.(s.trans))=lone",1
+"all s:State | all  e1:Event | #(e1.(s.trans))=lone",2
+"all s: State | e : Event | lone n: State | e->n in s.trans",1
+"all s: State | f : Event | lone n: State | f->n in s.trans",1
+"all s: state | f : Event | lone n: State | f->n in s.trans",1
+"all s: state | set f : Event | lone n: State | f->n in s.trans",1
+"all s:State | all disj e1, e2:Events | e1.(s.trans)!=e2.(s.trans)",1
+"all s:s1:s2:State | s->s1 in trans and s->s2 in trans implies s1=s2",1
+"all s:s1:s2:State | s->s1 in Trans and s->s2 in Trans implies s1=s2",1
+"all s:State | e1,e2:Event | e1->s in s.trans and e2->s in s.trans implies e1=e2",1
+"all x, z, v : State, y : Event,  | x->y->z in trans and x->y->v in trans implies z=v",1
+"}
+
+fun lookupState: set State -> set State {  
+	{s1, s2: set State | s2 = s1.trans[Event]}",1
+"}
+
+fun lookupState: State -> State {  
+	{s1, s2: State | some e: Event | s2 = s1.trans[e]}",1
+"all s : State | all disj e1, e2 : Event | e1 in (s.trans).State and e2 in (s.trans).State implies s1 = s2",1
+"all s : State, e : Event | lone e.(s.trans)  
+}
+
+adj = {x,y : State | some e : Event | x -> e -> y in trans",1
+"all s : State , e : Event | lone e.(s.trans) 
+
+}
+
+fun adj: State -> State {
+  {x,y : State | some (x.trans).y",2
+"all s : State, e : Event | lone s.trans[e]
+}
+
+fun tr : State -> State { { s1, s2 : State | s1->Event->s2 in trans",1
+"all s : State, e : Event | lone s.trans[e]
+}
+
+/*
+All states are reachable from an initial state.
+*/
+fun reachable : State -> set State {
+  let s : State | s->s.trans[Event]",1

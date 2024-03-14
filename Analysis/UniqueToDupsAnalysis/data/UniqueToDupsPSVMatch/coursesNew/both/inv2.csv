@@ -1,0 +1,19 @@
+"some Professor.teaches",1
+"no (Person-Student).teaches",1
+"no (teaches.Course & Student)",1
+"no (Person - Professor).enrolled",1
+"all p: Student| no p.teaches",4
+"all s: Student| no s.teaches",1
+"all x : Student | no x.teaches",1
+"all x: Person - Student | no x.teaches",1
+"all x: Person - Professor | no x.enrolled",1
+"all p :  (Person - Professor) | no p.enrolled",1
+"all p: Person| p in Student implies no p.teaches",1
+"all x:Professor, y: Course| x->y in teaches",2
+"all p:Person | Course in p.teaches implies p in Professor",1
+"all p:Person, c:Course | c in p.teaches implies p in Student",1
+"all x: Person , y: Course | (x in Professor) implies (y in x.teaches)",1
+"all s: Student, p : Person | no s.teaches && some p.teaches",1
+"all c : Course | all p : Person-Student | no p & teaches.c",1
+"all p:Person | all x:Person-p | x.enrolled not in p.teaches",1
+"all p:Person | all c:Course | (c in p.enrolled) implies p in Professor",1

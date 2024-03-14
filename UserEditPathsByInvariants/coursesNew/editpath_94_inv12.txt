@@ -1,0 +1,5 @@
+inv12 T: all x : Student | all c : Course | all g : Grade | lone(x -> g in c.grades)
+inv12 U: all x : Student | all c : Course | all g : Grade | lone(x -> g)
+inv12 T: all x : Student | all c : Course | all g : Grade | #(x -> g in c.grades) = 1
+inv12 U: all x : Student | all c : Course | lone g : Grade | x -> g in c.grades
+

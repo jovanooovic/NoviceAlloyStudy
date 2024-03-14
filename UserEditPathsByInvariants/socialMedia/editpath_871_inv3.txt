@@ -1,0 +1,10 @@
+inv3 S: all x : Photo.not Ad | x.follows
+inv3 S: all x : Photo not Ad | x.follows
+inv3 S: all x : Photo not Ad | y.follows
+inv3 S: all x : User & all y : Photo | y.follows.posts not in Ad
+inv3 S: all x : User & all y : Photo | x.follows.posts not in x.Photos.Ad
+inv3 S: all x : User & all y : Photo | x.follows.posts not in x.Photo.Ad
+inv3 S: all x : User & all y : Photo | x.follows.posts not in x.Photo.Ad
+inv3 S: all x : User | all y : Photo | x.sees -> x.follows	all y : Photo | not in x.Photo.Ad
+inv3 T: all x : User | all y : Photo | x.sees -> x.follows
+

@@ -1,0 +1,15 @@
+inv3 S: all p : Photos | some disj u1,u2 : User |  p in u1.sees and p in u2.posts -> u2 in u1.follows
+inv3 T: all p : Photo | some disj u1,u2 : User |  p in u1.sees and p in u2.posts -> u2 in u1.follows
+inv3 T: all p : Photo | one disj u1,u2 : User |  p in u1.sees and p in u2.posts -> u2 in u1.follows
+inv3 T: all p : Photo | some disj u1,u2 : User |  p in u1.sees and p in u2.posts -> u2 in u1.follows
+inv3 B: all p : Photo | some disj u1,u2 : User |  p in u1.sees and p in u2.posts implies u2 in u1.follows
+inv3 B: all p : Photo | some disj u1,u2 : User |  ((p in u1.sees and p in u2.posts) implies u2 in u1.follows) or p in Ad
+inv3 B: all p : Photo-Ad | some disj u1,u2 : User |  ((p in u1.sees and p in u2.posts) implies u2 in u1.follows)
+inv3 B: all p : Photo | some disj u1,u2 : User |  p in Ad or (p in u1.sees and p in u2.posts) implies u2 in u1.follows
+inv3 B: all p : Photo | some disj u1,u2 : User |  p in Ad or (p in u1.sees and p in u2.posts) implies u2 in u1.follows or p in u1.posts
+inv3 B: all p : Photo | some disj u1,u2 : User |  (p in u1.sees and p in u2.posts) implies u2 in u1.follows else p in Ad
+inv3 B: all p : Photo | some u1,u2 : User |  (p in u1.sees and p in u2.posts) implies u2 in u1.follows else p in Ad
+inv3 B: all p : Photo | some disj u1,u2 : User | ( (p in u1.sees and p in u2.posts) implies u2 in u1.follows else p in Ad) or p in u1.posts implies p in u1.sees
+inv3 B: all p : Photo | some disj u1,u2 : User | ( (p in u1.sees and p in u2.posts) implies u2 in u1.follows else p in Ad) or p in u1.posts implies p in u1.sees
+inv3 C: all p : Photo , u : User | p in u.sees implies p in u.follows.posts or p in Ad
+

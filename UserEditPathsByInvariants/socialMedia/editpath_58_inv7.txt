@@ -1,0 +1,4 @@
+inv7 U: all x : User |all y : User | y in x.suggested => (some z : x.follows | y in z.follows) and (y not in x.follows + x)
+inv7 U: all x : User |all y : User | y in x.suggested => ((some z : x.follows | y in z.follows) and (y not in x.follows + x))
+inv7 C: all x : User |all y : User | y in x.suggested <=> ((some z : x.follows | y in z.follows) and (y not in x.follows + x))
+

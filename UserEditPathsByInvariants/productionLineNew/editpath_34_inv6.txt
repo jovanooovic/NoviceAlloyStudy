@@ -1,0 +1,11 @@
+inv6 U: all x,y:Component | x in y.parts implies x!=y
+inv6 U: all x,y:Component | (x in y.parts or y in x.parts)implies x!=y
+inv6 U: all x:Component | x not in x.parts
+inv6 U: all x:Component | x not in x.parts and x not in parts.x
+inv6 S: all x:Product | x in Components implies x not in x.parts
+inv6 U: all x:Product | x in Component implies x not in x.parts
+inv6 U: all x:Product | x in Component implies x not in x.parts and x not in parts.x
+inv6 B: Component not in Component.parts
+inv6 U: all x,y : Component | x in y.parts implies x!=y
+inv6 C: all x,y : Component | x in y.^parts implies x!=y
+

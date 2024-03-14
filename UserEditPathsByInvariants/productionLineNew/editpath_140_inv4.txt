@@ -1,0 +1,5 @@
+inv4 S: all c:Components | some p:Products | c in p.parts	and	all c:Components | some m:Materials | c not in m.parts
+inv4 S: (all c:Components | some p:Products | c in p.parts)	and	(all c:Components | some m:Materials | c not in m.parts)
+inv4 S: (all c:Component | some p:Products | c in p.parts)	and	(all c:Component | some m:Materials | c not in m.parts)
+inv4 B: (all c:Component | some p:Product | c in p.parts)	and	(all c:Component | some m:Material | c not in m.parts)
+

@@ -1,0 +1,22 @@
+inv14 B: all s:Student,c:Class | some t:Teacher | t->c in Teaches implies t->s in Tutors
+inv14 B: all s:Student,c:Class | some t:Teacher | t->c in Teaches implies t->s in Tutors
+inv14 B: all p1,p2:Person, c:Class | p1->p2 in Tutors implies p1 in Teacher and p2 in Student and p1->c in Teaches
+inv14 B: all s:Student,c:Class | some t:Teacher | t->c in Teaches implies t->s in Tutors
+inv14 B: all s:Student,t:Teacher | some g:Group,c:Class | c->s->g in Groups and t->c in Teaches implies t->s in Tutors
+inv14 B: all s:Student,c:Class | (some g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student,c:Class | some g:Group,t:Teacher | (t->c in Teaches and c->s->g in Groups) implies t->s in Tutors
+inv14 B: all s:Student,c:Class,t:Teacher | some g:Group | (t->c in Teaches and c->s->g in Groups) implies t->s in Tutors
+inv14 S: all c:Class,s:Students,t:Teachers | t->c in Teaches implies t->s in Tutors
+inv14 B: all c:Class,s:Student,t:Teacher | t->c in Teaches implies t->s in Tutors
+inv14 S: all c:Class,s:Student,t:Teacher |(some g:Group | c->s->g in Groups) | t->c in Teaches implies t->s in Tutors
+inv14 S: all c:Class,s:Student,t:Teacher |(some g:Group | c->s->g in Groups) | t->c in Teaches implies t->s in Tutors
+inv14 T: all s:Student | (some c:Class,g:Groups | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 S: all s:Student | (some c:Class,g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student | (some c:Class,g:Group | c->s->g in Groups) implies (some c:Class,t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student | some c:Class | (some g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student,c:Class | (some g:Group | c->s->g in Groups) implies (some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student,c:Class | some g:Group,t1,t2:Teacher | (c->s->g in Groups and t1->c in Teaches and t2->c in Teaches) implies (t1->s in Tutors and t2->s in Tutors)
+inv14 U: all s:Student,c:Class | (some g:Group | c->s->g in Groups) implies (all t:Teacher | t->c in Teaches implies t->s in Tutors)
+inv14 B: all s:Student,c:Class | (some g:Group | c->s->g in Groups) implies (all t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student | some g:Group,c:Class | c->s->g in Groups implies (all t:Teacher | t->c in Teaches implies t->s in Tutors)
+

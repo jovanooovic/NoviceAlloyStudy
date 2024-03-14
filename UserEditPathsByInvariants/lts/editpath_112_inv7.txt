@@ -1,0 +1,25 @@
+inv7 T: Init in Event.(State.^trans)
+inv7 S: Init in Event.(State.trans)^
+inv7 B: Init in Event.^(State.trans)
+inv7 B: Init in Event.^(State.trans)
+inv7 B: Init in State.^{x,y: State | some x.trans.y}
+inv7 T: Init in State.^{x,y: State | some x.~trans.y}
+inv7 T: Init in ~trans
+inv7 T: Init in ~trans.Event
+inv7 T: Init in ~trans.State
+inv7 T: Init in ~(trans.State)
+inv7 T: Init in ~(Event.(trans.State))
+inv7 T: Init in ~(Event.(State.trans))
+inv7 O: Init in (Event.~(State.trans))
+inv7 O: one Init and Init in (Event.~(State.trans))
+inv7 T: trans = ~trans
+inv7 T: trans.Event
+inv7 O: let ss = {x,y: State | some x.trans.y} {	   		ss = ~ss 	  }
+inv7 T: let ss = {x : State | some Init.trans.x} {	   		ss = ~ss 	  }
+inv7 O: let ss = {x,y : State | y in Init and some y.trans.x} {	   		ss = ~ss 	  }
+inv7 T: all e : Event | some e.(Init.trans) implies e.~(Init.trans)
+inv7 T: all e : Event | some e.(Init.trans) implies ~(Init.trans).e
+inv7 U: all e : Event | some e.(Init.trans) implies some ~(Init.trans).e
+inv7 U: all e : Event | some e.(Init.trans) implies some (e->Init).trans
+inv7 B: all s: Event.(State.trans) | s in ^{x,y: State | some x.trans.y}.s
+

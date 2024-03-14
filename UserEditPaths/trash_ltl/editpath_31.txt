@@ -1,0 +1,104 @@
+NA H: THEME UPDATE
+inv1 U: no Trash and no (Protected & Trash)
+inv1 C: no Trash and no (Protected )
+inv2 B: no Trash  and after some Trash
+inv2 S: no Files  and after some Files
+inv2 C: no File  and after some File
+inv3 C: always some File
+inv4 S: some f:File eventually f in Trash
+inv4 O: some f:File |eventually f in Trash
+inv4 S: some f:File | f eventually  in Trash
+inv4 O: some f:File | eventually f   in Trash
+inv4 S: eventually some (Files & Trash)
+inv4 C: eventually some (File & Trash)
+inv5 S: some f:File : eventually f in trash
+inv5 S: some f:File | eventually f in trash
+inv5 B: some f:File | eventually f in Trash
+inv5 B: eventually some (File & Trash)
+inv5 B: eventually some (File & Trash)
+inv5 B: eventually some ((File-Protected) & Trash)
+inv5 B: eventually some (File & Trash)
+inv5 B: eventually (some f:File | f in Trash)
+inv4 C: eventually some  Trash
+inv5 B: eventually (some f:File | after f in Trash)
+inv5 C: eventually (some f:File | after f  not in File)
+inv6 C: always (all f:Trash | after f in Trash)
+inv7 C: eventually some Protected
+inv8 B: eventually File.link in Trash
+inv8 B: eventually (all f:File| f+f.link in Trash)
+inv8 B: eventually (all f:File| f.link in Trash)
+inv8 B: eventually (File.link  in Trash)
+inv8 B: (all f:File| some f.link implies eventually f+f.link in Trash)
+inv8 B: (all f:File| some f.link implies eventually f.link in Trash)
+inv8 B: (all f:File| some f.link implies eventually f.link in Trash)
+inv8 U: all f:File| some f.link implies (eventually f in Trash)
+inv8 B: all f:File| some f.link implies (eventually f+f.link in Trash)
+inv8 B: all f:File| some f.^link implies (eventually f+f.^link in Trash)
+inv1 C: historically (no Trash and no Protected  )
+inv8 B: all f:File| eventually f.*link  in Trash
+inv8 B: all f:File| eventually f.^link  in Trash
+inv8 B: all f:File| eventually f.*link  in Trash
+inv8 T: all f:File| eventually some link  in Trash
+inv8 S: all f:File| some  f.*link eventually f.*link  in Trash
+inv8 B: all f:File| eventually  f.*link    in Trash
+inv8 B: always (all f:File| eventually  f.*link    in Trash)
+inv8 B: always (all f:File| some f.*link implies eventually  f.*link  in Trash)
+inv8 T: always (all f:File|  f.*link implies eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.*link  implies eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.*link  implies always eventually  f.*link  in Trash)
+inv9 C: always no (Protected & Trash)
+inv10 U: all f:File |once f in  Protected implies always f in Protected
+inv10 S: all f:File |(always f in Protected) since f in  Protected implies
+inv10 B: all f:File |(always f in Protected) since f in  Protected
+inv10 S: all f:File |always (since f in  Protected)
+inv10 C: always Protected' = Protected
+inv10 C: always Protected' = Protected
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.^link  in Trash)
+inv8 S: always (all f:File| some link^.f  implies  eventually  link^.f  in Trash)
+inv8 S: always (all f:File| some link^.f  implies  eventually  link^.f  in Trash)
+inv8 E: 
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.^link  in Trash)
+inv8 O: always (all f:File| some f.^link  implies  eventually  f+f.^link  in Trash)
+inv8 O: always (all f:File| some f.^link  implies  eventually after f+f.^link  in Trash)
+inv8 B: always (all f:File| some f.^link  implies  eventually after f.^link  in Trash)
+inv11 B: Protected' = (File - Protected)
+inv11 B: Protected' = ((File - Protected)-Trash)
+inv11 T: Protected' =  (File not in Protected )
+inv11 B: Protected' =  File
+inv11 B: Protected' =  (File - Protected) + Protected
+inv11 O: always (Protected' =  (File - Protected) + Protected )
+inv11 T: (File - Protected) after (File - Protected) in Protected
+inv11 B: (File - Protected) not in Protected after (File - Protected) in Protected
+inv11 B: (File - Protected)-Trash  not in Protected after (File - Protected) in Protected
+inv11 O: always Protected' = (File - Protected)
+inv11 O: always Protected' = Protected +(File - Protected)
+inv11 B: Protected' = Protected +(File - Protected)
+inv11 B: Protected' = File
+inv11 B: Protected' =Protected + (File-Protected )
+inv11 U: (File-Protected ) in Protected '
+inv11 C: always (File-Protected) in Protected '
+inv11 C: always (File-Protected) in Protected'
+inv12 B: all f:File | once f in Trash implies always some (f &Trash)
+inv12 B: all f:File | after f in Trash implies always some (f &Trash)
+inv12 B: always (all f:File | after f in Trash implies  some (f &Trash) )
+inv12 B: always (all f:File | eventually f in Trash implies after some (f &Trash) )
+inv12 S: -	always (all f:File | eventually f in Trash implies always  some (f &Trash) )
+inv12 B: always (all f:File | eventually f in Trash implies always  some (f &Trash) )
+inv12 B: always (all f:File |some (f &Trash)  since eventually f in Trash    )
+inv12 B: always (all f:File |some (f &Trash)  since  f in Trash )
+inv12 B: always (all f:File | f in Trash  since eventually f in Trash )
+inv12 B: (all f:File | always some (f &Trash) since f in Trash )
+inv12 B: (all f:File | always some (f &Trash) since eventually f in Trash )
+inv12 S: always (all f:File |  eventually f in Trash after always some (f& Trash)
+inv12 S: always (all f:File |  eventually f in Trash after always some (f& Trash))
+inv12 S: all f:File |  eventually f in Trash after (always some (f& Trash))
+inv12 S: (all f:File |  eventually f in Trash after always some (f& Trash))
+inv12 B: always (all f:File |  eventually f in Trash since  some (f& Trash) )
+inv12 B: always (all f:File |  f in Trash since  eventually some (f& Trash) )
+inv12 B: always (all f:File | eventually f in Trash since  eventually some (f& Trash) )
+inv12 B: always (all f:File |  f in Trash since  some (f& Trash) )
+inv12 B: always (all f:File |  always f in Trash since  some (f& Trash) )
+inv12 B: always (all f:File |  always f in Trash since  after some (f& Trash) )
+inv12 B: always (all f:File |  after some (f& Trash) implies  always f in Trash  )
+inv12 B: all f:File |  eventually always f in Trash
+

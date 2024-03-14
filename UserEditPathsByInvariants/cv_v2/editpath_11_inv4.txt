@@ -1,0 +1,5 @@
+inv4 U: always (all u : User | all disj v1, v2 : (u.profile & u.visible) | no (v1.ids & v2.ids))
+inv4 U: (all u : User | all disj v1, v2 : (u.profile & u.visible) | no (v1.ids & v2.ids))
+inv4 C: all u: User | u.visible<:^((u.profile<:ids).~(u.profile<:ids)):>u.visible in iden
+inv4 C: all u: User | u.visible<:^((u.profile<:ids).~(u.profile<:ids)):>u.visible in iden
+

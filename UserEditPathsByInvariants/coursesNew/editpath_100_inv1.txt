@@ -1,0 +1,9 @@
+inv1 T: all x: Person-Professor| x in enrolled
+inv1 T: all x: Person-Professor| x in enrolled
+inv1 B: all x: Person-Professor| x -> x in enrolled
+inv1 B: all x: Person-Professor, y: Course| x -> y in enrolled
+inv1 C: all x: Person, y: Course| x -> y in enrolled implies x in Student
+inv1 S: all x: Students, y: Course| x -> y in enrolled
+inv1 B: all x: Student, y: Course| x -> y in enrolled
+inv1 C: all x: Person, y: Course| x -> y in enrolled implies x in Student
+

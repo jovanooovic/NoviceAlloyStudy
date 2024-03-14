@@ -1,0 +1,8 @@
+inv14 B: all s : Student | s not in Teacher
+inv14 S: all t : Teacher, c : class, p : Person : t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors
+inv14 S: all t : Teacher, c : class, p : Person | t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors
+inv14 S: all t : Teacher, c : Class, p : Person | t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors
+inv14 U: all t : Teacher, c : Class, p : Person, g : Group | t -> c in Teaches and c -> p -> g in Groups implies t -> p in Tutors
+inv14 S: all t : Teacher, c : Class, s : Student, g : Group | t -> c in Teaches and c -> s -> g in Groups implies t -> p in Tutors
+inv14 U: all t : Teacher, c : Class, s : Student, g : Group | t -> c in Teaches and c -> s -> g in Groups implies t -> s in Tutors
+

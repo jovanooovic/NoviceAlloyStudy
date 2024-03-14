@@ -1,0 +1,9 @@
+inv4 S: all u : User, p : Photo | p in Ad => (all posts in User -> Ad)
+inv4 O: all u : User, p : Photo | p in Ad => (posts in User set -> Ad)
+inv4 O: all u : User, p : Photo | (p in Ad and u -> p in posts) => (posts in User set -> Ad)
+inv4 C: all p1, p2 : Photo, u : User | (p1 in Ad and u -> p1 in posts and u -> p2 in posts) => p2 in Ad
+inv4 C: not some a : Ad, p : Photo-Ad, u : User | u -> a in posts and u -> p in posts
+inv4 B: all a : Ad, p : Photo-Ad, u : User | u -> a in posts and u -> p in posts
+inv4 C: all a : Ad, p : Photo-Ad, u : User | u -> a in posts => u -> p not in posts
+inv4 C: not some a : Ad, p : Photo, u : User | p not in Ad and u -> a in posts and u -> p in posts
+

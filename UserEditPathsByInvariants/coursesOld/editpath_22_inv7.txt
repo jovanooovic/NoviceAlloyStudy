@@ -1,0 +1,9 @@
+inv7 S: all s: Student, proj: Project, c: Course | proj in s.projects implies one (Couse <: projects).p
+inv7 S: all s: Student, proj: Project, c: Course | proj in s.projects implies lone (Course <: projects).p
+inv7 B: all s: Student, proj: Project, c: Course | proj in s.projects implies lone (Course <: projects).proj
+inv7 B: all s: Student, proj: Project, c: Course | proj in s.projects implies one (Course <: projects).proj
+inv7 B: all s: Student, proj1: Project, proj2: Project, c: Course | proj1 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj2 not in s.projects
+inv7 B: all s: Student, proj1: Project, proj2: Project, c: Course | c in s.enrolled and proj1 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj2 not in s.projects
+inv7 U: all s1 : Student | all p1,p2 : Project | all c1 : Course |	    (		(s1->p1 in projects) and (s1->p2 in projects) and	     	(c1->p1 in projects) and (c1->p2 in projects)	    )	  	implies p1=p2
+inv7 U: all s: Student, proj1: Project, proj2: Project, c: Course | c in s.enrolled and proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj1=proj2
+

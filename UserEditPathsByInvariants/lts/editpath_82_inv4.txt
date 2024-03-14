@@ -1,0 +1,14 @@
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some (s.^~trans):>Init
+inv4 T: all s:State | some (s.Event.^~trans):>Init
+inv4 B: all s:State | some s.trans :> Init
+inv4 T: all s:State | some s.^trans :> Init
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some s.Event.^~trans :> Init
+inv4 T: all s:State | some (s.Event).^~trans :> Init
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 T: all s:State | some Init <: (Event.s)
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 O: all s:State | some Init <: (trans.Event.s)
+inv4 T: all s:State | s in Init.trans:>State
+

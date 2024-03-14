@@ -1,0 +1,4 @@
+inv10 B: no (parts :> Component & workstation.*succ.~workstation)
+inv10 B: all c : Component, ws : c.parts.workstation | ws not in c.workstation.^succ
+inv10 B: all c : Component, ws : c.parts.workstation | c.workstation in ws.^succ
+

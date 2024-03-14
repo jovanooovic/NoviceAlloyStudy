@@ -1,0 +1,8 @@
+inv3 B: all e : Exit | no Track.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: no Exit.succs
+inv3 U: no Exit.succs
+inv3 C: Exit = Track - succs.Track
+inv3 C: all t : Track | no t.succs iff t in Exit
+inv3 C: Exit = Track - succs.Track
+

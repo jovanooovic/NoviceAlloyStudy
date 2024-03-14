@@ -1,0 +1,13 @@
+inv7 S: all u : Users | all u_followed in follows.u | all sugg in follows.u_followed | sug not in follows.u => sug in u.suggested
+inv7 S: all u : Users | all u_followed : follows.u | all sugg : follows.u_followed | sug not in follows.u => sug in u.suggested
+inv7 S: all u : User | all u_followed : follows.u | all sugg : follows.u_followed | sug not in follows.u => sug in u.suggested
+inv7 B: all u : User | all u_followed : follows.u | all sugg : follows.u_followed | sugg not in follows.u => sugg in u.suggested
+inv7 S: all u : User | all others : followed.u.followed | others not in followed.u => others in suggested.u
+inv7 B: all u : User | all others : follows.u.follows | others not in follows.u => others in suggested.u
+inv7 U: all u : User | all u_f : follows.u | all others : follows.u_f | others in suggested.u => others not in follows.u
+inv7 U: all u : User | all u_f : u.follows | all others : follows.u_f | others in suggested.u => others not in follows.u
+inv7 B: all u : User | all u_f : u.follows | all others : follows.u_f | others in suggested.u => others not in u.follows
+inv7 B: all u : User | all u_f : u.follows | all others : follows.u_f | others in suggested.u and others not in u.follows
+inv7 B: all u : User | all u_f : follows.u | all others : u_f.follows | others in u.suggested and others not in u.follows
+inv7 B: all u : User | all u_f : u.follows | all others : u_f.follows | others in u.suggested and others not in u.follows
+

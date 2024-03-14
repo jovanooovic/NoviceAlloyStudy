@@ -1,0 +1,13 @@
+inv6 S: all i: Influencer | disj i.posts.date
+inv6 T: no i: Influencer | i.posts.date.~i.posts.date in iden
+inv6 B: no i: Influencer | #i.posts.date = #i.posts
+inv6 U: all p: Photo | p in Influencer.posts => #p.date = #p
+inv6 B: all p1: Photo, p2: Photo, i: Influencer | p1 in i.posts && p2 in i.posts => p1.date != p2.date
+inv6 B: all disj p1: Photo, p2: Photo, i: Influencer | p1 in i.posts && p2 in i.posts => p1.date != p2.date
+inv6 S: all disj p1: Photo, p2: Photo | i: Influencer | p1 in i.posts && p2 in i.posts => p1.date != p2.date
+inv6 B: all disj p1: Photo, p2: Photo | all i: Influencer | p1 in i.posts && p2 in i.posts => p1.date != p2.date
+inv6 B: all disj p1: Photo, p2: Photo | all disj i: Influencer | p1 in i.posts && p2 in i.posts => p1.date != p2.date
+inv6 B: no disj d1, d2 : Day, i: Influencer | d1 in i.posts.date && d2 in i.posts.date
+inv6 C: all i: Influencer, d: Day | d in i.posts.date
+inv6 C: all i: Influencer, d: Day | d in i.posts.date
+

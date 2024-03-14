@@ -1,0 +1,4 @@
+inv2 U: all ws1,ws2 : Workstation | all w1 : Worker | w1 in ws1.workers and w1 in ws2.workers implies ws1=ws2	all ws : Workstation | some w : Worker | w in ws.workers
+inv2 U: all ws1,ws2 : Workstation | all w1 : Worker | w1 in ws1.workers and w1 in ws2.workers implies ws1=ws2	all ws : Workstation | some ws.workers
+inv2 C: all ws1,ws2 : Workstation | all w1 : Worker | w1 in ws1.workers and w1 in ws2.workers implies ws1=ws2	all ws : Workstation | some ws.workers	all w : Worker | w in Workstation.workers
+

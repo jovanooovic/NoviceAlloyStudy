@@ -1,0 +1,7 @@
+inv12 U: all c : Course | all p : Student | all g : Grade | lone p->g & c.grades
+inv12 U: all c : Course | all p : Student | lone g : Grade | p->g in c.grades
+inv12 B: all c : Course | all p : Student | all g : Grade | p->g in c.grades
+inv12 T: all c : Course | all p : Student | all g : Grade | p->g & c.grades
+inv12 U: all c : Course | all p : Student | all g : Grade | lone p->g & c.grades
+inv12 U: all p : Student | all c : p.enrolled |all g : Grade | lone p->g & c.grades
+

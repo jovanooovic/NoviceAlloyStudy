@@ -1,0 +1,19 @@
+inv9 E:
+inv9 S: all p: Professor, c: Course | c in p.teaches implies ((c.grades.person) not in (p.teaches.grades.person))	  	  	  	  c.grades.person not in p.teaches
+inv9 S: all p: Professor, c: Course | c in p.teaches implies ((c.grades.person) not in (p.teaches.grades.person))
+inv9 B: all p: Professor, c: Course | c in p.teaches implies ((c.grades.Person) not in (p.teaches.grades.Person))
+inv9 B: all p: Professor, c: Course | c in p.teaches implies ((c.grades.Person) not in (p.teaches.grades.Person))
+inv9 B: all p: Professor, c: Course | c in p.teaches implies ((c.grades.Person) not in (p.teaches.grades.Person))
+inv9 B: all p: Professor, c: Course | c in p.teaches implies ((c.grades.Person) not in (p.teaches.grades.Person))
+inv9 B: all p: Professor | some c: Course | c in p.teaches implies ((c.grades.Person) not in (p.teaches.grades.Person))
+inv9 S: all p: Professor | some c: Course | c in p.teaches implies ((c.grades.Person)
+inv9 B: all p: Professor | some c: Course | c in p.teaches
+inv9 B: all p: Professor | some c: Course | lone c.grades.Person
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+inv9 B: all p: Professor | some c: Course | c in p.teaches implies ((c.grades.Grade) not in (p.teaches.grades.Grade))
+inv9 B: all p: Professor | all c: Course | c in p.teaches implies ((c.grades.Grade) not in (p.teaches.grades.Grade))
+inv9 B: all p: Professor | all c: Course | c in p.enrolled implies ((c.grades.Grade) not in (p.teaches.grades.Grade))
+inv9 S: all p: Professor | all c: Course | c in p.enrolled implies ((c.grades.Grade) not in (p.teaches.grades.Grade) and p.enrolled not in c.grade.Grade.teaches)
+inv9 B: all p: Professor | all c: Course | c in p.enrolled implies ((c.grades.Grade) not in (p.teaches.grades.Grade) and p.enrolled not in c.grades.Grade.teaches)
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+

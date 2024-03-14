@@ -1,0 +1,4 @@
+inv12 U: all s: Student | all c: Course | lone ~(c.grades).s
+inv12 S: all s: Student |	    all c: Course |	      (s.courses.grades[s] in Grade) => (s.courses.grades[s].cardinality() <= 1)
+inv12 S: all s: Student | all c: Course | (s.courses.grades[s] in Grade) => (s.courses.grades[s].cardinality() <= 1)
+

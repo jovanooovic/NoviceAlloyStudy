@@ -1,0 +1,30 @@
+inv5 S: p.projects in Student and some (Person<:projects).Project & Person
+inv5 O: Person.projects in Student and some (Person<:projects).Project & Person
+inv5 B: some (Person<:projects).Project & Student
+inv5 T: some (Person<:projects).Project = Student
+inv5 B: some (Person<:projects).Project & Student
+inv5 B: some (Person<:projects).Project & Person - Professor
+inv5 B: some (Person<:projects).Project & (Person - Professor)
+inv5 B: Person.projects in Student
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 B: (Person<:projects).Project = Student
+inv5 U: (Person<:projects).Project in Student
+inv5 B: (Person<:projects).Project in Student && some (Person<:projects).Project & Student
+inv5 B: (Person<:projects).Project in Student && some (Person<:projects).Project & Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+inv5 B: all p: Project | some (Person<:projects).p & Person - Professor
+inv5 T: all p: Project | some (Person<:projects).p in Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+inv5 T: all p: Project | some (Person<:projects).p = Student
+inv5 B: all p: Project | some ((Person<:projects).p & Person - Professor)
+inv5 U: all p: Project | some ((Person<:projects).p & Student)
+inv5 U: all p: Project | some (Person<:projects).p
+inv5 T: all p: Project | some (Person<:projects).p not in Professor
+inv5 T: all p: Project | some (Person<:projects).p != Professor
+inv5 U: all p: Project | some (Student<:projects).p
+inv5 C: all p: Project | some (Person<:projects).p and (Person<:projects).p in Student
+inv5 B: some (Person<:projects).Project and (Person<:projects).Project in Student
+inv5 C: all p: Project | some (Person<:projects).p and (Person<:projects).p in Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+

@@ -1,0 +1,9 @@
+inv4 S: all x: User, y: Photo | y in ad implies all z: x.posts.Ad
+inv4 S: all x: User, y: Photo | y in ad implies all z: x.posts.Ad
+inv4 S: all x: User, y: Photo | y in ad implies all z: Photo | x -> z in posts implies z in Ad
+inv4 S: all x: User, y: Photo | y in ad implies all x.posts in Ad
+inv4 S: all x: User, y: Photo | y in ad and y in x.posts implies all x.posts in Ad
+inv4 S: all x: User, y: Photo | y in ad and y in x.posts implies x.posts in Ad
+inv4 S: all x: User, y: Photo | y in Ad and y in x.posts implies x.posts in Ad
+inv4 C: all x: User, y: Photo | y in Ad and y in x.posts implies x.posts in Ad
+

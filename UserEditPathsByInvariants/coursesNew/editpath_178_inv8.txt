@@ -1,0 +1,14 @@
+inv8 U: all p : Professor | p !in p.teaches
+inv8 B: all p : Professor | p !in p.teaches => p.enrolled != p.teaches
+inv8 B: all p : Professor | p !in p.teaches => p.enrolled != p.teaches
+inv8 E:
+inv8 U: all p : Professor | p !in p.teaches
+inv8 U: all p : Professor | p.teaches = p.teaches
+inv8 U: all p : Professor | p not in p.teaches
+inv8 B: all p : Professor | p.enrolled !in p.teaches
+inv8 B: all p : Professor | p.enrolled = 0
+inv8 B: all p : Professor | p.enrolled = none
+inv8 U: all p : Professor | p.enrolled & p.teaches = none
+inv8 U: all p : Professor | p.enrolled & p.teaches = none
+inv8 U: all p : Professor | p.enrolled & p.teaches = none
+

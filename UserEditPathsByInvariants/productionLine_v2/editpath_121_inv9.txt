@@ -1,0 +1,50 @@
+inv9 T: one Workstation.^Workstation.succ
+inv9 T: one ^Workstation.succ
+inv9 T: one begin.(^begin.succ).end
+inv9 T: one begin.(^succ).end
+inv9 S: one begin.^(w : Workstation | some w.succ).end
+inv9 S: one begin.^(w : Workstation | some w.succ)
+inv9 S: ^(w : Workstation | some w.succ)
+inv9 S: ^w.succ
+inv9 T: ^Workstation.succ
+inv9 T: ^begin.succ
+inv9 T: begin.^succ
+inv9 T: one begin.^succ.end
+inv9 T: one begin.^(begin.succ.end)
+inv9 T: one begin.^(succ.end)
+inv9 T: one begin.^({ w:Workstation | some succ.w}).end
+inv9 T: one begin.^{some w : Workstation | one succ.w}.end
+inv9 T: one begin.^{w : Workstation | one succ.w}.end
+inv9 T: some w : Workstation | one begin.^{y : Workstation | one w.succ.y}.end
+inv9 T: one begin.^{w : Workstation | one succ.w}.end
+inv9 T: one begin.^{w,z : Workstation | one w.succ.z}.end
+inv9 T: one begin.^{all w,z : Workstation | one w.succ.z}.end
+inv9 T: one begin.^{all w,z : Workstation | one w.succ.z}.end
+inv9 T: one begin.^{w,z : Workstation | one w.succ.z}.end
+inv9 T: one begin.^{w,z : Workstation | one w.succ.z}
+inv9 T: one begin.^{w : Workstation | one succ.w}.end
+inv9 T: one begin.^{w : Workstation | some succ.w}.end
+inv9 T: end in begin.^{w : Workstation | one succ.w}
+inv9 T: begin in ^{w : Workstation | one w.succ}.end
+inv9 T: one begin.^{w : Workstation | one succ.w}
+inv9 T: one begin.^succ.Workstation
+inv9 T: one begin.^succ.Workstation.end
+inv9 T: one begin.^(succ.Workstation).end
+inv9 T: one w : Workstation | begin.^(succ.w).end
+inv9 T: one w : Workstation | begin.^succ.end
+inv9 T: all x : Workstation | one x.succ	one begin.^succ.end
+inv9 T: all x : Workstation | one x.succ	begin.^succ.end
+inv9 T: all x : Workstation | one x.succ	begin.(^succ).end
+inv9 B: all x : Workstation | one x.succ	end in begin.^succ
+inv9 B: all x : Workstation | lone x.succ	end in begin.^succ
+inv9 B: all x : Workstation | one x.succ	end in begin.^succ
+inv9 B: all x : Workstation-end | one x.succ	all x : Workstation | begin not in x.succ	end in begin.^succ
+inv9 O: all x : Workstation | one x.succ	no end.succ	no begin & (Workstation-begin).succ	end in begin.^succ
+inv9 O: all x : Workstation | one x.succ		no end.succ		no begin & (Workstation-begin).succ		end in begin.^succ
+inv9 B: all x : Workstation | lone x.succ		no end.succ		no begin & (Workstation-begin).succ		end in begin.^succ
+inv9 O: all x : Workstation | one x.succ		no end.succ		no begin & (Workstation-begin).succ		end in begin.^succ
+inv9 B: all x : Workstation-end | one x.succ		no end.succ		no begin & (Workstation-begin).succ		end in begin.^succ
+inv9 U: all x : Workstation-end | one x.succ		no end.succ		no begin & (Workstation-begin).succ		end in begin.*succ
+inv9 C: all x : Workstation-end | one x.succ		no end.succ		no begin & (Workstation-begin).succ		Workstation in begin.*succ
+inv9 C: all x : Workstation-end | one x.succ		no end.succ		no succ.begin		Workstation in begin.*succ
+

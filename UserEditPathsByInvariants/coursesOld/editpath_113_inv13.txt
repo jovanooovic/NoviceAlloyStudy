@@ -1,0 +1,16 @@
+inv13 T: all c: Course | first
+inv13 T: all c: Course | first
+inv13 T: all c: Course | c.grades.first
+inv13 B: all c: Course, s: Student | c.grades.first = s implies s.projects in c.projects
+inv13 B: all c: Course, s: Student | c.grades.first = s implies s.projects in c.projects
+inv13 B: all c: Course, s: Student | s in c.grades.first implies s.projects in c.projects
+inv13 B: all c: Course, s: Student | s in c.grades.first implies c.projects in s.projects
+inv13 B: all c: Course, s: Student | s in c.grades.first implies c.projects in first.projects
+inv13 B: all c: Course, s: Student | c.projects in c.grades.first.projects
+inv13 B: all c: Course| c.projects in c.grades.first.projects
+inv13 B: all c: Course | c.projects in c.grades.first.projects
+inv13 T: all c: Course | lone c.projects in c.grades.first.projects
+inv13 B: all c: Course | lone c.projects&c.grades.first.projects
+inv13 B: all c: Course | some c.projects&c.grades.first.projects
+inv13 B: all c: Course | some c.projects&c.grades.first.projects
+

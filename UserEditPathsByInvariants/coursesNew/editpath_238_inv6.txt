@@ -1,0 +1,24 @@
+inv6 S: all st:Studetn, c:Course| c in st.enrolled implies c.projects in st.projects
+inv6 B: all st:Student, c:Course| c in st.enrolled implies c.projects in st.projects
+inv6 B: all st:Student, c:Course| c in st.enrolled implies c.projects = st.projects
+inv6 B: all st:Student, c:Course| c in st.enrolled implies c.projects = st.projects
+inv6 B: all st:Student | some c:Course| c in st.enrolled implies c.projects in st.projects
+inv6 B: all st:Student | some c : Course | c in st.enrolled implies st.projects in c.projects
+inv6 B: all st:Student | some c : Course | c in st.enrolled and st.projects in c.projects
+inv6 S: all u : Student, p: u.projects | some c : Course | c in u.enrolled and p in c.projects)
+inv6 U: all u : Student, p: u.projects | some c : Course | c in u.enrolled and p in c.projects
+inv6 B: all st:Student | some c : Course | c in st.enrolled and st.projects in c.projects
+inv6 B: all u : Student, p: u.projects | some c : Course | c in u.enrolled and u.projects in c.projects
+inv6 U: all u : Student, p: u.projects | some c : Course | c in u.enrolled and p in c.projects
+inv6 B: all st : Student, c : Course | (c in st.enrolled) implies (c.projects in st.projects)
+inv6 B: all st : Student, c : Course | (c in st.enrolled) implies (st.projects in c.projects)
+inv6 B: all st : Student, c : Course | (c in st.enrolled) and (st.projects in c.projects)
+inv6 B: all st : Student | some c : Course | (c in st.enrolled) and (st.projects in c.projects)
+inv6 U: all st : Student, p: st.projects | some c : Course | (c in st.enrolled) and (p in c.projects)
+inv6 B: all st : Student, p: st.projects | all c : Course | (c in st.enrolled) and (p in c.projects)
+inv6 U: all st : Student, p: st.projects | some c : Course | (c in st.enrolled) and (p in c.projects)
+inv6 U: all st : Student, p: st.projects | some c : Course | (c in st.enrolled) and (p in c.projects)
+inv6 T: all s: Student, p: Project | s in p.Course.enrolled implies s in p.Course.projects
+inv6 T: all s: Student, p: Project | s in p.Course.enrolled implies s in p.Course.projects
+inv6 U: all st : Student, p: st.projects | some c : Course | (c in st.enrolled) and (p in c.projects)
+

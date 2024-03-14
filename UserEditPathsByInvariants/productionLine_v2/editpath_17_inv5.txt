@@ -1,0 +1,8 @@
+inv5 E:
+inv5 O: all r : Robot, h : Human, w : Workstation | r in w iff h not in w
+inv5 O: all r : Robot, h : Human, w : Workstation | (r in w) iff (h not in w)
+inv5 U: all r : Robot, h : Human, w : Workstation | ((r in w) implies (h not in w)) and ((h in w) implies (r not in w))
+inv5 S: all w1, w2 : Worker, ws : Workstation | w1,w2 in ws implies (w1,w2 in Robot or w1,w2 in Human)
+inv5 S: all w1, w2 : Worker, ws : Workstation | (w1,w2 in ws) implies ((w1,w2 in Robot) or (w1,w2 in Human))
+inv5 S: all w1, w2 : Worker, ws : Workstation | (w1,w2 in ws) implies ((w1,w2 = Robot) or (w1,w2 = Human))
+

@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 S: all x : Photo | some y : User y -> x in posts
+inv1 U: all x : Photo | some y : User | y -> x in posts
+inv1 O: all x : Photo | some y : User | x -> y in posts
+inv1 C: all x : Photo | one y : User | y -> x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 T: all u1 : User | all u2 : User | u1 -> u2 in follows ->  u1 != u2
+inv2 T: all u1 : User | all u2 : User | u1 -> u2 in follows ->  u1 != u2
+inv2 T: (all u1 : User | all u2 : User | u1 -> u2 in follows) ->  u1 != u2
+inv2 C: all u1 : User | all u2 : User | u1 -> u2 in follows implies  u1 != u2
+inv2 B: all u1 : User | all u2 : User | follows.u1 != u2
+inv2 B: all u1 : User | all u2 : User | u1.follows != u2
+inv2 B: all u1 : User | all u2 : User | follows.u1 != u2
+inv2 U: all u1 : User | follows.u1 != u1
+inv2 U: all u1 : User | u1.follows != u1
+inv2 C: all u1 : User | u1 not in u1.follows
+inv3 S: all u1 : User | all ph : Photo |  some inf : Influencer |	u1 -> ph in sees implies (ph in inf.posts or ph in Add)
+inv3 B: all u1 : User | all ph : Photo |  some inf : Influencer |	u1 -> ph in sees implies (ph in inf.posts or ph in Ad)
+inv3 U: all u1 : User | all ph : Photo |  some inf : User |	u1 -> ph in sees implies (ph in inf.posts or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	u1 -> ph in sees implies ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv3 T: all u1 : User | all ph : Photo |	u1 -> ph in sees -> ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	u1 -> ph in sees implies ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv4 S: all u1 : User |
+inv4 S: all u1 : User |
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv3 T: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and some u1.follows.u2 ) or ph  in Ad)
+inv3 T: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and some u2.u1.follows ) or ph  in Ad)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv4 O: all ph : Photo | ph in Ad implies (all u1 : User | u1 -> ph in posts and u1.posts in Ad )
+inv4 O: all ph : Photo | ph in Ad implies (all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts and ph2 in Ad)
+inv4 S: all ph : Photo | all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts | ph in Ad implies	ph2 in Ad
+inv4 S: all ph : Photo | all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts | ph in Ad	implies ph2 in Ad
+inv4 S: all u1 : User | some u1.posts in Add implies (all ph in Photo | u1 -> ph in posts | ph in Add)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph in Photo | u1 -> ph in posts | ph in Ad)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo | u1 -> ph in posts | ph in Ad)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+NA H: THEME UPDATE
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+

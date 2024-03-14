@@ -1,0 +1,6 @@
+inv6 T: all s : Student | s.projects.~projects in s.enrolled
+inv6 S: all s : Student | s.projects.~Courses<:projects in s.enrolled
+inv6 T: all s : Student | s.projects.~Course<:projects in s.enrolled
+inv6 B: all s : Student | s.projects.~(Course<:projects) in s.enrolled
+inv6 B: all s : Student | s.projects.~(Course<:projects) in s.enrolled
+

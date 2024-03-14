@@ -1,0 +1,8 @@
+inv5 B: all t : Track | t not in Junction <=> no succs.t and one succs.t
+inv5 B: all t : Track | t not in Junction <=> ( no succs.t and one succs.t )
+inv5 B: all t : Track | t not in Junction => ( no succs.t and one succs.t )
+inv5 U: all t : Track | t in Junction => some succs.t
+inv5 U: all t : Track | t in Junction => some succs.t
+inv5 B: all t : Track | t in Junction => some succs.succs.t
+inv5 S: all t : Track | t in Junction => in succs.succs.t
+

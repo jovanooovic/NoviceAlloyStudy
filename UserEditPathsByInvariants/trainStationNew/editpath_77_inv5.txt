@@ -1,0 +1,19 @@
+inv5 B: #Junction.succs > 2
+inv5 B: #Junction.succs > 1
+inv5 B: #succs.Junction > 1
+inv5 S: Junction = Track -
+inv5 S: Junction = Track -
+inv5 S: Junction = Track - (#succs.Tracks > 2)
+inv5 T: Junction = Track - (#succs.Track > 2)
+inv5 T: Junction = Track - (#Track.succs > 2)
+inv5 T: Junction in (#Track.succs > 2)
+inv5 B: all j:Junction | #Track.succs > 2
+inv5 B: all j:Junction | #j.succs > 2
+inv5 B: all j:Junction | #succs.j > 2
+inv5 B: all t:Track | t in Junction => #succs.t > 2
+inv5 B: all t:Track | t in Junction => #t.succs > 1
+inv5 U: all t:Track | t in Junction => #succs.t > 1
+inv5 U: all j:Junction | # j . ~succs > 1
+inv5 U: all j:Junction | j in Junction <=> # j . ~succs > 1
+inv5 C: all j:Track| j in Junction <=> # j . ~succs > 1
+

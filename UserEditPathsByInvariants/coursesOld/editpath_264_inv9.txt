@@ -1,0 +1,5 @@
+inv9 S: all t:Teacher, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled implies p not in Teacher)
+inv9 B: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled implies p not in Professor)
+inv9 S: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled p not in Professor)
+inv9 B: all t:Professor, c:Course | c in t.teaches implies (all p:Person | c in p.enrolled and p not in Professor)
+

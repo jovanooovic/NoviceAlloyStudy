@@ -1,0 +1,10 @@
+inv6 U: all e : Entry | e.signals in Signal
+inv6 T: all e : Entry | one e.signals in Signal
+inv6 B: all e : Entry | (one e.signals) and (e.signals in Signal)
+inv6 B: all e : Entry | one e.signals & Signal
+inv6 U: all e : Entry | some e.signals & Signal
+inv6 U: all e : Entry | some (e.signals & Signal)
+inv6 B: all e : Entry | one (e.signals & Signal)
+inv6 U: all e : Entry | some (e.signals & Signal)
+inv6 C: all e : Entry | some e.signals & Speed
+

@@ -1,0 +1,38 @@
+na H: THEME UPDATE
+inv1 T: (Node . ~Node) in iden
+inv1 B: (adj . ~adj) in iden
+inv1 S: all n1->n2 : adj | n1 in Node
+inv1 S: all n1->n2 : Node.adj | n1 in Node
+inv1 T: all n : Node.adj | ~n in Node.adj
+inv1 T: all n : adj | ~n in Node.adj
+inv1 T: all n : adj | ~n in adj
+inv1 O: all n1, n2 : Node | n1->n2 in adj
+inv1 C: all n1, n2 : Node | n1->n2 in adj implies n2->n1 in adj
+inv2 C: all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 U: inv2	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 T: inv2	all n : Node | no n.Node	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 O: inv2	all n : Node | no n.adj	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 S: inv2	all n : Node | n not in adj*	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 S: inv2	all n : Node | n not in n.adj*	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 C: inv2	all n : Node | n not in n.(^adj)	}		pred inv2{	all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj
+inv3 C: all n : Node | n not in n.(^adj)
+inv3 C: all n : Node | n not in n.(^adj)
+inv4 C: adj = (Node -> Node)
+inv5 C: no adj & iden
+inv6 S: +adj = (Node -> Node)
+inv6 O: ^adj = (Node -> Node)
+inv6 O: ^adj = (Node -> Node - iden)
+inv6 O: ^adj = (Node -> Node - iden)
+inv6 O: (Node -> Node - iden) in ^adj
+inv6 S: ^(ajd + ~adj) = (Node -> Node)
+inv6 O: ^(adj + ~adj) = (Node -> Node)
+inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+inv7 B: ^(adj + ~adj) = (Node -> Node )
+inv7 C: (Node -> Node - iden) in ^adj
+inv7 C: (Node -> Node - iden) in ^adj
+inv8 O: no (adj . adj)
+inv8 C: (adj . adj) in adj
+inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+inv6 C: (Node -> Node - iden) in ^(adj + ~adj)
+inv7 C: (Node -> Node - iden) in ^adj
+

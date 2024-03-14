@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | x - follows.x
+inv2 C: all x : User | x not in follows.x
+inv3 O: all x : User | x.sees in x.follows
+inv3 S: all x : User | x.sees in x.follows |
+inv3 O: all x : User | x.sees in x.follows
+inv3 S: all x : User | x.sees | x.follows
+inv3 O: all x : User | x.sees in x.follows
+inv3 O: all x : User | x.sees in x.follows
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 S: all x : User | x.sees in x.follows.posts		all y : Ads | y.sees
+inv3 T: all x : User | x.sees in x.follows.posts		all y : Ad | y.sees
+inv3 O: all x : User | x.sees in x.follows.posts		all y : Ad | y in y.sees
+inv3 S: all y : Ad | all x : User | x.sees in x.follows.posts | x in y.sees
+inv3 S: all y : Ad | all x : User | x.sees in x.follows.posts | y in x.sees
+inv3 S: all y : Photo-Ad | all x : User | x.sees in x.follows.posts | y in x.sees
+inv3 O: all y : Photo-Ad | all x : User | x.sees in x.follows.posts
+inv3 B: all y : Photo-Ad | all x : User | x.sees in y
+inv3 S: all y : Photo-Ad | all x : User | x.sees in y | y in x.follows.posts
+inv3 S: all y : Photo-Ad | all x : User | x.sees in y | y in x.follows.posts
+inv3 S: all y : Photo-Ad | all x : User | y in x.sees | y in x.follows.posts
+inv3 S: all y : Photo-Ad | all x : User | y in x.sees | y in (x.follows).posts
+inv3 T: all p : Photo-Ad | all u : User | u.p.sees implies some v : User | v->p in posts && u->v in follows
+inv3 C: all p : Photo-Ad | all u : User | u->p in sees implies some v : User | v->p in posts && u->v in follows
+inv4 B: all p : Photo-Ad | all u : User | u.posts not in p
+inv4 B: all p:Photo-Ad | all a : Ad | all u : User | u.posts not in a
+inv4 B: all p:Photo-Ad | all a : Ad | all u : User | u.posts in a implies u.posts not in p
+inv3 S: all p : Photo-Ad | all u : User | u in sees.x implies some v : User | v in posts.p and u in follows.v
+inv3 C: all p : Photo-Ad | all u : User | u in sees.p implies some v : User | v in posts.p and u in follows.v
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | u.posts in p
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | all u.posts in p
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | all p1 in u.posts | p1 in p
+inv4 S: all u : User | all a : Ad | a in u.posts implies all u.posts in a
+

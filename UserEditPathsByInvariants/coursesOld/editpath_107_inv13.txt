@@ -1,0 +1,4 @@
+inv13 B: all c1 : Course | all g1 : Grade | all s1 : Student | 	  			  	c1->s1->g1 in grades implies 	  	(	        some p1:Project | some g2 : Grade | some s2 : Student | 	      	c1->s2->g2 in grades and g2=max[g1]	  	   	and c1->p1 in projects and s2->p1 in projects 		)
+inv13 U: all s : Student | all c : Course |	  	s in c.grades.last implies (some p : Project | p in c.projects and p in s.projects)
+inv13 U: all s : Student | all c : Course |	  	s in c.grades.last implies (some p : Project | p in c.projects and p in s.projects)
+

@@ -1,0 +1,13 @@
+inv5 U: all p : Project | some p.~(Student <: projects)
+inv5 T: all p : Project | some p.~(Person <: projects) in Student
+inv5 T: all p : Project | some p.~(Person <: projects) in Student
+inv5 U: all p : Project | p.~(Person <: projects) in Student
+inv5 T: all p : Project | some (p.~(Person <: projects) in Student)
+inv5 T: all p : Project | some p.~(Person <: projects) in Student
+inv5 T: all p : Project | p.~(some Person <: projects) in Student
+inv5 T: all p : Project | (some p.~(Person <: projects)) in Student
+inv5 T: all p : Project | p.~(Person <: projects) in Student	    some projects.Project
+inv5 T: all p : Project | p.~(Person <: projects) in Student	    some projects.Project
+inv5 B: all p : Project | p.~(Person <: projects) in Student	    some (Person <: projects).Project
+inv5 C: all p : Project | p.~(Person <: projects) in Student	    	    all p : Project | some p.~(Person <: projects)
+

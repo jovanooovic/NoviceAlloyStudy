@@ -1,0 +1,5 @@
+inv1 B: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1!=u2
+inv1 B: one u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1!=u2
+inv1 U: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1=u2
+inv1 C: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1=u2	all x:Photo | some y:User | y->x in posts
+

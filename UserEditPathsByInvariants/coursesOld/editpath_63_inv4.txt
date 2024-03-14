@@ -1,0 +1,6 @@
+inv4 U: Course.projects = Project
+inv4 U: Course.projects in Project
+inv4 B: all c, c1 : Course | no c.projects & c1.projects
+inv4 U: all disj c, c1 : Course | no c.projects & c1.projects
+inv4 C: all p : Project | one projects.p <: Course
+

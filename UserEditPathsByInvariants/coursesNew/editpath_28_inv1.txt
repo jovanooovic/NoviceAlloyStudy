@@ -1,0 +1,7 @@
+inv1 U: all p: Person, s: Student, c: Course | p not in s => p not in c
+inv1 B: all p: Person, s: Student, c: Course | p not in s => p not in c.~enrolled
+inv1 B: all p: Person, s: Student | p not in s => p not in Course.~enrolled
+inv1 U: all p: Person, s: Student | p not in Student => p not in Course.~enrolled
+inv1 C: all p: Person | p not in Student => p not in Course.~enrolled
+inv1 C: all p: Person | p not in Student => p not in Course.~enrolled
+

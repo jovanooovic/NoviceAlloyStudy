@@ -1,0 +1,61 @@
+NA H: THEME UPDATE
+inv1 O: all p: Person.enrolled | p in Student
+inv1 O: all p: Person.enrolled | p = Student
+inv1 O: all p : Person.enrolled | p = Student
+inv1 C: all p : enrolled.Course | p in Student
+inv2 B: all p : enrolled.Course | p in Professor
+inv2 C: all p : teaches.Course | p in Professor
+inv3 O: all c: Course | not lone p : Professor | p in teaches.c
+inv3 O: all c: Course | some p : Professor | p in teaches.c
+inv4 S: all p : Project | one c: Course | p in c.proposes
+inv4 S: all p : Project | one c: Course | p in c.project
+inv4 C: all p : Project | one c: Course | p in c.projects
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 B: all  pessoa : enrolled.Course | pessoa in Student
+inv5 B: all pessoa : enrolled.Course, pessoa : enrolled.Course | pessoa in Student
+inv5 B: all curso: Course.projects, pessoa : enrolled.Course | pessoa in Student
+inv5 S: all curso: Course.projects| pessoa in Student
+inv5 B: all curso: Course.projects, pessoa: Person| pessoa in Student
+inv5 B: all curso: Course.projects, pessoa : enrolled.Course | pessoa in Student
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 S: all curso: Course.projects, pessoa : Pessoa.enrolled.curso | pessoa in Student
+inv5 T: all curso: Course.projects, pessoa : Person.enrolled.curso | pessoa in Student
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 B: all curso: Course.projects | some pessoa : enrolled.curso | pessoa in Student
+inv8 T: all p: Professor | p not in p.teaches.grades
+inv5 E: 
+inv8 U: all p: Professor | p not in p.teaches.grades.Person
+inv8 U: all p: Professor , st: Course.grades.Person| p not in p.teaches.grades.Person
+inv8 U: all p: Professor , st: Course.grades.Grade| p not in p.teaches.grades.Person
+inv8 B: all p: Professor , st: Course.grades.Grade| p not in p.teaches.grades.Grade
+inv8 B: all p: Professor| p not in p.teaches.grades.Grade
+inv8 B: all p: Professor , c : p.teaches , st: c.grades.Grade| p not in st
+inv8 B: all p: Professor , c : p.teaches| p not in c.grades.Grade
+NA H: THEME UPDATE
+inv5 T: all p : Project | Person <: projects.p in Student and some projects.p
+inv5 C: all p : Project | Person <: projects.p in Student and some Person <: projects.p
+inv5 S: all p : Project | some Player.projects & p	  	all p : Person | some p.projects => p in Student
+inv5 C: all p : Project | some Person.projects & p	  	all p : Person | some p.projects => p in Student
+inv6 B: all s : Student, p : Project | p in s.projects => Course <: projects.p in p.enrolled
+inv6 B: all s : Student, p : Project | p in s.projects => Course <: projects.p in s.enrolled
+inv8 B: all p: Professor , c : p.teaches| p not in c.grades.Grade
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+inv8 U: all p : Professor, c : Course | c in p.teaches => c not in p.enrolled
+inv10 C: Course.grades.Grade in Student
+inv10 T: Course.grades
+inv10 T: Course.grades
+inv10 T: Course.grades
+inv10 T: Course.grades
+inv10 T: Course.grades
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv14 S: all s1, s2 : Student, p : Project | (p in s1.projects and p in s2.projects) => all p1 : (Project - p) | p1 not in s1.projects or p2 not in s2.projects
+inv14 B: all s1, s2 : Student, p : Project | (p in s1.projects and p in s2.projects) => all p1 : (Project - p) | p1 not in s1.projects or p1 not in s2.projects
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 O: all s1, s2 : Person | lone s1.projects & s2.projects
+inv14 C: all s1, s2 : Person | lone s1.projects & s2.projects or s1 = s2
+inv14 S: all s1, s2 : Person | lone s1.projects & s2.projects or s1 == s2
+inv14 U: all s1, s2 : Student | lone s1.projects & s2.projects or s1 = s2
+inv14 U: all s1, s2 : Student | lone s1.projects & s2.projects or s1 = s2
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 => lone s1.projects & s2.projects
+

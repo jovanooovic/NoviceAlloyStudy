@@ -1,0 +1,5 @@
+inv3 S: all u : User, f : Photo | f!=Ad implies f in u.follows.post
+inv3 O: all u : User, f : Photo | f!=Ad implies f in u.follows.posts
+inv3 S: all u : User, f : Photo | (p in u.sees) implies (f not in Ad and f in u.follows.posts) or (f in Ad)
+inv3 C: all u : User, f : Photo | (f in u.sees) implies (f not in Ad and f in u.follows.posts) or (f in Ad)
+

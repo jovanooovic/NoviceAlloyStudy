@@ -1,0 +1,48 @@
+NA H: THEME UPDATE
+inv3 S: always some f:File
+inv3 O: always some f:File | f in Trash + Protected
+inv3 C: always some f:File | f in File
+inv3 T: always some f:File | f
+inv3 C: always some File
+inv4 T: eventually some File in Trah
+inv4 T: eventually some File in Trash
+inv4 S: eventually some f:File  f in Trash
+inv4 C: eventually some f:File | f in Trash
+inv4 C: eventually some f:File | f in Trash
+inv5 B: eventually some f:File | f in Trash
+inv5 B: eventually some f:File | f not in Trash and f not in Protected
+inv5 O: some f:File | eventually no f
+inv5 T: some f:File | eventually no f in File
+inv5 O: eventually some f:File | f not in File
+inv6 C: always all f:File | f in Trash implies after always f in Trash
+inv4 C: eventually some f:File | f in Trash
+inv5 E: 
+inv6 C: always all f:File | f in Trash implies after always f in Trash
+inv6 U: all f:File | f in Trash implies after always f in Trash
+inv6 C: always all f:File | f in Trash implies after always f in Trash
+inv7 O: some f:File | f in Protected
+inv7 C: eventually some f:File | f in Protected
+inv7 C: eventually some Protected
+inv4 C: eventually some Trash
+inv8 S: always all f:File, some f2.File| f2 in f.link implies eventually f2 in Trash
+inv8 S: always all f:File, some f2:File| f2 in f.link implies eventually f2 in Trash
+inv8 B: always all f:File | some f.link implies eventually f.link in Trash
+inv8 B: always all f:File | some f.link implies always eventually f.link in Trash
+inv8 O: always all f:File | some f.link implies always eventually f in Trash
+inv9 B: no Protected + Trash
+inv9 O: always no Protected + Trash
+inv9 O: always all p:Protected | no Protected + Trash
+inv9 T: always all p:Protected | no p in Protected + Trash
+inv9 C: always all p:Protected | p not in Trash
+inv10 U: always all p:Protected | p in Protected
+inv9 S: all p:Protected | always  not in Trash
+inv9 C: always all p:Protected | p not in Trash
+inv9 C: always all p:Protected | p not in Trash
+inv10 U: always all p:Protected | p in Protected implies after always p in Protected
+inv10 U: always all f:File | f in Protected implies after always f in Protected
+inv10 U: always all p:Protected | p in Protected implies after always p in Protected
+inv11 U: all f:File | f in File-Protected implies after f in Protected
+inv11 C: always all f:File | f in File-Protected implies after f in Protected
+inv6 C: always all f:File | f in Trash implies after always f in Trash
+inv6 C: always all f:File | f in Trash implies after f in Trash
+

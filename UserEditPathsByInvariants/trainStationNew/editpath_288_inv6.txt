@@ -1,0 +1,9 @@
+inv6 B: all x:Track | one x.signals
+inv6 B: all x:Track | x in Entry => one x.signals
+inv6 B: all x:Track | x in Entry <=> one x.signals
+inv6 O: all x:Track | x in Entry <=> one (x.signals & Speed)
+inv6 O: all x:Track | x in Entry => one (x.signals & Speed)
+inv6 C: all x:Track | x in Entry => some (x.signals & Speed)
+inv6 O: all x:Track | x in Entry <=> some (x.signals & Speed)
+inv6 C: all x:Track | x in Entry => some (x.signals & Speed)
+

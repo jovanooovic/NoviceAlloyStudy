@@ -1,0 +1,9 @@
+inv6 C: all t:Entry | some s:Speed| s in t.signals
+inv6 O: all t:Track & Entry | some s:Speed| t in t.signals
+inv6 B: all t:Track & Entry-Exit | some s:Speed| t in t.signals
+inv6 B: all t:(Track & Entry)-Exit | some s:Speed| t in t.signals
+inv6 O: all t:Entry | some s:Speed| t in t.signals
+inv6 C: all t:Entry | some s:Speed| s in t.signals
+inv6 B: all t:Track-Entry | some s:Speed| s in t.signals
+inv6 C: all t:Track & Entry | some s:Speed| s in t.signals
+

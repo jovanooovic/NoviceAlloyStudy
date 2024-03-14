@@ -1,0 +1,8 @@
+inv1 B: all p: Photo| one User.sees
+inv1 E:
+inv1 U: all u: User, p: Photo | one u->p
+inv1 B: one sees
+inv1 O: all p: Photo | one sees.User
+inv1 S: all p: Photo, u: user | sees.p != u.sees
+inv1 C: posts in User one -> set Photo
+

@@ -1,0 +1,5 @@
+inv8 O: all u:User | u.sees&Ad in u.suggested.posts
+inv8 S: all u:User | u.sees&Ad in u.(followed+suggested).posts
+inv8 C: all u:User | u.sees&Ad in u.(follows+suggested).posts
+inv8 C: all u:User,a:Ad | u->a in sees implies u->a in follows.posts or u->a in suggested.posts
+

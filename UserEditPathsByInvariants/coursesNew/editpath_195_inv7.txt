@@ -1,0 +1,25 @@
+inv7 E:
+inv7 E:
+inv7 B: all c: Course | all x : Student| c in x.enrolled => one p: Project | p in c.projects && p in x.projects
+inv7 B: all c: Course | all s: Student | one p: Project | p in c.projects && p in s.projects
+inv7 B: all c: Course | all s: Student | one p: Project | p in c.projects && s in projects.p
+inv7 S: all c: Course | all s: Student | one (p in c.projects && s in projects.p)
+inv7 B: all c: Course | all s: Student | one p: Project | (p in c.projects && s in projects.p)
+inv7 T: all x : Student | all c :  Course | some y, z : Project | y -> x in c.projects and z -> x in c.projects implies y = z
+inv7 T: all x : Student | all c :  Course | some y, z : Project | y -> x in c.projects && z -> x in c.projects => y = z
+inv7 T: all x : Student | all c :  Course | some y, z : Project | (y -> x in c.projects) && (z -> x in c.projects) => y = z
+inv7 B: all s: Person | all c: Course | one p: Project | p in s.projects && s in Student && p in c.projects => c in s.enrolled
+inv7 B: all c: Course | all s: Student | one p: Project | (p in c.projects && s in projects.p)
+inv7 B: all s: Student | all c: Course | one (c.projects&s.projects)
+inv7 B: all s: Student | all c: Course | one (c.projects & s.projects)
+inv7 B: all s: Student | all c: s.enrolled | one (c.projects & s.projects)
+inv7 S: all s: Student | all c: s.enrolled | some y, x: Project | y in s.projects && z in s.projects && y in c.projects && z in c.projects => z=y
+inv7 B: all s: Student | all c: s.enrolled | some y, z: Project | y in s.projects && z in s.projects && y in c.projects && z in c.projects => z=y
+inv7 S: all s: Student | some y, z: Project | y in s.projects && z in s.projects && projects.y == projects.z => z=y
+inv7 T: all s: Student | some y, z: Project | y in s.projects && z in s.projects && projects.y = projects.z => z=y
+inv7 B: all s: Student | some y, z: Project |all c: Course | y in s.projects && z in s.projects && y in c.projects  && z in c.projects => y=z
+inv7 B: all s: Student | some y, z: Project | all c: Course | (y in s.projects) && (z in s.projects) && (y in c.projects) && (z in c.projects) => y=z
+inv7 U: all s: Student | all y, z: Project | all c: Course | (y in s.projects) && (z in s.projects) && (y in c.projects) && (z in c.projects) => y=z
+inv7 U: all s: Student | all y, z: Project | all c: Course | y in s.projects && z in s.projects && y in c.projects && z in c.projects => y=z
+inv7 U: all s: Student | all y, z: Project | all c: Course | y in s.projects && z in s.projects && y in c.projects && z in c.projects => y=z
+

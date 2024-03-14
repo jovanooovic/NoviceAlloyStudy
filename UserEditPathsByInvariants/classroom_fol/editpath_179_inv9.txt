@@ -1,0 +1,8 @@
+inv9 S: all c:Class | t1,t2:Teacher | c->t1 in Teaches and c->t2 in Teaches implies t1=t2
+inv9 S: all c:Class | t1,t2:Teacher | c->t1 in ~Teaches and c->t2 in ~Teaches implies t1=t2
+inv9 S: all c:Class | t1,t2:Teacher | t1->c in Teaches and t1->c in Teaches implies t1=t2
+inv9 S: all c:Class | t1,t2:Teacher | some Teacher
+inv9 E:
+inv9 B: all c:Class,t1,t2:Teacher | t1->c in Teaches
+inv9 C: all c:Class,t1,t2:Teacher | t1->c in Teaches and t2->c in Teaches implies t1=t2
+

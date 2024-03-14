@@ -1,0 +1,15 @@
+inv4 S: all s: State | Init in trans*.s
+inv4 S: all s: State | Init in (trans.s)*
+inv4 T: all s: State | Init in (trans.s)
+inv4 T: all s: State | s in Init or some e: Event | trans[e].s
+inv4 T: all s: State | s in Init or (some e: Event | trans[e].s)
+inv4 T: all s: State | (s in Init) or (some e: Event | trans[e].s)
+inv4 U: all s: State | (s in Init) or (some e: Event | some trans.s.e)
+inv4 U: all s: State | (s in Init) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init and some trans.s.Event) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (some trans.s.Event)
+inv4 U: all s: State | Init in trans.s.Event or (some trans.s.Event)
+inv4 U: all s: State | s in Init or Init in trans.s.Event or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (Init in trans.s.Event) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (some pre:State | (not pre in s) and (pre in trans.s.Event))
+

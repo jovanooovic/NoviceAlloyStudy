@@ -1,0 +1,69 @@
+inv3 U: all ex:Exit | no ex.succs
+inv3 U: no Exit.succs
+inv3 U: all t:Track| no t.succs => t in Exit
+inv3 B: all t:Track| no t.succs => t = Exit
+inv3 B: all t:Track| #t.succs=0 => t = Exit
+inv3 U: all t:Track| #t.succs=0 => t in Exit
+inv3 U: all t:Track| no t.succs => t in Exit
+inv3 U: all t:Track| t in Exit => no t.succs
+inv3 U: all ex:Exit | no ex.succs
+inv3 U: all ex:Exit | #ex.succs=0
+inv3 U: all ex:Exit | ex in Track => no ex.succs
+inv3 U: all ex:Exit | ex in Track => #ex.succs=0
+inv3 U: all t:Track| no t.succs => t in Exit
+inv3 B: all t:Track| no t.succs => Exit in t
+inv3 T: all ex:Exit | ex.succs={}
+inv3 U: all ex:Exit | no ex.succs
+inv3 U: all ex:Exit | ex in Track => no ex.succs
+inv3 U: all ex:Exit | no ex.next
+inv3 U: all ex:Exit | no ex.succs.next
+inv3 S: all ex:Exit | ex.succs.last = ex
+inv3 S: all ex:Exit | Track.succs.last = ex
+inv3 S: all ex:Exit | Track.last = ex
+inv3 S: all ex:Exit | ex.last = ex
+inv3 S: all ex:Exit | ex.last
+inv3 T: all ex:Exit | no Track.succs[ex+1]
+inv3 T: all ex:Exit | no Track.succs[ex]
+inv3 U: all ex:Exit | ex in Track => no ex.succs
+inv3 U: all ex:Exit | Track not in ex.succs
+inv3 U: all ex:Exit | Track not in ex.succs and ex not in ex.succs
+inv3 S: all ex:Exit | Track not in ex.succs and ex not in ex.succs and Entry not in ex.succs and Juction not in ex.succs
+inv3 B: all ex:Exit | Track not in ex.succs and ex not in ex.succs and Entry not in ex.succs and Junction not in ex.succs
+inv3 B: all ex:Exit | ex not in ex.succs and Entry not in ex.succs and Junction not in ex.succs
+inv3 B: all ex:Exit | Exit not in ex.succs and Entry not in ex.succs and Junction not in ex.succs
+inv3 U: all ex:Exit | ex not in ex.^(succs)
+inv3 U: all ex:Exit | no ex.^(succs)
+inv3 U: all ex:Exit | #ex.^(succs)=0
+inv3 U: all ex:Exit | no ex.^(succs) and ex not in ex.^(succs)
+inv3 U: all ex:Exit | no ex.^(succs) and ex not in ex.^(succs)
+inv3 S: all ex:Exit | ex not in Juction and ex not in Entry => no ex.^(succs) and ex not in ex.^(succs)
+inv3 U: all ex:Exit | ex not in Junction and ex not in Entry => no ex.^(succs) and ex not in ex.^(succs)
+inv3 U: all ex:Exit | ex not in Junction and ex not in Entry => no ex.^(succs)
+inv3 U: all t:Track | no t.^(succs) => t in Exit
+inv3 B: all t:Track | no t.^(succs) => t in Exit and t not in Entry
+inv3 B: all t:Track | no t.^(succs) => t in Exit and t not in Entry and t not in Junction
+inv3 B: all t:Track | no t.^(succs) and t not in t.^(succs) => t in Exit and t not in Entry and t not in Junction
+inv3 U: all t:Track | no t.^(succs) and t not in t.^(succs) => t in Exit
+inv3 U: all t:Track, e:Exit | t not in e.^(succs) => no e.^(succs)
+inv3 S: all t1,t2:Track | t1 not in t2.^(succs) => t2 in Exit
+inv3 S: all t1,t2:Track | t1 not in t2.^(succs) => t2 in Exit
+inv3 B: all t1,t2:Track | t1 not in t2.^(succs) => t2 in Exit
+inv3 U: all t1,t2:Track | t1 not in Exit => some t1.^(succs)
+inv3 U: all t1,t2:Track | t1 not in Exit => some t1.(succs)
+inv3 U: all t1,t2:Track | t1 not in Exit => some t1.succs
+inv3 B: all t1,t2:Track | t1 not in Exit => one t1.succs
+inv3 B: all t1,t2:Track | t1 not in Exit => one t1.^(succs)
+inv3 C: all t1,t2:Track | t1 not in Exit <=> some t1.^(succs)
+inv3 C: all t:Track | t not in Exit <=> some t.(succs)
+inv3 C: all t:Track | t not in Exit <=> some t.^(succs)
+inv3 U: all t:Track | t in Exit => no t.(^succs)
+inv3 C: all t:Track | t in Exit <=> no t.(^succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 U: all t:Exit | no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 U: all t:Track | t in Exit => no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 C: all t:Track | t in Exit iff no t.^(succs)
+

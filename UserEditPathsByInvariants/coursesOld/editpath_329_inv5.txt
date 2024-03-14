@@ -1,0 +1,13 @@
+inv5 C: Person <: projects in Student some -> Project
+inv5 S: all p:Project | none x:Person | x->p in projects and n not in Student
+inv5 S: none p:Project | none x:Person | x->p in projects and n not in Student
+inv5 U: all p:Project, x:Person | x->p in projects implies x in Student
+inv5 U: all p:Project, x:Person | x->p in Person <: projects implies x in Student
+inv5 U: all p:Project, x:Person | x->p in (Person <: projects) implies x in Student
+inv5 U: all p:Project | some x:Person | x->p in projects implies x in Student
+inv5 U: all p:Project,  x:Person | x->p in projects implies x in Student
+inv5 S: all p:Project | x->p in Person <: projects implies x in Student
+inv5 U: all p:Project, x:Person | x->p in Person <: projects implies x in Student
+inv5 S: all p:Projec| all x:Person | x->p in Person <: projects implies x in Student and x->p
+inv5 T: all p:Project| all x:Person | x->p in Person <: projects implies x in Student and x->p
+

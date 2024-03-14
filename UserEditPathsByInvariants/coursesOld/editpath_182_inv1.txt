@@ -1,0 +1,69 @@
+inv1 S: all p:Person | s:Student | p.enrolled = s.enrolled
+inv1 B: all p:Professor | no p.enrolled
+inv1 B: no Professor.enrolled
+inv1 S: all p:Professor | p no in Person.enrolled
+inv1 S: all p:Professor | p.enrolled no in Person.enrolled
+inv1 S: Professor.enrolled no in Person.enrolled
+inv1 O: Professor.enrolled not in Person.enrolled
+inv1 S: all Professor.enrolled not in Person.enrolled
+inv1 T: no Professor.enrolled in Person.enrolled
+inv1 O: not Professor.enrolled in Person.enrolled
+inv1 B: all p:Professor | not p.enrolled in Person.enrolled
+inv1 S: all s:Student | all s.enrolled in Person.enrolled
+inv1 U: all s:Student | s.enrolled in Person.enrolled
+inv1 B: all s:Student | Person.enrolled in s.enrolled
+inv1 S: all Person.enrolled in Student.enrolled
+inv1 U: all p:Person | p.enrolled in Student.enrolled
+inv1 S: all p:Person | s:Student | p.enrolled in s.enrolled
+inv1 B: all p:Person | all s:Student | p.enrolled in s.enrolled
+inv1 B: all p:Person | not p.enrolled in Professor.enrolled
+inv1 B: all p:Person | not (p.enrolled in Professor.enrolled)
+inv1 B: all p:Person | not (Professor.enrolled in p.enrolled)
+inv1 B: all p:Professor | not (p.enrolled in Person.enrolled)
+inv1 S: all s:Student | all s.enrolled in Person.enrolled
+inv1 S: all Person.enrolled in Student.enrolled
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 S: all p:Person.enrolled | all p in Student.enrolled
+inv1 S: all (Person.enrolled in Student.enrolled)
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 U: Student.enrolled = Person.enrolled
+inv1 U: Student.enrolled = Person.enrolled
+inv1 S: all p:Person.enrolled | p in Students.enrolled
+inv1 S: all p:Person | p.enrolled in Students.enrolled
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 U: all p:Person.enrolled | p in Student.enrolled
+inv1 B: all p:Person.enrolled | not p in Professor.enrolled
+inv1 T: all p:Person.enrolled | not one p in Professor.enrolled
+inv1 S: all p:Person.enrolled | not p in one Professor.enrolled
+inv1 B: all p:Person.enrolled | not p in Professor.enrolled
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | s = p
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | p in s
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | s in p
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | s = p
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor | p in s & pr not in p
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor | p in s | pr not in p
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p in s | pr not in p
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s | pr not in p
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s & p != s
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s | p != s
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s | p != pr
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p = s & p != pr
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p in s & p not in pr
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | p in s | p not in pr
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | s-pr = s
+inv1 B: all s:Student.enrolled | all pr:Professor.enrolled | s-pr = s
+inv1 S: all p:Person.enrolled | pr: Professor.enrolled | pr not in p.^
+inv1 S: all p:Person.enrolled | pr: Professor.enrolled | pr not in p
+inv1 B: all p:Person.enrolled | all s:Student.enrolled | p in s
+inv1 S: all p:Person.enrolled | all s:Student.enrolled all pr:Professor.enrolled | p in s & s!= pr
+inv1 S: all p:Person.enrolled | all s:Student.enrolled all pr:Professor.enrolled | (p in s) & (s!= pr)
+inv1 S: all p:Person.enrolled | all s:Student.enrolled all pr:Professor.enrolled | (p in s) and (s != pr)
+inv1 S: all p:Person.enrolled | all s:Student.enrolled all pr:Professor.enrolled | s != implies (p in s)
+inv1 S: all p:Person.enrolled | all s:Student.enrolled all pr:Professor.enrolled | s != pr implies (p in s)
+inv1 S: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | s != pr implies (p in s)
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | (p in s) and not (s & pr)
+inv1 T: all p:Person.enrolled | all s:Student.enrolled | all pr:Professor.enrolled | (p in s) and (s & pr)
+inv1 T: all p:Person, c: Course | no (p & Student) implies c not in p enrolled
+inv1 C: all p:Person, c: Course | no (p & Student) implies c not in p.enrolled
+

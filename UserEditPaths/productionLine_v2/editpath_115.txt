@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 S: all w: Workers | w in Human or w in Robot
+inv1 C: all w: Worker | w in Human or w in Robot
+inv1 C: all w: Worker | w in Human or w in Robot
+inv2 S: all ws: Workstation | one w: woker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 S: all ws: Workstation | one w: worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 S: all ws: Workstation | one w: Worker | ws.succ == none and w in ws.workers	all w: Worker | one ws: Workstation | ws.succ == none and w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | ws.succ = none and w in ws.workers	all w: Worker | one ws: Workstation | ws.succ = none and w in ws.workers
+inv1 C: all w: Worker | w in Human or w in Robot
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv3 C: all com: Component | one com.workstation
+inv4 T: all com: Component | some com.parts	all mat: Material | none mat.parts
+inv4 C: all com: Component | some com.parts	all mat: Material | no mat.parts
+inv5 C: all h: Human | all r: Robot | all ws: Workstation | h in ws.workers implies r not in ws.workers
+inv6 U: all com : Component | com not in com.parts
+inv6 U: all com : Component | com not in com.parts	all c1, c2: Component | c1 != c2 and c1 in c2.parts implies c2 not in c2.parts
+inv7 C: all com: Component | all d: Dangerous | d in com.parts implies com in Dangerous
+inv7 C: all com: Component | all d: Dangerous | d in com.parts implies com in Dangerous
+inv8 C: all com: Component | all ws: Workstation | all h: Human | ws in com.workstation and com in Dangerous implies h not in ws.workers
+inv10 S: all a1, a2: Component | all ws: WorkStation | a2 in a1.parts implies a2.workstation in begin and a1.workstation in end
+inv10 B: all a1, a2: Component | a2 in a1.parts implies a2.workstation in begin and a1.workstation in end
+

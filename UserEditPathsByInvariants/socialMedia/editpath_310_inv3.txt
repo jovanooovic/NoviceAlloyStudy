@@ -1,0 +1,7 @@
+inv3 U: all u : User | all seenPhotos : u.sees | seenPhotos in Ad || seenPhotos not in Ad && seenPhotos.posts in u.follows
+inv3 U: all u : User | all seenPhotos : u.sees | seenPhotos in Ad || seenPhotos not in Ad && seenPhotos.posts in follows.u
+inv3 U: all u : User | all seenPhotos : u.sees | seenPhotos in Ad || (seenPhotos not in Ad && seenPhotos.posts in u.follows)
+inv3 U: all u : User, seenPhotos : u.sees | seenPhotos in Ad || (seenPhotos not in Ad && seenPhotos.posts in u.follows)
+inv3 S: all u : User, seenPhotos : u.sees | seenPhotos in Ad || (seenPhotos not in Ad && seenPhotos u.follows.posts)
+inv3 C: all u : User, seenPhotos : u.sees | seenPhotos in Ad || (seenPhotos not in Ad && seenPhotos in u.follows.posts)
+

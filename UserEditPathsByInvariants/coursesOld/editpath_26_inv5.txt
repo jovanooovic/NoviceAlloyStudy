@@ -1,0 +1,14 @@
+inv5 U: no (Person-Student) & projects.Project
+inv5 T: no (Person-Student) & projects.Project	  all p:Project, pe:Person | some p in pe
+inv5 O: no (Person-Student) & projects.Project	  all p:Project| some enrolled.p
+inv5 O: no (Person-Student) & projects.Project	  all p:Project| some p.enrolled
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| some p.enrolled
+inv5 T: no (Person-Student) & projects.Project	   all p:Person| some p.enrolled.Project
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| p in enrolled.Project
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| p in Project.enrolled
+inv5 B: no (Person-Student) & projects.Project	   all p:Person| some p.projects
+inv5 O: no (Person-Student) & projects.Project	   all p:Project| some p.projects
+inv5 T: no (Person-Student) & projects.Project	   all p:Project| some projects.p
+inv5 C: no (Person-Student) & projects.Project	   all p:Project| some Person<:projects.p
+inv5 T: no (Person-Student) & projects.Project	   all p:Project| some projects.p
+

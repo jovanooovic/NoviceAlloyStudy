@@ -1,0 +1,5 @@
+inv1 T: all p:Professor , c:Course | p not in grades
+inv1 T: all p:Professor , c:Course | not grades->p
+inv1 T: all p:Professor , c:Course | grades->p
+inv1 C: all p:Person | all c1:Course | p->c1 in enrolled implies p in Student
+

@@ -1,0 +1,11 @@
+inv1 T: all img : Photo | one img in User.posts
+inv1 T: all img : Photo | one img in posts.User
+inv1 O: all img : Photo | img in posts.User
+inv1 S: all img : Photo | img in one posts.User
+inv1 O: all img : Photo | img in posts.User
+inv1 O: all img : Photo | one posts.User
+inv1 C: all img : Photo | one posts.img
+inv1 C: all img : Photo | one posts.img
+inv1 B: all img : Photo | one User.posts
+inv1 C: all img : Photo | one posts.img
+

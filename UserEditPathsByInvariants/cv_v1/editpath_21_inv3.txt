@@ -1,0 +1,18 @@
+inv3 U: all u : User.profile, disj x,y : u.ids | x = y => x = y
+inv3 T: all u : User | ~(u.profile.ids).(u.profile.ids) in iden
+inv3 T: all u : User | ~(u.profile.ids).(u.profile.ids) in iden
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv3 O: iden in (profile.ids).~(profile.ids)
+inv3 O: iden in ~(profile.ids).(profile.ids)
+inv3 B: iden & (Id->Id) in ~(profile.ids).(profile.ids)
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv3 T: all w : source.Source | w
+inv3 T: all w : source.Source | w->ids
+inv3 T: all w : source.Source | w.ids
+inv3 B: all w : source.Source, w1,w2 : w.ids | w1 = w2
+inv3 B: all w : source.Source, disj w1,w2 : w.ids | w1 = w2
+inv3 T: all w : source.Source, disj w1,w2 : w.ids | no w1 = w2
+inv3 U: all w : source.Source, disj w1,w2 : w.ids | w1 not = w2
+

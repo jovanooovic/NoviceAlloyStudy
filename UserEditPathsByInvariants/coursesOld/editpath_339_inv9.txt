@@ -1,0 +1,22 @@
+inv9 B: all c: Course, p1, p2: Person | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person | some c: Course | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person | some c: Course | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 S: all p1, p2: Person | one p1.enrolled in p2.enrolled => all p1.teaches not in p2.enrolled
+inv9 T: all p1, p2: Person | one p1.enrolled in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person | lone c: Course | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person | some c: Course | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person | all c: Course | c in p1.enrolled && c in p2.enrolled => p1.teaches not in p2.enrolled
+inv9 T: all p1, p2: Person | some c: Course | c in p1.enrolled && c in p2.enrolled => one p1.teaches not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | some c2: Course | c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 O: all p1, p2: Person, c1: Course | all c2: Course | c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | some c2: Course | c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | one c2: Course | c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | one c2: Course | p1!=p2 && c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | some c2: Course | p1!=p2 && c2 in p1.enrolled && c2 in p2.enrolled => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | some c2: Course | p1!=p2 && (c2 in p1.enrolled && c2 in p2.enrolled) || (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 U: all p1, p2: Person, c1: Course | some c2: Course | p1!=p2 &&  (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 O: all p1, p2: Person, c1: Course | one c2: Course | p1!=p2 && (c2 in p1.enrolled && c2 in p2.enrolled) || (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 O: all p1, p2: Person, c1: Course | one c2: Course | p1!=p2 &&  (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | lone c2: Course | p1!=p2 && (c2 in p1.enrolled && c2 in p2.enrolled) || (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+inv9 B: all p1, p2: Person, c1: Course | lone c2: Course | p1!=p2 &&  (c2 in p1.teaches && c2 in p2.teaches) => c1 in p1.teaches && c1 not in p2.enrolled
+

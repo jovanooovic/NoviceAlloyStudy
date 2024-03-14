@@ -1,0 +1,22 @@
+inv7 T: all u : User | u.suggested - u.follows
+inv7 S: all u : User | u.sugested in u.follows.User.follows - u.follows
+inv7 T: all u : User | u.suggested in u.follows.User.follows - u.follows
+inv7 T: all u,y : User | u.suggested in u.follows.y.follows - u.follows
+inv7 T: all u,y : User | u.suggested in u.follows.y.follows - u.follows
+inv7 U: all u,y : User | u.suggested in u.follows.follows - u.follows
+inv7 U: all u : User | u.suggested in u.follows.follows - u.follows
+inv7 B: all u : User | u.follows.follows - u.follows in u.suggested
+inv7 U: all u : User | u.follows.follows - u.follows - u in u.suggested
+inv7 U: all u : User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 T: all u : User | u & suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u : User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies some u.suggested
+inv7 T: all u : User | (u.follows.follows - u.follows - u) implies one u.suggested
+inv7 T: all u : User | u.suggested  implies (u.follows.follows - u.follows - u)
+inv7 U: all u : User | u.suggested  in (u.follows.follows - u.follows - u)
+

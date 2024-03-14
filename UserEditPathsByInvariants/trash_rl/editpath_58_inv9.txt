@@ -1,0 +1,6 @@
+inv9 U: all f:File | f not in f.link
+inv9 T: all f:File | no f in f.link
+inv9 T: all f:File | f not in ~(f.link)
+inv9 U: all f:File | f not in (f.~link)
+inv9 C: no (File.link).link
+

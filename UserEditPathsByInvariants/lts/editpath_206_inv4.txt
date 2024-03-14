@@ -1,0 +1,48 @@
+inv4 S: all i : Initial | State in i.trans
+inv4 S: all i : Initial | State in i.trans
+inv4 T: all i : Init | State in i.trans
+inv4 T: all i : Init | State in i<:trans
+inv4 T: some i : Init | State in i<:trans
+inv4 S: all s : State | some Initial.^trans
+inv4 T: all s : State | some Init.^trans
+inv4 O: all s : State | some s.(Init.trans)
+inv4 B: all s : State | some s.(Init<:trans)
+inv4 T: all s : State | some s.(Init:>trans)
+inv4 B: all s : State | some s.(Init<:trans)
+inv4 B: all s : State | some s.(Init<:trans:>State)
+inv4 B: all s : State | some s.(Init <: trans)
+inv4 O: all s : State | some (Init <: trans).s
+inv4 B: all s : State, i : Init | some (i <: trans).s
+inv4 B: all s : State, i : Init | some s.(i <: trans)
+inv4 B: all s : State, i : Init | some (i <: trans).s
+inv4 O: all s : State | some (Init <: trans).s
+inv4 B: all s : State | some s.(Init <: trans)
+inv4 O: all s : State | some s.(Init . trans)
+inv4 B: all s : State | some s.(Init <: trans)
+inv4 O: all s : State | some Init.( s.trans)
+inv4 O: all s : State | some Init<:(s.trans)
+inv4 B: all s : State | some Init.(s<:trans)
+inv4 O: all s : State | some (Init.trans).s
+inv4 T: State in Init.trans
+inv4 T: all s : State | s.(Init.trans)
+inv4 O: all s : State | some s.(Init.trans)
+inv4 B: all s : State | some s.(Init<:trans)
+inv4 T: all s : State | Init.*(s.trans)
+inv4 U: all s : State | some Init.*(s.trans)
+inv4 B: all s : State | State in Init.*(s.trans)
+inv4 B: all s : State | State in Init.*(s.trans)
+inv4 T: all s : State | State in Init.*(s<:trans)
+inv4 O: all s : State | State in Init.^(s.trans)
+inv4 B: all s : State | State in Init.*(s.trans)
+inv4 S: let t = {all x,y : State, some z : Event | x->z->y in trans}		all s : State | State in Init.*(s.trans)
+inv4 S: let t = {all x,y : State, some z : Event | x->z->y in trans}		all s : State | some Init.(s.^t)
+inv4 S: let t = {all x,y : State, some z : Event | x->z->y in trans}		all s : State | some Init.(s.^t)
+inv4 S: let t = {all x,y : State, some z : Event | x->z->y in trans}|		all s : State | some Init.(s.^t)
+inv4 S: let t = {all x,y : State, some z : Event | x->z->y in trans} |		all s : State | some Init.(s.^t)
+inv4 T: let t = {all x,y : State | some z : Event | x->z->y in trans} |		all s : State | some Init.(s.^t)
+inv4 T: let t = {all x,y : State | some z : Event | x->z->y in trans} |		all s : State | some Init<:(s.^t)
+inv4 T: let t = {all x,y : State | some z : Event | x->z->y in trans} |		all s : State | some (s.^t)
+inv4 T: let t = {all x,y : State | some z : Event | x->z->y in trans} |		all s : State | some i : Init | s in i.(^t)
+inv4 T: let t = {all x,y : State | some z : Event | x->z->y in trans} |		State in Init.(^t)
+inv4 C: let t = {x,y : State | some z : Event | x->z->y in trans} |		State in Init.(^t)
+

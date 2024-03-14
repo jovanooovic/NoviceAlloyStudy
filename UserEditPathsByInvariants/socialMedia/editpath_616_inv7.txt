@@ -1,0 +1,9 @@
+inv7 U: all u, y : User | y in u.suggested implies (some follows.y & u.follows) and (no y & u.follows) and u != y
+inv7 U: all u, y : User | y in u.suggested implies (some follows.y & u.follows) and (no y & u.follows)
+inv7 S: all u, y : User | y in u.suggested implies (some follows.y & u.follows) and (no y & u.follows) and x!=y
+inv7 U: all u, y : User | y in u.suggested implies (some follows.y & u.follows) and (no y & u.follows) and u!=y
+inv7 C: all u, y : User | y in u.suggested iff (some follows.y & u.follows) and (no y & u.follows) and u!=y
+inv7 B: all u, y : User | y in u.suggested iff (some follows.y & u.follows) and (no y & u.follows)
+inv7 U: all u : User| all y : User-u | y in u.suggested iff (some follows.y & u.follows) and (no y & u.follows)
+inv7 C: all u, y : User | y in u.suggested iff (some follows.y & u.follows) and (no y & u.follows) and u!=y
+

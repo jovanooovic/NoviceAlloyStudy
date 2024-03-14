@@ -1,0 +1,10 @@
+inv4 S: all p : Project | some c : Course | #(c.project)>0
+inv4 U: all p : Project | some c : Course | #(c.projects)>0
+inv4 U: all p : Project | some c : Course | p in c.projects
+inv4 B: all p : Project | some c : Course | c.projects in c
+inv4 B: some c : Course | c.projects in c
+inv4 B: all p : Project | one c : Course | c.projects in c
+inv4 S: all p : Project | one c : Course | p in c.projetcs
+inv4 S: all p : Project | one c : Course | p in c.projetcs
+inv4 C: all p : Project | one c : Course | p in c.projects
+

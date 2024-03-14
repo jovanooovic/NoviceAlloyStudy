@@ -1,0 +1,10 @@
+inv15 S: all p:Person | some Tutors.p implies (Teacher in Tutors^.p)
+inv15 B: all p:Person | some Tutors.p implies (Teacher in ^Tutors.p)
+inv15 U: all p:Person | some Tutors.p implies (some t:Teacher | t in ^Tutors.p)
+inv15 B: all p:Person | some Tutors.p implies (Teacher in ^Tutors.p)
+inv15 T: all p:Person | some Tutors.p implies (^Tutors.p:>Teacher)
+inv15 T: all p:Person | some Tutors.p implies (Teacher<:^Tutors.p)
+inv15 B: all p:Person | some Tutors.p implies (Teacher in ^Tutors.p)
+inv15 U: all p:Person | some Tutors.p implies not ((Teacher & ^Tutors.p)= none)
+inv15 C: all p:Person | some Teacher <: (p.^~Tutors)
+

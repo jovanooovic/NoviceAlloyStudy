@@ -1,0 +1,8 @@
+inv4 S: all s: State | s in Init.trans^
+inv4 T: all s: State | s in ^Init.trans
+inv4 S: let adj = {s1,s2: State | some e s1.e.s2}	  all s: State | some i: Init | s in ^adj
+inv4 S: let adj = {s1,s2: State | s1 -> e -> s2 in trans}	  all s: State | some i: Init | s in ^adj
+inv4 S: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans}	  all s: State | some i: Init | s in ^adj
+inv4 T: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all s: State | some i: Init | s in ^adj
+inv4 C: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all s: State | some i: Init | s in i.^adj
+

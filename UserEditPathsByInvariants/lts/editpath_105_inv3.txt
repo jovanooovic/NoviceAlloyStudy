@@ -1,0 +1,21 @@
+inv3 U: all s:State | lone s'
+inv3 T: all s:State | lone s'=s.trans
+inv3 O: all s:State | lone s.trans
+inv3 S: all s:s1:s2:State | s->s1 in Trans and s->s2 in Trans implies s1=s2
+inv3 S: all s:s1:s2:State | s->s1 in trans and s->s2 in trans implies s1=s2
+inv3 T: all s:State,e:Event | lone s.e
+inv3 T: all s:State,e:Event | lone s.e in trans
+inv3 U: all s:State,e:Event | lone s.trans.e
+inv3 O: all s:State,e:Event | lone s.trans
+inv3 T: all s:State,e:Event | lone s->e in trans
+inv3 O: all s:State,e:Event | lone s.trans
+inv3 T: all s:State,e:Event | lone e.s.trans
+inv3 U: all s:State,e:Event | lone s.trans.e
+inv3 T: all s:State,e:Event | lone s->e in trans
+inv3 E:
+inv3 T: all s,s1:State,e:Event | lone s->e->s1 in trans
+inv3 B: all s,s1:State,e:Event | s->e->s1 in trans
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+

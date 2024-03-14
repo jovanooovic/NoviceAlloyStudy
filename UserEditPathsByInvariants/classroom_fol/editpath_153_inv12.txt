@@ -1,0 +1,10 @@
+inv12 B: all x : Teacher, y : Class, z : Group | z->x->z in Groups
+inv12 B: all x : Teacher, y : Class, z : Group | y->x->z in Groups
+inv12 B: all x : Teacher, y : Class, z : Group | y->x->z in Groups and x->y in Teaches
+inv12 B: all x : Teacher, y : Class | some z : Group | y->x->z in Groups and x->y in Teaches
+inv12 B: all x : Teacher, y : Class | some z : Group | y->x->z in Groups
+inv12 B: all x : Teacher | some y : Class, z : Group | y->x->z in Groups
+inv12 C: all x : Teacher | some y : Class, z : Group, v : Person | x->y in Teaches and y->v->z in Groups
+inv12 C: all x : Teacher | some y : Class, z : Group, v : Person | x->y in Teaches and y->v->z in Groups
+inv12 C: all x : Teacher | some y : Class, z : Group, v : Person | x->y in Teaches and y->v->z in Groups
+

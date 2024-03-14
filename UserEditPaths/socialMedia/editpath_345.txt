@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv2 S: some x : User ~follows x
+inv2 S: some x : User | some y : User | x != y | x->y in follows
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | no x in follows.x
+inv1 C: all x : Photo | one posts.x
+inv2 T: all x : User | no x in follows.x
+inv2 T: all x : User | no x in x.follows
+inv2 T: all x : User | no x in follows
+inv2 C: all x : User | x not in follows.x
+inv3 S: some x : User | all y : User | y in x.follows | x.sees not in Ad | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees not in Ad | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts		all j : User | all f : Ad | f in j.sees set -> set User
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts		all j : User | all f : Ad | f in j.sees set -> set User
+

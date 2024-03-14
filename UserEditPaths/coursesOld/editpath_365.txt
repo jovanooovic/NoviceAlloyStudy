@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 C: (enrolled . Course) in Student
+inv2 C: (teaches . Course) in Professor
+inv3 C: Course in (Person . teaches)
+inv4 C: (this/Course <: projects) in Course one -> Project
+inv5 E: 
+inv5 U: (this/Person <: projects) . Project in Student
+inv5 B: ((this/Person <: projects) . Project) = Student
+inv5 C: (this/Person <: projects) in Student some -> Project
+inv6 B: all s : Student |	  (s . (this/Person <: projects) . ~(this/Course <: projects))	  in s . enrolled
+inv8 U: all p : Professor | p not in (p . teaches . ~enrolled)
+inv8 U: all p : Professor | p not in (p . teaches . ~enrolled)
+inv10 C: grades in Course -> Student -> Grade
+inv11 U: all s : Student | (grades . Grade . s) in (s . enrolled)
+

@@ -1,0 +1,5 @@
+inv5 S: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r in ws.workers => false
+inv5 B: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r in ws.workers
+inv5 O: all ws : Workstation | all h : Human, r : Robot | h in ws.workers and r not in ws.workers
+inv5 C: all ws : Workstation | all h : Human, r : Robot | h in ws.workers => r not in ws.workers
+

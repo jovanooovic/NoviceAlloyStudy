@@ -1,0 +1,6 @@
+inv9 B: all x: Person, y : Course | x ->y not in enrolled implies x in Professor
+inv9 T: all x: Person, z : Person -x ,y : Course | x -> y teaches  and z in Professor implies z -> y not in enrolled
+inv9 T: all x: Person, z : Person -x ,y : Course | x -> y teaches   implies z -> y not in enrolled
+inv9 B: all x: Person, z : Person -x ,y : Course | x -> y in teaches  and z in Professor implies z -> y not in enrolled
+inv9 U: all x: Person, z : Person -x ,y : Course | x -> y in teaches and z -> y in teaches implies z-> y not in enrolled and x -> y not in enrolled
+

@@ -1,0 +1,9 @@
+inv7 B: all s:User | some u:User-s | s in u.suggested iff some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows
+inv7 B: all s:User | some u:User-s | s in u.suggested iff some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows and s not in u.follows
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows and s not in u.follows)
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (some u1:User-s | s in u1.follows and u1 in u.follows and s not in u.follows)
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (some u1:User-s | u != s and s in u1.follows and u1 in u.follows and s not in u.follows)
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (u != s and some u1:User-s | s in u1.follows and u1 in u.follows and s not in u.follows)
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (u != s and s not in u.follows and some u1:User-s | s in u1.follows and u1 in u.follows)
+inv7 B: all s:User | some u:User-s | (s in u.suggested) iff (u != s and s not in u.follows and some u1:User | s in u1.follows and u1 in u.follows)
+

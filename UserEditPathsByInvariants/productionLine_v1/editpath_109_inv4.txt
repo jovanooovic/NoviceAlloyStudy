@@ -1,0 +1,7 @@
+inv4 T: all c: Component | let parts = p.parts | gt[parts.Position, c.position]
+inv4 T: all c: Component | let parts = p.parts | lt[parts.position, c.position]
+inv4 S: all c: Component | all p: p.parts | lt[p.position, c.position]
+inv4 S: all c: Component | all p: p.parts | lte[p.position, c.position]
+inv4 S: all c: Component | let parts = c.parts | lte[p.position, c.position]
+inv4 O: all c: Component | let parts = c.parts | lte[parts.position, c.position]
+

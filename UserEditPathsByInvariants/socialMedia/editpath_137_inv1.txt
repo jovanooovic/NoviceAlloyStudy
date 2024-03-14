@@ -1,0 +1,48 @@
+inv1 S: all p: Photo, some u: User | p in u.posts
+inv1 S: all p: Photo some u: User | p in u.posts
+inv1 S: all p: Photo, some u: User | p in lone u.posts
+inv1 S: all p: Photo, some u: User | p in (lone u.posts)
+inv1 S: all p: Photo, some u: User | p in (one u.posts)
+inv1 S: all p: Photo, some u: User | p in (one u.posts);
+inv1 S: all p : Photo, some u : User | p in (one u.posts);
+inv1 S: all p : Photo, some u : User | p in (one u.posts)
+inv1 S: all p : Photo, some u : User | u.posts
+inv1 S: all p : Photo, some u : User | u.posts
+inv1 S: some u: User, all p: Photo | p in u.posts
+inv1 S: one u: User, all p: Photo | p in u.posts
+inv1 S: one u: User, all p: Add | p in u.posts
+inv1 S: one u: User | PHOTO in u.posts
+inv1 B: one u: User | Photo in u.posts
+inv1 T: one u: User | Photo in u.posts or Influencer.posts
+inv1 B: one u: User | Photo in u.posts or Photo in Influencer.posts
+inv1 U: Photo in User.posts
+inv1 S: some Photo in one User.posts
+inv1 T: some Photo in (one User.posts)
+inv1 S: all Photo in User.posts
+inv1 B: one u: User | Photo in u.posts
+inv1 B: lone u: User | Photo in u.posts
+inv1 T: Photo & User.posts
+inv1 U: Photo in User.posts or Ad in User.posts or Photo in Influencer.posts or Ad in Influencer.posts
+inv1 B: no (User.posts & Influencer.posts)
+inv1 B: some (User.posts & Influencer.posts)
+inv1 T: User.posts and Influencer.post != none
+inv1 S: some User.posts or Influencer.post
+inv1 T: some User.posts or Influencer.posts
+inv1 T: User.posts or Influencer.posts
+inv1 T: one (User.posts or Influencer.posts)
+inv1 B: one (User.posts & Influencer.posts)
+inv1 T: one User in posts.Photo
+inv1 T: some User in posts.Photo
+inv1 B: some u: User | posts.Photo in u
+inv1 U: posts.Photo in User or posts.Photo in Influencer
+inv1 S: all p: Photo, all a: Ad | one (posts.p or posts.ad)
+inv1 S: all p: Photo, all a: Ad | one (posts.p or posts.a)
+inv1 S: all p: Photo, all a: Ad | one (posts.p || posts.a)
+inv1 S: all p: Photo, all a: Ad | one (posts.p & posts.a)
+inv1 S: all p: Photo, all a: Ad | one posts.p or one posts.a
+inv1 B: posts.Photo = User + Influencer
+inv1 B: posts.Photo = User - Influencer
+inv1 U: User.posts = Photo + Ad
+inv1 U: posts in User lone -> Photo
+inv1 U: all p: Photo | lone posts.p
+

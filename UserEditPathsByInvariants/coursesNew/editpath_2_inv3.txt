@@ -1,0 +1,12 @@
+inv3 S: all c : Courses , p : Person | lone p in c.teaches
+inv3 S: all c : Courses , p : Person | lone p in c.teaches
+inv3 T: all c : Course , p : Person | lone p in c.teaches
+inv3 T: all c : Course , p : Person | some p in c.teaches
+inv3 B: all c : Course , p : Person | p in c.teaches
+inv3 B: all c : Course , p : (Person-Student) | p in c.teaches
+inv3 B: all c : Course , p : Person | p in c.teaches
+inv3 S: all c : Course , some p : Person | p in c.teaches
+inv3 S: Courses in Professor.teaches
+inv3 O: Course in Professor.teaches
+inv3 O: Course = Professor.teaches
+

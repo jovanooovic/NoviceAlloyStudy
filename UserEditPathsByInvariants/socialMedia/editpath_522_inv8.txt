@@ -1,0 +1,4 @@
+inv8 O: all x : User, y: Ad | y in x.sees implies all z: User | y in z.posts and (z in x.follows or z in x.suggested)
+inv8 C: all x : User, y: Ad | y in x.sees implies some z: User | y in z.posts and (z in x.follows or z in x.suggested)
+inv8 O: all x : User, y: Ad | y in x.sees implies all z: User | y in z.posts and (z in x.follows or z in x.suggested)
+

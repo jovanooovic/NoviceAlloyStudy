@@ -1,0 +1,10 @@
+inv1 B: all x: Person | x not in Student
+inv1 O: all x: Person | x in Student
+inv1 T: all x: Person | (x not in Student) implies x not x.enrolled
+inv1 T: all x: Person | (x not in Student) implies not x.enrolled
+inv1 U: all x: Person | (x not in Student) implies x not in x.enrolled
+inv1 C: all x: Person | all y: Course | (x not in Student) implies y not in x.enrolled
+inv1 U: all p: Person, c: Course | p in c.enrolled implies p in Student
+inv1 C: all p: Person, c: Course | p in c.~enrolled implies p in Student
+inv1 C: all x: Person , y: Course | (x not in Student) implies y not in x.enrolled
+

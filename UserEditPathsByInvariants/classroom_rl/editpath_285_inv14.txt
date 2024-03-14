@@ -1,0 +1,19 @@
+inv14 T: all c : Class, s : c.Groups->Person | c in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups->Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person | s :> Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person | s <: Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c->Groups.Person | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Person | s in Teaches.c.Tutors
+inv14 T: all c : Class, s : c.Groups.Person.Group | s in Teaches.c.Tutors
+inv14 U: all c : Class, s : c.Groups.Student | s in Teaches.c.Tutors
+

@@ -1,0 +1,8 @@
+inv7 U: all x : User | x.suggested in x.^follows.follows - x.follows
+inv7 U: all x : User | x.suggested in x.^follows.follows - x.follows - x
+inv7 U: all x : User | x.suggested in x.follows.follows
+inv7 C: suggested = (follows . follows) - follows - iden
+inv7 T: all x : User | x.suggested & x.follows.follows - x.follows - x
+inv7 C: all x : User | x.suggested = x.follows.follows - x.follows - x
+inv7 C: all x : User | x.suggested = x.follows.follows - x.follows - x
+

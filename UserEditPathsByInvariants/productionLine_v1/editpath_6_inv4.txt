@@ -1,0 +1,14 @@
+inv4 T: all c: Component | c.parts.position < c.position
+inv4 O: all c: Component | c.^parts.position in c.position.prevs
+inv4 O: all c: Component | c.^parts.position in prevs[c.position]
+inv4 O: all c: Component | (c.^parts).position in prevs[c.position]
+inv4 O: all c: Component | c.^parts.position in prevs[c.position]
+inv4 C: all c: Component | c.^parts.position in prevs[c.position] + c.position
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+inv4 U: Component.^parts.position in Component.position.prevs + Component.position
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+inv4 B: all c: Component | c.position.lte[c.^parts.position]
+inv4 B: all c: Component | c.position.gte[c.^parts.position]
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+inv4 C: all c: Component | c.^parts.position in c.position.prevs + c.position
+

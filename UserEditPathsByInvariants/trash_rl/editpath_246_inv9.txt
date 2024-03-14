@@ -1,0 +1,19 @@
+inv9 B: all f1, f2 : File |	f1.link = f2.link implies f1 = f2
+inv9 O: all f1, f2 : File |	f1.link != f2.link
+inv9 O: all f1, f2 : File |	some f1.link implies f1.link != f2.link
+inv9 B: all f1, f2 : File |	f1 != f2 implies f1.link != f2.link
+inv9 T: all f1, f2 : File |	f1 != f2 implies f1.link and f2.link = {}
+inv9 T: all f1, f2 : File |	f1 != f2 implies f1.link * f2.link = {}
+inv9 S: all f1, f2 : File |	f1 != f2 implies (f1.link * f2.link) = {}
+inv9 T: all f1, f2 : File |	f1 != f2 implies (f1.link & f2.link) = {}
+inv9 T: all f1, f2 : File |	f1 != f2 implies f1.link & f2.link = {}
+inv9 T: all f1, f2 : File |	f1 != f2 implies f1.link & f2.link in {}
+inv9 T: all f1, f2 : File |	f1 != f2 implies none f1.link & f2.link
+inv9 S: all f1, f2 : File |	f1 != f2 implies (none f1.link & f2.link)
+inv9 S: all f1, f2 : File |	f1 != f2 implies (none (f1.link & f2.link))
+inv9 B: all f1, f2 : File |	f1 != f2 implies (no (f1.link & f2.link))
+inv9 B: all f1, f2 : File |	f1 != f2 implies (no f1.link & f2.link)
+inv9 T: all f : File |	all l : f.link |	all f2 : File |	no l.link = f2
+inv9 C: all f : File |	all l : f.link |	no l.link
+inv9 C: all l : File.link |	no l.link
+

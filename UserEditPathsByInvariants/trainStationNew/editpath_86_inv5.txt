@@ -1,0 +1,10 @@
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:t.~succ
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succ and t2 in t.~succ
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succs and t2 in t.~succ
+inv5 C: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succs and t2 in t.~succs
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2			all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2			all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv5 C: all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv5 C: all t:Junction | some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2	all t:Track | (some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2) implies t in Junction
+

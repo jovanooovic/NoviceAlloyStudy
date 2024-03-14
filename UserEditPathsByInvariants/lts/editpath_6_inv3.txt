@@ -1,0 +1,6 @@
+inv3 O: all s : State | lone s.trans
+inv3 T: all s : State | lone e : Event | s.e.S
+inv3 S: all s : State | lone e : Event
+inv3 O: ~(State.trans).(State.trans) in iden
+inv3 B: (State.trans).~(State.trans) in iden
+

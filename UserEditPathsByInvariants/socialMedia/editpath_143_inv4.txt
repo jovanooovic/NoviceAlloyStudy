@@ -1,0 +1,13 @@
+inv4 S: all x:User | all y:x.post | y in Ad
+inv4 S: all x:User | all y:x.post | y in Ad
+inv4 O: all x:User | all y:x.posts | y in Ad
+inv4 B: all x:User | some y:x.posts | y in Ad
+inv4 O: all x:User | all y:x.posts | y in Ad
+inv4 S: all x:User | one x.posts in Ad | all y:x.posts | y in Ad
+inv4 S: all x:User | all y:x.posts | some y in Ad implies all y in Ad
+inv4 U: all x:User | all y:x.posts | some z:y | z in Ad implies y in Ad
+inv4 U: all x:User | all y:x.posts | some z:x.posts | z in Ad implies y in Ad
+inv4 O: all x:User | all y:x.posts | one z:x.posts | z in Ad implies y in Ad
+inv4 C: all x:User | (some z:x.posts | z in Ad) implies (all y:x.posts | y in Ad)
+inv4 C: all x:User | (some x.posts & Ad) implies (x.posts in Ad)
+

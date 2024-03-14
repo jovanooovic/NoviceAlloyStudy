@@ -1,0 +1,13 @@
+inv3 T: all u:User |  sees.follows in follows.u
+inv3 T: all u:User | sees.follows in follows.u
+inv3 T: all u:User | sees in follows.u
+inv3 S: all u:User | sees in follows.p
+inv3 S: all u:User | sees in follows.Photos
+inv3 T: all u:User | sees in follows.Photo
+inv3 O: all u:User | sees.Photo in follows.Photo
+inv3 T: all u:User | u.sees.Photo in follows.Photo
+inv3 T: all u:User | u.sees.Ad in u.follows.posts
+inv3 T: all u:User | no u.sees.Ad in u.follows.posts
+inv3 T: all u:User | no u.sees-Ad in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+

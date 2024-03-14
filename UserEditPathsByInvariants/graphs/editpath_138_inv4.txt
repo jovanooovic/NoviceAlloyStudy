@@ -1,0 +1,8 @@
+inv4 U: all n1, n2: Node | n2 in n1.^(adj)
+inv4 B: all n1, n2: Node | n2 in n1.^(adj) and n2 not in n2.adj
+inv4 U: all n1, n2: Node | n2 in n1.^(adj) and n2 in n2.adj
+inv4 B: all n1, n2: Node | n2 in n1.^(adj) and n2 not in n2.adj
+inv4 U: all n : Node | n in n.^(adj)
+inv4 U: all n1 : Node | no n2: Node | n2 not in n1.^(adj)
+inv4 C: all n1, n2 : Node | n1 in n2.adj
+

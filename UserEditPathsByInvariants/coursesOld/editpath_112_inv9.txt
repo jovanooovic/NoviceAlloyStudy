@@ -1,0 +1,17 @@
+inv9 B: all p: Professor, c: p.teaches | all p2: Professor - Student | c !in p2.enrolled
+inv9 U: all p: Professor, c: p.teaches | no (c.~teaches-p) & (p.teaches.~enrolled)
+inv9 U: all p, cp: Professor, c: p.teaches | cp not in c.enrolled
+inv9 S: all p, cp: Professor, c: p.teaches | c not in p2.enrolled
+inv9 B: all p, cp: Professor, c: p.teaches | c not in cp.enrolled
+inv9 B: all p, cp: Professor, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 B: all disj p, cp: Professor, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 S: all disj xp, cp: Professor, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 B: all disj p, cp: Professor, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 B: all disj p, cp: Professor, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 B: all p: Professor, cp: Professor-Student, c: Course | c in p.teaches implies c not in cp.enrolled
+inv9 B: all p, coll: Professor, c: Course | c in p.teaches
+inv9 B: all p, coll: Professor, c: Course | c in p.teaches implies c not in coll.enrolled
+inv9 B: all p, coll: Professor, c: Course | c in p.teaches iff c not in coll.enrolled
+inv9 B: all p, coll: Professor, c: Course | (c in p.teaches iff c not in coll.enrolled)
+inv9 B: all p, coll: Professor, c: Course | (c in p.teaches => c not in coll.enrolled)
+

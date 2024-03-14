@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv8 O: all u : User | all a : Ad | u->a in sees implies (one v : User | v->a in posts and (u->v in follows or u->v in suggested))
+inv6 C: all i : Influencer | all d : Day | some p : Photo | i->p in posts and p->d in date
+inv5 U: all u, v: User | (u!=v and v in Influencer) implies u->v in follows
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u not in u.follows
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested and u!=v implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows )
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested implies ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 B: all u, v : User | u->v in suggested iff ( some z : User | z->v in follows and u->z in follows and u->v not in follows)
+inv7 C: all u, v : User | u->v in suggested iff ( some z : User | z->v in follows and u->z in follows and u->v not in follows and v!=u)
+

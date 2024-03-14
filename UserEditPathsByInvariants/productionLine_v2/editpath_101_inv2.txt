@@ -1,0 +1,13 @@
+inv2 S: all s:Workstation | some s.workers	all w:Worker | one Workstation.s
+inv2 T: all s:Workstation | some s.workers	all w:Worker | one Workstation.w
+inv2 T: all s:Workstation | some s.workers	all w:Worker | one w.Workstation
+inv2 T: all s:Workstation | some s.workers and (s.workers in iden)
+inv2 U: all s:Workstation | some s.workers
+inv2 T: all s:Workstation | some s.workers and s.workers in iden
+inv2 T: all s:Workstation, w:Worker | some s.workers and s.w in iden
+inv2 B: workers in Workstation some -> one Worker
+inv2 C: workers in Workstation one -> some Worker
+inv2 U: all w:Worker | one workers.w
+inv2 C: all w:Worker | one workers.w	all w:Workstation | some w.workers
+inv2 C: all w:Worker | one workers.w					Workstation = workers.Worker
+

@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | p in d
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d in p
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d & p = d
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d & p = d
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows and s not in u.follows
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows and s not in u.follows and u not in s
+inv8 O: all u: User | all a : u.sees | a in Ad iff ( a in u.follows.posts or a in u.suggested.posts)
+inv8 C: all u: User | all a : u.sees | a in Ad implies ( a in u.follows.posts or a in u.suggested.posts)
+inv3 C: all u : User | all p : Photo | p in u.sees implies (p in Ad or p in u.follows.posts)
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows and s not in u.follows and u not in s
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows and s not in u.follows and u not in s	all u : User | all u2 : User | u in u2.suggested implies ( u not in u2.follows and u in u2.follows.follows and u != u2)
+inv7 U: all u : User | all u2 : User | u in u2.suggested implies ( u not in u2.follows and u in u2.follows.follows and u != u2)
+inv7 U: all u : User | all u2 : User | u in u2.suggested implies ( u not in u2.follows and u in u2.follows.follows and u != u2)
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d & p = d
+inv6 U: all i : Influencer | all p : i.posts.date | p in Day
+inv6 B: all i : Influencer | all p : i.posts.date | Day & p = Day
+inv6 C: all i : Influencer | Day & i.posts.date = Day
+inv6 C: all i : Influencer | Day & i.posts.date = Day
+inv7 U: all u :User | all u2: User | (u in u2.suggested) implies (u!= u2 and u not in u2.follows and u in u2.follows.follows)
+inv7 B: all u :User | all u2: User | (u in u2.suggested) implies (u!= u2 and u not in u2.follows and u in u2.follows.follows and u2 not in u.follows)
+inv7 U: all u :User | all u2: User | (u in u2.suggested) implies (u!= u2 and u not in u2.follows and u in u2.follows.follows)
+

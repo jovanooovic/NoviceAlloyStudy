@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv8 S: all p1, p2: Professor, c : Course | (p1 ->x in enrolled and p2 -> in teaches) => (p1 != p2)
+inv8 S: all p1, p2: Professor, c : Course | (p1 ->x in enrolled and p2 -> c in teaches) => (p1 != p2)
+inv8 U: all p1, p2: Professor, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) => (p1 != p2)
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) => (p1 not in Professor)
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) => (p1 in Student and p1 not in Professor)
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) <=> (p1 in Student and p1 not in Professor)
+inv10 S: all p : Person, c: Course, g: Grade | c -> p -> g in Grades => p not in Professor
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades => p not in Professor
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor
+inv10 O: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor and p in Student
+inv10 O: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p in Student
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades and p -> c in enrolled <=> p in Student
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades and p -> c in enrolled <=> p not in Professor
+

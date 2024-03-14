@@ -1,0 +1,18 @@
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in projects and s2->p1 in projects and s1->p2 in projects and s2->p2 in projects
+inv14 B: not some s1, s2: Student | all p1, p2: Project| s1->p1 in projects and s2->p1 in projects and s1->p2 in projects and s2->p2 in projects
+inv14 B: not some s1, s2: Student | all p1, p2: Project| s1->p1 in projects and s2->p1 in projects and s1->p2 in projects and s2->p2 in projects and s1 != s2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in projects and s2->p1 in projects and s1->p2 in projects and s2->p2 in projects and s1 != s2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: all s:Student, c: Course, g1,g2: Grade | c->s->g1 in grades and c->s->g2 in grades implies g1=g2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: not some s1, s2: Student | some p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: not some s1, s2: Student | all p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2
+inv14 B: not some s1, s2: Student | all p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2 	  	  all s1, s2: Student, p: Project | s1->p in Person <: projects and s2->p in Person <: projects	  implies (not some p2: Project| s1->p2 in Person <: projects and s2->p2 in Person <: projects and p!=p2)
+inv14 B: not some s: Student | some c: Course| s->c in teaches	  	  not some s1, s2: Student | all p1, p2: Project| s1->p1 in  Person <: projects and s2->p1 in  Person <: projects and s1->p2 in  Person <: projects and s2->p2 in  Person <: projects and s1 != s2 	  	  all s1, s2: Student, p: Project | s1->p in Person <: projects and s2->p in Person <: projects	  implies (not some p2: Project| s1->p2 in Person <: projects and s2->p2 in Person <: projects and p!=p2)
+inv14 B: not some s: Student | some c: Course| s->c in teaches	  	  	  	  all s1, s2: Student, p: Project | s1->p in Person <: projects and s2->p in Person <: projects	  implies (not some p2: Project| s1->p2 in Person <: projects and s2->p2 in Person <: projects and p!=p2)
+inv14 B: not some s: Student | some c: Course| s->c in teaches	  	  	  	  all s1, s2: Student, p: Project | s1->p in Student <: projects and s2->p in Student <: projects	  implies (not some p2: Project| s1->p2 in Student <: projects and s2->p2 in Student <: projects and p!=p2)
+inv14 B: all s1, s2: Student, p: Project | s1->p in Student <: projects and s2->p in Student <: projects	  implies (not some p2: Project| s1->p2 in Student <: projects and s2->p2 in Student <: projects and p!=p2)
+inv14 B: all s1, s2: Student, p: Project | s1->p in projects and s2->p in projects	  implies (not some p2: Project| s1->p2 in projects and s2->p2 in projects and p!=p2)
+

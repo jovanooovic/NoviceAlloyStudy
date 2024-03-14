@@ -1,0 +1,15 @@
+inv2 B: all w: Worker | one w.workers	all ws: Workstation | all w1, w2: ws.workers | w1 = w2
+inv2 B: all w: Worker | one w.succ	all ws: Workstation | all w1, w2: ws.workers | w1 = w2
+inv2 B: all w: Worker | one w.succ
+inv2 S: all ws: Workstation | some w: ws.workers	all w: Worker | one w.workstation	all w: Worker, ws1, ws2: w.workstation | ws1 != ws2 => ws1 not in ws2.^succ and ws2 not in ws1.^succ
+inv2 S: all ws,w | w in worstation.w
+inv2 S: all w | w in worstation.w
+inv2 T: Worker & Workstation
+inv2 T: all w: Worker | w & Workstation
+inv2 T: all w: Worker | w & workstation
+inv2 S: all w: Worker | not in w - workstation
+inv2 T: all w: Worker | ~(w not in workstation)
+inv2 T: all w: Worker | ~(w in workstation)
+inv2 T: all w: Worker | (w in workstation)
+inv2 C: workers in Workstation one -> some Worker
+

@@ -1,0 +1,16 @@
+inv3 B: all x : Exit | all y : Track | x in y.signals iff no succs.y
+inv3 U: all x : Exit | all y : Track | x in y.signals implies no succs.y
+inv3 B: all x : Exit | all y : Track | x in y.signals iff no succs.y
+inv3 B: all x : Exit | all y : Track | x in y.signals iff no y.succs
+inv3 U: all x : Exit | all y : Track | x in y.signals implies no y.succs
+inv3 B: all x : Exit | all y : Track | x in y.signals iff no succs.y
+inv3 B: all x : Exit | all y : Track | x in y.signals iff no y.succs
+inv3 U: all x : Exit | all y : Track | x in y.signals implies no y.succs
+inv3 U: all x : Signal | all y : Track | (x in Exit and x in y.signals) implies no y.succs
+inv3 U: all y : Track | all x : Signal | (x in Exit and x in y.signals) implies no y.succs
+inv3 B: all y : Track | all x : Signal | (x in Exit and x in y.signals)
+inv3 U: all y : Track | all x : Signal | (x in Exit and y in x.signals) implies no y.succs
+inv3 U: all y : Track | all x : Signal | (x in Exit and x in y.signals) implies no y.succs
+inv3 U: all y : Track | all x : Signal | x in Exit implies no y.succs
+inv3 U: all y : Track | all x : Signal | (x in Exit and x in y.signals) implies no y.succs
+

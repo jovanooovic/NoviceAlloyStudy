@@ -1,0 +1,4 @@
+inv8 B: all u:User, a: Ad | a in u.posts => a in u.follows or a in u.suggested
+inv8 B: all u:User, a: Ad | a in u.posts => a in u.follows.posts or a in u.suggested.posts
+inv8 C: all u:User, a: Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+

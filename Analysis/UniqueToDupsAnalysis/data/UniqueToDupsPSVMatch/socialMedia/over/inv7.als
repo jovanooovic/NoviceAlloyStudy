@@ -1,0 +1,179 @@
+all u : User | suggested = u -> ((u.follows).follows - u.follows)
+-- div,2
+all u : User | (u -> ((u.follows).follows - (u.follows))) = suggested
+-- div,1
+no x, y : User | x in y.follows => y in x.suggested + x.follows
+-- div,1
+all u1,u2 : User | u1 in follows.u2 && follows.u2 not in u1.follows
+-- div,1
+all u : User | suggested = ((u.follows).follows - (u.follows + u)) -> u
+-- div,1
+all u : User | (u -> ((u.follows).follows - (u.follows + u))) = suggested
+-- div,3
+all s, f, nf : univ | all u: User | u.follows in f and nf in u.follows
+-- div,3
+all s, f, nf : univ | all u: User | u.follows in f and u.follows not in nf
+-- div,1
+all u1, u2: User | u2 in u1.suggested and u2 in u1.follows.follows and u1 != u2
+-- div,1
+all u,s:User | (s in u.suggested implies s in u.follows.follows) and s not in u.follows
+-- div,1
+all x,y,z : User |
+(y->x in follows and x->z in follows and y->z not in follows and x!=z)
+-- div,1
+all u,s : User| (s in u.suggested) and (u not in follows.s) and some (u.follows & follows.s)
+-- div,1
+all u1, u2, u3 : User | u1 -> u2 in suggested and u1 -> u3 in follows and not u1 -> u2 in follows
+-- div,2
+all u,s : User| (s in u.suggested) and (u not in follows.s) and some (follows.u & follows.s)
+-- div,1
+all u1,u2: User | u2 in u1.suggested and (u2 in u1.follows.follows - u1.follows - u1)
+-- div,1
+all x,y,z : User | y in x.follows and z in y.follows and z not in x.follows and z in x.suggested
+-- div,1
+all a, b, c : User | b in a.suggested iff b in c.follows and c in a.follows and b not in a.follows
+-- div,1
+all u,x,y : User | u -> x in follows and x -> y in follows and u -> y not in follows iff u -> y in suggested
+-- div,1
+all u,x,y : User | u -> x in follows and x -> y in follows and no (u.follows & y) iff u -> y in suggested
+-- div,1
+all u : User | u.follows.follows in u.suggested && u.follows not in u.suggested && u not in u.suggested
+-- div,2
+all u1, u2: User | u1 not in u2 and u2 in u1.follows.follows and u2 not in u1.follows and u2 in u1.suggested
+-- div,1
+all x, y, z: User | x -> y in suggested iff x -> z in follows and z -> y in follows and not x -> y in follows
+-- div,1
+all u : User | u.follows.follows in u.suggested && u not in u.suggested && u.follows not in u.suggested
+-- div,1
+all u:User | no u.suggested&u.follows and u not in u.suggested and u.suggested = u.follows.follows
+-- div,1
+all u1, u2, u3: User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) && (u1 in suggested.u3)
+-- div,1
+all x,y,z : User | y in x.follows and z in y.follows and z not in x.follows and z in x.suggested and x not in z
+-- div,1
+all u1, u2, u3 : User | (u3 in u1.suggested) <=> ((u2 in u1.follows and u3 in u2.follows) and u3 not in u1.follows)
+-- div,1
+all u1,u2,u3:User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows iff u3 not in u1.follows
+-- div,1
+all x, y:User | x not in x.suggested and y not in x.follows and y in x.follows.follows iff y in x.suggested
+-- div,1
+all u, y, z : User | (y in u.follows and z in y.follows and z not in u.follows and u != z) <=>  z in u.suggested
+-- div,1
+all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+-- div,2
+all u1,u2,u3:User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+-- div,3
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u3 != u1 and u3 in u2.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and not(u1->u3 in follows) <=> u3->u1 in suggested
+-- div,1
+all u1,u2,u3:User | u1->u2 in follows and u2->u3 in follows and not u1->u3 in follows <=> u1->u3 in suggested
+-- div,2
+all u1, u2, u3 : User | (u3 in u1.suggested) <=> ((u2 in u1.follows and u3 in u2.follows) and u3 not in u1.follows and u3 != u1)
+-- div,2
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u2 in u1.follows and u3 in u2.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3 : User | (u1 != u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+<=> (u1->u3 in suggested)
+-- div,1
+all u1,u2,u3:User | u1->u3 in suggested <=> (u1->u3 not in follows and u1!=u3) and u1->u2 in follows and u2->u3 in follows
+-- div,1
+all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3)
+-- div,1
+all x:User | x not in x.suggested
+all x, y:User |y in x.suggested  and y not in x.follows and y in x.follows.follows
+-- div,1
+all u1 : User, u2 : User, u3 : User | u1->u2 in suggested and u2->u1 not in follows and u3->u1 in follows and u2->u3 in follows
+-- div,1
+all x:User | x not in x.suggested
+all x, y:User | y in x.suggested iff y not in x.follows and y in x.follows.follows
+-- div,3
+all x:User | x not in x.suggested
+all x, y:User | y not in x.follows and y in x.follows.follows iff y in x.suggested
+-- div,2
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u3 != u1 and u3 in u2.follows and u2 in u1.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3 : User | u1!=u2 and u2!=u3 and u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u2 != u3 and u2 in u1.follows and u3 in u2.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3 : User | u3 in u1.suggested <=> u1!=u2 and u2!=u3 and u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows
+-- div,1
+all u1, u2, u3 : User | u3 in u1.suggested <=> u3 not in u1.follows and u1!=u2 and u2!=u3 and u2 in u1.follows and u3 in u2.follows
+-- div,2
+all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff y -> u in suggested
+-- div,1
+all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+-- div,7
+all u:User| u not in u.suggested
+all u1,u2:User| (u2 in u1.follows.follows and u2 not in u1.follows) iff (u2 in u1.suggested)
+-- div,1
+all u1, u2, u3 : User | (u1 -> u2 in follows and u2 -> u3 in follows and not u1 -> u3 in follows and u1 != u2 and u2 != u3) <=> u1 -> u3 in suggested
+-- div,1
+all x : User | all y: User | all z: User |( (z in x.suggested) => (z in y.follows and y in x.follows) ) and z not in x.follows
+-- div,1
+all x:User | x not in x.suggested
+all x, y:User |x!=y implies y in x.suggested iff y not in x.follows and y in x.follows.follows
+-- div,2
+all x: User | x not in x.suggested
+all x, z: User | x!=z and z in x.suggested iff z not in x.follows and z in x.follows.follows
+-- div,1
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u3 != u1 and u2 != u3 and u2 in u1.follows and u3 in u2.follows <=> u3 in u1.suggested
+-- div,1
+all u1, u2, u3 : User | (u3 in u1.suggested) <=> ((u2 in u1.follows and u3 in u2.follows) and (u3 not in u1.follows) and (u3 != u2) and (u2 != u1) and (u3 != u1))
+-- div,1
+all u1, u2, u3 : User | u3 not in u1.follows and u2 != u1 and u3 != u1 and u2 != u3 and u3 in u2.follows and u2 in u1.follows <=> u3 in u1.suggested
+-- div,1
+all u,x,y : User+Influencer | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+-- div,1
+all u, s : User |
+u != s && u->s not in follows
+&& some f : User |
+s != f && u != f && u->f in follows && f->s in follows => u->s in suggested
+-- div,2
+all u:User | u->u not in suggested
+all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+-- div,1
+all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+
+
+all u : User | u.suggested = u.follows.follows
+-- div,1
+all u:User | u->u not in suggested
+all u1, u2, u3: User | u1 != u2 and u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+-- div,1
+all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+
+
+all u : User | u.suggested = (u.follows.follows - u.follows )
+-- div,1
+all user : User + Influencer | (user not in user.suggested) and (user.follows not in user.suggested)
+all user1, user2 : User + Influencer | (user2 in user1.follows.follows) implies user2 in user1.suggested
+-- div,1
+all u, s : User | u->s in suggested =>
+u->s not in follows
+&& some f : User |
+u != s && u->f in follows && f->s in follows
+all u : User | u.suggested = u.follows.follows-u.follows
+-- div,1
+all x: User | all f : x.follows.follows | (f not in x.follows ) => f in x.suggested
+all x: User | all f : x.suggested |  f in x.follows.follows and f not in x.follows
+all x: User | x not in x.suggested
+-- div,1
+all u : User | u not in u.follows + u.suggested
+all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x
+all x : User | all u : x.follows.follows - x - x.follows | u in x.suggested
+-- div,2
+all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested
+all u1 , u2 : User | u2 in Influencer implies u2 not in u1.suggested
+all u1 : User | u1 not in u1.suggested
+all u1, u2 : User | (u2 not in u1.^follows or u2 in u1.follows) implies u2 not in u1.suggested
+-- div,1
+all user1, user2 : User |
+user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 not in follows implies user1->user3 in suggested
+
+
+
+all user1, user2, user3 : User |
+user1->user2 in follows and user2->user3 in follows and user1->user3 in follows implies user1->user3 not in suggested
+-- div,1

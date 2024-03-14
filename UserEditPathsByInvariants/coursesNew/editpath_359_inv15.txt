@@ -1,0 +1,5 @@
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies 	  (all g1,g2 : Grade | x->g1  and col-> g2 )
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies 	  (all g1,g2 : Grade | (x->g1 in c.grades and col-> g2 in c.grades) implies g1-g2 < 2 and g1-g2>-2)
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies (all g1,g2 : Grade | (x->g1 in c.grades and col-> g2 in c.grades) implies g1-g2 < 2 and g1-g2>-2)
+inv15 E:
+

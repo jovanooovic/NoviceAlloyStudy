@@ -1,0 +1,6 @@
+inv3 T: all e:Exit | succs.e
+inv3 T: all t:Track | succs.t iff t in Exit
+inv3 T: all t:Track | succs.t in signals iff t in Exit
+inv3 B: all t:Track | no succs.t iff t in Exit
+inv3 C: all t:Track | no t.succs iff t in Exit
+

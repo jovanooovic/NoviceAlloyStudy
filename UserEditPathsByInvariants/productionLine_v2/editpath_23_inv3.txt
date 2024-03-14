@@ -1,0 +1,8 @@
+inv3 S: all c: Component, one w: Workstation | c in w.begin
+inv3 T: all c: Component | one w: Workstation | c in w.begin
+inv3 O: all c: Component | one w: Workstation | c in begin
+inv3 B: all c: Component | one w: Workstation | c.workstation in begin
+inv3 T: all c: Component | one w: Workstation | c.w in begin
+inv3 T: all c: Component | one w: Workstation | w in c.begin
+inv3 C: all c: Component | one ws: Workstation | ws in c.workstation
+

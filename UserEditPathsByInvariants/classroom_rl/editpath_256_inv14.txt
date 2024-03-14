@@ -1,0 +1,18 @@
+inv14 T: all s : Student, t : Teacher | some s.(Class.Groups) implies t.(Class)
+inv14 T: all s : Student, t : Teacher | some s.(Class.Groups) implies t.(Class.Groups)
+inv14 T: all s : Student, t : Teacher | (some s.(Class.Groups)) implies t.(Class.Groups)
+inv14 B: all s : Student, t : Teacher | (some s.(Class.Groups)) implies some t.(Class.Groups)
+inv14 B: all s : Student, t : Teacher | some s.(Class.Groups) implies some t.(Class.Groups)
+inv14 B: all s : Student, t : Teacher | some s.(Class.Groups) implies some t.(Class.Groups)
+inv14 S: all s : Student, t : Teacher | some s.(Class.Groups)
+inv14 S: all s : Student, t : Teacher | some s.(Class.Groups) & Teacher<:Teaches).c
+inv14 S: all s : Student, t : Teacher | some s.(Class.Groups) & Teacher<:Teaches).c
+inv14 S: all s : Student, t : Teacher | some s.(Class.Groups) implies some t<:Teaches).Class
+inv14 B: all s : Student | some s.(Teacher<:Teaches)
+inv14 B: all s : Student, c : Class | some (Teacher<:Teaches).c implies some s.(Teacher<:Teaches)
+inv14 U: all s : Student, c : Class | some (Teacher<:Tutors).c implies some s.(Teacher<:Teaches)
+inv14 B: all s : Student, c : Class | some (Teacher<:Teaches).c implies some s.(Teacher<:Tutors)
+inv14 U: all s : Student, c : Class | some c.(Teacher<:Teaches) implies some s.(Teacher<:Tutors)
+inv14 B: all s : Student, c : Class | some s.(Teacher<:Tutors) implies some c.(Teacher<:Teaches)
+inv14 B: all s : Person, c : Class | some s.(Teacher<:Tutors) implies some c.(Teacher<:Teaches)
+

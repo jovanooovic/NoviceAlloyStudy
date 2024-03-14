@@ -1,0 +1,21 @@
+inv1 T: one p1 : Person | all c : Course | c in p1.grades
+inv1 T: one p1 : Person | all c : Course | c in grades.p1
+inv1 O: one p1 : Person | all c : Course | c in grades.p1.Grade
+inv1 O: one p1 : Person | all c : Course | c in grades.p1.Person
+inv1 T: one p1 : Person | all c : Course | c in grades.p1
+inv1 T: one p1 : Person | all c : Course | c in p1.grades
+inv1 T: one p1 : Person | all c : Course | c in grades.p1
+inv1 S: one p1 : Person | all c : Course | c in (p1.Grades).grades
+inv1 T: one p1 : Person | all c : Course | c in (p1.Grade).grades
+inv1 T: one p1 : Person | all c : Course | c in (p1.Person).grades
+inv1 T: one p1 : Person | all c : Course | 	c in (p1.Person).grades
+inv1 T: one p1 : Person | all c : Course | 	c in (p1.Person).grades
+inv1 T: one p1 : Person | all c : Course | 	c in (p1.Grade).grades
+inv1 T: one p1 : Person | all c : Course | 	c in (p1.Grade.grades)
+inv1 O: one p1 : Person | all c : Course | 	c in (grades.p1.Grade)
+inv1 O: one p1 : Person | all c : Course | 	c in (grades.p1.Grade)
+inv1 T: one p1 : Person | all c : Course | 	c in (grades.Grade)
+inv1 B: one p1 : Person | all c : Course | 	c in (grades.Grade.p1)
+inv1 T: one p1 : Person | all c : Course | c in (grades.Grade)
+inv1 B: one p1 : Person | all c : Course | c->p1 in (grades.Grade)
+

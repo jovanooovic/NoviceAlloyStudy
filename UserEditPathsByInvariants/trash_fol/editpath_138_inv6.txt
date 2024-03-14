@@ -1,0 +1,12 @@
+inv6 S: all f,g : File | f->g in link and
+inv6 T: all f,g : File | all l : link | g->l in link and f->l in link implies f=g
+inv6 T: some f,g : File | all l : link | g->l in link and f->l in link implies f=g
+inv6 T: all l : link , g,f : File | g->l in link and f->l in link implies g=f
+inv6 T: all l : link , g,f : File | g->l->f in link and f->l->g in link implies g=f
+inv6 T: all f : File, l,t: link | f->l in link and f->t in link implies l=t
+inv6 T: all f : File, l,t: link | f->l in File and f->t in File implies l=t
+inv6 T: all f,g : File | all l,t : link | f->l->g in File and f->t->g in File implies l=t
+inv6 T: all f,g : File | all l,t : link | f->l->g in link and f->t->g in link implies l=t
+inv6 T: all f,g : File, l,t : link | f->l->g in link and f->t->g in link implies l=t
+inv6 T: all f : File, l,t: link | f->l in link and f->t in link implies l=t
+

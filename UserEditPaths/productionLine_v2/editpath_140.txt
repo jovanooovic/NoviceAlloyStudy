@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: Worker in Human+Robot
+inv3 E: 
+inv2 C: all w: Workstation | some w.workers	all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 C: no Material.parts	all c : Component | some c.parts
+inv5 O: all w : Workstation | w.workers in Human or w.workers in Robot
+inv6 B: no parts & iden
+inv6 O: no *parts & iden
+inv6 O: no ^parts & iden
+inv6 U: iden not in ^parts
+inv6 O: no iden & ^parts
+inv7 O: all d : Dangerous, c : ^parts.d | c in Dangerous
+inv8 C: no Dangerous.workstation.workers & Human
+inv8 C: no Dangerous.workstation.workers & Human
+inv9 C: Workstation = begin.*succ	no end.succ	all w : Workstation-end | one w.succ
+inv9 U: Workstation = begin.*succ		all w : Workstation-end | one w.succ
+inv9 C: Workstation = begin.*succ	no end.succ	all w : Workstation-end | one w.succ
+inv10 B: all c : Component, p : c.parts | c.workstation in p.workstation.^succ
+inv10 B: all c : Component, p : c.parts&Component | c.workstation in p.workstation.^succ
+

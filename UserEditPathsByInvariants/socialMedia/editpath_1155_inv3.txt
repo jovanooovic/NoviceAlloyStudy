@@ -1,0 +1,6 @@
+inv3 O: all x : User | x.sees in (x.follows.posts)
+inv3 T: all x : User | x.sees in (x.follows.posts or Ad)
+inv3 T: all x : User | x.sees in x.follows.posts or Ad
+inv3 O: all x : User | x.sees in x.follows.posts
+inv3 C: all x : User | x.sees in x.follows.posts + Ad
+

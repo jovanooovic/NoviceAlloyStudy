@@ -1,0 +1,5 @@
+inv7 B: all s : Student | all c : s.enrolled | #s->(c.projects) <= 1
+inv7 B: all s : Student | all c : s.enrolled | #(s->(c.projects)) <= 1
+inv7 T: all s : Student | all c : s.enrolled | #(s->(c.projects) & s.projects) <= 1
+inv7 U: all s : Student | all c : s.enrolled | #(s->(c.projects) & projects) <= 1
+

@@ -1,0 +1,10 @@
+inv5 B: all p : Project | all per : Person - Professor | p in per.projects
+inv5 B: all p : Project | all per : Person - Professor | p in per.projects		all p : Project | all per : Person | p in per.projects
+inv5 B: all p : Project | all prof : Professor | p  not in prof.projects		all p : Project | all per : Person - Professor | p in per.projects
+inv5 S: all p : Person - Student | p.projects = None		all p : Project | all per : Person - Professor | p in per.projects
+inv5 C: all p : Person - Student | p.projects = none		all p : Project | p in Student.projects
+inv5 B: all p : Professor | p.projects = none		all p : Project | p in Student.projects
+inv5 C: all p : Person - Student | p.projects = none		all p : Project | p in Student.projects
+inv5 C: all p : Person - Student | p.projects = none		all p : Project | p in Student.projects
+inv5 C: all p : Person - Student | p.projects = none		all p : Project | p in Student.projects
+

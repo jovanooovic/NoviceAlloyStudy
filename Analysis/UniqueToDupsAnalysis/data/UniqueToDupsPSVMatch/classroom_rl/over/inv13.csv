@@ -1,0 +1,7 @@
+"all p : Person | p in Teacher && p.Tutors in Student",2
+"no(Student & Person.Tutors) and (no (Tutors.(Person-Student)))",1
+"no ((Person-Teacher).Tutors) and no (Tutors -> (Person-Student))",2
+"no Student.Tutors
+    Person.Tutors in Student
+    no Tutors.Teacher
+    Tutors.Person in Teacher",3

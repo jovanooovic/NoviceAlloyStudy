@@ -1,0 +1,7 @@
+inv8 S: always all f, g : File | eventually
+inv8 T: always all l : link | eventually l in Trash
+inv8 S: always all link | eventually link in Trash
+inv8 T: always all f, g : File | f->g in link implies eventually link in Trash
+inv8 S: always all f, g : File | f->g in link implies eventually in Trash
+inv8 C: always all f, g : File | f->g in link implies eventually f in Trash
+

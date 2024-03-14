@@ -1,0 +1,6 @@
+inv8 S: all d : Dangerous, ws : Workstation , h : Human | ws in c.workstation implies h not in ws.workstation
+inv8 U: all d : Dangerous, ws : Workstation , h : Human | ws in d.workstation implies h not in ws.workstation
+inv8 B: all d : Dangerous, ws : Workstation , h : Human | ws in d.workstation and h not in ws.workstation
+inv8 C: all c: Dangerous, ws : c.workstation | no (ws.workers & Human)
+inv8 C: all d: Dangerous, ws : d.workstation | no (ws.workers & Human)
+

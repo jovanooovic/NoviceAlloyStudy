@@ -1,0 +1,7 @@
+inv4 S: all u : User, a : Add | a in u.posts => u.posts in Ad
+inv4 C: all u : User, a : Ad | a in u.posts => u.posts in Ad
+inv4 C: all u : User, a : Ad | a in u.posts => u.posts in Ad
+inv4 S: all u : User one a : Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User, d: Ad | one a: Ad | u in a.~posts => u.posts in d
+inv4 B: all u : User | one a : Ad | a in u.posts => u.posts in Ad
+

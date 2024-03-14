@@ -1,0 +1,12 @@
+inv14 S: all s1:Student, s2:Student, p1:Project, p2:Project | p1 in s.projects and p2 in s.projects and s1!=s2 and p1!=p2) implies (s1 not p2.projects and s2 not in p1.projects)
+inv14 S: all s1:Student, s2:Student, p1:Project, p2:Project | (p1 in s.projects and p2 in s.projects and s1!=s2 and p1!=p2) implies (s1 not p2.projects and s2 not in p1.projects)
+inv14 U: all s1:Student, s2:Student, p1:Project, p2:Project | 	  	(p1 in s1.projects and p2 in s1.projects and s1!=s2 and p1!=p2) implies (s1 not in p2.projects and s2 not in p1.projects)
+inv14 U: all s1:Student, s2:Student, p1:Project, p2:Project | s1 not in p2.projects and s2 not in p1.projects
+inv14 U: all s1:Student, s2:Student, p1:Project, p2:Project | 	  	(p1 in s1.projects and p2 in s1.projects and s1!=s2 and p1!=p2) implies (s1 not in p2.projects and s2 not in p1.projects)
+inv14 U: all s1,s2 : Student | all p1,p2 : Project |	  	(s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies	  	( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 B: all s1,s2 : Student | all p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p1 not in s2.projects)
+inv14 U: all s1:Student, s2:Student, p1:Project, p2:Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies ( p2 not in s1.projects) or (p2 not in s2.projects)
+inv14 B: all s1,s2 : Student, p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p1 not in s2.projects)
+inv14 S: all s1,s2 : Student all p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p2 not in s2.projects)
+inv14 U: all s1,s2 : Student | all p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p2 not in s2.projects)
+

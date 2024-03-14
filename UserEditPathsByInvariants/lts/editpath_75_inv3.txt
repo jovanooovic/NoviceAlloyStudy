@@ -1,0 +1,6 @@
+inv3 U: all s:State, e:Event | lone s.trans.e
+inv3 U: all s:State | lone s.trans.Event
+inv3 B: all s:State | lone s.trans.State
+inv3 C: all s:State , e:Event| lone e->State & s.trans
+inv3 O: all s:State| lone Event->State & s.trans
+

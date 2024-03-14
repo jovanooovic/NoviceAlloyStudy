@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 S: all x: Woker| x in Human or x in Robot
+inv1 C: all x: Worker| x in Human or x in Robot
+inv2 S: all x: Workstation | some y : Worker | y in x.wokers	all x, y: Worker , z : Workstation | x in z.workers and y in z.workers implies x = y
+inv2 S: all x: Workstation | some y : Worker | y in x.wokers	all x, y: Worker , z : Workstation | x in z.workers and y in z.workers implies x = y
+inv2 B: all x: Workstation | some y : Worker | y in x.workers	all x, y: Worker , z : Workstation | x in z.workers and y in z.workers implies x = y
+inv1 C: all x: Worker| x in Human or x in Robot
+inv2 B: all x: Workstation | some y : Worker | y in x.workers	all x, y: Worker , z : Workstation | x in z.workers and y in z.workers implies x = y
+inv2 B: all x: Workstation | some y : Worker | y in x.workers	all x, y: Worker , z : Workstation | z in workers.x and z in workers.y implies x = y
+inv2 S: all x: Workstation | some y : Worker | y in x.workers	all x Worker , y , z : Workstation | x in y.workes and x in z.workers implies y = z
+inv2 S: all x: Workstation | some y : Worker | y in x.workers	all x Worker | all y, z : Workstation | x in y.workes and x in z.workers implies y = z
+inv2 S: all x: Workstation | some y : Worker | y in x.workers	all x: Worker | all y, z : Workstation | x in y.workes and x in z.workers implies y = z
+inv2 U: all x: Workstation | some y : Worker | y in x.workers	all x: Worker | all y, z : Workstation | x in y.workers and x in z.workers implies y = z
+inv2 B: all x: Workstation | all y : Worker | y in x.workers	all x: Worker | all y, z : Workstation | x in y.workers and x in z.workers implies y = z
+inv2 U: all x: Workstation | some y : Worker | y in x.workers	all x: Worker | all y, z : Workstation | x in y.workers and x in z.workers implies y = z
+inv2 C: all x: Workstation | some y : Worker | y in x.workers	all x: Worker | some y : Workstation | x in y.workers	all x: Worker | all y, z : Workstation | x in y.workers and x in z.workers implies y = z
+inv3 U: all x: Component | some y : Workstation | y in x.workstation
+inv3 C: all x: Component | some y : Workstation | y in x.workstation	all x: Component | all y, z : Workstation | x in workstation.y and x in workstation.z implies y = z
+inv4 U: all x: Product |  x in Component implies some x.parts
+inv4 T: all x: Product |  x in Component implies some x.parts	all x: Product |  x in Material implies none x.parts
+inv4 S: all x: Product |  x in Component implies some x.parts	all x: Product |  x in Material implies empty x.parts
+inv4 C: all x: Product |  x in Component implies some x.parts	all x: Product |  x in Material implies no x.parts
+inv4 C: all x: Product |  x in Component implies some x.parts	all x: Product |  x in Material implies no x.parts
+inv5 U: all x, y: Worker, z, w: Workstation | x in Human and y in Robot and x in workers.z and y in workers.w implies z != w
+inv5 C: all x, y: Worker, z, w: Workstation | x in Human and y in Robot and x in z.workers and y in w.workers implies z != w
+

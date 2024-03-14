@@ -1,0 +1,13 @@
+inv6 B: all i:Influencer | all p:Photo | i->p in posts implies (all d:Day | p->d in date)
+inv6 U: all i:Influencer | all p:Photo | i->p in posts implies (one d:Day | p->d in date)
+inv6 T: all i:Influencer | all p:Photo | one d:Day | i->p in posts and p-d in date
+inv6 T: all i:Influencer | all p:Photo | all d:Day | i->p in posts and p-d in date
+inv6 T: all i:Influencer | all p:Photo | all d:Day | p->d in date and i-p in posts
+inv6 T: all i:Influencer | some p:Photo | all d:Day | p->d in date and i-p in posts
+inv6 T: all i:Influencer | some p:Photo | all d:Day | p->d in date and i-p in posts
+inv6 O: all i:Influencer | some p:Photo | all d:Day | p->d in date and i->p in posts
+inv6 C: all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts
+inv6 C: all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts
+inv6 C: all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts
+inv6 C: all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts
+

@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 O: one Entry and one Exit
+inv1 O: some Entry and one Exit
+inv1 C: some Entry and some Exit
+inv1 C: some Entry and some Exit
+inv2 C: all sign : Signal | one tr : Track | sign in tr.signals
+inv3 U: all tr : Exit | no tr.succs
+inv3 U: all tr : Track | no tr.succs implies tr in Exit
+inv3 S: all tr : Track and no tr.succs implies tr in Exit
+inv3 U: all tr : Track | no tr.succs implies tr in Exit
+inv3 S: all tr : Exit implies no tr.succs
+inv3 S: all tr | Exit implies no tr.succs
+inv3 U: all tr : Exit | no tr.succs
+inv3 B: all tr : Track | no succs.tr implies tr in Exit
+inv3 B: all tr : Track | (no succs.tr or tr in succs.tr) implies tr in Exit
+inv3 B: all tr : Track | (no tr.succs or tr in tr.succs) implies tr in Exit
+inv3 U: all tr : Track | (no tr.succs and tr in tr.succs) implies tr in Exit
+inv3 B: all tr : Track | (no tr.succs or tr in tr.succs) implies tr in Exit
+inv5 S: |
+inv5 S: |
+inv3 B: all tr : Track | (no tr.succs or tr in  tr.succs) implies tr in Exit
+inv3 B: all tr : Track | (no tr.succs or tr in  tr.succs) implies tr in Exit
+inv3 U: all tr : Track | (no tr.succs) implies tr in Exit
+inv3 U: all tr : Track | (no tr.succs) implies (tr in Exit or (tr in Exit and tr in Entry and tr in Junction))
+inv3 U: all tr : Track | (no tr.succs implies tr in Exit) or (tr in Exit and tr in Entry and tr in Junction)
+inv3 U: all tr : Track | (no tr.succs implies tr in Exit) or (tr in Exit and tr in Entry and tr in Junction and tr in tr.succs)
+inv3 S: all tr : Exit implies (no tr.succs or (tr in Entry and tr in junction and tr in tr.succs)
+inv3 S: all tr : Exit implies (no tr.succs or (tr in Entry and tr in junction and tr in tr.succs) )
+inv3 S: all tr : Exit implies (no tr.succs or (tr in Entry and tr in junction and tr in tr.succs))
+inv3 S: all tr : Exit implies (no tr.succs or (tr in Entry and tr in Junction and tr in tr.succs))
+inv3 S: all tr : Exit implies (no tr.succs or tr in Entry )
+inv3 U: all tr : Exit | (no tr.succs or (tr in Entry and tr in Junction and tr in tr.succs))
+inv3 S: all tr : Exit and (no tr.succs or (tr in Entry and tr in Junction and tr in tr.succs))
+inv3 U: all tr : Track | tr in Exit implies (no tr.succs or (tr in Entry and tr in Junction and tr in tr.succs))
+inv3 B: all tr : Track | (no tr.succs or (tr in Entry and tr in Junction and tr in tr.succs)) implies tr in Exit
+inv3 U: all tr : Track | (no tr.succs or (tr in Entry and tr in Junction and tr in Exit and tr in tr.succs)) implies tr in Exit
+

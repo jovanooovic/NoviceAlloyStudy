@@ -1,0 +1,15 @@
+inv4 T: all u : User, y : Photo | y in u.posts.Ad implies y in Ad
+inv4 T: all u : User, y : Photo | y in u.Ad implies y in Ad
+inv4 U: all u : User, y : Photo | y in Ad implies y in Ad
+inv4 U: all y : Photo | y in Ad implies y in Ad
+inv4 O: all u : User, y : Photo | y in Ad implies u.posts in Ad
+inv4 B: all u : User | some y : Photo | y in u.posts and y in Ad implies u.posts in Ad
+inv4 C: all u : User | all y : Photo | y in u.posts and y in Ad implies u.posts in Ad
+inv4 C: all u : User, y : Photo | y in u.posts and y in Ad implies u.posts in Ad
+inv4 C: all u : User, y : Photo | y in u.posts & Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts & Ad implies u.posts in Ad
+inv4 U: all u : User | one u.posts & Ad implies u.posts in Ad
+inv4 C: all u : User | some  u.posts & Ad implies u.posts in Ad
+inv4 T: all u : User | some u.posts & Ad implies u.posts + Ad
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+

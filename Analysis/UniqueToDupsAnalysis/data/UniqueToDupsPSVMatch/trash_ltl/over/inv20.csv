@@ -1,0 +1,12 @@
+"always all f : Trash | f not in Protected",1
+"always all p : File | p in Trash since p not in Protected",1
+"always all f: File | f in Trash since f not in Protected",23
+"always all t: File | t in Trash since t not in Protected",1
+"always (all f:File | f in Trash since no (f&Protected) )",2
+"always all f : File | f in Trash releases f not in Protected",2
+"always all f : File | f in Trash triggered f not in Protected",2
+"always all f : Protected | f in Trash since f not in Protected",1
+"always (all f : Trash | f not in Protected releases f not in Trash)",1
+"always all f : File | f in Trash since f in File - Protected",1
+"always all f : File | always f in Trash since f not in Protected",1
+"always all f : File | f in Trash => historically f not in Protected",1

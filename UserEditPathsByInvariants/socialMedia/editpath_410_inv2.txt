@@ -1,0 +1,18 @@
+inv2 U: all u: User | one u
+inv2 O: all u: User | no follows.u
+inv2 O: all u: User | no u.follows
+inv2 T: all u: User | no u.follows.u
+inv2 T: all u: User | no u.follows.u
+inv2 T: all u: User | no u.follows.u
+inv2 T: all u: User | no u.follows.u
+inv2 T: all u: User | no u.follows.u
+inv2 T: iden u
+inv2 T: iden u.follows
+inv2 T: iden follows
+inv2 T: iden follows
+inv2 T: iden follows.u
+inv2 T: iden u.follows
+inv2 S: .no(follows & iden)
+inv2 C: no (follows & iden)
+inv2 C: no (follows & iden)
+

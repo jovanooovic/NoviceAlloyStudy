@@ -1,0 +1,15 @@
+inv1 E:
+inv1 T: all p: Person | p.enrolled not none => p in Student
+inv1 T: all p: Person | enrolled not none => p in Student
+inv1 O: all p: Person | p.enrolled in Course => p in Student
+inv1 O: all p: Person | p not in Student => p.enrolled not in Course
+inv1 B: all p: Person | one c: Course | p in Student => p.enrolled=c
+inv1 B: all p: Person | one c: Course | p in Student => p.enrolled in c
+inv1 B: all p: Person | one c: Course | p.enrolled in c => p in Student
+inv1 B: all p: Person | lone c: Course | p.enrolled in c => p in Student
+inv1 B: all p: Person | lone c: Course | c in p.enrolled => p in Student
+inv1 B: all p: Person | one c: Course | c in p.enrolled => p in Student
+inv1 B: all p: Person | lone c: Course | c in p.enrolled => (p in Student && p not in Professor)
+inv1 C: enrolled.Course in Student
+inv1 O: enrolled.Course = Student
+

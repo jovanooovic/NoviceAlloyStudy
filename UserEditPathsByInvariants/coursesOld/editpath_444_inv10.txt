@@ -1,0 +1,8 @@
+inv10 S: all p : Person, c: Course, g: Grade | c -> p -> g in Grades => p not in Professor
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades => p not in Professor
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor
+inv10 O: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor and p in Student
+inv10 O: all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p in Student
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades and p -> c in enrolled <=> p in Student
+inv10 B: all p : Person, c: Course, g: Grade | c -> p -> g in grades and p -> c in enrolled <=> p not in Professor
+

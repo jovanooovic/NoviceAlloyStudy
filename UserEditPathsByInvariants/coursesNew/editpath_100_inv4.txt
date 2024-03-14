@@ -1,0 +1,13 @@
+inv4 T: all x:Project | one projects.x
+inv4 T: all x:Project | one projects.x
+inv4 O: all x:Project | one x.projects
+inv4 T: all x:Project | one projects.x
+inv4 T: all x:Project | lone projects.x
+inv4 T: all x:Project, y:Course| lone x -> y in projects
+inv4 T: all x:Project | lone y:Course|  x -> y in projects
+inv4 U: all x:Project | lone y:Course|  y-> x in projects
+inv4 O: all x:Project |  one x.projects
+inv4 O: all x:Project |  one x.projects
+inv4 T: all x:Project |  one projects.x
+inv4 C: all x:Project |  one (Course <: projects).x
+

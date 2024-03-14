@@ -1,0 +1,6 @@
+inv10 S: all f:Track, j:Junction, s:Semaphore| j in f.sucss implies f-> s in signals
+inv10 B: all f:Track, j:Junction, s:Semaphore| j in f.succs implies f-> s in signals
+inv10 O: all f:Track, j:Junction| some s:Semaphore| j in f.succs implies f-> s in signals
+inv10 B: all f:Track, j:Junction| some s:Semaphore| j->f in succs implies f-> s in signals
+inv10 O: all f:Track, j:Junction| some s:Semaphore| j in f.succs implies f-> s in signals
+

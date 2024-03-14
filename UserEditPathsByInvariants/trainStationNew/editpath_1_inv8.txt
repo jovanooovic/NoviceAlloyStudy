@@ -1,0 +1,8 @@
+inv8 S: all e: Entry, x: Exit| x in e.^occurs
+inv8 O: all e: Entry, x: Exit| x in e.^succs
+inv8 O: all e: Entry, x: Exit| x in e.succs
+inv8 O: all e: Entry, x: Exit| x in e.^succs
+inv8 B: all t1,t2: Track|t1 in Entry and t2 in Exit =>  t1 in t2.^succs
+inv8 O: all t1,t2: Track|t1 in Entry and t2 in Exit =>  t2 in t1.^succs
+inv8 C: all disj t1,t2: Track|t1 in Entry and t2 in Exit =>  t2 in t1.^succs
+

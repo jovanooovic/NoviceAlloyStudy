@@ -1,0 +1,33 @@
+"noprev",1
+"Component.parts.postion.lte[Component.parts]",1
+"Component.parts.position.lte[Component.parts]",1
+"all c: Component | c.^parts in prevs[c.parts]",1
+"all c: Component | c.parts.position = prevs[c.parts]",1
+"all c: Component | c.parts.position in prevs[c.parts]",1
+"all c:Component | (c.position) == (c.^parts).position",1
+"all c:Component | c.part.position in c.position.~^next",1
+"all c : Component | all p : c.parts | p not in nexts[c]",1
+"all c:Component
+	p in c.parts
+	gt[c.position,p.position]",1
+"all c:Component
+	p in c.parts | gt[c.position,p.position]",1
+"all c:Component | p in c.parts | gt[c.position,p.position]",1
+"all c:Component | (c.parts.position) in  prevs(c.position)",1
+"all c: Component | p: c.^parts | p.position.lte[c.position]",1
+"all c:Component | p in c.parts => gt[c.position,p.position]",2
+"Component.parts.position in prevs[Components.position.next]",1
+"all c : Component, p : c.parts | c.position <= p.position.one",1
+"all c: Component | all p: p.parts | lt[p.position, c.position]",1
+"all c:Component | one p in c.parts => gt[c.position,p.position]",1
+"all c: Component | all p: p.parts | lte[p.position, c.position]",1
+"all c: Component | all p: c.parts | c.position <= p.position.one",1
+"all c : Components | all p : c.parts | p in c.position.prevs.parts",1
+"all c: Component | no {p: Product | p.position in ^next[c.position]}",1
+"all c: Component | c.^parts.position in c.positon + c.position.prevs",1
+"all c: Component | let parts = c.parts | lte[p.position, c.position]",1
+"all p : Position | position.p).parts not in position.(p.^next).parts",2
+"all disj c, c1 : Component | smaller[c.position, c1.position :Position]",1
+"all disj c, c1 : Component | smaller[c.position, c1.position : Position]",1
+"all c : Component, pos : c.position | all p : c.parts | p.position.leq[pos]",1
+"all p : Position | no (position.p <: Components) & (position.(p.^next) <: Components)",1

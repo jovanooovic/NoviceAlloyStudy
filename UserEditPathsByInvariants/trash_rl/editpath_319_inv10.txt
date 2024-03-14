@@ -1,0 +1,22 @@
+inv10 T: all f1, f2 : File | f1.link in Trash & f1 in Trash
+inv10 T: all f : File | f.link in Trash & f in Trash
+inv10 T: all f : File | no f.link in Trash & f in Trash
+inv10 T: all f : File | no f.link in Trash + f in Trash
+inv10 T: all f : File | no f.link in Trash & f in Trash
+inv10 T: all f : File | f.link in Trash & f in Trash
+inv10 T: all f : File | f.link in Trash -> f in Trash
+inv10 T: all f : File | no f.link in Trash & f in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 T: all f : File | no (f.link & f) in Trash
+inv10 S: all f : File | f in Trash implies f^.link in Trash
+inv10 C: all f : File | f in Trash implies f.^link in Trash
+inv10 B: all f : File | f.^link in Trash implies f in Trash
+inv10 C: all f : File | f in Trash implies f.^link in Trash
+inv10 C: all f : File | f in Trash implies f.^link in Trash
+inv10 C: all f : File | f in Trash implies f.^link in Trash
+

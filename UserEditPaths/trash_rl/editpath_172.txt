@@ -1,0 +1,61 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv1 C: no Trash
+inv3 E: 
+inv3 E: 
+inv1 C: no Trash
+inv2 B: Trash = File.link
+inv2 C: Trash = File
+inv3 E: 
+inv3 C: some Trash
+inv4 E: 
+inv4 O: all p: File |	not (p in Trash)
+inv4 C: all p: Protected |	not (p in Trash)
+inv5 E: 
+inv5 O: Trash = File - Protected
+inv5 C: all f: File - Protected | f in Trash
+inv5 C: all f: File - Protected | f in Trash
+inv6 C: all f: File | lone f.link
+inv6 C: all f: File | lone f.link
+inv7 B: all f: File | some f.link implies !(f in Trash)
+inv7 B: all f: File | f in Trash implies no f.link
+inv7 B: all f: Trash | no f.link
+inv7 T: all f: Trash | f.link
+inv7 B: all f: Trash | no f.link
+inv7 B: all f: Trash | some f.link
+inv7 B: some f: Trash | some f.link
+inv7 B: some f: Trash | no f.link
+inv7 B: all f: Trash | no f.link
+inv8 C: all f: File | no f.link
+inv8 C: all f: File | no f.link
+inv9 B: File.^link = File
+inv9 U: File.*link = File
+inv9 U: File.^link = File.link
+inv9 B: File.*link = File.link
+inv9 T: File.^link = File.link - iden
+inv9 O: File.^link = File.link - File.iden
+inv9 C: all f: File.link| no f.link
+inv10 E: 
+inv10 B: all t: Trash | all f: File | t != f.*link
+inv10 B: all t: Trash | all f: File | t != f.^link
+inv10 S: !(any f: File - Trash | f.^link in Trash)
+inv10 B: no f: File - Trash | f.^link in Trash
+inv10 S: no f: File - Trash | f.^link != empty and f.^link in Trash
+inv10 T: no f: File - Trash | f.^link  and f.^link in Trash
+inv10 U: no f: File - Trash | f.*link in Trash
+inv10 S: any f: File | (some f.^link & Trash) and f in Trash
+inv10 S: any f: File | (some f.^link & Trash) and (f in Trash)
+inv10 O: all f: File | (some f.^link & Trash) and (f in Trash)
+inv10 B: all f: File | (some f.^link & Trash) implies (f in Trash)
+inv10 B: all f: Trash | some f.^link & Trash
+inv10 C: all f: Trash | f.^link in Trash
+inv3 C: some Trash
+inv4 C: all p: Protected |	not (p in Trash)
+inv5 C: all f: File - Protected | f in Trash
+inv6 C: all f: File | lone f.link
+inv7 B: all f: Trash | no f.link
+inv7 E: 
+inv7 E: 
+inv7 C: all f: File | no (f.^link & Trash)
+NA H: THEME UPDATE
+

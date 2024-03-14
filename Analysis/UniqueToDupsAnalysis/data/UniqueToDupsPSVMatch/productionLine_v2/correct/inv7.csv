@@ -1,0 +1,21 @@
+"all c : Component | c in parts.Dangerous implies c in Dangerous",2
+"all x : Component | no x.parts & Dangerous or x in Dangerous",1
+"all c : Component | some Dangerous & c.parts => c in Dangerous",3
+"all c : Component | some (c.parts & Dangerous) => c in Dangerous",16
+"all x : Component | no x.parts & Dangerous or one x & Dangerous",1
+"all c:Component | no c.parts & Dangerous or one c & Dangerous",1
+"all c: Component, p: c.parts | p in Dangerous implies c in Dangerous",4
+"all c:Component, d:Dangerous | d in c.parts => c in Dangerous",7
+"all c: Component, p : c.parts | some p & Dangerous implies c in Dangerous",1
+"all c: Component | all d: Dangerous | d in c.parts => c in Dangerous",4
+"all c: Component | all p : c.parts | p in Dangerous implies c in Dangerous",1
+"all d : Dangerous | all c : Component | c->d in parts implies c in Dangerous",1
+"all c:Component | all d:Dangerous | c->d in parts implies c in Dangerous",1
+"all p:Product | p in Component and some(p.parts & Dangerous) implies p in Dangerous",2
+"all com: Component | all d: Dangerous | d in com.parts implies com in Dangerous",2
+"all c:Component,p:Product | p in c.parts and p in Dangerous implies c in Dangerous",4
+"all c: Component, p: Product |  p in Dangerous and p in c.parts implies c in Dangerous",1
+"all c,d : univ | c in Component and d in Dangerous and c->d in parts implies c in Dangerous",1
+"all c:Component,p:Product | c->p in parts and p in Dangerous implies c in Dangerous",2
+"all c : Component | all p : Product | p in Dangerous and p in c.parts implies c in Dangerous",2
+"all c : Component | all p : Product | (c->p in parts and p in Dangerous) implies c in Dangerous",2

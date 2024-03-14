@@ -1,0 +1,11 @@
+inv12 B: all c: Course, s: Student, g: Grade | one s.(c.grades)
+inv12 S: all c: Course, s: Student | one s.(c.grades)
+inv12 S: all s:Student| lone s.enrolled.grades.s
+inv12 S: all s:Student| lone s.enrolled.grades
+inv12 S: all s:Student| lone s.enrolled.grades
+inv12 U: all s:Student| lone s.enrolled.grades.s
+inv12 E:
+inv12 U: all s:Student| lone s.enrolled.grades.s
+inv12 U: all s:Student, c:Course, g:Grade| lone s.(c.grades)
+inv12 U: all s:Student, c:Course| lone s.(c.grades)
+

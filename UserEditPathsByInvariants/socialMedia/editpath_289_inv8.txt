@@ -1,0 +1,7 @@
+inv8 C: all a : Ad, u : User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+inv8 T: all a : Ad, u : User | a in u.sees implies a in posts
+inv8 U: all a : Ad, u : User | a in u.sees implies a in User.posts
+inv8 T: all a : Ad, u : User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)		sees = Ad - (follows.posts + suggested.posts)
+inv8 T: all a : Ad, u : User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)		sees = Ad + (follows.posts + suggested.posts)
+inv8 T: sees = Ad  (follows.posts + suggested.posts)
+

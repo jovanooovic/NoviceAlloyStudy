@@ -1,0 +1,12 @@
+inv1 S: all p:person | p in Professor => p.enrolled == 0
+inv1 S: all p:person | p in Professor => p.enrolled == 0
+inv1 S: all p:person-Student |p.enrolled == 0
+inv1 S: all p:person | p in Professor => p.enrolled = 0
+inv1 B: all p:Person | p in Professor => p.enrolled = 0
+inv1 U: all p:Person | p.enrolled = 0 => p in Professor
+inv1 O: all p:Person-Student | p.enrolled = 0
+inv1 T: all p:Person-Student |  not p.enrolled
+inv1 C: all p:Person-Student | no p.enrolled
+inv1 B: all p:Person | p in Professor => no p.enrolled
+inv1 C: all p:Person-Student | no p.enrolled
+

@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv2 C: all c : Course | teaches.c in Professor
+inv3 B: all c : Course | teaches.c in Professor
+inv3 C: all c : Course | teaches.c != none
+inv4 T: all p : Project | #projects.p = 1
+inv4 T: all p : Project | #(projects.p) = 1
+inv4 S: all p : Project | (Course <: #(projects.p) = 1)
+inv4 T: all p : Project | Course <: (#(projects.p) = 1)
+inv4 T: all p : Project | (Course <: (#(projects.p) = 1))
+inv4 S: all p : Project | (Course <: (#(projects.p) = 1)))
+inv4 S: all p : Project | (Course <: #projects).p = 1))
+inv4 S: all p : Project | (Course <: #projects).p = 1)
+inv4 S: all p : Project | (Course <: #projects).p = 1
+inv5 S: all p : Projects | projects.p
+inv5 T: all p : Project | projects.p
+inv5 T: all p : Project | projects.p
+inv4 C: all p : Project | #((Course <: projects).p) = 1
+

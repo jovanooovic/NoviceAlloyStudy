@@ -1,0 +1,11 @@
+inv3 B: all p:Person, c:Course|p->c in teaches
+inv3 T: some p:Person| all c:Course|c implies p->c in teaches
+inv3 O: some p:Person| all c:Course|p->c in teaches
+inv3 T: some p:Person| all c:Course|p->c in teaches and p in teaches
+inv3 O: some p:Person| all c:Course|p->c in teaches and p in Professor
+inv3 B: all p:Person| all c:Course|p->c in teaches and p in Professor
+inv3 O: some p:Person| all c:Course|p->c in teaches and p in Professor
+inv3 B: some p:Person| all c:Course|p->c in teaches implies p in Professor
+inv3 O: some p:Professor| all c:Course|p->c in teaches
+inv3 O: all p:Course| some x:Person| x->p in teaches and x in Professor
+

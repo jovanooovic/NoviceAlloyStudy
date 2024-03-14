@@ -1,0 +1,12 @@
+inv16 U: all f : File | (f in Protected) implies (historically f in Protected)
+inv16 C: always all f : File | (f in Protected) implies (historically f in Protected)
+inv16 T: always (some (File in Protected)) implies (historically some (File in Protected))
+inv16 T: always ((some (File in Protected)) implies (historically some (File in Protected)))
+inv16 U: always ((some Protected) implies (historically some Protected))
+inv16 B: always ((some Protected') implies (historically Protected in Protected'))
+inv16 O: always ((some Protected') implies (historically Protected = Protected'))
+inv16 T: always all f : File | (some (File in Protected)) implies (historically f in Protected)
+inv16 C: always all f : File | (f in Protected) implies (historically f in Protected)
+inv16 C: always all f : File | (f in Protected) implies (historically f in Protected)
+inv16 C: always all f : File | (f in Protected) implies (historically f in Protected)
+

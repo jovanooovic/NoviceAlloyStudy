@@ -1,0 +1,17 @@
+inv4 S: all u: User | one A
+inv4 T: all u: User | one Ad in u.posts implies u.posts not in Photo-Ad
+inv4 T: all u: User | one Ad in u.posts implies u.posts not in Photo-Ad
+inv4 S: all u: User | one a: A | a in u.posts implies u.posts not in Photo-Ad
+inv4 B: all u: User | one a: Ad | a in u.posts implies u.posts not in Photo-Ad
+inv4 S: all u: User |
+inv4 T: all a: Ad, u: User | some a in u.posts
+inv4 T: all a: Ad, u: User | some a in u.posts
+inv4 T: all a: Ad, u: User | some a in u.posts
+inv4 T: all u: User | no u.posts&Ad and u.posts&(Photo-Ad)
+inv4 T: all u: User | no u.posts in Photo-Ad
+inv4 B: all u: User | Ad in u.posts
+inv4 T: all u: User | Ad in u.posts implies no Photo in u.posts
+inv4 B: all u: User | Ad in u.posts implies Photo-Ad not in u.posts
+inv4 B: all u: User | Ad+Photo not in u.posts
+inv4 C: all u: User |  some u.posts&Ad implies u.posts in Ad
+

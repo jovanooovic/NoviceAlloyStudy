@@ -1,0 +1,10 @@
+inv1 T: all p : Photo | one p & User.p
+inv1 U: all p : Photo | one p & User.posts
+inv1 U: all p : Photo | lone p & User.posts
+inv1 U: all p : Photo | one p & User.posts
+inv1 B: all p : Photo, u : User | one p & u.posts
+inv1 T: all p : Photo | one p in User.posts
+inv1 U: all p : Photo | p in User.posts
+inv1 S: all p : Photo, one u : User | p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+

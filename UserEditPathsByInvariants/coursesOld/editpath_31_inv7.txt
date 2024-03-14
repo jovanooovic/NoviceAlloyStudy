@@ -1,0 +1,3 @@
+inv7 T: all p1,p2:Project | all s:Student | s->p1 in Person <: projects and s->p2 in Person <: projects implies (all c1,c2:Course | c1 -> p1 and c2 -> p2 implies c1 != c2)
+inv7 B: all p1,p2:Project | all s:Student | s->p1 in Person <: projects and s->p2 in Person <: projects implies (all c1,c2:Course | c1 -> p1 in Course <: projects and c2 -> p2 in Course <: projects implies c1 != c2)
+

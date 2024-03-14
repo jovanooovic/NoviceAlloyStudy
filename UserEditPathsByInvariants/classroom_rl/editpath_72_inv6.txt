@@ -1,0 +1,7 @@
+inv6 O: Teacher . (Teacher <: Teaches) = Person
+inv6 O: (Teacher . (Teacher <: Teaches)) = Person
+inv6 T: (Teacher <: Teaches) = Person
+inv6 O: Teaches . Teacher = Person
+inv6 T: Teaches . Class . Teacher = Person
+inv6 C: all t : Teacher | some t . Teaches
+

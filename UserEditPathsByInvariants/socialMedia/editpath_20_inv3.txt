@@ -1,0 +1,18 @@
+inv3 S: all x : User | all follows.x.posts | sees.x
+inv3 S: all x : User | all follows.x.posts implies sees.x
+inv3 S: all x : User | all follows.x.posts->x in sees
+inv3 S: all x : User | all follows.x.posts in sees.x
+inv3 B: all x : User | follows.x.posts in sees.x
+inv3 S: all x : User | all follows.x.posts in sees.x
+inv3 B: all x : User | follows.x.posts in sees.x
+inv3 S: all x : User | all follows.x.posts : Photo and not Ad implies sees.x
+inv3 S: all x : User | all follows.x.posts not Ad in sees.x
+inv3 T: all x : User | all p : Photo and not Ad | x->y in sees
+inv3 B: all x : User | all p : Photo | p not in Ad implies x->p in sees
+inv3 B: all x : User | all p : Photo | p not in Ad and p not in posts.x implies x->p in sees
+inv3 S: all x : User | all p : Photo | p not in Ad and p not in posts.x implies x->p in sees	all x : User | all p : follows.x.posts not in Ad implies x->p in sees
+inv3 S: all x : User | all p : follows.x.posts not in Ad implies x->p in sees
+inv3 C: all x : User | all p : Photo | x in sees.p => (p in x.follows.posts || p in Ad)
+inv3 C: all x : User | all p : Photo | x in sees.p => (p in x.follows.posts || p in Ad)
+inv3 B: all x : User | all p : Photo | x in sees.p => (p in follows.x.posts || p in Ad)
+

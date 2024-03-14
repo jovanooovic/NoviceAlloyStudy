@@ -1,0 +1,10 @@
+inv2 T: one x:User | not follows.x
+inv2 T: all x:User | not x.follows.x
+inv2 T: all x:User | not follows.x
+inv2 S: some x:User | some y:User | x = y -> not in follows
+inv2 T: some x:User | some y:User | x = y -> x not in follows
+inv2 B: some x:User | some y:User | x = y
+inv2 S: some x:User | some y:User | x = y | x not in follows.y
+inv2 S: one x:User | one y:User | x = y | x not in follows.y
+inv2 C: all x:User | x not in follows.x
+

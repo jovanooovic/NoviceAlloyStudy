@@ -1,0 +1,6 @@
+inv3 U: all e: Exit | no e.succs
+inv3 U: all x: Exit | no x.succs
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv3 U: all x:Track | x in Exit implies no x.^succs
+inv3 U: all x:Track | no x.succs implies x in Exit
+

@@ -1,0 +1,6 @@
+inv8 O: all p : Product | all trab : Worker | all w : Workstation| (p in Dangerous and trab in w.workers) implies trab not in Human
+inv8 S: all p : Product | all trab : Worker | all w : Workstation| (p in Dangerous and trab in w.workers) implies trab in Roboy
+inv8 O: all p : Product | all trab : Worker | all w : Workstation| (p in Dangerous and trab in w.workers) implies trab in Robot
+inv8 O: all p : Dangerous | all trab : Worker | all w : Workstation| (trab in w.workers and w in p.workstation) implies trab in Robot
+inv8 O: all p : Dangerous | all trab : Worker | all w : Workstation| (trab in w.workers and w in p.workstation) implies trab in Robot
+

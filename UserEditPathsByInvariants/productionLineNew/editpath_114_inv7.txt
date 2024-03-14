@@ -1,0 +1,18 @@
+inv7 B: all c: Component | Dangerous in c.^parts implies Dangerous in c
+inv7 B: all c: Component | Dangerous in c.*parts implies Dangerous in c
+inv7 B: all c: Component | Dangerous in c.^parts implies Dangerous in c
+inv7 B: all c: Dangerous | Dangerous in c.^parts
+inv7 B: all c: Component | Dangerous in c.^parts implies some c & Dangerous
+inv7 B: all c: Component | Dangerous in c.^parts implies (some c & Dangerous)
+inv7 B: all c: Component | Dangerous in c.^parts implies (some c & Dangerous)
+inv7 T: all c: Component | Dangerous in c.^parts implies (c & Dangerous)
+inv7 B: all c: Component | Dangerous in c.^parts implies some (c & Dangerous)
+inv7 B: all c: Component | Dangerous in c.^parts implies no (c & Dangerous)
+inv7 B: all c: Component | Dangerous in c.^parts implies some (c & Dangerous & Component)
+inv7 T: all c: Component | some c.^parts in Dangerous => c in Dangerous
+inv7 S: all c: Component | some c.^parts: Dangerous | c in Dangerous
+inv7 S: all c: Component | c.^parts: Dangerous => c in Dangerous
+inv7 S: all c: Component | c.^parts: Dangerous implies c in Dangerous
+inv7 B: all c: Component | c.^parts in Dangerous => c in Dangerous
+inv7 B: all c: Component | Dangerous in c.^parts implies some (c & Dangerous & Component)
+

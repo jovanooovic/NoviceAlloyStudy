@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv10 T: all c : Course | all g : c.grades | g in Student
+inv10 T: all c : Course | all g : c.grades | g in Student
+inv10 S: all c : Course | all g : Grades | g.c in Student
+inv10 T: all c : Course | all g : Grade | g.c in Student
+inv10 T: all c : Course | all g : Grade | g.grades in Student
+inv10 T: all c : Course | all g : Grade | grades.g in Student
+inv10 T: all p : Person | all g : Grade | lone c : Course | g->p in c implies p in Student
+inv10 U: all p : Person | all g : Grade | all c : Course | g->p in c.grades implies p in Student
+inv10 C: all p : Person | all g : Grade | all c : Course | p->g in c.grades implies p in Student
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv13 S: all p : Student | lone pM : Student | all c : Course | all g : c.grades	  		pM->g >= p->g implies some pM.projects & c.projects
+inv13 T: all p : Student | lone pM : Student | all c : Course | all g : c.grades |	  		pM->g >= p->g implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		pM->g > p->g implies some pM.projects & c.projects
+inv13 S: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gt[pM->g, p->g] implies some pM.projects & c.projects
+inv13 S: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gte[pM->g, p->g] implies some pM.projects & c.projects
+inv13 S: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gte[g->pM, g->p] implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gte[g.pM, g.p] implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gt[g.pM, g.p] implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gt[g.pM, g.p] implies some pM.projects & c.projects
+inv13 S: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		ordering.gt[g.pM, g.p] implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gt[g.pM, g.p] implies some pM.projects & c.projects
+inv13 T: lone pM : Student | all p : Student - pM  | all c : Course | all g : c.grades |	  		gte[g.pM, g.p] implies some pM.projects & c.projects
+NA M: MOD BASE MODEL
+inv14 U: all s : Student | all s2 : Student-s | lone s.projects & s2.projects
+inv3 O: all c : Course | c in Professor.teaches
+inv2 C: all p : Person | some p.teaches  implies p in Professor
+inv12 U: all c : Course | all p : Student | all g : Grade | lone p->g & c.grades
+inv12 U: all c : Course | all p : Student | lone g : Grade | p->g in c.grades
+inv12 B: all c : Course | all p : Student | all g : Grade | p->g in c.grades
+inv12 T: all c : Course | all p : Student | all g : Grade | p->g & c.grades
+inv12 U: all c : Course | all p : Student | all g : Grade | lone p->g & c.grades
+inv12 U: all p : Student | all c : p.enrolled |all g : Grade | lone p->g & c.grades
+

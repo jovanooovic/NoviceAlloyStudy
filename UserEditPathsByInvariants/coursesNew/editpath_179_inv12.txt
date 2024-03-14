@@ -1,0 +1,6 @@
+inv12 S: all p:Person | lone g:Grade | p->g in person.enrolled.grades
+inv12 B: all p:Person | lone g:Grade | p->g in p.enrolled.grades
+inv12 S: all course:Course | all student:Person | lone g:Grade | p->g in course.grades
+inv12 C: all course:Course | all p:Person | lone g:Grade | p->g in course.grades
+inv12 C: all course:Course | (all p:Person | lone g:Grade | p->g in course.grades)
+

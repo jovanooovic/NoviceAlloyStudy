@@ -1,0 +1,14 @@
+inv3 S: all x, y : User, z : Photo | Ad.z and follows.x => some sees.y else all sees.y
+inv3 S: all x , y : User , z : Photo | Ad.z and follows.x => some sees.y else all sees.y
+inv3 S: all x : User , y : User , z : Photo | Ad.z and follows.x => some sees.y else all sees.y
+inv3 T: all x : User , y : User , z : Photo | Ad.z
+inv3 T: all x : User , y : User , z : Photo | z.Ad
+inv3 O: all x : User , y : User , z : Photo | z in Ad
+inv3 S: all x : User , y : User , z : Photo | z not in Ad and z in y.posts and x in follows.y => z in x.sees else all sees.z
+inv3 B: all x : User , y : User , z : Photo | z not in Ad
+inv3 T: all x : User , y : User , z : Photo | z not in Ad and z in y.posts and x in follows.y => z in x.sees else sees.z
+inv3 S: all x : User , y : User , z : Photo | z not in Ad and z in y.posts and x in follows.y => z in x.sees else all x in sees.z
+inv3 S: all x : User , y : User , z : Photo | z not in Ad => ( z in y.posts and x in follows.y => x in sees.y ) else all x in sees.z
+inv3 S: all x : User , y : User , z : Photo | z not in Ad => ( z in y.posts and x in follows.y => x in sees.y ) else all x in sees.z
+inv3 S: all x : User , y : User , z : Photo | z not in Ad => ( z in y.posts and x in follows.y => x in sees.y ) else all x in sees.z
+

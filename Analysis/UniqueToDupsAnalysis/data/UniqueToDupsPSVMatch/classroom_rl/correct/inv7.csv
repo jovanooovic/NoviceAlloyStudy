@@ -1,0 +1,23 @@
+"Class = Teacher.Teaches",5
+"Teacher.Teaches = Class",7
+"Class in Teacher.Teaches",36
+"Class in ~Teaches.Teacher",4
+"(Class & Teacher.Teaches) = Class",1
+"#(~Teaches.Teacher) >= #Class",1
+"all c:Class | c in Teacher.Teaches",26
+"all c: Class | some Teacher & Teaches.c",1
+"all c:Class | some (Teaches.c & Teacher)",18
+"all c : Class | some Teacher -> c & Teaches",1
+"all c:Class | some Teacher.Teaches:>c",4
+"all c : Class | some ( Teacher <:Teaches.c)",1
+"all c : Class | some (Teaches.c :> Teacher)",1
+"all c : Class | (#Teaches.c & Teacher) > 0",1
+"all c: Class | some c.~Teaches&Teacher",3
+"all c:Class | some t:Teacher | t in Teaches.c",2
+"all c:Class { some t:Teacher | c in t.Teaches }",3
+"all c:Class | some t:Teacher | t->c in Teaches",11
+"all c : Class | some x : Teacher | x->c in Teaches",1
+"all c:Class{ some t:Teacher | t in c.~Teaches }",3
+"all c : Class | some (Teaches.c & Teacher)
+  
+  Class in Teacher.Teaches",1

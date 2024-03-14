@@ -1,0 +1,9 @@
+inv14 B: all s: Student, c: Class | some t: Teacher | t->c in Teaches and t->s in Tutors
+inv14 B: all s: Student, c: Class | some t: Teacher | t->c in Teaches implies t->s in Tutors
+inv14 B: all s: Student, c: Class, g: Group | some t: Teacher | t->c in Teaches implies t->s in Tutors and c->s->g in Groups
+inv14 B: all s: Student, c: Class, g: Group | some t: Teacher | t->c in Teaches implies t->s in Tutors and c->s->g in Groups
+inv14 B: all s: Student, c: Class | some t: Teacher | t->c in Teaches implies some g: Group | c->s->g in Groups
+inv14 B: all s: Person, c: Class | some t: Teacher | t->c in Teaches implies some g: Group | c->s->g in Groups
+inv14 B: all s: Person, c: Class | some t: Person | t->c in Teaches implies some g: Group | c->s->g in Groups
+inv14 B: all s: Person, c: Class,  t: Person | t->c in Teaches implies some g: Group | c->s->g in Groups
+

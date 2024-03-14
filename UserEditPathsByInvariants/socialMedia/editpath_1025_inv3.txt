@@ -1,0 +1,5 @@
+inv3 B: all u:User, u2:User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u:User, u2:User, p:Photo-Ad | (u in sees.p and u2 in posts.p) implies u in follows.u2
+inv3 B: all u:User, u2:User, p:Photo-Ad | (u in sees.p and u2 in posts.p) implies u in follows.u2
+inv3 O: all u:User, u2:User, p:Photo-Ad | (u in sees.p and u2 in posts.p) implies u in follows.u2					all u : User | all p : u.sees | p in u.follows.posts or p in Ad
+

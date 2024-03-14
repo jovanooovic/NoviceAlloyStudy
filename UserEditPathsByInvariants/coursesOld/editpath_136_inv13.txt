@@ -1,0 +1,9 @@
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[s.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = min[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies some c.projects & s.projects
+inv13 B: all c : Course, s : Student | c in s.enrolled and s.(c.grades) = max[Student.(c.grades)] implies one c.projects & s.projects
+inv13 B: all c : Course, s : Student |( (c in s.enrolled) and (s.(c.grades) = max[Student.(c.grades)])) implies one (c.projects & s.projects)
+inv13 B: all c : Course, s : Student | ((c in s.enrolled) and (s.(c.grades) = max[Student.(c.grades)])) implies some (c.projects & s.projects)
+

@@ -1,0 +1,31 @@
+Pairs,2
+,,"no *parts",2
+
+Pairs,6
+,,"no (iden & ^parts)",2
+,,"no ^parts & iden",2
+,,"all p: Product | p not in p.^parts",1
+,,"all p : Product | no p & p.^parts",1
+
+Pairs,6
+,,"all c: Component | no c.parts",3
+,,"all c : Component | no c.^(parts)",1
+,,"all p : Product | no Component.parts",1
+,,"all p : Product | p in Component implies no p.^(parts)",1
+
+Pairs,5
+,,"all c : Component | no parts.c",3
+,,"all x1,x2 : Product | x2 in x1.parts implies x2 not in Component",1
+,,"all c: Component | not (some p : Product | c in p.parts)",1
+
+Pairs,19
+,,"all x : Component | x not in x.*parts",2
+,,"all c:Component| c not in c.*parts",7
+,,"all c: Component | not c in c.*parts",2
+,,"all c1,c2 : Component | c2 in c1.parts and c1!=c2",2
+,,"all c1, c2 : Component | c2 in c1.parts and c2!=c1",1
+,,"all p : Product | p in Component implies p not in p.*parts",1
+,,"all c:Component, c1:Component | c1 in c.parts and c!=c1",2
+,,"all c:Component, c1:Component | c1 in c.parts and c1!=c",1
+,,"all c1: Component, c2 : Component | c2 in c1.parts and c1!=c2",1
+

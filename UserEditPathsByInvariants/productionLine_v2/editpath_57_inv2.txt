@@ -1,0 +1,10 @@
+inv2 U: some Workstation->workers
+inv2 U: some Workstation.workers
+inv2 U: all w : Workstation | some w.workers	Worker in Workstation.workers
+inv2 T: all w : Workstation | some w.workers	lone Worker in Workstation.workers
+inv2 C: all w : Workstation | some w.workers	all w : Worker | one ww : Workstation | w in ww.workers
+inv2 B: all w : Workstation | some w.workers	one ww : Workstation | Worker in ww.workers
+inv2 T: Worker.^workers	all w : Worker | one ww : Workstation | w in ww.workers
+inv2 O: Worker.^workers = Workstation	all w : Worker | one ww : Workstation | w in ww.workers
+inv2 C: Worker.~workers = Workstation	all w : Worker | one ww : Workstation | w in ww.workers
+

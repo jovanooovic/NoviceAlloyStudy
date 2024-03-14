@@ -1,0 +1,7 @@
+inv5 U: all x : univ | x in Project implies some y : Student | y->x in Person<:projects
+inv5 C: all x : univ | x in Project implies some y : Student | y->x in Person<:projects		all p : Project | all s : Person | s->p in Person<:projects implies s in Student
+inv5 C: all p : Project | all s : Person | s->p in Person<:projects implies s in Student	    all x : univ | x in Project implies some y : Student | y->x in Person<:projects
+inv5 C: all x : univ | x in Project implies some y : Student | y->x in Person<:projects	    all x, y : univ | x in Person and y in Project and x->y in Person<:projects implies x in Student
+inv5 O: all x : univ | x in Project implies some y : Student | y->x in Person<:projects	    	    all x,y : univ | x->y in Person<:projects  implies x in Student and x not in Professor
+inv5 C: all x : univ | x in Project implies some y : Student | y->x in Person<:projects	    all x, y : univ | x in Person and y in Project and x->y in Person<:projects implies x in Student
+

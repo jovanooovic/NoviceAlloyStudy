@@ -1,0 +1,4 @@
+inv4 O: all t : Track | (no t.*succs & Entry <=> t in Entry)
+inv4 B: all t : Track | (t not in Track.*(succs) <=> t in Entry)
+inv4 C: all t : Track | (t not in Track.^(succs) <=> t in Entry)
+

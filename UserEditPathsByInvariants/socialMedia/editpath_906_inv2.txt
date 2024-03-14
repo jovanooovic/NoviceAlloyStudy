@@ -1,0 +1,19 @@
+inv2 S: x.follows.x not in
+inv2 S: x.follows.x not in
+inv2 T: all u : User | none u.follows.u
+inv2 S: not p.follows.p
+inv2 T: not follows.~follows
+inv2 T: not follows.~follows
+inv2 T: none follows.~follows
+inv2 S: | none follows.~follows
+inv2 B: follows.~follows not in iden
+inv2 T: none follows.~follows
+inv2 B: follows.~follows not in iden
+inv2 B: follows.(~follows) not in iden
+inv2 T: follows.User.User.follows not in iden
+inv2 T: (follows.User).(User.follows) not in iden
+inv2 T: User not in iden
+inv2 B: follows not in iden
+inv2 B: follows.~follows not in iden
+inv2 C: no follows & iden
+

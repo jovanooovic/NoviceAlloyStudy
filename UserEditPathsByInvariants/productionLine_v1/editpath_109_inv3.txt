@@ -1,0 +1,9 @@
+inv3 S: all c: Component | Robot/position[c.position]
+inv3 T: all c: Component | position[c.position]
+inv3 T: all c: Component | some position.(c.position)
+inv3 T: all c: Component | some position.(c.position)
+inv3 S: all c: Component | some (Robot/position).(c.position)
+inv3 T: all c: Component | let p = c.position | position.p
+inv3 T: all c: Component | let p = c.position | some position.p
+inv3 C: all c: Component | let p = c.position | some Robot <: position.p
+

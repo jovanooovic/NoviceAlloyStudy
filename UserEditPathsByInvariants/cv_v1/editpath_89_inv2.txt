@@ -1,0 +1,29 @@
+inv2 T: all u : User | some (Work<:source).u or (Work<:source).Institution
+inv2 B: all u : User | some (Work<:source).u or some (Work<:source).Institution
+inv2 S: all u : User | (u<:profile).Work in some (Work<:source).u  or some (Work<:source).Institution
+inv2 S: all u : User | (u<:profile).Work in some (Work<:source).u & (Work<:source).Institution
+inv2 O: all u : User | (u<:profile).Work in (Work<:source).u & (Work<:source).Institution
+inv2 T: all u : User | some (u<:profile).Work in (Work<:source).u & (Work<:source).Institution
+inv2 U: all u : User | some (u<:profile).Work implies some (Work<:source).u or some (Work<:source).Institution
+inv2 U: all u : User | some (u<:profile).Work implies some (Work<:source).u + (Work<:source).Institution
+inv2 O: all u : User | some (u<:profile).Work implies some (Work<:source).u & (Work<:source).Institution
+inv2 O: all u : User | some (u<:profile).Work implies some u.(Work<:source) & Institution.(Work<:source)
+inv2 O: all u : User | some (u<:profile).Work implies some u.(Work<:source) & Institution.(Work<:source)
+inv2 O: all u : User | some (u<:profile).Work implies some (Work<:source).u & (Work<:source).Institution
+inv2 O: all u : User | (Work<:source).u in (Work<:source).Institution
+inv2 T: all u : User | some (u<:profile).Work implies some (Work<:source).u  (Work<:source).Institution
+inv2 O: all u : User | (u<:profile).Work in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 O: all u : User | (u<:profile).Work in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u & (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in u.(Work<:source) + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in u.(Work<:source) + Institution.(Work<:source)
+inv2 O: all u : User | (u<:profile).Work in u.(Work<:source) + Institution.(Work<:source)
+inv2 O: all u : User | (u<:profile).Work in (Work<:source).u + (Work<:source).Institution
+inv2 U: all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution
+inv2 O: all u : User | (u<:profile).Work in (Work<:source).u + (Work<:source).Institution
+

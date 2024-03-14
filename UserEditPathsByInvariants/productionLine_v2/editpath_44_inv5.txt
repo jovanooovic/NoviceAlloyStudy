@@ -1,0 +1,15 @@
+inv5 T: all w: Workstation |  Robot implies Human not in w.workers
+inv5 B: all w: Workstation | (Robot in w.workers) implies Human not in w.workers
+inv5 B: all w: Workstation | (Robot in w.workers) implies (Human not in w.workers)
+inv5 B: all w: Workstation | (Robot in w.workers) implies (Human not in w.workers) or (Human in w.workers) implies (Robot not in w.workers)
+inv5 U: all w: Workstation | (Robot in w.workers) implies (Human not in w.workers) and (Human in w.workers) implies (Robot not in w.workers)
+inv5 B: all w: Workstation | (Robot in w.workers) implies (Human not in w.workers)	all w: Workstation | (Human in w.workers) implies (Robot not in w.workers)
+inv5 S: all w: Workstation | no (Robot in w.workers) implies (Human in w.workers)	all w: Workstation | no (Human in w.workers) implies (Robot in w.workers)		all w: Workstation |
+inv5 T: all w: Workstation | no (Robot in w.workers) implies (Human in w.workers)	all w: Workstation | no (Human in w.workers) implies (Robot in w.workers)
+inv5 B: all w: Workstation |  (Robot not in w.workers) implies (Human in w.workers)	all w: Workstation |  (Human not in w.workers) implies (Robot in w.workers)
+inv5 T: all w: Workstation | some (Robot not in w.workers) implies (Human in w.workers)
+inv5 T: all w: Workstation | some (Robot in w.workers) implies (Human in w.workers)
+inv5 T: all w: Workstation | some (Robot & w.workers) implies (Human & w.workers)
+inv5 C: all w: Workstation | some (Robot & w.workers) implies no (Human & w.workers)
+inv5 C: all w: Workstation | some (Robot & w.workers) implies no (Human & w.workers)
+

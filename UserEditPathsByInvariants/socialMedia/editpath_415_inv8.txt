@@ -1,0 +1,4 @@
+inv8 B: all x: User | all u: User | all p: Photo | (x in (u.follows) or x in (u.suggested)) implies u.posts in Ad
+inv8 B: all x: User | all u: User | all p: Photo | (x in (u.follows) or x in (u.suggested)) and (p in x.posts) implies (p in Ad)
+inv8 S: all u: User | all p: Photo | p in u.sees implies (p in Ad or (exists x: User | x in u.follows and p in x.posts))
+

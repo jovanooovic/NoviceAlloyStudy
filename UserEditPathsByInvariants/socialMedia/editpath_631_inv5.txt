@@ -1,0 +1,6 @@
+inv5 B: all x, y: User | x in Influencer => y in x.follows
+inv5 S: all x: User | all y: Influencer => y in x.follows
+inv5 B: all x: User | all y: Influencer | y in x.follows
+inv5 B: all x, y: User | y in Influencer => y in x.follows
+inv5 U: all x, y: User | y in Influencer && y != x => y in x.follows
+

@@ -1,0 +1,9 @@
+inv9 S: no c:Class | p1,p2:Teacher | c in p1->Teaches and c in p2->Teaches implies p1=p2
+inv9 T: no c:Class | all p1,p2:Teacher | c in p1->Teaches and c in p2->Teaches implies p1=p2
+inv9 B: no c:Class | all p1,p2:Teacher | c in p1.Teaches and c in p2.Teaches implies p1=p2
+inv9 B: no c:Class | all p1,p2:Teacher | c in p1.Teaches and c in p2.Teaches implies p1!=p2
+inv9 C: all c:Class,p1,p2:Teacher | c in p1.Teaches and c in p2.Teaches implies p1=p2
+inv9 O: lone Class->Teaches
+inv9 T: lone Teacher in Class->Teaches
+inv9 T: lone Teacher in Class.Teaches
+

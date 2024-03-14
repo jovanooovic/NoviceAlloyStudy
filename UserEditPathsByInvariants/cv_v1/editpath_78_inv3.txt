@@ -1,0 +1,4 @@
+inv3 T: all u : User, w1, w2 : Work | ((w1 in (u.profile)) & (w2 in (u.profile)) & (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 O: all u : User, w1, w2 : Work | ((w1 in (u.profile)) and (w2 in (u.profile)) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 O: all u : User, w1, w2 : Work | ((w1 in (u.profile)) and (w2 in (u.profile)) and (w1.source = w2.source)) implies (w1.ids not in w2.ids)
+

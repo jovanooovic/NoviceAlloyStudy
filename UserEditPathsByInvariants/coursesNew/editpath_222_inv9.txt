@@ -1,0 +1,10 @@
+inv9 U: all c : Course | all p : teaches.c | p.teaches not in (teaches.c - p).enrolled
+inv9 B: all c : Course | all p : teaches.c | p.teaches not in teaches.c.enrolled
+inv9 C: all c : Course | all p : teaches.c | no p.teaches & ((teaches.c - p).enrolled)
+inv9 U: all c : Course | all p : teaches.c | p.teaches not in (teaches.c - p).enrolled
+inv9 T: all c : Course | all p : teaches.c | p.teaches & (teaches.c - p).enrolled
+inv9 T: all c : Course | all p : teaches.c | p.teaches & ((teaches.c - p).enrolled  )
+inv9 C: all c : Course | all p : teaches.c | no p.teaches & ((teaches.c - p).enrolled  )
+inv9 U: all c : Course | all p : teaches.c | p.teaches not in (teaches.c - p).enrolled
+inv9 C: all c : Course | all p : teaches.c | no p.teaches & ((teaches.c - p).enrolled  )
+

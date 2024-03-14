@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 S: User x : follows.x
+inv2 S: User x : not follows.x
+inv2 T: User x
+inv2 T: all x : User | not follows.x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | follows.x
+inv2 C: all x : User | x not in follows.x
+inv3 T: all x, y : User | y in follows.x -> y.posts in sees.x
+inv3 T: all x, y : User | y in follows.x -> posts.y in sees.x
+inv3 S: all x, y, f : User, User, Photo | y in follows.x -> f in posts.y and in sees.x
+inv3 S: all x, y, f : User, User, Photo | y in follows.x -> f in posts.y and f in sees.x
+inv3 B: all x, y: User, f: Photo | y in follows.x implies f in posts.y and f in sees.x
+inv3 S: all x, y: User, f: Photo | f in x.sees and f in y.posts implies y in x.follows			y in follows.x implies f in posts.y and f in sees.x
+inv3 B: all x,y: User, f: Photo | f in x.sees and f in y.posts implies y in x.follows
+inv3 O: all x,y: User, f: Photo | f in x.sees and f not in Ad implies f in y.posts and y in x.follows
+

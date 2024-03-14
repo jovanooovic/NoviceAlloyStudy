@@ -1,0 +1,10 @@
+inv5 U: all u:Person, p:Project| u->p in projects implies u in Student
+inv5 U: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects implies u in Student
+inv5 B: all u:Person, p:Project, c:Course| u->p in projects implies u in Student and u->c in enrolled and c->p in projects
+inv5 U: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects implies u in Student
+inv5 B: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: all u:Person|some p:Project| all c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: all u:Person|some p:Project| one c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: some u:Person|all p:Project| one c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: some u:Person|all p:Project| one c:Course| u->p in projects and u in Student  implies u->c in enrolled and c->p in projects
+

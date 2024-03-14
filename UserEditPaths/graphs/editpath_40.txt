@@ -1,0 +1,39 @@
+na H: THEME UPDATE
+inv2 C: no adj & ~adj
+inv1 C: adj = ~adj
+inv4 U: Node in Node.^adj
+inv4 U: Node in Node.adj
+inv4 C: all n:Node |Node in n.adj
+inv5 C: no adj & iden
+inv3 C: all n:Node | n not in n.^adj
+inv4 U: all n:Node | Node-n in n.adj
+inv4 C: all n:Node | Node in n.adj
+inv6 O: all n:Node | Node in (n.^adj + n.^~adj)
+inv6 O: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv6 O: all n:Node | Node in (n.^adj + n.^~adj)
+inv6 O: all n:Node | Node in n.(^adj + ^~adj)
+inv6 O: all n:Node | Node in n.^(^adj + ^~adj)
+inv8 S: all n:Node |
+inv8 S: all n:Node |
+inv8 T: all n,o,p:Node | n->o and o->p in adj implies n->p in adj
+inv8 C: all n,o,p:Node | n->o in adj and o->p in adj implies n->p in adj
+inv8 C: adj.adj in adj
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 B: all n:Node | Node in (n.^adj + n.^~adj)
+inv6 O: all n:Node | Node in n.^(adj+~adj)
+inv6 C: all n:Node | Node-n in n.^(adj+~adj)
+na M: MOD BASE MODEL
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 B: all n:Node | Node in (n.^adj + n.^~adj)
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 U: all n:Node | Node-n in n.^adj or Node in n.^~adj
+inv7 U: all n:Node | Node-n in n.^adj or Node-n in n.^~adj
+inv7 B: all n:Node | Node in n.^adj or Node in n.^~adj
+inv7 B: all n:Node | Node = n.^adj + n.^~adj
+inv7 B: all n:Node | Node-n = n.^adj + n.^~adj
+inv7 B: all n:Node | Node = n.^adj + n.^~adj
+inv7 U: all n:Node | Node-n in n.^adj + n.^~adj
+inv7 U: all n:Node | Node-n in n.(^adj + ^~adj)
+inv7 U: all n:Node | Node-n in n.(*adj + *~adj)
+inv7 U: all n:Node | Node in n.(*adj + *~adj)
+

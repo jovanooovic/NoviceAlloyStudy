@@ -1,0 +1,23 @@
+inv6 B: Person <: projects in Student some -> Project and		enrolled in Student -> Course
+inv6 B: enrolled in Student -> Course		Person <: projects in Student some -> Project
+inv6 B: some s:Student | enrolled in s -> Course		Person <: projects in Student some -> Project
+inv6 B: all s:Student | enrolled in s -> Course		Person <: projects in Student some -> Project
+inv6 B: Person <: projects in Student some -> Project implies enrolled in Student some -> Course
+inv6 B: Person <: projects in Person some -> Project implies enrolled in Person some -> Course
+inv6 S: all s:Student | some p:Project | s -> p projects implies 	  	some c:Class | s - > c in enrolled implies
+inv6 S: all s:Student | some p:Project | s -> p projects implies 	  	some c:Class | s -> c in enrolled implies
+inv6 T: all s:Student | some p:Project | s -> p projects implies 	  	some c:Class | s -> c in enrolled
+inv6 S: all s:Student | some p:Project | s -> p in projects implies 	  	some c:Class | s -> c in enrolled
+inv6 B: all s:Student | some p:Project | s -> p in projects implies 	  	some c:Course | s -> c in enrolled
+inv6 B: all s:Student | some p:Project | s -> p in projects implies 	  	some c:Course | s -> c in enrolled and c -> p in projects
+inv6 T: all s:Student | some p:Project | s -> p in projects implies 	  	Course <: some c:Course | s -> c in enrolled and c -> p in projects
+inv6 S: all s:Student | some p:Project | s -> p in works_on
+inv6 T: Person <: all s:Person | some p:Project | s -> p in projects implies	  	some c:Course | s -> c in enrolled
+inv6 B: all s:Person | some p:Project | s -> p in projects implies	  	some c:Course | s -> c in enrolled
+inv6 B: some s:Person | some p:Project | s -> p in projects implies	  	some c:Course | s -> c in enrolled
+inv6 S: Course <: Projects in Student some -> Project implies	  	enrolled in Student some -> Project
+inv6 B: Course <: projects in Student some -> Project implies	  	enrolled in Student some -> Project
+inv6 B: some s:Person, p:Project | s -> p in projects implies (some c:Course | s -> c in enrolled and c -> p in projects)
+inv6 B: some s:Person, c:Course | s.projects = c.projects
+inv6 B: some s:Person, c:Course | s.projects = c.projects
+

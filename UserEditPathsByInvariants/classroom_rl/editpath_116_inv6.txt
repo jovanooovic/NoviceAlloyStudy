@@ -1,0 +1,21 @@
+inv6 T: Teacher in Class.Teacher
+inv6 T: Teacher in ~Class.Teacher
+inv6 O: Teacher in Teaches.Teacher
+inv6 O: Teacher in ~Teaches.Teacher
+inv6 T: Teacher in ~Teaches
+inv6 O: Teacher in ~Teaches.Teacher
+inv6 O: Teacher in ~Teaches.Person
+inv6 T: Teacher & ~Teaches.Person in iden
+inv6 T: (Teacher & ~Teaches.Teacher) in iden
+inv6 B: ~Teaches.Teaches in iden
+inv6 B: Teaches.~Teaches in iden
+inv6 T: Teacher in Teaches.~Teaches
+inv6 T: iden Teacher in Teaches.~Teaches
+inv6 T: iden[Teacher] in Teaches.~Teaches
+inv6 T: all t : Teacher | some t->Class in Teaches
+inv6 B: all t : Teacher | t->Class in Teaches
+inv6 T: all t : Teacher | t->(some Class) in Teacher
+inv6 T: all t : Teacher | some t.Class
+inv6 C: all t : Teacher | some t.Teaches
+inv6 T: ~(Teacher.Teaches).(Teacher.Teaches) in iden
+

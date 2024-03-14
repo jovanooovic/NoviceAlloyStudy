@@ -1,0 +1,6 @@
+inv4 T: all s : State | Init.^{x,y : State | x.trans.y} = State
+inv4 T: all s : State | Init.^{x,y : State | x.trans.y} = Evebt
+inv4 T: all s : State | Init.^{x,y : State | some x.trans.y}
+inv4 C: all s : State | Init.^{x,y : State | some x.trans.y} = State
+inv4 C: Init.^{x,y : State | some x.trans.y} = State
+

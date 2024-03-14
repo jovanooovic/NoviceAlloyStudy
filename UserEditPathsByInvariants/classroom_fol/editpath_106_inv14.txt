@@ -1,0 +1,11 @@
+inv14 B: all s:Student | some c:Class, g:Group | c->s->g in Groups => some t:Teacher | t->s in Teaches
+inv14 B: all s:Student | some c:Class, g:Group, t:Teacher | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 S: all s:Studen, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Student, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Person, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Student, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Person, t:Person | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 C: all s:Person, t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 C: all s,t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 C: all s,t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+

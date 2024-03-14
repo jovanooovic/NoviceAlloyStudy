@@ -1,0 +1,7 @@
+inv4 S: all c : Course | c in Projects.course
+inv4 S: all p : Project | p in Course.projects	  all c1, c2 : Courses | all p : Projects | (p in c1.projects and p in c2.projects) implies (c1 = c2)
+inv4 S: all p : Project | p in Course.projects	  all c1, c2 : Course | all p : Projects | (p in c1.projects and p in c2.projects) implies (c1 = c2)
+inv4 C: all p : Project | p in Course.projects	  all c1, c2 : Course | all p : Project | (p in c1.projects and p in c2.projects) implies (c1 = c2)
+inv4 U: all c1, c2 : Course | all p : Project | (p in c1.projects and p in c2.projects) implies (c1 = c2)
+inv4 C: all p : Project | p in Course.projects	  all c1, c2 : Course | all p : Project | (p in c1.projects and p in c2.projects) implies (c1 = c2)
+

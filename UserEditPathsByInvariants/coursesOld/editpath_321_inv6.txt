@@ -1,0 +1,4 @@
+inv6 B: all p:Person|all c:Course| all pr:Project|p->pr in projects implies (p in Student and p->c in enrolled and c->pr in projects)
+inv6 O: all p:Person | all pr:Project|p->pr in projects implies (some c:Course|p in Student and p->c in enrolled and c->pr in projects)
+inv6 U: all p:Student | all pr:Project|p->pr in projects implies (some c:Course| p->c in enrolled and c->pr in projects)
+

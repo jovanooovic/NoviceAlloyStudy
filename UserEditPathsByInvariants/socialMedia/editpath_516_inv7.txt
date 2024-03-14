@@ -1,0 +1,6 @@
+inv7 C: all u : User |	u.suggested = (	(u.follows.follows - u.follows) - u	)
+inv7 U: all u: User | all fu: u.follows | all ffu: fu.follows |	(ffu not in u.follows) and (ffu != u) implies (ffu in u.suggested)
+inv7 C: all u: User |	u.suggested = {	ffu: u.follows.follows |	(ffu not in u.follows) and (ffu != u)	}
+inv7 B: all u: User |	u.suggested = {	ffu: u.follows & u.follows.follows |	ffu not in u.follows and ffu != u	}
+inv7 C: all u: User | u.suggested = { ffu: u.follows.follows | (ffu not in u.follows) and (ffu != u) }
+

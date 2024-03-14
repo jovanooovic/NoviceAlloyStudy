@@ -1,0 +1,12 @@
+inv4 U: all e1,e2:Entry | e1->e2 not in succs
+inv4 B: all e1,e2:Entry | e1->e2 in succs
+inv4 U: no succs.Entry
+inv4 S: all t1,t2:Track | t1->t2 in succs implies t2 no in Entry
+inv4 U: all t1,t2:Track | t1->t2 in succs implies t2 not in Entry
+inv4 B: all t1,t2:Track | t1->t2 in succs implies t1 not in Entry
+inv4 U: all t1,t2:Track | t1->t2 in succs implies t2 not in Entry
+inv4 B: all t1,t2:Track | t1->t2 in succs implies t2 in Entry
+inv4 B: all t1,t2:Track | t1->t2 in succs implies t1 in Entry
+inv4 B: all t1,t2:Track | t1->t2 in succs implies t2 in Entry
+inv4 B: all t1,t2:Track | t1->t2 in succs implies t1 not in Entry
+

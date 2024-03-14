@@ -1,0 +1,15 @@
+inv3 S: all x,y : User | all p : Photo | p != Ad and x!=y implies (p in x.sees and p in y.posts) immplies y in x.follows
+inv3 B: all x,y : User | all p : Photo | p != Ad and x!=y implies (p in x.sees and p in y.posts) implies y in x.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies y in x.follows
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 S: all user : User, photo : Photo | (p in user.sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo = Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+

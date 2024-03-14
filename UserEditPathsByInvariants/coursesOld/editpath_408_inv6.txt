@@ -1,0 +1,5 @@
+inv6 U: all x : Student, y : Project | x->y in projects implies (some c : Course | x->c in enrolled)
+inv6 U: all x : Student, y : Project | x->y in projects implies (some c : Course | x->c in enrolled and c->y in projects)
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+

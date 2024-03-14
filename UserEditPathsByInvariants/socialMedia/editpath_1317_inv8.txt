@@ -1,0 +1,29 @@
+inv8 S: all a:Ad | u:User | a in u.sees implies some u2:User | a in u.posts and u2 in u.suggested or u2 in u.follows
+inv8 S: all a:Ad | u:User | a in u.sees implies some u2:User | a in u.posts and u2 in u.suggested
+inv8 S: all a:Ad | u:User | a in u.sees implies some u2:User | a in u2.posts and u2 in u.suggested or u2 in u.follows
+inv8 S: all p:Photo | u:User | p in u.sees and p in Ad implies some u2:User | a in u2.posts and u2 in u.suggested or u2 in u.follows
+inv8 S: all p:Photo | u:User | p in u.sees and p in Ad implies some u2:User | a in u2.posts and u2 in u.suggested
+inv8 E:
+inv8 S: all p:Photo | u:User | p in u.sees and p in Ad implies some u2:User | a in u2.posts
+inv8 S: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | a in u2.posts and u2 in u.suggested
+inv8 O: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested
+inv8 U: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows
+inv8 U: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows
+inv8 U: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows	all u:User | u not in u.sees
+inv8 U: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows
+inv8 U: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows	all u:User | u not in u.sees
+inv8 S: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows	all u:User | p:Photo | p in u.sees implies p not in u.posts
+inv8 B: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested or u2 in u.follows	all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.suggested	all p:Photo | all u:User | p in u.sees and p in Ad implies some u2:User | p in u2.posts and u2 in u.follows	all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and u2 in u.follows		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 B: all a:Ad | all u,u2:User | a in u2.posts and u2 in u.follows implies a in u.sees	all a:Ad | all u,u2:User | a in u2.posts and u2 in u.suggested implies a in u.sees		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 B: all a:Ad | all u,u2:User | a in u2.posts and u2 in u.follows implies a in u.sees	all a:Ad | all u,u2:User | a in u2.posts and u2 in u.suggested implies a in u.sees		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 B: all a:Ad | all u,u2:User | a in u2.posts and u2 in u.follows implies a in u.sees	all a:Ad | all u,u2:User | a in u2.posts and u2 in u.suggested implies a in u.sees		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and u2 in u.follows implies a in u.sees	all a:Ad | all u,u2:User | a in u2.posts and u2 in u.suggested implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and (u2 in u.follows or  u2 in u.suggested) implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and (u2 in u.follows or  u2 in u.suggested) implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)		all u:User | all p:Photo | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and (u2 in u.follows or  u2 in u.suggested) implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)		all u:User | all p:Ad | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and (u2 in u.follows or u2 in u.suggested) implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)		all u:User | all p:Ad | p in u.sees implies p not in u.posts
+inv8 O: all a:Ad | all u,u2:User | a in u2.posts and (u2 in u.follows or u2 in u.suggested) implies a in u.sees	all a:Ad | all u:User | a in u.sees implies some u2:User | a in u2.posts and (u2 in u.suggested or u2 in u.follows)				all u:User | all p:Ad | p in u.sees implies p not in u.posts
+inv8 B: all a:Ad | all u,u2:User | a in u2.posts and a in u.sees implies u2 in u.follows or u2 in u.suggested				all u:User | all p:Ad | p in u.sees implies p not in u.posts
+

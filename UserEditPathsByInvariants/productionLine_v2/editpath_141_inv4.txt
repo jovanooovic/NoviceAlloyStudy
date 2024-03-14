@@ -1,0 +1,10 @@
+inv4 U: parts in Component -> Product
+inv4 C: parts in Component -> some Product
+inv4 B: all a:Component | some b:Workstation | a->b in workstation
+inv4 B: all a:Component | some b:Workstation | a->b in workstation	all a:Product,b:Workstation | a->b in workstation implies a in Component
+inv4 T: all a:Component | some b:Workstation | a->b in parts	all a:Product,b:Workstation | a->b in workstation implies a in parts
+inv4 T: all a:Component | some b:Product | a->b in parts	all a:Product,b:Workstation | a->b in workstation implies a in parts
+inv4 U: all a:Component | some b:Product | a->b in parts	all a:Product,b:Workstation | a->b in parts implies a in Component
+inv4 C: all a:Component | some b:Product | a->b in parts	all a:Product,b:Product | a->b in parts implies a in Component
+inv4 U: all a:Component | some b:Product | a->b in parts
+

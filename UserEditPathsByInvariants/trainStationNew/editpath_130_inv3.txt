@@ -1,0 +1,21 @@
+inv3 T: no succs in Exit
+inv3 T: succs not in Exit
+inv3 S: succs in Exit no
+inv3 S: succs in Exit lone
+inv3 T: not some succs in Exit
+inv3 S: all e:Exit | not some t:Track | e->t in succ
+inv3 U: all e:Exit | not some t:Track | e->t in succs
+inv3 U: all e:Exit | all t:Track | e->t not in succs
+inv3 S: no (Exit . succ)
+inv3 U: no (Exit . succs)
+inv3 T: all e:Exit | all t:Track | no e->t in succs
+inv3 T: all e:Exit | all t:Track | no (e->t in succs)
+inv3 S: Exit = Tracks - (succs.Tracks)
+inv3 C: Exit = Track - (succs.Track)
+inv3 B: Exit = Track - (Track.succs)
+inv3 C: Exit = Track - (succs.Track)
+inv3 B: no (succs . Exit)
+inv3 S: Exit = no (succs . Exit)
+inv3 B: (succs . Exit) = none
+inv3 C: Exit = Track - (succs.Track)
+

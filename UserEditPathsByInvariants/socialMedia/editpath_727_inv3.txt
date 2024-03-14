@@ -1,0 +1,21 @@
+inv3 S: all x : posts.x | x not in sees.x
+inv3 B: all x : Photo | x not in posts.x.sees
+inv3 O: all x : Photo | x not in posts.x iff x in sees.x
+inv3 O: all x : Photo | x not in sees.x iff x in posts.x
+inv3 B: all x : Photo | all y : User | x in sees.x iff x in follows.y.posts
+inv3 B: all x : Photo, y : User | x in sees.x iff x in follows.y.posts
+inv3 S: all x : Photo, y : User | x in sees.x iff x in follows.y.posts and x : Ad
+inv3 B: all x : Photo, y : User | x in sees.x iff x in follows.y.posts and x in Ad
+inv3 U: all x : Photo, y : User, z : Ad | x in sees.x iff x in follows.y.posts and z in sees.z
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 S: all x : User | x in posts.x implies x in all posts.x
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+

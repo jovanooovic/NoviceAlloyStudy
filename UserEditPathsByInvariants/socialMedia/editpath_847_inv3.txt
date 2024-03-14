@@ -1,0 +1,12 @@
+inv3 T: all u:User | no p:u.posts | p->User not in u.follows
+inv3 T: all u:User | no p:u.posts | p->User not in u.follows
+inv3 O: all u:User | all p:u.sees | one u1:u.follows | (p in Ad) or (p in u1.posts and u1 in u.follows)
+inv3 O: all u:User | all p:u.sees | one u1:u.follows | (p in Ad and p not in u.posts) or (p in u1.posts and u1 in u.follows)
+inv3 O: all u:User | all p:u.sees | one u1:u.follows | (p not in u.posts) and ((p in Ad) or (p in u1.posts and u1 in u.follows))
+inv3 S: all u:User, all p:u.sees : p in u.follows.posts or p in Ad
+inv3 S: all u:User, p:u.sees : p in u.follows.posts or p in Ad
+inv3 S: all u:User | all p:u.sees : p in u.follows.posts or p in Ad
+inv3 C: all u:User, p:u.sees | p in u.follows.posts or p in Ad
+inv3 C: all u:User, p:u.sees | p in u.follows.posts or p in Ad
+inv3 C: all u:User, p:u.sees | p in u.follows.posts or p in Ad
+

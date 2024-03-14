@@ -1,0 +1,7 @@
+inv6 S: all i : Influencer, p : i.posts | p.date = Date
+inv6 B: all i : Influencer, p : i.posts | p.date = Day
+inv6 O: all i : Influencer, d : Day | some p : i.posts | d in p
+inv6 C: all i : Influencer, d : Day | some p : i.posts | d in p.date
+inv6 O: all i : Influencer | some p : i.posts | Day in p.date
+inv6 O: all i : Influencer | some p : i.posts | Day in p.^date
+

@@ -1,0 +1,12 @@
+inv9 E:
+inv9 U: begin.*succ = Workstation
+inv9 B: begin.^succ = Workstation
+inv9 U: begin.*succ = Workstation
+inv9 U: begin.*succ in Workstation
+inv9 C: begin.*succ = Workstation	all w : Workstation | w not in w.^succ	all w : Workstation-end | one w.succ
+inv9 U: begin.*succ = Workstation	all w : Workstation-end | one w.succ
+inv9 C: begin.*succ = Workstation	all w : Workstation | w not in w.^succ	all w : Workstation-end | one w.succ
+inv9 T: begin.*succ = Workstation	no Workstation.^succ & iden	all w : Workstation-end | one w.succ
+inv9 T: begin.*succ = Workstation	no Workstation.^succ & iden	all w : Workstation-end | one w.succ
+inv9 C: begin.*succ = Workstation	no ^succ & iden	all w : Workstation-end | one w.succ
+

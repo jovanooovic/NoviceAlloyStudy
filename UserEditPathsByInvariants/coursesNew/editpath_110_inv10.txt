@@ -1,0 +1,14 @@
+inv10 S: all g : Grade, p:Person | g in p.enrolled(p.grades)
+inv10 T: all g:Grade, p:Person | g in p.enrolled.grades
+inv10 B: all g:Grade, p:Person | g in p.(p.enrolled.grades)
+inv10 B: all g:Grade, s:Student | g in s.(s.enrolled.grades)
+inv10 B: all g:Grade, s:Student | g in s.(s.enrolled.grades)
+inv10 S: all s:Student | g in s.enrolled.grades.Grade
+inv10 B: all g:Grade, s:Student | g in s.enrolled.grades.Grade
+inv10 B: all g:Grade, s:Student | g in s.enrolled.grades.Person
+inv10 O: all g:Grade | g in Student.enrolled.grades.Person
+inv10 T: all s:Student | s.enrolled.grades.Grade
+inv10 T: all p:(Person-Student) | p not in enrolled.grades.Grade
+inv10 S: all p:(Person-Student) | p not in Corse.grades.Grade
+inv10 C: all p:(Person-Student) | p not in Course.grades.Grade
+

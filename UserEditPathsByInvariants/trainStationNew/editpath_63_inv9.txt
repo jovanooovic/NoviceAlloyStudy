@@ -1,0 +1,18 @@
+inv9 B: all t : Track | all s : Semaphore | t->s in signals implies t in Junction
+inv9 B: all t : Track | all s : Signal | s in Semaphore and t->s in signals implies t in Junction
+inv9 B: all t : Track | some s : Signal | s in Semaphore and t->s in signals implies t in Junction
+inv9 B: all t : Track | one s : Signal | s in Semaphore and t->s in signals implies t in Junction
+inv9 B: all t : Track | all s : Signal | s in Semaphore and t->s in signals implies t in Junction
+inv9 S: all t : Track | some k : Junction | t->k in succ implies (some s : Semaphore | t->s in signals)
+inv9 B: all t : Track | some k : Junction | t->k in succs implies (some s : Semaphore | t->s in signals)
+inv9 B: all t : Track | all s : Signal | s in Semaphore and t->s in signals implies t in Junction
+inv9 S: all t,k : Track | t->k in succs and t in Junction implies (some y : Semaphore | k->s in signals)
+inv9 S: all t,k : Track | t->k in succ and t in Junction implies (some y : Semaphore | k->s in signals)
+inv9 S: all t,k : Track | t->k in succs and t in Junction implies (some y : Semaphore | k->s in signals)
+inv9 B: all t,k : Track | t->k in succs and t in Junction implies (some s : Semaphore | k->s in signals)
+inv9 O: all t : Track | some k : Junction | all s : Semaphore | t->k not in succs implies t->s not in signals
+inv9 B: all t : Track | all k : Junction | all s : Semaphore | t->k not in succs implies t->s not in signals
+inv9 O: all t : Track | one k : Junction | all s : Semaphore | t->k not in succs implies t->s not in signals
+inv9 B: all t : Track | one k : Junction | one s : Semaphore | t->k not in succs implies t->s not in signals
+inv9 B: all t : Track | some k : Junction | some s : Semaphore | t->k not in succs implies t->s not in signals
+

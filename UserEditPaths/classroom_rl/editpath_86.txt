@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: no (Person-Student)
+inv2 C: no Teacher
+inv3 C: (Student-Teacher) = Student
+inv4 C: no ((Person-Student)-Teacher)
+inv5 C: some (Teacher.Teaches)
+inv6 C: all t : Teacher | some t.Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 C: all c : Class | lone ((c.~Teaches) & Teacher)
+inv13 C: (no (Person-Teacher).Tutors) and (no (Tutors.(Person-Student)))
+inv10 C: all c : Class, s : Student | some g : Group | c->s->g in Groups
+inv15 B: all p : Person | p.^(~Tutors) in Teacher
+inv15 T: ^(~Tutors) in Teacher
+inv15 B: all p : Person | (p in Teacher) or (p.^(~Tutors) in Teacher)
+inv15 T: all p : Person | some t : Teacher | p.^(~Tutors).t
+inv15 T: all p : Person | p.^(~Tutors)
+inv15 B: all p : Person | p.^(~Tutors) in Teacher
+inv15 B: all p : Person | (p.^(~Tutors)) in Teacher
+inv15 B: all p : Person | p.^(~Tutors) in Teacher
+

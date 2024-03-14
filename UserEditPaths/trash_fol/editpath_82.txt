@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv1 E: 
+inv1 C: no Trash
+inv1 C: Trash in none
+inv2 C: File = Trash
+inv3 C: some Trash
+inv4 C: no (Protected & Trash)
+inv5 T: no ((not Protected) & Trash)
+inv5 B: no ((File & Trash) & Protected)
+inv5 B: no (File & Trash & Protected)
+inv5 B: (File - Protected) & Trash = File & Trash
+inv5 B: (File - Protected) & Trash = (File & Trash)
+inv5 C: (File - Protected) & Trash = (File - Protected)
+inv6 S: link in File one => set Link
+inv6 S: link in File lone => set Link
+inv6 S: link in File lone -> set Link
+inv6 S: link in File lone -> set Link
+inv6 B: link in File lone -> set File
+inv6 C: link in File set -> lone File
+inv7 T: no ((File in link) & Trash)
+inv7 T: no ((File in File.link) & Trash)
+inv7 C: no ((File & File.link) & Trash)
+inv7 C: no (File & File.link & Trash)
+inv7 T: not some f1, f2: File | f1->f2 in link & f2 in Trash
+inv7 T: not some f1, f2: File | f1->f2 in link & f2 in Trash
+inv7 C: not some f1, f2: File | f1->f2 in link && f2 in Trash
+inv8 C: no link
+inv9 B: link.~link not in iden
+inv9 B: link.~link in iden
+inv9 T: link.~link in iden & link not in iden
+inv9 B: link.~link in iden && link not in iden
+inv10 S: all l1, l2 | l1->l2 in Trash => l2 in Trash
+inv9 T: all l1, l2, l3 : File | l1->l2 in link && l2->l3 link
+inv9 T: all l1, l2, l3 : File | l1->l2 in link && l2->l3 link
+inv10 T: all l1, l2 : File | l1->l2 in (link & Trash) => l2 in Trash
+inv10 O: all l1, l2 : File | l1->l2 in link => l2 in Trash
+inv10 T: all l1, l2 : File | (l1->l2 in link & l1 in Trash) => l2 in Trash
+inv10 C: all l1, l2 : File | (l1->l2 in link && l1 in Trash) => l2 in Trash
+inv9 T: all l1, l2, l3 : File | l1->l2 in link && l2->l3 link
+inv9 C: not some l1, l2, l3 : File | l1->l2 in link && l2->l3 in link
+NA H: THEME UPDATE
+

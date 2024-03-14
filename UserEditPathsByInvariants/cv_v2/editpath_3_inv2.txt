@@ -1,0 +1,9 @@
+inv2 O: all u : User , w : Work | w in u.profile implies (w.source = u or w.source = Institution)
+inv2 B: all u : User , w : Work, i : Institution | w in u.profile implies (w.source = u or w.source = i)
+inv2 B: all u : User , w : Work, i : Institution | always(w in u.profile implies (w.source = u or w.source = i))
+inv2 S: all u : User, i : Institution, w : u.profile | always( w.source =u or w.source = Institucion)
+inv2 B: all u : User, i : Institution, w : u.profile | always( w.source =u or w.source = Institution)
+inv2 B: one u : User | all i : Institution, w : u.profile | always( w.source =u or w.source = Institution)
+inv2 O: all w : Work , u : User | w in u.profile implies always (w.source = u or w.source = Institution)
+inv2 O: all disj w : Work , u : User | w in u.profile implies always (w.source = u or w.source = Institution)
+

@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 O: before { no Trash and no Protected}
+inv1 O: before { no Trash}
+inv3 C: always( some File)
+inv5 S: some f:File | eventualy f in Trash
+inv5 B: some f:File | eventually f in Trash
+inv5 B: some f:File | (eventually f in Trash)
+inv5 B: eventually (some f:File | f in Trash)
+inv6 S: all f:file | f in trash implies always f in trash
+inv6 S: all f:File | f in trash implies always f in trash
+inv6 S: all f:File | f in Trash implies always f in trash
+inv6 U: all f:File | f in Trash implies always f in Trash
+inv5 S: feventually (some f:File | f in Trash)
+inv5 B: eventually (some f:File | f in Trash)
+inv6 U: all f:File | f in Trash implies always f in Trash
+inv7 O: some f:File | f in Protected
+inv7 C: eventually ( some f:File | f in Protected )
+inv1 O: always( no Trash and no Protected)
+

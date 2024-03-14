@@ -1,0 +1,22 @@
+inv2 O: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.workstation) = 1
+inv2 O: all ws: Workstation | some (ws.workers)	all w: Worker | #(w.workstation) = 1
+inv2 B: all ws: Workstation | #(ws.workers) > 0	all w: Worker | one w->workstation
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | one (w.workstation) = 1
+inv2 O: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.workstation) = 1
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(Workstation)) = 1
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(Workstation)) = 1
+inv2 S: all ws: Workstation | #(ws.workers) > 0	all w: Worker | one w in Workstation
+inv2 S: all ws: Workstation | #(ws.workers) > 0	all w: Worker | one w->Workstation
+inv2 S: all ws: Workstation | #(ws.workers) > 0	all w: Worker | w in Workstation and one w->ws
+inv2 U: all ws: Workstation | #(ws.workers) > 0
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.Workstation) = 1
+inv2 S: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.ws) = 1
+inv2 T: all ws: Workstation, w: Worker | #(ws.workers) > 0 and one w.ws
+inv2 T: all ws: Workstation, w: Worker | #(ws.workers) > 0 and one ws.w
+inv2 S: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.Workstation) = 1	}
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.Workstation) = 1
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(Workstation)) = 1
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(Workstation)) = 1
+inv2 T: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(Workstation)) = 1
+inv2 O: all ws: Workstation | #(ws.workers) > 0	all w: Worker | #(w.(workstation)) = 1
+

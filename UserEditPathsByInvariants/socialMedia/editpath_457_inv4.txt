@@ -1,0 +1,5 @@
+inv4 S: all x : User | some ad : Ad && ad in x.posts => x.post in Ad
+inv4 S: all x : User | some ad : Ad & ad in x.posts => x.post in Ad
+inv4 S: all x : User | some ad : Ad | ad in x.posts => x.post in Ad
+inv4 B: all x : User | some ad : Ad | ad in x.posts => x.posts in Ad
+

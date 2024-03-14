@@ -1,0 +1,7 @@
+inv6 T: all i:Influencer, d1, d2: Day, p1,p2: Photo | i->p1 posts and i->p2 in posts and p1->d1 in date and p2->d2 in date => d2 = d1+1
+inv6 T: all i:Influencer, d1, d2: Day, p1,p2: Photo | p1->i posts and p2->i in posts and p1->d1 in date and p2->d2 in date => d2 = d1+1
+inv6 S: all i:Influencer, d1, d2: Day, p1,p2: Photo | (i->p1 posts and i->p2 in posts and p1->d1 in date and p2->d2 in date) => d2 = d1+1
+inv6 S: some i:Influencer, d1, d2: Day, p1,p2: Photo | (i->p1 posts and i->p2 in posts and p1->d1 in date and p2->d2 in date) => d2 = d1+1
+inv6 C: all i:Influencer,d:Day | some p:Photo | i->p in posts and p->d in date
+inv6 C: all i:Influencer,d:Day | some p:Photo | i->p in posts and p->d in date
+

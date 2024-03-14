@@ -1,0 +1,14 @@
+inv4 O: all t1,t2: Track| t1 in Entry <=> t1 not in t2.succs
+inv4 U: all t1,t2: Track| t1 in Entry implies t1 not in t2.succs
+inv4 T: all t1,t2: Track| t1 in t2.succs implies t1 not Entry
+inv4 O: all t1,t2: Track| t1 not in t2.succs <=> t1 in Entry
+inv4 B: all t1,t2,t3: Track| t1 not in t2.succs and t3 in t1.succs <=> t1 in Entry
+inv4 B: all t: Track| some a: Track| a not in t.succs <=> a in Entry
+inv4 B: all t: Track| all e: Entry| e not in t.succs && some e.succs
+inv4 O: all t1,t2: Track| t2 not in t1.succs && some t2.succs
+inv4 B: all t1,t2: Track| t2 not in t1.succs && some t2.succs implies t2 in Entry
+inv4 B: all t1,t2: Track| t2 not in t1.succs && some t2.succs && t2 not in t2.^(succs) implies t2 in Entry
+inv4 B: all t1,t2: Track| (t2 not in t1.succs && some t2.succs && t2 not in t2.^(succs)) implies t2 in Entry
+inv4 O: all t1,t2: Track| t1 in Entry <=> t1 not in t2.succs
+inv4 C: all t: Track| no succs.t <=> t in Entry
+

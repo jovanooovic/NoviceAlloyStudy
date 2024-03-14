@@ -1,0 +1,27 @@
+inv5 S: all t: Track
+inv5 U: all t: Junction | some l: Track | t in l.succs
+inv5 B: all j: Junction | some t : Track |  #(t)>=2 && j in t.succs
+inv5 B: all j: Junction | some t : Track |  #(t)>=2 && j in t.succs
+inv5 U: all j: Junction | some t : Track | some l : Track | j in t.succs and j in l.succs
+inv5 U: all j: Junction | some t : Track | some l : Track | j in t.succs and j in l.succs implies j != l
+inv5 U: all j: Junction | some t : Track | some l : Track | j != l and j in t.succs and j in l.succs
+inv5 U: all j: Junction | some t : Track | some l : Track | t != l and j in t.succs and j in l.succs
+inv5 B: all e: Exit | one t: Track | e in t.succs
+inv5 B: all e: Exit | one t: Track | e in t.succs	all j: Junction | some t, l : Track | t != l and t!= j and l!=j and j in t.succs and j in l.succs
+inv5 B: all j: Junction | some t, l : Track | t != l and t!= j and l!=j and j in t.succs and j in l.succs
+inv5 B: all e: Exit | lone t: Track | e in t.succs	all j: Junction | some t, l : Track | t != l and t!= j and l!=j and j in t.succs and j in l.succs
+inv5 S: all j: Junctions | #( j & Track.succs) > 1
+inv5 B: all j: Junction | #( j & Track.succs) > 1
+inv5 B: all j: Junction | #( j & Track.succs) > 1
+inv5 T: all t : Track | ( t & Track.succs) > 1 implies t in Junction
+inv5 U: all t : Track | #( t & Track.succs) > 1 implies t in Junction
+inv5 B: all t : Track | #( t & Track.succs) > 1 iff t in Junction
+inv5 B: all t : Track | #( t & Track.succs) > 1 iff t in Junction
+inv5 B: all t : Track - Junction| one t: Track | t in t.succs
+inv5 B: all t : Track - Junction - Entry| one t: Track | t in t.succs
+inv5 B: all t : Track - Junction - Entry| one t: Track | t in t.succs
+inv5 B: all t : Track - Junction - Entry| one l: Track | t in l.succs
+inv5 B: all t : Track - Junction - Entry| one l: Track | t in l.succs	all j: Junction | some t, l: Track | t != l and t != j and l!=j and j in t.succs and j in l.succs
+inv5 B: all t : Track - Junction - Entry| one l: Track | t in l.succs	all j: Junction | some t, l: Track | t != l  and j in t.succs and j in l.succs
+inv5 B: all t : Track - Junction - Entry| one l: Track | t in l.succs	all j: Junction | some t, l: Track | t != l  and j in t.succs and j in l.succs
+

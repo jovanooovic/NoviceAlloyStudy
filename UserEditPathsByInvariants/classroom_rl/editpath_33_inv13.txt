@@ -1,0 +1,8 @@
+inv13 T: all t:Tutors | Teacher.t.Student
+inv13 C: all t,s:Person | t->s in Tutors implies t in Teacher and s in Student
+inv13 C: all t,s:Person | t->s in Tutors implies t in Teacher and s in Student
+inv13 C: all t,s:Person | t->s in Tutors implies t in Teacher and s in Student
+inv13 C: all t,s:Person | t->s in Tutors implies t in Teacher and s in Student
+inv13 B: all s:Student,c:Class | some ( s<:c.Groups ) implies no((Teacher & Teaches.c)-(Tutors.s))
+inv13 C: all t,s:Person | some Tutors.s:>t implies t in Teacher and s in Student
+

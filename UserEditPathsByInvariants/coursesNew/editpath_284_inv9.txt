@@ -1,0 +1,4 @@
+inv9 O: all x,y : Person | all z1,z2 : Course | z1 in x.teaches and z1 in y.teaches implies (z2 in x.enrolled and z2 not in y.teaches) or (z2 in y.enrolled and z2 not in x.teaches)
+inv9 O: all x,y : Person | all z1,z2 : Course | z1 in x.teaches and z1 in y.teaches implies (z2 in x.enrolled and z2 not in y.teaches) and (z2 in y.enrolled and z2 not in x.teaches)
+inv9 O: all x,y : Person | all z1,z2 : Course | z1 in x.teaches and z1 in y.teaches implies (z2 in x.enrolled implies z2 not in y.teaches) and (z2 in y.enrolled implies z2 not in x.teaches)
+

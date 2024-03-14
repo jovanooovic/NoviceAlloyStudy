@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 B: all u: User | one u.posts
+inv1 B: all u: User | one posts.u
+inv1 C: all p: Photo | one posts.p
+inv2 T: all u: User | not u.follows
+inv2 T: all u: User | u not u.follows
+inv2 C: all u: User | u not in u.follows
+inv3 T: all u: User | u.sees in (u.follows and Ad)
+inv3 T: all u: User | u.sees in (u.follows.posts and Ad)
+inv3 C: all u: User | u.sees in (u.follows.posts + Ad)
+inv4 S: all u: User | u.posts in (Photos - Ad) or x.posts in Ad
+inv4 S: all u: User | u.posts in (Photo - Ad) or x.posts in Ad
+inv4 S: all u: User | u.posts in (Photo - Ad) or x.posts in Ad
+inv7 T: all u: User | u.suggested in (u.follows.follows + (u.follows.follows not in u.follows))
+inv7 T: all u: User | u.suggested implies (u.follows.follows and (u.follows.follows not in u.follows))
+

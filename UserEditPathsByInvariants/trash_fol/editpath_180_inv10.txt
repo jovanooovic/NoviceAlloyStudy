@@ -1,0 +1,17 @@
+inv10 S: all f,g:File |
+inv10 S: all f,g:File |
+inv10 S: all f,g:File |
+inv10 S: all f,g:File |
+inv10 S: all f,g:File |
+inv10 S: all f,g:File | (f->g in link) and in Trash
+inv10 S: all f,g:File | (f->g in link) and in Trash implies f and g in Trash
+inv10 B: all f,g:File | g in Trash implies f->g not in link
+inv10 B: all f,g:File | g in Trash and g!=f implies f->g not in link
+inv10 B: all f,g:File | g in Trash and g!=f implies f->g not in link
+inv10 O: all f,g:File | f in Trash implies f->g not in link
+inv10 T: all f,g:File | (f->g in link) in Trash implies g in Trash
+inv10 S: all f,g:File | (f->g in link) and in Trash implies g in Trash
+inv10 T: all f,g:File | (f->g in link) and f->g in Trash implies g in Trash
+inv10 T: all f,g:File | g in Trash implies f->g in Trash
+inv10 C: all f:Trash,g:File | f->g in link implies g in Trash
+

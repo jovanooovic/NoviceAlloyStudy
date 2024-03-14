@@ -1,0 +1,12 @@
+inv14 T: one (projects & Course)
+inv14 T: one (projects & Person -> Course)
+inv14 T: one (Person -> Course & projects)
+inv14 S: all p: Person | getProjectStudents[project]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 T: all p: Person | getProjectStudents[p.projects]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | one getProjectStudents[p.projects]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | no (getProjectStudents[project] & getProjectStudents[Project - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | p = (getProjectStudents[project] & getProjectStudents[Project - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 T: all p: Person | all project: p.projects | (getProjectStudents[project] & getProjectStudents[p.projects - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | p = (getProjectStudents[project] & getProjectStudents[p.projects - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 C: all p: Person | all project: p.projects | no ((getProjectStudents[project] & getProjectStudents[p.projects - project]) - p)	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+

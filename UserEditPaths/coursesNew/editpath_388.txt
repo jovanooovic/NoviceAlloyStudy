@@ -1,0 +1,48 @@
+NA H: THEME UPDATE
+inv1 S: all x:Person, c:Courses| x->c in enrolled implies x in Student
+inv1 C: all x:Person, c:Course| x->c in enrolled implies x in Student
+inv2 C: all x:Person, c:Course| x->c in teaches implies x in Professor
+inv3 O: some x:Person|all c:Course| x->c in teaches
+inv3 B: some x:Person, c:Course| x->c in teaches
+inv3 O: some x:Professor|all c:Course| x->c in teaches
+inv3 O: all c:Course| (some x:Professor| x->c in teaches)
+inv4 S: some p:Projects| one c:Courses| c->p in projects
+inv4 S: some p:Project| one c:Courses| c->p in projects
+inv4 B: some p:Project| one c:Course| c->p in projects
+inv4 B: some p:Project| (one c:Course| c->p in projects)
+inv4 C: all p:Project| (one c:Course| c->p in projects)
+inv5 B: all x:Student, p:Project| x->p in projects
+inv5 B: all x:Student| (some p:Project| x->p in projects)
+inv5 O: all x:Person, p:Project| x->p in projects implies x in Student	  some x:Student| all p:Project| x->p in projects
+inv5 C: all x:Person, p:Project| x->p in projects implies x in Student	  all p:Project| (some x:Student| x->p in projects)
+inv6 B: all x:Student, c:Course, p:Project| x->p in projects and c->p in projects implies x->c in enrolled
+inv7 S: all x:Student, c:Course, p,y:Project| x->p in project and x->y in project and c->p in project and c->y in project implies p=y
+inv7 S: all x:Student, c:Course, p,y:Project| x->p in projects and x->y in project and c->p in project and c->y in project implies p=y
+inv7 U: all x:Student, c:Course, p,y:Project| x->p in projects and x->y in projects and c->p in projects and c->y in projects implies p=y
+inv8 C: all x:Person, c:Course| x->c in teaches implies x->c not in enrolled
+inv8 U: all x:Professor, c:Course| x->c in teaches implies x->c not in enrolled
+inv9 B: all x:Professor, c:Course, y:Professor-x| x->c in teaches implies y->c not in enrolled
+inv9 S: all x:Professor, c:Course|)some y:Professor-x| x->c in teaches implies y->c not in enrolled)
+inv9 B: all x:Professor, c:Course|(some y:Professor-x| x->c in teaches implies y->c not in enrolled)
+inv9 U: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches))
+inv10 C: all x:Person, c:Course, g:Grade| c->x->g in grades implies x in Student
+inv11 U: all x:Student, c:Course, g:Grade| c->x->g in grades implies x->c in enrolled
+inv12 U: all c:Course, x:Student| (some g,y:Grade | c->x->g in grades and c->x->y in grades implies g = y)
+inv12 U: all c:Course, x:Student| (lone g:Grade | c->x->g in grades)
+inv13 E: 
+inv13 E: 
+inv14 B: all x,y,z:Student, p,g:Project| x->p in projects and y->p in projects implies z->g in projects and x->g in projects
+inv14 B: all x,y,z:Student, p,g:Project| x->p in projects and y->p in projects implies z->g in projects and x->g in projects implies z!=y
+inv14 U: all x:Student, y:Student-x, p:Project, g:Project-p| x->p in projects and y->p in projects and x->g in projects implies y->g not in projects
+inv15 S: all x:Student, y:Student-x, p:Project| x->p in projects and y->p in projects c->x->g in grades implies #y->x->g in grades <= 1
+inv15 S: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects c->x->g in grades implies #y->x->g in grades <= 1
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #y->x->g in grades <= 1
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #y->x->g <= 1 in grades
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #y->x->g in grades <= 1
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #c->y->g in grades <= 1
+inv15 U: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #c->y->g <= 1
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies c->y->g <= 1
+inv15 U: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #c->y->g <= 1
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #c->y->g <= 1 in grades
+inv15 T: all x:Student, y:Student-x, p:Project, c:Course, g:Grade| x->p in projects and y->p in projects and c->x->g in grades implies #c->y->g in grades <= 1
+

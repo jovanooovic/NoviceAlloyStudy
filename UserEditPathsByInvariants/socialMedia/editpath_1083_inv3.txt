@@ -1,0 +1,13 @@
+inv3 S: all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y	all x : Ad | all y : User | x in sees.y
+inv3 S: all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y	all x : Ad | all y : User | x in sees.y
+inv3 B: all x : Ad | all y : User | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Ad | all y : User | x in sees.y	all x : Photos | all y : Users | all z : Ad | y in follows.y | z not in posts.y | x in sees.y
+inv3 S: all x : Photos | all y : Users | all z : Ad | (x in sees.y) implies ((x in Ad) or (some z : User | y in z.follows.posts)
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv3 S: all y : Photos-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+inv3 S: all y : Photo-Ad | all x : Users | (x in sees.y) implies  ( y in x.follows.posts)
+

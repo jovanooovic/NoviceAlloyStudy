@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv6 T: all i: Influencer | i.posts.date in (Day & iden)
+inv6 U: all i: Influencer | i.posts.date in Day
+inv6 T: all i: Influencer | i.posts.date implies some Day
+inv6 T: all i: Influencer | i.posts.date implies Day
+inv6 U: all i: Influencer | i.posts.date in Day
+inv7 T: all s: suggested | s implies User.follows.User - User.follows
+inv7 T: all s: suggested | s in User.follows.User - User.follows
+inv7 T: all u: User | suggested in u.follows.User - u.follows
+inv7 T: all u: User | suggested in u.follows.u - u.follows
+inv7 T: all u: User | u.follows.u - u.follows
+

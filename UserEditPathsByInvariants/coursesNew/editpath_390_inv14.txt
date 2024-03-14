@@ -1,0 +1,6 @@
+inv14 S: all disj s1,s2:Student | c1,c2:Course | (s1 in c1.project & s2 in c1.project) implies no (s1 in c2.project && s2 in c2.project)
+inv14 S: all disj s1,s2:Student |all c1,c2:Course | (s1 in c1.project & s2 in c1.project) implies no (s1 in c2.project && s2 in c2.project)
+inv14 T: all disj s1,s2:Student |all c1,c2:Course | (s1 in c1.projects & s2 in c1.project) implies no (s1 in c2.project && s2 in c2.project)
+inv14 T: all disj s1,s2:Student |all c1,c2:Course | ((s1 in c1.projects) & (s2 in c1.project)) implies no (s1 in c2.project && s2 in c2.project)
+inv14 U: all disj s1,s2:Student | lone (s1.projects & s2.projects)
+

@@ -1,0 +1,6 @@
+inv7 B: all u1,u2,u3: User | u1 -> u2 in follows and u2 -> u3 in follows implies u3 -> u1 in suggested
+inv7 T: all u1,u2,u3: User | u1 -> u2 in follows and u2 -> u3 in follows and u1 -> u3 not follows implies u3 -> u1 in suggested
+inv7 B: all u1,u2,u3: User | u1 -> u2 in follows and u2 -> u3 in follows and u1 -> u3 not in follows implies u3 -> u1 in suggested
+inv7 B: all u1,u2,u3: User | u3 -> u1 in suggested implies u1 -> u2 in follows and u2 -> u3 in follows and u1 -> u3 not in follows
+inv7 C: all x, y: User | x -> y in suggested iff (x != y and some z: User | x -> z in follows and z -> y in follows and not x -> y in follows)
+

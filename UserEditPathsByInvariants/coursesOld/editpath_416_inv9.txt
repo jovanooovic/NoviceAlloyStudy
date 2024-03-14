@@ -1,0 +1,6 @@
+inv9 B: all p : enrolled.Course | p not in Professor
+inv9 B: all p : enrolled.Course | p not in Professor
+inv9 B: all p : Professor | no teaches.(p.teaches) & enrolled.(p.teaches)
+inv9 U: all p : Professor | no teaches.p.teaches & enrolled.p.teaches
+inv9 B: all p : Professor | no teaches.(p.teaches) & enrolled.(p.teaches)
+

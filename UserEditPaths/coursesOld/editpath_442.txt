@@ -1,0 +1,82 @@
+NA H: THEME UPDATE
+inv1 C: all p :Person, c:Course | p->c in enrolled implies p in Student
+inv1 C: all p :Person, c:Course | p->c in enrolled implies p in Student
+inv3 U: all c:Course |some p:Person | p in c implies p in Professor
+inv3 T: all c:Course |some p:Person | p->c implies p in Professor
+inv3 U: all c:Course, p:Person | some p->c
+inv3 T: all c:Course, p:Person | some p->c in teaches
+inv3 T: all c:Course, p:Professor | some (p->c in teaches)
+inv3 B: all c:Course, p:Professor | some p.teaches
+inv3 T: all c:Course, p:Professor |  p.teaches
+inv3 B: all c:Course, p:Professor |  p.teaches in c
+inv3 B: all c:Course, p:Person |  p.teaches in c implies p in Professor
+inv3 T: all c:Course, p:Person |  p.teaches->c implies p in Professor
+inv3 B: all c:Course, p:Person |  c in p.^teaches
+inv3 B: all c:Course, p:Person |  c in p.teaches
+inv3 B: all c:Course, p:Person |  c in p.*teaches
+inv3 T: all c:Course, p:Person |  teaches.Course
+inv3 U: all c:Course, p:Person | some teaches.Course
+inv3 T: all c:Course, p:Person | some teaches.Course in Professor
+inv3 B: all c:Course, p:Person | some teaches.Course->Professor
+inv3 U: all c:Course, p:Person | some teaches.Course->p
+inv3 U: all c:Course, p:Person | some p->teaches.Course
+inv3 B: all c:Course, p:Person | p->c in teaches
+inv3 O: all c:Course | one p:Person | p->c in teaches
+inv3 B: one c:Course | all p:Person | p->c in teaches
+inv3 B: one c:Course | some p:Person | p->c in teaches
+inv3 T: some teaches.Course in Professor
+inv3 B: teaches.Course in Professor
+inv3 C: all c:Course | some p:Person | p->c in teaches
+inv4 T: projects.Person in Course
+inv4 T: projects.Course in Course
+inv4 B: one Course <: projects
+inv4 S: all Course <: projects
+inv4 B: some Course <: projects
+inv4 T: Course <: projects
+inv4 B: lone Course <: projects
+inv4 T: lone Course <: projects & Person <: projects
+inv4 T: lone Course :> projects
+inv4 B: lone Course <: projects
+inv4 T: Person in projects implies  Course <: projects
+inv4 T: Course <: projects
+inv4 B: no Course <: projects
+inv4 B: one Course <: projects
+inv4 T: one Course :> projects
+inv4 T: all p:Project | one c:Course | p->c in projects
+inv4 T: all p:Project | one c:Course | p->c <: projects
+inv4 T: all p:Project | one c:Course | c <: projects
+inv4 S: c <: projects
+inv4 B: one Course <: projects
+inv5 S: Students <: projects & some p->c
+inv5 S: Students <: projects & some p->c
+inv5 S: Students <: projects
+inv5 T: Student <: projects
+inv5 T: Student <: projects
+inv5 S: Students <: projects & some p->c
+inv5 S: Student <: projects & some p->c
+inv5 S: Student <: projects & p->c
+inv5 T: Student <: projects
+inv4 T: all p:Project | one c:Course | p->c in projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 C: all pr:Project, p:Person | p->pr in projects implies p in Student	  	all p:Project | some s:Student | p in s.projects
+inv6 S: all p:Project | some s:Student | p in s.projects implies p in Student and c in s.enrolled
+inv6 B: all p:Project,c:Course| some s:Student | p in s.projects implies p in Student and c in s.enrolled
+inv6 B: all p:Project,c:Course| some s:Student | p in s.projects and c in s.enrolled
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects and c in s.enrolled
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects implies c in s.enrolled
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects implies c in s.enrolled
+inv6 B: all p:Project,c:Course,s:Student | p in c.projects and c in s.enrolled and p in s.projects
+inv6 B: all p:Project,c:Course,s:Student | p in c.projects and c in s.enrolled implies p in s.projects
+inv6 B: all p:Project,c:Course,s:Student | p in c.projects and c in s.enrolled iff p in s.projects
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects iff  p in c.projects and c in s.enrolled
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects iff ( p in c.projects and c in s.enrolled)
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects implies ( p in c.projects and c in s.enrolled)
+inv6 B: all p:Project,c:Course,s:Student | p in s.projects and p in c.projects implies c in s.enrolled
+inv7 S: all s:Student,c:Course | one p:Project | p in s.project
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects implies p in c
+inv7 B: all s:Student,c:Course | one p:Project | p in s.projects implies p in c.projects
+inv7 T: all s:Student,c:Course | one p:Project | lone p.Course in s.projects
+inv7 T: all s:Student,c:Course | one p:Project | lone p in s.projects
+NA H: THEME UPDATE
+

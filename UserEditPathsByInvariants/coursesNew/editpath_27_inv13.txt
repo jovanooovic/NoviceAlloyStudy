@@ -1,0 +1,6 @@
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies y in x.enrolled
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 B: all x : Person | all y : Course | y.grades[x] = y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 U: all x : Person | all y : Course | x in y.grades.max implies (one p : Project | p in y.projects and p in x.projects)
+inv13 O: all x : Person | all y : Course | x in y.grades.last implies (one p : Project | p in y.projects and p in x.projects)
+

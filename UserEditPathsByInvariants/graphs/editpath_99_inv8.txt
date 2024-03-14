@@ -1,0 +1,14 @@
+inv8 C: all n, n1, n2 : Node | n->n1 in adj and n1->n2 in adj => n->n2 in adj
+inv8 O: adj = Node->Node
+inv8 T: all n : Node | n->n.adj.adj.Node in adj
+inv8 T: all n : Node | n->(n.adj.adj.Node) in adj
+inv8 T: all n : Node | (n->(n.adj.adj.Node)) in adj
+inv8 T: all n : Node | let n1 = n.adj.adj.Node | n->n1 in adj
+inv8 T: let n1 = n.adj.adj.Node | (all n : Node | n->n1 in adj)
+inv8 S: n.adj.adj.Node
+inv8 T: all n : Node | n.adj.adj.Node
+inv8 C: all n : Node | n->n.adj.adj in adj
+inv8 S: Node->n.adj.adj in adj
+inv8 O: Node->Node.adj.adj in adj
+inv8 C: all n : Node | n->n.adj.adj in adj
+

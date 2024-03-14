@@ -1,0 +1,5 @@
+inv1 U: all p : Photo | p in User.posts
+inv1 O: all p : Photo | p in posts.User
+inv1 U: all p : Photo | p in User.posts
+inv1 C: all p : Photo | one u : User | u->p in posts
+

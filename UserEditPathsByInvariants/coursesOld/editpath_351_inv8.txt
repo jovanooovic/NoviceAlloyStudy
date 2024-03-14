@@ -1,0 +1,5 @@
+inv8 U: all p:Professor | p->p not in teaches
+inv8 U: no p:Professor | p->p in teaches
+inv8 B: no p:Professor| all c:Course | p->c in teaches and p->c in enrolled
+inv8 U: all p:Person, c:Course | p->c in teaches and p->c in enrolled implies p not in Professor
+

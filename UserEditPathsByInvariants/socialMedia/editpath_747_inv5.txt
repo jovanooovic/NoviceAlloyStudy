@@ -1,0 +1,9 @@
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 S: all x : User | (all y : User | y in Influencer) implies y in x.follows
+inv5 S: all x : User | (all y : User | y in Influencer) implies y in x.follows
+inv5 B: all x : User | all y : User | y in Influencer implies y in x.follows
+inv5 U: all x : User | all y : User | y in Influencer and !x in Influencer implies y in x.follows
+inv5 U: all x : User | all y : Influencer | !x in Influencer implies y in x.follows
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 U: all x : User | all y : Influencer | x!=y implies y in x.follows
+

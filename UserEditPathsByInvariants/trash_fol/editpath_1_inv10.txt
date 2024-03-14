@@ -1,0 +1,15 @@
+inv10 E:
+inv10 S: all t:Trash, fl:File.links | f1 in Trash implies (no f1 in File)
+inv10 S: all t:Trash, fl:File.link | f1 in Trash implies (no f1 in File)
+inv10 S: all t:Trash, fl:File.link | f1 in Trash
+inv10 S: all t:Trash, fl:File | f1 in Trash
+inv10 S: all t:Trash, fl:File.link | f1 in Trash implies (no f1 in File)
+inv10 T: all t:Trash, fl:File.link | fl in Trash implies (no fl in File)
+inv10 T: all fl:File.link | fl in Trash implies (no fl in File)
+inv10 O: all fl:File.link | fl in Trash
+inv10 T: all fl:File.link | fl in Trash implies (no fl in File)
+inv10 T: all fl:File.link | (fl in Trash implies (no fl in File))
+inv10 U: all fl:File.link | fl in Trash implies (fl in File)
+inv10 B: all fl:File.link | fl in Trash implies (fl not in File)
+inv10 B: all fl:File.link | fl in Trash implies (fl not in File)
+

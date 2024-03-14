@@ -1,0 +1,6 @@
+inv6 B: all s1:Student | some pr:Project | s1->pr in projects implies ( all c:Course | s1->c in enrolled and c->pr in projects )
+inv6 B: all s1:Student | some pr:Project | s1->pr in projects implies ( some c:Course | s1->c in enrolled and c->pr in projects )
+inv6 U: all s1:Student | all pr:Project | s1->pr in projects implies ( some c:Course | s1->c in enrolled and c->pr in projects )
+inv6 B: all s1:Student | all pr:Project | s1->pr in projects implies ( all c:Course | s1->c in enrolled and c->pr in projects )
+inv6 U: all s1:Student | all pr:Project | s1->pr in projects implies ( some c:Course | s1->c in enrolled and c->pr in projects )
+

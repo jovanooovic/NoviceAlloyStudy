@@ -1,0 +1,7 @@
+inv12 T: all t: Teacher | t->Group in Groups
+inv12 B: all t: Teacher | t in Class.Groups.Group
+inv12 B: Teacher in Class.Groups.Group
+inv12 O: all t: Teacher | t in (Class.Groups.Group & t.Teaches)
+inv12 B: all t: Teacher | t in (Class.Groups.Group & Teaches.Class)
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

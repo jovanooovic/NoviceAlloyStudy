@@ -1,0 +1,16 @@
+inv5 S: Junctions = Track - Track.succ.succ
+inv5 S: Junctions = Track - Track.succ.succ
+inv5 S: Junction = Track - Track.succ.succ
+inv5 B: Junction = Track - Track.succs.succs
+inv5 S: Junction = Track - Track.succs.succs^
+inv5 S: Junction = Track - Track.succ^succs
+inv5 T: Junction = Track - Track.succs^succs
+inv5 B: Junction = Track - (Track.succs).^succs
+inv5 B: all t : Track | t in Junction <=> t in Track.succs.^succs
+inv5 B: all t : Track | t in Junction <=> t in Track.succs.succs.^succs
+inv5 B: all t : Track | t in Junction <=> t in Track.succs.succs.*succs
+inv5 B: all t : Track | t in Junction <=> t in (Track.succs.succs).*succs
+inv5 S: all t : Track | t in Junction iff #succs.t>1 para a 5
+inv5 E:
+inv5 C: all t : Track | t in Junction iff #succs.t>1
+

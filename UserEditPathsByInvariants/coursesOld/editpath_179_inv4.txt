@@ -1,0 +1,10 @@
+inv4 T: one c:Course | projects.Project in c
+inv4 B: one c:Course | Project in c.projects
+inv4 B: one c:Course |all p: Project | p in c.projects
+inv4 B: one c:Course |all p: Project |c->p in projects
+inv4 B: one c:Course | all p: Project | c->p in projects
+inv4 C: all p: Project |one c:Course | c->p in projects
+inv4 C: all p: Project | one c:Course | p in c.projects
+inv4 S: all p: Project | one c:Course | p->c in proposes
+inv4 T: all p: Project | one c:Course | p->c in projects
+

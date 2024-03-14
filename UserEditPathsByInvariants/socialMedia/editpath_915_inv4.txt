@@ -1,0 +1,21 @@
+inv4 T: posts :> Ad = posts.Ad
+inv4 T: (posts :> Ad) = posts.Ad
+inv4 S: (posts :> Ad).Ad = post.Ad
+inv4 B: (posts :> Ad) != (posts :> (Photo - Ad))
+inv4 O: (posts - User->Ad) != (posts :> (Photo - Ad))
+inv4 U: (posts - User->Ad) = (posts :> (Photo - Ad))
+inv4 U: (posts & User->Ad) = (posts :> Ad)
+inv4 U: (posts & User->Ad) = (posts :> Ad)
+inv4 U: posts :> Ad  = posts & (User->Ad)
+inv4 U: posts :> Ad  = posts & User->Ad
+inv4 U: posts :> Ad = posts - User->(Photo - Ad)
+inv4 S: no((posts :> Ad).Ad & (posts :> (Photo - Ad)).ad)
+inv4 U: no((posts :> Ad).Ad & (posts :> (Photo - Ad)).Ad)
+inv4 C: no((posts :> Ad).Ad & (posts :> (Photo - Ad)).Photo)
+inv4 C: no(posts.(Photo - Ad) <: (posts :> Ad).Ad)
+inv4 B: (posts :> Ad).Ad not in posts.(Photo - Ad)
+inv4 C: no((posts :> Ad).Ad & posts.(Photo - Ad))
+inv4 B: (posts :> Ad).Ad != posts.(Photo - Ad)
+inv4 C: no((posts :> Ad).Ad & posts.(Photo - Ad))
+inv4 C: no (posts.Ad & posts.(Photo - Ad))
+

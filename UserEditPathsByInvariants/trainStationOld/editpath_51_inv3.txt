@@ -1,0 +1,6 @@
+inv3 S: always (all t:Trains, k:Tracks | some t.pos :> k implies after t.pos :> k)
+inv3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+inv3 T: always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)
+inv3 T: always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)
+inv3 U: always (all t:Train, k:Track | t.pos = k implies after t.pos = k)
+

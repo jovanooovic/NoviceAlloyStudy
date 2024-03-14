@@ -1,0 +1,27 @@
+inv2 E:
+inv2 T: all x : User | not x.follows.x
+inv2 T: all x : User | x not follows.x
+inv2 T: all x : User | not follows.x
+inv2 T: all x : User | not x.follows.x
+inv2 T: all x : User | x not follows.x
+inv2 S: all x : User | follows.all - x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | x no follows.x
+inv2 O: all x : User | no follows.x
+inv2 S: all x : User | no y follows.x | y = x
+inv2 S: all x : User | no y follows.x implies y = x
+inv2 S: all x, y : User | no y follows.x implies y = x
+inv2 S: all x : User, y : User | no y follows.x implies y = x
+inv2 S: y : User	all x : User| no y follows.x implies y = x
+inv2 S: all x and y : User| no y follows.x implies y = x
+inv2 S: all x and y : User| no y follows.x implies y == x
+inv2 S: all x : User | no x follows.x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | no x in follows.x
+inv2 S: x : User | not follows.x
+inv2 S: x : User | not (some follows.x)
+inv2 S: x : User | no (follows.x)
+inv2 O: all x : User | no (follows.x)
+inv2 S: all x : User | not in (follows.x)
+inv2 C: all x : User | x not in (follows.x)
+

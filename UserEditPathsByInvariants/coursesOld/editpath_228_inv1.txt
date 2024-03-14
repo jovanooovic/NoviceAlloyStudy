@@ -1,0 +1,64 @@
+inv1 T: all p : Professor | p.enrolled & none
+inv1 U: all p : Professor | none in p.enrolled
+inv1 T: all p : Professor | p.enrolled
+inv1 B: all p : Professor | p.enrolled = none
+inv1 U: all pro : Professor | all p : Person | pro not in p.enrolled
+inv1 T: all pro : Professor | all p : Person | p.enrolled-pro
+inv1 U: all pro : Professor | all p : Person | pro not in p.enrolled
+inv1 B: all p : Professor | p.enrolled = none
+inv1 B: all p : Person | p in Professor implies p.enrolled = none
+inv1 B: all p : Professor | p.enrolled = none
+inv1 S: all p : Professor | all s : Student | s == p implies p.enrolled = none
+inv1 S: all p : Professor | all s : Student | s == p implies p.enrolled = none
+inv1 S: all p : Professor | all s : Courses | p.enrolled = c - p.teaches
+inv1 S: all p : Professor | all s : Course | p.enrolled = c - p.teaches
+inv1 B: all p : Professor | all c : Course | p.enrolled = c - p.teaches
+inv1 B: all p : Professor | all c : Course | c - p.teaches in p.enrolled
+inv1 B: all s : Student | all c : Course | c in s.enrolled
+inv1 B: all s : Student | all p : Professor | all c : Course | c in s.enrolled iff s != p
+inv1 B: all s : Student | all p : Professor | all c : Course | c in s.enrolled iff no (s.enrolled & s.teaches)
+inv1 B: all s : Student | all p : Professor | all c : Course | no (s.enrolled & s.teaches)
+inv1 B: all s : Student | all c : Course | no (s.enrolled & s.teaches)
+inv1 B: all p : Professor | p.enrolled = none
+inv1 B: all p : Professor | p.enrolled = none
+inv1 S: all p : Professor | s : Student | c : Course | p.enrolled = none and c in s.enrolled
+inv1 B: all p : Professor | all s : Student | all c : Course | p.enrolled = none and c in s.enrolled
+inv1 B: all p : Professor | all s : Student | all c : Course | no (p.enrolled & c) and c in s.enrolled
+inv1 B: all p : Professor | all s : Student | all c : Course | no (p.enrolled & c)
+inv1 T: all p : Professor | all s : Student | all c : Course | no Course.p.enrolled
+inv1 B: all p : Professor | all s : Student | all c : Course | no p.enrolled
+inv1 S: all p : Professor, s : Student, all c : Course | no p.enrolled
+inv1 B: all p : Professor, s : Student, c : Course | no p.enrolled
+inv1 S: all p : Professor, s : Student, c : Course | c not in p.enrolled.object
+inv1 B: all p : Professor, s : Student, c : Course | c not in p.enrolled
+inv1 T: all p : Person, c : Course | c & p.teaches implies no (c & p.enrolled)
+inv1 T: all p : Person, c : Course | (c & p.teaches) implies c not in p.enrolled
+inv1 T: all p : Person, c : Course | (c & p.teaches) implies c not in p.enrolled
+inv1 T: all p : Person, c : Course | c & p.teaches implies c not in p.enrolled
+inv1 B: all p : Person, c : Course | c in p.teaches implies c not in p.enrolled
+inv1 B: all p : Person, c : Course | (c in p.teaches implies c not in p.enrolled) iff p in Student
+inv1 T: all p : Person, c : Course | no (c & p.enrolled and c & p.teaches)
+inv1 B: all p : Student, c : Course | lone p.enrolled
+inv1 T: all s : Student, c : Course | lone s.enrolled.c
+inv1 B: all s : Student, c : Course | lone enrolled.c
+inv1 T: all s : Student, c : Course | lone c in s.enrolled
+inv1 B: all s : Student, c : Course | c in s.enrolled
+inv1 S: all s : Student, c : Course | c in s.enrolled
+inv1 B: all s : Student, c : Course | c in s.enrolled
+inv1 T: all s : Student, c : Course | c in s.enrolled		} 	run {Student
+inv1 S: all p : Person, c : Course | c not in p.enrolled and c in s.enrolled		} 	run {Student = Professor
+inv1 T: all p : Person, c : Course | c & p.teaches implies c not in p.enrolled		} 	run {Student = Professor
+inv1 T: all p : Person, c : Course | (c & p.teaches) implies c not in p.enrolled		} 	run {Student = Professor
+inv1 T: all p : Person, c : Course | (c & p.teaches) implies c not in p.enrolled		} 	run {Student = Professor
+inv1 T: all p : Person, c : Course | no (c & p.teaches) implies c & p.enrolled		} 	run {Student = Professor
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+inv1 O: all p : Person, c : Course |  c not in p.enrolled iff no ( p & Student )
+inv1 O: all p : Person, c : Course | c not in p.enrolled iff no ( p & Student )
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+inv1 T: all p : Person, c : Course | ( p & Student ) implies c in p.enrolled
+inv1 T: all p : Person, c : Course | ( p & Student ) implies c in p.enrolled
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+inv1 C: all p : Person, c : Course | no ( p & Student ) implies c not in p.enrolled
+

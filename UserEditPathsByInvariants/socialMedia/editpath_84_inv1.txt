@@ -1,0 +1,9 @@
+inv1 S: all p : Photo | one u : User && p in u->posts
+inv1 S: all p : Photo | one u : User && p in u->posts,
+inv1 S: all p : Photo | one u : User => u.posts.p
+inv1 U: all p : Photo | one p.date
+inv1 S: all p : Photo | one u : User
+inv1 S: all p : Photo | some u:User
+inv1 S: all p : Photo | some u:User => u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+

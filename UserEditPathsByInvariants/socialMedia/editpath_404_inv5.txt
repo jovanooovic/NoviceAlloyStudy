@@ -1,0 +1,7 @@
+inv5 O: all x : Influencer | all p : User | p in follows.x and x not in follows.x and p not in follows.p
+inv5 S: all x : Influencer | all p : User | p in follows.x
+inv5 S: all x : Influencer | all p : User | p in follows.x
+inv5 B: all x : Influencer | all p : User | p in follows.x
+inv5 U: all x : Influencer | all p : User | p != x implies p in follows.x
+inv5 U: all x : Influencer | all p : User - x| p in follows.x
+

@@ -1,0 +1,5 @@
+inv3 O: all u: User | u.sees = u.follows.posts + Ad
+inv3 O: all u: User | u.sees - Ad = u.follows.posts
+inv3 C: all u: User | u.sees - Ad in u.follows.posts
+inv3 C: all u: User | u.sees in u.follows.posts + Ad
+

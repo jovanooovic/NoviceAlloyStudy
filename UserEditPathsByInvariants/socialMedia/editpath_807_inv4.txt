@@ -1,0 +1,6 @@
+inv4 S: all u: Users | one a: Ad | a in u.posts implies all u.posts in Ad
+inv4 S: all u: User | all p1, p2: Posts | (p1 != p2 and p1 in Ad) implies p2 in Ad
+inv4 S: all u: User | all p1, p2: Post | (p1 != p2 and p1 in Ad) implies p2 in Ad
+inv4 O: all u: User | all p1, p2: Photo | (p1 != p2 and p1 in Ad) implies p2 in Ad
+inv4 C: all u: User | all p1, p2: Photo | (p1 != p2 and p1 in Ad and (p1+p2) in u.posts) implies p2 in Ad
+

@@ -1,0 +1,11 @@
+inv1 T: all p : Person-Professor | p.enrolled
+inv1 T: all p : Person-Professor | p.enrolled
+inv1 B: all p : Person-Professor, c : Course | p.enrolled in c
+inv1 B: all p : Person-Professor, c : Course | c in p.enrolled
+inv1 B: all s : Student, c : Course | c in s.enrolled and (c not in (Person.enrolled) or c not in (Professor.enrolled))
+inv1 U: all p : Person | p in Student implies p.enrolled in Course
+inv1 U: all p : Person-Student | p.enrolled in Course
+inv1 U: all p : Person-Professor | p.enrolled in Course
+inv1 C: all p : Person-Student | no p.enrolled
+inv1 C: all p:Person | p not in Student implies no p.enrolled
+

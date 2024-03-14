@@ -1,0 +1,23 @@
+inv12 S: all p : Student | lone Courses.grades.Grade in Course.p
+inv12 T: all p : Student | lone Course.grades.Grade in Course.p
+inv12 T: all p : Student , c : p.enrolled | lone c.Grade.grades
+inv12 B: all p : Student , c : p.enrolled | lone c.grades.Grade
+inv12 B: all p : Student , c : p.enrolled | lone c.grades
+inv12 S: all p : Student , c : p.enrolled | lone p.c.grades
+inv12 S: all p : Student , c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 S: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 E:
+inv12 U: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv12 B: all p : Student, c : p.enrolled | lone (c.grades)
+inv12 S: all s : Student, c : s.enrolled  | lone c.Grades
+inv12 T: all s : Student, c : s.enrolled  | lone c.Grade
+inv12 B: all s : Student, c : s.enrolled  | lone c.grades
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 U: all s : Student, c : s.enrolled  | lone s.(c.grades)
+inv12 T: all s : Student, c : s.enrolled  | lone s.c.grades
+inv12 U: all s : Student, c : s.enrolled  | lone s.(c.grades)
+

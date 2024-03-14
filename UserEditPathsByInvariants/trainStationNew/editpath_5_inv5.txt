@@ -1,0 +1,11 @@
+inv5 T: all t:Track| t in Entry iff #(t in Track.^succs)>1
+inv5 T: all t:Track| t in Entry iff #(t in Track.^succs)>1
+inv5 T: all t:Track| t in Junction iff #(t in Track.^succs)>1
+inv5 B: all t:Track| t in Junction iff #(t & Track.^succs)>1
+inv5 B: all t:Track| t not in t.succs	all t:Track| t in Junction iff #(t & Track.^succs)>1
+inv5 B: all t:Track | t in Junction <=> t in Track.^(succs)	all disj t1,t2,t3:Track | t1 in t2.^(succs) && t1 in t3.^(succs) implies t1 in Junction
+inv5 B: all t:Track| t not in t.succs	all t:Track| t in Junction iff #(t & Track.^succs)>1
+inv5 B: all t:Track| t in Junction iff #(t & Track.^succs)>1
+inv5 B: all t1:Track|all t2,t3:Track-t1| t1 in Junction iff t1 in t2.succs and t1 in t3.succs
+inv5 B: all t1:Track|some t2,t3:Track-t1| t1 in Junction iff t1 in t2.succs and t1 in t3.succs
+

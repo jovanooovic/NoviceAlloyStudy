@@ -1,0 +1,34 @@
+inv5 B: all t: Track | t in Junction <=> some (t & Track.succs)
+inv5 B: all t: Track | t in Junction <=> t in Track.succs
+inv5 T: all t: Track | t in Junction <=> no (lone (t in Track.succs))
+inv5 T: all t: Track | t in Junction <=> t in Track.succs #2
+inv5 T: all t: Track | t in Junction <=> (t & Track.succs) > 2
+inv5 T: all t: Track | t in Junction <=> (t & Track.succs) > #2
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 2
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 1
+inv5 B: all t: Track | t in Junction <=> #(t & Track-t.succs) > 1
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 1
+inv5 T: all t: Track | t in Junction <=> #(t in Track.succs) > 1
+inv5 T: all t: Track | t in Junction <=> #(t in Track.succs) >= 1
+inv5 B: all t: Track | t in Junction <=> some (t & Track.succs)
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 1
+inv5 B: all t: Track | t not in Junction <=> lone (t & Track.succs)
+inv5 B: all t: Track | t not in Junction <=> lone (t & Track-t.succs)
+inv5 T: all t: Track | t in Junction <=> #(t & Track-t.succs)
+inv5 B: all t: Track | t in Junction <=> #(t & Track-t.succs) > 1
+inv5 S: all t: Track | t in Junction <=> (t & Track.succs) > 1 &
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 1
+inv5 B: all t: Track | t in Junction <=> #(t & Track-t.succs) > 1
+inv5 B: all t: Track | t in Junction <=> #(t & (Track-t).succs) > 1
+inv5 B: all t: Track | t not in Junction <=> lone (t & (Track-t).succs)
+inv5 B: all t: Track, t2: Track, t3: Track | t != t2 && t2 != t3 && t != t3 && t in t2.succs && t in t3.succs <=> t in Junction
+inv5 B: all t: Track, t2: Track, t3: Track | t != t2 && t2 != t3 && t != t3 && t in t2.succs && t in t3.succs <=> t in Junction and t2 not in t2.succs && t3 not in t3.succs
+inv5 B: all t: Track, t2: Track, t3: Track | t != t2 && t2 != t3 && t != t3 && t in t2.succs && t in t3.succs => t in Junction and t2 not in t2.succs && t3 not in t3.succs
+inv5 U: all t: Track, t2: Track, t3: Track | t != t2 && t2 != t3 && t != t3 && t in t2.succs && t in t3.succs and t2 not in t2.succs && t3 not in t3.succs => t in Junction
+inv5 S: all t, t2: Track | t in t2.succs and some (t & (Tree-t2).succs) => t in Junction
+inv5 U: all t, t2: Track | t in t2.succs and some (t & (Track-t2).succs) => t in Junction
+inv5 U: all t, t2: Track | t in t2.succs and some (t & (Track-t2-t).succs) => t in Junction
+inv5 B: all t: Track | t in Junction <=> #(t & Track.succs) > 1
+inv5 B: all t: Track | t in Junction => #(t & Track.succs) > 1
+inv5 U: all t: Track | #(t & Track.succs) > 1 => t in Junction
+

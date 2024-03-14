@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 S: all p : photo | one u:User | u->p in posts
+inv1 C: all p : Photo | one u:User | u->p in posts
+inv2 C: all a,b : User | a->b in follows implies a!=b
+inv3 S: all a,b : User | all c : Photos | b -> c in posts
+inv3 B: all a,b : User | all c : Photo | b -> c in posts
+inv3 S: all a,b : User | all c : Photo | b -> c in posts implies c not in ads
+inv3 B: all a,b : User | all c : Photo | b -> c in posts implies c not in Ad
+inv3 B: all a : Ad | all b : Influencer | b -> a in posts
+inv3 B: all a : Ad | one u : User | u->a in posts
+inv3 B: all a : Ad | one u : Influencer | u->a in posts
+inv3 S: all a : Ad | one u : Influencer | u->a in posts	all a,b : User | all p : Photos | a->b in follows implies a->p in sees
+inv3 B: all a : Ad | one u : Influencer | u->a in posts	all a,b : User | all p : Photo | a->b in follows implies a->p in sees
+inv3 B: all a : Ad | one u : Influencer | u->a in posts	all a,b : User | all p : Photo | a->b in follows implies a->p in sees	all a,b : User | all p : Photo | b->a in follows implies b->p in sees
+inv6 S: all a : Influencers | all d : Day | a->d implies a in posts
+inv6 T: all a : Influencer | all d : Day | a->d implies a in posts
+inv6 O: all a : Influencer | all d : Day | a->d in posts
+

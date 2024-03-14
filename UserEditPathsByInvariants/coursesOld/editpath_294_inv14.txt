@@ -1,0 +1,21 @@
+inv14 S: all disj s1, s2 : Student, p1, p2 : Project |
+inv14 U: all disj s1, s2 : Student, p1, p2 : Project | one s1
+inv14 U: all disj s1, s2 : Student, p1, p2 : Project | s1 != s2
+inv14 S: all disj s1, s2 : Student, p1, p2 : Project | (s1 in projects.p and s2 in projects.p) implies s1 != s2
+inv14 U: all disj s1, s2 : Student, p1, p2 : Project | (s1 in projects.p1 and s2 in projects.p1) implies s1 != s2
+inv14 B: all disj s1, s2 : Student, p1, p2 : Project | (s1 in projects.p1 and s2 in projects.p1) implies p1 != p2
+inv14 B: all disj s1, s2 : Student, p1, p2 : Project | (s1 in projects.p1 and s2 in projects.p1) implies (s2 not in projects.p2)
+inv14 B: all disj s1, s2 : Student, p1, p2 : Project | (s1 in projects.p1 and s2 in projects.p1) implies (s1 not in projects.p2 or s2 not in projects.p2)
+inv14 B: all disj s1, s2 : Student, p1, p2 : Project | (p1 in s1.projects and p2 in s2.projects) implies (s1 not in projects.p2 or s2 not in projects.p2)
+inv14 B: all disj s1, s2 : Student, p1, p2 : Project | (p1 in s1.projects and p2 in s2.projects) implies (p2 not in s1.projects or p2 not in s2.projects)
+inv14 B: all disj s1, s2 : Student, disj p1, p2 : Project | (p1 in s1.projects and p2 in s2.projects) implies (p2 not in s1.projects or p2 not in s2.projects)
+inv14 B: all disj s1, s2 : Student, disj p1, p2 : Project | (p1 in s1.projects and p2 in s2.projects) implies ((p2 not in s1.projects) or (p2 not in s2.projects))
+inv14 U: all s1,s2 : Student | all p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all disj s1,s2 : Student | all p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects and p1!=p2) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all disj s1,s2 : Student, p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects and p1!=p2) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 B: all disj s1,s2 : Student, p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all disj s1,s2 : Student, disj p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all disj s1,s2 : Student, disj p1,p2 : Project | (p1 in s1.projects and p1 in s2.projects) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 U: all disj s1,s2 : Student, disj p1,p2 : Project | (p1 in s1.projects and p1 in s2.projects) implies (p2 not in s1.projects or s2->p2 not in projects)
+inv14 U: all disj s1,s2 : Student, disj p1,p2 : Project | (p1 in s1.projects and p1 in s2.projects) implies (p2 not in s1.projects or p2 not in s2.projects)
+

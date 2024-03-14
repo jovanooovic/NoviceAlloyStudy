@@ -1,0 +1,13 @@
+inv1 B: all x : Photo | one User
+inv1 T: all x : Photo | some y : User | y->x in posts -> one y
+inv1 S: all x : Photo | some y : User | (y->x in posts) -> one y
+inv1 U: all x : Photo | some y : User | one y
+inv1 S: all x : Photo | some y : User | y->x in one posts
+inv1 S: x in User x.posts
+inv1 S: x in User implies one x.posts
+inv1 T: all x : User | one Photo.x
+inv1 T: all x : User | Photo.x = 1
+inv1 T: all x : Photo | x.posts
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+

@@ -1,0 +1,10 @@
+inv8 E:
+inv8 B: all p:Professor | no (p.projects & ((p.teaches).projects))
+inv8 U: all p:Professor | no (p.enrolled & p.teaches)
+inv8 E:
+inv8 T: all p:Professor | all c:Course | no ((p.teaches).projects & p.enrolled)
+inv8 U: all p:Professor | all c:Course | no ((p.teaches) & p.enrolled)
+inv8 U: all p:Professor |no p.teaches & p.enrolled
+inv8 U: all p:Professor | no p.teaches & p.enrolled
+inv8 U: all p:Professor | no p.teaches & p.enrolled
+

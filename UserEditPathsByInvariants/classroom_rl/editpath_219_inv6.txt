@@ -1,0 +1,48 @@
+inv6 S: all t : Teacher | one t.teaches
+inv6 O: all t : Teacher | one t.Teaches
+inv6 B: all t : Teacher | no t.Teaches
+inv6 B: all t : Teacher | no t.^Teaches
+inv6 S: all t : Teacher | no t^.Teaches
+inv6 U: all t : Teacher | no t.~Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 T: all t : Teacher | some Class in t.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv6 B: some c : Class | c in Teacher.Teaches
+inv6 B: all c : Class | c in Teacher.Teaches
+inv6 B: all t : Person | Class in t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 U: all t : Teacher | t.Teaches in Class
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 T: all t : Teacher | t.Teaches & Class
+inv6 C: all t : Teacher | some c : Class | c in t.Teaches
+inv6 S: all t : Teacher | some c in t.Teaches
+inv6 T: all t : Teacher | some Class in t.Teaches
+inv6 T: all t : Teacher | some (Class in t.Teaches)
+inv6 S: all t : Teacher | (some Class) in t.Teaches)
+inv6 T: all t : Teacher | (some Class) in t.Teaches
+inv6 B: some c : Class | c in Teacher.Teaches
+inv6 B: some c : Class | Teacher.Teaches in c
+inv6 U: all t : Teacher | no t.Teaches - Class
+inv6 U: all t : Teacher | no (t.Teaches - Class)
+inv6 S: all t : Teacher | Class in Teacher^.Teaches
+inv6 B: all t : Teacher | Class in t.^Teaches
+inv6 T: all t : Teacher | Class -> t.Teaches
+inv6 B: all t : Teacher | Class in t.Teaches
+inv6 B: all t : Teacher, c : Class | c in t.Teaches
+inv6 S: all t : Teacher | Teaches.c
+inv6 T: all t : Teacher | Teaches.t
+inv6 O: all t : Teacher | some Teaches.t
+inv6 B: some c : Class | some Teaches.c
+inv6 O: some c : Class | some c.Teaches
+inv6 T: all t : Teacher | some Class.t
+inv6 T: all t : Teacher | some t.Class
+inv6 T: all t : Teacher | some Class.t.Teaches
+inv6 T: all t : Teacher | some t.Teaches.Class
+inv6 S: all t : Teacher |
+inv6 S: all t : Teacher |
+inv6 C: all t : Teacher | some t.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+

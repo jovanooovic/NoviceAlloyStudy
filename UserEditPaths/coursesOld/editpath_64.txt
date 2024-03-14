@@ -1,0 +1,65 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 U: Person.teaches in Course
+inv3 U: Professor.teaches in Course
+inv3 U: Person.teaches in Course
+inv3 C: Course in Person.teaches
+inv4 T: projects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 C: Course<:projects in Course one -> set Project
+inv5 B: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student
+inv5 B: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student		Course<:projects in Course one -> set Project
+inv5 T: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student	  	Course<:projects in Course
+inv5 S: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | c->project => some(c->s->g in grades)
+inv5 S: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in project => some(c->s->g in grades)
+inv5 T: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in Course<:projects => some(c->s->g in grades)
+inv5 T: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in Course<:projects => some(c->s->g in grades)
+inv5 T: projects.Project in Student
+inv5 U: Person<:projects.Project in Student
+inv5 T: Person<:projects.Project in Student	  		Project in Person<:projects.Project
+inv5 O: Person<:projects.Project in Student	  		Project in Project.(Person<:projects)
+inv5 C: Person<:projects.Project in Student	  		Project in Person.(Person<:projects)
+inv6 B: all s: Student | all c: Course | all p: Project | s->p in projects and s->c in enrolled => c->p in projects
+inv6 B: all s: Student | all c: Course | all p: Project | c->p in projects => s->p in projects and s->c in enrolled
+inv6 S: all s: Student | all p: Project | c->p in projects => some c: Course | s->p in projects and s->c in enrolled
+inv6 U: all s: Student | all p: Project | s->p in projects => (some c: Course | s->c in enrolled and c->p in projects)
+inv7 B: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects and not (c->p1 in projects and c->p2 in projects)
+inv7 B: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects => not (c->p1 in projects and c->p2 in projects)
+inv7 U: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects => p1 = p2
+inv8 T: Professor.teaches not in iden
+inv8 B: teaches not in iden
+inv8 U: all p : Professor, c: Course | c in p.teaches => c not in p.enrolled
+inv9 B: Professor not in Person.enrolled
+inv9 B: Professor not in enrolled.Course
+inv9 B: all p1, p2: Professor, c: Course | p1->c in enrolled and p2->c in teaches => p1 != p2
+inv9 B: not some p1, p2: Professor, c: Course | p1->c in enrolled and p2->c in teaches
+inv9 B: all p1, p2: Professor, c: Course | not(p1->c in enrolled and p2->c in teaches)
+inv10 C: all c: Course, p:Person, g:Grade | c->p->g in grades => p in Student
+inv11 C: all c: Course, p:Person, g:Grade | c->p->g in grades => p->c in enrolled
+inv12 C: all c: Course, p:Person | lone g:Grade | c->p->g in grades
+inv12 S: all c: Course, p:Person, g1, g2:Grade | c->p->g in grades and c->p->g in grades => g1 = g2
+inv12 C: all c: Course, p:Person, g1, g2:Grade | c->p->g1 in grades and c->p->g2 in grades => g1 = g2
+inv13 S: one Grade/last
+inv12 C: all c: Course, p:Person, g1, g2:Grade | c->p->g1 in grades and c->p->g2 in grades => g1 = g2
+inv13 U: one last
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and no g.next => some p:Project | s->p in projects
+inv13 B: all s:Student, c:Course, g:Grade | c->s->g in grades and no g.prev => some p:Project | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:Project | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | s->p in projects
+inv13 S: all c->s->g : grades | g in last => some p:c.projects | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | s->p in projects
+inv14 B: all p1, p2 : Project | all s1, s2: Student | p1 != p2 and s1 != s2 => (s1->p1 in projects and s1->p2 in projects and s2->p1 in projects and s2->p2 in projects)
+inv14 U: all p1, p2 : Project | all s1, s2: Student | p1 != p2 and s1 != s2 => not (s1->p1 in projects and s1->p2 in projects and s2->p1 in projects and s2->p2 in projects)
+inv14 B: all p1, p2 : Project | all s1, s2: Student | p1 != p2 and s1 != s2 and  (s1->p1 in projects and s1->p2 in projects and s2->p1 in projects and s2->p2 in projects)
+inv15 T: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in Grade and c->s2->g2 in Grade => (g1 = g2 or g1 = prev[g2] or g2 = prev[g1]) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = prev[g2] or g2 = prev[g1]) )
+inv15 B: all c: Course, p:Person, g1, g2:Grade | c->p->g1 in grades and c->p->g2 in grades => g1 = g2				all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = prev[g2] or g2 = prev[g1]) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = prev[g2] or g2 = prev[g1]) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = g2 - 1 or g2 = g1 - 1) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = g2.prev or g2 = g1.prev) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = g2.next or g2 = g1.next) )
+inv15 B: all p : Project | all s1, s2 : Student | s1->p in projects and s2->p in projects and s1 != s2 => 	  	( all g1, g2: Grade, c : Course | c->s1->g1 in grades and c->s2->g2 in grades => (g1 = g2 or g1 = g2 - 1 or g2 = prev[g1]) )
+NA H: THEME UPDATE
+

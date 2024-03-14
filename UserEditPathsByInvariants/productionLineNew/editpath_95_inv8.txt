@@ -1,0 +1,5 @@
+inv8 B: all c:Component, w:Worker | c in Dangerous implies (c.workstation.workers & w in Human)
+inv8 B: all c:Component, ws:Workstation | c in Dangerous and ws in c.workstation implies( all w:Worker | w in ws.workers and w in Human )
+inv8 C: all c:Component, ws:Workstation | c in Dangerous and ws in c.workstation implies( all h:Human | h not in ws.workers )
+inv8 C: all c:Component, ws:Workstation | c in Dangerous and ws in c.workstation implies( all h:Human | h not in ws.workers )
+

@@ -1,0 +1,6 @@
+inv14 S: all x: Student | all Student - x : col | all p : x.projects | lone (x.projects & col.projects)
+inv14 U: all x: Student | all col : Student - x | all p : x.projects | lone (x.projects & col.projects)
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+inv14 U: all x : Student | all y : Student - x | lone p: Project | p in x.projects and p in y.projects
+

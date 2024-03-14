@@ -1,0 +1,5 @@
+inv1 B: all course: Course | all person: Person - Professor | course in person.enrolled
+inv1 O: all course: Course | all person: Person | course in person.enrolled implies (person in Student and person not in Professor)
+inv1 C: all course: Course | all person: Person | course in person.enrolled implies person in Student
+inv1 C: all course: Course | all person: Person | course in person.enrolled implies person in Student
+

@@ -1,0 +1,11 @@
+inv9 S: all p:Professor, c:Professor - p, c:Course | c in t.teaches => c not in enrolled.c
+inv9 U: all p:Professor, c:Professor - p, c:Course | c in p.teaches => c not in enrolled.c
+inv9 B: all p:Professor, col:Professor - p, c:Course | c in p.teaches => col not in enrolled.c
+inv9 B: all p:Professor, col:Professor - p, c:Course | c in p.teaches => col not in enrolled.c and c not in col.teaches
+inv9 U: all p:Professor, col:Professor - p, c:Course | c in p.teaches and c in col.teaches => col not in enrolled.c
+inv9 U: all p:Professor, col:Professor - p | some (col.teaches & p.teaches)=> no (col.enrolled & p.teaches)
+inv9 B: all p:Person| some p.enrolled => p in Student
+inv9 S: t:Professor, c:Course| c in t.teaches => c.enrolled not in Professor
+inv9 S: c:Course| c.enrolled not in Professor
+inv9 O: all c:Course| c.enrolled not in Professor
+

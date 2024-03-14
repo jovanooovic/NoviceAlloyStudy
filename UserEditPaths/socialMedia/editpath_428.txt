@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: all ph : Photo | one u : User | ph in u.posts
+inv2 C: all u : User | u not in u.follows
+NA M: MOD BASE MODEL
+inv3 O: all u : User | all ph : Photo | ph in u.sees implies (ph in Ad or (one u2 : u.follows | ph in u2.posts))
+inv4 T: all u : User | some u.posts in Ad implies (all p : u.posts | p in Ad)
+inv4 C: all u : User | some u.posts & Ad implies (all p : u.posts | p in Ad)
+inv5 B: all i : Influencer | follows.i = User - Influencer
+inv5 C: all i : Influencer | follows.i = User - i
+inv6 S: all i : Influencer | i.posts.date = Date
+inv6 C: all i : Influencer | i.posts.date = Day
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows )
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows and u not in s )
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows and u not in s and s not in u)
+inv7 U: all u : User | all s : User | s in u.suggested implies (some u2 : u.follows | s in u2.follows and s not in u.follows and u not in s and s not in u)
+inv8 B: all u : User | some ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User | one ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User - Influencer| one ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User - Influencer| one ad : Ad | ad in u.sees implies (ad in u.suggested.posts or ad in u.suggested.posts)
+inv8 O: all u : User | all ad : u.sees | some ad & Ad implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 O: all u : User | all ad : u.sees | ad in Ad implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+

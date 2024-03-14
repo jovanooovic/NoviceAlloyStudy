@@ -1,0 +1,55 @@
+inv13 S: all c : Courses | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some grade : c.grades | gte[Person.grade,nota] ) implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course, nota : Person.(c.grades) | some grade : c.grades | gte[Person.grade,nota]  implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course ,n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course ,n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | larger[Person.c.grades].c.grades in Student
+inv13 T: all c : Course | c.grades.larger[Person.c.grades] in Student
+inv13 T: all c : Course | larger[Person.c.grades].c.grades in Student
+inv13 T: all c : Course | larger[Person.c.grades] in Grade
+inv13 S: all c : Course | larger[Person.(c.grades)] in Grade
+inv13 S: all c : Course | larger[Person.(c.grades)] in Grade
+inv13 U: all c : Course | Person.(c.grades) in Grade
+inv13 T: all c : Course | last[Person.(c.grades)] in Grade
+inv13 U: all c : Course | Person.(c.grades) in Grade
+inv13 T: all c : Course | last[Person.(c.grades)] in Grade
+inv13 U: all c : Course | max[Person.(c.grades)] in Grade
+inv13 T: all c : Course | c.grades.max[Person.(c.grades)] in Person
+inv13 T: all c : Course | (c.grades).max[Person.(c.grades)] in Person
+inv13 T: all c : Course | c.grades.max[Person.(c.grades)] in Person
+inv13 U: all c : Course | c.grades.Grade in Person
+inv13 U: all c : Course | c.grades.(max[Person.(c.grades)]) in Person
+inv13 T: all c : Course | some c.projects.(c.grades.(max[Person.(c.grades)]))
+inv13 T: all c : Course | some c.projects.(c.grades.(max[Person.(c.grades)]))
+inv13 O: all c : Course | (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | some (c.grades.(max[Person.(c.grades)])) & projects.(c.projects)
+inv13 B: all c : Course | lone (c.grades.(max[Person.(c.grades)])) & projects.(c.projects)
+inv13 S: all c : Course | ((c.grades.(max[Person.(c.grades)])) in projects.(c.projects)) or no projects.(c.projects))
+inv13 T: all c : Course | ((c.grades.(max[Person.(c.grades)])) in projects.(c.projects)) or no projects.(c.projects)
+inv13 O: all c : Course | (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 T: all c : Course | some projects.(c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | some Person<:projects.(c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | some (c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | lone (c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | some (c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 O: all c : Course |(c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | lone (c.projects) => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | (c.grades.(max[Person.(c.grades)])).projects in c.projects
+inv13 B: all c : Course | lone (c.projects) => (c.grades.(max[Person.(c.grades)])).projects in c.projects
+inv13 B: all c : Course | some (c.projects) => (c.grades.(max[Person.(c.grades)])).projects in c.projects
+inv13 O: all c : Course | (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 B: all c : Course | some c.projects => (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 O: all c : Course | (c.grades.(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 O: all c : Course | ((c.grades).(max[Person.(c.grades)])) in projects.(c.projects)
+inv13 S: all c : Course | ((c.grades).(lats[Person.(c.grades)])) in projects.(c.projects)
+inv13 T: all c : Course | ((c.grades).(last[Person.(c.grades)])) in projects.(c.projects)
+

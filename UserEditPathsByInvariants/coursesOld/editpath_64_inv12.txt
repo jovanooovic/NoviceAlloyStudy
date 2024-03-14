@@ -1,0 +1,5 @@
+inv12 C: all c: Course, p:Person | lone g:Grade | c->p->g in grades
+inv12 S: all c: Course, p:Person, g1, g2:Grade | c->p->g in grades and c->p->g in grades => g1 = g2
+inv12 C: all c: Course, p:Person, g1, g2:Grade | c->p->g1 in grades and c->p->g2 in grades => g1 = g2
+inv12 C: all c: Course, p:Person, g1, g2:Grade | c->p->g1 in grades and c->p->g2 in grades => g1 = g2
+

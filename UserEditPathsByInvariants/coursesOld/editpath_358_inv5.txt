@@ -1,0 +1,10 @@
+inv5 U: all pro: Project | #pro.~{Person <: projects} >= 1
+inv5 U: all pro: Project | #pro.~{Student <: projects} >= 1
+inv5 S: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{Personen-Student <: projects} >= 1
+inv5 T: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{Person-Student <: projects} >= 1
+inv5 B: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{{Person-Student} <: projects} >= 1
+inv5 C: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{{Person-Student} <: projects} = 0
+inv5 B: all p: Person | (p in Student) => (p.projects = Project)
+inv5 U: #(Person-Student).projects = 0
+inv5 C: #(Person-Student).projects = 0	  		all p: Project | p in Student.projects
+

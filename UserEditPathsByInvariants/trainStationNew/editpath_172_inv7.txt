@@ -1,0 +1,15 @@
+inv7 B: all e:Entry | all t:Track-Entry | e not in t.succs	all e:Exit | all t:Track-Exit | t not in e.succs
+inv7 B: all t:Track | t not in Exit implies some ts:Track | ts in t.succs	all t:Track | t not in Entry implies some ts:Track | t in ts.succs
+inv7 B: all t:Track | t not in Exit implies some ts:Track | ts in t.succs	all t:Track | t in Exit implies all ts:Track | ts not in t.succs
+inv7 B: all t:Track | t not in Exit implies some ts:Track | ts in t.succs	all t:Track | t in Exit implies all ts:Track | t not in ts.succs
+inv7 B: all t:Track | t not in Exit implies some t2:Track | t->t2 in succs	all t:Track | t in Exit implies all t2:Track | t->t2 not in succs	all t:Track | t not in Entry implies some t2:Track | t2->t in succs	all t:Track | t in Entry implies all t2:Track | t2->t not in succs
+inv7 B: all t:Exit | all ts:Track-t | ts not in t.succs	all t:Entry | all ts:Track-t | t not in ts.succs
+inv7 U: no succs & iden
+inv7 B: all t:Exit | all ts:Track-t | ts not in t.succs	all t:Entry | all ts:Track-t | t not in ts.succs	no succs & iden
+inv7 B: all e:Entry, ex:Exit | e->ex in ^succs
+inv7 B: all e:Entry, ex:Exit | e->ex in ^succs
+inv7 B: all e:Entry, t:Track | e not in t.*succs
+inv7 B: all e:Entry, t:Track | e not in t.*succs	all e:Exit, t:Track | t not in e.*succs
+inv7 B: all e:Entry, t:Track | e not in t.^succs	all e:Exit, t:Track | t not in e.^succs
+inv7 E:
+

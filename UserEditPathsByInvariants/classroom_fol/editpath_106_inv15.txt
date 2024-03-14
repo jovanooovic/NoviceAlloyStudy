@@ -1,0 +1,7 @@
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => p3 in Teacher
+inv15 S: some t:Teacher in Person.*Tutors
+inv15 U: Teacher in Person.*Tutors
+inv15 B: some t:Teacher| t in Person.*Tutors
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => p3 in Teacher
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => (p3 in Teacher or p2 in Teacher)
+

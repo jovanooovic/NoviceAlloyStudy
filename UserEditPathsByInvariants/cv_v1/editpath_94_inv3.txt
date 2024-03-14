@@ -1,0 +1,5 @@
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv3 U: (profile.ids.source).~(profile.ids.source) in iden
+inv3 B: all s : Source | (profile.ids).~(profile.ids) in iden
+inv3 C: all s: Source, u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+

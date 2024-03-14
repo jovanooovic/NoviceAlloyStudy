@@ -1,0 +1,11 @@
+inv5 U: all w:Worker, ws:Workstation | w in ws.workers and w in Human implies w not in Robot
+inv5 B: all w:Worker, ws:Workstation | w in ws.workers implies (w in Human) or (w in Robot)
+inv5 O: all w:Worker, ws:Workstation | w in ws.workers implies (w in Human) or (w not in Robot)
+inv5 U: all w:Worker, ws:Workstation | w in ws.workers implies (w not in Human) or (w not in Robot)
+inv5 U: all w:Worker, ws:Workstation | w in ws.workers implies no (w & Human) or no (w & Robot)
+inv5 T: all w:Worker, ws:Workstation | w in ws.workers implies (w & Human) or	(w & Robot)
+inv5 U: all w:Worker, ws:Workstation | w in ws.workers and w in Human implies w not in Robot
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 C: all ws: Workstation | all w1,w2:Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 not in Robot
+

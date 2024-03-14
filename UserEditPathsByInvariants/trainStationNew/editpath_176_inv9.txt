@@ -1,0 +1,11 @@
+inv9 S: all x,y:Tracks, s:Signal|x->y in succs and y in Junction implies x->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and y in Junction implies x->s in signals and s not in Semaphore
+inv9 B: all x,y:Track|some s:Signal|x->y in succs and y in Junction implies x->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and y in Junction and x->s in signals implies s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and x in Junction and y->s in signals implies s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and x in Junction implies y->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and y not in Junction implies x->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and x not in Junction implies y->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and x not in Junction implies y->s in signals and s not in Semaphore
+inv9 B: all x,y:Track, s:Signal|x->y in succs and x not in Junction implies y->s in signals and s not in Semaphore
+

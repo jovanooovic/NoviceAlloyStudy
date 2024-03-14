@@ -1,0 +1,8 @@
+inv9 B: all c : Class | all t : Teacher | t->c in Teaches
+inv9 B: some t : Teacher | all c : Class | t->c in Teaches		all c : Class | all t : Teacher | t->c in Teaches
+inv9 B: some t : Teacher | all c : Class | t->c in Teaches
+inv9 S: all t : Teacher, y : Teacher | all c : Class | t->c in Teaches and y->c in Teaches t==y
+inv9 S: all t : Teacher, y : Teacher | all c : Class | t->c in Teaches and y->c in Teaches t=y
+inv9 C: all t : Teacher, y : Teacher | all c : Class | t->c in Teaches and y->c in Teaches implies t=y
+inv9 C: all t : Teacher, y : Teacher | all c : Class | t->c in Teaches and y->c in Teaches implies t=y
+

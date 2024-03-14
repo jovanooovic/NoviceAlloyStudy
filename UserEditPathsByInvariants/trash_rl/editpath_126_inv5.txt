@@ -1,0 +1,14 @@
+inv5 O: all p: Protected | p !in Trash	all f: File | f in Trash
+inv5 O: all f: File | f in Protected and f in Trash
+inv5 O: all f: File | f !in Protected and f in Trash
+inv5 O: all f: File | f in Protected and f !in Trash
+inv5 O: all f: File | f in Protected => f !in Trash else f in Trash
+inv5 S: all p, f: Protected, File | p !in Trash | (f - p) in Trash
+inv5 O: all f: File | f in Trash <=> f !in Protected
+inv5 C: all f : File | (f not in Protected) => (f in Trash)
+inv5 C: all f : File | f not in Protected => (f in Trash)
+inv5 C: all f : File | f not in Protected => f in Trash
+inv5 C: all f : File | f !in Protected => f in Trash
+inv5 B: all f : File | f in Trash => f !in Protected
+inv5 C: all f : File | f !in Protected => f in Trash
+

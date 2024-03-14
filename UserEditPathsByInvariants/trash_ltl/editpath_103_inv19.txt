@@ -1,0 +1,6 @@
+inv19 B: always (all f:Protected | f in Trash releases f in Protected)
+inv19 O: always (all f:Protected | f in Trash releases f in Protected and eventually f in Trash)
+inv19 O: always (all f:Protected | eventually f not in Protected and f in Trash)
+inv19 B: eventually (all f:Protected | eventually f not in Protected and f in Trash)
+inv19 C: always (all f:Protected | f in Protected until f in Trash)
+

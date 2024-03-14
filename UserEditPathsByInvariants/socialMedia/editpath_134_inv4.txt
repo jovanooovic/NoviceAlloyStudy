@@ -1,0 +1,35 @@
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 S: (all u1 : User | some u1.posts in Ad) implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 S: all u1 : User | some add : Photo | add in u1.posts | add in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 S: all u1 : User | one add : Ad | add in u1.posts	implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 B: all u1 : User | one add : Ad | add in u1.posts	implies (all ph : Ad |  ph in u1.posts)
+inv4 S: all u1 : User | one add : Ad | add in u1.posts	implies (all u1.posts in Ad)
+inv4 S: all u1 : User | one add : Ad | add in u1.posts	implies (all ph : u1.posts in Ad)
+inv4 S: all u1 : User | one add : Ad | add in u1.posts	implies ((all ph : u1.posts) in Ad)
+inv4 B: all u1 : User | one add : Ad | add in u1.posts	implies (all ph : Photo | ph in u1.posts implies ph in Ad)
+inv4 B: all u1 : User | some add : Ad | add in u1.posts	implies (all ph : Photo | ph in u1.posts implies ph in Ad)
+inv4 B: all u1 : User | one add : Ad | add in u1.posts	implies (some ph : Photo | ph in u1.posts implies ph in Ad)
+inv4 S: all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.post)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts )	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo )	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad  | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User  | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo | ph in u1.posts)	implies ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo implies	ph in u1.posts and ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo)	implies ph in u1.posts and ph in Ad
+inv4 S: (all u1 : User | one add : Ad | add in u1.posts | all ph : Photo)	implies (ph in u1.posts and ph in Ad)
+inv4 B: all u1 : User | one add : Ad | add in u1.posts	implies (all ph : Photo | ph in u1.posts and ph in Ad)
+inv4 B: all u1 : User | some add : Ad | add in u1.posts	implies (all ph : Photo | ph in u1.posts and ph in Ad)
+inv4 S: all u1 : User | some add : Ad | add in u1.posts	implies (all ph : Photo | ph in u1.posts and ph is Ad)
+inv4 S: all u1 : User | some add : Ad | add in u1.posts	implies (all u1.posts in Ad)
+inv4 B: all u1 : User | some add : Ad | add in u1.posts	implies (u1.posts in Ad)
+

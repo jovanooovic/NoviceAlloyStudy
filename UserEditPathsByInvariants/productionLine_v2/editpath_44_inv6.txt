@@ -1,0 +1,9 @@
+inv6 O: all c: Component, p: Product | no c.parts & p.parts
+inv6 O: all c: Component, p: Product | no c.parts & p.parts
+inv6 O: all c: Component, p: Product | no (c.parts & p.parts)
+inv6 O: all c: Component, p: Product | no (c.parts & p.parts)
+inv6 O: all c: Component, p: Product | (c.parts not in p.parts)
+inv6 O: all c: Component, p: Product | (p.parts not in c.parts)
+inv6 C: all c: Component, p: Product | no (c & c.^parts)
+inv6 C: all c: Component | no (c & c.^parts)
+

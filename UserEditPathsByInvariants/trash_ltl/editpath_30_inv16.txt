@@ -1,0 +1,18 @@
+inv16 S: all f : File | f in Protected since f in Protected)
+inv16 S: all f : File | always(f in Protected (historically f in Protected)
+inv16 S: all f : File | always(f in Protected (historically f in Protected))
+inv16 U: all f : File | f in Protected implies (historically f in Protected)
+inv16 S: all f : File | f in Protected since f in Protected)
+inv16 B: all f : File | f in Protected since f in Protected
+inv16 B: all f:File | once f in Protected implies always after f in Protected
+inv16 B: all f:File | once f in Protected implies always f in Protected
+inv16 B: all f:File |  f in Protected implies always after f in Protected
+inv16 B: all f:Protected |  always f in Protected
+inv16 B: all f:Protected |  always after f in Protected
+inv16 B: all f:Protected |  always (after f in Protected)
+inv16 S: all f:file | f in Protected implies (historically f in Protected)
+inv16 U: all f:File | f in Protected implies (historically f in Protected)
+inv16 U: all f:File | historically f in Protected implies f in Protected
+inv16 B: all f:File | historically f in Protected implies after f in Protected
+inv16 B: all f:File | historically f in Protected implies always after f in Protected
+

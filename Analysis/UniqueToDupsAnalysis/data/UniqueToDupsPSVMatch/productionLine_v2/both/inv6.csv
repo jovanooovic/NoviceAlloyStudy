@@ -1,0 +1,47 @@
+"parts not in iden",1
+"no parts & iden",6
+"no iden & parts",2
+"^parts not in iden",1
+"Component<:parts not in iden",1
+"Component not in Component.parts",3
+"no Component & Component.parts",1
+"Component not in Component.^(parts)",1
+"no c : Component | c . parts in c",1
+"all c:Product | c not in c.parts",1
+"no c:Component | c not in c.parts",1
+"all c:Component | c in c.parts",1
+"all c : Component | c->c in parts",2
+"one c:Component | c not in c.parts",2
+"some c:Component | c not in c.parts",5
+"one c:Component | c->c not in parts",1
+"lone c:Component | c not in c.parts",1
+"lone c:Component | c->c not in parts",1
+"all c : Component | c in c.^parts",1
+"some c:Component | no (c.parts & c)",2
+"some c:Component | c not in c.^parts",1
+"all c : Component | c in c.~^parts",1
+"all c1,c2:Component | c2 not in c1.parts",1
+"all c: Component | c<:parts not in iden",1
+"all x : Component | one x.^parts+x",1
+"all c1,c2:Component | c1->c2 not in parts",3
+"all c:Component | c.parts not in Component",3
+"all c : Component | no c.parts & Component",2
+"all c: Component | c.parts = Component - c",1
+"some c:Component | no (c.parts & Component)",1
+"all c1,c2:Component | c1->c2 in parts implies c1 = c2",1
+"all c1,c2:Component | c1->c2 not in parts implies c1 = c2",1
+"all c:Component | c not in c.parts and c.parts not in c",1
+"all c1 : Component, c2 : Component | c1->c2 in parts",1
+"all c1 : Component, c2 : Component | c1->c2 not in parts",1
+"all c : Component, p:Product | p not in c.parts => p=c",1
+"all c1, c2 : Component | c1->c2 not in parts and c2->c1 not in parts",1
+"all c : Component, p : Product | c in Product and c->p in parts",1
+"all c : Component, p:Product | p in c.parts => p not in Component",1
+"all c2:Component, p:Product | p in c2.parts => p not in Component",1
+"all c : Component, pa : Product |c->pa in parts implies pa not in Component",2
+"all c : Component, p : Product | c in Product and c->p in parts implies p not in Component",1
+"all c : Component | c->c not in parts
+all c1,c2 : Component | c1->c2 not in parts",1
+"all c1,c2 : Component | all p : Product | (c1->p in parts and c2->p in parts) implies (c1=c2)",2
+"all c:Component | c not in c.parts
+all p:Product | p not in p.parts => p in Component",2

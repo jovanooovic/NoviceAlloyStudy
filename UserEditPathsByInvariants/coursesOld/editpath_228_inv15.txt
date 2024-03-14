@@ -1,0 +1,2 @@
+inv15 S: all t : Tree, n : Name | lone (t.objects & Hash->n)	  	    all h : Hash | lone ( hash.h )	  		  	all h : Hash - Tree.hash - Blob.hash, t : Tree | no ( h->Name & t.objects ) 	  	all c : Commit, h : Hash - Tree.hash | h not in c.tree	  	all c : Commit, h : Hash - Commit.hash | h not in c.parent	  		  	all c : Commit | no (c.hash & c.parent)	  	all t : Tree | no (t.hash->Name & t.objects)
+

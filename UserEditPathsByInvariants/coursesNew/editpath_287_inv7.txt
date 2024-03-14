@@ -1,0 +1,13 @@
+inv7 S: all p:Student,all c:Course | lone(p.projects & c.projects)
+inv7 U: all p:Student, c:Course | lone(p.projects & c.projects)
+inv7 S: all s:Students | # (s.projects in s.enrolled.projects) <= 1
+inv7 T: all s:Student | # (s.projects in s.enrolled.projects) <= 1
+inv7 T: all s:Student | # s.projects in s.enrolled.projects <= 1
+inv7 T: all s:Student |( # s.projects in s.enrolled.projects) <= 1
+inv7 B: all s:Student | # (s.projects) < # (s.enrolled)
+inv7 T: all s:Student | # (s.projects in s.enrolled.projects) < 2
+inv7 T: all s:Student | lone s.projects in s.enrolled.projects
+inv7 T: all s:Student | lone (s.projects in s.enrolled.projects)
+inv7 T: all s:Student | lone (s.projects in s.enrolled.projects)
+inv7 T: all s:Student | lone (s.projects in s.enrolled.projects)
+

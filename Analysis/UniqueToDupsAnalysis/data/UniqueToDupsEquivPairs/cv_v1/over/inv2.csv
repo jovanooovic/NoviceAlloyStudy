@@ -1,0 +1,71 @@
+Pairs,5
+,,"all u : User | u.profile.source in u",1
+,,"all u:User , w:Work | (w in u.profile) implies (w.source = u )",1
+,,"all u:User, w:Work | w in u.profile implies u in w.source",1
+,,"all w:Work,u:User | w in u.profile implies u in w.source",1
+,,"all u:User | all w:Work | w in u.profile implies u in w.source",1
+
+Pairs,1
+,,"all w : User + Institution | some profile.w",1
+
+Pairs,14
+,,"all u : User | u.profile.ids in u + Institution",2
+,,"all u:User | (u.profile).source in (u&Institution)",1
+,,"all w:Work,u:User | w in u.profile implies u in w.ids",1
+,,"all u : User | (u<:profile).Work in (Work<:source).u + (Work<:source).Institution",4
+,,"all u : User | (u<:profile).Work in (Work<:source).u & (Work<:source).Institution",1
+,,"all u : User | (u<:profile).Work in u.(Work<:source) + Institution.(Work<:source)",1
+,,"all u : User | some (u<:profile).Work implies some u.(Work<:source) & Institution.(Work<:source)",2
+,,"all u : User | some (u<:profile).Work implies some (Work<:source).u & (Work<:source).Institution",2
+
+Pairs,1
+,,"all w:Work | (w in User.profile) && (User = w.source)",1
+
+Pairs,2
+,,"all u:User, s:Source | (s in u.profile & u & Institution)",1
+,,"all u:User, s:Source | (s in u.profile & User & Institution)",1
+
+Pairs,2
+,,"all w:Work | (w in User.profile) implies (w.source = User )",1
+,,"all w:Work | (w in User.profile) implies (User = w.source)",1
+
+Pairs,2
+,,"all u:User, w:(u.profile + u.visible) | w in (u+Institution)",2
+
+Pairs,1
+,,"all u : User | (u.profile) = (source.u + source.Institution)",1
+
+Pairs,1
+,,"all u : User | (Work<:source).u in (Work<:source).Institution",1
+
+Pairs,2
+,,"all u:User | Work = profile.u.source + profile.Institution.source",2
+
+Pairs,2
+,,"all u : User | (u.profile + u.visible).source in (u + Institution)",1
+,,"all x : User | x.profile.source + x.visible.source in Institution + x",1
+
+Pairs,2
+,,"all u: User | all w: Work | w.source in u or w.source in Institution",2
+
+Pairs,1
+,,"all u: User | u.profile.source in Institution or u.profile.source in u",1
+
+Pairs,1
+,,"all u:User, w:Work | w in u.profile implies ( w.source in Institution)",1
+
+Pairs,1
+,,"all w : Work, u:User, p : u + Institution |  w in u.profile implies w.source = p",1
+
+Pairs,1
+,,"all u:User , w:Work | (w in u.profile) implies (w.source = u || w.source = Institution)",1
+
+Pairs,8
+,,"all u:User,w:Work | some i:Institution | w in u.profile implies (w.source = i or w.source = u)",1
+,,"all u:User , w:Work |some i:Institution| (w in u.profile) implies (w.source = u || w.source = i)",1
+,,"all u:User, w:Work | some i:Institution | w in u.profile implies u in w.source or i in w.source",1
+,,"all u:User, w:Work | some i:Institution | w in u.profile implies (u in w.source or i in w.source)",5
+
+Pairs,1
+,,"all u:User, w:Work | w in u.profile implies (some i:Institution | u in w.source or i in w.source)",1
+

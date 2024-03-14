@@ -1,0 +1,14 @@
+inv6 S: all d : Day | some i.posts.date.d
+inv6 T: all d : Day | some Influencer.posts.date.d
+inv6 B: all d : Day | some Influencer.posts
+inv6 T: all d : Day | some (Influencer.posts).date.d
+inv6 T: all d : Day | some ((Influencer.posts).date).d
+inv6 B: all d : Day | some ((Influencer.posts).date)
+inv6 T: all d : Day | some ((Influencer.posts).date = d)
+inv6 T: all d : Day | some (Influencer.posts).date = d
+inv6 T: all d : Day | some d in (Influencer.posts).date
+inv6 B: all d : Day | d in (Influencer.posts).date
+inv6 B: all d : Day | (Influencer.posts).date = Day
+inv6 C: all i : Influencer | (i.posts).date = Day
+inv6 C: all i : Influencer | (i.posts).date = Day
+

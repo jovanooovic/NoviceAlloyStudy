@@ -1,0 +1,43 @@
+"some link",2
+"one link.link",1
+"no link.Trash",1
+"lone link.link",1
+"some link.link",1
+"lone link.File",4
+"some link.File",1
+"some File.link",1
+"one (link - iden)",1
+"lone (link - iden)",5
+"one link.~link",1
+"no (iden & ^link)",1
+"link.~link in iden",14
+"link in File one -> File",2
+"no File.link & Trash",1
+"link in File lone -> File",2
+"File = File & File.link",1
+"(link . ~link) in (~link . link)",1
+"all f : File | one link.f",1
+"lone f:File | f.link = f",2
+"all l : File | lone link.l",1
+"all f : File | some link.f",1
+"all f: File | lone link.f",4
+"all f:File | some f.link",4
+"some f : File | lone f.link",2
+"all f : File | lone link:>f",2
+"some f : File | lone link :> f",1
+"some f: File | f.link in File",2
+"all f1: File | lone f2: File | f2.link = f1",1
+"all f1: File | lone f2: File | f1.link in f2",1
+"(	all f:File| f->f not in link )and( link.~link in iden )",1
+"all f,f1:File | f->f1 in link and f not in Trash implies f1 not in Trash",1
+"all l,f1,f2 : File | f1->l in link and f2->l in link implies f1 = f2",1
+"all f1,f2 : File, l : univ | f1->l in link and f2->l in link implies f1 = f2",1
+"all e1,e2 : univ, f : File | e1->f in link and e2->f in link implies e1 = e2",1
+"all d,e1,e2 : univ | d in File and e1->d in link and e2->d in link implies e1 = e2",2
+"all f:File | some f1,f2:File-f | f->f1 in link and f->f2 in link implies f1=f2",3
+"all d,e1,e2 : univ, f : File | d in File and e1->d in link and e2->d in link implies e1 = e2",1
+"all e1,e2 : univ, f : File | e1->f in link and e2->f in link implies e1 = e2 and lone link.f",1
+"all e1,e2 : univ, f : File | e1->f in link and e2->f in link implies e1 = e2
+all f : File | lone link.f",1
+"all e1,e2 : univ, f : File | e1->f in link and e2->f in link implies e1 = e2
+all f1,f2 : File, l : univ | f1->l in link and f2->l in link implies f1 = f2",1

@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 C: Worker in Human+Robot
+inv2 U: Workstation in workers.Worker and Worker in Workstation.workers
+inv2 U: Workstation in workers.Worker and all w : Worker | lone workers.w
+inv2 C: Workstation in workers.Worker and all w : Worker | one workers.w
+inv3 C: all c : Component | one c.workstation
+inv4 S: Components in parts.Product
+inv3 U: iden :> Component in workstation.~workstation
+inv3 B: iden :> Component = workstation.~workstation
+inv3 C: (iden :> Component in workstation.~workstation) and  (~workstation.workstation in iden)
+inv4 S: (iden :> Components in parts.~parts) and (no Material in parts.~parts)
+inv4 T: (iden :> Component in parts.~parts) and (no Material in parts.~parts)
+inv4 C: (iden :> Component in parts.~parts) and (no iden :> Material & parts.~parts)
+inv5 O: all w : Workstation | w.workers in Human or w.workers in Robot
+NA H: THEME UPDATE
+

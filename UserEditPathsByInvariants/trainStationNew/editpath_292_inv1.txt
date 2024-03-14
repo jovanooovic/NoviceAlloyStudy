@@ -1,0 +1,15 @@
+inv1 T: all t: Track | some t.Entry && some t.Exit
+inv1 T: all t: Track | some t in Entry && some t in Exit
+inv1 B: all t: Track | t in Entry || t in Exit
+inv1 S: all t: Track |  in Entry || t in Exit
+inv1 S: all t: Track |  in Entry || t in Exit
+inv1 B: all t: Track | #t.succs in Entry && #t.succs in Exit
+inv1 B: all t: Track | #(t.succs & Entry) > 1 && #(t.succs & Exit) > 1
+inv1 B: all t: Track | some (t.succs & Entry) && some (t.succs & Exit)
+inv1 B: all t: Track | some (t & Entry) && some (t.succs & Exit)
+inv1 B: all t: Track | some (succs.t & Entry) && some (t.succs & Exit)
+inv1 B: all t: Track | #(succs.t & Entry)>=1 && #(t.succs & Exit)>=1
+inv1 C: some ex: Exit, e: Entry | e in Track && ex in Track
+inv1 C: some ex: Exit, e: Entry | e in Track && ex in Track
+inv1 C: some ex: Exit, e: Entry | e in Track && ex in Track
+

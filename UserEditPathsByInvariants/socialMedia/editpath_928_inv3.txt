@@ -1,0 +1,9 @@
+inv3 O: all u1,u2: User | all p: Photo | p in u1.sees implies (p in Ad) or (u2 in u1.follows and p in u2.posts)
+inv3 O: all u1,u2: User | all p: Photo | p in u1.sees implies (u2 in u1.follows and p in u2.posts) or p in Ad
+inv3 O: all u1,u2: User | all p: Photo | p in u1.sees implies (u2 in u1.follows and p in u2.posts and p not in Ad) or p in Ad
+inv3 O: all u1,u2: User | all p: Photo | p in u1.sees implies (u1 in u2.follows and p in u2.posts and p not in Ad) or p in Ad
+inv3 O: all u1,u2: User | all p: Photo | p in u1.sees implies (u2 in u1.follows and p in u2.posts and p not in Ad) or p in Ad
+inv3 S: all u1: User | all p: Photo | p in u1.sees implies (some u2: User | in u1.follows and p in u2.posts and p not in Ad) or p in Ad
+inv3 C: all u1: User | all p: Photo | p in u1.sees implies (some u2: User | u2 in u1.follows and p in u2.posts and p not in Ad) or p in Ad
+inv3 C: all u1: User, p: Photo | p in u1.sees implies (some u2: User | u2 in u1.follows and p in u2.posts and p not in Ad) or p in Ad
+

@@ -1,0 +1,129 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all p : Photo | one u : User | u -> p in Posts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 S: /all u : user | u -> u not in follows
+inv2 S: all u : user | u -> u not in follows
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 C: all u : User | u -> u not in follows
+inv2 C: all u : User | u -> u not in follows
+inv3 S: all u : User | all p : Photos | u -> p in posts
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 O: all u : User | all p : Photo | u -> p in follows
+inv2 C: all u : User | u -> u not in follows
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 C: all u : User | u -> u not in follows
+inv3 O: all u : User | one p : Photo | u -> p in follows
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 B: all u : User | all p : Photo | u -> p in sees
+inv3 B: one u : User | all p : Photo | u -> p in sees
+inv3 S: one u : User | all p : Photo | u -> p in sees | u -> p follows
+inv3 S: all u : User | not Ad in u.follow.post
+inv3 S: all u : User | not Ad in u.follows.post
+inv3 B: all u : User | not Ad in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 S: all u : User | no object.Ad in u.follows.posts
+inv3 T: all u : User | no Ad in u.follows.posts
+inv3 S: all u : User | not in Ad.sees in u.follows.posts
+inv3 S: all u : User | not in Ad in u.follows.posts
+inv3 S: all u : User | not in Ad in u.follows.posts
+inv3 T: all u : User | all p : Photo | u -> p not in Ad in u.follows.posts
+inv3 S: all u : User |p in Photos and p != Ad in u.follows.posts
+inv3 S: all u : User | Ad != Root in u.follows.posts
+inv3 B: all u : User | Ad in u.follows.posts
+inv3 B: all u : User | not Ad in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 T: all u : User | u.Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv4 T: all u : User | u.posts & Ad
+inv4 T: all u : User | u.posts.Ad
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv4 B: all u : User | one a : Ad | u -> a in posts
+inv4 T: all u : User | one a : Ad | u -> a in posts  implies u.posts Ad
+inv4 B: all u : User | one a : Ad | u -> a in posts  implies u.posts in Ad
+inv4 B: all u : User | one a : Ad | u -> a in posts implies u.posts in Ad
+inv4 T: all u : User | one a : Ad | u -> a in posts implies u.posts & Ad
+inv4 O: all u : User | one a : Ad | some u.posts & Ad implies u.posts in Ad
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+inv5 S: all i : Influencer | all -> i in follows
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+inv5 B: all i : Influencer | all u :User | u -> i in follows
+inv5 T: all u : User | u.follows & Influencer
+inv5 T: all u : User | u.follows & Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 T: all u : User | u.follows - User in u.follows in Influencer
+inv5 U: all u : User | u.follows - User in u.follows & Influencer
+inv5 T: all u : User | u.follows & Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 T: all u : User | u.follows & Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 T: all u : User | u.follows & Influencer
+inv5 U: all i : Influencer | i -> i not in follows
+inv5 S: all i : Influencer | all u : User | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -u not in follow | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -> u not in follow | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -> u not in follows | u -> i in follows
+inv5 S: all u : User | u -> u not in follows | u -> i in follows
+inv5 S: all u : User | u -> u not in follows
+inv5 S: all u : User | u -> u not in follows
+inv5 S: all u : User | u -> u not in follows
+inv5 S: all i : Influencer | all u : User | i -> i not in follows | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u -> i in follows
+inv5 S: all i : Influencer | all u : User | u in i.follows
+inv5 S: all u : User | u.follows in Influencer
+inv5 S: all u : User | u.follows - u in Influencer
+inv5 S: all u : User | u.follows - u in u.follows & Influencer
+inv5 S: all u : User | u.follows - u in u.follows
+inv5 S: all u : User | u.follows & u in u.follows
+inv5 S: all i : Influencer | all u : User | u -> i in follows
+inv5 S: all u : User | u.follows in Influencer
+inv5 S: all i : INfluencer | univ -> i in follows
+inv5 S: all i : Influencer | univ -> i in follows
+inv5 S: all i : Influencer | univ -> i in follows
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv5 O: all i : Influencer | univ -> i in follows
+inv5 T: all i : Influencer | all u : User | u.follows in follows
+inv5 B: all u : User | u.follows in Influencer
+inv5 S: all u : Influencer | univ -> i in follows
+inv5 O: all i : Influencer | univ -> i in follows
+inv5 B: all i : Influencer | all u : User | u -> i in follows
+inv5 S: | all u : User | u.follows in Influencer
+inv5 S: | all u : User | u.follows in Influencer
+inv5 S: | all u : User | u.follows in Influencer
+inv5 S: | all u : User | u.follows in Influencers
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User | u.follows - u in Influencer
+inv5 S: all u : User | u -> u not in follows | u.follows in Influencer
+inv5 S: all u : User | u -> u not in follows | u.follows in Influencer
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+inv5 B: all u : User | u.follows - u in Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User | all i : Influencer | u in i.follows
+inv5 B: all u : User | all i : Influencer | i in u.follows
+inv5 B: all u : User | all i : Influencer | u->i in follows
+inv5 O: all u : User | all i : Influencer | u->i in follows and u!=i
+inv5 U: all u : User | all i : Influencer | u!=i implies u->i in follows
+inv6 B: all i : Influencer| all d: Day| all p: Photo| i->p in posts implies p->d in date
+inv8 S: all u : User | u->p in sees implies p in Ad and u->i in follows or i->u in suggested
+inv8 S: all u : User |all p : Ad| u->p in sees implies u->i in follows or i->u in suggested
+inv7 E: 
+

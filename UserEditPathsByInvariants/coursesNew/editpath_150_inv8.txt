@@ -1,0 +1,9 @@
+inv8 U: no p: Professor | p in p.teaches
+inv8 U: all p: Professor | p not in p.teaches
+inv8 B: all p: Professor | p in p.teaches
+inv8 S: all p: Professor, c: Courses | p in c.~teahces => p not in c.~enrolled
+inv8 S: all p: Professor, c: Course | p in c.~teahces => p not in c.~enrolled
+inv8 U: all p: Professor, c: Course | p in c.~teaches => p not in c.~enrolled
+inv8 C: all p: Person, c: Course | p in c.~teaches => p not in c.~enrolled
+inv8 U: all p: Professor, c: Course | p in c.~teaches => p not in c.~enrolled
+

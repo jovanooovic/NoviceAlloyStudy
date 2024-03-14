@@ -1,0 +1,9 @@
+inv3 U: all x: Exit | #(x.succs) = 0
+inv3 S: all x: Track | x in Exit | no x.succs
+inv3 U: all x: Exit | no x.succs
+inv3 U: all x: Track | #(x.succs) = 0 implies x in Exit
+inv3 U: all x: Track | #(x.succs) = 0 implies x in Exit
+inv3 S: all x: Exit implies no x.succs
+inv3 B: all x: Track - Exit | lone x.succs
+inv3 S: all x: Track - Exit | lone x.succs	all x: Track | x not in x^.succs
+

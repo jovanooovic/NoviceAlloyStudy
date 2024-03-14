@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 B: all c : Course | no enrolled.c & Professor
+inv1 C: all c : Course | all p : enrolled.c | p in Student
+inv2 C: all c : Course | all p : teaches.c | p in Professor
+inv3 C: all c : Course | some teaches.c
+inv4 T: all p : Project | one projects.p
+inv4 T: all p : Project | one (projects<:Course).p
+inv4 T: all p : Project | one (Course:>projects).p
+inv4 C: all p : Project | one (Course<:projects).p
+inv5 T: all p : Project | all s : projects.p | s in Student	  	all p : Project | some projects.p
+inv5 C: all p : Project | all s : (Person<:projects).p | s in Student	  	all p : Project | some (Person<:projects).p
+inv6 B: all s : Student | no s.projects - s.enrolled
+inv6 T: all s : Student | no s.enrolled - s.projects
+inv6 B: all s : Student | no s.enrolled - s.(Person<:projects)
+inv6 U: all s : Student | no s.projects - s.enrolled.projects
+inv7 U: all s : Student | all c : s.enrolled | lone s.projects & c.projects
+inv8 U: no Professor & Professor.teaches
+inv8 B: no Professor & enrolled.(Professor.teaches)
+inv8 U: all p : Professor | p not in enrolled.(p.teaches)
+inv10 S: grades in Course,Student -> Grade
+inv10 C: grades in Course->Student-> Grade
+inv10 C: grades in Course->Student->Grade
+inv11 T: all s : Student | all c : Course | c->s in grades implies c in s.enrolled
+inv11 U: all s : Student | all c : Course | c->s->Grade in grades implies c in s.enrolled
+inv11 U: all s : Student | all c : Course | c->s->Grade in grades implies c in s.enrolled
+inv11 E: 
+inv11 U: all s : Student | all c : Course | c->s->Grade in grades implies c in s.enrolled + s.teaches
+inv11 U: all s : Student | all c : Course | c->s->Grade in grades implies c in s.enrolled
+inv12 U: all s : Student | all c : Course | lone c->s->Grade & grades
+inv13 S: all s : Student | all c : Course | c->s->Grade in grades implies c in
+inv12 U: all s : Student | all c : Course | lone c->s->Grade & grades
+inv13 U: all s : Student | all c : Course | c->s->Grade in grades implies some s.projects & c.projects
+inv13 E: 
+inv14 B: all s1,s2 : Student | lone s1.projects & s2.projects
+inv14 B: all s1,s2 : Student | lone s1.projects - s2.projects
+inv14 U: all s1,s2 : Student | lone s2 & (Person<:projects).(s1.projects)
+inv14 B: all s1,s2 : Student | lone s2.projects & s1.projects
+inv14 U: all s1,s2 : Student | all p : s1.projects | lone s2->p
+inv14 S: all s1,s2 : Student | all p : s1.projects | lone s2->p & Projects
+inv14 T: all s1,s2 : Student | all p : s1.projects | lone s2->p & Project
+inv14 U: all s1,s2 : Student | all p : s1.projects | lone s2->p & projects
+

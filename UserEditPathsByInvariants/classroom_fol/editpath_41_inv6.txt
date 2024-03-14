@@ -1,0 +1,6 @@
+inv6 S: all t:Teacher ,some c:Class | t->c in Teaches
+inv6 S: all t:Teacher ,some c:Class | t->c in Teaches
+inv6 O: all p:Person |some c:Class | p in Teacher implies p->c in Teaches
+inv6 B: all p:Person |some c:Class | (p in Teacher and p not in Student) implies p->c in Teaches
+inv6 C: all t:Teacher |some c:Class |   t->c in Teaches
+

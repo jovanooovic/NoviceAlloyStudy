@@ -1,0 +1,12 @@
+inv1 T: not Trash
+inv1 T: all f : File, t : Trash | t->f not in File
+inv1 B: no link
+inv1 U: all t : Trash , f : File | t->f not in link
+inv1 U: all t : Trash , f : File | f->t not in link
+inv1 U: all t : Trash , f : File | t->f not in link
+inv1 S: all w : File | implies w not in Trash
+inv1 U: all w : File | w not in Trash or w in Protected
+inv1 O: all w : File | w not in Trash and w in Protected
+inv1 S: all w : File | implies w not in Trash and w in Protected
+inv1 C: all w : File | w not in Trash
+

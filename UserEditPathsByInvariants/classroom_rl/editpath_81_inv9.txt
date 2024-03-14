@@ -1,0 +1,7 @@
+inv9 O: all c : Class | lone c->Teacher
+inv9 O: all c : Class | lone c->Teaches
+inv9 O: all c : Class | lone c->Teacher
+inv9 S: all c : Class, t, t1 : Teacher | (t->c + t->c1) in Teaches => t = t1
+inv9 C: all c : Class, t, t1 : Teacher | (t->c + t1->c) in Teaches => t = t1
+inv9 C: all c : Class, t, t1 : Teacher | t->c + t1->c in Teaches => t = t1
+

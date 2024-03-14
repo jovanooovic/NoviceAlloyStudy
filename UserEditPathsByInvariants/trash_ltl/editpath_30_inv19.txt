@@ -1,0 +1,9 @@
+inv19 B: eventually (all f:File | f in Protected implies f in Protected&Trash)
+inv19 B: eventually (all f:File | f in Protected until f in Trash)
+inv19 O: always (all f:File | f in Protected until f in Trash)
+inv19 B: (all f:File | eventually (f in Protected until f in Trash))
+inv19 U: (all f:File&Protected | eventually (f in Protected until f in Trash))
+inv19 B: (all f:File| f in Protected until f in Trash)
+inv19 O: always (all f:File| f in Protected until f in Trash)
+inv19 O: always (all f:File| f in Protected until f in Trash-Protected)
+

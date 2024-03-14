@@ -1,0 +1,7 @@
+inv3 U: all ex:Exit | no ex.succs
+inv3 S: all t:Track | t in Exit => no ex.succs
+inv3 U: all t:Track | t in Exit => no t.succs
+inv3 U: all t:Track | t in Exit => no t.^succs
+inv3 U: all t:Track | t in Exit => no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+

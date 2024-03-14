@@ -1,0 +1,16 @@
+inv4 U: all e : Entry | all t: Track | e not in t.succs
+inv4 B: all e : Entry | all t: Track | e not in succs.t
+inv4 S: all t : Track| (some s : Track | s not in t.succs) iff (some e: Entry | s == e)
+inv4 S: all t : Track| some s: Track |s not in t.succs iff (some e: Entry | s == e)
+inv4 S: all t : Track| some s: Track |s not in succs.t iff (some e: Entry | s == e)
+inv4 T: all t,e : Track| t is Entry iff (t not in e.succs)
+inv4 O: all t,e : Track| t in Entry iff (t not in e.succs)
+inv4 O: all t,e : Track| t in e.succs iff t not in Entry
+inv4 B: all t,e : Track| e in t.succs iff t not in Entry
+inv4 O: all t,e : Track| e in t.succs iff e not in Entry
+inv4 O: all t,e : Track| e in Entry iff (e not in t.succs)
+inv4 U: all t,e : Track| e in Entry implies (e not in t.succs)
+inv4 B: all t,e : Track| e in Entry iff (not(t in t.succs))
+inv4 O: all t,e : Track| e in Entry iff (not(e in t.succs))
+inv4 C: all e : Track| e in Entry iff (not(some t : Track |e in t.succs))
+

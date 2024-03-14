@@ -1,0 +1,8 @@
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g in (h + prev[h] + next[h])
+inv15 T: all p : Project, g,h : (projects.p).grades.(projects.p) | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades.(Person<:projects.p) | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades.(Course<:projects.p) | g in (h + prev[h] + next[h])
+inv15 O: all p : Project, g,h : (projects.p).grades[Person<:projects.p] | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades[Course<:projects.p] | g in (h + prev[h] + next[h])
+inv15 O: all p : Project, g,h : (projects.p).grades[Person<:projects.p] | g in (h + prev[h] + next[h])
+

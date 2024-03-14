@@ -1,0 +1,74 @@
+"follows in iden",3
+"follows not in iden",11
+"not follows in iden",1
+"follows != ~follows",1
+"User not in User.follows",10
+"User->User not in follows",1
+"posts in (User one -> Photo)",3
+"follows.~follows in iden",9
+"~follows.follows in iden",1
+"follows.~follows not in iden",14
+"follows.*follows not in iden",1
+"always(User not in User.follows)",1
+"follows.User not in User.follows",1
+"always(User->User not in follows)",2
+"User<:iden:>User not in follows",1
+"one x: User | no follows.x",2
+"no (follows.User & suggested.User)",1
+"all u : User | one u.follows",1
+"all y : User | one follows.y",1
+"all x : User | one follows.x",3
+"one x : User | one follows.x",1
+"all u : User | one follows.u",1
+"all u : User | lone follows.u",1
+"all u : User | u in follows.u",1
+"all x: User| x in follows.x",1
+"all x: User | x in x.follows",3
+"all x : User | lone follows.x",2
+"all u:User | u in u.follows",2
+"one x : User | lone follows.x",1
+"all x : User | some follows.x",5
+"one x : User | x not in follows.x",1
+"all u:User | u.follows not in u",2
+"all u:User | u->u in follows",1
+"one x:User| x not in x.follows",1
+"one u: User | u not in u.follows",2
+"all x :User| x->x in follows",3
+"follows.~follows in iden.~follows",1
+"all u : User | follows.u not in u",1
+"some u:User | u not in u.follows",1
+"one u : User | u->u not in follows",1
+"all x : User | one ~follows.x",1
+"some x:User| x not in x.follows",1
+"all u : User | not one follows.u",1
+"one x:User| x->x not in follows",1
+"some u: User | u->u not in follows",1
+"some u: User | ! u->u in follows",1
+"one u1:User | u1 -> u1 not in follows",1
+"all disj a, b : User | b in a.follows",1
+"all u: User | u.follows->u in iden",2
+"all u: User | u.follows->u not in iden",1
+"one user : User | user not in user.follows",1
+"all u : User | follows.u not in u.follows",1
+"all x:User | x.follows not in follows.x",1
+"all i: Influencer | i.posts in i.sees",1
+"all x:User | follows.x not in x.follows",2
+"all u : User | u.follows not in follows.u",1
+"all x : User + Influencer | some follows.x",1
+"some x:User | some y:User | x = y",1
+"User not in User.follows
+User not in User.suggested",1
+"all u : User + Influencer | not one follows.u",1
+"all u : User - Influencer | u not in u.*follows",1
+"all x: User | all y: follows.x | y = x",1
+"all u1, u2:User | u1 -> u2 in follows implies u1 = u2",1
+"all x : User | all y : User | x.follows != y",1
+"all u1 : User | all u2 : User | follows.u1 != u2",2
+"all u1 : User | all u2 : User | u1.follows != u2",1
+"all u : User | all u1 : User - u | u.follows in u1",1
+"all disj a, b : User | b in a.follows and a not in a.follows",1
+"some x : User | some y : User | some follows.x and x != y",1
+"all x : User | all y : Influencer | x.follows = y and x != y",1
+"all u1, u2:User | u1 -> u2 in follows and u2 -> u1 in follows implies u1 = u2",1
+"no (follows.User & suggested.User & follows.Influencer & suggested.Influencer)",1
+"some x : User | some y : User | some follows.x and some follows.y and x != y",1

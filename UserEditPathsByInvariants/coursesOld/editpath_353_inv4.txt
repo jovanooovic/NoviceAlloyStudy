@@ -1,0 +1,7 @@
+inv4 S: all p : Projects | one c : Courses | c -> p in projects
+inv4 S: all p : Project | one c : Courses | c -> p in projects
+inv4 C: all p : Project | one c : Course | c -> p in projects
+inv4 S: all p : Project | one projects.c
+inv4 S: one c : Course | all projects.c
+inv4 C: all p : Project | one c : Course | c -> p in projects
+

@@ -1,0 +1,6 @@
+inv15 B: Teacher.^Tutors in Teacher
+inv15 B: no( Teacher.^Tutors - Teacher)
+inv15 T: all p:Person | Teacher.p.^Tutors
+inv15 T: all s:Person | (^Tutors.s & Teacher)
+inv15 C: all s:Person |some  (^Tutors.s & Teacher)
+

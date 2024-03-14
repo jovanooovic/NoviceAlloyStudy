@@ -1,0 +1,5 @@
+inv10 B: all c:Component | c.^parts in (c.workstation.^~succ).~workstation
+inv10 B: all c:Component | no c.^parts & (c.workstation.^succ).~workstation
+inv10 B: all c:Component | no c.^parts & (c.workstation.*succ).~workstation
+inv10 B: all c:Component | c.^parts&Component in (c.workstation.^~succ).~workstation
+

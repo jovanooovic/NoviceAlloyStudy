@@ -1,0 +1,16 @@
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Person | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj a, b : Professor | t1->t2 not in teaches.~teaches
+inv9 S: all t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 B: all t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 S: disj t1, t2 : Professor | t1->t2 not in teaches.~teaches
+inv9 B: all t1, t2 : Professor | t1 != t2 implies t1->t2 not in teaches.~teaches
+inv9 S: all t1, t2 : Professor | t1->t2 in teaches.~teaches iff enrolled.(t1.reaches)
+inv9 T: all t1, t2 : Professor | t1->t2 in teaches.~teaches iff enrolled.(t1.teaches)
+inv9 S: all t1, t2 : Professor | (t1->t2 in teaches.~teaches iff) t2 not in enrolled.(t1.teaches)
+inv9 B: all t1, t2 : Professor | (t1->t2 in teaches.~teaches ) iff t2 not in enrolled.(t1.teaches)
+

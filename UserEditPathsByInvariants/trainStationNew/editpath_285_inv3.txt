@@ -1,0 +1,14 @@
+inv3 U: no Exit.succs
+inv3 U: all t : Track | (no t.succs) implies t in Exit
+inv3 U: all t : Track | t in Exit implies no t.succs
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 B: all t : Track | t not in Track.succs implies t in Exit
+inv3 U: no Exit.succs
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 B: all t : Track | t in Exit or t in Entry or t in Junction	all t : Track | no t.succs implies t in Exit
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 U: all t : Track - Exit | some t.succs
+inv3 U: all t : Track - Exit | some t.succs	all t : Track | no t.succs implies t in Exit
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 C: all t : Track | no t.succs iff t in Exit
+

@@ -1,0 +1,9 @@
+inv1 U: all p : Photo | p in User.posts
+inv1 T: all p : Photo | one p in User.posts
+inv1 U: all p : Photo | p in User.posts
+inv1 T: all p : Photo | some u : User | u->p
+inv1 U: all p : Photo | some u : User | u->p in posts
+inv1 S: all p : Photo | some u : User | u->p in Users - u
+inv1 T: all p : Photo | some u : User | u->p in User - u
+inv1 S: all p : Photo | some u : User | p in u.posts implies not p in all User.posts
+

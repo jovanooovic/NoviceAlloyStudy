@@ -1,0 +1,32 @@
+inv8 T: all u : User, s : sees | s in u.follows.posts or s in u.suggested.posts
+inv8 T: all u : User, s : sees | s in follows.u.posts or s in suggested.u.posts
+inv8 T: all u : User, s : sees | s in follows.posts.u or s in suggested.posts.u
+inv8 S: all u : User, s : sees | s in follows.posts.u or in suggested.posts.u
+inv8 S: all u : User | sees.s in follows.posts.u or in suggested.posts.u
+inv8 S: all u : User | sees.s in follows.posts.u
+inv8 U: all u : User | sees.u in follows.posts.u
+inv8 T: all u : User | sees.u in follows.posts.u or suggested.posts.u
+inv8 S: all u : User | sees.u in follows.posts.u or in suggested.posts.u
+inv8 U: all u : User | sees.u in follows.posts.u or sees.u in suggested.posts.u
+inv8 U: all u : User | sees.u in u.follows.posts or sees.u in u.suggested.posts
+inv8 S: all u : User | u.seed in u.follows.posts or sees.u in u.suggested.posts
+inv8 S: all u : User, ad Ad |  u.sees.ad in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 S: all u : User, ad Ad |  u.sees.ad in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 T: all u : User, ad : Ad |  u.sees.ad in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 T: all u : User, ad : Ad |  sees.u.ad in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 T: all u : User, ad : Ad |  sees.ad.u in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 T: all u : User, ad : Ad |  sees.ad.u  in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 T: all u : User, ad : Ad |  u.sees  in u.follows.posts  or  u.sees.ad in u.follows.suggested
+inv8 O: all u : User, ad : Ad |  u.sees  in u.follows  or  u.sees in u.follows
+inv8 T: all u : User, ad : Ad |  u.sees.ad  in u.follows  or  u.sees in u.follows
+inv8 T: all u : User, ad : Ad |  u.sees.Photo  in u.follows  or  u.sees in u.follows
+inv8 T: all u : User, ad : Ad |  ad.u.sees in u.follows  or  u.sees in u.follows
+inv8 T: all u : User, ad : Ad |  u.ad.sees in u.follows  or  u.sees in u.follows
+inv8 T: all u : User, ad : Ad |  u->sees.ad in u.follows  or  u.sees in u.follows
+inv8 O: all u : User, ad : Ad |  u.sees in u.follows  or  u.sees in u.suggested
+inv8 T: all u : User, p : posts|  u.sees in Ad implies p in u.follows or  p in u.suggested
+inv8 B: all u : User |  u.sees in Ad implies u.sees in u.follows.posts or  u.sees in u.suggested.posts
+inv8 O: all u : User , ad : Ad| ad in u.follows.posts or  ad in u.suggested.posts
+inv8 C: all u : User , ad : Ad| ad in u.sees implies ad in u.follows.posts or  ad in u.suggested.posts
+inv8 C: all u : User , ad : Ad| ad in u.sees implies ad in u.follows.posts or  ad in u.suggested.posts
+

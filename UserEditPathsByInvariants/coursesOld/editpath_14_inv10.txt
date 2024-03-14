@@ -1,0 +1,4 @@
+inv10 U: all person : Person | all course : Course | person->Grade in course.grades implies person in Student
+inv10 U: all person : Person | all course : Course | (person->Grade in course.grades) implies person in Student
+inv10 C: all person : Person | all course : Course | all grade : Grade |(person->grade in course.grades) implies person in Student
+

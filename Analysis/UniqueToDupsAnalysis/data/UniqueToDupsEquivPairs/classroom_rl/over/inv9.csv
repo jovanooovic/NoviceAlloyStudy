@@ -1,0 +1,104 @@
+Pairs,7
+,,"no Teaches",1
+,,"no (Teaches . Class)",2
+,,"Teaches.*Teaches in iden",1
+,,"all c: Class | no Teaches.c",1
+,,"all c:Class | not (some Teaches.c)",1
+,,"all t1, t2: Person.Teaches | t1 != t2",1
+
+Pairs,1
+,,"one Class.~Teaches",1
+
+Pairs,1
+,,"lone Teaches.~Teaches",1
+
+Pairs,1
+,,"no (Class -> Teacher)",1
+
+Pairs,84
+,,"Teaches.~Teaches in iden",17
+,,"Teaches in Person lone -> Class",1
+,,"all c:Class| lone Teaches.c",57
+,,"no c : Class | #Teaches.c > 1",1
+,,"all c : Class | #Teaches.c < 2",2
+,,"all c:Class | lone Teaches:>c",1
+,,"all c:Class | lone c.~Teaches",3
+,,"all c: Class | #(Teaches.c) <= 1",1
+,,"all c : Class | lone Person -> c & Teaches",1
+
+Pairs,2
+,,"lone (Teacher <: Teaches)",2
+
+Pairs,3
+,,"(Teaches . Class) = Class",2
+,,"all c : Class | one t : Teacher | c in Teaches.t",1
+
+Pairs,9
+,,"all c:Class| one Teaches.c",9
+
+Pairs,3
+,,"(Teaches).~(Teaches) = iden",1
+,,"iden in (~Teaches :> Teacher) . (Teacher <: Teaches)",1
+,,"one t1:Teacher | one t2:Teacher| t1.Teaches != t2.Teaches",1
+
+Pairs,3
+,,"all t : Teacher | no t.Teaches",1
+,,"all t1, t2: Teacher.Teaches | t1 != t2",1
+,,"all c : Class, t, t1 : Teacher |  t->c in Teaches implies t1->c not in Teaches",1
+
+Pairs,1
+,,"lone (Teaches.Class & Teacher)",1
+
+Pairs,12
+,,"all c : Class | lone c->Teacher",2
+,,"all c : Class | lone Teacher->c",3
+,,"all c : Class | #Teacher->c < 2",6
+,,"all c : Class | #(Teacher->c) <= 1",1
+
+Pairs,4
+,,"all c : Class | lone c->Teaches",1
+,,"all c:Class,p:Person | lone Teaches->c",1
+,,"all c:Class,p:Person | lone Teaches->c and lone p->Teaches",2
+
+Pairs,1
+,,"Teaches in Teacher lone -> Class",1
+
+Pairs,7
+,,"all c:Class| one Teaches.c & Teacher",1
+,,"all c : Class |  one (Teacher & Teaches.c)",2
+,,"all c:Class| one t:Teacher | t in Teaches.c",1
+,,"all c : Class | one t : Teacher | c in t.Teaches",2
+,,"all c: Class | one t: Teacher | t->c in Teaches",1
+
+Pairs,4
+,,"(Teacher <: Teaches).~Teaches in iden",3
+,,"Teacher <: Teaches.~Teaches in iden",1
+
+Pairs,1
+,,"all c:Class,t:Teacher | lone Teaches.c",1
+
+Pairs,1
+,,"all c:Class| one t:Teacher | t = Teaches.c",1
+
+Pairs,3
+,,"all t1, t2: Teacher | t1.Teaches not in t2.Teaches",1
+,,"all t : Teacher | one ( t & Groups.Group.Teacher)",2
+
+Pairs,1
+,,"((Teacher + Student) <: Teaches).~(Teaches) in iden",1
+
+Pairs,4
+,,"~Teaches.Teaches in iden and Teaches.~Teaches in iden",1
+,,"all c:Class,p:Person | lone Teaches.c and lone p.Teaches",3
+
+Pairs,2
+,,"all c : Class | #(Teacher->c) > 0 and #(Teacher->c) < 2",2
+
+Pairs,5
+,,"all c:Class,p:Teacher | lone Teaches.c && lone p.Teaches",5
+
+Pairs,1
+,,"all c : Class | lone (Teaches.c & Teacher)
+  
+  Class in (lone Teacher.Teaches)",1
+

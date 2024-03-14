@@ -1,0 +1,14 @@
+inv11 T: all s: Student, c: Course | some g: Grade | c in s.enrolled implies g in c.grades
+inv11 S: all s: Student, c: Course,  | some g: Grade | c in s.enrolled implies g in c.grades.s
+inv11 S: all s: Student, c: Course,  |  c in s.enrolled implies some c.grades.s
+inv11 B: all s: Student, c: Course |  c in s.enrolled implies some c.grades.s
+inv11 U: all s: Student, c: Course |  some c.grades.s implies c in s.enrolled
+inv11 T: all s: Student, c: Course |  c.grades.s implies c in s.enrolled
+inv11 B: all s: Student, c: Course |  some c.grades implies c in s.enrolled
+inv11 U: all s: Student, c: Course |  some c.grades.s implies c in s.enrolled
+inv11 U: all s: Student,p:Person, c: Course |  s = p and some c.grades.p implies c in s.enrolled
+inv11 U: all p: Person - Student, c: Course | some c.grades.p implies c in p.enrolled
+inv11 U: all p: Student, c: Course, g: Grade | p in c.grades.g implies c in p.enrolled
+inv11 U: all p: Student, c: Course, g: Grade | p in c.grades.g implies c in p.enrolled
+inv11 U: all p: Student, c: Course, g: Grade | p in c.grades.g implies c in p.enrolled
+

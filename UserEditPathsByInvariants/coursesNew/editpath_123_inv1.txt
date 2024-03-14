@@ -1,0 +1,6 @@
+inv1 C: all x: Person - Student | no x.enrolled
+inv1 C: all x: Person - Student | no x.enrolled
+inv1 S: all x: Teacher | #(x.enrolled)=0
+inv1 B: all x: Professor | #(x.enrolled)=0
+inv1 C: all x: Person | x not in Student implies #(x.enrolled)=0
+

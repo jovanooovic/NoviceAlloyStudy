@@ -1,0 +1,11 @@
+inv3 S: all t : Train | always lone f.pos
+inv3 U: all t : Train | always lone t.pos
+inv3 U: all t : Train | lone t.pos
+inv3 U: always all t : Train | always lone t.pos
+inv3 B: always all t : Train | always one t.pos
+inv3 S: always all t : Train | always before t.pos = after t.pos
+inv3 S: always all t : Train | always before t.pos /\ after t.pos
+inv3 U: always all t : Train, pos : t.pos | always lone pos
+inv3 U: always all t : Train, pos : t.pos | always lone pos
+inv3 C: always pos' = pos
+

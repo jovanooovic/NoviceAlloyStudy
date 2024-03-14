@@ -1,0 +1,35 @@
+inv6 O: all x : Node | Node in x.adj + adj.x
+inv6 O: all x : Node | Node in x.adj + adj.x + x
+inv6 O: all x : Node | Node in x.adj + adj.x + x
+inv6 T: all x : Node | Node in ^x.adj + ^adj.x + x
+inv6 T: all x : Node | Node in ^(x.adj) + ^(adj.x) + x
+inv6 T: all x : Node | Node in ^adj
+inv6 T: all x : Node | Node in ^(x.adj).adj + ^adj.(adj.x)
+inv6 T: all x : Node | Node in ^((x.adj).adj) + ^(adj.(adj.x))
+inv6 S: all x : Node | Node in ^(x.adj) + ^(adj.x))
+inv6 O: all x : Node | Node in x.adj + (~adj).x
+inv6 O: all x : Node | Node in x.adj + (~adj).x + x
+inv6 O: all x : Node | Node in x.adj
+inv6 O: all x : Node | Node in x.adj + x
+inv6 O: all x : Node | Node in x.^adj + x
+inv6 O: all x : Node | Node in x.^adj + x + ^~adj.x
+inv6 O: all x : Node | Node in x.^adj + x + ^adj.x
+inv6 O: all x : Node | Node in x.^adj + x
+inv6 O: all x, y : Node | Node in x.^adj + x + x.^~adj
+inv6 O: all x : Node | Node in x.^adj + x + x.^~adj
+inv6 O: all x : Node | Node in x.^adj + x + ^adj.x
+inv6 S: all x, y : Node | x->y in adj implies y->x not in adj and ode in x.^adj + x + ^adj.x
+inv6 B: all x, y : Node | x->y in adj implies y->x not in adj and Node in x.^adj + x + ^adj.x
+inv6 B: all x, y : Node | x->y in adj implies y->x not in adj and Node in x.^adj + x
+inv6 O: all x : Node | Node in x.*adj + x.*~adj
+inv6 O: all x : Node | Node in x.*adj + x.*~adj
+inv6 O: all x : Node | Node in x.*adj + *adj.x
+inv6 O: all x : Node | Node in x.*adj + (*adj).x
+inv6 O: all x : Node | Node in x.*adj + *adj.x
+inv6 O: all x : Node | Node in x.*adj + ~*adj.x
+inv6 O: all x : Node | Node in x.*adj + *~adj.x
+inv6 O: all x : Node | Node in x.*adj + ~*adj.x
+inv6 O: all x : Node | Node in x.*adj + (*adj).x
+inv6 O: all x : Node | Node in x.*adj + x.~(*adj)
+inv6 O: all x : Node | Node in x.*adj + x.~(*adj)
+

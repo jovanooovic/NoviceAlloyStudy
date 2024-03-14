@@ -1,0 +1,9 @@
+inv6 O: always ( some f:File| f not in Trash  and after (always (f in Trash)))
+inv6 O: always ( some f:File| f not in Trash  and after (f in Trash and after always f in Trash))
+inv6 B: always some f:File | (always f in Trash) releases (f in Trash and after f in Trash)
+inv6 B: always some f:File | (not always f in Trash) releases (f in Trash and after f in Trash)
+inv6 B: always some f:File | (not (always f in Trash)) releases (f in Trash and after f in Trash)
+inv6 O: always all f:File | (f in Trash) releases (f not in Trash) and after always (f in Trash)
+inv6 C: always all f:File | (f in Trash) implies always f in Trash
+inv6 C: always all f:File | (f in Trash) implies always f in Trash
+

@@ -1,0 +1,24 @@
+inv10 B: no Professor.enrolled.grades
+inv10 U: no grades.Professor
+inv10 U: no grades.Professor->Grade
+inv10 U: no grades.(Professor->Grade)
+inv10 U: no grades.(Professor->Grade)
+inv10 U: all x : Professor | no grades.(x->Grade)
+inv10 T: no grades & (Professor->Grade)
+inv10 T: all x : Professor | no grades & (x->Grade)
+inv10 T: all x : Professor | x->Grade not in grades
+inv10 T: Professor->Grade not in grades
+inv10 T: Professor->Grade
+inv10 B: no Professor->Grade
+inv10 T: no Professor->Grade & grades
+inv10 B: no Professor->Grade & Course.grades
+inv10 B: all x : Professor | no x->Grade & Course.grades
+inv10 B: all x : Professor | no x->Grade & (Course-x.enrolled).grades
+inv10 B: all x : Professor | no x->Grade & (Course-x.teaches).grades
+inv10 U: all x : Professor-Student | no x->Grade & (x.teaches).grades
+inv10 U: all x : Professor-Student | no x->Grade & Course.grades
+inv10 U: all x : Professor-Student | no x->Grade & Course.grades
+inv10 U: all x : Professor-Student | no x->Grade & Course.grades
+inv10 C: all x : Course | no x.grades & (Person-Student)->Grade
+inv10 C: no Course.grades & (Person-Student)->Grade
+

@@ -1,0 +1,15 @@
+inv3 B: Init.^{x,y: State | some (x.trans).y} = State
+inv3 U: all e : Event | lone trans.e
+inv3 U: all s: State, e: Event | lone s.trans.e
+inv3 U: all s: State | iden & (Event->State) in (s.trans).~(s.trans)
+inv3 U: all s: State | (iden & (Event->State)) in (s.trans).~(s.trans)
+inv3 B: all s: State | (iden & (Event->Event)) in (s.trans).~(s.trans)
+inv3 U: all s: State, e: Event | (iden & (s->e)) in (s.trans).~(s.trans)
+inv3 B: all s: State | (iden & (Event->Event)) in (s.trans).~(s.trans)
+inv3 T: all s: State | (~s.trans).(s.trans) in iden
+inv3 T: all s: State | (~s.trans).(s.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+inv3 O: ~(State.trans).(State.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+inv3 C: all s: State | ~(s.trans).(s.trans) in iden
+

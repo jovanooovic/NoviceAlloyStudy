@@ -1,0 +1,13 @@
+inv3 T: all p : Person, c : Course| some c in p.teaches
+inv3 B: all p : Person, c : Course| c in p.teaches
+inv3 T: all p : Person, c : Course| some c in p.teaches
+inv3 T: all p : Person, c : Course| p.teaches.~c
+inv3 T: all p : Person, c : Course| c in p.teaches.~c
+inv3 T: all p : Person, c : Course| c not in p.teaches.~c
+inv3 T: all p : Person, c : Course| c not in p.(teaches.~c)
+inv3 U: all p : Person, c : Course| c not in p.~teaches
+inv3 T: all p : Person, c : Course| p.teaches.~c
+inv3 T: all p : Person, c : Course| some p.teaches.~c
+inv3 B: all p : Person, c : Course| some p.~teaches
+inv3 E:
+

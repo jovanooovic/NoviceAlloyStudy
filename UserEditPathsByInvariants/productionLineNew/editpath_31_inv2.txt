@@ -1,0 +1,8 @@
+inv2 U: all w : Workstation, worker : Worker | #w.workers>0 and #workers.worker>0
+inv2 U: all w : Workstation, worker : Worker | #w.workers>0 and #workers.worker=1
+inv2 U: all w : Workstation, worker : Worker | #w.workers>0 and #workers.worker=1
+inv2 C: all w : Workstation | #w.workers>0	all worker : Worker | #workers.worker=1
+inv2 U: all w : Workstation|all worker : Worker | #w.workers>0 and #workers.worker=1
+inv2 S: all w : Workstation| #w.workers>0	all w : Worker | #w.worker=1
+inv2 C: all w : Workstation| #w.workers>0	all w : Worker | #workers.w=1
+

@@ -1,0 +1,19 @@
+inv7 S: all u : User , p : User-x | p in u.suggested iff p in x.follows.follows
+inv7 S: all u : User , p : User-x | p in u.suggested iff p in u.follows.follows
+inv7 B: all u : User , p : User-u | p in u.suggested iff p in u.follows.follows
+inv7 B: all u : User , p : User | p in u.suggested iff p in u.follows.follows
+inv7 U: all u : User , p : User | p in u.suggested implies p in u.follows.follows
+inv7 U: all u : User , p : User-u | p in u.suggested implies p in u.follows.follows
+inv7 S: all u : User , p : User-u | p in u.suggested implies (p in u.follows.follows p not in u.follows)
+inv7 U: all u : User , p : User-u | p in u.suggested implies (p in u.follows.follows and p not in u.follows)
+inv7 U: all u : User , p : User | p in u.suggested implies (p in u.follows.follows and p not in u.follows)
+inv7 B: all u : User , p : User | p in u.suggested iff (p in u.follows.follows and p not in u.follows)
+inv7 U: all u : User , p : (User-u) | p in u.suggested iff (p in u.follows.follows and p not in u.follows)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 C: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u!=s)
+inv7 U: all u : User , s : User-u| s in u.suggested iff( s in u.follows.follows and s not in u.follows)
+inv7 C: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u!=s)
+

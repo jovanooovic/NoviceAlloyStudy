@@ -1,0 +1,19 @@
+inv4 B: all x : User | some y : Ad | y in x.posts implies x.posts in Ad
+inv4 B: all x : User | some y : Ad | y in x.posts implies x.posts in Ad
+inv4 S: all x : User | some y Photo | y in x.posts and y in Ad implies x.posts in Ad
+inv4 S: all x : User | some y Photo | y in x.posts and y in Ad implies x.posts in Ad
+inv4 S: all x : User | some y Photo | y in x.posts and y in Ad implies x.posts in Ad
+inv4 S: all x : User | some y : Ad | y in x.posts implies all Ad z | z in x.posts
+inv4 B: all x : User | some y : Ad | y in x.posts implies all z : Ad | z in x.posts
+inv4 B: all x : User | some y : Ad | y in x.posts implies all z : Ad | x.posts in z
+inv4 B: all x : User | some y : Ad | y in x.posts implies x.posts in Ad
+inv4 B: all x : User | some y : Ad | y in x.posts implies no Photo & x.posts
+inv4 B: all x : User | some p : Ad | p in x.posts implies no x.posts & Photo
+inv4 B: all x : User | some p : Ad | p in x.posts implies all p : Photo | p not in x.posts
+inv4 B: all x : User |all p : Photo | some a : Ad | a in x.posts implies p not in x.posts
+inv4 O: all x : User | all p : Photo | all  a : Ad | a in x.posts implies p not in x.posts
+inv4 S: all x : User | all p : Photos | some a : Ad | a in x.posts implies p not in x.posts
+inv4 B: all x : User | all p : Photo | some a : Ad | a in x.posts implies p not in x.posts
+inv4 B: all x : User | all p : Photo-Ad | some a : Ad | a in x.posts implies p not in x.posts
+inv4 C: all x : User | all p : Photo-Ad | all a : Ad | a in x.posts implies p not in x.posts
+

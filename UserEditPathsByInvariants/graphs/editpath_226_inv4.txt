@@ -1,0 +1,18 @@
+inv4 T: all n:Node | n.adj
+inv4 U: all a:Node | a in a.^adj
+inv4 U: all a:Node | a in a.^adj
+inv4 B: all a:Node | a in a.^adj and not a->a in adj
+inv4 T: all a:Node | a.adj
+inv4 U: all a:Node | a in a.adj
+inv4 U: all a:Node | a in adj.a
+inv4 U: all a:Node | a in a.adj
+inv4 T: all a:Node | a in a.adj implies a in ~a.adj
+inv4 T: all a:Node | a in a.^adj implies a in ~a.^adj
+inv4 U: all a:Node | a in a.^adj implies a in a.^adj
+inv4 S: all a:Node | a in a.^adj implies a->not a
+inv4 U: all a:Node,b:Node | a in a.^adj implies a->b in adj
+inv4 C: all a:Node,b:Node |  a->b in adj
+inv4 C: all a:Node,b:Node |  a->b in adj
+inv4 C: all a:Node,b:Node | a->b in adj
+inv4 C: adj = Node -> Node
+

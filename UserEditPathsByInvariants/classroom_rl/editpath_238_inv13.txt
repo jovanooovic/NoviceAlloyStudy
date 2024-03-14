@@ -1,0 +1,7 @@
+inv13 B: not some s:Student | all p:Person | s->p in Tutors
+inv13 S: (not some s:Student | all p:Person | s->p in Tutors) and (not some t:Teacher | p->t in Tutors)
+inv13 U: not some s:Student | all p:Person | s->p in Tutors and (not some t:Teacher | p->t in Tutors)
+inv13 U: all p1, p2:Person | p1->p2 in Tutors implies p1 in Teacher
+inv13 C: all p1, p2:Person | (p1->p2 in Tutors implies p1 in Teacher and p2 in Student)
+inv13 C: all p1, p2:Person | (p1->p2 in Tutors implies p1 in Teacher and p2 in Student)
+

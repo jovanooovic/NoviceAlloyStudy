@@ -1,0 +1,5 @@
+inv7 B: all s: Student, proj1: Project, proj2: Project | proj1 in s.projects and proj2 in s.projects implies proj1 = proj2
+inv7 U: all s: Student, proj1: Project, proj2: Project, c: Course | proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj1 = proj2
+inv7 B: all proj: Project | lone (Course <: projects).proj
+inv7 U: all s: Student, proj1: Project, proj2: Project, c: Course | proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj1 = proj2
+

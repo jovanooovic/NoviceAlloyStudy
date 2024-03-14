@@ -1,0 +1,4 @@
+inv11 U: all p : ~(Course.grades).Person | p in Grade
+inv11 S: all s : Student | all c: Course | p in c.grades.Grade implies c in p.enrolled
+inv11 U: all p : Student | all c: Course | p in c.grades.Grade implies c in p.enrolled
+

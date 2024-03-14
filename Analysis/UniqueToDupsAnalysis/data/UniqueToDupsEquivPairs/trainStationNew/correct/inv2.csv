@@ -1,0 +1,41 @@
+Pairs,314
+,,"signals in Track one -> Signal",24
+,,"all x:Signal| one signals.x",8
+,,"all s:Signal| one signals.s",86
+,,"all si : Signal | one signals.si",1
+,,"all x : Signal | #signals.x = 1",1
+,,"all s:Signal | #signals.s=1",1
+,,"all s:Signal | one s.~signals",5
+,,"all s: Signal| some t: Track| one signals.s",1
+,,"all s:Signal|one t:Track | s in t.signals",132
+,,"all x:Signal | one y: Track | x in y.signals",4
+,,"all s : Signal | one x : Track | s in x.signals",2
+,,"all c:Signal | one t:Track | c in t.signals",1
+,,"all s : Signal | one t : Track | t in signals.s",1
+,,"all a : Signal | one b : Track | b -> a in signals",1
+,,"all s:Signal|one t:Track| t->s in signals",24
+,,"all si:Signal | one t:Track | si in t.signals",1
+,,"all s:Signal | one t1:Track | t1->s in signals",1
+,,"all s : Signal | one t : Track | one signals.s & t",1
+,,"all s : Signal | lone signals.s
+Signal in Track.signals",2
+,,"all sign : Signal | one tr : Track | sign in tr.signals",1
+,,"Signal = Track.signals
+all s : Signal | lone s.~signals",1
+,,"no (Signal - Track.signals)
+all s : Signal | lone signals.s",1
+,,"all signal: Signal | one track:Track | signal in track.signals",1
+,,"all s : Signal | one t : Track | s in t.signals and s not in (Track - t).signals",2
+,,"all sinal : univ | sinal in Signal implies one track : Track | track->sinal in signals",2
+,,"all x : Signal | some t : Track | x in t.signals and no x & (Track-t).signals",3
+,,"no (Signal - Track.signals)
+all t,u : Track | t != u implies no (t.signals & u.signals)",1
+,,"all s: Signal | s in Track.signals
+all s: Signal | all t,t1 : Track | s in t.signals and s in t1.signals implies t=t1",1
+,,"all s: Signal, t1,t2 : Track | t1->s in signals and t2->s in signals implies t1=t2
+all s : Signal | some t : Track | t->s in signals",1
+,,"all s : Signal | all t1, t2 : Track | s in t1.signals and s in t2.signals implies t1 = t2
+all s : Signal | some t : Track | s in t.signals",1
+,,"all a1,a2:Track | (some b:Signal | a1->b in signals and a2->b in signals) implies a1 = a2
+all b:Signal | some a:Track | a->b in signals",2
+

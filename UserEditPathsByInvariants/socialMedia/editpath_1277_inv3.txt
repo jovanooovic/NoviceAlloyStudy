@@ -1,0 +1,7 @@
+inv3 O: all u:User | u.sees = u.follows.posts + Ad
+inv3 O: all u:User | u.sees = Ad
+inv3 C: all p: Photo - Ad, u1: User | u1->p in sees => some u2: User | u2->p in posts and u1->u2 in follows
+inv3 O: all u: User | u.sees = u.follows.posts + Ad
+inv3 O: all u: User | u.follows.posts in u.sees and u.sees - u.follows.posts in Ad
+inv3 C: all u: User | u.sees - u.follows.posts in Ad
+

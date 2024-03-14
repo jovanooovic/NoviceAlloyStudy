@@ -1,0 +1,82 @@
+Pairs,19
+,,"no adj",7
+,,"no adj & adj",2
+,,"no adj + adj",1
+,,"no adj.~adj",1
+,,"all n : Node | no n.adj",3
+,,"all n : Node | n not in n.adj.~adj",2
+,,"no adj
+all n : Node, n2 : n.adj | n in n2.adj",1
+,,"all n:Node, n2:Node | n2 in n.adj => not n2 in n.adj",1
+,,"all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj
+no adj & adj",1
+
+Pairs,3
+,,"no Node",2
+,,"all n: Node | no m: Node | n.adj = m implies m.adj = n",1
+
+Pairs,1
+,,"one Node",1
+
+Pairs,4
+,,"lone Node",2
+,,"all n: Node | one m : Node | n.adj = m implies m.adj = n",1
+,,"all n: Node | lone m : Node | n.adj = m implies m.adj = n",1
+
+Pairs,11
+,,"iden in adj",1
+,,"iden in adj.adj",2
+,,"adj.~adj = iden",2
+,,"iden in adj.~adj",2
+,,"iden in ~adj.adj",2
+,,"~adj.adj in iden and iden in adj.~adj",1
+,,"~adj.adj in iden and iden in ~adj.adj",1
+
+Pairs,1
+,,"all n: Node | n.adj = n",1
+
+Pairs,1
+,,"all n,m: Node | n.adj = m",1
+
+Pairs,4
+,,"all n,m: Node | m in n.adj",1
+,,"all a,b:Node | b->a in adj",1
+,,"all n1, n2 : Node | n1->n2 in adj",1
+,,"all n1,n2:Node | n1 in n2.adj && n2 in n1.adj",1
+
+Pairs,1
+,,"(Node.adj->adj.Node) in adj",1
+
+Pairs,12
+,,"all n: Node | n.adj.adj = n",5
+,,"all n,m: Node | n.adj.adj = n",1
+,,"all n: Node | n.adj in Node implies n.adj.adj = n",1
+,,"all n: Node | n.adj.adj = n and n.adj != none",1
+,,"all n1,n2: Node | n1 in n2.adj iff n1.adj in n2",2
+,,"all n1,n2: Node | n1 in n2.adj and n1 in n2.adj iff n1.adj in n2",1
+,,"all n : Node | some ad : n.adj | n in ad.adj and ad.adj in n",1
+
+Pairs,2
+,,"all n:Node, n2:n.adj | n in n2",2
+
+Pairs,2
+,,"all disj n,m: Node | n.adj = m",1
+,,"all n: Node | one m: Node | n.adj = m implies m.adj = m",1
+
+Pairs,1
+,,"all n: Node | (n.adj->adj.n) = adj",1
+
+Pairs,2
+,,"all n1,n2: Node | n1 in n2.adj iff n1.adj = n2",1
+,,"all n : Node | all ad : n.adj | n in ad.adj and ad.adj in n",1
+
+Pairs,2
+,,"all disj n, n1 : Node | n1 in n.adj && n in n1.adj",1
+,,"all disj n1,n2:Node | n1 in n2.adj && n2 in n1.adj",1
+
+Pairs,2
+,,"all n: Node | n in adj.(n.adj)
+all disj n1, n2: Node | n2 in n1.adj => n1 in n2.adj",1
+,,"all disj n1, n2: Node | n2 in n1.adj => n1 in n2.adj
+all n : Node | n in n.adj.adj",1
+

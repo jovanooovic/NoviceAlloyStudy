@@ -1,0 +1,10 @@
+inv5 S: all t: Track | t in Junction implies t in some Track.succs
+inv5 U: all t: Track | t in Junction implies t in Track.succs
+inv5 B: all t1, t2, t3: Track | t1 in Junction implies t1 in t2.succs and t1 in t3.succs and t1 != t2 and t2 != t3 and t1 != t3
+inv5 B: all t1, t2, t3: Track | t1 in Junction implies t1 in t2.succs and t1 in t3.succs and t1 != t2 and t2 != t3 and t1 != t3	all t1, t2, t3: Track |  t1 in t2.succs and t1 in t3.succs and t1 != t2 and t2 != t3 and t1 != t3 implies t1 in Junction
+inv5 S: all t j : Track | #succs.j > 1 implies j in Junction
+inv5 U: all t, j : Track | #succs.j > 1 implies j in Junction
+inv5 U: all j : Track | #succs.j > 1 implies j in Junction
+inv5 C: all j : Track | #succs.j > 1 iff j in Junction
+inv5 C: all j : Track | #succs.j > 1 iff j in Junction
+

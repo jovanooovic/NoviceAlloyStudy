@@ -1,0 +1,5 @@
+inv3 O: all p : Person | p not in Teacher && p not in Student
+inv3 B: all p : Person | not (p not in Teacher && p not in Student)
+inv3 U: all p : Person | p in Student => p not in Teacher && p in Teacher => p not in Student
+inv3 C: all p : Person | p in Student => p not in Teacher || p in Teacher => p not in Student
+

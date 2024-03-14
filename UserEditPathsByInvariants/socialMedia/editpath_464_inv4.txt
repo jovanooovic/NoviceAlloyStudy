@@ -1,0 +1,20 @@
+inv4 S: all u:User |
+inv4 S: all u:User | (i.posts & Ad) -> u.posts in Ad
+inv4 T: all u:User | (u.posts & Ad) -> u.posts in Ad
+inv4 T: all u:User | (u.posts & Ad) -> u.posts = Ad
+inv4 T: all u:User | (u.posts & Ad) -> (u.posts = Ad)
+inv4 S: all u:User | (u.posts & Ad) -> (all u.posts -> Ad)
+inv4 T: all u:User | (u.posts & Ad) -> (u.posts -> Ad)
+inv4 T: all u:User | (u.posts & Ad) implies u.posts -> Ad
+inv4 T: all u:User | (u.posts & Ad) implies u.posts in Ad
+inv4 T: all u:User | (u.posts & Ad) implies u.posts -> Ad
+inv4 S: all u:User | (u.posts & Ad) in Photos implies u.posts in Ad
+inv4 O: all u:User | (u.posts & Ad) in Photo implies u.posts in Ad
+inv4 O: all u:User | (u.posts & Ad) in u.posts implies u.posts in Ad
+inv4 T: all u:User | (u.posts & Ad) implies (all p: Photo | u->p in posts implies p in Ad)
+inv4 T: all u:User | (u.posts & Ad) in posts implies (all p: Photo | u->p in posts implies p in Ad)
+inv4 T: all u:User | (u.posts & Ad) in posts implies (all p: Photo | u->p in posts implies p in Ad)
+inv4 O: all u:User | u-> (u.posts & Ad) in posts implies (all p: Photo | u->p in posts implies p in Ad)
+inv4 O: all u:User | u -> (u.posts & Ad) in posts implies (all p: Photo | u->p in posts implies p in Ad)
+inv4 C: all u: User, a: Ad | u->a in posts implies (all p: Photo | u->p in posts implies p in Ad)
+

@@ -1,0 +1,10 @@
+inv3 S: all w:User.profile | some s:Source implies lone w.id
+inv3 S: all w:User.profile, s:Source | lone w.id
+inv3 B: all w:User.profile, s:Source | lone w.ids
+inv3 B: all w:User.profile | lone w.ids
+inv3 B: all w:User.profile | one w.ids
+inv3 B: all w:User.profile | one w.ids
+inv3 B: all u: User, w: Work | w in u.profile => w.ids = w.ids && all u2: User, w2: Work | (w2 in u2.profile && u2.source = u.source) => w.ids = w2.ids
+inv3 S: all u: User, w: Work | w in u.profile => w.ids.isDisjoint[w'.ids | w' in u.profile]
+inv3 S: all u: User, w: Work | w in u.profile implies w.ids.isDisjoint[w'.ids | w' in u.profile]
+

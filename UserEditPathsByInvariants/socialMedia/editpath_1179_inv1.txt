@@ -1,0 +1,8 @@
+inv1 E:
+inv1 T: all p: Photo | p in posts
+inv1 U: all p: Photo | p in User.posts
+inv1 C: all p: Photo | one posts.p
+inv1 T: all p: Photo | #(p in User.posts)=1
+inv1 C: all p: Photo | #posts.p = 1
+inv1 C: all p: Photo | one posts.p
+

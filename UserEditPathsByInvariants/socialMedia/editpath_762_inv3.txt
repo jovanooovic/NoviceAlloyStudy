@@ -1,0 +1,14 @@
+inv3 S: all x : User | all y : User | all p : Photos | y in follows.x, p in y.posts, x in sees.p
+inv3 S: all x : User | all y : User | all p : Photos | y in follows.x and p in y.posts and x in sees.p
+inv3 S: all x : User | all y : User | all p : Photos | y in follows.x and p in y.posts and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and p not in Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and p not in Ad and x in sees.p
+inv3 T: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and p not Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and p not in Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts and p != Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts - Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo | y in follows.x and p in y.posts  and p != Ad and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo - Ad | y in follows.x and p in y.posts and x in sees.p
+inv3 O: all x : User | all y : User | all p : Photo - Ad | y not in follows.x and p in y.posts and x not in sees.p
+

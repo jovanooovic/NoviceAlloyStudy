@@ -1,0 +1,6 @@
+inv13 T: all s:Student, c:Course | s in c.grades.max implies s in c.projects
+inv13 T: all s:Student, c:Course | s in c.grades.max implies s in c.projects
+inv13 S: all s:Student, c:Course, g: Grades | s in (c.grades).g.max implies s in c.projects
+inv13 T: all s:Student, c:Course, g: Grade | s in (c.grades).g.max implies s in c.projects
+inv13 T: all s:Student, c:Course, g: Grade | s in ((c.grades).g).max implies s in c.projects
+

@@ -1,0 +1,4 @@
+inv9 T: all p : Professor | no p.teaches.Course & p.enrolled.Course
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+

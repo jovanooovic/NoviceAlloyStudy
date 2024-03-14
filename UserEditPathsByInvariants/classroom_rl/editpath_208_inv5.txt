@@ -1,0 +1,12 @@
+inv5 S: all t: Teacher | some t.teaches
+inv5 B: all t: Teacher | some t.Teaches
+inv5 T: some x:Class, t:Teacher | t.Teaches.x
+inv5 T: all x:Class, t:Teacher | some t.Teaches.x
+inv5 S: all t:Teacher, some x: Class | t.Teaches.x
+inv5 U: all t:Teacher | some x: Class | some Teaches.x
+inv5 T: all t:Teacher | some x: Class | some t.Teaches.x
+inv5 S: all p:Person | some x: Class | some t.Teaches.x
+inv5 T: all p:Person | some x: Class | some p.Teaches.x
+inv5 T: some x:Class|(all t:Teacher | t.Teaches.x)
+inv5 B: all x:Class | some Teaches.x
+

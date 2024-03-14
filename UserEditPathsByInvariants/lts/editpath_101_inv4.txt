@@ -1,0 +1,12 @@
+inv4 T: State in Init.^trans[Event]
+inv4 O: State in Init.trans[Event]
+inv4 T: State in Init.^trans[Event]
+inv4 T: State in ^Init.trans[Event]
+inv4 T: State in Init <: ^trans[Event]
+inv4 T: State in Init <: ^(trans[Event])
+inv4 T: State in Init <: ^(trans.Event)
+inv4 U: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		State in Init.*rel
+inv4 U: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		all s: State - Init | s in Init.*rel
+inv4 C: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		all s: State | s in Init.^rel
+inv4 C: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		State in Init.^rel
+

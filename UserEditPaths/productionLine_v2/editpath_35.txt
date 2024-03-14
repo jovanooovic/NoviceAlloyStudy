@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv4 C: all c:Component | some c.parts	all m:Material | m.parts = none
+inv4 U: parts in Component -> Product
+inv4 C: parts in Component -> some Product
+inv4 C: Component = parts.Product
+inv3 S: all c:Component
+inv3 S: all c:Component
+inv5 C: no workers.Human & workers.Robot
+inv5 C: workers.Human & workers.Robot = none
+inv6 C: all c:Component | c not in c.^parts
+inv6 O: no iden & ^parts
+inv7 S: all c:Components | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c:Component | c.parts in Dangerous implies c in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 T: parts.Dangerous in Dangerous	all c:Component  | some c.parts in Dangerous -> c in Dangerous
+inv7 T: parts.Dangerous in Dangerous	all c:Component  | some c.parts & Dangerous -> c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c:Component  | some c.parts & Dangerous implies c in Dangerous
+inv8 C: all c:Dangerous, ws:c.workstation,w:ws.workers | w not in Human
+inv8 C: all c:Dangerous | no c.workstation.workers & Human
+

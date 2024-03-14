@@ -1,0 +1,43 @@
+inv5 S: all p : Project | all s : Person | s in project.p
+inv5 B: all p : Project | all s : Person | s in projects.p
+inv5 U: all p : Project | all s : Person | s in projects.p implies s in Student
+inv5 B: all p : Project | all s : Person | s in projects.p and  s in Student
+inv5 U: all p : Project | some s : Person | s in projects.p and  s in Student
+inv5 U: all p : Project | some s : Person | s in projects.p implies s in Student
+inv5 U: all p : Project | some s : Student | s in projects.p
+inv5 B: all p : Project | all s : Student | s in projects.p
+inv5 B: all p : Project | all s : Person-Professor | s in projects.p
+inv5 B: all p : Project | all s : Person-Professor | s in projects.p and no projects.p&Professor
+inv5 U: all p : Project | some s : Student | s in projects.p
+inv5 U: all p : Project | some s : Person | s in projects.p implies s in Student
+inv5 B: all p : Project | some s : Person | s in projects.p implies s not in Professor
+inv5 B: all p : Project | some s : Person | s in projects.p implies (s not in Professor) and s in Student
+inv5 U: all p : Project | some s : Person | s in projects.p implies s in Student
+inv5 U: all p : Project | some s : Person | s in projects.p
+inv5 U: all p : Project | some s : Person | s in projects.p and s in Student
+inv5 B: all p : Project | all s : Person | s in projects.p and s in Student
+inv5 U: all p : Project | all s : Person | s in projects.p implies s in Student
+inv5 B: all p : Project | all s : Person | s in projects.p implies (s in Student) and ( s not in teaches.projects.p)
+inv5 B: all p : Project | all s : Person | s in projects.p implies (s in Student) and ( s not in teaches.projects.p)
+inv5 B: all p : Project | all s : Person | s in projects.p and (s in Student) and ( s not in teaches.projects.p)
+inv5 B: all p : Project | all s : Person | (s in projects.p) and (s in Student)
+inv5 S: all p : Project | all s : Person |
+inv5 S: all p : Project | all s : Person |
+inv5 S: all p : Project | all s : Person |
+inv5 B: all p : Project | all s : Person | (s in projects.p) and (s in Student)
+inv5 U: all s : Person | all p : Project |  s in projects.p implies s in Student
+inv5 B: all s : Person | all p : Project |  s in projects.p implies (s in Student ) and (s not in Professor)
+inv5 B: all s : Person | all p : Project |  s in projects.p implies (s in Student ) and (s not in Professor)
+inv5 B: all p : Person | all c : Course | p in enrolled.c implies p in Student		all s : Person | all p : Project |  s in projects.p implies (s in Student ) and (s not in Professor)
+inv5 U: all s : Person | all p : Project |  s in projects.p implies (s in Student )
+inv5 B: all s : Person | all p : Project |  s in projects.p implies (s in Student ) and (s not in Professor)
+inv5 B: all s : Person | all p : Project |  (s in projects.p) and (s in Student)
+inv5 S: all s : Person | all p : Project |  (s in projects.p) and (s in Student) 	  	all  p : Project | some s : User | s in projects.p
+inv5 O: all s : Person | all p : Project |  (s in projects.p) and (s in Student) 	  	all  p : Project | some s : Person | s in projects.p
+inv5 O: all s : Person | all p : Project |  p in s.projects and (s in Student) 	  	all  p : Project | some s : Person | s in projects.p
+inv5 C: all s : Person | all p : Project |  p in s.projects implies s in Student	  	all  p : Project | some s : Person | s in projects.p
+inv5 C: all s : Person | all p : Project |  (p in s.projects) implies (s in Student) 	  	all  p : Project | some s : Person | s in projects.p
+inv5 U: all s : Person | all p : Project |  (p in s.projects) implies (s in Student)
+inv5 C: all s : Person | all p : Project |  (p in s.projects) implies (s in Student) 	  	all  p : Project | some s : Person | s in projects.p
+inv5 U: all s : Person | all p : Project |  (p in s.projects) implies (s in Student)
+

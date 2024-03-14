@@ -1,0 +1,7 @@
+inv10 T: all c:Course| c.grades in Student
+inv10 U: all c:Course| c.grades[0] in Student
+inv10 S: all c:Courses| all p:Person,g:c.grades| p->g in c .grades implies p in Student
+inv10 T: all c:Course| all p:Person,g:c.grades| p->g in c .grades implies p in Student
+inv10 T: all c:Course| all p:Person,g: c.grades| p->g in c.grades implies p in Student
+inv10 C: all c:Course| all p:Person,g: Grade| p->g in c.grades implies p in Student
+

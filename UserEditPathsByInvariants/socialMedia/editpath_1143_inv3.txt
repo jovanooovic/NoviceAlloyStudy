@@ -1,0 +1,10 @@
+inv3 S: all u : User | all p: Photo - Ads | u.follows.p
+inv3 T: all u : User | all p: Photo - Ad | u.follows.p
+inv3 T: all u : User | all p: Photo - Ad | p.follows.u
+inv3 S: all u : User | all x.sees in x.follows.posts
+inv3 S: all u : User | all x.sees in u.follows.posts
+inv3 S: all u : User | all u.sees - Ad in u.follows.posts
+inv3 S: all u : User | all u.sees - Ad in u.follows.posts
+inv3 C: all x: User | x.sees - Ad in x.follows.posts
+inv3 C: all u: User | u.sees - Ad in u.follows.posts
+

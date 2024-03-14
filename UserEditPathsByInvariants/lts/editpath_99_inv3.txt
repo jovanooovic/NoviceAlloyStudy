@@ -1,0 +1,18 @@
+inv3 O: lone State.trans
+inv3 O: all s: State | lone s.trans
+inv3 B: all s: State |one e: Event | lone s.trans.e
+inv3 B: all s: State |one e: Event | lone trans.e
+inv3 O: all s: State |one e: Event | lone s.trans->e
+inv3 T: all s: State |one e: Event | lone s->e in State
+inv3 B: all s: State |one e: Event | lone s->e
+inv3 S: all s:State |one e: Event : lone e->s in trans
+inv3 T: all s:State |one e: Event | lone e->s in trans
+inv3 T: all s:State |one e: Event | lone trans.e in s.trans
+inv3 O: all s:State |one e: Event | lone s.trans
+inv3 B: all s:State |one e: Event | lone s.trans.e
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e->s
+inv3 T: all s:State |some e: Event | s.trans implies lone e in trans
+inv3 T: all s:State |some e: Event | s.trans implies lone trans.e->s
+inv3 T: all s:State |some e: Event | s.trans implies lone e->s
+

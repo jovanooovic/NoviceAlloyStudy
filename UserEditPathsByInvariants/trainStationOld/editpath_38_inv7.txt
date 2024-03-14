@@ -1,0 +1,8 @@
+inv7 B: eventually all t : Train | t.pos = Exit
+inv7 B: eventually all t : Train | no t.pos
+inv7 U: all t : Train | eventually no t.pos
+inv7 O: all t : Train | eventually always no t.pos
+inv7 O: all t : Train | eventually (always no t.pos)
+inv7 O: eventually all t : Train | (always no t.pos)
+inv7 B: eventually all t : Train | (t.pos = Exit) implies (no t.pos')
+

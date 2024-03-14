@@ -1,0 +1,33 @@
+Pairs,217
+,,"(Course<: projects) in Course one -> set Project",1
+,,"all x:Project |  one (Course <: projects).x",1
+,,"all p: Project | one (Course<:projects).p",9
+,,"all g:Project | one ( (Course <: projects).g)",3
+,,"all p : Project | one (p.~(Course <: projects))",2
+,,"all p : Project | #((Course <: projects).p) = 1",1
+,,"all p:Project| one projects.p & Course",8
+,,"all p: Project | one Course <: projects.p",5
+,,"all p: Project | one Course :> projects.p",2
+,,"all p:Project | one projects.p <: Course",1
+,,"all x: Project | one Course <:projects.x",4
+,,"all p : Project | #projects.p:>Course = 1",1
+,,"all p:Project| #Course:>projects.p=1",1
+,,"all p : Project | #Course<:projects.p = 1",2
+,,"all p: Project| one c:Course | c = projects.p",4
+,,"all x: Project |one c : Course | x in c.projects",1
+,,"all p: Project| one c: Course| c in projects.p",14
+,,"all x: Project| one y: Course  | x in y.projects",8
+,,"all p:Project| one c:Course| p in c.projects",110
+,,"all x : Project | one y : Course | y in projects.x",3
+,,"all p : Project | one x : Course | x in projects.p",2
+,,"all a:Project | one c:Course | a in c.projects",1
+,,"all p:Project|one c:Course| c->p in projects",21
+,,"all x: Project | one p: Course | p->x in projects",1
+,,"all pr: Project | one c : Course | pr in c.projects",1
+,,"all p: Project | one c: Course | p.~projects = c",2
+,,"all p : Project | one c : Course | c in p.~(projects)",1
+,,"all ps : Project | one c1 : Course | ps in c1.projects",1
+,,"all p1: Project | one c1: Course | c1->p1 in projects",2
+,,"all proj:Project | one c:Course | proj in c.projects",1
+,,"all project : Project | one course : Course | course->project in projects",3
+

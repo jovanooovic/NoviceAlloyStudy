@@ -1,0 +1,22 @@
+inv14 S: all p : Person | (some c : Class, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches and t->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t : Teacher | t->c in Teaches and t->p in Tutors
+inv14 S: all p : Person | p in Class implies some t : Teacher | t->c in Teaches and t->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t : Teacher | t->c in Teaches and t->p in Tutors
+inv14 S: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t->p in Tutors and t : Teacher | t->c in Teaches
+inv14 S: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t->p in Tutors and t : Teacher | t->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some t : Teacher | t->p in Tutors and t->c in Teaches
+inv14 B: all p : Student | some c : Class, g : Group | c->p->g in Groups implies some t : Teacher | t->p in Tutors and t->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies p in Student and some t : Teacher | t->p in Tutors and t->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies p->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some q : Person | q->c in Teaches and q->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some q : Person | q->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups and some q : Person | q->c in Teaches implies q->p in Tutors
+inv14 S: all p : Person | some c : Class, g : Group | c->p->g in Groups | some q : Person | q->c in Teaches implies q->p in Tutors
+inv14 S: all p : Person | some c : Class, g : Group | c->p->g in Groups | some q : Person | q->c in Teaches implies q->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups and some q : Person | q->c in Teaches and q->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some q : Person | q->c in Teaches and q->p in Tutors
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some q : Person | q->p in Tutors and q->c in Teaches
+inv14 B: all p : Person | some c : Class, g : Group | c->p->g in Groups implies some q : Person | q->p in Tutors and q->c in Teaches
+inv14 C: all x, v : Person, y : Class | (some z : Group | y->x->z in Groups) and v->y in Teaches implies v->x in Tutors
+inv14 C: all p, q : Person, c : Class | (some g : Group | c->p->g in Groups) and q->c in Teaches implies q->p in Tutors
+

@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv4 O: all u:User, w1,w2:Work | ((w1.ids=w2.ids) implies not ((w1 in u.visible)) and (w2 in u.visible))
+inv4 O: all u:User, w1,w2:Work | ((w1=w2) implies not ((w1 in u.visible)) and (w2 in u.visible))
+inv4 O: all u:User, w1,w2:Work | ((w1.ids=w2.ids) implies not ((w1 in u.visible)) and (w2 in u.visible))
+inv4 B: all u:User, w1,w2:Work | (((w1.ids=w2.ids) and (w1 in u.profile) and (w1 in u.profile)) implies not ((w1 in u.visible)) and (w2 in u.visible))
+inv4 B: all u:User, w1,w2:Work | (((w1.ids=w2.ids) and (w1 in u.profile) and (w2 in u.profile)) implies not ((w1 in u.visible)) and (w2 in u.visible))
+inv3 C: all w1, w2 : Work | all u : User | w1 != w2 and (w1 + w2) in u.profile and (w1.source = w2.source) implies no w1.ids & w2.ids
+inv4 T: all w1, w2 : Work | all u : User | w1 = w2 and (w1 + w2) in u.profile  implies (w1 in u.visible iff no w2 in u.visible)
+inv4 B: all w1, w2 : Work | all u : User | w1 = w2 and (w1 + w2) in u.profile  implies (w1 in u.visible iff not w2 in u.visible)
+inv4 B: all w1, w2 : Work | all u : User | w1.ids = w2.ids and (w1 + w2) in u.profile  implies (w1 in u.visible iff not w2 in u.visible)
+inv4 B: all w1, w2 : Work | all u : User | (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1 = w2
+inv4 B: all w1, w2 : Work | all u : User | (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.ids = w2.ids
+inv4 B: all w1, w2 : Work | all u : User | w1.source = w2.source and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.ids = w2.ids
+inv4 U: all w1, w2 : Work | all u : User | w1.ids = w2.ids and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.source = w2.source
+inv4 S: all w1, w2 : Work | all u : User | w1.ids == w2.ids and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.source = w2.source
+inv4 U: all w1, w2 : Work | all u : User | w1.ids = w2.ids and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.source = w2.source
+inv4 U: all w1, w2 : Work | all u : User | (w1.ids = w2.ids and (w1 + w2) in u.visible and (w1 + w2) in u.profile )implies w1.source = w2.source
+inv4 S: all w1, w2 : Work | all u : User | (w1.ids & w2.ids) and (w1 + w2) in u.visible and (w1 + w2) in u.profile )implies w1.source = w2.source
+inv4 T: all w1, w2 : Work | all u : User | (w1.ids & w2.ids) and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.source = w2.source
+inv4 U: all w1, w2 : Work | all u : User | some (w1.ids & w2.ids) and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies w1.source = w2.source
+inv4 B: all w1, w2 : Work | all u : User | w1.source = w2.source and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies no (w1.ids & w2.ids)
+inv4 U: all w1, w2 : Work | all u : User | w1.source != w2.source and (w1 + w2) in u.visible and (w1 + w2) in u.profile implies no (w1.ids & w2.ids)
+inv4 B: all w1, w2 : Work | all u : User |  (w1 + w2) in u.visible and (w1 + w2) in u.profile implies no (w1.ids & w2.ids)
+inv4 T: all w1, w2 : Work | all u : User |  some (w1.ids & w2.ids)  and (w1 + w2) in u.profile implies no (w1 + w2) in u.visible
+inv4 B: all w1, w2 : Work | all u : User |  some (w1.ids & w2.ids) and (w1 + w2) in u.profile implies not (w1 + w2) in u.visible
+inv4 B: all w1, w2 : Work | all u : User |  (some (w1.ids & w2.ids)) and (w1 + w2) in u.profile implies not (w1 + w2) in u.visible
+inv4 U: all disj w1, w2 : Work | all u : User |  (some (w1.ids & w2.ids)) and (w1 + w2) in u.profile implies not (w1 + w2) in u.visible
+

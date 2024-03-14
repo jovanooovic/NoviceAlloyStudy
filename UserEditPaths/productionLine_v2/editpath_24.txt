@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 S: all w : Workers | w in Robots or w in Human
+inv1 C: all w : Worker | w in Robot or w in Human
+inv1 C: all w : Worker | w in Robot+Human
+inv2 U: all w : Worker | all w1,w2 : Workstation | w in w1.workers and w in w2.workers implies w1=w2
+inv2 U: all ws : Workstation | some ws.workers
+inv2 U: all ws : Workstation | some ws.workers	all w : Worker | w in Workstation.workers
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 U: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker | w in Workstation.workers	all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2
+inv3 C: all c : Component | one w : Workstation | w in c.workstation
+inv4 B: all c : Component | all p : Product | c in p.parts	all m : Material | all p : Product | m not in p.parts
+inv4 B: all c : Component | some p : Product | c in p.parts	all m : Material | all p : Product | m not in p.parts
+inv4 B: all c : Component | some p : Product | c in p.parts	all m : Material | no m.parts
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv5 S: all h : Humans | all r : Robots | all w : Workstation | r in w.workers and h not in w.workers
+inv5 S: all h : Human | all r : Robots | all w : Workstation | r in w.workers and h not in w.workers
+inv5 O: all h : Human | all r : Robot | all w : Workstation | r in w.workers and h not in w.workers
+inv5 C: all h : Human | all r : Robot | all w : Workstation | r in w.workers implies h not in w.workers
+inv5 B: all h : Human | all r : Robot | all w : Workstation | r not in w.workers implies h in w.workers
+inv5 C: all h : Human | all r : Robot | all w : Workstation | h in w.workers implies r not in w.workers
+inv6 C: all c : Component | c not in c.^parts
+inv7 C: all c : Component | all d : Dangerous | d in c.parts implies c in Dangerous
+inv8 U: all h : Human | all d : Dangerous | all c : Component | c in Dangerous implies c not in Human
+inv8 U: all h : Human | all c : Component | c in Dangerous implies c not in Human
+inv8 C: all d : Dangerous | no d.workstation.workers&Human
+

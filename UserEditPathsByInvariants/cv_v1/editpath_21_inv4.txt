@@ -1,0 +1,19 @@
+inv4 T: all u : User, w : u.profile | lone u->w & u.visible
+inv4 U: all u : User, w : u.profile | lone u->w & visible
+inv4 U: all u : User, w : u.profile | lone w & u.visible
+inv4 B: all u : User, disj id1, id2 : u.visible.ids | lone ids.id1
+inv4 U: all u : User, id : u.visible.ids | lone u.visible.ids & id
+inv4 T: ids
+inv4 B: ~ids.ids in iden
+inv4 B: ~ids.ids in iden
+inv4 U: all u : User | ~(u.visible <: ids.ids).(u.visible <: ids.ids) in iden
+inv4 B: all u : User | ~(u.visible <: ids).(u.visible <: ids) in iden
+inv4 U: all u : User | (u.visible <: ids).~(u.visible <: ids) in iden
+inv4 O: all u : User | iden in (u.visible <: ids).~(u.visible <: ids)
+inv4 O: all u : User | iden in ~(u.visible <: ids).(u.visible <: ids)
+inv4 U: all u : User, w : u.profile | lone w & u.visible
+inv4 U: all u : User, id : u.profile.ids | lone id & u.visible.ids
+inv4 U: all u : User, id : u.profile.ids | #(id & u.visible.ids) < 2
+inv4 U: all u : User, id : u.profile.ids, w1, w2 : Work | w1->id + w2->id in visible.ids => w1 = w2
+inv4 T: all u : User, id : u.profile.ids, w1, w2 : Work | w1->id + w2->id in u.visible => w1 = w2
+

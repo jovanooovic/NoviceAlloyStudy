@@ -1,0 +1,25 @@
+inv3 S: all p: Person | lone in Student or lone in Teacher
+inv3 U: all p: Person | lone Student or lone Teacher
+inv3 S: all p: Person | p lone in Student or p lone in Teacher
+inv3 B: all p: Person |p in Student or p in Teacher
+inv3 B: one p: Person | p in Student or p in Teacher
+inv3 O: all p: Person | p not in Student and p in Teacher
+inv3 B: Person = Student + Teacher
+inv3 O: Person = Student + Teacher and no Teacher & Student
+inv3 T: Person = Student + Teacher and Teacher & Student
+inv3 U: Person = Student + Teacher implies no Teacher & Student
+inv3 S: Person = Student + Teacher, no Teacher & Student
+inv3 O: Person = Student + Teacher and no Teacher & Student
+inv3 S: Person = Student + Teacher and no Teacher & no Student
+inv3 O: Person = Student + Teacher	  	no Student & Teacher
+inv3 S: Person = 	  	no Student & Teacher
+inv3 S: Person = no Student & Teacher
+inv3 S: Person = no (Student + Teacher)
+inv3 S: Person = no Student + Teacher	  Person = Student & Teacher
+inv3 S: Person = no Student + Teacher,	  Person = Student & Teacher
+inv3 S: Person = no Student + Teacher,	  Student & Teacher
+inv3 S: Person = Student + Teacher,	  no Student & Teacher
+inv3 O: Person = Student + Teacher	  no Student & Teacher
+inv3 O: Person = Student + Teacher	  no Student & Teacher
+inv3 C: no Student & Teacher
+

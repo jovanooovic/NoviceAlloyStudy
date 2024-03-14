@@ -1,0 +1,6 @@
+inv3 S: all disj w1,w2 : Work | w1.id != w2.id
+inv3 B: all disj w1,w2 : Work | w1.ids != w2.ids
+inv3 O: all u:User , disj w1,w2:(u.profile) | w1.ids = w1.ids-w2.ids
+inv3 O: all u:User , disj w1,w2:(u.profile) | w1.ids = w1.ids-w2.ids
+inv3 O: all u:User , disj w1,w2:(u.profile) | (w1.ids = w1.ids-w2.ids) and (w2.ids = w2.ids-w1.ids)
+

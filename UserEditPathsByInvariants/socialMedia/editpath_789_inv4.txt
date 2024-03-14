@@ -1,0 +1,5 @@
+inv4 T: all u:User | u.posts&Ad in iden implies u.posts-Ad = none
+inv4 C: all u:User | u.posts&Ad != none implies u.posts-Ad = none
+inv4 C: all u:User | some u.posts&Ad implies u.posts-Ad = none
+inv4 C: all u:User | some u.posts&Ad implies no u.posts-Ad
+

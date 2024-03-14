@@ -1,0 +1,54 @@
+inv9 E:
+inv9 T: all w: Workstation | one begin in w && one end in w
+inv9 T: (all w: Workstation | one begin in w) && (all w: Workstation | one end in w)
+inv9 S: one begin in Workstation
+inv9 T: (all w: Workstation | one end in w.succs) && (all w: Workstation | one end in w)
+inv9 T: (all w: Workstation | one end in w.succs)
+inv9 S: (all w: Workstation | one x: Workstation | x in w.succs && x in end)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.succ && x in end)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.succ && x in end) && (all w: Workstation | one x: Workstation | x in w.^succ && x in begin)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.succ && x in end) && (all w: Workstation | one x: Workstation | x in w.*succ && x in begin)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.succ && x in end) && (all w: Workstation | some x: Workstation | x in w.*succ && x in begin)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.^succ && x in end) && (all w: Workstation | one x: Workstation | x in w.*succ && x in begin)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.^succ && x in end) && (all w: Workstation | one x: Workstation | x in succ.w && x in begin)
+inv9 B: (all w: Workstation | one x: Workstation | x in w.succ && x in end) && (all w: Workstation | one x: Workstation | x in succ.w && x in begin)
+inv9 B: all w: Workstation | (one (succ.w & begin)) && (one (w.succ & end))
+inv9 B: all w: Workstation | (one (*succ.w & begin)) && (one (w.succ & end))
+inv9 U: all w: Workstation | (one (*succ.w & begin)) && (one (w.*succ & end))
+inv9 U: all w: Workstation | (one (*succ.w & begin)) && (some (w.*succ & end))
+inv9 B: all w: Workstation | (one (succ.w & begin)) && (some (w.succ & end))
+inv9 B: all w: Workstation | one (succ.w & begin) && (some (w.succ & end))
+inv9 B: all w: Workstation | one (succ.w & begin) && one (w.succ & end)
+inv9 B: all w: Workstation | one (succ.w & begin) && one (w.succ & end) && (succ.w & begin)!=(w.succ & end)
+inv9 B: all w: Workstation | one (*succ.w & begin) && one (w.*succ & end) && (*succ.w & begin)!=(w.*succ & end)
+inv9 B: all w: Workstation | one (succ.w & begin) && one (w.*succ & end)
+inv9 B: all w: Workstation | (w in begin || one (succ.w & begin)) && one (w.*succ & end)
+inv9 U: all w: Workstation | one (*succ.w & begin) && one (w.*succ & end)
+inv9 T: all w: Workstation | one w in begin && one w in end
+inv9 U: one (Workstation & end)	one (Workstation & begin)
+inv9 U: one (Workstation & end) && one (Workstation & begin)
+inv9 U: (one w: end | all x: Workstation-w | x not in end) && (one w: begin | all x: Workstation-w | x not in begin)
+inv9 S: (one w: end, b: begin | all x: (Workstation-w)-b | x not in (end+begin)
+inv9 U: one w: end, b: begin | all x: (Workstation-w)-b | x not in (end+begin)
+inv9 U: one w: end, b: begin | all x: (Workstation-w)-b | no x&(end+begin)
+inv9 B: all w: Workstation | no w.succ & w.succ.succ and (w in begin.succ.*succ or w = end)
+inv9 U: all w: Workstation | no w.succ & w.succ.succ && (w in begin.succ.*succ || w = begin)
+inv9 S: all w: Workstation | no w.succ & w.succ.succ && ((w in begin.succ.*succ && (w = end or no)) || w = begin)
+inv9 U: all w: Workstation | no w.succ & w.succ.succ && ((w in begin.succ.*succ && w!= begin && (w = end or w!=end )) || w = begin)
+inv9 B: all w: Workstation | w = begin || (w in begin.succ.*succ && w not in begin && w not in end) || w in begin
+inv9 B: all w: Workstation | w = begin || (w in begin.*succ && w not in begin && w not in end) || w in begin
+inv9 B: all w: Workstation | w = begin || (w in begin.^succ && w not in begin && w not in end) || w in begin
+inv9 B: all w: Workstation | w in begin || (w in begin.^succ && w not in begin && w not in end) || w in begin
+inv9 U: all w: Workstation | w in begin || (w in begin.^succ && w not in begin && w not in end) || w in end
+inv9 U: all w: Workstation | (w in begin || (w in begin.^succ && w not in (begin+end)) || w in end)
+inv9 U: all w: Workstation | (w in begin || (w in begin.*succ && w not in (begin+end)) || w in end)
+inv9 U: all w: Workstation | (w in begin || (w in (begin.succ).*succ && w not in (begin+end)) || w in end)
+inv9 U: all w: Workstation | (w in begin || (w in (begin.*succ) && w not in (begin+end)) || w in end)
+inv9 U: all w: Workstation | w in begin || w in end || w in (begin.*succ)
+inv9 U: all w: Workstation | w in begin || w in end || w in (begin.*succ) && w not in end
+inv9 U: all w: Workstation | w in begin || w in end || (w in (begin.*succ) && w not in end)
+inv9 U: all w: Workstation | (w in begin || w in end || (w in (begin.*succ) && w not in end))
+inv9 U: all w: Workstation | (w in begin || w in end || (w in begin.*succ && w not in end))
+inv9 U: (all w1, w2: Workstation | (w1 in w2.succ && w2 in w1.succ) => w1 = w2) && (all w1: Workstation, w2: Workstation | w1 in w2.succ => no w3: Workstation | w1 in w3.succ and w3 in w2.succ)
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+

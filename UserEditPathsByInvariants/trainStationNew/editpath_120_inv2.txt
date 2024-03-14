@@ -1,0 +1,7 @@
+inv2 U: all s,x : Signal | all t,m : Track | (s in signals.t and x in signals.m) implies s!=m
+inv2 U: all s,x : Signal | all t,m : Track | (s in t.signals and x in m.signals) implies s!=m
+inv2 B: all x : Signal | all t,m : Track | (x in t.signals and x in m.signals) implies x!=x
+inv2 U: all x : Signal | all t,m : Track | x in t.signals and x in m.signals implies x!=m
+inv2 B: all x : Signal | all t,m : Track | x in t.signals and x in m.signals implies t!=m
+inv2 B: all x,y : Signal | all t,m : Track | x in t.signals and y in m.signals implies y!=x
+

@@ -1,0 +1,6 @@
+inv5 O: all u:User, i:Influencer | u not in i and u->i in follows
+inv5 O: all u:User, i:Influencer | u!=i and u->i in follows
+inv5 O: all u:User, i:Influencer | i!=u and u->i in follows
+inv5 U: all u:User, i:Influencer | i!=u implies  u->i in follows
+inv5 U: all u:User, i:Influencer | u not in i implies  u->i in follows
+

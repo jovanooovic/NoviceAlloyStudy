@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 S: Person in Studen
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv2 C: no Teacher
+inv3 O: no Student & Person
+inv4 C: Person = Student + Teacher
+inv3 O: no Student & Person
+inv3 O: all p: Person | p in Student and p not in Teacher
+inv3 O: all p: Person | (p in Student and p not in Teacher) or (p in Teacher and p not in Student)
+inv3 C: all p: Person | (p in Student and p not in Teacher) or (p in Teacher and p not in Student) or p not in (Student + Teacher)
+inv3 C: all p: Person | p not in Student & Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person = Student + Teacher
+inv5 U: some Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t: Teacher | some t.Teaches
+inv6 C: all t: Teacher | some t.Teaches
+inv7 U: all c: Class | some Teaches.c
+inv7 T: all c: Class | some Teacher.Teaches.c
+inv7 U: all c: Class | some Teacher.Teaches
+inv7 T: all c: Class | some Teacher.Teaches.c
+inv7 U: all c: Class | some Teacher.Teaches
+inv7 T: all c: Class | some Teacher.Teaches.c
+inv7 T: all c: Class |  Teacher.Teaches.c
+inv7 C: all c: Class |  c in Teacher.Teaches
+inv8 B: Teaches in Teacher lone -> Class
+inv8 O: Teaches in Teacher  -> lone Class
+inv8 C: Teacher <: Teaches in Teacher  -> lone Class
+inv9 E: 
+inv9 O: Teaches in Teacher lone -> Class
+inv9 O: Teaches in Person lone -> Class
+inv9 O: all c: Class | lone Teaches.c
+inv9 C: all c: Class | lone Teacher :> Teaches.c
+inv9 C: all c: Class | lone Teacher :> Teaches.c
+inv9 C: all c: Class | lone Teacher :> Teaches.c
+inv9 C: all c: Class | lone Teacher :> Teaches.c
+inv12 S: all t: Teacher | some t.Tutor
+inv10 C: all c: Class, s: Student | some c.Groups[s]
+inv11 U: all c: Class | some c.Groups => some Teaches.c
+inv11 T: all c: Class | some c.Groups => some Teacher.Teaches.c
+inv11 C: all c: Class | some c.Groups => some Teacher <: Teaches.c
+inv12 B: all t: Teacher | some t.Tutors
+inv12 B: all t: Teacher | some t.Tutors
+inv14 B: all c: Class, p: c.Groups.Group, t: Teacher & Teaches.c | p -> t in Tutors
+inv13 S: Tutor in Teacher -> Student
+inv13 C: Tutors in Teacher -> Student
+inv14 B: all c: Class, p: c.Groups.Group, t: Teacher & Teaches.c | p -> t in Tutors
+inv14 B: all c: Class, p: Student & c.Groups.Group, t: Teacher & Teaches.c | p -> t in Tutors
+

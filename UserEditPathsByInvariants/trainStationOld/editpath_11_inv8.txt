@@ -1,0 +1,13 @@
+inv8 O: always ( all t:Train | no t.pos.signal :> Green implies t.pos' = t.pos )
+inv8 B: always ( all t:Train | some s:Signal | (some (t.prox).signal :> s) and (s not in Green) implies t.pos' = t.pos)
+inv8 U: always ( all t:Train, s:Signal | some (t.prox).signal :> s implies (s in Green) releases (t.pos' = t.pos) )
+inv8 O: always ( all t:Train, s:Signal | some (t.pos).signal :> s implies (s in Green) releases (t.pos' = t.pos) )
+inv8 B: always ( all t:Train | some t.pos.prox.signal implies (t.pos.prox.signal in Green) releases (t.pos' = t.pos) )
+inv8 U: always ( all tk:Track | some tk.signal implies (tk.signal in Green) releases ( #(pos.tk') = #(pos.tk) ) )
+inv8 U: always ( all tk:Track | some tk.signal implies (tk.signal in Green) releases ( #pos.tk' = #pos.tk ) )
+inv8 U: always ( all tk:Track | some tk.signal and (tk.signal in Green) implies ( #pos.tk' = #pos.tk ) )
+inv8 U: always ( all tk:Track | some tk.signal and (tk.signal in Green) implies ( #(pos.tk') = #(pos.tk) ) )
+inv8 B: all t:Train | some t.pos.signal and t.pos.signal in Green implies t.pos' = t.pos
+inv8 B: always ( all t:Train | some t.pos.signal and t.pos.signal in Green implies t.pos' = t.pos )
+inv8 C: always ( all t:Train | some t.pos.signal and (t.pos.signal not in Green) implies t.pos' = t.pos )
+

@@ -1,0 +1,6 @@
+inv18 O: always (all f : Protected | f in Trash releases always f in Protected)
+inv18 S: always (	(once f in Protected) and f not in Protected implies (	f once in Trash	)	)
+inv18 S: always ( all f : File |	(once f in Protected) and f not in Protected implies (	f once in Trash	)	)
+inv18 U: always ( all f : File |	(once f in Protected) and f not in Protected implies (	once f in Trash	)	)
+inv18 B: always (	all f : File | f in Protected and f not in Protected' implies f in Trash'	)
+

@@ -1,0 +1,13 @@
+inv9 S: disj all ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 S: disj all ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws3->ws1 in succ) => ws1 in begin
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws3->ws1 in succ) => ws1 in begin	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws2->ws3 in succ) => ws2 in end
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv9 U: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)
+inv9 U: succ in Workstation lone -> lone Workstation		no (end . succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)
+inv9 C: succ in Workstation  -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv9 C: succ in Workstation lone  -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+

@@ -1,0 +1,10 @@
+inv15 T: all p : Project, s : (Student <: projects.p) | let gs = (projects.p).grades.Student, g = C.grades[s] |	  		g = gs or g = prev[gs] or prev[g] = gs
+inv15 T: all p : Project, s : (Student <: projects.p) | let gs = (projects.p).grades.Student| let g = C.grades[s] |	  		g = gs or g = prev[gs] or prev[g] = gs
+inv15 T: all p : Project, s : (Student <: projects.p) | let gs = (projects.p).grades.Student| let g = C.grades[s] | g = gs or g = prev[gs] or prev[g] = gs
+inv15 S: all p : Project, all g,h : (projects.p).grades[projects.p] | g = h or g = prev[h] or prev[g] = h
+inv15 S: all p : Project, all g,h : (projects.p).grades[Student <: projects.p] | g = h or g = prev[h] or prev[g] = h
+inv15 S: all p : Project, all g,h : (projects.p).(projects.p).grades | g = h or g = prev[h] or prev[g] = h
+inv15 S: all p : Project, all g,h : (projects.p).(projects.p.grades) | g = h or g = prev[h] or prev[g] = h
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g = h or g = prev[h] or prev[g] = h
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g = h or g = prev[h] or prev[g] = h
+

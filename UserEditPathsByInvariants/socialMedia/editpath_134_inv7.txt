@@ -1,0 +1,9 @@
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	u2 in u1.follows and u3 in u2.follows	implies u3 in u1.suggested
+inv7 S: (all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows))	implies u3 in u1.suggested
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows)	implies u3 in u1.suggested
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows	implies u3 in u1.suggested )
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows	implies u3 in u1.suggested )
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows)	implies u3 in u1.suggested
+inv7 B: all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows)	implies u3 in u1.suggested
+inv7 B: (all u1 : User | all u2 : User | all u3 : User |	(u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows)	implies u3 in u1.suggested)	or	all u1 : User | all inf : Influencer | inf in u1.suggested
+

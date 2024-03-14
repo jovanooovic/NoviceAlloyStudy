@@ -1,0 +1,5 @@
+inv5 T: all ws: Workstation | (ws.workers in Human implies ws.workers not in Robot) & (ws.workers in Robot implies ws.workers not in Human)
+inv5 B: all ws: Workstation | (ws.workers in Human implies ws.workers not in Robot) and (ws.workers in Robot implies ws.workers not in Human)
+inv5 B: all ws: Workstation | (ws.workers in Human implies ws.workers not in Robot)	all ws: Workstation | (ws.workers in Robot implies ws.workers not in Human)
+inv5 O: all ws: Workstation | ws.workers in Human or ws.workers in Robot
+

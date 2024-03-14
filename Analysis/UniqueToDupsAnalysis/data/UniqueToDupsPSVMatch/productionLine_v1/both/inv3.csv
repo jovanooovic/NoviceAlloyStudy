@@ -1,0 +1,15 @@
+"some Component.position",1
+"Robot = position.(Component.position)",1
+"Robot in position.(Component.position)",1
+"some Component.position & Robot.position",1
+"(Robot <: position).(Component <: Position.position) = (Robot <: position).Position",1
+"all c:Component | some c.parts.position",1
+"all c:Component | Robot.position in c.position",1
+"(Robot <: position).(Component <: Position.position) = (Robot <: position.Position)",1
+"all c:Component, r:Robot | c.position = r.position",2
+"all c:Component, r:Robot | c.position in r.position",1
+"all c: Component, r: Robot | one c.position & r.position",1
+"all c:Component.position, r:Robot | some r.position & c",1
+"all c: Component, r: Robot | some c.position & r.position",1
+"all c : Component | all r:Robot | r.position = c.position",1
+"all c:Component,p:Product, r:Robot,pos1,pos2:Position| c->p in parts and p->pos1 in position and r->pos2 in position implies pos1=pos2",1

@@ -1,0 +1,8 @@
+inv9 U: all ws : Workstation | ws not in end implies one ws.succ	all ws : Workstation | ws in end implies no ws.succ
+inv9 U: all ws : Workstation | ws not in end and ws not in begin implies one ws.succ	all ws : Workstation | ws in end implies no ws.succ
+inv9 S: all ws : Workstation | (ws not in end and ws not in begin) implies one ws.succ	all ws : Workstation | (ws in end ow ws in begin) implies no ws.succ
+inv9 S: all ws : Workstation | (ws not in end and ws not in begin) implies one ws.succ	all ws : Workstation | (ws in end ow ws in begin) implies no ws.succ
+inv9 B: all ws : Workstation | (ws not in end and ws not in begin) implies one ws.succ	all ws : Workstation | (ws in end or ws in begin) implies no ws.succ
+inv9 U: all ws : Workstation | (ws not in end and ws not in begin) implies one ws.succ	all ws : Workstation | (ws in end) implies no ws.succ
+inv9 U: all ws : Workstation | (ws not in end) implies one ws.succ	all ws : Workstation | (ws in end) implies no ws.succ
+

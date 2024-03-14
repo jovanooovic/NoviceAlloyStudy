@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 C: visible in profile
+inv1 U: User.visible in User.profile
+inv2 S: all x : x.profile.source & x.visible.source in Institution + x
+inv1 C: visible in profile
+inv2 U: all x : User | x.profile.source & x.visible.source in Institution + x
+inv2 O: all x : User | x.profile.source + x.visible.source in Institution + x
+inv2 C: all x : User | x.profile.source in Institution + x
+inv3 B: one profile.ids
+inv3 T: all w1 : Work, w2 : Work  | some (w1.ids && w2.ids) implies w1 = w2
+inv3 T: all w1 : Work, w2 : Work  | some (w1.ids && w2.ids) implies w1 = w2
+inv3 O: all w1 : Work, w2 : Work  | some (w1.ids & w2.ids) implies w1 = w2
+inv3 T: all w1 : Work, w2 : Work  | some (w1.ids and w2.ids) implies w1 = w2
+inv3 O: all w1 : Work, w2 : Work  | some (w1.ids & w2.ids) implies w1 = w2
+inv3 O: lone ids.Id
+inv3 O: all i : Id | lone ids.Id
+inv3 O: lone ids.Id
+inv3 O: all i : Id | lone ids.Id
+

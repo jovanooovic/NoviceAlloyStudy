@@ -1,0 +1,22 @@
+inv3 S: all e : Exit | no e.succ
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 B: all e : Exit | all t : Track | e!=t and e->t not in succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs	all e : Exit | no e.succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 U: all e : Exit | no e.^succs
+inv3 U: no e : Exit | some e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs	all e : Exit | no e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | all t : Track | t not in e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 S: no Exit.succs and
+inv3 U: no Exit.succs
+inv3 U: all t : Track | all e : Exit | no t.succs implies t in Exit and no e.succs
+inv3 U: all t : Track | all e : Exit | (no t.succs implies t in Exit) and no e.succs
+inv3 S: all t : Track | no t.succs implies t in Exit	all e : Exit no e.succs
+inv3 C: all t : Track | no t.succs implies t in Exit	all e : Exit | no e.succs
+

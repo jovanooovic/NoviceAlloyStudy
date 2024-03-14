@@ -1,0 +1,9 @@
+inv4 S: all u : User | one add : Add | add in u.posts implies u.posts in Add
+inv4 B: all u : User | one add : Ad | add in u.posts implies u.posts in Ad
+inv4 C: all u : User | all add : Ad | add in u.posts implies u.posts in Ad
+inv4 S: all u : User | f in Ad and f in u->posts implies u.posts in Ad
+inv4 S: all u : User | all f in Photo | f in Ad and f in u->posts implies u.posts in Ad
+inv4 T: all u : User | all f : Photo | f in Ad and f in u->posts implies u.posts in Ad
+inv4 T: all u : User | all f : Photo | f in Ad and f in u->posts implies u.posts in Ad
+inv4 C: all u : User | all f : Photo | f in Ad and f in u.posts implies u.posts in Ad
+

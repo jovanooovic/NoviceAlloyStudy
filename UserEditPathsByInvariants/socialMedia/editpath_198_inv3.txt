@@ -1,0 +1,7 @@
+inv3 O: all u: User | u.sees in u.follows.posts	all i: Ad, u: User | u.sees in i
+inv3 B: all u: User, i: Ad | u.sees in u.follows.posts && u.sees in i
+inv3 O: all u: User | u.sees in u.follows.posts && u.sees in Ad
+inv3 C: all u: User, i: Photo | i in u.sees && i not in Ad => i in u.follows.posts
+inv3 C: all u: User | u.sees in (u.follows.posts + Ad)
+inv3 C: all u: User | u.sees in u.follows.posts + Ad
+

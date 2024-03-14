@@ -1,0 +1,10 @@
+inv5 B: all inf : User-Influencer | all u : User | u in follows.inf
+inv5 B: all inf : Influencer | all u : User | u in follows.inf
+inv5 U: all inf : Influencer | all u : User-Influencer| u in follows.inf
+inv5 S: all inf : Influencer | all u : User| u!= i -> u in follows.inf
+inv5 T: all inf : Influencer | all u : User| u!= inf -> u in follows.inf
+inv5 T: all inf : Influencer, u : User| u!= inf -> u in follows.inf
+inv5 S: all inf : Influencer, u : User| u!= inf -> i in u.follows
+inv5 T: all inf : Influencer, u : User| u!= inf -> inf in u.follows
+inv5 T: all inf : User-Influencer, u : User| u!= inf -> inf in u.follows
+

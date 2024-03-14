@@ -1,0 +1,14 @@
+inv12 B: ~((Groups.Group):>Teacher) in Teaches
+inv12 B: ~(					(Groups.Group):>Teacher) in Teaches
+inv12 B: ~((Groups.Group):>Teacher) in Teaches
+inv12 B: Teaches in ~((Groups.Group):>Teacher)
+inv12 B: ~((Groups.Group):>Teacher) in Teaches
+inv12 B: ~((Groups.Group)) in Teaches
+inv12 T: Teaches.Groups.Group.Person in Teaches
+inv12 U: Teaches.Groups.Group.Person in Teaches.Class
+inv12 B: Teaches.Groups.Group.Person in Teacher
+inv12 O: Teaches.Groups.Group.Person = Teacher
+inv12 B: Teaches.Groups.Group.Person in Teacher
+inv12 B: all t : Teacher | lone t.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

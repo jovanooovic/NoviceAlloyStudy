@@ -1,0 +1,6 @@
+inv8 C: always (all f: link.File | eventually f in Trash)
+inv8 B: always (eventually link.File in Trash)
+inv8 B: always (eventually (some link.File & Trash))
+inv8 B: always (some link implies eventually (some link.File & Trash))
+inv8 C: always (all f: link.File | eventually f in Trash)
+

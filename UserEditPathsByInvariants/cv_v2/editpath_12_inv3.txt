@@ -1,0 +1,4 @@
+inv3 T: let R = User.profile | R.~R in iden
+inv3 O: let R = User.profile <: ids | R.~R in iden
+inv3 B: all u : User, disj w, w1 : u.profile | w.ids != w1.ids
+

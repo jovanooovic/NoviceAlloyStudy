@@ -1,0 +1,6 @@
+inv2 U: all x : Workstation | #(x.workers)>0	all x,y : Worker | all z,w : Workstation | (x in z.workers and y in w.workers and z!=w) implies x!=y
+inv2 U: all x : Workstation | #(x.workers)>0	all x : Worker | all z,w : Workstation | (x in z.workers and z!=w) implies x not in w.workers
+inv2 S: all x : Workstation | #(x.workers)>0		all x : Worker | one Workstation : w | x in w.workers
+inv2 S: all x : Workstation | #(x.workers)>0		all x : Worker | one Workstation : w | x in w.workers
+inv2 C: all x : Workstation | #(x.workers)>0		all x : Worker | one w :Workstation  | x in w.workers
+

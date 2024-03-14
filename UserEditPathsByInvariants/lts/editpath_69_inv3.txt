@@ -1,0 +1,12 @@
+inv3 U: all x : Event, y : State | lone y.trans.x
+inv3 O: all  y : State | lone y.trans
+inv3 U: all  y : Event | lone trans.y
+inv3 U: all x : State, y : Event | lone x.trans.y
+inv3 U: all x : State, y : Event | lone (x.trans).y
+inv3 T: all x : State, y : Event | lone x.trans.y.State
+inv3 U: all x : State, y : Event | lone x.trans.y
+inv3 O: all x : State | lone x.trans
+inv3 U: all x : State, y : Event | lone (x.trans).y
+inv3 S: all x, z, v : State, y : Event,  | x->y->z in trans and x->y->v in trans implies z=v
+inv3 C: all x, z, v : State, y : Event  | x->y->z in trans and x->y->v in trans implies z=v
+

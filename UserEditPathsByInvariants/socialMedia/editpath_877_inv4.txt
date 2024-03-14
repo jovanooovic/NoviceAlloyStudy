@@ -1,0 +1,7 @@
+inv4 B: all u : User | some a : Ad | u -> a in posts implies a in Ad
+inv4 B: all u : User | some a : Ad | u -> a in posts implies a in Ad
+inv4 S: all u : User | some a : Ad | a in u.post implies a in Ad
+inv4 B: all u : User | some a : Ad | a in u.posts implies a in Ad
+inv4 U: all u : User | all a : Ad | a in u.posts implies a in Ad
+inv4 C: all u : User | all a : Ad | all p: Photo | a in u.posts and p in u.posts implies p in Ad
+

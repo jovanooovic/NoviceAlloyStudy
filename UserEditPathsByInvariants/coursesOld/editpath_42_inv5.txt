@@ -1,0 +1,22 @@
+inv5 B: all s : Student | all p : Project | p in s.projects
+inv5 U: all u : Person | all p : Project | p in u.projects implies u in Student
+inv5 B: some u : Person | all p : Project | p in u.projects implies u in Student
+inv5 U: all p : Project | some u : Person | p in u.projects <=> u in Student
+inv5 U: all p : Project | some u : Person | p in u.projects implies u in Student
+inv5 B: all p : Project | some u : Person | p in u.projects implies u not in Professor
+inv5 B: all p : Project | some u : Person | p in Course.projects implies p in u.projects and u not in Professor
+inv5 S: all p : Project | some u : Person | p in Course.projects implies p in u.projects and u in Student
+inv5 S: all p : Project | all u : Person | p in Course.projects implies p in u.projects and u in Student
+inv5 S: all p : Project | all u : Person | p in Course.projects implies p in u.projects and u in Student
+inv5 S: all p : Project | all u : Person | p in Course.projects implies p in u.projects
+inv5 B: all p : Project | all u : Person | p in Course.projects implies p in u.projects and u in Student
+inv5 U: all p : Project | some u : Person | p in Course.projects implies p in u.projects
+inv5 U: all p : Project | some u : Student | p in Course.projects implies p in u.projects
+inv5 U: all p : Project | some u : Person |all c : Course| p in c.projects and c in u.enrolled implies p in u.projects
+inv5 U: all p : Project | some u : Person |all c : Course| p in c.projects and c in u.enrolled implies p in u.projects and u in Student
+inv5 B: all p : Project | all u : Person |all c : Course| p in c.projects and c in u.enrolled implies p in u.projects and u in Student
+inv5 B: all p : Project | all u : Person |all c : Course| p in c.projects and c in u.enrolled <=> p in u.projects and u in Student
+inv5 B: all p : Project | all u : Person |all c : Course| p in c.projects and c in u.enrolled implies p in u.projects and u not in Student
+inv5 B: all p : Professor | p.projects = none	  	all p : Project | p in Student.projects
+inv5 C: all p : Person - Student | p.projects = none	  	all p : Project | p in Student.projects
+

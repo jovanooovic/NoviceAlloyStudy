@@ -1,0 +1,26 @@
+inv7 S: all x, y:User | x in y.suggested implies x not in y.follows and x in y.folows.follows
+inv7 U: all x, y:User | x in y.suggested implies x not in y.follows and x in y.follows.follows
+inv7 U: all x, y:User | x in y.suggested implies x not in y.follows and x in y.follows.follows and x!=y
+inv7 U: all x, y:User | x in y.suggested implies x in y.follows.follows
+inv7 U: all x, y:User | x in y.suggested implies x in y.follows.follows and x!=y
+inv7 U: all x, y:User | x in y.suggested implies x in y.follows.follows and x not in y.follows and x!=y
+inv7 U: all x, y:User | x in y.suggested implies x in y.follows.follows and x not in y.follows and x!=y
+inv7 U: all x, y:User | x in y.follows.follows and x not in y.follows and x!=y implies x in y.suggested
+inv7 B: all x, y:User | x in y.follows.follows and x not in y.follows implies x in y.suggested and x != y
+inv7 B: all x, y:User | (x in y.follows.follows and x not in y.follows) implies x in y.suggested and x != y
+inv7 B: all x, y:User | y not in y.suggested and (x in y.follows.follows and x not in y.follows) implies x in y.suggested
+inv7 B: all x, y:User | y not in x.follows and y in x.follows.follows iff y in x.suggested
+inv7 B: all x, y:User | y not in x.follows and y in x.follows.follows iff y in x.suggested and y!=x
+inv7 U: all x, y:User | y not in x.follows and y in x.follows.follows and y!=x iff y in x.suggested and y!=x
+inv7 O: all x, y:User | x not in x.suggested and y not in x.follows and y in x.follows.follows iff y in x.suggested
+inv7 O: all x:User | x not in x.suggested	all x, y:User | y not in x.follows and y in x.follows.follows iff y in x.suggested
+inv7 O: all x:User | x not in x.suggested	all x, y:User | (y not in x.follows and y in x.follows.follows) iff y in x.suggested
+inv7 O: all x:User | x not in x.suggested	all x, y:User |y in x.suggested  iff y not in x.follows and y in x.follows.follows
+inv7 U: all x:User | x not in x.suggested	all x, y:User |y in x.suggested  implies y not in x.follows and y in x.follows.follows
+inv7 O: all x:User | x not in x.suggested	all x, y:User |y in x.suggested  and y not in x.follows and y in x.follows.follows
+inv7 O: all x:User | x not in x.suggested	all x, y:User |x!=y implies y in x.suggested  iff y not in x.follows and y in x.follows.follows
+inv7 B: all x, y:User |x!=y implies y in x.suggested  iff y not in x.follows and y in x.follows.follows
+inv7 O: all x:User | x not in x.suggested	all x, y:User |x!=y implies y in x.suggested iff y not in x.follows and y in x.follows.follows
+inv7 O: all x:User | x not in x.suggested	all x, y:User | y in x.suggested iff y not in x.follows and y in x.follows.follows
+inv7 C: all x:User | x not in x.suggested	all x, y:User | y in x.suggested iff y not in x.follows and y in x.follows.follows and x!=y
+

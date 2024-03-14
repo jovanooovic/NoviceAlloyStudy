@@ -1,0 +1,10 @@
+inv14 T: all s : Student | s.projects[projects] in Student lone -> lone Student
+inv14 T: all s : Student | s.projects in Student lone -> lone Student
+inv14 T: all s : Student | s.projects[Course <: projects] in Student lone -> lone Student
+inv14 T: all s : Student | s.projects[Person <: projects] in Student lone -> lone Student
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 T: all s1, s2 : disj Student | lone s1.projects & s2.projects
+inv14 U: all disj s1, s2 : Student | lone s1.projects & s2.projects
+inv14 U: all disj s1, s2 : Student | lone s1.projects & s2.projects
+

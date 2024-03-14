@@ -1,0 +1,36 @@
+inv9 S: all e : entry | end in e.*(succs)
+inv9 S: all b : begin | end in e.*(succs)
+inv9 S: all b : begin | end in b.*(succs)
+inv9 S: all ws : Workstation| ws in begin implies ws.*(succs) in end
+inv9 S: all ws : Workstation| ws in begin implies (some ws1 : Workstation | ws1 in ws.*(succs) && ws1 in end)
+inv9 U: all ws : Workstation| ws in begin implies (some ws1 : Workstation | ws1 in ws.*(succ) && ws1 in end)
+inv9 U: all b: begin | end in b.*(succ)
+inv9 B: all b: begin | end in b.^(succ)
+inv9 B: all ws : Workstation| ws in begin implies (some ws1 : Workstation | ws1 in ws.^(succ) && ws1 in end)
+inv9 U: all ws : Workstation| ws in begin implies (some ws1 : Workstation | ws1 in ws.*(succ) && ws1 in end)
+inv9 B: all ws : Workstation| ws in begin implies (some ws1 : end | end in ws.^(succ))
+inv9 B: all ws : Workstation| ws in begin implies (some ws1 : end | end in ws1.^(succ))
+inv9 U: all ws : Workstation| ws in begin implies (some ws1 : end | end in ws1.*(succ))
+inv9 B: all ws : Workstation| ws in begin implies (some ws1 : end | end in ws.^(succ))
+inv9 B: all ws : Workstation| ws in begin implies (some ws1 : end | ws1 in ws.^(succ))
+inv9 U: all ws : Workstation| ws in begin implies (some ws1 : end | ws1 in ws.^(succ)) or ws in end
+inv9 S: all ws : Workstation| ws in begin implies end in ws.^(succs)
+inv9 U: all ws : Workstation| ws in begin implies end in ws.*(succ)
+inv9 S: all ws : Workstation| ws in begin implies some succs.end
+inv9 S: all ws : Workstation| ws in begin implies one ws.^(succs).end
+inv9 T: all ws : Workstation| ws in begin implies one ws.^(succ).end
+inv9 T: all ws : Workstation| ws in begin implies one ws.^(succ) in end
+inv9 B: all ws : Workstation| ws in begin implies ws.^(succ) in end
+inv9 B: all ws : Workstation | ws in begin implies some ws.^(succ) & end
+inv9 U: all ws : Workstation | ws in begin implies some ws.*(succ) & end
+inv9 T: all ws : Workstation | ws in begin implies ws.*(succ) & end
+inv9 U: all ws : Workstation | ws in begin implies one (ws.*(succ) & end)
+inv9 B: all ws : Workstation | one (ws.*(succ) & end) && one ws.*(succ) & begin
+inv9 S: all ws : Workstation | (ws in begin implies some ws.*(succ) & end) && (ws in end implies no ws.succ
+inv9 U: all ws : Workstation | (ws in begin implies some ws.*(succ) & end) && (ws in end implies no ws.succ)
+inv9 U: all ws : Workstation | (ws in begin implies no succ.ws) or (ws in end implies no ws.succ) or (some (ws.*(succ) & end))
+inv9 U: all ws : Workstation | (ws in begin implies no succ.ws) or (ws in end implies no ws.succ) or (some (ws.*(succ) & end)) or begin = end
+inv9 U: all ws : Workstation | (ws in begin implies no succ.ws) or (ws in end implies no ws.succ) or (some (ws.*(succ) & end)) or (ws in begin && ws in end)
+inv9 U: all ws : Workstation | (ws in begin implies no succ.ws) or (ws in end implies no ws.succ) or (some (ws.*(succ) & end)) or (begin.succ in end)
+inv9 U: all ws : Workstation | (ws in begin implies no succ.ws) or (ws in end implies no ws.succ) or (some (ws.*(succ) & end)) or (ws in begin and ws.succ in end)
+

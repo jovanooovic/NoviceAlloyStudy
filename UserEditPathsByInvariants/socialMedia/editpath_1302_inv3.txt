@@ -1,0 +1,9 @@
+inv3 B: all u: User | u.follows.posts in u.sees
+inv3 S: all u: User | u.follows.posts in u.sees & no Ads
+inv3 S: all u: User | u.follows.posts in (u.sees & no Ad)
+inv3 S: all u: User | u.follows.posts in (u.sees & no Ad)
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 S: all u: User | u.sees & no Ad in u.follows.posts
+inv3 T: all u: User | u.sees in u.follows.posts not in Ad
+inv3 C: all u: User | u.sees-Ad in u.follows.posts
+

@@ -1,0 +1,7 @@
+inv4 B: some x: User | x.posts in posts.Ad
+inv4 O: all x: User | x.posts in posts.Ad
+inv4 O: all x: User | x.posts in Ad
+inv4 B: all x: User | (x.posts in Ad) => some posts.Ad
+inv4 B: all x: User | (x.posts in Ad) => no posts.Photo
+inv4 B: all x: User | (x.posts in Ad) => some Ad
+

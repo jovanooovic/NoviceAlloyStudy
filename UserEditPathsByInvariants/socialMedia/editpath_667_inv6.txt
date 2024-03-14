@@ -1,0 +1,13 @@
+inv6 U: all d:Day, i : Influencer| #(i.posts.date) > 0
+inv6 T: all d:Day, i : Influencer| some i.posts.date = d
+inv6 S: all d:Day, i : Influencer| some i.posts.date == d
+inv6 S: all  i : Influencer| all d:Day => some i.posts.date = d
+inv6 T: all d: Day,i:Influencer| some i.posts.date.d
+inv6 T: all d: Day, i:Influencer| some i.posts.date.d
+inv6 U: all d: Day, i:Influencer| some i.posts.date
+inv6 T: all d: Day, i:Influencer| some i.posts.date.d
+inv6 T: all d: Day, i:Influencer| some i.posts.d
+inv6 T: all d: Day, i:Influencer| some i.posts.date = d
+inv6 C: all d: Day, i:Influencer| #(i.posts.date & Day) = #Day
+inv6 C: all i:Influencer| #(i.posts.date & Day) = #Day
+

@@ -1,0 +1,12 @@
+inv7 E:
+inv7 U: all u : User | all s: u.suggested | (s not in u.follows) and (some f: u.follows | s in f.follows )
+inv7 U: all u : User | (all s: u.suggested | (s not in u.follows) and (some f: u.follows | s in f.follows ))
+inv7 U: all u : User | (all s: u.suggested | (s not in u.follows) and (some f: u.follows | s in f.follows ))
+inv7 U: all u : User | (all s: u.suggested | (s not in u.follows) and (some f: u.follows | s in f.follows ))
+inv7 B: all u : User | (all s: u.suggested | (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+inv7 B: all u : User | (all s: u.suggested | (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+inv7 B: all u : User | (all s: u.suggested - Influencer| (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+inv7 B: all u : User - Influencer | (all s: u.suggested - Influencer| (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+inv7 B: all u : User  | (all s: u.suggested - Influencer - u | (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+inv7 B: all u : User  | (all s: u.suggested - Influencer  | (s not in u.follows) and (some f: u.follows - Influencer| s in f.follows ))
+

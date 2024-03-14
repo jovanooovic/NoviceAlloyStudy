@@ -1,0 +1,5 @@
+inv3 C: all c : Component | one c.workstation
+inv3 U: iden :> Component in workstation.~workstation
+inv3 B: iden :> Component = workstation.~workstation
+inv3 C: (iden :> Component in workstation.~workstation) and  (~workstation.workstation in iden)
+

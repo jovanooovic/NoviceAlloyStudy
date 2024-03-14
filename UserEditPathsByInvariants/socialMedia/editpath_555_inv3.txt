@@ -1,0 +1,17 @@
+inv3 T: all x:User | x.follows.posts is x.sees
+inv3 O: all x:User | x.sees = x.follows.posts
+inv3 S: all x:User | x.sees = x.follows.posts + all y:Ad
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 S: all x:User | some y:Photo| y in Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Photo| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 S: all x:User | all y:Ad| let x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 T: all x:User | all y:Ad| x.sees(x.follows.posts) or x.sees(y)
+inv3 T: all x:User | all y:Ad| x.sees(x.follows.posts) || x.sees(y)
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | x not in x.follows	all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 B: all x:User | all y:Ad| x.sees = x.follows.posts + y
+inv3 O: all x:User | all y:x.sees| y in Ad and y in x.follows.posts
+inv3 C: all x:User | all y:x.sees| y in Ad or y in x.follows.posts
+

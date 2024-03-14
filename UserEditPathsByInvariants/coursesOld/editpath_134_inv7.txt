@@ -1,0 +1,5 @@
+inv7 U: all s : Student, c : Course | lone p : Project | s->p in projects and c->p in projects
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies ((all proj:Project | not stud->c in projects) or (one proj:Project | stud->c in projects))
+inv7 U: all s : Student, c : Course | lone p : Project | s->p in projects and c->p in projects
+inv7 T: all s : Student, c : Course | lone p : Project | s->p in projects and c->p in projects and c->p not in grades
+

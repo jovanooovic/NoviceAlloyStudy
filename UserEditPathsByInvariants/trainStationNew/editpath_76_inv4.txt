@@ -1,0 +1,12 @@
+inv4 S: all e : Entry | none t : Track | e in t.succs
+inv4 S: all e : Entry | none t : Track | e in t.succs
+inv4 S: all e : Track | none t : Track | e in Entry implies e in t.succs
+inv4 S: all  t : Track |  t in entry <=> t not in Tracks.^succs
+inv4 S: all  t : Track |  t in Entry <=> t not in Tracks.^succs
+inv4 C: all  t : Track |  t in Entry <=> t not in Track.^(succs)
+inv4 C: all  t : Track |  t in Entry <=> t not in Track.^succs
+inv4 U: all e : Entry | no t : Track |  e in t.succs
+inv4 O: all e : Track | no t : Track | e in Entry implies e in t.succs
+inv4 S: all e : Track | none t : Track | e in Entry implies e in t.succs
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+

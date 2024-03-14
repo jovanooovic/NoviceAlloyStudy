@@ -1,0 +1,17 @@
+inv3 B: all u1,u2 : User | all p : Photo | u1->p in sees and u2->p in posts implies u1->u2 in follows
+inv3 S: all u1,u2 : User | all p : Photo | u1->p in sees implies ((u2->p in posts u1->u2 in follows) or p in Ad)
+inv3 S: all u1,u2 : User | all p : Photo | u1->p in sees implies ((u2->p in posts u1->u2 in follows) or (p in Ad))
+inv3 O: all u1,u2 : User | all p : Photo | u1->p in sees implies ((u2->p in posts and u1->u2 in follows) or (p in Ad))
+inv3 B: all u1,u2 : User | all p : Photo | u1!=u2 and u1->p in sees implies ((u2->p in posts and u1->u2 in follows) or (p in Ad))
+inv3 O: all u : User | all p : Photo | u->p in sees implies ((one v : User | v->p in posts and u->v in follows) or (p in Ad))
+inv3 B: all x, z : User | all y : Photo | x->z in follows and z->y in posts implies x->y in sees
+inv3 O: all u : User | all p : Photo | u->p in sees implies ((one v : User | v->p in posts and u->v in follows) or (p in Ad))
+inv3 O: all u : User | u.sees in u.follows.posts
+inv3 T: all u : User | u.sees in u.follows.posts && Ad
+inv3 T: all u : User | all a : Ad | u.sees in (u.follows.posts && a)
+inv3 B: all u : User | all a : Ad | u.sees in (u.follows.posts & a)
+inv3 B: all u : User | all a : Ad | u.sees in (u.follows.posts + a)
+inv3 C: all u : User | u.sees in (u.follows.posts + Ad)
+inv3 O: all u : User | all p : Photo | u->p in sees implies ((one v : User | v->p in posts and u->v in follows) or (p in Ad))
+inv3 C: all u : User | u.sees in (u.follows.posts + Ad)
+

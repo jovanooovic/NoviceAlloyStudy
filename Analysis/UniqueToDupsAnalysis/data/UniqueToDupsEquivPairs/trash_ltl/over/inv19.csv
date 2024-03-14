@@ -1,0 +1,25 @@
+Pairs,1
+,,"always all p : Protected | after p in Trash",1
+
+Pairs,8
+,,"always all f:File | f in Protected until f in Trash",8
+
+Pairs,1
+,,"always (Protected' = Protected until Protected in Trash)",1
+
+Pairs,2
+,,"always all p : Protected | p in Protected' until p in Trash",1
+,,"always (all f:Protected | f in Trash releases f in Protected and eventually f in Trash)",1
+
+Pairs,1
+,,"always (
+
+Protected in Protected' until Protected in Trash
+)",1
+
+Pairs,1
+,,"always (all f:File| f in Protected until f in Trash-Protected)",1
+
+Pairs,1
+,,"always (all f:Protected | eventually f not in Protected and f in Trash)",1
+

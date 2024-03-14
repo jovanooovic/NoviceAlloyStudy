@@ -1,0 +1,8 @@
+inv2 E:
+inv2 T: all c:Component | no (c.^parts).c
+inv2 T: all c:Component | no ^(c.parts)
+inv2 T: all c:Component | no c.(c.parts)
+inv2 U: all c:Component | c not in (c.parts)
+inv2 T: all c:Component | c not in *(c.parts)
+inv2 U: all c:Component | c not in (c.parts)
+

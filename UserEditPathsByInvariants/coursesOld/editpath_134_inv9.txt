@@ -1,0 +1,23 @@
+inv9 B: all c : Course, p1 : Professor, p2 : Professor | p1->c in teaches implies ( p2->c not in enrolled )
+inv9 B: all c : Course, p1 : Professor, p : Person | p1->c in teaches and p->c in enrolled and p in Student
+inv9 B: all p : Professor, p1 : Professor | no (p.teaches & p.enrolled) and no p1.enrolled
+inv9 S: all p : Professor, p1 : Professor, c : Course | p1->c in teaches implies p2->c not in enrolled
+inv9 B: all p : Professor, p1 : Professor, c : Course | p->c in teaches implies p1->c not in enrolled
+inv9 B: all p : Professor, c : Course | some p2 : Professor | p->c in teaches and p2->c not in enrolled
+inv9 B: all c : Course | some p1 : Professor | some p2 : Professor | p1->c in teaches and p2->c not in enrolled
+inv9 S: all p1 : Professor, p2 : Professor | no (p.teaches & p2.enrolled)
+inv9 B: all p1 : Professor, p2 : Professor | no (p1.teaches & p2.enrolled)
+inv9 B: all p1 : Professor, p2 : Professor | no (p1.teaches & p2.enrolled)
+inv9 B: all c : Course, p : Professor, p2 : Professor| p->c in teaches implies p2->c not in enrolled
+inv9 B: all c1 : Course, c2 : Course, p : Professor, p2 : Professor| p->c1 in teaches and p2->c2 in enrolled implies c1 != c2
+inv9 B: all c1 : Course, c2 : Course, p : Professor, p2 : Professor| p->c1 in teaches and p2->c2 in enrolled implies c1 = c2
+inv9 B: all c1 : Course, c2 : Course, p : Professor, p2 : Professor| p->c1 in teaches and p2->c2 in enrolled implies c1 != c2
+inv9 B: all c1 : Course, c2 : Course, p : Professor, p2 : Professor| p->c1 in teaches and p2->c2 in enrolled implies (c1 != c2 and p != p2)
+inv9 B: all c : Course, p : Professor | p->c in teaches implies ( no p2 : Professor | p2->c in enrolled)
+inv9 B: all c : Course, p : Professor | p->c in teaches implies ( all p2 : Professor | p2->c not in enrolled)
+inv9 S: all c1 : Course, c2 : Course, p1 : Professor, p2 : Professor | p1->c1 in teaches implies (p2->c2 in enrolled and c2 != c1)
+inv9 B: all c1 : Course, c2 : Course, p1 : Professor, p2 : Professor | p1->c1 in teaches implies (p2->c2 in enrolled and c2 != c1)
+inv9 S: all c1 : Course, c2 : Course, p1 : Professor | p1->c1 in teaches implies (set p2 : Professor | p2->c2 in enrolled and c2 != c1)
+inv9 S: all c1 : Course, c2 : Course, p1 : Professor | p1->c1 in teaches implies (set p2 : Professor | p2->c2 in enrolled and c2 != c1)
+inv9 B: all c1 : Course, c2 : Course, p1 : Professor | p1->c1 in teaches implies (some p2 : Professor | p2->c2 in enrolled and c2 != c1)
+

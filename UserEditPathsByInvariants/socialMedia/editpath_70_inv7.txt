@@ -1,0 +1,6 @@
+inv7 T: all s: suggested | s implies User.follows.User - User.follows
+inv7 T: all s: suggested | s in User.follows.User - User.follows
+inv7 T: all u: User | suggested in u.follows.User - u.follows
+inv7 T: all u: User | suggested in u.follows.u - u.follows
+inv7 T: all u: User | u.follows.u - u.follows
+

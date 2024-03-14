@@ -1,0 +1,4 @@
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) => (p1 not in Professor)
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) => (p1 in Student and p1 not in Professor)
+inv9 B: all p1, p2: Person, c : Course | (p1 -> c in enrolled and p2 -> c in teaches) <=> (p1 in Student and p1 not in Professor)
+

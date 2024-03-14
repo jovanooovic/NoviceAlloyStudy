@@ -1,0 +1,5 @@
+inv3 S: all u: user | u in (u - Influencer).sees
+inv3 O: all u: User | u in (u - Influencer).sees
+inv3 T: all u: User, p: Photo | u.sees in (u.posts in u.follows)
+inv3 O: all u: User, p: Photo | u.sees in (u.posts.follows)
+

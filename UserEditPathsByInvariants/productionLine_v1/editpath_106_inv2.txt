@@ -1,0 +1,6 @@
+inv2 O: all c : Component | no c.^(parts)
+inv2 T: all c : Component | no c.^(parts).c
+inv2 T: all c : Component | no c.^(parts.parts).c
+inv2 T: all c : Component | no c in c.^(parts)
+inv2 C: no c : Component | c in c.^(parts)
+

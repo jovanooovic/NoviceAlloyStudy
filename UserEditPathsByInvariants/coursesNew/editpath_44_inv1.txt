@@ -1,0 +1,7 @@
+inv1 T: all e : Person | all c: Course | c in e.enrolled implies c & Student
+inv1 O: all e : Person | all c: Course | c in e.enrolled implies c in Student
+inv1 T: all p : Professor | all c : Course | no c in p.enrolled
+inv1 S: all p : Professor | no x.enrolled
+inv1 S: all p : Professor | no p.enrolled
+inv1 S: all x: Person - Student | no x.enrolled
+

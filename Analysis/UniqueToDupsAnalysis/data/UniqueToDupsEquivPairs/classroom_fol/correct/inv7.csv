@@ -1,0 +1,19 @@
+Pairs,127
+,,"Teacher.Teaches = Class",1
+,,"Class in Teacher.Teaches",20
+,,"all c : Class | c in Teacher.Teaches",2
+,,"all c:Class | some( c.~Teaches & Teacher)",2
+,,"all c:Class | some t:Teacher | t in Teaches.c",5
+,,"all c:Class | some t:Teacher | c in t.Teaches",1
+,,"all x: Class | some t :Teacher | t->x in Teaches",1
+,,"all y : Class | some x : Teacher | x->y in Teaches",2
+,,"all c:Class |some t:Teacher | t->c in Teaches",70
+,,"all x : Class | some y : Teacher | y->x in Teaches",1
+,,"all c : Class | some x : Teacher | x->c in Teaches",2
+,,"all c:Class | some p:Teacher | p->c in Teaches",5
+,,"all c:Class | some t:Teacher | t in c.~Teaches",5
+,,"not some c : Class | all t : Teacher | not t->c in Teaches",1
+,,"all c:Class | some p:Person | p in Teacher and p->c in Teaches",8
+,,"all c:Class | some t:Teacher | t in c.~Teaches
+  	Class in Teacher.Teaches",1
+

@@ -1,0 +1,9 @@
+inv8 E:
+inv8 T: all u : User | all a : u.sees & Ad | a->User in (u.follows + u.suggested)
+inv8 T: all u : User | all a : u.sees & Ad | User.a in (u.follows + u.suggested)
+inv8 S: all u : User | all a : u.sees & Ad | all User.a in (u.follows + u.suggested)
+inv8 S: all u : User | all a : u.sees & Ad | all User.a in (u.follows + u.suggested)
+inv8 T: all u : User | all a : u.sees & Ad | all uad : User.a | uad in (u.follows + u.suggested)
+inv8 T: all u : User | all a : u.sees & Ad | all uad : a->User | uad in (u.follows + u.suggested)
+inv8 C: all u : User | all a : u.sees & Ad | some uad : u.follows + u.suggested | a in uad.posts
+

@@ -1,0 +1,11 @@
+inv7 B: all u: User, s: User | u->s in suggested implies (all f: User | u->f in follows and f->s in follows and u->s not in follows)
+inv7 U: all u: User, s: User | some f: User | u->s in suggested implies (u->f in follows and f->s in follows and u->s not in follows)
+inv7 U: all u: User, s: User | some f: User | u->s in suggested implies (u->f in follows and f->s in follows)
+inv7 U: all u: User, s: User | some f: User | u->s in suggested and u->s not in follows implies (u->f in follows and f->s in follows)
+inv7 B: all u: User, s: User, f: User | u->s in suggested and u->s not in follows implies (u->f in follows and f->s in follows)
+inv7 B: all u: User, s: User, f: User | u->s in suggested and u->s not in follows implies (u->f in follows and f->s in follows and u->s not in follows)
+inv7 U: all u: User, s: User | u->s in suggested implies (some f: User | u->f in follows and f->s in follows and u->s not in follows)
+inv7 B: all u: User, s: User | s->u in suggested implies (some f: User | u->f in follows and f->s in follows and u->s not in follows)
+inv7 S: all s: User, f: User | some s: User | u->s in suggested implies (u->f in follows and f->s in suggested)
+inv7 U: all u: User, f: User | some s: User | u->s in suggested implies (u->f in follows and f->s in suggested)
+

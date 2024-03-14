@@ -1,0 +1,13 @@
+inv5 S: all s : State | s.trans = State.trasn
+inv5 O: all s : State | s.trans = State.trans
+inv5 U: all s : State | s.trans in State.trans
+inv5 T: all s : State | s.trans in State<:trans
+inv5 T: State->Event
+inv5 B: some State->Event
+inv5 O: one State->Event
+inv5 O: State->Event in iden
+inv5 B: all s : State | some s->Event
+inv5 S: all s : State | Event in s.(State->Event
+inv5 U: all s : State | Event in s.(State->Event)
+inv5 U: all s : State | Event = s.(State->Event)
+

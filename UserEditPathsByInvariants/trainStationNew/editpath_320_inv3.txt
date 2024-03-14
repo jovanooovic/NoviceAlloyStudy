@@ -1,0 +1,9 @@
+inv3 U: all e1,e2:Exit | e1->e2 not in succs
+inv3 T: all t1,t2:Track | t1->t2 not in succs implies t1 and t2 not in Exit
+inv3 U: all e1,e2:Exit | e1->e2 not in succs
+inv3 S: all e1:Exit | e not in succs
+inv3 T: all e1:Exit | e1 not in succs
+inv3 U: no Exit.succs
+inv3 U: no Exit.succs
+inv3 B: all e1,e2:Exit | e1->e2 not in succs implies e1 != e2
+

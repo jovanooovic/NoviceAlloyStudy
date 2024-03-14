@@ -1,0 +1,32 @@
+inv5 S: all
+inv5 U: all t:Track | t in Junction => t in Track.^(succs)
+inv5 B: all t:Track | t in Junction <=> t in Track.^(succs)
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs)
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs) and t3 in t2.^(succs)
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs) and t3 in t2.succs
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs) and t3 in t2.succs and t not in t.^(succs)
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t3.succs and t3 in t2.succs and t not in t.^(succs)
+inv5 B: all t:Track | t in Junction <=> t in Track.^(succs) and t in Track.succs
+inv5 B: all t,t2,t3:Track | t in Junction <=> t in t2.succs and t in t3.succs
+inv5 B: all disj t,t2,t3:Track | t in Junction <=> t in t2.succs and t in t3.succs
+inv5 B: all disj t,t2,t3:Track | t in Junction <=> t in t2.succs and t in t3.succs and t not in t.succs
+inv5 B: all disj t,t2,t3:Track | one t2.succs and one t3.succs and t in t2.succs and t in t3.succs <=> t in Junction
+inv5 S: all disj t,t2,t3:Track | t in Juction <=> some t in Track.^(succs)
+inv5 T: all disj t,t2,t3:Track | t in Junction <=> some t in Track.^(succs)
+inv5 B: all disj t,t2,t3:Track | one t2.succs and one t3.succs and t in t2.succs and t in t3.succs or t in Track.^(succs)<=> t in Junction
+inv5 B: all disj t,t2,t3:Track | one t2.succs and one t3.succs and t in t2.succs and t in t3.succs and t not in t.^(succs) or t in Track.^(succs)<=> t in Junction
+inv5 B: all disj t,t2,t3:Track | (one t2.succs and one t3.succs and t in t2.succs and t in t3.succs and t not in t.^(succs)) or t in Track.^(succs)<=> t in Junction
+inv5 B: all t:Track | t in Junction <=> t in Track.^(succs)
+inv5 B: all disj t,t2,t3:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs)
+inv5 B: all disj t,t2,t3:Track | t in Junction <=> t in t2.(succs) and t in t3.(succs)
+inv5 B: all disj t,t2,t3:Track | t in Junction <=> t in t2.succs and t in t3.succs
+inv5 S: all t:Track | t in Junction <=> t in t2.^(succs) and t in t3.^(succs)
+inv5 B: all t:Track | t in Junction <=> t in Track.^(succs)
+inv5 B: all t:Track | t in Track.^(succs) implies #Track.^(succs)>1
+inv5 B: all t:Junction | t in Track.^(succs) implies #Track.^(succs)>1
+inv5 B: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies t1 in Junction
+inv5 B: all t1,t2,t3:Track | t1 in t2.^(succs) and t1 in t3.^(succs) implies t1 in Junction
+inv5 B: all t1,t2,t3:Track | t1 in t2.^(succs) && t1 in t3.^(succs) implies t1 in Junction
+inv5 B: all disj t1,t2,t3:Track | t1 in t2.^(succs) && t1 in t3.^(succs) implies t1 in Junction
+inv5 C: all t : Track | t in Junction iff #succs.t>1
+

@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 U: Work.visible = Work.profile
+inv1 B: User.visible = User.profile
+inv1 U: profile.User = profile.User
+inv1 C: all u : User | u.visible in u.profile
+inv2 O: all u : User | u.profile.source in u
+inv2 B: all u : User | u in u.profile.source
+inv3 O: all s1,s2 : Source | s1.profile.ids not in s2.profile.ids
+inv3 B: all s1,s2 : Source | s1.profile.ids in s2.profile.ids implies s1 = s2
+inv4 T: all u : User | all w1,w2 : Work | w1 in u.profile and w2 in u.profile implies w1 not w2
+inv4 O: all u : User | all w1,w2 : Work | w1 in u.visible and w2 in u.visible implies w1 != w2
+

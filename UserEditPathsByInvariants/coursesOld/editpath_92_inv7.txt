@@ -1,0 +1,6 @@
+inv7 T: all c:Course | projects :> c.projects in Person -> lone Project
+inv7 C: all c:Course | Person <: projects :> c.projects in Person -> lone Project
+inv7 C: all c:Course,p:Person | lone p.projects & c.projects
+inv7 C: all c:Course,j1,j2:Project | (j1 in c.projects and j2 in c.projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+inv7 C: all c:Course,j1,j2:Project | (c->j1 in projects and c->j2 in projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+

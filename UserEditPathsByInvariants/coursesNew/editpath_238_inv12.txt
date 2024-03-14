@@ -1,0 +1,4 @@
+inv12 T: all c : Course, st : Student, g:Grade | lone (st->g in c.grades)
+inv12 U: all c : Course, st : Student, g:Grade | (st->g in c.grades) implies #st->g <= 1
+inv12 U: all c : Course, st : Student | lone g:Grade | (st->g in c.grades)
+

@@ -1,0 +1,28 @@
+inv1 T: all n : Node, a : n.adj | n->a => a->n
+inv1 T: all n : Node | n->adj => adj->n
+inv1 T: Node->adj
+inv1 T: Node
+inv1 T: Node.adj
+inv1 T: Node->Node
+inv1 T: adj
+inv1 B: ~adj.adj in iden
+inv1 O: iden in ~adj.adj
+inv1 T: Node.adj
+inv1 T: adj.adj
+inv1 T: ~adj.adj
+inv1 T: ~adj->adj
+inv1 T: all n : Node, a : n.adj | a->n in Node.adj
+inv1 C: all n : Node, a : n.adj | a->n in adj
+inv1 T: all n : Node | n.adj
+inv1 T: all n : Node | n->adj
+inv1 T: all n : Node | n->(n.adj)
+inv1 T: all n : Node | ~(n->(n.adj))
+inv1 C: all n : Node | ~(n->(n.adj)) in adj
+inv1 C: all n : Node, a : n.adj | a->n in adj
+inv1 U: all n : Node, a : n.adj | a in Node
+inv1 U: Node in Node
+inv1 O: no Node
+inv1 E:
+inv1 T: ~adj.adj
+inv1 T: iden
+

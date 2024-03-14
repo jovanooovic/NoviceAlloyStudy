@@ -1,0 +1,26 @@
+inv3 B: all x : User | (all y : x.sees | y not in User.posts) and	(all z : Ad | z in x.sees)
+inv3 B: all x : User | all y : x.sees | y not in User.posts
+inv3 B: all x : User | all y : x.sees | y not in User.posts
+inv3 B: all x : Influencer | all y : x.sees | y not in User.posts
+inv3 S: all x : User | all y : x.sees | y not in User.posts and y not extends Ad
+inv3 T: all x : User | all y : Photo | y in x.sees and y not in x.posts and y not Add
+inv3 B: all x : User | all y : Photo | y in x.sees and y not in x.posts
+inv3 T: all x : User | all y : Photo | y in x.sees and y not in x.posts and y is not an Ad
+inv3 T: all x : User | all y : Photo | y in x.sees and y not in x.posts and y is not an ad
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and y not in x.posts and y!=z
+inv3 B: all x : Influencer | all y : Photo | all z: Ad | y in x.sees and y not in x.posts and y!=z
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and y not in x.posts and y!=z
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and y!=z
+inv3 B: all x : User | all y : x.follows.posts | all z: Ad | y in x.sees and y!=z
+inv3 B: all x : User | all y : Photo| all z: Ad | y in x.sees and y!=z and y in x.follows.posts
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and y!=z and y in x.follows.posts
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and (y!=z and y in x.follows.posts || y = z)
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and ((y!=z and y in x.follows.posts) || (y = z))
+inv3 B: all x : User | all y : Photo | all z: Ad | y in x.sees and y!=z and y in x.follows.posts
+inv3 B: all x : User | all y : Photo | (all z: Ad | y in x.sees and y!=z and y in x.follows.posts ) || (all z: Ad | z in x.sees)
+inv3 B: all x : User | (all y : Photo | all z: Ad | y in x.sees and y!=z and y in x.follows.posts ) || (all z: Ad | z in x.sees)
+inv3 S: all x : User | all y : x.sees | y not in Ad => (some f : x.follows && y in f.post)
+inv3 S: all x : User | all y : x.sees | y not in Ad => (some f : x.follows && y in f.posts)
+inv3 C: all x : User | all y : x.sees | y not in Ad => (some f : x.follows | y in f.posts)
+inv3 C: all x: User | x.sees - Ad in x.follows.posts
+

@@ -1,0 +1,9 @@
+inv4 T: all s : State | s.trans in State
+inv4 T: all s : State | Init.trans in State
+inv4 T: all s : State | some e : Event | s.(e.(Init.trans)) in State
+inv4 U: all s : State | some e : Event | e.(Init.trans) in State
+inv4 U: all s : State | some e : Event | e.(s.trans) in State
+inv4 B: all s : State | some e : Event | e.(s.trans) in Init
+inv4 U: all s : State | some e : Event | e.(s.trans) in State
+inv4 U: all s : State | some e : Event | e.(s.trans) in State
+

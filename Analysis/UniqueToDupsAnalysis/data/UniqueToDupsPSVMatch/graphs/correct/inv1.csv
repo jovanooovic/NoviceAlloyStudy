@@ -1,0 +1,48 @@
+"adj=~adj",67
+"~adj=adj",4
+"adj in ~adj",9
+"no adj - ~adj",7
+"adj & ~adj = adj",7
+"adj = adj + ~adj",3
+"adj in adj & ~adj",1
+"(adj in ~adj) and (~adj in adj)",1
+"all n:Node | n.adj = adj.n",3
+"all n:Node | n.adj in adj.n",2
+"all n:Node | adj.n in n.adj",3
+"all n1 : Node | n1.adj = adj.n1",1
+"all n : Node | ~(n->(n.adj)) in adj",1
+"all n : Node, a : n.adj | a->n in adj",2
+"all n:Node, n2:n.adj | n in n2.adj",2
+"all a,b : Node | b in a.adj implies a in b.adj",1
+"all x, y: Node | y in x.adj implies x in y.adj",1
+"all n,m: Node | m in n.adj => n in m.adj",2
+"all x,y:Node | x->y in adj implies y->x in adj",12
+"all n,x:Node | n->x in adj implies x->n in adj",1
+"all a,b:Node | a->b in adj implies b->a in adj",5
+"all a,b:Node | b->a in adj implies a->b in adj",1
+"all n, m : Node | n->m in adj iff m->n in adj",1
+"all n: Node | all a: n.adj | n in a.adj",6
+"all n, n1 : Node | n->n1 in adj => n1->n in adj",1
+"all n1, n2: Node | n1 in n2.adj => n2 in n1.adj",4
+"all n1,n2:Node | n2 in n1.adj implies n1 in n2.adj",3
+"all n1,n2:Node | n1 in n2.adj <=> n2 in n1.adj",5
+"all n1, n2: Node | n2 in n1.adj iff n1 in n2.adj",1
+"all v1, v2 : Node | v1->v2 in adj implies v2->v1 in adj",4
+"all n1, n2 : Node | n1->n2 in adj => n2->n1 in adj",36
+"all e1, e2 : Node | e1 -> e2 in adj implies e2 -> e1 in adj",1
+"all n1, n2 : Node | n1->n2 in adj <=> n2->n1 in adj",1
+"all disj n, n1 : Node | n1 in n.adj <=> n in n1.adj",1
+"all disj n, n1 : Node | n->n1 in adj => n1->n in adj",2
+"all disj n1,n2 : Node | n2 in n1.adj => n2 in adj.n1",2
+"all disj n1, n2 :Node | n1 in n2.adj implies n2 in n1.adj",3
+"all disj n1, n2: Node | n2 in n1.adj => n1 in n2.adj",1
+"all disj n, n1 : Node | n->n1 in adj <=> n1->n in adj",2
+"all disj n1, n2: Node | n2 in n1.adj <=> n1 in n2.adj",1
+"all disj n1,n2: Node | n1 in n2.adj iff n2 in n1.adj",3
+"all disj n1,n2: Node |n1->n2 in adj implies n2->n1 in adj",3
+"all a:Node,b:Node | a->b in adj implies b->a in adj",1
+"all n:Node, n2:Node| n2 in n.adj => n in n2.adj",3
+"all n : Node, a : n.adj | n->a in adj implies a->n in adj",1
+"all n1,n2:Node | some n1.adj:>n2 implies some n2.adj:>n1",3
+"all n1,n2 :Node | n1->n2 in adj  implies n2->n1 in adj
+all n:Node |  (n.adj  in adj.n)",1

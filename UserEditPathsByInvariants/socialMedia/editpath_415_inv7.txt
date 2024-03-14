@@ -1,0 +1,8 @@
+inv7 B: all u: User | all x: User | x in u.follows and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in u.follows.follows and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) and x not in follows.u implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+inv7 S: all u: User | all x: User | x in (u.follows.follows* - u.follows) implies (x in u.suggested)
+inv7 B: all u: User | all x: User | x in (u.follows.follows - u.follows) implies (x in u.suggested)
+

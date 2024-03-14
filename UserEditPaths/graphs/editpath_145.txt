@@ -1,0 +1,54 @@
+na H: THEME UPDATE
+inv1 E: 
+inv1 C: adj = ~adj
+inv2 B: adj not in ~adj
+inv2 T: all e: adj | e not in ~adj
+inv2 T: all e: adj | ~e not in adj
+inv2 U: all n1: Node, n2: Node | n1 -> n2 in adj implies n2 -> n2 not in adj
+inv2 U: all n1: Node, n2: Node | (n1 -> n2) in adj implies (n2 -> n2) not in adj
+inv2 U: all n1: Node, n2: Node | (n1 -> n2 in adj) implies ((n2 -> n2) not in adj)
+inv2 U: all n1: Node, n2: Node | (n1 -> n2 in adj) implies (n2 -> n2 not in adj)
+inv2 U: all n1, n2: Node | (n1 -> n2 in adj) implies (n2 -> n2 not in adj)
+inv2 B: all n1, n2: Node | n1->n2 in adj implies n2->n1 in adj
+inv2 S: a: adj | a not in adj
+inv2 T: all a: adj | a not in adj
+inv2 U: adj & ~adj in iden
+inv2 C: no adj & ~adj
+inv2 U: adj & ~adj in iden
+inv2 C: no adj & ~adj
+inv2 U: adj & ~adj in iden
+inv2 C: no adj & ~adj
+inv3 E: 
+inv3 U: iden not in ^adj
+inv3 C: no iden & ^adj
+inv3 C: no iden & ^adj
+inv4 U: all n1, n2: Node | n1 in n2.^adj
+inv4 U: all n1, n2: Node | n1 in n2.^adj and n2 in n1.^adj
+inv4 U: all n1, n2: Node | (n1 in n2.^adj) and (n2 in n1.^adj)
+inv4 C: all n1, n2: Node | n1 in n2.adj
+inv4 C: adj = Node->Node
+inv5 T: no iden ^ adj
+inv5 C: no iden & adj
+inv6 S: Node -> Node = (adj & ~adj)^
+inv6 O: Node -> Node in ^(adj & ~adj)
+inv6 O: (Node -> Node) - iden in ^(adj & ~adj)
+inv6 O: (Node -> Node) in *(adj & ~adj)
+inv6 O: (Node -> Node) = *(adj & ~adj)
+inv6 O: (Node -> Node) = *(adj + ~adj)
+inv6 C: (Node -> Node) in *(adj + ~adj)
+inv7 E: 
+inv7 C: (Node -> Node) in *adj
+inv7 O: (Node -> Node) = *adj
+inv7 C: (Node -> Node) in *adj
+inv7 C: (Node -> Node) in *adj
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 B: all n1: Node, n2: Node, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 S: all n1, n2, n3: Node | #{n1,n2,n3} = 3 and n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 C: adj.adj in adj
+inv8 C: all n1, n2, n3: Node | n2 in n1.adj && n3 in n2.adj implies n3 in n1.adj
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj + ^adj
+inv8 B: all n1, n2, n3: Node | n1 in n2.adj and n2 in n3.adj implies n1 -> n3 in adj
+inv8 B: all n1, n2, n3: Node | n1 in n2.adj and n2 in n3.adj implies n3 in n1.adj
+inv8 C: all n1, n2, n3: Node | n2 in n1.adj and n3 in n2.adj implies n3 in n1.adj
+

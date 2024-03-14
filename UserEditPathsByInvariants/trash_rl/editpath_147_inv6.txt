@@ -1,0 +1,9 @@
+inv6 B: some f: File | f.link in File
+inv6 O: all f1: File | some f2: File | f1.link = f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2
+inv6 U: lone f1: File | all f2: File | f1.link = f2
+inv6 U: lone f1: File | all f2: File | f1.link = f2 and f1 != f2
+inv6 C: all f1: File | lone f2: File | f2 in f1.link
+inv6 O: lone f2: File | f2 in File.link
+inv6 C: all f1: File | lone f2: File | f2 in f1.link
+

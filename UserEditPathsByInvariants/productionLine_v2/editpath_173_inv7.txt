@@ -1,0 +1,11 @@
+inv7 B: all c : Component | c.^(parts) in Dangerous implies c in Dangerous
+inv7 O: all c : Component | all p : Product | p in Dangerous and p in c.^(parts) implies c in Dangerous
+inv7 B: all c : Component | c.^(parts) in Dangerous implies c in Dangerous
+inv7 O: all c : Component , p :  c.^(parts) | p in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.^(parts) in Dangerous implies c in Dangerous
+inv7 O: all c : Component , p : c.^(parts) | p in Dangerous implies c in Dangerous
+inv7 O: all p : Product | p in Dangerous implies (parts.p) in Dangerous
+inv7 T: all p : Product | p in Dangerous implies (parts).^p in Dangerous
+inv7 O: all p : Product | p in Dangerous implies p.^(~parts) in Dangerous
+inv7 O: all p : Product | p in Dangerous implies p.^(~parts) in Dangerous
+

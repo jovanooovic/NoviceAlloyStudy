@@ -1,0 +1,14 @@
+inv7 S: all s:Students | one Course <: projects.p
+inv7 S: all s:Student | one Course <: projects.p
+inv7 S: all s:Student p:Project | one Course <: projects.p
+inv7 B: all s:Student, p:Project | one Course <: projects.p
+inv7 B: all s:Student, p:Project | one s <: projects.p
+inv7 B: all p:Project | one projects.p <: Student
+inv7 S: all s.Student | one s <: Project
+inv7 S: all s.Student | one s <: projects.Projects
+inv7 S: all s.Student | one s <: projects.Project
+inv7 S: all s.Student c:Course | one s <: c.Project
+inv7 S: all s.Student c:Course | one s <: c.Project.projects
+inv7 S: all s.Student c:Course | one Project <: c
+inv7 S: all s.Student c:Course | one s <: c.Project.projects
+

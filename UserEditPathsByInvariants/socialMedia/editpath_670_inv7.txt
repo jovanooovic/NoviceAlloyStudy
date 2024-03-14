@@ -1,0 +1,7 @@
+inv7 S: all u,u2:User |all sug:u.suggested | u2 in u.follows => u2.follows.follows in sug
+inv7 B: all u,u2:User |all sug:u.suggested | u2 in u.follows => u2.follows.follows in sug
+inv7 B: all disj u,u2:User |all sug:u.suggested | u2 in u.follows => u2.follows.follows in sug
+inv7 B: all disj u,u2:User | u2 in u.follows implies u2.follows.follows in u.suggested
+inv7 U: all disj u,uu:User | u in uu.follows.follows && u not in uu.follows implies u in uu.suggested
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+

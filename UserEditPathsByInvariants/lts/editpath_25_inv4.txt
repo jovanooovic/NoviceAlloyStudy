@@ -1,0 +1,15 @@
+inv4 T: Init.*trans = State
+inv4 T: Init.*(State.trans.Event) = State
+inv4 T: Init.*(~trans.Event) = State
+inv4 T: Init.*(State.trans[Event]) = State
+inv4 S: Init.*({x: State, y: State | any e: Event | x.trans[e] = y}) = State
+inv4 S: Init.*({x: State, y: State | (any e: Event | x.trans[e] = y) }) = State
+inv4 U: Init.*{x: State, y: State | some (x.trans).y } = State
+inv4 U: Init.*({x: State, y: State | some (x.trans).y }) = State
+inv4 B: Init.*({x: State, y: State | some e: Event | x.trans[e] = y }) = State
+inv4 U: Init.*({x: State, y: State | some (x.trans).y }) = State
+inv4 C: Init.^({x: State, y: State | some (x.trans).y }) = State
+inv4 C: Init.^({x: State, y: State | some (x.trans).y }) = State
+inv4 U: Init.*({x: State, y: State | some (x.trans).y }) = State
+inv4 C: Init.^({x: State, y: State | some (x.trans).y }) = State
+

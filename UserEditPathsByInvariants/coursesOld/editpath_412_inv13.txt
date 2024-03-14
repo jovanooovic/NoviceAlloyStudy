@@ -1,0 +1,14 @@
+inv13 S: some Grande/last
+inv13 S: some Grande.last
+inv13 T: some Grade.last
+inv13 S: some Grade/last
+inv13 S: all s:Student, c:Course, g:Grade | c->p->g in grades and g in last => some p:c.projects | p in s.projects
+inv13 S: all s:Student, c:Course, g:Grade | c->p->g in grades and g in last
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | p in s.projects
+inv13 S: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | c.s1.g
+inv13 S: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | c.s1.g
+inv13 S: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | c.s1.g
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | p in s.projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | p in s.projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | p in s.projects
+

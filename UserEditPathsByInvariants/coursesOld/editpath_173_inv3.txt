@@ -1,0 +1,7 @@
+inv3 S: all c:Courses | some p:Person | no (p & Student) implies c not in p.teachs
+inv3 S: all c:Course | some p:Person | no (p & Student) implies c not in p.teachs
+inv3 B: all c:Course | some p:Person | no (p & Student) implies c not in p.teaches
+inv3 T: all c:Course | some p:Person | no (p & Student) implies (p & Professor) and c not in p.teaches
+inv3 S: all c:Courses | some p:Person | c in p.teaches
+inv3 C: all c:Course | some p:Person | c in p.teaches
+

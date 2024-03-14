@@ -1,0 +1,13 @@
+inv7 E:
+inv7 S: all s : Student, all c : s.enrolled | one c
+inv7 S: all s : Student, all c : s.enrolled | one c
+inv7 U: all s : Student, c : s.enrolled | one c
+inv7 B: all s : Student, c : s.enrolled | one c.projects
+inv7 B: all s : Student, c : s.enrolled | lone c.projects
+inv7 S: all s : Student, c : s.enrolled | lone c.projects & lone s.projects
+inv7 B: all s : Student, c : s.enrolled | lone c.projects and lone s.projects
+inv7 T: all s : Student, c : s.enrolled | lone (c.projects and s.projects)
+inv7 U: all s : Student, c : s.enrolled | lone (c.projects & s.projects)
+inv7 B: all s : Student, c : s.enrolled | lone (c.projects + s.projects)
+inv7 U: all s : Student, c : s.enrolled | lone (c.projects & s.projects)
+

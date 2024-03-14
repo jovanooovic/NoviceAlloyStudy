@@ -1,0 +1,7 @@
+inv10 T: all x: Person| all c: Course| c in c.grades implies c in Student
+inv10 T: all x: Person| all c: Course| c in grades.c implies c in Student
+inv10 T: all x: Person| all c: Course| c in grades.c implies x in Student
+inv10 T: all x: Person| all c: Course| x in grades.c implies x in Student
+inv10 U: all x: Person| all c: Course| all g: Grade| x in g.grades.c implies x in Student
+inv10 C: all x: Person| all c: Course| all g: Grade| x in c.grades.g implies x in Student
+

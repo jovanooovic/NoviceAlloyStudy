@@ -1,0 +1,7 @@
+inv7 U: all u,x: User | x->u in suggested implies x->u not in follows
+inv7 B: all u,x: User | ( some y : User | u->y in follows and x->y in follows and x != u) iff u->x in suggested
+inv7 B: all u,x: User | ( some y : User | u->y in follows and x->y in follows and x->u not in follows and u!=x) iff u->x in suggested
+inv7 B: all u,x: User | ( some y : User | u->y in follows and y->x in follows and x->u not in follows and u !=x ) iff u->x in suggested
+inv7 C: all u1, u3 : User | ( some u2 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3 ) iff u1->u3 in suggested
+inv7 C: all u,x: User | ( some y : User | u->y in follows and y->x in follows and u->x not in follows and u !=x ) iff u->x in suggested
+

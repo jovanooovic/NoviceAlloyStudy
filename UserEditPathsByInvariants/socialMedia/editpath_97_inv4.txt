@@ -1,0 +1,6 @@
+inv4 T: all x : User | some a : Ad | a in x.posts implies none x.posts-Ad
+inv4 B: all x : User | some a : Ad | a in x.posts implies no x.posts-Ad
+inv4 B: all x : User | some a : Ad | x->a in posts implies lone x.posts-Ad
+inv4 B: all x : User | some a : Ad | x->a in posts implies no x.posts-Ad
+inv4 C: all x : User | all a : Ad | a in x.posts implies no x.posts-Ad
+

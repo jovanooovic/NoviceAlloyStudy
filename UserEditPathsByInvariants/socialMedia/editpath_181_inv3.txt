@@ -1,0 +1,5 @@
+inv3 O: all u : User | u.sees in u.follows	all a : Photo-Ad | all u: User | a in u.sees
+inv3 O: all u : User | all l : u.sees |l in u.follows	all a : Photo-Ad | all u: User | a in u.sees
+inv3 O: all u : User | all l : u.sees |l in u.follows	all a : Photo-Ad | all u: User |all l : u.follows | l in u.sees
+inv3 O: all u : User | all l : u.sees |l in u.follows	all a : Photo-Ad | all ua: User |all la : ua.follows | la in ua.sees
+

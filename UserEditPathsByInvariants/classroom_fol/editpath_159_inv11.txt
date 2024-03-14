@@ -1,0 +1,5 @@
+inv11 O: all c:Class | no Person.(c.Groups)
+inv11 B: all c:Class,g:Group |some p:Person,t:Teacher | p->g in c.Groups implies c->t->g in Groups
+inv11 B: all c:Class,g:Group |some p:Person,t:Teacher | p->g in c.Groups implies p in c.~Teaches
+inv11 B: all c:Class,g:Group |some p:Person,t:Teacher | p->g in c.Groups implies t in c.~Teaches
+

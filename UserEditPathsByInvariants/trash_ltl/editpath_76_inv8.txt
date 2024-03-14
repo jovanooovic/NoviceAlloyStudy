@@ -1,0 +1,14 @@
+inv8 B: (some link) implies (File.(~link) in Trash)
+inv8 B: (some link) implies (eventually File.(~link) in Trash)
+inv8 T: all l : link | eventually l.File in Trash
+inv8 T: some l : link | eventually l.File in Trash
+inv8 U: all f : File | (some f.link) implies (eventually f in Trash)
+inv8 B: all f : File | (some link.f) implies (eventually f in Trash)
+inv8 B: all f : File | (some f.~link) implies (eventually f in Trash)
+inv8 T: always all l : link | eventually File.l in Trash
+inv8 T: always all l : link | eventually (File.l in Trash)
+inv8 T: always (all l : link | eventually (File.l in Trash))
+inv8 O: always all f : File | eventually f in Trash
+inv8 C: always all f : File | (some f.link) implies (eventually f in Trash)
+inv8 C: always all f : File | (some f.link) implies (eventually f in Trash)
+

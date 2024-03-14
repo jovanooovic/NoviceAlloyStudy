@@ -1,0 +1,6 @@
+inv6 S: all e : Entry, one s : Speed | s in e.signals
+inv6 O: all e : Entry | one s : Speed | s in e.signals
+inv6 B: all e : Entry, s : Speed | s in e.signals
+inv6 B: all t : Track, s : Speed | t in Entry implies s in t.signals
+inv6 O: all t : Track | some s : Speed | t in Entry implies s in t.signals
+

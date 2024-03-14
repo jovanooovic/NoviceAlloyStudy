@@ -1,0 +1,4 @@
+inv8 S: all c : Component | all p : Product | all w : Workker | (p in Dangerous and p in c.^(parts) and w in c.workstation.workers) implies w not in Human
+inv8 B: all c : Component | all p : Product | all w : Worker | (p in Dangerous and p in c.^(parts) and w in c.workstation.workers) implies w not in Human
+inv8 C: all c : Component | all w : Worker | (c in Dangerous and w in c.workstation.workers) implies w not in Human
+

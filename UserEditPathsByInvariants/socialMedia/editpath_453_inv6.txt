@@ -1,0 +1,7 @@
+inv6 S: all i: Influencer, d: Day, p: Photo | p in i.posts.day
+inv6 T: all i: Influencer, d: Day, p: Photo | p in i.posts.d
+inv6 B: all i: Influencer, d: Day, p: Photo | p in i.posts implies p in d
+inv6 B: all i: Influencer, d: Day, p: Photo | p in i.posts implies p in Day
+inv6 T: all i: Influencer, d: Day, p: Photo | p in i.posts => p.date
+inv6 C: all i: Influencer, d: Day | d in i.posts.date
+

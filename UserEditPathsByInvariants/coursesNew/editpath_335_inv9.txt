@@ -1,0 +1,7 @@
+inv9 S: all p: Professor | all c: Teacher | no (p.teaches & c.enrolled)
+inv9 B: all p: Professor | all c: Professor | no (p.teaches & c.enrolled)
+inv9 B: all p: Professor | all c: Professor | no (p.teaches & c.enrolled)  and p != c
+inv9 B: all p: Professor | all c: Professor | no (p.teaches & c.enrolled)
+inv9 B: all p: Professor | all c: Professor | some (p.teaches & c.teaches) => no (p.teaches & c.enrolled)
+inv9 B: all p: Professor | all c: Professor | some (p.teaches & c.teaches) => no (p.teaches & c.enrolled)
+

@@ -1,0 +1,10 @@
+inv1 B: all c:Course | Professor not in enrolled.c
+inv1 T: all p:Person | p.enrolled implies Professor not in p
+inv1 T: all p:Person | enrolled.p implies Professor not in p
+inv1 S: all c:Course | enrolled.c not in Prodessor
+inv1 B: all c:Course | enrolled.c not in Professor
+inv1 C: all c:Course | enrolled.c  in Student
+inv1 S: all c:Course | Students in enrolled.c
+inv1 B: all c:Course | Student in enrolled.c
+inv1 C: all c:Course | enrolled.c  in Student
+

@@ -1,0 +1,7 @@
+inv3 T: all disj w1,w2:Work, u:User | w1 and w2 in u.profile implies no (w1.ids & w2.ids)
+inv3 O: all disj w1,w2:Work, u:User | (w1+w2) in u.profile implies no (w1.ids & w2.ids)
+inv3 O: all  w1,w2:Work, u:User | (w1+w2) in u.profile implies no (w1.ids & w2.ids)
+inv3 O: all disj w1,w2:Work, u:User | (w1+w2) in u.profile implies no (w1.ids & w2.ids)
+inv3 S: all u:USer | all disj w1,w2: u.profile | no (w1.ids & w2.ids)
+inv3 O: all u:User | all disj w1,w2: u.profile | no (w1.ids & w2.ids)
+

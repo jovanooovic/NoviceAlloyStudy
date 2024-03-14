@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 S: all i : Photo | lone User.posts(i)
+inv1 T: all i : Photo | lone User.posts.i
+inv1 T: all i : Photo | i lone User
+inv1 T: all i : Photo | i lone User.posts
+inv1 S: all i : Photo | all u : User | u.posts -> photo
+inv1 T: all i : Photo | all u : User | u.posts -> i
+inv1 U: all i : Photo | some u : User | i in u.posts
+inv1 C: all i : Photo | one u : User | i in u.posts
+inv2 C: all x : User | all x2 : User | x->x2 in follows implies x != x2
+inv4 S: all x : User | Ad in u.posts implies all Ad in u.posts
+inv4 S: all u : User | Ad in u.posts implies all Ad in u.posts
+inv4 S: all u : User | Ad in u.posts implies  Ad in all u.posts
+inv4 U: all u : User | Ad in u.posts implies Ad in u.posts
+inv4 B: one u : User | Ad in u.posts implies Ad in u.posts
+inv4 U: all u : User | Ad in u.posts implies Ad in u.posts
+inv4 S: all u : User | Ad in u.posts.photo implies Ad in u.posts
+inv4 S: all u : User | Ad in u.posts implies u.posts.photo in Ad
+inv4 T: all u : User | Ad in u.posts implies u.posts.Photo in Ad
+inv4 T: all u : User | Ad in u.posts implies u.posts.Photo in Ad
+inv4 T: all u : User | Ad in u.posts implies u.posts.Photo in Ad
+inv4 T: all u : User | Ad in u.posts implies u.posts.Photo in Ad
+inv4 T: all u : User | Ad in u.posts implies u.posts.Photo in Ad
+

@@ -1,0 +1,9 @@
+inv4 S: all u:User | u->p
+inv4 S: all u:User | u->p
+inv4 S: all u:User | u->p
+inv4 E:
+inv4 T: all u:User, p:Photo | u->p in posts and p in Ad => (u->p => p in Ads)
+inv4 S: all u:User, p:Photo | u->p in posts and p in Ad => (u->p in posts => p in Ads)
+inv4 C: all u:User, p:Photo | u->p in posts and p in Ad => (all p2:Photo | u->p2 in posts => p2 in Ad)
+inv4 C: all u:User, p:Photo | u->p in posts and p in Ad => (all p2:Photo | u->p2 in posts => p2 in Ad)
+

@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv5 C: (all p: Project, x: Person | x->p in projects implies x in Student) and (all p: Project | some s: Student | s->p in projects)
+inv6 B: all s: Student, p: Project | s->p in projects iff (all c: Course | s->c in enrolled and c->p in projects)
+inv6 U: all s: Student, p: Project | s->p in projects implies (some c: Course | s->c in enrolled and c->p in projects)
+inv11 S: all s: Student, c: Courses, g: Grades | s->p->g in grades implies (s->c in enrolled and c->p in projects)
+inv11 S: all s: Student, c: Course, g: Grades | s->p->g in grades implies (s->c in enrolled and c->p in projects)
+inv11 S: all s: Student, c: Course, g: Grade | s->p->g in grades implies (s->c in enrolled and c->p in projects)
+inv11 S: all s: Student, c: Course, g: Grade | c->s->g in grades implies (s->c in enrolled and c->p in projects)
+inv11 U: all s: Student, c: Course, g: Grade | c->s->g in grades implies (s->c in enrolled)
+inv11 U: all s: Student, c: Course, g: Grade | c->s->g in grades implies s->c in enrolled
+inv8 S: all c: Course | teaches.c implies not in enrolled.c
+inv8 U: all p: Professor, c: Course | p->c in teaches implies p->c not in enrolled
+inv10 C: all p: Person, c: Course, g: Grade | c->p->g in grades implies p in Student
+inv11 U: all s: Student, c: Course, g: Grade | c->s->g in grades implies s->c in enrolled
+inv5 C: (all p: Project, x: Person | x->p in projects implies x in Student) and (all p: Project | some s: Student | s->p in projects)
+inv8 T: all p: Professor, c: Course | teaches.p implies not enrolled.c
+

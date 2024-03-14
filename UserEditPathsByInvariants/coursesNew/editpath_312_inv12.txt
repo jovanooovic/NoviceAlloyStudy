@@ -1,0 +1,8 @@
+inv12 T: all c : Course | all p : Person | all g : Grade | c in p.enrolled implies #(p->g in grades)=1
+inv12 T: all c : Course | all p : Person | all g : Grade | c in p.enrolled implies     #(p->g)=1 in grades
+inv12 S: all c1,c2 : Course | all p : Person | all g1,g2 : Grade | 	  ((p->g1 in c1.grades) and p->g2 in c2.grades)) implies c1!=c2
+inv12 S: all c1,c2 : Course | all p : Person | all g1,g2 : Grade | 	  ((p->g1 in c1.grades) and p->g2 in c2.grades)) implies c1!=c2
+inv12 O: all c1,c2 : Course | all p : Person | all g1,g2 : Grade | 	  (p->g1 in c1.grades and p->g2 in c2.grades) implies c1!=c2
+inv12 C: all c: Course | all p : Person | lone g: Grade | p->g in c.grades
+inv12 C: all c: Course | all p : Person | lone g: Grade | p->g in c.grades
+

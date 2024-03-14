@@ -1,0 +1,5 @@
+inv10 S: all c : Course | all p : Person | (c in s.enrolled and #(grades)>0) implies c in Student
+inv10 B: all c : Course | all p : Person | (c in p.enrolled and #(grades)>0) implies c in Student
+inv10 B: all c : Course | all p : Person | (c in p.enrolled and #(grades)>0) implies p in Student
+inv10 C: all c : Course | all p : Person | all g : Grade |(p->g in c.grades) implies p in Student
+

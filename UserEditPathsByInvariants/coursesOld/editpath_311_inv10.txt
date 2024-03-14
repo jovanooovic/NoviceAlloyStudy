@@ -1,0 +1,8 @@
+inv10 S: all p: Person, g: Grade | p->g in Course.grades implies p not in Teacher
+inv10 B: all p: Student | lone Course.grades[p]
+inv10 B: all p: Person | lone Course.grades[p] implies p in Student
+inv10 B: all p: Person | lone Course.grades[p] iff p in Student
+inv10 B: all p: Person | lone Course.grades[p] implies p in Student
+inv10 T: all p: Person | Course.grades[p] implies p in Student
+inv10 C: all p: Person | some Course.grades[p] implies p in Student
+

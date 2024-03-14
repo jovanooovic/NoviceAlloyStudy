@@ -1,0 +1,25 @@
+inv6 O: all x, y : Node | some (^adj).y & x
+inv6 T: all x, y : Node | x & (^adj).y
+inv6 O: all x, y : Node | some x & (^adj).y
+inv6 O: all x, y : Node | some x & (^adj).y
+inv6 T: all x, y : Node | some x.(^adj.y)
+inv6 O: all x, y : Node | some x<:(^adj.y)
+inv6 T: adj in ^Node
+inv6 T: adj in Node.^adj
+inv6 T: adj in Node.(^adj)
+inv6 T: all n : Node | adj in n.(^adj)
+inv6 T: all n : Node | adj in (^adj.n)
+inv6 S: adj in (^adj.n)
+inv6 T: adj in (^adj.Node)
+inv6 B: all x, y : Node | ^adj.x in ^adj.y
+inv6 T: all x, y : Node | ^adj<:x in ^adj<:y
+inv6 B: all x, y : Node | ^adj.x in ^adj.y
+inv6 B: all x, y : Node | ^adj.x in ^adj.y & x
+inv6 O: all x, y : Node | x in ^adj.y & x
+inv6 T: all x, y : Node | x in ^adj.y & y in ^adj.x
+inv6 O: all x, y : Node | x in ^adj.y and y in ^adj.x
+inv6 O: all x, y : Node | (x in ^adj.y) and (y in ^adj.x)
+inv6 S: all n : Node |
+inv6 E:
+inv6 E:
+

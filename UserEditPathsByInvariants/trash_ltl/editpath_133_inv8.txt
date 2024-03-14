@@ -1,0 +1,14 @@
+inv8 B: eventually all f:File | f.link in Trash
+inv8 T: eventually all f:File | f->link in Trash
+inv8 T: eventually all f:File | f in link in Trash
+inv8 B: eventually all f:File | f.link in Trash
+inv8 T: eventually all l:link | link in Trash
+inv8 T: eventually all l:link | File.link in Trash
+inv8 B: eventually all f:File | f.link in Trash
+inv8 B: eventually all f:File | f.link in Trash
+inv8 B: eventually all f:File | f.link in Trash
+inv8 B: eventually all f:File | f.link in Trash
+inv8 B: always all f:File | f.link in Trash
+inv8 B: always all f:File | eventually f.link in Trash
+inv8 C: always all f,g:File | f->g in link implies eventually f in Trash
+

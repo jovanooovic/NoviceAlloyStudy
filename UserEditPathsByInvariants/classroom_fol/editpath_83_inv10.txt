@@ -1,0 +1,15 @@
+inv10 S: all c : Class
+inv10 T: all c : Class, s : Student | some g : Group | s->g in Groups
+inv10 T: all s : Student | some g : Group | s->g in Groups
+inv10 T: all s : Person | some g : Group | s->g in Groups
+inv10 T: all c : Class, s : Student | some g : Group | s->g in c->Groups
+inv10 T: all c : Class, s : Student, bg : Groups | some g : Group | s->g in c->bg
+inv10 T: all c : Class, s : Student| some g : Group | s->g in Groups
+inv10 T: all c : Groups in Class, s : Student| some g : Group | s->g in c
+inv10 T: all c : Groups in Class, s : Student| some g : Group | s->g in c.Groups
+inv10 T: all c : Groups in Class, s : Student| some g : Group | s->g in c.Groups
+inv10 C: all c : Class, s : Student | some g : Group | s->g in c.Groups
+inv10 C: all c : Class, s : Student | some g : Group | s->g in c.Groups
+inv10 C: all c : Class, s : Student | some g : Group | s->g in c.Groups
+inv10 C: all c : Class, s : Student | some g : Group | s->g in c.Groups
+

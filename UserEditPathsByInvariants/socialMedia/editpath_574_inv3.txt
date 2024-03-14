@@ -1,0 +1,12 @@
+inv3 S: all u1, u2 : User, p : Photo | p in u1.sees -> u2 in u1.follows /\ p in u2.posts
+inv3 T: all u1, u2 : User, p : Photo | p in u1.sees -> u2 in u1.follows and p in u2.posts
+inv3 T: all u : User, p : Photo | p in u.sees -> p in u.follows.posts
+inv3 O: all u : User, p : Photo | p in u.sees => p in u.follows.posts
+inv3 C: all u : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 B: all u1,u2 : User, p : Photo | p in u1.sees => u2 in u1.follows
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees => u2 in u1.follows and p in u2.posts
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees => u2 in u1.follows and p in u2.posts or p in Ad
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees => (u2 in u1.follows and p in u2.posts)  or (p in Ad)
+inv3 S: all u1,u2 : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 C: all u : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+

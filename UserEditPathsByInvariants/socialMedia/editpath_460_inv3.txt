@@ -1,0 +1,4 @@
+inv3 T: all u: User | u.sees in (u.follows and Ad)
+inv3 T: all u: User | u.sees in (u.follows.posts and Ad)
+inv3 C: all u: User | u.sees in (u.follows.posts + Ad)
+

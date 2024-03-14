@@ -1,0 +1,4 @@
+inv4 B: all p1, p2: Project, c: Course | p1 in c.projects and p2 in c.projects implies p1=p2
+inv4 B: all p: Project | p in Course.projects		all p1, p2: Project, c: Course | p1 in c.projects and p2 in c.projects implies p1=p2
+inv4 C: all p: Project | p in Course.projects		all p: Project, c1, c2: Course | c1 in projects.p and c2 in projects.p implies c1=c2
+

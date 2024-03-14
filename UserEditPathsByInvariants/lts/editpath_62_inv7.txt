@@ -1,0 +1,9 @@
+inv7 S: all s : State | Init in s.^onlyStates
+inv7 S: (State = Init) or		(all s : State | Init in s.^onlyStates)
+inv7 S: (no trans) or		(all s : State | Init in s.^onlyStates)
+inv7 S: (all s : State | Init in s.^onlyStates)
+inv7 S: (all s : State.^onlyState | Init in s.^onlyStates)
+inv7 S: (all s : State.^onlyStates | Init in s.^onlyStates)
+inv7 S: (all s : (State.^onlyStates - Init) | Init in s.^onlyStates)
+inv7 S: (all s : State.^onlyStates | Init in s.^onlyStates)
+

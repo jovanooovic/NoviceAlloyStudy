@@ -1,0 +1,5 @@
+inv10 S: all p:Person | p not in Student implies no some enrolled.grades
+inv10 B: all st:Student, c : st.enrolled| some c.grades
+inv10 B: all p:Person-Professor, c : p.enrolled| some c.grades
+inv10 C: all c : Course, p : Person, g : Grade | p->g in c.grades implies p in Student
+

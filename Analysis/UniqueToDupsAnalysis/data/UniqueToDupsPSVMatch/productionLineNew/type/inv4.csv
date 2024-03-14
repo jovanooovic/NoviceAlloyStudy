@@ -1,0 +1,39 @@
+"parts = Component + (Product-Material)",1
+"Component in parts
+Material not in parts",1
+"all c : Component | c in parts
+parts - Material = parts",1
+"all p : Product | some p.parts in Component or p in Material",1
+"all c : Component, m : Material | c in parts & m not in parts",1
+"all c : Component | c in Product.parts
+parts - Material = parts",1
+"no m : Material | m.parts
+and
+all c : Componente | some m.parts",1
+"all c : Component | some c.parts
+all m : Material | none m.parts",1
+"all c : Component | some c.parts
+all m : Material | none c.parts",1
+"all c : Component | no m : Material | m.(^parts) and some c.parts",1
+"(no m : Material | m.parts)
+and
+(all c : Componente | some m.parts)",1
+"all x : Component | some x.parts and all y : Material | none y.parts",1
+"all c: Component | c in Product.parts
+all m: Material |no m in Product.parts",1
+"(Component <: parts) in Component set -> some Product
+parts - Material = parts",1
+"all c : Component | c in ((Product-Material).parts - iden)
+
+no (Material <: parts)",1
+"all x : Product | x in (Component-Material).parts and no x in (Material-Component).parts",1
+"all p:Product | p in Component implies p.parts
+all p:Product | p in Material implies no p.parts",1
+"(all c : Component | some p: Product | p in c.parts) and (all m : Material | no Product in m.parts)",1
+"all c:Component | some p:Product | p in c.parts and (all m:Material | all p:Product | no p in m.parts)",1
+"all x: Product |  x in Component implies some x.parts
+all x: Product |  x in Material implies none x.parts",1
+"all p : Product | p in Component implies some p.parts
+all p : Product | p in Material implies none p.parts",2
+"all x:Product | x is in Component implies #(x.parts)>0
+all x:Product | x is in Material implies #(x.parts)=0",2

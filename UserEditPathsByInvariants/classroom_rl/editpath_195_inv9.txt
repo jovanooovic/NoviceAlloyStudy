@@ -1,0 +1,11 @@
+inv9 B: all c : Class | #Teacher.(c.Groups) < 1
+inv9 B: all c : Class | #Teacher->(c.Groups) < 1
+inv9 B: all c : Class | #Teacher.(c.Groups) < 1
+inv9 B: all c : Class | #Teacher.(c.Groups) <= 1
+inv9 B: all c : Class | #Teacher.(c.Groups) <= 1
+inv9 B: all c : Class | #Teacher.(c.Groups) = 1
+inv9 T: all c : Class | #(Person.(c.Groups) in Teacher) <= 1
+inv9 T: all c : Class | one Person.(c.Groups) in Teacher
+inv9 T: all c : Class | some Person.(c.Groups) in Teacher
+inv9 T: all c : Class | all p : Person.(c.Groups) | some p in Teacher
+

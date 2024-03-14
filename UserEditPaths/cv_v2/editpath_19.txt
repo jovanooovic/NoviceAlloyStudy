@@ -1,0 +1,78 @@
+NA H: THEME UPDATE
+inv4 S: always (all u : User | all  disj v1 v2 : u.visible | not v1.id = v2.id)
+inv4 S: always all u : User, all  disj v1 v2 : u.visible | not v1.id = v2.id
+inv4 S: always all u : User, disj v1 v2 : u.visible | not v1.id = v2.id
+inv4 S: always all u : User, disj v1 v2 : u.visible | not v1.ids & v2.ids
+inv4 S: always all u : User | all disj v1 v2 : u.visible | not v1.ids & v2.ids
+inv4 S: always all u : User | all disj v1 v2 : u.visible | not (v1.ids & v2.ids)
+inv4 S: always all u : User, disj v1 v2 : u.visible | not (v1.ids & v2.ids)
+inv4 S: always (all u : User, disj v1 v2 : u.visible | not (v1.ids & v2.ids))
+inv4 T: always (all u : User | all disj v1, v2 : u.visible | not (v1.ids & v2.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | no (v1.ids & v2.ids))
+inv4 S: always (all u : User | all disj v1, v2 : u.visible | implies no (v1.ids & v2.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | no (v1.ids & v2.ids))
+inv4 U: always (all u : User | all disj v1, v2 : (u.profile & u.visible) | no (v1.ids & v2.ids))
+inv4 O: always (all u : User | all disj v1, v2 : u.profile | no (v1.ids & v2.ids))
+inv4 U: always (all u : User | all disj v1, v2 : (u.profile & u.visible) | no (v1.ids & v2.ids))
+inv4 U: always (all u : User | all disj vis : u.visible | no (vis.ids & (u.profile - vis)))
+inv4 S: always (all u : User, vis : u.visible, v : (u.profile - vis)| no (vis.ids & v.ids)
+inv4 O: always (all u : User, vis : u.visible, v : (u.profile - vis) | no (vis.ids & v.ids))
+inv4 B: always (all u : User, vis : u.visible, v : (u.visible - vis) | no (vis.ids & v.ids))
+inv4 U: always (all u : User | all disj v1, v2 : (u.profile & u.visible) | no (v1.ids & v2.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | no (v1.ids & v2.ids))
+inv1 C: always (all u : User, v : u.visible | v in u.profile)
+inv2 S: always (all u : User, p : u.profule | p.source in u+Institution)
+inv2 C: always (all u : User, p : u.profile | p.source in u+Institution)
+inv3 U: always (all u : User, p : u.profile | some p.ids)
+inv3 O: always (all u : User, p : u.profile | no p.ids & Id)
+inv4 O: always (all u : User | all disj v1, v2 : u.profile | (v1 + v2) not in u.visible)
+inv4 U: always (all u : User | all disj v1, v2 : u.profile | v1.ids = v2.ids implies ((v1 + v2) not in u.visible))
+inv4 U: always (all u : User | all disj v1, v2 : u.profile | some (v1.ids & v2.ids) implies ((v1 + v2) not in u.visible))
+inv4 O: always (all u : User | all disj v1, v2 : u.visible | some (v1.ids + v2.ids) implies ((v1.ids + v2.ids) not in u.visible.ids))
+inv4 S: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - (v1 + v2) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids)
+inv4 S: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - (v1 + v2) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - (v1 + v2)) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 S: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - v1 - v2)) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - v1 - v2) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 B: always (all u : User, disj v1, v2 : u.visible | all v : (u.profile - v1 - v2) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : (u.profile - v1 - v2) | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 O: always (all u : User, disj v1, v2 : u.visible, v : u.profile | (no v1.ids & v2.ids) and (v1.ids + v2.ids in v.ids))
+inv4 O: always (all u : User, disj v1, v2 : u.visible, v : u.profile | (no (v1.ids & v2.ids)) and (v1.ids + v2.ids in v.ids))
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : u.profile | (no (v1.ids & v2.ids)) and (v1.ids + v2.ids not in v.ids))
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : u.profile - v1 - v2 | (no (v1.ids & v2.ids)) and v1.ids not in v.ids and v2.ids not in v.ids)
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : (u.profile - v1 - v2) | (no (v1.ids & v2.ids)) and v1.ids not in v.ids and v2.ids not in v.ids)
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : (u.profile - v1 - v2) | (no (v1.ids & v2.ids)) and (no v1.ids & v.ids) and  no v2.ids & v.ids)
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : (u.profile - v1 - v2) | (no (v1.ids & v2.ids)) and (no v1.ids & v.ids) and no v2.ids & v.ids)
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - v1 - v2) | (no v1.ids & v2.ids) and (no v1.ids & v.ids) and no v2.ids & v.ids)
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - v1 - v2) | (no v1.ids & v2.ids) and (no v1.ids & v.ids) and (no v2.ids & v.ids))
+inv4 B: always (all u : User | all disj v1, v2 : u.visible | all v : (u.profile - v1 - v2) | (no (v1.ids & v2.ids)) and (no (v1.ids & v.ids)) and (no (v2.ids & v.ids)))
+inv4 B: always (all u : User, disj v1, v2 : u.visible, v : (u.profile - v1 - v2) | (no (v1.ids & v2.ids)) and (no (v1.ids & v.ids)) and (no (v2.ids & v.ids)))
+inv4 S: always (all u : User, disj v1, v2 : u.visible | (no (v1.ids & v2.ids)) | all v : (u.profile - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids)))
+inv4 S: always (all u : User, disj v1, v2 : u.visible | (no (v1.ids & v2.ids)) | all v : (u.profile - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))
+inv4 S: always (all u : User, disj v1, v2 : u.visible | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))
+inv4 O: always (all u : User, disj v1, v2 : u.visible | (no (v1.ids & v2.ids)) and (all v : (u.profile - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 O: always (all u : User, disj v1, v2 : u.visible | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 O: always (all u : User, disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 O: always (all u : User, disj v1, v2 : u.profile | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 S: always (all u : User | all disj v1, v2 : (u.vsibile & u.profile) | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 S: always (all u : User | all disj v1, v2 : (u.visibile & u.profile) | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 O: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and (all v : (Work - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+inv4 O: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and (all v : (u.profile - v1 - v2) | (no (v1.ids & v.ids)) and (no (v2.ids & v.ids))))
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv4 O: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | no (v1.ids + v2.ids) & v.ids)
+inv4 S: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | not (v1.ids = v.ids and v2.ids = v.ids)
+inv4 U: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | not (v1.ids = v.ids and v2.ids = v.ids))
+inv4 U: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | not (v1.ids in v.ids and v2.ids in v.ids))
+inv4 T: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | not (v1.ids & v.ids or v2.ids & v.ids))
+inv4 S: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | (no v1.ids & v.ids) and (no v2.ids & v.ids)
+inv4 O: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids & v2.ids)) and all v : (u.profile - v1 - v2) | (no v1.ids & v.ids) and (no v2.ids & v.ids))
+inv4 T: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (no (v1.ids = v2.ids)) and all v : (u.profile - v1 - v2) | (no v1.ids & v.ids) and (no v2.ids & v.ids))
+inv4 B: always (all u : User | all disj v1, v2 : (u.visible & u.profile) | (not (v1.ids = v2.ids)) and all v : (u.profile - v1 - v2) | (no v1.ids & v.ids) and (no v2.ids & v.ids))
+

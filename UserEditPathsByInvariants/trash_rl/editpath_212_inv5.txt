@@ -1,0 +1,12 @@
+inv5 O: File = Trash - Protected
+inv5 T: File = Trash & ^Protected
+inv5 T: all f : File | f in Trash & f not in Protected
+inv5 O: all f : File | f in Trash and f not in Protected
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv5 O: all f : File | f in Trash <=> f not in Protected
+inv5 B: all f : File | f in Trash => f not in Protected
+inv5 C: all f : File | f not in Protected => f in Trash
+inv5 S: File not in Protected => f in Trash
+inv5 O: File not in Protected => File in Trash
+inv5 C: all f : File | f not in Protected => f in Trash
+

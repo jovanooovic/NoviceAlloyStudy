@@ -1,0 +1,38 @@
+Pairs,1
+,,"Teacher.Tutors = Person.Tutors",1
+
+Pairs,1
+,,"all p : Person | p.Tutors in Student",1
+
+Pairs,3
+,,"all s:Student , t:Teacher |  Tutors.s in Teacher",2
+,,"all t : Teacher, s : Student | Tutors:>Student in Teacher<:Tutors",1
+
+Pairs,3
+,,"all p: Person | (some p.Tutors) => (p in Teacher)",2
+,,"all p1, p2:Person | p1->p2 in Tutors implies p1 in Teacher",1
+
+Pairs,5
+,,"Teacher.Tutors in Student
+  	Tutors.Student in Teacher",4
+,,"Teacher.Tutors in Student and Student.~Tutors in Teacher",1
+
+Pairs,1
+,,"Teacher.Tutors = Person.Tutors and Tutors.Student = Tutors.Person",1
+
+Pairs,1
+,,"all t : Teacher, s : Student | Teacher<:Tutors  in Tutors:>Student",1
+
+Pairs,3
+,,"all t : Teacher, s : Student | t.Tutors in Student and Tutors.s in Teacher",1
+,,"all s: Student , t:Teacher | t.Tutors in Student and Tutors.s in Teacher",2
+
+Pairs,2
+,,"all p : Person, t : Teacher | p->t in Tutors => p in Teacher && t in Student",2
+
+Pairs,1
+,,"all p : Person, t : Teacher | t->p in Tutors => t in Teacher and p in Student",1
+
+Pairs,1
+,,"not some s:Student | all p:Person | s->p in Tutors and (not some t:Teacher | p->t in Tutors)",1
+

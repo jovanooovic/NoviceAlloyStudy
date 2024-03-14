@@ -1,0 +1,5 @@
+inv3 S: all u : User | u.follows.posts in u.sees	all a : Add | all u : User | a in u.sees
+inv3 B: all u : User | u.follows.posts in u.sees	all a : Ad | all u : User | a in u.sees
+inv3 O: all u : User | u.sees = u.follows.posts + Ad	all a : Ad | all u : User | a in u.sees
+inv3 C: all u:User | all p:Photo | p in u.sees implies some v:User | p in v.posts and v in u.follows or p in Ad
+

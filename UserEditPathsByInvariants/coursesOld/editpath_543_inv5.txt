@@ -1,0 +1,26 @@
+inv5 S: all x:Person | all y:Project | x->y in projects implies x in Students
+inv5 U: all x:Person | all y:Project | x->y in projects implies x in Student
+inv5 B: all x:Person | all y:Project | x->y in projects implies x=Student
+inv5 B: all x:Project| (Person-Professor)->x in projects
+inv5 B: all x:Project| not(Person-Student)->x in projects
+inv5 S: all x:Project| not(Person-Professor)->x in projects and Students -> x in projects
+inv5 B: all x:Project| not(Person-Professor)->x in projects and Student -> x in projects
+inv5 T: all x:Project| not(Person-Student->x in projects) and Student -> x in projects
+inv5 S: all x:Project | Students->x in project
+inv5 S: all x:Project | Student->x in project
+inv5 B: all x:Project | Student->x in projects
+inv5 B: all x:Project | Student->x in projects
+inv5 B: all x:Project | Student->x in projects
+inv5 B: all x:Project | Student->x in projects	    	    some x:Student | x->Project in projects
+inv5 B: all x:Project | Student->x in projects	    	    some x:Student | x->Project in projects
+inv5 B: some x:Project | Student->x in projects	    	    some x:Student | x->Project in projects
+inv5 S: some x:Project | Student->x in projects	    	    some x:Student | x->Project in project
+inv5 B: some x:Project | Student->x in projects	    	    some x:Student | x->Project in projects
+inv5 T: projects.Project in Student	    	    some x:Student | x->Project in projects
+inv5 O: (Person<:projects).Project in Student	    	    some x:Student | x->Project in projects
+inv5 T: (Person<:projects).Project in Student	    	    some Student in projects.Project
+inv5 T: (Person<:projects).Project in Student	    	    some Student in  projects.Project
+inv5 B: (Person<:projects).Project in Student	    	    some x:Student| x in projects.Project
+inv5 C: (Person<:projects).Project in Student	    	    all y:Project| some (Person<:projects).y
+inv5 C: (Person<:projects).Project in Student	    	    all y:Project| some (Person<:projects).y
+

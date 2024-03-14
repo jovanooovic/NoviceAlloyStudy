@@ -1,0 +1,14 @@
+inv3 S: all u : User |  in u.follows.post
+inv3 S: all u : User | u.sees not in u.follows.post
+inv3 B: all u : User | u.sees not in u.follows.posts
+inv3 T: all u : User | u.sees not in Ad not in u.follows.posts
+inv3 S: all u : User | u.sees not in Ad and not in u.follows.posts
+inv3 O: all u : User | u.sees in u.follows.posts
+inv3 O: all u : User | u.sees in u.follows.posts and u.sees in Ad
+inv3 O: all u : User | u.sees in Ad and u.sees in u.follows.posts
+inv3 B: all u : User | u.sees in Ad implies u.sees in u.follows.posts
+inv3 O: all u : User | u.sees not in Ad and u.sees in u.follows.posts
+inv3 B: all u : User | u.sees&Ad in u.follows.posts
+inv3 T: all u : User | no u.sees&Ad in u.follows.posts
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+

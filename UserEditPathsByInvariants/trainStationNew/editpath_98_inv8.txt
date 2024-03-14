@@ -1,0 +1,29 @@
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs)
+inv8 B: all e:Entry, ex:Exit | ex in Entry.^(succs)
+inv8 B: all e:Entry, ex:Exit | Exit in Entry.^(succs)
+inv8 S: all e:Entry, ex:Exit | ex in all e.^(succs)
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs) and ex!=e
+inv8 O: all disj e:Entry, ex:Exit | ex in e.^(succs)
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs) and ex in Track.^(succs)
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs) and ex in (Track.^(succs) - Exit)
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs) and ex in (Track.^(succs) - Exit) and ex!=e
+inv8 O: all e:Entry, ex:Exit | ex in e.^(succs) and ex in (Track.^(succs) - Exit) and Exit!=Entry
+inv8 E:
+inv8 O: all ex:Exit, en:Entry | ex in en.^(succs)
+inv8 B: all ex:Exit, en:Entry | ex in Entry.^(succs)
+inv8 S: all ex:Exit, | ex in Entry.^(succs)
+inv8 S: all ex:Exit, | ex in Entry
+inv8 S: all ex:Exit, | ex in Entry.^(succs)
+inv8 S: all ex:Exit, | ex in Entry.^(succs)
+inv8 B: all ex:Exit | ex in Entry.^(succs)
+inv8 B: all ex:Exit | ex in Entry
+inv8 O: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.succs
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all  t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+

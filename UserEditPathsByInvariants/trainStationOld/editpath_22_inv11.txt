@@ -1,0 +1,12 @@
+inv11 O: always ( all t:Train| some t.pos and historically t.pos in Entry)
+inv11 O: always ( all t:Train| some t.pos and historically t.pos in Entry)
+inv11 O: always ( all t:Train| some t.pos and once t.pos in Entry)
+inv11 U: always ( all t:Train| some t.pos implies  once t.pos in Entry)
+inv11 C: always ( all t:Train | some t.pos implies once some t.pos :> Entry)
+inv11 T: always ( all t:Train| some t.pos implies  once some t.pos in Entry)
+inv11 T: always ( all t:Train| some t.pos implies  once some t.pos = Entry)
+inv11 C: always ( all t:Train| some t.pos implies  once some t.pos :> Entry)
+inv11 T: always ( all t:Train | some t.pos implies once  t.pos :> Entry)
+inv11 C: always ( all t:Train| some t.pos implies  once ( some t.pos and t.pos in Entry) )
+inv11 C: always ( all t:Train | some t.pos implies once some t.pos :> Entry)
+

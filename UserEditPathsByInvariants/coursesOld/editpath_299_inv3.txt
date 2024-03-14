@@ -1,0 +1,24 @@
+inv3 B: Professor in Course.grades.Person
+inv3 B: Professor in Course.grades.Grade
+inv3 B: Professor in Course.^(grades.Grade)
+inv3 B: Professor in Course.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor.teaches in c.grades.Grade
+inv3 T: all c:Course | Person.Professor in c.grades.Grade
+inv3 T: all c:Course | no (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor in c.^(grades.Grade)
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 T: all c:Course | Person.Professor in c.grades.Grade
+inv3 B: all c:Course | some p:Professor | p in c.grades.Grade
+inv3 E:
+inv3 B: all c:Course | some p:Professor | p in c.grades.Grade
+inv3 B: all c:Course | Professor-Student in c.grades.Grade
+inv3 B: all c:Course | (Professor-Student) in c.grades.Grade
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+inv3 T: all c:Course | no (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | some p:Person | p in c.grades.Grade implies p=Professor
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+

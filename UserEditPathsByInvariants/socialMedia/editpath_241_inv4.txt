@@ -1,0 +1,12 @@
+inv4 S: all p:Photo, i:Influecer | p -> i in posts implies p in Ad
+inv4 U: all p:Photo, i:Influencer | p -> i in posts implies p in Ad
+inv4 U: all p:Photo, u:User | p -> u in posts implies p in Ad
+inv4 O: all p:Photo, u:User | u -> p in posts implies p in Ad
+inv4 S: all u:User | (some a:Ad | u -> a in posts) implies (app p:Photo | u-> p in posts imples p in Ad)
+inv4 S: all u:User | (some a:Ad | u -> a in posts) implies (all p:Photo | u-> p in posts imples p in Ad)
+inv4 C: all u:User | (some a:Ad | u -> a in posts) implies (all p:Photo | u-> p in posts implies p in Ad)
+inv4 S: all u:User | (some p:Photo | u -> p in posts) implies p in Ad
+inv4 B: all u:User | some p:Photo | u -> p in posts implies p in Ad
+inv4 C: all u:User | (some a:Ad | u -> a in posts) implies (all p:Photo | u-> p in posts implies p in Ad)
+inv4 C: all u:User | (some a:Ad | u -> a in posts) implies (all p:Photo | u-> p in posts implies p in Ad)
+

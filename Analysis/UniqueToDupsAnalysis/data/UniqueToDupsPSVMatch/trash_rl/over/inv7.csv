@@ -1,0 +1,38 @@
+"(0 = 1)",1
+"no link",1
+"no Trash",1
+"no File.link",3
+"no link -> Trash",1
+"File.link not in File",1
+"all t : Trash | no link",1
+"no f: File | f in Trash",1
+"all f: File | f !in Trash",1
+"all f:File |  no link.f",4
+"all f: File | no f.link",2
+"all f,l : univ | f->l in link",1
+"no ((link.univ + univ.link) & Trash)",1
+"no (File.link + link.File) & Trash",3
+"all f : link.File | f not in File",3
+"all f : File.link | f not in File",1
+"all o : univ | o->Trash in link",1
+"no f:File | link.f & f in Trash",1
+"all f: File | f in Trash and no f.link",1
+"all f:File |  no link.f  and f not in Trash",1
+"all t: Trash | no t.link and no link.t",1
+"File = Trash
+all f : File | no f.link",1
+"no f:File | (f in Trash) => (f.link != none)",1
+"all t: Trash| no t.link and no t.~link",1
+"all f : File.link + link.File | f not in Trash",1
+"all f,g : File | f->g in link and g not in Trash",1
+"all f:File | f.link in File implies f not in Trash",1
+"all f: File | no ((f.link & Trash) + (link.f & Trash))",1
+"all	f1, f2:File | f1->f2 in link => f1->f2 not in link",1
+"File.link not in Trash
+
+all f : File.link | f not in Trash",1
+"no Trash & Protected and all f:File | f.link in Protected",1
+"all f: File | ((some f.link) or (some link.f)) => f not in Trash",1
+"all x, y : File | x->y in link implies (x not in Trash and y not in Trash)",1
+"all l1,l2 : File | l1->l2 in link implies (l1 not in Trash and l2 not in Trash)",1
+"all	f1, f2:File | f1->f2 in link => f1 not in Trash and f2 not in Trash",1

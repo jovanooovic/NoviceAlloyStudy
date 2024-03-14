@@ -1,0 +1,5 @@
+inv6 T: all i : Influencer | some (date.Day).~(i.posts)
+inv6 T: all i : Influencer | some (date.Day).(i.posts)
+inv6 T: all i : Influencer | some ((date.Day).(i.posts))
+inv6 C: all d : Day | Influencer in (posts.date.d)
+

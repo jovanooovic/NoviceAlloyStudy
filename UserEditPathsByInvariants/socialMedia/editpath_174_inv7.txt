@@ -1,0 +1,7 @@
+inv7 U: all u:User | u.suggested in u.follows.follows - u.follows
+inv7 U: all u:User | u.suggested in u.follows.follows - u.follows - u
+inv7 U: all u:User | u.suggested in (u.follows.follows - u.follows) - u
+inv7 T: all u:User | u.suggested 0 (u.follows.follows - u.follows) - u
+inv7 C: all u:User | u.suggested = (u.follows.follows - u.follows) - u
+inv7 C: all u1,u2:User | u1->u2 in suggested iff (u1->u2 in follows.follows and u1->u2 not in follows and u1 != u2)
+

@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 B: all c : Component | lone c.parts
+inv1 C: all c : Component | some c.parts
+inv1 C: iden & (Component->Product) in parts.~parts
+inv2 U: all c : Component | c not in c.parts.parts
+inv2 S: all c : Component | c not in c^.parts
+inv2 C: all c : Component | c not in c.^parts
+inv2 T: (Component.^parts).~(Component.^parts) in iden
+inv2 B: (^parts).~(^parts) in iden
+inv2 B: (^parts).~(^parts) not in iden
+inv2 U: iden not in (^parts).~(^parts)
+inv2 C: no iden & ^parts
+inv3 C: Component.position in Robot.position
+

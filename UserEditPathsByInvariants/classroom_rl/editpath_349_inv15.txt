@@ -1,0 +1,18 @@
+inv15 O: some t:Teacher | t in (Person.^Teaches)
+inv15 T: some t:Teacher | t in ^Teaches
+inv15 O: some t:Teacher |all p:Person | t in p.^Teaches
+inv15 B: some t:Teacher |all p:Person | t in p.^Tutors
+inv15 O: some t:Teacher |all p:Person | t in p.^~Tutors
+inv15 B: all t:Teacher | all p:Person | t in p.^~Tutors
+inv15 B: all t:Teacher | all p:Person | t in p.^Tutors
+inv15 B: all p:Person | Teacher in p.^Tutors
+inv15 T: all p:Person | some (Teacher in p.^Tutors)
+inv15 S: all p:Person | (some Teacher) in p.^Tutors)
+inv15 T: all p:Person | (some Teacher) in p.^Tutors
+inv15 S: all p:Person | (some Teacher in (p.^Tutors)
+inv15 T: all p:Person | some Teacher in (p.^Tutors)
+inv15 B: all p:Person |  Teacher in (p.^Tutors)
+inv15 B: all p:Person | some t:Teacher | t in (p.^Tutors)
+inv15 B: all p:Person | some Teacher <:(p.^Tutors)
+inv15 C: all p:Person | some Teacher <:(p.^~Tutors)
+

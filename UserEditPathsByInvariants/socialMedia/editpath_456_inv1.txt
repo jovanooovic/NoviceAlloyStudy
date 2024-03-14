@@ -1,0 +1,12 @@
+inv1 S: all p: Photo | posts(x, p) implies x in User
+inv1 S: all p: Photo, u: User | one u.posts(p)
+inv1 T: all p: Photo, u: User | u.posts(p)
+inv1 S: all p: Photo, u: User | p in u.Posts
+inv1 B: all p: Photo, u: User | p in u.posts
+inv1 S: one p in Posts
+inv1 S: one photo in Posts
+inv1 S: one p: Photo in Posts
+inv1 T: all p: Photo | one p in Posts
+inv1 B: all p: Photo, u1 : User, u2: User | p in u1.posts implies p not in u2.posts
+inv1 C: all p: Photo | one posts.p
+

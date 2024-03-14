@@ -1,0 +1,4 @@
+inv3 B: all p: Ad, u: User | p in u.sees
+inv3 O: all p: Ad, u: User | p in u.sees	all p: Photo - Ad, u: User | p in u.sees =>	some u2: User | p in u2.posts and u2 in u.follows
+inv3 C: all p : Photo - Ad, u1 : User | u1->p in sees	=> some u2 : User | u2->p in posts and u1->u2 in follows
+

@@ -1,0 +1,8 @@
+inv4 U: all t : Track | t = Entry implies no succs.t
+inv4 S: all t : Track | t = Entry implies #((succs)^.t)=0
+inv4 S: all t : Track | t = Entry implies #((succs)^.t)=0
+inv4 S: all t: Track | t in Entry iff no (succs)^.t
+inv4 T: all t: Track | t in Entry iff no (succs).^t
+inv4 C: all t: Track | t in Entry iff no ^(succs).t
+inv4 C: all t: Track | t in Entry iff no ^(succs).t
+

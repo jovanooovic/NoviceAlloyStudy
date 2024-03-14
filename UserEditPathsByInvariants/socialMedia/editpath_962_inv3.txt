@@ -1,0 +1,3 @@
+inv3 U: all u1: User, u2: User, p: Photo | p in u1.sees and u2 in u2.posts and u2 not in u1.follows implies p in Ad
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p in u2.posts and u2 not in u1.follows implies p in Ad
+

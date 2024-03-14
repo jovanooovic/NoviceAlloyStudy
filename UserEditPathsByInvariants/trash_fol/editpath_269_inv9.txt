@@ -1,0 +1,9 @@
+inv9 O: all g,x:File | not isLink[g] and not isLink[x]	}		pred isLink[f:File]{	some g:File | g->f in link
+inv9 O: all g,x:File | not isLink[g] and not isLink[x]	}		pred isLink[f:File]{	some g:File | g->f in link
+inv9 S: all f:File | f->g in link implies g->h not in link
+inv9 S: all f,g:File | f->g in link implies g->h not in link
+inv9 U: all f,g:File | f->g in link implies g->f not in link
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+

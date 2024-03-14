@@ -1,0 +1,15 @@
+inv7 B: #(Teacher->Class :> Class) = #Class
+inv7 B: #(Teaches :> Class) = #Class
+inv7 S: #(Teaches :> Class) == #Teaches
+inv7 U: #(Teaches :> Class) = #Teaches
+inv7 B: all c : Class | Teacher->c in Teaches
+inv7 T: all c : Class | some Teacher->c in Teaches
+inv7 T: all c : Class | (some Teacher)->c in Teaches
+inv7 B: ~Teaches.Teaches in iden
+inv7 T: ~(Teacher.Teaches).Teaches in iden
+inv7 B: some Teacher.Teaches
+inv7 C: #(~Teaches.Teacher) >= #Class
+inv7 B: Teacher in ~Teaches.Teacher
+inv7 B: Teacher in Teaches.Class
+inv7 C: Class in ~Teaches.Teacher
+

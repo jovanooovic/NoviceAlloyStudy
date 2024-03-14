@@ -1,0 +1,12 @@
+inv9 T: one t: Teacher | t.Teaches
+inv9 T: some t: Teacher | t.Teaches
+inv9 B: some t: Teacher | one t.Teaches
+inv9 B: some t: Teacher | lone t.Teaches
+inv9 B: some t: Teacher | lone t.Teaches
+inv9 B: one t: Teacher | lone t.Teaches
+inv9 B: some t: Teacher | lone t.Teaches
+inv9 B: some t: Teacher | t not in Student and lone t.Teaches
+inv9 T: some t: Teacher | some c: Class | c.Groups in Teacher and lone t.Teaches
+inv9 B: all c: Class | some t: Teacher | t->c in Teaches
+inv9 C: all c: Class | lone t: Teacher | t->c in Teaches
+

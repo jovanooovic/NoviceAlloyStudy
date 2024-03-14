@@ -1,0 +1,4 @@
+inv7 O: all s:Person, c:Course| one p:Project| s in Student and s->c in enrolled and c->p in projects and s->p in projects
+inv7 T: all s:Person, c:Course| one p:Project| s in Student and s->c in enrolled and c->p in projects and lone s->p in projects
+inv7 U: all s:Person, c:Course| lone p:Project| s in Student and s->c in enrolled and c->p in projects and s->p in projects
+

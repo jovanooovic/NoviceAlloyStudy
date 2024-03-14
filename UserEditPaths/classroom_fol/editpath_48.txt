@@ -1,0 +1,60 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person | p in Student
+inv2 S: not some t:Teacher
+inv2 C: not some p:Person | p in Teacher
+inv3 C: not some p:Person | p in Teacher and p in Student
+inv4 C: not some p:Person | not p in Teacher and not p in Student
+inv5 S: all p:Person | p in Teacher some c:Class | p->c in Teaches
+inv5 B: all p:Person | p in Teacher and some c:Class | p->c in Teaches
+inv5 B: all p:Teacher | some c:Class | p->c in Teaches
+inv5 C: some p:Teacher | some c:Class | p->c in Teaches
+inv5 C: some p:Teacher | some c:Class | p->c in Teaches
+inv6 C: all p:Teacher | some c:Class | p->c in Teaches
+inv7 C: all c:Class | some p:Teacher | p->c in Teaches
+inv8 S: all t1,t2:Teacher, all c:Class | t1->c in Teaches and t2->c in Teaches => t1=t2
+inv8 S: all t1,t2:Teacher, all c:Class | (t1->c in Teaches and t2->c in Teaches) => t1=t2
+inv8 B: all t1,t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) => t1=t2
+inv8 C: all t:Teacher, c1,c2:Class | (t->c1 in Teaches and t->c2 in Teaches) => c1=c2
+inv9 C: all t1,t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) => t1=t2
+inv10 T: all c:Class, s:Student | some g:Group | c->s->g
+inv10 C: all c:Class, s:Student | some g:Group | c->s->g in Groups
+inv11 B: all c:Class | some s:Student, g:Group | c->s->g in Groups => 	  		some t:Teacher | t->c in Teaches
+inv11 B: all c:Class | some t:Teacher | t->c in Teaches =>	  		some s:Student, g:Group | c->s->g in Groups
+inv12 O: all t:Teacher | some g:Group, s:Student, c:Class | c->s->g in Groups and t->c in Teaches
+inv13 C: all p1,p2:Person | p1->p2 in Tutors => p1 in Teacher and p2 in Student
+inv14 B: all s:Student | some c:Class, g:Group | c->s->g in Groups => some t:Teacher | t->s in Teaches
+inv14 B: all s:Student | some c:Class, g:Group, t:Teacher | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 S: all s:Studen, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Student, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => p3 in Teacher
+inv11 U: all c:Class | (some s:Student, g:Group | c->s->g in Groups) => 	  		some t:Teacher | t->c in Teaches
+inv11 B: all c:Class | some s:Person, g:Group | c->s->g in Groups => 	  		some t:Teacher | t->c in Teaches
+inv11 C: all c:Class | (some s:Person, g:Group | c->s->g in Groups) => 	  		some t:Teacher | t->c in Teaches
+inv12 C: all t:Teacher | some g:Group, s:Person, c:Class | c->s->g in Groups and t->c in Teaches
+inv14 B: all s:Person, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Student, t:Teacher | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s:Person, t:Person | some c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 C: all s:Person, t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 C: all s,t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv15 S: some t:Teacher in Person.*Tutors
+inv14 C: all s,t:Person, c:Class, g:Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv15 U: Teacher in Person.*Tutors
+inv15 B: some t:Teacher| t in Person.*Tutors
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => p3 in Teacher
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => (p3 in Teacher or p2 in Teacher)
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => (p1 in Teacher or p3 in Teacher or p2 in Teacher)
+inv15 B: all p1,p2,p3 : Person | p1->p2 in Tutors and p2->p3 in Tutors => (p3 in Teacher or p2 in Teacher)
+inv15 B: some t:Teacher | t in Person.Tutors
+inv15 B: some t:Teacher | t in Person.^Tutors
+inv15 S: all p:Person | some t :p.*Tutors
+inv15 S: all p:Person | some t :p.Tutors
+inv15 B: all p:Person | some t :Teacher | t in p.*Tutors
+inv15 B: all p:Person | some t :Teacher | t in p.^Tutors
+inv15 B: all p:Person | some t :Teacher | t in p.^Tutors
+inv15 B: all p:Person | some t :Teacher-p | t in p.^Tutors
+inv15 B: all p:Person | some t :Teacher | t in p.^Tutors
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv15 C: all p:Person | some t :Teacher | t in ^Tutors.p
+inv15 C: all p:Person | some t :Teacher | t in ^Tutors.p
+

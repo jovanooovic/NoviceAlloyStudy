@@ -1,0 +1,8 @@
+inv3 O: all w1,w2:Work | (w1 in User.profile and w2 in User.profile) implies w1.ids != w2.ids
+inv3 O: all w1,w2:Work | (w1 in User.profile and w2 in User.profile) implies w1.ids not in w2.ids
+inv3 O: all w1,w2:Work | (w1 in Source.profile and w2 in Source.profile) implies w1.ids not in w2.ids
+inv3 S: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id in w1.ids) implies id not in w2.ids
+inv3 S: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id in w1.ids) implies id1 not in w2.ids
+inv3 O: all id1:Id, w1,w2:Work | (w1 in Source.profile and w2 in Source.profile and id1 in w1.ids) implies id1 not in w2.ids
+inv3 B: all id1:Id, w1,w2:Work | (w1.source != w2.source and id1 in w1.ids) implies id1 not in w2.ids
+

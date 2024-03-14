@@ -1,0 +1,17 @@
+inv14 E:
+inv14 E:
+inv14 E:
+inv14 S: all ps : Person | some c : Class, some g : Group | some t : teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 S: all ps : Person | some c : Class, some g : Group | some t : Teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 S: all ps : Person | some c : Class, some g : Group | some t : Teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 B: all ps : Person | some c : Class, g : Group | some t : Teacher | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 B: all ps : Person, st : Student | some c : Class, g : Group | some t : Teacher | c->ps->g in Groups and t->c in Teaches implies t->st in Tutors
+inv14 B: all ps : Person, st : Student | some c : Class, g : Group | c->ps->g in Groups implies some t : Teacher | t->c in Teaches and t->st in Tutors
+inv14 T: all ps,t : Person | some c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps
+inv14 T: all ps,t : Person | some c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps
+inv14 B: all ps,t : Person | some c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 B: all ps : Person, t : Teacher | some c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 U: all ps : Person, t : Teacher | all c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 C: all ps : Person, t :  Person | all c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+inv14 C: all ps : Person, t :  Person | all c : Class, g : Group | c->ps->g in Groups and t->c in Teaches implies t->ps in Tutors
+

@@ -1,0 +1,10 @@
+-- equiv pair start,4
+all c:Course,p:c.projects,disj s1,s2:Person<:projects.p | some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+-- div,1
+all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+-- div,1
+all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and (some g:Grade | c->s2->g in grades) implies all g:Grade | c->s1->g in grades implies c->s2->g in grades.(iden+next+prev)
+-- div,1
+all c:Course,p:Project,s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and (some g:Grade | c->s2->g in grades) implies all g:Grade | c->s1->g in grades implies c->s2->g in grades.(iden+next+prev) or s1=s2
+-- div,1
+-- equiv pair end

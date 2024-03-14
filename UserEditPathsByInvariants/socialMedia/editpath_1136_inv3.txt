@@ -1,0 +1,5 @@
+inv3 S: all u1 : User | u2 : User | p : u2.posts | u1 -> p in sees implies u2 in u1.follows
+inv3 B: all u1 : User | all u2 : User | all p : u2.posts | u1 -> p in sees implies u2 in u1.follows
+inv3 T: all u1 : User | all u2 : User | all p : u2.posts and p not in Ad | u1 -> p in sees implies u2 in u1.follows
+inv3 B: all u1 : User | all u2 : User | all p : u2.posts | p not in Ad and u1 -> p in sees implies u2 in u1.follows
+

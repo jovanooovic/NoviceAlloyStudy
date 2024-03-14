@@ -1,0 +1,5 @@
+inv11 U: all c : Class | #c.Groups.Teacher > 0 => (some p : Person, g : Group | c->p->g in Groups)
+inv11 U: all c : Class | #c.Groups.Teacher > 0 => (some p : Person, g : Group | c->p->g in Groups)
+inv11 T: all c : Class | #c.Teacher.Groups > 0 => (some p : Person, g : Group | c->p->g in Groups)
+inv11 C: all c : Class | no (Teacher <: Teaches).c => no c.Groups
+

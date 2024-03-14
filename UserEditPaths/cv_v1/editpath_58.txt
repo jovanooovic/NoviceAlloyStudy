@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 C: all u:User | u.visible in u.profile
+inv1 U: User.visible in User.profile
+inv1 O: User.visible in User.profile & User
+inv2 O: all u:User , w:Work | (w in u.profile) implies (w.source = u || w.source = Institution)
+inv2 O: all u:User , w:Work | (w in u.profile) implies (w.source = u )
+inv2 O: all w:Work | (w in User.profile) implies (w.source = User )
+inv2 O: all w:Work | (w in User.profile) implies (User = w.source)
+inv2 O: all w:Work | (w in User.profile) && (User = w.source)
+inv4 B: all u:User | lone (u.profile & u.visible)
+inv4 U: all u:User, w:Work | lone (u.visible & w)
+inv4 U: all u:User, w:Work | w in u.profile implies lone (u.visible & w)
+inv4 U: all u:User, w:Work | w in u.profile implies lone (u.visible & w)
+inv3 O: all w:Work, w1:Work | no (w.ids & w1.ids)
+inv3 S: all w:Work, w1:Work | w in User.profile && w1 in User.profile -> no (w.ids & w1.ids)
+inv3 O: all w:Work, w1:Work | w in User.profile && w1 in User.profile implies no (w.ids & w1.ids)
+inv3 O: all w:Work, w1:Work | (w in User.profile && w1 in User.profile) implies no (w.ids & w1.ids)
+

@@ -1,0 +1,6 @@
+inv5 E:
+inv5 B: all p : Project | all s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv5 B: all p : Project | all s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student	  	all p : Project | some s : Person | s->p in projects
+inv5 B: all p : Project | all s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student	  	 and all p : Project | some s : Person | s->p in projects
+inv5 C: (all p1 : Project | some pr1 : Student | pr1->p1 in projects) and	     (all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student)
+

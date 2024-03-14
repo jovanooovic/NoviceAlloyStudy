@@ -1,0 +1,12 @@
+inv2 C: all u:User | u->u not in follows
+inv2 O: all u:User | u->u not in follows	all u:User | u->u not in suggested
+inv2 O: all u:User | u->u not in follows and u->u not in suggested
+inv2 O: all u:User | u->u not in follows and u->u not in suggested
+inv2 C: all u:User | u->u not in follows
+inv2 C: all u:User | u not in u.follows
+inv2 T: all u:User | u & u.follows not in iden
+inv2 T: all u:User | u & u.follows not in iden
+inv2 T: all u:User | u & u.follows not in iden
+inv2 T: all u:User | u & u.follows not = iden
+inv2 C: no follows & iden
+

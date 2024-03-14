@@ -1,0 +1,9 @@
+inv8 U: all c : Component | c in Dangerous => no (workstation.c.workers & Human)
+inv8 U: all c : Component | c in Dangerous => no ((workstation.c).workers & Human)
+inv8 T: all c : Component | c in Dangerous => no Human in workstation.c.workers
+inv8 U: all c : Component | c in Dangerous => all ws : workstation.c | no (ws.workers & Human)
+inv8 O: all c : Component | c in Dangerous => one ws : workstation.c | no (ws.workers & Human)
+inv8 U: all c : Component, ws : workstation.c | c in Dangerous => no (Human & ws.workers)
+inv8 C: all c : Component, ws : c.workstation | c in Dangerous => no (Human & ws.workers)
+inv8 C: all c : Component | c in Dangerous => no (c.workstation.workers & Human)
+

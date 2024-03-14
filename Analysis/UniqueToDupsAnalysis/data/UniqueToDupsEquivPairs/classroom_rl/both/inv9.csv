@@ -1,0 +1,93 @@
+Pairs,6
+,,"Teacher.Teaches = Class",1
+,,"all c : Class | one (c & Teacher.Teaches)",1
+,,"all c:Class | one Teacher.Teaches:>c",2
+,,"all c : Class | some Teaches.c & Teacher",1
+,,"all c: Class | some t: Teacher | t->c in Teaches",1
+
+Pairs,8
+,,"~Teaches.Teaches in iden",6
+,,"~(Teaches:>Class).(Teaches:>Class) in iden",2
+
+Pairs,4
+,,"all c:Class |  some Teaches.c",4
+
+Pairs,5
+,,"no ( Teaches.Class - Teacher)",1
+,,"(Teaches . ~Teaches) in (Teacher -> Teacher)",2
+,,"all c: Class | Teaches.c in Teacher",2
+
+Pairs,7
+,,"all t:Teacher | lone t.Teaches",3
+,,"~(Teacher <: Teaches).(Teacher <: Teaches) in iden",1
+,,"all p : Person | p in Teacher implies lone p.Teaches",1
+,,"all c : Class, t : Teacher | lone ((t.Teaches)->c)",1
+,,"all t:Teacher | all c1, c2:Class | t->c1 in Teaches and t->c2 in Teaches implies c1 = c2",1
+
+Pairs,2
+,,"all t : Teacher | one t.Teaches",2
+
+Pairs,2
+,,"all c: Class | #(Teaches.c) <= 2",2
+
+Pairs,2
+,,"all c : Class | not lone Teaches.c",1
+,,"all c : Class | not (lone Person -> c & Teaches)",1
+
+Pairs,2
+,,"lone t:Teacher | t.Teaches = Class",1
+,,"lone t:Teacher | all c:Class | c in t.Teaches",1
+
+Pairs,6
+,,"all c:Class | lone Teacher.Teaches",3
+,,"all t : Teacher | lone Teacher.Teaches",1
+,,"all c : Class | lone (Teacher.Teaches->c)",2
+
+Pairs,5
+,,"all t : Teacher | Class in t.Teaches",1
+,,"all c:Class | Teacher in Teaches.c",2
+,,"all c:Class,t:Teacher | one t.Teaches:>c",1
+,,"all c: Class | all t: Teacher | t->c in Teaches",1
+
+Pairs,1
+,,"all t : Teacher | one Groups.Group.t",1
+
+Pairs,1
+,,"~((Groups.Group):>Teacher) in Teaches",1
+
+Pairs,1
+,,"all c : Class | #Teacher.(c.Groups) = 1",1
+
+Pairs,2
+,,"all c : Class | #Teacher.(c.Groups) < 1",2
+
+Pairs,2
+,,"all c : Class | #Teacher.(c.Groups) <= 1",2
+
+Pairs,4
+,,"all c : Class | lone Teaches.c - Teacher",4
+
+Pairs,1
+,,"all c : Class | #Teacher->(c.Groups) < 1",1
+
+Pairs,1
+,,"all c : Class | Teacher->c not in Teaches",1
+
+Pairs,1
+,,"all c : Class |  no (Student & Teaches.c)",1
+
+Pairs,1
+,,"all c : Class | some (Teacher.Teaches->c)",1
+
+Pairs,1
+,,"all t : Teacher | Class in Teacher.Teaches",1
+
+Pairs,3
+,,"all c : Class | not lone Teacher -> c & Teaches",3
+
+Pairs,1
+,,"all t : Teacher | one ( t & Class.Groups.Group)",1
+
+Pairs,1
+,,"all c:Class,p:Teacher | lone Teaches.c implies lone p.Teaches",1
+

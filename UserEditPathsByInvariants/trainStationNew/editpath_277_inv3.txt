@@ -1,0 +1,12 @@
+inv3 U: all ex : Exit, t : Track | ex not in succs.t
+inv3 B: all ex : Exit, t : Track | ex not in t.succs
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 C: all t:Track | t not in Exit <=> some t.^(succs)
+inv3 B: all t:Track | t in Exit <=> t not in t.succs
+inv3 B: all t:Track | t in Exit <=> t not in succs.t
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+inv3 C: all t:Track | t in Exit <=> no t.succs
+inv3 B: all t:Track | t in Exit <=> no succs.t
+inv3 S: all t:Track | t in Exit <=> no t.sucss
+inv3 C: all t:Track | t in Exit <=> no t.succs
+

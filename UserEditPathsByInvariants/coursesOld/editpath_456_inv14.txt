@@ -1,0 +1,19 @@
+inv14 B: all s1, s2 : Student | lone p : Project | s1 in projects.p and s2 in projects.p
+inv14 B: all s1, s2 : Student | no p : Project | s1 in projects.p and s2 in projects.p
+inv14 B: all s1, s2 : Student | lone p : Project | s1 in projects.p and s2 in projects.p
+inv14 T: all p1, p2 : Project, s1, s2 : projects.p1 | s1 != s2 and p1 != p2 implies s1->p2 not in projects or s2->p2 not in projects
+inv14 T: all p1, p2 : Project, s1, s2 : projects.p1 | s1 != s2 and p1 != p2 implies s1->p2 not in Person<:projects or s2->p2 not in Person<:projects
+inv14 C: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies s1->p2 not in Person<:projects or s2->p2 not in Person<:projects
+inv14 C: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies p2 not in s1.projects or p2 not in s2.projects
+inv14 O: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies p2 not in s1.projects+s2.projects
+inv14 O: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies p2 not in s1.projects+s2.projects
+inv14 C: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies p2 not in s1.projects or p2 not in s2.projects
+inv14 C: all p1, p2 : Project, s1, s2 : Person<:projects.p1 | s1 != s2 and p1 != p2 implies p2 not in s1.projects&s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone p : Project | s1 in projects.p and s2 in projects.p
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone p : Project | s1 in projects.p and s2 in projects.p
+inv14 T: all s1, s2 : Student | s1 != s2 implies lone p : Project | p in s1.projects and p s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone p : Project | p in s1.projects and p in s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone p : Project | p in s1.projects&s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone s1.projects&s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 implies lone s1.projects & s2.projects
+

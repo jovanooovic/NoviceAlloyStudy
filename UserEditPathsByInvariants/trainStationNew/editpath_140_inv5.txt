@@ -1,0 +1,16 @@
+inv5 B: all t: Track| some succs.t <=> t in Junction
+inv5 S: all t1,t2,t3: Track| t1 in t2.succs and t1 in t3.succs <=> t in Junction
+inv5 S: all t1,t2,t3: Track| (t1 in t2.succs and t1 in t3.succs) <=> t in Junction
+inv5 B: all t1,t2,t3: Track| (t1 in t2.succs and t1 in t3.succs) <=> t1 in Junction
+inv5 U: all t: Track| one succs.t => t not in Junction
+inv5 U: all t: Track| lone succs.t => t not in Junction
+inv5 B: all t: Track| some succs.t => t  in Junction
+inv5 U: all t: Track| #succs.t=2 => t in Junction
+inv5 U: all t: Track| #succs.t=2 => t in Junction
+inv5 U: all t: Track| #succs.t=2 => t in Junction
+inv5 B: all t: Track| some succs.t <=> t in Junction
+inv5 B: all t: Track| some succs.t and some t.succs <=> t in Junction
+inv5 B: all t: Track| #succs.t!=1 and some t.succs <=> t in Junction
+inv5 B: all t: Track| #succs.t!=1 and #succs.t!=0 and some t.succs <=> t in Junction
+inv5 C: all t: Track| #succs.t!=1 and #succs.t!=0 <=> t in Junction
+

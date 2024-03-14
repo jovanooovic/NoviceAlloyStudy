@@ -1,0 +1,17 @@
+inv6 T: all s:Student | s.enrolled
+inv6 B: all s:Student | lone s.enrolled
+inv6 T: all s:Student, p:Project | s->p in projects implies s.enrolled
+inv6 T: all s:Student, p:Project | s->p in projects implies enrolled.s
+inv6 T: all s:Student, p:Project | s.projects implies enrolled.s
+inv6 T: all s:Student, p:Project | s->p in projects implies enrolled.s
+inv6 T: all s:Student, p:Project | s->p in projects implies s.enrolled
+inv6 T: all s:Student, p:Project | s.projects implies s.enrolled
+inv6 T: all s:Student, p:Project | projects.p implies s.enrolled
+inv6 T: all s:Student, p:Project, c:Course | p in s.projects implies s.enrolled
+inv6 T: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies s.enrolled
+inv6 T: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies s.enrolled.c
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies s in c
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies s in c.enrolled
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies s in s.enrolled
+inv6 B: all s:Student, p:Project, c:Course | p in s.projects and p in c.projects implies c in s.enrolled
+

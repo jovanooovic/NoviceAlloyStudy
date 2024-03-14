@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv1 C: all u:User, v : u.visible | v in u.profile
+inv2 S: all u:User, p:u.profile | p.source in (u+Institution)|
+inv2 O: all u:User, p:u.profile | p.source in u
+inv2 C: all u:User, p:u.profile | p.source in u + Institution
+inv3 U: all u:User, p:u.profile | some p.ids
+inv4 T: all u:User, p: u.profile | lone p in u.visible
+inv4 T: all u:User, p: u.profile | lone p in u.visible
+inv4 B: all u:User, p: u.profile | p in u.visible
+

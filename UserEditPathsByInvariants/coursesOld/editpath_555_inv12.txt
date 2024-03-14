@@ -1,0 +1,21 @@
+inv12 U: all c : Course | c.grades.Person->Person in iden
+inv12 U: all c : Course | c.grades.Person->Person in iden
+inv12 B: all c : Course | c.grades.Grade->Person in iden
+inv12 T: all c : Course | c.grades.Grade in iden
+inv12 B: all c : Course | c.grades.Grade in Student.iden
+inv12 T: all c : Course | c.grades.Grade->Student in Student.iden
+inv12 B: all c : Course | c.grades.Grade->Person in iden
+inv12 U: all c : Course | all s : Student| lone c.grades.Grade&s
+inv12 B: all c : Course | all s : Student| one c.grades.Grade & s
+inv12 B: all c : Course | all s : Person | one c.grades.Grade & s
+inv12 U: all c : Course | all s : Person | lone c.grades.Grade & s
+inv12 U: all c : Course | all s : Student | lone c.grades.Grade & s
+inv12 U: all c : Course | all s : Student | lone (c.grades.Grade)&s
+inv12 B: all c : Course | all s : Student | one (c.grades.Grade)&s
+inv12 B: all c : Course | all s : Student | one (c.grades)&s->Grade		all c : Course | all s : Student | one (c.grades.Grade)&s
+inv12 U: all c : Course | all s : Student | lone (c.grades)&(s->Grade)
+inv12 U: all c : Course | all s : Student | lone (c.grades.Grade)&s
+inv12 U: all c : Course | all s : Student | lone (c.grades)&(s->Grade)
+inv12 U: all c : Course | all s : Student | lone (c.grades)&(s->Grade)
+inv12 U: all c : Course | all s : Student | lone (c.grades)&(s->Grade)
+

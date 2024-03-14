@@ -1,0 +1,32 @@
+"no Material.parts",1
+"parts.Product in Component",1
+"parts in Component -> Product",5
+"all c:Component | some c.parts",2
+"all p:Product | no p.parts => p in Material",2
+"all c:Component, m:Material | some c.parts",1
+"all p:Product | some p.parts => p in Component",1
+"all p,z: Product | p->z in parts implies p in Component",2
+"all p1, p2 : Product | p1 -> p2 in parts => p1 in Component",2
+"all c : Component | some p : Product | p in c.parts",1
+"all c : Component | some p:Product | c->p in parts",3
+"all a:Component | some b:Product | a->b in parts",1
+"all c:Component, m:Material | some c.parts and no m.parts",11
+"all c:Component, m:Material | some c.parts and #m.parts=0",1
+"all c: Component, m: Material | c.parts != none and m.parts = none",2
+"all c:Component, m:Material | (c.parts not in none) and (m.parts in none)",1
+"all c : Component | some c.parts and all m : Material | no m.parts",3
+"all c : Component | some c.parts
+all m : Material | no (m.parts)-m",1
+"all c : Component | all m : Material | c.parts != none and m.parts = none",1
+"all c:Component | (c.parts != none) and (all m: Material | m.parts = none)",1
+"all p: Product | p in Component implies some p.parts and p in Material implies no p.parts",1
+"all c: Component, m: Material | some p: Product | p in c.parts and p not in m.parts",1
+"all c:Component, m:Material | some p:Product | c->p in parts and m->p not in parts",1
+"all product: Product | (product != Material implies some product.parts) or  (product = Material implies no product.parts)",1
+"all product: Product | (product = Component implies not no product.parts) and  (product = Material implies no product.parts)",1
+"all c:Component | some p:Product | (p in c.parts) and (all m: Material, p: Product | p not in m.parts)",1
+"all c:Component | some p:Product | (p in c.parts) and (all m: Material | no p: Product | p in m.parts)",1
+"all c : Component | some p : Product | c->p in parts
+all m : Material| some p : Product | m->p not in parts",1
+"all a:Component | some b:Product | a->b in parts
+all a:Product,b:Workstation | a->b in parts implies a in Component",1

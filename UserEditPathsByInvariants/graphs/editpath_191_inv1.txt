@@ -1,0 +1,5 @@
+inv1 O: all n : Node | some ad : n.adj | n in ad.adj and ad.adj in n
+inv1 O: all n : Node | all ad : n.adj | n in ad.adj and ad.adj in n
+inv1 S: all n : Node | all ad : n.adj | n in ad.adj and ad.adj in n and n in and ad.adj in ad.adj
+inv1 B: all n : Node | all ad : n.adj | #(n->ad.adj + ad.adj->n)=2
+

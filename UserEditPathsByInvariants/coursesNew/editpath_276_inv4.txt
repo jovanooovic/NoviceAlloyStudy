@@ -1,0 +1,14 @@
+inv4 B: all x,y : Course | x.projects != y.projects
+inv4 T: all p : Project | #(p.Course)=1
+inv4 T: all p : Project | #(projects.p)=1
+inv4 T: all p : Project | #(projects.p)=1
+inv4 T: all p : Project | #(projects.p)<=1
+inv4 T: all p : Project | all x:Course | #(Course.projects.p)=1
+inv4 T: all p : Project | all x : Course | #(x.projects.p)=1
+inv4 T: all p : Project | #(Course.projects.p)=1
+inv4 U: all p : Project | all x,y : Course | (p in x.projects and x!=y) implies p not in y.projects
+inv4 S: all p : Project	  all x,y : Course | (#(x.projects)>0 and x!=y) implies #(y.projects)=0
+inv4 B: all x,y : Course | (#(x.projects)>0 and x!=y) implies #(y.projects)=0
+inv4 B: one c : Course | #(c.projects)>0
+inv4 C: all x: Project |one c : Course | x in c.projects
+

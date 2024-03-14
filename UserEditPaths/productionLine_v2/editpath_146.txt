@@ -1,0 +1,63 @@
+NA H: THEME UPDATE
+inv5 T: all wb : Workstation | Robot in wb.workers implies no Human in wb.workers
+inv5 T: all wb : Workstation | (Robot in wb.workers) implies (no Human in wb.workers)
+inv1 E: 
+inv5 B: all wb : Workstation | (Robot in wb.workers) implies (Human not in wb.workers)
+inv5 B: all wb : Workstation | (Robot in wb.workers) implies (Human not in wb.workers)	all wb : Workstation | (Human in wb.workers) implies (Robot not in wb.workers)
+inv5 B: all wb : Workstation | (Robot in wb.workers) implies (Human not in wb.workers)
+inv5 B: all wb : Workstation | one r : Robot | one h : Human  | (r in wb.workers) implies (h not in wb.workers)	all wb : Workstation | one r : Robot | one h : Human  | (h in wb.workers) implies (r not in wb.workers)
+inv5 B: all wb : Workstation | some r : Robot | some h : Human  | (r in wb.workers) implies (h not in wb.workers)	all wb : Workstation | some r : Robot | some h : Human  | (h in wb.workers) implies (r not in wb.workers)
+inv5 S: all wb : Workstation | !(Human & Robot & wb.workers)
+inv5 S: all wb : Workstation | no (Human & Robot & wb.workers)
+inv5 S: all wb : Workstation | no (workers.Human & workers.Robot)
+inv5 S: all wb : Workstation | no (workers.Human & Robot)
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv6 C: all c : Component | no (c & (c.^parts))
+inv6 C: all c : Component | no (c & c.^parts)
+inv7 O: all c : Component | no (c.parts & Dangerous)
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv5 S: all wb : Workstation | some h : Human
+inv7 C: all c : Component | some (c.parts & Dangerous) implies c in Dangerous
+inv8 S: all c : Component | c in Dangerous implies c in
+inv8 S: all c : Component | c in Dangerous implies c in
+inv8 B: all c : Component | all wb : Workstation | one h : Human | (c in Dangerous and h in wb.workers) implies wb not in c.workstation
+inv5 S: all wb : Workstation | sb.workers in Human or wb.workers in Robot
+inv8 S: all c : Component | c in dangerous implies no ( c.worstaion.workers & Human )
+inv8 S: all c : Component | c in Dangerous implies no ( c.worstaion.workers & Human )
+inv8 S: all c : Component | c in Dangerous implies no ( c.workstaion.workers & Human )
+inv8 S: all c : Component | c in Dangerous implies no ( c.workstaion.workers & Human )
+inv8 C: all c : Component | c in Dangerous implies no ( c.workstation.workers & Human )
+inv8 B: all c : Component | c in Dangerous implies ( c.workstation.workers in Human )
+inv8 B: all c : Component | c in Dangerous implies ( c.workstation.workers in Human )
+inv8 S: all c : Component | c in Dangerous implies c.workstation.workers not in Human )
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv3 U: all c : Component | one wb : Workstation | c.workstation in wb
+inv3 C: all c : Component | one wb : Workstation | one (c.workstation & wb)
+inv3 C: all c : Component | one (c.workstation & Workstation)
+inv1 S: all w : Workers | w in Human or w in Robot
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all wb : Worstation | (wb.workers & Worker)
+inv2 T: all wb : Workstation | (wb.workers & Worker)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and (w & workers)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and one (w & workers)
+inv2 B: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and one (w & wb.workers)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 T: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (workers & w)
+inv2 S: all wb : Workstation | w : Worker | some (wb.workers & Worker) and wb->w in workers
+inv2 S: all wb : Workstation | w : Worker | some (wb.workers & Worker) and wb->w
+inv2 B: all wb : Workstation | all w : Worker | some (wb.workers & Worker) and wb->w in workers
+inv2 U: all wb : Workstation | all w : Worker | some (wb.workers & Worker)
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | workers.w
+inv2 T: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | workers.w
+inv2 U: all wb : Workstation | all w : Worker | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 S: all wb : Workstationn | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 B: all wb : Workstation | one (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)
+inv2 U: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | (w in Workstation.workers)
+inv2 O: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | (w in Workstation.workers)	all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)
+inv2 O: all wb : Workstation | some (wb.workers & Worker)	all w : Worker | one (w & Workstation.workers)	all wb1,wb2 : Workstation | all w : Worker | (w in wb1.workers) implies (w not in wb2.workers)
+

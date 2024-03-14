@@ -1,0 +1,7 @@
+inv11 B: all s: Student | s.enrolled = grades.s.Grade
+inv11 T: all s: Student | s.enrolled = grades.s
+inv11 U: all s: Student | grades.s.Grade in s.enrolled
+inv11 T: all s: Student | Grade.s.~grades in s.enrolled
+inv11 T: all s: Student | grades.s in s.enrolled
+inv11 U: all s: Student | grades.Grade.s in s.enrolled
+

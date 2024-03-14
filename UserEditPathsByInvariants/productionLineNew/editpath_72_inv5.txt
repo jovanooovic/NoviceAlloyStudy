@@ -1,0 +1,5 @@
+inv5 U: all w:Workstation | (Human.workers + Robot.workers) in w
+inv5 T: all w:Workstation | Human in w.workers implies no Robot in w.workers
+inv5 B: all w:Workstation | Human in w.workers implies Robot not in w.workers
+inv5 C: all w:Workstation | no (w.workers & Robot) or no (w.workers & Human)
+

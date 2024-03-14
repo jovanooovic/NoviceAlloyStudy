@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: some Entry and some Exit
+inv2 B: lone signals.Signal
+inv2 B: one signals.Signal
+inv2 S: all s: Signal | s in one Track.signals
+inv2 U: all s: Signal | s in (one Track.signals)
+inv2 U: all s: Signal | s in (Track.signals)
+inv2 C: all s: Signal | one signals.s
+inv3 U: all e: Exit | no e.succs
+inv3 B: all e: Exit | no succs.e
+inv3 U: no Exit.succs
+inv3 S: Exit = no Track.succs
+inv3 T: Exit = none Track.succs
+inv3 B: all t: Track | t in Exit implies no succs.Track
+inv3 B: all t: Track | t in Exit implies (no succs.Track)
+inv3 T: no succs.Track = Exit
+inv3 U: Exit.succs = none
+inv3 S: Exit = no Track.succs
+inv3 S: Exit = no (Track.succs)
+inv3 B: Exit not in (Track.succs)
+inv2 C: all s: Signal | one signals.s
+

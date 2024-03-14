@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv6 U: all f:File | always (f in Trash implies (after f in Trash))
+inv6 E: 
+inv6 E: 
+inv16 S: all f : File | f in Protected since f in Protected)
+inv6 E: 
+inv16 S: all f : File | always(f in Protected (historically f in Protected)
+inv16 S: all f : File | always(f in Protected (historically f in Protected))
+inv6 E: 
+inv16 U: all f : File | f in Protected implies (historically f in Protected)
+inv16 S: all f : File | f in Protected since f in Protected)
+inv16 B: all f : File | f in Protected since f in Protected
+inv10 U: all f:File | f in Protected  implies always f in Protected
+inv10 U: all f:File | f in Protected  implies (always f in Protected)
+inv10 B: all f:File | always f in Protected
+inv16 B: all f:File | once f in Protected implies always after f in Protected
+inv16 B: all f:File | once f in Protected implies always f in Protected
+inv16 B: all f:File |  f in Protected implies always after f in Protected
+inv16 B: all f:Protected |  always f in Protected
+inv16 B: all f:Protected |  always after f in Protected
+inv16 B: all f:Protected |  always (after f in Protected)
+inv16 S: all f:file | f in Protected implies (historically f in Protected)
+inv16 U: all f:File | f in Protected implies (historically f in Protected)
+inv16 U: all f:File | historically f in Protected implies f in Protected
+inv16 B: all f:File | historically f in Protected implies after f in Protected
+inv16 B: all f:File | historically f in Protected implies always after f in Protected
+inv5 T: some f:File | eventually File-f
+inv5 O: some f:File | eventually f not in File
+inv4 C: eventually (some f:File | f in Trash)
+inv5 O: eventually (some f:File | f not in File)
+inv5 B: eventually (all f:File | f not in File)
+inv6 U: all f:File | f in Trash implies always f in Trash
+inv6 U: all f:File | f in Trash implies (always f in Trash)
+inv6 U: all f:File | f in Trash implies (always after f in Trash)
+inv6 S: always (f:File&Trash | f in Trash)
+inv6 U: always (all f:File&Trash | f in Trash)
+inv6 U: always (all f:Trash | f in Trash)
+inv8 T: eventually (all l:link | link in Trash)
+inv8 B: eventually (all f:File | f.link in Trash)
+inv8 B: eventually (all f:File | link.f in Trash)
+inv8 T: eventually (all f1,f2:File | f1->f2 in link implies f1->f2 in Trash)
+inv8 B: eventually (all f1,f2:File | f1->f2 in link implies f1 in Trash)
+inv8 S: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+inv8 U: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash
+inv9 C: always( all f:File | f in Protected implies f not in Trash)
+inv5 O: some f:File | f not in File
+inv5 O: eventually(some f:File | f not in File)
+inv6 T: all f:File | f in Trash implies (always Trash[f])
+inv6 U: all f:File | f in Trash implies (always f in Trash)
+

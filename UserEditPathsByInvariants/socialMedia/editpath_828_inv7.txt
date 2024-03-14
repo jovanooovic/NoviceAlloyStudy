@@ -1,0 +1,10 @@
+inv7 E:
+inv7 S: all u1, u2, u3 : Users | u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows => u1 -> u3 in sees
+inv7 S: all u1, u2, u3 : Users | u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows => u1 -> u3 in suggested
+inv7 T: all u1, u2, u3 : User | u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows => u1 -> u3 in suggested
+inv7 S: all u1, u2, u3 : User | (u1 -> u2 in follows and u2 -> u3 follows and u1 -> u3 not in follows) => u1 -> u3 in suggested
+inv7 S: all u1, u2, u3 : User | (u1 -> u2 in follows and u2 -> u3 follows and not (u1 -> u3 in follows)) => u1 -> u3 in suggested
+inv7 T: all u1, u2, u3 : User | u1 -> u2 in follows and u2 -> u3 follows and not (u1 -> u3 in follows) => u1 -> u3 in suggested
+inv7 B: all u1, u2, u3 : User | u1 -> u2 in follows and u2 -> u3 in follows and not (u1 -> u3 in follows) => u1 -> u3 in suggested
+inv7 S: all u1, u3 : User | u1 -> u3 in suggested => (some u2:User | u1 -> u2 in follows and u2->u3 in follows and u1 -> u3 not in follows and u1 != u3
+

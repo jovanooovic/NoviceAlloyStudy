@@ -1,0 +1,8 @@
+inv9 S: all ws : Workstations | one b : Begin | no succ.b	all ws : Workstations | one e : end | no e.succ
+inv9 S: all ws : Workstation | one b : Begin | no succ.b	all ws : Workstation | one e : end | no e.^(succ)
+inv9 U: all ws : Workstation | one b : begin | no succ.b	all ws : Workstation | one e : end | no e.^(succ)
+inv9 B: all ws : Workstation | one succ.begin	all ws : Workstation | no end.^(succ)
+inv9 T: all ws : Workstation | one ws.begin	all ws : Workstation | no ws.^(succ)
+inv9 B: one succ.begin && no end.^(succ)
+inv9 B: one succ.begin && no end.^(succ) && begin != end
+

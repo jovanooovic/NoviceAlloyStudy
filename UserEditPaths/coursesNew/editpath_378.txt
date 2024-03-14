@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person, c:Course | c in p.enrolled implies p in Student
+inv2 B: all p:Person, c:Course | c in p.teaches implies p in Student
+inv2 C: all p:Person, c:Course | c in p.teaches implies p in Professor
+inv3 B: all c:Course, p:Professor | c in p.teaches
+inv3 B: all c:Course, p:Professor | c in p.teaches
+inv3 T: all c:Course, p:Professor | c implies c in p.teaches
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 B: some p:Person | all proj:Project | proj in p.projects implies p in Student
+inv5 B: some p:Person | all proj:Project | proj in p.projects implies p in Student and (some p2:Person | proj in p2.projects)
+inv5 U: all p:Person, proj:Project | (proj in p.projects implies p in Student) and (some p2 : Person | proj in p2.projects)
+inv5 S: all p:Person, proj:Project | (proj in p.projects implies p in Student) and (some p2:Person | proj in p2.projects)
+inv5 U: all p:Person, proj:Project | (proj in p.projects implies p in Student) and (some p2:Person | proj in p2.projects)
+inv6 U: all s:Student, proj:Project | proj in s.projects implies (some c:Course | proj in c.projects and c in s.enrolled)
+inv7 B: all s:Student, c:Course | one proj:Project | (c in s.enrolled and proj in c.projects) implies (proj in s.projects)
+inv7 B: all s:Student, c:Course | lone proj:Project | (c in s.enrolled and proj in c.projects) implies (proj in s.projects)
+inv7 S: all s:Student, c:Course | lone proj:Project | p in s.projects and p in c.projects
+inv7 S: all s:Student, c:Course | lone proj:Project | p in s.projects and p in c.projects
+inv7 U: all s:Student, c:Course | lone proj:Project | proj in s.projects and proj in c.projects
+inv8 U: all p:Professor, c:Course | p in c.teaches implies p not in c.enrolled
+inv8 U: all p:Professor, c:Course | c in p.teaches implies c not in c.enrolled
+inv8 U: all p:Professor, c:Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all p1,p2 : Professor | all c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all p1,p2 : Professor | all c:Course | c in p1.teaches implies c not in p2.teaches
+inv9 B: all p1,p2 : Professor | all c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all p1,p2 : Professor | all c:Course | c in p1.teaches and c in p2.teaches implies (all c2:Course | c2 in p1.teaches implies c2 not in p2.enrolled)
+inv10 C: all p:Person, c:Course, g:Grade | p->g in c.grades implies p in Student
+inv11 U: all s:Student, c:Course, g:Grade | s->g in c.grades implies c in s.enrolled
+inv12 U: all s:Student, c:Course | lone g:Grade | s->g in c.grades
+inv13 S: all
+inv13 S: all
+inv12 U: all s:Student, c:Course | lone g:Grade | s->g in c.grades
+inv13 U: all s:Student, c:Course | s in c.grades.last implies (some proj:Project | proj in s.projects)
+inv13 S: all s:Student, c:Course | s in c.grades.last implies (some proj:Project | proj in c.projects and p in s.projects)
+inv13 U: all s:Student, c:Course | s in c.grades.last implies (some proj:Project | proj in c.projects and proj in s.projects)
+inv14 B: all s1, s2 : Student, proj:Project | proj in s1.projects and proj in s2.projects implies (some proj2 : Project | (proj2 in s1.projects and proj2 not in s2.projects) or (proj2 in s2.projects and proj2 not in s1.projects))
+inv14 B: all s1, s2 : Student, proj:Project | proj in s1.projects and proj in s2.projects and s1!=s2 implies (some proj2 : Project | (proj2 in s1.projects and proj2 not in s2.projects) or (proj2 in s2.projects and proj2 not in s1.projects))
+inv14 S: all s1, s2 : Student | all p1,p2 : PRoject | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p2 not in s2.projects))
+inv14 U: all s1, s2 : Student | all p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and 	p1!=p2 implies (p2 not in s1.projects) or (p2 not in s2.projects)
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course | (s1!=s2 and p in s1.projects and p in 			s2.projects and p in c.projects) 	implies (all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+NA H: THEME UPDATE
+

@@ -1,0 +1,20 @@
+"Node in ^adj",2
+"*adj in Node.adj",1
+"^(adj + ~adj)",7
+"all n: Node | n.adj",1
+"all n: Node | n.adj.Node",1
+"all a:Node | adj = a.^adj",1
+"all n:Node | Node in n.*Node",1
+"all n : Node | some n<:adj & n",1
+"all n : Node | some Node<:adj & n",1
+"all n : Node | (some adj) & (Node = (n.^adj))",2
+"all v1, v2 : Node | v1->v2 in adj & v2->v1 in adj",1
+"inv4 & inv2
+}
+
+pred inv2{
+no ~adj & adj
+}
+
+pred inv4{
+adj = Node -> Node",1

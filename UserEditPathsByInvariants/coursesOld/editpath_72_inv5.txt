@@ -1,0 +1,6 @@
+inv5 T: all p : Project | some s : Student | projects.p in s
+inv5 T: all p : Project | all s : Student | projects.p in s
+inv5 T: all p : Project | projects.p in Student
+inv5 T: all p : Project | projects.p in Student	  	all p : Project | some s : Student | projects.p in s
+inv5 C: all p : Project | some (Person :> projects.p)	    all p : Project | (Person :> projects.p) in Student
+

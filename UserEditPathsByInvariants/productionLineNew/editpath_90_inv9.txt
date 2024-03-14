@@ -1,0 +1,18 @@
+inv9 U: all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 T: not succ & iden	all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 U: no succ & iden	all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 B: (Workstation-end).^succ = end
+inv9 U: begin.*succ = *succ.end
+inv9 B: begin.^succ = ^succ.end
+inv9 U: begin.*succ = *succ.end	no iden & succ
+inv9 B: end in begin.^succ	begin in ^succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 O: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) one -> lone Workstation	no iden & succ
+inv9 B: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) one -> one (Workstation-end)	no iden & succ
+inv9 B: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) lone -> one Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)	no iden & succ
+inv9 C: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)	no iden & ^succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)
+

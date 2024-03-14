@@ -1,0 +1,22 @@
+inv9 S: all b : Begin | all e : End | b.succ in Workstation and no e.succ
+inv9 U: all b : begin | all e : end | b.succ in Workstation and no e.succ
+inv9 U: one b : begin | one e : end | b.^succ in (Workstation-b) and no e.^succ
+inv9 U: one b : begin | one e : end | (b.^succ in (Workstation-b)) and (no e.^succ)
+inv9 U: all b : begin | all e : end | (b.^succ in (Workstation-b)) and (no e.^succ)
+inv9 U: one b : begin | one e : end | (b.^succ in (Workstation-b)) and (no e.^succ)
+inv9 U: one b : begin | one e : end | ((Workstation-b) in b.^succ) and (no e.^succ)
+inv9 S: one b : begin | one e : end | all w : Workstation | w not in w.^succ | (b.^succ in (Workstation-b)) and (no e.^succ) and
+inv9 S: one b : begin | one e : end | all w : Workstation | w not in w.^succ and (b.^succ in (Workstation-b)) and (no e.^succ) and
+inv9 U: one b : begin | one e : end | all w : Workstation | (w not in w.^succ) and (b.^succ in (Workstation-b)) and (no e.^succ)
+inv9 U: one b : begin | one e : end | all w : Workstation | (w not in w.^succ) and (b.^succ in Workstation) and (no e.^succ)
+inv9 U: one b : begin | one e : end | all w : Workstation | (w not in w.^succ) and (b.^succ in Workstation) and (no e.succ)
+inv9 U: one b : begin | one e : end | all w : Workstation | (w not in w.^succ) and (b.^succ in Workstation) and (no e.succ)
+inv9 C: all b : begin | all e : end | Workstation-b in b.^(succ) and no e.^(succ)	all w : Workstation | lone w.succ
+inv9 C: all b : begin | all e : end | Workstation-b in b.^(succ) and no e.^(succ)	all w : Workstation | lone w.succ
+inv9 B: one b : begin | one e : end | all w : Workstation | lone w.^succ and (b.^succ in Workstation) and (no e.succ)
+inv9 C: one b : begin | one e : end | all w : Workstation | lone w.succ and (b.^succ in Workstation) and (no e.succ)	all b : begin | all e : end | Workstation-b in b.^(succ) and no e.^(succ)	all w : Workstation | lone w.succ
+inv9 U: one b : begin | one e : end | all w : Workstation | lone w.succ and (b.^succ in Workstation) and (no e.succ)
+inv9 C: one b : begin | one e : end | all w : Workstation | lone w.succ and (b.^succ in (Workstation-b)) and (no e.succ)	all b : begin | all e : end | Workstation-b in b.^(succ) and no e.^(succ)	all w : Workstation | lone w.succ
+inv9 U: one b : begin | one e : end | all w : Workstation | lone w.succ and (b.^succ in (Workstation-b)) and (no e.succ)
+inv9 C: all b : begin | all e : end | Workstation-b in b.^(succ) and no e.^(succ)	all w : Workstation | lone w.succ
+

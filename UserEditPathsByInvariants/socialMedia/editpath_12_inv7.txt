@@ -1,0 +1,25 @@
+inv7 E:
+inv7 E:
+inv7 S: all u: User | u.suggested in u.follows.follows && not in u.follows
+inv7 B: all u: User | u.suggested in u.follows.follows && u.suggested not in u.follows
+inv7 B: all u: User, y: User| y in u.suggested iff y not in u.follows && y in u.follows.follows
+inv7 S: all u: User, y: User| y in u.suggested iff y not in u.follows && y in u.follows.follows && x not in y
+inv7 C: all u: User, y: User| y in u.suggested iff y not in u.follows && y in u.follows.follows && u not in y
+inv7 C: all u: User, y: User | y in u.suggested iff y not in u.follows && y in u.follows.follows && u not in y
+inv7 C: all u: User, y: User| y in u.suggested iff y not in u.follows && y in u.follows.follows && u not in y
+inv7 S: all u: User | u.suggested not in u.follows and in u.follows.follows
+inv7 S: all u: User | u.suggested not in u.follows && in u.follows.follows
+inv7 B: all u: User | u.suggested not in u.follows && u.suggested in u.follows.follows
+inv7 S: all u: User | u.suggested in u.follows.follows-u.follows
+inv7 S: all u: User | u.suggested in (u.follows.follows - u.follows)
+inv7 S: all u: User | u.suggested in (u.follows.follows - u.follows)
+inv7 U: all u: User | u.suggested in (u.follows.follows - u.follows)
+inv7 U: all u: User | u.suggested in u.follows.follows - u.follows
+inv7 T: all u: User | u.suggested in u.follows.follows - u.follows - iden
+inv7 T: all u: User | u.suggested in u.follows.follows - u.follows & iden
+inv7 U: all u: User | u.suggested in u.follows.follows - u.follows - u
+inv7 S: all u: User | u.suggested in u.follows.follows - u.follows & no u.suggested & iden
+inv7 U: all u: User | u.suggested in u.follows.follows - u.follows
+inv7 U: all u: User | u.suggested in u.follows.follows - u - u.follows
+inv7 C: all u: User | u.suggested = u.follows.follows - u.follows - u
+

@@ -1,0 +1,16 @@
+inv8 S: all t : teacher | t not in t.^(teaches.projects.~(Person<:projects))
+inv8 B: all t : Professor | t not in t.^(teaches.projects.~(Person<:projects))
+inv8 S: all p : Professor | p not in p.^(teaches.grades
+inv8 T: all p : Professor | p not in p.^(teaches.grades)
+inv8 T: all p : Professor | p not in p.^(teaches.grades)
+inv8 E:
+inv8 S: all p : Professor | p not in p.^(teaches.Grades)
+inv8 T: all p : Professor | p not in p.^(teaches.Grade)
+inv8 B: all p : Professor | p not in p.^(teaches.grades.Grade)
+inv8 U: all p : Professor | p not in p.^(teaches.grades.Person)
+inv8 S: all p : Professor | p not in p.^(teaches.grades.Grades)
+inv8 T: all p : Professor | p not in p.teaches.grades.~Grade
+inv8 U: all p : Professor | no p.teaches.grades.p
+inv8 B: all p : Professor | p not in p.teaches.grades.Grade
+inv8 U: all p : Professor | p not in p.teaches.grades.p
+

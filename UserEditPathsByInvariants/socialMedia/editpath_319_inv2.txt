@@ -1,0 +1,19 @@
+inv2 E:
+inv2 T: all x : User | not follows.x
+inv2 T: all x : User |  follows.x
+inv2 T: all x : User |  follows.x
+inv2 T: all x : Photo |  follows.x
+inv2 S: all x : User
+inv2 E:
+inv2 B: all x : User | some follows.x
+inv2 T: all x : User | not follows.x
+inv2 B: all x : User | some follows.x
+inv2 O: all x : User | no follows.x
+inv2 T: all x : User | not follows.x
+inv2 O: all x : User | no follows.x
+inv2 B: some x : User | some y : User | some follows.x and some follows.y and x != y
+inv2 T: some x : User | some y : User | some follows.x.y and x != y
+inv2 B: some x : User | some y : User | some follows.x and x != y
+inv2 S: all x : User | x not in follws.x
+inv2 C: all x : User | x not in follows.x
+

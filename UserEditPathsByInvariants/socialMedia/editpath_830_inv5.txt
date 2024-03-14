@@ -1,0 +1,8 @@
+inv5 S: all u: User , one i: Influencer| i in u.follows and i not in i.follows
+inv5 S: all u: User , one i: Influencer| i in u.follows . i not in i.follows
+inv5 S: all u: User , one i: Influencer| i in u.follows
+inv5 S: all u: User , one i: Influencer | i in u.follows
+inv5 S: all u: User , one i: User | i in Influencer => in u.follows
+inv5 S: all u: User | one i: User | i in Influencer => in u.follows
+inv5 S: all u: User , one i: Influencer| i in u.follows
+

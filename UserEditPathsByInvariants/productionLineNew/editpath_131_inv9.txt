@@ -1,0 +1,8 @@
+inv9 B: all ws:Workstation, w1:Workstation | w1 in ws.succ
+inv9 S: (all w1:Workstation, w2:Workstation | (w1 in begin and w1!=w2) implies w1 in w2.succ)	and	(all w1: Workstation | w not in w.succ)	and	(all w1:Worktation | w not in end implies one w1.succ)
+inv9 S: (all w1:Workstation, w2:Workstation | (w1 in begin and w1!=w2) implies w1 in w2.succ)	and	(all w: Workstation | w not in w.succ)	and	(all w:Worktation | w not in end implies one w.succ)
+inv9 B: (all w1:Workstation, w2:Workstation | (w1 in begin and w1!=w2) implies w1 in w2.succ)	and	(all w: Workstation | w not in w.succ)	and	(all w:Workstation | w not in end implies one w.succ)
+inv9 B: (all w1:Workstation, w2:Workstation | (w1 in begin and w1!=w2) implies w1 in w2.succ)	and	(all w: Workstation | w not in w.^(succ))	and	(all w:Workstation | w not in end implies one w.succ)
+inv9 S: (all w,wb:Workstation | (wb in begin and wb!=w) implies w in wb.^(succ))	and	(all w:Workstation | w not in w.^(succ))	and	(all w:Workstation | w not in end implies one w.succ)	}
+inv9 C: (all w,wb:Workstation | (wb in begin and wb!=w) implies w in wb.^(succ))	and	(all w:Workstation | w not in w.^(succ))	and	(all w:Workstation | w not in end implies one w.succ)
+

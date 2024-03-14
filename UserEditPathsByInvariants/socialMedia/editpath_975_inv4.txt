@@ -1,0 +1,7 @@
+inv4 S: all u:User, a:Ad,p:Photos-Ad | a in u.posts implies u.posts none p
+inv4 T: all u:User, a:Ad,p:Photo-Ad | a in u.posts implies u.posts none p
+inv4 T: all u:User, a:Ad,p:Photo-Ad | a in u.posts implies posts in u none -> p
+inv4 T: all u:User, a:Ad,p:Photo-Ad | a in u.posts implies posts in u none -> Photo
+inv4 T: all u:User, a:Ad,p:Photo-Ad | a in u.posts implies posts in User none -> Photo
+inv4 T: all u:User, a:Ad,p:Photo-Ad | a in u.posts implies posts in User none -> Photo
+

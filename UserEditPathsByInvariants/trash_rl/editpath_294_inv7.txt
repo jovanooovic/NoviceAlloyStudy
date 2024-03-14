@@ -1,0 +1,24 @@
+inv7 S: all f : File | all link.f
+inv7 T: all f : File |  link.f
+inv7 S: all t : Trash | no Link
+inv7 O: all t : Trash | no link
+inv7 U: all t : Trash | t not in t.link
+inv7 S: all link
+inv7 T: File = link
+inv7 B: all f : File | some f.link
+inv7 B: some f : File | some f.link
+inv7 O: all f : File | no f.link
+inv7 S: all f : File | f.link & no Trash
+inv7 T: all f : File | f.link implies no Trash
+inv7 B: all t : Trash | no t.link
+inv7 S: all t : Trash, f:File | no f.link & no t.link
+inv7 B: all t : Trash, f:File | no t.link
+inv7 S: all t : Trash, f:File | no t.link + no f.link
+inv7 S: all t : Trash, f : File | no t.link , no f.link
+inv7 S: all t : Trash, f : File | no t.link + no f.link
+inv7 B: all t : Trash | no t.link
+inv7 B: all t : Trash | no t.link
+inv7 O: File = Trash	all f : File | no f.link
+inv7 O: all f : File | no link.f
+inv7 C: all t : Trash | no link.t
+

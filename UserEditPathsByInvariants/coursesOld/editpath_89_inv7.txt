@@ -1,0 +1,14 @@
+inv7 T: all s: Student, p1, p2: Project | one c: Course | s in projects.p1  and s in projects.p2 implies projects.p1 != projects.p2
+inv7 B: all s: Student, p1, p2: Project | some c1, c2: Course | s in projects.p1  and s in projects.p2 implies c1 = projects.p1 and  c2 = projects.p2 and c1 != c2
+inv7 S: all s: Student, p1, p2: Project |  s in projects.p1 and s in projects.p2 implies c1 = projects.p1 and  c2 = projects.p2 and c1 != c2
+inv7 T: all s: Student, p1, p2: Project |  s in projects.p1 and s in projects.p2 implies  projects.p1 !=  projects.p2
+inv7 T: all s: Student, p1, p2: Project |  s in projects.p1 and s in projects.p2 implies  Course.projects.p1 !=  Course.projects.p2
+inv7 B: all s: Student, p1, p2: Project |all c1, c2: Course | s in projects.p1  and s in projects.p2 implies c1 = projects.p1 and  c2 = projects.p2 and c1 != c2
+inv7 B: all s: Student, p1, p2: Project |lone c1, c2: Course | s in projects.p1  and s in projects.p2 implies c1 = projects.p1 and  c2 = projects.p2 and c1 != c2
+inv7 B: all s: Student, p1, p2: Project, c1, c2: Course | s in projects.p1  and s in projects.p2 implies c1 = projects.p1 and  c2 = projects.p2 and c1 != c2
+inv7 B: all s: Student, p1, p2: Project, c1, c2: Course | s in projects.p1  and s in projects.p2 and c1 = projects.p1 and  c2 = projects.p2 implies c1 != c2
+inv7 B: all s: Student| lone p1, p2: Project| some c1, c2: Course | s in projects.p1 and s in projects.p2 and c1 = projects.p1 and  c2 = projects.p2 implies c1 != c2
+inv7 S: all s: Student, p1, p2: Project| one c1, c2: Course | s in projects.p1 and s in projects.p2 and c1 = projects.p1 and  c2 = projects.p2 implies c1 != c2 j
+inv7 B: all s: Student, p1, p2: Project| one c1, c2: Course | s in projects.p1 and s in projects.p2 and c1 = projects.p1 and  c2 = projects.p2 implies c1 != c2
+inv7 U: all s : Student, c : Course | lone s.projects & c.projects
+

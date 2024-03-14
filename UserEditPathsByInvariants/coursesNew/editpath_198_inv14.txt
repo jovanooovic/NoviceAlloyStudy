@@ -1,0 +1,10 @@
+inv14 S: all disj s1,s2 : Student | all p : Project | s1->p in projects and s2->p in projects => no s2.projects & no p1.projects - p
+inv14 B: all disj s1,s2 : Student | all p : Project | s1->p in projects and s2->p in projects => no s2.projects - p & s1.projects
+inv14 B: all disj s1,s2 : Student | all p : Project | (s1->p in projects and s2->p in projects) => no s2.projects - p & s1.projects
+inv14 U: all disj s1,s2 : Student | all p : Project | (s1->p in projects and s2->p in projects) => no (s2.projects - p) & s1.projects
+inv14 B: all disj s1,s2 : Student | all p : Project | (s1->p in projects and s2->p in projects) => no s2.projects - p & s1.projects
+inv14 U: all disj s1,s2 : Student | all p : Project | (s1->p in projects and s2->p in projects) => no (s2.projects - p) & s1.projects
+inv14 U: all disj s1,s2 : Student | all p : Project | p in s2.projects and p in s1.projects implies no (s2.projects - p) & s1.projects
+inv14 U: all disj s1,s2 : Student | all p : Project | p in s2.projects and p in s1.projects implies no (s2.projects - p) & s1.projects
+inv14 U: all disj s1,s2 : Student | lone s1.projects & s2.projects
+

@@ -1,0 +1,19 @@
+inv10 T: all g:Grade | enrolled.grades.g&Student
+inv10 T: all g:Grade | enrolled.grades.g&Student
+inv10 T: all g:Grade | enrolled.grades.Person.g&Student
+inv10 T: all c:Course | c.grades
+inv10 T: all c:Course | c.grades.Person
+inv10 S: all c:Course | c.grades.person
+inv10 T: all c:Course, p:Person | c.grades.p
+inv10 T: all p1 : Person | all c1 : Course | all g1 : Grade|	  	(c1->p1->g1 in grades) implies (p1 in Student)	  	all c:Course, p:Person | c.grades.p
+inv10 C: all p1 : Person | all c1 : Course | all g1 : Grade | (c1->p1->g1 in grades) implies (p1 in Student)
+inv10 C: all p1 : Person | all c1 : Course | all g1 : Grade | (c1->p1->g1 in grades) implies (p1 in Student)
+inv10 T: all c:Course | grades.Grade.c&Student
+inv10 T: all c:Course | grades.Grade.c&Student
+inv10 T: all c:Course | grades.Person&Student
+inv10 T: all c:Course | grades.Person.c&Student
+inv10 T: all c:Course | c.grades.Grade&Student
+inv10 T: all c:Course | c.grades.Grade&Student
+inv10 C: all c:Course | c.grades.Grade in Student
+inv10 C: all c:Course | c.grades.Grade in Student
+

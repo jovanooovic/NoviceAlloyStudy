@@ -1,0 +1,5 @@
+inv6 S: all s:Student | all c:Course | all p:Projects | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Student | all c:Course | all p:Project | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Person-Professor | all c:Course | all p:Project | p in s.projects implies p in c.projects and c in s.enrolled
+inv6 B: all s:Person-Professor | all c:Course | all p:c.projects | p in s.projects implies c in p.enrolled
+

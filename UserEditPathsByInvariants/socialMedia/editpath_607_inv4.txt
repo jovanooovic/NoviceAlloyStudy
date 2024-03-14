@@ -1,0 +1,9 @@
+inv4 U: all u:User| u.posts in Ad implies(no u.posts-Ad)
+inv4 T: all u:User| (some u.posts in Ad) implies(no u.posts-Ad)
+inv4 T: all u:User| (some u.posts) in Ad implies(no u.posts-Ad)
+inv4 S: all u:User| some y:Photo | x->y in posts and y in Ad implies(no u.posts-Ad)
+inv4 S: all u:User| some y:Photo | x->y in posts and y in Ad implies(u.posts in Ad)
+inv4 T: all u:User| some u.posts & Ad implies(u.posts & Ad)
+inv4 T: all u:User| some (u.posts & Ad) implies(u.posts & Ad)
+inv4 C: all u:User| some u.posts & Ad implies(u.posts in Ad)
+

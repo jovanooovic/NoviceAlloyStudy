@@ -1,0 +1,163 @@
+-- equiv pair start,35
+all p : Professor | no enrolled.p
+-- div,1
+all p : Professor | p not in enrolled.p
+-- div,1
+all x, y: Professor | y not in teaches.x
+-- div,1
+all x,y:Professor | y not in x.teaches
+-- div,2
+all p:Professor | no p.teaches & p
+-- div,1
+all x, y: Professor | x != y  implies y not in teaches.x
+-- div,1
+no p1, p2: Professor | p1 != p2 && p2 in p1.teaches
+-- div,1
+no p1, p2: Professor | p1 != p2 && p1 in p2.teaches
+-- div,1
+all p: Professor | no (teaches.(p.enrolled) & p.teaches)
+-- div,1
+all p:Person -Student | all a:p.teaches| p not in a
+-- div,1
+all p:Professor | all c:p.teaches | p not in p.enrolled
+-- div,1
+all p1, p2 : Professor | p1 !in p2.teaches and p2 !in p1.teaches
+-- div,2
+all x : Professor | all y : Professor-x | y not in x.teaches
+-- div,1
+all p : Professor | all o : Professor - p | o not in p.teaches
+-- div,1
+all p : Professor | all o : Professor - p | o not in p.enrolled
+-- div,1
+all p : Professor, o : Professor - p, c : p.teaches | o not in c
+-- div,1
+all t : Professor, c : Course | c in t.teaches implies no enrolled.t
+-- div,1
+all p:Person -Student | no pa : Professor | pa in p.teaches
+-- div,1
+all disj s,j:Professor |all c:s.teaches |  j not in c.enrolled
+-- div,1
+all p : Professor | (all c : p.teaches | Professor not in p.enrolled)
+-- div,1
+all p : Professor | (all c : p.teaches | no Professor & p.enrolled)
+-- div,2
+all p : Professor, s : Person | s in p.teaches.enrolled implies s not in Professor
+-- div,1
+all p : Professor | all c : teaches.p.teaches | no c.enrolled & p.teaches
+-- div,1
+all p : Professor | all col : Professor -p | all c : p.teaches | col not in c
+-- div,1
+all p:Professor, c:Professor - p, c:Course | c in p.teaches => c not in enrolled.c
+-- div,1
+all p: Professor, col: Professor - p | some (p.teaches & col.teaches) => col not in p.enrolled
+-- div,2
+all professor : Professor | all person : Person | professor->person in teaches implies person in Student
+-- div,1
+all professor : Professor | all colleague : Professor | professor != colleague implies colleague not in professor.teaches
+-- div,2
+all p : Professor | all col : Professor -p | all c : Course | c in p.teaches implies col not in col.enrolled
+-- div,1
+all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => pp not in p.enrolled
+-- div,1
+-- equiv pair end
+-- equiv pair start,3
+all c : Course | all p : teaches.c | p.teaches not in (teaches.c - p).enrolled
+-- div,3
+-- equiv pair end
+-- equiv pair start,86
+all disj s,j:Professor |some (s.teaches & j.teaches) implies no (s.enrolled & j.teaches)
+-- div,2
+all disj p1, p2: Professor | some p1.teaches & p2.teaches implies no (p1.teaches & p2.enrolled)
+-- div,1
+all p1, p2: Professor | p1!= p2 and (some p1.teaches & p2.teaches) implies no p1.teaches & p2.enrolled
+-- div,4
+all p1,p2 : Professor | p1!=p2 and (some p1.teaches & p2.teaches) implies (no p1.enrolled & p2.teaches )
+-- div,3
+all p1,p2:Professor| some (p2.teaches&p1.teaches) and p1!=p2 implies (no (p2.enrolled & p1.teaches))
+-- div,2
+all p : Professor, c : Professor - p | some (p.teaches & c.teaches) implies no (p.teaches & c.enrolled)
+-- div,2
+all p1,p2:Professor | (p1!=p2 and #p1.teaches&p2.teaches>0) implies (no p1.enrolled&p2.teaches)
+-- div,1
+all p:Professor, p2:Professor-p | (some (p.teaches & p2.teaches)) => (no p.teaches & p2.enrolled)
+-- div,3
+all p:Professor, pp:Professor-p | some(p.teaches & pp.teaches) => no (p.teaches & pp.enrolled)
+-- div,1
+all p: Professor, col: Professor - p | some (p.teaches & col.teaches) => no (col.enrolled & p.teaches)
+-- div,1
+all p:Professor, col:Professor - p | some (col.teaches & p.teaches)=> no (col.enrolled & p.teaches)
+-- div,4
+all p : Professor | all c : Professor - p | some (p.teaches & c.teaches) implies no (p.teaches & c.enrolled)
+-- div,3
+all p: Professor | all p1: Professor - p | some (p1.teaches & p.teaches) =>  no (p1.enrolled & p.teaches)
+-- div,1
+all p : Professor | all pp : (Professor - p) | some p.teaches & pp.teaches implies no p.teaches & pp.enrolled
+-- div,1
+all p : Professor | all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches)
+-- div,43
+all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (p.teaches & col.enrolled))
+-- div,1
+all t:Professor| all col:Professor-t| some (t.teaches & col.teaches) implies no (t.teaches & col.enrolled)
+-- div,1
+all p1:Professor | all p2:Professor - p1 | some (p1.teaches & p2.teaches) implies no (p1.teaches & p2.enrolled)
+-- div,2
+all p : Professor | (all col : Professor - p | (all c: col.teaches & p.teaches | no (col.enrolled & p.teaches)))
+-- div,1
+all disj p,p1:Professor | #p.teaches&p1.teaches>0 implies (#p.enrolled&p1.teaches=0 and  #p1.enrolled&p.teaches=0)
+-- div,1
+all p1, p2: Professor | all c: Course| (p1!=p2 and c in p1.teaches and c in p2. teaches) implies (all c2 : Course | c2 in p1.teaches implies c2 not in p2.enrolled)
+-- div,1
+all p1, p2: Professor | all c: Course| (p1!=p2 and c in p1.teaches and c in p2. teaches) implies (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+-- div,1
+all p1,p2:Professor|  all c1:Course | (p1!=p2 and c1 in p1.teaches and c1 in p2.teaches) implies
+                                         (all c2:Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+-- div,1
+all p1:Professor, p2:Professor, c:Course | p1!=p2 and p1 in teaches.c and p2 in teaches.c implies all c2:Course | p1 in teaches.c2 implies p2 not in enrolled.c2
+-- div,1
+all p1,p2 : Professor | all c1:Course |
+      (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 
+       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+-- div,3
+all p1:Professor, p2:Professor, c:Course | p1!=p2 and p1 in teaches.c implies p2 in teaches.c implies all c2:Course | p1 in teaches.c2 implies p2 not in enrolled.c2
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all p : Professor | all p2 : Person - p | some p.teaches & p2.teaches implies no p.teaches & p2.enrolled
+-- div,1
+-- equiv pair end
+-- equiv pair start,4
+all p : Professor | (all col : Professor - p | (all c: col.teaches & p.teaches | c not in col.enrolled))
+-- div,1
+all p:Professor, col:Professor - p, c:Course | c in p.teaches and c in col.teaches => col not in enrolled.c
+-- div,1
+all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+-- div,1
+all disj p,pp: Professor | all c: Course | p in c.~teaches && pp in c.~teaches => p not in c.~enrolled && pp not in c.~enrolled
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all p : Person - Student | (all col : Person - Student - p | all c: col.teaches & p.teaches | c not in col.enrolled)
+-- div,1
+-- equiv pair end
+-- equiv pair start,3
+all p1, p2 : Professor, c : Course | c in p1.teaches implies c not in p2.enrolled and
+  	c in p2.teaches implies c not in p1.enrolled
+-- div,1
+all disj p1, p2 : Professor, c : Course | c in p1.teaches implies c not in p2.enrolled and c in p2.teaches implies c not in p1.enrolled
+-- div,2
+-- equiv pair end
+-- equiv pair start,4
+all x: Person, z : Person -x ,y : Course | x -> y in teaches and z -> y in teaches implies z-> y not in enrolled and x -> y not in enrolled
+-- div,1
+all p1 : Person | all p2 : Person | all c : Course | (p1!=p2 and c in p1.teaches and c in p2.teaches) implies c not in p2.enrolled
+-- div,1
+all disj p,pp: Person | all c: Course | p in c.~teaches && pp in c.~teaches => p not in c.~enrolled && pp not in c.~enrolled
+-- div,1
+all p1 : Person | all p2 : Person | all c : Course | (p1!=p2 and c in p1.teaches and c in p2.teaches) implies (c not in p1.enrolled and c not in p2.enrolled)
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all x,y:Professor | all z,w:Course | (z in x.teaches and z in y.teaches and w in x.teaches and z!=w 
+  and x!=y) implies w not in y.enrolled
+-- div,1
+-- equiv pair end

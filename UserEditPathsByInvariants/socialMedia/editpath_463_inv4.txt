@@ -1,0 +1,29 @@
+inv4 E:
+inv4 B: all user : User | some Photo
+inv4 S: all user : univ | (user in User) and some ad : (user->ad in posts) and (ad in Ad) implies (all photo : univ | photo in Photo and user->photo in posts and photo in Ad)
+inv4 S: all user : univ | user in User and some ad : user->ad in posts and (ad in Ad) implies all photo : univ | photo in Photo and user->photo in posts and photo in Ad
+inv4 E:
+inv4 O: all user : univ | user in User and some ad : univ | user->ad in posts and (ad in Ad) implies all photo : univ | photo in Photo and user->photo in posts and photo in Ad
+inv4 E:
+inv4 T: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and posts in Ad
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 U: all user : User | some ad : univ | user->ad in posts and ad in Ad implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : Influencer | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies (user.posts) in Ad
+inv4 O: all user : User | (user.posts in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (user.posts in Photo and user.post not in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (user.posts in Photo and not user.post in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (none user.posts in Ad)
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad)
+inv4 S: all user : User | some ad : Ad | user-> ad in posts implies user.posts in Ad
+inv4 B: all user : User | some ad : Ad | user-> ad in posts implies user.posts in Ad
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | (some ad : Ad | user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | user->ad in posts and ad in Ad implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+

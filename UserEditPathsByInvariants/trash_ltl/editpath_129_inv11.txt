@@ -1,0 +1,8 @@
+inv11 U: all f : File - Protected | after f in Protected
+inv11 U: all f : File - Protected - Trash | after f in Protected
+inv11 U: all f : (File - Protected) - Trash | after f in Protected
+inv11 U: all f : File | f not in Protected => f in Protected'
+inv11 U: all f : File | f not in Protected => after f in Protected
+inv11 B: all f : File | f not in Protected => after always f in Protected
+inv11 U: all f : File - Protected | f in Protected'
+

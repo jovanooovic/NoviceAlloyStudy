@@ -1,0 +1,14 @@
+inv1 B: some t: Track | t in Junction + Entry + Exit and #t.succs>1
+inv1 B: some t: Track | t in Junction + Entry + Exit and #t.succs>0
+inv1 B: some t: Track | t in Junction + Entry + Exit and #t.succs>1
+inv1 B: some t : Track | t in Junction + Entry + Exit and #t.succs > 1
+inv1 B: all s: Track | (some e: Entry | e in s.succs) and (some x: Exit | x in s.succs)
+inv1 T: all t: Track | #t.Entry>1 and #t.Exit>1
+inv1 T: all t: Track | some t in Entry  and some t in Exit
+inv1 B: all s: Track | (some e: Entry | e in s.succs) and (some x: Exit | x in s.succs)
+inv1 B: all s: Track | (some e: Entry | e in s.succs) and (some x: Exit | x in s.succs)
+inv1 B: all s: Track | s in Junction + Entry => #(s.succs & Entry) > 0 && #(s.succs & Exit) > 0
+inv1 B: all s: Track | s in Junction + Entry => #(s.succs & Entry) > 1 && #(s.succs & Exit) > 1
+inv1 B: all s: Track | s in Junction + Entry => #(s.succs & Entry) > 0 && #(s.succs & Exit) > 0
+inv1 B: all s: Track | s in Junction + Entry + Exit => #(s.succs & Entry) > 0 && #(s.succs & Exit) > 0
+

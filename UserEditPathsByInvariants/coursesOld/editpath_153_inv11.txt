@@ -1,0 +1,29 @@
+inv11 S: all c:Grade all s:Student | g.s.grades in s.enrolled
+inv11 T: all c:Course, s:Student, g:Grade | (c.grades) in s.enrolled
+inv11 U: all c:Course, s:Student, g:Grade | g.(c.grades) in s.enrolled
+inv11 U: all c:Course, s:Student, g:Grade | g.(c.grades) in s.enrolled
+inv11 S: all c:Course, s:Person, g:Grade | g.(c.grades) in p.enrolled
+inv11 U: all c:Course, s:Person, g:Grade | g.(c.grades) in s.enrolled
+inv11 U: all c:Course, s:Person, g:Grade | g.(c.grades) in s.enrolled
+inv11 O: all c:Course, s:Person, g:Grade | Course.grades.g in s.enrolled
+inv11 U: all c:Course, s:Person, g:Grade | Course.grades.s in s.enrolled
+inv11 O: all c:Course, s:Person, g:Grade | Course.grades.g in s.enrolled
+inv11 O: all c:Course, s:Person, g:Grade | Course.grades.g in s.enrolled
+inv11 U: all c:Course, s:Person, g:Grade | Course.grades.s in s.enrolled
+inv11 U: all c:Course, s:Person, g:Grade | Course.grades.Person in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | c.~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | g.~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s.g).~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s.c).~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (c.g).~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s->g).~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s->g).~grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s->g) in c.grades in s.enrolled
+inv11 T: all c:Course, s:Person, g:Grade | (s->g).~grades in s.enrolled
+inv11 T: one p1 : Person | all c : Course | (c in (grades.Grade.p1)) in s.enrolled		all c:Course, s:Person, g:Grade | (s->g).~grades in s.enrolled
+inv11 T: one p1 : Person | all c : Course | (c in (grades.Grade.p1)) in s.enrolled		all c:Course, s:Person, g:Grade | (s->g).~grades in s.enrolled
+inv11 S: one p1 : Person | all c : Course | grades.Grade.p1 in s.enrolled
+inv11 B: one p1 : Person | all c : Course | grades.Grade.p1 in p1.enrolled
+inv11 B: one p1 : Person | grades.Grade.p1 in p1.enrolled
+inv11 C: all p1 : Person | grades.Grade.p1 in p1.enrolled
+

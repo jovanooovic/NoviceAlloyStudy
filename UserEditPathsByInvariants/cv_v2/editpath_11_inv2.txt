@@ -1,0 +1,14 @@
+inv2 U: all w: User.profile | w.source in User or w.source in Institution
+inv2 T: all w: Work | some u: User, s: Source | w in u.profile implies w.source in u or s
+inv2 T: all w: Work | some u: User | w in u.profile implies w.source in u or Institution
+inv2 B: all w: Work | some u: User | w in u.profile implies w.source in u or w.source in Institution
+inv2 B: all w: Work | one u: User | w in u.profile implies w.source in u or w.source in Institution
+inv2 S: all u: User | u.profile.source in u or u.profile.source in Institution
+inv2 S: all u: User | u.profile.source in u + Institution
+inv2 S: all u: User | u.profile.source in (u + Institution)
+inv2 O: all u: User | u.profile.source in u or u.profile.source in Institution
+inv2 C: all u: User | u.profile.source in u + Institution
+inv2 O: all u: User | u.profile.source in u or (u.profile.source in Institution)
+inv2 O: all u: User | (u.profile.source in u) or (u.profile.source in Institution)
+inv2 C: all u: User | u.profile.source in u + Institution
+

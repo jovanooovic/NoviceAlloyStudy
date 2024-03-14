@@ -1,0 +1,12 @@
+inv1 B: succs in Track -> some Entry	succs in Track -> some Exit
+inv1 B: succs in Track -> some Entry	succs in Track -> some Exit	signals in Track -> some Signal
+inv1 T: all t:Track | some Entry in t.*succs
+inv1 B: all t:Track | some e:Entry | e in t.*succs
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs	all t:Track | some s:Signal | s in t
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs	all t:Track | some s:Signal | t -> s in signals
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.*succs
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.^succs
+inv1 T: all t:Track | some entry:Entry, exit:Exit | (entry + exit) & t.^succs
+inv1 B: all t:Track | some entry:Entry, exit:Exit | (entry + exit) in t.^succs
+

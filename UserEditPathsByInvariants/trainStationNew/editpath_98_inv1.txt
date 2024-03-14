@@ -1,0 +1,26 @@
+inv1 T: all t:Track | some Entry in succs and some Exit in succs
+inv1 T: all t:Track | some Entry in t.succs and some Exit in t.succs
+inv1 B: all t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs
+inv1 O: one t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs
+inv1 B: all t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs
+inv1 U: all t:Track | some e:Entry ,ex:Exit | #e>=1 and #ex>=1
+inv1 S: all t:Track | some e:Entry ,ex:Exit |
+inv1 S: all t:Track | some e:Entry ,ex:Exit
+inv1 B: all t:Track | some e:Entry ,ex:Exit | e in t.succs and ex in t.succs and t in t.succs
+inv1 U: all t:Track | some Exit and some Entry
+inv1 T: all t:Track | some Exit in t.succs and some Entry in t.succs
+inv1 T: all t:Track, e:Entry, ex:Exit | #e in t.succs >=1 and #ex in t.succs >=1
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in t.succs and ex in t.succs
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in t.succs or ex in t.succs
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in t.succs and ex in t.succs
+inv1 B: all t:Track | some e:Entry, ex:Exit | e in t.succs and ex in t.succs	all e:Entry, ex:Exit | some t:Track | e in t.succs and ex in t.succs
+inv1 B: all e:Entry, ex:Exit | some t:Track | e in t.succs and ex in t.succs
+inv1 O: one t:Track | some ex:Exit, e:Entry | e in t.succs and ex in t.succs
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv1 O: some ex:Exit, e:Entry | e in Track.succs and ex in Track.succs
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+inv1 C: some ex:Exit, e:Entry | e in Track and ex in Track
+

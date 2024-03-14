@@ -1,0 +1,12 @@
+inv9 B: all p: Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled))
+inv9 B: all p: Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled)-p)
+inv9 B: all p: Professor | no ((enrolled.(p.teaches) & enrolled.(p.enrolled))-p)
+inv9 B: all p: Professor | no (((enrolled.(p.teaches)-p) & (enrolled.(p.enrolled)-p)))
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 S: all p: Professor | all s: enrolled.p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all s: enrolled.(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all s: teaches.(p.teaches) | no (s.enrolled & p.enrolled)
+inv9 B: all p: Professor | all c: teaches.(p.teaches) | no (c.enrolled & p.teaches)
+

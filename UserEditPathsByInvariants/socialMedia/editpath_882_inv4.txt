@@ -1,0 +1,15 @@
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv4 B: all x : User | some y : Photo | all z : x.sees | (Ad in x.posts) implies Ad in z
+inv4 B: all x : User | all z : x.sees | (Ad in x.posts) implies Ad in z
+inv4 B: all x : User | all z : x.sees | (Ad in x.posts) implies z in Ad
+inv4 B: all x : User | all z : x.posts | (Ad in z) implies z in Ad
+inv4 B: all x : User | some y : x.posts | all z : x.posts | (Ad in y) implies z in Ad
+inv4 S: all x : User |  all y : x.posts | one y in Ad implies all y in Ad
+inv4 T: all x : User |  all y : x.posts | one y in Ad implies y in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+

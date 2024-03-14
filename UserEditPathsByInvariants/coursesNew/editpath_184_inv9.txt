@@ -1,0 +1,10 @@
+inv9 B: all p:Professor | no (p.teaches & Professor.enrolled)
+inv9 B: all p:Professor | no (p.teaches & Professor.enrolled)
+inv9 S: all p:Professor | no (p.teaches & p1.enrolled)
+inv9 B: all p,p1:Professor | no (p.teaches & p1.enrolled)
+inv9 B: all p,p1:Professor | p1 != p implies no (p.teaches & p1.enrolled)
+inv9 B: all p,p1:Professor | p1 != p implies no (p.teaches & p1.enrolled)
+inv9 B: all p:Professor | all a:Professor-p | no (p.teaches & a.enrolled)
+inv9 B: all p:Professor | all a:Professor-p | no (p.teaches & a.enrolled)
+inv9 B: all p:Professor | all a:Professor | no (p.teaches & a.enrolled)
+

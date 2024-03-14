@@ -1,0 +1,27 @@
+inv5 S: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+inv5 S: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+inv5 S: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => t.pos' = one (t.pos).prox	}
+inv5 S: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => t.pos' = some ((t.pos).prox)	}
+inv5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => some tk : ((t.pos).prox) | t.pos' = tk	}
+inv5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos not in Exit => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+inv5 B: all t:Train {	t.pos in Exit => no t.pos'	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+inv5 B: all t:Train {	t.pos in Exit => t.pos' = t.pos - t.pos	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+inv5 B: all t:Train {	some t.pos =>{	t.pos in Exit => t.pos' = t.pos - t.pos	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}	}
+inv5 B: all t:Train {	t.pos in Exit => Train' = Train - t	t.pos in (Track - Exit) => {	one tk:((t.pos).prox) | t.pos' = tk	}	}
+inv5 B: all t:Train {	some (t.pos & Exit) => t.pos' = (t.pos) - (t.pos)		}
+inv5 S: all t:Train {	some tk | t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+inv5 S: all t:Train {	some tk | t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+inv5 B: all t:Train {	some tk:t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}
+inv5 O: always(	all t:Train {	some tk:t.pos {	(tk in Exit) => t.pos' = t.pos - tk	(tk not in Exit) => some tk2: tk.prox | t.pos' = tk2	}	}	)
+inv5 S: always(	all t:Train {	some (t.pos & Exit) => t.pos' = t.pos - tk	some (t.pos && (Track-Exit)) => some tk2: tk.prox | t.pos' = tk2	}	)
+inv5 T: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos && (Track-Exit)) => some tk2: t.pos | t.pos' = tk2	}	)
+inv5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: t.pos | t.pos' = tk2	}	)
+inv5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: (t.pos).prox { t.pos' = tk2 }	}	)
+inv5 O: always(	all t:Train {	some (t.pos & Exit) => no t.pos'	some (t.pos & (Track-Exit)) => some tk2: (t.pos).prox | t.pos' = tk2	}	)
+inv5 B: always(	all t:Train {	t.pos in Exit => no t.pos'	t.pos in Entry => some tk2: (t.pos).prox | t.pos' = tk2	}	)
+inv5 B: always(	all t:Train {	t.pos in Exit => no t.pos'	t.pos in Entry => some tk2: (t.pos).prox | t.pos' = tk2	no t.pos => t.pos' = t.pos	}	)
+inv5 E:
+inv5 B: all t:Train{	always( t.pos in Exit implies eventually no t.pos)	always( t.pos in Entry implies eventually t.pos in t.pos.prox)	}
+inv5 B: always(	all t:Train{	no t.pos :> Exit => eventually(t.pos in t.pos.prox)	some t.pos :> Exit => eventually(no t.pos)	}	)
+inv5 B: always( all t:Train | some t.pos :> Exit implies eventually (no t.pos) )	always( all t:Train | some t.pos :> (Track-Exit) implies eventually (t.pos in t.pos.prox) )
+

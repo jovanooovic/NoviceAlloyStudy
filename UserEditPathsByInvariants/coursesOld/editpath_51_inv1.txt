@@ -1,0 +1,6 @@
+inv1 T: all p : Person | p.enrolled implies p & Person
+inv1 T: all p : Person | p.enrolled implies p in Person
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 B: all p : Person| all c : Course | p.enrolled in c implies p in Student
+inv1 C: all p : Person| all c : Course | c in p.enrolled implies p in Student
+

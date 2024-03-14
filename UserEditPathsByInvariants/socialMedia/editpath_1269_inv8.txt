@@ -1,0 +1,6 @@
+inv8 T: all a:Ad | some u:User | u -> a in sees implies (some p:User | p -> a implies u -> p in follows or u -> p in suggested)
+inv8 B: all a:Ad | some u:User | u -> a in sees implies (some p:User | p -> a in posts implies u -> p in follows or u -> p in suggested)
+inv8 U: all a:Ad | all u:User | u -> a in sees implies (some p:User | p -> a in posts implies u -> p in follows or u -> p in suggested)
+inv8 U: all a:Ad,u:User | u -> a in sees implies (some p:User | p -> a in posts implies u -> p in follows or u -> p in suggested)
+inv8 C: all a:Ad,u:User | u -> a in sees implies (some p:User | p -> a in posts and (u -> p in follows or u -> p in suggested))
+

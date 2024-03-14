@@ -1,0 +1,7 @@
+inv7 S: all s : Student |	  		all c1, c2 : s.courses |	  			all p : s.projects |	  				( in c1 and p in c2) mplies c1 = c2
+inv7 S: all s : Student |	  		all c1, c2 : s.courses |	  			all p : s.projects |	  				(p in c1 and p in c2) mplies c1 = c2
+inv7 S: all s : Student |	  		all c1, c2 : s.enrolled |	  			all p : s.projects |	  				(p in c1 and p in c2) mplies c1 = c2
+inv7 U: all s : Student |	  		all c1, c2 : s.enrolled |	  			all p : s.projects |	  				(p in c1 and p in c2) implies c1 = c2
+inv7 B: all s : Student |	  		all c : s.enrolled |	  			all p1, p2 : s.projects & c.projects |	  				p1 != p2
+inv7 U: all s : Student |	  		all c : s.enrolled |	  			all p1, p2 : s.projects & c.projects |	  				p1 = p2
+

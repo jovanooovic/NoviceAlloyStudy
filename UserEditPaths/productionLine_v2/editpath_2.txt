@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv6 S: c : Component | c in ~c.^parts
+inv6 S: c : Component | c in c.^parts
+inv6 S: c : Component | c in (c.^parts)
+inv6 C: no c : Component | c in (c.^parts)
+inv6 B: all c : Component | c in c.^parts
+inv6 T: all c : Component | c in ~c.^parts
+inv6 B: all c : Component | c in c.~^parts
+inv6 C: no c : Component | c in c.^parts
+inv7 S: all c: Component, d: Dangerous, p: Product | p->d in parts => c-> in parts
+inv7 O: ^parts.Dangerous in Dangerous
+

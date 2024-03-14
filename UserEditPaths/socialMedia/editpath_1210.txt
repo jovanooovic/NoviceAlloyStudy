@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 E: 
+NA M: MOD BASE MODEL
+inv1 E: 
+inv1 E: 
+inv1 C: posts in User one -> set Photo
+inv2 T: follows
+inv1 C: posts in User one -> set Photo		all x : Photo | some y : User | y->x in posts
+inv1 C: posts in User one -> set Photo		all x : Photo | one y : User | y->x in posts
+inv2 C: all x : User | x not in x.follows
+inv1 C: all x : Photo | one y : User | y->x in posts
+inv3 B: all x : User | all y : x.sees | y not in Ad
+inv3 B: all x : User | all y : x.sees | posts.y in x.follows
+inv3 B: all x : User | all y : x.sees | posts.y in x.follows or y in Ad
+inv3 B: all x : User | all y : x.sees | posts.y in x.follows
+inv4 C: all x : User | (all y : x.posts | y in Ad) or (all y : x.posts | y not in Ad)
+inv5 T: all x : Influencer | all y : User | y.follows.x
+inv5 B: all x : Influencer | all y : User | y->x in follows
+inv5 U: all x : Influencer | all y : User | y != x implies y->x in follows
+inv6 C: all day : Day | all influencer : Influencer | some photo : influencer.posts | day in photo.date
+inv7 B: all user : User | all suggested : user.suggested | all following : user.follows | following != suggested and suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | suggested not in user.follows and some following : user.follows | suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all user_suggested : user.suggested | (user_suggested != user and user_suggested not in user.follows and some following : user.follows | user_suggested in following.follows)
+inv8 S: all user : User | all ad in user.sees | ad in Ad implies ((some following : user.follows | following->ad in posts) or some suggested : user.suggested | suggested->ad in posts)
+inv8 C: all user : User | all ad : user.sees | ad in Ad implies ((some following : user.follows | following->ad in posts) or some suggested : user.suggested | suggested->ad in posts)
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 B: all user : User | some suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 S: all user : User | set suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 B: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and all following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and one following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | (all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows))
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 B: all user : User | some suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv1 C: all x : Photo | one y : User | y->x in posts
+inv1 C: posts in User one -> set Photo
+inv1 C: all x : Photo | one y : User | y->x in posts
+inv2 C: all x : User | x not in x.follows
+inv3 B: all x : User | all y : x.sees | posts.y in x.follows or y in Ad
+inv4 C: all x : User | (all y : x.posts | y in Ad) or (all y : x.posts | y not in Ad)
+inv5 U: all x : Influencer | all y : User | y != x implies y->x in follows
+inv6 C: all day : Day | all influencer : Influencer | some photo : influencer.posts | day in photo.date
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv8 C: all user : User | all ad : user.sees | ad in Ad implies ((some following : user.follows | following->ad in posts) or some suggested : user.suggested | suggested->ad in posts)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+NA H: THEME UPDATE
+

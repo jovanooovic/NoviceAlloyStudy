@@ -1,0 +1,51 @@
+inv5 S: all i : Influencer | (follows.u) in univ
+inv5 U: all i : Influencer | (follows.i) in univ
+inv5 U: all i : Influencer | (follows.i) in User
+inv5 U: all i : Influencer | i not in i.follows and (follows.i) in User
+inv5 U: all i : Influencer | (follows.i) in User
+inv5 B: all i : Influencer | (follows.i) in User and User in follows.i
+inv5 T: all i : Influencer | follows.i in User.univ
+inv5 U: all i : Influencer | follows.i in User
+inv5 T: all i : Influencer | follows.i & User in iden
+inv5 T: all i : Influencer | (follows.i & User) in iden
+inv5 T: all i : Influencer | (follows.i.User) in iden
+inv5 B: all i : Influencer | (follows.i -> User) in iden
+inv5 T: all i : Influencer | (follows.i -> User-i) in iden
+inv5 T: all i : Influencer | (follows.i -> User-Influencer) in iden
+inv5 S: all i : Influencer | u not in u.follows and (follows.i -> User) in iden
+inv5 B: all i : Influencer | i not in i.follows and (follows.i -> User) in iden
+inv5 B: all i : Influencer | (follows.i -> User) in iden
+inv5 U: all i : Influencer , u: User | u->i in follows implies u in User
+inv5 S: all i : Influencer | follows.i in User+Influecer
+inv5 U: all i : Influencer | follows.i in User+Influencer
+inv5 U: all i : Influencer | follows.i in User
+inv5 S: all u : User | user.follows in Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 U: all i : Influencer | i.follows in User
+inv5 T: all u : User | u.follows.Influencer
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all u : User-Influencer | u.follows in Influencer
+inv5 B: all u : User | (u.follows -> Influencer) in iden
+inv5 U: all i : Influencer | follows.i in User
+inv5 B: all i : Influencer | follows.i in User-Influencer
+inv5 U: all i : Influencer | follows.i in User
+inv5 U: all i : Influencer | follows.i in User
+inv5 T: all u : User | (u.follows.Influencer -> Influencer) in iden
+inv5 T: all u : User | ((u.follows).Influencer -> Influencer) in iden
+inv5 T: all u : User | ((u.(follows.Influencer)) -> Influencer) in iden
+inv5 B: all u : User | (u.follows -> Influencer) in iden
+inv5 T: all u : User | ((u.follows.Influencer) -> Influencer) in iden
+inv5 S: all u : User | u.follows.Influecer in Influencer
+inv5 S: all u : User | u.follows.Influecer in Influencer
+inv5 T: all u : User | u.follows.Influencer in Influencer
+inv5 T: all u : User | u.(follows.Influencer) in Influencer
+inv5 T: all u : User | (u.follows).Influencer in Influencer
+inv5 T: all u : User | u.follows.Influencer
+inv5 T: all u : User | (u.follows)-(User-Influencer)
+inv5 B: all i : Influencer | follows.i = User
+inv5 S: all i : Influencer | follows.i = User\i
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv5 C: all i : Influencer | follows.i = User-{i}
+inv5 C: all i : Influencer | follows.i = User-{i}
+

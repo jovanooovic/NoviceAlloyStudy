@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 T: all w : Work | visible.w => profile.w
+inv1 T: all w : Work, u : User | some u.visible[w] => some u.profile[w]
+inv1 O: all w : Work, u : User | w in u.visible => u in u.profile
+inv1 C: all w : Work, u : User | w in u.visible => w in u.profile
+inv1 U: all w : Work | w in User.visible => w in User.profile
+inv1 C: all w : Work, u : User | w in u.visible => w in u.profile
+inv2 C: all u : User, w : Work | w in u.profile => w.source in Institution + u
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => w1 = w2	    }
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => w1.ids = w2.ids	    }
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => some w1.ids & w2.ids	    }
+

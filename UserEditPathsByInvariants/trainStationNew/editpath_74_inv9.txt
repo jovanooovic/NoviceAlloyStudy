@@ -1,0 +1,32 @@
+inv9 S: all t : Tracks | all j : Junction | all s : Semaphore | j not in t.succs implies no s in t.signals
+inv9 T: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies no s in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 T: all t : Track | all j : Junction | all s : Semaphore | j not in ^t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.^succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in succs.t implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.succs.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j in t.succs implies s in t.signals
+inv9 T: all t : Track | all j : Junction | all s : Semaphore | no j in t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 B: all disj t,t2:Track, s:Semaphore | t2 in Junction && t2 not in t.succs => s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 S: all t : Track | all disj j1,j2 : Junction | all s : Semaphore | j1+j not in t.succs implies s not in t.signals
+inv9 B: all t : Track | all disj j1,j2 : Junction | all s : Semaphore | j1+j2 not in t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Junction | all s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 S: all t : Track | all j : Signals - Junction | all s : Semaphore | j in t.succs implies s not in t.signals
+inv9 U: all t : Track | all j : Signal - Junction | all s : Semaphore | j in t.succs implies s not in t.signals
+inv9 B: all t : Track | all j : Track - Junction | all s : Semaphore | j in t.succs implies s not in t.signals
+inv9 S: all t : Track | all j : Track - Junction | j not in t.succs implies s no t.signals
+inv9 S: all t : Track | all j : Track - Junction | j not in t.succs implies s no t.signals
+inv9 B: all t : Track | all j : Track - Junction | j not in t.succs implies no t.signals
+inv9 B: all t : Track | all j :Junction | j not in t.succs implies no t.signals
+inv9 B: all t : Track | all j :Junction | j not in succs.t implies no t.signals
+inv9 B: all t : Track | no succs.t & Junction implies no t.signals
+inv9 S: all t : Track | no t.succst & Junction implies no t.signals
+inv9 O: all t : Track | no t.succs & Junction implies no t.signals
+inv9 T: all t : Track | no t.succs in Junction implies no t.signals
+inv9 T: all t : Track | no t.succs = Junction implies no t.signals
+inv9 O: all t : Track | some j : Junction | j not in t.succs implies no t.signals
+

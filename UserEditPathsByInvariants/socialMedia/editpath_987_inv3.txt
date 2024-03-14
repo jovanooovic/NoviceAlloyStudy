@@ -1,0 +1,16 @@
+inv3 S: all x : User | all y : Photos | some z : User | y in z.posts and y in x.follows
+inv3 O: all x : User | all y : Photo | some z : User | y in z.posts and y in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and y in x.follows	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and z in x.follows	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv2	and	all x : User | all y : Photo | some z : User | y in z.posts and z in x.follows and y in x.sees	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: all x : User | x.sees in (x.follows.posts - Ad)
+inv3 O: inv2 and	all x : User | x.sees in (x.follows.posts - Ad)	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: inv1 and inv2 and	all x : User | x.sees in (x.follows.posts - Ad)	}		pred inv2{		all x : User | x not in x.follows		}		pred inv1{		all x : Photo | one posts.x
+inv3 S: all x : User | x.sees in x.follows.posts or x.sees == Ad
+inv3 T: all x : User | x.sees in x.follows.posts or x.sees -> Ad
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad
+inv3 O: inv2 and	all x : User | x.sees in x.follows.posts or x.sees in Ad	}		pred inv2{		all x : User | x not in x.follows
+inv3 O: all x : User | x.sees in x.follows.posts or x.sees in Ad and  x not in x.follows
+inv3 O: all x : User | x.sees in (x.follows.posts - Ad) or x.sees in Ad
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+

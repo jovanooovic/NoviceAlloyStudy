@@ -1,0 +1,4 @@
+inv9 B: all t,t1 : Professor | all c : Course | t!=t1 and c in t.enrolled and c in t1.enrolled implies c not in t.teaches and c not in t1.teaches
+inv9 B: all t,t1 : Professor | all c : Course | t!=t1 and c in t.enrolled implies c not in t1.teaches
+inv9 U: all t,t1 : Professor | all c,c1 : Course | t!=t1 and c in t.teaches&t1.teaches and c1 in t.teaches implies c1 not in t1.enrolled
+

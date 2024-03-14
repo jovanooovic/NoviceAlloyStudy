@@ -1,0 +1,5 @@
+inv4 C: all  p1,p2: Photo, u:User | (p1 in Ad and u->p1 in posts and u->p2 in posts) => p2 in Ad
+inv4 B: not some a: Ad, p:Photo-Ad, u:User | u->a in posts => u->p not in posts
+inv4 C: all a: Ad, p:Photo-Ad, u:User | u->a in posts => u->p not in posts
+inv4 C: all a: Ad, p:Photo-Ad, u:User | u->a in posts => u->p not in posts
+

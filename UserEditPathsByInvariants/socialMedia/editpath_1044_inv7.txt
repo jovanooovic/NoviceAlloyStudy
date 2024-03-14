@@ -1,0 +1,10 @@
+inv7 B: all u1 : User ,u2 : u1.follows | u2.follows - u1.follows in u1.suggested
+inv7 B: all u1 : User ,u2 : u1.follows | u1.follows-u2.follows not in u1.suggested
+inv7 B: all u1 : User ,u2 : u1.follows | u1.follows-u2.follows not in u1.suggested
+inv7 B: all u1 : User ,u2 : u1.follows | u1.follows-u2.follows not in u1.suggested
+inv7 B: all u1 : User ,u2 : u1.follows | u1.follows-u2.follows not in u1.suggested
+inv7 B: all u1 : User | u1.follows.follows = u1.suggested
+inv7 B: all u1 : User | u1.follows.follows-u1.follows = u1.suggested
+inv7 C: all u1 : User | u1.follows.follows-u1.follows-u1 = u1.suggested
+inv7 C: all u1 : User | u1.follows.follows-u1.follows-u1 = u1.suggested
+

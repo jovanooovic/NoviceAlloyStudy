@@ -1,0 +1,25 @@
+"no Student.teaches.Course",1
+"no Course in Student.teaches",1
+"no (Person-Student) & teaches",1
+"all p : Professor | p in p.Course",1
+"no Person-Professor.teaches.Course",1
+"Person->teaches = Professor->Course",1
+"(Person-Student) & enrolled.teaches",1
+"no Course in Person-Professor.teaches",1
+"no (Person-Student) & enrolled.teaches",2
+"(Person-Student) & teaches.Course",1
+"teaches.Course & (Person-Professor)",1
+"all p : Person | p in Professor implies p.teaches",2
+"all p : Person | p.teaches implies p in Professor",1
+"all p:Person,c:Course | p->c implies p in Professor",1
+"all x : Person | x in enrolled.teaches => x in Professor",1
+"all p: Person, c: Course | p->c teaches => p in Professor",1
+"all p : Professor, t:teaches | p -> p in teaches",1
+"all p:Person, c:Course | p->c teaches implies p in Professor",4
+"all p : Person, c: Course| p.teaches.c implies p in Professor",1
+"all p: Person | p in Course.grades.Grade implies not p.teaches",1
+"all p : Person | some c: Course| p.teaches.c implies p in Professor",1
+"all p : Person | all c : Course | p->c teaches implies p in Professor",1
+"all p: Person, c: Course | no (p && Professor) implies c not in p.teaches",1
+"no Course in Student.teaches
+	all p:Person-Professor, c:Course | c not in p.teaches",1

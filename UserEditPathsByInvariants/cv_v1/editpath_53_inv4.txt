@@ -1,0 +1,4 @@
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => w1 = w2	    }
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => w1.ids = w2.ids	    }
+inv4 B: all u : User, w1, w2 : Work {	      w1 in u.profile and w2 in u.profile and w1 in u.visible and w2 in u.visible => some w1.ids & w2.ids	    }
+

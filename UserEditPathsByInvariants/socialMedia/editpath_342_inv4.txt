@@ -1,0 +1,12 @@
+inv4 S: all u: User, some a : Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | one a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | one a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | one a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | one a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts => u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts => u.posts in Ad
+inv4 C: all p1,p2 : Photo, u : User | u->p1 in posts and p1 in Ad implies u->p2 in posts implies p2 in Ad
+inv4 C: all p1,p2 : Photo, u : User | p1 in u.posts and p1 in Ad => p2 in u.posts => p2 in Ad
+

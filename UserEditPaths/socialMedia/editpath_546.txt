@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv2 C: all u1,u2:User | u1 -> u2 in follows implies u1 != u2
+inv2 C: all u:User | u -> u not in follows
+inv3 B: all u,u2:User, p:Photo | u->p in sees implies u->u2 in follows
+inv3 B: all u,u2:User, p:Photo | u->p in sees implies ((u->u2 in follows and p not in Ad) or (p in Ad))
+inv3 O: all u,u2:User, p:Photo | u->p in sees implies ((u->u2 in follows and p not in Ad and u2->p in posts) or (p in Ad))
+inv3 O: all u,u2:User, p:Photo | u->p in sees implies ((u->u2 in follows and u2->p in posts) or (p in Ad))
+inv3 C: all u:User, p:Photo | u->p in sees implies ((some u2:User | u->u2 in follows and u2->p in posts) or (p in Ad))
+inv3 O: all u:User, p:Photo | u->p in sees implies ((one u2:User | u->u2 in follows and u2->p in posts) or (p in Ad))
+inv3 B: all u:User, p:Photo | u->p in sees implies ((lone u2:User | u->u2 in follows and u2->p in posts) or (p in Ad))
+inv3 O: all u:User, p:Photo | u->p in sees implies ((one u2:User | u->u2 in follows and u2->p in posts) or (p in Ad))
+inv4 S: all u:User | some p:Post | u->p in posts and p in Ad implies all u -> p in Ad
+inv4 S: all u:User | some p:Post | u->p in posts and p in Ad implies all p1:Photo | u -> p in Ad
+inv4 S: all u:User | (some a:Ad | u->a in posts) implies (all p1:Photo | u -> p in posts implies p in Ad)
+inv4 C: all u:User | (some a:Ad | u->a in posts) implies (all p:Photo | u -> p in posts implies p in Ad)
+inv5 S: none u:User, i:Influencer | u->i in follows and u=i
+inv5 U: not some u:User, i:Influencer | u->i in follows and u=i
+inv5 U: all u:User, i:Influencer | u->i in follows or u=i
+inv7 C: all u1, u2, u3: User | u1->u2 in suggested iff (some u3: User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2)
+inv7 C: all u1, u2: User | u1->u2 in suggested iff (some u3: User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2)
+inv8 S: all u:User | all a:Add| u->a in sees implies (some u2:User | u2->a in posts and (u->u2 in follows or u->u2 in suggested))
+inv8 C: all u:User | all a:Ad| u->a in sees implies (some u2:User | u2->a in posts and (u->u2 in follows or u->u2 in suggested))
+inv8 C: all u:User, a:Ad | u->a in sees implies (some u2:User | u2->a in posts and (u->u2 in follows or u->u2 in suggested))
+

@@ -1,0 +1,13 @@
+inv9 B: all x,y:Professor| x!=y implies no (x.teaches & y.enrolled)
+inv9 B: all x,y:Professor| x!=y implies x.teaches not in y.enrolled
+inv9 B: all x,y:Professor| x!=y implies (x.teaches not in y.enrolled)
+inv9 B: all x,y:Professor, c:Course | x!=y implies c in x.teaches implies c not in y.enrolled
+inv9 B: all x,y:Professor | x!=y implies no (x.teaches & y.enrolled)
+inv9 B: all x,y:Professor | no (x.teaches & y.enrolled)
+inv9 B: all x:Person, y:Professor | x in Professor implies no (y.teaches & x.enrolled)
+inv9 B: all p:Professor | p.teaches not in Professor.enrolled
+inv9 B: no Professor.enrolled
+inv9 B: all p1:Person, p2:Professor | p1 in Professor implies no p1.enrolled
+inv9 B: all p:Person | p in Professor implies p not in Student
+inv9 B: no (Student & Professor)
+

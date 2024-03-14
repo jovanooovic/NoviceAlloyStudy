@@ -1,0 +1,13 @@
+inv14 B: all s: Student, t: Teacher | some c: Class | c->t in Teaches implies t->s in Tutors
+inv14 B: all s: Student, t: Teacher | some c: Class | c->t->s in Groups implies t->s in Tutors
+inv14 T: all s: Student, t: Teacher | some c: Class | Groups.t implies t->s in Tutors
+inv14 S: all s: Student, t: Teacher | some c: Class | all Groups.t implies t->s in Tutors
+inv14 B: all s: Student | some c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors
+inv14 B: all s: Student | one c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors
+inv14 U: all s: Student | all c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors
+inv14 B: all s: Student | some c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors
+inv14 S: all g: Group | some c: Class | all t: Teacher | c->t->g in Groups g in Student implies t->g in Tutors
+inv14 S: all s: Student |  t: Teacher | t->s in Teaches implies
+inv14 S: all s: Student |  t: Teacher | t->s in Teaches implies
+inv14 S: all s: Student |  t: Teacher | t->s in Teaches implies
+

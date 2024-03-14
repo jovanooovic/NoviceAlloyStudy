@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 S: all c:Component | c.parts != empty
+inv1 U: all c:Component | c.parts != 0
+inv1 U: all c:Component | c.parts in univ
+inv2 U: all c:Component | c.parts in (univ-c)
+inv2 O: all c:Component | c.parts in (univ-c-c.parts)
+inv2 U: all c:Component | c.parts in (univ-c)
+inv2 B: all c:Component | c.parts in (univ-c)	    all c1,c2:Component | c2 in c1.parts => c2.parts in (univ - c1.parts)
+inv2 B: all c:Component | c.parts in (univ-c)	    all c1,c2:Component | c2 in c1.parts => c2.parts in (univ - c1.parts)
+inv1 U: all c:Component | c.parts in univ
+inv1 B: all c:Component | c.parts in (univ-c.parts)
+inv3 C: all c:Component | some r:Robot | c.position = r.position
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv2 U: all c1,c2:Component | c1 not in c1.parts
+inv2 U: all c1:Component | c1 not in c1.parts
+inv2 S: all c1,c2:Component | c1 not in c1.parts | c1 in c2.parts => c2 not in c1.parts
+inv2 S: all c1,c2:Component | c1 not in c1.parts | c1 in c2.parts => c2 in (univ -c1.parts)
+inv2 U: all c1,c2:Component | c1 in c2.parts => c2 in (univ -c1.parts)
+inv2 U: all c1,c2:Component | c1 in c2.parts => c2 in (univ -c1.parts)	    all c1:Component | c1 not in c1.parts
+inv1 O: all c:Component | some p:Product | c.parts = p
+inv4 T: all c:Component | c.parts.position < c.position
+inv4 S: all c:Component | p in c.parts | gt[c.position,p.position]
+inv4 S: all c:Component		p in c.parts		gt[c.position,p.position]
+inv4 S: all c:Component		p in c.parts | gt[c.position,p.position]
+inv4 S: all c:Component | p in c.parts => gt[c.position,p.position]
+inv4 S: all c:Component | one p in c.parts => gt[c.position,p.position]
+inv4 S: all c:Component | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv2 U: all c1,c2:Component | c1 in c2.parts => c2 in (univ -c1.parts)	    all c1:Component | c1 not in c1.parts
+inv2 C: all c1:Component | c1 not in c1.^parts
+inv2 C: all c1:Component | c1 not in c1.^parts
+inv1 C: all c:Component | some p:Product | p in c.parts
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv4 O: all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position]
+inv4 O: all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position] && p.position in prevs[c.position]
+

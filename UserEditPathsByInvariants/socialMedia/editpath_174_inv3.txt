@@ -1,0 +1,3 @@
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 C: all u:User, p:Photo | u->p in sees and p not in Ad implies u->p in follows.posts
+

@@ -1,0 +1,11 @@
+inv5 T: {x,y: State | x.(trans.y) in Event}
+inv5 T: {x,y: State | Event in x.(trans.y)}
+inv5 T: {x,y: State | Event in Event<:x.(trans.y)}
+inv5 B: Event in State.(trans.State)
+inv5 B: Event = State.(trans.State)
+inv5 B: Event in (State.trans).State
+inv5 B: Event = (State.trans).State
+inv5 O: all s : State | Event in (s.trans).State
+inv5 O: all s : State | Event = (s.trans).State
+inv5 C: all s : State | (State.trans).State = (s.trans).State
+

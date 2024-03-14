@@ -1,0 +1,25 @@
+inv5 U: all p:Project | some (Student <: projects).p
+inv5 S: all p:Project | some x:Person x.project implies x in Student
+inv5 S: all p:Project | some x:Person x.project.p implies x in Student
+inv5 S: all p:Project | some x:Person | x.project implies x in Student
+inv5 T: all p:Project | some x:Person | x.projects implies x in Student
+inv5 U: all p:Project | some x:Person | p in x.projects implies x in Student
+inv5 U: all p:Project,x:Person | p in x.projects implies x in Student
+inv5 U: all p:Project,x:Person | x in projects.p implies x in Student
+inv5 U: all p:Project, x:Person | x in (Person <: projects).p implies x in Student
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person | x in (Person <: projects).p implies x in Student
+inv5 U: all p:Project, x:Person |some (Person <: projects).p and x in (Person <: projects).p implies x in Student
+inv5 U: all p:Project, x:Person |some (Person <: projects).p implies p in x.projects implies x in Student
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person |some (Person <: projects).p and x in (Person <: projects).p implies x in Student
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person |p in x.projects implies x in Student
+inv5 U: all p:Project | some x:Person | p in x.projects implies x in Student
+inv5 B: all p:Project | some x:Person | p in x.projects implies x not in Professor
+inv5 B: all p:Project | some x:Person | p in x.projects implies x not in Student
+inv5 U: all p:Project | some x:Person | p in x.projects implies x in Student
+inv5 U: all p:Project | some (Student <: projects).p
+inv5 U: all p:Project | some x:Person | p in x.projects and x in Student
+inv5 B: all p:Project, x:Person | p in x.projects and x in Student
+inv5 B: all p:Project, x:Student | p in x.projects
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person | x in (Person <: projects).p implies x in Student
+inv5 C: all p:Project | some (Person <: projects).p		all p:Project, x:Person | x in (Person <: projects).p implies x in Student
+

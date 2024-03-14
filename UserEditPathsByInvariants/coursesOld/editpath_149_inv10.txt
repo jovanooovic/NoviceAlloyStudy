@@ -1,0 +1,8 @@
+inv10 B: all c : Course, p : Person | some c.grades.p <=> p not in Professor
+inv10 T: all c : Course, p : Person | some p.c.grades <=> p not in Professor
+inv10 B: all c : Course, p : Person | some p.(c.grades) <=> p not in Professor
+inv10 B: all c : Course, p : Person | some p.(c.grades) <=> c not in p.teaches
+inv10 B: all c : Course| all p : Person | some p.(c.grades) <=> c not in p.teaches
+inv10 B: all c : Course, p : Person | some p.(c.grades) => c not in p.teaches
+inv10 B: all c : Course, p : Person | some p.(c.grades) <=> c not in p.teaches
+

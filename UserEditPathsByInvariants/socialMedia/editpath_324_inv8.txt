@@ -1,0 +1,9 @@
+inv8 S: all u: User, a: Add | u->a in sees => (some u1,u2: User | u->u1 in follows or u->u2 in suggested)
+inv8 U: all u: User, a: Ad | u->a in sees => (some u1,u2: User | u->u1 in follows or u->u2 in suggested)
+inv8 B: all u: User, a: Ad | u->a in sees => (all u1,u2: User | u->u1 in follows or u->u2 in suggested)
+inv8 B: all u,u1,u2: User, a: Ad | u->a in sees => (u->u1 in follows or u->u2 in suggested)
+inv8 B: all u,u1,u2: User, a: Ad | u->a in sees and (u->u1 in follows or u->u2 in suggested)
+inv8 B: all u,u1,u2: User-Influencer, a: Ad | u->a in sees and (u->u1 in follows or u->u2 in suggested)
+inv8 B: all u,u1,u2: User, a: Ad | u->a in sees and (u->u1 in follows or u->u2 in suggested)
+inv8 B: all u,u1: User, a: Ad | u->a in sees and u1->a in posts => (u->u1 in follows or u->u1 in suggested)
+

@@ -1,0 +1,26 @@
+inv4 S: all u : User | all x, y : Add | u -> x in posts implies (u -> y in posts)
+inv4 B: all u : User | all x, y : Ad | u -> x in posts implies (u -> y in posts)
+inv4 B: all u : User | Ad in u.posts
+inv4 T: all u : User | some u.posts.Ad
+inv4 B: all u : User | Ad in u.posts
+inv4 O: all u : User | u.posts in Ad
+inv4 T: all u : User | some u.posts.Ad implies u.posts in Ad
+inv4 T: all u : User | lone u.posts.Ad implies u.posts in Ad
+inv4 T: all u : User | (some u.posts.Ad) implies u.posts in Ad
+inv4 T: all u : User | (some u.posts.Ad) implies u.posts in Ad
+inv4 T: all u : User | (some u.posts.Ad) implies u.posts in Ad
+inv4 S: all u : User | implies u.posts in Ad
+inv4 O: all u : User | u.posts in Ad
+inv4 T: all u : User | one u.posts in Ad implies u.posts in Ad
+inv4 T: all u : User | (one u.posts in Ad) implies u.posts in Ad
+inv4 T: all u : User | (some u.posts.Ad) implies u.posts in Ad
+inv4 T: all u : User | u.posts.Ad in Ad
+inv4 T: all u : User | u.posts.Ad
+inv4 T: all u : User | u.posts
+inv4 T: all u : User | u.posts.Ad in univ
+inv4 U: all u : User | u.posts in univ
+inv4 S: all u : User | (some u.posts in Ad) implies u.posts in Ad ***Errado***
+inv4 T: all u : User | (some u.posts in Ad) implies u.posts in Ad
+inv4 T: all u : User | (some (u.posts in Ad)) implies u.posts in Ad
+inv4 U: all u : User | (u.posts in Ad) implies u.posts in Ad
+

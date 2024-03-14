@@ -1,0 +1,6 @@
+inv8 B: all t : Track | t in Exit and t in Entry
+inv8 O: all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in t1.succs
+inv8 S: all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in succ.t1
+inv8 B: all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in succs.t1
+inv8 C: all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+

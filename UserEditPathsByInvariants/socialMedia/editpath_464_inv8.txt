@@ -1,0 +1,10 @@
+inv8 S: all u,u2:User , a:Ad | u-> a in sees iff u2-> in posts && u2 in (u.follows || u.suggested )
+inv8 T: all u,u2:User , a:Ad | u -> a in sees iff u2 -> a in posts && u2 in (u.follows || u.suggested )
+inv8 T: all u,u2:User , a:Ad | u -> a in sees iff ((u2 -> a in posts ) && (u2 in (u.follows || u.suggested )))
+inv8 T: all u,u2:User , a:Ad | u -> a in sees implies ((u2 -> a in posts ) && (u2 in (u.follows || u.suggested )))
+inv8 S: all u,u2:User , a:Ad | u -> a in sees implies ((u2 -> a in posts) && (u->u1 in follows || u->u1 in suggested)))
+inv8 S: all u:User , a:Ad | u -> a in sees implies (some u2: User (u2 -> a in posts) && (u2 in (u.follows || u.suggested)))
+inv8 T: all u:User , a:Ad | u -> a in sees implies (some u2: User| (u2 -> a in posts) && (u2 in (u.follows || u.suggested)))
+inv8 S: all u:User , a:Ad | u -> a in sees implies (some u2: User | u2 -> a in posts && (u->u2 in follows || u->u2 in suggested)) )
+inv8 S: all u,u2:User , a:Ad | u -> a in sees implies ( u2 -> a in posts && (u2 in (u.follows || u.suggested))
+

@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv1 T: all u:User | u.posts
+inv2 S: all u:User | u.follows & u == none
+inv2 S: all u:User | u.follows-u == u.follows
+inv2 S: all u:User | u.follows-u == iden
+inv2 T: all u:User | u.follows-u in iden
+inv2 T: all u:User | u.follows-u
+inv2 C: all u:User | u.follows-u = u.follows
+

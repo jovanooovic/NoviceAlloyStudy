@@ -1,0 +1,8 @@
+inv4 U: all c: Component, m: Material | some c.parts and no m.parts
+inv4 T: all c: Component, m: Material | some p: Product | p in c.parts and no p in m.parts
+inv4 U: all c: Component, m: Material | some p: Product | p in c.parts and p not in m.parts
+inv4 C: all c: Component | some  c.parts	all m: Material | no m.parts
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv4 U: all c: Component, m: Material | some c.parts and no m.parts
+inv4 C: all c: Component| some c.parts	all m: Material | no m.parts
+

@@ -1,0 +1,11 @@
+inv9 U: all wc: Workstation | wc not in wc.^succ
+inv9 S: all wc: Workstation | wc not in wc.^succ and all wc1, wc2: wc.succ | wc1 == wc2
+inv9 U: all wc: Workstation | wc not in wc.^succ and all wc1, wc2: wc.succ | wc1 = wc2
+inv9 O: all wc: Workstation | wc not in wc.^succ and #wc.succ = 1
+inv9 B: all wc: Workstation | #wc.succ = 1
+inv9 O: all wc: Workstation | wc not in wc.^succ and #wc.succ = 1
+inv9 U: all wc: Workstation | wc not in wc.^succ and (#wc.succ = 1 or #wc.succ = 0)
+inv9 O: all wc: Workstation | wc not in wc.^succ and (#wc.succ = 1 or #wc.succ = 0) and all wc2: Workstation - wc | wc2 in wc.^succ
+inv9 U: all wc: Workstation | wc not in wc.^succ	all wc: Workstation | (wc in begin and #wc.succ = 1 and all wc2: Workstation - wc | wc2 in wc.^succ) or	(wc in end and wc.succ = none) or	(wc not in begin and wc not in end and #wc.succ = 1)
+inv9 C: all wc: Workstation | wc not in wc.^succ	all wc: Workstation | (wc in begin and #wc.succ = 1 and all wc2: Workstation - wc | wc2 in wc.^succ) or	(wc in end and wc.succ = none) or	(wc not in begin and wc not in end and #wc.succ = 1 and one wc3: Workstation - wc | wc3.succ = wc)
+

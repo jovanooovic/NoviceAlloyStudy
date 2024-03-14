@@ -1,0 +1,20 @@
+"Teacher in ~Teaches",1
+"Teacher in Teacher.Class",1
+"all t:Teacher,g:Group | t->g",1
+"all x : Teacher | lone x.Class",1
+"all t : Teacher | t in Teaches",2
+"Teacher.~Teaches.Teaches in iden",1
+"all x : Teacher | lone Class.Teacher",1
+"all t:Teacher,g:Group | t->g in Groups",2
+"all t : Teacher, c : Class | t->c in Class",1
+"iden  in (Teacher.Teaches).~(Teacher.Teaches)",1
+"all t : Teacher | some c : Class | t->c Teaches",1
+"Teacher in (Teacher.Teaches).~(Teacher.Teaches)",1
+"all p:Person | p in Teaches implies p in Teacher",3
+"all p:Person,c:Class | p in Teacher implies p->c",1
+"iden & Teacher in (Teacher.Teaches).~(Teacher.Teaches)",1
+"all p1,p2:Person | p1->p2 in Class implies p1 in Teacher",1
+"(iden & Teacher) in (Teacher.Teaches).~(Teacher.Teaches)",1
+"all p:Person,c:Class,g:Group | p in Teacher implies c->p->g",1
+"all p:Person | p in Teaches => some c:Class | p->c in Teaches",1
+"all p:Person,c:Class,g:Group | p in Teacher implies c->p->g in Class",2

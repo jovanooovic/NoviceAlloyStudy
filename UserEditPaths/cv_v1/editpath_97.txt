@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv1 C: visible in profile
+inv2 S: all u : User | u.profile in (source.Instituion + source.u)
+inv2 C: all u : User | u.profile in (source.Institution + source.u)
+inv2 U: User.profile in (source.Institution + source.User)
+inv2 U: all u : User | u.profile in (source.Source)
+inv3 B: ~ids.ids in iden
+inv3 O: ids.~ids in iden
+inv3 U: User.profile.~ids.ids in User.profile.iden
+inv3 B: one profile.ids
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv3 U: User.(profile.ids) in Id
+inv3 B: Id in User.(profile.ids)
+inv3 S: ~(profile.ids).(profiles.ids) in iden
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 O: iden in (profile.ids).~(profile.ids)
+inv3 B: (profile.ids).~(profile.ids) in iden
+

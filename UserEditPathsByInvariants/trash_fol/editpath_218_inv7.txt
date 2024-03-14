@@ -1,0 +1,15 @@
+inv7 B: all f1,f2 : File | f1->f2 in link implies f2 in Trash
+inv7 C: all f1,f2 : File | f1->f2 in link implies f2 not in Trash
+inv7 S: all f1->f2 : link | f2 not in Trash
+inv7 S: all (f1,f2) : link | f2 not in Trash
+inv7 C: all f1,f2 : File | f1->f2 in link implies f2 not in Trash
+inv7 C: all f1,f2 : File | f1->f2 in link implies f2 not in Trash
+inv7 C: all f1,f2 : File | f1->f2 in link implies f2 not in Trash
+inv7 S: all f1 : File | is_link[f] implies f not in Trash	}		pred is_link[f : File]{	some g:File | f->g in link
+inv7 B: all f1,f2 : File | f1->f2 in link implies f1 not in Trash
+inv7 S: all f1 : File | is_link[f] implies f not in Trash	}		pred is_link[f : File]{	some g:File | f->g in link
+inv7 S: all f1 : File | is_link[f1] implies f not in Trash	}		pred is_link[f : File]{	some g:File | f->g in link
+inv7 B: all f : File | is_link[f] implies f not in Trash	}		pred is_link[f : File]{	some g : File | f->g in link
+inv7 C: all f : File | is_linked[f] implies f not in Trash	}		pred is_linked[f : File]{	some g : File | g->f in link
+inv7 C: all f : File | is_linked[f] implies f not in Trash	}		pred is_linked[f : File]{	some g : File | g->f in link	}		pred is_link[f : File]{	some g : File | f->g in link
+

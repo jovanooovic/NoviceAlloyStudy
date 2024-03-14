@@ -1,0 +1,22 @@
+inv3 T: all p:Photo | sees.p.follows
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.sees.Ad
+inv3 T: all p:Photo-Ad |	all a:Ad | sees.a
+inv3 T: all a:Ad | sees.a
+inv3 T: all u:User | u.sees.Ad
+inv3 T: all u:User | sees.Ad
+inv3 S: all p:Photo-Ad | u.follows.posts	all u:User |
+inv3 S: all p:Photo-Ad | follows.posts.p	all u:User |
+inv3 S: all p:Photo-Ad | u:User | u.follows.posts.p
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 B: all u:User | u.sees-Ad in follows.u.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 E:
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User-Ad | u.sees in u.follows.posts
+inv3 O: all u:User-Ad | u.sees in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+

@@ -1,0 +1,9 @@
+inv10 S: all s :Students|some g:Group | g in Class and s->g in Groups
+inv10 T: all s :Student|some g:Group | g in Class and s->g in Groups
+inv10 E:
+inv10 T: all s :Student|some g:Group | g in Class implies  s->g in Groups
+inv10 T: all s :Student| some g:Group | s->g in Groups
+inv10 T: all p :Person| some g:Group |  p in Student and p->g in Groups
+inv10 S: all c:Class | all s :Student| some g:Group |  c-> (p->g)in Groups
+inv10 C: all c:Class | all s :Student| some g:Group |  c-> (s->g)in Groups
+

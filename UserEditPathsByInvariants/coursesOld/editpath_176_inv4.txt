@@ -1,0 +1,11 @@
+inv4 T: all p:Project | one (p = Course.projects)
+inv4 T: all p:Project | one Course.p
+inv4 T: all p:Project | one Course.p
+inv4 T: all p:Project | p in Course.p
+inv4 U: all p:Project | p in Course.projects
+inv4 T: all p:Project | lone p in Course.projects
+inv4 T: all p:Project | one p in Course.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv4 T: all p:Project | one  p in Course.projects
+inv4 C: all p:Project | one c:Course | p in c.projects
+

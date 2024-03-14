@@ -1,0 +1,42 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course = Person.teaches
+inv4 C: all p: Project | one (Course<:projects).p
+inv5 E: 
+inv5 T: projects.Project in Student and some projects.Person
+inv5 O: (Person<:projects).Project in Student and some (Person<:projects).Person
+inv5 B: (Person<:projects).Project in Student and some (Person<:projects).Project
+inv5 C: all p: Project | (Person<:projects).p in Student and some (Person<:projects).p
+inv6 B: all s: Student | s.projects in s.enrolled
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 T: all s: Student, c: Course | lone s.projects.c
+inv7 T: all s: Student, c: Course | lone s.projects.~projects.c
+inv7 T: all s: Student, c: Course | lone s.projects.~projects.c
+inv7 T: all s: Student, c: Course | lone s.projects.~(projects.c)
+inv7 T: all s: Student, c: Course | lone s.projects.~projects.c
+inv7 B: all s: Student | lone s.projects&s.enrolled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv7 B: all s: Student | lone s.projects&s.enrolled.projects
+inv7 T: all s: Student, c: Course | lone s.projects&s.enrolled.c.projects
+inv7 B: all c: Course | lone enrolled.c.projects&c.projects
+inv7 S: all s: Student, c: Course | lone s.projects&( all s.enrolled.projects)
+inv7 S: all s: Student, c: Course | lone s.projects&( all s.enrolled.projects)
+inv7 B: all s: Student, c: Course | lone s.projects&(s.enrolled.projects)
+inv7 B: all s: Student | lone s.projects&(s.enrolled.projects)
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone s.projects&c.projects
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone s.projects&c.projects
+inv8 B: Professor.teaches not in Professor.enrolled
+inv8 B: all p: Professor | p.teaches not in p.enrolled
+inv8 B: all p: Person | p.teaches not in p.enrolled
+inv8 B: all p: Person | p.teaches != p.enrolled
+inv8 B: no Professor.teaches&Professor.enrolled
+inv8 S: all p: Professr | no p.teaches&p.enrolled
+inv8 U: all p: Professor | no p.teaches&p.enrolled
+inv9 B: all p1,p2: Professor | no p1.teaches&p2.enrolled
+inv9 U: all p: Professor | no p.teaches&Professor-p.enrolled
+inv9 B: all p: Professor | no p.teaches&(Professor-p).enrolled
+

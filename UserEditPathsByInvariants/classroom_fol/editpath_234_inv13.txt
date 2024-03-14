@@ -1,0 +1,22 @@
+inv13 S: (no Student & Person^(~Tutors)) and (no Teacher & Person^Tutors)
+inv13 S: (no Student in Person^(~Tutors))
+inv13 T: no Student in Person.^(~Tutors)
+inv13 T: no Student in Person.Tutors
+inv13 O: no Person.Tutors
+inv13 O: no Person.^Tutors
+inv13 O: no Person.^~Tutors
+inv13 T: all s:Student |no s in Person.^~Tutors
+inv13 B: all s:Student | s not in Person.^~Tutors
+inv13 B: all s:Student,t:Teacher | s not in Person.^~Tutors and t not in Person.^Tutors
+inv13 B: no Student.Tutors and no Teacher.~Tutors
+inv13 B: no Student.Tutors
+inv13 B: all s:Student | s not in Person.^Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.^Tutors and t not in Person.Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.^Tutors and t not in Person.^Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.*Tutors and t not in Person.*Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.^Tutors and t not in Person.^Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.^Tutors and t not in Person.^~Tutors
+inv13 T: all s:Student, t:Teacher | s not in Person.Tutors.^Tutors and t not in Person.~Tutors^~Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.Tutors.^Tutors and t not in Person.~Tutors.^~Tutors
+inv13 B: all s:Student, t:Teacher | s not in Person.Tutors.^Tutors and t not in Person.~Tutors.^~Tutors
+

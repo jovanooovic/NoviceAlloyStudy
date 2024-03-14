@@ -1,0 +1,13 @@
+inv5 S: all x: Influencer| all follows.x
+inv5 B: all x: Influencer| some follows.x
+inv5 B: all x: Influencer| one follows.x
+inv5 B: all x: Influencer, y:User| y-> x in follows
+inv5 O: all x: Influencer, y:User| y-> x in follows and x->x not in follows
+inv5 U: all x: Influencer, y:User| y-> x in follows implies x->x not in follows
+inv5 B: all x: Influencer, y:User| y-> x in follows implies y->y not in follows
+inv5 O: all x: Influencer, y:User| y-> x in follows and x->x not in follows
+inv5 U: all x: Influencer, y:User| y-> x in follows implies x-> x not in follows
+inv5 U: all x: Influencer, y:User-Influencer| y-> x in follows
+inv5 O: one x: Influencer| all y:User| y-> x in follows  and x->x not in follows
+inv5 U: all x: Influencer, y:User-x |  y-> x in follows
+

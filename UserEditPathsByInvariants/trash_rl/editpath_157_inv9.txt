@@ -1,0 +1,19 @@
+inv9 B: all f:File | lone f.link
+inv9 B: all f:File | lone f.^link
+inv9 T: all f:File | f.link implies no((f.link).link)
+inv9 T: all f:File | f.link implies not((f.link).link)
+inv9 T: all f:File | f.link implies no (f.link.link)
+inv9 T: all f:File | f.link implies  (f.link.link) not in link
+inv9 T: all f:File |  f.link implies f.link.link
+inv9 T: all f:File |  f.link implies f.(link.link)
+inv9 T: all f:File |  f.link implies ((f.link).link)
+inv9 T: all f:File |  f.link implies ((f.link).link) in Trash
+inv9 T: all f:File |  f.link
+inv9 B: all f:File |  f.link in Trash
+inv9 U: all f:File |  f.link.link in Trash
+inv9 T: all f:File |  f.link implies  no f.link.link
+inv9 T: all f:File |  f.link implies  (no f.link.link )
+inv9 T: all f:File |  f.link implies  no( f.link.link )
+inv9 T: all f:File |  f.link implies f.link.link in Trash
+inv9 C: all f:File |  no f.link.link
+

@@ -1,0 +1,15 @@
+inv1 B: all t: Track | some e: Entry | e in t
+inv1 B: all t: Track | some e: Entry, x: Exit | e in t && x in t
+inv1 O: some t: Track | some e: Entry | some x: Exit | e in t.succs && x in t.succs
+inv1 B: all t: Track | some e: Entry | some x: Exit | e in t.succs && x in t.succs
+inv1 C: some Entry & Track	some Exit & Track
+inv1 U: some Entry & Track
+inv1 U: some Exit & Track
+inv1 T: all e: Entry, x: Exit | e & x && x & e
+inv1 B: all e: Entry, x: Exit | some (e & x) && some (x & e)
+inv1 U: all e: Entry, x: Exit | some e && some x
+inv1 C: all e: Entry, x: Exit | some e && some x	some Entry && some Exit
+inv1 C: some Entry && some Exit
+inv1 S: Track.succs(x) != ? ? Signal.subsetOf(Track.succs(x)) ?	Track.preds(x) != ? ? Signal.subsetOf(Track.preds(x)) ? x : Junction
+inv1 C: some Entry && some Exit
+

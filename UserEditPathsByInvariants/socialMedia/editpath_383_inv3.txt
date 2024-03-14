@@ -1,0 +1,12 @@
+inv3 O: all x: User | all p: Photo | x in x.sees
+inv3 T: all x: User | all p: Photo | one (x in x.sees)
+inv3 S: forall u: User, p: Photo |	(p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 S: forall u: User, p: Photo | (p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 S: all u: User, p: Photo | (p in u.sees) <=> (p in u.follows.posts or p instanceof Ad)
+inv3 B: all u: User, p: Photo | (p in u.sees)
+inv3 B: all u: User, p: Photo | (p in u.sees) => (p in u.posts) or (p in Ad)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User, p: Photo | (p in u.sees) => (p in u.posts)
+inv3 S: all u: User | u.sees in u.posts
+

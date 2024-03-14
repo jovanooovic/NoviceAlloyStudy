@@ -1,0 +1,6 @@
+inv2 S: all
+inv2 T: all p: Person | p in Course.grades.Grade implies not p.teaches
+inv2 S: all p: Person, c: Course | p->t in teaches implies p in Professor
+inv2 C: all p: Person, c: Course | p->c in teaches implies p in Professor
+inv2 C: all p: Person, c: Course | p->c in teaches implies p in Professor
+

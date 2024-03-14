@@ -1,0 +1,18 @@
+inv4 T: all c:Component | c.parts.position < c.position
+inv4 S: all c:Component | p in c.parts | gt[c.position,p.position]
+inv4 S: all c:Component		p in c.parts		gt[c.position,p.position]
+inv4 S: all c:Component		p in c.parts | gt[c.position,p.position]
+inv4 S: all c:Component | p in c.parts => gt[c.position,p.position]
+inv4 S: all c:Component | one p in c.parts => gt[c.position,p.position]
+inv4 S: all c:Component | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => gt[c.position,p.position]
+inv4 B: all c:Component | some p:Product | p in c.parts => lt[c.position,p.position]
+inv4 B: all c:Component | all p:Product | p in c.parts => lt[c.position,p.position]
+inv4 O: all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position]
+inv4 O: all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position] && p.position in prevs[c.position]
+

@@ -1,0 +1,7 @@
+inv3 S: all x: Courses | some t:Professor | x in teaches.t
+inv3 O: all x: Course | some t:Professor | x in teaches.t
+inv3 O: all x: Course | some t:Person-Student | x in t.teaches
+inv3 O: all x: Course | (some t:Person-Student | x in t.teaches)
+inv3 O: all x: Course | (some t: Professor | x in t.teaches)
+inv3 O: all x: Course | (some t: Professor | x in t.teaches)
+

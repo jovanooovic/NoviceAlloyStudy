@@ -1,0 +1,8 @@
+inv6 B: all i : Influencer | i.posts in Day
+inv6 B: all d : Day | Influencer.posts in d
+inv6 B: all i : Influencer | i.posts in posts.Day
+inv6 S: all i : Influencer | i.posts.Day in Day
+inv6 S: all d : Day | Influencer.posts in d
+inv6 S: all d : Day | all i : Influencer | d in i.posts.date
+inv6 S: all d : Day,i : Influencer | d in i.posts.date
+

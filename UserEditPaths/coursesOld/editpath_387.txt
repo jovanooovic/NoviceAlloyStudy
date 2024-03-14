@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 B: some teaches.Course
+inv3 O: some Course.teaches
+inv4 B: all p : Project | p in Person.projects
+inv4 B: all p : Project | one (p & Person.projects)
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv4 U: all p : Project | one p & Course.projects
+inv4 U: all p : Project | one (p & Course.projects)
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv4 C: all p : Project | one Course <: projects.p
+inv4 O: all p : Project | one Course <: p.projects
+inv4 C: all p : Project | one Course <: projects.p
+inv5 B: no Professor.projects
+inv5 U: no (Person-Student).projects
+inv5 B: no Professor.projects and all p : Project | some Person <: projects.p
+inv5 B: no Professor.projects and all p : Project | some Person <: (projects).p
+inv5 B: no Professor.projects and (all p : Project | some Person <: (projects).p)
+inv5 B: no Professor.projects		all p : Project | some Person <: (projects).p
+inv5 C: no (Person-Student).projects	  	all p:Project | some Person <: (projects).p
+inv5 B: no Professor.projects	  	all p:Project | some Person <: (projects).p
+inv5 T: no Professor in Person.projects	  	all p:Project | some Person <: (projects).p
+inv5 T: Professor not in Person.projects	  	all p:Project | some Person <: (projects).p
+inv5 C: no (Person-Student).projects	  	all p:Project | some Person <: (projects).p
+inv5 B: no (Professor).projects	  	all p:Project | some Person <: (projects).p
+inv5 C: no (Person-Student).projects	  	all p:Project | some Person <: (projects).p
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+NA M: MOD BASE MODEL
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone c.projects & s.projects
+NA M: MOD BASE MODEL
+inv8 U: all p : Professor | no p.enrolled & p.teaches
+inv10 S: no (Person-Student).Courses.grades
+inv10 S: no (Person-Student).Courses.grades
+inv10 T: no (Person-Student).Course.grades
+inv10 C: no (Person-Student).(Course.grades)
+inv10 B: no (Person-Professor).(Course.grades)
+inv10 C: no (Person-Student).(Course.grades)
+inv11 U: all c : Course, s : Student | some s.(c.grades) implies c in s.enrolled
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv13 B: all c : Course, s : c.grades.last | c in s.enrolled
+inv9 C: all p: Person | no ((p.teaches.~teaches)-p) & enrolled.(p.teaches)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.((s.projects)-p)
+NA H: THEME UPDATE
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.((s.projects)-p)
+

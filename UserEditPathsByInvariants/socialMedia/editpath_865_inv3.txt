@@ -1,0 +1,9 @@
+inv3 S: all x : User |
+inv3 B: all x : User | all y: User | x.sees in y.posts iff x in y.follows
+inv3 B: all x : User | all y: User | (x.sees in y.posts) iff x in y.follows
+inv3 B: all x : User | all y: User | (y.posts in x.sees) iff x in y.follows
+inv3 B: all x : User | all y: User | (y.posts in x.sees) iff y in x.follows
+inv3 B: all x : User | all y: User | (y.posts in x.sees) iff x in y.follows
+inv3 C: all x:User | all y:x.sees| y in Ad or y in x.follows.posts
+inv3 O: all x:User |  x.sees in Ad or x.sees in x.follows.posts
+

@@ -1,0 +1,22 @@
+inv3 E:
+inv3 O: all u: User | some u.sees.follows.posts
+inv3 O: all u: User | some u.sees.follows.posts
+inv3 S: all u: User, all p: Photo-Ad | some u.sees.follows.posts.p
+inv3 S: all u: User, all p: Photo-Ad | some
+inv3 B: all u: User | all p: Photo-Ad | some posts.p
+inv3 T: all u: User | all p: Photo-Ad | some u.sees.posts.p
+inv3 T: all u: User | all p: Photo-Ad | some u.sees.follows.posts.p
+inv3 S: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | u->y in follows and y->x in posts)
+inv3 C: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | u->y in follows and y->p in posts)
+inv3 T: all u: User | all p: Photo-Ad | u.sees.p implies (some y: User | u->y in follows and y->p in posts)
+inv3 C: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | u->y in follows and y->p in posts)
+inv3 C: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | y in u.follows and y->p in posts)
+inv3 O: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | y in u.follows and y in p.posts)
+inv3 C: all u: User | all p: Photo-Ad | u->p in sees implies (some y: User | y in u.follows and p in y.posts)
+inv3 C: all u: User | all p: Photo-Ad | p in u.sees implies (some y: User | y in u.follows and p in y.posts)
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 T: all u: User | all p: Photo-Ad | p in u.sees in u.follows.posts
+inv3 T: all u: User | all p: Photo-Ad | (p in u.sees) in u.follows.posts
+inv3 S: all u: User |  in u.follows.posts
+inv3 C: all u: User |  u.sees-Ad in u.follows.posts
+

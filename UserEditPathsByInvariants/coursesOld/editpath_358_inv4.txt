@@ -1,0 +1,29 @@
+inv4 B: all p: Project | all c: Course | p in c.projects		all c: Course | #c.projects = 1
+inv4 S: all pro: Project | proj in Course.projects
+inv4 U: all pro: Project | pro in Course.projects
+inv4 T: all pro: Project | #Course.projects.pro = 1
+inv4 S: all pro: Project | #Course.projects.ident.pro = 1
+inv4 T: all pro: Project | #Course.projects.iden.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project<:iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project:>iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{iden :> Project}.pro = 1
+inv4 S: all pro: Project | #Course.projects.{Projects<:iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project<:iden}.pro = 1
+inv4 B: all pro: Project | #Course.projects.{Project<:iden} = 1
+inv4 T: all pro: Project | ~{Course.projects}
+inv4 T: all pro: Project | ~{Course.projects}.pro
+inv4 T: all pro: Project | ~{Course<:projects}.pro
+inv4 T: all pro: Project | {Course<:projects}.pro
+inv4 T: all pro: Project | {Course<:projects}
+inv4 T: all pro: Project | ~{Course:>projects}.pro
+inv4 T: all pro: Project | ~{Course<:projects}.pro
+inv4 T: all pro: Project | ~{Course <: projects}.pro
+inv4 E:
+inv4 B: all pro: Project | #Course.projects.{Project<:iden} = 1
+inv4 T: all pro: Project | ~{Course <: projects}.pro
+inv4 T: all pro: Project | ~{Course <: projects}
+inv4 T: all pro: Project | ~{Course <: projects}[pro]
+inv4 T: all pro: Project | ~{Course <: projects}
+inv4 C: all pro: Project | #pro.~{Course <: projects} = 1
+inv4 C: all pro: Project | #pro.~{Course <: projects} = 1
+

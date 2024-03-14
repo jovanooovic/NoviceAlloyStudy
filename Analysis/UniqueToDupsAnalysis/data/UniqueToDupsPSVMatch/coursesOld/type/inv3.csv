@@ -1,0 +1,116 @@
+"teaches != none",1
+"teaches.Course",1
+"Course some Pofessor",1
+"Course some Professor",1
+"all c:Course | teaches.c",1
+"some Professor in Person",1
+"all x:Course | teaches.x",2
+"all c:Course | c.teaches",1
+"all c: Course | teaches.c",1
+"Professor->Course != none",1
+"all c : Course | teaches.c",2
+"all c : Course | c.teaches",1
+"all c: Course | c.~teaches",2
+"all c : Course | c.~teaches",1
+"all c: Course | c in teaches",1
+"all p : Professor | p.teaches",5
+"Course & teaches.Professor",1
+"Course & Professor.teaches",1
+"teaches.Person in grades.Course",1
+"some teaches.Course in Professor",2
+"some Professor in Person.teaches",1
+"some Professor in teaches.Course",1
+"some Course.~teaches in Professor",1
+"all t:Professor| lone t in Course",1
+"all c : Course | Professor.teaches",1
+"all p : Professor | p => p.teaches",1
+"all kurs: Course | kurs in teaches",1
+"some (teaches.Course in Professor)",1
+"all c: Course | one Professor in c",1
+"all c: Course | some Professor in c",1
+"all c:Course | some Person.teaches.c",2
+"all c : Course | Professor.teaches.c",1
+"all c : Course | c.Professor.teaches",1
+"all c : Course | some Person.teaches.c",1
+"all c : Course | c & Professor.teaches",2
+"all c:Course, p:Professor |  p.teaches",1
+"all c: Course, p: Person | c implies p",1
+"all c : Course | c && Professor.teaches",1
+"all p : Person, c : Course| p.teaches.~c",2
+"all c:Course, p:Person |  teaches.Course",1
+"all c : Course | c->teaches in Professor",1
+"all x : Course | some Professor.teaches.x",2
+"all c : Course | c implies some Professor",1
+"all c : Course | some Professor.teaches.c",4
+"all c : Course | one (Person - Student).c",1
+"all c:Course | some (c in Person.teaches)",1
+"all c:Course | one Professor in teaches.c",1
+"all c : Course | some c in Person.teaches",1
+"all c : Course | some c.projects.~projects",1
+"all c : Course | some (Professor.teaches).c",1
+"all c: Course | lone teaches.c in Professor",1
+"all c:Course | some c.~teaches in Professor",1
+"all c : Course | some Professor.(teaches.c)",1
+"all c : Course | some Professor in teaches.c",1
+"all c: Course | some  Professor in c.teaches",1
+"all c : Course | some teaches.c in Professor",1
+"all c : Course | some p : Professor | p -> c",1
+"all  t:Professor, c:Course | some c.teaches.t",1
+"all c:Course, p:Person | some p->c in teaches",1
+"all c:Course | some c.(~teaches) in Professor",1
+"all  t:Professor, c:Course | some t.teaches.c",1
+"all p : Person, c : Course| some p.teaches.~c",1
+"all c : Course | c implies not lone Professor",1
+"all p : Person, c : Course| c in p.teaches.~c",1
+"all c: Course, p: Person | c implies p.teaches",1
+"all c : Course | some p : Professor | p.teaches",1
+"all p : Professor | some p.~(Professor<:Course)",2
+"all p : Person, c : Course| some c in p.teaches",2
+"all c: Course, p: Person | some p->c in teaches",1
+"all c : Course, p : Professor | some p.teaches.c",1
+"all c: Course, p: Person | some(p->c in teaches)",1
+"all t : Professor | some c : Course| t implies c",1
+"all c : Course, p : Professor | lone p.teaches.c",1
+"all c : Course | some p : Professor | c implies p",2
+"all c : Course | c implies some Professor.teaches",1
+"all c:Course | Person.Professor in c.grades.Grade",2
+"all p : Person, c : Course| c not in p.teaches.~c",1
+"all c : Course | some p : Professor | p.teaches.c",1
+"all c : Course | some t : Professor | t.teaches.c",1
+"all p : Professor | some p in p.~(Person<:Course)",1
+"all c:Course, p:Professor | some (p->c in teaches)",1
+"all c : Course | c implies not lone Professor -> c",1
+"all p : Professor, c : Course | some (p.teaches.c)",1
+"all c : Course | some (Person - Student).teaches.c",1
+"all p : Person, c : Course| c not in p.(teaches.~c)",1
+"all c : Course, p : Professor | some c in p.teaches",2
+"all c:Course | no (Person-Student) in c.grades.Grade",2
+"all c : Course | some c in (Person - Student).teachs",1
+"all p : Professor | some p in p.~(Professor<:Course)",3
+"all c: Course, p: Person | c implies (p & Professor)",1
+"all c : Course | some c in (Person - Student).teaches",1
+"all c : Course, p : Professor | some p -> c in teaches",1
+"all p : Person , c : Course | c implies p in Professor",1
+"all t : Professor | some c : Course| t -> c in t.teaches",1
+"all c:Course |some p:Person | p->c implies p in Professor",1
+"all c:Course, p:Person | some teaches.Course in Professor",1
+"all c : Course | not lone p : Professor | c -> p & teaches",1
+"all c : Course, p : Professor | some c.~(Professor<:Course)",1
+"all c:Course, p:Person |  p.teaches->c implies p in Professor",1
+"all c : Course | not lone p : Professor | c implies p & teaches",1
+"all p : Person | p in Professor implies some p.~(Person<:Course)",1
+"all p : Person | p.~(Person<:Course) implies some p in Professor",1
+"all c : Course | not lone p : Professor | c implies p in teaches",1
+"all c: Course, p: Person | (p & Professor) implies c in p.teaches",1
+"all c: Course | some enrolled.c implies (some Professor.teaches.c)",1
+"all p : Person | p in Professor implies some p.~(Professor<:Course)",1
+"all c: Course | some enrolled.c implies (some teaches.c in Professor)",1
+"all c : Course, p : Person | p -> c in teaches => (some p in Professor)",1
+"all p : Professor | some p in p.~(Person<:Course) implies p in Professor",1
+"all c : Course, p : Person | (p -> c in teaches) implies some p in Professor",1
+"all p : Person, c : Course | p in c.grades.Grade~teaches implies p in Professor",1
+"all course: Course | all person: Professor | course implies course in person.teaches",1
+"all x : Course | some y : Professor | y->x in teaches
+  	some Professor in teaches.Course",1
+"all course: Course | some professor: Professor | course implies course in professor.teaches",1
+"all c:Course | some p:Person | no (p & Student) implies (p & Professor) and c not in p.teaches",1

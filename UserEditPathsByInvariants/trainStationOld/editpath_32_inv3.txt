@@ -1,0 +1,41 @@
+inv3 S: always all t: Train | after t.pois = t.pos
+inv3 U: always all t: Train | after t.pos = t.pos
+inv3 T: always pos
+inv3 T: always all t: Train, tk: Track | t.pos.tk in pos implies after t.pos.tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies after t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos or t->tk not in pos implies always t->tk not in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | one t.pos and t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos and t->tk not in pos implies always t->tk in pos
+inv3 O: always all t: Train, tk: Track | t->tk in pos or t->tk not in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos or t->tk not in pos implies always t->tk not in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos
+inv3 C: always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+inv3 U: always all t: Train, tk: Track | t->tk in pos implies always t->tk in pos and t->tk not in pos implies always t->tk not in pos
+inv3 C: always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+inv3 U: always(Train->Track in pos implies always Train->Track in pos)
+inv3 U: always (Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos)
+inv3 U: always ((Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos))
+inv3 U: Train->Track in pos implies always Train->Track in pos and Train->Track not in pos implies always Train->Track not in pos
+inv3 U: (Train->Track in pos implies always Train->Track in pos) and (Train->Track not in pos implies always Train->Track not in pos)
+inv3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+inv3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+inv3 S: all (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+inv3 S: all (Train->Track in pos implies always Train->Track in pos) and (no (Train->Track) & pos implies always no (Train->Track) & pos)
+inv3 S: all (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+inv3 U: (Train->Track in pos implies always Train->Track in pos) and (no Train->Track & pos implies always no Train->Track & pos)
+inv3 C: all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)
+inv3 U: always prox' = prox
+inv3 U: always prox = prox'
+inv3 U: always prox' = prox
+inv3 C: always pos' = pos
+

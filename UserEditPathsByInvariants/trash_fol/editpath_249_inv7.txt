@@ -1,0 +1,8 @@
+inv7 B: all f : File | f.link not in Trash
+inv7 T: all f : File | link not in Trash
+inv7 T: all f,g : File | f->g and g not in Trash
+inv7 O: all f,g : File | f->g in link and g not in Trash
+inv7 O: all f,g : File | f->g in link and f not in Trash
+inv7 C: all f,g : File | f->g in link implies g not in Trash
+inv7 C: all f,g : File | f->g in link implies g not in Trash
+

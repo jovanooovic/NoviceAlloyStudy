@@ -1,0 +1,16 @@
+inv9 B: all w : Workstation | one w.succ
+inv9 U: all w : Workstation | one w.succ or w in end
+inv9 U: all w : Workstation | one w.succ or w = end	all w : Workstation | w not in w.^succ
+inv9 U: all w : Workstation | one w.succ or w = end	all w : Workstation | w not in w.^succ	all w : Workstation | begin not in w.^succ
+inv9 O: all w : Workstation | one w.succ	all w : Workstation | w not in w.^succ	all w : Workstation | begin not in w.^succ
+inv9 O: all w : Workstation | one w.succ and begin != end	all w : Workstation | w not in w.^succ	all w : Workstation | begin not in w.^succ
+inv9 U: all w : Workstation | one w.succ or w = end or begin = end	all w : Workstation | w not in w.^succ	all w : Workstation | begin not in w.^succ
+inv9 U: all w : Workstation - end | one w.succ or begin=end
+inv9 U: all w : Workstation - end | one w.succ or begin=end	all w : Workstation | w not in w.^succ
+inv9 U: all w : Workstation - end | one w.succ or begin=end	all w : Workstation | w not in w.^succ	all w : Workstation - begin | w in Workstation.succ
+inv9 O: no end.succ	all w : Workstation - end | lone w.succ	all w :Workstation - begin | w in begin.succ
+inv9 S: no end.succ	all w : Workstation - end | lone w.succ	Workstation - begin | w in begin.succ
+inv9 O: no end.succ	all w : Workstation - end | lone w.succ	Workstation - begin in begin.succ
+inv9 O: no end.succ	all w : Workstation - end | lone w.succ and w not in w.^succ	Workstation - begin in begin.succ
+inv9 O: no end.succ	all w : Workstation - end | lone w.succ	all w : Workstation | begin not in w.succ		Workstation - begin in begin.succ
+

@@ -1,0 +1,10 @@
+inv5 U: all u : User | all i : Influencer | u in follows.i implies (u!=i)
+inv5 U: all u : User | all i : Influencer | u in follows.i implies (u!=i)
+inv5 U: all u : User-Influencer | all i,y : Influencer | i!=y implies ((i in follows.y) and (u in follows.y))
+inv5 U: all u : User| all i : Influencer | u in follows.i implies u!=i
+inv5 B: all u : User| all i : Influencer | u in follows.i
+inv5 T: all u : User| all i : Influencer | set follows.i
+inv5 U: all u : User| all i : Influencer | u != i implies u in follows.i
+inv5 U: all u : User| all i : Influencer | u != i implies u in follows.i
+inv5 U: all u : User| all i : Influencer | u != i implies u in follows.i
+

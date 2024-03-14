@@ -1,0 +1,5 @@
+inv3 S: all u:Users, p:Photo| p in u.follows.sees
+inv3 B: all u:User, p:Photo| p in u.follows.sees
+inv3 B: all u:User, p:Photo| p in u.follows.sees	all a:Ad, u:User| a in u.sees
+inv3 T: all u:User, p:Photo| p in u.follows.sees	all p:Photo, u:User| p in Ad & p in u.sees
+

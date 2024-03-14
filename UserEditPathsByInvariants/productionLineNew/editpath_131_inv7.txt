@@ -1,0 +1,5 @@
+inv7 U: all c:Component | some p:Component | (p in Dangerous and p in c.parts) implies c in Dangerous
+inv7 U: all c:Component | all p:Component | (p in Dangerous and p in c.parts) implies c in Dangerous
+inv7 U: all c:Component | all p:Component | (p in Dangerous &&  p in c.parts) implies c in Dangerous
+inv7 C: all c:Component | all p:Product | (p in Dangerous and p in c.parts) implies c in Dangerous
+

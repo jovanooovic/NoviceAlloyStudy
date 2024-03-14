@@ -1,0 +1,4 @@
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : enrolled.c - s | lt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : enrolled.c - s | gt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : (enrolled.c - s) | gt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+

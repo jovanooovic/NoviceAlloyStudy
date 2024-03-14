@@ -1,0 +1,11 @@
+inv9 S: !(Teacher some -> one Class)
+inv9 T: Teacher some -> one Class
+inv9 S: Teacher.teaches some -> one Class
+inv9 T: Teacher.Teaches some -> one Class
+inv9 O: all t1, t2: Teacher | t1.Teaches not in t2.Teaches
+inv9 O: all t1, t2: Teacher.Teaches | t1 != t2
+inv9 O: all t1, t2: Person.Teaches | t1 != t2
+inv9 E:
+inv9 E:
+inv9 U: all c: Class | lone (c&Teacher.Teaches)
+

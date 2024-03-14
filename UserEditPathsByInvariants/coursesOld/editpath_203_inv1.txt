@@ -1,0 +1,10 @@
+inv1 O: all p: Person | some enrolled implies p in Student
+inv1 B: all p: Professor | no p.enrolled
+inv1 S: all c: Course | p = enrolled.c implies p in Student
+inv1 S: all c: Course | p: Person | p = enrolled.c implies p in Student
+inv1 B: all p: Person | some enrolled implies p in (Person-Professor)
+inv1 B: all p: Person | some p.enrolled implies p in (Person-Professor)
+inv1 S: enrolled.Coruse in Student
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+

@@ -1,0 +1,12 @@
+inv7 B: User . suggested = User . follows . follows
+inv7 B: User . suggested = User . follows . follows - User . follows
+inv7 B: User . suggested = (User . follows . follows) - (User . follows)
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows  => u1->u3 in suggested
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows  <=> u1->u3 in suggested
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 U: all u:User | u->u not in suggested	all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 O: all u:User | u->u not in suggested	all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 B: all u:User | u->u not in suggested	all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows => u1->u3 in suggested
+inv7 S: all u:User | u->u not in suggested	all u1, u2, u3: User | u1 != u2 and u1!=u3 and au1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 O: all u:User | u->u not in suggested	all u1, u2, u3: User | u1 != u2 and u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+

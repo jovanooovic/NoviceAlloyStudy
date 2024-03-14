@@ -1,0 +1,13 @@
+inv2 S: all ws :  Workstation | ws implies (lone w : Worker)
+inv2 S: all ws :  Workstation | ws implies (lone w : Worker |)
+inv2 S: all ws :  Workstation | ws implies (some w : Worker )
+inv2 O: all ws :  Workstation | some w :  Worker | w->ws in workstation
+inv2 S: all ws :  Workstation | some w :  Worker | w->ws in workstation	all w :  Worker | one w :  Workstation | w->ws in workstation
+inv2 O: all ws :  Workstation | some w :  Worker | w->ws in workstation	all w :  Worker | one ws :  Workstation | w->ws in workstation
+inv2 O: (all ws :  Workstation | some w :  Worker | w->ws in workstation)	and	(all w :  Worker | one ws :  Workstation | w->ws in workstation)
+inv2 O: (all ws :  Workstation | some w :  Worker | w->ws in workers)	and	(all w :  Worker | one ws :  Workstation | w->ws in workers)
+inv2 C: (all ws : Workstation | some w : Worker | ws->w in workers)	and	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv2 C: (all ws : Workstation | some w : Worker | ws->w in workers)	and	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv2 C: (all ws : Workstation | some w : Worker | ws->w in workers)	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv2 C: all ws : Workstation | some w : Worker | ws->w in workers	all w : Worker | one ws : Workstation | ws->w in workers
+

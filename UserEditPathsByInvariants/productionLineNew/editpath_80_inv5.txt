@@ -1,0 +1,7 @@
+inv5 O: all w : Workstation | all h : Human | all r : Robot | (h in w.workers) iff (r not in w.workers)
+inv5 U: all w : Workstation | all h : Human | all r : Robot | (h in w.workers) iff (r not in w.workers) and (r in w.workers) iff (h not in w.workers)
+inv5 O: all w : Workstation | all h : Human | all r : Robot | ((h in w.workers) iff (r not in w.workers)) and ((r in w.workers) iff (h not in w.workers))
+inv5 S: all w : Workstation | (w.workers - Humans = Robot) or (w.workers - Humans = none)
+inv5 B: all w : Workstation | (w.workers - Human = Robot) or (w.workers - Human = none)
+inv5 C: all w : Workstation | all h : Human | all r : Robot | ((h in w.workers) implies (r not in w.workers)) and ((r in w.workers) implies (h not in w.workers))
+

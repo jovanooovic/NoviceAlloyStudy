@@ -1,0 +1,16 @@
+inv1 B: all c : Course | c.grades.Grade = Student
+inv1 T: all c : Course | c.grades.Grade is in Student
+inv1 B: all c : Course | c.grades.Grade in Student
+inv1 B: all c : Course | all p : Person | p in c.grades.Grade => p in Student
+inv1 B: all c : Course | Student in c.grades.Grade
+inv1 B: all c : Course | Professor not in c.grades.Grade
+inv1 B: all c : Course | Student in c.grades.Grade and Professor not in c.grades.Grade
+inv1 B: all c : Course | all p : Person | p in c.grades.Grade implies p in Student
+inv1 B: all c : Course | all p : Person | p in c.grades.Grade implies p = Student
+inv1 B: all c : Course | all p : Person | p in c.grades.Grade implies p=Student
+inv1 B: all c : Course | all p : Person | p in c.grades.Grade implies p in Student
+inv1 B: all c : Course | all s : Student | all p : Person-Student | s in c.grades.Grade and p not in c.grades.Grade
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv1 C: all p : Person | all c : Course | c in p.enrolled => p in Student
+

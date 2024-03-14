@@ -1,0 +1,12 @@
+inv3 U: all e:Exit | no t:Track | e->t in succs
+inv3 U: no t:Track | t in Exit.succs
+inv3 T: all e:Exit | no Track in e->succs
+inv3 T: all e:Exit | no Track in e.succs
+inv3 U: all e:Exit | no e.succs
+inv3 U: no Exit.succs
+inv3 U: all t:Exit | no t.succs
+inv3 U: no Exit.succs
+inv3 U: all t:Exit | all ts:Track | ts not in t.succs
+inv3 C: all t:Track | t in Exit iff all ts:Track | ts not in t.succs
+inv3 C: all t:Track | t in Exit iff all ts:Track | ts not in t.succs
+

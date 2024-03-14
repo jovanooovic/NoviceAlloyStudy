@@ -1,0 +1,4 @@
+inv14 B: all c: Class | Teaches.c in Tutors.(c.Groups.Group & Student)
+inv14 S: all c: Class | let w = Tutors.(c.Groups.Group & Student) | no w or Teaches.c in w
+inv14 U: all c: Class | let w = Tutors.(c.Groups.Group & Student) | no w or Teaches.c in w
+

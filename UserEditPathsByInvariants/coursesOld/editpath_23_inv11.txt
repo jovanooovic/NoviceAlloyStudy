@@ -1,0 +1,9 @@
+inv11 T: all p : Person-Student | p not in (Course.grades.Grade)-(enrolled.grades.Grade)
+inv11 U: all p : Person-Student | p not in (Course.grades.Grade)-(p.enrolled.grades.Grade)
+inv11 B: all p : Person-Student | p not in (Course.grades.Grade)&(p.enrolled.grades.Grade)
+inv11 U: all p : Person-Student | p not in (Course-p.enrolled).grades.Grade
+inv11 U: all p : Person-Student | p not in (Course-(p.enrolled)).grades.Grade
+inv11 U: all p : Person-Professor | p not in (Course-(p.enrolled)).grades.Grade
+inv11 C: all p : Person | p not in (Course-(p.enrolled)).grades.Grade
+inv11 U: all p : Student | p not in (Course-(p.enrolled)).grades.Grade
+

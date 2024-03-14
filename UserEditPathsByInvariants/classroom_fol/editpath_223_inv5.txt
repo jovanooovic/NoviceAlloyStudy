@@ -1,0 +1,10 @@
+inv5 B: all t:Teacher | t in Group
+inv5 T: some p:Teacher,c:Class | p->c
+inv5 T: some p:Teacher,c:Class | p->c
+inv5 T: some p:Teacher,c:Group | p->c
+inv5 C: some p:Teacher,c:Class | p->c in Teaches
+inv5 S: some p:Person,c:Class | p in Teacher implies
+inv5 S: some c:Class | some t:Teachers | p-> in Teaches
+inv5 S: some c:Class | some t:Teacher | p-> in Teaches
+inv5 C: some c:Class | some t:Teacher | t->c in Teaches
+

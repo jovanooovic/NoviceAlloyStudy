@@ -1,0 +1,24 @@
+inv4 T: all p:Project | one projects.p
+inv4 T: all p:Project | one Course.projects.p
+inv4 T: all p:Project | one Course.projects.p
+inv4 T: all p:Project | one Course.projects.p
+inv4 T: all p:Project | some Course.projects.p
+inv4 U: all p:Project | p in Course.projects
+inv4 S: all p:Project | p in one Course.projects
+inv4 T: all p:Project | one Course.projects.p
+inv4 U: all p:Project | p in Course.projects
+inv4 U: all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 B: all p:Project | one Course.projects
+inv4 T: all p:Project | one Course.projects.p
+inv4 B: all p:Project | one Course.projects
+inv4 B: all p:Project | one Course.projects
+inv4 T: all p:Project | one Course.projects.p
+inv4 T: all p:Project | some Course.projects.p
+inv4 U: all p:Project | some Course.projects
+inv4 B: one Course.projects
+inv4 U: all p:Project | p in Course.projects
+inv4 C: all p:Project | p in Course.projects	  	all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 T: all p:Project | p in projects	  	all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 T: all p:Project | p in projects	  	all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+inv4 C: all p:Project | p in Course.projects	  	all p:Project,c1,c2:Course | p in c1.projects and p in c2.projects implies c1=c2
+

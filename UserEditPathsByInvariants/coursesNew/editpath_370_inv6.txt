@@ -1,0 +1,7 @@
+inv6 T: all s : Student | no c : Course | c in s.projects and c not in s.enrolled.projects
+inv6 T: all s : Student | no c : Course | c in s.projects and c not in s.enrolled.projects
+inv6 U: all s : Student | no c : Course | c in s.(Person <: projects) and c not in s.enrolled.(Course <: projects)
+inv6 U: all s : Person | no c : Course | c in s.(Person <: projects) and c not in s.enrolled.(Course <: projects)
+inv6 S: Student <: projects).(~projects :> Course) in enrolled
+inv6 B: (Student <: projects).(~projects :> Course) in enrolled
+

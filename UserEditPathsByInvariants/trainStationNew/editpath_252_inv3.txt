@@ -1,0 +1,9 @@
+inv3 B: some e : Exit, t : Track | no t.succs implies e in t
+inv3 B: some e : Exit, t : Track | no t.succs implies e in t
+inv3 B: some e : Exit, t : Track | e in t implies no t.succs
+inv3 B: some e : Exit, t : Track | e in t implies no t.succs	all t : Track | t.succs != t
+inv3 U: all t : Track | t in Exit implies no t.succs
+inv3 U: all t : Track | t in Exit implies no t.^succs
+inv3 C: all t : Track | t in Exit iff no t.^succs
+inv3 C: all t : Track | t in Exit iff no t.succs
+

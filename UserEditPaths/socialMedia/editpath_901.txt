@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 B: all p:Photo|all u: User| p in u.posts
+inv1 C: all p:Photo|one u: User| p in u.posts
+inv1 O: all p:Photo|one u: User| u in u.posts
+inv1 O: one u: User| u in u.posts
+inv1 O: all p: Photo |one u: User| u in u.posts
+inv1 C: all p: Photo |one u: User| p in u.posts
+inv1 B: all p: Photo |all u: User| p in (one u.posts)
+inv1 U: all p: Photo | some posts.p
+inv1 C: all p: Photo | one posts.p
+inv1 C: all p: Photo |  #posts.p=1
+inv2 C: all u:User|u not in u.follows
+inv2 O: all u:User| no u.follows
+inv2 O: all u:User|  #u.follows=0
+inv2 C: all u:User|  u not in u.follows
+inv2 C: all u:User|  u not in u.follows
+inv3 B: all p: Photo|all u: User|some (sees.p & u.follows)
+inv3 B: all p: Photo|all u: User|lone(sees.p & u.follows)
+inv3 O: all u: User, p: Photo | p in u.sees implies (some f: u.follows | p in f.posts)
+inv3 O: all u: User, p: Photo | p in u.sees implies (some f: u.follows | p in f.posts)	all a: Ad, u: User | a in u.sees
+inv3 B: all a: Ad, u: User | a in u.sees
+inv3 O: all u: User, p: Photo | p in u.sees && p not in Ad implies (some f: u.follows | p in f.posts)	all a: Ad, u: User | a in u.sees
+inv4 T: all p:Photo|all a:Ad| p in a implies posts.p
+inv5 E: 
+inv5 E: 
+inv5 E: 
+inv5 E: 
+inv5 E: 
+inv5 E: 
+inv5 T: all f: Influencer|all u:User| (f in u-f).follows
+inv5 T: all f: Influencer|all u:User|some  (f in u-f).follows
+

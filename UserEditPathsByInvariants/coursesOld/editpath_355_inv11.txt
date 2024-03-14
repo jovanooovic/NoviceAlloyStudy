@@ -1,0 +1,6 @@
+inv11 U: all x:Student, y:Course, z:Grade | x->y not in enrolled implies y->x->z not in grades
+inv11 T: all x:Student,y:Grade | x->y in enrolled.grades
+inv11 B: all x:Student,y:Grade | x->y in x.enrolled.grades
+inv11 B: all x:Student,y:Grade | x->y in enrolled.grades.x
+inv11 U: all x:Student, y:Course, z:Grade | x->y not in enrolled implies y->x->z not in grades
+

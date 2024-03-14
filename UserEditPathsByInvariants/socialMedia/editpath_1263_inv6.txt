@@ -1,0 +1,8 @@
+inv6 T: all day: Day | all influencer: Influencer | all photo: Photo | photo->day in influencer.posts
+inv6 B: all day: Day | all influencer: Influencer | all photo: Photo | day in photo.date implies photo in influencer.posts
+inv6 B: all day: Day | all influencer: Influencer | all photo: Photo | photo.date = day implies photo in influencer.posts
+inv6 B: all day: Day | all influencer: Influencer | all photo: Photo | photo in influencer.posts implies photo.date = day
+inv6 B: all day: Day | all influencer: Influencer | all photo: Photo | photo in influencer.posts implies day in photo.date
+inv6 B: all day: Day | all photo: Photo | all i: Influencer | photo->day in date implies photo in i.posts
+inv6 C: all day: Day | all i: Influencer | day in i.posts.date
+

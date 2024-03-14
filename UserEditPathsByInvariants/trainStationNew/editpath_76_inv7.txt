@@ -1,0 +1,5 @@
+inv7 U: all en : Entry, ex : Exit | ex in en.^succs implies ex != en
+inv7 U: all en : Track, ex : Track | en in Entry and ex in Exit and ex in en.^succs implies ex != en
+inv7 B: all t : Track | t in t.^succs
+inv7 C: all t : Track | t not in t.^succs
+

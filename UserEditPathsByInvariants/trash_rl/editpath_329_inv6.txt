@@ -1,0 +1,30 @@
+inv6 S: all file in File : lone file.link
+inv6 S: file in File : lone file.link
+inv6 S: File : lone file.link
+inv6 S: file.link -> lone file
+inv6 S: file in File | file.link -> lone file
+inv6 S: link: File.link, file:File |.link -> lone file
+inv6 U: all link: File.link | lone link
+inv6 S: all file : File. | lone file.link
+inv6 S: all file : File. | file.link -> lone file
+inv6 S: all file : File. | file - file.link  lone file
+inv6 S: all file : File. | file.^link -> lone file
+inv6 S: all file : File. | lone file.^link
+inv6 S: all link in File.link | link
+inv6 T: all link : File.link | link
+inv6 U: all link : File.link | lone link
+inv6 S: all link : File.link | f: File | link -> lone file
+inv6 S: all link : File.link | f: File | one link -> lone file
+inv6 S: link : File.link | f: File | one link -> lone file
+inv6 S: link : File.link | lone link
+inv6 U: all link : File.link | lone link
+inv6 U: all link : File.link | lone file: File | file in link
+inv6 T: all file: File | lone file in file.^link
+inv6 S: all file: File |  file.^link = lone
+inv6 S: all file: File |  file.^link = lone file
+inv6 T: all file: File |  lone file in file.^link
+inv6 S: file: File |  lone file.^link
+inv6 O: lone File.link
+inv6 S: lone link: File.link
+inv6 C: all file: File |  lone file.link
+

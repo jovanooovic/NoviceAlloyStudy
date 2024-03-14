@@ -1,0 +1,19 @@
+inv7 B: all s: Student, c:Course | one p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 B: all s: Student, c:Course | lone p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 B: all s: Student, c:Course | lone p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 S: all s: Student, c:Course, lone p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 S: all s: Student, c:Course, lone p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 S: all s: Student, c:Course lone p:Project | s in enrolled.c and c in projects.p implies s in projects.p
+inv7 B: all s: Student, c:Course| lone p:Project | s in projects.p
+inv7 T: all s: Student, c:Course,p:Project | s in enrolled.c and c in projects.p implies lone s in projects.p
+inv7 T: all s: Student, c:Course,p:Project | s in enrolled.c and c in projects.p implies lone projects.p
+inv7 B: all s: Student, c:Course,p:Project | s in enrolled.c and c in projects.p implies lone (Person <:projects).p
+inv7 B: all p:Project, c:Course | lone (Person<: projects).p and c in projects.p
+inv7 B: all p:Project, c:Course | lone (Person<: projects).p
+inv7 B: all p:Project, c:Course | lone (Person<: projects).p and c->p in projects
+inv7 E:
+inv7 E:
+inv7 B: all p:Person | p.projects in p.enrolled.projects
+inv7 T: all p:Person | lone p.projects in p.enrolled.projects
+inv7 E:
+

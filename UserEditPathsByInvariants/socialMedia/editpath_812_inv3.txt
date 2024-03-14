@@ -1,0 +1,3 @@
+inv3 B: all u:User | all uf: u.follows | all p:Photo | (p in uf.posts) implies (p not in Ad) && (p in u.sees) implies (p in Ad)
+inv3 C: all u:User | all us: u.sees | us in u.follows.posts or us in Ad
+

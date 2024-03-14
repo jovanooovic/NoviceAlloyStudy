@@ -1,0 +1,8 @@
+inv7 S: all p : Person, c : Course | c in p.enrolled implies lone p.projects & c.course
+inv7 S: all p : Person, c : Course | c in p.enrolled implies lone p.projects & c.course
+inv7 S: all p : Person, c : Course | c in p.enrolled implies lone (p.projects & c.course)
+inv7 U: all p : Person, c : Course | c in p.enrolled implies lone p.projects & c.projects
+inv7 B: all p : Person | lone p.projects & p.enrolled.projects
+inv7 B: all p : Student | lone p.projects & p.enrolled.projects
+inv7 U: all p : Person, c : Course | c in p.enrolled implies lone p.projects & c.projects
+

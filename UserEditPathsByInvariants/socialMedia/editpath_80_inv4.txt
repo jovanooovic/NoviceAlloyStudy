@@ -1,0 +1,21 @@
+inv4 S: all u:User | some (u.posts & Ad) implies all u.posts in Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 S: all u : User | some a : Ad | u->a in posts implies all p : Photo | u->p in posts | p is Ad
+inv4 S: all u : User | some a : Ad | u->a in posts implies all p : Photo | u->p in posts | p is Ad
+inv4 S: all u : User | some a : Ad | u->a in posts implies all p : Photo | u->p in posts | p is Ad
+inv4 S: all u : User | some a : Ad | u->a in posts implies all p : Photo | u->p in posts | p is Ad
+inv4 T: all u:User | some a:Ad | a in u.posts implies all x: u.posts | x is Ad
+inv4 T: all u:User | some a:Ad | a in u.posts implies all x:u.posts | x is Ad
+inv4 T: all u:User | some a:Ad | a in u.posts implies all x:u.posts | x is Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 S: all u:User-Influence | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u:User-Influencer | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 S: all u:User | some a:Ad | a in u.posts implies u.posts in Ad	all u:Influence | u.posts in Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad	all u:Influencer | u.posts in Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad	all u:User | u in Influencer implies u.posts in Ad
+inv4 T: all u:User | some a:Ad | a in u.posts implies u.posts in Ad	all u:User | u is Influencer implies u.posts in Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u:User | some a:Ad | a in u.posts implies u.posts in Ad
+inv4 T: all u:User | some u.posts in Ad implies u.posts in Ad
+inv4 C: all u:User | u.posts & Ad != none implies u.posts in Ad
+

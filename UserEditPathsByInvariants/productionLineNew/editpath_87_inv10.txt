@@ -1,0 +1,12 @@
+inv10 S: all c:Component| c.ws in c.^parts.workstation.succ
+inv10 B: all c:Component| c.workstation in c.^parts.workstation.succ
+inv10 B: all c:Component| c.workstation in c.^(parts.workstation.succ)
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.parts.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.workstation.^succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.^workstation.succ
+inv10 B: all c:Component| c.parts in Component implies c.parts.workstation in c.^(workstation.succ)
+inv10 B: all c:Component| c.parts in Component implies c.workstation in c.^(parts.workstation.succ)
+

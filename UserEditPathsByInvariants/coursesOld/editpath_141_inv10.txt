@@ -1,0 +1,6 @@
+inv10 T: all p : Person | all c : Course | p->c in grades implies p in Student
+inv10 T: all p : Person | all c : Course | all g : grades |p->c->g in grades implies p in Student
+inv10 U: all p : Person | all c : Course | all g : Grade |p->c->g in grades implies p in Student
+inv10 U: all p : Person | all c : Course | all g : Grade | (p->c->g in grades) implies (p in Student)
+inv10 C: all p : Person | all c : Course | all g : Grade | (c->p->g in grades) implies (p in Student)
+

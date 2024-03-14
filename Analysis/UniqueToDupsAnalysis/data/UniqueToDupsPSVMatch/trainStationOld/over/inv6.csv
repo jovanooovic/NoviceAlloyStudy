@@ -1,0 +1,32 @@
+"always Signal != Signal'",2
+"always no (signal & signal')",1
+"always (Signal-Green = Green')",1
+"always Green' = Signal - Green",2
+"all s: Signal | always s != s'",3
+"always all s: Signal | always s != s'",1
+"always one s : Signal | always s' != s",1
+"always all s : Signal | always s' != s",1
+"always some s : Signal | always s' != s",1
+"always all s : Signal | eventually s' != s",1
+"always some s : Signal | eventually s' != s",1
+"all t : Track |always( t.signal' != t.signal)",1
+"all t : Track | always t.signal != t.signal'",1
+"always all s : Signal | always eventually s' != s",1
+"always ((Signal-Green = Green') and (Green = (Signal-Green)'))",1
+"always ((Signal-Green = Green') and (Green = Signal'-Green'))",1
+"all s : Signal | no (s & Green) implies s' = Green else s' not in Green",1
+"always (Green = Signal and no Green' or no Green and Green' = Signal)",1
+"all t : Track | always ((some t.signal) implies (t.signal != t.signal'))",2
+"always (Green = Signal and no Green' or no Green and Green' = Signal')",1
+"always (Signal in Green and no Green' or no Green and Green' = Signal')",2
+"all  s : Signal | always (no (s & Green) implies s' = Green else s' not in Green)",1
+"always (all  s : Signal |  no (s & Green) implies s' = Green else s' not in Green)",1
+"always (all  s : Signal |  no (s & Green) implies s'  in  Green else s' not in Green)",1
+"always ( all s : Signal { s in Green => s' not in Green
+s not in Green => s' in Green
+}
+)",2
+"always ( all s : Signal { s in Green => Green' = Green - s
+s not in Green => Green' = Green + s
+}
+)",1

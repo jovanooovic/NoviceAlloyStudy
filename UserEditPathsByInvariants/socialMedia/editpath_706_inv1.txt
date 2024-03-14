@@ -1,0 +1,14 @@
+inv1 U: all p:Photo, u1,u2:User | u1->p in posts and u2->p in posts => u1 = u2
+inv1 C: all p:Photo, u1,u2:User | u1->p in posts and u2->p in posts => u1 = u2	all p:Photo | some u:User | u->p in posts
+inv1 U: all p:Photo | some u:User | u->p in posts
+inv1 C: all p:Photo | one u:User | u->p in posts
+inv1 C: all p:Photo, u1,u2:User | u1->p in posts and u2->p in posts => u1 = u2	all p:Photo | some u:User | u->p in posts
+inv1 S: post in User lone -> set Photo	all p:Photo | some u:User | u->p in posts
+inv1 C: posts in User lone -> set Photo	all p:Photo | some u:User | u->p in posts
+inv1 C: posts in User lone -> Photo	all p:Photo | some u:User | u->p in posts
+inv1 C: posts in User lone -> Photo		posts in User some -> Photo
+inv1 C: posts in User one -> Photo
+inv1 C: }		check Injectividade {	(all p:Photo, u1,u2:User | u1->p in posts and u2->p in posts => u1 = u2)	iff	(posts in User lone -> Photo)
+inv1 C: }		check Injectividade {	(all p:Photo, u1,u2:User | u1->p in posts and u2->p in posts => u1 = u2)	iff	(posts in User lone -> Photo)
+inv1 C: posts in User one -> Photo
+

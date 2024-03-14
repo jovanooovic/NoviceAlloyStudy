@@ -1,0 +1,5 @@
+inv6 B: all i:Influencer, p:Photo, d:Day | p->d in date and i->p in posts
+inv6 S: all i:Influencer, p:Photo, one d:Day | p->d in date and i->p in posts
+inv6 B: all i:Influencer, p:Photo| one d:Day | p->d in date and i->p in posts
+inv6 C: all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts
+

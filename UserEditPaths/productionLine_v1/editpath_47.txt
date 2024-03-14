@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: all c : Component | some c.parts
+inv2 U: all c : Component | c not in c.parts
+inv3 T: all p : Position | p in Component.position => some position.p
+inv3 T: all p : Position | p in Component.position => some position.p
+inv3 S: all p : Position | p in Component.position => some positionr.p
+inv3 T: all p : Component.Position | some r : Robot | r->p in position
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+inv3 T: all p : Component.position | some Robot->p in position
+inv2 U: all c : Component | c not in c.parts
+inv2 B: all c,c1 : Component, p : Position | c->p + c1->p in position => c = c1
+inv2 T: all c,c1 : Component, p : Position | c not in c->parts and c1 not in c1->parts and c->p + c1->p in position => c = c1
+inv2 T: all c,c1 : Component, p : Position | (c not in c->parts) and (c1 not in c1->parts) and c->p + c1->p in position => c = c1
+inv2 B: all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and c->p + c1->p in position => c = c1
+inv2 B: all c,c1 : Component, p : Position | (c not in c.parts) and (c1 not in c1.parts) and (c->p + c1->p in position => c = c1 )
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+inv1 O: iden in parts.~parts
+inv1 C: iden & Component->Component in parts.~parts
+

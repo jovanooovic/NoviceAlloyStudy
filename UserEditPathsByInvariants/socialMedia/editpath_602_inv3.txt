@@ -1,0 +1,5 @@
+inv3 S: all ad:Ad, p:Photo, u:User | p not in Add implies posts.p in user.follows
+inv3 S: all ad:Ad, p:Photo, u:User | p not in Ad implies posts.p in user.follows
+inv3 B: all ad:Ad, p:Photo, u:User | p not in Ad implies posts.p in u.follows
+inv3 C: all p:Photo, u:User | p in u.sees => p in Ad or p in u.follows.posts
+

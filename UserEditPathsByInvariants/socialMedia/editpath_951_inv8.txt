@@ -1,0 +1,8 @@
+inv8 S: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->s in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (u->v in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | v->a in sees => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | (v->a in sees and u->a in posts) => (v->u in follows or v->u in suggested)
+inv8 B: all v, u : User, a : Ad | (v->a in sees and u->a in posts) => (v->u in follows or v->u in suggested)
+

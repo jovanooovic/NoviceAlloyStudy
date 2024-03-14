@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 U: all p: Person, s: Student, c: Course | p not in s => p not in c
+inv1 B: all p: Person, s: Student, c: Course | p not in s => p not in c.~enrolled
+inv1 B: all p: Person, s: Student | p not in s => p not in Course.~enrolled
+inv1 U: all p: Person, s: Student | p not in Student => p not in Course.~enrolled
+inv1 C: all p: Person | p not in Student => p not in Course.~enrolled
+inv2 C: all p: Person | p not in Professor => p not in Course.~teaches
+inv3 C: all c: Course | #c.~teaches>0
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv5 S: all p: Person, pr: Project | (p in student => pr in p.projects)
+inv5 B: all p: Person, pr: Project | (p in Student => pr in p.projects)
+inv5 U: all p: Person, pr: Project | (p not in Student => pr not in p.projects)
+inv5 T: all p: Person, pr: Project | (p not in Student => pr not in p.projects)  && (#pr.~projects>0)
+inv5 T: all s: Student, pr: Project | (pr in s.projects)  && (#pr.~projects>0)
+inv5 O: all p: Person | p not in Student => p.projects = none		   	   all p: Project | some m: Person | m.projects = p
+inv5 U: all p: Person | (p not in Student => p.projects = none) && (all pr:Project | some s: Student | pr in s.projects )
+NA H: THEME UPDATE
+inv5 U: all p: Person | (p not in Student => p.projects = none) && (all pr:Project | some s: Student | pr in s.projects )
+inv5 S: all p: Person, pp:Project | (p not in Student => pp not in p.project) && (all pr:Project | some s: Student | pr in s.projects )
+inv5 U: all p: Person, pp:Project | (p not in Student => pp not in p.projects) && (all pr:Project | some s: Student | pr in s.projects )
+NA H: THEME UPDATE
+

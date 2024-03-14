@@ -1,0 +1,4 @@
+inv12 U: all s: Student | all course: s.enrolled | lone (course.grades).Grade & s
+inv12 T: all s: Student | all course: s.enrolled | lone (course.grades) & s.Grade
+inv12 U: all s: Student | all course: s.enrolled | lone ((course.grades) & s -> Grade)
+

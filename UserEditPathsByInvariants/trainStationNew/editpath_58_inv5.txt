@@ -1,0 +1,19 @@
+inv5 E:
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs <=> t1 in Junction	all j : Junction | j not in Track.succs&j
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs <=> t1 in Junction	all j : Junction | j not in j.succs
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs <=> t1 in Junction	all j : Track | j not in j.succs
+inv5 B: all j : Track | j not in j.succs
+inv5 E:
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 U: all t1 : Track | some t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 S: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction	no Track.succ
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction	no Track.succs
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction	one Track.succs
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 U: all j : Junction | some t1,t2: Track | t1!=t2 and j in t1.succs&t2.succs
+inv5 C: all j : Junction | some t1,t2: Track | t1!=t2 and j in t1.succs&t2.succs	all t1,t2,t3 : Track | t2!=t3 and t1 in t3.succs&t2.succs implies t1 in Junction
+

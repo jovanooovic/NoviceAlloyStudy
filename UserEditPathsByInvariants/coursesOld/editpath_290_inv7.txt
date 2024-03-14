@@ -1,0 +1,15 @@
+inv7 U: all s : Student | lone (Course <: projects).projects.s
+inv7 B: all s : Student | lone (Course <: projects).(s.projects)
+inv7 T: all s : Student, c : Course | lone c.(s.projects)
+inv7 T: all s : Student, c : Course | lone(s.projects).c
+inv7 B: all s : Student | lone (s.projects)
+inv7 B: all s : Student | lone (Course <: projects).(s.projects)
+inv7 T: all s : Student | (Course <: projects).(s.projects)
+inv7 B: all s : Student, c : Course | c in s.enrolled implies lone c.projects
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone c.projects & s.projects
+inv7 T: all s : Student, c : Course | c in s.enrolled implies lone s.projects.c
+inv7 T: all s : Student, c : Course | c in s.enrolled implies lone c.projects.s
+inv7 T: all s : Student, c : Course | c in s.enrolled implies lone c.projects & s.projects.c
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone c.projects & s.projects
+inv7 U: all s : Student, c : Course | c not in s.enrolled or lone c.projects & s.projects
+

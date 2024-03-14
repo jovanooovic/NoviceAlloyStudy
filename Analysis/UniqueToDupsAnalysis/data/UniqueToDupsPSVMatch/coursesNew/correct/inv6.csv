@@ -1,0 +1,9 @@
+"(Person <: projects) in enrolled.projects",1
+"all p:Project| (Person <: projects) in enrolled.projects",1
+"all s : Person | all p : Project | p in s.projects implies s in enrolled.projects.p",2
+"all p: Project | all pe: Person | p in pe.projects implies p in pe.enrolled.projects",1
+"all x: Person| all p: Project | p in x.projects implies (some c: Course| p in c.projects and c in x.enrolled)",1
+"all p : Project | all s : Person | p in s.projects implies some c : Course | p in c.projects and s in enrolled.c",1
+"all s1 : Person | all ps : Project | ps in s1.projects implies (some c1 : Course | ps in c1.projects and c1 in s1.enrolled)",1
+"all s1 : Person | all p1 : Project | 
+  	s1->p1 in projects implies (some c1 : Course | c1->p1 in projects and s1->c1 in enrolled)",2

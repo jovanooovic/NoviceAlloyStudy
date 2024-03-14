@@ -1,0 +1,4 @@
+inv1 B: all s:Student, p:Person | s.enrolled = p.enrolled
+inv1 B: all s:Student, p:Person | p.enrolled in s.enrolled
+inv1 C: all c:Course, p:Person | no (p & Student) implies c not in p.enrolled
+

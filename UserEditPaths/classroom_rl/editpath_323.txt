@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv7 C: Class = Teacher.Teaches
+inv9 C: all c : Class | lone((c.~Teaches) & Teacher)
+inv11 T: all c : Class | (some (c.Group) ) implies (some( c.~Teaches & Teacher))
+inv11 T: all c : Class | (some (c.Group) ) implies (some ( c.~Teaches) & Teacher)
+inv11 T: all c : Class | (some (c.Group) ) implies some (( c.~Teaches) & Teacher)
+inv11 C: all c : Class | (some (c.Groups) ) implies some (( c.~Teaches) & Teacher)
+inv15 C: all p : Person | some ( p.^(~Tutors) & Teacher)
+inv12 T: all t : Teacher | some t.Teaches.Group
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

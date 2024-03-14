@@ -1,0 +1,13 @@
+inv1 S: all x : Photo | some y : User y -> x in posts
+inv1 U: all x : Photo | some y : User | y -> x in posts
+inv1 O: all x : Photo | some y : User | x -> y in posts
+inv1 C: all x : Photo | one y : User | y -> x in posts
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv1 S: all i : Photo | one u : User | y -> x in posts
+inv1 O: all i : Photo | one u : User | i -> u in posts
+inv1 C: all i : Photo | one u : User | u -> i in posts
+inv1 C: all i : Photo | one u : User | u -> i in posts	all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv1 C: all x : Photo | one posts.x
+

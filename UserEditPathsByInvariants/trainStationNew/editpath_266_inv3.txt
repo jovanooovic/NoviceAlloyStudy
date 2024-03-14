@@ -1,0 +1,34 @@
+inv3 S: all
+inv3 S: all
+inv3 S: all
+inv3 B: one e:Track | all t:Track | e->t not in succs implies e in Entry
+inv3 B: one e:Track | all t:Track | e->t not in succs implies e in Exit
+inv3 B: some e:Track | all t:Track | e->t not in succs implies e in Exit
+inv3 U: all e:Exit | all t:Track | e->t not in succs
+inv3 U: all e:Exit | all t:Track | e->t not in succs
+inv3 B: some t:Track | t in Exit implies all ts:Track | t->ts not in succs
+inv3 B: some t:Track | t in Exit implies all ts:Track | t!=ts and t->ts not in succs
+inv3 B: some t:Track | t in Exit implies all ts:Track | t->ts not in succs
+inv3 B: some t:Track | t in Exit implies all ts:Track | t!=ts and t->ts not in succs
+inv3 B: some t:Track | t in Exit implies all ts:Track | t!=ts and t->ts not in succs	some t:Track | t in Exit implies all s:Signal | t->s not in signals
+inv3 B: all t:Track | t in Exit implies all ts:Track | t!=ts and t->ts not in succs	all t:Track | t in Exit implies all s:Signal | t->s not in signals
+inv3 B: all t:Track | t in Exit implies all ts:Track | t!=ts and t->ts not in succs	all t:Track | t in Exit implies all s:Signal, ss:Semaphore, sss:Speed | t->s not in signals and t->ss not in signals and t->sss not in signals
+inv3 B: all t:Track | t in Exit implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 B: some t:Track | t in Exit implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 B: all t:Exit | all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 B: all t:Exit, ts:Track, s:Signal | t!=ts implies  t->ts not in succs and t->s not in signals
+inv3 B: all t:Exit, ts:Track, s:Signal | t->ts not in succs and t->s not in signals
+inv3 U: all t:Exit, ts:Track, s:Signal | t->ts not in succs
+inv3 U: all t:Exit, ts:Track | t->ts not in succs
+inv3 B: all t:Track | t in Exit implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 B: all t:Track | t in Exit implies all ts:Track, s:Signal | t!=ts and ts->t not in succs and t->s not in signals
+inv3 B: all t:Track | t in Exit implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 S: all t:Exit implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 S: all t:Exit | implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 S: all t:Exit | implies all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 B: all t:Exit | all ts:Track, s:Signal | t!=ts and t->ts not in succs and t->s not in signals
+inv3 S: all t:Exit | all ts:Track, s:Signal, ss:Semaphore, sss:Speed | t!=ts and t->ts not in succs and t->s not in signals and
+inv3 B: all t:Exit | all ts:Track, s:Signal, ss:Semaphore, sss:Speed | t!=ts and t->ts not in succs and t->s not in signals and t->ss not in signals and t->sss not in signals
+inv3 C: all t:Track | t in Exit iff all ts:Track | ts not in t.succs
+inv3 C: all t:Track | t in Exit iff all ts:Track | ts not in t.succs
+

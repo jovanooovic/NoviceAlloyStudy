@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 C: (all f : File | f not in Trash)
+inv2 C: (all file : File | file in Trash)
+inv3 C: (some file : File | file in Trash)
+inv4 C: (all f : File | f in Protected implies f not in Trash)
+inv5 C: (all f: File | f not in Protected implies f in Trash)
+inv6 C: (all t,u,x : File | t->u in link and t->x in link implies u=x)
+inv7 T: (all t,u : File | t->u in link implies t->u not in Trash)
+inv7 O: (all t,u : File | t->u in link implies t not in Trash and u not in Trash)
+inv7 O: (all t,u : File | t->u in link implies (t not in Trash and u not in Trash))
+inv7 S: (all t,u : File | t->u in link implies )
+inv7 S: (all t,u : File | t->u in link implies )
+inv7 S: (all t,u : File | t->u in link implies )
+inv7 S: (all t,u : File | t->u in link implies )
+inv7 S: (all t,u : File | t->u in link implies )
+

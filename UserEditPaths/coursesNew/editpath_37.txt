@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 B: all p : Person - Professor, c : Course | c in p.enrolled
+inv1 B: all p : Person - Student, c : Course | c in p.enrolled
+inv1 T: all p : Person |p not in Student implies not p.enrolled
+inv1 C: all p : Person |p not in Student implies no p.enrolled
+inv1 T: all p : Person - Professor | p.enrolled
+inv1 S: all p : Person - Professor | all p.enrolled
+inv2 C: all p : Person |p not in Professor implies no p.teaches
+inv3 C: all c:Course | some teaches.c
+inv4 S: all p : project | one c : course | p in c.projects
+inv4 S: all p : Project | one c : course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 T: all p : Person, pr : Project | p not in Student implies no pr in p.projects	  	all pr: Project | some p : Person | p in p.projects
+inv5 T: all p : Person, pr : Project | p not in Student implies  pr not in p.projects	  	all pr: Project | some p : Person | p in p.projects
+inv5 C: all p : Person, pr : Project | p not in Student implies pr not in p.projects	  	all pr: Project | some s : Student | pr in s.projects
+inv5 C: all p : Person, pr : Project | p not in Student implies pr not in p.projects	  	all pr: Project | some s : Person | pr in s.projects
+inv5 C: all p : Person, pr : Project | p not in Student implies pr not in p.projects	  	all pr: Project | some s : Student | pr in s.projects
+inv6 B: all st : Student, c : Course, pr:c.projects | c in st.enrolled implies pr in st.projects
+inv6 B: all st : Student, c : Course, pr:st.projects | c in st.enrolled implies pr in c.projects
+inv6 B: all st : Student, c : Course, pr:st.projects | c in st.enrolled implies pr in c.projects
+inv6 U: all st : Student, pr:st.projects|some c : Course | c in st.enrolled implies pr in c.projects
+inv6 U: all st : Student, pr: st.projects |some c : Course | c in st.enrolled <=> pr in c.projects
+inv6 U: all st : Student, pr: st.projects |some c : Course | c in st.enrolled and pr in c.projects
+inv7 S: all st:Student, c:Course, lone pr:Project | c in st.enrolled implies p in c.projects
+

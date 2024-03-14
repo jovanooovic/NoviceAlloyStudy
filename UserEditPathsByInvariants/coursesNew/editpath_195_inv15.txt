@@ -1,0 +1,2 @@
+inv15 B: all s1, s2: Student| all c: Course| all p: Project| (s1!=s2 && p in s1.projects && p in s2.projects && p in c.projects) => (all g1,g2 : Grade | g1 in s1.(c.grades) && g2 in s2.(c.grades) => (g1=prev[g2] || g2=prev[g1] || g1=g2))
+

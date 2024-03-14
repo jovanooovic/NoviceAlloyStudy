@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 U: all p : Person | all c : Course | p in c implies p in Student
+inv1 U: all p : Person | all c : Course | p in c implies p not in Professor
+inv1 U: all p : Person | all c : Course | (p in c) implies p in Student
+inv1 U: all p : Person | p in Course implies p not in Professor
+inv1 U: all p : Person | p in Course implies p in Student
+inv1 U: all p : Person | p in Course implies (p in Student and p not in Professor)
+inv1 U: all p : Person | p in Course implies (p in Student and p not in Professor)
+inv1 S: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv1 S: all p : Person | Course in p.enrolled implies p in Student
+inv1 S: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv1 S: all p : Person | all c : Course | (c in p.enrolled) implies p in Student
+inv1 S: all p : Person | all c : Course | (c in p.enrolled) implies (p in Student)
+inv1 C: all p : Person | all c : Course | (c in p.enrolled) implies (p in Student)
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv1 B: all p : Person | Course in p.enrolled implies p in Student
+inv1 S: all p : Person | all Course in p.enrolled implies p in Student
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies p in Student
+inv2 C: all p : Person | all c : Course | c in p.teaches implies p in Professor
+inv3 S: all c : Courses | some p : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv1 C: all p : Person | all c : Course | c in p.enrolled implies (p in Student)
+inv2 C: all p : Person | all c : Course | c in p.teaches implies (p in Professor)
+inv3 C: all c : Course | c in Person.teaches
+inv4 S: all p : Project | p in Course.projects	  	all p : Project | all c1,c2 : course | p in c1.projects and p in c2.projects implies (c1=c2)
+inv4 C: all p : Project | p in Course.projects	  	all p : Project | all c1,c2 : Course | p in c1.projects and p in c2.projects implies (c1=c2)
+inv5 S: all p : Person-Students | p.projects = none	  	all p : Projetc | p in Person.projects
+inv5 S: all p : Person-Student | p.projects = none	  	all p : Projetc | p in Person.projects
+inv5 C: all p : Person-Student | p.projects = none	  	all p : Project | p in Person.projects
+inv6 S: sll p : Project | all s : Student | p in s.projects implies p in s.enrolled.projects
+inv6 S: sll p : Project | all s : Student | p in s.projects implies p in s.enrolled.projects
+inv6 U: all p : Project | all s : Student | p in s.projects implies p in s.enrolled.projects
+

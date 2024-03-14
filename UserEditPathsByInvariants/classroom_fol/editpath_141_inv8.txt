@@ -1,0 +1,7 @@
+inv8 S: all t:Teacher | c1,c2:Class | c1 in t.Teaches and c2 in t.Teaches implies c1=c2
+inv8 C: all t:Teacher,c1,c2:Class | c1 in t.Teaches and c2 in t.Teaches implies c1=c2
+inv8 B: all t:Teacher | some t.Teaches
+inv8 B: Class in Teacher.Teaches
+inv8 C: all t:Teacher,c1,c2:Class | c1 in t.Teaches and c2 in t.Teaches implies c1=c2
+inv8 C: all t:Teacher | lone t.Teaches
+

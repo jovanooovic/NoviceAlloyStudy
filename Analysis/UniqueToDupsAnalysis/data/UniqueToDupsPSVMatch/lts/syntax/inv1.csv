@@ -1,0 +1,45 @@
+"trans.",1
+"lone s.trans",1
+"some s.trans",1
+"some S.trans",2
+"all s: State |",1
+"all State.trans",1
+"lone State.Trans",1
+"some State.trans
+
+/*
+There is a single initial state.
+*/",1
+"some s:State in s.trans",1
+"all State | trans != none",4
+"all s : State some s.trans",1
+"all s:State | some t:trans",2
+"all s: State | some s.trans",1
+"all s: State | some x.trans",1
+"all s : State | some s.tans",1
+"all s:State | s.trans = some",1
+"all s: State | some s.trans) > 0",1
+"all s: State | some s.transition",1
+"all s:State, some t:trans | t in s",1
+"all s:State | some t:trans in s.trans",1
+"all s : State | one s.trans
+
+/*
+There is a single initial state.
+*/",1
+"all s: State, some e: State | s.trans = e",1
+"all s:State | some s.trans
+
+/*
+There is a single initial state.
+*/",2
+"all s : State | all e->ns : s.trans | no s.trans",1
+"all s:State | some Event.(s.trans)
+
+/*
+There is a single initial state.
+*/",1
+"all s : State | all (e->ns) : s.trans | no s.trans",1
+"all s1 : State , some s2 : State | s1 -> s2 in trans",1
+"all s:State | some ss:State | e:Event | e->ss in s.trans",1
+"all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1 not s2)",1

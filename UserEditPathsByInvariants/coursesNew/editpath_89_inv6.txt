@@ -1,0 +1,5 @@
+inv6 U: all p:Project, s:Student | s.projects in s.enrolled.projects
+inv6 U: all p:Project, s:Student | (Person <: projects) in enrolled.projects
+inv6 C: all p:Project| (Person <: projects) in enrolled.projects
+inv6 C: (Person <: projects) in enrolled.projects
+

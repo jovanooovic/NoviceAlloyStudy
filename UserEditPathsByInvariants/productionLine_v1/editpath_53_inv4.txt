@@ -1,0 +1,31 @@
+inv4 T: all c : Component |  c.^parts not in c.^next.^parts
+inv4 T: all c : Component |  c.^parts not in c.^next.^parts
+inv4 T: all c : Component |  c.^parts not in (c.^next).^parts
+inv4 T: all c : Component |  c.^parts not in (c.^next).^parts
+inv4 T: all p : Position | Component.p.parts not in Component.(p.^next).parts
+inv4 S: all p : Position | position.p).parts not in position.(p.^next).parts
+inv4 S: all p : Position | position.p).parts not in position.(p.^next).parts
+inv4 B: all p : Position | position.p.parts not in position.(p.^next).parts
+inv4 B: all p : Position | position.p.^parts not in position.(p.^next).^parts
+inv4 B: all p : Position | position.p.parts not in position.(p.^next).parts
+inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+inv4 T: all p : Position | no position.p.*parts & position.(p.^next).*parts
+inv4 T: all p : Position | no position.p.*parts & position.(p.^next).*parts
+inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+inv4 T: all p : Position | no position.p.parts & position.(p.^next).*parts
+inv4 B: all p : Position | no position.p.parts & position.(p.^next).parts
+inv4 B: all disj c1, c2 : Component | c1.parts in c2.parts implies c1.position in c2.position.*prev
+inv4 S: all p : Position | no (position.p <: Components) & (position.(p.^next) <: Components)
+inv4 U: all p : Position | no (position.p <: Component) & (position.(p.^next) <: Component)
+inv4 B: all p : Position | no (position.p <: Component).parts & (position.(p.^next) <: Component).parts
+inv4 O: all p : Position | no (position.p <: Component).parts & (position.(p.^next) <: Component).*parts
+inv4 O: all p : Position | no (position.p <: Component).*parts & (position.(p.^next) <: Component).*parts
+inv4 T: all p : Position | no (position.p).*parts & (position.(p.^next)).*parts
+inv4 T: all p : Position | no (position.p).*parts & (position.(p.^next)).*parts	  	all c : Component | no c.parts.position
+inv4 O: all c : Component | no c.parts.position
+inv4 C: all c : Component | no c.^parts.position & c.position.^next
+inv4 C: all c : Component | no c.^parts.position & c.position.^next
+inv4 C: all c : Component | no c.^parts.position & c.position.^next
+

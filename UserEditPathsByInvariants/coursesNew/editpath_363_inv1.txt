@@ -1,0 +1,5 @@
+inv1 S: all s: Student | s in c.~enrolled
+inv1 B: all s: Student | s in Course.~enrolled
+inv1 S: all s: Person | p not in Student => p not in Course.~enrolled
+inv1 C: all p: Person | p not in Student => p not in Course.~enrolled
+

@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 S: sig Station {	entries: some Entry,	exits: some Exit	}
+inv1 S: sig Station {	entries: some Entry,	exits: some Exit	}
+inv1 E: 
+inv1 T: all x:Track | some Entry.x and some Exit.x
+inv1 C: some x:Track | x in Entry	some x:Track | x in Exit
+inv2 C: all x:Signal | one signals.x
+inv3 S: all x:Exit | no x.succ
+inv2 C: all x:Signal | one signals.x
+inv3 U: all x:Exit | no x.succs
+inv3 U: all x:Track | x in Exit implies no x.succs
+inv3 U: all x:Exit, y:Track | y not in x.succs
+inv3 U: all x:Exit | no x.succs
+inv4 U: all x:Entry | no succs.x
+inv4 B: all x:Entry | no x.succs
+inv4 U: all x:Entry | no succs.x
+

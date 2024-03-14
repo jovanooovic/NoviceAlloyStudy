@@ -1,0 +1,5 @@
+inv4 T: all u : User | some (Ad&u.posts) => none (u.posts-Ad)
+inv4 C: all u : User | some (Ad&u.posts) => no (u.posts-Ad)
+inv4 C: all u : User | some (u.posts&Ad) => no (u.posts-Ad)
+inv4 C: all u : User | some (u.posts&Ad) => no (u.posts-Ad)
+

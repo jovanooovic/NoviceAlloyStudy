@@ -1,0 +1,10 @@
+inv2 T: all u : User | u not in u.^(u)
+inv2 O: all u : User | u not in u.^(follows)
+inv2 T: all u : User | u not in follows
+inv2 C: all u : User | u not in u.follows
+inv2 S: follow.~follows iden
+inv2 T: follows.~follows iden
+inv2 B: follows.~follows in iden
+inv2 B: follows.~follows in iden.~follows
+inv2 C: no iden & follows
+

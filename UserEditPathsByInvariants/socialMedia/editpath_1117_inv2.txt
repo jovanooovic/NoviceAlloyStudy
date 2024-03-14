@@ -1,0 +1,15 @@
+inv2 S: u.~u.folows in iden
+inv2 S: u.~u.folows in iden
+inv2 S: u.~u.folows in iden
+inv2 S: u.u in iden
+inv2 S: u.follows->u in iden
+inv2 B: all u: User | u.follows->u in iden
+inv2 U: all u: User | u->u in iden
+inv2 T: all u: User | u.u in iden
+inv2 T: all u: User | u.~(u.follows) in iden
+inv2 T: all u: User | u.~(u->follows) in iden
+inv2 T: all u: User | u.follows in iden
+inv2 B: all u: User | u.follows->u in iden
+inv2 B: all u: User | u.follows->u not in iden
+inv2 C: all u: User | u->u not in follows
+

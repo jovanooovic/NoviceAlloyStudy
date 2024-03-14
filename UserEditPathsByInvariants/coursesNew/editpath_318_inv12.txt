@@ -1,0 +1,7 @@
+inv12 S: all s : Sudent | all c : Course | all g : Grade | lone (s->g in c.grades)
+inv12 T: all s : Student | all c : Course | all g : Grade | lone (s->g in c.grades)
+inv12 T: all s : Student | all c : Course | all g : Grade | lone (s->g in c.grades)
+inv12 E:
+inv12 T: all s : Person | all c : Course | all g : Grade | lone (s->g in c.grades)
+inv12 U: all s : Student | all c : Course | lone g : Grade | s->g in c.grades
+

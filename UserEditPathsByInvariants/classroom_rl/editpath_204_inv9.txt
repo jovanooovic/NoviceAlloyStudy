@@ -1,0 +1,14 @@
+inv9 S: all c : Class | c in one Teacher.Teaches
+inv9 U: all c : Class, t : Teacher | #(c & t.Teaches) < 2
+inv9 U: all c : Class | #(c & Teacher.Teaches) < 2
+inv9 T: all c : Class | #(c and Teacher.Teaches) < 2
+inv9 U: all c : Class | #(c & Teacher.Teaches) < 2
+inv9 U: all c : Class | #(c & Teacher.Teaches) < 2
+inv9 U: all c : Class, t : Teacher | #(c & t.Teaches) < 2
+inv9 T: all c : Class | #(c in Teacher.Teaches) < 2
+inv9 B: all c : Class | one (c & Teacher.Teaches)
+inv9 O: all c : Class | #Teacher->c < 2
+inv9 O: all c : Class | #(Teacher->c) < 2
+inv9 O: all c : Class | #(Teacher->c) > 0 and #(Teacher->c) < 2
+inv9 O: all c : Class | #(Teacher->c) > 0 and #(Teacher->c) < 2
+

@@ -1,0 +1,9 @@
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.grades[Person]
+inv8 B: all c : Course | all p : Professor | p in c.~(teaches) iff p not in c.grades[Person]
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades[Person] and p not in c.~(enrolled))
+inv8 S: all c : Course | all p : Professor | p not in c.~(enrolled))
+inv8 S: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.~(enrolled))
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades[Person] and p not in c.~(enrolled))
+inv8 T: all c : Course | all p : Professor | p in c.~(teaches) implies (p not in c.grades and p not in c.~(enrolled))
+inv8 U: all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.~(enrolled)
+

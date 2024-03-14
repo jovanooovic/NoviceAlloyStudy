@@ -1,0 +1,7 @@
+inv12 T: all s : Student, enrol : s.enrolled | lone s in enrol.grades.s
+inv12 T: all s : Student, enrol : s.enrolled | lone enrol.grades.Grade = s
+inv12 T: all s : Student, enrol : s.enrolled | lone s in enrol.grades.Grade
+inv12 T: all s : Student, enrol : s.enrolled | lone enrol.s.grades
+inv12 T: all s : Student, enrol : s.enrolled | lone s.enrol.grades
+inv12 U: all s : Student, c : Course | lone (s.(c.grades))
+

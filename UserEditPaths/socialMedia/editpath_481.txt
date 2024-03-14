@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv2 S: for all u: user | u not in u.follows
+inv3 S: for all p : Photos | p in u.sees => (p in u.follows.posts and p not in Ad)	for all u : User | for all a :Ad | a in u.sees
+inv2 S: all u: user | u not in u.follows
+inv3 S: all p : Photos | p in u.sees => (p in u.follows.posts and p not in Ad)	all u : User | all a :Ad | a in u.sees
+inv3 S: all p : Photo | p in u.sees => (p in u.follows.posts and p not in Ad)	all u : User | all a :Ad | a in u.sees
+inv1 U: all p : Photo | some u:User | p in u.posts
+inv1 U: all p : Photo | some u:User | p in u.posts
+NA H: THEME UPDATE
+

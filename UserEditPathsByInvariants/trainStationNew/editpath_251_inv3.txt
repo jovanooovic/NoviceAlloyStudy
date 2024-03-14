@@ -1,0 +1,6 @@
+inv3 U: all x : Track | x in Exit implies #(x.succs) = 0
+inv3 U: all x : Track | #(x.succs) = 0  implies x in Exit
+inv3 S: all x : Track | x in Exit implies #(x.^succes) = 0
+inv3 U: all x : Track | x in Exit implies #(x.^succs) = 0
+inv3 C: all x : Track | (x in Exit implies #(x.succs) = 0) and (#(x.succs) = 0 implies x in Exit )
+

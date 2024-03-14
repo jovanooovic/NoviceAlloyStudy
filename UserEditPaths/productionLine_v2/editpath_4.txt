@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv6 U: all c:Component | c->c not in parts
+inv6 T: all c:Component | c->c not in c.*parts
+inv6 T: all c:Component | c->c not in c.(*parts)
+inv6 T: all c:Component | c->c not in c.parts
+inv6 S: all c:Component | c->c not in c*.parts
+inv6 S: all c:Component | c->c not in c^.parts
+inv6 T: all c:Component | c->c not in *(c.parts)
+inv6 T: all c:Component | c->c not in *(c.parts)
+inv6 T: all c:Component | c->c not in (c.*parts)
+inv6 T: all c:Component | c->c not in ^(c.parts)
+inv6 T: all c:Component | c->c not in c.parts
+inv6 U: all c:Component | c->c not in parts
+inv6 S: all c:Component | c->c not in *.parts
+inv6 U: all c:Component | c->c not in parts
+inv6 S: all c:Component | c->c not in *.parts
+inv6 T: all c:Component | c->c not in c.parts
+inv6 U: all c:Component | c not in c.parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c not in c.^parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c->c not in ^parts
+inv7 O: all c:Component | c in ^parts.Dangerous  => c in Dangerous
+inv7 B: all c:Component | c in ^parts.Dangerous
+inv7 O: all c:Component | c in *parts.Dangerous => c in Dangerous
+inv7 O: all c:Component | c in ^parts.Dangerous => c in Dangerous
+inv8 T: all c:Component | c in Dangerous => Human not in workers.workstation
+inv8 T: all c:Component | c in Dangerous => Human not in c->workstation.workers
+inv8 T: all c:Component | c in Dangerous => Human not in (c->workstation).workers
+inv8 T: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => Human not in workers
+inv8 S: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human h in workers)
+inv8 T: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| h in workers)
+inv8 U: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| h->ws in workers)
+inv8 C: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| ws->h in workers)
+inv9 S: disj all ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 S: disj all ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws3->ws1 in succ) => ws1 in begin
+inv9 B: all disj ws1, ws2:Workstation | ws1->ws2 in succ => not some ws3:Workstation | ws3->ws2 in succ	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws3->ws1 in succ) => ws1 in begin	all disj ws1, ws2:Workstation | ws1->ws2 in succ and (not some ws3:Workstation | ws2->ws3 in succ) => ws2 in end
+inv8 U: all c:Component | c in Dangerous  => (workers . workstation . c) in Robot
+inv8 U: all c:Component | c in Dangerous  => workers . workstation . c in Robot
+inv8 O: all c:Component | c in Dangerous  => c.workstation.workers in Robot
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv9 U: succ in Workstation lone -> lone Workstation	Workstation in (begin . *succ)
+inv9 U: succ in Workstation lone -> lone Workstation		no (end . succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)
+inv9 U: Workstation in (begin . *succ)	no (end . succ)
+inv9 C: succ in Workstation  -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv9 C: succ in Workstation lone  -> lone Workstation	Workstation in (begin . *succ)	no (end . succ)
+inv10 T: all c:Component, p:Product | (c->p in parts) => (Workstation.c) in (p.workstation.^succ)
+inv10 T: all c:Component, p:Product | (c->p in parts) => (c.Workstation) in (p.workstation.^succ)
+inv10 T: all c:Component, p:Product | (c->p in parts) => (c.Workstation) in (p.workstation.^succ)
+inv10 B: all c:Component, p:Product | (c->p in parts) => (c.workstation) in (p.workstation.^succ)
+inv10 B: all c:Component, p:Product | (p in c . parts) => (c.workstation) in (p.workstation.^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) => (c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) => (p . workstation) in (c . workstation . ^succ)
+

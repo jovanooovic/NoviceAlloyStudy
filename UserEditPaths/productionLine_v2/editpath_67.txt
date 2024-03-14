@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 U: all ws : Workstation | some w : Worker | ws->w in workers	all w : Worker | some ws : Workstation | ws->w in workers
+inv2 C: all ws : Workstation | some w : Worker | ws->w in workers	all w : Worker | some ws1 : Workstation | ws1->w in workers and all ws2 : Workstation | ws2->w in workers implies ws1 = ws2
+inv3 U: all c : Component | some w : Workstation | c->w in workstation
+inv3 C: all c : Component | some w1 : Workstation | c->w1 in workstation and all w2 : Workstation | c->w2 in workstation implies w1 = w2
+inv4 C: all c : Component | some p : Product | c->p in parts	all m : Material, p : Product | m->p not in parts
+inv5 C: all h : Human, r : Robot, w : Workstation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)
+inv6 U: all c : Component | c->c not in parts
+inv5 C: all h : Human, r : Robot, w : Workstation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)
+inv6 U: all c : Component | c->c not in parts
+inv6 B: all c1, c2 : Component | c1->c2 not in parts
+inv6 B: all c1, c2 : Component | c1->c2 not in parts
+inv6 U: all c1, c2 : Component | c1->c2 in parts implies c2->c1 not in parts
+inv6 B: all c1, c2 : Component | c1->c2 not in parts and c2->c1 not in parts
+inv6 B: all c : Component | c->c in parts
+inv6 U: all c : Component | c->c not in parts
+inv6 B: all c1 : Component, c2 : Component | c1->c2 in parts
+inv6 B: all c1 : Component, c2 : Component | c1->c2 not in parts
+inv6 O: all c : Component, p : Product | p->c not in parts
+inv6 O: all c : Component, p : Product | c->p not in parts
+inv6 O: all p : Product, c : Component | c->p not in parts
+inv6 O: all p, c : univ | p in Product and c in Component implies  c->p not in parts
+

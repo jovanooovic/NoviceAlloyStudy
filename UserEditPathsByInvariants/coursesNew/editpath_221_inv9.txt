@@ -1,0 +1,11 @@
+inv9 U: all p:Professor | all c:p.teaches | p not in p.enrolled
+inv9 B: all p:Professor | some t:Professor|all c:p.teaches | c not in t.enrolled
+inv9 B: all p:Professor | some t:Professor|all c:t.teaches | c not in p.enrolled
+inv9 B: all p:Person -Student | all col :Person-Student-p | no (p.teaches & col.enrolled)
+inv9 B: all p:Person -Student | (all col :Person-Student-p | no (p.teaches & col.enrolled))
+inv9 T: all p:Person -Student | all a:p.teaches| no p in a
+inv9 U: all p:Person -Student | all a:p.teaches| p not in a
+inv9 U: all p:Person -Student | no pa : Professor | pa in p.teaches
+inv9 B: all p:Person | no (p.teaches & p.enrolled)
+inv9 B: all p:Person-Student | no (p.teaches & p.enrolled)
+

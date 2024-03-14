@@ -1,0 +1,18 @@
+inv6 S: all s : Student, p : Projects, c : Course | no (s.enrolled & c) and (p & c.projects) implies p not in s.porjects
+inv6 T: all s : Student, p : Project, c : Course | no (s.enrolled & c) and (p & c.projects) implies p not in s.porjects
+inv6 T: all s : Student, p : Project, c : Course | ( no (s.enrolled & c) and (p & c.projects) ) implies p not in s.porjects
+inv6 T: all s : Student, p : Project, c : Course | ( no (s.enrolled & c) and (p & c.projects) ) implies p not in s.projects
+inv6 S: all s : Student, p : Project, c : Course | ( no (s.enrolled & c) implies no (s.projects & p)
+inv6 B: all s : Student, p : Project, c : Course | no (s.enrolled & c) implies no (s.projects & p)
+inv6 T: all s : Student, p : Project, c : Course | (c.projects & p) and no (s.enrolled & c) implies no (s.projects & p)
+inv6 T: all s : Student, p : Project, c : Course | ((c.projects & p) and no (s.enrolled & c) ) implies no (s.projects & p)
+inv6 B: all s : Student, p : Project, c : Course | no (s.enrolled & c) implies no (s.projects & p)
+inv6 B: all s : Student, p : Project, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 S: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects) 	}	check inv6		pred inv6{			  	all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+inv6 B: all s : Student, c : Course | no (s.enrolled & c) implies no (s.projects & c.projects)
+

@@ -1,0 +1,58 @@
+NA H: THEME UPDATE
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts
+inv1 T: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts and x not Ad
+inv1 T: all x : Photo |all ad : Ad | all y,z : User | x in y.posts implies x not in z.posts and x not ad
+inv1 B: all x : Photo |all ad : Ad | all y,z : User | x in y.posts implies x not in z.posts and x not in ad
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows	all x : Influencer | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows	all x : Influencer | x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.follows and x not in ^follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.^follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.^follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad
+inv2 C: all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | all t : User | x in t.posts implies x not in t.sees
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | all t : User | x in t.posts implies x not in t.sees	all x : Photo | all t : User | x in t.sees implies x not in t.posts
+inv3 B: all u1,u2 : User | all p1 : Photo | p1 not in Ad
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u1 in u2.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+inv4 O: all u1 : User | all ad : Ad  | ad in u1.posts implies u1.posts in ad
+inv4 S: all u1 : User | all p1 : Photo | all ad : Ad  | p1 == ad and p1 in u1.posts implies u1.posts == ad
+inv4 O: all u1 : User | all p1 : Photo | all ad : Ad  | p1 = ad and p1 in u1.posts implies u1.posts = ad
+inv4 O: all u1 : User | all p1 : Photo | all ad : Ad  | p1 = ad and p1 in u1.posts implies u1.posts = ad
+inv4 O: all u1 : User | all p1 : Photo | all ad : Ad  | p1 = ad and p1 in u1.posts implies u1.^posts = ad
+inv4 O: all u1 : User | all p1 : Photo | all ad : Ad  | p1 = ad and p1 in u1.posts implies u1.posts = ad
+inv5 B: all i1 : Influencer | all u1 : User | i1 in u1.follows
+inv5 B: all i1 : Influencer | all u1 : User | i1 in u1.follows
+inv5 B: all i1 : Influencer | all u1 : User | i1 in u1.follows
+inv4 S: all p1,p2 : Photo | all ad : Ad  | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad
+inv4 O: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad
+inv4 S: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all
+inv4 S: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all
+inv4 O: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad
+inv4 O: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all u1 : User | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees
+inv4 S: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all u1 : User | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees	all u1 : Influencer | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees	}
+inv4 O: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all u1 : User | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees	all u1 : Influencer | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees
+inv4 O: all p1,p2 : Photo | all ad : Ad  | all x : User | p1 = ad and p1 in x.posts and p2 in x.posts implies p2 = ad	all u1 : User | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees	all u1 : Influencer | all p1 : Photo | p1 in u1.posts implies p1 not in u1.sees	all x : Day | some p : Photo | x = p.date
+inv4 S: all u: User | (some u.posts in Ad => all u.posts in Ad) and (no u.posts in Ad => no u.posts in Ad)
+inv4 S: all u: User | (some u.posts in Ad => all u.posts in Ad) and (no u.posts in Ad => no u.posts in Ad)
+inv4 B: all x : Day | some p : Photo | x = p.date
+inv4 B: all x : Day | some p : Photo | x in p.date
+inv4 S: all x : Day | some p : Photo | x == p.date
+inv4 B: all x : Day | some p : Photo | x = p.date
+inv4 T: all x : Day | some p : Photo | x is p.date
+inv4 B: all x : Day | some p : Photo | x = p.date
+inv4 B: all x : Day | one p : Photo | x = p.date
+inv4 T: all x : Day | all p : Photo | #(x in p.date) = 1
+inv4 S: all x : Day | all p : Photo | assert(x in p.date)
+inv4 S: assert{all x : Day | all p : Photo | x in p.date}
+inv4 S: all x : Day | all p : Photo | assert{x in p.date}
+inv4 B: all x : Day | all p : Photo | x in p.date
+

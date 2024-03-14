@@ -1,0 +1,10 @@
+inv15 S: all disj p1, p2 : (Person<:projects).Projects | p1 = p2
+inv15 O: all disj p1, p2 : (Person<:projects).Project | p1 = p2
+inv15 S: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : Course<:projects).proj | p1 = p2
+inv15 S: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : Course<:projects).proj | p1 = p2
+inv15 O: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : (Course<:projects).proj | p1 = p2
+inv15 U: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : (Course<:projects).proj | 	  		c.grades.p1 = prev[c.grades.p2] or c.grades.p1 = next[c.grades.p2]
+inv15 U: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : (Course<:projects).proj | 	  		c.grades.p1 = prev[c.grades.p2] or c.grades.p1 = next[c.grades.p2]
+inv15 U: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : (Course<:projects).proj | 	  		c.grades.p1 = prev[c.grades.p2] or c.grades.p1 = next[c.grades.p2]
+inv15 O: all proj : Project, disj p1, p2 : (Person<:projects).proj, c : (Course<:projects).proj | 	  		~(c.grades).p1 = prev[~(c.grades).p2] or ~(c.grades).p1 = next[~(c.grades).p2]
+

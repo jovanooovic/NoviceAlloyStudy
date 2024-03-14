@@ -1,0 +1,9 @@
+inv15 T: all p : Person | p <: ^ Tutors
+inv15 T: all p : Person | p <: (^ Tutors)
+inv15 T: all p : Person | p <: (* Tutors)
+inv15 B: all p : Person | some p <: (^ Tutors)
+inv15 B: all p : Person | some p <: ^ Tutors
+inv15 B: all p : Teacher | some p <: ^ Tutors
+inv15 B: some p : Teacher | some p <: ^ Tutors
+inv15 C: all p : Person | some Teacher <: (^ Tutors) . p
+

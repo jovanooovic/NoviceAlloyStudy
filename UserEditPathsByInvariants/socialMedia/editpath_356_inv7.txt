@@ -1,0 +1,8 @@
+inv7 U: all disj u1,u2: User | u2 in u1.follows && u2.follows not in u1.follows => u1.suggested in u2.follows
+inv7 B: all disj u1,u2: User | u2 in u1.follows && u2.follows not in u1.follows => u2.follows in u1.suggested
+inv7 B: all disj u1,u2: User | u2 in u1.follows && u2.follows != u1.follows => u2.follows in u1.suggested
+inv7 B: all disj u1,u2: User | all dif: u1.follows - u2.follows| u2 in u1.follows =>   u1.suggested in dif
+inv7 B: all disj u1,u2: User | all dif: u1.follows - u2.follows| u2 in u1.follows =>   dif in u1.suggested
+inv7 B: all disj u1,u2: User | all dif: u2.follows - u1.follows | u2 in u1.follows => u1 = dif
+inv7 B: all disj u1,u2: User | u2 in u1.follows => u1.suggested = (u2.follows - u1.follows)
+

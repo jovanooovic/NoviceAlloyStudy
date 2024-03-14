@@ -1,0 +1,9 @@
+inv2 U: all disj t, t1 : Track | no t.signals & t1.signals
+inv2 B: all s : Signal, t : Track | s in t.signals
+inv2 U: all s : Signal | s in Track.signals
+inv2 B: all s : Signal | s in Track.(^succs).signals
+inv2 U: all s : Signal | s in Track.signals or s in Track.(^succs).signals
+inv2 U: all s : Signal | s in Track.signals or s in Track.^succs.signals
+inv2 U: all s : Signal | s in Track.signals
+inv2 U: all s : Signal | s in Track.signals or s in Track.^succs.signals
+

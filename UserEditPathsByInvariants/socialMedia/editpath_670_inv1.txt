@@ -1,0 +1,14 @@
+inv1 S: all p:posts | lone u :user | p in u
+inv1 T: all p:posts | lone u :User | p in u
+inv1 T: all p:posts | lone u :User | p -> u
+inv1 S: all p:Photo | all u:user | lone p in u.posts
+inv1 T: all p:Photo | all u:User | lone p in u.posts
+inv1 T: all p:Photo | all u:User | lone (p in u.posts)
+inv1 T: all p:Photo | all u:User | some (p in u.posts)
+inv1 B: all p:Photo | all u:User |  (p in u.posts)
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 O: all p:Photo | some u:User | p in posts.u
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | lone u:User | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+

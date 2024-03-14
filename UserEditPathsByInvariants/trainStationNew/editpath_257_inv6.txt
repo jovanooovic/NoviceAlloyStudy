@@ -1,0 +1,27 @@
+inv6 B: all t:Track | Entry in Track implies Speed in t.signals
+inv6 O: all t:Track | some s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 O: all t:Track | one s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 T: all t:Track | Entry in Track implies one Speed in t.signals
+inv6 T: all t:Track,s:Signal | Entry in Track implies one s in t.signals and s in Speed
+inv6 T: all t:Track | Entry in Track implies one Speed in t.signals
+inv6 O: all t:Track | one s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 O: all t:Track | some s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 B: all t:Track | all s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 O: all t:Track | some s:Signal | Entry in Track implies s in t.signals and s in Speed
+inv6 B: all t:Track | some s:Signal | Entry in Track implies Speed in t.signals
+inv6 B: all t:Track | Entry in Track implies Speed in t.signals
+inv6 T: all t:Track | Entry in Track implies one Speed in t.signals
+inv6 O: all t:Track | Entry in Track implies one Speed & t.signals
+inv6 O: all t:Track | Entry in Track implies Speed in t.signals	all t:Track | Entry in Track implies some Speed & t.signals
+inv6 O: all t:Track | Entry in Track implies Speed in t.signals	all t:Track | Entry in Track implies one Speed & t.signals
+inv6 O: all t:Track | Entry in Track implies one Speed & t.signals
+inv6 O: all t:Track | Entry in Track implies one Speed & t.signals
+inv6 O: all t:Track | Entry in Track implies one Speed & t.signals
+inv6 T: all t:Track | (Entry & t) implies (some s:Speed | s in t.signals)
+inv6 C: all t:Track | one (Entry & t) implies (some s:Speed | s in t.signals)
+inv6 O: all t:Track | some s:Speed | one (Entry & t) implies s in t.signals
+inv6 O: all t:Track | some s:Speed | one (Entry & t) implies s in t.signals
+inv6 O: all t:Track | some s:Speed | one (Entry & t) implies s in t.signals
+inv6 O: all t:Track | some s:Speed | one (Entry & t) implies s in t.signals
+inv6 O: all t:Track | some s:Speed | one (Entry & t) implies s in t.signals
+

@@ -1,0 +1,10 @@
+inv7 S: all f
+inv7 S: all f : File  | f.l not in Trash
+inv7 B: all f : File  | f.link not in Trash
+inv7 O: all f : File  | f.link not in Trash and f not in Trash
+inv7 B: all f : File  | f.link not in Trash
+inv7 C: all f : File  | (all l : f.link | l not in Trash)
+inv7 B: all f : File  | f.link not in Trash
+inv7 C: all f : File  | (all l : f.link | l not in Trash)
+inv7 C: all f : File  | (all l : f.link | l not in Trash)
+

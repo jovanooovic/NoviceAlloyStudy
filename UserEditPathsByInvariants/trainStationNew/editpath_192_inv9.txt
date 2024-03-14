@@ -1,0 +1,8 @@
+inv9 S: all t:Tracks, s:Semaphore | t not in succs.Juntion implies no t.Semaphores
+inv9 S: all t:Track, s:Semaphore | t not in succs.Juntion implies no t.Semaphores
+inv9 S: all t:Track, s:Semaphore | t not in succs.Junction implies no t.Semaphores
+inv9 T: all t:Track, s:Semaphore | t not in succs.Junction implies no t.Semaphore
+inv9 T: all t:Track | t not in succs.Junction implies no t.Semaphore
+inv9 S: all t:Track, s:Semaphore| no (t & succs.Junction) implies s not in t.Signals
+inv9 C: all t:Track, s:Semaphore| no (t & succs.Junction) implies s not in t.signals
+

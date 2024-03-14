@@ -1,0 +1,11 @@
+inv8 T: sees = (suggested.posts + follows.posts) in Ad
+inv8 T: sees = (suggested + follows).posts in Ad
+inv8 T: sees = posts.(suggested + follows) in Ad
+inv8 O: sees = (suggested + follows).posts
+inv8 O: sees = (suggested.posts + follows.posts)
+inv8 T: Ad in (suggested + follows).posts
+inv8 T: Ad in (suggested + follows).posts in sees
+inv8 T: Ad in (suggested + follows).posts
+inv8 T: (suggested + follows).posts in Ad
+inv8 C: all a : Ad, u : User | a in u.sees => a in u.(suggested + follows).posts
+

@@ -1,0 +1,15 @@
+inv2 S: one x : User
+inv2 B: one x : User | one follows.x
+inv2 T: one x : User | none one follows.x
+inv2 T: one x : User | none follows.x
+inv2 T: one x : User | none (follows.x)
+inv2 T: all x : User | none (follows.x)
+inv2 B: all x : User | one follows.x
+inv2 T: all x : User | none follows.x
+inv2 T: all x : User | none x
+inv2 T: all x : User | none posts.x
+inv2 T: all x : User | none follows x x
+inv2 S: all x,y : User |
+inv2 C: all x : User | x not in x.follows
+inv2 C: all x,y : User | x->y in follows implies x != y
+

@@ -1,0 +1,14 @@
+inv10 T: all c: Class, s: Student | c[s] in Group
+inv10 U: all c: Class, s: Student | c.Groups[s] in Group
+inv10 B: Class.Groups[Student] != none
+inv10 B: Class.Groups.Group != none
+inv10 O: all s: Student, c: Class { some g: Group | c.Groups.g = s }
+inv10 O: all s: Student, c: Class { one g: Group | c.Groups.g = s }
+inv10 T: all c: Class, s: Student | one Group in c.Groups[s]
+inv10 B: all c: Class, s: Student | Group in c.Groups[s]
+inv10 T: all s: Student, c: Class | c.~Groups.s in Group
+inv10 B: all s: Student { one g: Group | s->g in Class.Groups }
+inv10 O: all s: Student, c: Class { one g: Group | s->g in c.Groups }
+inv10 B: all s: Student - Teacher, c: Class { one g: Group | s->g in c.Groups }
+inv10 O: all s: Student, c: Class { one g: Group | s->g in c.Groups and s.Teaches = none }
+

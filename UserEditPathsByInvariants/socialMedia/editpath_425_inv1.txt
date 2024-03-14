@@ -1,0 +1,14 @@
+inv1 T: all p: Photo | one p in User.posts
+inv1 T: all p: Photo | one p in User.posts
+inv1 U: all p: Photo | p in User.posts
+inv1 T: all p: Photo | one (p in User.posts)
+inv1 U: all p: Photo, u: User | p in u.posts implies p not in (User-u).posts
+inv1 U: all p: Photo, u: User | p in u.posts and p in u.posts implies p not in (User-u).posts
+inv1 B: all p: Photo, u: User | p in u.posts and (p in u.posts implies p not in (User-u).posts)
+inv1 B: all p: Photo + Ad, u: User | p in u.posts and (p in u.posts implies p not in (User-u).posts)
+inv1 T: all p: Photo + Ad, u: User | one p.u
+inv1 B: all p: Photo, u: User | p in u.posts
+inv1 B: all p: Photo, u: User | p in u.posts
+inv1 S: all p: Photo | one posts.img
+inv1 C: all p: Photo | one posts.p
+

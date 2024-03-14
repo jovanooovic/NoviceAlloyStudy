@@ -1,0 +1,4 @@
+inv8 B: all x: User, y: Photo | y in x.sees implies some z: User | z in x.follows or z in x.suggested
+inv8 U: all x: User, y: Photo | y in x.sees and y in Ad implies some z: User | z in x.follows or z in x.suggested
+inv8 C: all x: User, y: Photo | y in x.sees and y in Ad implies y in x.follows.posts or y in x.suggested.posts
+

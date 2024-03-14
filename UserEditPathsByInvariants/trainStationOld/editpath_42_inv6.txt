@@ -1,0 +1,7 @@
+inv6 O: always ( all s : Signal | (s in Green implies s' not in Green) and (s not in Green implies s' in Green) )
+inv6 U: always ( all s : Signal | (s in Green implies s' not in Green) or (s not in Green implies s' in Green) )
+inv6 S: always ( all s : Signal { s in Green => s' not in Green}	s not in Green => s' in Green)
+inv6 O: always ( all s : Signal { s in Green => s' not in Green	s not in Green => s' in Green	}	)
+inv6 O: always ( all s : Signal { s in Green => Green' = Green - s	s not in Green => Green' = Green + s	}	)
+inv6 C: always ( all s : Signal | (s in Green implies eventually s not in Green) and (s not in Green implies eventually s in Green) )
+

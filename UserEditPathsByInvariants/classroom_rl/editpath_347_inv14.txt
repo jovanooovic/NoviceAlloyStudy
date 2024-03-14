@@ -1,0 +1,8 @@
+inv14 T: all s:Person,c:Class | (some c<:Groups.s) implies (all t:Person | some Teaches.c:>t implies Tutors.s:>t)
+inv14 T: all s:Person,c:Class | (some s<:c.Groups) implies (all t:Person | some Teaches.c:>t implies Tutors.s:>t)
+inv14 T: all s:Person,c:Class | (some s<:c.Groups) implies no((Teaches & Teaches.c) - (Tutors.s))
+inv14 T: all s:Person,c:Class | some (c<:Groups.s) implies (all t:Person | some Teaches.c:>t implies Tutors.s:>t)
+inv14 U: all s:Person,c:Class | some (s<:c.Groups) implies no((Teacher & Teaches.c)-(Tutors.s))
+inv14 U: all s:Person,c:Class | some (s<:c.Groups) implies no((Teacher & Teaches.c) - (Tutors.s) )
+inv14 U: all s:Student,c:Class | some (s<:c.Groups) implies no((Teacher & Teaches.c) - (Tutors.s) )
+

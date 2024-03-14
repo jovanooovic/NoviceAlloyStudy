@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 T: all p:Person, c:Course | c in p.enrolled implies p
+inv1 C: all p:Person, c:Course | c in p.enrolled implies p in Student
+inv2 C: all p:Person, c:Course | c in p.teaches implies p in Professor
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 S: all p:Projects | one c:Course | c in projects.p
+inv4 S: all p:Projects | one c:Course | c in projects.p
+inv4 C: all p:Project | one c:Course | c in projects.p
+inv5 T: all proj:Project, p:Person | (p in projects implies p in Student) and (some p2:Person | projects.proj)
+inv5 T: all proj:Project, p:Person | (p in projects.proj implies p in Student) and (some p2:Person | projects.proj)
+inv5 U: all proj:Project, p:Person | (p in projects.proj implies p in Student) and (some p2:Person | p2 in projects.proj)
+inv6 U: all s:Student, proj:Project | s in projects.proj implies (some c:Course | s in enrolled.c and proj in c.projects)
+inv6 U: all s:Student, proj:Project | s in projects.proj implies (some c:Course | s in enrolled.c and proj in c.projects)
+inv8 U: all p:Professor, c:Course | p in teaches.c implies p not in enrolled.c
+inv9 B: all p1:Professor, p2:Professor, c:Course | p1 in teaches.c and p2 in teaches.c implies (p1 not in enrolled.c or p2 not in enrolled.c)
+inv9 B: all p1:Professor, p2:Professor, c:Course | p1 in teaches.c and p2 in teaches.c implies (all c2:Course | p1 in teaches.c2 implies p2 not in enrolled.c2)
+inv10 O: all c:Course, p:Person, g:Grade | c->p->g in grades implies p in Student and p in enrolled.c
+inv10 C: all c:Course, p:Person, g:Grade | c->p->g in grades implies p in Student
+inv11 O: all c:Course, p:Person, g:Grade | c->p->g in grades implies p in Student and p in enrolled.c
+inv12 U: all c:Course, p:Student | lone g:Grade | c->p->g in grades
+inv13 U: all s:Student, c:Course | s in c.grades.last implies (some p:Project | p in c.projects and p in s.projects)
+

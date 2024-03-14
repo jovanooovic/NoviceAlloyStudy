@@ -1,0 +1,19 @@
+inv9 T: all c:Class | lone Teacher.Class
+inv9 B: all c:Class | lone Teacher.Teaches
+inv9 T: all c:Class | lone Teacher.Class
+inv9 T: lone Class in Teacher.Teaches
+inv9 U: all t:Teacher | lone Teaches.t
+inv9 O: all c:Class | lone Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 S: all c:Class,p:person | lone Teaches.c and lone p.Teaches
+inv9 O: all c:Class,p:Person | lone Teaches.c and lone p.Teaches
+inv9 S: all c:Class,Teacher | lone Teaches.c and lone p.Teaches
+inv9 O: all c:Class,p:Teacher | lone Teaches.c and lone p.Teaches
+inv9 O: all c:Class,p:Teacher | lone Teaches.c and lone p.Teaches
+inv9 O: all c:Class,p:Teacher | lone Teaches.c && lone p.Teaches
+inv9 B: all c:Class,p:Teacher | lone Teaches.c implies lone p.Teaches
+inv9 O: all c:Class,p:Teacher | lone Teaches.c and lone p.Teaches
+inv9 O: all c:Class,p:Teacher | lone Teaches.c and lone p.Teaches
+

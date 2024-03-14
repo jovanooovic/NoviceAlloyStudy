@@ -1,0 +1,22 @@
+inv8 S: all t: Entry |
+inv8 S: all t: Entry |
+inv8 S: all t: Entry |
+inv8 B: all t: Entry | some x: Exit | x in t.^succs
+inv8 B: all t: Entry | some x: Exit | x in t.succs
+inv8 B: all t: Entry | some (t.succs & Exit)
+inv8 B: all t: Entry | some (t.^succs & Exit)
+inv8 B: all t: Entry | some (t.succs & Exit)
+inv8 B: all t: Entry | all x: t.succs | some (x.succs & Exit)
+inv8 B: all t: Entry | all x: t.succs | some (x.succs & Exit)
+inv8 S: all t: Entry | all x: t.succs | #(x.succs & Exit) == #Exit
+inv8 S: all t: Entry | all x: t.succs | #(x.^succs & Exit) == #Exit
+inv8 S: all t: Entry | #(t.^succs & Exit) == #Exit
+inv8 S: all t: Entry | #(t.succs & Exit) == #Exit
+inv8 O: all t: Entry | #(t.succs & Exit) = #Exit
+inv8 O: all t: Entry | #(t.^succs & Exit) = #Exit
+inv8 O: all t: Entry | all e: Exit | e in t.^succs
+inv8 O: all t: Entry | all e: Exit | e in t.succs
+inv8 O: all t: Entry | all e: Exit | e in t.^succs && t in e.^succs
+inv8 C: all t: Entry | all e: Exit | e in t.*succs
+inv8 C: all t: Entry | all e: Exit | e in t.*succs
+

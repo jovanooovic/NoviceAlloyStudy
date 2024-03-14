@@ -1,0 +1,11 @@
+inv15 S: all p1,p2,p3:Person |
+inv15 S: /* all p1,p2,p3:Person |
+inv15 S: /* all p1,p2,p3:Person |
+inv15 S: /* all p1,p2,p3:Person |
+inv15 S: /* all p1,p2,p3:Person
+inv15 S: all t,s1,s2:Person | all c:Class | all g:Group | c->(s1->g) in Groups and c->(s2->g) in Groups and t->c in Teaches) implies (t->s1 in Tutors and t->s2 in Tutors)
+inv15 B: all t,s1,s2:Person | all c:Class | all g:Group | (c->(s1->g) in Groups and c->(s2->g) in Groups and t->c in Teaches) implies (t->s1 in Tutors and t->s2 in Tutors)
+inv15 S: all s:Person | all c:Class | all g:Group | (c->(s->g) in Groups implies (all t:Teacher | t->c in Teaches implies t->s in Tutors
+inv15 B: all s:Person | all c:Class | all g:Group | (c->(s->g) in Groups implies (all t:Teacher | t->c in Teaches implies t->s in Tutors))
+inv15 S: ...
+

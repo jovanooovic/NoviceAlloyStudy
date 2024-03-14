@@ -1,0 +1,8 @@
+inv7 S: all x, z : User | x in suggested.z iff x != z and z not in x.follows and z in x.follows.follows
+inv7 S: all x, z : User | x in suggested.z iff x != z and z not in x.follows and z in x.follows.follows
+inv7 S: all x, z : User | x in suggested.z iff x != z
+inv7 C: all x, z : User | x in suggested.z iff x != z and z not in x.follows and z in x.follows.follows
+inv7 C: all x, z : User | x in suggested.z iff z in (x.follows.follows - x.follows - x)
+inv7 C: all x, z : User | x in suggested.z iff z in (x.follows.follows - x.follows - x)
+inv7 C: all x, z : User | z in x.suggested iff x != z and z not in x.follows and z in x.follows.follows
+

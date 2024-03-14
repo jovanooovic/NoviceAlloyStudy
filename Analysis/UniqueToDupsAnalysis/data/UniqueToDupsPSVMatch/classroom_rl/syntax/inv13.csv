@@ -1,0 +1,35 @@
+"all",1
+"(Tutors.Person in Teacher",1
+"Tutor in Teacher -> Student",1
+"tutors in Teacher -> Student",1
+"(Tutors.Person in Teacher) & (",3
+"all p1,p2:Person | some  Tutors.",1
+"Teacher.Tutores + Tutores.Student",1
+"all (Teacher <: Tutors) :> Student",1
+"Teacher<:Tutors:>+Student = Tutors",1
+"all p : Person | p.tutors in Student",1
+"Teachers <: Tutors :> Student = Tutors",1
+"no Student.Tutors and no Tutors.Teachers",1
+"no Students.Tutors and no Tutors.Teacher",1
+"no Student.Teaches && no Teachers.Tutors",1
+"Person.Tutors in Student & no Student.Teaches",1
+"Tutors = {(t in Teacher, s in Student | t -> s }",1
+"Person.Tutors & Student, 
+  Tutors.Person & Teacher",1
+"Person.Tutors in Students and Tutors.Person in Teacher",1
+"all p1,p2 | p1.Tutors in Student and Tutors.p2 in Teacher",1
+"Teacher.Tutors in Students and Tutors.Students in Teacher",1
+"Teachers <: Tutors = Tutors && Tutors :> Students = Tutors",1
+"Teachers.Tutors in Students and Tutors.Students in Teachers",1
+"no(Student & Person.Tutors) and (no (Tutors.(Person-Student))",1
+"Tutors = {(p1, p2 in Person | p1 in Teacher and p2 in Student }",1
+"Teacher.Tutor = Person.Tutor and Student.Tutored = Person.Tutored",1
+"Teacher.Tutors = Person.Tutors and Student.Tutored = Person.Tutored",1
+"all t,s:Person | all Tutors.s:>t implies t in Teacher and s in Student",1
+"all p1,p2 in Person | p1->p2 in Tutors implies p1 in Teacher and p2 in",1
+"all p : Person | all s: Student | s.tutors = empty and p.Tutors in Student",1
+"all p : Person | all s: Student | s.Tutors = empty and p.Tutors in Student",1
+"all p : Person | some p.Tutors implies p in Teachers  and p.Tutors in Student",1
+"all p1,p2 in Person | p1->p2 in Tutors implies p1 in Teacher and p2 in Student",2
+"all p : Person | all s: Student | student.tutors = empty and person.Tutors in Student",1
+"(not some s:Student | all p:Person | s->p in Tutors) and (not some t:Teacher | p->t in Tutors)",1

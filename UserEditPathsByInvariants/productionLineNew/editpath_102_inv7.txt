@@ -1,0 +1,4 @@
+inv7 B: all m: Material| some c: Component| (m in Dangerous && m in c.parts) implies c.parts in Dangerous
+inv7 B: all m: Material| all c: Component| (m in Dangerous && m in c.parts) implies c.parts in Dangerous
+inv7 C: all c: Component| all x: c.parts| x in Dangerous implies c in Dangerous
+

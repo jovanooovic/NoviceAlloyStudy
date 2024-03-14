@@ -1,0 +1,18 @@
+inv4 S: some u: User one a: Ad | u.posts.a implies u.posts = Ad
+inv4 S: some u: User one a: Ad | u.posts = a implies u.posts = Ad
+inv4 S: some u: User one a: Ad | (u.posts == a) implies (all u.posts in Ad)
+inv4 S: some u: User, one a: Ad | (u.posts == a) implies (all u.posts in Ad)
+inv4 S: some u: User, one a: Ad | (u.posts.a) implies (all u.posts in Ad)
+inv4 S: some u: User, one a: Ad | (u->a) implies (all u.posts in Ad)
+inv4 S: some u: User, one a: Ad | (u->a) implies (u.posts in Ad)
+inv4 S: User.posts == Ad implies (User.posts' == Ad)
+inv4 S: (User.posts == Ad) implies (User.posts' == Ad)
+inv4 T: all u: User | (u.posts in Ad) implies (no u.posts in Photo)
+inv4 S: some u: User | some (u.posts == Ad) and after no u.posts == Ad
+inv4 S: some u: User | some (u.posts == Ad) and after (no u.posts == Ad)
+inv4 S: some u: User | some (u.posts == Ad) and after (no (u.posts == Ad))
+inv4 O: some posts.Ad and after (no posts.Photo)
+inv4 S: some u: User, one a: Ad | u->a and after (no u.posts == Photo)
+inv4 S: some u: User, one a: Ad | u->a and after (no u->Photo)
+inv4 S: some u: User, some a, p: Ad | u->a and after (no u->p)
+

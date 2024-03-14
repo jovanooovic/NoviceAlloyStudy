@@ -1,0 +1,5 @@
+inv8 S: all t1,t2:Teacher, all c:Class | t1->c in Teaches and t2->c in Teaches => t1=t2
+inv8 S: all t1,t2:Teacher, all c:Class | (t1->c in Teaches and t2->c in Teaches) => t1=t2
+inv8 B: all t1,t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) => t1=t2
+inv8 C: all t:Teacher, c1,c2:Class | (t->c1 in Teaches and t->c2 in Teaches) => c1=c2
+

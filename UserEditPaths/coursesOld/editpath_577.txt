@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv6 B: all p: Project | all s: Student | s.projects=p implies s.enrolled.projects=p
+inv6 B: all p: Project | all s: Student | s.projects in p implies s.enrolled.projects in p
+inv6 U: all s: Student | s.projects in Project implies s.enrolled.projects in Project
+inv6 U: all s: Student | s.projects in Project implies s.projects in s.enrolled.projects
+inv7 B: all s: Student | lone c: Course | c in s.enrolled
+inv7 U: all s: Student | lone c: Course | s.enrolled=c
+

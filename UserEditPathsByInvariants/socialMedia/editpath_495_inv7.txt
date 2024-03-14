@@ -1,0 +1,11 @@
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 B: all u:User | u.suggested not in u.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows
+inv7 B: all u:User | u.suggested not in u.follows &&  u.suggested in u.follows.follows
+inv7 B: all disj u,uu:User | u.suggested not in u.follows &&  u.suggested in uu.follows.follows
+inv7 B: all u:User | u.suggested not in u.follows &&  u.suggested in u.follows.follows
+

@@ -1,0 +1,11 @@
+inv7 S: all s: Student |
+inv7 T: all s: Student, c : Course | c in s.enrolled => #s.c.projects = 1
+inv7 S: all s: Student, c : Course | c in s.enrolled => #(p.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled => #(s.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled =>	  		#(s.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled =>	  		#(s.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled =>	  		#(s.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled =>	  		#(s.projects & c.projects) = 1
+inv7 B: all s: Student, c : Course | c in s.enrolled =>	  		one (s.projects & c.projects)
+inv7 U: all s: Student, c : Course | c in s.enrolled =>	  		lone (s.projects & c.projects)
+

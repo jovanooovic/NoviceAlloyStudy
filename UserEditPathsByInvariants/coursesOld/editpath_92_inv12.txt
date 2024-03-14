@@ -1,0 +1,5 @@
+inv12 S: grade in Course -> Student -> lone Grade
+inv12 O: grades in Course -> Student -> lone Grade
+inv12 U: all c:Course,s:Student | lone s.(c.grades)
+inv12 C: all g1,g2:Grade | (some c:Course,p:Person | c->p->g1 in grades and c->p->g2 in grades) implies g1=g2
+

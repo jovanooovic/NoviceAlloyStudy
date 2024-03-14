@@ -1,0 +1,37 @@
+"enrolled.(Professor.course)",1
+"all t:Teacher | t not in t.teaches",1
+"all t: Teacher | t not in t.teaches",1
+"all p : Professor | p not in teach.p",1
+"all p: Professor | all c: p.teaches | one",1
+"all p: Professor | p not in p.teaches.grade",1
+"all x : Teacher | x.teaches not in x.enrolled",1
+"all p : Professor | no p.endrolled & p.teaches",1
+"all p : Professor | no p.teaches & p.enrolled)",1
+"all p : Professor | t.teaches not in t.enrolled",1
+"all t:Professor| all t.enrolled not in t.teaches",1
+"all p : Professor | all p.teaches not in p.enrolled",1
+"all p:Professor |all  c:p.teaches | c not in a.enrolled",1
+"all a:Professor |all  c:p.teaches | c not in a.enrolled",1
+"all p : Professor | c : p.teaches | c not in p.enrolled",1
+"all p : Professor | c : p.enrolled | c not in p.teaches",1
+"all p : Professor | all c : Courses | p not in teaches.c",1
+"all x : Professor | all c : x.teaches | c not in p.enrolled",1
+"all c : Course | all p : Professor | p not in c.~(enrolled))",1
+"all p : Professor | (all c : p.teaches | c not in p.enrolled))",4
+"all c: Course, p: Professor | c in p.teaches => p not in c.teachers",1
+"all p:Professor | all coursesTeached:p.teaches | c not in p.enrolled",1
+"all p: Professor, c: Course | p in c.~teahces => p not in c.~enrolled",1
+"all u:User, c:Course | (c in u.teaches) implies (c not in u.enrolled)",1
+"all p: Professor, c: Courses | p in c.~teahces => p not in c.~enrolled",1
+"all t:teatcher, c:Course | c in t.teatches implies c not in t.enrolled",1
+"all t:Teatcher, c:Course | c in t.teatches implies c not in t.enrolled",1
+"all t:Professor, c:Course | c in t.teatches implies c not in t.enrolled",1
+"all p : Professor, c : Course | c in p.teaches implies p no in c.enrolled",1
+"all p : Person | all c : Course | c in p.teaches implies p not in Prefessor",1
+"all c: Course, p: Professor | c in p.teaches => p != c.grades.getKey(p.grades)",2
+"all c: Course, p: Professor | c in p.teaches => p.grades[p] not in c.grades.ran",1
+"all c: Course, p: Professor | c in p.teaches => p.grades[p] not in c.grades.ran
+}",1
+"all x : Professor | for all y : Course | x in teaches.y implies x not in enrolled.y",1
+"all c : Course | all p : Professor | p in c.~(teaches) implies p not in c.~(enrolled))",1
+"r, c1,c2:Course| p1->c1 in teaches and p2->c2 in enrolled and p1 != p2 implies c1 != c2",1

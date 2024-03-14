@@ -1,0 +1,6 @@
+inv7 U: all u : User | all resto : User - u | resto in u.suggested implies (resto not in u.follows and resto in u.^follows.follows)
+inv7 U: all u : User | all resto : u.suggested | (resto not in u.follows and resto in u.^follows.follows)
+inv7 U: all u : User | all resto : u.suggested | resto not in u.follows and resto in u.^follows.follows
+inv7 U: all u : User | all resto : u.suggested | resto not in u.follows and resto in u.^(follows.follows)
+inv7 U: all u : User | all resto : u.suggested | resto not in u.follows and resto in u.^follows.follows
+

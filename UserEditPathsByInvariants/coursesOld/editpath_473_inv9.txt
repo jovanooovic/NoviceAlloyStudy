@@ -1,0 +1,6 @@
+inv9 B: all c : Course | teaches.c not in Professor
+inv9 B: all c : Course, p:Professor | c in p.teaches implies teaches.c not in Professor
+inv9 B: all c : Course, p:Professor | c in p.teaches implies enrolled.c not in Professor
+inv9 B: all c : Course, p:Professor | c in p.teaches implies enrolled.c-p not in Professor
+inv9 B: all c : Course | enrolled.c not in Professor
+

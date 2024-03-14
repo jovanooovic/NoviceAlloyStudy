@@ -1,0 +1,18 @@
+inv3 S: x : User | x.sees - Ad in x.follows.posts
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x: User, y: Ad | all y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User, y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User | y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User, y : Ad | y in x.sees
+inv3 S: all x : User | x.sees - Ad in x.follows.posts
+inv3 S: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 T: all x : User | x.sees - Ad in x.follows.posts and all y : Ad | y in x in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees and y not in x.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees - x.follows.posts
+inv3 O: all x : User | x.sees - Ad in x.follows.posts	all x : User | all y : Ad | y in x.sees
+

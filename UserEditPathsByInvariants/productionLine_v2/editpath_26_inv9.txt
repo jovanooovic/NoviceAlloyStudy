@@ -1,0 +1,5 @@
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ)
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ and k in end)
+inv9 B: all w : Workstation | (w in begin implies (some k : Workstation | w->k in succ and k in end)) or (w in begin and w in end)
+inv9 B: all w : Workstation | w in begin implies (some k : Workstation | w->k in succ and (k in end or (k not in end and k not in begin)))
+

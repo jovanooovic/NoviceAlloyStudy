@@ -1,0 +1,39 @@
+na H: THEME UPDATE
+inv1 T: ~Node.Node in iden
+inv1 B: ~adj.adj in iden
+inv1 C: ~adj = adj
+inv1 C: ~adj = adj
+inv2 B: ~adj != adj
+inv2 T: ~adj implies no adj
+inv2 T: adj implies ~adj
+inv2 T: adj implies no adj
+inv2 T: adj implies (no ~adj)
+inv2 B: Node.adj != adj.Node
+inv2 B: adj != ~adj
+inv2 O: no ~adj
+inv2 O: no ~adj
+inv1 B: ~adj.adj in iden
+inv2 T: no (~adj = adj)
+inv2 T: no (~adj = adj)
+inv2 B: not (~adj = adj)
+inv2 C: no ~adj & adj
+inv3 S: a.^adj not in iden
+inv3 S: a.^adj in iden
+inv3 T: Node.^adj in iden
+inv3 T: Node.adj in iden
+inv3 T: Node.^adj not in iden
+inv4 U: Node.^adj = Node
+inv4 U: Node.^adj in Node
+inv4 U: Node.^adj in Node
+inv4 U: Node.^adj = Node
+inv4 C: adj = Node -> Node
+inv3 C: all a:Node | a not in a.^adj
+inv5 O: all a:Node | a not in a.^adj
+inv5 C: no (adj & iden)
+inv6 O: inv1 and inv4	}		pred inv1{	~adj = adj	}		pred inv4{	adj = Node -> Node
+inv7 T: inv4 & inv2	}		pred inv2{	no ~adj & adj	}		pred inv4{	adj = Node -> Node
+inv7 O: inv4 and inv2	}		pred inv2{	no ~adj & adj	}		pred inv4{	adj = Node -> Node
+inv7 T: ^(adj + ~adj)
+inv7 T: ^(adj + ~adj)
+na H: THEME UPDATE
+

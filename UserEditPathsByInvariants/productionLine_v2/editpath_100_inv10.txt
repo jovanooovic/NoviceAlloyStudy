@@ -1,0 +1,12 @@
+inv10 S: all x : Component | x.parts.workstation not in x.*workstations
+inv10 S: all x : Component | x.parts.workstations not in x.*workstations
+inv10 T: all x : Component | x.parts & x.workstation.*succ
+inv10 T: all x : Component | x.parts & x.workstation.*succ
+inv10 B: all x : Component | x.parts not in x.workstation.*succ
+inv10 B: all x : Component | x.parts not in x.workstation.*succ
+inv10 B: all x : Component | x.parts not in x.workstation.*succ
+inv10 T: all x : Component | x.parts not in x.*({ x: Workstation | one x.succ})
+inv10 B: all x : Component | x.parts not in (x.workstation).*succ
+inv10 T: all x : Component | (x.parts & Component).workstation & (x.workstation).*succ
+inv10 B: all x : Component | no (x.parts & Component).workstation & (x.workstation).*succ
+

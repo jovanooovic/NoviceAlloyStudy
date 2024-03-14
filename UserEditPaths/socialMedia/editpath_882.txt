@@ -1,0 +1,64 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all x : Photo | soe y : User | y -> x in posts
+inv1 U: all x : Photo | some y : User | y -> x in posts
+inv1 C: all x : Photo | one posts.x
+inv2 E: 
+inv2 O: all x : User | x -> x in posts
+inv2 B: all x : User | x -> x in follows
+inv2 T: all x : User | not x in follows
+inv2 C: all x : User | not x -> x in follows
+inv3 S: all x : User | all y : Photos | (x -> y in sees) -> (x -> y in follows)
+inv3 T: all x : User | all y : Photo | (x -> y in sees) -> (x -> y in follows)
+inv3 T: all x : User | all y : Photo | (x -> y in sees) -> (x -> y in follows)
+inv2 C: all x : User | not x -> x in follows
+inv3 T: all x : User | all y : Photo | (x in sees) -> (x in follows)
+inv3 T: all x : User | all y : Photo | (x -> y in sees) -> (x -> y in follows)
+inv3 T: all x : User | all y : Photo | (x -> y in sees) -> (x -> y in follows)
+inv3 T: all x : User | some y : Photo | (x -> y in sees) -> (x -> y in follows)
+inv3 B: all x : User | all y : Photo | (x -> y in sees)
+inv3 O: all x : User | all y : Photo | (x -> y in follows)
+inv3 B: all x : User | all y : User | (x -> y in follows)
+inv3 T: all x : User | all y : User | (x -> y in follows) -> (x -> y in follows)
+inv3 T: all x : User | all y : User | all z : Photo | (x -> y not in follows) -> (x -> z not in sees)
+inv3 B: all x : User | all y : User | all z : Photo | (x -> y not in follows) implies (x -> z not in sees)
+inv3 U: all x : User | all y : User | all z : Photo | (x -> y not in follows) implies (x -> y not in sees)
+inv3 U: all x : User | all y : User | all z : Photo | (x not in y.follows) implies (x not in y.sees)
+inv3 U: all x : User | all y : User | all z : Photo | (x not in y.follows) implies (x not in z.sees)
+inv3 T: all x : User |  all y : Photo | x.sees in x.y.follows and y != Ad
+inv3 T: all x : User |  all y : Photo | x.sees in y.x.follows and y != Ad
+inv3 O: all x : User |  all y : Photo | x.sees in x.follows and y != Ad
+inv3 T: all x : User |  all y : Photo | x.sees in x.follows.y and y != Ad
+inv3 T: all x : User |  all y : Photo | x.sees in y.x.follows and y != Ad
+inv3 T: all x : User |  all y : Photo | x.sees in y.x.follows
+inv3 T: all x : User |  all y : Photo | x.sees in y.follows.x
+inv3 O: all x : User |  all y : Photo | x.sees in y.follows
+inv3 O: all x : User |  all y : Photo | x.sees in x.follows
+inv3 O: all x : User |  all y : Photo | x.sees in follows.x
+inv3 T: all x : User |  all y : Photo | x.sees in follows.x.y
+inv3 T: all x : User |  all y : Photo | x.sees in follows.y.x
+inv3 T: all x : User |  all y : Photo | x.follows
+inv3 T: all x : User |  all y : Photo | follows.x
+inv3 T: all x : User |  all y : Photo | x.sees in (y in x.follows)
+inv3 T: all x : User |  all y : Photo | x.sees in (y in follows)
+inv3 T: all x : User |  all y : Photo | x.sees in (y in follows.x)
+inv3 T: all x : User |  all y : Photo | x.sees in (y -> x in follows)
+inv3 T: all x : User |  all y : Photo | x.sees in (x -> y in follows)
+inv3 T: all x : User |  all y : Photo | x.sees in (x -> y in follows)
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv3 C: all x : User | x.sees - Ad in x.follows.posts
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv4 T: all x : User | some y : Photo | (Ad in x.posts) implies (all z : x.sees | z implies Ad)
+inv4 B: all x : User | some y : Photo | all z : x.sees | (Ad in x.posts) implies Ad in z
+inv4 B: all x : User | all z : x.sees | (Ad in x.posts) implies Ad in z
+inv4 B: all x : User | all z : x.sees | (Ad in x.posts) implies z in Ad
+inv4 B: all x : User | all z : x.posts | (Ad in z) implies z in Ad
+inv4 B: all x : User | some y : x.posts | all z : x.posts | (Ad in y) implies z in Ad
+inv4 S: all x : User |  all y : x.posts | one y in Ad implies all y in Ad
+inv4 T: all x : User |  all y : x.posts | one y in Ad implies y in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv3 B: all x : User | x.sees - Ad not in x.follows.posts
+

@@ -1,0 +1,17 @@
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts
+inv1 T: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts and x not Ad
+inv1 T: all x : Photo |all ad : Ad | all y,z : User | x in y.posts implies x not in z.posts and x not ad
+inv1 B: all x : Photo |all ad : Ad | all y,z : User | x in y.posts implies x not in z.posts and x not in ad
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows	all x : Influencer | x not in x.follows
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows	all x : Influencer | x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.follows and x not in ^follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.^follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : User | x not in x.follows and x not in follows.x	all x : Influencer | x not in x.^follows and x not in follows.x
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | all t : User | x in t.posts implies x not in t.sees
+inv1 B: all x : Photo | all y,z : User | x in y.posts implies x not in z.posts	all ad : Ad | all x : Photo | x not in ad	all x : Photo | all t : User | x in t.posts implies x not in t.sees	all x : Photo | all t : User | x in t.sees implies x not in t.posts
+

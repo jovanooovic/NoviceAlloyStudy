@@ -1,0 +1,17 @@
+inv17 T: always ( one (Train.pos) => before Train.pos:>Exit )
+inv17 T: always ( one (Train.pos) =>  Train.pos:>Exit )
+inv17 E:
+inv17 T: ( one (Train.pos) =>  Train.pos:>Exit )
+inv17 T: always ( one pos =>  Train.pos:>Exit )
+inv17 T: ( one pos =>  Train.pos:>Exit )
+inv17 B: ( one pos =>  no pos)
+inv17 B: ( one pos => one Train.pos:>Exit )
+inv17 O: always( one pos => one Train.pos:>Exit )
+inv17 B: always( one Train.pos:>Exit  since one pos  )
+inv17 B: ( one pos => one Train.pos:>Exit )
+inv17 B: one Train.pos:>Exit  since one pos
+inv17 B: some pos => one Train.pos:>Exit  since one pos
+inv17 B: some Train => (one Train.pos:>Exit  since one pos)
+inv17 B: always (some Train => (one Train.pos:>Exit  since one pos))
+inv17 B: some Train => (one Train.pos:>Exit  since one pos)
+

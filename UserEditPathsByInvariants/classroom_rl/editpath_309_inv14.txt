@@ -1,0 +1,4 @@
+inv14 B: all s:Student , t:Teacher | some Tutors.s :>t
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no((Teacher & Teaches.c) - (Tutors.s) )
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no((Teacher & Teaches.c) - (Tutors.s) )
+

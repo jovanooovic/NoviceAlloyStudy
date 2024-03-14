@@ -1,0 +1,8 @@
+inv9 T: all b:begin | one end in b.^succ
+inv9 S: all b:begin  e:end | end in b.^succ
+inv9 B: all b:begin, e:end | end in b.^succ
+inv9 B: all b:begin, e:end | end in b.^succ and b != e
+inv9 B: all w:Workstation - end | one w.succ	no end.succ	some begin.^succ
+inv9 U: all w:Workstation - end | one w.succ	no end.succ	some begin.*succ
+inv9 C: all w:Workstation - end | one w.succ	no end.succ	Workstation in begin.*succ
+

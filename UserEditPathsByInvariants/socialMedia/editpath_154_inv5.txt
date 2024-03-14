@@ -1,0 +1,4 @@
+inv5 B: all u:User,i:Influencer |i in u.follows
+inv5 B: all disj u,i:User | Influencer in i implies i in u.follows
+inv5 U: all disj u,i:User | i in Influencer implies i in u.follows
+

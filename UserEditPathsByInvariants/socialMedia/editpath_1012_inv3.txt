@@ -1,0 +1,9 @@
+inv3 U: all u : User | all p : sees.u | posts.p in follows.u
+inv3 T: all u : User | all p : sees.u | p is Photo implies posts.p in follows.u
+inv3 U: all u : User | all p : sees.u - Ad | posts.p in follows.u
+inv3 U: all u : User | all p : sees.u - Ad | posts.p in u.follows
+inv3 U: all u : User | all p : sees.u - Ad | posts.p in follows.u
+inv3 U: all u : User - Influencer | all p : sees.u - Ad | posts.p in follows.u
+inv3 U: all u : User | all p : sees.u - Ad | posts.p in u.follows
+inv3 B: all u : User | all p : u.sees - Ad | posts.p in u.follows
+

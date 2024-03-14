@@ -1,0 +1,11 @@
+inv3 S: all u : User,p : Photos | p in Ad -> u.sees
+inv3 S: all u : User,p : Photos | p in Ad -> p in u.sees
+inv3 T: all u : User,p : Photo | p in Ad -> p in u.sees
+inv3 T: all u : User ,p : Photo | p in Ad -> p in u.sees
+inv3 B: all u : User ,p : Photo | p in Ad => p in u.sees
+inv3 T: all u : User ,p : Photo | p in Ad => p in u.sees || p
+inv3 B: all u : User ,p : Photo | p in Ad => p in u.sees || p in u.follows.posts
+inv3 T: all u : User ,p : Photo | p in  p in u.sees => p in Ad || p in u.follows.posts
+inv3 C: all u : User ,p : Photo | p in u.sees => p in Ad || p in u.follows.posts
+inv3 C: all u : User ,p : Photo | p in u.sees => p in Ad || p in u.follows.posts
+

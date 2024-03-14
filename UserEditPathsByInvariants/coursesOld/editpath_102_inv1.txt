@@ -1,0 +1,8 @@
+inv1 B: all s: Student, c: Course | s -> c in enrolled
+inv1 B: all s: Student, p:Professor, c: Course | s -> c in enrolled and p -> c not in enrolled
+inv1 B: all s: Student, p:Professor, c: Course | s -> c in enrolled and p -> c not in enrolled
+inv1 B: all s: Student, p:Professor, c: Course, pe: Person | s -> c in enrolled and p -> c not in enrolled and pe -> c not in enrolled
+inv1 B: all s: Student, p:Professor, c: Course | s -> c in enrolled and p -> c not in enrolled
+inv1 C: all c: Course | enrolled.c in Student
+inv1 C: enrolled.Course in Student
+

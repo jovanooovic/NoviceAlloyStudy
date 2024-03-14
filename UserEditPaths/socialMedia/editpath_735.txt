@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv1 U: all u : User | posts.u in Photo
+inv1 U: all u : User | u.posts in Photo
+inv1 O: all p : Photo | p in posts.p
+inv1 T: all p : Photo | p in posts
+inv1 S: all p : Photo | u->p in posts
+inv1 O: all p : Photo | p in p.posts
+inv1 O: all p : Photo | p in posts.p
+inv1 T: all p : Photo | posts.p in posts
+inv1 T: all p : Photo | p.posts in posts
+inv1 U: all p : Photo | p in User.posts
+inv1 T: all p : Photo | one p in User.posts
+inv1 T: all p : Photo | one p in posts.p
+inv1 T: all p : Photo | one p in posts
+inv1 C: all p : Photo | one posts.p
+inv2 O: all u : User | no follows.u
+inv2 T: all u : User | no u in follows
+inv2 T: all u : User | no u in u.follows
+inv2 C: all u : User | u not in u.follows
+inv2 C: all u : User | u not in follows.u
+inv2 C: all u : User | u not in u.follows
+inv3 C: all p : Photo - Ad | all u : User | p in u.sees implies p in u.follows.posts
+inv4 C: all p : Photo - Ad | all u : User | all a : Ad | a in u.posts implies p not in u.posts
+inv5 U: all u : User - Influencer | all i : Influencer | i in u.follows
+inv5 S: all u : User - Influencer | all follows.Influencer
+inv5 S: all u : User - Influencer | all u.Influencer
+inv5 S: all u : User - Influencer | all follows.Influencer
+inv5 S: all i: Influencer | all follows.i
+inv5 T: all i: Influencer | univ follows.i
+inv5 S: all i: Influencer | all follows.i
+inv5 U: all u : User - Influencer | all i : Influencer | i in u.follows
+inv5 B: all u : User - Influencer | all i : Influencer | i in follows.u
+inv5 B: all u : User | all i : Influencer |u != i implies i in follows.u
+inv5 U: all u : User - Influencer | all i : Influencer | u in follows.i
+inv5 U: all u : User | all i : Influencer | u != i implies u in follows.i
+inv6 T: all i : Influencer | all d : Day | one i.posts.d
+inv6 T: all i : Influencer, d : Day | some i.posts.d
+inv6 T: all i : Influencer, d : Day , p : Photo| some p in i.posts.d
+inv6 T: all i : Influencer, d : Day , p : Photo| some d in i.posts.date
+inv6 T: all i : Influencer, d : Day , p : Photo| some i.p.d
+inv6 T: all i : Influencer, d : Day | some i.posts.d
+inv6 T: all i : Influencer, d : Day | some i.posts in day
+inv6 T: all i : Influencer, d : i.posts.date | some i.posts.d
+inv6 T: all i : Influencer, d : i.posts.date | some d in i.posts.date
+inv6 T: all i : Influencer, d : Day | some d in i.posts.date
+inv6 C: all i : Influencer, d : Day | d in i.posts.date
+inv7 B: all u1,u2 : User | u1 in u2.suggested implies u2 not in u1.follows and (some u3 : User | u1 in u3.follows and u3 in u2.follows)
+inv7 U: all x,y : User | x in y.suggested implies x not in y.follows and (some z : User | x in z.follows and z in y.follows)
+inv7 C: all x,y : User | y in x.suggested iff( (x not in follows.y) and	( some z : User | (z in follows.y) and (z in x.follows) ) and	( x!=y ) )
+inv7 C: all x,y : User | y in x.suggested iff( (x not in follows.y) and	( some z : User | (z in follows.y) and (z in x.follows) ) and	( x!=y ) )
+inv8 O: all p : Ad | all u : User | p in u.sees iff (some x : User | u in follows.x and p in posts.x)
+inv8 U: all p : Ad | all u : User | p in sees.u implies (some x : User | u in follows.x and p in posts.x)
+inv8 U: all p : Ad | all u : User | p in sees.u implies (some x : User | u in follows.x and p in posts.x and x!=u)
+inv8 U: all p : Ad | all u : User | p in sees.u implies p in u.follows.posts or p in u.suggested.posts
+inv8 C: all p : Ad | all u : User | p in u.sees implies (p in u.follows.posts) or (p in u.suggested.posts)
+NA H: THEME UPDATE
+

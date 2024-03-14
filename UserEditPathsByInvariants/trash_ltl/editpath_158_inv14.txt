@@ -1,0 +1,6 @@
+inv14 S: always (Proteced' = Protected - Protected & Trash)
+inv14 O: always (Protected' = Protected - Protected & Trash)
+inv14 O: always (Protected' = Protected - (Protected & Trash))
+inv14 O: always (Protected' in Protected - (Protected & Trash))
+inv14 C: always (all f : Protected | f in Trash implies after f not in Protected )
+

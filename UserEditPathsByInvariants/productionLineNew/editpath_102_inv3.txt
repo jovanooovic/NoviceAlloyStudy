@@ -1,0 +1,7 @@
+inv3 S: all c: Component| some w: Workstation| w in c.component
+inv3 U: all c: Component| some w: Workstation| w in c.workstation
+inv3 T: all c: Component| some w: Workstation| one w in c.workstation
+inv3 U: all c: Component| some w: Workstation| w in c.workstation
+inv3 O: (all c: Component| some w: Workstation| w in c.workstation) && (all c: Component| one workstation.c)
+inv3 C: all c: Component | one c.workstation
+

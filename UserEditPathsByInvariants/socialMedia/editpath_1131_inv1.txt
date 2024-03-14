@@ -1,0 +1,7 @@
+inv1 U: all p:Photo, u:User | u->p in posts implies one u
+inv1 T: one u:User | u.posts
+inv1 T: one u:User | u.posts
+inv1 S: all x,y :User| one p:Photo| x->p in posts and y -> op in posts implies x = y
+inv1 B: all x,y :User| one p:Photo| x->p in posts and y -> p in posts implies x = y
+inv1 B: one x,y :User| one p:Photo| x->p in posts and y -> p in posts implies x = y
+

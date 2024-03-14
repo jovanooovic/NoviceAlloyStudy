@@ -1,0 +1,10 @@
+inv2 S: all u:User, w:(user.profile + user.visible) | w.source in Institution
+inv2 S: all u:User| all w:(user.profile + user.visible) | w.source in Institution
+inv2 S: Work.source in (User+Instituition)
+inv2 U: Work.source in (User+Institution)
+inv2 S: all u:User, w:(user.profile + user.visible) | w in (u+Institution)
+inv2 O: all u:User, w:(u.profile + u.visible) | w in (u+Institution)
+inv2 O: all u:User, w:(u.profile + u.visible) | w in (u+Institution)
+inv2 S: all u:User, all w:(u.profile) | (w.source) in (u + Institution)
+inv2 C: all u:User | all w:(u.profile) | (w.source) in (u + Institution)
+

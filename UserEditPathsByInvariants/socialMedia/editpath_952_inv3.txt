@@ -1,0 +1,12 @@
+inv3 S: all u1 : User | all ph : Photo |  some inf : Influencer |	u1 -> ph in sees implies (ph in inf.posts or ph in Add)
+inv3 B: all u1 : User | all ph : Photo |  some inf : Influencer |	u1 -> ph in sees implies (ph in inf.posts or ph in Ad)
+inv3 U: all u1 : User | all ph : Photo |  some inf : User |	u1 -> ph in sees implies (ph in inf.posts or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	u1 -> ph in sees implies ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv3 T: all u1 : User | all ph : Photo |	u1 -> ph in sees -> ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	u1 -> ph in sees implies ((some u2 : User | ph in u2.posts and u1 -> u2 in follows ) or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv3 T: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and some u1.follows.u2 ) or ph  in Ad)
+inv3 T: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and some u2.u1.follows ) or ph  in Ad)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+

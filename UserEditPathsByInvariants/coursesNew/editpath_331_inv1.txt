@@ -1,0 +1,8 @@
+inv1 S: all person : univ | all courses : Courses | person->courses in enrolled implies person in Student
+inv1 C: all person : univ | all courses : Course | person->courses in enrolled implies person in Student
+inv1 C: all professor : Person - Student | no professor.enrolled
+inv1 S: all professor : univ | professor in Professor implies no professor->courses in enrolled
+inv1 B: all professor : univ | professor in Professor implies no professor.enrolled
+inv1 B: all professor : Professor | no professor.enrolled
+inv1 C: all person : univ | all courses : Course | person->courses in enrolled implies person in Student
+

@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 U: all u1,u2:User | all p:Photo | u1->p in posts and u2->p in posts implies u1=u2
+inv1 B: all u1,u2:User | all p:Photo | u1->p in posts and u2->p in posts implies u1!=u2
+inv1 B: one u1:User | all p:Photo | u1->p in posts
+inv1 B: all u1:User | all p:Photo | u1->p in posts
+inv1 C: all p:Photo | one posts.p
+inv1 C: all p:Photo | one posts.p
+inv2 C: all u1,u2:User | u1->u2 in follows implies u1!=u2
+inv3 E: 
+inv2 C: all u1,u2:User | u1->u2 in follows implies u1!=u2
+inv3 S: all u1:User | all p:Photo | u1->p in posts implies((some u2 | u2 -> p in sees implies u2 -> u1 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in posts implies((some u2 | u2 -> p in sees implies u2 -> u1 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2 | u2 -> p in posts implies u1 -> u2 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts implies u1 -> u2 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts and u1 -> u2 in follows) or ph in Ad)
+inv2 C: all u1,u2:User | u1->u2 in follows implies u1!=u2
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv3 C: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts and u1 -> u2 in follows) or p in Ad)
+inv4 B: all u1:User | all a:Ad | u1->a in posts
+inv4 C: all u1:User | all a:Ad | u1->a in posts implies ( all p:Photo | u1->p in posts implies p in Ad)
+inv5 B: all i:Influencer | all u:User | u->i in follows
+inv5 U: all i:Influencer | all u:User-i | u->i in follows
+inv6 B: all i:Influencer | all p:Photo | i->p in posts implies (all d:Day | p ->d in date )
+inv6 B: all i:User-Influencer | all p:Photo | i->p in posts implies (all d:Day | p ->d in date )
+inv6 U: all i:User-Influencer | all p:Photo | i->p in posts implies (one d:Day | p ->d in date )
+NA H: THEME UPDATE
+inv7 S: all u:User | u1.suggested = u.follows.follows - u.follows - u
+inv7 C: all x : User | x.suggested = x.follows.follows - x.follows - x
+inv8 O: all u1:User | u1.sees in u1.follows.posts + u1.suggested.posts
+inv8 S: all u:User | all a:Ad | a in u1.sees implies (a in u.follows.posts or a in u.suggested.posts)
+inv8 C: all u:User | all a:Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)
+

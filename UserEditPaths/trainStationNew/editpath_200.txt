@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv1 C: some Entry	some Exit
+inv2 S: all s : Signal | one signals.S
+inv2 C: all s : Signal | one signals.s
+inv3 C: all t : Track | no t.succs iff t in Exit
+inv4 C: all t : Track | no succs.t iff t in Entry
+inv5 S: all t : Track | not lone succs.t iff t in Join
+inv5 C: all t : Track | not lone succs.t iff t in Junction
+inv6 C: all e : Entry | some Speed & e.signals
+inv7 C: no ^succs & iden
+inv8 S: all en : Entry, ex : Exit | ex in en.*succ
+inv8 C: all en : Entry, ex : Exit | ex in en.*succs
+inv9 C: all t : Track | no Junction & t.succs implies no Semaphore & t.signals
+inv10 T: all t : Track | some Junction & t.succs implies Semaphore & t.signals
+inv10 O: all t : Track | some Junction & t.succs implies one Semaphore & t.signals
+inv10 C: all t : Track | some Junction & t.succs implies some Semaphore & t.signals
+

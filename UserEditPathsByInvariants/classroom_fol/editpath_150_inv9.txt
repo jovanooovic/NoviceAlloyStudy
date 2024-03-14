@@ -1,0 +1,30 @@
+inv9 T: all c:Class, t1, t2:Teacher | (t1 -> c in Teaches) and (t2 -> c in Teacher) implies t1 = t2
+inv9 C: all c:Class, t1, t2:Teacher | (t1 -> c in Teaches) and (t2 -> c in Teaches) implies t1 = t2
+inv9 S: teaches in Teacher one -> Class
+inv9 O: Teaches in Teacher one -> Class
+inv9 O: Teaches in Teacher one -> one Class
+inv9 O: Teaches in Teacher one -> Class
+inv9 O: Teaches in Person one -> Class
+inv9 U: Teaches in Person -> Class
+inv9 O: Teaches in Person one -> Class
+inv9 O: Teaches in Class one -> Person
+inv9 O: Teaches in Person one -> Class
+inv9 S: all p:Person | p.teaches one Class
+inv9 T: all p:Person | p.Teaches one Class
+inv9 B: all p:Person | one p.Teaches
+inv9 O: all p:univ | one p.Teaches
+inv9 B: all p:Teacher | one p.Teaches
+inv9 O: Teaches in Person one -> Class
+inv9 O: Person <: Teaches in Person one -> Class
+inv9 O: Person <: Teaches in Teacher one -> Class
+inv9 O: Teacher <: Teaches in Teacher one -> Class
+inv9 O: Teaches in Person one -> Class
+inv9 T: Teaches in Person one -> Class	  Teacher in Teacher one -> Class
+inv9 O: Teaches in Person one -> Class	  Teaches in Teacher one -> Class
+inv9 S: Teaches in Person one -> Class	  Teaches in Teacher one -> Class	  Teacher in Student no -> Class
+inv9 T: Teaches in Person one -> Class	  Teaches in Teacher one -> Class	  Teacher in Student none -> Class
+inv9 S: Teaches in Person one -> Class	  Teaches in Teacher one -> Class	  Teacher in Student no -> Class
+inv9 T: Teaches in Person one -> Class	  Teaches in Teacher one -> Class	  all s:Student, c:Class | s -> c = none
+inv9 T: Teaches in Person one -> Class	  Teaches in Teacher one -> Class	  all s:Student, c:Class | s.c  none
+inv9 C: all c:Class, t1, t2:Teacher | (t1 -> c in Teaches) and (t2 -> c in Teaches) implies t1 = t2
+

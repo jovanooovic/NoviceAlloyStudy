@@ -1,0 +1,9 @@
+inv7 B: all s:Student | some c:Course | one p:Project | s->c in enrolled and s->p in projects
+inv7 B: all s:Student | all c:Course | one p:Project | s->c in enrolled and s->p in projects
+inv7 B: all s:Student | all c:Course | s->c in enrolled implies one p:Project | s->p in projects
+inv7 B: all s:Student | some c:Course | s->c in enrolled implies one p:Project | s->p in projects
+inv7 B: all s:Student | some c:Course | s->c in enrolled implies lone p:Project | s->p in projects
+inv7 B: all s:Student | some c:Course | s->c in enrolled implies lone p:Project | s->p in projects and c->p in projects
+inv7 B: all s:Student | some c:Course | s->c in enrolled implies lone p:Project | s->p in projects and c->p in projects
+inv7 U: all s:Student, c:Course | s->c in enrolled implies lone p:Project | s->p in projects and c->p in projects
+

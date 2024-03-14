@@ -1,0 +1,20 @@
+inv12 S: all s : Student, g : Grade, c : Course |
+inv12 B: all s : Student, c : Course | one c.grades[s]
+inv12 T: all s : Student, c : Course, g : Grade | one g in c.grades[s]
+inv12 B: all s : Student, c : Course | one c.grades[s]
+inv12 T: all s : Student | one c : Course | c.grades[s]
+inv12 T: all s : Student, c : Course | one g:Grade | c.grades[s]
+inv12 B: all s : Student, c : Course | one g:Grade | g in c.grades[s]
+inv12 B: all s : Student, c : Course | one c.grades[s]
+inv12 B: all s : Student, c : Course | one c.grades[s]
+inv12 B: all s : Student, c : Course | #c.grades[s] = 1
+inv12 B: all c : Course, g : Grade, s : Student | #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all s : Student, c : Course | #c.grades[s] = 1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+inv12 B: all c : Course, g : Grade, s : Student | g in c.grades[s] => #c.grades=1
+

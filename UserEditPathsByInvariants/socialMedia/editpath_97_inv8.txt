@@ -1,0 +1,6 @@
+inv8 S: all u : User | all a : Ad | a in u.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv8 B: all u,a,p : univ | u in User and a in Ad and u->a in sees and p in User and p->a in posts implies u->p in follows or u->p in suggested
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+inv8 C: all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)
+

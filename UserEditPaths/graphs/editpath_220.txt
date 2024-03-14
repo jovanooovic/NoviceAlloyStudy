@@ -1,0 +1,32 @@
+na H: THEME UPDATE
+inv1 T: all x, y: Node | y in x.Node implies x in y.Node
+inv1 T: all x, y: Node | y in x.Node implies x in y.Node
+inv1 C: all x, y: Node | y in x.adj implies x in y.adj
+inv2 C: all x, y, z: Node | (y in x.adj and z in y.adj) implies z != x
+inv3 S: all x: Node | x not in x.adj.*
+inv3 S: all x: Node | x not in x.^
+inv3 C: all x: Node | x not in x.^(adj)
+inv3 U: all x: Node | x not in x.adj
+inv3 C: all x: Node | x not in x.^(adj)
+inv4 U: all x, y: Node | x in y.^(adj) and y in x.^(adj)
+inv4 T: all x, y: Node | x in (y.adj or y.^(adj)) and y in (x.adj or x.^(adj))
+inv4 U: all x, y: Node | (x in y.^(adj) or x in y.adj) and (y in x.^(adj) or y in x.adj)
+inv4 U: all x, y: Node | x in y.^(adj)
+inv4 U: all x, y: Node | x in y.^(adj) and y in x.^(adj)
+inv4 U: all x: Node | Node in x.*adj
+inv4 U: all x: Node | (Node - x) in x.adj
+inv4 U: all x: Node | (Node - x) in x.^(adj)
+inv4 U: all x: Node | Node in x.^(adj)
+inv5 C: all x, y: Node | x in y.adj implies x != y
+inv6 S: all x: Node | x in x.(^)adj
+inv6 B: all x: Node | x in x.^(adj)
+inv6 T: all x: Node | x in x.^(adj) or adj.x
+inv6 B: all x: Node | x in x.^(adj) or x in adj.x
+inv6 T: all x: Node | x in x.^(adj) or x in adj.^(x)
+inv6 B: all x: Node | x in x.^(adj) or x in Node.^(adj)
+inv6 B: all x: Node | x in Node.^(adj) or x in adj.Node
+inv6 O: all x, y: Node | x in y.^(adj) or x in adj.y or x = y
+inv7 B: all x, y: Node | x in y.^(adj) or x in adj.y
+inv7 U: all x, y: Node | x in y.^(adj) or x in adj.y or x = y
+inv8 C: all x, y, z: Node | x in y.adj and y in z.adj implies x in z.adj
+

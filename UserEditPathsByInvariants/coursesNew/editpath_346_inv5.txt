@@ -1,0 +1,6 @@
+inv5 U: all p : Person - Student | all pr: Project | no p.projects and pr in Person.projects
+inv5 B: all p : Person - Student | all pr: Project | no p.projects and pr in (Person-Professor).projects
+inv5 C: all p : Person - Student | no p.projects 	  all p: Project | p in Person.projects
+inv5 U: all p : Person - Student | no p.projects and Project in Person.projects
+inv5 C: all p : Person - Student | no p.projects 	  all p: Project | p in Person.projects
+

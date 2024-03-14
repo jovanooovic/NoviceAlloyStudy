@@ -1,0 +1,6 @@
+inv7 O: all c : Component | (some d : Dangerous | d in c.^(parts)) implies c in Dangerous
+inv7 C: all c : Component | (some d : Dangerous | d in c.(parts)) implies c in Dangerous
+inv7 C: all c : Component | (some d : Dangerous | d in c.parts) implies c in Dangerous
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | Dangerous in c.parts implies c in Dangerous
+

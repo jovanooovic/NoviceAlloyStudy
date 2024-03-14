@@ -1,0 +1,22 @@
+"Node in adj",1
+"Node -> Node",2
+"Node.*adj",1
+"all n:Node | n",2
+"all n : Node | n",1
+"all n:Node | n.adj",1
+"all a:Node | a.adj",1
+"all n: Node | n.adj",1
+"all n: Node | n.*adj",1
+"all n : Node | n.*adj",1
+"all n:Node | n->(adj.n)",1
+"all n : Node | n in adj",1
+"all n : Node | n in ^adj",1
+"all n: Node | n.*adj in adj",1
+"all n : Node | adj not in n.adj",1
+"all n1, n2 : Node | some (n1.n2)",10
+"all n:Node | n in adj.Node & n in Node.adj",1
+"all n1, n2: Node | n1->n2 && n2->n1 in adj",1
+"all a:Node | a in a.adj implies a in ~a.adj",1
+"all a:Node | a in a.^adj implies a in ~a.^adj",1
+"all n1, n2: Node | n1->n2 implies n2->n1 in adj",1
+"all x, y: Node | x in (y.adj or y.^(adj)) and y in (x.adj or x.^(adj))",1

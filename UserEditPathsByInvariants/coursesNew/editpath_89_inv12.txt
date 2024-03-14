@@ -1,0 +1,7 @@
+inv12 B: all s:Student| lone s.(s.enrolled.grades)
+inv12 B: all s:Student| lone s.enrolled.grades
+inv12 B: all c: Course, g:Grade| lone (c.grades.g & Student)
+inv12 S: all c: Course, s:Person| lone p.(c.grades)
+inv12 C: all c: Course, p:Person| lone p.(c.grades)
+inv12 O: all c: Course, p:Person| lone Person.(c.grades)
+

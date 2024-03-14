@@ -1,0 +1,92 @@
+"}
+
+pred inv1{",2
+"adj",2
+"Node",1
+"iden",1
+"adj.adj",2
+"Node.adj",3
+"adj	in Node",1
+"adj in Node",4
+"Node->adj",1
+"adj & adj",1
+"Node in ^adj",1
+"Node->Node",1
+"~adj.adj",2
+"not adj + adj",1
+"~adj->adj",1
+"one Node.Node",1
+"Node in ~Node",1
+"adj = ~adj
+}
+
+pred inv1{
+adj = ~adj",1
+"adj + ~adj",2
+"all a:adj | ~a",1
+"no adj in Node",1
+"adj & ~adj",4
+"adj in Node.adj",1
+"adj.Node in iden",1
+"Node = adj + ~adj",1
+"adj + ~adj in Node",1
+"all n:Node | n.adj",2
+"Node . adj in iden",1
+"iden & adj.adj",1
+"Node in adj & ~adj",1
+"~Node.Node in iden",1
+"(adj & ~adj) in Node",1
+"all n : Node | adj.n",1
+"all n : Node | n.adj",1
+"all n : Node | n->adj",1
+"all n: Node | n in ^n",1
+"(Node . ~Node) in iden",1
+"all n:Node | no ~(n.adj)",1
+"all n:Node | n in Node.n",1
+"all n : Node | n->(n.adj)",1
+"Node.adj implies adj.Node",1
+"all a:Node.adj | ~a in adj",1
+"all n:Node | n.adj or adj.n",1
+"all n : Node | ~(n->(n.adj))",1
+"all n : Node | n.adj in ~adj",1
+"all n : adj | ~n in Node.adj",1
+"all n: Node | no n in n.^adj",1
+"all n: Node{n.adj = ~(n.adj)}",1
+"all n: Node | n.adj = ~(n.adj)",2
+"all a:adj | ~a in adj",2
+"all n : adj | ~n in adj",1
+"all n: Node | one n.adj.adj = n",1
+"all n : Node | n->adj => adj->n",1
+"all n : Node.adj | ~n in Node.adj",1
+"all disj n : Node | n in adj.~adj",2
+"inv1[adj]
+}
+
+pred inv1{
+inv1[adj]",1
+"all n : Node | some n in n.adj.~adj",1
+"all n : Node | one n.adj and n.(~adj)",1
+"all n : Node, a : n.adj | n->a => a->n",1
+"all n1,n2:Node | n1->n2 implies n2->n1",1
+"all a,b:Node | b in a.adj -> a in b.adj",1
+"all n1, n2 : Node | n1->n2 implies n2->n1",1
+"all n : Node, a : n.adj | a->n in Node.adj",1
+"all n : Node | (one n.adj )&(one n.(~adj))",1
+"all n,x:Node | n.x in adj implies x.n in adj",1
+"all n1, n2 : Node | n1 ->n2 implies n2 -> n1",1
+"all a,b : Node | a -> b implies b -> a in adj",1
+"all x,y : Node | x->y in Node and y->x in Node",1
+"all n1, n2 : Node | (n1 ->n2) implies (n2 -> n1)",1
+"all x, y: Node | y in x.Node implies x in y.Node",2
+"all n,m: Node | n.adj = m implies lone m.adj = n",1
+"all x,y : Node | x->y in Node implies y->x in Node",1
+"all n1,n2:Node | some n1.adj:>n2 implies n2.adj:>n1",1
+"all n1, n2 : Node | (n1.adj.n2) implies (n2.adj.n1)",1
+"all n: Node | n.adj in Node implies some n.adj.adj = n",1
+"all n1,n2:Node | n1->n2 in Node implies n2->n1 in Node",2
+"all n: Node | n.adj in Node implies lone n.adj.adj = n",1
+"all n1, n2 : Node | (n1.n2) in adj  implies (n2.n1) in adj",1
+"all a,b:Node | a->b in adj implies b->a and a->a not in adj",1
+"all e1, e2 : Node | e1 -> e2 in Node implies e2 -> e1 in Node",1
+"all a,b:Node | a->b in adj implies (b->a and a->a) not in adj",1
+"all n1:Node | all n2:Node in n1.adj | n1 in n2.adj && n2 in n1.adj",1

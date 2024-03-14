@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 C: all worker : Worker | worker in Human or worker in Robot
+inv2 T: all workstation : Workstation | all workers : Worker | workers in workstation.workers != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | (workers in workstation.workers) != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | workstation.workers != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | Workstation.workers != none and worker in Workstation.workers
+inv2 S: all workers : Worker | workstation.workers != none and worker in Workstation.workers
+inv2 T: all workers : Worker | Workstation.workers != none and worker in Workstation.workers
+inv2 U: all worker : Worker | (Workstation.workers != none) and (worker in Workstation.workers)
+inv2 U: all worker : Worker | (Workstation.workers != none) and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+inv2 U: Workstation.workers != none and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+inv2 C: all w : Workstation | w.workers != none and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+inv3 C: all c : Component | one w : Workstation | w in c.workstation
+inv4 S: all c : Component | all m : material | c.parts != none and m.parts is none
+inv4 T: all c : Component | all m : Material | c.parts != none and m.parts is none
+inv4 S: all c : Component | all m : Material | (c.parts != none) and (m.parts is none)
+inv4 S: all c : Component | all m : Material | (c.parts != none) and (m.parts is none)
+inv4 S: all c : Component | all m : Material | (c.parts != none) and (m.parts is none))
+inv4 C: (all c : Component | some p : Product | c->p in parts)	and	(all m : Material | no p : Product | m->p in parts)
+inv5 S: all w : Workstation | all w1,w2 : Worker | (w1 in w.workers and w2 in w.workers and w1 is Human) implies w2 is Human
+inv5 T: all w : Workstation | all w1,w2 : Worker | w1 in w.workers and w2 in w.workers and w1 is Human implies w2 is Human
+inv5 S: all w : Workstation | all w1,w2 : Worker | (w1 in w.workers and w2 in w.workers and w1 is Human) implies w2 is Human
+inv5 S: all w : Workstation | all w1,w2 : Worker | (w1 in w.workers and w2 in w.workers and w1 is Human) implies (w2 is Human)
+inv5 S: all w : Workstation | all w1,w2 : Worker | (w1 in w.workers and w2 in w.workers and w1 is Human) implies (w2 is Human
+inv5 T: all w : Workstation | all w1,w2 : Worker | w1 in w.workers and w2 in w.workers and w1 is Human implies w2 is Human
+inv5 S: all w : Workstation | all w1,w2 : Worker | (w1 in w.workers and w2 in w.workers and w1 is Human) implies w2 is Human
+inv5 S: all w : Workstation | all w1,w2 : Worker | ((ws->w1 in workers and ws->w2 in workers and w1 in Human)	implies (w2 in Human)
+inv5 S: all w : Workstation | all w1,w2 : Worker |  (w1 in w.workers and w2 in w.workers and w1 is Human) implies w2 is Human
+inv5 O: all ws : Workstation | all w1,w2 : Worker |	(ws->w1 in workers and ws->w2 in workers and w1 in Human)	implies (w2 in Human)
+inv5 O: all ws : Workstation | all w1,w2 : Worker |	(ws->w1 in workers and ws->w2 in workers and w1 in Human)	implies (w2 in Human)
+inv6 C: all c : Component | c not in c.^(parts)
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 O: all c : Component | all p : Product | p in Dangerous and p in c.^(parts) implies c in Dangerous
+inv8 S: all c : Component | all p : Product | all w : Workker | (p in Dangerous and p in c.^(parts) and w in c.workstation.workers) implies w not in Human
+inv8 B: all c : Component | all p : Product | all w : Worker | (p in Dangerous and p in c.^(parts) and w in c.workstation.workers) implies w not in Human
+inv8 C: all c : Component | all w : Worker | (c in Dangerous and w in c.workstation.workers) implies w not in Human
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv10 B: all c1,c2 : Component | all w1,w2 : Workstation |	w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies	w1 in w2.^(succ)
+

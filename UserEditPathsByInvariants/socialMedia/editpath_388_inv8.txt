@@ -1,0 +1,10 @@
+inv8 S: all u:User | u.sees =
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts&u.suggested.posts)
+inv8 O: all u:User | u.sees = (u.follows.posts&Ad + u.suggested.posts&Ad)
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts&Ad + u.suggested.posts&Ad)
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts + u.suggested.posts)
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts&Ad + u.suggested.posts&Ad)
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts + u.suggested.posts)&Ad
+inv8 O: all u:User | u.sees = (u.follows.posts + u.suggested.posts)&Ad
+inv8 O: all u:User | u.sees&Ad = (u.follows.posts + u.suggested.posts)&Ad
+

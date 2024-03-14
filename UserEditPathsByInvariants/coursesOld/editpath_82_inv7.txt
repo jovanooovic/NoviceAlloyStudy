@@ -1,0 +1,14 @@
+inv7 B: all s:Student | one s.teaches.projects
+inv7 B: all s:Student | lone s.teaches.projects
+inv7 T: all s:Student, c:Course, p:Project | s->c in enrolled and c->p in projects implies one s->p in projects
+inv7 T: all s:Student, c:Course, p:Project | s->c in enrolled and c->p in projects implies one s->p in projects
+inv7 T: all s:Student, c:Course, p:Project | s->c in enrolled and c->p in projects implies (one s->p in projects)
+inv7 T: all s:Student, c:Course, p:Project | (s->c in enrolled and c->p in projects) implies (one s->p in projects)
+inv7 T: all s:Student, c:Course, p:Project | (s->c in enrolled and c->p in projects) implies  (one s->p in projects)
+inv7 B: all s:Student, c:Course, p:Project | (s->c in enrolled and c->p in projects) implies s->p in projects
+inv7 S: all s:Student, c1,c2:Course, p:Project | (s->c in enrolled and c->p in projects) implies s->p in projects
+inv7 B: all s:Student, c1,c2:Course, p:Project | (s->c1 in enrolled and c1->p in projects) implies s->p in projects
+inv7 B: all s:Student, c:Course, p1,p2:Project | s->c in enrolled and c->p1 in projects and c->p2 in projects and s->p1 in projects and s->p1 in projects implies p1=p2
+inv7 U: all s:Student, c:Course, p1,p2:Project | s->c in enrolled and c->p1 in projects and c->p2 in projects and s->p1 in projects and s->p2 in projects implies p1=p2
+inv7 U: all s:Student, c:Course, p1,p2:Project | s->c in enrolled and c->p1 in projects and c->p2 in projects and s->p1 in projects and s->p2 in projects implies p1=p2
+

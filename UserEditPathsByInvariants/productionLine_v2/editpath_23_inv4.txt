@@ -1,0 +1,9 @@
+inv4 U: all c:Component, m:Material | (c.parts != none) and (m.parts = none)
+inv4 U: all c:Component, m:Material | (c.parts not in none) and (m.parts in none)
+inv4 U: all c:Component | (c.parts != none) and (all m: Material | m.parts = none)
+inv4 S: all c:Component, some p:Product | (p in c.parts) and (all m: Material, p: Product | p not in m.parts)
+inv4 U: all c:Component | some p:Product | (p in c.parts) and (all m: Material, p: Product | p not in m.parts)
+inv4 S: all c:Component | some p:Product | (p in c.parts) and (all m: Material, no p: Product | p in m.parts)
+inv4 U: all c:Component | some p:Product | (p in c.parts) and (all m: Material | no p: Product | p in m.parts)
+inv4 C: (all c:Component | some p:Product | p in c.parts) and (all m: Material | no p: Product | p in m.parts)
+

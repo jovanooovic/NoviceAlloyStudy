@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 S: all i : Image | some u : User | i in u.posts
+inv1 U: all i : Photo | some u : User | i in u.posts
+inv1 C: all i : Photo | one u : User | i in u.posts
+inv1 C: all i : Photo | one u : User | i in u.posts
+inv2 C: all u : User | u not in follows.u
+inv5 U: all i : Influencer, u : User - i | u in follows.i
+inv3 T: all u : User, p : Photo | p in Ad => u.sees.p	all u : User, p : Photo | p not in Ad and p in u.follows.posts => u.sees.p
+inv3 B: all u : User, p : Photo | p in Ad => p in u.sees	all u : User, p : Photo | p not in Ad and p in u.follows.posts => p in u.sees
+inv3 B: all u : User, p : Photo | p in Ad => p in u.sees
+inv3 C: all u : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv4 C: all u : User, a : Ad | a in u.posts => u.posts in Ad
+inv5 U: all i : Influencer, u : User - i | u in follows.i
+inv6 C: all i : Influencer, d : Day | d in i.posts.date
+inv7 S: all u: User | u.suggested in u.follows.follows and  not in u.follows
+inv7 B: all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+inv8 S: all u : User, ad : Ad | ad in u.sees = (u.follows.pots + (u.follows.follows - (u.follows + u)) )
+inv8 T: all u : User, ad : Ad | ad in u.sees = (u.follows.posts + (u.follows.follows - (u.follows + u)) )
+inv8 T: all u : User, ad : Ad | ad in u.sees iff (u.follows.posts + u.suggested.posts )
+inv8 O: all u : User, ad : Ad | ad in u.sees iff ad in (u.follows.posts + u.suggested.posts )
+inv8 C: all u : User, ad : Ad | ad in u.sees => ad in (u.follows.posts + u.suggested.posts )
+

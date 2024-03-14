@@ -1,0 +1,6 @@
+inv2 S: all u1,u2 : User | u1.follows.u2 -> u1=u2	.
+inv2 S: all u1,u2 : User | u1=u2 implies u1.^(follows.u2)	.
+inv2 S: all u1,u2 : User | u1=u2 implies ^(u1.follows.u2)	.
+inv2 S: all u1,u2 : User | u1=u2 implies  not (u1.follows.u2)	.
+inv2 C: all u : User | u not in u.follows
+

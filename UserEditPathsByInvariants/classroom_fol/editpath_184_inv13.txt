@@ -1,0 +1,12 @@
+inv13 S: all t:Teacher , s:Student | t in Tutors and |(s in Tutors)
+inv13 T: all t:Teacher , s:Student | t in Tutors and !(s in Tutors)
+inv13 T: all t:Teacher , s:Student | t in Tutors and not (s in Tutors)
+inv13 T: all t:Teacher , s:Student | t in Tutors
+inv13 T: all t:Teacher  | t in Tutors
+inv13 S: all p:Person | p in Tutor implies p in Teacher
+inv13 T: all p:Person | p in Tutors implies p in Teacher
+inv13 T: all p:Person | p in Tutors implies p in Teacher
+inv13 T: all p:Person | p in Tutors implies p in Teacher
+inv13 B: some t:Teacher | all s:Student | t->s in Tutors
+inv13 C: all p1:Person, p2:Person | p1->p2 in Tutors implies p1 in Teacher and p2 in Student
+

@@ -1,0 +1,18 @@
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 S: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts | p in Ad)
+inv4 S: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 T: all x: User | some x.posts in Ad implies (all p: Photo | p in x.posts and p in Ad)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 S: all ph : Photo | all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts | ph in Adb implies ph2 in Ad
+inv4 S: all ph : Photo | all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts | ph in Ad implies ph2 in Ad
+inv4 S: all ph : Photo | all u1 : User | all ph2 : Photo | u1 -> ph in posts and u1 -> ph2 in posts | ph in Ad implies ph2 in Ad
+inv4 S: all x: User | some p1: Photo | all p2: Photo | (p1 in x.posts and p1 in Ad) implies (p2 in x.posts and p in Ad)
+inv4 B: all x: User | some p1: Photo | all p2: Photo | (p1 in x.posts and p1 in Ad) implies (p2 in x.posts and p2 in Ad)
+inv4 B: all x: User | some p1: Photo | p1 in x.posts and p1 in Ad implies (all p2: Photo | p2 in x.posts and p2 in Ad)
+inv4 B: all x: User | some p1: Ad | p1 in x.posts implies (all p2: Photo | p2 in x.posts and p2 in Ad)
+inv4 B: all x: User | some p1: Ad | p1 in x.posts implies (all p2: Photo | p2 in x.posts and p2 in Ad)
+

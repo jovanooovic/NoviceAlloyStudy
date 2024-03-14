@@ -1,0 +1,7 @@
+inv4 C: all u:User | all a:Ad | a in u.posts implies u.posts in Ad
+inv4 S: all u:User | (Ad in u.posts) => (u.posts in Ad)
+inv4 S: all u:User | (Ad in u.posts) => (u.posts = Ad)
+inv4 B: all u:User | (Ad in u.posts) => (u.posts = Ad)
+inv4 B: all u:User, a:Ad | a in u.posts implies u.posts not in Ad
+inv4 C: all u:User, a:Ad | a in u.posts implies u.posts in Ad
+

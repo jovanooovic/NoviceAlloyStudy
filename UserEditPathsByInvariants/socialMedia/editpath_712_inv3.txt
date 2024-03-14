@@ -1,0 +1,21 @@
+inv3 T: all x : User | x.sees not Adds
+inv3 T: all x : User | x.sees not Ad
+inv3 S: all x : User | Add(x.sees) or follows.posts.(x.sees)
+inv3 T: all x : User | Ad(x.sees) or follows.posts.(x.sees)
+inv3 T: all x : User |  follows.posts.(x.sees)
+inv3 T: all x : User | x.sees in Ad or follows.posts.(x.sees)
+inv3 O: all x : User | x.sees in Ad
+inv3 S: all x : User | x.sees in Ad or  or follows.posts.x.sees
+inv3 T: all x : User | x.sees in Ad or follows.posts.x.sees
+inv3 T: all x : User | x.sees in Ad or x.follows.posts.x.sees
+inv3 O: all x : User | x.sees in Ad or x.sees in x.follows.posts
+inv3 S: all x : User | x.sees in Ad or x.sees in x.follows.post
+inv3 O: all x : User | x.sees in Ad or x.sees in x.follows.posts
+inv3 O: all x : User | x.sees in Ad or x.sees in x.follows.posts
+inv3 O: all x : User | x.sees in Ad or x.sees in x.follows.posts no Ad
+inv3 S: all x : User | x.sees in Ad or post.x.sees in x.follows		-
+inv3 S: all x : User | x.sees in Ad or posts.x.sees in x.follows		-
+inv3 S: all x : User | x.sees in Ad or x.sees in x.follows.posts		-
+inv3 S: all x : User | (x.sees in Ad) or (x.sees in x.follows.posts)		-
+inv3 O: all x : User | (x.sees in Ad) or (x.sees in x.follows.posts)
+

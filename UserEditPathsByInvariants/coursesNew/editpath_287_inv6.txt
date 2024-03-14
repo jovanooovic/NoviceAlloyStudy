@@ -1,0 +1,7 @@
+inv6 B: all e:Student, p:Project | p in e.projects => e.enrolled in (projects.p & Course)
+inv6 U: all e:Student, p:Project | p in e.projects => p in e.enrolled.projects
+inv6 S: all p:Projects
+inv6 S: all p:Projects
+inv6 U: all s:Student| s.projects in s.enrolled.projects
+inv6 U: all s:Student| s.projects in s.enrolled.projects
+

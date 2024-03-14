@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+inv1 C: all f : File | f not in Trash
+inv6 C: all f,a1,a2 : File |	f->a1 in link and f->a2 in link implies a1=a2
+inv7 S: all f,l : File | f->l in linked and l not in Trash
+inv7 O: all f,l : File | f->l in link and l not in Trash
+inv7 C: all f,l : File | f->l in link implies l not in Trash
+inv8 C: all f,l : File | f->l not in link
+inv9 C: all f,l1,l2 : File | f->l1 in link  implies l1->l2 not in link
+inv10 S: all all f,b : File | (f->b in link and f in Trash) implies  b in Trash
+inv10 S: all all f,b : File | (f->b in link and f in Trash) implies b in Trash
+inv10 S: all all f,b : File | (f->b in link and f in Trash) implies b in Trash
+inv10 S: all all f,b : File | (f->b in link and f in Trash) implies b in Trash
+inv10 C: all f,b : File | (f->b in link and f in Trash) implies b in Trash
+

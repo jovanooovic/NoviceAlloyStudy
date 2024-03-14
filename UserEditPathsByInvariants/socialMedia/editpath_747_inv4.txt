@@ -1,0 +1,14 @@
+inv4 S: all x : User | some x.posts in Ad -> all x.posts in Ad
+inv4 S: all x : User | (some x.posts in Ad) -> (all x.posts in Ad)
+inv4 T: all x : User | (some x.posts in Ad) -> (x.posts in Ad)
+inv4 T: all x : User | (some x.posts in Ad) -> (x.posts in Ad)
+inv4 S: all x : User | (some x.posts in Ad) | (x.posts in Ad)
+inv4 T: all x : User | some y : Ad | y in x.posts -> x.posts in Ad
+inv4 T: all x : User | some y : Ad | y in x.posts -> x.posts in Ad
+inv4 T: all x : User | some y : Ad | (y in x.posts) -> x.posts in Ad
+inv4 T: all x : User | some y : Ad | (y in x.posts) -> (x.posts in Ad)
+inv4 B: all x : User | some y : Ad | (y in x.posts)
+inv4 T: all x : User | some y : Ad | (y in x.posts) -> (x.posts in Ad)
+inv4 B: all x : User | some y : Ad | (y in x.posts) implies (x.posts in Ad)
+inv4 C: all x : User | (some y : Ad | y in x.posts) implies (x.posts in Ad)
+

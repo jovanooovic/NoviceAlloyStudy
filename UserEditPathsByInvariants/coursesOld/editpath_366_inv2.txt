@@ -1,0 +1,12 @@
+inv2 S: all p:Person-Teacher, c:Course | c not in p.teaches
+inv2 C: all p:Person-Professor, c:Course | c not in p.teaches
+inv2 T: no Course in Person-Professor.teaches
+inv2 T: no Course in Student.teaches		all p:Person-Professor, c:Course | c not in p.teaches
+inv2 T: no Course in Student.teaches
+inv2 T: no Student.teaches.Course
+inv2 O: no teaches.Course
+inv2 O: no Person-Professor.teaches
+inv2 T: no Person-Professor.teaches.Course
+inv2 O: no Person-Professor.teaches
+inv2 C: all p:Person-Professor, c:Course | c not in p.teaches
+

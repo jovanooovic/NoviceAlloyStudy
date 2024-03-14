@@ -1,0 +1,9 @@
+inv15 T: all p1,p2,p3:Person | (p1 in Teacher implies (p2 and p3 in  Student) )or (p2 in Teacher implies (p1 and p3 in  Student) ) or (p3 in Teacher implies (p2 and p1 in  Student) )
+inv15 T: all p1,p2,p3:Person | (p1 in Teacher implies (p2 and p3 in  Student) )or (p2 in Teacher implies (p1 and p3 in  Student) ) or (p3 in Teacher implies (p2 and p1 in  Student) )
+inv15 T: all p1,p2,p3:Person | (p1 in Teacher implies (p2 and p3 in  Student) )
+inv15 S: all p1,p2,p3:Person | (p1 in Teacher implies (p2, p3 in  Student) )
+inv15 B: all p1,p2,p3:Person | (p1 in Teacher implies (p2 in  Student and p3 in  Student) )
+inv15 B: all p1,p2,p3:Person | (p1 in Teacher implies (p2 in  Student and p3 in  Student) ) or (p2 in Teacher implies (p1 in  Student and p3 in  Student) ) or (p3 in Teacher implies (p2 in  Student and p1 in  Student) )
+inv15 B: all p1,p2,p3:Person | p1 in Teacher implies (p1->p2 in Tutors) implies (p2 ->p3 in Tutors)
+inv15 B: all p1,p2,p3:Person | (p1 in Teacher implies (p1->p2 in Tutors) implies (p2 ->p3 in Tutors) ) and p1 not in Student
+

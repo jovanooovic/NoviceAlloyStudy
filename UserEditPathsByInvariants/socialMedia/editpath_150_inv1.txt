@@ -1,0 +1,17 @@
+inv1 T: all p : Photo | p in posts
+inv1 S: all p : Photo, all u : User | p in u.posts
+inv1 S: all p : Photo, all u : User | p in u.posts
+inv1 B: all p : Photo, u : User | p in u.posts
+inv1 B: some p : Photo | all u : User | p in u.posts
+inv1 U: all p: Photo | p in User.posts
+inv1 S: all p: Photo | p in User.posts	all p: Photo| some u1, u2: User | p in u1.post and p in u2.posts implies u1=u2
+inv1 U: all p: Photo | p in User.posts	all p: Photo| some u1, u2: User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 U: all p: Photo| some u1, u2: User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 S: all p: Photo | p in one User.posts
+inv1 U: all p: Photo | p in User.posts
+inv1 U: all p: Photo | lone posts.p
+inv1 S: all p: Photo | lone posts.p	all p: Photo | p in User.post
+inv1 C: all p: Photo | lone posts.p	all p: Photo | p in User.posts
+inv1 C: all p: Photo | p in User.posts		all p: Photo | lone posts.p
+inv1 C: all p: Photo | p in User.posts		all p: Photo | lone posts.p
+

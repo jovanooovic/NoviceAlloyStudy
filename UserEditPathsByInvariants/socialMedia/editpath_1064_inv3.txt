@@ -1,0 +1,18 @@
+inv3 S: all u : User | univ in u.follow.post
+inv3 T: all u : User | u.sees != Ad in u.follow.post
+inv3 S: all u : User | u.post != Ad in u.follow.post
+inv3 T: all u : User | u.posts != Ad in u.follow.post
+inv3 T: all u : User | u.posts != Ad in u.follow.posts
+inv3 T: all u : User | u.sees not in Ad in u.follow.posts
+inv3 T: all u : User | u.sees not in Ad in u.follow.posts
+inv3 T: all u : User | u.follows.posts
+inv3 T: all u : User | u -> u not in u.follows.posts
+inv3 T: all u : User | u.follows.posts
+inv3 T: all u : User | posts in u.follows.posts
+inv3 B: all u : User | Ad in u.follows.posts
+inv3 B: all u : User | Ad not in u.follows.posts
+inv3 B: all u : User | Ad not in u.sees.posts
+inv3 B: all u : User | Ad not in u.sees
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 C: all u : User | (u.sees - Ad) in u.follows.posts
+

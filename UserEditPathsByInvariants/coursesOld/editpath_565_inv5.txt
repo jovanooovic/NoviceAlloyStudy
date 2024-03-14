@@ -1,0 +1,25 @@
+inv5 U: Student.projects = Project
+inv5 U: Student.projects = Project 	  	(Student <: projects) in Student some -> set Project
+inv5 B: Student.projects = Project 	  	(Student <: projects) in Student some -> some Project
+inv5 T: some projects.Project in Student
+inv5 T: no (projects.Project - Student)
+inv5 T: no (projects.Project - Student)
+inv5 U: no ((Person <: projects).Project - Student)
+inv5 C: (Person <: projects).Project in Student	  	Person.projects = Project
+inv5 U: Person.((Person <: projects) & Student->Project) = Project
+inv5 T: Student.projects = Person.projects = Project
+inv5 U: Student.projects & Person.projects = Project
+inv5 B: (Student - Professor).projects = Project
+inv5 B: (Person - Professor).projects = Project
+inv5 B: (Person - Professor).projects = Project
+inv5 U: (Person & Student).projects = Project
+inv5 B: no (Professor.projects & Project)
+inv5 T: Person.Project - Professor.projects = Project
+inv5 B: Person.projects - Professor.projects = Project
+inv5 C: Person.projects - (Person - Student).projects = Project
+inv5 B: Person.projects - (Person & Professor).projects = Project
+inv5 B: Person.projects - (Person & Student).projects = Project
+inv5 U: Person.projects - (Professor - Student).projects = Project
+inv5 C: Person.projects - (Person - Student).projects = Project
+inv5 B: (Person - Professor).projects = Project
+

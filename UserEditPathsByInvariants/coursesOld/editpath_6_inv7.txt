@@ -1,0 +1,15 @@
+inv7 T: all s: Student | lone projects.s
+inv7 T: all s: Student | lone projects.s
+inv7 T: all s: Student | lone projects.s
+inv7 S: all
+inv7 B: all s: Student, c: Course | c in s.enrolled implies lone c.grades.Grade
+inv7 B: all s: Student, c: Course | c in s.enrolled implies one c.grades.Grade
+inv7 B: all s: Student, c: Course | c in s.enrolled implies one c.^(grades.Grade)
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | c in s.enrolled and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p1 in c.(Course <: projects))
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | p1 != p2 and c in s.enrolled and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p1 in c.(Course <: projects))
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | p1 != p2 and c in s.enrolled and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p2 not in c.(Course <: projects))
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | c in s.enrolled and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p2 not in c.(Course <: projects))
+inv7 S: all s: Student, c: Course, p1: Project, P2: Project | c in s.(Person <: enrolled) and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p2 not in c.(Course <: projects)) or (p2 in c.(Course <: projects) and p1 not in c.(Course <: projects))
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | c in s.(Person <: enrolled) and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p2 not in c.(Course <: projects)) or (p2 in c.(Course <: projects) and p1 not in c.(Course <: projects))
+inv7 B: all s: Student, c: Course, p1: Project, p2: Project | c in s.(Person <: enrolled) and p1 in s.(Person <: projects) and p2 in s.(Person <: projects) implies (p1 in c.(Course <: projects) and p2 not in c.(Course <: projects)) or (p2 in c.(Course <: projects) and p1 not in c.(Course <: projects)) or (p2 not in c.(Course <: projects) and p1 not in c.(Course <: projects))
+

@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 C: visible in profile
+inv2 S: User.profile.sorce in iden:>(User + Institution)
+inv2 T: User.profile.source in iden:>(User + Institution)
+inv2 O: profile.source in iden:>(User + Institution)
+inv2 U: User.profile.source in User.iden + Institution
+inv2 C: profile.source in iden + User->Institution
+NA M: MOD BASE MODEL
+inv2 C: profile.source in iden + User->Institution
+inv2 C: profile.source in iden + User->Institution
+inv3 B: all s : Source | profile.(source.s<:ids.~(source.s<:ids)).~profile in iden
+

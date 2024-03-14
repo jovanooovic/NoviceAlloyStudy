@@ -1,0 +1,9 @@
+inv14 B: all f:File&Protected&Trash | after f in File&Trash
+inv14 B: always(all f:File&Protected&Trash | after f in File&Trash)
+inv14 S: always(all f:File | f in Protected&Trash after f in Trash-Protected)
+inv14 O: always(all f:File | f in Protected&Trash implies after (f in Trash-Protected))
+inv14 B: all f:File | f in Protected&Trash implies after (f in Trash-Protected)
+inv14 B: all f:File | f in Protected&Trash implies after (f in Trash)
+inv14 U: all f:File | f in Protected&Trash implies after (f not in Protected)
+inv14 C: always (all f:File | f in Protected&Trash implies after (f not in Protected))
+

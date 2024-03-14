@@ -1,0 +1,6 @@
+inv2 C: all u: User | u not in u.follows	follows - iden = follows
+inv2 C: all u: User | u -> u not in follows	follows - iden = follows
+inv2 C: all u: User | u -> u not in follows
+inv2 C: all u: User | u not in u.follows
+inv2 C: all u: User | u -> u not in follows	all u: User | u not in u.follows	follows - iden = follows
+

@@ -1,0 +1,16 @@
+inv1 S: all i1, i2 | some u : univ | i1 -> u in post and i2 -> u in post
+inv1 S: all i1, i2 : univ | some u : univ | i1 -> u in post and i2 -> u in post
+inv1 O: all i1, i2 : univ | some u : univ | i1 -> u in posts and i2 -> u in posts
+inv1 O: all i1, i2 : univ | some u : univ | i1 -> u in posts and i2 -> u in posts
+inv1 O: all i1, i2 : Photo | some u : User | i1 -> u in posts and i2 -> u in posts
+inv1 O: all i1, i2 : Photo | some u : User | i1 -> u in posts and i2 -> u in posts
+inv1 O: all i1, i2 : Photo | some u : User | i1 -> u in posts and i2 -> u in posts
+inv1 O: all i1, i2 : Photo | some u : User | i1 -> u in posts and i2 -> u in posts
+inv1 S: all p:Photo, u1,u2: User | (u1->p in Photos and u2->p in Photos) => u1 = u2	all p:Photo | some u: User | u->p in Photos
+inv1 C: all p:Photo, u1,u2: User | (u1->p in posts and u2->p in posts) => u1 = u2	all p:Photo | some u: User | u->p in posts
+inv1 C: all p: Photo | one u :User | u->p in posts
+inv1 U: posts in User lone -> Photo
+inv1 C: posts in User lone -> Photo	posts in User some -> Photo
+inv1 S: posts in User lone -> Photo	posts in User some -> Photo		posts in User one -> Photo	}		check Injetivicade {	(all p:Photo, u1,u2: Uesr | u1 -> p in posts and u2->p in posts => u1 = u2)	iff	(posts in User lone -> Photo)
+inv1 C: posts in User lone -> Photo	posts in User some -> Photo		posts in User one -> Photo	}		check Injetivicade {	(all p:Photo, u1,u2: User | u1 -> p in posts and u2->p in posts => u1 = u2)	iff	(posts in User lone -> Photo)
+

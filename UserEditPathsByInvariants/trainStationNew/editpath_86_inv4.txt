@@ -1,0 +1,3 @@
+inv4 C: all a:Track | a in Entry iff all a2:Track | a2->a not in succs
+inv4 C: all a:Entry | all a2:Track | a2->a not in succs	all a:Track | (all a2:Track | a2->a not in succs) implies a in Entry
+

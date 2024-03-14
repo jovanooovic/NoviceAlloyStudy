@@ -1,0 +1,13 @@
+inv11 B: after (all f : File | f in Protected)
+inv11 B: after File in Protected
+inv11 U: after ((File & Protected) in Protected)
+inv11 U: always after ((File & Protected) in Protected)
+inv11 B: always after ((File - Protected) in Protected)
+inv11 O: always ((File - Protected) in Protected)
+inv11 B: after ((File - Protected) in Protected)
+inv11 B: always after ((File - Protected) in Protected)
+inv11 B: always (after ((File - Protected) in Protected))
+inv11 C: always ( ((File - Protected) in Protected'))
+inv11 S: always ( ((File - Protected) in after Protected))
+inv11 C: always ((File - Protected) in Protected')
+

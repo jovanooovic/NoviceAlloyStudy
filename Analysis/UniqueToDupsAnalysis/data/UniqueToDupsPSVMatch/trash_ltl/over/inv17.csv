@@ -1,0 +1,8 @@
+"always File' = File - Trash",3
+"always (Trash&Trash' not in File')",1
+"always File' = File - File & Trash",3
+"always all t: Trash | after no t",1
+"always (all f : File | after f not in File)",1
+"always (all f : Trash | File' = File - f)",1
+"always all f : File | f in Trash implies f not in File",1
+"always all f:File | eventually f in Trash implies after f not in File",1

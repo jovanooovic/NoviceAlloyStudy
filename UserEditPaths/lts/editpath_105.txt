@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 U: all s:State | lone s'
+inv3 T: all s:State | lone s'=s.trans
+inv3 O: all s:State | lone s.trans
+inv3 S: all s:s1:s2:State | s->s1 in Trans and s->s2 in Trans implies s1=s2
+inv3 S: all s:s1:s2:State | s->s1 in trans and s->s2 in trans implies s1=s2
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 T: all s:State,e:Event | lone s.e
+inv3 T: all s:State,e:Event | lone s.e in trans
+inv3 U: all s:State,e:Event | lone s.trans.e
+inv3 O: all s:State,e:Event | lone s.trans
+inv3 T: all s:State,e:Event | lone s->e in trans
+inv3 O: all s:State,e:Event | lone s.trans
+inv3 T: all s:State,e:Event | lone e.s.trans
+inv3 U: all s:State,e:Event | lone s.trans.e
+inv3 T: all s:State,e:Event | lone s->e in trans
+inv3 E: 
+inv4 T: all s:State | State in s.^trans
+inv4 T: all s:State | State in s.^trans.Event
+inv3 T: all s,s1:State,e:Event | lone s->e->s1 in trans
+inv3 B: all s,s1:State,e:Event | s->e->s1 in trans
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+inv4 O: all s:State | State in s.trans.Event
+inv4 B: all s:State | some s.trans
+inv4 T: State in Init.trans
+inv4 O: State in Init.trans.Event
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+inv3 C: all s,s1,s2:State,e:Event | s->e->s1 in trans and s->e->s2 in trans implies s1=s2
+inv4 B: some Init.trans
+inv4 T: some Init.^trans
+inv4 T: some Init.Event
+inv4 O: some Init.trans.Event
+inv5 T: all s,s1:State,e:Event | s->e in trans
+inv5 O: all s,s1:State,e:Event | s->e->s1 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s3 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s2 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s3 in trans
+inv6 C: all e:Event | some s1,s2:State | s1->e->s2 in trans
+inv7 O: all e:Event,s1,s2:State | s1->e->s2 in trans implies s2->e->s1 in trans
+inv7 O: all e:Event,s1,s2:State |some e1:Event| s1->e->s2 in trans implies s2->e1->s1 in trans
+NA H: THEME UPDATE
+

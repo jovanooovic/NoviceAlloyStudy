@@ -1,0 +1,9 @@
+inv7 S: all s:Student|(all c:s.enrolled|one c.project)
+inv7 B: all s:Student|(all c:s.enrolled|one c.projects)
+inv7 B: all s:Student|(all c:s.enrolled|one c.projects)
+inv7 S: all s:Student|(all c:s.enrolled|lone (c.projects & s.projects)
+inv7 U: all s:Student|all c:s.enrolled|lone (c.projects & s.projects)
+inv7 T: all c: Course, p: Person | #p.projects & c = 1
+inv7 T: all c: Course, p: Person |	    (p in Student implies #p.projects & c <= 1)	    && (p in Professor implies #p.projects & c = 0)
+inv7 U: all s:Student|all c:s.enrolled|lone (c.projects & s.projects)
+

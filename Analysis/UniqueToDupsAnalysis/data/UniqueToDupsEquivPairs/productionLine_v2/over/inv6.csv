@@ -1,0 +1,44 @@
+Pairs,6
+,,"no *parts",1
+,,"no *parts & iden",4
+,,"some c:Component | c not in c.*parts",1
+
+Pairs,25
+,,"no iden & ^parts",15
+,,"no ^parts & iden",9
+,,"all p:Product | p->p  not in ^parts",1
+
+Pairs,2
+,,"no (parts . ~parts & iden)",1
+,,"all p: Product | no (p.parts.(~parts) & p)",1
+
+Pairs,13
+,,"all c : Component | no (c.parts)",1
+,,"all c1:Component | no c1.^(parts)",1
+,,"all c: Component | no (c.parts.(~parts) & c)",3
+,,"all c : Component, p : Product | c->p not in parts",1
+,,"all p : Product, c : Component | c->p not in parts",1
+,,"all c: Component, p: Product | no c.parts & p.parts",4
+,,"all c : Component |all p : Product| c->p not in parts",1
+,,"all p, c : univ | p in Product and c in Component implies  c->p not in parts",1
+
+Pairs,25
+,,"all c:Component | c not in c.*parts",10
+,,"all c : Component | c.parts not in (c.^parts)",1
+,,"all c,d : Component | c.parts not in (d.^parts)",1
+,,"all c1, c2 : Component | c1 = c2 implies c2 not in c1",1
+,,"all c,d : Component | c.parts not in (c.^parts)",1
+,,"all c: Component, p: Product | (p.parts not in c.parts)",1
+,,"all c: Component, p: Product | (c.parts not in p.parts)",1
+,,"all c:Component | c not in c.parts and c.parts not in c.parts",1
+,,"all c : Component |	all p : Product | c.parts not in (p.^parts)",1
+,,"all c : Component, pa : Product | c->pa in parts and pa not in Component",1
+,,"all c : Component, p : Product | c in Product and c->p in parts and p not in Component",3
+,,"all c : Component, pa : Product | c in Product and c->pa in parts and pa not in Component",1
+,,"all c : Component | c.parts not in (c.^parts)
+all c,d : Component | c.parts not in (d.^parts)",2
+
+Pairs,2
+,,"all c : Component, p : Product | p->c not in parts",1
+,,"all c,p : univ | c in Component and p in Product and p->c in parts implies all par : Product | p->par in parts implies par!=c",1
+

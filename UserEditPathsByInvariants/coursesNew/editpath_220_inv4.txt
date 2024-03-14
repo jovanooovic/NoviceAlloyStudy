@@ -1,0 +1,15 @@
+inv4 B: all x: Project, y: Course  | x in y.projects
+inv4 B: all x: Project, y: Course  | x in y.projects && one y.projects
+inv4 T: all x: Project, y: Course  | x => x in y.projects
+inv4 S: all x: Project, y: Course  |x in one y.projects
+inv4 B: all x: Project, y: Course  |x in (one y.projects)
+inv4 T: all x: Project, y: Course  | one (x in y.projects)
+inv4 T: all x: Project, y: Course  | #(x in y.projects) = 1
+inv4 S: all x: Project, y: Course  | #(x in y.projects) == 1
+inv4 C: all x: Project| one y: Course  | x in y.projects
+inv4 C: all p: Project | one c: Course | p.~projects = c
+inv4 S: all p: Project | one c: Course | c.projects = p	}
+inv4 B: all p: Project | one c: Course | c.projects = p
+inv4 C: all p: Project | one c: Course | p.~projects = c
+inv4 C: all x: Project| one y: Course  | x in y.projects
+

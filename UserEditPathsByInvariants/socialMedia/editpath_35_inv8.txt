@@ -1,0 +1,23 @@
+inv8 B: all x : User | x.sees in Ad implies x.follows.posts in Ad
+inv8 B: all x : User | x.sees in Ad implies (x.follows.posts in Ad or x.posts in Ad)
+inv8 B: all x : User | (x.sees in Ad) implies (x.follows.posts in Ad or x.posts in Ad)
+inv8 B: all x : User | x.sees in Ad
+inv8 B: all x : User | x.sees in Ad or x.posts in Ad
+inv8 B: all x : User | x.sees in Ad implies x.posts in Ad
+inv8 B: all x : User | (x.sees in Ad) implies x.posts in Ad
+inv8 B: all x : User | (x.sees in Ad) implies (x.posts in Ad)
+inv8 B: all x : User | (x.sees in Ad) implies (x.posts in Ad  or x.follows.posts in Ad)
+inv8 U: all x : User | (x.sees in Ad) implies (x.sees in Ad)
+inv8 E:
+inv8 U: all x : User | (x.sees in Ad) implies (x.sees in Ad)
+inv8 U: all x : User | (x.sees in Ad) implies (x.sees in Ad)
+inv8 U: all x : User | (x.sees in Ad) implies (x.sees in Ad)
+inv8 B: all x : User | x.posts in Ad implies x.sees in Ad
+inv8 B: all x : User |  (x.follows.posts in Ad or x.posts in Ad) implies x.sees in Ad
+inv8 B: all x : User |  (x.follows.posts in Ad or x.posts in Ad or x.suggested.posts in Ad) implies x.sees in Ad
+inv8 B: all x : User |  (x.follows.posts in Ad or x.posts in Ad or x.suggested.posts in Ad) implies x.sees in Ad
+inv8 B: all x : User |  ((x.follows.posts in Ad) or (x.posts in Ad) or (x.suggested.posts in Ad)) implies x.sees in Ad
+inv8 B: all x : User |  (((x.follows.posts in Ad) or (x.posts in Ad) or (x.suggested.posts in Ad)) implies x.sees in Ad)
+inv8 B: all x : User |  (((x.follows.posts in Ad) or (x.posts in Ad) or (x.suggested.posts in Ad)) implies x.sees in Ad)
+inv8 B: all x : User |  (((x.follows.posts in Ad) or (x.posts in Ad) or (x.suggested.posts in Ad)) implies x.sees in Ad)
+

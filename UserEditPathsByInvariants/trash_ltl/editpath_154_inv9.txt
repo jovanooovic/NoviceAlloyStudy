@@ -1,0 +1,21 @@
+inv9 T: always Protected
+inv9 T: always Protected
+inv9 B: all f: File | f in Protected implies always f not in Trash
+inv9 B: all f: File | once f in Protected implies always f not in Trash
+inv9 B: all f: File | always f not in Trash since f in Protected
+inv9 B: all f: File | always f' not in Trash since f in Protected
+inv9 S: all f: File | always f not in Trash once f in Protected
+inv9 B: all f: File | always f not in Trash implies once f in Protected
+inv9 B: all f: File | always f not in Trash implies always f in Protected
+inv9 B: all f: File | always f not in Trash implies eventually f in Protected
+inv9 B: all f: File | always f not in Trash implies once f in Protected
+inv9 B: all f: File | always after f not in Trash implies once f in Protected
+inv9 B: all f: File | always after f in Protected implies always f not in Trash
+inv9 B: all f: File | eventually after f in Protected implies always f not in Trash
+inv9 B: all f: File | eventually f in Protected implies always f not in Trash
+inv9 U: all f: File | always f in Protected implies eventually f not in Trash
+inv9 T: all f: File | always (no f in Protected or f in Trash)
+inv9 T: all f: File | always (no f in Protected or no f in Trash)
+inv9 S: all f: File | always (no f in Protected & no f in Trash)
+inv9 S: all f: File | always (no f in Protected & no f in Trash)
+

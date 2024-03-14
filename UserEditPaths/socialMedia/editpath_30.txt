@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 B: all x : User | one posts.x
+inv1 C: all x : Photo | one posts.x
+inv2 C: all x : User | x not in x.follows
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+inv4 S: all x :User | (some x.posts in Ad) implies (all x.posts in Ad)
+inv4 T: all x :User | (some x.posts in Ad) implies (x.posts in Ad)
+inv4 S: all x :User | (some x.posts & Ad) implies (all x.posts & Ad)
+inv4 C: all x :User | (some x.posts & Ad) implies (x.posts in Ad)
+inv5 S: all x : User | y : Influencer | y in x.follows
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 U: all x : User - Influencer | all y : Influencer | y in x.follows
+inv5 U: all x : Influencer | all y : User-x | x in y.follows
+inv6 C: all x : Day | all y : Influencer | x in y.posts.date
+inv7 T: all x : User | x.suggested implies (x in x.follows.follows and x not in x.follows)
+inv7 S: all x : User | x.suggested implies (x in x.follows.follows and not in x.follows)
+inv7 S: all x : User | x.suggested in (x.follows.follows and not in x.follows)
+inv7 B: all x : User | (x.suggested in x.follows.follows) and (x.suggested not in x.follows)
+inv7 U: all x : User | x.suggested in (x.follows.follows -x.follows)
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows
+inv7 S: all x : User | x.follows not in x.suggested
+inv7 B: all x : User | x.follows not in x.suggested
+inv7 B: all x : User | x.follows not in x.suggested and x.suggested in x.follows.follows
+inv8 E: 
+inv8 S: all x : User |
+inv8 S: all x : User
+inv8 T: all x : User  | x
+inv7 B: all x : User | x.follows not in x.suggested and x.suggested in x.follows.follows
+inv6 C: all x : Day | all y : Influencer | x in y.posts.date
+inv7 B: all x : User | x.follows not in x.suggested and x.suggested in x.follows.follows
+inv7 B: all x : User | x.follows not in x.suggested and x.suggested in x.follows.follows
+inv8 C: all x : User | x.sees&Ad in (x.follows.posts + x.suggested.posts)
+inv8 C: all x : User | x.sees&Ad in (x.follows.posts + x.suggested.posts)
+NA H: THEME UPDATE
+

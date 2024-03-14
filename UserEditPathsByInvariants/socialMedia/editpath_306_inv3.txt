@@ -1,0 +1,17 @@
+inv3 S: all x : User | all z: User |all y: Photo | x in follows.z |y not in Ad and y in z.posts|all see.y
+inv3 S: all x : User | all z: User |all y: Photo | x in follows.z and y not in Ad and y in z.posts and all see.y
+inv3 B: all x : User |all p : Photo | p not in Ad
+inv3 B: all x : User |all p : Photo | p not in Ad
+inv3 S: all x : User |all p : Photo | p not in Ad| p in x.follows
+inv3 S: all x : User |all p : Photo | p not in Ad| p in x.follows.posts
+inv3 S: all x : User |all p : Photo | p not in Ad| p in (x.follows).posts
+inv3 S: all x : User |all p : Photo | p not in Ad| p in (x.follows).posts| p in sees.x
+inv3 S: all x : User |all p : Photo | p not in Ad| p in (x.follows).posts| p in x.sees
+inv3 O: all x : User |all p : Photo | p not in Ad and p in (x.follows).posts and p in x.sees
+inv3 B: all x : User |some p : Photo | p not in Ad and p in (x.follows).posts and p in x.sees
+inv3 B: some x : User |some p : Photo | p not in Ad and p in (x.follows).posts and p in x.sees
+inv3 O: all x : User |all p : Photo | p not in Ad and p in x.sees iff p in (x.follows).posts
+inv3 B: all x : User |some p : Photo | p not in Ad and p in x.sees iff p in (x.follows).posts
+inv3 O: all x : User |all p : Photo | p not in Ad and p in x.sees iff p in (x.follows).posts
+inv3 C: all x : User |all p : x.sees | p in Ad or p in x.follows.posts
+

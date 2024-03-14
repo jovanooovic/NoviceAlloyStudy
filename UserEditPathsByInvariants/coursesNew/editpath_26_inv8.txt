@@ -1,0 +1,26 @@
+inv8 U: all p: Professor | p not in p.teaches
+inv8 S: all p: Professor | p not in p.teaches.grade
+inv8 T: all p: Professor | p not in p.teaches.grades
+inv8 T: all p: Professor, c: Course | c in p.teaches => p not in c.grades
+inv8 U: all p: Professor | p not in p.teaches
+inv8 U: all p: Professor, c: Course | p in c.teaches => p != c
+inv8 S: all c: Course, p: Professor | c in p.teaches => p not in c.teachers
+inv8 T: all c: Course, p: Professor | c in p.teaches => p not in c.grades
+inv8 T: all c: Course, p: Professor | c in p.teaches => p not in c.grades
+inv8 S: all c: Course, p: Professor | c in p.teaches => p != c.grades.getKey(p.grades)
+inv8 S: all c: Course, p: Professor | c in p.teaches => p != c.grades.getKey(p.grades)
+inv8 U: all c: Course, p: Professor | c in p.teaches => p != c.grades[p]
+inv8 U: all c: Course, p: Professor | c in p.teaches => p !in c.grades.Person
+inv8 U: all c: Course, p: Professor | c in p.teaches => p !in c.grades.Person
+inv8 T: all c: Course, p: Professor | c in p.teaches => no p.grades[p] in c.grades
+inv8 T: all c: Course, p: Professor | c in p.teaches => no p in c.grades
+inv8 T: all c: Course, p: Professor | c in p.teaches => no c.grades[p] in c.grades
+inv8 T: all c: Course, p: Professor | c in p.teaches => not (p.grades[p] in c.grades)
+inv8 S: all c: Course, p: Professor | c in p.teaches => p.grades[p] not in c.grades.ran	}
+inv8 S: all c: Course, p: Professor | c in p.teaches => p.grades[p] not in c.grades.ran
+inv8 T: all c: Course, p: Professor | c in p.teaches => p.grades[p] not in c.grades
+inv8 T: all c: Course, p: Professor | c in p.teaches => p not in c.grades
+inv8 B: all c: Course, p: Professor | c in p.teaches => no c.grades[p]
+inv8 T: all c: Course, p: Professor | c in p.teaches => c not inp.enrolled
+inv8 U: all c: Course, p: Professor | c in p.teaches => c not in p.enrolled
+

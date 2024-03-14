@@ -1,0 +1,11 @@
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 T: all p : Person | p.enrolled not null implies p in Student
+inv1 T: all p : Person | p.enrolled not none implies p in Student
+inv1 T: all p : Person |none p.enrolled  implies p not in Student
+inv1 B: all p : Person |p in enrolled.Course  implies p not in Student
+inv1 S: all p : Person |p in enrolled.Course iif p not in Student
+inv1 B: all p : Person |p in enrolled.Course iff p not in Student
+inv1 O: all p : Person |p in enrolled.Course iff p in Student
+inv1 C: all p : Person |p in enrolled.Course implies p in Student
+inv1 O: all p : Person |p in enrolled.Course iff p in Student
+

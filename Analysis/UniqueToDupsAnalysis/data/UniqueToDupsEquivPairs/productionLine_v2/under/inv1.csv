@@ -1,0 +1,22 @@
+Pairs,18
+,,"no Human & Robot",2
+,,"Human + Robot in Worker",1
+,,"not some w:Worker | not w in Human + Worker",1
+,,"all w: Worker | w in Human => w not in Robot",5
+,,"all x : Worker | no x & Human or no x & Robot",1
+,,"all h:Human,r:Robot |  h in Worker or r in Worker",2
+,,"all h:Human,r:Robot |  h in Worker and r in Worker",4
+,,"all h : Human, r : Robot | h in Worker and h in Worker",1
+,,"all w : Worker | w in Human implies w not in Robot
+all w : Worker | w in Robot implies w not in Human",1
+
+Pairs,11
+,,"Workstation.workers in Human+Robot",2
+,,"all w:Worker | w in Workstation.workers implies w in Human or w in Robot",1
+,,"all w:Worker,wr:Workstation | w in wr.workers implies w in Human or w in Robot",1
+,,"all ws : Workstation, w : Worker |w in ws.workers implies w in Robot or w in Human",1
+,,"all ws : Workstation, w : Worker | w in ws.workers implies (w in Robot or w in Human)",1
+,,"all ws: Workstation, w: Worker | ws->w in workers implies (w in Human or w in Robot)",1
+,,"all w: Workstation, w1: Worker | w->w1 in workers implies(w1 in Human or w1 in Robot)",3
+,,"all w: Workstation, work: Worker | work in w.workers implies work in Human or work in Robot",1
+

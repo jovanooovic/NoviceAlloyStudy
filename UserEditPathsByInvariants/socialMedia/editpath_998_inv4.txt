@@ -1,0 +1,27 @@
+inv4 S: all u : User | p : Photo | p1 : Photo | p in Ad and u->p in posts implies p2 in Ad
+inv4 S: all u : User, p : Photo, p1 : Photo | p in Ad and u->p in posts implies p2 in Ad
+inv4 O: all u : User, p : Photo, p2 : Photo | p in Ad and u->p in posts implies p2 in Ad
+inv4 O: all u : User, p : Photo | p in Ad and u->p in posts implies (all p2 : Photo | u->p2 in posts and p2 in Ad )
+inv4 C: all u : User, p : Photo | p in Ad and u->p in posts implies (all p2 : Photo | u->p2 in posts implies p2 in Ad )
+inv4 C: all u:User, a:Ad | u->a in posts implies (all p:Photo | u->p in posts implies p in Ad)
+inv4 T: all u:User, ad:Ad | some u.posts in ad implies u.posts in ad
+inv4 T: all u:User, ad:Ad | some u.posts in ad implies u.posts in ad
+inv4 T: all u:User, ad:Ad | some u.posts in Ad implies u.posts in Ad
+inv4 T: all u:User | some u.posts in Ad implies u.posts in Ad
+inv4 T: all u:User | some u.posts in Ad implies u.posts in Ad
+inv4 T: all u:User | (some u.posts in Ad) implies (u.posts in Ad)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 S: all u1 : User | some u1.posts in Ad implies (all ph : Photo |  ph in u1.posts | ph in Ad)
+inv4 T: all u1 : User | some u1.posts in Ad implies (all ph : Photo | ph in u1.posts and ph in Ad)
+inv4 T: all u:User | some u.posts in Ad implies (all p:Photo | p in u1.posts and p in Ad)
+inv4 S: all u:User | some u.posts in Ad implies (all p:Photo | p in u1.posts | p in Ad)
+inv4 T: all u:User | some u.posts in Ad implies (all p:Photo | p in u1.posts implies p in Ad)
+inv4 T: all u:User | some u.posts in Ad implies (all p:Photo | p in u1.posts implies p in Ad)
+inv4 T: all u:User | (some u.posts in Ad) implies ( all p : Photo | posts.p in Ad)
+inv4 T: all u:User | (some u.posts in Ad) implies ( all p : Photo | u.posts in Ad)
+inv4 T: all u:User | (some u.posts in Ad) implies ( all p : Photo | some posts.p in Photo)
+inv4 T: all u:User | (some u.posts in Ad) implies ( all p : Photo | some u.posts in Photo)
+inv4 T: all u:User | (some u.posts in Ad) implies ( all p : Photo | some u.posts in Ad)
+inv4 C: all u:User, a:Ad | u->a in posts implies (all p:Photo | u->p in posts implies p in Ad)
+inv4 T: all u:User, ad:Ad | some u.posts in ad implies u.posts in ad
+

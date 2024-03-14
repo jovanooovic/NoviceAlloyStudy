@@ -1,0 +1,21 @@
+inv5 S: all
+inv5 S: all
+inv5 S: all
+inv5 S: all
+inv5 E:
+inv5 B: all p: Project | lone s: Student | p in s.projects
+inv5 S: all p: Project | lone s: Person | p in s.projects => s in Students
+inv5 B: all p: Project | lone s: Person | p in s.projects => s in Student
+inv5 B: all p: Project | one s: Person | p in s.projects => s in Student
+inv5 B: all p: Project | lone s: Person | p in s.projects => s in Student	  	Person.projects = Project
+inv5 U: Person.projects = Project
+inv5 B: all p: Project | lone s: Person | p in s.projects	  	all p: Project, s: Person | p in s.projects => s in Student
+inv5 B: all p: Project | lone s: Person | p in s.projects
+inv5 B: all p: Project | lone s: Person | p in s.projects	  	all p: Project, s: Person | p in s.projects => s in Student
+inv5 U: all p: Project, s: Person | p in s.projects => s in Student
+inv5 B: all p: Project | lone s: Person | p in s.projects	  	all p: Project, s: Person | p in s.projects => s in Student
+inv5 B: all p: Project | lone s: Person | p in s.projects	  	Student.projects - Professor.projects = Student.projects
+inv5 O: all p: Project | lone s: Person | p in s.projects	  	Student.projects = Project
+inv5 B: all p: Project | lone s: Person | p in s.projects && s in Student
+inv5 B: all p: Project | lone s: Student | p in s.projects
+

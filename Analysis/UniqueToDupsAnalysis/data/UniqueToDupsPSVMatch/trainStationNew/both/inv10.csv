@@ -1,0 +1,130 @@
+"succs.Junction->Semaphore in signals",1
+"Junction.succs->Semaphore in signals",1
+"Semaphore in Junction.~succs.signals",1
+"some Semaphore & (succs.Junction).signals",1
+"some succs.Junction.signals :> Semaphore",1
+"all t : Track | succs.t not in Junction",1
+"all t:Track | one Junction & succs.t",1
+"one (Track - ~succs.Junction).signals :> Semaphore",1
+"one (Track - ^succs.Junction).signals :> Semaphore",1
+"all j : Junction | (succs.j).signals in Semaphore",1
+"all t1 : Junction.succs | some t1.signals&Semaphore",1
+"all t : Track | succs.t in Junction implies some t.signals",1
+"all t : Track | t.succs in Junction implies some t.signals",1
+"all t : Track | t.succs in Junction iff some t.signals",1
+"all j:Junction | one s:Semaphore | s in j.signals",1
+"all t : Track | t.succs in Junction implies not lone t.signals",1
+"all t : Track | t.succs in Junction iff not lone t.signals",1
+"all t : Track | t in succs.Junction implies Semaphore in t.signals",1
+"all x: Track | Junction in x.succs implies Semaphore in x.signals",1
+"all t: Track | t in Junction.succs implies t.signals in Semaphore",1
+"all t: Track | t in succs.Junction => t.signals in Semaphore",4
+"all t: Track | Junction in t.succs => Semaphore in t.signals",4
+"all t: Track | t in succs.Junction and t.signals in Semaphore",1
+"all t: Track| t.succs in Junction => Semaphore in t.signals",3
+"all t: Track | Semaphore in t.signals => Junction in t.succs",2
+"all t: Track| t.succs in Junction => t.signals in Semaphore",2
+"all t1 : Track.succs <: Junction | some t1.signals&Semaphore",1
+"all t: Track | t in succs.Junction iff t.signals in Semaphore",1
+"all t1 : (Track <: Junction).succs | some t1.signals&Semaphore",1
+"all t: Track| t.succs not in Junction => Semaphore not in t.signals",1
+"all t: Track| t.succs not in Junction => t.signals not in Semaphore",1
+"all t: Track | t in Junction.~succs implies t.signals in Semaphore",1
+"all x: Track | Junction in x.^succs implies Semaphore in x.signals",1
+"all t: Track | t.succs=Junction implies some Semaphore&t.signals",1
+"all t:Track | t.succs in Junction implies one (t.signals & Semaphore)",1
+"all t:Track |some Junction & t.succs implies Semaphore in t.signals",1
+"all t : Track | some t.succs & Junction implies Semaphore in t.signals",1
+"all t : Track | t.succs in Junction => some t.signals & Semaphore",6
+"all t: Track | t.succs in Junction implies some Semaphore&t.signals",2
+"all t: Track | some t & succs.Junction implies t.signals in Semaphore",1
+"all t:Track | t.~succs in Junction implies some (t.signals & Semaphore)",1
+"all t: Track | some t & Junction.~succs implies t.signals in Semaphore",1
+"all t : Track | one (succs.t & Junction) implies one (t.signals & Semaphore)",1
+"all t:Track | one Junction & succs.t => some (Semaphore & t.signals)",2
+"all t : Track, j : Junction | j in t.succs => Semaphore in t.signals",1
+"all t: Track | some succs.t & Junction => some Semaphore & t.signals",1
+"all t : Track | (some succs.t & Junction) implies (some t.signals & Semaphore)",4
+"all t : Track | some Junction & t.succs implies lone t.signals & Semaphore",1
+"all t : Track | lone Junction & t.succs implies lone t.signals & Semaphore",1
+"all t: Track | Junction in t.^(succs) => Semaphore in t.^(succs).signals",1
+"all t : Track | some j : Junction | j in t.succs implies some t.signals",1
+"all t:Track | some Junction & t.~succs => some t.signals & Semaphore",1
+"all t : Track | some ((t . ~succs) & Junction) => some ((t . signals) & Semaphore)",2
+"all t: Track | some (succs.t & Junction) => some (Semaphore & succs.t.signals)",2
+"all t : Track | (all j : Junction | j in t.succs) implies one signals.Semaphore",1
+"all t : Track | all s : Semaphore | (t in succs.Junction ) implies s in t.signals",1
+"all t : Track | one s : Semaphore | Junction in t.succs => s in t.signals",1
+"all t : Track | all s : Semaphore | (Junction in succs.t ) implies s in t.signals",1
+"all t : Track | one s: Semaphore | t.succs in Junction => s in t.signals",1
+"all t:Track |all e:Semaphore | Junction in t.succs implies e in t.signals",1
+"all t: Track| Junction in succs.t implies some s: Semaphore| s in t.signals",4
+"all t : Track , j : Junction , s : Semaphore | s in t.signals and no j.signals",2
+"all t : Track | some s : Semaphore | t in Junction.succs implies s in t.signals",1
+"all t: Track | t in Junction implies some s: Semaphore | s in succs.t.signals",1
+"all t : Track | some s: Semaphore | Junction in succs.t implies s in t.signals",3
+"all t: Track | Junction in t.succs => some s: Semaphore | s in t.signals",3
+"all t: Track | some j: Junction | j in t.succs => Semaphore in t.signals",1
+"all t:Track |some e:Semaphore | Junction in t.succs implies e in t.signals",1
+"all t:Track, j:Junction, s:Semaphore | j in t.succs => s in t.signals",2
+"all x: Track | some y: x.signals | Junction in x.succs implies y in Semaphore",1
+"all t : Track | some s : Semaphore | Junction in t.succs => s in t.signals",3
+"all t : Track | some s : t.signals | t.succs in Junction implies s in Semaphore",1
+"all t: Track | t.succs in Junction => some s: Semaphore | s in t.signals",5
+"all t1,t2:Track | t2 in t1.succs and Junction in t2 implies Semaphore in t1.signals",1
+"all x: Track | some y: x.signals | x.succs in Junction implies y in Semaphore",1
+"all f:Track, j:Junction, s:Semaphore| j in f.succs implies f-> s in signals",1
+"all t:Track, j:Junction, s:Semaphore | j in t.succs <=> s in t.signals",1
+"all j : Junction, t : succs.j, s:Signal | s in t.signals and s in Semaphore",1
+"all t: Track| all t1: Junction| t1 in t.succs => Semaphore in t.signals",1
+"all t: Track| some t1: Junction| t1 in t.succs => Semaphore in t.signals",1
+"all t1:Track, t2:Track, s:Semaphore| t2 in t1.succs implies s in t1.signals",1
+"all t, t1: Track | t in Junction implies some s: Semaphore | s in succs.t.signals",1
+"all t: Track| all t1: Junction| t1 not in t.succs => Semaphore not in t.signals",1
+"all t : Track | some s: Semaphore | Junction in ^succs.t implies s in t.signals",1
+"all x: Track | some y: x.signals | Junction in x.^succs implies y in Semaphore",1
+"all x: Track | some y: x.signals | x.^succs in Junction implies y in Semaphore",2
+"all x: Track | some s: Semaphore | Junction in x.^succs implies s in x.signals",1
+"all t: Track| some t1: Junction| t1 not in t.succs => Semaphore not in t.signals",1
+"all t: Track| (t.succs in Junction and t.succs not in Exit) => Semaphore in t.signals",1
+"all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals",2
+"all t : Track | some j : Junction | t in j.succs implies some (t.signals & Semaphore)",1
+"all a,b:Track, s:Semaphore| b in Junction and b->a in succs implies a->s in signals",1
+"all t : Track, j : Junction | one s : Semaphore | t in j.succs implies s in t.signals",1
+"all t: Track - Exit| all t1: Junction| t1 in t.succs => Semaphore in t.signals",1
+"all t: Track| all t1: Junction - Exit| t1 in t.succs => Semaphore in t.signals",1
+"all t : Track|some s : Semaphore, j: Junction| j in t.succs implies s in t.signals",1
+"all t: Track, j: Junction | some s: Semaphore| t in j.succs => s in t.signals",2
+"all t:Junction, x:Track| some s:Semaphore| t->x in succs implies x->s in signals",1
+"all f:Track, j:Junction| some s:Semaphore| j->f in succs implies f-> s in signals",1
+"all a,b:Track| one s:Semaphore| b in Junction and b->a in succs implies a->s in signals",1
+"all t: Track| all t1: Junction | (t1 in t.succs and t1 not in Exit) => Semaphore in t.signals",1
+"all t : Track | (all j : Junction | j in t.succs) implies(all s : Semaphore | s in t.signals)",2
+"all t1:Track, t2:Track, s:Signal| t2 in t1.succs implies s in t1.signals implies s in Semaphore",1
+"all t : Track | (all j : Junction | j in t.succs) implies (some s : Semaphore | s in t.signals)",2
+"all t1:Track, t2:Track, s:Signal| t2 in t1.succs implies s in t1.signals and s in Semaphore",1
+"all t : Track  | all j : Junction | some s: Semaphore | j in succs.t implies s in t.signals",1
+"all t: Track | one j: Junction| some s: Semaphore | j in t.succs implies s in t.signals",1
+"all t : Track | all j : Junction | t in j.succs implies (some s : Semaphore | s in t.signals)",1
+"all t1,t2 : Track | all s : Semaphore | t2 in t1.succs and t2 in Junction implies s in t1.signals",2
+"all t:Track | some j:Junction | j in t.succs implies one s:Semaphore | s in t.signals",1
+"all t:Track | some j:Junction | j in t.succs implies some s:Semaphore | s in t.signals",3
+"all t: Track | some x: Junction | x in t.succs => some s: Semaphore | s in t.signals",2
+"all t : Track | some j : Junction | some s : Semaphore | j in t.succs implies s in t.signals",6
+"all t: Track | some x: Junction | x in t.succs <=> some s: Semaphore | s in t.signals",1
+"all t : Track | some k : Junction | t->k in succs implies (some s : Semaphore | t->s in signals)",4
+"all t : Track, j : Junction | some s : t.signals | t != j and  j in t.succs implies s in Semaphore",1
+"all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (lone s:Semaphore | s in t1.signals)",1
+"all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals",5
+"all t1,t2:Track,s:Signal | t2 in t1.succs and Junction in t2 implies s in Semaphore and s in t1.signals",2
+"all t1:Track | some t2:Track | t2 in t1.succs and some (Junction & t2) implies Semaphore in t1.signals",1
+"all t: Track | t in Junction implies some s: Semaphore, t1: Track | t1 in succs.t and s in t1.signals",1
+"all t1:Track | some t2:Track | t1 in t2.^succs and one (Junction & t2) implies Semaphore in t1.signals",1
+"all t1:Track | some t2:Track | t1 in t2.^succs and one (Junction & t1) implies Semaphore in t1.signals",1
+"all a:Track,b:Track-a| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals",2
+"some a:Track,b:Track-a| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals",1
+"all t:Track | (some t2:Track | t->t2 in succs and t2 in Junction) implies (some s:Signal | t->s in signals and s not in Semaphore)",1
+"all t: Track | t in Junction and t not in Exit and t not in Entry implies some s: Semaphore | all t1: Track | t1 in succs.t implies s in t1.signals",1
+"all x1,x2 : Track | all y : Junction | some z : Semaphore | x2 in x1.^succs and y in x1.^succs and y in x2.^succs implies z in x1.signals",1
+"all t : Track | some j : Junction | some s : Semaphore | j in t.succs implies s in t.signals
+all t : Track | some (t.signals & Semaphore) implies some (t.succs & Junction)",1

@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 C: all x : Course | enrolled.x in Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 B: some teaches.Course
+inv3 C: all x: Course | some teaches.x
+inv4 T: all x : Project | one projects.x
+inv4 C: all x : Project | one Course <: projects.x
+inv4 B: one Course <: projects.Project
+inv5 U: all x : Project | some Person <: projects.x & Student
+inv5 T: all x : Project | some Person <: projects.x & Person <: projects.x in Student
+inv5 C: all x : Project | some Person <: projects.x && Person <: projects.x in Student
+inv6 B: all x : Student, y : x.projects | Course <: projects.y in x.enrolled
+inv7 U: all x : Student, y : x.enrolled | lone (y.projects & x.projects)
+inv8 B: all x : Professor | x.enrolled not in x.teaches
+inv8 U: all x : Professor, y: x.enrolled| y not in x.teaches
+inv10 T: all p : Course.grades | p.Grade in Student
+inv10 C: all p : Course.grades.Grade | p in Student
+inv12 T: all x: Student, c : x.enrolled | lone c.x.Grade
+inv12 U: all x: Student, c : x.enrolled | lone c.grades.x
+inv12 U: all x: Student, c : x.enrolled | lone c.grades.x
+inv12 U: all x: Student, c : x.enrolled | lone (x & c.grades.Grade)
+inv12 U: all x: Person, c: x.enrolled | lone (x & c.grades.Grade)
+inv12 U: all x: Person, c: x.enrolled | lone (x & Course.grades.Grade)
+inv12 B: all x: Person, c: x.enrolled | lone (Person & Course.grades.Grade)
+inv14 T: all x : Student | x.projects
+inv12 U: all x: Course, y: enrolled.x | lone (y & x.grades.Grade)
+

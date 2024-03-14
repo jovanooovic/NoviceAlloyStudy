@@ -1,0 +1,7 @@
+inv6 S: all c1,c2 : Components | all p : Product | (c1->p in parts and c2->p in parts) implies (c1=c2)
+inv6 B: all c1,c2 : Component | all p : Product | (c1->p in parts and c2->p in parts) implies (c1=c2)
+inv6 S: all c1,c2 : Component | all p : Product | (c1->p in parts and c2->p in parts) implies (c1==c2)
+inv6 B: all c1,c2 : Component | all p : Product | (c1->p in parts and c2->p in parts) implies (c1=c2)
+inv6 S: all c1,c2 : Component |c not in c.^(parts)
+inv6 C: all c : Component |c not in c.^(parts)
+

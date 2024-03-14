@@ -1,0 +1,10 @@
+inv5 B: all p: Person, c:Course, pj: Project | p in Student and p in projects.pj
+inv5 B: all p: Person, pj: Project | p in Student and p in projects.pj
+inv5 B: all p: Person, pj: Project | p in Student and pj in p.projects
+inv5 U: all p: Person, pj: Project | pj in p.projects implies p in Student
+inv5 U: all p: Person, pj: Project | p in projects.pj implies p in Student
+inv5 U: all p: Person, pj: Project | p in projects.pj and pj in p.projects implies p in Student
+inv5 S: all pj: Project, p:Person | p in (Person <: projects).pj implies p in Student	  	all pj: Project | some (Person: projects).p
+inv5 S: all pj: Project, p:Person | p in (Person <: projects).pj implies p in Student	  	all pj: Project | some (Person <: projects).p
+inv5 C: all pj: Project, p:Person | p in (Person <: projects).pj implies p in Student	  	all pj: Project | some (Person <: projects).pj
+

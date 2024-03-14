@@ -1,0 +1,13 @@
+inv2 S: all ws: Workstation | some w.workers	all w: Worker | some workers.w
+inv2 S: all ws: Workstation | some w.workers	all w: Worker | w in workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | some workers.w
+inv2 T: all ws: Workstation | some ws.workers	all w: Worker | w in workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | w in Workstation.workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker, ws1, ws2: Workstation | w in ws1.workers && w in ws2.workers => ws1=ws2
+inv2 T: all ws: Workstation | some ws.workers	all w: Worker | some w in Workstation.workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | some workers.w
+inv2 S: all ws: Workstation | some ws.workers	all w: Worker, ws: workStation | w in ws.workers
+inv2 B: all ws: Workstation | some ws.workers	all w: Worker, ws: Workstation | w in ws.workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+

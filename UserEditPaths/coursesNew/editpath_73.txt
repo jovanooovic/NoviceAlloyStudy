@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person, c:Course| p->c in enrolled implies p in Student
+inv2 S: all p:person, c:Course| p->c in teaches implies p in Professor
+inv2 C: all p:Person, c:Course| p->c in teaches implies p in Professor
+inv3 B: all p:Person, c:Course|p->c in teaches
+inv3 T: some p:Person| all c:Course|c implies p->c in teaches
+inv3 O: some p:Person| all c:Course|p->c in teaches
+inv3 T: some p:Person| all c:Course|p->c in teaches and p in teaches
+inv3 O: some p:Person| all c:Course|p->c in teaches and p in Professor
+inv4 C: all p:Project| one c:Course| c->p in projects
+inv5 B: all p:Project| one x:Person| x->p in projects and x in Student
+inv5 U: all p:Project| some x:Person| x->p in projects and x in Student
+inv5 S: all p:Project, x:Person| x->p in projects implies x in Student	  all p:Project| one x:person| x->p in projects
+inv5 O: all p:Project, x:Person| x->p in projects implies x in Student	  all p:Project| one x:Person| x->p in projects
+inv5 C: all p:Project, x:Person| x->p in projects implies x in Student	  all p:Project| some x:Student| x->p in projects
+inv5 O: all p:Project, x:Person| x->p in projects implies x in Student	  all p:Project| one x:Person| x->p in projects and x in Student
+inv5 C: all p:Project, x:Person| x->p in projects implies x in Student	  all p:Project| some x:Person| x->p in projects and x in Student
+inv3 B: all p:Person| all c:Course|p->c in teaches and p in Professor
+inv3 O: some p:Person| all c:Course|p->c in teaches and p in Professor
+inv3 B: some p:Person| all c:Course|p->c in teaches implies p in Professor
+inv3 O: some p:Professor| all c:Course|p->c in teaches
+inv3 O: all p:Course| some x:Person| x->p in teaches and x in Professor
+inv6 S: all p:Person, c:Course, x:Project|p->x in projects and c->x in projects p in Student implies p->c in enrolled
+inv6 B: all p:Person, c:Course, x:Project|p->x in projects and c->x in projects and p in Student implies p->c in enrolled
+inv7 O: all s:Person, c:Course| one p:Project| s in Student and s->c in enrolled and c->p in projects and s->p in projects
+inv7 T: all s:Person, c:Course| one p:Project| s in Student and s->c in enrolled and c->p in projects and lone s->p in projects
+inv7 U: all s:Person, c:Course| lone p:Project| s in Student and s->c in enrolled and c->p in projects and s->p in projects
+inv8 U: all p:Person, c:Course| p->c in teaches and p in Professor implies p->c not in enrolled
+inv10 S: all p:Person, g:Grades, c:Course| c->p->g in grades implies p in Student
+inv9 E: 
+inv10 C: all p:Person, g:Grade, c:Course| c->p->g in grades implies p in Student
+inv11 O: all p:Person, g:Grade, c:Course| c->p->g in grades implies p in Student and p->c in enrolled
+inv12 S: all p:Person, c:Course| one g:grade| c->p->g in grades
+inv12 O: all p:Person, c:Course| one g:Grade| c->p->g in grades
+inv12 B: all p:Person, c:Course| some g:Grade| c->p->g in grades
+inv12 C: all p:Person, c:Course| lone g:Grade| c->p->g in grades
+inv14 T: all p:Person, x:Person-p, y:Project, v:Project-y, c:Course, k:Course-c| c->y in projects and p->y in projects and x->p in projects and p->c in enrolled and x->c in enrolled and k->v in projects and p->k in enrolled and p->v in projects implies x->v not in projects
+inv14 T: all p:Person, x:Person-p, y:Project, v:Project-y, c:Course, k:Course-c| c->y in projects and p->y in projects and x->p in projects and p->c in enrolled and x->c in enrolled and k->v in projects and p->k in enrolled and p->v in projects implies x->v not in projects
+inv14 T: all p:Student, x:Student-p, y:Project, v:Project-y, c:Course, k:Course-c| c->y in projects and p->y in projects and x->p in projects and p->c in enrolled and x->c in enrolled and k->v in projects and p->k in enrolled and p->v in projects implies x->v not in projects
+inv14 T: all p:Student, x:Student-p, y:Project, v:Project-y, c:Course, k:Course-c| c->y in projects and p->y in projects and x->p in projects and p->c in enrolled and x->c in enrolled and k->v in projects and p->k in enrolled and p->v in projects implies x->v not in projects
+

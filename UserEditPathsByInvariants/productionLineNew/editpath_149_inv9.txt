@@ -1,0 +1,29 @@
+inv9 U: all w : Workstation | one w.succ or w in end
+inv9 S: all w : Workstation-w | one w.succ or w in end
+inv9 U: all w : Workstation | one w.succ or w in end or w = w
+inv9 B: all w : Workstation | one w.succ
+inv9 B: one Workstation.succ
+inv9 U: all w: Workstation | w not in w.succ
+inv9 U: all w: Workstation-end | (w not in w.succ) and one w.succ
+inv9 U: all w: Workstation-end | (w not in w.^succ) and one w.succ
+inv9 B: all w: Workstation-end | (w not in w.*succ) and one w.succ
+inv9 S: all w: Workstationd | (w not in w.*succ)
+inv9 O: all w: Workstation | (w not in w.*succ)
+inv9 O: all w: Workstation | (w not in w.*succ)
+inv9 U: all w: Workstation | (w not in w.^succ)
+inv9 U: all w: Workstation | (w not in w.^succ) and (one w.succ or w in end)
+inv9 S: all w: Workstation | (w not in w.^succ	no end.succ
+inv9 U: all w: Workstation | (w not in w.^succ)	no end.succ
+inv9 T: one Workstation.succ or end
+inv9 B: one Workstation-end.succ
+inv9 S: all w : Workstations | w not in w.^succs
+inv9 S: all w : Workstation | w not in w.^succs
+inv9 U: all w : Workstation | w not in w.^succ
+inv9 U: all w : Workstation-end | (w not in w.^succ) and (one w.succ)	no end.succ	no succ.begin
+inv9 O: all w : Workstation | (w not in w.^succ) and (one w.succ)	no end.succ	no succ.begin
+inv9 S: all w: Workstation | one w.succ	all w, w': Workstation | w' in w.succ implies not w' in w.succ	one begin.succ	no end.succ
+inv9 O: all w: Workstation | one w.succ	all w, v: Workstation | w' in w.succ implies not w' in w.succ	one begin.succ	no end.succ
+inv9 O: all w: Workstation | one w.succ	all w, v: Workstation | v in w.succ implies not w in v.succ	one begin.succ	no end.succ
+inv9 O: all w,v: Workstation | one w.succ and (w in v.*succ implies v not in w.*succ)		one begin.succ	no end.succ
+inv9 O: all w,v: Workstation | one w.succ and (w in v.*succ implies v not in w.*succ)		one begin.succ iff some Workstation-begin	no end.succ
+

@@ -1,0 +1,16 @@
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 B: all n:Node | Node in (n.^adj + n.^~adj)
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 B: all n:Node | Node in (n.^adj + n.^~adj)
+inv7 U: all n:Node | Node-n in (n.^adj + n.^~adj)
+inv7 U: all n:Node | Node-n in n.^adj or Node in n.^~adj
+inv7 U: all n:Node | Node-n in n.^adj or Node-n in n.^~adj
+inv7 B: all n:Node | Node in n.^adj or Node in n.^~adj
+inv7 B: all n:Node | Node = n.^adj + n.^~adj
+inv7 B: all n:Node | Node-n = n.^adj + n.^~adj
+inv7 B: all n:Node | Node = n.^adj + n.^~adj
+inv7 U: all n:Node | Node-n in n.^adj + n.^~adj
+inv7 U: all n:Node | Node-n in n.(^adj + ^~adj)
+inv7 U: all n:Node | Node-n in n.(*adj + *~adj)
+inv7 U: all n:Node | Node in n.(*adj + *~adj)
+

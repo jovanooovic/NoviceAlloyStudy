@@ -1,0 +1,9 @@
+inv14 S: all s1,s2.Student | s1.projects & s2.projects = s1.projects + s2.projects implies s1 = s2
+inv14 B: all s1,s2:Student | s1.projects & s2.projects = s1.projects + s2.projects implies s1 = s2
+inv14 B: all s1,s2:Student | one s1.projects & s2.projects implies one s1.projects + s2.projects
+inv14 B: all s1,s2:Student | lone s1.projects & s2.projects implies lone s1.projects + s2.projects
+inv14 B: all s1,s2:Student | s1!=s2 and  lone s1.projects & s2.projects implies lone s1.projects + s2.projects
+inv14 B: all s1,s2:Student | s1!=s2 and  one s1.projects & s2.projects implies one s1.projects + s2.projects
+inv14 B: all s1,s2:Student | s1!=s2 and  one s1.projects & s2.projects
+inv14 B: all s1,s2:Student | s1!=s2 implies one s1.projects & s2.projects
+

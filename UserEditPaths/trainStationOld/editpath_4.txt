@@ -1,0 +1,11 @@
+NA H: THEME UPDATE
+inv6 U: always (all s:Signal | always (s in Green) implies eventually (s not in Green ) or	always s not in Green implies  eventually (s in  Green) )
+inv5 E: 
+inv4 C: always all disj t1,t2:Train | no (t1.pos & t2.pos )
+inv7 B: all t:Train | some (t.pos & Entry ) implies eventually some (t.pos & Exit)
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies eventually some (t.pos & Exit) )
+inv7 U: always (all t:Train | always some (t.pos & Entry ) implies eventually some (t.pos & Exit) )
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies  always (eventually some (t.pos & Exit) ))
+inv7 B: (all t:Train | some (t.pos & Entry ) implies   eventually some (t.pos & Exit) )
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies   eventually some (t.pos & Exit) )
+

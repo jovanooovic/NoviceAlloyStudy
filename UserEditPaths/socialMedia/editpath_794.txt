@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv1 B: one u:User | all p:Photo | u->p in posts
+inv1 U: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1=u2
+inv1 S: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1=u2	all x:Photo | some u3:User | u3->p in posts
+inv1 U: all u1,u2:User | all p:Photo | (u1->p in posts and u2->p in posts) implies u1=u2
+inv1 C: all p:Photo | one posts.p
+inv2 C: all u1,u2:User | u1->u2 in follows implies u1 !=u2
+inv3 C: all u : User, x : Photo | u->x in sees and x not in Ad implies(some v: User | u->v in follows and v->x in posts)
+

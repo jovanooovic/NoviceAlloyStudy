@@ -1,0 +1,9 @@
+inv11 B: all c:Class, p:Person, g:Group | c->p->g in Groups implies p in Teacher
+inv11 B: all c:Class, p:Person | some g:Group | c->p->g in Groups implies p in Teacher
+inv11 B: all c:Class, p:Person, g:Group | c->p->g in Groups implies p in Teacher
+inv11 B: all c:Class, p:Person, g:Group | c->p->g in Groups implies p in Teacher and p not in Student
+inv11 O: all c:Class, p:Person, g:Group | (c->p->g in Groups) implies p in Teacher and c->p in Teaches
+inv11 O: all c:Class, p:Person, g:Group | c->p->g in Groups implies p in Teacher and c->p in Teaches
+inv11 O: all c:Class, p:Person, g:Group | c->p->g in Groups implies p in Teacher and p->c in Teaches
+inv11 C: all c:Class, p:Person, g:Group | c->p->g in Groups implies (some t:Teacher|  t->c in Teaches)
+

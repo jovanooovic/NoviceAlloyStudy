@@ -1,0 +1,9 @@
+inv14 S: all x, y:Student | one x.projects y.projects
+inv14 S: all x, y:Student | one x.projects y.projects
+inv14 T: all x, y:Student | one x.projects and y.projects
+inv14 B: all x, y:Student | one x.projects & y.projects
+inv14 B: all x, y:Student | one x.projects & y.projects and x != y
+inv14 B: all x, y:Student | lone x.projects & y.projects and x != y
+inv14 B: all x, y:Student | x!=y and lone x.projects & y.projects
+inv14 U: all x, y:Student | x!=y implies lone x.projects & y.projects
+

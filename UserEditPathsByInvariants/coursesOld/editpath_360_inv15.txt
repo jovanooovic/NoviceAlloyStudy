@@ -1,0 +1,12 @@
+inv15 T: all c: Course, s1: Student, s2: Student - s1 | (s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects) implies (grades.s1 = grades.s2 + 1 or grades.s1 = grades.s2 - 1 or grades.s1 = grades.s2)
+inv15 S: all c: Course, s1: Student, s2: Student - s1 | (s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects) implies (grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 S: all c: Course, s1: Student, s2: Student - s1 | (s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects) implies (grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 S: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies (grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 T: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies ((prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 B: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects))
+inv15 U: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies (grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 T: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies (c.grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 T: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies (c.grades.s1 in (prev[grades.s2] + next[grades.s2] + grades.s2))
+inv15 T: all c: Course, s1: Student, s2: Student - s1 | ((s1.enrolled in c) and (s2.enrolled in c) and lone (s1.projects & s2.projects)) implies c.grades.s1
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g in (h + prev[h] + next[h])
+

@@ -1,0 +1,7 @@
+inv14 U: all s : Student | all disj p1,p2 : s.projects | no (Person.projects & p1) & (Person.projects & p2)
+inv14 B: all s : Student | all disj p1,p2 : s.projects | one (Person.projects & p1) & (Person.projects & p2)
+inv14 U: all s : Student | all disj p1,p2 : s.projects | lone (Person.projects & p1) & (Person.projects & p2)
+inv14 T: all s : Student | all disj p1,p2 : s.projects | lone (Person->projects & Person->p1) & (Person->projects & Person->p2)
+inv14 B: all s : Student | all disj p1,p2 : s.projects | one (projects & Person->p1) & (projects & Person->p2)
+inv14 U: all s : Student | all disj p1,p2 : s.projects | lone (projects & Person->p1) & (projects & Person->p2)
+

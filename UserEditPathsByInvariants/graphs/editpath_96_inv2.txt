@@ -1,0 +1,8 @@
+inv2 T: no (adj = ~adj)
+inv2 T: no (adj = adj)
+inv2 B: all n : Node | n.adj.(~adj) = n
+inv2 S: all n : Node | n.adj & (~adj).n = null
+inv2 O: all n : Node | no (n.adj & (~adj).n)
+inv2 C: all n : Node | no (n.adj & n.(~adj))
+inv2 O: no (Node.adj & Node.(~adj))
+

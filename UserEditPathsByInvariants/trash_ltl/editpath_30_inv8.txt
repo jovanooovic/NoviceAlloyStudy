@@ -1,0 +1,15 @@
+inv8 T: eventually (all l:link | link in Trash)
+inv8 B: eventually (all f:File | f.link in Trash)
+inv8 B: eventually (all f:File | link.f in Trash)
+inv8 T: eventually (all f1,f2:File | f1->f2 in link implies f1->f2 in Trash)
+inv8 B: eventually (all f1,f2:File | f1->f2 in link implies f1 in Trash)
+inv8 S: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+inv8 U: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash
+inv8 T: eventually( all f:File | f.link in link)
+inv8 S: eventually( all f:File | f in link implies (eventually f.link&Trash)
+inv8 T: eventually( all f:File | f in link implies (eventually f.link&Trash))
+inv8 U: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash
+inv8 U: eventually(all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+inv8 C: always (all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+inv8 C: always (all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+

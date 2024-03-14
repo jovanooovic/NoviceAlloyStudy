@@ -1,0 +1,19 @@
+inv1 E:
+inv1 T: all o : Photo | some User.o
+inv1 T: all o : Photo | some o.User
+inv1 U: User.posts = Photo
+inv1 O: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts
+inv1 S: User.posts = Photo		posts.~posts in Iden
+inv1 C: User.posts = Photo		posts.~posts in iden
+inv1 O: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts
+inv1 T: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts & p1!=p2
+inv1 T: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts & p1!=p2
+inv1 O: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts && p1!=p2
+inv1 O: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts or p1!=p2
+inv1 S: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts or p1==p2
+inv1 B: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts or p1=p2
+inv1 O: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts or p1=p2	all p : Photo | lone posts.p
+inv1 C: User.posts = Photo		all p : Photo | lone posts.p
+inv1 B: User.posts = Photo	all p1,p2 : User | p1.posts != p2.posts or p1=p2
+inv1 C: User.posts = Photo	all p : Photo | lone posts.p
+

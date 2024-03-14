@@ -1,0 +1,6 @@
+inv3 B: all u : User | u.posts - Ad not in u.sees
+inv3 B: all u : User | (u.posts - Ad) not in u.sees
+inv3 B: all u : User, p : u.posts | p not in Ad implies p not in u.sees
+inv3 S: all u : User, p : (u.posts Ad) | p not in u.sees
+inv3 B: all u : User, p : u.posts - Ad | p not in u.sees
+

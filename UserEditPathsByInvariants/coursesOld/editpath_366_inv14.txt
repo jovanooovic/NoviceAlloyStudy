@@ -1,0 +1,18 @@
+inv14 U: all s1:Student,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects or ps in s2.projects or (ps not in s1.projects and ps not in s2.projects)
+inv14 B: all s1,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects and ps not in s2.projects	  	all s1,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps not in s1.projects and ps in s2.projects
+inv14 B: all s1,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects and ps not in s2.projects	  	all s1,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s2.projects and ps not in s1.projects
+inv14 B: all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects and ps not in s2.projects	  	all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s2.projects and ps not in s1.projects
+inv14 B: all s1,s2:Student | one p:Project | s1->p in projects and s2->p in projects implies all ps:Project-p | s1->ps in projects and s2->ps not in projects	  	all s1,s2:Student | one p:Project | s1->p in projects and s2->p in projects implies all ps:Project-p | s2->ps in projects and s1->ps not in projects
+inv14 B: all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects implies ps not in s2.projects	  	all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s2.projects implies ps not in s1.projects
+inv14 B: all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects or ps in s2.projects
+inv14 B: all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | (ps in s1.projects or ps in s2.projects)
+inv14 B: all s1,s2:Student | one p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | (ps in s1.projects) or (ps in s2.projects)
+inv14 B: all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects and p2 in s2.projects implies p1 = p2
+inv14 B: all s1,s2:Student | some p1,p2:Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects and p2 in s2.projects implies p1 = p2
+inv14 B: some s1,s2:Student | some p1,p2:Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects and p2 in s2.projects implies p1 = p2
+inv14 B: some s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects and p2 in s2.projects implies p1 = p2
+inv14 U: all s1:Student,s2:Student, p:Project | p in s1.projects and p in s2.projects implies all ps:Project-p | ps in s1.projects or ps in s2.projects or (ps not in s1.projects and ps not in s2.projects)
+inv14 B: all s:Student, p:Project | p in s.projects and some s2:Student-s | p in s2.projects implies all ps:Project | ps in s.projects and ps not in s2.projects
+inv14 B: all s:Student, p:Project | p in s.projects and some s2:Student-s | p in s2.projects implies all ps:Project | ps in s.projects implies ps not in s2.projects
+inv14 E:
+

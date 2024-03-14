@@ -1,0 +1,10 @@
+inv4 B: all u: User | some p: Photo | p in Ad and u->p in posts implies ( all o: Photo | 	  p->o in posts implies o in Ad)
+inv4 S: all u: User | (some p: Photo | p in Ad and u->p in posts) implies ( all o: Photo | 	  p->o in posts implies o in Ad)
+inv4 B: all u: User | (some p: Photo | p in Ad and u->p in posts implies ( all o: Photo | 	  p->o in posts implies o in Ad))
+inv4 S: all u: User | (some p: Photo | p in Ad and u->p in posts) implies all o: Photo | 	  p->o in posts implies o in Ad
+inv4 B: all u: User | (some p: Photo | p in Ad and u->p in posts implies all o: Photo | 	  p->o in posts implies o in Ad)
+inv4 S: all u: User | (some p: Photo | p in Ad and u->p in posts implies) all o: Photo | 	  p->o in posts implies o in Ad
+inv4 E:
+inv4 E:
+inv4 B: all u1,u2:User| u2 in Influencer implies u1->u2 in follows
+

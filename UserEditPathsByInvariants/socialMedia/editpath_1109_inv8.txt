@@ -1,0 +1,8 @@
+inv8 S: all u : User | (u.sees & Ad) in (u.followed + u.suggested).posts
+inv8 C: all u : User | (u.sees & Ad) in (u.follows + u.suggested).posts
+inv8 T: sees.(Ad & iden) = (suggested + follows).posts
+inv8 O: sees.(Ad->Ad & iden) = (suggested + follows).posts
+inv8 T: sees.(Ad->Ad & iden) = (suggested + follows).posts & Ad
+inv8 C: sees.(Ad->Ad & iden) in (suggested + follows).posts
+inv8 C: sees & (univ -> Ad) in (suggested + follows).posts
+

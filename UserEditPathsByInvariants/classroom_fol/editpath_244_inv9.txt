@@ -1,0 +1,7 @@
+inv9 B: all c : Class | (#Teacher.Teaches)<2
+inv9 B: all c : Class | #(Teacher.Teaches)<2
+inv9 B: all c : Class |( c in Teacher.Teaches and #(Teacher.Teaches)<2)
+inv9 B: all c : Class |( c in Teacher.Teaches implies #(Teacher.Teaches)<2)
+inv9 S: all c : Class, | #(Teacher -> c & Teaches)<2
+inv9 C: all c : Class | #(Teacher -> c & Teaches)<2
+

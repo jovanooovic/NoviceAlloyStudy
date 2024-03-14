@@ -1,0 +1,118 @@
+Pairs,1
+,,"some Event",1
+
+Pairs,2
+,,"some State->Event",1
+,,"some State->Event->State",1
+
+Pairs,1
+,,"one Event.(State.trans)",1
+
+Pairs,5
+,,"State.trans = Event->State",2
+,,"all e:Event | e->State in State.trans",1
+,,"all s:State | Event in s.~(State.trans)",1
+,,"all e:Event | Event->State in State.trans",1
+
+Pairs,6
+,,"Event = State.(trans.State)",1
+,,"Event = (State.trans).State",1
+,,"Event in State.(trans.State)",1
+,,"Event in State.trans.State",2
+,,"Event in State.~(State.trans)",1
+
+Pairs,1
+,,"State in Event.(State.trans)",1
+
+Pairs,10
+,,"all s : State | some s->Event",1
+,,"all x : State | some x->Event",3
+,,"all x, y : State | some x->Event",1
+,,"all x : State | some x->Event->State",2
+,,"all x : State | some y : State | some x->Event->y",1
+,,"all x, y : State | some e : Event | some x->e implies some y->e",1
+,,"all x, y : State | some e : Event | some x->e->y implies some y->e->y",1
+
+Pairs,6
+,,"all x : State | some (x.trans)",2
+,,"all s : State | some Event.(s.trans)",4
+
+Pairs,1
+,,"all s:State, e:Event | lone e.(s.trans)",1
+
+Pairs,1
+,,"all x, y : State | some x.trans & y.trans",1
+
+Pairs,1
+,,"all s,r :State | (r.trans).s = (s.trans).r",1
+
+Pairs,1
+,,"all s : State | some e : Event | one e.(s.trans)",1
+
+Pairs,1
+,,"all s1,s2:State | s1.~(s1.trans) = s2.~(s2.trans)",1
+
+Pairs,1
+,,"all disj s1, s2 : State | #(s1.trans) = #(s2.trans)",1
+
+Pairs,1
+,,"all x, y : State | some e : Event | x->e->y in trans",1
+
+Pairs,1
+,,"all s1,s2:State | Event.(s1.trans) = Event.(s2.trans)",1
+
+Pairs,1
+,,"all x: State, y: State | (x.trans).univ = (univ.trans).x",1
+
+Pairs,1
+,,"all s1, s2 : State | one Event.(s1.trans) & Event.(s2.trans)",1
+
+Pairs,1
+,,"all x, y : State | x->Event->y in trans implies y->Event->y in trans",1
+
+Pairs,1
+,,"all x, y : State | x->Event->y in trans implies y->Event->x in trans",1
+
+Pairs,2
+,,"all s1,s2:State |some e:Event |some e.(s1.trans) implies some e.(s2.trans)",2
+
+Pairs,3
+,,"all x, y : State | all e : Event | x->e->y in trans implies y->e->y in trans",3
+
+Pairs,1
+,,"all x, y : State | some e : Event | x->e->y in trans implies y->e->y in trans",1
+
+Pairs,2
+,,"all e:Event, s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]",1
+,,"all e:Event, disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]",1
+
+Pairs,1
+,,"all disj s1, s2 : State | some e : Event | one e.(s1.trans) iff one e.(s2.trans)",1
+
+Pairs,1
+,,"all x, y, z : State | some e : Event | x->e->y in trans implies y->e->x in trans",1
+
+Pairs,1
+,,"all disj s1, s2 : State | some e : Event | some e.(s1.trans) iff some e.(s2.trans)",1
+
+Pairs,2
+,,"all disj s1, s2 : State | some e : Event | one e.(s1.trans) implies one e.(s2.trans)",2
+
+Pairs,1
+,,"all x, y : State | some e : Event | x->e->State in trans implies y->e->State in trans",1
+
+Pairs,1
+,,"some e:Event, disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]",1
+
+Pairs,1
+,,"some e:Event | all disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]",1
+
+Pairs,1
+,,"all s1, s2 : State | all e1, e2 : Event | some e1.(s1.trans) and some e2.(s2.trans) implies e1 = e2",1
+
+Pairs,1
+,,"all disj s1, s2 : State | some e : Event | one e.(s1.trans) implies one e.(s2.trans) else no e.(s1.trans)",1
+
+Pairs,1
+,,"all disj s1, s2: State | all e1, e2: Event |some n: State| e1->n in s1.trans and e2->n in s2.trans implies e1=e2",1
+

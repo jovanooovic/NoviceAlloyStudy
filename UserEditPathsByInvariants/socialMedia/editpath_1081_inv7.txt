@@ -1,0 +1,14 @@
+inv7 B: all u1:User, u2:User, u3:User | u1 in follows.u2 and u3 in follows.u2 and u1 not in follows.3 implies u3 in suggested.u1
+inv7 B: all u1:User, u2:User, u3:User | (u1 in follows.u2 and u3 in follows.u2 and u1 not in follows.3) implies (u3 in suggested.u1)
+inv7 B: all u1:User, u2:User, u3:User | (u1 in follows.u2 and u3 in follows.u2 and u1 not in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1:User, u2:User, u3:User | (u1 in follows.u2 and u2 in follows.u3 and u1 not in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1:User, u2:User, u3:User | (u1 in follows.u2 and u2 in follows.u3 and u1 not in follows.u3) implies (u3 in u1.suggested)
+inv7 S: all u:User = u.suggested = (u.follows.follows - u.follows)
+inv7 S: all u:User = u.suggested = (u.follows.follows - u.follows)
+inv7 B: all u:User | u.suggested = (u.follows.follows - u.follows)
+inv7 C: all u:User | u.suggested = (u.follows.follows - u.follows) - u
+inv7 C: all u:User | u.suggested = (u.follows.follows - u.follows) - u
+inv7 U: all u:User | u.suggested in (u.follows.follows - u.follows) - u
+inv7 C: all u:User | u.suggested = (u.follows.follows - u.follows) - u
+inv7 C: all u:User | u.suggested = (u.follows.follows - u.follows) - u
+

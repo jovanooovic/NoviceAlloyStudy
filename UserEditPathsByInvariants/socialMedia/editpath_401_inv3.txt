@@ -1,0 +1,29 @@
+inv3 S: all
+inv3 S: all
+inv3 S: all
+inv3 S: all
+inv3 S: all
+inv3 S: all x : User | all y : Photo | posts.
+inv3 S: all x : User | all p : Photo | x.sees in
+inv3 B: all x,y : User | x.sees in y.posts implies x->y in follows
+inv3 B: all x,y : User | x.sees in y.posts implies y in x.follows
+inv3 S: all x,y : User | x.sees in y.posts implies x->y in follows	all x | (some y in x.sees) &
+inv3 B: all x,y : User | x.sees in y.posts implies x->y in follows
+inv3 S: all x,y : User | all p in x.sees | (p in y.posts & x->y in follows) or p in Ad
+inv3 T: all x,y : User | all p : Photo in x.sees | (p in y.posts & x->y in follows) or p in Ad
+inv3 S: all x,y : User | all p : in x.sees | (p in y.posts & x->y in follows) or p in Ad
+inv3 S: all x,y : User | all p : in x.sees | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x,y : User | all p : in x.sees | (p in y.posts & x->y in follows)
+inv3 S: all x,y : User | all p : in x.sees | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | some y : User | all p : in x.sees | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | all p : in x.sees | some y : User | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | all p : in x.sees | some y : User | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | all p : Photo | all p in x.sees | some y : User | (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | all p : Photo | some y : User | all p in x.sees & (p in y.posts & x->y in follows) or (p in Ad)
+inv3 S: all x : User | all p : Photo | all p in x.sees & (p in x.follows.posts) or (p in Ad)
+inv3 S: all x : User | all p : Photo | all p in x.sees & (p in x.follows.posts) or (p in Ad)
+inv3 O: all x : User | all p : Photo | (p in x.follows.posts) or (p in Ad)
+inv3 T: all x : User | all p : Photo | some y : User | p in x.sees implies ((p in y.posts & x->y in follows) or (p in Ad))
+inv3 C: all x : User | all p : Photo | some y : User | p in x.sees implies ((p in y.posts and x->y in follows) or (p in Ad))
+inv3 C: all x : User | all p : Photo | p in x.sees implies ((some y : User | p in y.posts and x->y in follows) or (p in Ad))
+

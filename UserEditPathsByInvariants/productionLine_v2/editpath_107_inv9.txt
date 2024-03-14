@@ -1,0 +1,9 @@
+inv9 U: all w : Workstation | w not in w.(^succ)
+inv9 U: one begin	one end		all w : Workstation | w not in w.(^succ)	all w : Workstation | w in end => no w.succ
+inv9 U: one begin	one end		all w : Workstation | w not in w.(^succ)	all w : Workstation | w in end => no w.succ and w not in end => one w.succ
+inv9 U: one begin	one end		all w : Workstation | w not in w.(^succ)	all w : Workstation | w in end => (no w.succ and w not in end => one w.succ)
+inv9 U: one begin	one end		all w : Workstation | w not in w.(^succ)	all w : Workstation | w in end => (no w.succ and (w not in end => one w.succ))
+inv9 U: one begin	one end		all w : Workstation | w not in w.(^succ)	all w : Workstation | (w in end => no w.succ) and (w not in end => one w.succ)
+inv9 U: one begin	one end		all w : Workstation | w in begin => w not in Workstation.succ	all w : Workstation | w not in w.(^succ)	all w : Workstation | (w in end => no w.succ) and (w not in end => one w.succ)
+inv9 C: one begin	one end		all w : Workstation | w in begin => w not in Workstation.succ	all w,w2 : Workstation | w in w2.succ => w not in (Workstation -w2).succ	all w : Workstation | w not in w.(^succ)	all w : Workstation | (w in end => no w.succ) and (w not in end => one w.succ)
+

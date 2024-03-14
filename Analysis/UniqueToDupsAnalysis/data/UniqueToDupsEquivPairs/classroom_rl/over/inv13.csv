@@ -1,0 +1,15 @@
+Pairs,2
+,,"all p : Person | p in Teacher && p.Tutors in Student",2
+
+Pairs,1
+,,"no(Student & Person.Tutors) and (no (Tutors.(Person-Student)))",1
+
+Pairs,2
+,,"no ((Person-Teacher).Tutors) and no (Tutors -> (Person-Student))",2
+
+Pairs,3
+,,"no Student.Tutors
+    Person.Tutors in Student
+    no Tutors.Teacher
+    Tutors.Person in Teacher",3
+

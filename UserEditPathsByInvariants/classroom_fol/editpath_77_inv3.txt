@@ -1,0 +1,10 @@
+inv3 T: all p : Person | no ( p in Student & p in Teacher)
+inv3 T: all p : Person | no ( (p in Student) & (p in Teacher))
+inv3 T: all p : Person | no ( p in Student & p in Teacher)
+inv3 T: all p : Person | no ( p in Student & p in Teacher)
+inv3 T: all p : Person | ( p not in Student & p not in Teacher)
+inv3 O: all p : Person | ( p not in Student and p not in Teacher)
+inv3 C: all p : Person | p not in (Student & Teacher)
+inv3 C: no (Student & Teacher)
+inv3 C: no (Student & Teacher)
+

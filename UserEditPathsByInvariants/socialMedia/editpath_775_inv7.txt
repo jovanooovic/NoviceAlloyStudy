@@ -1,0 +1,4 @@
+inv7 U: all disj u1,u2 :User | u1 in u2.suggested implies (u1 not in u2.follows and (some u3:User|u3!=u2 and u3 in u2.suggested))
+inv7 B: all disj u1,u2 :User | u1 in u2.suggested implies	(u1 not in u2.follows and (some u3:User |u3!=u2 and u3!=u1 and u3 in u2.suggested))
+inv7 B: all disj u1,u2 :User | u1 in u2.suggested implies	(u1 not in u2.follows and (some u3:User |u3!=u2 and u3!=u1 and u3 in u1.suggested))
+

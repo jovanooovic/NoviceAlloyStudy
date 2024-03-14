@@ -1,0 +1,20 @@
+inv6 S: all i : Influencer | all d : Day | some p : Photo | i.posts.y
+inv6 S: all i : Influencer | all d : Day | some p : Photo | i.posts.y
+inv6 T: all i : Influencer | all d : Day | some p : Photo | d and (p in posts.i)
+inv6 T: all i : Influencer | all d : Day | some p : Photo | d implies ((p in posts.i) and (d in date.p))
+inv6 U: all i : Influencer | all d : Day | some p : Photo | (p in posts.i) implies (d in date.p)
+inv6 B: all i : Influencer | all d : Day | some p : Photo | (i in posts.p) implies (d in date.p)
+inv6 B: all i : Influencer | all d : Day | all p : Photo | (i in posts.p) implies (d in date.p)
+inv6 U: all i : Influencer | all d : Day | all p : Photo | (p in posts.i) implies (d in date.p)
+inv6 E:
+inv6 U: all i : Influencer | all d : Day | all p : Photo | (p in posts.i) implies (d in date.p)
+inv6 B: all i : Influencer | all d : Day | all p : Photo | some date.posts.i
+inv6 T: all i : Influencer | all d : Day | all p : Photo | d in date.p implies some p in posts.i
+inv6 U: all i : Influencer | all d : Day | all p : Photo | d in date.p implies p in posts.i
+inv6 U: all i : Influencer | all d : Day | all p : Photo | d in date.p implies i in posts.p
+inv6 U: all i : Influencer | all d : Day | all p : Photo | d in date.p implies i in posts.p
+inv6 O: all i : Influencer | all d : Day | some p : Photo | (d in date.p) and (i in posts.p)
+inv6 O: all i : Influencer | all d : Day | some p : Photo | (d in date.p) and (i in posts.p)
+inv6 O: all i : Influencer | all d : Day | some p : Photo | d in date.p and i in posts.p
+inv6 C: all i : Influencer | all d : Day | some p : Photo | d in p.date and i in posts.p
+

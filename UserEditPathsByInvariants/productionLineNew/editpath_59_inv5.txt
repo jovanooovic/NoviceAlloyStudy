@@ -1,0 +1,10 @@
+inv5 S: all x,y in Workstation.workers implies x = y
+inv5 S: all x,y in Workstation.workers implies x == y
+inv5 S: all x in Workstation.workers implies x in Human or x in Robot
+inv5 S: (all x in Workstation.workers) implies (x in Human or x in Robot)
+inv5 S: (all x: Workstation.workers) implies (x in Human or x in Robot)
+inv5 S: all x: Workstation.workers implies x in Human or x in Robot
+inv5 B: all x: Workstation.workers | x in Human or x in Robot
+inv5 S: all x,y: Workstation.workers | x,y in Human or x,y in Robot
+inv5 O: all x: Workstation | x.workers in Human or x.workers in Robot
+

@@ -1,0 +1,5 @@
+inv7 B: all u: User | u.follows.follows in u.suggested
+inv7 S: all u: User | u.follows.follows in u.suggested and not in u.follows
+inv7 T: all u: User | u.follows.follows in u.suggested and u.~follows
+inv7 B: all u: User | u.follows.follows not in u.follows implies u.follows.follows in u.suggested
+

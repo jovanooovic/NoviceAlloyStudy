@@ -1,0 +1,19 @@
+inv9 T: all p : Professor | no p.teaches.Professor
+inv9 S: all c : Course, p : teachers.c | p.enrolled&(teaches.c).teaches=none
+inv9 S: all c : Course, p : teachers.c | p.enrolled&(teaches.c).teaches=none
+inv9 B: all p : Professor | Professor not in enrolled.(p.teaches)
+inv9 B: all p : Professor | (Person-Student) not in enrolled.(p.teaches)
+inv9 B: all c : Course, p : teaches.c | p not in enrolled.c
+inv9 B: all c : Course, p : teaches.c | p not in enrolled.c&p
+inv9 T: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 T: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 T: all p : Professor| none enrolled.(p.teaches)&teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)= none
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor|  teaches.(p.teaches)  not in enrolled.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches)  in teaches.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches) not in teaches.(p.teaches)
+inv9 B: all p : Professor| teaches.(p.teaches) not in enrolled.(p.teaches)
+inv9 B: all p : Professor| enrolled.(p.teaches)&teaches.(p.teaches)= none
+

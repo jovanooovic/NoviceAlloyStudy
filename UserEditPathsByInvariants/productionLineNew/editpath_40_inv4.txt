@@ -1,0 +1,13 @@
+inv4 U: all c:Component,m:Material| some c.parts and no m.parts
+inv4 U: all c:Component,m:Material| no m.parts
+inv4 B: all c:Component,m:Material| no m.parts and some parts.c
+inv4 U: all c:Component,m:Material| no m.parts and some c.parts
+inv4 U: all c:Component,m:Material| no m.parts and (some c.parts)
+inv4 U: all c:Component,m:Material| no m.parts
+inv4 U: all c:Component,m:Material| some c.parts
+inv4 S: all p:Product| (p in Material => no p.parts) or (p in Components =>some p.parts)
+inv4 U: all p:Product| (p in Material => no p.parts) or (p in Component =>some p.parts)
+inv4 U: all p:Product| (p in Material => no p.parts) or (p in Component => some p.parts)
+inv4 U: all p:Product| (p in Material => no p.parts) or (p in Component => one p.parts)
+inv4 U: all p:Product| (p in Material => no p.parts) or (p in Component => lone p.parts)
+

@@ -1,0 +1,6 @@
+inv7 U: all x, y, z: User | z in x.suggested implies z in x.follows.follows
+inv7 U: all x, y: User | y in x.suggested implies y in x.follows.follows and y not in x.follows
+inv7 U: all x, y, z: User | z in x.suggested implies z not in x.follows and z in x.follows.follows
+inv7 B: all x, y, z: User | z in x.suggested implies z not in x.follows and y in x.follows and z in y.follows
+inv7 U: all x, z: User | z in x.suggested implies z not in x.follows and z in x.follows.follows
+

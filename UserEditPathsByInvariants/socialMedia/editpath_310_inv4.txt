@@ -1,0 +1,14 @@
+inv4 U: all u : User, uPosts : u.posts | uPosts in Ad || uPosts not in Ad
+inv4 T: all u : User, uPosts : u.posts | some uPosts in Ad => uPosts in Ad
+inv4 T: all u : User, uPosts : u.posts | some uPosts in Ad => all p : uPosts | p in Ad
+inv4 O: all u : User, uPosts : u.posts | uPosts in Ad-Photo || uPosts in Photo-Ad
+inv4 S: all u : User | u.posts in Ad || u.Posts not in Ad
+inv4 U: all u : User | u.posts in Ad || u.posts not in Ad
+inv4 U: all u : User, uPosts : u.posts | uPosts in Ad => u.posts not in Photo-Ad
+inv4 T: all u : User | some u.posts in Ad => all p : u.posts | p in Ad
+inv4 S: all u : User | some u.posts : Ad | all p : u.posts | p in Ad
+inv4 O: all u : User | u.posts in Photo-Ad || u.posts in Ad-Photo
+inv4 U: all u : User | u.posts in Photo-Ad => all p : u.posts | p in Photo-Ad
+inv4 U: all u : User | u.posts in Ad || u.posts not in Ad
+inv4 C: all u : User | u.posts in Ad || u.posts in Photo-Ad
+

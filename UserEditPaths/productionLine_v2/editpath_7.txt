@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 C: Worker = Human + Robot
+inv2 U: workers in Workstation -> some Worker
+inv2 C: workers in Workstation one -> some Worker
+inv3 C: workstation in Component -> one Workstation
+inv4 S: parts in Component -> some Product	parts in Material -> no Product
+inv4 S: parts in Component -> some Product	parts in Material -> no Product
+inv4 C: parts in Component -> some Product
+inv4 C: parts in Component -> some Product	no Material.parts
+inv4 B: some Component.parts	no Material.parts
+inv4 S: parts in Component -> some Product	parts in Material set -> no Product
+inv4 S: parts in Component -> some Product	parts in Material -> no Product
+inv4 O: parts in Component -> some Product	parts in Material -> one Product
+inv4 T: parts in Component -> some Product	parts in Material -> none Product
+inv4 C: parts in Component -> some Product
+inv4 C: parts in Component -> some Product	no Material.parts
+inv5 O: all w:Workstation | w.workers in Human or w.workers in Robot
+inv6 U: all c:Component | c not in c.parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 U: all c:Component | c not in c.parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c not in c.^parts
+inv7 B: all c:Component | Dangerous in c.^parts => c in Dangerous
+inv7 B: all c:Component | c.^parts in Dangerous => c in Dangerous
+inv7 U: all c:Component | c.*parts in Dangerous => c in Dangerous
+inv7 O: all c:Component | some c.^parts & Dangerous => c in Dangerous
+inv7 O: all c:Component | some c.^parts & Dangerous => c in Dangerous
+inv8 O: all c:Dangerous | c.workstation.workers in Robot
+inv9 U: Workstation in begin.*succ
+inv9 C: Workstation in begin.*succ	no end.succ	all w:Workstation-end | one w.succ
+inv10 B: all c:Component | some c.workstation => some c.parts
+inv10 U: all c:Component | some c.workstation => some c.*parts
+inv10 B: all c:Component | some c.workstation => Component = c.*parts
+inv10 B: all c:Component | some c.workstation => Component = c.^parts
+

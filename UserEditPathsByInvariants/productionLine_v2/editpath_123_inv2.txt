@@ -1,0 +1,8 @@
+inv2 S: all ws : Workstation | some w1 : Worker | w1->ws in worker
+inv2 O: all ws : Workstation | some w1 : Worker | w1->ws in workers
+inv2 S: all ws : Workstation | some w1 : Worker | w1->ws in workers	all w1 : Workers | lone ws : Workstation | w1 -> ws in workers
+inv2 O: all ws : Workstation | some w1 : Worker | w1->ws in workers	all w1 : Worker | lone ws : Workstation | w1 -> ws in workers
+inv2 O: (all ws : Workstation | some w1 : Worker | w1->ws in workers)	and	(all w1 : Worker | one ws : Workstation | w1 -> ws in workers)
+inv2 C: (all ws : Workstation | some w1 : Worker | ws->w1 in workers)	and	(all w1 : Worker | one ws : Workstation | ws -> w1 in workers)
+inv2 C: (all ws : Workstation | some w1 : Worker | ws->w1 in workers)	(all w1 : Worker | one ws : Workstation | ws -> w1 in workers)
+

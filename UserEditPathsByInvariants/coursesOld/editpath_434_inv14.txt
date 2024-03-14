@@ -1,0 +1,12 @@
+inv14 S: all s:Student | disj s2:Student | s2 in projects(s.projects) & Person
+inv14 S: all s:Student | disj s2:Student | s2 in (projects(s.projects) & Person)
+inv14 S: all s1,s2: Student | s1 != s2 implies one (s1.project | s2.project)
+inv14 S: all s1,s2: Student | s1 != s2 implies one (s1.project + s2.project)
+inv14 B: all s1,s2: Student | s1 != s2 implies one (s1.projects + s2.projects)
+inv14 B: all s1,s2: Student | s1 != s2 implies lone (s1.projects + s2.projects)
+inv14 U: all s1: Student | some s2: Student | s1 != s2 implies lone (s1.projects + s2.projects)
+inv14 U: all s1: Student | some s2: Student | s1 != s2 implies lone (s1.projects & s2.projects)
+inv14 U: all s1,s2: Student  | s1 != s2 implies lone (s1.projects & s2.projects)
+inv14 B: all s1,s2: Student  | lone (s1.projects & s2.projects)
+inv14 U: all s1,s2: Student  | s1 != s2 implies lone (s1.projects & s2.projects)
+

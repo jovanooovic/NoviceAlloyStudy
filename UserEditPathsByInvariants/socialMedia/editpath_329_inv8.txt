@@ -1,0 +1,10 @@
+inv8 B: all u: User , a: Ad | u.sees in a implies (u.follows + u.suggested).posts in a
+inv8 B: all u: User , a: Ad | u.sees in a implies a in (u.follows + u.suggested).posts
+inv8 B: all u: User , a: Ad | u.sees in a implies a = (u.follows + u.suggested).posts
+inv8 B: all u: User , a: Ad | u.sees in a implies (u.follows + u.suggested).posts & Ad in a
+inv8 O: all u: User , a: Ad | u.sees in  (u.follows + u.suggested).posts & Ad
+inv8 C: all u: User , a: Ad | u.sees & Ad  in  (u.follows + u.suggested).posts
+inv8 B: all u: User , a:Ad | u->a in sees implies (u.follows + u.suggested)-> a in posts
+inv8 B: all u: User , a:Ad | u->a = sees implies (u.follows + u.suggested)-> a in posts
+inv8 B: all u: User , a:Ad | u->a in sees implies (u.follows + u.suggested)-> a in posts
+

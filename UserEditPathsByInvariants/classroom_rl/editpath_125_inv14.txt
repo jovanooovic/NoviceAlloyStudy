@@ -1,0 +1,10 @@
+inv14 S: all c : Class, s : c.Groups.Student, t : Teachers->c | t->s in Tutors
+inv14 T: all c : Class, s : c.Groups.Student, t : Teacher->c | t->s in Tutors
+inv14 T: all c : Class, s : c.Groups.Student, t : Teacher->c | t->s in Tutors
+inv14 T: all c : Class, p : c.Groups.Person, t : Teacher->c | t->p in Tutors
+inv14 T: all c : Class, p : c.Groups.Person, t : Teacher->c | p in t.Tutors
+inv14 T: all c : Class, p : c.Groups.Person, t : Teacher->c | t->p in Tutors
+inv14 T: all c : Class, p : c.Groups, t : Teacher->c | t->p in Tutors
+inv14 S: all c : Class, p->g : c.Groups.Person, t : Teacher->c | t->p in Tutors
+inv14 T: all c : Class, p : (c.Groups).Group, t : Teacher->c | t->p in Tutors
+

@@ -1,0 +1,10 @@
+inv5 T: all u : User | u.follows & Influencer
+inv5 U: all u : User | u.follows & Influencer in u.follows
+inv5 U: all u : User | u.follows & Influencer in u.follows
+inv5 B: all u : User | u.follows & Influencer in u.follows - Influencer
+inv5 T: all u : User, i : Influencer | u.follows.i in u.follows
+inv5 T: all u : User| u.follows & Influencer implies u.follows
+inv5 B: all u : User| Influencer - u.follows in u.follows
+inv5 B: all u : User | Influencer - u.follows in u.follows
+inv5 U: all u : User | Influencer - u in u.follows
+

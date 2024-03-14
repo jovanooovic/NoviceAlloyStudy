@@ -1,0 +1,9 @@
+inv3 B: all p:Person | p in Teacher or p in Student
+inv3 B: all p:Person | p in Teacher implies p in Student
+inv3 T: all p:Person | p and Teacher implies p not in Student or p in Student and p not in Teacher
+inv3 C: all p:Person | p in Teacher implies p not in Student or p in Student and p not in Teacher
+inv3 C: all p:Person | p in Teacher implies p not in Student or p in Student implies p not in Teacher
+inv3 T: no p:Person | p is Student and p is Teacher
+inv3 C: no p:Person | p in Student and p in Teacher
+inv3 C: no p:Person | p in Student and p in Teacher
+

@@ -1,0 +1,14 @@
+inv11 O: all c : Class | some t : Teacher | (some p : Person, g : Group | c -> p -> g in Groups) implies t -> c in Teaches
+inv11 O: all c : Class | some t : Teacher | t -> c not in Teaches implies (all p : Person, g : Group | c -> p -> g not in Groups)
+inv11 O: all c : Class | some t : Teacher | t -> c not in Teaches implies not (some p : Person, g : Group | c -> p -> g in Groups)
+inv11 O: all c : Class | some t : Teacher | ((t -> c not in Teaches) implies not (some p : Person, g : Group | c -> p -> g in Groups))
+inv11 O: all c : Class | some t : Teacher | (t -> c not in Teaches) implies not (some p : Person, g : Group | c -> p -> g in Groups)
+inv11 B: all c : Class | all t : Teacher | (t -> c not in Teaches) implies not (some p : Person, g : Group | c -> p -> g in Groups)
+inv11 B: all c : Class, t : Teacher | (t -> c not in Teaches) implies not (some p : Person, g : Group | c -> p -> g in Groups)
+inv11 B: all c : Class, t : Teacher | (t -> c not in Teaches) implies (all p : Person, g : Group | c -> p -> g not in Groups)
+inv11 B: all c : Class, t : Person | (t -> c not in Teaches) implies (all p : Person, g : Group | c -> p -> g not in Groups)
+inv11 B: all c : Class, t : Person | (t -> c in Teaches) implies (all p : Person, g : Group | c -> p -> g in Groups)
+inv11 B: all c : Class, t : Teacher | (t -> c not in Teaches) implies (all p : Person, g : Group | c -> p -> g not in Groups)
+inv11 B: not all c : Class, t : Teacher | (t -> c not in Teaches) implies (all p : Person, g : Group | c -> p -> g not in Groups)
+inv11 B: all c : Class | all t : Teacher | (t -> c not in Teaches) implies (all p : Person, g : Group | c -> p -> g not in Groups)
+

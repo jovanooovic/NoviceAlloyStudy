@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv5 O: all x, y : State | x.trans = y.trans
+inv5 O: all x, y : State | x.trans in y.trans
+inv5 B: all x, y : State | some x.trans & y.trans
+inv5 T: State in State<:trans
+inv5 T: State in Event.(State<:trans)
+inv5 T: State in (State<:trans).Event
+inv5 O: State in State.(trans.Event)
+inv5 T: State in State.(trans<:Event)
+

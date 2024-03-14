@@ -1,0 +1,10 @@
+inv7 B: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows implies u3 in u1.suggested
+inv7 T: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows = u3 in u1.suggested
+inv7 T: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows = (u3 in u1.suggested)
+inv7 B: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows and (u3 in u1.suggested)
+inv7 B: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows implies (u3 in u1.suggested)
+inv7 U: all disj u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows implies (u3 in u1.suggested)
+inv7 E:
+inv7 B: all u : User | u.suggested = u.follows.follows - u.follows
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u
+

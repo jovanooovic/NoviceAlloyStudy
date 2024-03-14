@@ -1,0 +1,13 @@
+inv9 B: all p:Person | no p.teaches & (Professor-p).enrolled
+inv9 B: all p:Professor | no p.teaches & (Professor-p).enrolled
+inv9 B: all p:Professor | no (Professor-p).enrolled & p.teaches
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: all p1 : Professor, c:Course | c in p1.teaches implies c not in (Professor-p1).enrolled
+inv9 B: all p1,p2 : Person, c:Course | c in p1.teaches and c in p2.enrolled implies p2 not in Professor
+inv9 B: all p1,p2 : Professor, c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all p1,p2 : Professor, c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all p1,p2 : Professor, c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all disj p1,p2 : Professor, c:Course | c in p1.teaches implies c not in p2.enrolled
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+

@@ -1,0 +1,17 @@
+inv1 E:
+inv1 B: all n: Node | n.adj.adj in n
+inv1 B: all n, m: Node | n.adj in m iff m.adj in n
+inv1 B: all disj n, m: Node | n.adj in m iff m.adj in n
+inv1 S: all disj n, m: Node | n.adj in m if m.adj in n
+inv1 B: all disj n, m: Node | n.adj in m implies m.adj in n
+inv1 T: all n: Node | n.adj = ~(n.adj)
+inv1 B: all n,m: Node | n.adj = m implies m.adj = n
+inv1 B: all n,m: Node | n.adj in m implies m.adj in n
+inv1 B: all disj n,m: Node | n.adj in m implies m.adj in n
+inv1 B: all n: Node | n in n.^adj
+inv1 U: all n: Node | n in n.*adj
+inv1 B: all n: Node | n in n.^adj
+inv1 C: all disj n1,n2: Node | n1 in n2.adj iff n2 in n1.adj
+inv1 C: all disj n1,n2: Node | n1 in n2.adj iff n2 in n1.adj
+inv1 C: all disj n1,n2: Node | n1 in n2.adj iff n2 in n1.adj
+

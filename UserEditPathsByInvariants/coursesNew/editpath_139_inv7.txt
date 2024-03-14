@@ -1,0 +1,8 @@
+inv7 B: all s: Student| #s.enrolled = #s.projects
+inv7 S: all s: Student, p: Project| p in s.project implies one p in s.enrolled.projects
+inv7 T: all s: Student, p: Project| p in s.projects implies one p in s.enrolled.projects
+inv7 T: all s: Student, p: Project| p in s.projects implies #(p in s.enrolled.projects) = 1
+inv7 S: all s: Student, c: Course | s in c.enrolled => card(s.projects & c.projects) <= 1
+inv7 U: all s: Student, c: Course | s in c.enrolled => #(s.projects & c.projects) <= 1
+inv7 U: all s: Student, c: Course | c in s.enrolled => #(s.projects & c.projects) <= 1
+

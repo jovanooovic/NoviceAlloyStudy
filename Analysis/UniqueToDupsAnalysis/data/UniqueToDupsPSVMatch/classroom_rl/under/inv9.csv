@@ -1,0 +1,16 @@
+"no (Class . Teaches)",1
+"Teacher.Teaches in Class",1
+"Teaches.^Teaches in iden",1
+"(Teaches . ~Teaches) in (Person -> Person)",1
+"all c:Class | lone c.Teaches",4
+"all t:Teacher | lone Teaches.t",2
+"all c : Class | lone Teaches.Teacher",2
+"all c: Class | lone (c&Teacher.Teaches)",1
+"all c : Class | lone ((c.Teaches) - Teacher)",1
+"(Teacher <: Teaches).~(Teaches :> Teacher) in iden",2
+"all c:Class | lone Teacher.Teaches:>c",5
+"all c:Class | lone Teacher.Teaches<:c",1
+"all c : Class | #(c & Teacher.Teaches) < 2",3
+"all c:Class,t:Teacher | lone t.Teaches:>c",1
+"all c:Class,t:Teacher | lone Teaches.c:>t",1
+"all c : Class, t : Teacher | #(c & t.Teaches) < 2",2

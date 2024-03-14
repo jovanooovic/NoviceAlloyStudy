@@ -1,0 +1,26 @@
+"always no Trash & Trash'",1
+"all t : Trash | t not in File'",1
+"all t: Trash | after t not in File",1
+"always (all f : Trash | f not in Trash')",1
+"always all f : Trash | after f not in Trash",1
+"always (all f:Trash | after no Trash&f)",2
+"all f:File | f in Trash implies after f not in File",1
+"all f: File | always f in Trash implies after f not in File",1
+"always all f : File | f in Trash implies after f not in Trash",1
+"all f: File |always f in Trash implies always f' not in File",1
+"all f: File |eventually (f in Trash implies always f not in File)",1
+"all f: File |eventually (before f in Trash implies f not in File)",1
+"all f: File |eventually (f in Trash implies File' = File - f)",1
+"all f: File |once (always f in Trash implies File' = File - f)",1
+"all f: File | always f in Trash implies always after f not in File",1
+"all f:File | before f not in Trash implies after File'=File-f",1
+"all f: File |eventually (before f in Trash implies File = File - f)",1
+"all f: File |eventually (before f in Trash implies always f not in File)",1
+"all f: File |eventually (always f in Trash implies always f not in File)",1
+"all f: File |eventually (always f in Trash implies File' = File - f)",1
+"all f: File |eventually (before f in Trash implies File' = File - f)",1
+"all f: File | once always f in Trash implies always after f not in File",1
+"always all f:File | f not in Trash and f in Trash' implies f not in File''",1
+"all f: File | eventually always f in Trash implies always after f not in File",1
+"all f: File |always f in Trash implies always f' not in File and f' not in Trash",1
+"all f: File |always f in Trash implies always f' not in File and f' not in Trash and f' not in Protected",1

@@ -1,0 +1,6 @@
+inv1 S: all p : Person - Students, c : Courses | c in p.enrolled | c not in Courses
+inv1 S: all p : Person - Students, c : Course | c in p.enrolled | c not in Course
+inv1 S: all p : Person - Student, c : Course | c in p.enrolled | c not in Course
+inv1 C: all p : Person - Student, c : Course | c not in p.enrolled
+inv1 C: all p : Person - Student, c : Course | c not in p.enrolled
+

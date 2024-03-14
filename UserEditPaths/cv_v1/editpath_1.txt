@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv3 C: all u:User,s:Source,i:Id | lone (u.profile & source.s & ids.i)
+inv4 S: all u.User, i:Id | lone (u.visible & ids.i)
+inv4 U: all u:User, i:Id | lone (u.visible & ids.i)
+inv4 B: all u:User, i:Id | lone (u.visible.ids)
+inv4 B: all u:User| lone (u.visible.ids)
+inv4 B: all u:User, w:Work| lone (u.visible.ids & w.ids)
+inv4 U: all u:User, i:Id | lone (u.visible & ids.i)
+inv4 S: all u:User, i:Id, w:Work | lone (u.visible & ids.i) & lone (w.ids)
+inv4 O: all u:User, i:Id, w:Work | lone (u.visible & ids.i) and lone (w.ids)
+inv4 U: all u:User, i:Id, w:Work | lone (u.visible & ids.i)
+inv4 B: all u:User, i:Id, w:Work | lone (u.visible & ids.i) and lone (visible.(ids.i))
+inv4 U: all u:User, i:Id| lone (u.visible & ids.i)
+

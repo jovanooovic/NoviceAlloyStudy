@@ -1,0 +1,13 @@
+inv1 B: all p : Photo | all u1,u2 : User | p in u1.posts implies p not in u2.posts
+inv1 B: all p : Photo | all u1,u2 : User | p in u1.posts implies p not in u2.posts
+inv1 B: all p : Photo | all u1,u2 : User | p in u1.posts implies p not in u2.posts
+inv1 B: all u : User | u not in u.follows	all p : Photo | all u1,u2 : User | p in u1.posts implies p not in u2.posts
+inv1 U: all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 U: all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 U: all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 B: all p : Photo | all u1,u2 : User | all i : Influencer | p in u1.posts and p in u2.posts implies u1=u2 and i=u1
+inv1 U: all p : Photo | all u1,u2 : User | (p in u1.posts and p in u2.posts) implies u1=u2
+inv1 U: all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 C: all p : Photo | p in User.posts	all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+inv1 C: all p : Photo | p in User.posts	all p : Photo | all u1,u2 : User | p in u1.posts and p in u2.posts implies u1=u2
+

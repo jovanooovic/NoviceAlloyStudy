@@ -1,0 +1,5 @@
+inv7 B: all a, b, c : User | b in c.follows and b not in a.follows and c in a.follows implies b in a.suggested
+inv7 O: all a, b, c : User | b in a.suggested iff b in c.follows and c in a.follows and b not in a.follows
+inv7 S: all a, b : User | b in a.suggested iff a != b and some c : User | b in c.follows and c in a.follows and b not in a.follows
+inv7 C: all a, b : User | b in a.suggested iff a != b and (some c : User | b in c.follows and c in a.follows and b not in a.follows)
+

@@ -1,0 +1,6 @@
+inv8 S: all t: Teacher : t not in (t.teaches & t.enrolled)
+inv8 S: all t: Teacher, c: Course | t not in (teaches.c & t.enrolled.c)
+inv8 S: all t: professor, c: Course | t not in (teaches.c & enrolled.c)
+inv8 U: all t: Professor, c: Course | t not in (teaches.c & enrolled.c)
+inv8 U: all t: Professor, c: Course | c not in (t.teaches & t.enrolled)
+

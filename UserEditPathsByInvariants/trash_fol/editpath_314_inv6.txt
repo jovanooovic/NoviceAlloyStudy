@@ -1,0 +1,10 @@
+inv6 O: all x,y,z : File | x->y in link implies (all z : File | x->z not in link)
+inv6 O: all x,y,z : File | x->y in link implies (all z : File | x->z not in link)
+inv6 O: all x,y : File | x->y in link implies (all z : File | x->z not in link)
+inv6 O: all x,y : File | x->y in link implies (all z : File | z != x and x->z not in link)
+inv6 O: all x,y : File | x->y in link implies (all z : File | z != y and x->z not in link)
+inv6 C: all x,y : File | x->y not in link or (all z : File | x->y in link and x -> z in link implies y=z)
+inv6 S: all x,y,z : File | x->y in link and x->z in link implies y=z)
+inv6 C: all x,y,z : File | x->y in link and x->z in link implies y=z
+inv6 C: all x,y,z : File | x->y in link and x->z in link implies y=z
+

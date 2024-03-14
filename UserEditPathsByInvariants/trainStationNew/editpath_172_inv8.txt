@@ -1,0 +1,14 @@
+inv8 O: all e:Entry, ex:Exit | ex in e.^succs
+inv8 T: all e:Entry, ex:Exit | ex in e.^(e.succs)
+inv8 O: all e:Entry, ex:Exit | ex in e.^succs
+inv8 O: all e:Entry, ex:Exit | some t:Track | t in e.succs and ex in t.succs
+inv8 O: all e:Entry, ex:Exit | some t:Track | t in e.succs and ex in t.^succs
+inv8 O: all e:Entry, ex:Exit | some t:Track | t in e.^succs and ex in t.^succs
+inv8 O: all e:Entry, ex:Exit | some t:Track | t in e.^succs and ex in t.succs
+inv8 O: all e:Entry, ex:Exit | e->ex in succs
+inv8 O: all e:Entry, ex:Exit | e->ex in ^succs
+inv8 C: all e:Entry, ex:Exit | e->ex in *succs
+inv8 B: all e:Entry | some ex:Exit | e->ex in *succs
+inv8 C: all e:Entry | all ex:Exit | e->ex in *succs
+inv8 C: all e:Entry | all ex:Exit | e->ex in *succs
+

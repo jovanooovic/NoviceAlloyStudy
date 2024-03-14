@@ -1,0 +1,10 @@
+inv3 U: all x : Exit | all y : Track | x->y not in succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 B: all e : Exit | one t : Track | e->t not in succs
+inv3 U: all e : Exit | some t : Track | e->t not in succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+inv3 S: all e : Exit | all t : Track | all s : Signals | e->t not in succs and e->s not in signals
+inv3 B: all e : Exit | all t : Track | all s : Signal | e->t not in succs and e->s not in signals
+inv3 U: all e : Exit | all t : Track | e->t not in succs
+

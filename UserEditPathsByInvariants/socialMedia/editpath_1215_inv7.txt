@@ -1,0 +1,6 @@
+inv7 S: all user : User | user in user.suggested => user.follows.follows != user.folowers
+inv7 U: all user : User | user in user.suggested => (user.follows.follows != user.follows)
+inv7 T: all user : User | user.suggested in (user.follows.follows != user.follows)
+inv7 U: all disj u, uu:User | u in uu.suggested => (u in uu.follows.follows && u not in uu.follows)
+inv7 U: all disj u, uu:User | u in uu.follows.follows && u not in uu.follows implies u in uu.suggested
+

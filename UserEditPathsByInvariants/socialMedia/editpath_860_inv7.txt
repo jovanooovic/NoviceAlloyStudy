@@ -1,0 +1,26 @@
+inv7 U: all u1, u2 : User | u1 in u2.suggested implies u1 in u2.follows.follows and u1 not in u2.follows
+inv7 E:
+inv7 U: all u1, u2 : User | u1 in u2.suggested implies (u1 in u2.follows.follows) and (u1 not in u2.follows)
+inv7 U: all u1, u2 : User | u1 in u2.suggested implies (u1 in u2.follows.follows) and (u1 not in u2.follows)
+inv7 U: all u1 : User | all u2 : u1.suggested | u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1 : User | all u2 : u1.suggested | u2 not in u1.follows
+inv7 U: all u1 : User | all u2 : u1.suggested | u2 not in u1.follows
+inv7 U: all u1 : User | all u2 : u1.suggested | u2 in u1.follows.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u2 in u1.follows.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 B: all u1, u2 : User | u2 in u1.suggested iff u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User | u2 != u1 and u2 in u1.suggested implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 T: all u1 : User | some u1.suggested implies some u1.follows.follows not in u1.follows
+inv7 U: all u1 : User | some u1.suggested implies some (u1.follows.follows) - (u1.follows)
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested and u1 != u2 implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows
+inv7 B: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows and u1 not in u2.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows
+inv7 B: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows and u1 not in u2.follows
+inv7 S: all u1, u2 : User - Influencer | u2 in u1.suggested implies and u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User - Influencer | u2 in u1.suggested implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User - Influencer | u2 in u1.suggested implies u1 != u2 and u2 in u1.follows.follows and u2 not in u1.follows
+inv7 U: all u1, u2 : User - Influencer | u2 in u1.suggested and u1 != u2 implies u2 in u1.follows.follows and u2 not in u1.follows
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows) - u
+

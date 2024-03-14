@@ -1,0 +1,8 @@
+inv6 S: all f:File|
+inv6 S: all f:File| a->b implies b->a
+inv6 S: all f:File b:link| f->b implies b->f
+inv6 O: all x,y,z : File | (x->y in link) and (x->z in link) implies x=y
+inv6 O: all x,y,z : File | (x->y in link and x->z in link) implies x=y
+inv6 C: all x,y,z : File | (x->y in link and x->z in link) implies z=y
+inv6 C: all x,y,z : File | (x->y in link and x->z in link) implies z=y
+

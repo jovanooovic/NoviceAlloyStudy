@@ -1,0 +1,9 @@
+inv2 T: all x : Workstation | all y : Worker | some y in x.workers
+inv2 T: all x : Workstation | all y : Worker | some (y in x.workers)
+inv2 T: all x : Workstation | all y : Worker | some (y in x.workers)
+inv2 B: all x : Workstation | all y : Worker | y in x.workers
+inv2 U: all x : Workstation | all y : Worker | some x.workers and some workers.y
+inv2 U: all x : Workstation | some x.workers and	all y : Worker | some workers.y
+inv2 U: all x : Workstation | some x.workers and	all y : Worker | some workers.y
+inv2 C: all x : Workstation | some x.workers and	all y : Worker | one workers.y
+

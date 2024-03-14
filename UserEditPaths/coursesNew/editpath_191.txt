@@ -1,0 +1,41 @@
+NA H: THEME UPDATE
+inv2 S: all u:User, c:Course| u->c in teaches implies u in Professor
+inv1 C: all u:Person, c:Course| u->c in enrolled implies u in Student
+inv2 C: all u:Person, c:Course| u->c in teaches implies u in Professor
+inv3 O: some u:Person| all c:Course| u in Professor and u->c in teaches
+inv3 B: some u:Person| one c:Course| u in Professor and u->c in teaches
+inv3 B: some u:Person, c:Course| u in Professor and u->c in teaches
+inv3 O: some u:Person|all c:Course|u->c in teaches
+inv3 O: some u:Person|all c:Course| u->c in teaches
+inv3 C: all x:Course| some z:Person | z->x in teaches
+inv3 O: some u:Person|all c:Course| u->c in teaches
+inv3 C: all c:Course| some u:Person| u->c in teaches
+inv4 C: all p:Project| one c:Course| c->p in projects
+inv5 U: all u:Person, p:Project| u->p in projects implies u in Student
+inv5 U: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects implies u in Student
+inv5 B: all u:Person, p:Project, c:Course| u->p in projects implies u in Student and u->c in enrolled and c->p in projects
+inv5 U: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects implies u in Student
+inv5 B: all u:Person, p:Project, c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: all u:Person|some p:Project| all c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv6 S: all u:Person, p:Project, all c:Course| u->p in projects and u in Student implies u->c in enrolled and c->p in projects
+inv6 B: all u:Person, p:Project, c:Course| u->p in projects and u in Student implies u->c in enrolled and c->p in projects
+inv6 S: all u:Person, p:Project| u->p in projects and u in Student implies some one c:Course u->c in enrolled and c->p in projects
+inv6 S: all u:Person, p:Project| u->p in projects and u in Student implies some one c:Course |u->c in enrolled and c->p in projects
+inv6 B: all u:Person, p:Project| u->p in projects and u in Student implies one c:Course|u->c in enrolled and c->p in projects
+inv5 B: all u:Person|some p:Project| one c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: some u:Person|all p:Project| one c:Course| u->p in projects and u->c in enrolled and c->p in projects and u in Student
+inv5 B: some u:Person|all p:Project| one c:Course| u->p in projects and u in Student  implies u->c in enrolled and c->p in projects
+inv6 B: all u:Person, p:Project| u->p in projects and u in Student implies one c:Course|u->c in enrolled and c->p in projects
+inv7 S: all u:Person,c:Course, p,x:Project| u->c in enrolled and c->p in project and c->x in project and u->x in project and u->p in projects and u in Student implies u=x
+inv7 B: all u:Person,c:Course, p,x:Project| u->c in enrolled and c->p in projects and c->x in projects and u->x in projects and u->p in projects and u in Student implies u=x
+inv7 U: all u:Person,c:Course, p,x:Project| u->c in enrolled and c->p in projects and c->x in projects and u->x in projects and u->p in projects and u in Student implies p=x
+inv8 B: all u:Person,c:Course| u in Professor and u->c in teaches implies u->c in enrolled
+inv8 U: all u:Person,c:Course| u in Professor and u->c in teaches implies u->c not in enrolled
+inv10 C: all u:Person, c:Course, g:Grade| c->u->g in grades implies u in Student
+inv11 O: all u:Person, c:Course, g:Grade| c->u->g in grades implies u in Student and u->c in enrolled
+inv12 O: all u:Person, c:Course|one g:Grade| c->u->g in grades and u in Student
+inv12 C: all u:Person, c:Course, g,x:Grade| c->u->g in grades and c->u->x in grades implies g=x
+inv14 S: all u:Person, k:Person-u, c:Course, x:Project|one p:Projects-x| u->p in projects and k->p in projects implies u->x in projects and k->x not in projects
+inv14 B: all u:Person, k:Person-u, c:Course, x:Project|one p:Project-x| u->p in projects and k->p in projects implies u->x in projects and k->x not in projects
+inv14 B: all u:Person, k:Person-u, c:Course, x:Project|one p:Project-x| u->p in projects and k->p in projects and u in Student and k in Student implies u->x in projects and k->x not in projects
+

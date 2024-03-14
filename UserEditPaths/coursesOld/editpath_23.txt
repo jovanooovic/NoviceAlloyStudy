@@ -1,0 +1,97 @@
+NA H: THEME UPDATE
+inv1 C: no (Person-Student).enrolled
+inv10 B: all p : Professor | p not in p.teaches.grades.Grade
+inv10 B: all p : teaches.Course | p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 U: all p : Person | p in Person
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 S: all p : Person-| p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv1 C: no (Person-Student).enrolled
+inv3 O: Course in Professor.teaches
+inv4 U: all p : Project | one (Course.projects)&p
+inv5 C: no (Person-Student).projects && Project in Student.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 U: all s : Student, c : s.enrolled | lone c.projects&s.projects
+inv7 U: all s : Student, c : s.enrolled | lone c.projects&s.projects
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv5 C: no (Person-Student).projects && Project in Student.projects
+inv8 U: all p : Professor | no p.teaches&p.enrolled
+inv9 O: all c : Course, p : teaches.c | p.enrolled&(teaches.c).teaches=none
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 U: all p : Person | p in Person
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 T: all p : Person | p.enrolled.grades => p not in Professor
+inv10 B: all p : Person | some p.enrolled.grades => p not in Professor
+inv10 S: all p : Person | some (p.enrolled.grades.Grades)&p => p not in Professor
+inv10 B: all p : Person | some (p.enrolled.grades.Grade)&p => p not in Professor
+inv10 B: all p : Person | some (p.enrolled.grades.Grade)&p => p not in Professor
+inv10 B: all p : Person | some p.(Course.grades)=> p not in Professor
+inv10 B: all p : Person | some p.(Course.grades) => p not in Professor
+inv10 S: all p : Person-Students | p not in Course.grades.Grade
+inv10 C: all p : Person-Student | p not in Course.grades.Grade
+inv10 B: all p : Professor | p not in Course.grades.Grade
+inv10 C: all p : Person-Student | p not in Course.grades.Grade
+inv4 U: all p : Project | one (Course.projects)&p
+inv4 T: Course.projects.~(Course.projects) in iden
+inv4 T: Course.projects.~(Course.projects) in iden
+inv4 T: projects.~(projects) in iden
+inv4 T: projects.~(projects) in iden
+NA M: MOD BASE MODEL
+inv4 T: all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one p.(Course.projects)
+inv4 T: all p : Project | one p in (Course.projects)
+inv4 U: all p : Project | one (Course.projects)-(Project-p)
+inv4 T: projects.~(projects) in iden
+inv4 T: Course.projects.~(Course.projects) = iden
+inv4 T: Course.projects*Course.~(Course.projects)*Course = iden
+inv4 T: Course.projects->Course.~(Course.projects)->Course = iden
+inv4 T: ((Course.projects)->Course).~(Course.projects)->Course = iden
+inv4 O: ((Course.projects)->Course).~((Course.projects)->Course) = iden
+inv4 T: Course.projects.~(Course.projects) in iden
+inv11 T: all p : Person-Student | p not in (Course.grades.Grade)-(enrolled.grades.Grade)
+inv11 U: all p : Person-Student | p not in (Course.grades.Grade)-(p.enrolled.grades.Grade)
+inv11 B: all p : Person-Student | p not in (Course.grades.Grade)&(p.enrolled.grades.Grade)
+inv11 U: all p : Person-Student | p not in (Course-p.enrolled).grades.Grade
+inv11 U: all p : Person-Student | p not in (Course-(p.enrolled)).grades.Grade
+inv11 U: all p : Person-Professor | p not in (Course-(p.enrolled)).grades.Grade
+inv11 C: all p : Person | p not in (Course-(p.enrolled)).grades.Grade
+inv12 T: all p : Person | p
+NA M: MOD BASE MODEL
+inv11 U: all p : Student | p not in (Course-(p.enrolled)).grades.Grade
+inv12 B: all p : Student | lone p.(p.enrolled.grades)
+inv12 U: all p : Student, c : p.enrolled | lone p.(c.grades)
+inv13 S: all
+inv13 S: all
+inv13 S: all
+inv4 C: Course <: projects in Course one -> Project
+inv4 T: Course<:projects.~(Course<:projects)
+inv4 T: (Course<:projects).~(Course<:projects)
+inv4 O: (Course<:projects).~(Course<:projects) = iden
+inv4 U: (Course<:projects).~(Course<:projects) in iden
+inv4 T: all p : Project | one p in Course<:projects
+inv4 T: all p : Project | one p in (Course<:projects)
+inv4 T: all p : Project | one p in Course.(Course<:projects)
+inv4 B: ~(Course<:projects).(Course<:projects) in iden
+inv4 U: all p : Project | lone (Course<:projects).p
+inv4 C: all p : Project | one (Course<:projects).p
+inv4 U: (Course<:projects).~(Course<:projects) in iden
+inv13 S: all s : Student
+inv14 T: all s : Student, p : s.projects | ((Person<:projects).p)-s not in ((s.projects)-p).Project
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in Person
+inv14 T: all s : Student, p : s.projects | ((Person<:projects).p)-s not in ((s.(Person<:projects))-p).Project
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in ((s.(Person<:projects))-p)
+inv14 T: all s : Student, p : s.projects | ((Person<:projects).p)-s not in ((s.projects)-p).Project
+inv14 T: all s : Student, p : s.projects | ((Person<:projects).p)-s not in ((s.projects)-p).Project
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 B: all s : Student, p : s.projects | ((Student<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 B: all s : Student, p : s.projects | ((Student<:projects).p)-s not in (Student<:projects).((s.projects)-p)
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 O: all s : Person, p : s.projects | ((Person<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 E: 
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s not in (Person<:projects).((s.projects)-p)
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s&(Person<:projects).((s.projects)-p)=none
+inv14 B: all s : Person-Professor, p : s.projects | ((Person<:projects).p)-s&(Person<:projects).((s.projects)-p)=none
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s&(Person<:projects).((s.projects)-p)=none
+

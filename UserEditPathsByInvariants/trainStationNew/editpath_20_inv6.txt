@@ -1,0 +1,13 @@
+inv6 U: all e : Entry | some e.signals
+inv6 S: all e : Entry | some e.signal
+inv6 B: all e : Entry | some e.signals	all e : Entry | all s : Speed | s in e.signals
+inv6 B: all e : Entry | all s : Speed | s in e.signals
+inv6 B: all s : Speed | s in Entry.signals
+inv6 B: all e : Entry | all s : Speed | Speed in e.signals
+inv6 U: all e : Entry | some e.signals
+inv6 S: all e : Entry | some e.signals	all e : Entry | e.singnals in e.signals&Speed
+inv6 O: all e : Entry | some e.signals	all e : Entry | e.signals in e.signals&Speed
+inv6 U: all e : Entry | some e.signals
+inv6 O: all e : Entry | some e.signals	all e : Entry | e.signals in e.signals&Speed
+inv6 C: all e : Entry | some e.signals&Speed
+

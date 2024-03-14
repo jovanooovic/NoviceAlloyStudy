@@ -1,0 +1,9 @@
+inv12 T: all x : Student | all y: x.enrolled | some x.y.grades
+inv12 B: all x : Student | all y: x.enrolled | some y.grades
+inv12 B: all x : Student | all y: x.enrolled | lone y.grades
+inv12 B: all x : Student | lone x.enrolled.grades
+inv12 T: all x : Student | lone x.x.enrolled.grades
+inv12 B: all x : Student | lone x.(x.enrolled.grades)
+inv12 E:
+inv12 B: all x: Student | one x.(Course.grades)
+

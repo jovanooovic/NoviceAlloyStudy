@@ -1,0 +1,8 @@
+inv5 T: all x : Influencer | no follows-follows.x
+inv5 T: all x : Influencer | follows-x.follows=none
+inv5 T: all x : Influencer | follows=follows.x
+inv5 T: all x : User | x in Influencer implies x follows x
+inv5 T: all x : User | x in Influencer implies x.follows.x
+inv5 T: all x : Influencer | no follows.x-follows
+inv5 T: all x : Influencer | no x.follows-follows
+

@@ -1,0 +1,9 @@
+inv5 T: projects.Course in Student
+inv5 T: Person <: projects.Course in Student
+inv5 T: (Person <: projects.Course) in Student
+inv5 T: (Person <: projects.Course)
+inv5 T: (Person <: projects.Course) in Student
+inv5 T: (Person <: projects.Course) in Student	  	all p : Project | some projects.p
+inv5 T: (Person <: projects.Course) in Student	  	all p : Project | some projects.p :> Person
+inv5 C: all p : Person | some p.projects => p in Student	  	all p : Project | some projects.p :> Person
+

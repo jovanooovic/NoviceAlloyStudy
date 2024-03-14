@@ -1,0 +1,5 @@
+inv8 O: all ad: Ad | all user1, user2: User | ad in user1.sees implies ad in user2.posts and (user2 in user1.follows or user2 in user1.suggested)
+inv8 S: all ad: Ad | all user1, user2: User |  (ad in user2.posts and (user2 in user1.follows or user2 in user1.suggested) implies ad in user1.sees
+inv8 B: all ad: Ad | all user1, user2: User |  ad in user2.posts and (user2 in user1.follows or user2 in user1.suggested) implies ad in user1.sees
+inv8 C: all ad: Ad | all user: User |  ad in user.sees implies (ad in user.follows.posts or ad in user.suggested.posts)
+

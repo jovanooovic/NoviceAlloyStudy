@@ -1,0 +1,10 @@
+inv5 S: Workers & Robots not in workers
+inv5 T: Worker & Robot not in workers
+inv5 S: all ws:Worstation | not some w1, w2:Worker | ws->w and w1 in Human and w2 in Robot and w1!=w2
+inv5 S: all ws:Workstation | not some w1, w2:Worker | ws->w and w1 in Human and w2 in Robot and w1!=w2
+inv5 T: all ws:Workstation | not some w1, w2:Worker | ws->w1 and ws->w2 and w1 in Human and w2 in Robot and w1!=w2
+inv5 C: all ws:Workstation | not some w1, w2:Worker | ws->w1 in workers and ws->w2 in workers and w1 in Human and w2 in Robot and w1!=w2
+inv5 C: all ws:Workstation | not some w1, w2:Worker | (ws->w1 + ws->w2) in workers and w1 in Human and w2 in Robot and w1!=w2
+inv5 O: all w:Workstation | w.workers in Robot or w.workers in Human
+inv5 C: all w:Workstation | no w.workers & Robot or no w.workers & Human
+

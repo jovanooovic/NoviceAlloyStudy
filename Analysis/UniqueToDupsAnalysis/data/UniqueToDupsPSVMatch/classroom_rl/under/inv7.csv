@@ -1,0 +1,21 @@
+"Class = Person.Teaches",1
+"Class in Person.Teaches",3
+"Teacher.Teaches in Class",1
+"#(Teaches :> Class) = #Teaches",1
+"Class in Class.~Teaches.Teaches",1
+"all x:Class| some Teaches.x",2
+"all c:Class | some Teaches.c",37
+"all c : Class | some Teacher->c",2
+"all c : Class | #Teaches.c > 0",1
+"all c: Class | some c.~Teaches",3
+"all c : Class | c in Person.Teaches",1
+"(Class->Class & iden) in ~Teaches.Teaches",1
+"iden & (Class->Class) in ~Teaches.Teaches",2
+"all c: Class | some Teacher.Teaches",5
+"Class.~Teaches.Teaches in Teacher.Teaches",1
+"all c:Class | some Teaches.~Teaches",2
+"all c : Class | some ((Person.Teaches) -> c)",1
+"all c : Class | some (Teacher.Teaches)->c",3
+"all c : Class, t : Teacher | some t->c",1
+"all c : Class | some t : Teacher | some t.Teaches",2
+"all c : Class | some t : Teacher | some t->Teaches->c",1

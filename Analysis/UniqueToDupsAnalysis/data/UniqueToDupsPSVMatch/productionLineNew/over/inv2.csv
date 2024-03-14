@@ -1,0 +1,39 @@
+"some Workstation.workers && one workstation.Worker",1
+"all ws : Workstation | some w : Worker | w in ws",1
+"all ws : Workstation | some ws.workers
+all w : Worker | one succ.w",1
+"all w : Workstation | some w.workers
+all w : Worker | one w.workers",1
+"all s : Workstation | some w : Worker | s.workers in s && one workers.s",1
+"all s : Workstation | some w : Worker | w in s.workers && one workers.s",1
+"all s : Workstation | #s.workers>0
+all w: Worker | one w.workstation",1
+"all ws:Workstation | some ws.workers &&
+all w:Worker | one w.workstation",2
+"all ws : Workstation | some ws.workers
+all w : Worker | one workstation.w",1
+"all ws: Workstation | some (ws.workers)
+all w: Worker | #(w.workstation) = 1",1
+"all ws: Workstation | #(ws.workers) > 0
+all w: Worker | #(w.workstation) = 1",3
+"all w: Worker | #w.^workstation = 1
+all ws: Workstation | #ws.workers > 0",1
+"all ws: Workstation | ws.workers != none && all w: ws.workers | w.workstation = ws",1
+"all p: Workstation | one p.workers
+all x: Worker | one v: Workstation | x in v.workers",2
+"all ws : Workstation | some ws.workers
+all w : Worker | one ws : Workstation | w in ws.workstation",1
+"some w : Workstation | some w.workers
+all w : Worker | one work : Workstation | w in work.workstation",1
+"all wst : Workstation | some w : Worker | w in wst
+all w : Worker | all wst : Workstation | w in wst",1
+"all ws : Workstation | some w : Worker | w in ws
+all w : Worker | one ws : Workstation | w in ws.workers",1
+"all ws : Workstation | some ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers implies w not in ws1.workers",1
+"all w:Workstation | some h:Worker | h in workers.w
+some w:Workstation | all h:Worker |h in workers.w",1
+"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w : Worker |w in ws.workers && w in ws1.workers implies w = ws1",2
+"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w,w1 : Worker |w in ws.workers && w in ws1.workers implies w = ws1",1

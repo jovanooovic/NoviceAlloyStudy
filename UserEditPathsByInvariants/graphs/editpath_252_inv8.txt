@@ -1,0 +1,7 @@
+inv8 S: all disj a,b,c : Node | (a in ajd.b and c in b.adj) => c in a.adj
+inv8 U: all disj a,b,c : Node | (a in adj.b and c in b.adj) => c in a.adj
+inv8 T: all  a,b,c : Node | a!= b !=c => (a in adj.b and c in b.adj) => c in a.adj
+inv8 U: all  a,b,c : Node | (a!= b and  a !=c) => (a in adj.b and c in b.adj) => c in a.adj
+inv8 U: all  a,b,c : Node | (a!= b and  a !=c) => (a in adj.b and c in b.adj) => c in a.adj
+inv8 U: all  a,b,c : Node | (a!= b and  a !=c and b!=c) => (a in adj.b and c in b.adj) => c in a.adj
+

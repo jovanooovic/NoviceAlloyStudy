@@ -1,0 +1,91 @@
+Pairs,8
+,,"some Teaches.Class",6
+,,"some Class.~Teaches",2
+
+Pairs,5
+,,"some Teacher.Teaches",1
+,,"some (Teaches.Class & Teacher)",2
+,,"some  Teacher & Teaches.Class",1
+,,"some Teacher <: Teaches.Class",1
+
+Pairs,1
+,,"Teaches.Class = Teacher",1
+
+Pairs,2
+,,"~Teaches.Teaches in iden",2
+
+Pairs,10
+,,"Teaches.Class in Teacher",1
+,,"all c:Class | Teaches.c in Teacher",9
+
+Pairs,1
+,,"Teacher in Teaches.Class",1
+
+Pairs,2
+,,"Teacher in Person . Teaches",1
+,,"Teacher in ~Teaches.Teacher",1
+
+Pairs,1
+,,"#(Teaches :> Class) = #Class",1
+
+Pairs,2
+,,"all c : Class | one Teaches.c",2
+
+Pairs,2
+,,"all c : Class | lone Teaches.c",2
+
+Pairs,1
+,,"all c : Class | #Teacher->c > 1",1
+
+Pairs,1
+,,"all c : Class | (#c.Groups) > 0",1
+
+Pairs,1
+,,"Teacher.Teaches in Teaches.Class",1
+
+Pairs,1
+,,"(Class->Class) in ~Teaches.Teaches",1
+
+Pairs,1
+,,"#(Teacher->Class :> Class) = #Class",1
+
+Pairs,3
+,,"all c : Class | some c.Groups.Group",1
+,,"all c : Class | #Person.(c.Groups) > 0",2
+
+Pairs,1
+,,"all c : Class | no Teacher.(c.Groups)",1
+
+Pairs,1
+,,"~((Groups.Group):>Teacher) in Teaches",1
+
+Pairs,4
+,,"all c : Class | Teacher in Teaches . c",1
+,,"all c : Class | Teacher->c in Teaches",3
+
+Pairs,1
+,,"all c : Class | one Teacher.(c.Groups)",1
+
+Pairs,1
+,,"all c : Class | lone Teacher.(c.Groups)",1
+
+Pairs,5
+,,"all c : Class | some Teacher.(c.Groups)",2
+,,"all c : Class |  #Teacher.(c.Groups) > 0",1
+,,"all c: Class | some t: Teacher | some Groups[c][t]",2
+
+Pairs,4
+,,"all c : Class, t : Teacher | some t.Teaches",4
+
+Pairs,1
+,,"all c:Class | all t:Teacher | t.Teaches = c",1
+
+Pairs,2
+,,"all c : Class | Person.(c.Groups) in Teacher",2
+
+Pairs,1
+,,"all t : Teacher, c : Class | some c->t->Group",1
+
+Pairs,1
+,,"all c : Class, t : Teacher | (#t.(c.Groups)) > 0",1
+

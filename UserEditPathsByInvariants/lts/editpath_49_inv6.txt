@@ -1,0 +1,15 @@
+inv6 O: all e:Event | some e.trans
+inv6 O: all e:Event | some trans.e
+inv6 S: all e:Event| some s.State | s in trans.e
+inv6 T: all e:Event| some s:State | s in trans.e
+inv6 T: all e:Event| some s:State | s in e->State
+inv6 T: all e:Event| some s:State | s in (e->State).trans
+inv6 T: all e:Event| some s:State | s in (e.State).trans
+inv6 T: all e:Event| some s:State | e in s->trans.State
+inv6 T: some e:Event| some s:State | e in s->trans->State
+inv6 B: all s:State | some s.trans.State
+inv6 B: all s:State | some (s.trans).State
+inv6 B: all s:State | one (s.trans).State
+inv6 C: all e:Event | some e.(State.trans)
+inv6 C: all e:Event | some e.(State.trans)
+

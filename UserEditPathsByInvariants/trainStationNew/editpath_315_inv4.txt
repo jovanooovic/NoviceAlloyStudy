@@ -1,0 +1,13 @@
+inv4 T: all t:Track | t in Entry implies t not i succs.t
+inv4 T: all t:Track | t in Entry implies t not t.succs.t
+inv4 T: all t:Track | t in Entry implies t not succs.t
+inv4 T: all t:Track | t in Entry implies t not succs.t
+inv4 U: all t:Track | t in Entry implies t not in succs.t
+inv4 U: all t:Track | t in Entry implies Entry not in succs.t
+inv4 U: all t:Track | t in Entry implies Entry not in succs.t
+inv4 T: all t:Track | Entry implies Entry not in succs.t
+inv4 U: all t:Track | t in Entry implies Entry not in succs.t
+inv4 U: all t:Track | t in Entry implies Entry not in succs.t
+inv4 S: all t:Track | t in Entry iff no ^(succs).y
+inv4 C: all t:Track | t in Entry iff no ^(succs).t
+

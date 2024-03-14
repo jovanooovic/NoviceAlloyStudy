@@ -1,0 +1,116 @@
+NA H: THEME UPDATE
+inv7 B: always all f : File | f in Protected
+inv7 O: some f : File | f in Protected
+inv7 T: some File in Protected
+inv7 O: some Protected
+inv7 C: eventually some Protected
+inv11 C: always all f : File | f not in Protected implies after f in Protected
+inv12 T: always some f : File | eventually some f in Trash implies f in Trash
+inv12 B: always some f : File | eventually f in Trash implies f in Trash
+inv12 B: always some f : File | eventually Trash = Trash'
+inv12 T: always some File eventually Trash implies Trah = Trash'
+inv12 B: always some f : File | eventually f in Trash implies f in Trash
+inv12 B: always some f : File | eventually f in Trash implies f in Trash'
+inv12 S: always f : File | eventually f in Trash implies f in Trash'
+inv12 S: always all f : File | some eventually f in Trash implies f in Trash'
+inv12 T: always all f : File | eventually some f in Trash implies f in Trash'
+inv12 B: always all f : File | eventually f in Trash implies f in Trash'
+inv12 U: eventually (some f : File | eventually f in Trash implies f in Trash')
+inv12 U: eventually (some f : File | eventually always f in Trash implies f in Trash')
+inv12 C: eventually (some f : File | eventually always f in Trash )
+inv13 S: always all f : File | f in Trash implies once in trash
+inv13 S: always all f : File | f in Trash implies once f in trash
+inv13 U: always all f : File | f in Trash implies once f in Trash
+inv13 U: always all f : File | always f in Trash implies once f in Trash
+inv13 U: always all f : File | always (f in Trash) implies once f in Trash
+inv13 U: always all f : File | (always f in Trash) implies once f in Trash
+inv13 B: always some f : File | always f in Trash implies once f in Trash
+inv13 B: always some f : File | always f in Trash implies once f not in Trash
+inv13 B: always some f : File | f in Trash implies once f not in Trash
+inv13 U: always all f : File | always f in Trash implies once f not in Trash
+inv13 C: always all f : File | f in Trash implies once f not in Trash
+inv14 S: always all f : File | f in Trash implies after f not in Protectede
+inv14 O: always all f : File | f in Trash implies after f not in Protected
+inv14 B: always all f : File | always f in Trash implies after f not in Protected
+inv14 C: always all f : Protected | f in Trash implies after f not in Protected
+inv14 C: always all f : Protected | f in Trash implies f not in Protected'
+inv15 S: always all f : File | eventually f in Tash
+inv14 C: always all f : Protected | f in Trash implies f not in Protected'
+inv15 C: always all f : File | eventually f in Trash
+inv16 U: always all f : Protected | f in Protected implies f in Protected
+inv16 C: always all f : Protected | f in Protected implies historically f in Protected
+inv16 C: always all f : Protected | historically f in Protected
+inv17 U: always all f : Trash | after f not in Trash
+inv17 U: always all f : File | f in Trash implies after f not in Trash
+inv17 C: always all f : File | f in Trash implies after f not in File
+inv5 C: eventually some f : File | f not in File'
+inv5 C: eventually some f : File | after f not in File
+inv5 O: some f : File | eventually f not in File'
+inv5 O: some f : File | eventually after f not in File
+inv5 C: eventually some f : File | after f not in File
+inv5 C: eventually (some f : File | f not in File')
+inv18 S: always f : Protected | f not in Protected since f in Trash
+inv18 S: always f : Protected | f not in Protected since f in Trash
+inv18 S: always f : Protected | f not in Protected until f in Trash
+inv18 O: always all f : Protected | f not in Protected until f in Trash
+inv18 O: always all f : Protected | f not in Protected since f in Trash
+inv18 O: always all f : Protected | f not in Protected releases f in Trash
+inv18 O: always all f : Protected | f in Trash releases f not in Protected
+inv18 O: always all f : Protected | f in Trash until f not in Protected
+inv18 C: always all f : Protected | f in Trash releases f in Protected
+inv19 B: all f : Protected | f in Trash until f not in Protected
+inv18 C: always all f : Protected | f in Trash releases f in Protected
+inv19 B: all f : Protected | f in Trash until f not in Protected
+inv19 B: all f : Protected | (f in Trash and f in Protected) until f not in Protected
+inv19 B: eventually all f : Protected | f in Trash until f not in Protected
+inv19 U: eventually all f : Protected | f in Trash until f in Protected
+inv19 B: eventually all f : Protected | f in Trash and f not in Protected until f in Protected
+inv19 B: all f : Protected | f in Trash and f not in Protected until f in Protected
+inv19 U: all f : Protected | (f in Trash and f not in Protected) until f in Protected
+inv19 U: all f : Protected | f in Trash implies historically f in Protected
+inv19 S: evntually all f : Protected | f in Trash implies historically f in Protected
+inv19 U: eventually (all f : Protected | f in Trash implies historically f in Protected)
+inv19 U: eventually (all f : Protected | eventually f in Trash implies historically f in Protected)
+inv19 U: all f : Protected | eventually f in Trash implies historically f in Protected
+inv19 U: all f : Protected | f in Protected until f in Trash
+inv19 C: always all f : Protected | f in Protected until f in Trash
+inv18 O: always all f : Protected | f in Trash until f not in Protected
+inv18 C: always all f : Protected | f in Trash releases f in Protected
+inv18 C: always all f : Protected | f in Trash releases f in Protected
+inv19 C: always all f : Protected | f in Protected until f in Trash
+inv19 C: always all f : Protected | f in Protected until f in Trash
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv19 C: always all f : Protected | f in Protected until f in Trash
+inv19 C: always all f : Protected | f in Protected until f in Trash
+inv20 O: always all f : File | f in Trash releases f not in Protected
+inv20 B: always all f : File | f not in Protected since f in Trash
+inv20 B: always all f : File | f not in Protected until f in Trash
+inv20 O: always all f : File | f in Trash releases f not in Protected
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv20 B: always some f : File | f in Trash since f not in Protected
+inv20 B: always all f : File | f not in Protected since f in Trash
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv20 O: always all f : File | always f in Trash since f not in Protected
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv20 B: always all f : File | f not in Protected since f in Trash
+inv20 B: always all f : File | always f not in Protected since f in Trash
+inv20 B: always all f : File | always f not in Protected since once f in Trash
+inv20 O: always all f : File | f in Trash triggered f not in Protected
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv20 O: always all f : Protected | f in Trash since f not in Protected
+inv20 O: always all f : File | f in Trash since f not in Protected
+inv20 B: always all f : File | f not in Protected triggered f in Trash
+inv20 O: always all f : File |  f in Trash triggered f not in Protected
+inv20 O: always all f : File |  f in Trash since f not in Protected
+inv20 B: always all f : File | f not in Protected since f in Trash
+inv20 B: always all f : File | always f not in Protected since f in Trash
+inv20 B: always all f : Protected | f not in Protected since f in Trash
+inv20 B: always some f : Protected | f not in Protected since f in Trash
+inv20 B: always some f : File | f not in Protected since f in Trash
+inv20 U: always all f : Trash | f not in Protected since f in Trash
+inv20 C: always all f : Trash | f in Trash since f not in Protected
+inv20 C: always all f : Trash | f in Trash since f not in Protected
+inv20 S: always all f : Trash | since f not in Protected
+inv20 C: always all f : Trash | f in Trash since f not in Protected
+NA H: THEME UPDATE
+

@@ -1,0 +1,12 @@
+inv2 S: ~signal in Signal one -> lone Track
+inv2 B: ~signals in Signal one -> lone Track
+inv2 B: all t,u : Track | no (t.signals & u.signals)
+inv2 U: all t,u : Track | t != u implies no (t.signals & u.signals)
+inv2 C: no (Signal - Track.signals)	all t,u : Track | t != u implies no (t.signals & u.signals)
+inv2 U: no (Signal - Track.signals)
+inv2 C: no (Signal - Track.signals)	all s : Signal | lone signals.s
+inv2 C: all s : Signal | one signals.s
+inv2 C: all s : Signal | one signals.s
+inv2 S: singals in Track one -> set Signal
+inv2 C: signals in Track one -> set Signal
+

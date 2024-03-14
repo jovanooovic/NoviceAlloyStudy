@@ -1,0 +1,18 @@
+inv10 B: all c:Class | some c.Groups
+inv10 T: all c:Class, s: Student | s in c.Groups
+inv10 T: all c:Class | Student in c.Groups
+inv10 B: all c:Class, g:Group | Student in c.Groups.g
+inv10 B: all c:Class, g:Group | Student->g in c.Groups
+inv10 B: all c:Class, g:Group | (Student->g) in c.Groups
+inv10 O: all c:Class | some g:Group | (Student->g) in c.Groups
+inv10 B: all c:Class | (Student->Group) in c.Groups
+inv10 B: all c:Class, s:Student, g:Group | (s->g) in c.Groups
+inv10 C: all c:Class, s:Student | some g:Group | (s->g) in c.Groups
+inv10 S: all s: Student | some g: Group | (s->g) in c.Groups
+inv10 B: all s: Student | some g: Group | (s->g) in Class.Groups
+inv10 B: all c: Class | (Student->Group) in c.Groups
+inv10 T: all c: Class | some (Student->Group) in c.Groups
+inv10 T: all c: Class | (Student->(some Group)) in c.Groups
+inv10 B: all c: Class | (Student->Group) in c.Groups
+inv10 C: all c: Class | Student in (c.Groups).Group
+

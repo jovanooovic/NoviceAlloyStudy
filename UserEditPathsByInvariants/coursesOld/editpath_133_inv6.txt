@@ -1,0 +1,8 @@
+inv6 S: cursos dos projetos tem de estar nos cursos enrolled	  	(Course<:projects).Project in (Student<:projects).Project
+inv6 B: (Course<:projects).Project in (Student<:projects).Project
+inv6 S: cursos dos projetos tem de estar nos cursos enrolled	  	all s : Student, c : Course | c in s.projects implies c in s.enrolled
+inv6 T: all s : Student, c : Course | c in s.projects implies c in s.enrolled
+inv6 T: (Student.projects).Course in Student.enrolled
+inv6 T: (Student.projects).Course in Student.enrolled
+inv6 B: (Course<:projects).(Student.projects) in Student.enrolled
+

@@ -1,0 +1,36 @@
+inv4 S: all s: State | s^.trans
+inv4 S: Init^.trans
+inv4 S: Init^.trans
+inv4 T: Init.^trans
+inv4 T: Init.^trans in State
+inv4 T: State.^trans
+inv4 T: all s: State | all e: Event | one Init.^trans implies s->e->s
+inv4 T: some e: Event | all s: State | Init.trans implies e->s in trans
+inv4 T: some e: Event | all s: State | Init.trans implies s
+inv4 T: some e: Event | all s: State | s in Init.^trans
+inv4 T: some e: Event | all s: State | s in Init.^trans.e
+inv4 T: some e: Event | all s: State | Init.trans and e->s in trans
+inv4 T: some e: Event | all s: State | Init.trans implies e->s
+inv4 T: some e: Event | Init.trans implies *trans.e
+inv4 T: all s: State | all e: Event | Init.trans.e
+inv4 T: all s: State | all e: Event | Init.trans
+inv4 T: all s: State | all e: Event | Init.trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in trans
+inv4 T: all s: State | all e: Event | Init.trans in trans implies e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies ~trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e in trans
+inv4 T: all s: State | some e: Event | Init.trans in trans implies trans.e->s in State
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s in State
+inv4 T: all s: State | some e: Event | Init.trans in trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans in trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in trans
+inv4 T: all s: State | all e: Event | Init.trans implies e->s in State
+inv4 B: all s: State | all e: Event | e->s in Init.trans
+inv4 O: all s: State | some e: Event | e->s in Init.trans
+inv4 S: all s: State | some e: Event | all e->s in Init.trans
+inv4 B: Init = trans.State.Event
+

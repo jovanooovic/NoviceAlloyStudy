@@ -1,0 +1,17 @@
+inv2 O: all ws : Workstation | some ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers implies w not in ws1.workers
+inv2 U: all ws : Workstation | some ws.workers
+inv2 U: all ws : Workstation | some ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers && ws != ws1 implies w not in ws1.workers
+inv2 O: all ws : Workstation | some w : Worker | w in ws.workers	all ws,ws1 : Workstation, w,w1 : Worker |w in ws.workers && w in ws1.workers implies w = ws1
+inv2 O: all ws : Workstation | some w : Worker | w in ws.workers	all ws,ws1 : Workstation, w : Worker |w in ws.workers && w in ws1.workers implies w = ws1
+inv2 O: all ws : Workstation | some w : Worker | w in ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers && w in ws1.workers implies w = ws1
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers && w in ws1.workers implies w != ws1
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers implies w not in ws.succ
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers	all ws : Workstation, w : Worker | w in ws.workers implies w not in ws.succ
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers	all ws : Workstation, w : Worker | w in ws.workers implies w not in ws.succ
+inv2 U: all ws : Workstation | some ws.workers	all ws : Workstation, w : Worker | w in ws.workers implies w not in ws.succ
+inv2 U: all ws : Workstation | some ws.workers	all ws,ws1 : Workstation, w : Worker | w in ws.workers && w in ws1.workers implies ws = ws1
+inv2 C: all ws : Workstation | some ws.workers	all ws,ws1 : Workstation, w : Worker | one workers.w
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker | one workers.w
+inv2 U: all ws : Workstation, w : Worker | some ws.workers && one workers.w
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker | one workers.w
+

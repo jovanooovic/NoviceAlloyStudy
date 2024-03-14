@@ -1,0 +1,25 @@
+inv5 T: all s : Student , p : Project | projects.Project in Student
+inv5 U: all s : Student , p : Project | Person<:projects.Project in Student
+inv5 U: all s : Student  | Person<:projects.Project in Student
+inv5 U: all s : Student  | Person<:projects.Project in Student
+inv5 U: all s : Student | Person<:projects.Project in Student
+inv5 T: all s : Student | some Student in Person.projects
+inv5 T: all s : Student | some Person.projects & Student
+inv5 B: all s : Student | some Person.projects<:Person & Student
+inv5 T: all s : Student | some Person.projects & Student
+inv5 B: all s : Student | some Student.projects
+inv5 B: some Student.projects
+inv5 T: all s : Student | Student in Person.projects and some Student in Person.projects
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects
+inv5 T: all s : Student | Student in Person.projects and some Student & Person<:Person.projects
+inv5 S: all s : Student | Student in Person.projects and some Student & Person.project<:Person
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects<:Person
+inv5 T: all s : Student | Student in Person.projects and some Student & Person.projects:>Person
+inv5 B: all s : Student | Student in Person.projects:>Person and some Student & Person.projects:>Person
+inv5 T: all s : Student | Student in Person.projects:>Person and some Student & Person.projects
+inv5 T: all x : Professor | no x.projects	  	some y : Project | Student & projects.y
+inv5 T: projects.Project & Student
+inv5 T: projects.Project in Student
+inv5 U: Person<:projects.Project in Student
+inv5 B: all p : Professor | Person<:projects.Project in Student and no p.projects
+

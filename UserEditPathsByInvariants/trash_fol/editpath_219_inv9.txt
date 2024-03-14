@@ -1,0 +1,9 @@
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 C: all f,g,h : File | f->g in link implies g->h not in link
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+inv9 T: all f:File | not isLinked[isLinked[f]]	}		/* If a link is deleted, so is the file it links to. */		pred isLinked(f:File){	some f2:File | f2->f in link
+inv9 T: all f1,f2:File | isLinked[f1] implies f1->f2 not link	}		/* If a link is deleted, so is the file it links to. */		pred isLinked(f:File){	some f2:File | f2->f in link
+inv9 C: all f1,f2:File | isLinked[f1] implies f1->f2 not in link	}		pred isLinked(f:File){	some f2:File | f2->f in link
+

@@ -1,0 +1,13 @@
+inv7 O: all s : State | Init in s.trans[Event] + s.trans[Event].trans[Event] + s.trans[Event].trans[Event].trans[Event]
+inv7 O: all s : State | Init in s + s.trans[Event] + s.trans[Event].trans[Event] + s.trans[Event].trans[Event].trans[Event]
+inv7 S: all s : State | s in Init.^reachable => Init in s.^reachable
+inv7 S: all i, s : State | s in i.^reachable => i in s.^reachable
+inv7 S: all i, s : State | s in i.^reachable <=> i in s.^reachable
+inv7 S: all i, s : State | s in i.^reachable => i in s.^reachable
+inv7 S: all i : Init, s : State | s in i.^reachable => i in s.^reachable
+inv7 S: all i : Init, s : State | s in i.*reachable => i in s.*reachable
+inv7 S: all s : State {	      some i : Init | s in i.*reachable => i in s.*reachable	    }
+inv7 S: all s : State {	      some i : Init | s in i.^reachable => i in s.^reachable	    }
+inv7 S: all s : State | s in Init.^reachable {	      some i : Init | i in s.^reachable	    }	}		fun reachable : State -> set State {		{ s0 : State, s1 : State | s1 in s0.trans[Event] }
+inv7 S: all s : State | s in Init.^reachable => some i : Init | i in s.^reachable
+

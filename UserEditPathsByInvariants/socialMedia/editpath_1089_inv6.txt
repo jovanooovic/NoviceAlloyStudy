@@ -1,0 +1,10 @@
+inv6 S: all d:Date, p:Photo, u:User| u in Influencer implies u->p in posts and p->d in Date
+inv6 B: all d:Day, p:Photo, u:User| u in Influencer implies u->p in posts and p->d in date
+inv6 T: all d:Day, p:Photo, u:User| u in Influencer implies u->p in posts and p.date
+inv6 T: all d:Day, p:Photo, u:User| u in Influencer implies u->p in posts and date.d
+inv6 B: all d:Day, p:Photo, u:User| u in Influencer implies u->p in posts and p.date in Day
+inv6 S: all d:Day, u:User| some p:Photo| u in Influencer implies u->p in posts and p->d in Date
+inv6 O: all d:Day, u:User| some p:Photo| u in Influencer implies u->p in posts and p->d in date
+inv6 O: all d:Day, u:User| some p:Photo| u in Influencer and u->p in posts and p->d in date
+inv6 C: all d:Day, u:Influencer| some p:Photo| u->p in posts and p->d in date
+

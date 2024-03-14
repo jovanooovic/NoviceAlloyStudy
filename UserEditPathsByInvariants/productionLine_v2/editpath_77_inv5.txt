@@ -1,0 +1,6 @@
+inv5 C: all ws,r : univ | ws in Workstation and r in Robot and ws->r in workers implies all w : Worker | ws->w in workers implies w not in Human	all ws,h : univ | ws in Workstation and h in Human and ws->h in workers implies all w : Worker | ws->w in workers implies w not in Robot
+inv5 T: all w : Workstation | some w.workstation.Robot implies no w.workstation.Human	all w : Workstation | some w.workstation.Human implies no w.workstation.Robot
+inv5 U: all w : Workstation | some w.workstation & Robot implies no w.workstation & Human	all w : Workstation | some w.workstation & Human implies no w.workstation & Robot
+inv5 C: all w : Workstation | some w.workers & Robot implies no w.workers & Human	all w : Workstation | some w.workers & Human implies no w.workers & Robot
+inv5 O: all w : Workstation | w.workers in Robot or w.workers in Human
+

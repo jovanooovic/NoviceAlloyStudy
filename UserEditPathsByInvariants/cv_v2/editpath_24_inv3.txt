@@ -1,0 +1,23 @@
+inv3 O: all w1,w2:Work | profile.w1.ids = profile.w2.ids implies w1=w2
+inv3 B: all w1,w2 : User.profile | w1.ids = w2.ids implies w1=w2
+inv3 O: all w : User.profile | all id1,id2 : Id | id1 in w.ids implies id2 not in w.ids
+inv3 O: some w : User.profile | all id1,id2 : Id | id1 in w.ids implies id2 not in w.ids
+inv3 O: all u:User | all id1,id2 : Id | id1 in u.profile.ids implies id2 not in u.profile.ids
+inv3 T: all u:User | all id1,id2 : Id | no u.profile.id1 & u.profile.id2
+inv3 B: all u:User| one u.profile.ids
+inv3 B: all u:User| lone u.profile.ids
+inv3 O: all w1,w2 : User.profile | w1.ids != w2.ids
+inv3 B: all w1,w2 : User.profile | w1.ids = w2.ids implies w1=w2
+inv3 S: all u:User | w1,w2 : u.profile | w1.ids = w2.ids implies w1=w2
+inv3 S: all u:User and some w1,w2:u.profile | no User
+inv3 S: all u:User | (all w1,w2 :u.profile |w1.ids = w2.ids implies w1=w2))
+inv3 O: all u:User | all w1,w2 : Work | (w1 in u.profile and w2 in u.profile) implies (w1.ids != w2.ids)
+inv3 S: all u:User | all w1,w2 : Work | (w1 in u.profile and w2 in u.profile and w1.ids=w2.ids) implies w1=w2)
+inv3 B: all u:User | all w1,w2 : Work | (w1 in u.profile and w2 in u.profile and w1.ids=w2.ids) implies w1=w2
+inv3 O: all u:User | all w1,w2 : Work | (w1 in u.profile and w2 in u.profile) implies w1.ids != w2.ids
+inv3 S: id1,id2 : Id | all u:User | (id1.ids in u.profile and id2.ids in u.profile) implies id1!=id2
+inv3 S: id1,id2 : Id | all u:User | (id1.ids in u.profile and id2.ids in u.profile) implies id1!=id2
+inv3 O: all id1,id2 : Id | all u:User | (id1.ids in u.profile and id2.ids in u.profile) implies id1!=id2
+inv3 B: all w1,w2 : Source.profile | w1.ids = w2.ids implies w1=w2
+inv3 B: all w1,w2 : Source.profile | w1.ids = w2.ids implies w1=w2
+

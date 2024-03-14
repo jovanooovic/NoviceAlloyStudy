@@ -1,0 +1,7 @@
+inv8 T: all p : Professor | p not it ^(p.teaches.grades.Grade)
+inv8 T: all p : Professor | p not in ^(p.teaches.grades.Grade)
+inv8 B: all p : Professor | p not in p.teaches.^(grades.Grade)
+inv8 B: all p : Professor | p not in p.teaches.*(grades.Grade)
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+

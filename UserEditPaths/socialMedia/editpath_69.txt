@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 S: all p : Photo | one posts.u
+inv1 C: all p : Photo | one posts.p
+inv2 O: all u : User | no follows.u
+inv2 T: all u : User | no u.follows.u
+inv2 T: all u : User | none u.follows.u
+inv2 T: all u : User | none u.follows
+inv2 O: all u : User | no follows.u
+inv2 C: all u : User | u not in follows.u
+inv2 C: all u : User | u not in u.follows
+inv3 S: all u : User | some p : Photo | p in u.sees iff p.post.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff p.posts.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff posts.p.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff posts.p.follows.u
+inv3 B: all u : User | some p : Photo | p in u.sees iff u in (posts.p).follows
+inv3 S: all u : User | some p : Photo | p in u.sees p not in ad iff u in (posts.p).follows
+inv3 S: all u : User | some p : Photo | p in u.sees and p not in ad iff u in (posts.p).follows
+inv3 B: all u : User | some p : Photo | p in u.sees and p not in Ad iff u in (posts.p).follows
+inv3 B: all u : User | some p : Photo | sees.u - Ad in u.follows.posts
+inv3 U: all u : User | sees.u - Ad in u.follows.posts
+inv3 U: all u : User | sees.u  in u.follows.posts
+inv3 U: all u : User | sees.u - Ad in (u.follows).posts
+inv3 U: all u : User | (sees.u - Ad) in (u.follows).posts
+inv3 U: all u : User | sees.u - Ad in (u.follows).posts
+inv3 U: all u : User | sees.u - Ad in u.follows
+inv3 U: all u : User | sees.u - Ad in follows.u
+inv3 U: all u : User | sees.u - Ad in u
+inv3 S: all u : User | u.sees - Ad in (u.follows).post
+inv3 C: all u : User | u.sees - Ad in (u.follows).posts
+inv2 S: all u : User | u not in u.follows	follows.(-follows) in iden
+inv2 S: -follows.follows in iden
+inv2 C: no follows & iden
+inv4 T: all u : User | some u.posts in Ad iff u.posts in Ad
+inv4 T: all u : User | some u.posts in Ad iff u.posts in Ad
+inv4 T: all u : User | some u.posts in Ad implies u.posts in Ad
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+inv5 T: all i : Influencer | some u : User | u.follows.i
+inv5 T: all i : Influencer | some u : User | (u.follows).i
+inv5 B: all i : Influencer | some u : User | i in u.follows
+inv5 B: all u : User | u.follows in Influencer
+inv5 B: all i : Influencer | all u : User | u.follows in i
+inv5 B: all i : Influencer | all u : User | i in u.follows
+inv5 U: all i : Influencer | (User - i) in follows.i
+NA H: THEME UPDATE
+

@@ -1,0 +1,16 @@
+inv6 T: all s: Student | not s.projects
+inv6 T: all s: Student, p: Project | p in s.projects implies p in (Course <: projects)
+inv6 T: all s: Student, p: Project | p in s.projects implies (Course <: projects).p
+inv6 T: all s: Student, p: Project | p in s.projects implies (Course <: projects).p
+inv6 B: all s: Student, p: Project, c: Course | (p in s.projects and s in c.grades.Grade) implies (p in c.projects)
+inv6 S: all s: Student, p: Project, c: Course | (p in c.projects and s in c.grade.Grade) implies (p in s.projects)
+inv6 B: all s: Student, p: Project, c: Course | (p in c.projects and s in c.grades.Grade) implies (p in s.projects)
+inv6 B: all s: Student, p: Project, c: Course | (p in c.projects and p in s.projects) implies (s in c.grades.Grade)
+inv6 S: all s: Student, p: Project, c: Course | (p in s.(Person <: projects) implies (p in s.projects)
+inv6 U: all s: Student, p: Project, c: Course | (p in s.(Person <: projects)) implies (p in s.projects)
+inv6 B: all s: Student, p: Project, c: Course | (p in s.(Person <: projects)) implies (p in c.(Course <: projects))
+inv6 B: all s: Student, p: Project, c: Course | (p in s.(Person <: projects)) implies (p in c.(Course <: projects) and c in s.enrolled)
+inv6 B: all s: Student, p: Project, c: Course | (p in s.(Person <: projects)) implies c in s.enrolled
+inv6 B: all s: Student, p: Project, c: Course | (p in s.(Person <: projects) and p in c.(Course <: projects)) implies c in s.enrolled
+inv6 B: all s: Student, p: Project, c: Course | (p in s.(Person <: projects) and p in c.(Course <: projects)) implies c in s.enrolled
+

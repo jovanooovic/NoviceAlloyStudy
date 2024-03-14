@@ -1,0 +1,5 @@
+inv4 T: all u : User | some Ad in u.posts => all p : u.posts | p in Ad
+inv4 O: all u : User | some Ad : u.posts | all p : u.posts | p in Ad
+inv4 S: all ad : Ad | all posts : posts.ad.posts in Ad
+inv4 C: all ad : Ad | all posts : posts.ad.posts | posts in Ad
+

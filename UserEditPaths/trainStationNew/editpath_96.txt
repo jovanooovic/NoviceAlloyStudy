@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv8 C: all e : Entry | Exit in e.*succs
+inv9 B: all t1,t2 : Track | t2 in t1.succs and t1 not in Junction implies no t1.signals&Semaphore
+inv9 B: all t1,t2 : Track | t2 in t1.succs and t1 not in Junction implies no t1.signals&Semaphore	all t : Track | no t.succs implies no t.signals&Semaphore
+inv9 B: all t1,t2 : Track | t2 in t1.succs and t1 not in Junction implies no t1.signals&Semaphore	all t : Track | no t.succs implies no t.signals&Semaphore
+inv10 C: all t1,t2 : Track | t2 in t1.succs and t2 in Junction implies some t1.signals&Semaphore
+inv9 B: all t1,t2 : Track | t2 in t1.succs and t1 not in Junction implies no t1.signals&Semaphore	all t : Track | no t.succs implies no t.signals&Semaphore
+inv9 U: all t : Track | no t.succs implies no t.signals&Semaphore
+inv9 O: all t : Track | no t.succs implies no t.signals&Semaphore	all t1,t2 : Track | t2 in t1.succs and t2 not in Junction implies no t1.signals&Semaphore
+inv9 S: all t : Track | no t.succs implies no t.signals&Semaphore	all t : Track | no t.succs&Junction implies no t1.signals&Semaphore
+inv9 C: all t : Track | no t.succs implies no t.signals&Semaphore	all t : Track | no t.succs&Junction implies no t.signals&Semaphore
+inv9 C: all t : Track | no t.succs&Junction implies no t.signals&Semaphore
+NA H: THEME UPDATE
+

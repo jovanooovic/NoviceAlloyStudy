@@ -1,0 +1,7 @@
+inv8 U: all p : Professor | p not in p.teaches
+inv8 U: all p : Professor | p not in teaches.p
+inv8 B: all p : Professor | p.teaches not in p.enrolled
+inv8 S: all p : Professor | all p.teaches not in p.enrolled
+inv8 U: all p : Professor | all c: p.teaches| c not in p.enrolled
+inv8 U: all p : Professor | no p.enrolled.teaches
+

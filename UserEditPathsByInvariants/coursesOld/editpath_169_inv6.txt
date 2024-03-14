@@ -1,0 +1,14 @@
+inv6 S: all p : Student | s.projects<:Person iff p.enrolled.projects<:Course
+inv6 T: all p : Student | p.projects<:Person iff p.enrolled.projects<:Course
+inv6 U: all p : Student | p.projects<:Person in p.enrolled.projects<:Course
+inv6 U: all p : Student | p.projects in p.enrolled.projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Student-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Student-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Person-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 B: all x : Student | no x.projects & ((Student-x).enrolled).projects
+inv6 B: all x : Student | no x.projects & ((Person-x).enrolled).projects
+inv6 B: all x : Student | no x.projects & (Course-x.enrolled).projects
+inv6 U: all p : Student | p.projects in p.enrolled.projects
+

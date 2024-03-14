@@ -1,0 +1,7 @@
+inv8 O: all p : Person | teaches.p not in enrolled.p
+inv8 B: all c : Course | teaches.c not in enrolled.c
+inv8 C: all c : Course, t : teaches.c | t not in enrolled.c
+inv8 O: all c : Course | no teaches.c+enrolled.c
+inv8 C: all c : Course | no teaches.c&enrolled.c
+inv8 C: all c : Course, t : teaches.c | t not in enrolled.c
+

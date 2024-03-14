@@ -1,0 +1,5 @@
+inv6 U: all s : Student, p : Project | s->p in Person<:projects implies some c : Course | s->c in enrolled
+inv6 U: all s : Student, p : Project | s->p in Person<:projects implies some c : Course | s->c in enrolled
+inv6 U: all s : Student, p : Project | s in Student and s->p in Person<:projects implies some c : Course | s->c in enrolled
+inv6 U: all s : Student, p : Project | s->p in Person<:projects implies some c : Course | s->c in enrolled and c->p in Course<:projects
+

@@ -1,0 +1,7 @@
+inv15 B: all t:Train | eventually (t.pos)' != t.pos
+inv15 U: all t:Train | one t.pos implies eventually (t.pos)' != t.pos
+inv15 U: all t:Train | always one t.pos implies eventually (t.pos)' != t.pos
+inv15 B: always eventually (some t:Train | (t.pos)' != t.pos)
+inv15 B: always eventually (some t:pos.Track | (t.pos)' != t.pos)
+inv15 B: always eventually (some t:Train | (t.pos)' != t.pos)
+

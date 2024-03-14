@@ -1,0 +1,6 @@
+inv6 B: all i : Influencer, d : Day, p : Photo | p in i.posts implies d in p.date
+inv6 U: all i : Influencer, d : Day | some p : Photo | p in i.posts implies d in p.date
+inv6 C: all i : Influencer, d : Day | some p : Photo | p in i.posts and d in p.date
+inv6 B: all i : Influencer, d : Day, p : Photo | p in i.posts and d in p.date
+inv6 C: all i : Influencer, d : Day | some p : Photo | p in i.posts and d in p.date
+

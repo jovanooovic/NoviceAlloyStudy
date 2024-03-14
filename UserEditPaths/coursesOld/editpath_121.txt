@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv2 C: all p : Person | some p.teaches implies p in Professor
+inv3 B: all c : Course | some enrolled.c
+inv3 B: all c : Course | one enrolled.c
+inv3 C: all c : Course | some teaches.c
+inv4 T: all p: Project | one projects.p
+inv4 C: all p: Project | one Course :> projects.p
+inv5 U: all p : Person | some p.projects implies p in Student
+inv5 C: Person :> projects.Project in Student	  	all p: Project | some Person :> projects.p
+inv6 T: all p : Person in Student | some p.enrolled
+inv6 S: all s: Student | s.projects in s.enrroled.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 T: all s: Student | all c: s.enrolled | lone s.projects in c.projects
+inv7 U: all s: Student | all c: s.enrolled | lone s.projects & c.projects
+inv8 U: all p: Professor | no p.teaches & p.enrolled
+inv9 U: all p: Professor | all c: p.teaches | all col: teaches.c | col not in c
+inv9 B: all p: Professor | all c: p.teaches | all col: teaches.c | c not in col.enrolled
+inv9 B: all p: Professor | all c: p.teaches | all col: teaches.c | no col.enrolled & c
+inv9 U: all p: Professor | all c: p.teaches | all col: teaches.p.teaches | no col.enrolled & c
+inv9 S: all p: Professor |  cor : p.teaches | col : teaches.cor | no col.enrolled & cor
+inv9 B: all p: Professor | all cor : p.teaches |all col : teaches.cor | no col.enrolled & cor
+inv9 B: all p: Person | all cor : p.teaches |all col : teaches.cor | no col.enrolled & cor
+inv9 U: all p: Person | all cor : p.teaches |all col : teaches.cor |  cor.enrolled in Person-col
+inv9 B: all p: Person | all cor : p.teaches |all col : teaches.cor |  enrolled.cor in Person-col
+inv10 T: all p : grades.Grade | p in Student
+inv10 T: all p : Grade.~grades | p in Student
+inv10 T: all p : Course.~grades | p in Grade
+inv10 U: all p : Course.grades.Person | p in Grade
+inv10 C: all p : Course.grades.Grade | p in Student
+inv10 T: all p : Course.~grades.Grade | p in Grade
+inv10 U: all p : Course.~(grades.Grade) | p in Grade
+inv10 C: all p : Course.grades.Grade | p in Student
+inv11 U: all p : ~(Course.grades).Person | p in Grade
+inv11 S: all s : Student | all c: Course | p in c.grades.Grade implies c in p.enrolled
+inv11 U: all p : Student | all c: Course | p in c.grades.Grade implies c in p.enrolled
+inv12 B: all p: Student | lone ~(Course.grades).p
+inv12 U: all p: Student | all c: p.enrolled | lone ~(c.grades).p
+inv13 S: all s : Student | all c: Course | s in c.grades.last implies so
+

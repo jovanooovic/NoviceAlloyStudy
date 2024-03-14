@@ -1,0 +1,16 @@
+inv3 B: some teaches.Course
+inv3 T: all c : Course | c.teaches
+inv3 T: all c : Course | teaches.c
+inv3 S: all c : Course | some t : Professor | p.teaches.c
+inv3 T: all c : Course | some t : Professor | t.teaches.c
+inv3 T: all c : Course | some p : Professor | p.teaches
+inv3 T: all p : Professor | p.teaches
+inv3 T: all p : Professor | p.teaches
+inv3 T: all p : Professor | p.teaches
+inv3 S: all p : Professor, c : Courses | lone (p.teaches & teaches.c)
+inv3 U: all p : Professor, c : Course | lone (p.teaches & teaches.c)
+inv3 B: all p : Professor, c : Course | some (p.teaches & teaches.c)
+inv3 T: all p : Professor, c : Course | some (p.teaches.c)
+inv3 B: all p : Professor, c : Course | some (p.teaches)
+inv3 B: some (Professor.teaches)
+

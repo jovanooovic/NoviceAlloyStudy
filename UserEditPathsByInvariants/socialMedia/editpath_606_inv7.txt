@@ -1,0 +1,10 @@
+inv7 S: all x : User | suggest.x in ( follows.follows.x and not follows.x)
+inv7 T: all x : User | suggested.x in ( follows.follows.x and not follows.x)
+inv7 S: all x : User | suggested.x in follows.follows.x and suggested.x not follows.x)
+inv7 B: all x : User | suggested.x not in follows.x
+inv7 B: all x : User | suggested.x not in follows.x	all x : User | suggested.x in follows.follows.x
+inv7 B: all x : User | suggested.x not in follows.x	all x : User | suggested.x in follows.follows.x	all x : User | x not in x.suggested
+inv7 B: all x : User | x.suggested not in x.follows	all x : User | x.suggested in x.follows.follows	all x : User | x not in x.suggested
+inv7 B: all x : User | (x.suggested not in x.follows) && (x.suggested in x.follows.follows) && (x not in x.suggested)
+inv7 B: all x : User | (x.suggested in x.follows.follows) && (x.suggested not in x.follows) && (x not in x.suggested)
+

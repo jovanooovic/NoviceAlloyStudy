@@ -1,0 +1,9 @@
+inv3 E:
+inv3 S: all u1:User | all p:Photo | u1->p in posts implies((some u2 | u2 -> p in sees implies u2 -> u1 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in posts implies((some u2 | u2 -> p in sees implies u2 -> u1 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2 | u2 -> p in posts implies u1 -> u2 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts implies u1 -> u2 in follows) or ph in Ad)
+inv3 S: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts and u1 -> u2 in follows) or ph in Ad)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+inv3 C: all u1:User | all p:Photo | u1->p in sees implies((some u2:User | u2 -> p in posts and u1 -> u2 in follows) or p in Ad)
+

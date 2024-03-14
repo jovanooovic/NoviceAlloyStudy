@@ -1,0 +1,8 @@
+inv8 B: all u : User | posts.(u.sees & Ad) in u.follows
+inv8 B: all u : User | no posts.(u.sees & Ad) - u.follows
+inv8 B: all u : User | posts.(u.sees & Ad) in (u.follows + u.suggested)
+inv8 S: all u : User | all ad : u.posts & Ad | posts.add in u.follows + u.suggested
+inv8 S: all u : User | all ad : u.posts & Ad | posts.add in u.follows + u.suggested
+inv8 S: all u : User | all ad : u.posts & Ad | posts.add in (u.follows + u.suggested)
+inv8 B: all u : User | all ad : u.sees & Ad | posts.ad in (u.follows + u.suggested)
+

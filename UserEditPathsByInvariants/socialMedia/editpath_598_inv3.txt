@@ -1,0 +1,10 @@
+inv3 U: all x : User | all y : sees.x | y not in Ad => some u : User | u in follows.x && y in posts.u
+inv3 U: all x : User | all y : sees.x | y not in Ad => some u : User | (u in follows.x || u = x) && y in posts.u
+inv3 U: all x : User | all y : sees.x | y not in Ad => (some u : User | (u in follows.x || u = x) && y in posts.u)
+inv3 S: all x : User | all y : sees.x | (y not in Ad => (some u : User | (u in follows.x || u = x) && y in posts.u)(
+inv3 U: all x : User | all y : sees.x | y not in Ad => (some u : User | (u in follows.x || u = x) && y in posts.u)
+inv3 U: all x : User | all y : sees.x | y not in Ad => (some u : User | u in x.follows  && y in posts.u)
+inv3 O: all x : User | all y : x.sees | y not in Ad => (some u : User | u in x.follows  && y in posts.u)
+inv3 C: all x : User | all y : x.sees | y not in Ad => (some u : User | u in x.follows  && y in u.posts)
+inv3 C: all x : User | all y : x.sees - Ad | (some u : x.follows  | y in u.posts)
+

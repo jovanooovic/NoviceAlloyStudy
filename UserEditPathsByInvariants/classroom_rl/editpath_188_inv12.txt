@@ -1,0 +1,19 @@
+inv12 B: all t:Teacher | some t <: Class.Groups
+inv12 B: all t:Teacher | some t <: Class.Groups
+inv12 S: all t:Teacher | some c.Class | t.Teaches:>c implies c.Person.Group:>Groups
+inv12 E:
+inv12 T: all t:Teacher | some t.Teaches.Class implies (some Person <: Class.Groups)
+inv12 T: all t:Teacher | some c:Class | t <: Teaches.c implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | some c:Class | t.Teaches.c implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | some c:Class | Teaches.c:>t implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | t.Teaches implies (some Person <: Class.Groups)
+inv12 T: all t:Teacher | some c:Class | t.Teaches implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | some c:Class | t.Teaches.c implies (some Person <: c.Groups)
+inv12 C: all t:Teacher | some t.Teaches.Groups
+inv12 T: all t:Teacher | some c:Class | t.Teaches implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | some c:Class | t.Teaches:>c implies (some Person <: c.Groups)
+inv12 T: all t:Teacher | some c:Class | c <: t.Teaches implies (some Person <: c.Groups)
+inv12 U: all t:Teacher | some c:Class | c in t.Teaches implies (some Person <: c.Groups)
+inv12 C: all t:Teacher | some t.Teaches.Groups
+inv12 C: all t:Teacher | some t.Teaches.Groups
+

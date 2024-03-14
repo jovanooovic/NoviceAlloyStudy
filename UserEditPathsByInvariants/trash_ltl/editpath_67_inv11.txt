@@ -1,0 +1,15 @@
+inv11 S: always f:File | f not in Protected implies f in Protected'
+inv11 S: always f:File | f not in Protected implies Protected' = Protected + f
+inv11 O: always all f:File | f not in Protected implies Protected' = Protected + f
+inv11 O: always all f:File | Protected' = Protected + f
+inv11 B: always all f:File | after Protected' = Protected + f
+inv11 O: always all f:File | after f in Protected
+inv11 O: always all f:File | f in Protected'
+inv11 B: all f:File | f in Protected'
+inv11 O: always all f:File | f in Protected' iff f not in Protected
+inv11 U: always all f:File | (f not in Protected and f not in Trash) implies f in Protected'
+inv11 U: always all f:File | always f not in Protected implies f in Protected'
+inv11 O: always all f:File | eventually f not in Protected implies f in Protected'
+inv11 C: always all f:File | f not in Protected implies after f in Protected
+inv11 C: always all f:File | f not in Protected implies f in Protected'
+

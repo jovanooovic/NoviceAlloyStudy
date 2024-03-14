@@ -1,0 +1,27 @@
+inv14 S: all c : Classes | Teaches . c . Tutors = Class . Groups . Group
+inv14 B: all c : Class | Teaches . c . Tutors = Class . Groups . Group
+inv14 B: all c : Class | Teaches . c . Tutors = c . Groups . Group
+inv14 B: all c : Class | Teaches . c . Tutors in c . Groups . Group
+inv14 B: all c : Class | c . Groups . Group in Teaches . c . Tutors
+inv14 B: all c : Class | c . Groups . Group in (Teacher <: Teaches) . c . Tutors
+inv14 B: all c : Class | (c . Groups) . Group in (Teaches . c) . Tutors
+inv14 T: all s : Student, c : Class | c -> s <: Groups implies (Teaches . c) -> s in Tutors
+inv14 U: all s : Student, c : Class | some c -> s <: Groups implies (Teaches . c) -> s in Tutors
+inv14 T: all s : Student, c : Class | (c -> s) <: Groups implies (Teaches . c) -> s in Tutors
+inv14 B: all c : Class | c . (Groups . Group) in ((Teaches . c) . Tutors)
+inv14 B: all c : Class | c . (Groups . Group) in (Teaches . c . Tutors)
+inv14 B: all c : Class | c . (Groups . Group) in (Teaches . c . Tutors)
+inv14 B: all c : Class | c . (Groups . Group) in (Teaches . c . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) in (Teaches . c . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) in (Teaches . c . Tutors) & Student
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors) & Student
+inv14 B: all c : Class | (c . (Groups . Group)) = (Teaches . c . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors) & Teacher
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in (Teacher & (Teaches . c) . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in ((Teacher & (Teaches . c)) . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student = (Teacher & (Teaches . c) . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student = ((Teaches . c) . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in ((Teaches . c) . Tutors)
+inv14 B: all c : Class | (c . (Groups . Group)) & Student in (Teacher & (Teaches . c)) . Tutors
+

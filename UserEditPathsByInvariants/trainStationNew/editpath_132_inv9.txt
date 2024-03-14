@@ -1,0 +1,4 @@
+inv9 B: all t : Track | t.succs !in Junction => Semaphore !in t.signals
+inv9 B: all t: Track | (all t1: Track | t1 in t.succs => (t1 in Junction)) =>  no s: Semaphore | s in t.signals
+inv9 C: all t: Track, s:Semaphore | no t.succs & Junction => s not in t.signals
+

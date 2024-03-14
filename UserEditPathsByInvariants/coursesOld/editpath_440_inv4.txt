@@ -1,0 +1,47 @@
+inv4 S: all p : Project | propose.p in Course
+inv4 S: all p : Project | proposes.p in Course
+inv4 T: all p : Project | projects.p in Course
+inv4 T: all p : Project | projects.p in Course
+inv4 T: all p : Project | projects.p in Course
+inv4 T: all p : Project | Course.projects.p in Course
+inv4 U: all p : Project | p.projects in Course
+inv4 T: all p : Project | projects.p in Course
+inv4 T: all p : Project | Course.(projects.p)
+inv4 T: all p : Project | one (Course.(projects.p))
+inv4 T: all p : Project | one ((Course.projects).p)
+inv4 S: all p : Project , c : Course | one (c.project.p)
+inv4 T: all p : Project , c : Course | one (c.projects.p)
+inv4 T: all p : Project , c : Course | one (c.(projects.p))
+inv4 B: all p : Project , c : Course | one c.projects
+inv4 B: all p : Project , c : Course | one c.projects and p in c.projects
+inv4 T: all p : Project , c : Course | one projects.p
+inv4 T: all p : Project , c : Course | one c.projects.p
+inv4 S: all p : Project | one Course.project.p
+inv4 T: all p : Project | one Course.projects.p
+inv4 S: one c : Course |all p : Project | c->p in project
+inv4 B: one c : Course |all p : Project | c->p in projects
+inv4 B: one c : Course | all p : Project | p in c.projects
+inv4 C: all p : Project| one c : Course | p in c.projects
+inv4 T: all p : Project | one Course.projects.p
+inv4 T: all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one (Course.projects).p
+inv4 T: all p : Project | one p.projects.Course
+inv4 S: all p : Project | one Course.project.p
+inv4 T: all p : Project | one Course.projects.p
+inv4 S: all p : p.(Course <: projects)| one projects.p
+inv4 S: all p : p.(Course <: projects)| one projects.p
+inv4 T: all p : (Course <: projects)| one projects.p
+inv4 S: all p : p.(Course <: projects)| one projects.p
+inv4 T: all p : Project | all p : p.(Course <: projects)| one projects.p
+inv4 T: all p : (Course <: projects)| one projects.p
+inv4 T: all p : Person.(Course <: projects)| one projects.p
+inv4 T: all p : (projects <: Course)| one projects.p
+inv4 T: all p : (projects <: Course )| one projects.p
+inv4 T: all p : (Course <: projects)| one projects.p
+inv4 T: all p : (Course <: Course.projects)| one projects.p
+inv4 T: all p : Project | one p.projects.(Course :> projects)
+inv4 C: all p : Project | one (Course :> projects.p)
+inv4 C: all p : Project | one (Course :> projects.p)
+inv4 T: all p : Project | one (projects.p)
+inv4 C: all p : Project | one (Course :> projects.p)
+

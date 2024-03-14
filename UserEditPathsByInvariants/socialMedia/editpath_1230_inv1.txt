@@ -1,0 +1,18 @@
+inv1 S: all p:Photo,x:User | posts(x,p) implies x in User
+inv1 T: all p:Photo,x:User | x.posts(p) implies x in User
+inv1 T: all p:Photo,x:User | p.posts(x) implies x in User
+inv1 S: all p:Photo | posts(x,p) implies x in User
+inv1 S: all p:Photo | posts(x,p) implies (x in User)
+inv1 T: all p:Photo,x:User | x.posts(p) implies (x in User)
+inv1 U: all p:Photo,x1,x2:User | p in x1.posts and p in x2.posts implies x1=x2
+inv1 U: all p:Photo,x1,x2:User | p in x1.posts and p in x2.posts implies x1=x2 and x1 in User
+inv1 T: all p:Photo | one p in User
+inv1 C: all p:Photo | one x:User | p in x.posts
+inv1 C: all p:Photo | one x:User | p in x.posts
+inv1 C: all p:Photo | one x:User | p in x.posts
+inv1 T: all p:Photo | one User.posts.p
+inv1 C: all p:Photo | one posts.p
+inv1 S: one posts.p
+inv1 B: one posts.Photo
+inv1 C: all p:Photo | one posts.p
+

@@ -1,0 +1,21 @@
+inv5 T: some s : Student | all p : Project | p->s in projects
+inv5 B: some s : Student | all p : Project | s->p in projects
+inv5 S: some p : Person | all p : Project | p in Student implies s->p in projects
+inv5 B: some person : Person | all p : Project | person in Student implies person->p in projects
+inv5 B: some person : Person | all p : Project | person->p in projects implies person in Student
+inv5 T: some person : Person | all p : Project | person->p in projects implies some person in Student
+inv5 B: some person : Person | all p : Project | person->p in projects implies person in Student
+inv5 B: some person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 B: some s : Student | all p : Project | s->p in projects		some person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects &&		all person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p2 : Project | (person->p2 in projects) implies person in Student
+inv5 O: (some s : Student | all p : Project | s->p in projects)		(all person : Person | all p2 : Project | (person->p2 in projects) implies person in Student)
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p2 : Project | person->p2 in projects implies person in Student
+inv5 C: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	(all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student)
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 U: all p : Project | some s : Student | s->p in projects		all person : Student, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+

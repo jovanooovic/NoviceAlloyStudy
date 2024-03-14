@@ -1,0 +1,9 @@
+inv3 S: all c : Course, t : Teacher
+inv3 S: all c : Course, t : Teacher |
+inv3 S: all c : Course, some t : Teacher | t.teaches = c.course
+inv3 S: all c : Course, some t : Teacher | t.teaches = c.course
+inv3 S: all c : Course, some t : Teacher | t.teaches = c
+inv3 S: all c : Course, t : Teacher | t.teaches = c
+inv3 B: all c : Course, t : Professor | t.teaches = c
+inv3 B: all c : Course, t : Professor | c in t.teaches
+

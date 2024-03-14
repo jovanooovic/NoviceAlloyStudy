@@ -1,0 +1,9 @@
+inv13 B: no Student.Tutors && no Tutors.Teacher
+inv13 B: no Student.Tutors && Teacher.Tutors in Student	    no Tutors.Teacher && Tutors.Student in Teacher
+inv13 B: no Student.Tutors	    some Teacher.Tutors && Teacher.Tutors in Student	    no Tutors.Teacher	    some Tutors.Student && Tutors.Student in Teacher
+inv13 B: no Student.Tutors	    Teacher.Tutors in Student	    no Tutors.Teacher	    Tutors.Student in Teacher
+inv13 O: no Student.Tutors	    Person.Tutors in Student	    no Tutors.Teacher	    Tutors.Person in Teacher
+inv13 O: no Student.Tutors	    Person.Tutors in Student	    no Tutors.Teacher	    Tutors.Person in Teacher
+inv13 O: no Student.Tutors	    Person.Tutors in Student	    no Tutors.Teacher	    Tutors.Person in Teacher
+inv13 C: Tutors.Person in Teacher	    Person.Tutors in Student
+

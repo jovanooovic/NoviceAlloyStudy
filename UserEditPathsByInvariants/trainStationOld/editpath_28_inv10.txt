@@ -1,0 +1,6 @@
+inv10 T: always (all j:Junction | lone (prox.Junction).signal.Green)
+inv10 C: always (all j:Junction | lone (prox.Junction).signal & Green)
+inv10 C: always (all j:Junction | lone (prox.j).signal & Green)
+inv10 C: always (lone (prox.Junction).signal & Green)
+inv10 C: always (all j:Junction | lone (prox.j).signal & Green)	always (lone (prox.Junction).signal & Green)
+

@@ -1,0 +1,11 @@
+inv5 T: all u:User | u not in u-Influencer implies User.follows.u
+inv5 B: all u:User | u not in u-Influencer implies u in User.follows
+inv5 B: all u:User | u in Influencer implies u in User.follows
+inv5 T: all u:User | u in Influencer implies u in User.follows.u
+inv5 B: all u:User | u in Influencer implies u in User.follows
+inv5 B: all u:User | Influencer in u.follows
+inv5 O: all u:User | u in Influencer implies u in User.follows-User
+inv5 C: all u:User | u.follows&Influencer = Influencer-u
+inv5 B: all u:User | u.follows&Influencer = Influencer
+inv5 C: all u:User | u.follows&Influencer = Influencer-u
+

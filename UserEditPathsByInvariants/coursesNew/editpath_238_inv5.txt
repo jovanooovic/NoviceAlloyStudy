@@ -1,0 +1,10 @@
+inv5 B: all ps : Person, pr : Project | ((ps not in Student) implies (no ps.projects) and (pr in ps.projects))
+inv5 S: all ps : Person | ((ps not in Student) implies (no ps.projects))	  all pr : Project, p : Person |and (pr in p.projects))
+inv5 B: all ps: Person, pr:Project | (ps not in Student implies no ps.projects) and (pr in ps.projects)
+inv5 S: all ps: Person, pr:project | ps not in Student implies (no ps.projects and pr in ps.projects )
+inv5 B: all ps: Person, pr:Project | ps not in Student implies (no ps.projects and pr in ps.projects )
+inv5 S: all p: Person | p not in Student implies no p.projects	  all p: Project,  | (some s: Student | p in s.projects)
+inv5 C: all p: Person | p not in Student implies no p.projects	  all p: Project | (some s: Student | p in s.projects)
+inv5 C: all p: Person | p not in Student implies no p.projects	  all p: Project | some s: Student | p in s.projects
+inv5 C: all p: Person | p not in Student implies no p.projects	  all p: Project | some s: Student | p in s.projects
+

@@ -1,0 +1,8 @@
+inv7 U: all u,x:User | u in x.suggested => u in x.follows.follows
+inv7 U: all u,x:User | u in x.suggested => u in x.^(follows)
+inv7 U: all u,x:User | u in x.suggested => u in x.follows.follows and u not in x.follows
+inv7 U: all u,x:User | u in x.suggested => u not in x.follows and u in x.follows.follows
+inv7 U: all u,x:User | u in x.suggested and u != x => u not in x.follows and u in x.follows.follows
+inv7 U: all u:User,x:User-u| u in x.suggested => u not in x.follows and u in x.follows.follows
+inv7 U: all u:User,x:User| u in x.suggested => u not in x.follows and u in x.follows.follows
+

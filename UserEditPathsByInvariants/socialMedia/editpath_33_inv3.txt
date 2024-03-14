@@ -1,0 +1,8 @@
+inv3 B: all disj u1: User, u2: User | u1.sees in u2.posts
+inv3 S: all disj u1: User, u2: User | some u1.sees u2.posts
+inv3 B: all disj u1: User, u2: User | some u1.sees & u2.posts
+inv3 B: all disj u1: User, u2: User | some u1.sees & u2.posts + Ad
+inv3 B: all disj u1: User, u2: User | some u1.sees & (u2.posts + Ad)
+inv3 O: all disj u: User | u.sees in u.follows.posts
+inv3 C: all disj u: User | u.sees in u.follows.posts + Ad
+

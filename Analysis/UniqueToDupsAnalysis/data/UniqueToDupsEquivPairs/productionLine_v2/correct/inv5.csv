@@ -1,0 +1,51 @@
+Pairs,93
+,,"no workers.Human & workers.Robot",18
+,,"workers.Human & workers.Robot = none",1
+,,"no Robot.~workers & Human.~workers",4
+,,"all w : Workstation | no Human->Robot & w.workers->w.workers",1
+,,"all w : Workstation | no Robot->Human & w.workers->w.workers",1
+,,"all h : Human | all r : Robot | no (workers.h & workers.r)",1
+,,"all w:Workstation | no Human&w.workers or no Robot&w.workers",1
+,,"all w:Workstation | no w.workers & Robot or no w.workers & Human",9
+,,"all x : Workstation | no x.workers & Human or no x.workers & Robot",3
+,,"all w : Workstation| some w.workers & Robot => no w.workers & Human",3
+,,"all w: Workstation | some (Robot & w.workers) implies no (Human & w.workers)",2
+,,"all ww:Workstation | some (ww.workers & Human) implies no (ww.workers & Robot)",1
+,,"all w : Workstation, h : Human | h in w.workers implies (Robot & w.workers) = none",1
+,,"all w : Workstation, h:Human, r:Robot | h in w.workers implies r not in w.workers",2
+,,"all s:Workstation, h:Human, r:Robot |h not in s.workers or r not in s.workers",1
+,,"all w:Workstation,h:Human,r:Robot | h not in w.workers or r not in w.workers",3
+,,"all h:Human, r:Robot, w:Workstation | (w->h in workers implies w->r not in workers)",1
+,,"all w: Workstation, h: Human, r: Robot | w->h in workers => w->r !in workers",1
+,,"all h : Human, r : Robot, ws : Workstation | h in ws.workers implies r not in ws.workers",2
+,,"all w1: Workstation, r:Robot, h:Human | r in w1.workers implies h not in w1.workers",2
+,,"all h : Human, ws : Workstation, r : Robot | h in ws.workers implies r not in ws.workers",1
+,,"all wk:Workstation, h:Human, r:Robot | h in wk.workers => r not in wk.workers",2
+,,"all h: Human, r: Robot, ws: Workstation | h not in ws.workers or r not in ws.workers",3
+,,"all h : Human, r : Robot, w : Workstation | not (w -> h in workers and w -> r in workers)",1
+,,"all w:Workstation | no h:Human,r:Robot | w->h in workers and w->r in workers",1
+,,"all ws: Workstation, w: Worker | w in ws.workers and w in Human implies no Robot&ws.workers",1
+,,"all r : Robot | r not in (workers.Human).workers
+all h : Human | h not in (workers.Robot).workers",1
+,,"all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers",2
+,,"all h : Human | all r : Robot | all w : Workstation | r in w.workers implies h not in w.workers",1
+,,"all h : Human | all r : Robot | all w : Workstation | h in w.workers implies r not in w.workers",2
+,,"all h: Human | all w : Workstation | w->h in workers implies all r : Robot | w->r not in workers",1
+,,"all h: Human | all r: Robot | all ws: Workstation | h in ws.workers implies r not in ws.workers",2
+,,"all ws:Workstation, w1,w2:Worker | w1 in ws.workers and w2 in ws.workers and w1 in Human implies w2 not in Robot",1
+,,"all s : Workstation | all w1, w2 : Worker | w1 in s.workers and w2 in s.workers and w1 in Human implies w2 not in Robot",1
+,,"all ws:Workstation | not some w1, w2:Worker | (ws->w1 + ws->w2) in workers and w1 in Human and w2 in Robot and w1!=w2",1
+,,"all w: Workstation, h: Human, r: Robot | (h in w.workers implies r not in w.workers) and (r in w.workers implies h not in w.workers)",1
+,,"all h:Human, r:Robot, w:Workstation | (w->h in workers implies w->r not in workers) or (w->r in workers implies w->h not in workers)",1
+,,"all h : Human, r : Robot, w : Workstation | (w->h in workers implies w->r not in workers) and (w->r in workers implies w->h not in workers)",5
+,,"all ws:Workstation | not some w1, w2:Worker | ws->w1 in workers and ws->w2 in workers and w1 in Human and w2 in Robot and w1!=w2",1
+,,"all h : Human | all r : Robot | all w : Workstation | (w->h in workers implies w->r not in workers) or (w->r in workers implies w->h not in workers)",1
+,,"all w : Workstation | some w.workers & Robot implies no w.workers & Human
+all w : Workstation | some w.workers & Human implies no w.workers & Robot",1
+,,"all h:Human, ws:Workstation | ws->h in workers implies all r:Robot | ws->r not in workers
+all r:Robot, ws:Workstation | ws->r in workers implies all h:Human | ws->h not in workers",2
+,,"all w : Workstation | all r : Robot | all h : Human | r in w.workers implies h not in w.workers
+all w : Workstation | all r : Robot | all h : Human | h in w.workers implies r not in w.workers",1
+,,"all ws,r : univ | ws in Workstation and r in Robot and ws->r in workers implies all w : Worker | ws->w in workers implies w not in Human
+all ws,h : univ | ws in Workstation and h in Human and ws->h in workers implies all w : Worker | ws->w in workers implies w not in Robot",1
+

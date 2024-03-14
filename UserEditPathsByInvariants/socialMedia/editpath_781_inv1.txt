@@ -1,0 +1,8 @@
+inv1 S: all p:Photo | exactly 1 (p.posts.User)
+inv1 S: all p:Photo | exactly 1 (p.posts.User)
+inv1 T: all p:Photo | User one -> Photo
+inv1 C: posts in (User one -> Photo)
+inv1 U: all p: Photo | some u: User | p in u.posts
+inv1 C: posts in (User one -> Photo)
+inv1 C: all p:Photo | one u : User | u -> p in posts
+

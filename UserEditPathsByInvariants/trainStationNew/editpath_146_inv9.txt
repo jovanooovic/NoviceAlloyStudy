@@ -1,0 +1,9 @@
+inv9 B: all t: Track | t.succs not in Junction implies no s: Semaphore | s in t.signals
+inv9 B: all t: Track | some t1: Junction | t1 in t.succs implies some s: Semaphore | s in t.signals
+inv9 B: all t: Track | all t1: Junction | t1 in t.succs implies some s: Semaphore | s in t.signals
+inv9 B: all t: Track | all t1: Junction | t1 in t.succs iff some s: Semaphore | s in t.signals
+inv9 B: all t: Track | all t1: Junction | t1 not in t.succs implies no s: Semaphore | s in t.signals
+inv9 B: all t, t1: Track| t1 in Junction and t1 not in t.succs implies no s: Semaphore | s in t.signals
+inv9 B: all t, t1: Track| t1 in Junction and t1 not in t.succs implies no s: Semaphore | s in t.signals
+inv9 B: all t, t1: Track| t1 in Junction and t1 not in t.succs implies no s: Semaphore | s in t.signals
+

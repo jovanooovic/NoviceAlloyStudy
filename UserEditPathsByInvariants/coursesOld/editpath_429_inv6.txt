@@ -1,0 +1,13 @@
+inv6 T: all s:Student | s.projects
+inv6 T: all s:Student | (s.enrolled.~projects)
+inv6 T: all s:Student | s.enrolled.Course
+inv6 T: all s:Student | none s.enrolled.projects & (Course-s.enrolled).projects
+inv6 B: all s:Student | no s.enrolled.projects & (Course-s.enrolled).projects
+inv6 S: all s:Student, proj:Project | proj in s.enrolled.projects implies some c | in proj in c.projects
+inv6 S: all s:Student, proj:Project | proj in s.enrolled.projects implies some c:Course | in proj in c.projects
+inv6 S: all s:Student, proj:Project | proj in s.enrolled.projects implies some c:Course | in proj in c.projects
+inv6 U: all s:Student, proj:Project | proj in s.enrolled.projects implies some c:Course |  proj in c.projects
+inv6 B: all s:Student | s.projects = s.enrolled.projects
+inv6 U: all s:Student | s.projects in s.enrolled.projects
+inv6 U: all s:Student | s.projects in s.enrolled.projects
+

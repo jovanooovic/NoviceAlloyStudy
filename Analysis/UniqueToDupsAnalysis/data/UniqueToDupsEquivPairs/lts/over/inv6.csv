@@ -1,0 +1,25 @@
+Pairs,16
+,,"all e:Event | some trans.e",2
+,,"all e:Event | some e.trans",2
+,,"all e: Event | some (trans.e).State",1
+,,"all e: Event | some State.(trans.e)",1
+,,"all e: Event | some State.trans.e",3
+,,"all e:Event | some e.trans :> State",1
+,,"all e:Event | some e.~(State.trans)",1
+,,"all e:Event | some (State.trans).Event",1
+,,"all e:Event|some s:State | some trans.(e->s)",2
+,,"all e:Event|some s:(State-Init) | some trans.(e->s)",1
+,,"all e:Event|some s:State | some trans.(e->s) or one trans.(e->s)",1
+
+Pairs,2
+,,"some s : State | Event in s.trans.State",2
+
+Pairs,1
+,,"some s:State |all e:Event| some trans.(e->s)",1
+
+Pairs,1
+,,"all e:Event | one s:State | e in ~(Init.trans)[s]",1
+
+Pairs,1
+,,"all e:Event | some s:State | e in ~(Init.trans)[s]",1
+

@@ -1,0 +1,6 @@
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad in f.posts or ad in s.posts and ad not in u.posts
+inv8 S: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts ad in f.posts or ad in s.posts and
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts and ad in f.posts or ad in s.posts
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts and (ad in f.posts or ad in s.posts)
+inv8 U: all u : User | all ad : u.sees - Photo | all f : u.follows | all s : u.suggested | ad not in u.posts implies (ad in f.posts or ad in s.posts)
+

@@ -1,0 +1,25 @@
+na H: THEME UPDATE
+inv1 O: all n,m: Node | n.adj = m
+inv1 O: all disj n,m: Node | n.adj = m
+inv1 B: all disj n,m: Node | n.adj = m => m.adj = n
+inv1 B: all disj n,m: Node | n.adj = m <=> m.adj = n
+inv1 B: all disj n,m: Node | n.adj = m iff m.adj = n
+inv1 T: all n,m: Node | n.adj = m implies lone m.adj = n
+inv1 S: all n,m: Node | n.adj = m implies m.adj lone = n
+inv1 S: all n,m: Node | n.adj = m implies m.adj = lone n
+inv1 B: all n,m: Node | n.adj = m implies m.adj = n
+inv1 O: all n: Node | lone m : Node | n.adj = m implies m.adj = n
+inv1 O: all n: Node | one m : Node | n.adj = m implies m.adj = n
+inv1 B: all n: Node | one m : Node | n.adj = m iff m.adj = n
+inv1 B: all n: Node | one m : Node | m.adj = n
+inv1 B: all n: Node | lone m : Node | m.adj = n
+inv1 B: all n: Node | lone m : Node | m.adj = n	all n: Node | lone m : Node | n.adj = m
+inv1 B: all n: Node | lone m : Node | m.adj = n	all n: Node | one m : Node | n.adj = m
+inv1 B: all n: Node | one m : Node | m.adj = n	all n: Node | one m : Node | n.adj = m
+inv1 O: all n,m: Node | n.adj.adj = n
+inv1 O: all n: Node | n.adj.adj = n
+inv1 B: all n,m: Node | n.adj = m implies m.adj = m
+inv1 O: all n: Node | one m: Node | n.adj = m implies m.adj = m
+inv1 B: all n: Node | all m: Node | n.adj = m implies m.adj = m
+inv1 B: all n: Node | all m: Node | n.adj = m iff m.adj = m
+

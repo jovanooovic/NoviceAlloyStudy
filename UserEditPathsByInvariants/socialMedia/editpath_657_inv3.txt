@@ -1,0 +1,6 @@
+inv3 T: all u: User | u.sees implies (u.follows or p.Ad)
+inv3 T: all u: User | u.sees implies (u.follows + Ad)
+inv3 T: all u: User | u.follows.posts implies (u.follows + Ad)
+inv3 T: all u: User | u.sees implies (u.follows.posts + Ad)
+inv3 C: all u: User | u.sees in (u.follows.posts + Ad)
+

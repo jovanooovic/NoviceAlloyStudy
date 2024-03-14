@@ -1,0 +1,5 @@
+inv13 E:
+inv13 C: grades.(max[Grade]) in projects.~projects
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade]) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade])) implies (p.projects & c.projects != none)
+

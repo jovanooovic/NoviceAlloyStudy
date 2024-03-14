@@ -1,0 +1,63 @@
+"Trash =",2
+"Trash \ Protected",1
+"some i in Protected",1
+"Protected = no Trash",4
+"Protect not in Trash",1
+"Protected no-> Trash",1
+"no Protected & Trasj",1
+"Protected -> no Trash",1
+"Protected not in Trash
+
+/* All unprotected files are deleted.. */",1
+"Potected not in Trash",1
+"Protected no in Trash",5
+"not Protected in Trash
+}
+
+run {inv4 and inv4o
+}
+
+pred inv4{
+not Protected in Trash
+}
+
+run {inv4 and inv4o",1
+"File = Prepared - Trash",1
+"(Protected  not in Trash",1
+"never Protected in Trash",1
+"all Protected | not Trash",1
+"Protected & Trash = empty",1
+"all Protected not in Trash",1
+"i in Protected
+i not in Trash",1
+"i in Protected -> i not in Trash",1
+"not some f:Protected : f in Trash",1
+"File = Protected
+no Trash
+
+/* All unprotected files are deleted.. */",1
+"all f: File | f in Protected xor f in File",1
+"all f : File | f.protected and not f.Trash",1
+"i = Protected
+i in Protected
+i not in Trash",1
+"none f:File :  f in Protected && f in Trash",1
+"all f : File | f = Protected | f not in Trash",1
+"all f:File | f in protected => f not in Trash",1
+"all f : File | f = Protected - Trash
+
+/* All unprotected files are deleted.. */",1
+"(all f : File | f in Protected implies not in Trash)",2
+"all f: Files | f.link in Protected => f.link !in Trash",1
+"all p : Protected |
+p in Protected implies (p notin Trash)",1
+"some f:File | one t:Trash | t -> f implies not in Protected",1
+"all f : File | f = Protected & f not in Trash
+
+/* All unprotected files are deleted.. */",1
+"all f : File | f in Protected & f not in Trash
+
+/* All unprotected files are deleted.. */",1
+"(all f : File | f in Protected & f not in Trash)
+
+/* All unprotected files are deleted.. */",1

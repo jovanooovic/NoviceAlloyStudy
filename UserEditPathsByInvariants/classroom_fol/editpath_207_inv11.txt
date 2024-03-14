@@ -1,0 +1,19 @@
+inv11 T: all c:Class | c not in Teaches implies Class.Groups = none
+inv11 T: all c:Class | not c in Teaches implies Class.Groups = none
+inv11 T: all c:Class | c not in Person.Teaches implies Class.Groups = none
+inv11 T: all c:Class | c not in Person.Teaches implies Class->Groups is none
+inv11 T: all c:Class | c not in Person.Teaches implies Class.Groups= none
+inv11 T: all c:Class | c not in Person.Teaches implies Class.Groups is none
+inv11 T: all c:Class | c not in Person.Teaches implies Class->Groups is none
+inv11 S: all c:Class,s:Student | c not in Person.Teaches implies no c->s->g in Groups
+inv11 T: all c:Class,s:Student | c not in Person.Teaches implies no c->s=none
+inv11 T: all c:Class,s:Student | c not in Person.Teaches implies no c->s->Groups=none
+inv11 B: all c:Class | c not in Person.Teaches implies no Group
+inv11 T: all c:Class | c not in Person.Teaches implies no c.Group
+inv11 B: all c:Class | c not in Person.Teaches implies no c->Group
+inv11 O: all c:Class | c not in Teacher.Teaches implies no c->Group
+inv11 O: all c:Class | c not in Teacher.Teaches implies no c->Group
+inv11 S: all c:Class | some p:Person,g:Group implies (some t:Teacher | t->c in Teaches)
+inv11 S: all c:Class | (some p:Person,g:Group | c->p-> in Groups) implies (some t:Teacher | t->c in Teaches)
+inv11 C: all c:Class | (some p:Person,g:Group | c->p->g in Groups) implies (some t:Teacher | t->c in Teaches)
+

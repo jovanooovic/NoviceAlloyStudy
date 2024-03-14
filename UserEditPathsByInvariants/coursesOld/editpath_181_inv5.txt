@@ -1,0 +1,14 @@
+inv5 B: (Person-Professor) in projects.Project
+inv5 T: some (Person-Professor) in projects.Project
+inv5 T: no (Person-Student) in projects.Project
+inv5 B: (Person-Student) in projects.Project
+inv5 B: (Person-Professor) in projects.Project
+inv5 S: no (Person-student) & projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv5 B: (Person-Professor) in projects.Project
+inv5 T: projects.Project in Student
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 O: (Person<:projects).Project in Student 	  	all p: Project | some s: Student | s.projects=p
+inv5 C: (Person<:projects).Project in Student 	  	all p: Project | some s: Student | p in s.projects
+

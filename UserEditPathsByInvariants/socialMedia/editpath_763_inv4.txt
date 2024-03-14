@@ -1,0 +1,18 @@
+inv4 T: all u : User | one u.posts in Ad implies no u.posts in Photo-Ad
+inv4 T: all u : User | one u.posts in Ad implies (no u.posts in Photo-Ad)
+inv4 S: all u : User | one u.posts in Ad implies (none u.posts in Photo-Ad)
+inv4 S: all u : User | one u.posts in Ad | no u.posts in Photo-Ad
+inv4 S: all u : User | one u.posts in Ad | none u.posts in Photo-Ad
+inv4 T: all u : User | one u.posts in Ad implies no u.posts in Photo-Ad
+inv4 T: all u : User | one u.posts in Ad implies #(u.posts in Photo-Ad) = 0
+inv4 T: all u : User | one u.posts in Ad implies no (u.posts & Photo-Ad)
+inv4 T: all u : User | one u.posts in Ad and no (u.posts & Photo-Ad)
+inv4 S: all u : User | all u.posts in Ad or (all u.posts & Photo-Ad)
+inv4 S: all u : User | all u.posts in Ad or (all u.posts & Photo-Ad)
+inv4 S: all u : User | u.posts == Ad or ( u.posts & Photo-Ad)
+inv4 S: all u : User | one u.posts in Ad implies all u.posts in Ad
+inv4 S: all u : User | one u.posts in Ad implies u.posts == Ad
+inv4 U: all u : User | u.posts in Ad => (all p : u.posts | p in Ad)
+inv4 T: all u : User | one u.posts in Ad => (all p : u.posts | p in Ad)
+inv4 C: all u : User | (some ph : u.posts | ph in Ad) => (all p : u.posts | p in Ad)
+

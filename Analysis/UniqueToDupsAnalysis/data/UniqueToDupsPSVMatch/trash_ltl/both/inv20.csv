@@ -1,0 +1,27 @@
+"always all p: Protected | always p in Trash",1
+"all f : File | f in Trash since f not in Protected",2
+"always all t: File | t in Trash since t in Protected",1
+"always all f : File | f in Trash since f in Protected",2
+"always all f : File | f not in Protected until f in Trash",1
+"always all f : Trash | f in Trash since f in Protected",1
+"always all f : File | f not in Protected since f in Trash",4
+"always all t: File | t not in Protected since t in Trash",1
+"always all t : Trash | (t in Trash) since (t in Protected)",1
+"always (all f : Trash | f in Protected since f not in Trash)",1
+"always some f : File | f not in Protected since f in Trash",1
+"always some f : File | f in Trash since f not in Protected",1
+"always (all f:File | no (f&Protected) since  f in Trash)",1
+"always (all f : Trash | f in Protected releases f in Trash)",1
+"always all f:File | f in Trash implies once f in Protected",1
+"always (all f:File | f in Trash since  (f not in Protected') )",1
+"always all f:File | f not in Protected triggered f in Trash",3
+"always all t: Trash | t in Protected since t in Protected",1
+"always all t: File | t not in Protected since t in Protected",3
+"always all t: Trash | t not in Protected since t in Protected",1
+"always all f : Protected | f not in Protected since f in Trash",1
+"always (all f:Trash | f not in Protected triggered f in Trash)",2
+"always some f : Protected | f not in Protected since f in Trash",1
+"always (all f:Protected | f in Trash releases f in Protected)",1
+"always all f : File | always f not in Protected since f in Trash",2
+"always all f : Trash | once f in Protected && f not in Protected'",1
+"always all f : File | always f not in Protected since once f in Trash",1

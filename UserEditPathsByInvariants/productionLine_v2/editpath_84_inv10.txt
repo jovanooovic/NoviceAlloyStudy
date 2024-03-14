@@ -1,0 +1,7 @@
+inv10 O: all c : Component | c.parts in begin.*succ - c.workstation.*succ
+inv10 O: all c : Component | c.parts in begin.*succ - c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.*succ
+inv10 B: all c : Component | c.parts.workstation in c.workstation.^succ
+inv10 B: all c : Component | c.parts.workstation in (begin.*succ - c.workstation.*succ)
+

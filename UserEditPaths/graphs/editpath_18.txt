@@ -1,0 +1,19 @@
+na H: THEME UPDATE
+inv1 S: a,b:Node | b in a.adj implies a in b.adj
+inv1 S: a,b:Node | b in a.adj -> a in b.adj
+inv1 T: all a,b:Node | b in a.adj -> a in b.adj
+inv1 C: all a,b:Node | b->a in adj implies a->b in adj
+inv2 C: all a,b:Node | a->b in adj implies b->a not in adj
+inv3 S: all a,b:Node |
+inv2 S: no adj & -adj
+inv2 C: no adj & ~adj
+inv3 T: all a:Node | no ^a.adj & ~(^a.adj)
+inv3 T: all a:Node | no ^(a.adj) & ~(^a.adj)
+inv3 T: all a:Node | no a.^adj & ~(a.^adj)
+inv3 C: all a:Node | no a.^adj & a.~(^adj)
+inv4 U: all a,b:Node | b in a.^adj
+inv4 C: all a,b:Node | a->b in adj
+inv5 O: all a:Node | no a & a.^adj
+inv5 C: all a:Node | a->a not in adj
+inv6 O: all a,b:Node | a->b in adj or b->a in adj
+

@@ -1,0 +1,14 @@
+inv9 B: one begin.succ	all w : Workstation | w not in begin and w not in end implies one w.succ	no end.succ
+inv9 B: one begin.succ	begin.succ != end	all w : Workstation | w not in begin and w not in end implies one w.succ	no end.succ	begin != end
+inv9 T: begin not in begin.^succ	end begin.^succ	no end.succ	all w : Workstation - end | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ
+inv9 O: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end - begin | one w.succ
+inv9 B: begin not in begin.^succ	end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ
+inv9 U: begin not in begin.^succ	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ	all w : Workstation - begin | begin not in w.^succ
+inv9 C: begin not in begin.^succ	begin.^succ = Workstation-begin	one begin.succ implies end in begin.^succ and end != begin	no end.succ	all w : Workstation - end | one w.succ and w not in w.^succ and end in w.^succ	all w : Workstation - begin | begin not in w.^succ
+

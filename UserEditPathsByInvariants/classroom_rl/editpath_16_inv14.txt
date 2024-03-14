@@ -1,0 +1,12 @@
+inv14 B: all c : Class, s : Student | some c.Groups.s
+inv14 B: all c : Class, s : Student | some c.Groups
+inv14 S: all c : Class { 	      all s : Student | s->Group in c.Groups {	        all t : Teacher | c in t.Teaches {	          s in t.Tutors	        }	      }	    }
+inv14 B: all c : Class, t : Teacher, s : Student {	      c in t.Teaches implies s in t.Tutors	    }
+inv14 B: all c : Class | some c.Groups.Group
+inv14 O: all c : Class | no c.Groups.Group
+inv14 B: all c : Class | some c.Groups.Group
+inv14 T: all c : Class | c.Groups.Group
+inv14 T: all c : Class | c.Groups.Group :> Student
+inv14 T: all c : Class | c.Groups.Group <: Student
+inv14 U: all c : Class, s : Student, t : Teacher | s in c.Groups.Group and c in t.Teaches implies s in t.Tutors
+

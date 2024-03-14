@@ -1,0 +1,16 @@
+inv7 S: all u : Users | all s : u.suggested | s not in u.followed and some ufoll in u.followed | s in ufoll.followed
+inv7 S: all u : Users | all s : u.suggested | s not in u.followed and some ufoll in u.followed | s in ufoll.followed
+inv7 S: all u : Users | all s : u.suggested | s not in u.followed and (some ufoll in u.followed | s in ufoll.followed)
+inv7 S: all u : Users | all s : u.suggested | some ufoll in u.followed | s not in u.followed and s in ufoll.followed
+inv7 S: all u : Users | all s : u.suggested | some ufoll in u.followed | s not in u.followed and s in ufoll.followed
+inv7 S: all u : Users | all s : u.suggested | some ufoll : u.followed | s not in u.followed and s in ufoll.followed
+inv7 S: all u : User | all s : u.suggested | some ufoll : u.followed | s not in u.followed and s in ufoll.followed
+inv7 S: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.followed and s in ufoll.follows
+inv7 U: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows
+inv7 U: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows
+inv7 S: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows and s <> u
+inv7 U: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows and s != u
+inv7 U: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows and s != u
+inv7 U: all u : User | all uf : u.follows | all uff : uf.follows - u.follows - u | uff in u.suggested
+inv7 C: all u : User | all s : u.suggested | some ufoll : u.follows | s not in u.follows and s in ufoll.follows and s != u	all u : User | all uf : u.follows | all uff : uf.follows - u.follows - u | uff in u.suggested
+

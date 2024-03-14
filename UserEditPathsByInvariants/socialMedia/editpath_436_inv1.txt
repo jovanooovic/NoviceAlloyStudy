@@ -1,0 +1,8 @@
+inv1 E:
+inv1 T: all x : Photo | sum y : User | y -> x in posts
+inv1 T: all x : Photo | sum y : User | y->x in posts
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 U: all x : Photo | some y,z : User | y->x in posts and z->x in posts and z=y
+inv1 U: all x : Photo | some y,z : User | y->x in posts and z->x in posts => z=y
+inv1 C: all x : Photo | one posts.x
+

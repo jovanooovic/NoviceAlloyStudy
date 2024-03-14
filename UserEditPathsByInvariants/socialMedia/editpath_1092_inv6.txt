@@ -1,0 +1,4 @@
+inv6 S: all d : Day, all i : Influencer | d in i.posts.date
+inv6 C: all d : Day, i : Influencer | d in i.posts.date
+inv6 C: all i : Influencer | all d : Day | some p : Photo | d in p.date and i in posts.p
+

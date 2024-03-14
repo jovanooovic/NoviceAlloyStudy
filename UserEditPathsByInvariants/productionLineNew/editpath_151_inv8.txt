@@ -1,0 +1,5 @@
+inv8 S: all x : Component | all y : Workstation |y in c.workstation and c in Dangerous implies y.workers not in Human
+inv8 U: all x : Component | all y : Workstation |y in y.workstation and y in Dangerous implies y.workers not in Human
+inv8 U: all x : Component | all y : Workstation |y in x.workstation and y in Dangerous implies y.workers not in Human
+inv8 B: all x : Component | all y : Workstation |y in x.workstation and x in Dangerous implies y.workers not in Human
+

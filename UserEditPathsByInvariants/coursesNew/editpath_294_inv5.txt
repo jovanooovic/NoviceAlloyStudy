@@ -1,0 +1,11 @@
+inv5 U: all pr:Project|some p:Person| pr in p.projects and p in Student
+inv5 U: all pr:Project|some p:Person| pr in p.projects iff p in Student
+inv5 U: all pr:Project|some p:Person| pr in Course.projects implies pr in p.projects and p in Student
+inv5 U: all pr:Project|some p:Person| pr in Course.projects implies (pr in p.projects and p in Student)
+inv5 U: all pr:Project|some p:Person| pr in p.projects and p in Student
+inv5 U: all pr:Project|some p:Person| pr in p.projects implies p in Student
+inv5 B: all pr:Project|some p:Person| pr in p.projects implies p in Student and p not in Professor
+inv5 B: all pr:Project|some p:Person| pr in p.projects implies p not in Professor
+inv5 U: all pr:Project|some p:Person| pr in p.projects implies p in (Person & Student)
+inv5 C: all p:Person - Student| no p.projects		all pr:Project|some p:Person| pr in p.projects
+

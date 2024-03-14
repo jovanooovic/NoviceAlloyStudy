@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 C: all c: Course | enrolled.c in Student
+inv1 O: all c: Course | enrolled.c in Student and enrolled.c not in Professor
+inv1 C: all c: Course | enrolled.c in Student
+inv1 O: all c: Course | enrolled.c in Student and enrolled.c not in Professor
+inv1 C: all c: Course | enrolled.c in Student
+inv5 T: all p: Project | some s: projects.p | s in Student
+inv5 T: all p: Project | some s: projects.p | s in Student
+inv5 B: some p: Person, proj: Project | proj in p.projects implies p in Student
+inv5 U: all p: Person, proj: Project | proj in p.projects implies p in Student
+inv5 T: all proj: Project | some projects.proj and some p: projects.proj | p in Student
+inv5 T: all proj: Project | some projects.proj and some p: projects.proj | p in Student
+inv5 T: all p: Person | p.projects implies p in Student
+inv5 T: all p: Person | set p.projects implies p in Student
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Person.projects = Project
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Person.projects in Project
+inv5 S: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project in Person.projects
+inv5 S: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project = Person.projects
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project in Person.projects
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project = Person.projects
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project = Student.projects
+inv5 U: Project = Student.projects
+inv5 B: (all p: Person | some proj: Project | proj in p.projects implies p in Student)		and		Project in Student.projects
+inv5 B: all proj: Project | some p: Student | proj in p.projects		and all p: Student | some proj: Project | proj in p.projects
+inv5 B: (all proj: Project | some p: Student | proj in p.projects)		and (all p: Student | some proj: Project | proj in p.projects)
+inv5 B: (all proj: Project | some p: Person | proj in p.projects)		and (all p: Person | some proj: Project | proj in p.projects implies p in Student)
+inv5 U: all proj: Project | some p: Person | proj in p.projects and p in Student
+inv5 U: all p: Person | some p.projects implies p in Student
+

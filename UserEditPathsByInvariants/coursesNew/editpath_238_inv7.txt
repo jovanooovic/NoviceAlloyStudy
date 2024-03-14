@@ -1,0 +1,7 @@
+inv7 S: all st:Student | st.projects.size <=1
+inv7 B: all st:Student | #st.projects <=1
+inv7 S: all st:Student, pr:st.courses.projects | #pr.projects <=1
+inv7 U: all st:Student, pr:st.enrolled.projects | #pr.projects <=1
+inv7 T: all st:Student, c:st.enrolled | lone st.projects in c
+inv7 U: all st:Student, c:st.enrolled | #(st.projects & c.projects) <= 1
+

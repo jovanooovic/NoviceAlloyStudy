@@ -1,0 +1,11 @@
+inv9 E:
+inv9 U: all p1,p2 : Professor | all c1:Course |	      (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+inv9 U: all p1,p2 : Professor | all c1:Course | p1!=p2 and p1->c1 in teaches and p2->c1 in teaches implies all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled
+inv9 S: all c1 : Course, p1,p2 in teaches.c1 | p1!=p2 implies all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled
+inv9 S: all c1 : Course, p1, p2 in teaches.c1 | p1!=p2 implies all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled
+inv9 C: all c1 : Course, p1, p2 : teaches.c1 | p1!=p2 implies all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled
+inv9 C: all c1, c2 : Course, p1, p2 : teaches.c1 | p1!=p2 implies p1->c2 in teaches implies p2->c2 not in enrolled
+inv9 C: all c1, c2 : Course, p1, p2 : teaches.c1 | p1 != p2 implies p1 in teaches.c2 implies p2 not in enrolled.c2
+inv9 O: all c1, c2 : Course, p1, p2 : teaches.c1 | p1 in teaches.c2 implies p2 not in enrolled.c2
+inv9 O: all c1, c2 : Course, p1, p2 : teaches.c1 | p1 in teaches.c2 implies p2 not in enrolled.c2
+

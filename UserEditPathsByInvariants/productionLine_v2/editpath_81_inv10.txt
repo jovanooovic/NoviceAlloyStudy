@@ -1,0 +1,4 @@
+inv10 S: all c : Component | all p : Component | all w, wa : Workstation | w in c.worksation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+inv10 B: all c : Component | all p : Component | all w, wa : Workstation | w in c.workstation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+inv10 B: all c : Component | all p : Product | all w, wa : Workstation | w in c.workstation and p in c.^parts and wa in p.workstation implies w in wa.^succ
+

@@ -1,0 +1,24 @@
+inv1 T: all x,y : univ | x in Photo implies y in User and y->x posts
+inv1 T: all x,y : univ | x in Photo implies y->x posts
+inv1 T: all x,y : univ | x in Photo implies y->x posts
+inv1 O: all x,y : univ | x in Photo implies y in User and y->x in posts
+inv1 S: all x,y,z : univ | x in Photo implies y,z in User and y->x in posts
+inv1 O: all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z=y
+inv1 O: all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z=y
+inv1 O: all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z = y
+inv1 S: all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z = y	all
+inv1 O: all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z = y
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv1 T: all p : Photo | one u : User | u.posts
+inv1 T: all p : Photo | one u : User | p.posts.u
+inv1 S: all p : Photo | one u : User |
+inv1 S: all p : Photo | one u : User |
+inv1 T: all p : Photo | one u : User | u.p.posts
+inv1 T: all p : Photo | one u : User | p.posts
+inv1 T: all p : Photo | p.posts
+inv1 T: one User.Photo.posts
+inv1 T: some User.Photo.posts
+inv1 T: User.Photo.posts
+inv1 T: all p : Photo | one u : User | lone(u.p.posts)
+inv1 C: all p : Photo | one posts.p
+

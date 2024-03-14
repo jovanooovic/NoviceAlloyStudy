@@ -1,0 +1,39 @@
+inv11 B: all c:Class | some s:Student, g:Group, t:Teacher | s->g in c.Groups implies t->c in Teaches
+inv11 B: all c:Class, t:Teacher | some s:Student, g:Group | s->g in c.Groups implies t->c in Teaches
+inv11 B: all c:Class, t:Teacher, s:Student | some g:Group | s->g in c.Groups implies t->c in Teaches
+inv11 O: all c:Class | some t:Teacher | t->c in Teaches
+inv11 T: all c:Class | some t:Teacher, g:Group |g in c.Groups implies t->c in Teaches
+inv11 T: all c:Class | some t:Teacher, g:Groups |g in c implies t->c in Teaches
+inv11 T: all c:Class | some t:Teacher, g:Groups |g in c implies t->c in Teaches
+inv11 B: all c:Class, s:Student | some t:Teacher, g:Group | s->g in c.Groups implies t->c in Teaches
+inv11 B: all c:Class, s:Student | some t:Teacher, g:Group | s->g in c.Groups and t->c in Teaches
+inv11 S: all c:Class, g:Class.Groups | g in c.Groups implies t->c in Teaches
+inv11 S: all c:Class, g:Class.Groups | t:Teacher | g in c.Groups implies t->c in Teaches
+inv11 S: all c:Class, g:Groups | t:Teacher | g in c.Groups implies t->c in Teaches
+inv11 T: all c:Class, g:Class.Groups | some t:Teacher | g in c.Groups implies t->c in Teaches
+inv11 T: all c:Class, g:Groups | some t:Teacher | g in c.Groups implies t->c in Teaches
+inv11 T: all c:Class, g:Groups | some t:Teacher | g in c.Groups.Group implies t->c in Teaches
+inv11 T: all c:Class, g:Groups | some t:Teacher | g in c.Groups.Person implies t->c in Teaches
+inv11 T: all c:Class, pg:Person->Group | some t:Teacher | pg in c.Groups implies t->c in Teaches
+inv11 T: all c:Class | some t:Teacher, p:Person | p in c.Groups implies t->c in Teaches
+inv11 B: all c:Class | some t:Teacher, p:Person, g:Group | p->g in c.Groups implies t->c in Teaches
+inv11 O: all c:Class, p:Person, g:Group | some t:Teacher | p->g in c.Groups implies t->c in Teaches
+inv11 T: all c:Class | some t:Teacher,g:Group,p:Person | c->p->g implies t->c in Teaches
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | c->p->g in Groups implies t->c in Teaches
+inv11 O: all c:Class | some t:Teacher,g:Group,p:Person | c->p->g in Groups and t->c in Teaches
+inv11 B: some c:Class, t:Teacher,g:Group,p:Person | c->p->g in Groups and t->c in Teaches
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | p->g in c.Groups implies t->c in Teaches
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | (p->g in c.Groups) implies (t->c in Teaches)
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | (p->g in c.Groups) implies (c->t in Teaches)
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | (g->p in c.Groups) implies (t->c in Teaches)
+inv11 B: all c:Class | some t:Teacher,g:Group,p:Person | (p->g in c.Groups) implies (t->c in Teaches)
+inv11 B: all c:Class, t:Teacher | some g:Group,p:Person | (p->g in c.Groups) implies (t->c in Teaches)
+inv11 E:
+inv11 B: all c:Class | some p:Person, g:Group | c->p->g in Groups
+inv11 B: all c:Class | some t:Teacher, g:Group | c->t->g in Groups
+inv11 B: all c:Class | some p:Person, g:Group | c->p->g in Groups implies p->c in Teaches
+inv11 C: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)  implies (some t:Teacher | t->c in Teaches )
+inv11 C: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)  implies (some t:Teacher | t->c in Teaches )
+inv11 C: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)  implies (some t:Teacher | t->c in Teaches )
+inv11 C: all c:Class | (some g:Group,p:Person | c->p->g in Groups)  implies (some t:Teacher | t->c in Teaches )
+

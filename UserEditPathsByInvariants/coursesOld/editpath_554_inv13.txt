@@ -1,0 +1,3 @@
+inv13 U: all s : Student, c : Course | some g : Grade | c->s->g in grades && g = max[Grade] => some p : Project |  s->p in projects && c->p in projects
+inv13 U: all s : Student, c : Course, g : Grade | 	  		c->s->g in grades && g = max[Grade] => some p : Project |  s->p in projects && c->p in projects
+

@@ -1,0 +1,6 @@
+inv9 B: all t : Track | all j : Junction | j not in t.succs implies (all s : Semaphore | s not in t.signals)
+inv9 B: all t : Track | all j : Junction | (j not in t.succs) implies (all s : Semaphore | s not in t.signals)
+inv9 C: all t : Track | (all j : Junction | j not in t.succs) implies (all s : Semaphore | s not in t.signals)
+inv9 C: all t : Track | (all j : Junction | j not in t.succs) implies (all s : Semaphore | s not in t.signals)
+inv9 C: all t : Track |  no (t.succs & Junction) implies (all s : Semaphore | s not in t.signals)
+

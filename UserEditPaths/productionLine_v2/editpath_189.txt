@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 C: (all ws : Workstation | some w : Worker | ws->w in workers)	and	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv3 C: all c : Component | one ws : Workstation | c->ws in workstation
+inv4 C: (all c : Component | some p : Product | c->p in parts)	and	(all m : Material | no p : Product | m->p in parts)
+inv5 O: all ws : Workstation | all w1,w2 : Worker |	(ws->w1 in workers and ws->w2 in workers and w1 in Human)	implies (w2 in Human)
+inv6 S: all c1 : Component | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	all c3 : Component | c1->c3 in parts implies (c3->c2 not in parts) and path[c3,c2]
+inv6 S: all c1 : Component | c not in c.^(parts)
+inv6 C: all c : Component | c not in c.^(parts)
+inv7 O: all c : Component | all p : Product | p in Dangerous and p in c.^(parts) implies c in Dangerous
+inv8 S: all c : Component | all w: Workstation |	c in Dangerous and w in c.worstation implies	(all h : Human | h not in w.workers)
+inv8 S: all c : Component | all w: Workstation |	c in Dangerous and w in c.workstatio implies	(all h : Human | h not in w.workers)
+inv8 C: all c : Component | all w: Workstation |	c in Dangerous and w in c.workstation implies	(all h : Human | h not in w.workers)
+

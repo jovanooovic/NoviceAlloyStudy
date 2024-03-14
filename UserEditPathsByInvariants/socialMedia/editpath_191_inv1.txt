@@ -1,0 +1,16 @@
+inv1 S: All x: Photo | x in one User.posts
+inv1 S: All x : Photo | x in User.posts
+inv1 U: Photo in User.posts
+inv1 S: x: Photo | y:User | x in y.posts
+inv1 S: all x:Photo | all y:User | x in one y.posts
+inv1 B: all x:Photo | all y:User | x in (one y.posts)
+inv1 B: all x:Photo | all y:User | x in (one y.posts)
+inv1 U: Photo in User.posts
+inv1 S: Photo in one User.posts
+inv1 B: Photo in (one User.posts)
+inv1 S: one Photo in one User.posts
+inv1 T: all x: Photo | #(x in User.posts) = 1
+inv1 U: all x: Photo | Photo in User.posts
+inv1 S: Photo in one User.posts
+inv1 C: all x : Photo | one posts.x
+

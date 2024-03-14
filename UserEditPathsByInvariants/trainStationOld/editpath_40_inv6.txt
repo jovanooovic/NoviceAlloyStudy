@@ -1,0 +1,7 @@
+inv6 O: all t : Track |always( t.signal' != t.signal)
+inv6 O: all s : Signal | no (s & Green) implies s' = Green else s' not in Green
+inv6 O: all  s : Signal | always (no (s & Green) implies s' = Green else s' not in Green)
+inv6 O: always (all  s : Signal |  no (s & Green) implies s' = Green else s' not in Green)
+inv6 B: always (all  s : Signal |  no (s & Green) implies s' = Green else s'!=Green)
+inv6 O: always (all  s : Signal |  no (s & Green) implies s'  in  Green else s' not in Green)
+

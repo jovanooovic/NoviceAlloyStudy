@@ -1,0 +1,117 @@
+Pairs,1
+,,"adj = ^adj",1
+
+Pairs,5
+,,"adj.Node = Node",1
+,,"all n: Node | some n.adj",2
+,,"all n:Node | n in adj.Node",1
+,,"all n : Node | some n.(^adj)",1
+
+Pairs,16
+,,"Node.adj = Node",1
+,,"Node in Node.adj",1
+,,"Node.^adj = Node",3
+,,"Node in Node.^adj",3
+,,"all n : Node | some adj.n",3
+,,"all n:Node | n in Node.adj",3
+,,"all n : Node | some (^adj).n",1
+,,"all n:Node | n in Node.^adj",1
+
+Pairs,33
+,,"^adj = Node->Node",1
+,,"all a,b : Node | a in b.^adj",1
+,,"all a,b:Node | b in a.^adj",1
+,,"all x, y: Node | x in y.^(adj)",1
+,,"all n : Node | n.^adj = Node",4
+,,"all x: Node | Node in x.^(adj)",1
+,,"all n:Node | Node in n.^adj",10
+,,"all  n1,n2 :Node | n2 in  n1.^adj",2
+,,"all n1, n2: Node | n1 in n2.^adj",2
+,,"all x, y: Node | x in y.^(adj) and y in x.^(adj)",2
+,,"all n1 : Node | no n2: Node | n2 not in n1.^(adj)",1
+,,"all  n1,n2 :Node | n2 in  n1.^adj and n1 in n2.^adj",1
+,,"all n1,n2:Node | n1 in n2.^adj && n2 in n1.^adj",4
+,,"all n:Node, x:Node| n in x.^adj && x in n.^adj",1
+,,"all x, y: Node | (x in y.^(adj) or x in y.adj) and (y in x.^(adj) or y in x.adj)",1
+
+Pairs,13
+,,"adj in Node->Node",1
+,,"Node.^adj in Node",2
+,,"Node in Node.*adj",1
+,,"all n : Node | n.adj in Node",1
+,,"all n: Node | n in n.*adj",5
+,,"all n1, n2 : Node | some (n1->n2)",1
+,,"all n:Node | n in Node.*adj",1
+,,"all a:Node | a in a.^adj implies a in a.^adj",1
+
+Pairs,10
+,,"all n:Node | n in adj.n",1
+,,"all a:Node | a in adj.a",1
+,,"all a:Node | a in a.adj",2
+,,"all n:Node | n in n.adj",4
+,,"all n : Node | n in n.~adj",1
+,,"all n1, n2: Node | n1->n2 & n2->n1 in adj",1
+
+Pairs,7
+,,"all n: Node | n in n.^adj",4
+,,"all a:Node | a in a.^adj",3
+
+Pairs,21
+,,"Node set -> set Node in *adj",1
+,,"all n:Node | Node in n.*adj",5
+,,"all x: Node | Node in x.*adj",1
+,,"all disj a,b : Node | a in b.^adj",1
+,,"all disj x,y : Node | x in y.^adj",1
+,,"all n:Node | Node-n in n.^adj",3
+,,"all x: Node | (Node - x) in x.^(adj)",1
+,,"all disj n1, n2 : Node | n2 in n1.^adj",1
+,,"all disj n1,n2: Node | (n1 in n2.^adj)",1
+,,"all disj n1, n2 : Node | n2 in n1.*adj",1
+,,"all disj n1,n2: Node | ((n1 in n2.*adj))",1
+,,"all n1,n2:Node | n1 in n2.*adj && n2 in n1.*adj",2
+,,"all disj n1, n2: Node | n1 in n2.^adj and n2 in n1.^adj",1
+,,"all disj n1,n2: Node | ((n1 in n2.*adj) and (n2 in n1.*adj))",1
+
+Pairs,1
+,,"all n : Node | n in n.adj.adj",1
+
+Pairs,1
+,,"all n : Node | n.adj = n.~adj",1
+
+Pairs,2
+,,"Node in (Node.adj + adj.Node)",1
+,,"all n: Node | some (n.adj + adj.n)",1
+
+Pairs,16
+,,"all disj n, m: Node | n->m in adj",1
+,,"all x: Node | (Node - x) in x.adj",1
+,,"all n : Node | Node in n.adj+n",1
+,,"all n:Node | Node-n in n.adj",8
+,,"all disj n1, n2 : Node | n2 in n1.adj",1
+,,"all disj n1,n2 : Node | n1 in adj.n2",2
+,,"all x : Node | x.adj - x = Node - x",1
+,,"all disj n1, n2: Node | n1->n2 + n2->n1 in adj",1
+
+Pairs,7
+,,"all n1,n2:Node | n1 in n2.*adj => n2 in n1.*adj",1
+,,"all n1,n2:Node | n1 in n2.^adj => n2 in n1.^adj",1
+,,"all n1,n2:Node | n1 in n2.*adj <=> n2 in n1.*adj",1
+,,"all n1,n2:Node | n1 in n2.^adj <=> n2 in n1.^adj",1
+,,"all disj n1,n2:Node | n1 in n2.*adj => n2 in n1.*adj",2
+,,"all disj n1,n2:Node | n1 in n2.^adj => n2 in n1.^adj",1
+
+Pairs,1
+,,"all n1, n2: Node | n1 in n2.adj or n2 in n1.adj",1
+
+Pairs,2
+,,"all n1, n2: Node | n1 in n2.^adj or n2 in n1.^adj",2
+
+Pairs,1
+,,"all n1, n2: Node | n2 in n1.^(adj) and n2 in n2.adj",1
+
+Pairs,1
+,,"all a:Node,b:Node | a in a.^adj implies a->b in adj",1
+
+Pairs,4
+,,"all disj n1, n2: Node | n1 in n2.^adj or n2 in n1.^adj",4
+

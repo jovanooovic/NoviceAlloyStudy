@@ -1,0 +1,4 @@
+inv2 U: some workers	all w : Worker | w in Workstation.workers
+inv2 U: some workers	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 C: some workers	workers in Workstation one -> some Worker
+

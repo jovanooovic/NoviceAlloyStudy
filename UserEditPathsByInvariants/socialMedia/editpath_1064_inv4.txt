@@ -1,0 +1,10 @@
+inv4 S: all u : User | u.posts.Ad implies u.posts == Ad
+inv4 T: all u : User | u.posts
+inv4 S: all u : User | one a : Add| a in u.posts implies
+inv4 S: all u : User | one a : Ad| a in u.posts implies
+inv4 B: all u : User | one a : Ad| a in u.posts
+inv4 S: all u : User | one a : Ad| a in u.posts implies all u.posts = Ad
+inv4 S: all u : User | one a : Ad| some u.posts & Ad implies all u.posts = Ad
+inv4 B: all u : User | one a : Ad| some u.posts & Ad
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+

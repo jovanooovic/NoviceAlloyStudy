@@ -1,0 +1,7 @@
+inv7 U: all x,y,z : Track | (y in x.succs and z in y.succs) implies (x != y and y != z)
+inv7 U: all x,y,z : Track | (y in x.succs and z in y.succs) implies (x != y and y != z and x != z)
+inv7 U: all x,y : Track | y in x.succs implies x != y and x not in x.succs
+inv7 U: all x,y : Track | y in x.succs implies x != y	all x : Track | x not in x.succs
+inv7 B: all x,y : Track | x != y implies y in x.succs	all x : Track | x not in x.succs
+inv7 B: all x,y : Track | x != y implies (y in x.succs and x in y.succs)	all x : Track | x not in x.succs
+

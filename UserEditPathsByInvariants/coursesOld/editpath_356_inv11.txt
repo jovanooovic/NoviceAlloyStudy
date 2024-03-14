@@ -1,0 +1,5 @@
+inv11 O: all p : Person | ~(Course.grades).p in p.enrolled
+inv11 C: all p : Person, c : Course | c not in p.enrolled implies p not in c.grades.Grade
+inv11 C: all p : Person, c : Course | c not in p.enrolled implies no ~(c.grades).p
+inv11 C: all p : Person, c : Course | c not in p.enrolled implies no ~(c.grades).p
+

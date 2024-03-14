@@ -1,0 +1,5 @@
+inv12 B: all s : Student, c : Course | c in s.enrolled and lone c.grades.s
+inv12 B: all s : Student, c : Course | c in s.enrolled and lone ~(c.grades).s
+inv12 T: all s : Student, c : Course | c in s.enrolled and  ~(c.grades).s
+inv12 U: all s : Student, c : Course | c in s.enrolled implies  lone  ~(c.grades).s
+

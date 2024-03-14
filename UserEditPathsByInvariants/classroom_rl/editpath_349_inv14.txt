@@ -1,0 +1,12 @@
+inv14 S: all s:Student | all t:Teacher.(<:s.Group) in Teaches implies t->s in Tutors
+inv14 S: all s:Student | all t:Teacher.(<:s.Group) in Teaches implies t->s in Tutors
+inv14 S: all s:Student | all t:Teacher->(<:s.Group) in Teaches implies t->s in Tutors
+inv14 S: all s:Student | all t:Teacher->(<:s.Group) in Teaches implies t->s in Tutors
+inv14 S: all s:Student | (all t:Teacher)->(<:s.Group) in Teaches implies t->s in Tutors
+inv14 S: all s:Student | ((all t:Teacher)->(<:s.Group) in Teaches) implies t->s in Tutors
+inv14 S: all s:Student | s <: (c:Class).Groups
+inv14 S: all s:Student | c:Class| s <: c.Groups
+inv14 T: all s:Student | all c:Class| s <: c.Groups
+inv14 T: all s:Student | all c:Class | all t:Teacher | (s <: c.Groups and t->c in Teaches )implies t->s in Tutors
+inv14 T: all s:Student | all c:Class | all t:Teacher | (s <: c.Groups) and (t->c in Teaches) implies t->s in Tutors
+

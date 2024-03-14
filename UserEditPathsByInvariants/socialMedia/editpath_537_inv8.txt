@@ -1,0 +1,7 @@
+inv8 O: all u : User | all p : u.sees | p not in Ad or p in u.follows or p in u.suggested
+inv8 O: all u : User | all p : u.sees | p not in Ad or (p in u.follows or p in u.suggested)
+inv8 O: all u : User | all p : u.sees | p not in Ad
+inv8 O: all u : User | all p : u.sees | p not in Ad or p in u.follows
+inv8 O: all u : User | all p : u.sees | p not in Ad or p in u.follows
+inv8 C: all u : User | all p : u.sees | p not in Ad or p in u.follows.posts or p in u.suggested.posts
+

@@ -1,0 +1,13 @@
+inv7 B: all u1,u2,u3 : User | u3 in u1.suggested implies u2 in u1.follows and u3 in u2.follows
+inv7 B: all u1,u2,u3 : User | u3 in u1.suggested implies u2 in u1.follows and u3 in u2.follows	all u1,u2 : User | u2 in u1.suggested implies u1 != u2
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u2 in u1.follows and u3 in u2.follows)
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u2 in u1.follows and u3 not in u1.follows)
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u2 in u1.follows and u3 not in u1.follows)	all u1,u2 : User | u1 in u2.suggested implies u1 != u2
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u2 in u1.follows and u3 not in u1.follows)	all u1,u2 : User | u1 in u2.suggested implies u1 != u2
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u3 in u2.follows and u3 not in u1.follows)	all u1,u2 : User | u1 in u2.suggested implies u1 != u2
+inv7 U: all u1,u3 : User | u3 in u1.suggested implies (some u2 : User | u3 in u2.follows and u3 not in u1.follows and u2 in u1.follows)	all u1,u2 : User | u1 in u2.suggested implies u1 != u2
+inv7 U: all x, y: User | x->y in suggested implies (some z: User | z->y in follows and x->y not in follows)	all u1,u2 : User | u1 in u2.suggested implies u1 != u2
+inv7 U: all x, y: User | x->y in suggested implies (some z: User | z->y in follows and x->y not in follows)	all x, y: User | x->y in suggested implies x != y
+inv7 U: all x, y: User | x->y in suggested implies (some z: User | z->y in follows and x->y not in follows)	all x, y: User | x->y in suggested implies x != y
+inv7 U: all x, y: User | x->y in suggested implies (some z: User | z->y in follows and x->y not in follows)	all x, y: User | x->y in suggested implies x != y
+

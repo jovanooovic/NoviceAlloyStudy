@@ -1,0 +1,10 @@
+inv4 B: all p: Person | lone Student
+inv4 B: all p: Person | lone Student
+inv4 O: all p: Person | one s: Student | one t: Teacher | p = s or p = t
+inv4 B: all p: Person | all s: Student | all t: Teacher | p = s or p = t
+inv4 B: no p: Person | one s: Student | one t: Teacher | p = s or p = t
+inv4 B: no p: Person | one s: Student | one t: Teacher | p != s and p != t
+inv4 O: no p: Person | all s: Student | all t: Teacher | p != s and p != t
+inv4 C: no p: Person | p not in Student and p not in Teacher
+inv4 C: no p: Person | p not in Student and p not in Teacher
+

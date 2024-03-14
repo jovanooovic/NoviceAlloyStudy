@@ -1,0 +1,18 @@
+inv10 S: all x: Person | all c: Course | some g: grade | g in grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in grades.x => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => cin x.enrolled && x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => c in x.enrolled && x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => c in x.enrolled
+inv10 T: all x: Person | all c: Course | x in Student && grades(x) => c in x.enrolled
+inv10 T: all x: Person | all c: Course | x in Student && c.grades(x) => c in x.enrolled
+inv10 T: all g: Grade | all x: Person | all c: Course | g in c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | c.grades.x => x in Student
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+

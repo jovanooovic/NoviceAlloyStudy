@@ -1,0 +1,14 @@
+inv7 B: all f: File | some f.link implies !(f in Trash)
+inv7 B: all f: File | f in Trash implies no f.link
+inv7 B: all f: Trash | no f.link
+inv7 T: all f: Trash | f.link
+inv7 B: all f: Trash | no f.link
+inv7 B: all f: Trash | some f.link
+inv7 B: some f: Trash | some f.link
+inv7 B: some f: Trash | no f.link
+inv7 B: all f: Trash | no f.link
+inv7 B: all f: Trash | no f.link
+inv7 E:
+inv7 E:
+inv7 C: all f: File | no (f.^link & Trash)
+

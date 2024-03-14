@@ -1,0 +1,10 @@
+inv3 T: all x,y : User | y in follows.x -> y.posts in sees.x
+inv3 T: all x,y : User | y in follows.x -> posts.y in sees.x
+inv3 T: all x,y : User | y in follows.x -> posts.y in sees.x
+inv3 B: all x,y: User, f:Photo | f in x.sees and f in y.posts implies y in x.follows
+inv3 T: all x,y: User, f:Photo | f in x.sees and f in y.posts and f not Ad implies y in x.follows
+inv3 S: all x,y: User, f:Photo | f in x.sees and f in y.posts implies (f not Ad && y in x.follows)
+inv3 S: all x,y: User, f:Photo | f in x.sees and f in y.posts implies (f not Ad && y in x.follows) || f is Ad
+inv3 S: all x,y: User, f:Photo, a:Ad | f in x.sees and f in y.posts implies (f not Ad && y in x.follows) || (f = a)
+inv3 S: all x,y: User, f:Photo | f in x.sees and f in y.posts implies (f not Ad && y in x.follows) || f not in Ad
+

@@ -1,0 +1,13 @@
+inv11 B: all c:Class | c->Person->Group in Groups implies Person in Teacher
+inv11 B: all c:Class | some p:Person | c->p->Group in Groups implies Person in Teacher
+inv11 B: all c:Class | some p:Person | c->p->Group in Groups implies p in Teacher
+inv11 B: all c:Class | some g:Group, p:Person | c->p->g in Groups implies p in Teacher
+inv11 E:
+inv11 T: all c:Class | some g:Group, t:Teacher | c->Person->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->Person->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g implies t.c in Teaches
+inv11 T: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies t.c in Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies t->c in Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies c in t.Teaches
+inv11 B: all c:Class | some g:Group, t:Teacher | c->Person->g in Groups implies c in t.Teaches
+

@@ -1,0 +1,35 @@
+inv3 S: always all t: Train | always t in one Track
+inv3 O: always all t: Train | always t in Track
+inv3 U: always all t: Train | always t not in Track
+inv3 U: always all t: Train | t not in Track
+inv3 B: always all t: Train | some tr: Track | t in tr implies t' in tr
+inv3 B: always all t: Train | some tr: Track | t in pos.tr implies t' in pos.tr
+inv3 B: always all t: Train | one tr: Track | t in pos.tr implies t' in pos.tr
+inv3 B: always all t: Train | one tr: Track | always t in pos.tr implies t' in pos.tr
+inv3 B: always all t: Train | one tr: Track | always (t in pos.tr implies t' in pos.tr)
+inv3 B: always all t: Train | always one tr: Track | always (t in pos.tr implies t' in pos.tr)
+inv3 T: always Train.pos.Track
+inv3 T: always Train.pos
+inv3 T: all t: Train | always t.pos
+inv3 U: always all t: Train | t in t.pos implies after t in t.pos
+inv3 U: always all t: Train | always t in t.pos implies after t in t.pos
+inv3 S: always all t: Train | always t in one t.pos implies after t in t.pos
+inv3 B: always all t: Train | always one t.pos implies after t in t.pos
+inv3 B: always all t: Train | always one t.pos implies after t' in t.pos
+inv3 T: always all t: Train | always t.pos implies after t' in t.pos
+inv3 O: always all t: Train | always t' in t.pos
+inv3 U: always all t: Train | always after t.pos = t.pos
+inv3 S: always all t: Train | always t.pos = after t.pos
+inv3 S: all t: Train | always t.pos = after t.pos
+inv3 S: always all t: Train | t.pos = after t.pos
+inv3 T: always all t: Train | t.pos implies after t.pos
+inv3 B: always all t: Train |one tr: Track | t.pos in tr implies after t.pos in tr
+inv3 O: always all t: Train | always t in Entry
+inv3 O: always Train in Entry
+inv3 O: Train in Entry
+inv3 B: always Train.pos in Entry
+inv3 S: always Train.pos in one Track implies always after Train.pos in one Track
+inv3 S: always Train.pos in one Track implies after Train.pos in one Track
+inv3 U: always Train.pos' = Train.pos
+inv3 C: always pos' = pos
+

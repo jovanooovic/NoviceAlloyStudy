@@ -1,0 +1,11 @@
+inv7 S: all user1, user2, user3 : User | (user1 in user2.suggested) implies (   and user1 not in user2.follows)
+inv7 S: all user1, user2, user3 : User | (user1 in user2.suggested) implies (   and user1 not in user2.follows)
+inv7 B: all user1, user2, user3 : User | (user1 in user2.suggested) implies ( user1 in user3.follows and user3 in user2.follows  and user1 not in user2.follows)
+inv7 B: all user1, user2, user3 : User | (user1 in user2.suggested) implies (user1 in user3.follows and user3 in user2.follows  and user1 not in user2.follows)
+inv7 U: all user1, user2 : User | (user1 in user2.suggested) implies (user1 in user2.follows.follows and user1 not in user2.follows)
+inv7 U: all user1, user2 : User | user1 in user2.suggested implies (user1 in user2.follows.follows and user1 not in user2.follows)
+inv7 U: all user1, user2 : User | user1 in user2.suggested implies (user1 in user2.follows.follows-user2.follows-user2)
+inv7 U: all user1, user2 : User | user1 in user2.suggested implies (user1 in ((user2.follows.follows - user2.follows) - user2))
+inv7 U: all user1, user2 : User | user1 in user2.suggested implies (user1 in ((user2.follows.follows - user2.follows) ))
+inv7 C: all u1, u2 : User | u2 in u1.suggested <=> (u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows)
+

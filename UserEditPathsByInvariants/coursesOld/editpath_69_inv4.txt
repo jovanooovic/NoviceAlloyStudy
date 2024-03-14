@@ -1,0 +1,14 @@
+inv4 S: all c:Course | c.projects in lone (c)
+inv4 T: all c:Course | lone (c) in c.projects
+inv4 T: one c:Course | c in c.projects
+inv4 T: one c:Course | c.projects
+inv4 S: one c:Course | all p:Person | p.projects in lone(c)
+inv4 B: one c:Course | all p:Person | p.projects in c
+inv4 B: one c:Course | all p:Project | p in c.projects
+inv4 B: one c:Course | all p:Project | p in c.projects
+inv4 B: one c:Course | all p:Project | p in c.projects
+inv4 C: all p: Project | one c: Course |  p in c.projects
+inv4 B: one c: Course |  all p: Project | p in c.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+inv4 C: all p: Project | one c: Course | p in c.projects
+

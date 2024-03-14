@@ -1,0 +1,11 @@
+inv7 O: all c:Course | (this/Person <: projects) in Student -> lone Project
+inv7 B: all c:Course, s:Student | s->c in enrolled => (this/Person <: projects) in Student -> lone Project
+inv7 T: all c:Course | c.projects in Student -> lone Project
+inv7 S: lone Student.projects.c
+inv7 T: all c:Course | lone Student.projects.c
+inv7 T: all c:Course | lone (Student.projects).(c.projects)
+inv7 B: all c:Course | lone (Student.projects) & (c.projects)
+inv7 B: all c:Course | no (Student.projects) & (c.projects)
+inv7 B: all c:Course | lone (Student.projects) & (c.projects)
+inv7 U: all c:Course, s:Student | lone (s.projects) & (c.projects)
+

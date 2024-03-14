@@ -1,0 +1,5 @@
+inv10 U: all x : Student | all y : Course | some x.(y.grades) implies x in Student
+inv10 U: all x : Student | all y : Course | some x.enrolled.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some x.(y.grades) implies x in Student
+inv10 C: all x : Person | all y : Course | some y.grades[x] implies x in Student
+

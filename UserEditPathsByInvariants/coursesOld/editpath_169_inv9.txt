@@ -1,0 +1,10 @@
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: all x : Professor | no ((Professor-x).enrolled & x.teaches)
+inv9 B: all disj x,y:Professor| x.enrolled not in y.teaches
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+inv9 B: all disj  x,y : Professor | no y.enrolled & x.teaches
+inv9 B: all x : Professor, y : Professor-x | no y.enrolled & x.teaches
+inv9 B: all x : Professor, y : Professor-x | no (y.enrolled & x.teaches)
+

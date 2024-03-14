@@ -1,0 +1,19 @@
+inv15 S: all p1,p2,p3 | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher
+inv15 B: all p1,p2,p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher
+inv15 B: all p1,p2,p3:Person | (p1 in Teacher) or (p1->p2 in Tutors implies p2 in Teacher) or (p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher)
+inv15 S: (all p:Person | p is Teacher) or (all p1,p2:Person | p1->p2 in Tutors implies p2 is Teacher) or (all p1, p2, p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher)
+inv15 S: (all p:Person | p in Teacher) or (all p1,p2:Person | p1->p2 in Tutors implies p2 is Teacher) or (all p1, p2, p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher)
+inv15 B: (all p:Person | p in Teacher) or (all p1,p2:Person | p1->p2 in Tutors implies p2 in Teacher) or (all p1, p2, p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher)
+inv15 B: (all p:Person | p in Teacher) or (all p1,p2:Person | p1->p2 in Tutors implies p1 in Teacher) or (all p1, p2, p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p1 in Teacher)
+inv15 B: (all p:Person | p in Teacher) or (all p1,p2:Person | p1->p2 in Tutors implies p2 in Teacher) or (all p1, p2, p3:Person | p1->p2 in Tutors and p2->p3 in Tutors implies p3 in Teacher)
+inv15 S: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teachers) or (some p3: Person | p1 != p3 and p2 != p3 and p2->p3 and p3 -> Teachers)
+inv15 T: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (some p3: Person | p1 != p3 and p2 != p3 and p2->p3 and p3 -> Teacher)
+inv15 T: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (some p3: Person | p1 != p3 and p2 != p3 and p2->p3 in Tutors and p3 -> Teacher)
+inv15 B: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (some p3: Person | p1 != p3 and p2 != p3 and p2->p3 in Tutors and p3 in Teacher)
+inv15 B: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (some p3: Person | p2->p3 in Tutors and p3 in Teacher)
+inv15 U: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (some p3: Person | (p2->p3 in Tutors and p3 in Teacher) or (some p4:Person | p3->p4 in Tutors and p4 in Teacher ))
+inv15 B: all p1,p2:Person | (p1->p2 in Tutors and p2 in Teacher) or (all p3: Person | (p2->p3 in Tutors and p3 in Teacher) or (some p4:Person | p3->p4 in Tutors and p4 in Teacher ))
+inv15 S: all p1: Person | p in Teacher or (some p2:Person | p1->p2 in Tutors => (p2 in Teacher or (some p3:Person | p3 in Teacher)))
+inv15 S: all p1: Person | p1 in Teacher or (some p2:Person | p1->p2 in Tutors => (p2 in Teacher or (some p3:Person | p2->p3 in Tutors andp3 in Teacher)))
+inv15 U: all p1: Person | p1 in Teacher or (some p2:Person | p1->p2 in Tutors => (p2 in Teacher or (some p3:Person | p2->p3 in Tutors and p3 in Teacher)))
+

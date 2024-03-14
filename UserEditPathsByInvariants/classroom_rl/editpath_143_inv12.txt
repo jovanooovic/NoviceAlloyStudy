@@ -1,0 +1,30 @@
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  t.Teaches.Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  (t.Teaches).Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  (t.Teaches).Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some g:Group, p:Person | t.Teaches->p->g in Groups
+inv12 T: all t:Teacher | some t.Teaches in Class
+inv12 E:
+inv12 E:
+inv12 S: some c:Class |  all a: Teaches.c and some a->s->g in Groups
+inv12 S: some c:Class |  all a: Teaches.c | some a->s->g in Groups
+inv12 S: some c:Class |  all t: Teaches.c | some a->t->g in Groups
+inv12 S: some c:Class |  all t: Teaches.c | some c->t->g in Groups
+inv12 S: some c:Class| somee (Teaches.c - Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c - Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Person) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) implies  some g:Group, p:Person | c->p->g in Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Person) and  some g:Group, p:Person | c->p->g in Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some c.Groups
+inv12 B: some c:Class| some (Teaches.c) and  some c.Groups
+inv12 B: some c:Class| some Teaches.c + Teacher and  some c.Groups
+inv12 B: some c:Class| no(Teaches.c -Teacher) and  some c.Groups
+inv12 B: some c:Class| no(Teaches.c -Person) and  some c.Groups
+inv12 O: some c:Class| all t:Teacher |t->c in Teaches and  some c.Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some c.Groups
+inv12 O: some c:Class |all t: Teacher | t->c in Teaches and some c.Groups
+inv12 U: all t: Teacher | some t.Teaches and some c:Class| some c.Groups
+inv12 C: all t: Teacher | some t.Teaches.Groups
+

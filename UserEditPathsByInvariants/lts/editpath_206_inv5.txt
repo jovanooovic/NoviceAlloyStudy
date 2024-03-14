@@ -1,0 +1,15 @@
+inv5 S: all s : State | some Event(s.trans)
+inv5 S: all s : State | some Event(s.trans)
+inv5 B: all s : State | some Event.(s.trans)
+inv5 O: all s : State | some (s.trans).Event
+inv5 O: all s : State, e : Event | some (s.trans).e
+inv5 T: all s : State, e : Event | some (s.trans)<:e
+inv5 O: all s : State, e : Event | some (s.trans).e
+inv5 O: all s : State, e : Event | some e.(s.trans)
+inv5 T: all s : State | Event in s.trans
+inv5 T: all s : State | Event in s<:trans
+inv5 B: all s : State | some Event.(s.trans)
+inv5 B: all s : State | some Event.(s.trans)
+inv5 O: all s : State | some Event.(s<:trans)
+inv5 B: all s : State | some Event.(s.trans)
+

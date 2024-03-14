@@ -1,0 +1,13 @@
+inv5 T: all proj:Project | some p:Person | p->proj in p.projects implies p is not Professor	    all proj:Project | some p:Student | p->proj in p.projects
+inv5 T: all proj:Project | some p:Person | p->proj in p.projects implies p is not Professor	    all proj:Project | some p:Student | p->proj in p.projects
+inv5 T: all proj:Project | some p:Person | p->proj in p.projects implies p is not Professor
+inv5 T: all proj:Project | some p:Student | p->proj in p.projects
+inv5 T: all proj:Project | some p:Person | p->proj in p.projects implies p is not Professor
+inv5 T: all proj:Project | some p:Person | p->proj in projects implies p is not Professor
+inv5 B: all proj:Project | some p:Person | p->proj in projects implies p not in Professor
+inv5 B: all proj:Project | all p:Person | p->proj in projects implies p in Professor	    all proj:Project | some p:Student | p->proj in projects
+inv5 C: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	(all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student)
+inv5 B: (all proj:Project | all p:Person | p->proj in projects implies p in Professor)	    (all proj:Project | some p:Student | p->proj in projects)
+inv5 B: (all proj:Project | some p:Student | p->proj in projects)			(all proj:Project | all p:Person | p->proj in projects implies p in Professor)
+inv5 C: all proj:Project | all p:Person | p->proj in projects implies p in Student	    all proj:Project | some p:Student | p->proj in projects
+

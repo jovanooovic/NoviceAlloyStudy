@@ -1,0 +1,6 @@
+inv2 S: all y : User | follows(x,y)
+inv2 T: all y : User | y follows x
+inv2 T: all y : User | y follows y
+inv2 S: all y : User | follows(y,y)
+inv2 C: all y : User | y not in follows.y
+

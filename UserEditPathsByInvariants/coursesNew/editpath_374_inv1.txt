@@ -1,0 +1,6 @@
+inv1 O: all p : Person, g : Grade | p->g in Course.grades and p in Student
+inv1 B: all p : Person, g : Grade | p->g in Course.grades implies p in Student
+inv1 C: all p : enrolled.Course | p in Student
+inv1 B: all p : Person, g : Grade | p->g in Course.grades implies p in Student
+inv1 C: all p : enrolled.Course | p in Student
+

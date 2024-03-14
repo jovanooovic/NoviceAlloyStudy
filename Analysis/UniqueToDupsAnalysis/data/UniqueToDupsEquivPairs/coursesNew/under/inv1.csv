@@ -1,0 +1,40 @@
+Pairs,36
+,,"no enrolled.Professor",2
+,,"enrolled in  (Person -> Course)",1
+,,"no (enrolled.Person - Student)",1
+,,"no (Professor <: Person.enrolled)",1
+,,"all p : Professor | p not in Course",1
+,,"all  p : Professor | p not in enrolled.p",1
+,,"all  p : Professor | p not in p.enrolled",2
+,,"all c : Course | c.enrolled in Student",1
+,,"all s:Student | s.enrolled in Course",1
+,,"all p : Professor | p not in Person.enrolled",1
+,,"all x: Person - Student | no enrolled.x",1
+,,"all p:Person| Course.grades.p in Student",1
+,,"all c:Course| c.grades.Person in Student",1
+,,"all p:Person-Student | none in p.enrolled",2
+,,"all p : Person-Student | p.enrolled in Course",1
+,,"all p : Person-Professor | p.enrolled in Course",1
+,,"all c : Course | c.enrolled in Student-Professor",1
+,,"all p: Person | p in p.enrolled => p in Student",1
+,,"all p : Professor , c: Course | p not in c.enrolled",1
+,,"all p:Person | p.enrolled = 0 => p in Professor",1
+,,"all x: Person | (x not in Student) implies x not in x.enrolled",1
+,,"all p : Person | p in Student implies p.enrolled in Course",1
+,,"all p: Person | p in Person.enrolled implies p in Student",1
+,,"all p : Person | all pr : Professor | pr not in p.enrolled",1
+,,"all c: Course, p: Person | p in c.enrolled => p in Student",3
+,,"all p:Person, c:Course| p in c.enrolled implies p in Student",2
+,,"all p: Person, c: Course | p not in Student => p not in enrolled[c]",2
+,,"all p: Person, s: Student, c: Course | p not in s => p not in c",1
+,,"all p : Person | (p not in Student implies #(enrolled) = 0) or (p in Student implies #(enrolled) > 0)",1
+
+Pairs,1
+,,"all p : Person | p.enrolled in Student.enrolled",1
+
+Pairs,1
+,,"all p: Person, s: Student | p not in Student => p not in Course.~enrolled",1
+
+Pairs,1
+,,"all p1 : Person | all c1 : Course | p1.enrolled = c1 implies p1 in Student",1
+

@@ -1,0 +1,12 @@
+inv6 S: all c : Component | p : Product | c.parts not in p.parts
+inv6 S: all c,d : Component | c.parts not in (d.parts.^)
+inv6 S: all c,d : Component | c.parts not in (d.parts.^)
+inv6 S: all c,d : Component | c.parts not in (d.parts.^)
+inv6 O: all c,d : Component | c.parts not in (d.^parts)
+inv6 O: all c,d : Component | c.parts not in (c.^parts)
+inv6 O: all c : Component | c.parts not in (c.^parts)
+inv6 O: all c : Component | c.parts not in (c.^parts)	all c,d : Component | c.parts not in (d.^parts)
+inv6 O: all c : Component | c.parts not in (c.^parts)	all c,d : Component | c.parts not in (d.^parts)
+inv6 O: all c : Component |	all p : Product | c.parts not in (p.^parts)
+inv6 C: all c : Component | c not in (c.^parts)
+

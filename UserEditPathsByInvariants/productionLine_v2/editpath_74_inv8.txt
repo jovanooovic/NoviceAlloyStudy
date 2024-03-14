@@ -1,0 +1,9 @@
+inv8 S: all c : Component | c in Dangerous implies	(all w : Workstation | w in c.workstation implies Human not in w.workers))
+inv8 B: all c : Component | c in Dangerous implies	(all w : Workstation |	w in c.workstation implies Human not in w.workers)
+inv8 S: all c : Component | all w : Workstation | c in Dangerous and w in c.workstation	implies Human not in w.workers)
+inv8 B: all c : Component | all w : Workstation | c in Dangerous and w in c.workstation	implies Human not in w.workers
+inv8 B: all c : Component | all w : Workstation |	c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 B: all c : Component | all w : Workstation |	c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 B: all c : Component | all w : Workstation |	c in Dangerous and w in c.workstation implies Human not in w.workers
+inv8 C: all c : Component | all w : Workstation |	c in Dangerous and w in c.workstation implies (all h : Human | h not in w.workers)
+

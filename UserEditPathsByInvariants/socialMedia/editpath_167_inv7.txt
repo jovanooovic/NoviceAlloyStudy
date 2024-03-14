@@ -1,0 +1,15 @@
+inv7 E:
+inv7 B: all x : User | all u : follows.follows.x | x in u.follows or x in u.suggested
+inv7 U: all x : User | all u : follows.follows.x - x | x in u.follows or x in u.suggested
+inv7 U: all x : User | all u : x.follows.follows| u in x or u in x.follows or u in x.suggested
+inv7 S: all x : User | all u : x.follows.follows| u in x.suggested if u not in x + x.follows
+inv7 U: all x : User | all u : x.follows.follows| u in x.suggested => u not in x + x.follows
+inv7 U: all x : User | all u : x.follows.follows - x.follows - x| u in x.suggested
+inv7 S: all x : User | u not in u.follows + u.suggested	all x : User | all u : x.follows.follows - x.follows - x| u in x.suggested
+inv7 B: all u : User | u not in u.follows + u.suggested	all x : User | all u : x.follows.follows - x.follows - x| u in x.suggested
+inv7 B: all u : User | u not in u.follows + u.suggested and no u.suggested & u.follows	all x : User | all u : x.follows.follows - x.follows - x| u in x.suggested
+inv7 B: all u : User | u not in u.follows + u.suggested and no u.suggested & u.follows	all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x
+inv7 B: all u : User | u not in u.follows + u.suggested	all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x
+inv7 S: all u : User | u not in u.follows + u.suggested	all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x	all x : User | all u : x.follows.follows - u - x.follows | u in x.suggested
+inv7 O: all u : User | u not in u.follows + u.suggested	all x : User | all u : x.suggested | u in x.follows.follows and u not in x.follows + x	all x : User | all u : x.follows.follows - x - x.follows | u in x.suggested
+

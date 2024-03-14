@@ -1,0 +1,10 @@
+inv10 T: all p:Person | p.grades implies p in Student
+inv10 U: all p:Person | some grades.p implies p in Student
+inv10 T: all p:Person | p in Course.grades implies p in Student
+inv10 T: all p:Person | p in Course.grades & Person implies p in Student
+inv10 O: all p:Person | some Person <: Course.grades implies p in Student
+inv10 T: all p:Person | p in Professor implies p not in  Person <: Course.grades
+inv10 C: all p:Person | some p.(Course.grades) implies p in Student
+inv10 T: all p:Person | some p.Course.grades implies p in Student
+inv10 C: all p:Person | some p.(Course.grades) implies p in Student
+

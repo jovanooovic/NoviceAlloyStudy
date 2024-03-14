@@ -1,0 +1,9 @@
+inv2 T: all x: Worker| all s: Workstation| one x in s.worker
+inv2 S: all x: Worker| all s: Workstation| #(x in s.worker)=1
+inv2 T: all x: Worker| all s: Workstation| #(x in s.workers)=1
+inv2 T: all x: Worker| all s: Workstation| one x in s.workers
+inv2 T: all x: Worker| all s: Workstation| #s.workers.x=1
+inv2 T: all x: Worker| all s: Workstation| one (x in s.workers)
+inv2 T: all x: Worker| all s: Workstation| #s.workstation.x=1
+inv2 C: (all w: Workstation | some r: Worker | r in w.workers) && (all w: Worker | one workers.w)
+

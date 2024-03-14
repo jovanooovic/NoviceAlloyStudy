@@ -1,0 +1,14 @@
+inv15 T: all p : Person | some t : Teacher | t in Tutors.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors || t in p.Tutors.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors
+inv15 S: all t : Teacher | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors
+inv15 S: all t, t1 : Teacher t in t1.Tutors || t in t1.Tutors.Tutors
+inv15 B: all t, t1 : Teacher | t in t1.Tutors || t in t1.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors
+inv15 B: all p : Teacher | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in p.Tutors || t in p.Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | t in (p.Tutors :> Teacher) || t in (p.Tutors.Tutors :> Teacher)
+inv15 B: all p : Person | some t : Teacher | p=t || t in (p.Tutors) || t in p.Tutors.Tutors
+

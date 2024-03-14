@@ -1,0 +1,13 @@
+inv1 B: all n : Node | n in n.adj.~adj
+inv1 B: all disj n,n1 : Node | n in n1.adj.~adj
+inv1 B: all disj n : Node | n in n.adj.~adj
+inv1 T: all disj n : Node | n in adj.~adj
+inv1 T: all disj n : Node | n in adj.~adj
+inv1 B: all disj n : Node | n in n.adj.~adj
+inv1 O: all disj n : Node | n not in n.adj.~adj
+inv1 O: all n : Node | n not in n.adj.~adj
+inv1 T: all n : Node | some n in n.adj.~adj
+inv1 B: all n : Node | some n & n.adj.~adj
+inv1 U: all n : Node | lone n & n.adj.~adj
+inv1 B: all n : Node | n in n.adj.~adj
+

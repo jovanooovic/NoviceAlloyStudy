@@ -1,0 +1,13 @@
+inv8 B: all e: Entry, ex: Entry | ex in e.^succs
+inv8 T: all e: Entry, ex: Entry | no ex not in e.^succs
+inv8 B: all e: Entry, ex: Entry | ex  in e.^succs
+inv8 O: all e: Entry, ex: Exit | ex  in e.^succs
+inv8 B: all e: Entry | some ex: Exit | ex  in e.^succs
+inv8 O: all e: Entry | Exit in e.^succs
+inv8 T: all e: Entry | no Exit not in e.^succs
+inv8 B: all e: Entry | Junction not in e.^succs
+inv8 O: all e: Entry | Exit in e.^succs
+inv8 S: all e: Entry, all ex: Exit | ex in e.^succs
+inv8 O: all e: Entry, ex: Exit | ex in e.^succs
+inv8 B: all e: Entry | some ex: Exit | ex in e.^succs
+

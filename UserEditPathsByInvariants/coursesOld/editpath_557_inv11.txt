@@ -1,0 +1,12 @@
+inv11 T: all s:Student, c:Course | c.grades.s.Grade implies enrolled.c in Student
+inv11 T: all s:Student, c:Course | grades.Grade.s implies enrolled.c in Student
+inv11 T: all s:Student | grades.Grade.s implies s.enrolled
+inv11 U: all s:Student | grades.Grade.s in s.enrolled
+inv11 U: all s:Student | grades.s.Grade in s.enrolled
+inv11 U: all s:Student | grades.Grade.s in s.enrolled
+inv11 U: all s:Student | s.grades.Grade in s.enrolled
+inv11 U: all s:Student | grades.s.Grade in s.enrolled
+inv11 U: all s:Student | grades.Grade.s in s.enrolled
+inv11 T: all s:Student | grades.Grade in s.enrolled
+inv11 U: all s:Student | grades.Grade.s in s.enrolled
+

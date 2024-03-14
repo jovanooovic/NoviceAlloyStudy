@@ -1,0 +1,9 @@
+inv8 T: sees = Ad & ( follows + suggested)
+inv8 T: sees = Ad & (follows + suggested)
+inv8 T: sees = Ad - (follows + suggested)
+inv8 T: sees = Ad - (follows.posts + suggested.posts)
+inv8 T: sees = Ad & (follows.posts + suggested.posts)
+inv8 T: sees = Ad - (follows.posts - suggested.posts)
+inv8 S: all u: User, a: Add | a in u.sees implies (a in u.follows.posts) or (a in u.suggested.posts)
+inv8 C: all u: User, a: Ad | a in u.sees implies (a in u.follows.posts) or (a in u.suggested.posts)
+

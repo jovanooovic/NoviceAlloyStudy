@@ -1,0 +1,16 @@
+inv13 E:
+inv13 C: grades.(max[Grade]) in projects.~projects
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade]) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade])) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade])) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | all p : Person | (p in c.grades(max[Grade])) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade]) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade])) implies (p.projects & c.projects != none)
+inv13 S: all c : Course | some p : Person | (p in c.grades(max[Grade]))) implies (p.projects & c.projects != none)
+inv13 B: all c : Course | some p : Person | (p in c.grades.(max[Grade])) implies (p.projects & c.projects != none)
+inv13 B: all c : Course | some p : Person | some pr: Project | (p in c.grades.(max[Grade])) implies (pr in c.projects and pr in p.projects)
+inv13 B: all c : Course | some p : Person | some pr: Project | (p in c.grades.(max[Grade])) implies ((p.projects & c.projects) != none)
+inv13 B: all c : Course | some p : Person | (p in c.grades.(max[Grade])) implies ((p.projects & c.projects) != none)
+inv13 C: all c : Course | all p : Person | all g : Grade | ((g = max[Grade]) and p->g in c.grades) implies ((c.projects & p.projects) != none)
+inv13 U: all c : Course | all p : Student | all g : Grade | ((g = max[Grade]) and p->g in c.grades) implies ((c.projects & p.projects) != none)
+

@@ -1,0 +1,6 @@
+inv2 S: all u : User , u2 : User | u.follows.x != u.follows.y
+inv2 T: all u : User , u2 : User | u.follows.u != u.follows.u2
+inv2 T: all u : User , u2 : User | User.follows.u != User.follows.u2
+inv2 T: all u : User , u2 : User | User.follows.u != User.follows.u2
+inv2 S: all u : User , u2 : User | follows.u != \\follows.u2
+

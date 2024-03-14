@@ -1,0 +1,19 @@
+inv7 B: all p:Project | one p.~projects.~enrolled
+inv7 B: all p:Project | one p.~projects.~enrolled&Student
+inv7 B: all p:Project | one p.~projects.~enrolled
+inv7 B: all p:Project | one enrolled.projects.p
+inv7 B: all p:Project | one (enrolled.projects.p&Student)
+inv7 B: all p:Project | one (enrolled.projects.p)&Student
+inv7 O: all p:Project | one (p.enrolled.projects)&Student
+inv7 T: all p:Person | one (p.enrolled.projects)&Student
+inv7 O: all p:Person | one (p.enrolled.(Course <: projects))&Student
+inv7 B: all p:Person | one p.enrolled.(Course <: projects)
+inv7 B: all s:Student | one s.enrolled.(Course <: projects)
+inv7 B: all s:Student | lone s.enrolled.(Course <: projects)
+inv7 B: all s:Student | lone s.enrolled.projects
+inv7 B: all s:Student | lone s.enrolled.(Course <: projects)
+inv7 B: all s:Student | lone s.enrolled.(Course <: projects)
+inv7 B: all s:Student | lone (s.enrolled.(Course <: projects) & s.projects)
+inv7 B: all p:Project | lone p.~projects.~enrolled
+inv7 B: all s:Student | lone (s.enrolled.(Course <: projects) & s.projects)
+

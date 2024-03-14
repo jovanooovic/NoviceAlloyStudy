@@ -1,0 +1,6 @@
+inv11 U: all s : Student, c : Course | c not in s.enrolled implies s not in c.grades.Grade
+inv11 B: all s : Student, c : grades.Grade.s | c not in s.enrolled
+inv11 C: all c : Course, s : c.grades.Grade | c in s.enrolled
+inv11 U: all s : Student, c : grades.Grade.s | c in s.enrolled
+inv11 U: all s : Student, c : grades.Grade.s | c in s.enrolled
+

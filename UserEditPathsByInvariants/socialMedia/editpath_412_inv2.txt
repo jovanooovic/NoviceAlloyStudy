@@ -1,0 +1,4 @@
+inv2 U: all x: User | !x.follows = x
+inv2 U: all x: User | !(x.follows = x)
+inv2 C: all x: User | !(x in x.follows)
+

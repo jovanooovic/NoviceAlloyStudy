@@ -1,0 +1,7 @@
+inv4 B: all n: Node | n.adj = Node - n
+inv4 B: all n: Node | n.adj in Node - n
+inv4 U: all n: Node | Node - n in n.adj
+inv4 U: all disj n, m: Node | n->m in adj
+inv4 C: all n, m: Node | n->m in adj
+inv4 C: all n: Node | n.adj = Node
+

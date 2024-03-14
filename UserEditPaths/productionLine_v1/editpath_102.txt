@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 C: Component in parts.Product
+inv2 C: (no iden & ^parts)
+inv3 T: all c: Component | some position.(c.position)
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv3 S: all c: Component | some r: Robot | r.position = (c.position)
+inv3 S: all c: Component | some r: Robot | r.position = c.position
+inv3 C: all c: Component | some r: Robot | r.position = c.position
+inv4 S: all c: Component | no {p: Product | p.position in ^next[c.position]}
+inv4 O: all c: Component | no {p: Product | p.position in ^next[c.position]}
+inv4 O: all c: Component | no {p: Product | p.position in ^next[c.position]} & c.parts
+inv4 O: all c: Component | no ({p: Product | p.position in ^next[c.position]} & c.parts)
+inv4 C: all c: Component | no ({p: Product | some p.position && p.position in ^next[c.position]} & c.parts)
+

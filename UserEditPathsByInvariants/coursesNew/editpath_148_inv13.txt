@@ -1,0 +1,7 @@
+inv13 B: all x:Person, c:Course, g:Grade, p:Project| c->x->g in grades implies x in Student and x->c in enrolled
+inv13 B: all x:Person, c:Course, g:Grade, p:Project| c->x->g in grades implies x in Student and x->c in enrolled and c->p in projects
+inv13 B: all x:Person, c:Course, g:Grade, p:Project| c->x->g in grades implies x in Student and x->c in enrolled and c->p in projects and x->p in projects
+inv13 O: all x:Person, c:Course, g:Grade| one p:Project| c->x->g in grades implies x in Student and x->c in enrolled and c->p in projects and x->p in projects
+inv13 B: all x:Person, c:Course, g:Grade| one p:Project| c->x->g in grades and x in Student implies x->c in enrolled and c->p in projects and x->p in projects
+inv13 B: all x:Person, c:Course, g:Grade, p:Project| c->x->g in grades and x in Student implies x->c in enrolled and c->p in projects and x->p in projects
+

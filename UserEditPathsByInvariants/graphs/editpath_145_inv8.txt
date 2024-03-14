@@ -1,0 +1,11 @@
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 B: all n1: Node, n2: Node, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 S: all n1, n2, n3: Node | #{n1,n2,n3} = 3 and n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 C: adj.adj in adj
+inv8 C: all n1, n2, n3: Node | n2 in n1.adj && n3 in n2.adj implies n3 in n1.adj
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj
+inv8 B: all n1, n2, n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 -> n2 in adj + ^adj
+inv8 B: all n1, n2, n3: Node | n1 in n2.adj and n2 in n3.adj implies n1 -> n3 in adj
+inv8 B: all n1, n2, n3: Node | n1 in n2.adj and n2 in n3.adj implies n3 in n1.adj
+inv8 C: all n1, n2, n3: Node | n2 in n1.adj and n3 in n2.adj implies n3 in n1.adj
+

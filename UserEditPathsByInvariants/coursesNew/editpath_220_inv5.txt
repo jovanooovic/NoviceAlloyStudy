@@ -1,0 +1,36 @@
+inv5 S: all s: Person, p: Project | x in Student => x p.~projects
+inv5 T: all s: Person, p: Project | s in Student => s p.~projects
+inv5 T: all s: Person, p: Project | s in Student => s p.~projects.~projects
+inv5 T: all s: Person, p: Project | s in Student => s p.~projects.~enrolled
+inv5 B: all s: Person, p: Project | s in Student => s in p.~projects.~enrolled
+inv5 T: all s: Person, p: Project | s in Student => s in s.projects
+inv5 B: all s: Person, p: Project | s in Student => s in p.~projects
+inv5 U: all s: Person, p: Project | s not in Student => s not in p.~projects
+inv5 T: all s: Person, p: Project | p.~projects in Student
+inv5 T: all s: Person, p: Project | p.~projects in Student
+inv5 B: all s: Person, p: Project | s in Student and s in p.~projects
+inv5 B: all s: Person, p: Project | s not in Student and s not in p.~projects
+inv5 B: all s: Person, p: Project | s in Student implies s in p.~projects
+inv5 U: all s: Person, p: Project | s not in Student implies s not in p.~projects
+inv5 B: all s: Person, p: Project | s in Student implies s in p.~projects	  	all s: Person, p: Project | s not in Student implies s not in p.~projects
+inv5 B: all x: Person, p: Project | x not in p.~projects => x not in Student
+inv5 B: all x: Person, s: Student,p: Project | (x not in p.~projects => x not in Student) && #s.projects>0
+inv5 S: all x: p | some p: Project | p not in Student => p not in p.~projects
+inv5 T: all x: Person | some p: Project | x not in Student => p not in p.~projects
+inv5 B: all x: Person | some p: Project | x not in Student => p not in x.projects
+inv5 B: all x: Person | some p: Project | x not in Student => x.projects != p
+inv5 B: all x: Student | some p: Project | x.projects != p
+inv5 S: all p: Project | p.~projects in Studen
+inv5 T: all p: Project | p.~projects in Student
+inv5 S: all p: Project | p.~this/Person/projects in Student
+inv5 B: all s: Student | #s.projects > 0
+inv5 S: all p: Person | p in Student && #s.projects > 0
+inv5 B: all p: Person | p in Student && #p.projects > 0
+inv5 S: all x: Person, y: Project | p not in Student => not p.projects
+inv5 T: all x: Person, y: Project | x not in Student => not x.projects
+inv5 B: all x: Person, y: Project | x in Student => #x.projects>0
+inv5 B: all x: Person | x in Student => #x.projects>0
+inv5 U: all x: Person | x in Student => #x.projects>0 && x not in Student => x.projects = 0
+inv5 S: all x: Person | x in Student => #x.projects>0 && x not in Student => x.projcts not in Course.projects
+inv5 U: all x: Person | x in Student => #x.projects>0 && x not in Student => x.projects not in Course.projects
+

@@ -1,0 +1,7 @@
+inv5 B: all ws : Workstation | some w : Worker | (w in ws.workers and w in Robot) implies ws.workers in Robot
+inv5 B: all ws : Workstation | some w : Worker | (w in ws.workers and w in Robot) <=> ws.workers in Robot
+inv5 B: all ws : Workstation | some w : Worker | (w in ws.workers and w in Robot) implies ws.workers not in Human
+inv5 U: all ws : Workstation , w : Worker | (w in ws.workers and w in Robot) implies ws.workers not in Human
+inv5 O: all ws : Workstation , w : Worker | (w in ws.workers and w in Robot) implies ws.workers in Robot	all ws : Workstation , w : Worker | (w in ws.workers and w in Human) implies ws.workers in Human
+inv5 O: all ws : Workstation , w : Worker | (w in ws.workers and w in Robot) implies ws.workers in Robot	all ws : Workstation , w : Worker | (w in ws.workers and w in Human) implies ws.workers in Human
+

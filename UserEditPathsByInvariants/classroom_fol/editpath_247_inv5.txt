@@ -1,0 +1,15 @@
+inv5 S: all x in Teacher
+inv5 B: all x : Teacher | some y : Class | x -> y in Teaches
+inv5 T: all x : Class | some t : Teacher | x -> t in Groups
+inv5 B: all x : Class | some t : Teacher, g : Group | x -> t -> g in Groups
+inv5 B: some c : Class, t : Teacher, g : Group | c -> t -> g in Groups
+inv5 T: some c : Class, t : Teacher, g : Group | some c -> t -> g in Groups
+inv5 B: some c : Class, t : Teacher, g : Group | c -> t -> g in Groups
+inv5 S: some c : Class | t : Teacher, g : Group | c -> t -> g in Groups
+inv5 B: some c : Class | some t : Teacher, g : Group | c -> t -> g in Groups
+inv5 B: some c : Class | some t : Teacher | some g : Group | c -> t -> g in Groups
+inv5 B: some c : Class | some g : Group | some t : Teacher | c -> t -> g in Groups
+inv5 B: some c : Class, g : Group, t : Teacher | c -> t -> g in Groups
+inv5 O: some c : Class, t : Teacher | c -> t in Teaches
+inv5 C: some c : Class, t : Teacher | t -> c in Teaches
+

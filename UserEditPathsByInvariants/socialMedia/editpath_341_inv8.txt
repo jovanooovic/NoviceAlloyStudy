@@ -1,0 +1,7 @@
+inv8 O: all u, u1 : User, p : u.sees | p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees and p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees => p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 B: all u, u1 : User | some p : Photo | p in u.sees => p in u1.posts and (u1 in u.follows or u1 in u.suggested)
+inv8 B: all u, u1 : User | some p : Photo | p in u.sees => p in u1.posts and u1 != u and (u1 in u.follows or u1 in u.suggested)
+inv8 O: all u, u1 : User, p : Photo | p in u.sees => p in u1.posts and u1 != u and (u1 in u.follows or u1 in u.suggested)
+

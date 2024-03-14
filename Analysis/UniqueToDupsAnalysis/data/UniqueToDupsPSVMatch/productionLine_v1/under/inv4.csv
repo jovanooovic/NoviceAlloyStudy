@@ -1,0 +1,12 @@
+"no prev[Component]",2
+"no Resource.parts",1
+"all c:Component |  one ((c.position))",1
+"all c:Component | no((c.^parts & Resource).position  & c.position.^next)",1
+"all c:Component | c.position not in c.position.^next",4
+"all c: Component , p : c.parts | p not in nexts[c.position]",2
+"all c:Component | no (c.parts & c.position.~^next)",1
+"all c: Component , p : c.parts | p not in nexts[p.position]",1
+"all c:Component | no (c.parts & c.parts.position.~^next)",1
+"Component.^parts.position in Component.position.prevs + Component.position",1
+"all p : Position | no (position.p <: Component) & (position.(p.^next) <: Component)",1
+"all c: Component | ((c.^parts) & Component).position not in (c.position).^next or no (c.^parts & Component)",1

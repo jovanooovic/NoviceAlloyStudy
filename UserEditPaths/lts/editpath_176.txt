@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 B: some Init.trans
+inv1 C: all s:State | some s.trans
+inv2 B: one Init.trans
+inv2 C: one Init
+inv3 O: all s:State | lone s.trans
+inv3 T: all s:State | lone Event in State.~(s.trans)
+inv3 B: all s:State | lone State.~(s.trans)
+inv3 C: all s:State, e:Event | lone e.(s.trans)
+inv4 T: State in Init.^trans
+inv4 T: State in Init.(^trans)
+inv4 O: State in Init.^(Event.trans)
+inv4 T: State in ^Init.(Event.trans)
+inv4 O: all s:State | s in Event.(Init.trans)
+inv4 T: all s:State | s in ^Event.(Init.trans)
+inv4 O: all s:State | s in Event.^(Init.trans)
+inv4 T: all s:State | s in Event.(Init.^trans)
+inv4 T: State in ^(Event.(Init.trans))
+inv4 T: State in ^(Init.trans)
+inv4 O: State in Event.^(Init.trans)
+inv5 O: all s:State | Event in State.~(s.trans)
+inv5 U: all s:State | State.~(s.trans) in Event
+inv6 C: all e:Event | some s:State | e in State.~(s.trans)
+inv5 O: all s:State | Event in State.~(s.trans)
+inv5 O: all s:State | Event in State.~(s.trans) and Event in State.~(Init.trans)
+inv4 T: all s:State | s in Init.trans
+inv4 T: all s:State | s in ^(Event.Init.trans)
+inv4 T: all s:State | s in ^(Event.(Init.trans))
+inv4 T: all s:State | s in ^(Event.(Init.trans)).trans
+inv4 T: all s:State | s in ^((Event.(Init.trans)).trans)
+inv4 O: all s:State | some e:Event | s in e.^(Init.trans)
+inv4 O: all s:State | some e:Event | s in e.(Init.trans)
+inv4 T: all s:State | some e:Event | s in ^e.(Init.trans)
+inv4 T: State-Init in Event.Init.^trans
+inv4 T: State-Init in Event.Init.trans
+inv4 B: State-Init in Event.(Init.trans)
+inv4 B: State-Init in Event.^(Init.trans)
+inv4 T: State-Init in Event.(Init.^trans)
+inv4 T: State-Init in Event.(^Init.trans)
+inv4 B: State-Init in Event.^(Init.trans)
+inv7 T: Init in ^Event.~(State.trans)
+inv4 B: State-Init in Event.^(Init.trans)
+

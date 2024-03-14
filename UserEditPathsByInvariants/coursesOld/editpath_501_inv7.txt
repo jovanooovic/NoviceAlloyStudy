@@ -1,0 +1,5 @@
+inv7 B: all s: Student, tp1, tp2: Project, c1,c2 : Course | 	  tp1 in s.projects and tp2 in s.projects and tp1 in c1.projects and tp2 in c2.projects implies c1!=c2
+inv7 B: all s: Student, tp1, tp2: Project, c : Course | 	  tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects implies tp1!=tp2
+inv7 B: all s: Student, tp1, tp2: Project, c : Course | 	  (tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects) implies tp1!=tp2
+inv7 U: all s: Student, tp1, tp2: Project, c : Course | 	  (tp1 in s.projects and tp2 in s.projects and tp1 in c.projects and tp2 in c.projects) implies tp1=tp2
+

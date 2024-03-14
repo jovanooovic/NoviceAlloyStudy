@@ -1,0 +1,23 @@
+inv7 T: all u:User | no (u.follows and u.suggested) and u.suggested in u.follows.follows
+inv7 T: all u:User | no (u.follows and u.suggested) and u.suggested in u.follows.follows
+inv7 U: all u:User | no (u.follows & u.suggested) and u.suggested in u.follows.follows
+inv7 U: all u:User | no (u.follows & u.suggested) and u.suggested in u.follows.follows-u
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f not in u.follows and f in u.follows.follows
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f not in u.follows and f in u.follows.follows-u
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f not in u.follows and f in u.follows.follows-u
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f not in u.follows and f in (u.follows.follows)-u
+inv7 U: all u:User | some f:User | f in u.suggested implies f not in u.follows and f in (u.follows.follows)-u
+inv7 U: all u:User | some f:User | f in u.suggested implies f not in u.follows and f in (u.follows.follows)
+inv7 U: all u:User | some f:User | f in u.suggested implies (f not in u.follows and f in (u.follows.follows))
+inv7 U: all u:User | some f:User | f in u.suggested implies f in ((u.follows.follows) - u.follows)
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f in ((u.follows.follows) - u.follows)
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f in (((u.follows).follows) - u.follows)
+inv7 S: all u:User | some f:User-u | f in u.suggested implies f in (((u.follows).follows) and f not in u.follows
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f in ((u.follows).follows) and f not in u.follows
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f not in u.follows
+inv7 B: all u:User | some f:User-u | f in u.suggested implies f in u.follows.follows - u.follows
+inv7 T: all u:User | some f:User-u | u.suggested = f in u.follows.follows - u.follows
+inv7 B: all u:User | some f:User-u | u.suggested = u.follows.follows - u.follows
+inv7 B: all u:User  | u.suggested = u.follows.follows - u.follows
+inv7 C: all u:User  | u.suggested = u.follows.follows - u.follows - u
+

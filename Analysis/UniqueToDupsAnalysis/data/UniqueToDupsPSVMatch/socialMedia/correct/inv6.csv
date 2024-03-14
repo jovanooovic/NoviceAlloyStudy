@@ -1,0 +1,115 @@
+"Influencer -> Day in posts.date",1
+"(Influencer <: posts).date = Influencer->Day",1
+"Influencer <: (posts.date) = Influencer->Day",4
+"all i:Influencer | i.posts.date = Day",42
+"all x:Influencer| x.posts.date = Day",7
+"all i : Influencer | Day = i.posts.date",13
+"all d : Day | Influencer in (posts.date.d)",5
+"all i:Influencer | Day in i.posts.date",36
+"all x:Influencer | no Day - x.posts.date",1
+"all i : Influencer | no Day - i.posts.date",2
+"all i:Influencer | #i.posts.date = #Day",1
+"all i: Influencer | i.posts.date&Day = Day",2
+"all i : Influencer | Day & i.posts.date = Day",2
+"all i: Influencer | Day - i.posts.date = none",1
+"all d:Day, i:Influencer| d in i.posts.date",35
+"all d:Day,i:Influencer | i in posts.(date.d)",2
+"all x:Influencer, d:Day | d in x.posts.date",2
+"all i : Influencer, p : Day | p in  i.posts.date",1
+"all u:Influencer, d:Day | u in posts.date.d",1
+"all x:Day,y:Influencer| x in y.posts.date",2
+"all i:Influencer, d:Day| d in i.posts.date",81
+"all i:Influencer| #(i.posts.date & Day) = #Day",1
+"all i : Influencer, d : Day | Day in i.posts.date",1
+"all inf : Influencer, d:Day| d in inf.posts.date",2
+"all i : Influencer, d:Day | some i.posts.date & d",5
+"all d: Day, i: Influencer | i in d.~date.~posts",1
+"all i : Influencer | (i.posts&Photo).date&Day = Day",1
+"all i:Influencer | i.posts <: date in Photo some -> Day",1
+"all d : Day, i : Influencer | some (i.posts.date & d)",1
+"all d : Day, i : Influencer | some date.d & i.posts",1
+"all i : Influencer, d : Day | some i.posts & date.d",5
+"all x: Day | all p: Influencer | x in p.posts.date",1
+"all d: Day | all i: Influencer | d in i.posts.date",27
+"all d : Day |all x : Influencer | d in x.posts.date",1
+"all i:Influencer | all d:Day | d in i.posts.date",22
+"all i:Influencer| all z:Day | z in i.posts.date",8
+"all u: Influencer| all d: Day| d in u.posts.date",1
+"all x : Influencer | all d : Day | d in x.posts.date",2
+"all x : Influencer | all y : Day | y in x.posts.date",3
+"all d: Day| all u: Influencer | d in (u.posts).date",2
+"all a:Influencer | all d:Day | d in a.posts.date",2
+"all x : Day | all y : Influencer | x in y.posts.date",4
+"all day: Day | all i: Influencer | day in i.posts.date",4
+"all d : Day | all inf : Influencer | d in inf.posts.date",1
+"all d: Day, i:Influencer| #(i.posts.date & Day) = #Day",1
+"all d:Day | all i:Influencer | some (i.posts.date & d)",3
+"all i : Influencer | all d : Day | some i.posts.date & d",1
+"all x : Influencer | all y : Day | some x.posts.date&y",1
+"all i : Influencer | all d : Day | some date.d & i.posts",2
+"all x:User, d:Day | x in Influencer implies d in x.posts.date",1
+"all x: User, y: Day | x in Influencer implies y in x.posts.date",2
+"all i:Influencer, d:Day | some p:i.posts | p.date = d",5
+"all d:Day, i:Influencer | some p: i.posts | p.date=d",3
+"all i:Influencer, d:Day | some p:i.posts | d in p.date",2
+"all d : Day, i : Influencer | some p : i.posts | p.date in d",1
+"all d : Day, f : Influencer | some p : f.posts| d in p.date",1
+"all d : Day, i : Influencer | some p : date.d | p in i.posts",1
+"all d: Day, i: Influencer | some p: i.posts | p in d.~date",3
+"all u:Influencer, d:Day | some p:Photo | u in posts.date.d",1
+"all u : User | u in Influencer implies (all d : Day | d in u.posts.date)",3
+"all d: Day | all u: User | u in Influencer implies (d in u.posts.date)",4
+"all x: User | x in Influencer => all d: Day | d in x.posts.date",6
+"all d : Day | all i : Influencer | some p: i.posts | p.date = d",3
+"all i : Influencer | all d : Day | some p: i.posts | d in p.date",1
+"all d : Day | all i : Influencer | some d2: i.posts.date | d2=d",8
+"all d:Day , i:Influencer |some p:Photo | p.date = d and p in i.posts",1
+"all i:Influencer, d:Day | some p:Photo | p in i.posts and d in p.date",10
+"all d:Day, x:Influencer|some p:Photo| p in x.posts and d in p.date",1
+"all d : Day, i : Influencer | some p : Photo | p in date.d && i in posts.p",1
+"all d : Day, i : Influencer | some p : Photo | i in posts.p && p in date.d",2
+"all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)",5
+"all i : Influencer, d : Day | some p : Photo | d in p.date && i in posts.p",1
+"all a : Influencer, b : Day | some c : Photo | c in a.posts and b in c.date",1
+"all d:Day, i:Influencer | some p:Photo | p in i.posts and d in p.date",2
+"all i : Influencer, d : Day | some p : Photo | d in p.date and p in i.posts",1
+"all u:Influencer, d:Day | some p:Photo | u in posts.p and p in date.d",4
+"all d:Day,i:Influencer | some p:Photo | d in p.date and p in i.posts",4
+"all i: Influencer, d: Day | some p: Photo | i->p in posts and d in p.date",1
+"all d:Day, x:Influencer|some y:Photo| x-> y in posts and y-> d in date",5
+"all i:Influencer, d:Day | some p:Photo | p->d in date and i->p in posts",7
+"all d:Day, i:Influencer| some p:Photo| i->p in posts and p->d in date",10
+"all d:Day, u:Influencer| some p:Photo| u->p in posts and p->d in date",3
+"all x : Influencer, d : Day | some p : Photo | x->p in posts and p->d in date",1
+"all i:Influencer, d:Day| some p:Photo| i->p in posts and p->d in date",30
+"all d: Day, i: Influencer| some p: Photo | p->d in date and i->p in posts",4
+"all inf : Influencer, d : Day | (some p : Photo | (inf -> p in posts and p->d in date))",1
+"all i : Influencer | all d : Day | some z : Photo | z in i.posts and z.date=d",1
+"all d : Day | all i : Influencer | some p : Photo | p in i.posts and p.date = d",2
+"all i : Influencer | all d : Day | some p : Photo | p in i.posts and p.date = d",1
+"not some d : Day, i : Influencer | not some p : Photo | i->p in posts and p->d in date",1
+"all i : Influencer | all d : Day | some p : Photo | d = p.date and p in i.posts",1
+"all d:Day | all i:Influencer |some p:Photo | p in i.posts and d in p.date",2
+"all i : Influencer | all d : Day | some z : Photo | z in i.posts and z.date in d",1
+"all i : Influencer | all d : Day | some p : Photo | i in posts.p and d in p.date",1
+"all i : Influencer | all d : Day | some p : Photo | d in p.date and i in posts.p",7
+"all d:Day | all i:Influencer | some p:Photo | p in i.posts and p in date.d",1
+"all d : Day | all i : Influencer | some p : Photo | p in i.posts and p.date in d",1
+"all i: Influencer | all d: Day | some p: Photo | p in i.posts and d in p.date",1
+"all d : Day | all i : Influencer | some p : Photo | d in p.date and p in i.posts",1
+"all d : Day | all i : Influencer | some p : Photo | i in posts.p and d in p.date",1
+"all i: Influencer | all d: Day | some p: Photo | i->p in posts and p->d in date",6
+"all x : Influencer | all d : Day | some p : Photo | p->d in date and x->p in posts",5
+"all d: Day | all i: Influencer | some p: Photo | i->p in posts and p->d in date",4
+"all infl:Influencer, day:Day | some pst:Photo | infl->pst in posts and pst->day in date",2
+"all inf : Influencer | all day : Day | some ph : Photo | ph in inf.posts and ph.date = day",1
+"all inf : Influencer | all day : Day | some ph : Photo | ph in inf.posts and day in  ph.date",2
+"all day : Day | all influencer : Influencer | some photo : influencer.posts | day in photo.date",2
+"all i, d : univ | i in Influencer and d in Day implies some p : univ | i->p in posts and p->d in date",2
+"all x, y : univ | x in Influencer and y in Day implies some z : Photo | x->z in posts and z->y in date",2
+"all d:Day | all u:User | u in Influencer implies some p:Photo | p in u.posts and d in p.date",1
+"all u:User | u in Influencer implies all d:Day | some p:Photo | u in posts.p and p in date.d",1
+"all u: User, i: Influencer, d: Day | u=i implies some p: Photo | u->p in posts and p->d in date",1
+"all i : Influencer | Day in i.posts.date
+all d: Day | all i: Influencer | d in i.posts.date",1
+"all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts",6

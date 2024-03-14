@@ -1,0 +1,4 @@
+inv6 S: all p : Project, s : Student, c : Course | p in s.projects => p in s.courses.projects
+inv6 U: all p : Project, s : Student, c : Course | p in s.projects => p in s.enrolled.projects
+inv6 U: all p : Project, s : Student | p in s.projects => p in s.enrolled.projects
+

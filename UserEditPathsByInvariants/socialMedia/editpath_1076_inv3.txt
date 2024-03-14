@@ -1,0 +1,5 @@
+inv3 T: all u : User , f : u.follows , p : Photo - Ad | u.sees.p and f.posts.p
+inv3 T: all u : User | u.sees - Ad and u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+

@@ -1,0 +1,87 @@
+NA H: THEME UPDATE
+inv1 B: teaches in Person -> Student
+inv1 C: enrolled in Student -> Course
+inv2 C: teaches in Professor -> Course
+inv3 C: teaches in Person some -> Course
+inv4 T: projects in Course one -> Project
+inv4 C: Course <: projects in Course one -> Project
+inv5 T: projects in Student some -> Project
+inv5 C: Person <: projects in Student some -> Project
+inv5 T: all p:Project | projects.p in Student and some projects.p
+inv5 T: all p:Project | Person <: projects.p in Student and some projects.p
+inv5 C: all p:Project | Person <: projects.p in Student and some Person <: projects.p
+inv6 U: all s:Student | s.projects in s.enrolled.projects
+inv6 U: all s:Student,p:Project | p in s.projects implies p in s.enrolled.projects
+inv6 T: projects in enrolled.projects
+inv6 C: Person<:projects in enrolled.projects
+inv7 T: all c:Course | projects :> c.projects in Person -> lone Project
+inv7 C: all c:Course | Person <: projects :> c.projects in Person -> lone Project
+inv7 C: all c:Course,p:Person | lone p.projects & c.projects
+inv8 U: no iden & teaches
+inv8 U: all c:Course | no c.teaches & c.enrolled
+inv8 C: all c:Course | no teaches.c & enrolled.c
+inv8 C: no teaches & enrolled
+inv8 C: all p:Person | no p.teaches & p.enrolled
+inv9 O: all p:Person | no p.teaches.~enrolled & p.teaches.~teaches
+inv9 O: no teaches.~enrolled & teaches.~teaches
+inv10 C: grades in Course -> Student -> Grade
+inv10 S: Course.grandes.Grade in Student
+inv10 C: Course.grades.Grade in Student
+inv10 C: Course.grades in Student->Grade
+inv11 O: grades.Grade in enrolled
+inv11 C: grades.Grade in ~enrolled
+inv11 U: all s:Student | (grades.Grade).s in s.enrolled
+inv11 S: all c.Course | c.(grades.Grade) in enrolled.c
+inv11 C: all c:Course | c.(grades.Grade) in enrolled.c
+inv12 S: grade in Course -> Student -> lone Grade
+inv12 O: grades in Course -> Student -> lone Grade
+inv12 U: all c:Course,s:Student | lone s.(c.grades)
+NA H: THEME UPDATE
+inv1 C: all p:Person,c:Course | p->c in enrolled implies p in Student
+inv2 C: all p:Person,c:Course | p->c in teaches implies p in Professor
+inv3 C: all c:Course | some p:Person | p->c in teaches
+inv4 C: all p:Project | some c:Course | c->p in projects	  	all c1,c2:Course | (some p:Project | c1->p in projects and c2->p in projects) implies c1 = c2
+inv5 C: all p:Person,j:Project | p->j in projects implies p in Student	  	all j:Project | some p:Person | p->j in projects
+inv6 U: all s:Student,p:Project | s->p in projects implies s->p in enrolled.projects
+inv6 C: all s:Person,p:Project | s->p in projects implies s->p in enrolled.projects
+inv7 C: all c:Course,j1,j2:Project | (j1 in c.projects and j2 in c.projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+inv7 C: all c:Course,j1,j2:Project | (c->j1 in projects and c->j2 in projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+inv8 C: all p:Person,c:Course | p->c not in teaches or p->c not in enrolled
+inv9 O: all p1,p2:Person | p1->p2 not in teaches.~enrolled or p1->p2 not in teaches.~teaches
+inv9 E: 
+inv10 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies p in Student
+inv11 O: all c:Course,p:Person,g:Grade | c->p->g in grades implies c->p in enrolled
+inv11 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies p->c in enrolled
+inv11 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies c->p in ~enrolled
+inv12 C: all g1,g2:Grade | (some c:Course,p:Person | c->p->g1 in grades and c->p->g2 in grades) implies g1=g2
+inv13 C: all c:Course | c.grades.last in c.projects.~projects
+inv13 B: all c:Course | c.grades.first in c.projects.~projects
+inv13 C: all c:Course,p:Person | c->p->last in grades implies c->p in projects.~projects
+inv14 T: all p1:Person, j1,j2:p1.projects | no projects.j1 & projects.j2 or j1 = j2
+inv14 O: all p1:Person, j1,j2:p1.projects | no Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 S: all p1:Person, j1,j2:p1.projects | p = Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 C: all p1:Person, j1,j2:p1.projects | p1 = Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 O: all p1,p2:Person, j:Project | p1->j in projects and p2->j in projects implies p1 = p2
+inv14 C: all p1,p2:Person, j1,j2:Project | p1->j1 in projects and p2->j1 in projects and p1->j2 in projects and p2->j2 in projects implies p1 = p2 or j1 = j2
+inv15 U: all c:Course,p:c.projects | (projects.p).(c.grades) in Grade
+inv15 B: all c:Course,p:c.projects | #(projects.p).(c.grades) < 3
+inv15 O: all c:Course,p:c.projects | max[(projects.p).(c.grades)] = max[(projects.p).(c.grades)].next
+inv15 U: all c:Course,p:c.projects | max[(projects.p).(c.grades)] in max[(projects.p).(c.grades)].(iden+next)
+inv15 O: all c:Course,p:c.projects | max[(projects.p).(c.grades)] in min[(projects.p).(c.grades)].(iden+next)
+inv15 T: all c:Course,p:c.projects,disj s1,s2:projects.p | s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 O: all c:Course,p:c.projects,disj s1,s2:Person<:projects.p | s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 C: all c:Course,p:c.projects,disj s1,s2:Person<:projects.p | some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->c in projects and s2->c in projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->c in Person<:projects and s2->c in Person<:projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in Course<:projects and s1->c in Person<:projects and s2->c in Person<:projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in Course<:projects and s1->c in Person<:projects and s2->c in Person<:projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in Course<:projects and s1->c in (Person<:projects) and s2->c in Person<:projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in (Course<:projects) and s1->c in (Person<:projects) and s2->c in (Person<:projects) and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in (Course<:projects) and s1->c in (Person<:projects) and s2->c in (Person<:projects) and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person |  s2->c in (Person<:projects) and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 T: all c:Course,p:Project,disj s1,s2:Person | c->p in (Course<:projects) and s1->p in (projects) and s2->c in (Person<:projects) and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 C: all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and some s2.(c.grades) implies s1.(c.grades) in s2.(c.grades).(iden+next+prev)
+inv15 S: all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and (some g:Grade | c->s2->g in grades) implies all g:Grade | c->s1->g in grades implies c->s2->g in .grades.(iden+next+prev)
+inv15 C: all c:Course,p:Project,disj s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and (some g:Grade | c->s2->g in grades) implies all g:Grade | c->s1->g in grades implies c->s2->g in grades.(iden+next+prev)
+inv15 C: all c:Course,p:Project,s1,s2:Person | c->p in projects and s1->p in projects and s2->p in projects and (some g:Grade | c->s2->g in grades) implies all g:Grade | c->s1->g in grades implies c->s2->g in grades.(iden+next+prev) or s1=s2
+

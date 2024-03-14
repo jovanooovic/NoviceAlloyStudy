@@ -1,0 +1,15 @@
+inv3 S: (u.follows).(Photo-Ad)
+inv3 T: all u:User | (u.follows).(Photo-Ad)
+inv3 T: all u:User | u.sees = (u.follows).(Photo-Ad)
+inv3 T: all u:User | u.sees = (u.follows).(Photo-Ad)
+inv3 T: all u:User | u.sees = (u.follows.posts).(Photo-Ad)
+inv3 T: all u:User | u.sees = Photo.(u.follows.posts)
+inv3 T: all u:User | u.sees = Photo.(u.follows).posts
+inv3 S: all u:User | Ads in u.sees
+inv3 B: all u:User | Ad in u.sees
+inv3 B: all u:User | Ad in u.sees
+inv3 B: all u,uu:User, pht:Photo | uu->pht in posts and u->uu not in follows implies u->pht not in sees				all ad:Ad, u:User | u->ad in sees
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User | u.sees = u.follows.posts
+inv3 O: all u:User | u.sees = u.follows.posts			all u:User | Ad in u.sees
+

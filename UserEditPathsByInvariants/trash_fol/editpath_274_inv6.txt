@@ -1,0 +1,19 @@
+inv6 T: all f : File | (some l : link | l in f)
+inv6 T: all f : File | (some l : link | l in f)
+inv6 T: all f : File | (some l : link | l in f.l)
+inv6 T: all f : File | (some l : link | l in f.l)
+inv6 S: all f : File | (some f.l : link | f.l in f)
+inv6 T: all f : File | (some l : link | f.l in f)
+inv6 T: all f : File | (some l : link | l in f)
+inv6 T: all f : File | (some l : link | (f.l) in f)
+inv6 S: all f : File | (some l : f.link )
+inv6 S: all f : File | (some l : f.link | true)
+inv6 S: all f : File | (some l : f.link | True)
+inv6 S: all f : File | not no f.link )
+inv6 S: all f : File | not no f.link )
+inv6 S: all f : File | not no f.link )
+inv6 S: all f : File | not no f.link )
+inv6 B: all f : File | not (no f.link )
+inv6 C: all f : File | #(f.link)<2
+inv6 C: all f : File | #(f.link)<2
+

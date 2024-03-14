@@ -1,0 +1,11 @@
+inv9 B: all p1, p2 : Person | all c : Course | c in p1.teaches and c in p2.enrolled implies p2 not in Professor
+inv9 B: all p : Professor | all c : Course | c in p.teaches implies all s : Person | c in s.enrolled implies s not in Professor
+inv9 B: all p : Professor | all c : Course | c in p.teaches implies (all s : Person | c in s.enrolled implies s not in Professor)
+inv9 B: all p : Professor | all c : Course | c in p.teaches implies (all s : Professor | c not in s.enrolled)
+inv9 B: all p1, p2 : Professor | all c : Course | c in p1.teaches implies c not in p2.enrolled
+inv9 S: all p1, p2 : Person | all c : Course | c in p1.teaches and c in p2.enrolled imlpies p2 not in Professor
+inv9 B: all p1, p2 : Person | all c : Course | c in p1.teaches and c in p2.enrolled implies p2 not in Professor
+inv9 S: all p1,p2 : Professor | all c : Course | c in p1.teaches implies c not in p2.teaches
+inv9 B: all p1,p2 : Professor | all c : Course | c in p1.teaches implies c not in p2.teaches
+inv9 B: all p1,p2 : Professor | all c : Course | c in p1.teaches and p1 !=  p2 implies c not in p2.teaches
+

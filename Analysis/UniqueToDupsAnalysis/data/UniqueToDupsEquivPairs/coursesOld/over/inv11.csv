@@ -1,0 +1,9 @@
+Pairs,7
+,,"grades.Grade in enrolled",2
+,,"all p : Person | ~(Course.grades).p in p.enrolled",1
+,,"all c:Course, s:Person, g:Grade | Course.grades.g in s.enrolled",3
+,,"all c:Course,p:Person,g:Grade | c->p->g in grades implies c->p in enrolled",1
+
+Pairs,1
+,,"all p: Person, g: Grade, c: Course | p->g in c.grades implies p in Student and c in p.enrolled",1
+

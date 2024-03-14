@@ -1,0 +1,22 @@
+inv1 B: Work in User.profile
+inv1 T: Work in User<:profile
+inv1 B: Work in User.profile
+inv1 B: Work in User.profile + User.visible
+inv1 B: Work in User.profile & User.visible
+inv1 T: no Work in User.profile & User.visible
+inv1 T: all w : Work | some User.(visible.w)
+inv1 B: all w : Work | some (User<:visible).w
+inv1 U: all w : Work | some (User<:visible).w implies some (User<:profile).w
+inv1 O: all w : Work | some (User<:visible).w implies some w.(User<:profile)
+inv1 U: all w : Work | some w.(User<:visible) implies some w.(User<:profile)
+inv1 O: all w : Work | some (User<:visible).w implies some w.(User<:profile)
+inv1 O: all w : Work | some (User<:visible).w implies some w.(User<:profile)
+inv1 O: all w : Work | some (User<:visible).w implies some w.(User<:profile)
+inv1 U: all w : Work | some (User<:visible).w implies some (User<:profile).w
+inv1 U: some (User<:visible).Work implies some (User<:profile).Work
+inv1 T: all w : Work | some (User<:visible).w in (User<:profile).w
+inv1 C: all w : Work | (User<:visible).w in (User<:profile).w
+inv1 U: (User<:visible).Work in (User<:profile).Work
+inv1 C: all w : Work | (User<:visible).w in (User<:profile).w
+inv1 C: all w : Work | (User<:visible).w in (User<:profile).w
+

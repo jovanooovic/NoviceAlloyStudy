@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv5 U: no ((Person - Student) <: projects)
+inv5 S: (no ((Person - Student) <: projects) Person.projects = Projects
+inv5 S: no ((Person - Student) <: projects) Person.projects = Projects
+inv5 S: no ((Person - Student) <: projects) Person.projects = Projects
+inv5 T: no ((Person - Student) <: projects) Person.projects = projects
+inv5 T: Person.projects - (Person.Student).projects = Project
+inv5 C: Person.projects - (Person - Student).projects = Project
+inv6 B: (Student <: projects).(~projects :> Course) in enrolled
+inv6 S: all s:Student | s.Projects in s.enrolled.projects
+

@@ -1,0 +1,6 @@
+inv9 U: all profCourse: Professor.teaches | Professor not in profCourse
+inv9 B: all profCourse: Professor.teaches | Professor.enrolled not in profCourse
+inv9 B: all profCourse: Professor.teaches | all profBel: Professor.enrolled | profBel not in profCourse
+inv9 B: all profBel: Professor.enrolled | profBel not in Professor.teaches
+inv9 B: all profBel: Professor.enrolled | #{profBel & Professor.teaches} = 0
+

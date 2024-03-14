@@ -1,0 +1,3 @@
+inv7 B: all x : Student | all c : Course | c in x.enrolled and (#(x.projects & c.projects)=0 or #(x.projects & c.projects)=1)
+inv7 U: all x : Student | all c : x.enrolled | (#(x.projects & c.projects)=0 or #(x.projects & c.projects)=1)
+

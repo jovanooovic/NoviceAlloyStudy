@@ -1,0 +1,26 @@
+inv12 O: all t:Teacher | some g:Group, s:Student, c:Class | t->c in Teaches and s->g in c.Groups
+inv12 B: all t:Teacher | some g:Group, s:Student, c:Class | t->c in Teaches implies s->g in c.Groups
+inv12 B: all t:Teacher, c:Class | some g:Group, s:Student| t->c in Teaches implies s->g in c.Groups
+inv12 B: all t:Teacher, c:Class | some g:Group, s:Student| t->c in Teaches and s->g in c.Groups
+inv12 O: all t:Teacher | some c:Class,s:Student,g:Group | t->c in Teaches and s->g in c.Groups
+inv12 B: all t:Teacher | some c:Class,g:Group | t->g in c.Groups
+inv12 O: all t:Teacher | some c:Class,g:Group | t->c in Teaches and t->g in c.Groups
+inv12 B: all t:Teacher,c:Class | some g:Group | t->g in c.Groups
+inv12 B: all t:Teacher,c:Class | some g:Group | t->c in Teaches and t->g in c.Groups
+inv12 B: all t:Teacher,c:Class | some s:Student,g:Group | t->c in Teaches and s->g in c.Groups
+inv12 B: all t:Teacher | some c:Class,g:Group | t->c in Teaches implies c->t->g in Groups
+inv12 U: all t:Teacher | some c:Class,g:Group | c->t->g in Groups implies t->c in Teaches
+inv12 B: all t:Teacher | some c:Class,g:Group,s:Student | c->s->g in Groups implies t->c in Teaches
+inv12 B: all t:Teacher,c:Class | some g:Group,s:Student | c->s->g in Groups implies t->c in Teaches
+inv12 B: all t:Teacher,c:Class | some g:Group | c->t->g in Groups implies t->c in Teaches
+inv12 S: all t:Teacher | some c:Class | (some g:Group c->t->g in Groups) implies t->c in Teaches
+inv12 S: all t:Teacher | some c:Class | (some g:Group c->t->g in Groups) implies t->c in Teaches
+inv12 U: all t:Teacher | some c:Class | (some g:Group | c->t->g in Groups) implies t->c in Teaches
+inv12 B: all t:Teacher | some g:Group,c:Class | c->t->g in Groups
+inv12 O: all t:Teacher | some g:Group,c:Class | c->t->g in Groups and t->c in Teaches
+inv12 B: all t:Teacher,c:Class| some g:Group | c->t->g in Groups and t->c in Teaches
+inv12 O: all t:Teacher | some g:Group,c:Class | c->t->g in Groups and t->c in Teaches
+inv12 U: all t:Teacher | some g:Group,c:Class | c->t->g in Groups implies t->c in Teaches
+inv12 U: all t:Teacher | some c:Class | (some g:Group | c->t->g in Groups) implies t->c in Teaches
+inv12 C: all t:Teacher | some p:Person,c:Class,g:Group | t->c in Teaches and c->p->g in Groups
+

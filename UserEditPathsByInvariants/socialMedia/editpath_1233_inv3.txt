@@ -1,0 +1,12 @@
+inv3 B: all a,u,f,s : univ | u in User and u-> f in follows and u -> s in sees and a in Ad implies s!=a
+inv3 B: all a,u,f,p,s : univ | u in User and u-> f in follows and f -> p in posts and a in Ad implies p!=a
+inv3 B: all a,u,f,p : univ | u in User and u-> f in follows and f -> p in posts and a in Ad implies p!=a
+inv3 B: all a,u,f,p : univ | u in User and u-> f in follows and f -> p in posts and a in Ad implies p!=a
+inv3 B: all u,f,p,s : univ | u in User and u-> f in follows and f -> p in posts and u -> s in sees implies s = p
+inv3 B: all u,f,p,s,a : univ | u in User and u-> f in follows and f -> p in posts and u -> s in sees and a in Ad implies s = p or s = a
+inv3 S: all u,f : User,p,s : Photos ,a : Ad | u -> s in sees implies u-> f in follows and f -> p in posts and s = p  or s = a
+inv3 B: all u,f : User ,p, s : Photo ,a : Ad | u -> s in sees implies u-> f in follows and f -> p in posts and s = p  or s = a
+inv3 S: all u,f : User ,p, s : Photo | u -> s in sees implies some p | u-> f in follows and f -> p in posts or some a : Ad s = a
+inv3 S: all u,f : User ,p, s : Photo | u -> s in sees implies some p | u-> f in follows and f -> p in posts or some a : Ad | s = a
+inv3 S: all x : User | all y : x sees - Ad | (some u: x.follows) | y in u.posts)
+

@@ -1,0 +1,6 @@
+inv10 O: no(Trash.link)
+inv10 S: all f,l : File | (l in f.link and f i Trash) implies l in Trash
+inv10 S: all f,l : File | (f.l in link and f i Trash) implies l in Trash
+inv10 T: all f,l : File | (f.l in link and f in Trash) implies l in Trash
+inv10 C: all f,l : File | (l in f.link and f in Trash) implies l in Trash
+

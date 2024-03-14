@@ -1,0 +1,6 @@
+inv4 B: all u : User | (some p : Photo | u->p in posts and p in Ad implies (all p1: Photo | u->p1 in posts implies p1 in Ad))
+inv4 C: all u : User | (all p : Photo | u->p in posts and p in Ad implies (all p1: Photo | u->p1 in posts implies p1 in Ad))
+inv4 C: all u : User | (all p : Photo | u->p in posts and p in Ad implies (all p1: Photo | u->p1 in posts implies p1 in Ad))
+inv4 T: all u: User, p: Photo | p in Ad & u.posts implies u.posts & (Photo-Ad)
+inv4 C: all u: User, p: Photo | p in (Ad & u.posts) implies u.posts in Ad
+

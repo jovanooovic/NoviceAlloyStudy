@@ -1,0 +1,17 @@
+inv6 S: all i : Influencer | all d : Date | (some p : Photo | i->p in posts)
+inv6 U: all i : Influencer | all d : Day | (some p : Photo | i->p in posts)
+inv6 T: all i : Influencer | all d : Day | (some p : Photo | i->p in posts and d in date)
+inv6 S: all i : Influencer | all d : Day | (some p : Photo | i->p in posts and d is date)
+inv6 O: all d : Day | (all i : Influencer | (some p : Photo | i->p in posts and p in d))
+inv6 O: all d : Day | all i : Influencer | (some p : Photo | i->p in posts and p in d)
+inv6 C: all d : Day | (all i : Influencer | (some p : Photo | i->p in posts and p->d in date))
+inv6 C: all d : Day | (all i : Influencer | (some p : Photo | i->p in posts and p->d in date))
+inv6 T: all d: Day, i: Influencer | i.posts.d
+inv6 B: all d: Day | Influencer.posts.date = d
+inv6 O: all d: Day, i: Influencer | i.posts.date = d
+inv6 T: all d: Day, i: Influencer | some i.posts.date = d
+inv6 B: all d: Day | some i: Influencer | i.posts.date = d
+inv6 B: all d: Day | some i: Influencer | d in i.posts.date
+inv6 C: all d: Day | all i: Influencer | d in i.posts.date
+inv6 C: all d: Day | all i: Influencer | d in i.posts.date
+

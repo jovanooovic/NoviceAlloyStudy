@@ -1,0 +1,29 @@
+inv1 B: all c: Course | c.grades.Grade-Professor = c.grades.Grade
+inv1 B: all c: Course | Professor not in c.grades.Grade
+inv1 B: all c: Course | c.grades.Grade-Professor = c.grades.Grade
+inv1 B: all p: Person, c: Course | p in c.grades.Grade implies p not in Professor
+inv1 S: not enrolled.grades.Grades
+inv1 T: not enrolled.grades.Grade
+inv1 T: not enrolled.Professor
+inv1 U: all p: Professor | p not in Person.enrolled
+inv1 T: all p: Professor | p not in Person.enrolled.grades
+inv1 B: all p: Professor | p not in Person.enrolled.grades.Grade
+inv1 B: all p: Professor | p not in Person.enrolled.grades.Grade
+inv1 T: not enrolled.grades.Grade
+inv1 T: not Course.enrolled
+inv1 T: not Professor.enrolled
+inv1 T: not Professor.enrolled.projects
+inv1 U: all p: Person | p.enrolled - Professor = p.enrolled
+inv1 T: no enrolled & Professor
+inv1 T: no enrolled & Professor.enrolled
+inv1 T: no enrolled & Professor.teaches
+inv1 T: not enrolled & Professor.teaches
+inv1 T: no enrolled-Professor.teaches
+inv1 T: all p: Professor | enrolled-p.teaches = enrolled
+inv1 T: all p: Professor | Person.enrolled-p.teaches = enrolled
+inv1 T: all p: Professor | p not in Person.Course
+inv1 C: all p1 : Person | all c1 : Course | p1->c1 in enrolled implies p1 in Student
+inv1 C: all p : Person, c : Course | p->c in enrolled implies p in Student
+inv1 B: all p: Person, c: Course | p in c.grades.Grade implies p in Student
+inv1 C: all p: Person, c: Course | p->c in enrolled implies p in Student
+

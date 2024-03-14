@@ -1,0 +1,19 @@
+inv7 U: all c : Class | some Teaches . c
+inv7 T: all c : Class | (Teacher <: Teaches) -> c in Teaches
+inv7 T: all c : Class | ((Teacher <: Teaches) -> c) in Teaches
+inv7 O: Teaches . Class = Class
+inv7 T: Teaches <: Class = Class
+inv7 T: Teaches :> Class = Class
+inv7 C: all c : Class | some t : Teacher | t -> c in Teaches
+inv7 T: all c : Class | Teaches -> c in Teaches
+inv7 B: all c : Class | Teacher -> c in Teaches
+inv7 B: all c : Class | Teacher in Teaches . c
+inv7 B: all c : Class | Teaches . c in Teacher
+inv7 B: all c : Class | (Teaches . c) in Teacher
+inv7 T: all c : Class | (Teaches <: c) in Teacher
+inv7 T: all c : Class | (Teaches :> c) in Teacher
+inv7 C: all c : Class | some t : Teacher | t -> c in Teaches
+inv7 C: all c : Class | some t : Teacher | t -> c in Teaches
+inv7 C: all c : Class | some t : Teacher | t -> c in Teaches
+inv7 C: all c : Class | some Teacher -> c & Teaches
+

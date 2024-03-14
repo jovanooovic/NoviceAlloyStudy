@@ -1,0 +1,14 @@
+inv14 B: all s: Student | all p: s.projects | Person :> projects.p not in projects.(s.projects-p)
+inv14 B: all s: Student | all p: s.projects | Person :> projects.p not in projects.(s.projects-p)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-p) not in projects.(s.projects-p)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.(s.projects-p)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.(s.projects)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.((s.projects)-p)
+inv14 B: all s: Student | all p: s.projects | Person :> ((projects.p)-s) not in projects.((s.projects)-p)
+inv14 B: all s: Student | all p: s.projects | Person <: ((projects.p)-s) not in projects.((s.projects)-p)
+inv14 B: all s: Student | all p: s.projects | Person <: ((projects.p)-s) not in projects.((s.projects)-p)
+inv14 T: all s: Student | all p: s.projects | all s2: projects.p | s2 not in (s.projects)-p
+inv14 T: all s: Student | all p: s.projects | all s2: Person <: projects.p | s2 not in (s.projects)-p
+inv14 T: all s: Student | all p: Project <: s.projects | all s2: Person <: projects.p | s2 not in (s.projects)-p
+inv14 U: all s: Student | all p: Project <: s.projects | all s2: Person <: projects.p | s2 not in Person <: (s.projects)-p
+

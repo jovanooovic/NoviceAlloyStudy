@@ -1,0 +1,7 @@
+inv3 T: all x : User | all y : Photo | y -> follows.x.posts
+inv3 B: all x : User | all y : Photo | y in follows.x.posts
+inv3 T: all x : User | all y : Photo | all z : Ad | y in follows.x.posts or z
+inv3 T: all x : User | all y : Photo | all z : Ad | y in follows.x.posts or z
+inv3 C: all x:User | all y:x.sees| y in Ad or y in x.follows.posts
+inv3 C: all x:User | all y:x.sees| y in Ad or y in x.follows.posts
+

@@ -1,0 +1,22 @@
+inv10 B: all p : Professor | p not in p.teaches.grades.Grade
+inv10 B: all p : teaches.Course | p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 U: all p : Person | p in Person
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 S: all p : Person-| p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 U: all p : Person | p in Person
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 T: all p : Person | p.enrolled.grades => p not in Professor
+inv10 B: all p : Person | some p.enrolled.grades => p not in Professor
+inv10 S: all p : Person | some (p.enrolled.grades.Grades)&p => p not in Professor
+inv10 B: all p : Person | some (p.enrolled.grades.Grade)&p => p not in Professor
+inv10 B: all p : Person | some (p.enrolled.grades.Grade)&p => p not in Professor
+inv10 B: all p : Person | some p.(Course.grades)=> p not in Professor
+inv10 B: all p : Person | some p.(Course.grades) => p not in Professor
+inv10 S: all p : Person-Students | p not in Course.grades.Grade
+inv10 C: all p : Person-Student | p not in Course.grades.Grade
+inv10 B: all p : Professor | p not in Course.grades.Grade
+inv10 C: all p : Person-Student | p not in Course.grades.Grade
+

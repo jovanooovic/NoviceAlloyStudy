@@ -1,0 +1,33 @@
+inv2 U: all ws: Workstation, w: Worker | #ws.workers>0 && #w.~workers = 1
+inv2 B: all ws: Workstation, w: Worker | some ws.workers && w in ws.workers
+inv2 S: all ws: Workstation | w: Worker | some ws.workers && w in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && w in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && one ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers && one w.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers && one w.~workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers && #w.~workers=1
+inv2 T: all ws: Workstation | all w: Worker | ws.workers>1 && #w.~workers=1
+inv2 B: all ws: Workstation | all w: Worker | #ws.workers>1 && #w.~workers=1
+inv2 B: all ws: Workstation | all w: Worker | #ws.workers>2 && #w.~workers=1
+inv2 U: all ws: Workstation | all w: Worker | #ws.workers> 0  && #w.~workers=1
+inv2 S: all ws: Workstation | some w: ws.workers	all w: Worker | one ws: w.workstation
+inv2 S: all ws: Workstation | some w: ws.workers	all w: Worker | one ws: w.workstation
+inv2 S: all ws: Workstation | some w: ws.workers && one ws.workers.~workers
+inv2 U: all ws: Workstation | all w: Worker | #ws.workers> 0  && #w.~workers=1
+inv2 O: all ws: Workstation | ws.workers != none && all w: ws.workers | w.workstation = ws
+inv2 U: all ws: Workstation  | #ws.workers> 0  && one ws.workers.~workers
+inv2 C: all w: Worker |	one ws: Workstation |	w in ws.workers	all ws: Workstation |	some w: Worker |	w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | one ws2: Workstation |#ws.workers> 0  &&  w in ws2.workers
+inv2 C: all ws: Workstation |  some ws.workers			all w: Worker | one ws: Workstation | w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers
+inv2 T: all ws: Workstation | all w: Worker | some ws.workers  &&  (one w) in ws.workers
+inv2 B: all ws: Workstation | all w: Worker | some ws.workers  &&  w in ws.workers
+inv2 U: all ws: Workstation | all w: Worker | some ws.workers  &&  one w.~workers
+inv2 U: all ws: Workstation,  w: Worker | some ws.workers  &&  one w.~workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one w.~workers
+inv2 U: all ws: Workstation, w: Worker | some ws.workers  &&  one w.~workers
+inv2 S: all ws: Workstation | some ws.workers  &&  all  w: Worker one w.~workers
+inv2 C: all ws: Workstation | some ws.workers  &&  all  w: Worker | one w.~workers
+inv2 U: all ws: Workstation | all  w: Worker | some ws.workers  &&   one w.~workers
+inv2 U: all ws: Workstation, w: Worker | some ws.workers  &&   one w.~workers
+

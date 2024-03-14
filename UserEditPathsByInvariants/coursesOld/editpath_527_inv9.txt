@@ -1,0 +1,16 @@
+inv9 B: all t : Professor , r : Professor - t | r.enrolled not in t.teaches
+inv9 B: all t : Professor , r : Professor - t |t !=r implies r.enrolled not in t.teaches
+inv9 B: all t : Professor , r : Professor  |t !=r implies r.enrolled not in t.teaches
+inv9 B: all t : Professor , r : Professor-t , c : Course | c in t.teaches implies c not in r.enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in r.enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in (Professor-r).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches iff c not in (Professor-r).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches iff c not in (Professor-t).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches iff c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | no t.teaches & (Professor-t).enrolled
+inv9 B: all t : Professor  | no (t.teaches & (Professor-t).enrolled)
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+

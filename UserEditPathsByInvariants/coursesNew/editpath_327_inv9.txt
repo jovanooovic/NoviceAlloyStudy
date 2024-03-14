@@ -1,0 +1,8 @@
+inv9 U: all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => pp not in p.enrolled
+inv9 U: all p:Professor, pp:Professor-p, c:Course | (c in p.teaches && c in pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p, c:Course | some (c in p.teaches && c in pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p, c:Course | some (p.teaches && pp.teaches) => (c not in p.enrolled && c not in pp.enrolled)
+inv9 T: all p:Professor, pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+inv9 T: all p:Professor, pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+inv9 T: all p:Professor | all pp:Professor-p| some (p.teaches && pp.teaches) => no (pp.enrolled & p.teaches)
+

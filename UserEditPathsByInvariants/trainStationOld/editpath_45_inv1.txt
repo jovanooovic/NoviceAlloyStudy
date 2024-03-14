@@ -1,0 +1,15 @@
+inv1 U: all t:Track | Green not in t.signal until Green in t.signal
+inv1 B: always (all t:Track | Green not in t.signal until Green in t.signal)
+inv1 B: (all t:Track | Green in t.signal since Green not in t.signal)
+inv1 B: (Signal = Green)
+inv1 B: once (Signal = Green)
+inv1 B: (historically Signal = Green) until (some t:Track | Green not in t.signal)
+inv1 B: (Signal = Green) until (some t:Track | Green not in t.signal)
+inv1 S: (all f:Track f.signal = Green) until (some t:Track | Green not in t.signal)
+inv1 B: (all f:Track | f.signal = Green) until (some t:Track | Green not in t.signal)
+inv1 B: all s:Signal | s not in Green until (some s:Signal | s in Green)
+inv1 B: (all s:Signal | s not in Green) until (some s:Signal | s in Green)
+inv1 C: (some s:Signal | s in Green) since (historically (all s:Signal | s not in Green))
+inv1 C: (some s:Signal | s in Green) since (historically (all s:Signal | s not in Green))
+inv1 C: (some s:Signal | s in Green) since (historically (all s:Signal | s not in Green))
+

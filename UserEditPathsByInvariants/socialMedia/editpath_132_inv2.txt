@@ -1,0 +1,16 @@
+inv2 S: all u:User | no iden.folows
+inv2 O: all u:User | no iden.follows
+inv2 O: all u:User | no u.follows
+inv2 T: all u:User | no u.follows = u
+inv2 T: all u:User | ~u.follows
+inv2 T: all u:User | u.follows
+inv2 T: all u:User | follows.u
+inv2 O: all u:User | no  follows.u
+inv2 O: all u:User | no follows.u
+inv2 O: all u : User | no follows.u
+inv2 O: all x : User | no follows.x
+inv2 C: all x : User | x not in follows.x
+inv2 C: all x : User | x not in x.follows
+inv2 C: all x : User | x not in follows.x
+inv2 C: all x : User | x not in follows.x
+

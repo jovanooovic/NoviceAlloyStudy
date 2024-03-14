@@ -1,0 +1,4 @@
+inv13 T: all t, s : Person | t.Teaches & s.Tutors
+inv13 T: all t, s : Person | t in Teacher & s in Student
+inv13 T: all t, s : Person | (t.Tutors & s.Tutors) implies (t in Teacher & s in Student)
+

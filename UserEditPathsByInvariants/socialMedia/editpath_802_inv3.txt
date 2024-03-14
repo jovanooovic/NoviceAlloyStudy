@@ -1,0 +1,18 @@
+inv3 T: some x: Influencer|all y: User| one (posts.y in sees.x)
+inv3 T: all x: Influencer|all y: User| one (posts.y in sees.x)
+inv3 T: all x: Influencer|all y: User| one (posts.y in sees.x)
+inv3 T: all x: Influencer|all y: User| one posts.y in sees.x
+inv3 T: all x: Influencer|all y: User| posts.y  one sees.x
+inv3 T: all x: Influencer|some y: User| posts.y  one sees.x
+inv3 S: all x: Influencer|some y: User| x!=y  one (posts.y in sees.x)
+inv3 S: all x: Influencer|some y: User| x!=y  one (sees.x in posts.y)
+inv3 S: all x: Influencer|some y: User : x!=y  one (sees.x in posts.y)
+inv3 T: some x: Influencer|User-x one Useer.sees.x
+inv3 S: some x: Influencer|User-x in Useer.sees.x
+inv3 S: some x: Influencer|all y :User x!=y
+inv3 S: some x: Influencer|all y :User x!=y
+inv3 S: some x: Influencer|all y :User x!=y
+inv3 S: some x: Influencer|all y :User x!=y
+inv3 S: some x: Influencer|all y :User x!=y
+inv3 S: some x: Influencer|all y :User x!=y
+

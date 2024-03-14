@@ -1,0 +1,19 @@
+NA H: THEME UPDATE
+inv2 S: all p : Person - Professor|
+inv1 C: all p : Person - Student | #(p.enrolled) = 0
+inv2 C: all p : Person - Professor| #(p.teaches) = 0
+inv3 B: all c : Course | #(teaches.c) = 0
+inv3 C: all c : Course | #(teaches.c) > 0
+inv4 T: all p : Project | #(projects.p) = 1
+inv4 S: all p : Project | #(projects.p & Course->Entry) = 1
+inv4 C: all p : Project | #(Course <: projects.p) = 1
+inv5 C: all p : Project | #((Person <: projects.p) - Student) = 0 and #((Person <: projects.p) & Student) > 0
+inv6 B: all p : Project | all s : Person <: projects.p | s.enrolled in Course <: projects.p
+inv6 B: all p : Project | all s : Person <: projects.p | s.enrolled in (Course <: projects.p)
+inv6 S: all s : Student | all p :  s.projects | (Courses <: projects.p) in s.courses
+inv6 S: all s : Student | all p :  s.projects | (Course <: projects.p) in s.courses
+inv6 B: all s : Student | all p :  s.projects | (Course <: projects.p) in s.enrolled
+inv7 B: all s : Student | all p, y :  s.projects | (Course <: projects.p) not in (Course <: projects.y)
+inv7 T: all s : Student | all p :  s.projects | #((Course <: projects.p) & (Course <: projects.p).projects) < 2
+inv7 T: all s : Student | all p :  s.projects | #( (Course <: projects.p) & (Course <: projects.p).projects ) = 1
+

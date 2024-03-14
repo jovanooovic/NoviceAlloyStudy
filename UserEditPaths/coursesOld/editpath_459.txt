@@ -1,0 +1,99 @@
+NA H: THEME UPDATE
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 T: all p:Person | p.enrolled in Course implies p.Student
+inv1 T: all p:Person | p.enrolled in Course implies p lone Student
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 T: all p:Person | p.enrolled.Course implies p in Student
+inv1 T: all p:Person | p.enrolled in Course implies p & Student
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 T: all p:Person | p.enrolled in Course implies p is Student
+inv1 B: one p:Person | p.enrolled in Course implies p in Student
+inv1 T: all s:Student | s.enrolled in Course implies s not Professor
+inv1 B: all p:Person, c:Course | p.enrolled in c implies p in Student
+inv1 C: all p:Person, c:Course | p in enrolled.c implies p in Student
+inv1 C: all p:Person, c:Course | p in enrolled.c implies p in Student
+inv2 C: all p:Person, c:Course | p in teaches.c implies p in Professor
+inv2 C: all p:Person, c:Course | p in teaches.c implies p in Professor
+inv3 O: all c:Course | c in Professor.teaches
+inv4 S: all p.Project | p implies Course.projects
+inv4 S: all p.Project | p implies Course
+inv4 T: all p:Project | p implies Course
+inv4 T: all p:Project | p implies Course.projects
+inv4 U: all p:Project | p in Course.projects
+inv4 T: all p:Project | one p.Course.projects
+inv4 B: all p:Project | one Course.projects
+inv4 B: all p:Project | one Course
+inv4 S: all p:Project | p in one Course
+inv4 S: all p:Project | p in one Course.projects
+inv4 T: all p:Project | one Course implies p
+inv4 T: all p:Project | one Course implies p.projects
+inv4 T: all p:Project | one Course.projects implies p
+inv4 T: all p:Project | p.projects in Course.projects
+inv4 T: all p:Project | one projects.p
+inv4 S: all p:Project | one (Course c: projects).p
+inv4 S: all p:Project | one (Course.c: projects).p
+inv4 S: all p:Project | one (Course.c:projects).p
+inv4 S: all p:Project | one (Course.c.projects).p
+inv4 S: all p:Project | one (Course < c:projects).p
+inv4 T: all p:Project | one (Course < c.projects).p
+inv4 C: all p:Project | one (Course <: projects).p
+inv5 T: all p:Person | p is Student
+inv5 B: all p:Person | p in Student
+inv5 U: all p:Person | p in Student implies p.projects in Person.projects
+inv5 U: all p:Person | p.projects in Student implies p.projects in Person.projects
+inv5 B: all p:Person | p.projects in Student and p.projects in Person.projects
+inv5 T: all p:Person | p.projects in Student and p.projects implies Person.projects
+inv5 U: all p:Person | p.projects in Student implies p.projects in Person.projects
+inv5 U: all p:Person, pj:Project | pj in Student implies pj in p.projects
+inv4 C: all p:Project | one (Course <: projects).p
+inv5 U: all p:Person, pj:Project | pj in Student implies pj in p.projects
+inv5 U: all p:Person, pj:Project | pj in Student implies p in pj.projects
+inv5 T: all p:Person, pj:Project | pj in Student implies p in p.projects
+inv5 T: all p:Project | p in Student.projects and p implies Person.projects
+inv5 T: all p:Project | p in Student.enrolled and p implies Person.projects
+inv5 T: all p:Project | p in Student.p and p implies Person.projects
+inv5 T: all p:Project | p in Student.enrolled and p implies Person.projects
+inv5 T: all p:Project | p in Student.projects and p implies Person.projects
+inv5 T: all p:Project | p implies Student.projects and p in Person.projects
+inv5 T: all p:Project | p implies Student.projects
+inv5 S: all p:Project | p implies all Student.projects
+inv5 T: all p:Project | p implies p.Person in Student.projects
+inv5 T: all p:Project | Person.p implies Person.Student
+inv5 T: all p:Project | Person.p implies Person in Student
+inv5 B: all p:Project | one (Person <: projects).p
+inv5 U: all p:Project, ps:Person | ps in (Person <: projects).ps implies ps in Student
+inv5 U: all p:Project, ps:Person | ps in (Person <: projects).ps implies ps in Student	  	all p:Project | some (Person <: projects).p
+inv5 C: all p:Project, ps:Person | ps in (Person <: projects).p implies ps in Student	  	all p:Project | some (Person <: projects).p
+inv5 C: all p:Project, ps:Person | ps in (Person <: projects).p implies ps in Student	  	all p:Project | some (Person <: projects).p
+inv6 B: all p:Person, c:Course | p in Student implies c in p.enrolled
+inv6 T: all p:Person, c:Course | p is Student implies c in p.enrolled
+inv6 B: all p:Person, c:Course | p in Student implies c in p.enrolled
+inv6 B: all p:Person | p in Student implies Course in p.enrolled
+inv6 B: all p:Person | p in Student implies Course.projects in p.enrolled
+inv6 S: all p:Person | p in Student implies (Course <: projects).penrolled
+inv6 T: all p:Person | p in Student implies (Course <: projects).enrolled
+inv6 T: all p:Person | p in Student implies (Course <: projects).p
+inv6 T: all p:Person | p in Student implies (Course <: enrolled).p
+inv6 B: all p:Person | p in Student implies Course in p.enrolled
+inv6 S: all p:Person, c:Course| p in projects.c implies p in pStudent
+inv6 T: all p:Person, c:Course| p in projects.c implies p in p.Student
+inv6 T: all p:Person, c:Course | p in projects.c implies p in Student
+inv6 T: all p:Person, c:Course | p in projects.c implies p in (Person <: projects).p
+inv6 T: all p:Person, c:Course | p in projects.c implies p in (Student <: projects).p
+inv6 S: all p:Person, c:Course | p.enrolled in (P.enrolled).teaches
+inv6 T: all s:Student, p:Project, c:Course | s in projects.p and c in projects.p implies s in enrolled
+inv6 T: all s:Student, p:Project, c:Course | s in projects.p and c in c.projects.p implies s in enrolled
+inv6 T: all s:Student, p:Project, c:Course | s in projects.p and c in c.projects.p implies s in enrolled.c
+inv6 B: all s:Student, p:Project, c:Course | s in projects.p and c in projects.p implies s in enrolled.c
+inv7 T: all s:Student | lone projects.s
+inv7 T: all s:Student | lone projects.s in Course
+inv7 T: all s:Student | lone s.projects in Course
+inv7 T: all s:Student | lone projects.s implies Course
+inv7 S: all s:Student | lone projects.s implies Course.person
+inv7 S: all s:Student | lone projects.s implies person.Course
+inv7 T: all s:Student | lone projects.s in s.Course
+inv7 T: all s:Student | lone projects.s in Course.s
+inv7 T: all s:Student | lone projects.s
+inv6 B: all s:Student, p:Project, c:Course | s in projects.p and c in projects.p implies s in enrolled.c
+inv7 B: all s:Student | lone s.projects
+

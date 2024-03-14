@@ -1,0 +1,66 @@
+NA H: THEME UPDATE
+inv1 S: all x: Person | all c: course | c in x.enrolled => x in Student
+inv1 C: all x: Person | all c: Course | c in x.enrolled => x in Student
+inv2 C: all x: Person | all c: Course | c in x.teaches => x in Professor
+inv3 S: all x: Course | some t: Person | t in Professor && c in t.teaches
+inv3 O: all c: Course | some t: Person | t in Professor && c in t.teaches
+inv8 C: all p: Person | all c: Course | c in p.teaches => c not in p.enrolled
+inv3 O: all c: Course | some t: Person | t in Professor && c in t.teaches
+inv6 B: all s: Person | all c: Course | all p: Project | p in s.projects && s in Student && p in c.projects => c in s.enrolled
+inv4 B: all c: Course | one p: Project | p in c.projects
+inv4 C: all p: Project | one c: Course | c in projects.p
+inv9 B: all p, s: Person | all c: Course | s in Professor && p in Professor && c in p.teaches => c not in s.enrolled
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c, d: Course | (c in s.teaches => c not in p.enrolled)
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c: Course | (c in s.teaches => c not in p.enrolled)
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c: Course | c in s.teaches => c not in p.enrolled
+inv10 S: all x: Person | all c: Course | some g: grade | g in grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in grades.x => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => cin x.enrolled && x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => c in x.enrolled && x in Student
+inv10 T: all x: Person | all c: Course | grades(x) => c in x.enrolled
+inv10 T: all x: Person | all c: Course | x in Student && grades(x) => c in x.enrolled
+inv10 T: all x: Person | all c: Course | x in Student && c.grades(x) => c in x.enrolled
+inv11 T: all x: Person | all c: Course | x in Student && c.grades(x) => c in x.enrolled
+inv10 T: all g: Grade | all x: Person | all c: Course | g in c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | g in c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | c.grades(x) => x in Student
+inv10 T: all x: Person | all c: Course | some g: Grade | c.grades(x) => x in Student
+inv8 C: all p: Person | all c: Course | c in p.teaches => c not in p.enrolled
+inv12 T: all x: Person | all y: Course | some g: Grade | g in y.grades(x) && x in Students
+inv12 T: all x: Person | all y: Course | one g: Grade | y.grades(x)
+inv12 E: 
+inv7 E: 
+inv5 S: (all x: Person | all p: Project | p in x.projects => x in Student) && (some z: Person | z in projects.p
+inv5 S: (all x: Person | all p: Project | p in x.projects => x in Student) && (some z: Person | z in projects.p)
+inv5 C: (all x: Person | all p: Project | p in x.projects => x in Student) && (all j: Project | some z: Person | z in projects.j)
+NA H: THEME UPDATE
+inv1 C: all x: Person | all c: Course | c in x.enrolled => x in Student
+inv2 C: all x: Person | all c: Course | c in x.teaches => x in Professor
+inv3 O: all c: Course | some t: Person | t in Professor && c in t.teaches
+inv4 C: all p: Project | one c: Course | c in projects.p
+inv5 C: (all x: Person | all p: Project | p in x.projects => x in Student) && (all j: Project | some z: Person | z in projects.j)
+inv6 B: all s: Person | all c: Course | all p: Project | p in s.projects && s in Student && p in c.projects => c in s.enrolled
+inv7 E: 
+inv8 C: all p: Person | all c: Course | c in p.teaches => c not in p.enrolled
+inv7 B: all c: Course | all x : Student| c in x.enrolled => one p: Project | p in c.projects && p in x.projects
+inv7 B: all c: Course | all s: Student | one p: Project | p in c.projects && p in s.projects
+inv7 B: all c: Course | all s: Student | one p: Project | p in c.projects && s in projects.p
+inv7 S: all c: Course | all s: Student | one (p in c.projects && s in projects.p)
+inv7 B: all c: Course | all s: Student | one p: Project | (p in c.projects && s in projects.p)
+inv7 T: all x : Student | all c :  Course | some y, z : Project | y -> x in c.projects and z -> x in c.projects implies y = z
+inv7 T: all x : Student | all c :  Course | some y, z : Project | y -> x in c.projects && z -> x in c.projects => y = z
+inv7 T: all x : Student | all c :  Course | some y, z : Project | (y -> x in c.projects) && (z -> x in c.projects) => y = z
+inv7 B: all s: Person | all c: Course | one p: Project | p in s.projects && s in Student && p in c.projects => c in s.enrolled
+inv12 S: all x: Person | all y: Course | one y.grades(x)
+inv12 S: all x: Person | all y: Course | one y.grades(x) && x in Student
+inv12 S: all x: Student | all y: Course | one y.grades(x)
+inv12 S: all s: Student | all y: Course | one y.grades(s)
+inv12 B: all s: Student | all y: Course | one y.grades.s
+inv12 B: all s: Student | all y: Course | one y.grades
+inv12 S: all s: Student | all y: Course | one y.grades(s)
+NA H: THEME UPDATE
+inv10 T: all x: Person | all c: Course |c.grades(x) => x in Student
+

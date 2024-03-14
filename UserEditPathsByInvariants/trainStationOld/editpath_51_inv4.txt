@@ -1,0 +1,12 @@
+inv4 S: always (t1,t2:Train | no t1.pos = t2.pos)
+inv4 S: always (t1,t2:Train | t1.pos != t2.pos)
+inv4 S: always (t1,t2:Train | t1.pos not t2.pos)
+inv4 S: always (t1,t2:Train | t1->pos not t2->pos)
+inv4 E:
+inv4 S: always (all t1,t2:Train | t1.pos not t2.pos)
+inv4 O: always (all t1,t2:Train | t1.pos != t2.pos)
+inv4 O: always (all disj t1,t2:Train | t1.pos != t2.pos)
+inv4 T: always (all disj t1,t2:Train | some (t1.pos and t2.pos) implies t1.pos != t2.pos)
+inv4 T: always (all disj t1,t2:Train | some (t1.pos and t2.pos) implies t1.pos != t2.pos)
+inv4 T: always (all disj t1,t2:Train | some (t1.pos :> Track and t2.pos :> Track) implies t1.pos != t2.pos)
+

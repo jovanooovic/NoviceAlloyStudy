@@ -1,0 +1,8 @@
+inv14 U: all s : Student, c : Class, t : Teacher | t -> c in Teaches and (some g : Group | c -> s -> g in Groups) implies t -> s in Tutors
+inv14 B: all s : Student, c : Class, t : Teacher | t -> c in Teaches and (some g : Group | c -> s -> g in Groups) iff t -> s in Tutors
+inv14 U: all s : Student, c : Class, t : Teacher, g : Group | (c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors
+inv14 U: all s : Student, c : Class, t : Teacher, g : Group | (c -> s -> g in Groups) and (t -> c in Teaches) implies t -> s in Tutors
+inv14 U: all s : Student, c : Class, t : Teacher, g : Group | ((c -> s -> g in Groups) and (t -> c in Teaches)) implies t -> s in Tutors
+inv14 C: all s : Person, c : Class, t : Person, g : Group | (c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors
+inv14 C: all s : Person, c : Class, t : Person, g : Group | (c -> s -> g in Groups) and t -> c in Teaches implies t -> s in Tutors
+

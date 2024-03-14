@@ -1,0 +1,5 @@
+inv4 U: all u : User | all p : u.posts | p not in Ad or p in Ad
+inv4 S: all u : User | p : u.posts | p not in Ad or p in Ad
+inv4 U: all u : User | u.posts not in Ad or u.posts in Ad
+inv4 C: all u : User | no u.posts & Ad or u.posts in Ad
+

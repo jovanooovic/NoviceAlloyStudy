@@ -1,0 +1,31 @@
+inv13 T: all c : Course | all s : Student |  first[c.grades.s] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Student |  first[c.grades.Grade] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Student |  first[c.grades.Student] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Student |  first[c.grades.Person] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[s.c.grades] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[s.(c.grades)] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[c.grades] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[c.grades.s] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[c.grades.Grade] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[grades.c.s] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[c.grades] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[s.c.grades] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  first[s.(c.grades)] implies s.projects in c.projects
+inv13 T: all c : Course | all s : Person |  s.(c.grades) implies s.projects in c.projects
+inv13 U: all c : Course | all s : Person |  s.(c.grades) in Grade
+inv13 O: all c : Course | all s : Person |  s.(c.grades) in Student
+inv13 T: all c : Course | all s : Person |  first[s.(c.grades)]
+inv13 T: all c : Course | all s : Person |  first[Grade] = s.(c.grades) implies s.projects in c.projects
+inv13 B: all c : Course | all s : Person |  no s.(c.grades).prev implies s.projects in c.projects
+inv13 B: all c : Course | some s : Student |  no s.(c.grades).prev implies s.projects in c.projects
+inv13 B: all c : Course | one s : Student |  no s.(c.grades).prev implies s.projects in c.projects
+inv13 B: all c : Course | some s : Student |  no (s.(c.grades)).prev implies s.projects in c.projects
+inv13 B: all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 T: all c : Course | some s : Student | s in c.grades		all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 B: all c : Course | some s : Student | s->Grade in c.grades		all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 B: all c : Course | all s : Student | s->Grade in c.grades		all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 B: all c : Course | all g : Grade | g in Student.(c.grades) implies  Student->g in c.grades		all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 B: all c : Course | all g : Grade | g in Student.(c.grades) implies Student->g in c.grades		all c : Course | some s : Student | no (s.(c.grades)).next implies s.projects in c.projects
+inv13 B: all c : Course | some s : Student | no (s.(c.grades)).next implies some p : Project | p in s.projects and p in c.projects
+inv13 B: all c : Course | some s : Student | no (s.(c.grades)).next implies some p : Project | p in s.projects and p in c.projects
+

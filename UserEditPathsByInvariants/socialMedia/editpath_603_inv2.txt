@@ -1,0 +1,19 @@
+inv2 C: all u : User | u->u not in follows
+inv2 S: u.follows not in iden
+inv2 S: u.follows not in iden
+inv2 B: follows not in iden
+inv2 S: follows.u not in iden
+inv2 T: all u : User | follows.u not in iden
+inv2 T: none follows & iden
+inv2 T: none (follows & iden)
+inv2 T: follows & iden = none
+inv2 T: follows & iden is none
+inv2 T: follows & iden is in none
+inv2 T: (follows & iden) is in none
+inv2 T: (follows & iden) is in none
+inv2 O: follows - iden = iden
+inv2 C: iden - follows = iden
+inv2 C: no iden & follows
+inv2 C: no follows & iden
+inv2 C: no (follows & iden)
+

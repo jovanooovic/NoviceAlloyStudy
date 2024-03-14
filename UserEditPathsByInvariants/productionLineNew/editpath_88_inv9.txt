@@ -1,0 +1,24 @@
+inv9 S: one begin.succ and one succ.end and		(no succ & iden) and ((w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end))
+inv9 O: one begin.workstation and one workstation.end and (all w : Workstation-begin-end | one w.workstation and one workstation.w)
+inv9 O: one begin.workstation and one workstation.end and (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 O: one begin.workstation and one workstation.end and (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 O: one begin.workstation and one workstation.end and (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 B: one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 U: no succ or (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 U: one Workstation or (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 B: (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 T: no begin->end in succ and (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 B: no begin->end & succ and (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 S: (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 U: (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 B: (one begin.succ and one succ.end and (all w : Workstation-begin-end | one w.succ and one succ.w))
+inv9 U: all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 B: (all w : Workstation-begin-end | one w.succ and one succ.w)	one begin.succ	one succ.end	end in begin.^succ
+inv9 B: all w : Workstation-begin-end | one w.succ and one succ.w	one begin.succ	one succ.end	end in begin.^succ
+inv9 B: (all w : Workstation-begin-end | one w.succ and one succ.w) and	(one begin.succ) and	(one succ.end) and	(end in begin.^succ)
+inv9 B: (all w : Workstation-begin-end | one w.succ and one succ.w) and	(end in begin.^succ)
+inv9 S: (all w : Workstation-begin-end | one w.succ and one succ.w) and
+inv9 U: (all w : Workstation-begin-end | one w.succ and one succ.w)
+inv9 B: (all w : Workstation-begin-end | one w.succ and one succ.w) and	(end in begin.^succ)
+inv9 U: (all w : Workstation-begin-end | one w.succ and one succ.w) and	(end in begin.*succ)
+

@@ -1,0 +1,16 @@
+inv3 S: some p.teaches
+inv3 B: some Professor.teaches
+inv3 B: some Person.teaches
+inv3 T: some Professor.Course
+inv3 O: some Course.teaches
+inv3 T: all c : Course | some c in teaches
+inv3 T: all c : Course | some c in Professor.teaches
+inv3 T: all c : Course | some c in Person.teaches
+inv3 B: all p : Person | some p.teaches
+inv3 T: all c : Course, p : Professor | some c in p.teaches
+inv3 T: all c : Course | some p : Professor | some c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv3 O: some p : Professor | Course in p.teaches
+inv3 O: all c : Course | some p : Professor | Course in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+

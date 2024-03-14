@@ -1,0 +1,4 @@
+inv11 B: all c:Course,s:Student | s.grades in c.grades implies c in s.enrolled
+inv11 T: all c:Course,s:Student | s in c.grades implies c in s.enrolled
+inv11 U: all c:Course,s:Student,g:Grade | g in s.(c.grades) implies (c in s.enrolled)
+

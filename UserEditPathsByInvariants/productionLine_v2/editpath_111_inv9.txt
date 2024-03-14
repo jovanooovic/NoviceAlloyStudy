@@ -1,0 +1,7 @@
+inv9 B: all w : Workstation | one w2 : Workstation | w.^succ in w2
+inv9 B: all w : Workstation | one w2 : Workstation | w2!=w and w.^succ in w2
+inv9 B: all w : Workstation | lone w2 : Workstation | w2!=w and w.^succ in w2
+inv9 U: all w1, w2 : Workstation | w1 != w2 and w1 in begin implies w2 in w1.^succ
+inv9 B: all w : Workstation - end | one w2 : Workstation | w2 in w.^succ	all w : Workstation - begin | one w2 : Workstation | w in w2.^succ
+inv9 B: all w : Workstation - end | one w2 : Workstation | w2!=w and w2 in w.^succ	all w : Workstation - begin | one w2 : Workstation | w2!=w and w in w2.^succ
+

@@ -1,0 +1,11 @@
+inv7 S: all r : (Init.^function) | Init in r.^function
+inv7 S: all r : (Init.^function) | Init in r.^function
+inv7 T: all r : (Init.^function) | some Init in r.^function	}		fun function: State->State {	  	  {s1, s2: State | some (s1.trans).s2}
+inv7 T: all r : (Init.^function) | lone Init in r.^function	}		fun function: State->State {	  	  {s1, s2: State | some (s1.trans).s2}
+inv7 S: all r : (Init.^function) | all i: Init | i in r.^function
+inv7 S: all i: Init, r : (i.^function) | i in r.^function
+inv7 T: all i: Init, r : (i.^function) | some i in r.^function	}		fun function: State->State {	  	  {s1, s2: State | some (s1.trans).s2}
+inv7 S: some i: Init, r : (i.^function) | i in r.^function
+inv7 S: all i: Init, r : (i.^function) | i in r.^function
+inv7 S: all r : (Init.^function) | some Init & r.^function
+

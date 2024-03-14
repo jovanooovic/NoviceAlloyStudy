@@ -1,0 +1,13 @@
+inv11 S: all f : File | f not in Protected after f in Protected
+inv11 S: all f : File | f not in Protected after f in Protected
+inv11 S: all a : File | f not in Protected after f in Protected
+inv11 S: all f : File | f not in Protected after f in Protected
+inv11 S: all f : File | f not in Protected after (f in Protected)
+inv11 S: all f : File | (f not in Protected) after (f in Protected)
+inv11 S: all a : File | (a not in Protected) after (f in Protected)
+inv11 S: all a : File | (a not in Protected) after (a in Protected)
+inv11 U: all a : File | (a not in Protected) implies  after (a in Protected)
+inv11 U: all a : File - (File & Protected) | (a not in Protected) implies  after (a in Protected)
+inv11 U: all a : File - (File & Protected) |  after (a in Protected)
+inv11 C: always(all a : File - (File & Protected) |  after (a in Protected))
+

@@ -1,0 +1,5 @@
+inv4 B: all p1:Product | all c:Component , m:Material | p1 in c.parts and p1 in m.parts
+inv4 B: some p1:Product | all c:Component , m:Material | p1 in c.parts and p1 not in m.parts
+inv4 C: all c:Component | some c.parts	all m:Material | no m.parts
+inv4 C: all c:Component | some c.parts	all m:Material | no m.parts
+

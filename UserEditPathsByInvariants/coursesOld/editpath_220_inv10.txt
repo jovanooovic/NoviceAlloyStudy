@@ -1,0 +1,11 @@
+inv10 S: all Course.grades & Student.grades
+inv10 S: all Course.grades & Student->grades
+inv10 T: set Course.grades & Student->grades
+inv10 T: no Course.grades & (Person-Student)->grades
+inv10 C: no Course.grades & (Person-Student)->Grade
+inv10 S: no Courses.grades & (Person-Students)->grades
+inv10 T: no Course.grades & (Person-Student)->grades
+inv10 C: no Course.grades & (Person-Student)->Grade
+inv10 C: no Course.grades & (Person-Student)->Grade
+inv10 C: no Course.grades & (Person-Student)->Grade
+

@@ -1,0 +1,45 @@
+inv9 T: all t1:Track | some t2:Track | t2 in t1.succs and (Junction & t2) implies Semaphore not in t1.signals
+inv9 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore not in t1.signals
+inv9 B: all t1:Track | some t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals
+inv9 T: all t1:Track | some t2:Track | t2 in t1.succs and (Junction & t2) implies Semaphore in t1.signals
+inv9 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv9 B: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies (some s:Semaphore | s not in t1.signals)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies (all s:Semaphore | s not in t1.signals)
+inv9 S: all t1,t2:
+inv9 S: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.siganls
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | no t1.succs implies Semaphore not in t1.signals
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | t1.succs=none implies Semaphore not in t1.signals
+inv9 T: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | (Exit & t1) implies Semaphore not in t1.signals
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies Semaphore not in t1.signals
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (some s:Semaphore | s not in t1.signals)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (all s:Semaphore | s not in t1.signals)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (one s:Semaphore | s not in t1.signals)
+inv9 S: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (one s:Siganl | s not in t1.signals and s in Semaphore)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (one s:Signal | s not in t1.signals and s in Semaphore)
+inv9 S: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies no (Siganl & t1)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies no (Signal & t1)
+inv9 T: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies no (Signal in t1)
+inv9 S: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies all s:Siganl (s not in t1)
+inv9 S: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (all s:Siganl | s not in t1)
+inv9 B: all t1,t2:Track | t2 in t1.succs and no (Junction & t2) implies Semaphore not in t1.signals	all t1:Track | some (Exit & t1) implies (all s:Signal | s not in t1)
+inv9 E:
+inv9 T: all t:Track | no (Junction & t.succs) implies no (Semaphore in t.signals)
+inv9 U: all t:Track | no (Junction & t.succs) implies no (Junction & t.succs)
+inv9 S: all t:Track | no (Junction & t.succs) implies no (Junction & t.succs)				all t1:Track | one (Exit & t) implies (some s:Semaphore | s not in t1.signals)
+inv9 S: all t:Track | no (Junction & t.succs) implies no (Junction & t.succs)				all t1:Track | one (Exit & t) implies (some s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies no (Junction & t.succs)				all t:Track | one (Exit & t) implies (some s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies no (Junction & t.succs)				all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies Semaphore not in t.signals				all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies Semaphore not in t.signals				all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies Semaphore not in t.signals				all t:Track | one (Exit & t) implies (some s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | no (Junction & t.succs) implies Semaphore not in t.signals				all t:Track | one (Exit & t) implies (some s:Semaphore | s not in t.signals)
+inv9 E:
+inv9 B: all t:Track | one (Exit & t) implies (Semaphore not in t.signals)
+inv9 B: all t:Track | one (Exit & t) implies (Semaphore not in t.signals and Signal not in t.signals)
+inv9 B: all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 O: all t:Track | no (Junction & t.succs) implies (all s:Semaphore | s not in t.signals)				all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 O: all t:Track | no (Junction & t.succs) implies (all s:Semaphore | s not in t.signals)	all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+inv9 O: all t:Track | no (Junction & t.succs) implies (all s:Semaphore | s not in t.signals)	all t:Track | one (Exit & t) implies (all s:Semaphore | s not in t.signals)
+

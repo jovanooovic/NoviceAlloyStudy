@@ -1,0 +1,7 @@
+inv8 B: all u : User | some ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User | one ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User - Influencer| one ad : Ad | ad in u.sees implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 B: all u : User - Influencer| one ad : Ad | ad in u.sees implies (ad in u.suggested.posts or ad in u.suggested.posts)
+inv8 O: all u : User | all ad : u.sees | some ad & Ad implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+inv8 O: all u : User | all ad : u.sees | ad in Ad implies (one u2 : u.follows + u.suggested | ad in u2.posts )
+

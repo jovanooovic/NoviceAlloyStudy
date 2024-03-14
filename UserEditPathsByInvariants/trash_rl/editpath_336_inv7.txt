@@ -1,0 +1,11 @@
+inv7 O: all f: File | no ((f.link & Trash) + (link.f & Trash))
+inv7 B: all f: File | some f.link => not f in Trash
+inv7 B: all f: File | some f.link => not f in Trash
+inv7 B: all f: File | some f.link => f not in Trash
+inv7 S: all f: File | ((some f.link) or (some link.f) => f not in Trash
+inv7 O: all f: File | ((some f.link) or (some link.f)) => f not in Trash
+inv7 B: all f: File | ((some f.link) or (some link.f)) => f in Trash
+inv7 O: no ((link.univ + univ.link) & Trash)
+inv7 B: all f: File | some f.link => f not in Trash
+inv7 B: all t: Trash | no t.link
+

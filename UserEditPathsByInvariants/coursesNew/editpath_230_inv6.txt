@@ -1,0 +1,11 @@
+inv6 B: all s: Student | s.projects in s.enrolled
+inv6 B: all s: Student | some s.projects
+inv6 B: all s: Student | s.projects in s.enrolled
+inv6 T: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {
+inv6 S: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Courses
+inv6 B: all s: Student | (s.projects) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 B: all s: Student | (projects.(s.projects) & Course) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 T: all s: Student | (projects.(s.projects)) in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 B: all s: Student | getProjectCourse[s.projects] in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p & Course
+inv6 T: all s: Student | getProjectCourse[s.projects] in s.enrolled	}		fun getProjectCourse[p : Project]: one Course {	  	projects.p
+

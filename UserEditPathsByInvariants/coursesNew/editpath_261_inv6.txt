@@ -1,0 +1,12 @@
+inv6 U: Student.projects in Student.enrolled.projects
+inv6 B: (Student.enrolled-Student).projects = none
+inv6 B: ((Student.enrolled)-Student).projects = none
+inv6 B: (Student.enrolled.projects)-Student.projects = none
+inv6 B: (Student-Student.enrolled).projects = none
+inv6 U: (Student.projects)-(Student.enrolled.projects) = none
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 U: all p : Project, s : Student | p in s.projects => p in s.enrolled.projects
+

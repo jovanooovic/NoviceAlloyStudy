@@ -1,0 +1,8 @@
+inv4 T: all p : Project | lone p in Course.projects
+inv4 U: all p : Project, c : Course | p in c.projects implies p not in (Course-c).projects
+inv4 U: all p : Project, c : Course, c2 : (Course-c) | p in c.projects implies p not in c2.projects
+inv4 S: all p : Project, c : Course | p in Course.project and p in c.project implies p not in (Course-c).projects
+inv4 S: all p : Project, c : Course | p in Course.project and p in c.projects implies p not in (Course-c).projects
+inv4 U: all p : Project, c : Course | p in Course.projects and p in c.projects implies p not in (Course-c).projects
+inv4 C: all p : Project | p in Course.projects	  all c1,c2 : Course, p : Project | p in c1.projects and p in c2.projects implies c1=c2
+

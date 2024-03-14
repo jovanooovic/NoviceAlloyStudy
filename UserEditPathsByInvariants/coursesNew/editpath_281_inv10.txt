@@ -1,0 +1,4 @@
+inv10 O: all p : Person, c: Course | p.(c.grades) in Grade implies p in Student
+inv10 S: all p : Person, c: Course | g in p.(c.grades) implies p in Student
+inv10 C: all p : Person, c: Course, g : Grade | g in p.(c.grades) implies p in Student
+

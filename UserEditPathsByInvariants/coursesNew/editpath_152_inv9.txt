@@ -1,0 +1,5 @@
+inv9 B: all p, s: Person | all c: Course | s in Professor && p in Professor && c in p.teaches => c not in s.enrolled
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c, d: Course | (c in s.teaches => c not in p.enrolled)
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c: Course | (c in s.teaches => c not in p.enrolled)
+inv9 B: all p, s: Person | s in Professor && p in Professor => all c: Course | c in s.teaches => c not in p.enrolled
+

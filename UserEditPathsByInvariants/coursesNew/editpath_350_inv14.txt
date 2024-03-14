@@ -1,0 +1,9 @@
+inv14 B: all s1,s2 : Student | lone (s1+s2).enrolled
+inv14 T: all s1,s2 : Student | lone (s1+s2).Person <: projects
+inv14 B: all s1,s2 : Student | lone (s1+s2).(Person <: projects)
+inv14 O: all s1,s2 : Person | lone (s1+s2).(Person <: projects)
+inv14 O: all s1,s2 : Person | lone s1.(Person <: projects) & s2.(Person <: projects)
+inv14 B: all s1,s2 : Student | lone s1.(Person <: projects) & s2.(Person <: projects)
+inv14 U: all s1,s2 : Student | s1 != s2 implies lone s1.(Person <: projects) & s2.(Person <: projects)
+inv14 U: all s1,s2 : Student | s1 != s2 implies lone s1.(Person <: projects) & s2.(Person <: projects)
+

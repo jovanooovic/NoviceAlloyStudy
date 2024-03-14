@@ -1,0 +1,7 @@
+inv6 O: all n1,n2:Node | n1->n2 in adj
+inv6 O: all n1,n2:Node | n1 in n2.^adj || n2 in n1.^adj
+inv6 T: all n1,n2:Node | n2 in ^(n1.adj + n1.~adj) || n1 in ^(n2.adj + n2.~adj)
+inv6 O: all n1,n2:Node | n2 in n1.^(adj + ~adj) || n1 in n2.^(adj + ~adj)
+inv6 O: all n1,n2:Node | n2 in n1.^(adj + ~adj)
+inv6 C: all n1,n2:Node | n2 in n1.*(adj + ~adj)
+

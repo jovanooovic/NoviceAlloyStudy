@@ -1,0 +1,20 @@
+inv4 S: Components in parts	Material not in parts
+inv4 T: Component in parts	Material not in parts
+inv4 S: all c : Component, m : material | c in parts & m not in parts
+inv4 T: all c : Component, m : Material | c in parts & m not in parts
+inv4 T: all c : Component | c in parts	parts - Material = parts
+inv4 T: all c : Component | c in Product.parts	parts - Material = parts
+inv4 T: (Component <: parts) in Component set -> some Product	parts - Material = parts
+inv4 C: (Component <: parts) in Component set -> some Product	no (Material <: parts)
+inv4 B: all c : Component | c in Product.parts		no (Material <: parts)
+inv4 B: all c : Component | c in (Product-Material).parts		no (Material <: parts)
+inv4 T: all c : Component | c in ((Product-Material).parts - iden)		no (Material <: parts)
+inv4 S: parts = Components + (Product-Material)
+inv4 T: parts = Component + (Product-Material)
+inv4 S: parts = set (Component + (Product-Material))
+inv4 C: (Component <: parts) in Component set -> some Product	no (Material <: parts)
+inv4 B: some Component.parts	no Material.parts
+inv4 C: all c: Component | some c.parts	all c: Material | no c.parts
+inv4 O: (parts :> Component) in Component set -> some Product	no (parts :> Material)
+inv4 C: (Component <: parts) in Component set -> some Product	no (Material <: parts)
+

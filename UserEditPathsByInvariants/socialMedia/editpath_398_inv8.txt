@@ -1,0 +1,5 @@
+inv8 O: all u1,u2 : User| all p:Photo| p in Ad and u1->p in sees implies (u2->p in posts and(u1->u2 in follows or u1->u2 in suggested))
+inv8 T: all u1,u2 : User| all p:Photo| p in Ad and (u2->p in posts and(u1->u2 in follows or u1->u2 in suggested)) in sees implies u1->p
+inv8 T: all u1,u2 : User| all p:Photo| p in Ad and (u2->p in posts and (u1->u2 in follows or u1->u2 in suggested)) in sees implies u1->p
+inv8 B: all u1,u2 : User| all p:Photo| p in Ad and (u2->p in posts and (u1->u2 in follows or u1->u2 in suggested)) implies u1->p in sees
+

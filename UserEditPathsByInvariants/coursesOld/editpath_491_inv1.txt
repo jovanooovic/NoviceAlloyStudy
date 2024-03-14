@@ -1,0 +1,19 @@
+inv1 T: all p:Person, c:Course | p->c in enrolled implies Student(p)
+inv1 C: all p:Person, c:Course | p->c in enrolled implies p in Student
+inv1 C: all p:Person, c:Course | p->c in enrolled implies p in Student
+inv1 B: all e:Student, c:Course| e in c.enrolled
+inv1 B: all e:Student, c:Course| e in enrolled.c
+inv1 B: all e:Student, c:Course| c in e.enrolled
+inv1 B: all e:Student, c:Course| c in enrolled.e
+inv1 B: all e:Student, c:Course| e in c.enrolled
+inv1 B: all e:Student, c:Course| e.enrolled	in c
+inv1 B: all e:Student, p:Person| e in p.enrolled
+inv1 B: all e:Student, p:Person| e in enrolled.p
+inv1 T: all e:Student, p:Person| e in p.enrolled.Course
+inv1 S: all e:Student, p:Person| c.enrolled
+inv1 T: all e:Student,c:Course| c.enrolled
+inv1 B: all e:Student,c:Course| e.enrolled in c
+inv1 U: all e:Student,c:Course| enrolled.e in c
+inv1 B: all e:Student, c:Course| e->c in enrolled
+inv1 C: all p:Person, c:Course | p->c in enrolled implies p in Student
+

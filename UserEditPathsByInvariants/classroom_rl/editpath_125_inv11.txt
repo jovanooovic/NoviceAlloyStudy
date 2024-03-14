@@ -1,0 +1,11 @@
+inv11 B: all c : Class | some (Teacher->c) implies some Groups
+inv11 U: all c : Class | some Groups  implies some (Teacher->c)
+inv11 T: all c : Class | some c->Person->Group in Groups implies some Teacher->c in Teaches
+inv11 T: all c : Class | c->Person->Groups in Groups implies Teacher->c in Teaches
+inv11 B: all c : Class | some c.Groups implies Teacher->c in Teaches
+inv11 T: all c : Class | some c.Groups implies some Teacher->c in Teaches
+inv11 T: all c : Class | some c.Groups implies Teacher->c not none
+inv11 U: all c : Class | some c.Groups implies some Teacher->c
+inv11 U: all c : Class | some c.Groups => some Teacher->c
+inv11 C: all c : Class | some c.Groups => (some t : Teacher | t->c in Teaches)
+

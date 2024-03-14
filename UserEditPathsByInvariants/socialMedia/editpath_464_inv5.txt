@@ -1,0 +1,25 @@
+inv5 S: all Influencer:i | User:u | i in user.follows
+inv5 S: all Influencer:i | User:u | i in user.follows & u !=i
+inv5 S: all Influencer:i | User:u | i in user.follows & u!=i
+inv5 S: all Influencer:i | User:u | i in user.follows & u!=i
+inv5 S: all Influencer:i | User:u | i in u.follows & u!=i
+inv5 S: all Influencer:i | User:u | i in u.follows & u not i
+inv5 S: all Influencer:i | User:u | i in u.follows & u != i
+inv5 S: all Influencer:i | User:u |  u != i & i in u.follows
+inv5 S: all Influencer:i | User:u | u not i & i in u.follows
+inv5 S: all Influencer:i -> all  User:u | u != i -> i in u.follows
+inv5 S: all Influencer:i ->   User:u | u != i -> i in u.follows
+inv5 S: all Influencer:i ->   User:u | (u != i) -> i in u.follows
+inv5 S: all Influencer:i |   User:u | (u != i) -> i in u.follows
+inv5 S: all Influencer:i |   User:u | (u != i) implies i in u.follows
+inv5 S: all Influencer:i ,  User:u | (u != i) => i in u.follows
+inv5 S: all Influencer:i |  User:u | (u != i) => i in u.follows
+inv5 S: all Influencer:i |  User:u | (u != i) -> i in u.follows
+inv5 S: all Influencer:i |  User:u | (u != i) -> i in u.follows
+inv5 S: all Influencer:i |  User:u | (u != i) -> i in u.follows
+inv5 S: all  User:u | Influencer:i | (u != i) -> i in u.follows
+inv5 S: all  User:u | Influencer:i | (u != i) -> i in u.follows
+inv5 S: all  User:u , Influencer:i | (u != i) implies i in u.follows
+inv5 S: all  User:u , Influencer:i | (u != i) implies i in u.follows
+inv5 U: all  u: User, i:Influencer | (u != i) implies i in u.follows
+

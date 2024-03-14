@@ -1,0 +1,32 @@
+na H: THEME UPDATE
+inv1 C: adj = ~adj
+inv2 T: no adj = ~adj
+inv2 O: no adj.~adj & iden
+inv2 T: no adj = ~adj
+inv2 S: no iden & graph.~graph
+inv2 O: no iden & adj.~adj
+inv2 O: no iden & adj.~adj
+inv2 C: no iden & adj.adj
+inv3 C: no iden & ^adj
+inv4 U: ^adj = Node->Node
+inv4 C: adj = Node->Node
+inv5 C: no iden & adj
+inv8 C: adj.adj in adj
+inv6 U: adj + ~adj in Node->Node
+inv6 U: ^adj in Node->Node
+inv6 O: ^adj = Node->Node
+inv6 O: *(adj + ~adj) = Node->Node
+inv6 O: *adj + *(~adj) = Node->Node
+inv6 O: Node->Node in *adj + *(~adj)
+inv6 O: *adj + *(~adj) = Node->Node
+inv6 O: ^adj + ^(~adj) = Node->Node
+inv6 O: *adj = Node->Node
+inv6 O: ^adj = Node->Node
+inv7 O: *adj = Node->Node
+inv7 O: *adj = Node->Node
+inv6 O: ^(adj + ~adj) = Node->Node
+inv6 O: *(adj + ~adj) = Node->Node
+inv6 U: Node.*(adj + ~adj) = Node
+inv6 C: Node->Node in *(adj + ~adj)
+inv7 C: Node->Node in *(adj)
+

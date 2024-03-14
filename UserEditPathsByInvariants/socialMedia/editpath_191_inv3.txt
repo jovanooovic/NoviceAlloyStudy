@@ -1,0 +1,20 @@
+inv3 B: User.sees not in User.posts
+inv3 S: User.sees not in User.posts	All y : User | Ad in y.sees
+inv3 B: User.sees not in User.posts	all y : User | Ad in y.sees
+inv3 B: User.sees - Ad not in User.posts	all y : User | Ad in y.sees
+inv3 B: (User.sees - Ad) not in User.posts	all y : User | Ad in y.sees
+inv3 B: User.sees not in User.posts	all y : User | Ad in y.sees
+inv3 B: one x: User | x.sees not in x.posts	all y : User | Ad in y.sees
+inv3 S: x: User | x.sees not in x.posts	all y : User | Ad in y.sees
+inv3 B: all x: User | x.sees not in x.posts	all y : User | Ad in y.sees
+inv3 B: all x: User | x.sees != x.posts	all y : User | Ad in y.sees
+inv3 B: all x: User | x.posts not in x.sees	all y : User | Ad in y.sees
+inv3 T: all x: User | x.posts & x.sees	all y : User | Ad in y.sees
+inv3 T: all x: User | (x.posts) & (x.sees)	all y : User | Ad in y.sees
+inv3 B: all x: User | (x.posts) not in (x.sees)	all y : User | Ad in y.sees
+inv3 B: all x: User | (x.posts) not in (x.sees)	all y : User | Ad in y.sees
+inv3 B: all x: User | all y: x.sees - Ad | x.posts not in y
+inv3 B: all x: User | all y: x.sees - Ad | y not in x.posts
+inv3 T: all x: User | all y: x.sees - Ad | y.User in x.follows
+inv3 B: all x: User | all y: x.sees - Ad | posts.y in x.follows
+

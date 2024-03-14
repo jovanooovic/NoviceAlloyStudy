@@ -1,0 +1,8 @@
+inv1 S: all p: Person, c:Courses| p in Student => c in p.enrolled
+inv1 B: all p: Person, c:Course| p in Student => c in p.enrolled
+inv1 U: all p:Person-Student | none in p.enrolled
+inv1 U: all p:Person-Student | none in p.enrolled
+inv1 T: all p:Person-Student | p.enrolled = {}
+inv1 C: all p:Person-Student | no p.enrolled
+inv1 C: all p:Person-Student | no p.enrolled
+

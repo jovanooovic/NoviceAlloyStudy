@@ -1,0 +1,8 @@
+inv2 T: all x:User | no x.follows.x
+inv2 T: all x:User | no x.follows in iden
+inv2 T: all x:User | no follows.x in iden
+inv2 T: all x:User | x.follows not in iden
+inv2 C: no (follows & iden)
+inv2 C: all u:User | u->u not in follows
+inv2 C: no (follows & iden)
+

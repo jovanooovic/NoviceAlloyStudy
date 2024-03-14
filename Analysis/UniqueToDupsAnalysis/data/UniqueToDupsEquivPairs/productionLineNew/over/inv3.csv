@@ -1,0 +1,15 @@
+Pairs,21
+,,"all c:Component| one workstation.c",10
+,,"all x: Component | x in #(Workstation)",1
+,,"all c : Component | one (c.~workstation)",2
+,,"all x: Component | one v: Workstation | x in v",1
+,,"all c:Component | one w:Workstation | c in w.workstation",1
+,,"all w : Component | one s : Workstation | w in s.workstation",2
+,,"all c: Component| some x: Workstation| c in x.workstation",1
+,,"all c:Component | one ws:Workstation | c in ws.workstation",1
+,,"(all c: Component| some w: Workstation| w in c.workstation) && (all c: Component| one workstation.c)",1
+,,"(all c: Component| some x: Workstation| c in x.workstation) && (all c: Component| one workstation.c)",1
+
+Pairs,1
+,,"workstation in Component one -> one Workstation",1
+

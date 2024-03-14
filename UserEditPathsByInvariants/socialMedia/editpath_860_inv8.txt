@@ -1,0 +1,4 @@
+inv8 O: all u : User | all p : Ad | p in u.follows.posts or p in u.suggested.posts
+inv8 C: all u : User | all p : Ad | p in u.sees implies p in u.follows.posts or p in u.suggested.posts
+inv8 C: all u : User | all p : Ad | p in u.sees implies p in u.follows.posts or p in u.suggested.posts
+

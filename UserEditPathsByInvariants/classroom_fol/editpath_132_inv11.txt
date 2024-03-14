@@ -1,0 +1,20 @@
+inv11 S: all c: Class, s:Student, g: Group | some t: Teachers | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 S: all c: Class, s:Student, g: Group | some t: Teachers | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 S: all c: Class, s:Student, g: Group | some t: Teachers | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 B: all c: Class, s:Student, g: Group | some t: Teacher | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 B: all c: Class, s: Student, g: Group | some t: Teacher | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 B: all c: Class, s: Student, g: Group | some t: Teacher | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 T: all c: Class, s: Student | some t: Teacher, g: Groups | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 T: all c: Class, s: Student | some t: Teacher, g: Groups | (c->t not in Teaches) implies c->s->g not in Groups
+inv11 B: all c: Class | some s: Student, t: Teacher, g: Group | c->s->g in Groups implies t->c in Teaches
+inv11 T: all c: Class, g: Groups | some s: Student, t: Teacher | c->s->g in Groups implies t->c in Teaches
+inv11 B: all c: Class, g: Group | some s: Student, t: Teacher | c->s->g in Groups implies t->c in Teaches
+inv11 B: all c: Class, g: Group, s: Student | some t: Teacher | c->s->g in Groups implies t->c in Teaches
+inv11 B: all c: Class, g: Group, s: Student, t: Teacher | c->s->g in Groups implies t->c in Teaches
+inv11 B: all c: Class, g: Group, s: Student, t: Teacher | c->s->g in Groups implies (t->c in Teaches	and t != s)
+inv11 B: all c: Class, g: Group, s: Student | some t: Teacher | c->s->g in Groups implies t->c in Teaches and t != s
+inv11 B: all c: Class, g: Group, s: Student | some t: Teacher | c->s->g in Groups implies (t->c in Teaches and t != s)
+inv11 B: all c: Class, g: Group | some t: Teacher , p: Person | c->p->g in Groups implies (t->c in Teaches)
+inv11 B: all c: Class | some t: Teacher , p: Person , g: Group| c->p->g in Groups implies (t->c in Teaches)
+inv11 B: all c: Class | some t: Teacher , p: Person , g: Group| (c->p->g in Groups) implies (t->c in Teaches)
+

@@ -1,0 +1,21 @@
+inv12 E:
+inv12 S: all s: Student | one (c.grades.Grade & s)
+inv12 B: all s: Student, c: Course | one (c.grades.Grade & s)
+inv12 B: all s: Student, c: Course | one (c.grades.Grade & s)
+inv12 B: all p: Person, c: Course | one (c.grades.Grade & p) implies p in Student
+inv12 B: all s: Student, c: Course | one (c.grades.Grade & c)
+inv12 T: all c: Course, s: Student | c.grades.Grade
+inv12 T: all c: Course, s: Student | s.enrolled & c.grades.Grade.~grades
+inv12 T: all c: Course, s: Student | s.enrolled & c.(grades.Grade.~grades)
+inv12 T: all c: Course, s: Student | s.enrolled & c.(grades.Grade.~enrolled)
+inv12 B: all c: Course, s: Student | one (s.enrolled & c.(grades.Grade.~enrolled))
+inv12 B: all c: Course, s: Student | one (s.enrolled & c.grades.Grade)
+inv12 S: all c: Course, s: Student | c in s.enrolled implies one (s & g.grades.Grade)
+inv12 B: all c: Course, s: Student | c in s.enrolled implies one (s & c.grades.Grade)
+inv12 U: all c: Course, s: Student | lone (s & c.grades.Grade)
+inv12 U: all c: Course, s: Student | lone (s & c.grades.Grade)
+inv12 U: all c: Course, s: Student | lone (s & c.grades.Person)
+inv12 U: all c: Course, s: Student | lone (s & c.~(grades.Person))
+inv12 U: all c: Course, s: Student | lone (s & ~(c.grades).Person)
+inv12 U: all c: Course, s: Student | c in s.enrolled implies lone (s & c.grades.Grade)
+

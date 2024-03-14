@@ -1,0 +1,7 @@
+inv4 T: Init.^adj		}		/*	All the states have the same events available.	*/	fun adj: State -> State {	{ x,y : State | some (x.trans).y }
+inv4 S: Init in State.^adj
+inv4 S: Init in ^adj.State
+inv4 S: all s:State | Init in s.^adj
+inv4 S: all s:State | s in Init.^adj
+inv4 S: all s:State | s in Init.^adj
+

@@ -1,0 +1,38 @@
+"all t:",1
+"all t: Teacher",1
+"all t:Teacher |",3
+"all t : Teacher |",2
+"Teacher<:Teaches).Groups",1
+"all t : Teacher | some ()",2
+"all t:Teacher | some t.tutors",1
+"all t: Teacher | some t.Tutor",1
+"all t:Teachers | some(Groups.t)",1
+"all t : Teacher | some+ t.Teaches.Groups",1
+"all t : Techer | some (t.Teaches.Groups)",1
+"all t : Teacher | some (t.Teaches).Groupos",1
+"all t : Teacher | some groups in t.Teaches",2
+"some g:Group | some (Class.Groups.g & Teaches.c)",1
+"some ~Teaches&Teacher.Groups & some Group in Class",1
+"all t : Teacher | some ((t.Teaches).Groups).Person)",1
+"all t : Teacher | t & Teaches.c & (some Class.Groups)",1
+"all g:Group | some c:Class,some t:Teacher | some Classes",1
+"some c:Class |  all t: Teaches.c | some a->t->g in Groups",1
+"some c:Class |  all a: Teaches.c | some a->s->g in Groups",1
+"some c:Class |  all t: Teaches.c | some c->t->g in Groups",1
+"some c:Class |  all a: Teaches.c and some a->s->g in Groups",1
+"all g:Group | some c:Class,some t:Teacher | t->g in c.Groups",1
+"all t : Teacher | some ((t.Teaches) & ((Groups.Person).Group)",1
+"all t : Teacher | some ((t.Teaches) & ((Groups.Person).Groups)",1
+"iden in  ~(Teatcher <: Teaches.Groups) . (Teatcher <: Teaches.Groups)",1
+"all t: Teacher | some c: Class | some Person.(c.Groups) | t->c in Teaches",1
+"all t:Teacher | some c.Class | t.Teaches:>c implies c.Person.Group:>Groups",1
+"all p: Person | some g: Group | all c: Class | p in Teacher c->p->g in Groups",1
+"all t : Teacher | some p : Person, g : Group | some g.(p.((t.Teaches).Groups)))",1
+"all g:Group | some c:Class,some t:Teacher | t->g in c.Groups and t->c in Teaches",1
+"some c:Class| somee (Teaches.c - Teacher) and  some g:Group, p:Person | c->p->g in Groups",1
+"Teacher in Class.Groups.Group
+  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group",1
+"Teacher in Class.Groups.Group
+  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group",1
+"Teacher in Class.Groups.Group && 
+  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group",1

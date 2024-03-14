@@ -1,0 +1,28 @@
+inv8 S: all t:Teachers | c1, c2:Class and (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+inv8 S: all t:Teachers | all c1, c2:Class and (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+inv8 S: all t:Teachers, c1,c2:Class and (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+inv8 S: all t:Teachers, c1,c2:Class | (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+inv8 C: all t:Teacher, c1,c2:Class | (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+inv8 T: Teaches Teacher -> one Class
+inv8 O: Teaches in Teacher -> one Class
+inv8 B: Teaches in Teacher one -> Class
+inv8 O: Teaches in Teacher one -> one Class
+inv8 B: Teaches in Teacher lone -> Class
+inv8 B: Teaches in Teacher -> Class
+inv8 B: Teaches in Teacher one -> Class
+inv8 O: Teaches in Teacher one -> lone Class
+inv8 O: Teaches in Teacher one -> lone Class
+inv8 O: Teaches in Person one -> lone Class
+inv8 O: Teaches in Person -> lone Class
+inv8 B: Teaches in Person lone -> Class
+inv8 B: Teaches in Person one -> Class
+inv8 O: Teaches in Person -> lone Class
+inv8 U: Teaches in Person -> Class
+inv8 U: Teacher <:Teaches in Person -> Class
+inv8 O: Teacher <:Teaches in Person -> one Class
+inv8 O: Teacher <:Teaches in Teacher -> one Class
+inv8 S: all p:Person | some c: Class | t -> c in Teaches	  Teacher <:Teaches in Teacher -> one Class
+inv8 O: all p:Person | some c: Class | p -> c in Teaches	  Teacher <:Teaches in Teacher -> one Class
+inv8 O: all p:Teacher | some c: Class | p -> c in Teaches	  Teacher <:Teaches in Teacher -> one Class
+inv8 C: all t:Teacher, c1,c2:Class | (t -> c1 in Teaches) and (t -> c2 in Teaches) implies c1 = c2
+

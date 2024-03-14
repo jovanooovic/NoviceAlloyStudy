@@ -1,0 +1,9 @@
+inv4 S: all t : Tracks | t in Entry implies t.succs = none
+inv4 B: all t : Track | t in Entry implies t.succs = none
+inv4 B: all t : Track | t in Entry implies t.succs = 0
+inv4 U: all t,t1 : Track | t!=t1 and t in Entry implies t not in t1.succs
+inv4 U: all t,t1 : Track | t in Entry implies t not in t1.succs
+inv4 U: all t : Track |  t in Entry implies t not in Track.succs
+inv4 U: all t : Track |  t in Entry implies t not in (Track-t).succs
+inv4 U: all t : Track |  t in Entry implies t not in Track.succs
+

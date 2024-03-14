@@ -1,0 +1,48 @@
+Pairs,2
+,,"always no Protected & Trash",2
+
+Pairs,2
+,,"all f:File | always f in Protected",2
+
+Pairs,12
+,,"always (all f:File | f in Protected)",3
+,,"always all f: File | f in Protected since f in Protected",5
+,,"always all f: File | f in Protected triggered f in Protected",1
+,,"always all f: File | always f in Protected since f in Protected",3
+
+Pairs,1
+,,"all p : Protected | always p = Protected",1
+
+Pairs,2
+,,"(all f:File | after always f in Protected)",1
+,,"(all f:File | always(after f in Protected))",1
+
+Pairs,4
+,,"always all f: File | always f in Protected",3
+,,"always all f:File | once f in Protected && always f in Protected",1
+
+Pairs,3
+,,"always (all f:File | after f in Protected)",1
+,,"always (all f:File | always(after f in Protected))",1
+,,"always (all f:File | after always f in Protected)",1
+
+Pairs,1
+,,"all f : Protected.link | always f in Protected",1
+
+Pairs,9
+,,"all f: File | f in Protected since f in Protected",3
+,,"all f: File | always f in Protected since f in Protected",6
+
+Pairs,1
+,,"once File in Protected implies always File in Protected",1
+
+Pairs,2
+,,"all f : Protected | always f in Protected and f not in Trash",1
+,,"all f : File | f in Protected => always f in Protected and f not in Trash",1
+
+Pairs,1
+,,"always all f : File | f in Protected implies f not in Protected'",1
+
+Pairs,1
+,,"always all f : File | f in Protected implies (f in Protected' and f not in Trash)",1
+

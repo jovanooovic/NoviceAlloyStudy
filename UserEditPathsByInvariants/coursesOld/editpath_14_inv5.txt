@@ -1,0 +1,10 @@
+inv5 U: all person : Person | all project: Project | project in person.projects implies person in Student
+inv5 B: all person : Student | all project: Project | project in person.projects
+inv5 B: all person : Person | all project: Project | project in person.projects and person in Student
+inv5 S: all person : Person - Student | all project: Project | project in person.projects = non
+inv5 T: all person : Person - Student | all project: Project | project in person.projects = none	  	all person : Student | all project: Project | project in person.projects
+inv5 B: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in person.projects
+inv5 S: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in Sttudent.projects
+inv5 U: all person : Person - Student | person.projects = none	  	all person : Student | all project: Project | project in Student.projects
+inv5 C: all person : Person - Student | person.projects = none	  	all project: Project | project in Student.projects
+

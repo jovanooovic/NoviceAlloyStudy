@@ -1,0 +1,83 @@
+NA H: THEME UPDATE
+inv1 U: all w: Worker | w in Human => w not in Robot
+inv1 C: all w: Worker | w in Human => w not in Robot	all w: Worker | w not in Human => w in Robot
+inv1 C: all w: Worker | w in Human <=> w not in Robot
+inv1 C: all w: Worker | w in Human <=> w not in Robot
+inv2 S: all ws: Workstation | some w.workers	all w: Worker | some workers.w
+inv2 S: all ws: Workstation | some w.workers	all w: Worker | w in workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | some workers.w
+inv2 T: all ws: Workstation | some ws.workers	all w: Worker | w in workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | w in Workstation.workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker, ws1, ws2: Workstation | w in ws1.workers && w in ws2.workers => ws1=ws2
+inv2 T: all ws: Workstation | some ws.workers	all w: Worker | some w in Workstation.workers
+inv2 U: all ws: Workstation | some ws.workers	all w: Worker | some workers.w
+inv2 S: all ws: Workstation | some ws.workers	all w: Worker, ws: workStation | w in ws.workers
+inv2 B: all ws: Workstation | some ws.workers	all w: Worker, ws: Workstation | w in ws.workers
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv3 S: all c: Component | one ws: Worstation  | ws in c.workstation
+inv2 C: all ws: Workstation | some ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv3 C: all c: Component | one ws: Workstation  | ws in c.workstation
+inv3 U: all c: Component | some ws: Workstation  | ws in c.workstation
+inv4 T: all c: Component | some c.parts	all m: Material | none m.parts
+inv4 T: all c: Component | some c.parts	all m: Material | none m.parts
+inv4 C: all c: Component | some c.parts	all m: Material | not some m.parts
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv5 O: all ws: Workstation, r: Robot, h: Human | r in ws.workers <=> h not in ws.workers
+inv6 C: all c: Component | c not in c.^(parts)
+inv6 C: all c: Component | c not in c.^(parts)
+inv4 C: all c: Component | some c.parts	no Material.parts
+inv4 B: some Component.parts	no Material.parts
+inv6 C: all c: Component | c not in c.^(parts)
+inv7 O: all c: Component, p: Product | p in Dangerous && p in c.^(parts) => c in Dangerous
+inv8 S: all c: Component| c in Dangerous => c.workstation.workers not in Humans
+inv8 B: all c: Component | c in Dangerous => c.workstation.workers not in Human
+inv9 B: Workstation.*(succ)	in begin+end
+inv9 B: all w: Workstation | w.*(succ) in begin+end && w not in w.^(succ)
+inv9 U: all w: Workstation | w not in w.^(succ)
+inv9 B: all w: Workstation | w.*(succ) in begin+end && w not in w.^(succ)
+inv9 O: all w: Workstation | w in begin && w.^(succ) in end && w not in w.^(succ)
+inv9 T: all w: workstation | w not in Workstation.succ => w in begin	all w: Workstation | w not in w.^(succ)	all w: Workstation | no w.succ => w in end
+inv9 U: all w: Workstation | w not in Workstation.succ => w in begin	all w: Workstation | w not in w.^(succ)	all w: Workstation | no w.succ => w in end
+inv9 C: all w: Workstation | w not in Workstation.succ => w in begin	all w: Workstation | w not in w.^(succ)	all w: Workstation | lone w.succ	all w: Workstation | no w.succ => w in end
+inv9 U: all w: Workstation | w not in Workstation.succ => w in begin		all w: Workstation | lone w.succ	all w: Workstation | no w.succ => w in end
+inv9 C: all w: Workstation | w not in Workstation.succ => w in begin	all w: Workstation | w not in w.^(succ)	all w: Workstation | lone w.succ	all w: Workstation | no w.succ => w in end
+inv10 O: all w: Workstation, c: Component, p: Product | p in c.^(parts) => p in w && c in w.^(succ)
+inv10 O: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2 && w.^(succ) in c1
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation && w not in c1.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation-c2.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation
+inv10 O: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation && w.^(succ) not in c2.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation && w not in c1.workstation
+inv10 B: all w: Workstation, c: Component | w in c.^(parts).workstation && w.^(succ) in c.workstation
+inv10 B: all w: Workstation, c: Product | w in c.^(parts).workstation && w.^(succ) in c.workstation
+inv10 B: all w: Workstation, c: Product | some c.parts => w in c.^(parts).workstation && w.^(succ) in c.workstation
+inv1 C: all w: Worker | w in Human <=> w not in Robot
+inv10 B: all w: Workstation, p: Product | some p.^(parts) => w in p.^(parts).workstation && w.^(succ) in p.workstation
+inv10 B: all w: Workstation, p: Product | some p.^(parts) => w in p.^(parts).workstation-p.workstation && w.^(succ) in p.workstation-p.^(parts).workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation && w.^(succ) in c1.workstation && w not in c1.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation
+inv10 B: all w: Workstation, c1, c2: Product | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation
+inv10 O: all w: Workstation, c1, c2: Component | c1 in c2.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.succ in c1.workstation-c2.workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation	all w: Workstation, p: Product | some p.^(parts) => w in p.^(parts).workstation-p.workstation && w.^(succ) in p.workstation-p.^(parts).workstation
+inv10 B: all w: Workstation, c1, c2: Component | c2 in c1.^(parts) => w in c2.workstation-c1.workstation && w.^(succ) in c1.workstation-c2.workstation
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation-c1.workstation && w1 in c1.workstation-c2.workstation && w1 in w2.^(succ)
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.parts => w2 in c2.workstation-c1.workstation && w1 in c1.workstation-c2.workstation && w1 in w2.^(succ)
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation-c1.workstation && w1 in c1.workstation-c2.workstation && w1 in w2.^(succ)
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation-c1.workstation && w1 in c1.workstation-c2.workstation && w1 in w2.^(succ) && w1 != w2
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w1 in w2.^(succ) && w1 != w2
+inv10 B: all disj w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w2 in w1.^(succ)
+inv10 O: all w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w2 in w1.^(succ)
+inv10 O: all w1, w2: Workstation, c1, c2: Product | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w2 in w1.^(succ)
+inv10 B: all w1, w2: Workstation, c1, c2: Product | c2 in c1.^(parts) && w2 in c2.workstation && w1 in c1.workstation => w2 in w1.^(succ)
+inv10 B: all w1, w2: Workstation, c1, c2: Product | c2 in c1.^(parts) && w2 in c2.workstation && w1 in c1.workstation => w1 in w2.^(succ)
+inv10 S: all w1, w2: Workstation, c1, c2: Components | c2 in c1.^(parts) && w2 in c2.workstation && w1 in c1.workstation => w1 in w2.^(succ)
+inv10 B: all w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) && w2 in c2.workstation && w1 in c1.workstation => w1 in w2.^(succ)
+inv10 O: all w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w1 in w2.^(succ)
+inv10 O: all w1, w2: Workstation, c1, c2: Product | c2 in c1.^(parts) => w2 in c2.workstation && w1 in c1.workstation && w1 in w2.^(succ)
+inv10 B: all w1, w2: Workstation, c1, c2: Component | c2 in c1.^(parts) && w2 in c2.workstation && w1 in c1.workstation => w1 in w2.^(succ)
+

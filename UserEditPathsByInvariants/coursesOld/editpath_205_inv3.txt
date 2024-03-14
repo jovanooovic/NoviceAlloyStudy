@@ -1,0 +1,14 @@
+inv3 B: all c: Course | lone p: Person | c in p.teaches
+inv3 B: all c: Course | lone p: Professor | c in p.teaches
+inv3 B: all c: Course | lone p: Person | p ->c in teaches
+inv3 S: all c: Course | teaches.p
+inv3 T: all c: Course | teaches.c
+inv3 O: all c: Course | one teaches.c
+inv3 B: all c: Course | lone teaches.c
+inv3 T: all c: Course | lone teaches.c in Professor
+inv3 B: all c: Course | lone teaches.c
+inv3 B: all c: Course | lone p: Professor | p in teaches.c
+inv3 S: teaches.Person = Courses
+inv3 O: teaches.Person = Course
+inv3 C: Person.teaches = Course
+

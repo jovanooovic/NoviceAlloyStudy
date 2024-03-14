@@ -1,0 +1,84 @@
+Pairs,5
+,,"lone Teacher.Teaches",1
+,,"all c : Class | lone Teacher.Teaches",1
+,,"all c : Class | #(Teacher.Teaches)<2",2
+,,"all c : Class |( c in Teacher.Teaches implies #(Teacher.Teaches)<2)",1
+
+Pairs,1
+,,"Teacher in Teaches.Class",1
+
+Pairs,2
+,,"~Teaches.Teaches in iden",2
+
+Pairs,1
+,,"all p:Person | one p.Teaches",1
+
+Pairs,2
+,,"all p:Teacher | one p.Teaches",1
+,,"all t:Teacher | one t.Teaches",1
+
+Pairs,8
+,,"all t:Teacher | lone t.Teaches",4
+,,"all t:Teacher | lone ~Teaches.t",1
+,,"all c:Class,t:Teacher | lone t.Teaches",1
+,,"all t:Teacher | lone t.Teaches and lone t.Groups",2
+
+Pairs,1
+,,"some t: Teacher | one t.Teaches",1
+
+Pairs,1
+,,"one t: Teacher | lone t.Teaches",1
+
+Pairs,3
+,,"some t: Teacher | lone t.Teaches",3
+
+Pairs,4
+,,"all c : Class | Teacher in Teaches.c",1
+,,"all c : Class, t : Teacher | t->c in Teaches",1
+,,"all c:Class,t1,t2:Teacher | t1->c in Teaches",1
+,,"all c : Class | all t : Teacher | t->c in Teaches",1
+
+Pairs,1
+,,"some c : Class | Teacher in Teaches.c",1
+
+Pairs,1
+,,"Class.~Teaches.Teaches in Teacher.Teaches",1
+
+Pairs,2
+,,"all c: Class | some t: Teacher | t->c in Teaches",1
+,,"no c:Class | all p1,p2:Teacher | c in p1.Teaches and c in p2.Teaches implies p1!=p2",1
+
+Pairs,1
+,,"some t : Teacher | all c : Class | t->c in Teaches",1
+
+Pairs,2
+,,"lone t : Teacher | all c : Class | t->c in Teaches",2
+
+Pairs,1
+,,"all t:Teacher | (lone t.Teaches) and (lone t->Groups)",1
+
+Pairs,1
+,,"some t: Teacher | t not in Student and lone t.Teaches",1
+
+Pairs,1
+,,"all t:Teacher | lone t.Teaches and (no Student & Teacher)",1
+
+Pairs,1
+,,"all c : Class |( c in Teacher.Teaches and #(Teacher.Teaches)<2)",1
+
+Pairs,1
+,,"no c:Class | all p1,p2:Teacher | c in p1.Teaches and c in p2.Teaches implies p1=p2",1
+
+Pairs,1
+,,"not some c :Class | all t1,t2 : Teacher | t1->c in Teaches and t2->c in Teaches and t1 = t2",1
+
+Pairs,9
+,,"all c : Class | some t, x : Teacher | t -> c in Teaches and x -> c in Teaches implies t = x",1
+,,"all c : Class | some y, z : Teacher | y->c in Teaches and z->c in Teaches implies z = y",1
+,,"all c:Class | some t1,t2:Teacher | t1->c in Teaches and t2->c in Teaches implies t1=t2",5
+,,"not some c :Class | all t1,t2 : Teacher | t1->c in Teaches and t2->c in Teaches and t1 != t2",2
+
+Pairs,1
+,,"some t : Teacher | all c : Class | t->c in Teaches
+	all c : Class | all t : Teacher | t->c in Teaches",1
+

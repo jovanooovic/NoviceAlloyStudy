@@ -1,0 +1,7 @@
+inv1 T: all p : Person, c : Course | c -> p in grades => p in Student
+inv1 C: all p : Person, c : Course | p -> c in enrolled => p in Student
+inv1 U: all p : Student, c : Course | p -> c in enrolled => p not in (Person-Student)
+inv1 S: all p : Student, c : Course | p -> c in enrolled => p in Student)
+inv1 U: all p : Student, c : Course | p -> c in enrolled => p in Student
+inv1 C: all p : Person, c : Course | c in p.enrolled => p in Student
+

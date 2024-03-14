@@ -1,0 +1,38 @@
+na H: THEME UPDATE
+inv1 C: all n, m : Node | n->m in adj iff m->n in adj
+inv2 B: all n : Node | n.adj->n not in adj
+inv2 O: all n, m : Node | n->m in adj iff m->n not in adj
+inv2 C: all n, m : Node | n->m in adj implies m->n not in adj
+inv2 T: all n: Node | no n.adj.n
+inv2 T: all n: Node | no n.adj[n]
+inv2 C: all n: Node | n not in n.adj.adj
+inv3 C: all n: Node | n not in n.^adj
+inv4 B: all n: Node | n.adj = Node - n
+inv4 B: all n: Node | n.adj in Node - n
+inv4 U: all n: Node | Node - n in n.adj
+inv4 U: all disj n, m: Node | n->m in adj
+inv4 C: all n, m: Node | n->m in adj
+inv4 C: all n: Node | n.adj = Node
+inv5 O: all n: Node | n not in n.^adj
+inv5 C: all n: Node | n->n not in adj
+inv6 U: Node.*adj & *adj.Node = Node
+inv6 B: Node.^adj & ^adj.Node = Node
+inv7 B: some n: Node | n.*adj = Node
+inv7 U: no Node or some n: Node | n.*adj = Node
+inv7 B: lone n: Node | n.*adj = Node
+inv7 S: n: Node | n.*adj = Node
+inv7 B: one n: Node | n.*adj = Node
+inv7 B: lone n: Node | n.*adj = Node
+inv7 B: no Node or one n: Node | n.*adj = Node
+inv7 U: Node.^adj + Node.iden = Node
+inv7 S: set n: Node | n.*adj = Node
+inv7 S: n: Node | n.*adj = Node
+inv7 B: some { n: Node | n.*adj = Node }
+inv7 U: no Node or (some n: Node | n.*adj = Node)
+inv7 U: no Node or (some {n: Node | n.*adj = Node})
+inv7 U: no Node or (some {n: one Node | n.*adj = Node})
+inv7 C: all n: Node | n.*adj = Node
+inv8 C: all a, b, c: Node | a->b in adj and b->c in adj implies a->c in adj
+inv6 S: all n: Node | n.*(adj + -adj) = Node
+inv6 C: all n: Node | n.*(adj + ~adj) = Node
+

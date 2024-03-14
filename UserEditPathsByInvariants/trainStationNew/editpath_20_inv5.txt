@@ -1,0 +1,57 @@
+inv5 S: all j : Junction | t not in Track.succs implies t in Entry	all e : Entry | e not in Track.succs
+inv5 S: all j : Junction | j not in Track.succs implies t in Entry	all e : Entry | e not in Track.succs
+inv5 B: all j : Junction | j not in Track.succs implies j in Entry	all e : Entry | e not in Track.succs
+inv5 S: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in jucntion
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 B: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs implies t1 in Junction
+inv5 B: all j : Junction | all t1,t2 : Track | t1!=t2 and j in t1.succs&t2.succs
+inv5 B: all j : Junction | all t1,t2 : Track | t1!=t2 implies j in t1.succs&t2.succs
+inv5 B: all j : Junction | all t1,t2 : Track | t1!=t2 implies j in t1.succs&t2.succs
+inv5 B: all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs&t2.succs implies t1 in Junction
+inv5 T: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs implies t1 in Junction	all t1 : Track | lone t1 in Track.succs implies t1 not in Junction
+inv5 B: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs implies t1 in Junction	all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2
+inv5 B: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2
+inv5 S: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2	all t1,t2 : Track | t1!=t2 and t1 not in t2.succ implies t1 not in Junction
+inv5 B: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2	all t1,t2 : Track | t1!=t2 and t1 not in t2.succs implies t1 not in Junction
+inv5 B: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2	all t: Track | t not in Track.succs implies t not in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs implies t1 in Junction	all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2	all t: Track | t not in Track.succs implies t not in Junction
+inv5 B: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2	all t: Track | t not in Track.succs implies t not in Junction
+inv5 B: all t1,t2 : Track | all j : Junction | j in t1.succs implies j in t2.succs and t1!=t2 and j!=t1	all t: Track | t not in Track.succs implies t not in Junction
+inv5 U: all t: Track | t not in Track.succs implies t not in Junction
+inv5 S: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2, some t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 U: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2: Track | some t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs <=> t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 not in t3.succs <=> t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs <=> t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 not in t3.succs <=> t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs <=> t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 not in t3.succs <=> t1 not in Junction
+inv5 B: all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 B: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs implies t1 in Junction		all t: Track | t not in Track.succs implies t not in Junction	all t1,t2,t3 : Track | t1!=t2 and t2!=t3 and t1 in t2.succs and t1 not in t3.succs implies t1 not in Junction
+inv5 O: all t1,t2,t3 : Track | t2!=t3 and t1!=t2 and t1 in t2.succs&t2.succs <=> t1 in Junction
+inv5 S: all j : junction | all t1,t2 : Tracks | t1!=t2 and j in t1.succs&t2.succs
+inv5 S: all j : Junction | all t1,t2 : Tracks | t1!=t2 and j in t1.succs&t2.succs
+inv5 B: all j : Junction | all t1,t2 : Track | t1!=t2 and j in t1.succs&t2.succs
+inv5 B: all j : Junction | all t1,t2 : Track | j in t1.succs&t2.succs
+inv5 B: all t1,t2,t3 : Track | t1 in Junction <=> t1 in t2.succs&t3.succs
+inv5 B: all t1,t2,t3 : Track | t1 in Junction implies t1 in t2.succs&t3.succs
+inv5 E:
+inv5 E:
+inv5 E:
+inv5 U: all j : Junction | j in Track.succs
+inv5 T: all j : Junction | some j in Track.succs
+inv5 U: all j : Junction | some Track.succs&j
+inv5 S: all t : Traks | t in Tracks.succs implies t in Junction
+inv5 S: all t : Tracks | t in Tracks.succs implies t in Junction
+inv5 S: all t : Tracks | t in Tracks.succs implies t in Junction
+inv5 S: all t : Track | t in Tracks.succs implies t in Junction
+inv5 B: all t : Track | t in Track.succs implies t in Junction
+inv5 B: all t : Track | t in Track.succs implies t in Junction	all j : Junction | j in Track.succs
+inv5 B: all t : Track | t in Track.succs implies t in Junction	all j : Junction | j in Track.succs
+inv5 B: all t : Track | t in Track.succs
+inv5 B: no Track.succs
+inv5 B: all t : Track | t not in Track.succs
+

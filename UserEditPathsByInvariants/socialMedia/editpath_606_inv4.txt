@@ -1,0 +1,10 @@
+inv4 S: all x : User | one x.posts in Ad implies all x.posts in Ad
+inv4 S: all x : User | x.posts one in Ad implies all x.posts in Ad
+inv4 T: all x : User | one x.posts in Ad
+inv4 T: all x : User | (one x.posts) in Ad
+inv4 S: all x : User | some y in x.posts and y in Ad
+inv4 B: all x : User | some y : x.posts | y in Ad
+inv4 B: all x : User | some y : x.posts | y in Ad implies x.posts in Ad
+inv4 C: all x : User | (some y : x.posts | y in Ad) => x.posts in Ad
+inv4 C: all x : User | (some y : x.posts | y in Ad) => x.posts in Ad
+

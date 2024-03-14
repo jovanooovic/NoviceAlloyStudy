@@ -1,0 +1,6 @@
+inv5 U: all i:User | i in Influencer implies all u:User | u!=i implies u in follows.i
+inv5 U: all i:Influencer | all u:User | u!=i implies u in follows.i
+inv5 U: all i:Influencer, u:User | u!=i implies u in follows.i
+inv5 U: all i:Influencer, u:User-i | u in follows.i
+inv5 U: all i:Influencer, u:User-i | u in follows.i
+

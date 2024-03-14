@@ -1,0 +1,5 @@
+inv6 U: Node.*adj & *adj.Node = Node
+inv6 B: Node.^adj & ^adj.Node = Node
+inv6 S: all n: Node | n.*(adj + -adj) = Node
+inv6 C: all n: Node | n.*(adj + ~adj) = Node
+

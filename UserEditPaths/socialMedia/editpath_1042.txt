@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 S: all p : Photo, one u : User | p in u.posts
+inv1 S: all p : Photo, one u : User | p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv2 C: all u : User | u not in u.follows
+inv3 S: all u : User | all p : Photo - Ad | p in u.sees implies p in u.follows.post
+inv3 S: all u : User | all p : Photo - Ad | p in u.sees implies p in u.follows.post
+inv3 C: all u : User | all p : Photo - Ad | p in u.sees implies p in u.follows.posts
+inv4 B: all u : User | one p : Photo | p in Ad implies u.posts in Ad
+inv4 S: all u : User | set p : Photo | p in Ad implies u.posts in Ad
+inv4 S: all u : User | set p : Photo | p in Ad implies posts.u in Ad
+inv4 O: all u : User | one p : Photo | p in Ad implies posts.u in Ad
+inv4 U: all u : User | all p : Photo | p in Ad implies posts.u in Ad
+inv4 O: one u : User | one p : Photo | p in Ad implies posts.u in Ad
+inv4 E: 
+inv5 S: all i : Influencer | follow.i in all u : User
+inv5 S: all i : Influencer | follows.i in all u : User
+inv5 B: all i : Influencer | all u : User | follows.i in u
+inv4 S: all u : User | u.posts in Ad implies all u.posts in Ad
+inv4 U: all u : User | u.posts in Ad implies u.posts in Ad
+inv4 B: all u : User | one a : Ad | a in u.posts implies u.posts in Ad
+inv5 U: all i : Influencer | all u : User-i | u in follows.i
+inv4 C: all u:User | some u.posts & Ad implies u.posts in Ad
+inv4 C: all u:User | some u.posts & Ad implies u.posts in Ad
+inv5 U: all i : Influencer | all u : User-i | u in follows.i
+inv6 B: all d : Day | all i : Influencer | i.posts.date in d
+inv6 C: all d : Day | all i : Influencer | d in i.posts.date
+

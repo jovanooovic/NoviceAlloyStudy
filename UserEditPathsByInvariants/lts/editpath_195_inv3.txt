@@ -1,0 +1,10 @@
+inv3 S: all s : State -> lone s.trans.Event
+inv3 S: all s : State -> lone s.trans.Event
+inv3 S: all s : State -> lone s.trans.Event
+inv3 O: all s : State | lone s.trans
+inv3 U: all s : State | lone s.trans.Event
+inv3 O: all s : State | lone s.trans
+inv3 T: all s : State | lone s.trans.State.Event
+inv3 O: all s : State | lone Event.(s.trans)
+inv3 B: all s : State | s.trans.State = Event
+

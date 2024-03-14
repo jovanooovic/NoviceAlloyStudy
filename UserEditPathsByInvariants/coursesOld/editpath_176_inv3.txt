@@ -1,0 +1,8 @@
+inv3 U: all c:Course, p:Person | lone (p.teaches & c)
+inv3 U: all c:Course, p:Professor | lone (p.teaches & c)
+inv3 U: all c:Course, p:Professor | lone (p.teaches & c)
+inv3 B: all c:Course, p:Professor | lone (p.teaches & c) implies c not in Student.teaches
+inv3 S: all c:Course | some teaches.c
+inv3 S: all c:Course | some teaches.c
+inv3 C: all c:Course | some teaches.c
+

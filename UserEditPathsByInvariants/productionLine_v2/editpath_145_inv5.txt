@@ -1,0 +1,5 @@
+inv5 C: all w:Workstation | no Human&w.workers or no Robot&w.workers
+inv5 O: all w:Workstation | (all p:w.workers | p in Robot) or (all p:w.workers | p in Human)
+inv5 T: all w:Workstation | w.workers in Workstation -> Human or w.workers in Workstation -> Robot
+inv5 O: all w:Workstation | w.workers in Human or w.workers in Robot
+

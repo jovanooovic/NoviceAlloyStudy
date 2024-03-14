@@ -1,0 +1,11 @@
+inv5 B: all t : Teacher | some t->Group
+inv5 T: all t : Teacher | some t->Group in Class
+inv5 T: some t : Teacher | t->Group in Class
+inv5 S: some c : Class, some t : Teacher, some g : Group | c->t->g in Groups
+inv5 B: some c : Class, t : Teacher, g : Group | c->t->g in Groups
+inv5 S: some c : Class, t : Teacher | some c->t->G
+inv5 B: some c : Class, t : Teacher | some c->t->Group
+inv5 B: some c : Class, t : Teacher | c->t->Group in Groups
+inv5 C: some c : Class, t : Teacher | c in t.Teaches
+inv5 C: some c : Class, t : Teacher | t->c in Teaches
+

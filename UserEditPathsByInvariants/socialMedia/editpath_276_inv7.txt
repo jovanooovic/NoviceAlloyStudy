@@ -1,0 +1,21 @@
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies sug in followed.follows
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies (sug in followed.follows and sug not in u.follows)
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies (sug in followed.follows and followed in u.follows and sug not in u.follows)
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies (sug in followed.follows and followed in u.follows)
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies (sug in followed.follows and followed in u.follows and sug not in u.follows)
+inv7 B: all u : User, sug: User, followed : User | sug in u.suggested implies (sug in followed.follows and followed in u.follows and sug not in u.follows and u!=sug)
+inv7 B: all u : User | all s: u.follows | s not in u.follows and s in u.suggested
+inv7 B: all u : User | all s: u.follows | u not in s.follows and s in u.suggested
+inv7 B: all u : User | all s: u.follows  | u not in s.follows and s.follows in u.suggested
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows and y in u.suggested
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows and y in u.suggested and u!=y and s!=y and s!=u
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows and y in u.suggested and u!=s and u!=y and s!=u and s!=y
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows implies y in u.suggested and u!=s and u!=y and s!=u and s!=y
+inv7 S: all u : User | all s: u.follows | all y: s.follows | y not in u.follows implies y in u.suggested and u!=s,y  and s!=u and s!=y
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows implies y in u.suggested and u!=s and u!=y and s!=u and s!=y
+inv7 U: all u : User | all s: u.follows | all y: s.follows | u!=s and u!=y and s!=u and s!=y and y not in u.follows implies y in u.suggested
+inv7 B: all u : User | all s: u.follows | all y: s.follows | y not in u.follows implies y in u.suggested and u!=s and u!=y and s!=u and s!=y
+inv7 B: all u : User | all s: u.follows | some y: s.follows | y not in u.follows implies y in u.suggested and u!=s and u!=y and s!=u and s!=y
+inv7 S: all u, x : User | all s: u.follows | x in u.suggested implies x in s.follows and
+inv7 B: all u, x : User | all s: u.follows | x in u.suggested implies x in s.follows
+

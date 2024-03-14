@@ -1,0 +1,5 @@
+inv6 S: all s:Student, p:Project | p in s.projects iff some c:Course | p in c.projects and c in s.enrolls
+inv6 B: all s:Student, p:Project | p in s.projects iff some c:Course | p in c.projects and c in s.enrolled
+inv6 U: all s:Student, p:Project | p in s.projects implies some c:Course | p in c.projects and c in s.enrolled
+inv6 U: all s:Student, p:Project | p in s.projects implies some c:Course | p in c.projects and c in s.enrolled
+

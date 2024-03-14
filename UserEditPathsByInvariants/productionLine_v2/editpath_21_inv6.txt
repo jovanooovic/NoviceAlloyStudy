@@ -1,0 +1,11 @@
+inv6 U: all c: Component | no (c.parts & c)
+inv6 B: some c: Component | no (c.parts & c)
+inv6 O: all c: Component | no (c.parts.(~parts) & c)
+inv6 U: all c: Component | no (c.parts & c)
+inv6 O: all c: Component | no (c.parts.(~parts) & c)
+inv6 O: all p: Product | no (p.parts.(~parts) & p)
+inv6 S: all c: Component | no (c.parts.(~parts) & p)
+inv6 O: all c: Component | no (c.parts.(~parts) & c)
+inv6 U: all c: Component | no (c.~parts & c)
+inv6 C: all c: Component | c not in c.^parts
+

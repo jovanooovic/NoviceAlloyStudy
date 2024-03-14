@@ -1,0 +1,5 @@
+inv8 S: all c: Component | all w: worker | all ws: Workstation | c in Dangerous and w in c.ws implies w in Robot
+inv8 T: all c: Component | all w: Worker | all ws: Workstation | c in Dangerous and w in c.ws implies w in Robot
+inv8 T: all c: Component | all w: Worker | all ws: Workstation | c in Dangerous and w in c.ws.workers implies w in Robot
+inv8 O: all c: Component | all w: Worker | c in Dangerous and w in c.workstation.workers implies w in Robot
+

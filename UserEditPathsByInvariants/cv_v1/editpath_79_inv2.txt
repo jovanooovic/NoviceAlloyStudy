@@ -1,0 +1,6 @@
+inv2 O: all u:User, s:Source | (s in u.profile & u & Institution)
+inv2 S: all u:User, s:Source | (s in u.profile & U & Institution)
+inv2 O: all u:User, s:Source | (s in u.profile & User & Institution)
+inv2 S: all u:User, s:Source, w:u.profile | (w.source in Institucion) or (w.source = u)
+inv2 C: all u:User, s:Source, w:u.profile | (w.source in Institution) or (w.source = u)
+

@@ -1,0 +1,5 @@
+inv7 B: all c:Component | c in Dangerous implies c.parts in Dangerous
+inv7 S: all c:Component | c.parts in Dangerous implies c in Dangerous
+inv7 S: all c:Component,p:Product | p in c.parts and p in Dangerous implies c in Dangerous
+inv7 C: all c:Component,p:Product | p in c.parts and p in Dangerous implies c in Dangerous
+

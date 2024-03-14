@@ -1,0 +1,9 @@
+inv10 B: all s: Student| some grades.s
+inv10 B: all s: Student | (s.enrolled).grades[s] != none
+inv10 B: all s: Student | some (s.enrolled).grades[s]
+inv10 B: all s: Student | some (s.enrolled).grades.s
+inv10 B: all s: Student | some c: Course | c.grades[s] != none
+inv10 B: all s: Student | some c: Course | some c.grades[s]
+inv10 U: all p: Person | some grades[p] implies p in Student
+inv10 U: all p: Person | some grades.p implies p in Student
+

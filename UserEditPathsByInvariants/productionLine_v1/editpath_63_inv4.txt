@@ -1,0 +1,21 @@
+inv4 T: all disj c, c1 : Component | c.position < c1.position
+inv4 T: all disj c, c1 : Component | c.position before c1.position
+inv4 T: all disj c, c1 : Component | smaller[c.position, c1.position]
+inv4 S: all disj c, c1 : Component | smaller[c.position, c1.position :Position]
+inv4 S: all disj c, c1 : Component | smaller[c.position, c1.position : Position]
+inv4 T: all disj c, c1 : Component | smaller[c.position, c1.position]
+inv4 O: all disj c, c1 : Component | c.position.lt[c1.position]
+inv4 O: all c : Component, pos : c.position, p : c.parts | p.position = pos
+inv4 O: all c : Component, pos : c.position | all p : c.parts | p.position = pos
+inv4 S: all c : Component, pos : c.position | all p : c.parts | p.position.leq[pos]
+inv4 C: all c : Component, pos : c.position | all p : c.parts | p.position.lte[pos]
+inv4 C: all c : Component, pos : c.position, p : c.parts | p.position.lte[pos]
+inv4 S: Component.parts.postion.lte[Component.parts]
+inv4 S: Component.parts.position.lte[Component.parts]
+inv4 B: Component.parts.position in prevs[Component.position]
+inv4 B: Component.parts.position in prevs[Component.position + 1]
+inv4 B: Component.parts.position in prevs[Component.position.next]
+inv4 B: Component.parts.position in prev[Component.position.next]
+inv4 S: Component.parts.position in prevs[Components.position.next]
+inv4 B: Component.parts.position in prevs[Component.position.next]
+

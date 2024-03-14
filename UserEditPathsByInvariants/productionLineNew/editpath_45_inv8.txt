@@ -1,0 +1,10 @@
+inv8 O: all c: Component & Dangerous | all x : Workstation | no (x.workers & Human)
+inv8 C: all c: Component & Dangerous | all x : c.workstation | no (x.workers & Human)
+inv8 C: all c: Component & Dangerous | all x : c.workstation | no (x.workers & Human)
+inv8 B: all c : Component | c = Dangerous implies Human not in c.workstation.workers
+inv8 B: all c : Component | c in Dangerous implies Human not in c.workstation.workers
+inv8 S: all c : Component | c == Dangerous implies Human not in c.workstation.workers
+inv8 C: all c: Component & Dangerous | all x : c.workstation | no (x.workers & Human)
+inv8 B: all dc : Component & Dangerous | Human not in dc.workstation.workers
+inv8 C: all dc : Component & Dangerous | no (dc.workstation.workers & Human)
+

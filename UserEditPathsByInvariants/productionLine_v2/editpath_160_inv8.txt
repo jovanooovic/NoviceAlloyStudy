@@ -1,0 +1,7 @@
+inv8 S: all ws:Worstation |  ^parts.Dangerous
+inv8 T: all ws:Workstation |  ^parts.Dangerous
+inv8 T: all c:Component, ws:Workstation |  some Dangerous & c.^parts => not some Human in workers
+inv8 T: all c:Component, ws:Workstation |  some Dangerous & c.^parts => not some Human in ws.workers
+inv8 T: all c:Component, ws:Workstation |  some Dangerous & c.^parts => some Human not in workers
+inv8 T: all c:Component, ws:Workstation |  c.^parts in Dangerous  => some Human not in workers
+

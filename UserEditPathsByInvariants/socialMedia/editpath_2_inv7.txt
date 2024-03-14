@@ -1,0 +1,4 @@
+inv7 B: all x:User | x.suggested = x.follows.follows - x.follows
+inv7 B: all x:User | x.suggested = (x.follows.follows - x.follows)
+inv7 C: all x:User | x.suggested = (x.follows.follows - x.follows - x)
+

@@ -1,0 +1,16 @@
+inv15 S: all c:Course , p:c.projects, s1, s2: (Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 and c->s2->g2 => ((prev.g1 = g2) or (g1=g2))
+inv15 S: all c:Course, p:c.projects, s1, s2: (Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 and c->s2->g2
+inv15 S: all c:Course, p:c.projects, s1, s2: Person, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 and c->s2->g2
+inv15 S: all c:Course, p:c.projects, s1, s2: (Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((prev.g1 = g2) or (g1=g2))
+inv15 S: all c:Course, p:c.projects, s1, s2: (Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades
+inv15 S: all c:Course, p:c.projects, s1, s2: Person, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades
+inv15 S: all c:Course, p:c.projects, s1, s2: Person, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades
+inv15 S: all c:Course, p:c.projects, s1, s2: Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 S: all c:Course, p:c.projects, s1, s2: Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 S: all c:Course, p:c.projects, s1, s2: Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 O: all c:Course, p:c.projects, s1, s2: (Person<:projects).Project, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 O: all c:Course, p:c.projects, s1, s2: (Person<:projects).p, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 O: all c:Course, p:c.projects, s1, s2: (Person<:projects).p, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2)  or (g1=g2))
+inv15 O: all c:Course, p:c.projects, s1, s2: (Person<:projects).p, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+inv15 O: all c:Course, p:c.projects, s1, s2: (Person<:projects).p, g1,g2:Grade | 	  		s1 != s2 and c->s1->g1 in grades and c->s2->g2 in grades => ((g1.prev = g2) or (g1=g2.prev) or (g1=g2))
+

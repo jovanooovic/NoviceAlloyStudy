@@ -1,0 +1,8 @@
+inv9 U: all pf: Professor , p: Person | p in pf.enrolled implies p in Student
+inv9 S: all pf: Professor , c : Course | some (c & p.teaches) implies no (c & p.enrolled)
+inv9 B: all pf: Professor , c : Course | some (c & pf.teaches) implies no (c & pf.enrolled)
+inv9 B: all pf: Professor , c : Course | some c & pf.teaches implies no (c & pf.enrolled)
+inv9 U: all p1,p2 : Professor | all c1:Course |	      (p1!=p2 and p1->c1 in teaches and p2->c1 in teaches) implies 	       (all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled)
+inv9 U: all p1,p2: Professor , c : Course | (p1 != p2 and c in p1.teaches and c in p2.teaches ) implies (all c2: Course | c2 in p1.teaches implies c2 not in p2.enrolled)
+inv9 U: all p1,p2: Professor , c : Course | (p1 != p2 and c in p1.teaches and c in p2.teaches ) implies (all c2: Course | c2 in p1.teaches implies c2 not in p2.enrolled)
+

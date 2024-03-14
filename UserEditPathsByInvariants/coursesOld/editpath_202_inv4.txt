@@ -1,0 +1,4 @@
+inv4 C: all proj:Project | one c:Course | c->proj in projects
+inv4 U: all proj:Project, c1, c2:Course | c1->proj in projects and c2->proj in projects => c1=c2
+inv4 C: all proj:Project, c1, c2:Course | c1->proj in projects and c2->proj in projects => c1=c2	  	all proj:Project | some c:Course | c->proj in projects
+

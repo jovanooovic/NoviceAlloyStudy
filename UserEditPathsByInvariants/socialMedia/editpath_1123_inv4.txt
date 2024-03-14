@@ -1,0 +1,28 @@
+inv4 S: all u: User | one u.posts in Ad implies  all u.posts in Ad
+inv4 S: all u: User | one u.posts in Ad implies  all u.posts in Ad
+inv4 B: all u: User | one e: u.posts | e in Ad implies u.posts in Ad
+inv4 B: all u: User | lone e: u.posts | e in Ad implies u.posts in Ad
+inv4 B: all u: User | one e: u.posts | e in Ad implies u.posts in Ad
+inv4 S: all u: User | some a: Add | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts iff u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | one a: Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | some a: Ad | a in u.posts implies u.posts in Ad
+inv4 B: some u: User | some a: Ad | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | one l : u.posts | l in Ad implies u.posts in Ad
+inv4 B: all u: User | some l : u.posts | l in Ad implies u.posts in Ad
+inv4 T: all u: User | some l : u.posts | lone u.posts in Ad implies u.posts in Ad
+inv4 T: all u: User | lone u.posts in Ad implies u.posts in Ad
+inv4 B: all u: User | lone e : User.posts | e in Ad implies u.posts in Ad
+inv4 B: all u: User | some e : User.posts | e in Ad implies u.posts in Ad
+inv4 B: all u: User | some e : u.posts | e in Ad implies u.posts in Ad
+inv4 B: some u: User | some e : u.posts | e in Ad implies u.posts in Ad
+inv4 B: some p : User.posts | all u : User | (p in u.posts and p in Ad ) implies u.posts in Ad
+inv4 B: some p : User.posts | all u : User | (p in u.posts and p in Ad ) implies u.posts in Ad
+inv4 S: all u: User | some a : Add | a in u.posts implies u.posts in Ad
+inv4 B: all u: User | some a : Ad | a in u.posts implies u.posts in Ad
+inv4 T: all u: User | all a : Ad | one a in u.posts implies u.posts in Ad
+inv4 C: all u: User | all a : Ad | a in u.posts implies u.posts in Ad
+inv4 C: all u: User | all a : Ad | a in u.posts implies u.posts in Ad
+

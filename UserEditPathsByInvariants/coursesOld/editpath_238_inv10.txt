@@ -1,0 +1,10 @@
+inv10 T: all c : Course | c.grades in Student
+inv10 T: all c : Course | c.grades in Student
+inv10 O: all c : Course, p : Person | c.grades[p]=Student
+inv10 S: all c : Course, p : Person | c.grades[p]==Student
+inv10 U: all c : Course, p : Person | c.grades[p] = Grade => p in Student
+inv10 B: all c : Course, p : Person | c in p.enrolled => p in Student
+inv10 T: all c : Course, p : Person | p in c.grades => p in Student
+inv10 C: all c : Course, p : Person, g : Grade | g in c.grades[p] => p in Student
+inv10 C: all c : Course, p : Person, g : Grade | g in c.grades[p] => p in Student
+

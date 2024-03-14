@@ -1,0 +1,15 @@
+na H: THEME UPDATE
+inv1 B: all n : Node | n not in n.adj
+inv1 B: all n : Node | n != n.adj
+inv1 B: no adj & iden
+inv1 B: no ^adj &iden
+inv1 C: all x,y : Node | x->y in adj implies y->x in adj
+inv1 C: adj = ~adj
+inv1 B: all n : Node | n in n.adj.~adj
+inv1 B: adj.~adj in iden
+inv7 B: Node in Node.^adj
+inv6 B: Node in Node.^adj
+inv6 O: all n : Node | Node - n in n.^adj
+inv7 C: all n : Node | Node - n in n.^adj
+inv7 C: all disj x,y : Node | x in y.^adj
+

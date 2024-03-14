@@ -1,0 +1,171 @@
+all g:Group | some p:Person | p->g in Groups
+-- div,1
+all c:Class, t:Teacher | some g:Group | c->g in Groups
+-- div,1
+all c:Class | c not in Person.Teaches implies no c.Group
+-- div,1
+all c:Class | not c in Teaches implies Class.Groups = none
+-- div,1
+all c:Class | c not in Teaches implies Class.Groups = none
+-- div,1
+all c:Class,g:Group | some t:Teacher | lone c->t->g in Groups
+-- div,1
+all c : Class, g : Person -> Group | c-> g in Groups
+-- div,1
+all c:Class | some c.Groups implies (some Teacher & c.~Groups)
+-- div,1
+all c:Class | some t:Teacher | c.Groups implies t->c in Teaches
+-- div,1
+all c:Class | c not in Person.Teaches implies Class.Groups= none
+-- div,1
+all c : Class | some t:Teacher,g:Group,p:Person | c->p->g => t->c
+-- div,1
+all c:Class|some t:Teacher | some c.Groups implies t in c.~Groups
+-- div,1
+all c:Class | c not in Person.Teaches implies Class.Groups = none
+-- div,1
+all c:Class | c not in Person.Teaches implies Class.Groups is none
+-- div,1
+all c:Class| some t:Teacher | some ~Groups.c implies c in t.Teaches
+-- div,1
+all c:Class| some t:Teacher | some c.~Groups implies c in t.Teaches
+-- div,1
+all c:Class | c not in Person.Teaches implies Class->Groups is none
+-- div,2
+all c:Class, t:Teacher | some g:Group | t->c in Teaches in c.Groups
+-- div,1
+all c:Class, t:Teacher | some g:Group | c->g implies t->c in Teaches
+-- div,1
+all c:Class,s:Student | c not in Person.Teaches implies no c->s=none
+-- div,1
+all c:Class | some g:Group,t:Teacher | c->t->g in Groups implies t->c
+-- div,1
+all c : Class | all g : Groups | some t : Teacher | c->t->g in Groups
+-- div,2
+all c:Class | some t:Teacher, g:Groups |g in c implies t->c in Teaches
+-- div,2
+all c:Class, t:Teacher | some g:Group | c.Groups implies t->c in Teaches
+-- div,1
+all c:Class, g:Group | some p:Person | p->g in Groups implies p in Teacher
+-- div,1
+all c:Class |some t:Teacher |some g:Groups|  g in c implies t->c in Teaches
+-- div,1
+all c:Class | some t:Teacher |some g:Groups| g in c implies t->c in Teaches
+-- div,2
+all c : Class | some t:Teacher,g:Group,p:Person | c->p->g in Groups => t->c
+-- div,1
+all c:Class | some g:Group, t:Teacher | c->Person->g implies t.c in Teaches
+-- div,1
+all c:Class,s:Student | c not in Person.Teaches implies no c->s->Groups=none
+-- div,1
+all c:Class | some t:Teacher, g:Group |g in c.Groups implies t->c in Teaches
+-- div,1
+all c:Class |some t:Teacher | some c.Group.Person implies t in c.Groups.Group
+-- div,1
+all c:Class | some t:Teacher | some c.Groups implies some t in c.Groups.Group
+-- div,1
+all c:Class, g:Groups | some t:Teacher | g in c.Groups implies t->c in Teaches
+-- div,1
+all c:Class | some t:Teacher, p:Person | p in c.Groups implies t->c in Teaches
+-- div,1
+all c:Class | some g:Group, t:Teacher,p:Person | c->p->g implies t.c in Teaches
+-- div,1
+all c:Class |some t:Teacher |some g:Groups|  no c implies no (t->c in Teaches )
+-- div,1
+all c:Class | some g:Group,t:Teacher | c->t->g in Class implies t->c in Teaches
+-- div,2
+all c:Class | some t:Teacher,g:Group,p:Person | c->p->g implies t->c in Teaches
+-- div,1
+all x : Class, p:Person, g:Group | some x->p->g in Class implies p->g in Teacher
+-- div,1
+all c:Class,t:Teacher,s:Student | some g:Group | c->s->g implies t->c in Teaches
+-- div,1
+all c:Class,s:Student,g:Group | some t:Teacher | c->s->g implies t->c in Teaches
+-- div,1
+all c:Class | some t:Teacher,g:Group | some c.Groups implies t in c->g in ~Groups
+-- div,2
+all c: Class | some t: Teacher, g: Group | t->c in Teaches implies c->g in Groups
+-- div,1
+all c:Class | some t:Teacher |some g:Group| c->g in Groups implies t->c in Teaches
+-- div,1
+all c : Class, g : Group | some t : Person | c->g in Groups implies t->c in Teaches
+-- div,1
+all c:Class | (some g:Group,s:Person | c->s->g in Groups) => (some t:Teacher| t->c)
+-- div,1
+all c:Class, g:Groups | some t:Teacher | g in c.Groups.Group implies t->c in Teaches
+-- div,1
+all c:Class | some g:Group, t:Teacher,p:Person | c->Person->g implies t.c in Teaches
+-- div,1
+all c : Class | (some g:Group,p:Person | c->p->g in Groups) => some t:Teacher | t->c
+-- div,1
+all c:Class, g:Groups | some t:Teacher | g in c.Groups.Person implies t->c in Teaches
+-- div,1
+all x : Class | some p: Person, g : Groups | x->p->g in Groups implies p->g in Teaches
+-- div,1
+all c:Class | some t:Teacher | some g:Group | c->(t->g) in Groups implies t-c in Teaches
+-- div,1
+all c : Class, g : Group, p : Person | some t : Teacher | c->p->g in Groups implies t->c
+-- div,1
+all c:Class | some g:Group, t:Teacher,p:Person | c->p->g in Groups implies t.c in Teaches
+-- div,1
+all c : Class | some g : Group | some t : Teacher | c->g in Groups implies t->c in Teaches
+-- div,1
+all c:Class |some g:Group |some p:Person | c->p->g  implies some t:Teacher| t->c in Teaches
+-- div,1
+all c:Class | some s:Student,g:Group | (c->s->g) implies (some t:Teacher | t->c in Teaches)
+-- div,1
+all c:Class |some t:Teacher |some g:Group |some p:Person | c->p->g  implies t->c in Teaches
+-- div,1
+all c:Class |some t:Teacher |some g:Group |some p:Person | c->( p->g)  implies t->c in Teaches
+-- div,1
+all c : Class | all g : Group, p : Person | c->p->g implies some t : Teacher | t->c in Teaches
+-- div,1
+all c:Class |some g:Group |some p:Person | c->p->g  implies (some t:Teacher| t->c in Teaches )
+-- div,1
+all c : Class | all g : Groups, p : Person | c->p->g implies some t : Teacher | t->c in Teaches
+-- div,1
+all c: Class, g: Groups | some s: Student, t: Teacher | c->s->g in Groups implies t->c in Teaches
+-- div,1
+some t : Teacher | all c : Class | some s : Student | some g : Group | c->s->g in Groups and t->c
+-- div,1
+all c : Class | some t : Teacher | some s : Student | some g : Group | c->s->g in Groups and t->c
+-- div,1
+all c : Class | all g : Groups, p : Person | c->p->g implies (some t : Teacher | t->c in Teaches)
+-- div,1
+all x : Class | some y : Person, z : Group, v : Teacher | x->y->z in Group implies v->x in Teaches
+-- div,1
+all c:Class | (some g:Group |some p:Person | c->p->g)  implies (some t:Teacher | t->c in Teaches )
+-- div,1
+all c : Class | all g : Groups| all p : Person | c->p->g implies some t : Teacher | t->c in Teaches
+-- div,1
+all c:Class | (some g:Group |some p:Person | c->(p->g))  implies (some t:Teacher | t->c in Teaches )
+-- div,2
+some t : Teacher | all c : Class | some s : Student | some g : Group | c->s->g in Groups implies t->c
+-- div,1
+(all c : Class | some t : Teacher | t->c in Class implies some s:Student, g:Group | c->s->g in Groups)
+-- div,1
+all c : Class | some g : Group, p : Person | c->p->g in Groups -> (some t : Teacher | t->c in Teaches)
+-- div,1
+all c : Class, p, p2 : Person | p -> c in Teaches and p in Teacher implies some g : Group | c -> p2 -> g
+-- div,1
+all x : Class | some p: Person, g : Groups | x->p->g in Class implies some t : Teacher | t->x in Teaches
+-- div,1
+all x : Class | some p: Person, g : Groups | x->p->g in Groups implies some t : Teacher | t->x in Teaches
+-- div,3
+all c : Class | (some p : Person, g : Group | c->p->g in Groups) -> 
+(some t : Teacher | t->x in Teaches)
+-- div,1
+all x : Class | some p: Person, g : Groups | x->p->g in Groups implies some t : Teacher | p->g in Teaches
+-- div,1
+all c: Class, s: Student | some t: Teacher, g: Groups | (c->t not in Teaches) implies c->s->g not in Groups
+-- div,2
+all c:Class, g:Class.Groups | some t:Teacher | g in c.Groups implies t->c in Teaches
+-- div,1
+all c : Class, g : Person -> Group | c->g in Groups implies (some t : Teacher | t->c in Teaches)
+-- div,3
+all c : Class, g : Person -> Group | some t : Teacher | c->g in Groups implies t->c in Teaches
+-- div,1
+all c:Class, pg:Person->Group | some t:Teacher | pg in c.Groups implies t->c in Teaches
+-- div,1
+all c : Class | some g : Group | all t, p : Person | (c->p->g in Groups and t->g in Group) implies (t->c in Teaches and t in Teacher)
+-- div,1

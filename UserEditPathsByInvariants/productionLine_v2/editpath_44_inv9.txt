@@ -1,0 +1,15 @@
+inv9 E:
+inv9 B: all w: Workstation | one w.succ
+inv9 B: all w: Workstation | one (w.succ & w)
+inv9 B: all w: Workstation | one (w.succ)
+inv9 B: all disj w: Workstation | one (w.succ)
+inv9 B: all w: Workstation | one (w.succ)
+inv9 B: all w: Workstation | one (w.succ) and w not in w.succ
+inv9 B: all w: Workstation | one (w.succ) and (w not in w.succ)
+inv9 O: all w: Workstation | one (w.succ) and (w not in w.^succ)
+inv9 U: all w: Workstation | lone (w.succ) and (w not in w.^succ)
+inv9 U: all w: Workstation | lone (w.succ) and (w not in w.succ)
+inv9 U: all w: Workstation | lone (w.succ)
+inv9 U: all w: Workstation | lone (w.succ) and (w not in w.succ)
+inv9 U: all w: Workstation | lone (w.succ) and (w not in w.succ)
+

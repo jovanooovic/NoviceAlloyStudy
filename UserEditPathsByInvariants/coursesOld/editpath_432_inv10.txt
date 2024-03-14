@@ -1,0 +1,4 @@
+inv10 B: all c : Course, p : Person | some p.(c.grades) <=> c not in p.teaches
+inv10 B: all c : Course, p : Person | some p.(c.grades) => c not in p.teaches
+inv10 C: all p : Person, c : Course | some p.(c.grades) implies p in Student
+

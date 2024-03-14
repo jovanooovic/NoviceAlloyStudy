@@ -1,0 +1,11 @@
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p in Professor and p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled and p not in Student
+inv8 B: all c : Course, p : Person | p->c in teaches and p not in Student
+inv8 B: all c : Course, p : Person | p->c in teaches and p not in Student
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and c not in p.enrolled
+inv8 U: all p : Professor | no (p.teaches & p.enrolled)
+

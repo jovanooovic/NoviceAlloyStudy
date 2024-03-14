@@ -1,0 +1,8 @@
+inv7 T: all x : follows.follows | x in suggested
+inv7 T: all x : follows.follows | x in suggested & x not in follows
+inv7 B: all x: User | x.follows.follows in x.suggested implies x.follows.follows not in x.follows
+inv7 B: all x: User | x.follows.follows in x.suggested implies (x.follows).follows not in x.follows
+inv7 C: all x: User | x.suggested = (x.follows).follows - x.follows - x
+inv7 B: all x: User | x.suggested = (x.follows).follows - x.follows
+inv7 C: all x: User | x.suggested = (x.follows).follows - x.follows - x
+

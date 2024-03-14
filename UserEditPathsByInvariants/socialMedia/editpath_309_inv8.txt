@@ -1,0 +1,6 @@
+inv8 B: all u:User,v:User,p:Photo | p in Ad and u in sees.p and v in posts.p implies u in follows.v or u in suggested.v
+inv8 B: all u:User,v:User,p:Ad | u in sees.p and v in posts.p implies u in follows.v or u in suggested.v
+inv8 B: all u:User,v:User | u in sees.Ad and v in posts.Ad implies u in follows.v or u in suggested.v
+inv8 B: all u:User,v:Influencer | u in sees.Ad and v in posts.Ad implies u in follows.v or u in suggested.v
+inv8 B: all u:User,v:User,p:Ad | u in sees.p and v in posts.p implies u in follows.v or u in suggested.v
+

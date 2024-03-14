@@ -1,0 +1,8 @@
+inv2 S: all p: Person ,c: Course| p in not Teacher or (p -> c in teaches)
+inv2 S: all p: Person ,c: Course| p not in  Teacher or (p -> c in teaches)
+inv2 B: all p: Person ,c: Course| p not in  Professor or (p -> c in teaches)
+inv2 B: all p: Person ,c: Course| p not in Professor or (p -> c in teaches)
+inv2 B: all p: Person ,c: Course| p not in Student and (p -> c in teaches)
+inv2 C: all p: Person , c: Course| p in Professor  or  not(p -> c in teaches)
+inv2 C: all p: Person , c: Course| p in Professor or not(p -> c in teaches)
+

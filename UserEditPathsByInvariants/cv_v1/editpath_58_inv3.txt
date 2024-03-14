@@ -1,0 +1,5 @@
+inv3 O: all w:Work, w1:Work | no (w.ids & w1.ids)
+inv3 S: all w:Work, w1:Work | w in User.profile && w1 in User.profile -> no (w.ids & w1.ids)
+inv3 O: all w:Work, w1:Work | w in User.profile && w1 in User.profile implies no (w.ids & w1.ids)
+inv3 O: all w:Work, w1:Work | (w in User.profile && w1 in User.profile) implies no (w.ids & w1.ids)
+

@@ -1,0 +1,22 @@
+inv5 E:
+inv5 U: no disj w1, w2: Human + Robot | w1.workers & w2.workers != none
+inv5 U: all h: Human, r: Robot | no h.workers & r.workers
+inv5 T: all w: Workstation | no w.workers.Human & w.workers.Robot
+inv5 T: all h: Human, r: Robot | no h.workers = r.workers
+inv5 T: Human & Robot
+inv5 S: all h: Human, r: Robot: h in w.workers & r in w.workers
+inv5 S: all h: Human, r: Robot | h in w.workers & r in w.workers
+inv5 T: all h: Human, r: Robot, w: Worker | h in w.workers & r in w.workers
+inv5 O: all disj h, r: Worker | no w: Workstation | h in w.workers and r in w.workers
+inv5 C: all h: Human, r: Robot, ws: Workstation | h not in ws.workers or r not in ws.workers
+inv5 T: all h: Human, r: Robot, ws: Workstation | h not in ws.workers & r not in ws.workers
+inv5 C: all h: Human, r: Robot, ws: Workstation | h not in ws.workers or r not in ws.workers
+inv5 C: all h: Human, r: Robot, ws: Workstation | h not in ws.workers or r not in ws.workers
+inv5 B: Workstation = workers.Human + workers.Robot
+inv5 S: all workers.Human + workers.Robot
+inv5 T: univ workers.Human + workers.Robot
+inv5 T: univ workers.Human - workers.Robot
+inv5 B: no workers.Human - workers.Robot
+inv5 S: all workers.Human - workers.Robot
+inv5 C: no workers.Human & workers.Robot
+

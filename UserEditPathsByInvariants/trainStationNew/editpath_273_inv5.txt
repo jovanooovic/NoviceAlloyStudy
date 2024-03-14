@@ -1,0 +1,4 @@
+inv5 S: all t : Track |  #[t.~succs] > 0  <=> t in Junction
+inv5 B: all t : Track |  some t.~succs <=> t in Junction
+inv5 C: all t : Track |  some t.~succs && not one t.~succs <=> t in Junction
+

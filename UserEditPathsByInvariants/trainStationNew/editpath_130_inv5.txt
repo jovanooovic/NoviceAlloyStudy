@@ -1,0 +1,18 @@
+inv5 S: all Junction | some t:Track |
+inv5 B: all j:Junction | some t1, t2:Track | t1->j in succs and t2->t1 in succs
+inv5 S: all j:Junction | disj some t1, t2:Track | t1->j in succs and t2->t1 in succs
+inv5 B: all j:Junction | some disj t1, t2:Track | t1->j in succs and t2->t1 in succs
+inv5 B: all j:Junction | some disj t1, t2:Track | t1 != j and t1->j in succs and t2->t1 in succs
+inv5 S: all j:Junction | some disj t1, t2:Track | t1 != j and t2 != j and and t1->j in succs and t2->t1 in succs
+inv5 B: all j:Junction | some disj t1, t2:Track | t1 != j and t2 != j and t1->j in succs and t2->t1 in succs
+inv5 B: all j:Junction | some disj t1, t2:Track | t1 != j and t2 != j and t1->j in succs and t2->t1 in succs
+inv5 B: all j:Junction | some disj t1, t2:Track | t1!=t2 and t1 != j and t2 != j and t1->j in succs and t2->t1 in succs
+inv5 B: not some j:Junction | j->j in succs	all j:Junction | some disj t1, t2:Track | t1!=t2 and t1 != j and t2 != j and t1->j in succs and t2->t1 in succs
+inv5 B: not some j:Junction | j->j in succs
+inv5 B: not some j:Junction | j->j in succs
+inv5 S: not some j:Junction | j->j in succs		not some j:Junction | lone (j . )
+inv5 B: not some j:Junction | j->j in succs		not some j:Junction | lone (j . succs)
+inv5 B: not some j:Junction | lone (j . succs)
+inv5 T: not some j:Junction | lone (^j . succs)
+inv5 B: not some j:Junction | lone (j . ^succs)
+

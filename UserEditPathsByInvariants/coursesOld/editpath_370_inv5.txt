@@ -1,0 +1,10 @@
+inv5 T: all x : Person | x in Person <: projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in (Person <: projects.Course) => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in (Person :> projects.Course) => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x in Person <: projects.Course => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in Person <: projects => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in projects => x in Student	  	all c : Course | some Person <: projects.c
+inv5 T: all x : Person | x->Course in projects => x in Student	  	all p : Project | some Person <: projects.p
+inv5 C: all p : Person | some p.projects => p in Student	  	all p : Project | some Person <: projects.p
+

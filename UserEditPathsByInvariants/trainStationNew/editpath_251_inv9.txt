@@ -1,0 +1,11 @@
+inv9 B: all x : Track | all y : Junction | all y : Semaphore | y not in x.^succs implies y in x.signals
+inv9 B: all x : Track | all y : Junction | all y : Semaphore | y not in x.^succs implies y not in x.signals
+inv9 B: all x : Track | all y : Junction | all z : Semaphore | y not in x.^succs implies z not in x.signals
+inv9 B: all x : Track | all y : Junction | all z : Semaphore | y not in x.^succs implies z not in x.^signals
+inv9 B: all x : Track | all y : Junction | all z : Semaphore | y not in x.^succs implies z not in x.signals
+inv9 S: all x : Track | x.^succs in Junction implies x.signals in Semaphore
+inv9 B: all x : Track | x.^succs in Junction implies x.signals in Semaphore
+inv9 B: all x1,x2 : Track | x2 in x1.^succs and x1.^succs in Junction implies x1.signals in Semaphore or x2.signals in Semaphore
+inv9 B: all x1,x2 : Track | all y : Junction | all z : Semaphore | x2 in x1.^succs and y not in x1.^succs implies z not in x1.signals and z not in x2.signals
+inv9 B: all x : Track | all y : Junction | all z : Semaphore | y not in x.succs implies z not in x.signals
+

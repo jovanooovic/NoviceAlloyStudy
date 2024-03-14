@@ -1,0 +1,14 @@
+inv10 T: always always Protected
+inv10 T: once Protected always Proteced
+inv10 T: once Protected always Protected
+inv10 T: always (always Protected)
+inv10 U: all f : Protected | always f in Protected
+inv10 U: always (all f : Protected | always f in Protected)
+inv10 U: all f : File | once f in Protected implies always f in Protected
+inv10 U: all f : File | historically f in Protected implies always f in Protected
+inv10 S: always p : Protected | historically p in Proteced and always p in Protected
+inv10 S: always p : Protected | historically p in Proteced and always p in Protected
+inv10 S: all p : Protected | historically p in Proteced and always p in Protected
+inv10 U: all p : Protected | historically p in Protected and always p in Protected
+inv10 C: always all p : Protected | historically p in Protected and always p in Protected
+

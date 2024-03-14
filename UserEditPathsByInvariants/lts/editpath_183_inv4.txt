@@ -1,0 +1,63 @@
+inv4 B: all s : State | s in Init.*(trans.Event)
+inv4 B: all s : State | s in Init.*(trans[Event])
+inv4 T: all s : State | s in Init.*(trans)
+inv4 T: all s : State | s in Init.*(trans)
+inv4 T: all s : State | s in Init.*(trans)
+inv4 T: all s : State | s in Init.*trans
+inv4 O: all s : State | s in Init.trans[Event]
+inv4 O: all s : State | s in Init.(trans[Event])
+inv4 O: all s : State | s in Init.(Event.trans)
+inv4 B: all s : State | s in Init.*(Event.trans)
+inv4 O: all s : State | s in Init.trans[Event]
+inv4 O: all s : State | s in Init.trans[Event] + Init.trans[Event].trans[Event]
+inv4 C: all s : State | s in Init.trans[Event] + Init.trans[Event].trans[Event] + Init.trans[Event].trans[Event].trans[Event]
+inv4 O: all s : State | s in Init.trans[Event] + Init.trans[Event].trans[Event]
+inv4 O: all s : State | s in Init.(trans[Event]) + Init.trans[Event].trans[Event]
+inv4 T: all s : State | s in Init.*(trans)
+inv4 T: all s : State | s in Init.*(~trans)
+inv4 B: all s : State | s in Init.*(trans.State)
+inv4 T: all s : State | s in Init.*(trans.Event.State)
+inv4 B: all s : State | s in Init.*(trans.State)
+inv4 B: all s : State | s in Init.*(trans[State])
+inv4 O: all s : State | s in Init.(trans[State])
+inv4 T: all s : State | s in Init.(trans[Event][State])
+inv4 T: all s : State | s in Init.trans
+inv4 O: all s : State | s in Init.trans.Event
+inv4 O: all s : State | s in Init.trans[Event]
+inv4 T: all s : State | s in Init . *trans[Event]
+inv4 T: all s : State | s in Init . *(trans.State.Event)
+inv4 T: all s : State | s in Init.*(trans.State.Event)
+inv4 B: all s : State | s in Init.*(trans [Event])
+inv4 B: all s : State | some s.trans[Event]
+inv4 B: all s : State | some s.trans.State
+inv4 B: all s : State | s in s.trans[Event]
+inv4 O: all s : State | s in Init.trans[Event].trans[Event]
+inv4 T: all s : State | s in Init.*trans[Event]
+inv4 U: all s : State | { }
+inv4 S: all s : State | s in Init.*tran	}		/*	All the states have the same events available.	*/	fun tran[s : State] : set State {	  s.trans[Event]
+inv4 S: all s : State | s in Init.*tran1	}		/*	All the states have the same events available.	*/	fun tran1[s : State] : set State {	  s.trans[Event]
+inv4 S: all s : State | s in Init.*tran1	}		/*	All the states have the same events available.	*/	fun tran1 (s : State) : set State {	  s.trans[Event]
+inv4 T: all s : State | s in Init.*trans
+inv4 S: all s : State | let r[x] = x.tran[Event] | s in Init.*r
+inv4 U: all s : State | { }
+inv4 O: all s : State | s in Init.trans[Event]
+inv4 O: all s : State | s in Init.trans[Event] + Init.trans[Event].trans[Event]
+inv4 C: all s : State | s in Init.trans[Event] + Init.trans[Event].trans[Event] + Init.trans[Event].trans[Event].trans[Event]
+inv4 S: all s : State | s in reachable[Init]
+inv4 S: all s : State | s in Init.reachable
+inv4 S: all s : State | s in Init.reachable.reachable
+inv4 S: all s : State | s in Init.reachable.reachable.reachable
+inv4 S: all s : State | s in Init.reachable
+inv4 S: all s : State | s in Init.reachable
+inv4 S: all s : State | s in Init.reachable.reachable
+inv4 S: all s : State | s in Init.reachable.reachable.reachable
+inv4 S: all s : State | s in Init.reachable.reachable.reachable.reachable
+inv4 S: all s : State | s in Init.*reachable	}		/*	All the states have the same events available.	*/	fun reachable[s : State] : set State {	  s.trans[Event]
+inv4 S: all s : State | s in Init .* reachable	}		/*	All the states have the same events available.	*/	fun reachable[s : State] : set State {	  s.trans[Event]
+inv4 S: all s : State | s in Init. (reachable)
+inv4 S: all s : State | s in Init. *(reachable)	}		/*	All the states have the same events available.	*/	fun reachable[s : State] : set State {	  s.trans[Event]
+inv4 S: all s : State | s in Init. *(reachable)
+inv4 S: all s : State | s in Init.*reachable
+inv4 S: all s : State | s in Init.*reachable
+inv4 S: all s : State | s in Init.^reachable
+

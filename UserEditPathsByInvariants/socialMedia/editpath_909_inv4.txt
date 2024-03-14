@@ -1,0 +1,6 @@
+inv4 B: all u : User | all p : Photo | p in u.posts
+inv4 O: all u : User | all p : Photo | p in u.posts and all a : Ad | a in u.posts implies p-a = none
+inv4 B: all u : User | all p : Photo | p in u.posts and some a : Ad | a = p implies p-a = none
+inv4 B: all u : User | some a : Ad | a in u.posts implies all b : Ad | b in u.posts
+inv4 B: all u : User | some a : Ad | a in u.posts implies all b : Ad | b in u.posts
+

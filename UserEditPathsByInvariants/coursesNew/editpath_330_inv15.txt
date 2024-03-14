@@ -1,0 +1,9 @@
+inv15 T: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (some prev[g1].g2 or some prev[g2].g1)
+inv15 T: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (some prev[g1].g2 or some prev[g2].g1)
+inv15 T: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (some (g1.prev).g2 or some (g2.prev).g1)
+inv15 T: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (some (g1.prev).g2 or some (g2.prev).g1)
+inv15 B: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (g2 in g1.prev or g1 in g2.prev)
+inv15 B: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				some (s1.projects & s2.projects) implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)
+inv15 B: all disj s1, s2 : Student |	  		all g1 : s1.(Course.grades) |	  			all g2 : s2.(Course.grades) |	  				(some (s1.projects & s2.projects) and some g1 and some g2 )implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)
+inv15 B: all disj s1, s2 : Student |	  		all c : s1.enrolled & s2.enrolled |	          all g1 : s1.(c.grades), g2 : s2.(c.grades) |	                  (some (s1.projects & s2.projects & c.projects) and some g1 and some g2 )implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)
+

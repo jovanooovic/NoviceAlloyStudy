@@ -1,0 +1,22 @@
+inv1 B: all t:Track | once t.signal != Green
+inv1 S: all t:Track | once Green no in t.signal
+inv1 B: all t:Track | once Green not in t.signal
+inv1 B: always(all t:Track | once(Green not in t.signal))
+inv1 B: once (all t:Track | t.signal = Green implies (before t.signal != Green))
+inv1 B: once (all t:Track | Green in t.signal implies (before Green not in t.signal))
+inv1 B: always (all t:Track&Entry | Green not in t.signal)
+inv1 B: always (all t:Track&Entry | always Green not in t.signal)
+inv1 B: always (all t:Track&Entry | once Green not in t.signal)
+inv1 B: once (all t:Track&Entry | Green not in t.signal)
+inv1 B: once (all t:Entry | Green not in t.signal)
+inv1 B: always (all t:Entry | Green not in t.signal)
+inv1 B: always (all t:Entry | Green not in signal.t)
+inv1 B: always (all t:Entry | Green not in t.signal)
+inv1 S: always (all t:track | Green in t.signal since Green not in t.signal)
+inv1 B: always (all t:Track | Green in t.signal since Green not in t.signal)
+inv1 B: always (all t:Track | Green not in t.signal until (Green in t.signal))
+inv1 U: (all t:Track | Green not in t.signal until (Green in t.signal))
+inv1 B: all t:Track | always (Green not in t.signal until (Green in t.signal))
+inv1 S: all t:Track, g:Green | g not in t.signal until (g in t.signal))
+inv1 B: always (all t:Track, g:Green | g not in t.signal until (g in t.signal))
+

@@ -1,0 +1,3 @@
+inv3 O: all p:Photo,u:User| p in u.sees =>  (some z: User | z in u.follows and p in z.posts)
+inv3 C: all p:Photo,u:User| p in u.sees =>  (some z: User | z in u.follows and p in z.posts or (p in Ad))
+

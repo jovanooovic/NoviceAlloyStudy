@@ -1,0 +1,5 @@
+inv3 B: all u : User | u.follows = posts.(u.sees)
+inv3 B: all u : User | u.follows = posts.(u.sees-Ad)
+inv3 B: all u : User | u.follows = posts.((u.sees)-Ad)
+inv3 B: all u : User | u.follows in posts.((u.sees)-Ad)
+

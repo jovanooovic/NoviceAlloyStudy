@@ -1,0 +1,16 @@
+inv7 B: all s : Student, p : s.projects | p in  s.enrolled.projects
+inv7 T: all s : Student, p : s.projects | #(p in  s.enrolled.projects) < 1
+inv7 S: all s : Student | #(p.projects &  s.enrolled.projects) < 1
+inv7 B: all s : Student | #(s.projects &  s.enrolled.projects) < 1
+inv7 B: all s : Student | #(s.projects &  s.enrolled.projects) <= 1
+inv7 S: all s : Student, p : s.enroled.projects | #(s.projects & p) <= 1
+inv7 U: all s : Student, p : s.enrolled.projects | #(s.projects & p) <= 1
+inv7 S: all s : Student, p : s.enrolled.projects,sp  : s.projects | #(ss & p) <= 1
+inv7 U: all s : Student, p : s.enrolled.projects,sp  : s.projects | #(sp & p) <= 1
+inv7 U: all s : Student, p : s.enrolled.projects | #(s.projects & p) <= 1
+inv7 U: all s : Student | all p : s.enrolled.projects | #(s.projects & p) <= 1
+inv7 U: all s : Student | all p : s.enrolled.projects | lone (s.projects & p)
+inv7 U: all s : Student | all p : s.enrolled | lone (s.projects & p.projects)
+inv7 U: all s : Student | all p : s.enrolled | #(s.projects & p.projects) <= 1
+inv7 U: all s : Student | all p : s.enrolled | lone (s.projects & p.projects)
+

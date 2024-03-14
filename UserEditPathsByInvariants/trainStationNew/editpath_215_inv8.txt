@@ -1,0 +1,13 @@
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 O: all t: Track | all e : Exit | t in Entry implies e in t.^succs
+inv8 O: all t: Track | all e : Exit | t in Entry implies e in t.succs
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 U: all e : Entry | Exit in e.^succs or e in Exit
+inv8 O: all e : Entry | Exit in e.^succs and e not in Exit
+inv8 U: all e : Entry | Exit in e.^succs or e in Exit
+inv8 O: all e : Entry | all ex:Exit | ex in e.^succs
+inv8 U: all e : Entry | all ex:Exit | ex in e.^succs or e in Exit
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 C: all en : Entry | all ex : Exit | ex in en.^(succs) or en=ex
+

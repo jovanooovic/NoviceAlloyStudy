@@ -1,0 +1,19 @@
+inv3 S: all u : User | u.sees.user
+inv3 T: all u : User | all p: Photo | posts.(u.sees.p) in u.follows
+inv3 T: all u : User | all p: Photo | posts.u.sees.p in u.follows
+inv3 S: all u : User | all p: Photo | all u2 : | posts.(u.sees) in u.follows
+inv3 B: all u : User | posts.(u.sees) in u.follows
+inv3 B: all u : User | posts.(u.sees) not in u.follows
+inv3 S: all u : User | all p : Photo | u->p in sees and not in Ad implies u not in (posts.p)
+inv3 S: all u : User | all p : Photo | u->p in sees and not in Ad implies u not in posts.p
+inv3 S: all u : User | all p : Photo | (u->p in sees and not in Ad) implies u not in posts.p
+inv3 S: all u : User | all p : Photo | (u->p in sees and not in Ad) implies true
+inv3 S: all u : User | all p : Photo | (u->p in sees and not in Ad) implies True
+inv3 S: all u : User | all p : Photo | (u->p in sees and not in Ad)
+inv3 S: all u : User | all p : Photo | u->p in sees and not in Ad
+inv3 B: all u : User | all p : Photo | u->p in sees and p not in Ad
+inv3 B: all u : User | all p : Photo | u->p in sees and p not in Ad implies u not in posts.p
+inv3 T: all u : User | all p : Photo | u->p in sees and p not in Ad implies u not in follows(posts.p)
+inv3 B: all u : User | all p : Photo | u->p in sees and p not in Ad implies u not in follows.(posts.p)
+inv3 C: all u : User | all p : Photo | u->p in sees and p not in Ad implies u in follows.(posts.p)
+

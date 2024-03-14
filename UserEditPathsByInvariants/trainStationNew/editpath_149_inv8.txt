@@ -1,0 +1,9 @@
+inv8 B: Entry in ^succs.Exit
+inv8 B: Entry in *succs.Exit
+inv8 O: all e : Entry | e.(^succs :> Exit) = Exit
+inv8 C: all e : Entry | e.(*succs :> Exit) = Exit
+inv8 O: Entry->Exit in ^succs
+inv8 U: (Entry - Exit)->(Exit - Entry) in ^succs
+inv8 C: Entry->Exit in *succs
+inv8 C: Entry->Exit in *succs
+

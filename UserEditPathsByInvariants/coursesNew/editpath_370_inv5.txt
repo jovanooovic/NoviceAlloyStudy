@@ -1,0 +1,16 @@
+inv5 S: all p : Project | s : Person | s in p.(~(Person <: projects)) and s in Student
+inv5 S: all p : Project | s : Person | s in p.(~(Person <: projects)) and (s in Student)
+inv5 S: all p : Project | s : Person | s in (p.(~(Person <: projects))) and (s in Student)
+inv5 S: all p : Project | s : Person | some (p.(~(Person <: projects))) and (p in s implies s in Student)
+inv5 U: all p : Project | all s : Person | some (p.(~(Person <: projects))) and (p in s implies s in Student)
+inv5 U: all p : Project | some s : Person | some (p.(~(Person <: projects))) and (p in s implies s in Student)
+inv5 U: all p : Project | some s : Person | s in p.(~(Person <: projects)) and (s in Student)
+inv5 B: all p : Project | all s : Person | s in p.(~(Person <: projects)) and (s in Student)
+inv5 B: all p : Project | all s : Person | s in p.(~(Person <: projects)) and (s in Student)
+inv5 U: all p : Project | all s : Person | some (p.(~(Person <: projects))) and (p in s implies s in Student)
+inv5 U: all p : Project | some s : Student | s in p.(~(Person <: projects))
+inv5 B: all p : Project | some s : Student | no pr : Professor | s in p.(~(Person <: projects)) or pr in p.(~(Person <: projects))
+inv5 U: all p : Project | some s : Person | s in p.(~(Person <: projects)) and (s in Student)
+inv5 U: all p : Project | some s : Person | s in p.(~(projects)) and (s in Student)
+inv5 C: Person.projects - (Person - Student).projects = Project
+

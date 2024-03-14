@@ -1,0 +1,33 @@
+inv3 O: all u1,u2 : User | u2 in u1.follows and u1.sees in u2.posts
+inv3 O: all u1,u2 : User | u2 in u1.follows and u1.sees in u2.posts and u1 != u2
+inv3 B: all a : Ad | all u : User | a in u.sees
+inv3 B: all a : Ad | all u : User | a in u.sees	all u : User | u.sees not in u.posts
+inv3 B: all a : Ad | all u : User | a in u.sees
+inv3 T: all x : User | x.sees implies some y: User | y in x.follows
+inv3 T: all x : User | x.sees implies some y: User | y in x.follows
+inv3 S: all x : User | x.sees y: User | y in x.follows
+inv3 S: all x : User | x.sees implies y: User | y in x.follows
+inv3 T: all x : User | x.sees implies some y: User | y in x.follows
+inv3 T: all x,y : User | x != y and y in x.follows => x.sees and y.posts
+inv3 T: all x,y : User | x != y and y in x.follows => x.sees and y.posts
+inv3 S: all x,y : User | x != y and y in x.follows => x.sees == y.posts
+inv3 S: all x,y : User | x != y and y in x.follows => x.sees == y.posts
+inv3 S: all x,y : User | x != y and y in x.follows => x.sees == y.posts
+inv3 O: all u : User | u.sees - Ad = u.follows.posts - Ad
+inv3 O: all u : User | u.sees - Ad = u.follows.posts - Ad	all a : Ad, u : User | a in u.sees
+inv3 B: all u : User | u.follows.posts - Ad in u.sees - Ad	all a : Ad, u : User | a in u.sees
+inv3 O: all u : User | u.sees - Ad in u.follows.posts - Ad	all a : Ad, u : User | a in u.sees
+inv3 O: all u : User | u.sees in u.follows.posts	all a : Ad, u : User | a in u.sees
+inv3 B: all u : User | u.follows.posts in u.sees	all a : Ad, u : User | a in u.sees
+inv3 B: all u : User | u.follows.posts in u.sees	all a : Ad, u : User | a in u.sees
+inv3 B: all u1, u2 : User, p: Photo | u1->p in posts implies p not in Ad and u2->p in sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User, p: Photo | u1 in posts.p implies p not in Ad and u2->p in sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User, p: Photo | u1 in posts.p implies p not in Ad and p in u2.sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts implies p not in Ad and p in u2.sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees implies u2->u1 in follows
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees implies u1 in u2.follows
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees => u1 in u2.follows	all x : Ad, u: User | x in u.sees
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees => u1 in u2.follows	all x : Ad, u: User | x in u.sees
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees => u1 in u2.follows
+inv3 B: all u1, u2 : User, p: Photo | p in u1.posts => p not in Ad and p in u2.sees => u1 in u2.follows
+

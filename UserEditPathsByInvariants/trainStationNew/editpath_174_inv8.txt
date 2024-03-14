@@ -1,0 +1,9 @@
+inv8 O: all ex : Exit, en : Entry | ex in en.^(succs)
+inv8 B: all ex : Exit | some en : Entry | en in succs.ex
+inv8 B: all ex : Exit | some en : Entry | en in (^succs).ex
+inv8 B: all ex : Exit | some en : Entry | ex in en.^(succs)
+inv8 B: all ex : Exit | (some en : Entry | ex in en.^(succs))
+inv8 E:
+inv8 O: all ex : Exit | all en : Entry | ex in en.^(succs)
+inv8 C: all ex : Exit | all en : Entry | ex in en.*(succs)
+

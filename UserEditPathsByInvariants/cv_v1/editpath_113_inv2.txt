@@ -1,0 +1,10 @@
+inv2 S: all w:User.profile |
+inv2 B: all u:User , w:Work | w in u.profile && one w.source
+inv2 S: all u:User , w:Work, i:Intitution | w in u.profile && w.source == u || w.source == i
+inv2 S: all u:User , w:Work, i:Intitution | w in u.profile && w.source = u || w.source = i
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && w.source = u || w.source = i
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && (w.source = u || w.source = i)
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && (w.source = u)
+inv2 B: all u:User ,i:Institution | u.profile.source = u
+inv2 B: all u:User ,i:Institution | u.profile.source = u || u.profile.source = i
+

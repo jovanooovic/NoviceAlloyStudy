@@ -1,0 +1,14 @@
+inv2 B: adj!=~adj
+inv2 T: no adj=~adj
+inv2 B: not adj=~adj
+inv2 S: all adj | adj != ~adj
+inv2 T: all adj:Node | adj != ~adj
+inv2 T: all adj:Node | not adj = ~adj
+inv2 T: all n:adj, x:adj | n in x.adj => x not in n.adj
+inv2 S: all n:adj x:adj | n in x.adj => x not in n.adj
+inv2 T: all n:adj, x:adj | n in x.adj => x not in n.adj
+inv2 S: all n:adj |all x in n.adj => n not in x.adj
+inv2 S: all n:adj |all x:n.adj => n not in x.adj
+inv2 T: all n:adj |all x:n.adj | n not in x.adj
+inv2 C: all n:Node.adj |all x:n.adj | n not in x.adj
+

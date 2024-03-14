@@ -1,0 +1,14 @@
+inv6 S: all s: Students, p: Projects | s->p in projects implies (all c: Courses | c->p in projects and s->c in enrolled)
+inv6 S: all s: Student, p: Projects | s->p in projects implies (all c: Courses | c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project | s->p in projects implies (all c: Course | c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project | s->p in projects iff (all c: Course | c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects iff ( c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects iff (c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects implies (c->p in projects and s->c in enrolled)
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects implies (s->c in enrolled)
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects iff s->c in enrolled
+inv6 B: all s: Student, p: Project, c: Course | s->p in projects implies s->c in enrolled
+inv6 S: all s: Student, p: Project | s->p in projects implies (all c: Course s->c in enrolled)
+inv6 B: all s: Student, p: Project | s->p in projects implies (all c: Course | s->c in enrolled)
+inv6 B: all s: Student, p: Project | s->p in projects iff (all c: Course | s->c in enrolled)
+

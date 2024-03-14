@@ -1,0 +1,5 @@
+inv7 T: all person : Student | lone project : Project | all course : Course | project in person.projects implies projects in course.projects
+inv7 B: all person : Student | lone project : Project | all course : Course | project in person.projects implies project in course.projects
+inv7 B: all person : Student | lone project : Project | all course : Course | project in person.projects and project in course.projects
+inv7 U: all person : Student | all project1, project2 : Project | all course : Course | ((project1 + project2) in person.projects and (project1 + project2) in course.projects) implies project1 = project2
+

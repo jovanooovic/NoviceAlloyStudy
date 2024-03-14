@@ -1,0 +1,29 @@
+inv9 O: all c : Class | lone Teacher
+inv9 T: all c : Class | lone Teacher in c.Groups
+inv9 B: lone Teacher.Teaches
+inv9 T: Teacher.Teaches -> lone Teacher
+inv9 T: Class.Groups
+inv9 T: lone Teacher.Teaches.Class
+inv9 O: lone Teaches.Class
+inv9 B: all c : Class | lone Teacher.Teaches
+inv9 T: all c : Class | lone c.Groups in Teacher.Teaches
+inv9 T: lone Teacher in Teaches.Class
+inv9 T: lone Teacher in Teaches.Teaches
+inv9 S: no some Teacher in Teaches.Class
+inv9 T: no Teacher in Teaches.Class
+inv9 B: Teacher in Teaches.Class
+inv9 S: all c : Class | lone Tecahes.c
+inv9 O: all c : Class | lone Teaches.c
+inv9 T: all c : Class | lone Teacher in Teaches.c
+inv9 T: all c : Class | lone Teacher in Teaches.c
+inv9 O: all c : Class | lone Teacher
+inv9 S: all c : Class | t1, t2 : Teacher | t1 in Teaches.c & t2 in Teaches.c :> t1=t2
+inv9 S: all c : Class | t1, t2 : Teacher | t1 in Teaches.c & t2 in Teaches.c -> t1=t2
+inv9 S: all c : Class | t1, t2 : Teacher | t1 in Teaches.c and t2 in Teaches.c -> t1=t2
+inv9 T: all c : Class | some t1, t2 : Teacher | t1 in Teaches.c and t2 in Teaches.c -> t1=t2
+inv9 T: all c : Class | lone Teacher in Teaches.c
+inv9 O: all c : Class | lone Teaches.c
+inv9 C: (Teacher <: Teaches).~(Teacher <: Teaches) in iden
+inv9 C: (Teacher <: Teaches).~(Teacher <: Teaches) in iden
+inv9 C: (Teacher <: Teaches).~(Teacher <: Teaches) in iden
+

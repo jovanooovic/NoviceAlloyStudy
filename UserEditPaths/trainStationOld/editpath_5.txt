@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 C: all s : Signal | s not in Green
+inv1 C: no Green
+inv2 O: eventually all s : Signal | s in Green
+inv2 O: always all s : Signal | eventually s in Green
+inv2 S: s : Signal | eventually s in Green
+inv2 C: all s : Signal | eventually s in Green
+inv3 S: all t : Train | always lone f.pos
+inv3 U: all t : Train | always lone t.pos
+inv3 U: all t : Train | lone t.pos
+inv3 U: always all t : Train | always lone t.pos
+inv3 B: always all t : Train | always one t.pos
+inv3 S: always all t : Train | always before t.pos = after t.pos
+inv3 S: always all t : Train | always before t.pos /\ after t.pos
+inv3 U: always all t : Train, pos : t.pos | always lone pos
+inv4 S: always t1, t2: Train | some t1.pos & t2.pos implies t1 = t2
+inv3 U: always all t : Train, pos : t.pos | always lone pos
+inv4 S: always t1: Train | t2: Train | some t1.pos & t2.pos implies t1 = t2
+inv3 C: always pos' = pos
+inv4 S: always t1: Train | t2: Train | some t1.pos & t2.pos implies t1 = t2
+inv4 S: always t1: Train | t2: Train | some t1.pos & t2.pos implies t1 = t2
+

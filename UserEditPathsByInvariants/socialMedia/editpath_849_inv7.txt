@@ -1,0 +1,8 @@
+inv7 U: all u: User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all u: User | u.suggested in (u.follows.follows - u.follows)
+inv7 T: all u: User | u.suggested in (u.follows.follows and not u.follows)
+inv7 U: all u1, u2: User | u1 not in u2 and u2 in u1.follows.follows and u2 not in u1.follows implies u2 in u1.suggested
+inv7 O: all u1, u2: User | u1 not in u2 and u2 in u1.follows.follows and u2 not in u1.follows and u2 in u1.suggested
+inv7 C: all u1, u2: User | u1 not in u2 and u2 in u1.follows.follows and u2 not in u1.follows iff u2 in u1.suggested
+inv7 C: all u, s: User | s in u.suggested iff (s in u.follows.follows and u not in s and s not in u.follows)
+

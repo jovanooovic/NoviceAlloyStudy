@@ -1,0 +1,6 @@
+inv5 T: all w : Workstation | w.workers in (Human or Robot)
+inv5 S: all w : Workstation | w.workers all in (Human or Robot)
+inv5 C: all h : Human | all r : Robot | no (workers.h & workers.r)
+inv5 S: all h : Human | all r : Robot | all w : Workstation | h in w.worker implies r not in w.workers
+inv5 C: all h : Human | all r : Robot | all w : Workstation | h in w.workers implies r not in w.workers
+

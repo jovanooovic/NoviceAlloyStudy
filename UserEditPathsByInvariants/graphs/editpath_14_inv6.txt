@@ -1,0 +1,10 @@
+inv6 T: adj = Node.^adj or Node.~^adj
+inv6 T: adj = Node.^adj || Node.~^adj
+inv6 T: adj = Node.^adj + Node.~^adj
+inv6 T: adj = Node.^adj + Node.^adj
+inv6 T: adj = Node.^adj
+inv6 O: all a:Node, b:Node | b in a.^adj || b in a.~^adj
+inv6 T: all b:Node | b in ^(adj + ~adj)
+inv6 T: all a:Node, b:Node | b in ^(a.adj + a.~adj)
+inv6 O: all a:Node, b:Node | b in a.^(adj + ~adj)
+

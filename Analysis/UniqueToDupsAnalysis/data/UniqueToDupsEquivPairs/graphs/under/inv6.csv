@@ -1,0 +1,33 @@
+Pairs,29
+,,"Node.^adj in Node",2
+,,"Node in Node.*adj",3
+,,"Node.*adj in Node",2
+,,"^adj in Node->Node",1
+,,"adj + ~adj in Node->Node",1
+,,"Node.*(adj + ~adj) = Node",1
+,,"all n: Node | n - n in n",1
+,,"Node.*adj & *adj.Node = Node",1
+,,"all n:Node | some n.*adj",1
+,,"all n:Node | n in n.*adj",2
+,,"Node in (Node.*adj  + *adj.Node)",1
+,,"all n:Node | n in Node.*adj",1
+,,"all n:Node | some n->n.*adj",1
+,,"all n:Node | some n.(n->n.*adj)",1
+,,"all n : Node | n.(adj + ~adj) in Node",1
+,,"all n : Node | some n.*(adj + ~adj)",1
+,,"all n : Node | n.^(adj + ~adj) in Node",1
+,,"all n : Node | n->n.^adj in Node->Node",2
+,,"all x, y : Node | some x.*adj + y.*adj",1
+,,"all n:Node | some n.*adj + n.^~adj",1
+,,"all n:Node | some n->(n.*adj + n.^~adj)",1
+,,"all n:Node | some n.(n->(n.*adj + n.^~adj))",1
+,,"all n, x :Node | some n2:Node | n in (n2.*adj + ~(~adj).x)",1
+
+Pairs,3
+,,"lone  Node  or  Node in (Node.adj  + adj.Node)",1
+,,"not lone Node implies  Node in (Node.adj  + adj.Node)",1
+,,"one Node or (Node = (Node.(^adj) + Node.(^(~adj))))",1
+
+Pairs,1
+,,"some adj implies   Node in (Node.adj  + adj.Node)",1
+

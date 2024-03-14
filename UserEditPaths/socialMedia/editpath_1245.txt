@@ -1,0 +1,35 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all u : User |
+inv1 S: all p : Phots | one posts.p
+inv1 C: all p : Photo | one posts.p
+inv2 E: 
+inv2 C: all x : User | not x in x.follows
+inv3 S: all x,y : User | all p : Photo | p != Ad and x!=y implies (p in x.sees and p in y.posts) immplies y in x.follows
+inv3 B: all x,y : User | all p : Photo | p != Ad and x!=y implies (p in x.sees and p in y.posts) implies y in x.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies y in x.follows
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 S: all user : User, photo : Photo | (p in user.sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo = Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (followed->photo in posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (user->followed in follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv4 S: all u :User | all ad : Ad | ad in u.posts implies user.posts in Ad
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv3 B: all user : User, photo : Photo | (photo in user.sees) implies (photo in Ad) or	(all followed : User | (photo in followed.posts) implies (followed in user.follows))
+inv4 C: all u :User | all ad : Ad | ad in u.posts implies u.posts in Ad
+inv5 U: all i : Influencer | all u : User | u!=i implies i in u.follows
+inv6 U: all d : Day | all i : Influencer | some p : Photo | p.date in Day and p in i.posts
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv6 C: all d : Day | all i : Influencer | some p : Photo | d in p.date and p in i.posts
+inv8 S: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv8 S: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv8 C: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and u->followed in follows) or (suggest->a in posts and u->suggest in suggested)
+inv8 C: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and followed in u.follows) or (suggest->a in posts and u->suggest in suggested)
+inv8 O: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed in a.posts and followed in u.follows) or (suggest->a in posts and u->suggest in suggested)
+inv8 C: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and followed in u.follows) or (suggest->a in posts and u->suggest in suggested)
+inv8 T: all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and followed in u.follows) or (suggest->a in posts and suggested in u.suggest)
+

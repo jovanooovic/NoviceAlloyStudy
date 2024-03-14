@@ -1,0 +1,66 @@
+inv5 O: all i : Influencer, u : User | u in follows.i && i not in follows.i
+inv5 S: all i : Influencer, u : User | u in follows.i | i not in follows.i
+inv5 O: all i : Influencer, u : User | u in follows.i && i != u
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : User, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 O: all i : Influencer, u : User | u in follows.i && i not in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all u : User, i : Influencer| u in follows.i
+inv5 B: all u : User, i : Influencer| u in follows.i && i in follows.i
+inv5 B: all u : User, i : Influencer| (u in follows.i) && (i in follows.i)
+inv5 O: all u : User, i : Influencer| (u in follows.i) && (i not in follows.i)
+inv5 O: all u : User, i : Influencer | (u in follows.i) && (i not in follows.i)
+inv5 U: all i : Influencer, u : User-Influencer | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | i in u.follows
+inv5 S: all u : User, i : Influencer | u.follows all u
+inv5 T: all u : User, i : Influencer | u.follows i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | i in follows.u
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 T: all u : User.Influencer, i : Influencer | u in follows.i
+inv5 U: all u : User-Influencer, i : Influencer | u in follows.i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 O: all u : User, i : Influencer | u in follows.i && u != i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 S: all u : User, i : Influencer | u in follows.i &&
+inv5 S: all u : User, i : Influencer | u in follows.i &&
+inv5 B: all i : Influencer | i in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 E:
+inv5 B: all i : Influencer | some follows.i
+inv5 B: all i : Influencer | one follows.i
+inv5 T: all i : Influencer | User follows.i
+inv5 B: all i : Influencer | User in follows.i
+inv5 U: all i : Influencer | follows.i in User
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1	all u3 : User | u3 not in suggested.u3
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u1 not in suggested.u2	all u3 : User | u3 not in suggested.u3
+inv5 B: all i : Influencer, u : User | u in follows.i	all u1, u2 : User | u1 in follows.u2 implies u1 not in suggested.u2	all u : User | u not in suggested.u
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 S: all i : Influencer, u : User-Influencers | u in follows.i
+inv5 S: all i : Influencer, u : User-Influencers | u in follows.i
+inv5 U: all i : Influencer, u : User-Influencer | u in follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 T: all i : Influencer | set follows.i
+inv5 B: all i : Influencer | some follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer, u : User | one follows.i
+inv5 B: all i : Influencer | one follows.i
+inv5 B: all i : Influencer, u : User | u in follows.i
+inv5 B: all i : Influencer | some u : User | u in follows.i
+inv5 B: all i : Influencer | all u : User | u in follows.i
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.i)
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.u)
+inv5 B: all i : Influencer | all u : User | u in follows.i && (u not in suggested.u) && (i not in suggested.i)
+inv5 B: all i : Influencer, u : User | (u in follows.i) && (u not in suggested.u) && (i not in suggested.i)
+inv5 B: all i : Influencer | (i not in suggested.i)
+inv5 B: all i : Influencer | i not in suggested.i
+

@@ -1,0 +1,18 @@
+inv11 B: Protected' = (File - Protected)
+inv11 B: Protected' = ((File - Protected)-Trash)
+inv11 T: Protected' =  (File not in Protected )
+inv11 B: Protected' =  File
+inv11 B: Protected' =  (File - Protected) + Protected
+inv11 O: always (Protected' =  (File - Protected) + Protected )
+inv11 T: (File - Protected) after (File - Protected) in Protected
+inv11 B: (File - Protected) not in Protected after (File - Protected) in Protected
+inv11 B: (File - Protected)-Trash  not in Protected after (File - Protected) in Protected
+inv11 O: always Protected' = (File - Protected)
+inv11 O: always Protected' = Protected +(File - Protected)
+inv11 B: Protected' = Protected +(File - Protected)
+inv11 B: Protected' = File
+inv11 B: Protected' =Protected + (File-Protected )
+inv11 U: (File-Protected ) in Protected '
+inv11 C: always (File-Protected) in Protected '
+inv11 C: always (File-Protected) in Protected'
+

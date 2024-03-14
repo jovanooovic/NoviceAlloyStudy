@@ -1,0 +1,11 @@
+inv9 S: all t :
+inv9 S: all t :
+inv9 O: all c : Class | lone Teacher->c
+inv9 O: all c : Class |  #(Teacher->c) < 2
+inv9 O: all c : Class |  #(Teacher->c) < 2
+inv9 O: all c : Class, t, t1 : Teacher |  t->c in Teaches implies t1->c not in Teaches
+inv9 S: all c : Class, | Teacher->c not in Teaches
+inv9 S: all c : Class, | Teacher->c not in Teaches
+inv9 B: all c : Class | Teacher->c not in Teaches
+inv9 C: all c : Class | #(Teacher->c & Teaches) < 2
+

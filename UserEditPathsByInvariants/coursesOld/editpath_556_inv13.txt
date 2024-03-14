@@ -1,0 +1,5 @@
+inv13 S: s2 in Student and p in Project and s1->p in Person <: projects and s2->p in Person <: projects implies all p1 : Project | p1!=p and s1->p1 in Person <: projects implies not s2->p1 in Person <: projects
+inv13 T: all s : Student | all c : Course | s in c.grades.last implies (some p : Project | p->c in projects and p->s in projects)
+inv13 T: all s : Student | all c : Course | s in c.grades.last implies (some p : Project | p->c in projects and p->s in projects)
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies (some p : Project | c->p in projects and s->p in projects)
+

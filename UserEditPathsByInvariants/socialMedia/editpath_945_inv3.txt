@@ -1,0 +1,6 @@
+inv3 T: all x : User, y : Ad | x.sees.y
+inv3 T: all x : User, y : Ad | x sees y
+inv3 B: all x,y : User, z : Photo | x->z in posts and y->z in sees implies x->y in follows
+inv3 S: all x,y : User, z : Photo | x->z in posts and y->z in sees implies x->y in follows	all x : User, y : Ads | x->y in sees
+inv3 B: all x,y : User, z : Photo | x->z in posts and y->z in sees implies x->y in follows	all x : User, y : Ad | x->y in sees
+

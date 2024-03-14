@@ -1,0 +1,10 @@
+inv5 U: all disj t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs => t1 in Junction
+inv5 U: all disj t1,t2,t3:Track | (t1 not in t1.succs) and t1 in t2.succs and t1 in t3.succs => t1 in Junction
+inv5 B: all t:Track | t not in t.succs	all disj t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs => t1 in Junction
+inv5 B: all t:Junction | t not in t.succs	all disj t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs => t1 in Junction
+inv5 B: all t:Junction | t not in t.succs	all disj t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs => t1 = Junction
+inv5 U: all disj t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t3 in t2.succs=> t1 in Junction
+inv5 U: all disj t1,t2,t3:Track | t1 in t2.succs and #t2.succs=1 and t1 in t3.succs and #t3.succs=1 => t1 in Junction
+inv5 B: all t:Track | t not in t.succs	all disj t1,t2,t3:Track | t1 in t2.succs and #t2.succs=1 and t1 in t3.succs and #t3.succs=1 => t1 in Junction
+inv5 B: all disj t1,t2,t3:Track | t1 in t2.succs  => t1 in Junction
+

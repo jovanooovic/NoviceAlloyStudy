@@ -1,0 +1,16 @@
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.Course
+inv4 T: all p: Project | one projects.Project
+inv4 T: all c: Course | one projects.c
+inv4 B: all c1, c2: Course, p1,p2: Project | p1 in c1.projects and p2 in c2.projects implies p1!=p2
+inv4 B: all c1, c2: Course, p1,p2: Project | (p1 in c1.projects and p2 in c2.projects) implies p1!=p2
+inv4 B: all c1, c2: Course | some p1,p2: Project | (p1 in c1.projects and p2 in c2.projects) implies p1!=p2
+inv4 T: all p: Project | one Course.p
+inv4 O: all p: Project | one p.projects
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.Course
+inv4 S: all p: Project | one (Course c.projects).p
+inv4 S: all p: Project | one (Course c: projects).p
+inv4 S: all p: Project | one (Course c<:projects).p
+inv4 C: all p: Project | one (Course<:projects).p
+

@@ -1,0 +1,29 @@
+inv5 S: some c: Class | some t: Teacher | t.class
+inv5 T: some c: Class | some t: Teacher | t.Class
+inv5 T: some c: Class | some t: Teacher | c.t
+inv5 T: all t: Teacher | t.Teaches
+inv5 T: some t: Teacher | t.Teaches
+inv5 B: all t: Teacher | some t.Teaches
+inv5 B: all t: Teacher | some p: Person | p in Teacher and some t.Teaches
+inv5 T: all t: Teacher | some p: Person | p in Teacher implies t.Teaches
+inv5 S: all t: Teacher | some c: Class | some t.Teaches c
+inv5 S: all t: Teacher | some c: Class | some t.Teaches c.t
+inv5 B: all t: Teacher | some c: Class | some t.Teaches
+inv5 T: all t: Teacher | some c: Class | some t.Teaches and c.Groups.t
+inv5 T: all t: Teacher | some c: Class | some t.Teaches in c.Groups
+inv5 T: all t: Teacher | some c: Class | some t.Teaches and c.Groups
+inv5 T: all t: Teacher | some c: Class | t.c in t.Teaches
+inv5 B: all t: Teacher | some c: Class | t->c in Teaches
+inv5 T: all t: Teacher | some c: Class | t->c in Group.Teaches
+inv5 T: all t: Teacher | some c: Class | c->t in Group.Teaches
+inv5 T: all t: Teacher | some c: Class | c->t in Group.Teaches
+inv5 S: some c: Class | all t: Teacher | t.teaches.c
+inv5 T: some c: Class | all t: Teacher | t.Teaches.c
+inv5 S: some c: Class | all t: Teacher | c->t->g
+inv5 T: some c: Class | all t: Teacher | c->t->Group
+inv5 S: some c: Class | all t: Teacher | p->c in Teaches
+inv5 B: some c: Class | all t: Teacher | t->c in Teaches
+inv5 B: all c: Class | some t: Teacher | t->c in Teaches
+inv5 B: all c: Class | all t: Teacher | t->c in Teaches
+inv5 C: some c: Class | some t: Teacher | t->c in Teaches
+

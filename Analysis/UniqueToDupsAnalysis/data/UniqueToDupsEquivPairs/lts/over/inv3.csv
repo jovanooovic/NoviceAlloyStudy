@@ -1,0 +1,73 @@
+Pairs,2
+,,"lone trans",1
+,,"all s : State, e : Event | lone trans",1
+
+Pairs,2
+,,"lone State.trans",2
+
+Pairs,5
+,,"lone Event.(State.trans)",5
+
+Pairs,6
+,,"all s:State | one s.trans",6
+
+Pairs,1
+,,"State.trans in Event  -> one State",1
+
+Pairs,9
+,,"all s:State | lone Event.(s.trans)",8
+,,"all s : State | all disj e1, e2 : State | e1 in Event.(s.trans) and e2 in Event.(s.trans) implies e1 = e2",1
+
+Pairs,4
+,,"let k = trans.State | iden in ~k.k",2
+,,"let k = trans.State | iden in k.~k",1
+,,"let R = State.trans | iden in ~R.R",1
+
+Pairs,1
+,,"all s:State | lone (State-s).trans",1
+
+Pairs,10
+,,"State.trans in Event -> lone State",1
+,,"~(State.trans).(State.trans) in iden",5
+,,"let R = State.trans | ~R.R in iden",1
+,,"all e:Event| lone e.(State.trans)",1
+,,"all e : Event | lone e<:State.trans",2
+
+Pairs,49
+,,"trans in State -> lone Event -> State",1
+,,"all s:State | lone s.trans",38
+,,"all y : State | lone y.trans",2
+,,"all x : State | lone x.trans",1
+,,"always (all s: State | lone s.trans)",1
+,,"all s:State,e:Event | lone s.trans",4
+,,"all s:State| lone Event->State & s.trans",1
+,,"all s : State, e : Event | lone s.trans->e",1
+
+Pairs,4
+,,"all  e1:Event | #(e1.(State.trans))<1",2
+,,"all s : State, e : Event | no s.trans[e]",1
+,,"all s:State | all  e1:Event | #(e1.(s.trans))<1",1
+
+Pairs,1
+,,"all s:State | s in Init.^(trans.Event)",1
+
+Pairs,1
+,,"State.trans in Event some -> one State",1
+
+Pairs,8
+,,"all e : Event | State->State in trans.e",2
+,,"all s : State, e : Event | one s.trans.e",1
+,,"all s : State, e : Event | one s.(e.trans)",1
+,,"all s:State, e:Event | some s.trans.e",2
+,,"all s:State, e:Event | some (s->e).trans",1
+,,"all s:State | all  e1:Event | e1.(s.trans)=1",1
+
+Pairs,6
+,,"all s: State, e: Event | one e.(s.trans)",4
+,,"all s:State | all  e1:Event | #(e1.(s.trans))=1",1
+,,"all e: Event, s:State |one s2: State | e->s2 in s.trans",1
+
+Pairs,2
+,,"all s:State |one e: Event | lone s.trans",1
+,,"all s: State |one e: Event | lone s.trans->e",1
+

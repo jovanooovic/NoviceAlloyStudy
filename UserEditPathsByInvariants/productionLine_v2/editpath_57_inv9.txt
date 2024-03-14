@@ -1,0 +1,26 @@
+inv9 U: no iden & ^succ
+inv9 U: one w : Workstation | not w in Workstation.succ
+inv9 U: one w : Workstation | not w in Workstation.succ	no iden & ^succ
+inv9 U: Workstation - begin = Workstation.succ
+inv9 U: Workstation - begin = Workstation.succ	no iden & ^succ	no end.succ
+inv9 O: Workstation - begin = Workstation.succ	all w : Workstation | one w.succ	no iden & ^succ	no end.succ
+inv9 O: all w : Workstation | one w.succ	no iden & ^succ	no end.succ
+inv9 B: all w : Workstation | one w.succ
+inv9 O: all w : Workstation | one w.succ	no iden & ^succ
+inv9 B: all w : Workstation | one w.succ	no iden & succ
+inv9 E:
+inv9 U: all w : Workstation | w not in w.succ
+inv9 B: all w : Workstation | w not in w.succ and one w.succ
+inv9 U: all w : Workstation | w not in w.succ	all w : Workstation - end | one w.succ
+inv9 U: all w : Workstation | w not in w.succ and begin not in w.succ	all w : Workstation - end | one w.succ
+inv9 B: all w : Workstation | w not in w.succ and begin not in w.succ	all w : Workstation - end | one w.succ	begin != end
+inv9 U: all w : Workstation | w not in w.succ and begin not in w.succ	all w : Workstation - end | one w.succ	no iden & succ
+inv9 U: all w : Workstation | w not in w.succ and begin not in w.succ	all w : Workstation - end | one w.succ	no iden & ^succ
+inv9 C: all w : Workstation | w not in w.succ	all w : Workstation - begin | w in Workstation.succ	all w : Workstation - end | one w.succ	no iden & ^succ
+inv9 U: all w : Workstation | w not in w.succ	all w : Workstation - begin | w in Workstation.succ	all w : Workstation - end | one w.succ
+inv9 C: all w : Workstation | w not in w.succ	all w : Workstation - begin | w in Workstation.succ	all w : Workstation - end | one w.succ	no iden & ^succ
+inv9 C: all w : Workstation - begin | w in Workstation.succ	all w : Workstation - end | one w.succ	no iden & ^succ
+inv9 C: no iden & ^succ	all w : Workstation - begin | w in Workstation.succ	all w : Workstation - end | one w.succ
+inv9 C: no iden & ^succ	Workstation - begin in Workstation.succ	all w : Workstation - end | one w.succ
+inv9 C: no iden & ^succ	Workstation - begin in Workstation.succ	all w : Workstation - end | one w.succ
+

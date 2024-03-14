@@ -1,0 +1,27 @@
+"link",1
+"link not in univ",1
+"link.File in iden",1
+"all l : link | l in Trash",1
+"all f:File | f not in link",1
+"all f1, f2 : File | f1->f2",6
+"all f: File | f not in link",2
+"all f : File | f not in link",1
+"all l : link | l in link",1
+"all f:File |no f.link in File",1
+"all l : link | l not in link",2
+"all f : File | f.link is empty",1
+"all f1, f2:File | f1 -> f2 = none",1
+"all f:File | no isLink[f]
+}
+
+/* A link does not link to another link. */
+
+pred isLink[f:File]{
+some g:File | g->f in link",1
+"all f : File | no isLink[f]
+}
+
+/* A link does not link to another link. */
+
+pred isLink[f:File]{
+some g:File | g->f in link",1

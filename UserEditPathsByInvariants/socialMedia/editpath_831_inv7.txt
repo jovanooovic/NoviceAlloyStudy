@@ -1,0 +1,5 @@
+inv7 U: all u:User,x:User |  x in u.suggested => x in u.follows.follows and x not in u.follows and x!=u
+inv7 U: all disj u:User,x:User |  x in u.suggested => x in u.follows.follows and x not in u.follows and x!=u
+inv7 C: all u :User | u.suggested = u.follows.follows - u.follows -u
+inv7 C: all u :User | u.suggested = u.follows.follows - u.follows -u
+

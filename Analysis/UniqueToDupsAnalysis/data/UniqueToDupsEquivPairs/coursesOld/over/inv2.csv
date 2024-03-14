@@ -1,0 +1,35 @@
+Pairs,5
+,,"no teaches.Course",1
+,,"(Person . teaches) in Professor",1
+,,"all p : Person | p.teaches in Professor",1
+,,"all p : Person | no p.teaches - Professor",1
+,,"all p : Person, c : Course | c in p.teaches implies c in Professor",1
+
+Pairs,4
+,,"teaches.Course = Professor",3
+,,"all p:Person | some p.teaches iff p in Professor",1
+
+Pairs,5
+,,"no Person-Professor.teaches",3
+,,"all p : Person | p in p.teaches",1
+,,"all p : Person | p ->p in teaches",1
+
+Pairs,1
+,,"teaches = Professor -> Course",1
+
+Pairs,1
+,,"no Person-Professor & teaches.Course",1
+
+Pairs,1
+,,"Course.~teaches = Professor - Student",1
+
+Pairs,2
+,,"all p:Person | p.teaches in Course implies p in Professor",1
+,,"all p:Person | p.enrolled in Course implies p in Professor",1
+
+Pairs,1
+,,"all p : Person | p.teaches in Course implies p = Professor",1
+
+Pairs,1
+,,"all p : Person | some p.teaches implies p in Professor and p not in Student",1
+

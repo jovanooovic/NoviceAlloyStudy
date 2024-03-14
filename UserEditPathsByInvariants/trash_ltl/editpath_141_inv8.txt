@@ -1,0 +1,14 @@
+inv8 T: all l : link | eventually l in Trash
+inv8 T: all l : link | eventually File.l in Trash
+inv8 T: all l : link | eventually l.File in Trash
+inv8 B: eventually File.link in Trash
+inv8 B: eventually link.File in Trash
+inv8 T: eventually link.~link in Trash
+inv8 T: eventually link.link in Trash
+inv8 B: eventually no link
+inv8 B: eventually File.link + link.File in Trash
+inv8 B: some f : File | eventually f.link + link.f in Trash
+inv8 B: some f : File | eventually f.link + link.f in Trash
+inv8 B: always some f : File | eventually f.link in Trash
+inv8 B: eventually some f : File | eventually f.link in Trash
+

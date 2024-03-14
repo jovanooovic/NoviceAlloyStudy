@@ -1,0 +1,11 @@
+"profile.source in iden:>(User + Institution)",1
+"all u:User, p:u.profile | p.source in u",1
+"all u:User| u.profile.source = u + Institution",1
+"profile.~profile in iden and profile.Work in Institution",1
+"all w : Work | w.source = User or w.source = Institution",1
+"all u : User | Work.source = u or Work.source = Institution",1
+"all u:User| some i:Institution | u.profile.source = u + i",1
+"all u : User , s : u.profile | s.source = u or s.source = Institution",1
+"all u: User | u.profile.source in u or u.profile.source in Institution",3
+"all u : User , w : Work | w in u.profile implies (w.source = u or w.source = Institution)",1
+"all w : Work , u : User | w in u.profile implies always (w.source = u or w.source = Institution)",2

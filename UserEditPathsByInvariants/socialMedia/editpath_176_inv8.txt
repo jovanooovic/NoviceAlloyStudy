@@ -1,0 +1,4 @@
+inv8 S: all u : User | (some a : Ad, u2 : User | u -> a in sees and u2 -> a in posts) => (u -> u2 in follows or u -> u2 in suggested)
+inv8 B: all u : User | some a : Ad, u2 : User | (u -> a in sees and u2 -> a in posts) => (u -> u2 in follows or u -> u2 in suggested)
+inv8 C: all u : User, a : Ad | u -> a in sees implies (some u2 : User | u2 -> a in posts and (u -> u2 in follows or u -> u2 in suggested))
+

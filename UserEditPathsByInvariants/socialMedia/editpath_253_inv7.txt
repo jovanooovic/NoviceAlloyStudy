@@ -1,0 +1,21 @@
+inv7 S: all x: User | all f : u.follows.follows | f not in x.follows => f  in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | f not in x.follows => f  in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | f not in x.follows => f  in x.suggested	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.follows.follows | (f not in x.follows and x != f ) => f in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | (f not in x.follows ) => f in x.suggested	all x: User | x not in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | (f not in x.follows ) => f in x.suggested	all x: User | all f : x.suggested | f in x.follows.follows	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.suggested | f not in x.follows => f in x.follows.follows	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.suggested |  f in x.follows.follows  => f not in x.follows	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.suggested |  f in x.follows.follows and f not in x.follows	all x: User | x not in x.suggested
+inv7 O: all x: User | all f : x.follows.follows | (f not in x.follows ) => f in x.suggested	all x: User | all f : x.suggested |  f in x.follows.follows and f not in x.follows	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.follows.follows | f in x.suggested => f not in x.follows		all x: User | all f : x.suggested |  f in x.follows.follows and f not in x.follows	all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.follows.follows | f in x.suggested => f not in x.follows			all x: User | x not in x.suggested
+inv7 U: all x: User | all f : x.follows.follows | f in x.suggested => f not in x.follows			all x: User | x not in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | f not in x.follows => f in x.suggested			all x: User | x not in x.suggested and x.follows not in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | f not in x.follows => f in x.suggested			all x: User | x not in x.suggested and x.follows not in x.suggested
+inv7 B: all x: User | all f : x.follows.follows | f not in x.follows => f in x.suggested			all x: User | x not in x.suggested and x.follows not in x.suggested
+inv7 S: all x : User | u.suggested = (u.follows.follows - u.follows - u)
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u)
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u)
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u)
+

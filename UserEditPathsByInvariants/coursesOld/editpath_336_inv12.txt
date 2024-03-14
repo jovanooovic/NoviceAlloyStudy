@@ -1,0 +1,6 @@
+inv12 S: all s:Student, c:Course, p1,p2:Project | p1 in s.projects and p2 in s.projects and c in s.enrolled and p1 in c.projects and p2 in c.projects implies p1=p2				all s:Student, c:Course, g1,g2: Grade | g1 in c.grades.Person and g2 in c.grades.Person and c
+inv12 S: all s:Student, c:Course, p1,p2:Project | p1 in s.projects and p2 in s.projects and c in s.enrolled and p1 in c.projects and p2 in c.projects implies p1=p2
+inv12 U: all s:Student, c:Course, g1,g2: Grade | g1 in c.grades.Person and g2 in c.grades.Person and c in s.enrolled implies g1=g2
+inv12 U: all s:Student, c:Course, g1,g2: Grade | g1 in c.grades.s and g2 in c.grades.s and c in s.enrolled implies g1=g2
+inv12 U: all s:Student, c:Course, g1,g2: Grade | g1 in s.(c.grades) and g2 in s.(c.grades) and c in s.enrolled implies g1=g2
+

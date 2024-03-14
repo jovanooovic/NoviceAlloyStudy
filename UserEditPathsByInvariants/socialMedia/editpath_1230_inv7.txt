@@ -1,0 +1,38 @@
+inv7 U: all x0,x1:User | x0 in x1.suggested implies some x2:User | x2 in x1.follows and x0 in x2.follows
+inv7 U: all x0,x1:User | x0 in x1.suggested implies some x2:User | x2 in x1.follows and x0 in x2.follows
+inv7 S: all x0,x1:User | x2 in x0.suggested implies x2 not in x0.follows
+inv7 U: all x0,x1:User | x1 in x0.suggested implies x1 not in x0.follows
+inv7 U: all x0,x1:User | x1 in x0.suggested implies x1 not in x0.follows and x0!=x1
+inv7 S: all x0,x1,x3:User | x1 in x0.suggested and x3 in x0.folows implies x1 not in x0.follows and x0!=x1
+inv7 U: all x0,x1,x3:User | x1 in x0.suggested and x3 in x0.follows implies x1 not in x0.follows and x0!=x1
+inv7 U: all x0,x1:User | x1 in x0.suggested implies x1 not in x0.follows and x0!=x1
+inv7 S: all x0,x1:User | x1 in x0.suggested implies some x3:User x1 not in x0.follows and x0!=x1 and x1 in x3.follows
+inv7 S: all x0,x1:User | x1 in x0.suggested implies some x3:User x1 not in x0.follows and x0!=x1 and x1 in x3.follows
+inv7 U: all x0,x1:User | x1 in x0.suggested implies some x3:User | x1 not in x0.follows and x0!=x1 and x1 in x3.follows
+inv7 U: all x0,x1:User | some x3:User | x1 in x0.suggested implies x1 not in x0.follows and x0!=x1 and x1 in x3.follows and x3 in x0.follows and x1 in x3.follows
+inv7 E:
+inv7 T: all x,x1,x2:User | x1 in x.suggested implies x1 != x and x2 != x1 and x1 in x2.follows and x2 in x2 in x1.follows
+inv7 T: all x,x1,x2:User | x1 in x.suggested implies x1 != x and x2 != x1 and x1 in x2.follows and x2 in x2 in x1.follows
+inv7 T: all x,x1,x2:User | x1 in x.suggested implies (x1 != x) and (x2 != x1) and x1 in x2.follows and x2 in x2 in x1.follows
+inv7 T: all x,x1,x2:User | x1 in x.suggested implies ((x1 != x) and (x2 != x1) and x1 in x2.follows and x2 in x2 in x1.follows)
+inv7 B: all x,x1,x2:User | x1 in x.suggested implies x1 != x and x2 != x1
+inv7 B: all x,x1,x2:User | x1 in x.suggested implies x1 != x and x2 != x1 and x1 in x2.follows
+inv7 B: all x,x1,x2:User | x1 in x.suggested implies x1 != x and x2 != x1 and x1 in x2.follows and x2 in x1.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies some x2:User | x1 != x and x2 != x1 and x1 in x2.follows and x2 in x1.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies some x2:User | x1 != x and x2 != x1 and x1 in x2.follows and x2 in x1.follows	all x,x1:User | x in x1.suggested implies x not in x1.follows
+inv7 U: all x,x1:User | x1 in x.suggested implies some x2:User | x1 != x and x2 != x1 and x1 in x2.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies some x2:User | x2 in x.follows and x1 in x2.follows and x not in x1.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies some x2:User | x2 in x1.follows and x1 in x2.follows and x not in x1.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies x in x1.follows and x1 not in x.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies x in x1.follows and (x1 not in x.follows)
+inv7 S: all x,x1:User | x1 in x.suggested implies x in x1.follows and (x1 not in x.follows) and x =! x1
+inv7 B: all x,x1:User | x1 in x.suggested implies x in x1.follows and x!=x1 and x1 not in x.follows
+inv7 B: all x,x1:User | x1 in x.suggested implies x in x1.follows and x1 not in x.follows
+inv7 U: all x,x1:User | x1 in x.suggested implies some x3:User | x1 in x3.follows and x3 in x.follows and x1 not in x.follows
+inv7 U: all x,x1:User | x1 in x.suggested implies some x3:User | x1 in x3.follows and x3 in x.follows and x1 not in x.follows and x1!=x
+inv7 B: all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows implies x2 in x0.suggested
+inv7 S: all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows implies x2 in x0.suggested x0!=x2
+inv7 B: all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows implies x2 in x0.suggested and x0!=x2
+inv7 U: all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows and x0!=x2 implies x2 in x0.suggested
+inv7 U: all x0,x1,x2:User | x2 in x1.follows and x1 in x0.follows and x2 not in x0.follows and x0!=x1 and x1!=x2 and x0!=x2 implies x2 in x0.suggested
+

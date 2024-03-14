@@ -1,0 +1,25 @@
+inv2 S: one signal -> some Track
+inv2 T: Signal one -> some Track
+inv2 S: one Signal -> some Track
+inv2 T: one Signal in Track
+inv2 T: one Signal in Track
+inv2 S: one Signal in one Track
+inv2 B: all t1,t2: Track | no (t1.signals & t2.signals)
+inv2 T: all t1,t2: Track | no ((t1.signals and t1.succs.^signals) & (t2.signals and t2.succs.^signals))
+inv2 T: all t1,t2: Track | no ((t1.signals and t1.^succs.signals) & (t2.signals and t2.^succs.signals))
+inv2 B: all t1,t2: Track | no ((t1.signals + t1.^succs.signals) & (t2.signals + t2.^succs.signals))
+inv2 B: all t1,t2: Track | lone ((t1.signals + t1.^succs.signals) & (t2.signals + t2.^succs.signals))
+inv2 S: all t1, t2: Tracks,	s: Signal |	((s in t1.(^succs.signals)) and (s in t2.(^succs.signals)) implies t1 = t2
+inv2 S: all t1, t2: Tracks,	s: Signal |	((s in t1.(^succs.signals)) and (s in t2.(^succs.signals))) implies t1 = t2
+inv2 B: all t1, t2: Track,	s: Signal |	((s in t1.(^succs.signals)) and (s in t2.(^succs.signals))) implies t1 = t2
+inv2 O: all t1, t2: Track,	s: Signal |	((s in t1.(^succs.signals)) and (s in t2.(^succs.signals))) implies t1 = t2	Signal in Track
+inv2 O: all t1, t2: Track,	s: Signal |	((s in t1.(^succs.signals)) and (s in t2.(^succs.signals))) implies t1 = t2	all s: Signal | s in Track
+inv2 B: all s: Signal | one Track
+inv2 C: signals in Track one -> set Signal
+inv2 S: all s: Signal | s in one Track
+inv2 U: all s: Signal | some t: Track | s in t.signals
+inv2 S: all s: Signal | some t: Track | s in one t.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+

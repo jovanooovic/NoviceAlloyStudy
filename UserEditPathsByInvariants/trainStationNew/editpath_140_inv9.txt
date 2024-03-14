@@ -1,0 +1,8 @@
+inv9 B: all t: Track| t.succs not in Junction implies no t.signals
+inv9 B: all t: Track| Semaphore in t.signals => t.succs not in Junction
+inv9 B: all t: Track| some (t.succs & Junction) <=> no (t.signals & Semaphore)
+inv9 T: all t: Track| (t.succs & Junction) <=> no (t.signals & Semaphore)
+inv9 O: all t: Track| lone (t.succs & Junction) <=> no (t.signals & Semaphore)
+inv9 O: all t: Track| no (t.succs & Junction) <=> no (t.signals & Semaphore)
+inv9 C: all t: Track| no (t.succs & Junction) => no (t.signals & Semaphore)
+

@@ -1,0 +1,8 @@
+inv1 T: (Person & enrolled) = Student
+inv1 T: all p:Person | p in enrolled implies p in Student
+inv1 U: all p:Person | p in Person.enrolled implies p in Student
+inv1 B: all p:Person | p in Person.enrolled iff p in Student
+inv1 B: some p:Person | some(p.enrolled) iff p in Student
+inv1 B: some p:Person | some(p.enrolled) implies p in Student
+inv1 C: all p:Person | some(p.enrolled) implies p in Student
+

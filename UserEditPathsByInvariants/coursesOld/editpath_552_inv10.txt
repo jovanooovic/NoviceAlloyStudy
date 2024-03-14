@@ -1,0 +1,8 @@
+inv10 S: all g: Grades | grades.g in Student
+inv10 T: all g: Grade | grades.g in Student
+inv10 T: all p: Person, g: Grade | p->g implies p in Student
+inv10 S: all p: Student, g: Grade | Course.grandes implies p->g
+inv10 T: all p: Student, g: Grade | Course.grades implies p->g
+inv10 C: Course.grades in Student->Grade
+inv10 C: Course.grades in Student->Grade
+

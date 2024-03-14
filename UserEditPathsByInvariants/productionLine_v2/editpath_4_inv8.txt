@@ -1,0 +1,12 @@
+inv8 T: all c:Component | c in Dangerous => Human not in workers.workstation
+inv8 T: all c:Component | c in Dangerous => Human not in c->workstation.workers
+inv8 T: all c:Component | c in Dangerous => Human not in (c->workstation).workers
+inv8 T: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => Human not in workers
+inv8 S: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human h in workers)
+inv8 T: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| h in workers)
+inv8 U: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| h->ws in workers)
+inv8 C: all c:Component, ws:Workstation | c in Dangerous and c->ws in workstation => (not some h:Human| ws->h in workers)
+inv8 U: all c:Component | c in Dangerous  => (workers . workstation . c) in Robot
+inv8 U: all c:Component | c in Dangerous  => workers . workstation . c in Robot
+inv8 O: all c:Component | c in Dangerous  => c.workstation.workers in Robot
+

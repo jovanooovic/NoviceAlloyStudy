@@ -1,0 +1,17 @@
+NA H: THEME UPDATE
+inv8 B: all e:Exit | e in Entry.^succs
+inv8 B: all e:Exit | e in Entry.succs
+inv8 S: all exit:Exit, all entry:Entry | exit in entry.succs
+inv8 O: all exit:Exit, entry:Entry | exit in entry.succs
+inv8 T: all exit:Exit, entry:Entry | exit in ^(entry.succs)
+inv8 S: all exit:Exit, entry:Entry | exit in entry^.succs)
+inv8 S: all exit:Exit, entry:Entry | exit in entry^.succs
+inv8 O: all exit:Exit, entry:Entry | exit in entry.(^succs)
+inv8 B: Exit in Entry.^succs
+inv8 O: no Exit
+inv8 B: Exit in Entry.^succs
+inv8 B: all t:Track | t in Entry.^succs iff t in Exit
+inv8 B: Exit in Entry.*succs
+inv8 B: Exit in Entry + Entry.^succs
+inv8 B: Exit in Entry.^succs
+

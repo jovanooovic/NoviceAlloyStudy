@@ -1,0 +1,10 @@
+inv6 S: all t : Track | some (t.signal & Speed)
+inv6 O: all t : Track | some (t.signals & Speed)
+inv6 O: all t : Track | one (t.signals & Speed)
+inv6 T: all t : Track | (t.signals & Speed)
+inv6 O: all t : Track | one (t.signals & Speed)
+inv6 O: all t : Track | some (t.signals & Speed)
+inv6 B: all t : Track | Speed in t.signals
+inv6 T: all t : Track, s : Signal | signals.Speed
+inv6 T: all t : Track | signals.Speed
+

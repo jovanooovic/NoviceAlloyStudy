@@ -1,0 +1,6 @@
+inv4 S: (all f : File | f in Protected implies not in Trash)
+inv4 S: (all f : File | f in Protected & f not in Trash)		/* All unprotected files are deleted.. */
+inv4 S: all f : File | f in Protected & f not in Trash		/* All unprotected files are deleted.. */
+inv4 S: File = Protected	no Trash		/* All unprotected files are deleted.. */
+inv4 O: File = Protected	no Trash
+

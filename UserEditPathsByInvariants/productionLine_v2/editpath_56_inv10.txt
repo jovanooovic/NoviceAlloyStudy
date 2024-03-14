@@ -1,0 +1,9 @@
+inv10 B: all c : Component, p : Product | (p in c . parts) => (c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) => (c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation . ^~succ) in (p . workstation)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . *succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv10 B: all c : Component, p : Product | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+inv10 B: all c, p : Component | (p in c . parts) =>	(c . workstation) in (p . workstation . ^succ)
+

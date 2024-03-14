@@ -1,0 +1,32 @@
+inv3 T: all x: Photo | sees.x -> follows.x
+inv3 T: all x: Photo | sees.x -> follows.x
+inv3 O: all x: Photo | sees.x in follows.x
+inv3 B: all x: Photo | sees.x in follows.sees.x
+inv3 S: all x,y: User,Photo | sees.y in follows.x
+inv3 S: all x,y: User,Photo | sees.y in follows.x && posts.y == x
+inv3 S: all x,y: User,Photo | sees.y in follows.x && posts.y == x
+inv3 S: all x,y: User,Photo | sees.y in follows.x && posts.y == x
+inv3 S: all x:User,y:Photo | sees.y in follows.x && posts.y == x
+inv3 B: all x,y : User, p : Photo | p in x.sees && p in y.posts => y in follows.x
+inv3 B: all x,y : User, p : Photo | (p in x.sees && p in y.posts) => y in follows.x
+inv3 O: all x,y : User, p : Photo | p in x.sees => y in follows.x && p in y.posts
+inv3 O: all x,y : User, p : Photo | p in x.sees => (y in follows.x && p in y.posts)
+inv3 S: all x,y : User, p : Photo | (not p.ads && p in x.sees && p in y.posts) => y in follows.x
+inv3 S: all x,y : User, p : Photo | (not p extends ads && p in x.sees && p in y.posts) => y in follows.x
+inv3 S: all x,y : User, p : Photo | (not p extends Ad && p in x.sees && p in y.posts) => y in follows.x
+inv3 S: all x,y : User, p : Photo | ( p not Ad && p in x.sees && p in y.posts) => y in follows.x
+inv3 S: all x,y : User, p : Photo, a : Ad | (not p == a && p in x.sees && p in y.posts) => y in follows.x
+inv3 B: all x,y : User, p : Photo, a : Ad | (p != a && p in x.sees && p in y.posts) => y in follows.x
+inv3 B: all x,y : User, p : Photo, a : Ad | (p != a && p in x.sees && p in y.posts) => y in follows.x
+inv3 B: all x,y : User, p : Photo, a : Ad | (p in x.sees && p in y.posts) => (y in follows.x && p != a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts) => (y in follows.x && p != a)) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts) => (y in follows.x)) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts) => (y in follows.x && p != a)) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts && x != y) => (y in follows.x && p != a)) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts) => (y in follows.x && p != a)) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts && not p in x.posts) => (y in follows.x && p != a)) || (p = a)
+inv3 S: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts && p != a) => (y in follows.x) || (p = a)
+inv3 B: all x,y : User, p : Photo, a : Ad | ((p in x.sees && p in y.posts && p != a) => y in follows.x) || (p = a)
+inv3 B: all x,y : User, p : Photo | ((p in x.sees && p in y.posts && p not in Ad) => y in follows.x) || p in Ad
+inv3 O: all x,y : User, p : Photo | ((p in x.sees && p not in Ad) => (y in follows.x && p in y.posts)) || p in Ad
+

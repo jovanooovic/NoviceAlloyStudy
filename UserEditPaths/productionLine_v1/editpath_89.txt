@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv1 S: all c:Componet | some c.parts
+inv1 C: all c:Component | some c.parts
+inv2 C: all c:Component | no (c & c.^parts)
+inv3 C: all c:Component|  some (position.(c.position) & Robot)
+inv4 O: all c:Component | c.parts in (c.position.~^next)
+inv4 U: all c:Component | c.position not in c.position.^next
+inv4 U: all c:Component | no((c.^parts & Resource).position  & c.position.^next)
+inv4 C: all c:Component | no((c.^parts ).position  & c.position.^next)
+

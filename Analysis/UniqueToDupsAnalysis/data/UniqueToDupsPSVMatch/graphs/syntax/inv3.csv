@@ -1,0 +1,46 @@
+"all",1
+"dag[adj]",1
+"no ^.adj",1
+"no *.adj",1
+"a.^adj != a",1
+"no Node^.adj",1
+"no adj* & id",1
+"a.^adj in iden",1
+"all a,b:Node |",1
+"+adj not in id",1
+"no adj* & iden",1
+"a not in a.^adj",1
+"iden not in +adj",1
+"+adj not in iden",1
+"not iden in adj*",1
+"not in Node.^adj",1
+"a.^adj not in iden",1
+"all a:Node | no a^adj=a",1
+"all n | n->n not in ^adj",1
+"all x: Node | x not in x.^",1
+"all v : Node | no v.adj & x",1
+"all n:Node | n not in a.^adj",1
+"all n:Node | n not in n.adj~",1
+"all n:Node | n not in n.adj*",1
+"all a : Node | a not in a.ajd",1
+"all n: None | n not in n.^adj",1
+"all a : Node | a not in a.^ajd",2
+"all x: Node | x not in x.adj.*",1
+"all n : Node | no (n.^node & n)",1
+"v1.adj and v2.adj implies v1 = v2",1
+"all n: None | n not in n.~adj.adj",1
+"all n: Node | n not in n.^requires",1
+"all a,b,c:Node | a->b in adj b->c in adj",2
+"all x, y z : Node | x->y in adj and z->y in adj implies y = z",1
+"inv2
+all n : Node | n not in adj*
+}
+
+pred inv2{
+all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj",1
+"inv2
+all n : Node | n not in n.adj*
+}
+
+pred inv2{
+all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj",1

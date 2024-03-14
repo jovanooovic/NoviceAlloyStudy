@@ -1,0 +1,12 @@
+inv9 U: all w : Workstation | w not in w.^succ
+inv9 B: one begin.succ and one succ.end	all w : Workstation | w not in w.^succ
+inv9 S: one begin.succ and one succ.end	all w : Workstation | one w.succs and one succs.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation | one w.succ and one succ.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w or begin=end
+inv9 B: one begin.succ and one succ.end	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 B: one begin.succ and no succ.begin	one succ.end and no end.succ	all w : Workstation-begin-end | one w.succ and one succ.w
+inv9 U: all w : Workstation-begin | (w in begin.^succ) and (w not in w.^succ)	all w : Workstation-end | one w.succ
+inv9 C: all w : Workstation-begin | (w in begin.^succ)	all w : Workstation | (w not in w.^succ)	all w : Workstation-end | one w.succ
+inv9 C: all w : Workstation-begin | (w in begin.^succ)	all w : Workstation | w not in w.^succ	all w : Workstation-end | one w.succ
+

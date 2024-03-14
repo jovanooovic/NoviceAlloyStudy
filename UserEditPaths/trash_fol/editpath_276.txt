@@ -1,0 +1,42 @@
+NA H: THEME UPDATE
+inv1 T: Trash = {}
+inv1 T: Trash = {}
+inv1 S: Trash = Empty
+inv1 S: Trash = empty
+inv1 T: Trash t = {}
+inv1 T: Trash t = {}
+inv1 T: Trash t = {}
+inv2 S: all x in File	x in Trash
+inv1 S: t in Trash	t = {}
+inv1 T: Trash' = {}
+inv1 U: Trash' = Trash
+inv1 S: x in File	x not in Trash
+inv1 T: File x	x in File	x not in Trash
+inv1 C: all x : File | x not in Trash
+inv1 C: all x : File | x not in Trash
+inv2 C: all x : File | x in Trash
+inv3 O: one x : File | x in Trash
+inv3 T: one x : File | one x in Trash
+inv3 C: some x : File | x in Trash
+inv4 C: all x : Protected | x not in Trash
+inv5 S: all x : not in Protected | x in Trash
+inv5 S: all x : not in Protected | x in Trash
+inv5 S: all x : File | x not in Protected | x in Trash
+inv5 S: all x : File | all x not in Protected | x in Trash
+inv5 T: all x : File | x not in Protected -> x in Trash
+inv5 O: all x : File | x not in Protected and x in Trash
+inv5 C: all x : File | x not in Protected implies x in Trash
+inv6 B: all x : File | all y : File | x->y in link
+inv6 C: all x : File | all y : File | all z : File | x->y in link and x->z in link implies y=z
+inv6 C: all x : File | all y : File | all z : File | x->y in link and x->z in link implies y=z
+inv7 C: all x : File | all y : File | x->y in link implies y not in Trash
+inv8 C: all x : File | all y : File | x->y not in link
+inv9 T: all x : File | all y : File | all z : File | x->y in link and y->z implies y!=z
+inv9 O: all x : File | all y : File | all z : File | x->y in link and x->z in link implies y!=z
+inv9 U: all x : File | all y : File | all z : File | x->y in link and y->z in link implies y!=z
+inv9 O: all x : File | all y : File | all z : File | x->y in link and y->z not in link
+inv9 C: all x : File , y : File , z : File | x->y in link implies y->z not in link
+inv10 T: all x : Trash, y : Trash | x->y x in link
+inv10 B: all x : Trash, y : Trash | x->y in link
+inv10 C: all x : Trash, y : File | x->y in link implies y in Trash
+

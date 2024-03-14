@@ -1,0 +1,15 @@
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Professor | p.enrolled is none
+inv1 B: all p : Professor | p.enrolled = 0
+inv1 T: all p : Professor | p.enrolled < 1
+inv1 B: all p : Professor | p.enrolled = none
+inv1 T: all p : Person | p.enrolled implies p is Student
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 T: all p : Person | p.enrolled not none implies p in Student
+inv1 T: all p : Person |p.enrolled iff p in Student
+inv1 T: all p : Person | p.enrolled iff p in Student
+inv1 T: all p : Person | p.enrolled iff p in Student
+inv1 T: all p : Person | p.enrolled iff p in Student
+inv1 O: all p : Person, c : Course | c in p.enrolled iff p in Student
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+

@@ -1,0 +1,74 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person = Student + Teacher
+inv5 S: some c : Class, t : Teacher, g: Group c->t->g in groups
+inv5 S: some c : Class, t : Teacher, g: Group | c->t->g in groups
+inv5 B: some c : Class, t : Teacher, g: Group | c->t->g in Groups
+inv5 U: some Teaches
+inv5 B: Class->Teacher->Group in Groups
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and noy inv5o}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and noy inv5o
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5OK}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5OK
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5ok}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5ok
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv50K}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv50K
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5O}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5O
+inv5 S: Class->Teacher->Group in Groups	}		run test { inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test { inv5 and not inv5o
+inv5 S: Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o
+inv13 B: Teaches in Teacher->Student
+inv13 S: Teacher.Tutor = Person.Tutor and Student.Tutored = Person.Tutored
+inv13 S: Teacher.Tutors = Person.Tutors and Student.Tutored = Person.Tutored
+inv13 U: Teacher.Tutors = Person.Tutors and Tutors.Student = Tutors.Person
+inv13 T: Teacher.Tutors.Student = Tutors
+inv13 C: Teacher<:Tutors:>Student = Tutors
+inv13 S: Teacher<:Tutors:>+Student = Tutors
+inv13 E: 
+inv5 S: Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o	}		pred inv5{		Class->Teacher->Group in Groups	}		run test{ inv5 and not inv5o
+NA H: THEME UPDATE
+inv5 S: some (Teaches . Class & Teacher)	}		run test{ inv5 and not inv5o	}		pred inv5{	  some (Teaches . Class & Teacher)	}		run test{ inv5 and not inv5o
+inv6 B: some Teacher.Teaches
+inv6 C: all t: Teacher | some t.Teaches
+inv7 B: all c : Class | Teaches.c in Teacher
+inv7 C: all c : Class | some (Teaches.c & Teacher)
+inv7 B: some (Teaches.Class & Teacher)
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 C: all c : Class | lone (Teaches.c & Teacher)
+inv9 C: all c : Class | lone (Teaches.c & Teacher)
+inv10 B: some Student.(Class.Groups)
+inv6 C: Teacher in Teaches.Class
+inv7 C: Class in Teacher . Teaches
+inv10 B: all s : Student | some s.(Class.Groups)
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->s . Groups
+inv8 O: ~Teaches . Teaches in iden
+inv8 O: ~Teaches . Teaches in iden
+inv9 T: Teaches . ~Teaches in iden.Teacher
+inv8 T: (~Teaches .Teacher) . (Teacher.Teaches) in iden
+inv8 T: (~Teaches .Teacher) .(Teacher.Teaches) in iden
+inv8 C: (~Teaches :>Teacher) .(Teacher<:Teaches) in iden
+inv9 C: (Teacher <: Teaches) . (~Teaches :> Teacher) in iden
+inv10 B: Student in Class.Groups.Group
+inv10 B: Student = Class.Groups.Group
+inv10 S: all s: Student, c: Class | some g : Group c->s->g in Groups
+inv10 S: all s: Student, c: Class | some g : Group c->s->g in Groups
+inv10 C: all s: Student, c: Class | some g : Group | c->s->g in Groups
+inv10 C: all s: Student, c: Class | some s.(c.Groups)
+inv11 O: all c: Class | some t :Teacher | t->c in Teaches and some c.Groups
+inv15 T: all s:Student | some Teacher in s.^Teacher
+inv15 T: all s:Student |some Teacher & s.^Teacher
+inv15 B: all s:Student |some Teacher & s.^Teaches
+inv15 T: all s:Student |some Teacher in s.^Teaches
+inv15 S: all s:Student |some Teacher i s.^Tutors
+inv15 B: all s:Student |some Teacher & s.^Tutors
+inv15 B: all s:Student | Teacher in s.^Tutors
+inv15 B: all s:Student | some Teacher & s.^Tutors
+inv15 B: all s:Person | some Teacher & s.^Tutors
+inv15 S: all s:Person | some Teacher & s.+Tutors
+inv15 S: all s:Person | some Teacher & s.Tutors+
+inv15 B: all s:Person | some Teacher & s.*Tutors
+

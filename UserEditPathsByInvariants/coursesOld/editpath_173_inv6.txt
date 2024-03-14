@@ -1,0 +1,9 @@
+inv6 S: Stundent.projects - Stundent.enrolled = Stundent.projects
+inv6 U: Student.projects - Student.enrolled = Student.projects
+inv6 B: Student.projects - Student.enrolled = none
+inv6 T: Student.projects & Student.enrolled = Student.projects
+inv6 U: Student.projects & Student.enrolled.projects = Student.projects
+inv6 U: Student.projects - Student.enrolled.projects = none
+inv6 U: Person.projects - Person.enrolled.projects = none
+inv6 B: all s:Student | s.(Person<:projects).~(Course<:projects) in s.enrolled
+

@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g in (h + prev[h] + next[h])
+inv15 T: all p : Project, g,h : (projects.p).grades.(projects.p) | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades.(Person<:projects.p) | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades.(Course<:projects.p) | g in (h + prev[h] + next[h])
+inv15 O: all p : Project, g,h : (projects.p).grades[Person<:projects.p] | g in (h + prev[h] + next[h])
+inv15 U: all p : Project, g,h : (projects.p).grades[Course<:projects.p] | g in (h + prev[h] + next[h])
+inv15 O: all p : Project, g,h : (projects.p).grades[Person<:projects.p] | g in (h + prev[h] + next[h])
+inv14 B: all s : Student , u : Student - s, p :Project, r : Project-p | p in s.projects and p in u.projects implies r in s.projects or r in u.projects
+inv14 B: all s : Student , u : Student - s | lone u.projects & u.projects
+inv14 B: all s : Student , u : Student - s | lone( u.projects & u.projects )
+inv14 U: all s : Student , u : Student - s | lone( s.projects & u.projects )	  	all s : Student, t : Student - s | lone (s.projects & t.projects)
+inv12 B: all s : Student, c : Course | c in s.enrolled and lone c.grades.s
+inv12 B: all s : Student, c : Course | c in s.enrolled and lone ~(c.grades).s
+inv12 T: all s : Student, c : Course | c in s.enrolled and  ~(c.grades).s
+inv12 U: all s : Student, c : Course | c in s.enrolled implies  lone  ~(c.grades).s
+inv11 U: all s: Student , c: Course | s in c.grades.Grade implies c in s.enrolled
+inv10 C: all p : Person | p in Course.grades.Grade implies p in Student
+inv9 B: all t : Professor , r : Professor - t | r.enrolled not in t.teaches
+inv9 B: all t : Professor , r : Professor - t |t !=r implies r.enrolled not in t.teaches
+inv9 B: all t : Professor , r : Professor  |t !=r implies r.enrolled not in t.teaches
+inv8 U: all p : Professor , c : Course | c in p.teaches implies c not in p.enrolled
+inv8 U: all p : Professor , c : Course | c in p.teaches implies c not in p.enrolled
+inv9 B: all t : Professor , r : Professor-t , c : Course | c in t.teaches implies c not in r.enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in r.enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in (Professor-r).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches iff c not in (Professor-r).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches iff c not in (Professor-t).enrolled
+inv9 B: all t : Professor , r : Professor , c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches iff c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | c in t.teaches implies c not in (Professor-t).enrolled
+inv9 B: all t : Professor ,  c : Course | no t.teaches & (Professor-t).enrolled
+inv9 B: all t : Professor  | no (t.teaches & (Professor-t).enrolled)
+inv9 B: all x : Professor | no (Professor-x).enrolled & x.teaches
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv8 T: all p : Professor , c : Course | c in p->teaches implies c not in p->enrolled
+inv8 U: all p : Professor , c : Course | p->c in teaches implies p->c not in enrolled
+

@@ -1,0 +1,21 @@
+inv9 B: no Professor.teaches & Professor.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & (p.enrolled.~teaches)		no teaches.(Professor.teaches) & Professor.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & (p.enrolled.~teaches)
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & (p.enrolled.~teaches)-p
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & p.teaches.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & p.teaches.enrolled
+inv9 T: all p: Professor | no (p.teaches.~teaches)-p in p.teaches.enrolled
+inv9 B: all p: Professor | (p.teaches.~teaches)-p not in p.teaches.enrolled
+inv9 U: all p: Professor | no (p.teaches.~teaches) & p.teaches.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & p.teaches.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & p.teaches.enrolled
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 B: all p: Professor | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 O: all p: Person | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 O: all p: Person | no (p.teaches.~teaches) & enrolled.(p.teaches)
+inv9 O: all p: Person | no (p.teaches.~teaches)-p & enrolled.(p.teaches)
+inv9 C: all p: Person | no ((p.teaches.~teaches)-p) & enrolled.(p.teaches)
+inv9 C: all p: Person | no ((p.teaches.~teaches)-p) & enrolled.(p.teaches)
+

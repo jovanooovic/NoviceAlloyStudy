@@ -1,0 +1,21 @@
+inv5 T: all i : Influencer | User.follows.i
+inv5 T: all i : Influencer | User.follows.i
+inv5 T: all u : User | u in Influencer => User.follows.u
+inv5 T: all u : User | u in Influencer => User.follows.u
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all User, i : Influencer | User.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 T: all u : User, i : Influencer | u.follows.i
+inv5 B: all u : User, i : Influencer | u in follows.i
+inv5 B: all u : User | u in follows.Influencer
+inv5 O: all u : User | u in follows.Influencer and u not in Influencer
+inv5 B: all u : User | u in follows.Influencer
+inv5 B: all u : User - Influencer | u in follows.Influencer
+inv5 B: all u : User | u in follows.Influencer
+inv5 B: all i : Influencer | User in Influencer.follows
+inv5 B: all i : Influencer | User in follows.i
+

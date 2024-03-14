@@ -1,0 +1,7 @@
+inv17 O: always (some t:Train | once (t.pos in Entry and historically no Entry) and eventually(t.pos in Exit and historically no Exit))
+inv17 S: always (some t:Train | historically no Train.pos) and eventually(t.pos in Exit and historically no Exit))
+inv17 O: always (some t:Train | historically no Train.pos and eventually(t.pos in Exit and historically no Exit))
+inv17 O: always (some t:Train | before historically no Train.pos and eventually(t.pos in Exit and historically no Exit))
+inv17 T: always (some t:Train | historically lone (Train.pos + t) and eventually (t.pos in Exit and historically lone (Train.Exit + t)))
+inv17 O: always (some t:Train | historically lone (Train.pos + t) and eventually (t.pos in Exit and historically lone (pos.Exit + t)))
+

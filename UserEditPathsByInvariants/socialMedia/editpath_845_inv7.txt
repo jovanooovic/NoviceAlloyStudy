@@ -1,0 +1,11 @@
+inv7 S: all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in i1.follows
+inv7 U: all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+inv7 S: all distinct u1, u2, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+inv7 U: all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows and u3 != u1
+inv7 E:
+inv7 T: all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows and u3 != u1 != u2
+inv7 U: all u1: User, u2: User, u3: User | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+inv7 S: all u1: User, u2: User-u1, u3: User-u3 | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+inv7 U: all u1: User, u2: User-u1, u3: User-u2-u1 | u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+inv7 U: all u1: User, u2: User, u3: User | u1 != u2 and u1 != u3 and u2 != u3 and u3 in u1.suggested and u2 in u1.follows and u3 in u2.follows implies u3 not in u1.follows
+

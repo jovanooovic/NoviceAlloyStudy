@@ -1,0 +1,10 @@
+Pairs,4
+,,"all s:State | some trans",3
+,,"all s : State | some State.trans",1
+
+Pairs,4
+,,"all s:State , e:Event | some e->s",1
+,,"let s = State <: Event.trans | s.~s in iden",1
+,,"let s = State <: trans.Event | s.~s in iden",1
+,,"let s = State <: State.trans | s.~s in iden",1
+

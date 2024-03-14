@@ -1,0 +1,16 @@
+inv5 B: all inf : Influencer | inf in User.follows
+inv5 B: all inf : Influencer | all u: User | inf in u.follows
+inv5 U: all inf : Influencer | all u: User-Influencer | inf in u.follows
+inv5 B: all inf : Influencer | all u: User | inf in u.follows
+inv5 B: all inf : Influencer | inf in User.follows
+inv5 B: all inf : Influencer | all u: User | inf in u.follows
+inv5 B: all inf : Influencer | all u: User | inf in u.follows	all inf,inf2 : Influencer | inf in inf2.follows
+inv5 B: all u: User | all inf : Influencer |  inf in u.follows
+inv5 O: all u: User | all inf : Influencer |  inf in u.follows and inf not in inf.follows
+inv5 T: all u: User | all inf : Influencer |  inf in u.follows and inf
+inv5 B: all u: User | all inf : Influencer |  inf in u.follows
+inv5 U: all u : User-Influencer | all inf : Influencer |  inf in u.follows
+inv5 B: all u : User | all inf : Influencer |  inf in u.follows
+inv5 U: all inf : Influencer | all u : User-inf |  inf in u.follows
+inv5 U: all inf : Influencer | all u : User-inf |  inf in u.follows
+

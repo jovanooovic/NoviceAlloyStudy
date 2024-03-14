@@ -1,0 +1,9 @@
+inv5 S: all w:Workstation | w.workers &
+inv5 S: all w:Workstation | w.workers &
+inv5 S: all s:Workstation, h:Human, r:Robot |hnot in s.workers or r not in s.workers
+inv5 C: all s:Workstation, h:Human, r:Robot |h not in s.workers or r not in s.workers
+inv5 S: all s:Workstation | w.workers in Human or w.workers in Robot
+inv5 O: all s:Workstation | s.workers in Human or s.workers in Robot
+inv5 C: no workers.Human & workers.Robot
+inv5 C: no (workers.Human & workers.Robot)
+

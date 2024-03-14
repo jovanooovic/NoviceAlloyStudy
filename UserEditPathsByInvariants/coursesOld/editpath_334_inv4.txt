@@ -1,0 +1,10 @@
+inv4 S: all p : Project |
+inv4 B: all c : Course | lone c.projects
+inv4 S: all c1, c2 : Course | no (c1.projects & c2.projects)
+inv4 S: all c1, c2 : Course | no (c1.projects & c2.projects)
+inv4 S: all c1, c2 : Course | no c1.projects & c2.projects
+inv4 S: all disj c1, c2 : Course | no c1.projects & c2.projects
+inv4 S: all disj c1, c2 : Course | lone c1.projects & c2.projects
+inv4 S: all disj c1, c2 : Course | no c1.projects & c2.projects
+inv4 U: all disj c1, c2 : Course | no c1.projects & c2.projects
+

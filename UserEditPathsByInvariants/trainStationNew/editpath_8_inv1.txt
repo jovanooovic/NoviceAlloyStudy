@@ -1,0 +1,16 @@
+inv1 S: all t:track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)
+inv1 T: all t:Track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)
+inv1 B: all t:Track | #Entry&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Junction&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(^succs.t)>0 and #Entry&(t.^succs+^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.*succs+*succs.t)>0 and #Entry&(t.*succs+*succs.t)>0
+inv1 B: all t:Track | #Exit&(t.succs)>0 and #Entry&(t.succs)>0
+inv1 B: all t:Track | #Exit&(t.succs+succs.t)>0 and #Entry&(t.succs+succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs)>0 and #Entry&(^succs.t)>0
+inv1 B: all t:Track | #Exit&(t.*succs)>0 and #Entry&(*succs.t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(*succs.t+t)>0
+inv1 B: all t:Track | #Exit&(t.^succs+t)>0 and #Entry&(^succs.t+t)>0
+inv1 U: all t:Track | #Entry > 0 and #Exit >0
+inv1 C: #Entry > 0 and #Exit >0
+

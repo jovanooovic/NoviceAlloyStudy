@@ -1,0 +1,7 @@
+inv3 S: all u1, u2 : User, p : photo | not (u1 -> p in sees and u1 -> u2 in follows)	not some add : Ad | all u : User u -> add not in sees
+inv3 S: all u1, u2 : User, p : photo | not (u1 -> p in sees and u1 -> u2 in follows)	not some add : Ad | all u : User | u -> add not in sees
+inv3 B: all u1, u2 : User, p : Photo | not (u1 -> p in sees and u1 -> u2 in follows)	not some add : Ad | all u : User | u -> add not in sees
+inv3 S: all u1, u2 : User, p : Photo | not (u1 -> p in sees and u1 -> u2 in follows and p not in Add)	not some add : Ad | all u : User | u -> add not in sees
+inv3 B: all u1, u2 : User, p : Photo | not (u1 -> p in sees and u1 -> u2 in follows and p not in Ad)	not some ad : Ad | all u : User | u -> ad not in sees
+inv3 B: all u1, u2 : User, p : Photo | not (u1 -> p in sees and u1 -> u2 in follows and u2 -> p in posts and p not in Ad)	not some ad : Ad | all u : User | u -> ad not in sees
+

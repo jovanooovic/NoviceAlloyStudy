@@ -1,0 +1,7 @@
+inv12 B: all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all c : Course | all s : Student | all g : Grade | c in s.enrolled implies s->g in c.grades	  all s1, s2 : Student | all c : Course | (s1 in c.grades.Grade) and (s2 in c.grades.Grade) implies (s1 != s2 and s1 in c.enrolled and s2 in c.enrolled)
+inv12 B: all c : Course | all s : Student | all g : Grade | c in s.enrolled implies s->g in c.grades	  all s1, s2 : Student | all c : Course | (s1 in c.grades.Grade) and (s2 in c.grades.Grade) implies (s1 != s2 and c in s1.enrolled and c in s2.enrolled)
+inv12 B: all c : Course | all s : Student | all g : Grade | c in s.enrolled implies s->g in c.grades	  all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 T: all s : Student | all g1, g2 : Grade | all c : Course | s->g1 in c.grades.Grade and s->g2 in c.grades.Grade implies g1 = g2
+inv12 U: all s : Student | all g1, g2 : Grade | all c : Course | s->g1 in c.grades and s->g2 in c.grades implies g1 = g2
+

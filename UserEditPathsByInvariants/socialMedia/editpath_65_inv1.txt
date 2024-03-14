@@ -1,0 +1,10 @@
+inv1 S: all x : Photo -> some user : User
+inv1 B: all x : Photo, u : User | some user : User | x in user.posts implies x not in u.posts
+inv1 U: all x : Photo, u : User | some user : User | x in posts.user implies x not in posts.User
+inv1 U: all x : Photo, u : User | some user : User | x in posts.user implies x not in posts.u
+inv1 U: all x : Photo, u : User | some user : User | x in posts.user implies x not in posts.u
+inv1 B: all x : Photo, u : User | u->x in posts implies x in User
+inv1 S: all x : Photo | u : User | u->x in posts implies x in User
+inv1 B: all x : Photo |all u : User | u->x in posts implies x in User
+inv1 B: all p : Photo | some u : User | u->p in posts implies p not in User.posts
+

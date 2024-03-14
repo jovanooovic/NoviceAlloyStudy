@@ -1,0 +1,12 @@
+inv4 T: all u : User | some a : Ad | a in u.posts implies all a : u.posts | a is Ad
+inv4 B: all u : User | some a : Ad | a in u.posts implies all a : u.posts | a = Ad
+inv4 B: all u : User | one p : Photo | p in u.posts and one a : Ad | a = p implies all p1 : u.posts | p1 = Ad
+inv4 S: all u : User | one p : Photo | p in u.posts and set a : Ad | a = p implies all p1 : u.posts | p1 = Ad
+inv4 S: all u : User | one p : Photo | p in u.posts and set a : Ad | a = p implies all p1 : Photo | p1 in u.posts and p1 = Ad
+inv4 B: all u : User | one p : Photo | p in u.posts and some a : Ad | a = p implies all p1 : Photo | p1 in u.posts and p1 = Ad
+inv4 B: all u : User | one p : Photo | p in u.posts and all a : Ad | a = p implies all p1 : Photo | p1 in u.posts and p1 = Ad
+inv4 S: all u : User | all p : Photo | p in u.posts and some p = Ad implies all p = Ad
+inv4 S: all u : User | all p : Photo | p in u.posts and some p | Ad implies all p | Ad
+inv4 S: all u : User | all p : u.posts | one a : Ad | p = a implies all a1 : Add | a in u.posts
+inv4 B: all u : User | all p : u.posts | one a : Ad | p = a implies all a1 : Ad | a in u.posts
+

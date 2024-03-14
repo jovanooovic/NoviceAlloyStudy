@@ -1,0 +1,7 @@
+inv4 T: all s1, s2 : State | (s1 in Init) implies(s2 in s1.^trans)
+inv4 T: all s1, s2 : State | (s1 in Init) implies(s2 in (s1.^trans))
+inv4 T: all s1, s2 : State | (s1 in Init) implies (s2 in (s1.^trans))
+inv4 T: all s1, s2 : State , e : Event | (s1 in Init) implies (s2 in (s1.e.^trans))
+inv4 T: all s1, s2 : State , e : Event | (s1 in Init) implies (s2 in (e.(s1.^trans)))
+inv4 T: all s1, s2 : State | (s1 in Init) implies (s2 in (s1.^trans))
+

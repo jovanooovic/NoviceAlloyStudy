@@ -1,0 +1,10 @@
+inv8 S: some a: Add | all u: User | a in u.sees implies a in (u.follows.posts or u.suggested.posts)
+inv8 T: some a: Ad | all u: User | a in u.sees implies a in (u.follows.posts or u.suggested.posts)
+inv8 T: some a: Ad | all u: User | a in u.sees implies a in (u.follows.posts or u.suggested.posts)
+inv8 T: some a: Photo | all u: User | a in u.sees implies a in (u.follows.posts or u.suggested.posts)
+inv8 B: some a: Photo | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+inv8 B: some a: Ad | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+inv8 B: some a: Ad | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts + u.posts)
+inv8 U: all a: Ad | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts + u.posts)
+inv8 C: all a: Ad | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)
+

@@ -1,0 +1,32 @@
+NA H: THEME UPDATE
+inv1 U: all p:Photo | some u : User | p in u.posts
+inv1 C: all p:Photo | one u : User | p in u.posts
+inv2 C: all u:User | u not in u.follows
+inv3 S: all u:User | all p:u.sees | f:u.follows | p in f.posts
+inv3 O: all u:User, p:Photo | p in u.sees => p in u.follows.posts
+inv3 O: all u:User, p:Photo | p in u.sees => p in u.follows.posts
+inv3 C: all u:User, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 S: all u:user, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 C: all u:User, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv4 O: all u:User | all p:u.posts | p in Ad
+inv4 S: all u:User, a:Add | a in u.posts => u.posts in Add
+inv4 C: all u:User, a:Ad | a in u.posts => u.posts in Ad
+inv4 C: all u:User, a:Ad | a in u.posts => u.posts in Ad
+inv5 S: all i:Influencer, u:user | u!=i => u in i.follows
+inv5 B: all i:Influencer, u:User | u!=i => u in i.follows
+inv5 U: all i:Influencer, u:User | u!=i => i in u.follows
+inv5 U: all i:Influencer, u:User | u!=i => i in u.follows
+inv6 C: all i:Influencer, d:Day | d in i.posts.date
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 B: all u:User | u.suggested not in u.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows.follows
+inv7 S: all u:User | u.suggested not in u.follows |  u.suggested in u.follows
+inv7 B: all u:User | u.suggested not in u.follows &&  u.suggested in u.follows.follows
+inv7 B: all disj u,uu:User | u.suggested not in u.follows &&  u.suggested in uu.follows.follows
+inv7 B: all u:User | u.suggested not in u.follows &&  u.suggested in u.follows.follows
+inv8 O: all u:User,a:Ad | a in u.follows.posts or a in u.suggested.posts
+inv8 C: all u:User,a:Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+

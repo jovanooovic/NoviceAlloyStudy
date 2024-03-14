@@ -1,0 +1,8 @@
+inv6 O: all e:Event|some s:State | some trans.(e->s)
+inv6 O: some s:State |all e:Event| some trans.(e->s)
+inv6 O: all e:Event|some s:(State-Init) | some trans.(e->s)
+inv6 O: all e:Event|some s:State | some trans.(e->s)
+inv6 O: all e:Event|some s:State | some trans.(e->s) or one trans.(e->s)
+inv6 T: all e:Event |some s,s1:State | some (s1->e->s) in trans
+inv6 C: all e:Event |some s,s1:State |  (s1->e->s) in trans
+

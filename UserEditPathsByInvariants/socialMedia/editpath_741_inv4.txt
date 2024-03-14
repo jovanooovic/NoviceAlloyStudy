@@ -1,0 +1,11 @@
+inv4 S: all u : User, some a : Ad | a in u.posts implies u.posts in Ad
+inv4 S: all u : User | all p : Photo | some a : Ad | a in u.posts and n in u.posts implies n in Ad
+inv4 B: all u : User | all n : Photo | some a : Ad | a in u.posts and n in u.posts implies n in Ad
+inv4 S: all u : User, some a : Ad | a in u.posts implies all n : Photo | n in u.posts implies n in Ad
+inv4 B: all u : User | some a : Ad | a in u.posts implies all n : Photo | n in u.posts implies n in Ad
+inv4 B: all u : User | all n : Photo | some a : Ad | a in u.posts and n in u.posts implies n in Ad
+inv4 B: all u : User | all n : Photo | some a : Ad | a in u.posts and n in u.posts implies n in Ad
+inv4 B: all u : User | some a : Ad | a in u.posts implies all n : Photo | n in u.posts implies n in Ad
+inv4 C: all u : User | all n : Photo | all a : Ad | a in u.posts and n in u.posts implies n in Ad
+inv4 C: all u : User | all a : Ad | a in u.posts implies all n : Photo | n in u.posts implies n in Ad
+

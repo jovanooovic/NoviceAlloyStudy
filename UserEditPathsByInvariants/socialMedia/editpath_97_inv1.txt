@@ -1,0 +1,4 @@
+inv1 U: all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x=y
+inv1 C: all y : univ | y in Photo implies some x : User | x->y in posts	all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x = y
+inv1 C: all y : Photo | some x : User | x->y in posts	all p : Photo | all x, y : User | x->p in posts and y->p in posts implies x = y
+

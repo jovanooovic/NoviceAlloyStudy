@@ -1,0 +1,8 @@
+inv3 T: all s : State | (Event.s).(s.Event) in iden
+inv3 B: let st = trans.State | ~st.st in iden
+inv3 U: all s : State, e : Event | lone s.trans.e
+inv3 U: all s : State, e : Event | lone (s->e).trans
+inv3 C: all s : State, e : Event | lone e.(s.trans)
+inv3 T: all s : State, e : Event | lone e.s.trans
+inv3 C: all s : State, e : Event | lone e.(s.trans)
+

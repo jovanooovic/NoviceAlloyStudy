@@ -1,0 +1,8 @@
+inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v1->v1 in adj
+inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v1->v1 in adj and v2->v2 in adj)
+inv3 U: all v1, v2 : Node | v1->v2 in adj implies not (v2->v1 in adj and v2->v2 in adj)
+inv3 U: all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj
+inv3 T: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 implies not v1 = v3
+inv3 U: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies not v1 = v3
+inv3 B: all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies v1 = v3
+

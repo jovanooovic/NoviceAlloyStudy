@@ -1,0 +1,4 @@
+inv2 U: all w: Workstation | some workers	all w: Worker | (one work : Workstation | w in work.workers)
+inv2 C: all w: Workstation | some w.workers	all w: Worker | (one work : Workstation | w in work.workers)
+inv2 C: all w : Worker | #(workers.w) = 1	all  wt : Workstation | #(wt.workers) > 0
+

@@ -1,0 +1,8 @@
+inv5 S: all x : Influencer | all x.follows
+inv5 S: all x : Influencer | all follows.x
+inv5 S: all x : Influencer | all follows.y
+inv5 S: all x : Influencer | all follows.x
+inv5 B: all x : Influencer , y : User | y in follows.x
+inv5 O: all x : Influencer , y : User | y in follows.x and y != x
+inv5 O: all x : Influencer , y : User | y in follows.x and x not in follows.x
+

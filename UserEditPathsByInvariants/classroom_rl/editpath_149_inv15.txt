@@ -1,0 +1,6 @@
+inv15 B: all p : Person | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors
+inv15 B: all p : Person - Teacher | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors
+inv15 B: all t1 : Teacher | some t : Teacher | t1->t in Tutors or t1->t in Tutors.Tutors
+inv15 T: all p : Person | some t : Teacher | p in Tutors or p->t in Tutors or p->t in Tutors.Tutors
+inv15 B: all p : Person | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors or p->t in Tutors.Tutors.Tutors
+

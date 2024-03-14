@@ -1,0 +1,18 @@
+inv6 O: all e1, e2 : Node | e2 in e1.*adj or e2 in *adj.e1
+inv6 O: all e1, e2 : Node | e2 in e1.*adj + *adj.e1
+inv6 O: all e1, e2 : Node | e2 in (e1.*adj + *adj.e1)
+inv6 S: all e1 | Node in (e1.*adj + *adj.e1)
+inv6 S: all e1 | Node in (e1.*adj + *adj.e1)
+inv6 O: all e1 : Node | Node in (e1.*adj + *adj.e1)
+inv6 S: all e1 : Node | Node in (e1.+adj + +adj.e1)
+inv6 O: all e1 : Node | Node in (e1.^adj + ^adj.e1)
+inv6 O: all e1 : Node | Node in (e1.^adj + ^adj.e1) - e1
+inv6 O: all e1 : Node | Node in ((e1.^adj + ^adj.e1) - e1)
+inv6 O: all e1 : Node | (Node - e1) in (e1.^adj + ^adj.e1)
+inv6 O: all e1 : Node | (Node - e1) in (e1.^adj + *adj.e1)
+inv6 O: all e1 : Node | (Node - e1) in (e1.*adj + *adj.e1)
+inv6 O: all e1 : Node | Node in (e1.*adj + *adj.e1) + (e1.~*adj + ~*adj.e1)
+inv6 O: all e1 : Node | Node in (e1.*adj + e1.~*adj)
+inv6 O: all e1 : Node | Node in (e1.*adj + e1.~*adj + *adj.e1 + ~*adj.e1)
+inv6 O: all e1 : Node | Node in (e1.*adj + ^adj.e1)
+

@@ -1,0 +1,23 @@
+inv7 S: all s : State | (s in Init.(^onlyStates)) implies (Init in s.~(^onlyStates))
+inv7 B: let t = {x,y : State | some z : Event | x->z->y in trans} | State in ~(^t).Init
+inv7 O: all x : State, y : Init, z : Event | trans in y one -> one z one -> one x
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} | Init in Init.*trans_bin.*trans_bin
+inv7 T: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans and s1 in s1.trans
+inv7 T: all s1, s2 : State, e1, e2 : Event | (s1->e1->s2 in trans) implies ((s2->e2->s1 in trans) and (s1 in s1.trans))
+inv7 O: let trans2 = {s1, s2 : State | some s1.trans.s2} | iden in ^trans2
+inv7 S: let t = {x,y : State | some z : Event | x->z->y in trans} | all s : State | Init in s.~t}
+inv7 B: let t = {x,y : State | some z : Event | x->z->y in trans} | {all s : State | Init in s.~t}
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} | Init in ~(*trans_bin).State
+inv7 O: all x : Event | (trans.x) in State one -> one State
+inv7 B: all s1,s2:State | some e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 S: let trans2 = {s1, s2 : State | some s1.trans.s2} |\n    no State.trans2
+inv7 O: let trans2 = {s1, s2 : State | some s1.trans.s2} | no State.trans2
+inv7 B: some (Event.(State.trans))
+inv7 O: all x : State, y : Init, z : Event | trans in y one -> one z one -> one x and z != y
+inv7 E:
+inv7 S: all s1, s2 : State | (s1 in s2.(^onlyStates)) implies (s2 in s1.(^onlyStates))
+inv7 S: all s1, s2 : State | (s1 in s2.(^onlyStates)) implies (s2 in s1.~(^onlyStates))
+inv7 S: all s : State | (s in Init.(^onlyStates)) implies (Init in s.(^onlyStates))
+inv7 S: all s : State, i : Init | (s in i.(^onlyStates)) implies (i in s.(^onlyStates))
+inv7 S: all s : State | (one Init) and ((s in Init.(^onlyStates)) implies (Init in s.(^onlyStates)))
+

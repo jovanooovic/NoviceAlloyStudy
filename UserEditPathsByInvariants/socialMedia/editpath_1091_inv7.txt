@@ -1,0 +1,16 @@
+inv7 U: all disj u,uu: User | uu not in u.follows && uu in u.follows.follows => uu in u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows | uu not in u.follows && uu in f  => uu in u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows |  uu in u.suggested  => uu not in u.follows && uu in f
+inv7 B: all disj u,uu: User | some f: u.follows.follows - u | uu not in u.follows && uu in f  => uu in u.suggested
+inv7 C: all u: User | u.suggested = (u.follows.follows - (u.follows + u))
+inv7 C: all disj u,uu: User, f: u.follows.follows - u | uu not in u.follows && uu in f  => uu in u.suggested	all u: User | u.suggested = (u.follows.follows - (u.follows + u))
+inv7 U: all disj u,uu: User, f: u.follows.follows - u | uu not in u.follows && uu in f  => uu in u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows - u | uu not in u.follows && uu in f  => uu = u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows  | uu not in u.follows && uu in f  => uu = u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows  | uu not in u.follows && uu in f  => uu = (u.suggested-u)
+inv7 B: all disj u,uu: User | some f: u.follows.follows  | uu not in u.follows && uu in f  => uu = u.suggested
+inv7 B: all disj u,uu: User | some f: u.follows.follows  | uu not in u.follows && uu in f  => uu in u.suggested
+inv7 C: all u: User | u.suggested = (u.follows.follows - u.follows - u)
+inv7 S: all u: User | u.suggested = (u.follows.follows - (u.follows + u)
+inv7 C: all u: User | u.suggested = (u.follows.follows - (u.follows + u))
+

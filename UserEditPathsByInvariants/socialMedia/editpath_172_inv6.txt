@@ -1,0 +1,7 @@
+inv6 S: all i : Influencer | all x,y : i.posts | x.date.next == y.date
+inv6 B: all i : Influencer | all x,y : i.posts | x.date.next = y.date
+inv6 B: all i : Influencer | all x,y : i.posts | x.date = y.date.next
+inv6 U: all i : Influencer | all x,y : i.posts | x.date != y.date.next
+inv6 B: all i : Influencer | all x,y : i.posts | x.date = y.date + 1
+inv6 B: all i : Influencer | all x,y : i.posts - Ad | x.date = y.date + 1
+

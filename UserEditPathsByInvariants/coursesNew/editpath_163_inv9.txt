@@ -1,0 +1,8 @@
+inv9 B: all s:Professor |all c:s.teaches | c not in s.enrolled
+inv9 B: all disj s,j:Person |all c:s.teaches |  c in j.enrolled implies j not in Professor
+inv9 B: all disj s,j:Professor |all c:s.teaches |  c in j.enrolled implies j not in Professor
+inv9 U: all disj s,j:Professor |all c:s.teaches |  j not in c.enrolled
+inv9 B: all disj s,j:Professor |all c:s.teaches |  c not in j.enrolled
+inv9 U: all disj s,j:Professor |some (s.teaches & j.teaches) implies no (s.enrolled & j.teaches)
+inv9 U: all disj s,j:Professor |some (s.teaches & j.teaches) implies no (s.enrolled & j.teaches)
+

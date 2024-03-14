@@ -1,0 +1,9 @@
+inv1 O: all n: Node | n.adj.adj = n
+inv1 T: all n: Node | one n.adj.adj = n
+inv1 B: all n,m: Node | n.adj = m implies m.adj = n
+inv1 B: all n,m: Node | n.adj = m iff m.adj = n
+inv1 B: all n,m: Node | n.adj in m iff m.adj in n
+inv1 S: all n,m: Node | n.adj in m if m.adj in n
+inv1 B: all n,m: Node | n.adj in m => m.adj in n
+inv1 B: all n,m: Node | n.adj in m <=> m.adj in n
+

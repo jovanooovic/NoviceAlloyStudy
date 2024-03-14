@@ -1,0 +1,12 @@
+inv4 T: all u : User | u.posts+Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts implies u.posts in Ad
+inv4 T: all u : User | u.posts&Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts&Ad implies u.posts-Ad = none
+inv4 T: all u : User | u.posts&Ad
+inv4 T: all u : User | u.posts
+inv4 T: all u : User | u
+inv4 E:
+inv4 B: all u : User | u.sees-Ad in u.follows.posts
+inv4 C: all u : User | u.posts&Ad != none implies u.posts-Ad = none
+inv4 C: all u : User | some u.posts&Ad implies u.posts-Ad = none
+

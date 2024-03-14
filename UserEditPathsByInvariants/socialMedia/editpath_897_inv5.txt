@@ -1,0 +1,21 @@
+inv5 S: all u : User-Influencer | x.follows in follows.Influencer
+inv5 B: all u : User-Influencer | u.follows in follows.Influencer
+inv5 B: all u : User-Influencer | all i : Influencer | u.follows in follows.i
+inv5 U: all u : User-Influencer | all i : Influencer | i in u.follows
+inv5 B: all u : User | all i : Influencer | i in u.follows
+inv5 B: all i : Influencer | all u : User  | i in u.follows
+inv5 B: all i : Influencer | all u : User | i in u.follows
+inv5 B: all i : Influencer | all u : User | i in u.follows
+inv5 S: all x : User | all y : Influencer | y in u.follows
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 B: all x : User | all y : Influencer | x in follows.y
+inv5 B: all x : User | some y : Influencer | x in follows.y
+inv5 B: all x : User | all y : Influencer | y in x.follows
+inv5 B: all y : Influencer | all x : User  | y in x.follows
+inv5 B: all y : Influencer | all x : User  | x in follows.y
+inv5 S: all y : Influencer | all x : User  | u != y implies x in follows.y
+inv5 U: all y : Influencer | all x : User  | x != y implies x in follows.y
+inv5 O: all x : User | x not in follows.x	all y : Influencer | all x : User  |  x in follows.y
+inv5 U: all y : Influencer | all x : User  | x != y implies x in follows.y
+inv5 U: all y : Influencer | all x : User  | x != y implies x in follows.y
+

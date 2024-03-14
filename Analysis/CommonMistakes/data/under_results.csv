@@ -1,0 +1,557 @@
+
+classroom_fol
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Person in Student", , ,3,1,0,0,0,
+
+inv2_oracle,"no Teacher", , ,2,1,0,0,0,
+
+inv3_oracle,"no Student & Teacher", , ,4,2,0,0,0,
+
+inv4_oracle,"Person in Student + Teacher", , ,5,2,0,0,0,
+
+inv5_oracle,"some Teacher.Teaches", , ,4,2,0,0,0,
+
+inv6_oracle,"all t:Teacher | some t.Teaches", , ,10,3,0,1,0,
+
+inv7_oracle,"all c:Class | some Teacher&Teaches.c", , ,12,4,0,1,0,
+
+inv8_oracle,"all t:Teacher | lone t.Teaches", , ,10,3,0,1,0,
+
+inv9_oracle,"all c:Class | lone Teacher&Teaches.c", , ,12,4,0,1,0,
+
+inv10_oracle,"all c:Class,s:Student | some s.(c.Groups)", , ,16,5,0,1,0,
+
+inv11_oracle,"all c:Class | some c.Groups implies some Teacher&Teaches.c", , ,17,6,1,1,0,
+inv11,"all c: Class, s:Student, g:Group | c->s->g in Groups => some t: Teacher | t->c in Teaches",11,26.82926829268293,33,9,1,2,0,-16,-3,0,-1,0,0.5151515151515151,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"all x:Teacher | some x.Teaches.Groups", , ,12,4,0,1,0,
+
+inv13_oracle,"Tutors in Teacher -> Student", , ,5,2,0,0,0,
+
+inv14_oracle,"all c:Class,p:Person | p in (c.Groups).Group implies Teaches.c -> p in Tutors", , ,25,8,1,1,0,
+inv14,"all s:Student,c:Class,t:Teacher | (some g:Group | c->s->g in Groups) and t->c in Teaches implies t->s in Tutors",13,11.607142857142858,39,11,2,2,0,-14,-3,-1,-1,0,0.6410256410256411,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv15_oracle,"all p:Person | some Teacher&(^Tutors).p", , ,13,5,0,1,0,
+
+classroom_rl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Person in Student", , ,3,1,0,0,0,
+
+inv2_oracle,"no Teacher", , ,2,1,0,0,0,
+
+inv3_oracle,"no Student & Teacher", , ,4,2,0,0,0,
+
+inv4_oracle,"Person in Student + Teacher", , ,5,2,0,0,0,
+
+inv5_oracle,"some Teacher.Teaches", , ,4,2,0,0,0,
+inv5,"some Teaches",15,22.058823529411764,2,1,0,0,0,2,1,0,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"all t:Teacher | some t.Teaches", , ,10,3,0,1,0,
+
+inv7_oracle,"all c:Class | some Teacher&Teaches.c", , ,12,4,0,1,0,
+inv7,"all c:Class | some Teaches.c",37,51.388888888888886,10,3,0,1,0,2,1,0,0,0,1.2,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"all t:Teacher | lone t.Teaches", , ,10,3,0,1,0,
+
+inv9_oracle,"all c:Class | lone Teacher&Teaches.c", , ,12,4,0,1,0,
+
+inv10_oracle,"all c:Class,s:Student | some s.(c.Groups)", , ,16,5,0,1,0,
+
+inv11_oracle,"all c:Class | some c.Groups implies some Teacher&Teaches.c", , ,17,6,1,1,0,
+
+inv12_oracle,"all x:Teacher | some x.Teaches.Groups", , ,12,4,0,1,0,
+
+inv13_oracle,"Tutors in Teacher -> Student", , ,5,2,0,0,0,
+
+inv14_oracle,"all c:Class,p:Person | p in (c.Groups).Group implies Teaches.c -> p in Tutors", , ,25,8,1,1,0,
+
+inv15_oracle,"all p:Person | some Teacher&(^Tutors).p", , ,13,5,0,1,0,
+
+coursesNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"enrolled in Student -> Course", , ,5,2,0,0,0,
+
+inv2_oracle,"teaches in Professor -> Course", , ,5,2,0,0,0,
+
+inv3_oracle,"teaches in Person some -> Course", , ,5,2,0,0,0,
+
+inv4_oracle,"all p : Project | one (Course <: projects).p", , ,10,3,0,1,0,
+inv4,"all p:Project | p in Course.projects",10,25.64102564102564,11,3,0,1,0,-1,0,0,0,0,0.9090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"all p : Project | some (Person <: projects).p
+	all p : Project | (Person <: projects).p in Student", , ,22,6,1,2,0,
+
+inv6_oracle,"all p : Person | p.projects in p.enrolled.projects", , ,15,5,0,1,0,
+inv6,"all s:Student| s.projects in s.enrolled.projects",27,15.428571428571427,15,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all u : Student | all p: u.projects | some c : Course | c in u.enrolled and p in c.projects",19,10.857142857142858,31,8,1,3,0,-16,-3,-1,-2,0,0.4838709677419355,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all s: Student | all p: s.projects | some c: Course | c in s.enrolled and p in c.projects",16,9.142857142857142,31,8,1,3,0,-16,-3,-1,-2,0,0.4838709677419355,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all p : Person, c : Course | lone p.projects & c.projects", , ,18,6,0,1,0,
+inv7,"all s:Student|all c:s.enrolled|lone (c.projects & s.projects)",43,21.5,22,7,0,2,0,-4,-1,0,-1,0,0.8181818181818182,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all s:Student, c:Course| lone (s.projects & c.projects)",10,5.0,18,6,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"(all p : Person | no p.teaches & p.enrolled)", , ,14,5,0,1,0,
+inv8,"all p:Professor |all c:p.teaches | c not in p.enrolled",29,11.372549019607844,19,5,0,2,0,-5,0,0,-1,0,0.7368421052631579,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p : Professor | p !in p.teaches",23,9.019607843137255,11,3,0,1,0,3,2,0,0,0,1.2727272727272727,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p:Professor, c:Course | c in p.teaches => c not in p.enrolled",17,6.666666666666667,21,6,1,1,0,-7,-1,-1,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p:Professor |no p.teaches & p.enrolled",13,5.098039215686274,14,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p : Professor | all c : Course | c in p.teaches => c not in p.enrolled",11,4.313725490196078,23,6,1,2,0,-9,-1,-1,-1,0,0.6086956521739131,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p:Professor, c:Course | p in teaches.c implies p not in enrolled.c",11,4.313725490196078,21,6,1,1,0,-7,-1,-1,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"all p : Person | no (p.teaches.~teaches - p) & p.teaches.~enrolled", , ,22,10,0,1,0,
+inv9,"all p : Professor | all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches)",43,31.15942028985507,31,11,1,2,0,-9,-1,-1,-1,0,0.7096774193548387,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"Course.grades.Grade in Student", , ,7,3,0,0,0,
+
+inv11_oracle,"all c : Course | c.grades.Grade in enrolled.c", , ,15,5,0,1,0,
+inv11,"all s : Student, c : Course | s in c.grades.Grade => c in s.enrolled",10,10.638297872340425,23,7,1,1,0,-8,-2,-1,0,0,0.6521739130434783,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"all p : Person, c : Course | lone p.(c.grades)", , ,16,5,0,1,0,
+inv12,"all s:Student, c:Course | lone g:Grade| s->g in c.grades",12,9.836065573770492,23,6,0,2,0,-7,-1,0,-1,0,0.6956521739130435,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv13_oracle,"all c : Course, p : Person | last in p.(c.grades) implies some p.projects & c.projects", , ,26,9,1,1,0,
+inv13,"all s:Student, c:Course | s in c.grades.last implies (some p:Project | p in c.projects and p in s.projects)",15,25.0,35,10,2,2,0,-9,-1,-1,-1,0,0.7428571428571429,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv14_oracle,"all p : Person, disj x,y : p.projects | no ((Person <: projects).x & projects.y) - p", , ,23,8,0,1,0,
+inv14,"all x: Student | all col : Student - x | lone (x.projects & col.projects)",25,23.364485981308412,22,7,0,2,0,1,1,0,-1,0,1.0454545454545454,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv15_oracle,"all c : Course, p : c.projects, disj x,y : (Person <: projects).p | some c.grades[x] and some c.grades[y] implies c.grades[x] in c.grades[y].(prev+iden+next)", , ,50,19,2,1,0,
+
+coursesOld
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"enrolled in Student -> Course", , ,5,2,0,0,0,
+
+inv2_oracle,"teaches in Professor -> Course", , ,5,2,0,0,0,
+
+inv3_oracle,"teaches in Person some -> Course", , ,5,2,0,0,0,
+
+inv4_oracle,"all p : Project | one (Course <: projects).p", , ,10,3,0,1,0,
+inv4,"all p:Project|p in  Course.projects",25,15.24390243902439,11,3,0,1,0,-1,0,0,0,0,0.9090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"Project in Course.projects",13,7.926829268292683,5,2,0,0,0,5,1,0,1,0,2.0,0,0,0,0,0,0,0,1,0,0,0,0
+inv4,"all p : Project | one p&Course.projects",11,6.707317073170732,12,4,0,1,0,-2,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all p : Project | one Course.projects&p",10,6.097560975609756,12,4,0,1,0,-2,-1,0,0,0,0.8333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv4,"all p:Project | some c:Course | c->p in projects",10,6.097560975609756,17,4,0,2,0,-7,-1,0,-1,0,0.5882352941176471,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"all p : Project | some (Person <: projects).p
+	all p : Project | (Person <: projects).p in Student", , ,22,6,1,2,0,
+inv5,"all p:Project | some s:Student | s->p in projects",12,3.2432432432432434,17,4,0,2,0,5,2,1,0,0,1.2941176470588236,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"no (Person-Student) & projects.Project",12,3.2432432432432434,8,4,0,0,0,14,2,1,2,0,2.75,0,0,0,0,0,0,0,1,0,0,0,0
+inv5,"all p: Project | some s: Student | p in s.projects",11,2.9729729729729732,17,4,0,2,0,5,2,1,0,0,1.2941176470588236,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"all p : Person | p.projects in p.enrolled.projects", , ,15,5,0,1,0,
+inv6,"all s:Student | s.projects in s.enrolled.projects",65,28.888888888888886,15,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all s:Student, p:Project | s->p in projects => some c:Course | s->c in enrolled and c->p in projects",22,9.777777777777779,33,9,2,2,0,-18,-4,-2,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all p : Person, c : Course | lone p.projects & c.projects", , ,18,6,0,1,0,
+inv7,"all s:Student , c:Course | lone(s.projects & c.projects)",32,10.921501706484642,18,6,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all s : Student, c: s.enrolled | lone s.projects & c.projects",18,6.143344709897611,20,7,0,1,0,-2,-1,0,0,0,0.9,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all s:Student, c:Course | c in s.enrolled implies lone s.projects & c.projects",15,5.1194539249146755,24,8,1,1,0,-6,-2,-1,0,0,0.75,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all s1 : Student | all p1,p2 : Project | all c1 : Course | 
+  ((s1->p1 in projects) and (s1->p2 in projects) and (c1->p1 in projects) and (c1->p2 in projects)) implies p1=p2",12,4.09556313993174,44,12,2,3,0,-26,-6,-2,-2,0,0.4090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all s : Student | all p1,p2:Project | all c: Course|(p1+p2) in s.projects and (p1+p2 in c.projects) implies p1=p2",11,3.754266211604096,38,10,2,3,0,-20,-4,-2,-2,0,0.47368421052631576,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all c:Course, s:Student | lone s.projects & c.projects",11,3.754266211604096,18,6,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"(all p : Person | no p.teaches & p.enrolled)", , ,14,5,0,1,0,
+inv8,"all p: Professor | no p.teaches&p.enrolled",50,14.925373134328357,14,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p:Professor, c:Course | p->c in teaches => p->c not in enrolled",22,6.567164179104477,21,6,1,1,0,-7,-1,-1,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p : Professor, c: Course | c in p.teaches => c not in p.enrolled",18,5.3731343283582085,21,6,1,1,0,-7,-1,-1,0,0,0.6666666666666666,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p : Professor | p not in p.teaches.~enrolled",12,3.582089552238806,14,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv8,"all p: Professor | all c: Course | c in p.teaches implies c not in p.enrolled",11,3.2835820895522385,23,6,1,2,0,-9,-1,-1,-1,0,0.6086956521739131,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv9_oracle,"all p : Person | no (p.teaches.~teaches - p) & p.teaches.~enrolled", , ,22,10,0,1,0,
+inv9,"all p1,p2 : Professor | all c1:Course | p1!=p2 and p1->c1 in teaches and p2->c1 in teaches implies all c2 : Course | p1->c2 in teaches implies p2->c2 not in enrolled",15,9.49367088607595,45,12,3,3,0,-23,-2,-3,-2,0,0.4888888888888889,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"Course.grades.Grade in Student", , ,7,3,0,0,0,
+
+inv11_oracle,"all c : Course | c.grades.Grade in enrolled.c", , ,15,5,0,1,0,
+inv11,"all s:Student | grades.Grade.s in s.enrolled",27,14.594594594594595,15,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv11,"all s:Student, c:Course, g:Grade | c->s->g in grades => s->c in enrolled",10,5.405405405405405,27,8,1,1,0,-12,-3,-1,0,0,0.5555555555555556,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"all p : Person, c : Course | lone p.(c.grades)", , ,16,5,0,1,0,
+inv12,"all s:Student, c:Course | lone s.(c.grades)",20,6.944444444444445,16,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"all s:Student | all c:Course | lone s.(c.grades)",12,4.166666666666666,18,5,0,2,0,-2,0,0,-1,0,0.8888888888888888,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"all p1 : Student | all c1 : Course | (p1->c1 in enrolled) implies (lone g1 : Grade | c1->p1->g1 in grades)",10,3.4722222222222223,31,8,1,3,0,-15,-3,-1,-2,0,0.5161290322580645,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"all s : Student, c: s.enrolled | lone s.(c.grades)",10,3.4722222222222223,18,6,0,1,0,-2,-1,0,0,0,0.8888888888888888,0,0,0,0,0,0,0,0,0,0,0,0
+inv12,"all s: Student, c:Course | lone g: Grade | s->g in c.grades",10,3.4722222222222223,23,6,0,2,0,-7,-1,0,-1,0,0.6956521739130435,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv13_oracle,"all c : Course, p : Person | last in p.(c.grades) implies some p.projects & c.projects", , ,26,9,1,1,0,
+inv13,"all s: Student | all c: Course | s in c.grades.last implies (some p: Project | p in c.projects and p in s.projects)",21,13.636363636363635,37,10,2,3,0,-11,-1,-1,-2,0,0.7027027027027027,0,0,0,0,0,0,0,0,0,0,0,0
+inv13,"all s : Student | all c : Course | some g1 : Grade |   
+  	g1 in c.grades.Person implies (some p : Project | p in c.projects and p in s.projects)",10,6.493506493506493,43,11,2,4,0,-17,-2,-1,-3,0,0.6046511627906976,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv14_oracle,"all p : Person, disj x,y : p.projects | no ((Person <: projects).x & projects.y) - p", , ,23,8,0,1,0,
+inv14,"all disj s1,s2: Student | lone s1.projects&s2.projects",28,16.56804733727811,15,5,0,1,0,8,3,0,0,0,1.5333333333333334,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"all s1,s2:Student| s1 != s2 => lone s1.projects & s2.projects",14,8.284023668639055,19,6,1,1,0,4,2,-1,0,0,1.2105263157894737,0,0,0,0,0,0,0,0,0,0,0,0
+inv14,"all s1,s2 : Student | all p1,p2 : Project | (s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies ( (s1->p2 not in projects) or (s2->p2 not in projects) )",11,6.508875739644971,43,12,3,2,0,-20,-4,-3,-1,0,0.5348837209302325,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv15_oracle,"all c : Course, p : c.projects, disj x,y : (Person <: projects).p | some c.grades[x] and some c.grades[y] implies c.grades[x] in c.grades[y].(prev+iden+next)", , ,50,19,2,1,0,
+
+cv_v1
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"all u : User | u.visible in u.profile", , ,13,4,0,1,0,
+inv1,"",40,54.794520547945204,1,0,0,0,0,12,4,0,1,0,13.0,0,0,0,0,0,0,0,1,0,0,0,0
+inv1,"User.visible in User.profile",15,20.54794520547945,7,3,0,0,0,6,1,0,1,0,1.8571428571428572,0,0,0,0,0,0,0,1,0,0,0,0
+
+inv2_oracle,"all u : User | u.profile.source in Institution+u", , ,15,5,0,1,0,
+
+inv3_oracle,"all u : User, disj x,y : u.profile | x.source = y.source implies no (x.ids & y.ids)", , ,29,10,1,1,0,
+
+inv4_oracle,"all u : User, disj x,y : u.visible | x not in y.^(ids.~ids)", , ,22,8,0,1,0,
+inv4,"all u:User, w:Work | w in u.profile implies lone (u.visible & w)",13,13.829787234042554,22,7,1,1,0,0,1,-1,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+cv_v2
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"all u : User | u.visible in u.profile", , ,13,4,0,1,0,
+
+inv2_oracle,"all u : User | u.profile.source in Institution+u", , ,15,5,0,1,0,
+
+inv3_oracle,"all u : User, disj x,y : u.profile | x.source = y.source implies no (x.ids & y.ids)", , ,29,10,1,1,0,
+
+inv4_oracle,"all u : User, disj x,y : u.visible | x not in y.^((u.profile <: ids).~(u.profile <: ids))", , ,30,12,0,1,0,
+
+graphs
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"adj = ~adj", , ,4,2,0,0,0,
+
+inv2_oracle,"no adj & ~adj", , ,5,3,0,0,0,
+
+inv3_oracle,"all n : Node | n not in n.^adj", , ,12,4,0,1,0,
+
+inv4_oracle,"adj = Node -> Node", , ,5,2,0,0,0,
+inv4,"all n:Node | Node in n.^adj",10,7.042253521126761,12,4,0,1,0,-7,-2,0,-1,0,0.4166666666666667,0,1,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"no adj & iden", , ,4,2,0,0,0,
+
+inv6_oracle,"all n:Node | Node = n.*(adj+~adj)", , ,15,6,0,1,0,
+
+inv7_oracle,"all n:Node | Node = n.*adj", , ,12,4,0,1,0,
+
+inv8_oracle,"adj = ^adj", , ,4,2,0,0,0,
+
+lts
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"all s:State | some s.trans", , ,10,3,0,1,0,
+
+inv2_oracle,"one Init", , ,2,1,0,0,0,
+
+inv3_oracle,"all s : State, e : Event | lone e.(s.trans)", , ,16,5,0,1,0,
+inv3,"all s:State,e:Event | lone s.trans.e",15,21.428571428571427,16,5,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"let ts = {s1,s2:State | some e:Event | s1->e->s2 in trans} | all s:State | some i:Init | s in i.^ts", , ,41,11,0,3,0,
+
+inv5_oracle,"all s1,s2:State | s1.trans.State = s2.trans.State", , ,18,6,0,1,0,
+
+inv6_oracle,"State.trans.State = Event", , ,7,3,0,0,0,
+
+inv7_oracle,"let ts = {s1,s2:State | some e:Event | s1->e->s2 in trans} | all s:Init.^ts | some i:Init | i in s.^ts", , ,44,13,0,3,0,
+
+productionLine_v1
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"all c : Component | some c.parts", , ,10,3,0,1,0,
+inv1,"",47,90.38461538461539,1,0,0,0,0,9,3,0,1,0,10.0,0,0,0,0,0,0,0,1,0,0,0,0
+
+inv2_oracle,"all c : Component | c not in c.^parts", , ,12,4,0,1,0,
+inv2,"all c:Component | c not in c.parts",25,35.714285714285715,11,3,0,1,0,1,1,0,0,0,1.0909090909090908,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"all c : Component | some position.(c.position) & Robot", , ,14,5,0,1,0,
+
+inv4_oracle,"all c : Component, p : c.parts & Component | lte[p.position,c.position]", , ,21,6,1,1,0,
+
+productionLine_v2
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Worker = Human + Robot", , ,5,2,0,0,0,
+
+inv2_oracle,"workers in Workstation one -> some Worker", , ,5,2,0,0,0,
+
+inv3_oracle,"all c : Component | one c.workstation", , ,10,3,0,1,0,
+
+inv4_oracle,"all c : Component | some c.parts
+	all m : Material | no m.parts", , ,21,6,1,2,0,
+inv4,"all c:Component, m:Material | some c.parts and no m.parts",11,21.153846153846153,19,6,1,1,0,2,0,0,1,0,1.105263157894737,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv5_oracle,"all c : Workstation | no (c.workers & Human) or no (c.workers & Robot)", , ,19,7,1,1,0,
+
+inv6_oracle,"no c : Component | c in c.^parts", , ,12,4,0,1,0,
+inv6,"all c:Component | c not in c.parts",50,34.01360544217687,11,3,0,1,0,1,1,0,0,0,1.0909090909090908,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all c:Component | c->c not in parts",20,13.60544217687075,11,3,0,1,0,1,1,0,0,0,1.0909090909090908,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all c : Component | some c.parts & Dangerous implies c in Dangerous", , ,16,5,1,1,0,
+
+inv8_oracle,"all c : Component & Dangerous | no c.workstation.workers & Human", , ,16,6,0,1,0,
+
+inv9_oracle,"all w : Workstation - end | one w.succ
+	no end.succ
+	Workstation in begin.*succ", , ,23,9,1,1,0,
+inv9,"all w:Workstation | w not in w.^succ",10,3.9215686274509802,12,4,0,1,0,11,5,1,0,0,1.9166666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv10_oracle,"all c : Component, p : c.parts | p.workstation in ^succ.(c.workstation)", , ,22,8,0,1,0,
+
+productionLineNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"Worker = Human + Robot", , ,5,2,0,0,0,
+
+inv2_oracle,"workers in Workstation one -> some Worker", , ,5,2,0,0,0,
+
+inv3_oracle,"all c : Component | one c.workstation", , ,10,3,0,1,0,
+
+inv4_oracle,"all c : Component | some c.parts
+	all m : Material | no m.parts", , ,21,6,1,2,0,
+
+inv5_oracle,"all c : Workstation | no (c.workers & Human) or no (c.workers & Robot)", , ,19,7,1,1,0,
+
+inv6_oracle,"no c : Component | c in c.^parts", , ,12,4,0,1,0,
+inv6,"all c : Component | c !in c.parts",43,42.15686274509804,11,3,0,1,0,1,1,0,0,0,1.0909090909090908,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all c : Component | some c.parts & Dangerous implies c in Dangerous", , ,16,5,1,1,0,
+
+inv8_oracle,"all c : Component & Dangerous | no c.workstation.workers & Human", , ,16,6,0,1,0,
+
+inv9_oracle,"all w : Workstation - end | one w.succ
+	no end.succ
+	Workstation in begin.*succ", , ,23,9,1,1,0,
+
+inv10_oracle,"all c : Component, p : c.parts | p.workstation in ^succ.(c.workstation)", , ,22,8,0,1,0,
+
+socialMedia
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"all p : Photo | one posts.p", , ,10,3,0,1,0,
+inv1,"all x:Photo | some y:User | y->x in posts",66,13.580246913580247,17,4,0,2,0,-7,-1,0,-1,0,0.5882352941176471,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Photo| p in User.posts",40,8.23045267489712,11,3,0,1,0,-1,0,0,0,0,0.9090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Photo |some u:User | p in u.posts",36,7.4074074074074066,17,4,0,2,0,-7,-1,0,-1,0,0.5882352941176471,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Photo | some u:User | u->p in posts",18,3.7037037037037033,17,4,0,2,0,-7,-1,0,-1,0,0.5882352941176471,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all p:Photo | lone posts.p",16,3.292181069958848,10,3,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"Photo in User.posts",14,2.880658436213992,5,2,0,0,0,5,1,0,1,0,2.0,0,0,0,0,0,0,0,1,0,0,0,0
+inv1,"all x:Photo | some posts.x",12,2.4691358024691357,10,3,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv1,"all u1,u2:User | all p:Photo | u1->p in posts and u2->p in posts implies u1=u2",11,2.263374485596708,28,7,2,2,0,-18,-4,-2,-1,0,0.35714285714285715,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv2_oracle,"all p : User | p not in p.follows", , ,11,3,0,1,0,
+
+inv3_oracle,"all p : User | p.sees - Ad in p.follows.posts", , ,17,6,0,1,0,
+
+inv4_oracle,"all u : posts.Ad | u.posts in Ad", , ,13,4,0,1,0,
+
+inv5_oracle,"all i : Influencer | follows.i = User - i", , ,13,4,0,1,0,
+inv5,"all i:Influencer | all u:User-i | i in u.follows",46,5.852417302798982,19,5,0,2,0,-6,-1,0,-1,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer, u:User | u!=i => i in u.follows",43,5.470737913486006,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all u:User | Influencer-u in u.follows",31,3.9440203562340965,13,4,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer, u:User | u!=i => u->i in follows",23,2.926208651399491,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer | User-i in follows.i",21,2.6717557251908395,13,4,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer, u:User-i| i in u.follows",20,2.5445292620865136,17,5,0,1,0,-4,-1,0,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer, u:User | i!=u => i in u.follows",20,2.5445292620865136,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all u:User, i:Influencer|u!=i => i in u.follows",17,2.1628498727735366,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"User->Influencer - iden in follows",13,1.653944020356234,7,3,0,0,0,6,1,0,1,0,1.8571428571428572,0,0,0,0,0,0,0,1,0,0,0,0
+inv5,"all i:Influencer | all u :User | u!= i => i in u.follows",13,1.653944020356234,21,5,1,2,0,-8,-1,-1,-1,0,0.6190476190476191,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all u:User-Influencer, i:Influencer | i in u.follows",13,1.653944020356234,17,5,0,1,0,-4,-1,0,0,0,0.7647058823529411,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i: Influencer | follows.i in User",12,1.5267175572519083,11,3,0,1,0,2,1,0,0,0,1.1818181818181819,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer,u:User | i!=u implies u->i in follows",12,1.5267175572519083,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all i:Influencer | all u:User-i | u in follows.i",12,1.5267175572519083,19,5,0,2,0,-6,-1,0,-1,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+inv5,"all u: User, i: Influencer | i != u => i in u.follows",11,1.3994910941475827,19,5,1,1,0,-6,-1,-1,0,0,0.6842105263157895,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv6_oracle,"all i : Influencer, d : Day | some i.posts & date.d", , ,18,6,0,1,0,
+inv6,"all i:Influencer | i.posts.date in Day",15,18.51851851851852,13,4,0,1,0,5,2,0,0,0,1.3846153846153846,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"all u : User | u.suggested = u.follows.follows - u.follows - u", , ,21,8,0,1,0,
+inv7,"all disj u, uu : User | u in uu.follows.follows && u !in uu.follows => u in uu.suggested",53,4.387417218543047,26,8,2,1,0,-5,0,-2,0,0,0.8076923076923077,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all u : User | u.suggested in u.follows.follows-u.follows-u",39,3.2284768211920527,21,8,0,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all u : User | u.suggested in u.follows.follows-u.follows",33,2.7317880794701987,19,7,0,1,0,2,1,0,0,0,1.105263157894737,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all x,z:User| x->z in suggested implies (some y:User| x->y in follows and y->z in follows and x->z not in follows)",22,1.8211920529801324,35,10,2,2,0,-14,-2,-2,-1,0,0.6,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all u: User| u.suggested in u.follows.follows",12,0.9933774834437087,15,5,0,1,0,6,3,0,0,0,1.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all u1, u2 : User | u2 in u1.suggested => u2 in u1.follows.follows and u2 not in u1.follows",11,0.9105960264900662,26,8,2,1,0,-5,0,-2,0,0,0.8076923076923077,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows",10,0.8278145695364238,26,8,2,1,0,-5,0,-2,0,0,0.8076923076923077,0,0,0,0,0,0,0,0,0,0,0,0
+inv7,"all x : User | x.suggested in x.follows.follows-x.follows",10,0.8278145695364238,19,7,0,1,0,2,1,0,0,0,1.105263157894737,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"all u : User, p : u.sees & Ad | p in u.(follows+suggested).posts", , ,23,8,0,1,0,
+
+trainStationNew
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"some Entry
+	some Exit", , ,5,2,1,0,0,
+
+inv2_oracle,"all s : Signal | one signals.s", , ,10,3,0,1,0,
+inv2,"all s:Signal | s in Track.signals",15,17.441860465116278,11,3,0,1,0,-1,0,0,0,0,0.9090909090909091,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"all s:Signal | some t:Track | s in t.signals",10,11.627906976744185,17,4,0,2,0,-7,-1,0,-1,0,0.5882352941176471,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv3_oracle,"all t : Track | t in Exit iff no t.succs", , ,14,4,1,1,0,
+inv3,"no Exit.succs",81,11.095890410958905,4,2,0,0,0,10,2,1,1,0,3.5,0,0,0,0,0,0,0,1,0,0,0,0
+inv3,"all e:Exit| no e.succs",78,10.684931506849315,10,3,0,1,0,4,1,1,0,0,1.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t:Track| no t.succs => t in Exit",73,10.0,14,4,1,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t:Track| t in Exit => no t.succs",68,9.315068493150685,14,4,1,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t: Track| t in Exit => no t.^succs",23,3.1506849315068495,15,5,1,1,0,-1,-1,0,0,0,0.9333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Track| x in Exit => no x.succs",15,2.054794520547945,14,4,1,1,0,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all x:Exit| no x.succs",15,2.054794520547945,10,3,0,1,0,4,1,1,0,0,1.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t:Exit | no t.succs",13,1.7808219178082192,10,3,0,1,0,4,1,1,0,0,1.4,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t:Track| #t.succs=0 => t in Exit",12,1.643835616438356,16,5,1,1,0,-2,-1,0,0,0,0.875,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all t: Exit | #t.succs = 0",12,1.643835616438356,12,4,0,1,0,2,0,1,0,0,1.1666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+inv3,"all e:Exit | all t:Track | e->t not in succs",10,1.36986301369863,17,4,0,2,0,-3,0,1,-1,0,0.8235294117647058,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv4_oracle,"all t : Track | t in Entry iff no succs.t", , ,14,4,1,1,0,
+inv4,"no succs.Entry",10,7.042253521126761,4,2,0,0,0,10,2,1,1,0,3.5,0,0,0,0,0,0,0,1,0,0,0,0
+
+inv5_oracle,"all t : Track | t not in Junction iff lone succs.t", , ,14,4,1,1,0,
+
+inv6_oracle,"all t : Entry | some t.signals & Speed", , ,12,4,0,1,0,
+inv6,"all e:Entry | some e.signals",11,29.72972972972973,10,3,0,1,0,2,1,0,0,0,1.2,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"no t : Track | t in t.^succs", , ,12,4,0,1,0,
+inv7,"all t:Track | t not in t.succs",11,18.96551724137931,11,3,0,1,0,1,1,0,0,0,1.0909090909090908,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv8_oracle,"all e : Entry, x : Exit | x in e.*succs", , ,16,5,0,1,0,
+
+inv9_oracle,"all t : Track | no t.succs & Junction implies no t.signals & Semaphore", , ,19,7,1,1,0,
+
+inv10_oracle,"all j : Junction, t : succs.j | some t.signals & Semaphore", , ,18,6,0,1,0,
+
+trainStationOld
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Green", , ,2,1,0,0,0,
+
+inv2_oracle,"all s : Signal | eventually s in Green", , ,10,2,0,1,1,
+
+inv3_oracle,"always pos' = pos", , ,5,1,0,0,2,
+
+inv4_oracle,"always all t : Track | lone pos.t", , ,11,3,0,1,1,
+
+inv5_oracle,"all t : Train | always (some t.pos implies (t.pos' = t.pos or (t.pos in Exit implies no t.pos' else (some t.pos' and t.pos' in t.pos.prox))))", , ,48,16,4,1,5,
+
+inv6_oracle,"all s : Signal | always eventually (s in Green) and always eventually (s not in Green)", , ,17,3,1,1,4,
+
+inv7_oracle,"all t : Train | always (some t.pos implies eventually no t.pos)", , ,17,5,1,1,2,
+
+inv8_oracle,"all t : Train, p : Track | always (t.pos = p and p.signal not in Green implies (p.signal in Green releases t.pos = p))", , ,34,10,2,1,2,
+
+inv9_oracle,"all t : Train | no t.pos until (some t.pos & Entry)", , ,17,6,0,1,1,
+
+inv10_oracle,"all j : Junction | always lone (prox.j).signal & Green", , ,15,5,0,1,1,
+
+inv11_oracle,"all t : Train | always (some t.pos implies once some t.pos & Entry)", , ,19,6,1,1,2,
+
+inv12_oracle,"all t : Train | always (some t.pos implies some e : *prox.(t.pos) & Entry | all x : *prox.(t.pos) & e.*prox | once t.pos = x)", , ,47,17,1,3,2,
+
+inv13_oracle,"all t : Train | always ((no t.pos and once some t.pos) implies always no t.pos)", , ,23,7,2,1,3,
+
+inv14_oracle,"all s : Signal, t : Train | always (s in Green and t.pos = signal.s and t.pos' != signal.s implies after s not in Green)", , ,35,10,2,1,3,
+
+inv15_oracle,"all t : Train, p : Track | not (eventually always t.pos = p)", , ,18,5,0,1,2,
+
+inv16_oracle,"all t : Train | always (some t.pos & Exit implies (some t.pos since some t.pos & Entry))", , ,25,9,1,1,2,
+
+inv17_oracle,"all t : Train | always ((some t.pos and historically no (Train-t).pos) implies (no Train.pos & Exit until some t.pos & Exit))", , ,33,12,2,1,3,
+
+inv18_oracle,"all j : Junction | always (all disj x,y : pos.(prox.j) | before (x in pos.(prox.j) and y not in pos.(prox.j)) implies (x in pos.j releases (y not in pos.j)))", , ,46,14,2,2,3,
+
+trash_fol
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash", , ,2,1,0,0,0,
+
+inv2_oracle,"File in Trash", , ,3,1,0,0,0,
+
+inv3_oracle,"some Trash", , ,2,1,0,0,0,
+
+inv4_oracle,"no Protected & Trash", , ,4,2,0,0,0,
+
+inv5_oracle,"File = Trash + Protected", , ,5,2,0,0,0,
+
+inv6_oracle,"link in File -> lone File", , ,5,2,0,0,0,
+
+inv7_oracle,"no File.link & Trash", , ,6,3,0,0,0,
+
+inv8_oracle,"no link", , ,2,1,0,0,0,
+
+inv9_oracle,"no link.link", , ,4,2,0,0,0,
+
+inv10_oracle,"all f : File | f in Trash implies f.link in Trash", , ,15,4,1,1,0,
+
+trash_ltl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash + Protected", , ,4,2,0,0,0,
+
+inv2_oracle,"no File
+  	some File'", , ,6,2,1,0,1,
+inv2,"after some File",15,15.0,3,1,0,0,1,3,1,1,0,0,2.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"historically no File until some File",12,12.0,6,2,0,0,2,0,0,1,0,-1,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv2,"no File",10,10.0,2,1,0,0,0,4,1,1,0,1,3.0,0,0,0,0,0,0,0,0,1,0,0,0
+
+inv3_oracle,"always some File", , ,3,1,0,0,1,
+
+inv4_oracle,"eventually some Trash", , ,3,1,0,0,1,
+
+inv5_oracle,"eventually (some f:File | f not in File')", , ,11,2,0,1,2,
+
+inv6_oracle,"always Trash in Trash'", , ,5,1,0,0,2,
+inv6,"all f : File | f in Trash => always f in Trash",33,25.78125,14,3,1,1,1,-9,-2,-1,-1,1,0.35714285714285715,0,0,0,0,0,0,0,0,0,0,0,0
+inv6,"all f: File | always( f in Trash implies always f in Trash)",15,11.71875,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv7_oracle,"eventually some Protected", , ,3,1,0,0,1,
+
+inv8_oracle,"always (all f:link.File | eventually f in Trash)", , ,13,3,0,1,2,
+
+inv9_oracle,"always no Protected & Trash", , ,5,2,0,0,1,
+
+inv10_oracle,"always Protected = Protected'", , ,5,1,0,0,2,
+inv10,"always all f:Protected | always f in Protected",22,8.799999999999999,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always all f:File | f in Protected implies always f in Protected",19,7.6,15,3,1,1,2,-10,-2,-1,-1,0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always Protected in Protected'",17,6.800000000000001,5,1,0,0,2,0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always all f:File | f in Protected implies f in Protected",13,5.2,14,3,1,1,1,-9,-2,-1,-1,1,0.35714285714285715,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"always all p:Protected | always p in Protected",12,4.8,11,2,0,1,2,-6,-1,0,-1,0,0.45454545454545453,0,0,0,0,0,0,0,0,0,0,0,0
+inv10,"all f:Protected | always f in Protected",12,4.8,10,2,0,1,1,-5,-1,0,-1,1,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv11_oracle,"always File-Protected in Protected'", , ,7,2,0,0,2,
+inv11,"File - Protected in Protected'",11,23.91304347826087,6,2,0,0,1,1,0,0,0,1,1.1666666666666667,0,0,0,0,0,0,0,0,0,0,0,0
+
+inv12_oracle,"eventually some f : File | always f in Trash", , ,11,2,0,1,2,
+
+inv13_oracle,"always (all f:Trash | once f not in Trash)", , ,11,2,0,1,2,
+
+inv14_oracle,"always (all f:Trash&Protected | f not in Protected')", , ,13,3,0,1,2,
+
+inv15_oracle,"always (all f:File | eventually f in Trash)", , ,11,2,0,1,2,
+
+inv16_oracle,"always (all f:Protected | historically f in Protected)", , ,11,2,0,1,2,
+
+inv17_oracle,"always (no Trash&File')", , ,6,2,0,0,2,
+
+inv18_oracle,"always all f : Protected | f in Trash releases f in Protected", , ,14,3,0,1,2,
+
+inv19_oracle,"always all f : Protected | f in Protected until f in Trash", , ,14,3,0,1,2,
+
+inv20_oracle,"always (all f:Trash | not (f not in Trash triggered f in Protected))", , ,15,4,0,1,2,
+
+trash_rl
+exercise,submission,#Sub,Percent,#AST,#RL,#PL,#FOL,#LTL,DiffT,DiffRL,DiffPL,DiffFOL,DiffLTL,PctDiff,Up-RL-PL,Up-RL-FOL,Up-RL-LTL,Up-PL-FOL,Up-PL-LTL,UP-FOL-LTL,Down-PL-RL,Down-FOL-RL,Down-LTL-RL,Down-FOL-RL,Down-LTL-PL,Down-LTL-FOL,
+
+inv1_oracle,"no Trash", , ,2,1,0,0,0,
+
+inv2_oracle,"File in Trash", , ,3,1,0,0,0,
+
+inv3_oracle,"some Trash", , ,2,1,0,0,0,
+
+inv4_oracle,"no Protected & Trash", , ,4,2,0,0,0,
+
+inv5_oracle,"File = Trash + Protected", , ,5,2,0,0,0,
+
+inv6_oracle,"link in File -> lone File", , ,5,2,0,0,0,
+
+inv7_oracle,"no File.link & Trash", , ,6,3,0,0,0,
+
+inv8_oracle,"no link", , ,2,1,0,0,0,
+
+inv9_oracle,"no link.link", , ,4,2,0,0,0,
+
+inv10_oracle,"all f : File | f in Trash implies f.link in Trash", , ,15,4,1,1,0,
+

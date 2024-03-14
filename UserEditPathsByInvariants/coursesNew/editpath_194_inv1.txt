@@ -1,0 +1,5 @@
+inv1 T: all p : Person, c : Course | p.enrolled => p in Student
+inv1 T: all p : Person | p in Professor => not p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv1 C: all p : Person - Student | no p.enrolled
+

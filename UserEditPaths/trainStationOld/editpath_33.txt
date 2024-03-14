@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv3 B: all t : Train | always t.pos in Entry
+inv3 B: all t : Train | always t.pos in Entry or t.pos in Exit
+inv3 O: all t : Train | always no t.pos
+inv3 B: all t : Train | always t.pos in Entry
+inv3 B: all t : Train | always t.pos in Entry or always t.pos in Exit
+inv5 B: always all t : Train, p : t.pos | (t.pos)' in p.prox || Exit = p.prox
+inv3 B: always no Green
+inv3 B: all t : Train | always no Green & t.pos.signal
+inv3 C: all t : Train | always t.pos = t.pos'
+inv3 C: always pos = pos'
+inv3 U: always pos in pos'
+inv3 C: always pos = pos'
+inv5 O: always pos in pos'
+inv5 B: always all t : Train | t.pos' in t.pos.prox
+inv5 B: always all t : Train | t.pos' in t.pos.prox || t.pos' = Exit
+inv5 B: always all t : Train | t.pos' in t.pos.prox || t.pos' in Exit
+inv5 B: always all t : Train | t.pos' in t.pos.prox
+inv5 E: 
+inv6 S: always (Signal in Green => Signal not in Green' || no Signal & Green => Signal in Green'
+inv6 U: always (Signal in Green => Signal not in Green' || no Signal & Green => Signal in Green')
+inv6 U: always (Signal in Green => no Signal & Green' || no Signal & Green => Signal in Green')
+inv6 U: always all s : Signal | s in Green => no s & Green' or no s & Green => s in Green'
+inv7 B: always all t : Train | t.pos in Entry => eventually t.pos not in Entry
+inv7 B: always all t : Train | eventually t.pos != t.pos'
+inv5 B: always all t : Train | t.pos' in t.pos.next
+inv5 B: always all t : Train | t.pos' in t.pos.next
+inv5 B: always all t : Train | t.pos' in t.pos.prox
+inv5 B: always all t : Train | t.pos' in t.pos.prox or t.pos in Exit => t.pos' in Exit
+inv5 B: always all t : Train | t.pos' in t.pos.prox or t.pos' in Exit
+inv5 T: always all t : Train | t.pos' in t.pos.prox or Exit t.pos.next in t.pos' in Exit
+inv5 U: always all t : Train | t.pos' in t.pos.prox or Exit in t.pos.next => t.pos' in Exit
+inv5 U: always all t : Train | t.pos' in t.pos.prox or some Exit & t.pos.next => t.pos' in Exit
+inv6 U: always all s : Track.signal | s in Green => s not in Green' or s not in Green' => s in Green
+inv5 B: always all t : Train | t.pos' in t.pos.prox or t.pos in Exit
+inv6 S: always all s : Signal ignal | s in Green => s not in Green' or s not in Green' => s in Green
+inv5 B: always all t : Train | t.pos' in t.pos.prox or t.pos in Exit
+inv6 U: always all s : Signal | s in Green => s not in Green' or s not in Green => s in Green'
+inv6 B: always Signal & Green not in Signal & Green'
+inv6 B: always Signal & Green not in Signal & Green' or Signal - Green in Signal' & Green'
+inv6 B: always Signal & Green not in Signal' & Green' or Signal - Green in Signal' & Green'
+inv6 B: always Signal in Green and after no Green' or no Green and Signal in Green'
+

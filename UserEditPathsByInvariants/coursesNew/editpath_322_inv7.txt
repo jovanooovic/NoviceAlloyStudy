@@ -1,0 +1,6 @@
+inv7 T: all s : Student | all c : Course | c in s.enrolled => #(c.projects and s.projects) in 1
+inv7 B: all s : Student | all c : Course | c in s.enrolled => #(c.projects & s.projects) in 1
+inv7 B: all s : Student | all c : Course | c in s.enrolled => #(c.projects & s.projects) in {1}
+inv7 S: all s : Student | all c : Course | c in s.enrolled => #(c.projects & s.projects) in {0, 1}
+inv7 U: all s : Student | all c : Course | c in s.enrolled => lone(c.projects & s.projects)
+

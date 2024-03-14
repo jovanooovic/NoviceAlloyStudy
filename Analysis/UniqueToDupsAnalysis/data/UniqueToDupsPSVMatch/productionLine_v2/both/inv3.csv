@@ -1,0 +1,11 @@
+"one Component.workstation",1
+"workstation in Component one -> Worker",1
+"workstation in Component one -> Workstation",2
+"workstation in Component some -> some Workstation",1
+"iden :> Component = workstation.~workstation",1
+"all w: Workstation | one workstation.w",1
+"one ws: Workstation | ws in Component.workstation",1
+"all c: Component | one w: Workstation | c.workstation in begin",1
+"all c: Component, w: Workstation | w in c.workstation implies one workstation.c",1
+"all c: Component, w: Workstation | w in c.workstation implies one workstation.w",2
+"all c: Component, w: Workstation | w in c.workstation implies lone workstation.w",1

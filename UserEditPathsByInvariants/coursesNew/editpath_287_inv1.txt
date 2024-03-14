@@ -1,0 +1,7 @@
+inv1 C: all p:Person, c:Course | p in enrolled.c => p in Student
+inv1 S: all p:Person, c:Couse| p.enrolled => p in Aluno
+inv1 S: all p:Person, c:Couse| some p.enrolled => p in Student
+inv1 C: all p:Person, c:Course| some p.enrolled => p in Student
+inv1 C: all p:Person| some p.enrolled => p in Student
+inv1 C: all p:Person| some p.enrolled => p in Student
+

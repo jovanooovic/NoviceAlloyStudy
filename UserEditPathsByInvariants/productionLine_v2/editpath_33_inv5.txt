@@ -1,0 +1,17 @@
+inv5 S: Robot in Workstation <-> no Human in Workstation
+inv5 T: Robot in Workstation <=> no Human in Workstation
+inv5 T: Robot.Workstation <=> no Human.Workstation
+inv5 T: Robot.Workstation <=> Human.Workstation
+inv5 T: Robot in Workstation.workers <=> no Human in Workstation.workers
+inv5 B: Robot in Workstation.workers <=> Human in Workstation.workers
+inv5 T: Robot in Workstation.workers <=> no Human in Workstation.workers
+inv5 T: Robot in Workstation.workers <=> no (Human in Workstation.workers)
+inv5 B: Robot in Workstation.workers <=> not Human in Workstation.workers
+inv5 B: Robot in Workstation.workers <=> not Human in Workstation.workers	not Robot in Workstation.workers <=>  Human in Workstation.workers
+inv5 T: some Robot in Workstation.workers <=> not some Human in Workstation.workers
+inv5 C: all w:Workstation | some w.workers & Robot implies no w.workers & Human
+inv5 S: Robot in Workstation.workers -> no Human in Workstation.workers
+inv5 T: Robot in Workstation.workers -> none Human in Workstation.workers
+inv5 S: some Robot in Workstation.workers -> no Human in Workstation.workers
+inv5 S: some Robot in Workstation.workers -> no Human in Workstation.workers
+

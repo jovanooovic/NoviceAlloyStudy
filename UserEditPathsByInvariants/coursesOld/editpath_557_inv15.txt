@@ -1,0 +1,2 @@
+inv15 T: all c: Course, p: c.projects, disj s1,s2: (Person<:projects).p | (some s1.(c.grades) and some s2.(c.grades)) implies s1.(c.grades) = s2.(c.grades) || s1.(c.grades) in s2.c.grades.(next+prev)
+

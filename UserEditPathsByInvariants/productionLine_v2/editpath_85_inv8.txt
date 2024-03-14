@@ -1,0 +1,6 @@
+inv8 B: all p : Product | p in Dangerous implies (Robot in p.workstation)
+inv8 B: all p : Product | p in Dangerous implies (Robot in p.workstation.workers)
+inv8 B: all p : Product | p in Dangerous implies (Robot in p.workstation.workers and Human not in p.workstation.workers)
+inv8 B: all c : Component | c in Dangerous implies (Robot in c.workstation.workers and Human not in c.workstation.workers)
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+

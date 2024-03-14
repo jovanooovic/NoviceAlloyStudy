@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv5 B: all x : Influencer | (all y : User | x in y.follows)
+inv7 B: all x : User | (x.suggested not in x.follows) && (x not in x.suggested)
+inv5 B: all x : Influencer | (all y : User | y in follows.x)
+inv5 B: all y : User | y in follows.Influencer
+inv5 U: all x : Influencer | (all y : User-x | y in follows.x)
+inv7 B: all x : User | x.suggested in x.^follows && x.suggested not in x.follows
+inv7 B: all x : User | x.suggested in x.follows.follows && x.suggested not in x.follows
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows-x
+inv7 U: all x : User | x.suggested in x.follows.follows-x.follows && x not in x.suggested
+inv5 B: all x : Influencer | (all y : User-x | y in follows.x)		all y : User-Influencer | y in follows.Influencer
+inv5 B: all y : User-Influencer | y in follows.Influencer
+

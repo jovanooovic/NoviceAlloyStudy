@@ -1,0 +1,6 @@
+inv7 U: all u:User, s:u.suggested | s not in u.follows && s in u.follows.follows
+inv7 S: all u:User, uu:User| uu in u.sugests => uu not in u.follows && uu in u.follows.follows
+inv7 U: all u:User, uu:User| uu in u.suggested => uu not in u.follows && uu in u.follows.follows
+inv7 U: all disj u:User, uu:User| uu in u.suggested => uu not in u.follows && uu in u.follows.follows
+inv7 B: all u:User, uu:User|  uu not in u.follows && uu in u.follows.follows => uu in u.suggested
+

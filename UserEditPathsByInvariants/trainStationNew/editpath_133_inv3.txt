@@ -1,0 +1,8 @@
+inv3 T: all t:Track | t in Exit implies none t.succs
+inv3 U: all t:Track | t in Exit implies no t.succs
+inv3 U: all e:Exit | no e.succs
+inv3 B: all e:Exit | one e.succs
+inv3 U: all e:Exit | lone e.succs
+inv3 C: all t:Track | t in Exit iff no t.succs
+inv3 C: all t:Track | t in Exit iff no t.succs
+

@@ -1,0 +1,8 @@
+inv10 B: all c : Component | some c.workstation implies no c.parts
+inv10 B: all c : Component | some c.workstation implies no c.parts
+inv10 B: all c : Component | begin in c.workstation implies no c.parts
+inv10 B: all c : Component | begin in c.workstation implies no c.parts&Component
+inv10 B: all c : Component | begin in c.^workstation implies no c.parts&Component
+inv10 B: all c : Component | begin in c.workstation implies no c.^parts&Component
+inv10 O: all c : Component | c in Component.parts implies no c.workstation
+

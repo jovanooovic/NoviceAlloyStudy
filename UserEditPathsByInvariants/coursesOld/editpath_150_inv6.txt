@@ -1,0 +1,3 @@
+inv6 B: all p:Project,s:Student | s -> p in Person <: projects implies (some c:Course | c -> p in Course <: projects and p -> c in enrolled)
+inv6 U: all p:Project,s:Student | s -> p in Person <: projects implies (some c:Course | c -> p in Course <: projects and s -> c in enrolled)
+

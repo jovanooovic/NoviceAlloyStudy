@@ -1,0 +1,4 @@
+inv8 U: all ws : Workstation | (ws.workers & Dangerous) = none or (ws.workers & Human) = none
+inv8 O: all c : Component & Dangerous | all ws : Workstation | no (ws.workers & Human)
+inv8 C: all c : Component & Dangerous | all ws : c.workstation | no (ws.workers & Human)
+

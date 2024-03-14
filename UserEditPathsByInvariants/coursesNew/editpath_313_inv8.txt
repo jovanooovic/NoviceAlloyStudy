@@ -1,0 +1,12 @@
+inv8 U: all p : Professor | p not in p.teaches
+inv8 U: all p : Professor | p not in p.teaches.enrolled
+inv8 B: all p : Professor, c : Course | p.enrolled not in p.teaches
+inv8 B: all p : Professor, c : Course | p.enrolled not in p.teaches
+inv8 B: all p : Professor | p.enrolled not in p.teaches
+inv8 B: all p : Professor | p.teaches not in p.enrolled
+inv8 T: all p : Professor | none (p.teaches & p.enrolled)
+inv8 S: all p : Professor, c : Course | c in p.teaches implies p no in c.enrolled
+inv8 U: all p : Professor, c : Course | c in p.teaches implies p not in c.enrolled
+inv8 U: all p : Professor, c : Course | (c in p.teaches) implies (c not in p.enrolled)
+inv8 U: all p : Professor, c : Course | c in p.teaches implies c not in p.enrolled
+

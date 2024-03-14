@@ -1,0 +1,4 @@
+inv13 T: all s: Student, c: Course | s in enrolled.c and s.(c.grades).last implies some s.projects&c.projects
+inv13 T: all s: Student, c: Course | s in enrolled.c and (s.(c.grades)).last implies some s.projects&c.projects
+inv13 U: all s: Student, c: Course | s in enrolled.c and s in c.grades.last implies some s.projects&c.projects
+

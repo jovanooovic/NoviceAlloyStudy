@@ -1,0 +1,10 @@
+"always pos = pos'",5
+"always pos' = pos",9
+"always all t:Train | t.pos = t.pos'",3
+"all t : Train | always t.pos = t.pos'",2
+"always (all t:Train | (t.pos)'=t.pos)",2
+"always all t:Train | t.pos'=t.pos",6
+"all t:Train | always t.pos'=t.pos",4
+"always(all t : Train  | always (t.pos' = t.pos))",1
+"all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)",3
+"always all t: Train, tk: Track | (t->tk in pos implies always t->tk in pos) and (t->tk not in pos implies always t->tk not in pos)",2

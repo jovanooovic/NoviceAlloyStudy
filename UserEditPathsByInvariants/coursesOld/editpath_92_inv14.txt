@@ -1,0 +1,7 @@
+inv14 T: all p1:Person, j1,j2:p1.projects | no projects.j1 & projects.j2 or j1 = j2
+inv14 O: all p1:Person, j1,j2:p1.projects | no Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 S: all p1:Person, j1,j2:p1.projects | p = Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 C: all p1:Person, j1,j2:p1.projects | p1 = Person<:projects.j1 & Person<:projects.j2 or j1 = j2
+inv14 O: all p1,p2:Person, j:Project | p1->j in projects and p2->j in projects implies p1 = p2
+inv14 C: all p1,p2:Person, j1,j2:Project | p1->j1 in projects and p2->j1 in projects and p1->j2 in projects and p2->j2 in projects implies p1 = p2 or j1 = j2
+

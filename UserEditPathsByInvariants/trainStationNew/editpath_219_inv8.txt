@@ -1,0 +1,8 @@
+inv8 B: all x : Entry | some y: Exit | y in x.^(succs)
+inv8 B: all x : Entry | some y: Exit-x | y in x.^(succs)
+inv8 B: all x : Entry | some y: Exit-Entry | y in x.^(succs)
+inv8 B: all x : Entry-Exit | some y: Exit-Entry | y in x.^(succs)
+inv8 U: all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => x.^(succs) in Entry
+inv8 U: all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => ^(succs).x in Entry
+inv8 C: all x : Track, y:Track-x | x in Entry && y in Exit => y in x.^(succs)
+

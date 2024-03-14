@@ -1,0 +1,23 @@
+inv15 S: eventually always t.pos !=t.pos'
+inv15 O: eventually always (all t: Train| t.pos != t.pos')
+inv15 B: eventually always (some t: Train| t.pos != t.pos')
+inv15 B: eventually always (some t: Train| (no t.pos  implies some t.pos) or t.pos != t.pos')
+inv15 B: always (some t: Train| (no t.pos  implies some t.pos) or t.pos != t.pos')
+inv15 B: eventually always (some t: Train| (no t.pos  implies some t.pos) or t.pos != t.pos')
+inv15 B: eventually always (some t: Train| (no t.pos  implies eventually some t.pos) or t.pos != t.pos')
+inv15 B: always (some t: Train| (no t.pos  implies eventually some t.pos) or t.pos != t.pos')
+inv15 B: always (some t: Train| (no t.pos  implies eventually some t.pos) or eventually t.pos != t.pos')
+inv15 B: eventually always (pos != pos')
+inv15 B: eventually always some pos =>(pos != pos')
+inv15 B: eventually always (some pos =>(pos != pos'))
+inv15 U: always eventually (some pos =>(pos != pos'))
+inv15 B: always eventually (pos != pos')
+inv15 B: always eventually some Train and (pos != pos')
+inv15 B: always eventually some pos and (pos != pos')
+inv15 B: always eventually (some pos and (pos != pos'))
+inv15 B: always eventually pos!=pos'
+inv15 B: always eventually pos!=pos'
+inv15 U: always eventually (some pos implies pos!=pos'  )
+inv15 B: always eventually (some Train  implies Train.pos!=Train.pos' )
+inv15 C: always eventually (all t:Train | (no t.pos => eventually some t.pos ) and some t.pos => eventually (t.pos !=t.pos')   )
+

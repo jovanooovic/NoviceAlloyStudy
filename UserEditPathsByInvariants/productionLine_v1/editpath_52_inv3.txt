@@ -1,0 +1,11 @@
+inv3 B: all c:Component, r:Robot | c.position in r.position
+inv3 B: all c:Component, r:Robot | c.position = r.position
+inv3 O: all c:Component| c.position = Robot.position
+inv3 T: all c:Component | some Robot.position in c.position
+inv3 B: all c:Component | Robot.position in c.position
+inv3 T: all c:Component.position | some Robot.position in c
+inv3 B: all c:Component.position, r:Robot | some r.position & c
+inv3 S: all c:Component | some r:Robot | r.component = c.component
+inv3 T: all c:Component | some r:Robot | r.Component = c.Component
+inv3 C: all c:Component | some r:Robot | r.position = c.position
+

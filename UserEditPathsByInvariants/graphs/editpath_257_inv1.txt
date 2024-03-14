@@ -1,0 +1,9 @@
+inv1 U: Node.adj = adj.Node
+inv1 T: all a:Node.adj | ~a in adj
+inv1 T: all a:adj | ~a in adj
+inv1 S: all n1, n2 : Node | n1->n2 in adg <=> n2->n1 in adg
+inv1 C: all n1, n2 : Node | n1->n2 in adj <=> n2->n1 in adj
+inv1 T: all a:adj | ~a
+inv1 T: all a:adj | ~a in adj
+inv1 C: all n1, n2 : Node | n1->n2 in adj => n2->n1 in adj
+

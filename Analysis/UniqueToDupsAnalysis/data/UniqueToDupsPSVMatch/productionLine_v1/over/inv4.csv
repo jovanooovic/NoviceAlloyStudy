@@ -1,0 +1,46 @@
+"all c : Component | no c.parts.position",1
+"all c: Component | c.position.lt[(c.position).position]",1
+"all c : Component | c.parts.position = c.position",2
+"all c:Component | c.parts.position in c.position",1
+"all c : Component, p : c.parts | p not in c.^parts",1
+"all c:Component | (c.position) = (c.^parts).position",2
+"all c:Component |  one ((c.position) + (c.parts).position)",1
+"all c:Component | one (c.position) + (c.^parts).position",3
+"all disj c, c1 : Component | c.position.lt[c1.position]",1
+"all c:Component | all p:c.parts | p not in c.^parts",1
+"all c : Component | (c.parts & Component).position = c.position",2
+"all c:Component | no  c.parts.position.~^next",1
+"all c:Component | c.parts in c.position.~^next",5
+"all c: Component| c.parts.position in prevs[c.position]",2
+"all c:Component | c.parts in (c.^position.~^next)",1
+"all c:Component | c.position in c.position.~^next",1
+"all c: Component | c.^parts.position in c.position.prevs",4
+"all c: Component, p: c.parts | gt[c.position, p.position]",1
+"all c: Component, p: c.parts | gte[c.position, p.position]",1
+"all c:Component | c.parts.position in c.position.~next",1
+"all c : Component, pos : c.position, p : c.parts | p.position = pos",1
+"all c:Component | c.parts.position in c.position.~^next",1
+"all c: Component | (c.parts).position in (c.position).^~next",1
+"all c: Component| always c.parts.position in prevs[c.position]",1
+"all c: Component , p : c.parts | p.position not in nexts[c.position]",2
+"all c : Component, p : c.parts | p.position in c.position.prev",1
+"all c: Component, p: c.parts & Component | gt[c.position, p.position]",1
+"all c : Component, pos : c.position | all p : c.parts | p.position = pos",1
+"all c: Component | let parts = c.parts | lte[parts.position, c.position]",1
+"all c : Component | all p : c.parts | p in c.position.prevs.parts",1
+"all c : Component | all x: c.parts | x.position not in c.position.nexts",1
+"all c : Component | all p : c.parts | p.position not in nexts[c.position]",1
+"all c: Component | ((c.^parts) & Component).position not in (c.position).*next",1
+"all c: Component | c.^parts.position in prevs[c.parts.position] + c.position",2
+"all c : Component | ((c.parts & Component).position = c.position) or no (c.parts & Component)",1
+"all c: Component | no {p: Product | p.position in ^next[c.position]}",1
+"all c: Component | c.^parts.position in (prevs[c.^parts.position] + c.position)",1
+"all c: Component, p: c.^parts | p.position in c.position.prev + c.position",2
+"all c:Component, p:c.parts | p in Component implies c.position in p.position.nexts",1
+"all c : Component | all x: c.parts & Component | x.position in c.position.prevs",1
+"all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position]",1
+"all c: Component | no {p: Product | p.position in ^next[c.position]} & c.parts",2
+"all c : Component | all p : c.parts | some pos : c.position.prevs | p.position = pos",1
+"all p : Position | no (position.p <: Component).parts & (position.(p.^next) <: Component).*parts",1
+"all p : Position | no (position.p <: Component).*parts & (position.(p.^next) <: Component).*parts",1
+"all c:Component | all p:Product | p in c.parts => c.position in nexts[p.position] && p.position in prevs[c.position]",1

@@ -1,0 +1,15 @@
+inv6 B: (Student <: teaches) in (Student <: enrolled)
+inv6 B: all s: Student, c: Course | s->c in enrolled => s->c in teaches
+inv6 B: all s: Student, c: Course| s->c in enrolled and s->c in teaches
+inv6 B: all s: Student, c: Course| s->c in enrolled and s->c in teaches
+inv6 B: all s: Student, c: Course| s->c in enrolled and s->c in teaches
+inv6 T: all s: Student, c: Course| s->c in enrolled = s->c in teaches
+inv6 S: all s: Student, c: Course| s->c in enrolled == s->c in teaches
+inv6 T: all s: Student, c: Course| s->c in enrolled + s->c in teaches
+inv6 B: all s: Student, c: Course| s->c in enrolled or s->c in teaches
+inv6 B: all s: Student, c: Course| s->c in enrolled and s->c in teaches
+inv6 B: all c: Course| some s: Student| s->c in enrolled and s->c in teaches
+inv6 B: all p: Person | p.teaches = p.enrolled
+inv6 B: all p: Person | (p.teaches = p.enrolled) => p in Student
+inv6 B: all p: Person | p.teaches = p.enrolled
+

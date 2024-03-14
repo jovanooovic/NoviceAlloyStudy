@@ -1,0 +1,6 @@
+inv14 O: all p1,p2:Person | lone p:Project | p in p1.projects and p in p2.projects
+inv14 O: all p1,p2:Person, p:Project | p in p1.projects and p in p2.projects => not some p3:Project | p3 != p and p3 in p1.projects and p3 in p2.projects
+inv14 O: all p1,p2:Person, p:Project | p in p1.projects and p in p2.projects => (not some p3:Project | p3 != p and p3 in p1.projects and p3 in p2.projects)
+inv14 B: all p1, p2 : Project, s1, s2: Student | not (s1->p1 in projects and s1->p2 in projects and s2->p1 in projects and s2->p2 in projects)
+inv14 U: all p1, p2 : Project, s1, s2: Student | p1 != p2 and s1 != s2 => not (s1->p1 in projects and s1->p2 in projects and s2->p1 in projects and s2->p2 in projects)
+

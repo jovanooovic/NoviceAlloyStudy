@@ -1,0 +1,251 @@
+Pairs,5
+,,"no (Track.succs)",1
+,,"no Track.^succs",1
+,,"all t:Track | no t & Track.succs",1
+,,"all entry : Track | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)",2
+
+Pairs,1
+,,"Track in Entry.*succs",1
+
+Pairs,1
+,,"Track in Entry.^succs",1
+
+Pairs,2
+,,"Entry = (succs . Track)",1
+,,"all t:Track | some t.succs iff t in Entry",1
+
+Pairs,16
+,,"no (succs.Track & Entry)",1
+,,"all x:Entry | no x.succs",1
+,,"all e: Entry | no e.^succs",2
+,,"all t: Entry | no t.^succs",2
+,,"all e : Entry | e not in succs.Track",1
+,,"all entry : Entry | no entry.^succs",2
+,,"all t : Track | t in Entry implies t.succs = none",1
+,,"all t : Track | t in Entry implies t not in succs.Track",1
+,,"all e : Entry | all t: Track | e not in succs.t",1
+,,"all t1,t2:Track | t1->t2 in succs implies t1 not in Entry",2
+,,"all ta,td : Track | ta->td in succs implies ta not in Entry",1
+,,"all entry : Entry | no entry.^succs and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)",1
+
+Pairs,1
+,,"Entry not in Track.^succs",1
+
+Pairs,1
+,,"some x:Track | no succs.x",1
+
+Pairs,4
+,,"Track - Track.succs = Exit",1
+,,"Exit = Track - Track.succs",1
+,,"all t : Track | (t.(~succs))=none iff t in Exit",1
+,,"all t : Track | (t.^(~succs))=none iff t in Exit",1
+
+Pairs,1
+,,"Entry = Track - succs.Entry",1
+
+Pairs,12
+,,"Entry = Track - ^succs.Track",1
+,,"all t: Track| t in Entry  iff no t.succs",1
+,,"all t:Track | t in Entry iff no t.^succs",7
+,,"all t : Track | t in Entry iff t not in succs.Track",1
+,,"all x : Track | (x in Entry implies #(x.succs) = 0) and (#(x.succs) = 0 implies x in Entry )",1
+,,"all x : Track | x in Entry implies #(x.succs)=0
+all x : Track | #(x.succs)=0 implies x in Entry",1
+
+Pairs,1
+,,"no succs.Entry
+some Entry.succs",1
+
+Pairs,1
+,,"one Entry
+Track in Entry.*succs",1
+
+Pairs,1
+,,"all e1,e2:Entry | e1->e2 in succs",1
+
+Pairs,1
+,,"all t: Track | (Entry not in t.succs)",1
+
+Pairs,1
+,,"Exit = Track-({ t : Track | no succs.t})",1
+
+Pairs,1
+,,"all t : Track | no t.succs => t in Entry",1
+
+Pairs,2
+,,"Entry = Track-({ t : Track | no succs.t})",1
+,,"all t : Track | t in Entry <=> #succs.t > 0",1
+
+Pairs,1
+,,"all x:Track | Entry in x implies no succs.x",1
+
+Pairs,3
+,,"all t:Track | t in Entry iff no Track.succs",2
+,,"all t : Track | t in Entry iff no Track.^succs",1
+
+Pairs,1
+,,"one x:Track | x in Entry implies no succs.x",1
+
+Pairs,1
+,,"all t : Track | (t.succs)=none iff t in Exit",1
+
+Pairs,1
+,,"all t:Track | t in Entry <=> t not in succs.t",1
+
+Pairs,1
+,,"all t: Track | t in Entry iff none in succs.t",1
+
+Pairs,1
+,,"all t: Track - Entry | (Entry not in t.succs)",1
+
+Pairs,7
+,,"all t : Track | t in Entry implies t.succs = 0",1
+,,"all t:Track | t in Entry iff no t.*succs",1
+,,"all t : Track | t in Entry <=> #succs.t < 0",1
+,,"all t : Track | (t not in Track.*(succs) <=> t in Entry)",1
+,,"all t : Track | all e : Entry | t not in Entry and e not in t.^succs",1
+,,"all t:Track | t in Entry implies all ts:Track | ts!=t and ts->t not in succs",1
+,,"all t : Entry | t not in Track.*succs
+all t : Track | t not in Track.*succs implies t in Entry",1
+
+Pairs,8
+,,"all t,a:Track| t in Entry implies a->t in succs",8
+
+Pairs,1
+,,"all t,e : Track| e in t.succs iff t not in Entry",1
+
+Pairs,1
+,,"all t: Track | t != Entry => t.succs not in Entry",1
+
+Pairs,1
+,,"all t : Track | some e : Entry | e not in t.^succs",1
+
+Pairs,1
+,,"all t,e : Track| e in Entry iff (not(t in t.succs))",1
+
+Pairs,1
+,,"all t1,t2:Track| t1 in Entry iff t1 not in t2.*succs",1
+
+Pairs,7
+,,"all t,t2:Track | t not in t2.succs implies t in Entry",2
+,,"all x:Track, y:Track| y-> x not in succs implies x in Entry",4
+,,"all t:Track | all t1:Track | t1->t not in succs implies t in Entry",1
+
+Pairs,1
+,,"all t: Track | (t in Entry) <=>  t.succs not in Entry",1
+
+Pairs,1
+,,"all t: Track | t not in Entry => t.succs not in Entry",1
+
+Pairs,1
+,,"all t1,t2:Track | t1->t2 in succs implies t1 in Entry",1
+
+Pairs,1
+,,"all t,t2:Track | t not in t2.succs implies Entry in t",1
+
+Pairs,2
+,,"all t1,t2:Track | t1->t2 in succs implies t2 in Entry",2
+
+Pairs,1
+,,"all t,t2:Track | Entry in t implies t2 not in t.^succs",1
+
+Pairs,1
+,,"all t,t2:Track | t2 not in t.^succs implies Entry in t",1
+
+Pairs,3
+,,"all t:Track | t not in Track.^succs implies Entry in t",3
+
+Pairs,1
+,,"some t1,t2 : Track | t2 in t1.succs implies t1 in Entry",1
+
+Pairs,1
+,,"all t: Track | t not in Entry => t.^(succs) not in Entry",1
+
+Pairs,2
+,,"all t: Track | t not in Entry => Entry not in t.^(succs)",1
+,,"all noEntryTrack : Track - Entry | Entry not in noEntryTrack.^succs",1
+
+Pairs,1
+,,"all t: Track | t not in Entry <=> t.^(succs) not in Entry",1
+
+Pairs,1
+,,"all t: Track | t not in Entry <=> Entry not in t.^(succs)",1
+
+Pairs,4
+,,"all disj t,t2:Track | t in Entry <=> t not in t2.^(succs)",1
+,,"all t:Track, x:Track-t| t in Entry iff t not in x.^succs",1
+,,"all t:Track, tt:Track-t | t in Entry <=> t not in tt.^succs",1
+,,"all t1:Track|all t2:Track-t1| t1 in Entry iff t1 not in t2.^succs",1
+
+Pairs,3
+,,"all t1,t2: Track | t1 not in t2.^succs implies t1 in Entry",3
+
+Pairs,1
+,,"all t:Track | t not in (Track-t).^succs implies Entry in t",1
+
+Pairs,2
+,,"all a:Track, b:Track-a| a in Exit implies b->a not in succs",2
+
+Pairs,1
+,,"one a:Track|all b:Track-a| a->b in succs implies a in Entry",1
+
+Pairs,1
+,,"all t: Track| some a: Track| a not in t.succs <=> a in Entry",1
+
+Pairs,1
+,,"all t: Track| all e: Entry| e not in t.succs && some e.succs",1
+
+Pairs,1
+,,"all x:Track, y:Track-x| y-> x not in succs implies x in Entry",1
+
+Pairs,1
+,,"one a:Track|all b:Track-a| a->b not in succs implies a in Entry",1
+
+Pairs,1
+,,"one a:Track|all b:Track-a| b->a not in succs implies a in Entry",1
+
+Pairs,1
+,,"all t : Track | all t2 : Track-t | t in Entry <=> no t2.succs & t",1
+
+Pairs,1
+,,"all a:Track| a in Exit implies (some b:Track-a| b->a not in succs)",1
+
+Pairs,1
+,,"all t1,t2 : Track | t1 != t2 and t2 in t1.succs implies t1 in Entry",1
+
+Pairs,1
+,,"all t1,t2: Track| t2 not in t1.succs && some t2.succs implies t2 in Entry",1
+
+Pairs,1
+,,"all t1,t2,t3: Track| t1 not in t2.succs and t3 in t1.succs <=> t1 in Entry",1
+
+Pairs,3
+,,"all t : Track | t not in Track.^succs implies t in Entry
+Entry not in Track.^succs",1
+,,"Entry not in Track.^succs
+all t : Track | t not in Track.^succs implies t in Entry",2
+
+Pairs,1
+,,"some a:Track| all b:Track-a | b->a in succs and a->b not in succs implies a in Entry",1
+
+Pairs,1
+,,"all e : Entry | all t : Track | all s : Signal | t->e not in succs and e->s not in signals",1
+
+Pairs,2
+,,"all t1,t2: Track| t2 not in t1.succs && some t2.succs && t2 not in t2.^(succs) implies t2 in Entry",2
+
+Pairs,2
+,,"all t:Track | t not in Track.^succs implies Entry in t
+all t:Track | Entry in t implies no t.succs",1
+,,"all t:Track | t not in Track.^succs implies Entry in t
+all t:Track | Entry in t implies t.succs=none",1
+
+Pairs,1
+,,"all t : Track | all e : Entry | e not in t.^succs
+all disj t1,t2 : Track | t1 not in t2.^succs implies t1 in Entry",1
+
+Pairs,2
+,,"all t1,t2:Track | t1 in t2.^succs implies no (t2 & Entry)
+
+all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)",2
+

@@ -1,0 +1,6 @@
+inv6 U: all t:Track | t in Entry implies some t.signals
+inv6 B: all t:Track | t in Entry iff some t.signals
+inv6 S: all t:Track,s.Speed | t in Entry implies (s in t.signal)
+inv6 S: all t:Track|some s:Speed | t in Entry implies (s in t.signal)
+inv6 O: all t:Track|some s:Speed | t in Entry implies (s in t.signals)
+

@@ -1,0 +1,18 @@
+inv3 T: always all t: Train | (before t.pos) = t.pos
+inv3 T: always all t: Train | (before t.pos) = (after t.pos)
+inv3 T: always all t: Train | t.pos implies after t.pos
+inv3 S: always all t: Train | {let x = t.pos} after t.pos = x
+inv3 T: always all t: Train | {let x = t.pos | Train} after t.pos = x
+inv3 T: always all t: Train | {let x = t.pos | t} after t.pos = x
+inv3 S: all t: Train | always t.pos = x
+inv3 T: all t: Train | always t.pos
+inv3 S: trains = {all t: Train | t.pos}	always all tt: Train | trains = tt.pos
+inv3 S: always trains = {all t: Train | t.pos}	always all tt: Train | trains = tt.pos
+inv3 S: always trains = {all t: Train | t}	always all tt: Train, t: trains | t.pos = tt.pos
+inv3 U: all t,tt:Track | t->tt in prox implies always t->tt in prox
+inv3 S: all t: Train tt: Track | t->tt in pos implies always t->tt in pos
+inv3 U: all t: Train, tt: Track | t->tt in pos implies always t->tt in pos
+inv3 U: always all t: Train, tt: Track | t->tt in pos implies always t->tt in pos
+inv3 C: always pos' = pos
+inv3 C: always pos' = pos
+

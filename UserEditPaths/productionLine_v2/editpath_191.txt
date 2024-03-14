@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: Worker = Human + Robot
+inv2 C: workers in Workstation one -> some Worker
+inv2 C: workers in Workstation one -> some Worker
+inv3 C: workstation in Component -> one Workstation
+inv3 C: workstation in Component -> one Workstation
+inv4 C: parts in Component -> some Product	no Material.parts
+inv5 T: all w : Workstation | no Human*Robot & w.workers*w.workers
+inv5 C: all w : Workstation | no Human->Robot & w.workers->w.workers
+inv6 S: all c : Components | c not in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv6 C: all c : Component | c not in c.^parts
+inv7 O: all c : Component | some (c.*parts & Dangerous) implies c in Dangerous
+inv8 O: (Component & Dangerous).workstation.workers in Robot
+inv8 B: (Component & Dangerous).workstation.workers not in Human
+inv8 C: no (Component & Dangerous).workstation.workers & Human
+inv9 U: Workstation in (begin.*succ & end.*(~succ))	no iden & ^succ
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin.*succ & end.*(~succ))	no iden & ^succ
+inv9 U: succ in Workstation lone -> lone Workstation	Workstation in (begin.*succ & end.*(~succ))
+inv9 U: succ in Workstation lone -> lone Workstation		no iden & ^succ
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in (begin.*succ & end.*(~succ))	no iden & ^succ
+inv10 C: all c : Component | (c.parts & Component).workstation in c.workstation.^(~succ)
+NA H: THEME UPDATE
+

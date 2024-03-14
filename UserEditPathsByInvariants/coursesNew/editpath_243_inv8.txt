@@ -1,0 +1,14 @@
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 U: all p: Person - Student| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 U: all p: Person| all c: Course| p in c.teaches implies (p not in c.enrolled and p in Professor)
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 B: all p: Professor| some c: Course| p in c.teaches implies p not in c.enrolled
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 T: all p: Professor| all c: Course| p in c.teaches implies p not in enrolled
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies p not in c.enrolled
+inv8 U: all p1 : Professor | all c1:Course | p1->c1 in teaches implies p1->c1 not in enrolled
+inv8 U: all p: Professor| all c: Course| p in c.teaches implies (p not in c.enrolled)
+inv8 U: all p: Professor| all c: Course| c in p.teaches implies (p not in c.enrolled)
+inv8 U: all p: Professor| all c: Course| c in p.teaches implies c not in p.enrolled
+

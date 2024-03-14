@@ -1,0 +1,5 @@
+inv6 S: all p: Photo, y: Day | y in x.date implies all z: Influencer | x in z.posts
+inv6 S: all p: Photo, y: Day | y in x.date implies all z: Influencer | p in z.posts
+inv6 B: all p: Photo, y: Day | y in p.date implies all z: Influencer | p in z.posts
+inv6 C: all i: Influencer, d: Day | some p: Photo | i -> p in posts and p -> d in date
+

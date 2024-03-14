@@ -1,0 +1,6 @@
+inv10 B: all t : Track | some ((succs . t) & Junction) => some ((t . signals) & Semaphore)
+inv10 T: all t : Track | some (t in Junction . succs) => some ((t . signals) & Semaphore)
+inv10 B: all t : Track | some ((t . ~succs) & Junction) => some ((t . signals) & Semaphore)
+inv10 B: all t : Track | (some ((t . ~succs) & Junction)) => some ((t . signals) & Semaphore)
+inv10 C: all t : Track | some ((t . succs) & Junction) => some ((t . signals) & Semaphore)
+

@@ -1,0 +1,36 @@
+na H: THEME UPDATE
+inv1 E: 
+inv1 O: all n1,n2:Node | n1 in n2.adj && n2 in n1.adj
+inv1 O: all disj n1,n2:Node | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | all n2 in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 T: all n1:Node | all n2:Node in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | n2 in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | n2:Node in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | let n2:Node in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | let n2:Node = one n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 S: all n1:Node | n2 in n1.adj | n1 in n2.adj && n2 in n1.adj
+inv1 C: all n1,n2:Node | n1 in n2.adj <=> n2 in n1.adj
+inv2 S: all n1,n2:Node | n1 in n2.adj => n2 in -n1.adj
+inv2 C: all n1,n2:Node | n1 in n2.adj => n2 in (univ - n1.adj)
+inv2 O: all n1,n2:Node | n1 in n2.adj <=> n2 in (univ - n1.adj)
+inv2 C: all n1,n2:Node | n1 in n2.adj => n2 in (univ - n1.adj)
+inv3 S: all n:Node | n not in a.^adj
+inv3 C: all n:Node | n not in n.^adj
+inv4 U: all n1,n2:Node | n1 in n2.^adj && n2 in n1.^adj
+inv4 U: all n1,n2:Node | n1 in n2.*adj && n2 in n1.*adj
+inv4 U: all n1,n2:Node | n1 in n2.*adj => n2 in n1.*adj
+inv4 U: all n1,n2:Node | n1 in n2.*adj <=> n2 in n1.*adj
+inv4 U: all disj n1,n2:Node | n1 in n2.*adj => n2 in n1.*adj
+inv8 B: all n1,n2,n3:Node | n3 in n1.adj && n3 in n2.adj => n2 in n1.adj || n1 in n2.adj
+inv8 B: all disj n1,n2,n3:Node | n3 in n1.adj && n3 in n2.adj => n2 in n1.adj || n1 in n2.adj
+inv4 U: all disj n1,n2:Node | n1 in n2.*adj => n2 in n1.*adj
+inv3 C: all n:Node | n not in n.^adj
+inv3 C: all n:Node | n not in n.^adj
+inv4 U: all disj n1,n2:Node | n1 in n2.^adj => n2 in n1.^adj
+inv4 U: all n1,n2:Node | n1 in n2.^adj => n2 in n1.^adj
+inv1 C: all n1,n2:Node | n1 in n2.adj <=> n2 in n1.adj
+inv4 U: all n1,n2:Node | n1 in n2.^adj <=> n2 in n1.^adj
+inv4 S: all n1,n2:Node | n1 != n2 | n1 in n2.^adj <=> n2 in n1.^adj
+inv4 S: all n1,n2:Node | n1 != n2 | n1 in n2.^adj <=> n2 in n1.^adj
+inv4 S: all n1,n2:Node | n2 in (univ - n1) | n1 in n2.^adj <=> n2 in n1.^adj
+

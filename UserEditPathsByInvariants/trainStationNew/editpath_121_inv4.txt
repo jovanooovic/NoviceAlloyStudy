@@ -1,0 +1,16 @@
+inv4 U: all e: Entry | no e.~succs
+inv4 B: all e: Entry | no e.^succs
+inv4 U: all e: Entry | no e.~^succs
+inv4 U: all e: Entry | no e.~succs
+inv4 U: all e: Entry | no e.~^succs
+inv4 U: all e: Entry | no e.^~succs
+inv4 U: all t: Track | no (t.succs & Entry)
+inv4 B: all t: Track | (Entry not in t.succs)
+inv4 B: all t: Track - Entry | (Entry not in t.succs)
+inv4 U: all e: Entry | e not in succs.Entry
+inv4 U: all e: Entry | e not in Entry.succs
+inv4 U: all e: Entry | e not in Track.succs
+inv4 U: all e: Entry | e not in Track.succs
+inv4 U: all t: Track | t in Entry implies t not in Track.succs
+inv4 C: all t: Track | t in Entry iff t not in Track.succs
+

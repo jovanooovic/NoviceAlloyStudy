@@ -1,0 +1,31 @@
+inv2 S: all w1, w2 : Worker | all ws1,ws2: Worstation | ws1!=ws2 and w1 in ws1.worker and w2 in ws2.worker implies w1=w2
+inv2 S: all w1, w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.worker and w2 in ws2.worker implies w1=w2
+inv2 T: all w1, w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.Worker and w2 in ws2.Worker implies w1=w2
+inv2 T: all w1, w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.Worker and w2 in ws2.Worker implies w1=w2
+inv2 T: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.Worker and w2 in ws2.Worker implies w1=w2
+inv2 T: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.Worker and w2 in ws2.Worker implies w1=w2
+inv2 B: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1=w2
+inv2 B: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1=w2	all w : Worker | w in Workstation.workers
+inv2 B: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1=w2	all ws : Workstation | Worker in ws.workers
+inv2 B: all ws : Workstation | Worker in ws.workers
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 E:
+inv2 E:
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 U: Worker in Workstation.workers
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 B: all w : Worker | all ws : Workstation | w in ws.workers
+inv2 B: all ws : Workstation | all w : Worker | w in ws.workers
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers
+inv2 B: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1=w2	all ws : Workstation | some w : Worker | w in ws.workers
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | w in Workstation.workers
+inv2 B: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1=w2	all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | w in Workstation.workers
+inv2 C: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | w in Workstation.workers
+inv2 U: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2		all w : Worker | w in Workstation.workers
+inv2 T: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	all ws : Workstation | some Worker in ws.workers	all w : Worker | w in Workstation.workers
+inv2 C: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	all ws : Workstation | some ws.workers	all w : Worker | w in Workstation.workers
+inv2 U: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	some Workstation.workers	all w : Worker | w in Workstation.workers
+inv2 U: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	some Workstation.workers	all w : Worker | w in Workstation.workers
+inv2 C: all w1,w2 : Worker | all ws1,ws2: Workstation | ws1!=ws2 and w1 in ws1.workers and w2 in ws2.workers implies w1!=w2	all ws : Workstation | some ws.workers	all w : Worker | w in Workstation.workers
+

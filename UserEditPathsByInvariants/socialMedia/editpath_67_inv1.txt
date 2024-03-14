@@ -1,0 +1,10 @@
+inv1 B: all u:User,p:Photo | u->p in posts
+inv1 B: all u:User,p:Photo,i:Influencer | u->p in posts or i->p in posts
+inv1 C: posts in User one -> Photo
+inv1 U: posts in User -> Photo
+inv1 C: posts in User one -> Photo
+inv1 U: all u1,u2:User, p:Photo | u1->p in posts and u2->p in posts implies u1=u2
+inv1 S: all u1,u2:User, p:Photo | u1->p in posts and u2->p in posts implies u1=u2	all p:Photo | some u:user | u->p in posts
+inv1 C: all u1,u2:User, p:Photo | u1->p in posts and u2->p in posts implies u1=u2	all p:Photo | some u:User | u->p in posts
+inv1 C: all u1,u2:User, p:Photo | u1->p in posts and u2->p in posts implies u1=u2	all p:Photo | some u:User | u->p in posts
+

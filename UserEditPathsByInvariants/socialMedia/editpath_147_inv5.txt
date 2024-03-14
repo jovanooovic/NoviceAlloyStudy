@@ -1,0 +1,20 @@
+inv5 S: all u:User | some inf:Influencer | u!=inf | u.follows inf
+inv5 S: all u:User | some inf:Influencer | u!=inf | u.follows in inf
+inv5 S: all u:User | some inf:Influencer | u!=inf | u in inf.follows
+inv5 B: all u:User | some inf:Influencer | u!=inf  implies  u in inf.follows
+inv5 B: all u:User | some inf:Influencer | u!=inf  implies (u in inf.follows && inf not in u.follows)
+inv5 B: all u:User | all inf:Influencer | u!=inf  implies (u in inf.follows && inf not in u.follows)
+inv5 B: all u:User | some inf:Influencer | u!=inf  implies (u in inf.follows && inf not in u.follows)
+inv5 S: all u:User | some inf:Influencer | u!=inf |u in inf.follows | inf not in u.follows
+inv5 B: all u:User | some inf: Influencer | u!=inf implies u in inf.follows && inf not in u.follows
+inv5 B: all u:User | some inf: Influencer | u!=inf implies inf in u.follows && u not in inf.follows
+inv5 B: all u:User | all inf: Influencer | u!=inf implies inf in u.follows && u not in inf.follows
+inv5 B: all u:User | some inf: Influencer | u!=inf implies inf in u.follows && u not in inf.follows
+inv5 O: all u: User | (all inf: Influencer | u!=inf && inf in u.follows && u not in inf.follows)
+inv5 B: all u: User | (some inf: Influencer | u!=inf && inf in u.follows && u not in inf.follows)
+inv5 B: some u: User | (all inf: Influencer | u!=inf && inf in u.follows && u not in inf.follows)
+inv5 B: all u: User | (some inf: Influencer | u!=inf && inf not in u.follows && u in inf.follows)
+inv5 B: all u: User | (some inf: Influencer | u!=inf && inf in u.follows && u not in inf.follows)
+inv5 B: all u: User | (some inf: Influencer | u!=inf && inf in u.follows && u not in inf.follows)
+inv5 B: all u: User | (some inf: Influencer | inf in u.follows && u not in inf.follows)
+

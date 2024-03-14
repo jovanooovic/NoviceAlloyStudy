@@ -1,0 +1,18 @@
+inv10 T: all c:Class, g:Group | c -> g in Groups implies some s:Student | s in Groups
+inv10 B: all c:Class | one c.Groups
+inv10 T: all c:Class | some g:Group | c -> g in Groups
+inv10 S: all c:Class | some s.Groups
+inv10 O: all c:Class | some Student.Groups
+inv10 T: all c:Class, s:Student | one s.c
+inv10 T: all c:Class, s:Student | one s.Group
+inv10 T: all c:Class, s:Student | some c -> s in Groups
+inv10 S: all c:Class, s:Student |
+inv10 T: Groups in Class -> some Student
+inv10 O: all c: Class, s: Student |	        some g: Group | c.Groups[s] = g
+inv10 T: all c: Class, s: Student | some g: Group | s in c.Groups
+inv10 T: all c: Class, s: Student | some g: Group | c -> g in Groups implies s in g
+inv10 T: all c: Class, s: Student | some g: Group | c -> g in Groups implies s in g
+inv10 T: all c: Class, s: Student | c -> s in Groups
+inv10 B: all c: Class, s: Student, g:Group | c -> s -> g in Groups
+inv10 C: all c: Class, s: Student | some g:Group | c -> s -> g in Groups
+

@@ -1,0 +1,11 @@
+inv5 S: all follows.Influencer
+inv5 S: no  -follows.Influencer
+inv5 T: all u: User | u.follows.Influencer
+inv5 T: all u: User, i: Influencer | u.follows.i
+inv5 B: all u: User | Influencer in u.follows
+inv5 B: all u: User | Influencer in u.follows
+inv5 O: all u: User | u not in u.follows and Influencer in u.follows
+inv5 O: all u: User | u not in u.follows and Influencer in u.follows
+inv5 B: all u: User | u not in u.follows and u.follows in Influencer
+inv5 U: all u: User, i: Influencer | u not in i implies i in u.follows
+

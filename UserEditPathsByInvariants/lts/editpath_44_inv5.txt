@@ -1,0 +1,6 @@
+inv5 U: all e:Event, s1,s2:State | e in (Init.trans)[s1] implies e in (Init.trans)[s2]
+inv5 B: all e:Event, s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]
+inv5 B: all e:Event, disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]
+inv5 B: some e:Event, disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]
+inv5 B: some e:Event | all disj s1,s2:State | e in ~(Init.trans)[s1] implies e in ~(Init.trans)[s2]
+

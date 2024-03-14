@@ -1,0 +1,9 @@
+inv5 T: all t:Teacher | t.Teaches
+inv5 U: all t:Teacher | t.Teaches in Class
+inv5 T: all t:Teacher | t.Teaches in Teaches
+inv5 B: all t:Teacher | some t.Teaches
+inv5 C: some c:Class | c in Teacher.Teaches
+inv5 C: some c:Class | c in Teacher.Teaches
+inv5 O: some Teaches.Teaches
+inv5 C: some Teacher.Teaches
+

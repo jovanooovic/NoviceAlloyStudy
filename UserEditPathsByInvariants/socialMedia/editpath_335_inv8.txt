@@ -1,0 +1,8 @@
+inv8 T: all u:User | u.sees & Ad implies follows.u or suugested.u
+inv8 S: /all u:User | u.sees & Ad implies u.follows or u.sugested
+inv8 S: /all u:User | all a:Ad | a in u.sees implies u.follows or u.sugested
+inv8 T: all u:User | all a:Ad | a in u.sees implies u.follows or u.sugested
+inv8 S: all u:User | all a:Ad | a in u.sees implies a in u.follows.posts or a in u.sugested.posts
+inv8 S: all u:User | all a:Ad | a in u.sees implies a in u.follows.posts or a in u.sugested.posts
+inv8 C: all u:User | all a:Ad | a in u.sees implies a in u.follows.posts or a in u.suggested.posts
+

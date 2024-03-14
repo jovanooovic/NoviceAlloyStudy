@@ -1,0 +1,8 @@
+inv6 B: no (Green & Green')
+inv6 B: always no (Green & Green')
+inv6 O: always (Signal-Green = Green')
+inv6 O: always ((Signal-Green = Green') and (Green = Signal'-Green'))
+inv6 O: always ((Signal-Green = Green') and (Green = (Signal-Green)'))
+inv6 U: always all s : Signal {	((s in Green) implies (eventually s not in Green))	or	((s not in Green) implies (eventually s in Green))	}
+inv6 U: always all s : Signal {	((s in Green) implies (eventually s not in Green))	or	((s not in Green) implies (eventually s in Green))	}
+

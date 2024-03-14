@@ -1,0 +1,13 @@
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : User | x.sees.ad
+inv3 S: all x : Ad and all y : User | all y sees.x
+inv3 S: all x : Ad and y : User | all y sees.x
+inv3 S: all x : Ad and y : User | y sees.x
+inv3 S: all x : Ad and y : User | y in sees.x
+inv3 T: all x : User | x sees.y implies y not Ad
+inv3 T: all x : User | all y : Ad | x sees.y implies y not Ad
+inv3 T: all x : User | all y : Ad | x sees.y implies y not in Ad
+inv3 T: all x : User | all y : Photo | x sees.y implies y not in Ad
+

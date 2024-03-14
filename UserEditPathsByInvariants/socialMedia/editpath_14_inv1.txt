@@ -1,0 +1,20 @@
+inv1 T: all p:Photo | all u:User | p in u.p
+inv1 T: all p:Photo | all u:User | p in u->p
+inv1 T: all p:Photo | all u:User | p in u.p
+inv1 T: all p:Photo | all u:User | p in u->p
+inv1 T: all p:Photo | all u:User | p in p->u
+inv1 T: all p:Photo | all u:User | p in u->Photo
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 B: all p:Photo | all u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 U: all p:Photo | some u:User | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+

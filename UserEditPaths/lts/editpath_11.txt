@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv4 S: all s: State | Init in trans*.s
+inv4 S: all s: State | Init in (trans.s)*
+inv4 T: all s: State | Init in (trans.s)
+NA M: MOD BASE MODEL
+inv4 T: all s: State | s in Init or some e: Event | trans[e].s
+inv4 T: all s: State | s in Init or (some e: Event | trans[e].s)
+inv4 T: all s: State | (s in Init) or (some e: Event | trans[e].s)
+inv1 C: all s: State | some e: Event | some s.trans[e]
+inv1 C: all s: State | some e: Event | some s.trans[e]
+inv1 C: all s: State | some e: Event | some s.trans[e]
+inv2 C: one Init
+inv3 C: all s: State | all e: Event | lone s.trans[e]
+inv4 U: all s: State | (s in Init) or (some e: Event | some trans.s.e)
+inv4 U: all s: State | (s in Init) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init and some trans.s.Event) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (some trans.s.Event)
+inv5 C: all s, m: State, e: Event | some s.trans[e] => some m.trans[e]
+inv6 C: all e: Event | some s: State | some s.trans[e]
+inv7 E: 
+inv4 U: all s: State | Init in trans.s.Event or (some trans.s.Event)
+inv4 U: all s: State | s in Init or Init in trans.s.Event or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (Init in trans.s.Event) or (some trans.s.Event)
+inv4 U: all s: State | (s in Init) or (some pre:State | (not pre in s) and (pre in trans.s.Event))
+

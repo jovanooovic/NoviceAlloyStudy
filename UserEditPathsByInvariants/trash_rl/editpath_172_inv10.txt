@@ -1,0 +1,15 @@
+inv10 E:
+inv10 B: all t: Trash | all f: File | t != f.*link
+inv10 B: all t: Trash | all f: File | t != f.^link
+inv10 S: !(any f: File - Trash | f.^link in Trash)
+inv10 B: no f: File - Trash | f.^link in Trash
+inv10 S: no f: File - Trash | f.^link != empty and f.^link in Trash
+inv10 T: no f: File - Trash | f.^link  and f.^link in Trash
+inv10 U: no f: File - Trash | f.*link in Trash
+inv10 S: any f: File | (some f.^link & Trash) and f in Trash
+inv10 S: any f: File | (some f.^link & Trash) and (f in Trash)
+inv10 O: all f: File | (some f.^link & Trash) and (f in Trash)
+inv10 B: all f: File | (some f.^link & Trash) implies (f in Trash)
+inv10 B: all f: Trash | some f.^link & Trash
+inv10 C: all f: Trash | f.^link in Trash
+

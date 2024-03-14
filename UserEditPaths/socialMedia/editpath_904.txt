@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv4 B: all u : User | one a : Ad | a in u.posts implies all p : Photo | p in u.posts and p in Ad
+inv3 S: all u : User | p : Photo | p in u.sees and p not in Ad implies u.follows.posts
+inv3 S: all u : User | p : Photo | p in u.sees and p not in Ad implies p in u.follows.posts
+inv3 C: all u : User, p : Photo | p in u.sees and p not in Ad implies p in u.follows.posts
+inv4 C: all u : User | (some a : Ad | a in u.posts) implies all p : Photo | p in u.posts implies p in Ad
+inv3 T: all u : User | u.sees implies u.follows.posts not in Ad
+inv3 T: all u : User | u.sees implies all p : Photo | p in u.follows.posts not in Ad
+inv3 T: all u : User | u.sees implies all p : Photo | p in u.follows.posts and p not in Ad
+inv4 C: all u : User | (some a : Ad | a in u.posts) implies all p : Photo | p in u.posts implies p in Ad
+inv1 S: one u : User | all u.posts
+inv1 T: one u : User | set u.posts
+inv1 T: all p : Photo | posts.p
+inv1 T: all p : Photo | posts.p
+inv1 C: all p : Photo | one posts.p
+inv1 S: posts.~photo in univ
+inv1 T: posts.~Photo in univ
+inv1 T: posts.~Photo in univ
+inv2 B: follows.~follows in iden
+inv2 B: follows.~follows not in iden
+inv2 T: no follows in iden
+inv2 T: no follows and iden
+inv2 C: no follows & iden
+inv1 S: user.posts in iden
+inv1 S: posts.~user in iden
+inv1 S: iden in user.posts
+inv1 T: one u : User | iden in u.posts
+

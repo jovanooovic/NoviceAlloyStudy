@@ -1,0 +1,6 @@
+inv10 B: all comp : Component | comp.parts not in comp.workstation.^succ
+inv10 B: all comp : Component | (comp.parts).workstation not in comp.workstation.^succ
+inv10 B: all comp : Component | (Component &comp.parts).workstation not in comp.workstation.^succ
+inv10 O: all comp : Component | (Component &comp.parts).workstation in (^succ).comp.workstation
+inv10 C: all comp : Component | (Component &comp.parts).workstation in (^succ).(comp.workstation)
+

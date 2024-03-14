@@ -1,0 +1,13 @@
+inv5 O: all n: Node | n not in n.*adj
+inv5 O: all n: Node | no n.adj
+inv5 T: no Node.~Node
+inv5 O: no adj.~adj
+inv5 T: all n1, n2: Node | no n1->n2->n1 in adj
+inv5 T: all n1, n2: Node | no n1->n2->n1 in Node
+inv5 T: all n: Node | no n->n in adj
+inv5 C: all n: Node | not n->n in adj
+inv5 C: all n: Node | not n->n in adj	all n: Node | n not in n.adj
+inv5 C: all n: Node | n->n not in adj	all n: Node | n not in n.adj
+inv5 C: all n: Node | n->n not in adj
+inv5 C: all n: Node | not n->n in adj	all n: Node | n not in n.adj
+

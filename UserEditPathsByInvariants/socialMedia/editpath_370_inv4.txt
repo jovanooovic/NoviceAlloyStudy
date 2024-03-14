@@ -1,0 +1,6 @@
+inv4 S: all u : User | p in Ad => u.posts in Ad
+inv4 O: all u : User, p : Photo | p in Ad => u.posts in Ad
+inv4 S: all u : User, p : Photo | p in Ad && u.posts == p implies u.posts in Ad
+inv4 S: all u : User, p : Photo | (p in Ad && u.posts == p) implies u.posts in Ad
+inv4 C: all u : User, a : Ad | a in u.posts implies u.posts in Ad
+

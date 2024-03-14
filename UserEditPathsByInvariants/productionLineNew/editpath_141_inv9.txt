@@ -1,0 +1,7 @@
+inv9 B: all w:Workstation| w in end => w in begin.^(succ)
+inv9 T: all w:Workstation|  end => w in begin.^(succ)
+inv9 U: all disj b,e:Workstation| b in end and e in begin => b in e.^(succ)
+inv9 U: all disj b,e:Workstation| b in end and e in begin => b in e.*(succ)
+inv9 U: all b,e:Workstation| b in end and e in begin and b !=e => b in e.*(succ)
+inv9 U: all b,e:Workstation| b in end and e in begin => b in e.*(succ) or b = e
+

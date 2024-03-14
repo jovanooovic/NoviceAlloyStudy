@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all p : Photo | p in User.posts
+inv1 U: all u1,u2 : User, p : Photo | p in u1.posts and p in u2.posts implies u1 = u2
+inv2 C: all u : User | u not in u.follows
+inv1 U: all u1,u2 : User, p : Photo | p in u1.posts and p in u2.posts implies u1 = u2
+inv1 U: all i : Photo, u1, u2 : User | u1->i in posts and u2->i in posts implies u1 = u2
+inv1 C: all i : Photo | one u : User | u->i in posts	all i : Photo, u1, u2 : User | u1->i in posts and u2->i in posts implies u1 = u2
+inv1 U: all i : Photo, u1, u2 : User | u1->i in posts and u2->i in posts implies u1 = u2	all u1,u2 : User, p : Photo | p in u1.posts and p in u2.posts implies u1 = u2
+inv1 C: all i : Photo | one u : User | u->i in posts		all u1,u2 : User, p : Photo | p in u1.posts and p in u2.posts implies u1 = u2
+inv3 S: all u1,u2 : User, p : Photo | p in u1.seen implies p in u2.posts and u2 in u1.follows
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows and u1 != u2
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows and p not in Ad
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+

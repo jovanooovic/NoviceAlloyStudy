@@ -1,0 +1,6 @@
+inv10 C: grades in Course -> Student -> Grade
+inv10 S: Course.grandes.Grade in Student
+inv10 C: Course.grades.Grade in Student
+inv10 C: Course.grades in Student->Grade
+inv10 C: all c:Course,p:Person,g:Grade | c->p->g in grades implies p in Student
+

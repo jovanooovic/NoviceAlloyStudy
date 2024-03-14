@@ -1,0 +1,6 @@
+inv15 E:
+inv15 E:
+inv15 U: all c : Course, p : c . projects, disj s1, s2 : p . (Person <: projects) |	  (s1 . (c . grades)) . prev =  (s2 . (c . grades)) or	  (s2 . (c . grades)) . prev =  (s1 . (c . grades))
+inv15 U: all c : Course, p : c . projects, disj s1, s2 : p . (Person <: projects) |	  (s1 . (c . grades)) . prev =  (s2 . (c . grades)) or	  (s2 . (c . grades)) . prev =  (s1 . (c . grades))
+inv15 O: all c : Course, p : c . projects, disj s1, s2 : p . ~(Person <: projects) |	  (s1 . (c . grades)) . prev =  (s2 . (c . grades)) or	  (s2 . (c . grades)) . prev =  (s1 . (c . grades))
+

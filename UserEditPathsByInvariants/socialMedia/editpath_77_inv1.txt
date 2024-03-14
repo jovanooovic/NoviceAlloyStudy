@@ -1,0 +1,9 @@
+inv1 S: all i : Photo | lone User.posts(i)
+inv1 T: all i : Photo | lone User.posts.i
+inv1 T: all i : Photo | i lone User
+inv1 T: all i : Photo | i lone User.posts
+inv1 S: all i : Photo | all u : User | u.posts -> photo
+inv1 T: all i : Photo | all u : User | u.posts -> i
+inv1 U: all i : Photo | some u : User | i in u.posts
+inv1 C: all i : Photo | one u : User | i in u.posts
+

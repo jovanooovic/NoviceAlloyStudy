@@ -1,0 +1,13 @@
+inv5 B: all x : User, y : Influencer | y in x.follows
+inv5 U: all x : User-Influencer, y : Influencer | y in x.follows
+inv5 S: some follows.y
+inv5 S: not no follows.y
+inv5 B: all y : Influencer | not no follows.y
+inv5 B: all y : Influencer | not (no follows.y)
+inv5 B: all x : User, y : Influencer | x in  follows.y
+inv5 B: all x : User, y : Influencer | x->y in follows
+inv5 U: all x : User-Influencer, y : Influencer | x->y in follows
+inv5 U: all x : User-Influencer, y : Influencer | x != y implies x->y in follows
+inv5 U: all x : User, y : Influencer | x != y implies x->y in follows
+inv5 U: all x : User, y : Influencer | x != y implies y in x.follows
+

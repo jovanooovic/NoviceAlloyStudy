@@ -1,0 +1,24 @@
+Pairs,50
+,,"",40
+,,"Work.visible = Work.profile",1
+,,"profile.User = profile.User",1
+,,"Work.visible in Source.profile",1
+,,"all w:Work | w.visible = source.w",1
+,,"all w:Work | w.visible in source.w",2
+,,"all w:Work | w.visible = w.profile",1
+,,"all w:Work | w.visible in w.source",1
+,,"all w : Work.visible | one source.profile",1
+,,"all w : Work | some w.(User<:visible) implies some w.(User<:profile)",1
+
+Pairs,21
+,,"User.visible in User.profile",15
+,,"all w : Work | some (User<:visible).w implies some (User<:profile).w",2
+,,"all w : Work | w in User.visible => w in User.profile",3
+,,"all w:Work | w in User.visible:>Work implies w in User.profile:>Work",1
+
+Pairs,1
+,,"(User<:visible).Work in (User<:profile).Work",1
+
+Pairs,1
+,,"some (User<:visible).Work implies some (User<:profile).Work",1
+

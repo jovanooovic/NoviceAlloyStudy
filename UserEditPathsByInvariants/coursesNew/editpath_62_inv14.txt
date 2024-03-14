@@ -1,0 +1,6 @@
+inv14 S: all p1,p2 : Person | all pro1,pro2 | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies pro2 not in p2.projects
+inv14 S: all p1,p2 : Person | all pro1,pro2 | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies (pro2 not in p2.projects)
+inv14 O: all p1,p2 : Person | all pro1,pro2 : Project | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies (pro2 not in p2.projects)
+inv14 C: all p1,p2 : Person | lone pro : Project | pro in p1.projects and pro in p2.projects and p1 != p2
+inv14 C: all p1,p2 : Person | all pro1,pro2 : Project | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2 and p1!=p2) implies (pro2 not in p2.projects)
+

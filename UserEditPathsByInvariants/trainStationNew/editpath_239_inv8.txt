@@ -1,0 +1,4 @@
+inv8 O: all te:Entry, tex:Exit | tex in te.^succs and te in ^succs.tex
+inv8 O: all t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^succs
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^succs
+

@@ -1,0 +1,8 @@
+inv1 S: all p : photo | p.postes
+inv1 S: all p : Photo | p.postes
+inv1 T: all p : Photo | p.posts
+inv1 T: all p : Photo | User.posts.p
+inv1 S: all p : Photo | one p.posted
+inv1 S: all p : Photo | one posted.p
+inv1 C: all p : Photo | one posts.p
+

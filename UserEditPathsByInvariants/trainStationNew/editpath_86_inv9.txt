@@ -1,0 +1,11 @@
+inv9 S: all t:Track | no Junction&t.succs implies no t.signal
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track-Exit | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track | t in Exit or no Junction&t.succs implies no t.signals
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track | no Junction&t.~succs implies no t.signals
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 S: all t:Track | no Junction&t.succs implies no t.signals&Semaphores
+inv9 C: all t:Track | no Junction&t.succs implies no t.signals&Semaphore
+inv9 C: all t:Track | (all t2:Track | t->t2 in succs implies t2 not in Junction) implies (all s:Signal | t->s in signals implies s not in Semaphore)
+

@@ -1,0 +1,10 @@
+inv4 U: all c : Component | all m : Material | no m.parts and some c.parts
+inv4 U: all c : Component | all m : Material | no m.^parts and some c.parts
+inv4 U: all c : Component | all m : Material | no m.(^parts) and some c.parts
+inv4 T: all c : Component | no m : Material | m.(^parts) and some c.parts
+inv4 U: all c : Component | no m : Material | some m.(^parts) and some c.parts
+inv4 U: all c : Component | all m : Material | no m.(^parts) or some c.parts
+inv4 C: all c : Component | some (c.parts)	all m : Material | no (m.parts)
+inv4 C: all c : Component | some (c.parts)	all m : Material | no (m.parts)
+inv4 C: all c : Component | some (c.parts)	all m : Material | no (m.parts)
+

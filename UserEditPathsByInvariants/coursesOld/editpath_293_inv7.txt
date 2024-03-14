@@ -1,0 +1,11 @@
+inv7 T: all p1,p2: Project, s: Student, c: Course | p1 in c.projects and p2 in projects and s in p1.projects and p2.projects implies p1=p2
+inv7 T: all p1,p2: Project, s: Student, c: Course | (p1 in c.projects) and (p2 in c.projects) and s in p1.projects and p2.projects implies p1=p2
+inv7 T: all p1,p2: Project, s: Student, c: Course | ((p1 in c.projects) and (p2 in c.projects) and (s in p1.projects) and (p2.projects)) implies p1=p2
+inv7 S: all p1,p2: Project, s: Student, c: Course | ((p1 in c.projects) and (p2 in c.projects)implies p1=p2
+inv7 B: all p1,p2: Project, s: Student, c: Course | (p1 in c.projects) and (p2 in c.projects)implies p1=p2
+inv7 U: all p1,p2: Project, s: Student, c: Course | ((p1 in c.projects) and (p2 in c.projects) and (s in p1.projects) and (s in p2.projects)) implies p1=p2
+inv7 S: all p1,p2: Project, s: Student, c: Course | (s in p1.projects) and (s in p2.projects)) implies p1=p2
+inv7 U: all p1,p2: Project, s: Student, c: Course | ((s in p1.projects) and (s in p2.projects)) implies p1=p2
+inv7 B: all p1,p2: Project, s: Student, c: Course | ((s in (Person<:projects).p1) and (s in (Person<:projects).p2)) implies p1=p2
+inv7 U: all p1,p2: Project, s: Student, c: Course | ((s in (Person<:projects).p1) and (s in (Person<:projects).p2) and (p1 in c.projects) and (p2 in c.projects)) implies p1=p2
+

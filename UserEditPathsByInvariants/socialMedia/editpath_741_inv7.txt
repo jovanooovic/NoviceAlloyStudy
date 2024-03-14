@@ -1,0 +1,9 @@
+inv7 S: all u, i : User | i in u.suggested implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and U!=o
+inv7 U: all u, i : User | i in u.suggested implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and u!=o
+inv7 U: all u, i : User | i in u.suggested implies some o : User | o in u.follows and i in o.follows and i not in u.follows and i!=o and u!=i and u!=o
+inv7 B: all u, i : User | i in u.suggested implies all o : User | o in u.follows and i in o.follows and i not in u.follows and i!=o and u!=i and u!=o
+inv7 S: all u, i : User | i in u.suggested i not in u.follows  implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and u!=o
+inv7 U: all u, i : User | i in u.suggested and i not in u.follows  implies some o : User | o in u.follows and i in o.follows and i!=o and u!=i and u!=o
+inv7 U: all u, i : User | i in u.suggested implies some o : User | o in u.follows and i in o.follows and i not in u.follows and i!=o and u!=i and u!=o
+inv7 C: all u, i : User | i in u.suggested iff some o : User | o in u.follows and i in o.follows and i not in u.follows and i!=o and u!=i and u!=o
+

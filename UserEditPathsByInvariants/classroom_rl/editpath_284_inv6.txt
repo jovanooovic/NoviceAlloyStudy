@@ -1,0 +1,8 @@
+inv6 S: all t : Teacher | t.teaches
+inv6 T: all t : Teacher | t.Teaches
+inv6 S: all p : Person | p in Teacher implies t.Teaches
+inv6 T: all p : Person | p in Teacher implies p.Teaches
+inv6 T: all p : Person | p in Teacher implies p.Teaches
+inv6 O: all p : Person | some p.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+

@@ -1,0 +1,28 @@
+inv3 S: all a: Add | all u: User | u.a in sees	all p: Photo-Add | u1, u2: User | u1->p in sees and u2->p in posts implies u1-u2 in follows
+inv3 S: all a: Add | all u: User | u.a in sees	all p: Photo-Add | u1, u2: User | u1->p in sees and u2->p in posts implies u1->u2 in follows
+inv3 S: all a: Add | all u: User | u->a in sees	all p: Photo-Add | u1, u2: User | u1->p in sees and u2->p in posts implies u1->u2 in follows
+inv3 S: all a: Add | all u: User | u->a in sees or	all p: Photo-Add | u1, u2: User | u1->p in sees and u2->p in posts implies u1->u2 in follows
+inv3 S: (all a: Add | all u: User | u->a in sees) and	(all p: Photo-Add | u1, u2: User | u1->p in sees and u2->p in posts implies u1->u2 in follows)
+inv3 S: (all a: Add | all u: User | u->a in sees) and	(all p: Photo-Add | u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 S: (all a: Add | all u: User | u->a in sees) and (all p: Photo-Add | u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 S: (all a: Add | all u: User | u->a in sees) and	(all p: Photo-Add | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 S: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Add | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: all x, y : univ | x->y in sees implies y in Ad or all z : univ | z->y in posts implies x->z in follows
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)	all x, y : univ | x->y in sees implies y in Ad or all z : univ | z->y in posts implies x->z in follows
+inv3 B: (all a: Ad | all u: User | u->a in sees)	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)			all x, y : univ | x->y in sees implies y in Ad or all z : univ | z->y in posts implies x->z in follows
+inv3 B: (all a: Ad | all u: User | u->a in sees)	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 S: (all a: Ad | all u: User | u->a in sees)	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)	(all u : user | all p: Photo | u->p in posts implies u->p not in sees)
+inv3 B: (all a: Ad | all u: User | u->a in sees)	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)	(all u : User | all p: Photo | u->p in posts implies u->p not in sees)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows) and	(all u : User | all p: Photo | u->p in posts implies u->p not in sees)
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows) and	(all u : User | all p: Photo | (u->p in posts implies u->p not in sees) and (u->p in sees implies u->p not in posts))
+inv3 S: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows) and	(all u : User | all p: Add | (u->p in posts implies u->p not in sees) and (u->p in sees implies u->p not in posts))
+inv3 B: (all a: Ad | all u: User | u->a in sees) and	(all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows) and	(all u : User | all p: Ad | (u->p in posts implies u->p not in sees) and (u->p in sees implies u->p not in posts))
+inv3 S: (all a: Ad | all u: User | u->p not in post implies u->a in sees) and (all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 S: (all a: Ad | all u: User | u->a not in post implies u->a in sees) and (all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: (all a: Ad | all u: User | u->a not in posts implies u->a in sees) and (all p: Photo-Ad | all u1, u2: User | (u1->p in sees and u2->p in posts) implies u1->u2 in follows)
+inv3 B: all x, y : univ | x->y in sees implies y in Ad or all z : univ | z->y in posts implies x->z in follows
+

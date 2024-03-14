@@ -1,0 +1,7 @@
+inv9 T: all p : Professor, c : Course | no p.teaches.c & enrolled.c implies c in p.enrolled
+inv9 T: all p : Professor, c : Course | no p.teaches.Course & enrolled.c implies c in p.enrolled
+inv9 T: all p : Professor | no p.teaches.Course & p.enrolled.Course
+inv9 T: all p : Professor | no p.teaches.Course in p.enrolled.Course
+inv9 T: all p : Professor | p.teaches.Course  not in p.enrolled.Course
+inv9 B: no(teaches & (Professor <: enrolled).~teaches.teaches)
+

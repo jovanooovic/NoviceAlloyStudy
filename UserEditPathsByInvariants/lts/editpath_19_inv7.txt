@@ -1,0 +1,12 @@
+inv7 T: all s: State | some s.*trans[Event] & Init
+inv7 T: all s: State | some (s.*trans[Event] & Init)
+inv7 B: all s: State | some (s.*(trans[Event]) & Init)
+inv7 S: all s: State | some (s.*(trans..Event) & Init)
+inv7 T: all s: State | some (s.*(s.trans.Event) & Init)
+inv7 O: all s: State | s in Init.^{s1, s2: State | some s1.trans.s2} implies Init in s.^{s1, s2: State | some s1.trans.s2}
+inv7 O: all s: State | s in Init.*{s1, s2: State | some s1.trans.s2} implies Init in s.*{s1, s2: State | some s1.trans.s2}
+inv7 U: all s: State | s in Init.*{s1, s2: State | some s1.trans.s2} implies some (Init & s.*{s1, s2: State | some s1.trans.s2})
+inv7 C: all s: State | s in Init.^{s1, s2: State | some s1.trans.s2} implies some (Init & s.^{s1, s2: State | some s1.trans.s2})
+inv7 S: fun edge : State -> State {	    s1, s2: State | some s1.trans.s2	  }		  all s: State | s in Init.^edge implies some (Init & s.^edge)
+inv7 S: all s: State | s in Init.^edge implies some (Init & s.^edge)
+

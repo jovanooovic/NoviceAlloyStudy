@@ -1,0 +1,16 @@
+"no Dangerous.Workstation & workers.Human",1
+"no (workers.Human and Dangerous.workstation)",2
+"all x: Dangerous | no x.workstation.workers in Human",1
+"all d : Dangerous | no Human in d.workstation.workers",1
+"all c : Component & Dangerous | not (c.workstation & Human)",1
+"all c : Component & Dangerous | no c.workstation.workers in Human",1
+"all c : Component | c in Dangerous => no Human in workstation.c.workers",1
+"all c: Component | c.Dangerous implies  c.workstation.worker not in Human",1
+"all c:Component & Dangerous |all w: c.Workstation | no (w.workers & Human)",2
+"all c: Component & Dangerous| all x: c.workstation| no (x.workers and Human)",1
+"all c:Component |some w:Workstation |Dangerous in c implies (w.workers & Robot)",1
+"all c: Component, h: Human | c.Dangerous and h in c.workstation =>
+not h.Worker",2
+"all c:Component |all w:Workstation | Dangerous in c implies (w.workers & Robot)",1
+"all c:Component, ws:Workstation, w:Worker | c in Dangerous and ws in c.ws implies w not in ws.workers",1
+"all c:Component, ws:Workstation | c in Dangerous and ws in c.ws implies (all h:Human | h not in ws.workers)",1

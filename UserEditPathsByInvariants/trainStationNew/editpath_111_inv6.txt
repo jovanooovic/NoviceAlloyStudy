@@ -1,0 +1,8 @@
+inv6 S: all t:Tracks | some s:Signal | s in t.signals
+inv6 B: all t:Track | some s:Signal | s in t.signals
+inv6 B: all t:Track | one s:Signal | s in t.signals
+inv6 O: all t:Track | one s:Signal | s in t.signals and s in Speed
+inv6 O: all t:Track | some s:Signal | s in t.signals and s in Speed
+inv6 C: all t:Entry | some s:Signal | s in t.signals and s in Speed
+inv6 O: all t:Entry | one s:Signal | s in t.signals and s in Speed
+

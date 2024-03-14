@@ -1,0 +1,6 @@
+inv3 S: all c:Couse, t:Teacher | c in t.teaches
+inv3 S: all c:Course, t:Teacher | c in t.teaches
+inv3 B: all c:Course, t:Person | c in t.teaches
+inv3 S: all c:Course | some teacher:Person | c in t.teaches
+inv3 C: all c:Course | some teacher:Person | c in teacher.teaches
+

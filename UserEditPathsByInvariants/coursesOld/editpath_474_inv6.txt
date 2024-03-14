@@ -1,0 +1,10 @@
+inv6 S: all x: Students, y: Course | x in y.projects implies x in y.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x in y.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies y in x.enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x -> y in enrolled
+inv6 T: all x: Student , y: Course | x in y.projects implies x -> y in enrolled
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+inv6 E:
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+inv6 T: all x: Student , y: Project , z: Course | z in x.projects and y in projects.z implies y in x.enrolled
+

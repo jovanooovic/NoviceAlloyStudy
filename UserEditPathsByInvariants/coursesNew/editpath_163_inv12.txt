@@ -1,0 +1,5 @@
+inv12 T: all c:Course, p:Person,g:Grade | c in p.enrolled implies lone p->g in c.grades
+inv12 T: all c:Course, p:Person,g:Grade | lone p->g in c.grades
+inv12 T: all c:Course, p:Person,g:Grade | lone (p->g in c.grades)
+inv12 C: all c:Course, p:Person| lone g:Grade | p->g in c.grades
+

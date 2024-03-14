@@ -1,0 +1,8 @@
+inv15 T: all s : Student | some Teacher in s . ^Teacher
+inv15 T: all s : Student | Teacher in s . ^Teacher
+inv15 T: all s : Student | some Teacher in s . ^Tutors
+inv15 B: all s : Student | some Teacher & s . ^Tutors
+inv15 T: all s : Student | some Teacher in s . ^Tutors
+inv15 B: all s : Student | some (Teacher & s . ^Tutors)
+inv15 B: all p : Person | some (Teacher & p . ^Tutors)
+

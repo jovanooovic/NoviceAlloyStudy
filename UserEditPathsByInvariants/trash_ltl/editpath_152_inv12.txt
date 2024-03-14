@@ -1,0 +1,23 @@
+inv12 E:
+inv12 B: always all f:File | eventually f not in Trash implies f in Trash'
+inv12 B: always all f:File | eventually (f not in Trash implies f in Trash')
+inv12 S: always all f:File | eventually (f not in Trash after f in Trash)
+inv12 S: always all f:File | eventually (f not in Trash after f in Trash')
+inv12 S: eventually always f:File | f not in Protected after f in Protected'
+inv12 S: eventually always f:File | f not in Protected implies f in Protected'
+inv12 S: eventually always f:File | f not in Trash after f in Trash'
+inv12 S: eventually always f:File | f not in Trash implies f in Trash'
+inv12 B: eventually always all f:File | f not in Trash implies f in Trash'
+inv12 U: eventually always some f:File | f not in Trash implies f in Trash'
+inv12 U: eventually (always some f:File | f not in Trash implies f in Trash')
+inv12 U: eventually (always some f:File | f not in (Trash & Protected) implies f in Trash')
+inv12 U: eventually (always some f:File | (f not in Trash and f not in Protected ) implies f in Trash')
+inv12 U: eventually always some f:File | f in Trash
+inv12 U: eventually always some f:File | f not in Trash implies f in Trash'
+inv12 B: always some f:File | f not in Trash implies f in Trash'
+inv12 U: eventually some f:File | f not in Trash implies f in Trash'
+inv12 U: eventually some f:File | f not in Trash implies always f in Trash'
+inv12 U: eventually some f:File | always f not in Trash implies f in Trash'
+inv12 U: eventually always some f:File | f not in Trash implies f in Trash'
+inv12 B: eventually always all f:File | f not in Trash implies f in Trash'
+

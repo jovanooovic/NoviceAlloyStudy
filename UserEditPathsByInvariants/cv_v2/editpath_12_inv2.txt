@@ -1,0 +1,7 @@
+inv2 S: User.profile.source in (User + Instituition)
+inv2 U: User.profile.source in (User + Institution)
+inv2 S: all u : User, p : u.profile | w.source = u || w.source in Institution
+inv2 C: all u : User, w : u.profile | w.source = u || w.source in Institution
+inv2 T: all u : User, w : u.profile | w.source = u || some w.source.Institution
+inv2 C: all u : User, w : u.profile | w.source = u || some (w.source) & Institution
+

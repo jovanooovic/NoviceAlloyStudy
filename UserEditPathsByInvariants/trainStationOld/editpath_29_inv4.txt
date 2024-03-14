@@ -1,0 +1,14 @@
+inv4 S: lone
+inv4 S: lone
+inv4 B: lone Train.pos
+inv4 B: always(lone Train.pos)
+inv4 U: always(lone pos.Train)
+inv4 S: all t : Train | always (lone.t)
+inv4 U: all t : Train | always (lone t.pos)
+inv4 U: all t : Train | always (lone pos.t)
+inv4 U: all disj t : Train | always (lone pos.t)
+inv4 O: all t1,t2 : Train | always no (t1.pos & t2.pos)
+inv4 O: all t1,t2 : Train | always ( no (t1.pos & t2.pos) and t1.prox not in t2.pos)
+inv4 O: all t1,t2 : Train | always  no (t1.pos & t2.pos)
+inv4 O: all t1,t2 : Train | always  no (t1.pos & t2.pos)
+

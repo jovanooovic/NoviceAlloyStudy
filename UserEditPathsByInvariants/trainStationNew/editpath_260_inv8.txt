@@ -1,0 +1,7 @@
+inv8 O: all e1 : Entry, e2 : Exit | e2 in e1.^succs
+inv8 O: all e1 : Entry, e2 : Exit | e2 in e1.^succs - e1
+inv8 B: Entry.^succs & Exit = Exit
+inv8 O: all e1 : Entry | all e2 : Exit | e2 in e1.^succs - e1
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 C: all e : Entry | Exit in e.^succs + e
+

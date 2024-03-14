@@ -1,0 +1,4 @@
+inv4 T: all user: User | all ad: Ad | ad in user.posts implies user.^(posts in Photo+Ad-Photo)
+inv4 C: all user: User | all ad: Ad | ad in user.posts implies user.^(posts) in Ad
+inv4 C: all user: User | all ad: Ad | ad in user.posts implies user.posts in Ad
+

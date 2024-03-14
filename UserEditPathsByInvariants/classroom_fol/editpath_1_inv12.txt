@@ -1,0 +1,13 @@
+inv12 B: all t : Teacher | some c : Class, g : Group | c->t->g in Groups
+inv12 B: all t : Teacher | some c : Class, g : Group | c->t->g in Groups
+inv12 O: all t : Teacher | some c : Class, g : Group | t->c in Teaches and c->t->g in Groups
+inv12 B: some c : Class | (some p : Person, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches
+inv12 B: some c : Class | (some p : Person, g : Group | c->p->g in Groups) implies all t : Teacher | t->c in Teaches
+inv12 O: all t : Teacher | some c : Class, g : Group | t->c in Teaches and c->t->g in Groups
+inv12 S: all t : Teacher | (some c : Class, g : Group | t->c in Teaches) and c->t->g in Groups
+inv12 B: all t : Teacher | some c : Class, g : Group | t->c in Teaches implies c->t->g in Groups
+inv12 O: all t : Teacher | some c : Class, g : Group | t->c in Teaches and c->t->g in Groups
+inv12 O: all t : Teacher | some c : Class, g : Group | t->c in Teaches and c->t->g in Groups
+inv12 B: all t : Teacher | some c : Class, g : Group | c->t->g in Groups
+inv12 O: all t : Teacher | some c : Class, g : Group | c->t->g in Groups and t->c in Teaches
+

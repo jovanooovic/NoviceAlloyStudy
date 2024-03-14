@@ -1,0 +1,11 @@
+"File.link in File",3
+"link in File set -> set File",1
+"all f: File | #f.link =< 2",1
+"all f : File | all l : f.link | one l",1
+"all f : File | all l : f.link | some l",1
+"all f : File | all l : f.link | lone l",2
+"all f : File | all l : f.link | #l<2",3
+"all f : File | (all l : f.link | some f->l)",1
+"all f:File | some f1,f2:File | f->f1 in link and f->f2 in link implies f1=f2",1
+"all f1, f2 : File | f1.link = f2.link implies f1 = f2 and f1 != f2 implies no f1.link & f2.link",1
+"all f:File | some a:File | some b:File | f->a in link and f->b in link implies a=b",3

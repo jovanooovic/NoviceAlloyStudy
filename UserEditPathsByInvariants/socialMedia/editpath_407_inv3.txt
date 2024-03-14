@@ -1,0 +1,27 @@
+inv3 E:
+inv3 S: all x : User | some y : User in x.follows
+inv3 B: all x : User | some y : User | y in x.follows
+inv3 S: all x : User | some y : User | y in x.follows	y in sees.x
+inv3 O: all x : User | some y : User | y in x.follows and y in sees.x
+inv3 O: all x : User | some y : User | y in x.follows and y in x.sees
+inv3 S: all x : User | all y : User |all p : Photos| y in x.follows and p in y.posts
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts
+inv3 T: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x sees.y
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y and p not in Ad
+inv3 T: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y and p is not in Ad
+inv3 T: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y and p
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in y.sees
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in y.sees
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.y
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p and p != Ad
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p and p = Ad
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p and not p = Ad
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p and p = Ad
+inv3 O: all x : User | all y : User |all p : Photo| y in x.follows and p in y.posts and x in sees.p and p != Ad
+inv3 O: all x : User | all y : User |all p : Photo - Ad| y in x.follows and p in y.posts and x in sees.p and p != Ad
+inv3 O: all x : User | all y : User |all p : Photo - Ad| y in x.follows and p in y.posts and x in sees.p
+inv3 O: all x : User | all y : User |all p : Photo - Ad|  x not in follows.x and y in x.follows and p in y.posts and x in sees.p
+

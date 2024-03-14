@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 C: no Green
+inv2 O: eventually no(Signal-Green)
+inv2 O: eventually all s:Signal | s in Green
+inv2 C: all s:Signal |eventually s in Green
+inv3 C: always all t:Train | t.pos = t.pos'
+inv4 S: always on Train.pos
+inv4 B: always one Train.pos
+inv4 O: always all disj t1,t2:Train |  t1.pos!=t2.pos
+inv4 O: all disj t1,t2:Train | always t1.pos!=t2.pos
+inv4 O: all  t1,t2:Train | always t1.pos!=t2.pos
+inv4 O: always all t1,t2:Train | t1.pos!=t2.pos
+

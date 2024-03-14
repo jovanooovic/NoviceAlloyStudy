@@ -1,0 +1,8 @@
+inv5 T: all p: Person | some p.projects implies p in Student		all p: Project | p in Person <: projects
+inv5 T: all p: Person | some p.projects implies p in Student		all p: Project | Person <: p in projects
+inv5 T: all p: Person | some p.projects implies p in Student		all p: Project | p in (Person <: projects)
+inv5 T: all p: Person | some p.projects implies p in Student		all p: Project | p in projects
+inv5 T: all p: Person | some p.projects implies p in Student		all p: Project | p in projects
+inv5 T: all p: Project | p in projects
+inv5 C: all p: Person | some p.projects implies p in Student		all p: Project | p in Person.projects
+

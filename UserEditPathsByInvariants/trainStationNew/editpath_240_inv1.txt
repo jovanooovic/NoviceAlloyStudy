@@ -1,0 +1,4 @@
+inv1 T: all t:Track | some (Entry.t & Exit.t)
+inv1 T: all t:Track | some ( t.Entry & t.Exit)
+inv1 C: some e:Entry,ex:Exit | e in Track and ex in Track
+

@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv14 T: all s : Student | some s.Class
+inv14 B: all s : Student | some s.(Class.Groups)
+inv14 T: all s : Student | some s.(Class.Groups) and (Teacher.Tutors).s
+inv14 T: all s : Student | some s.(Class.Groups) & (Teacher.Tutors).s
+inv14 B: all s : Student | some s.(Class<:Groups)
+inv14 T: all s : Student | some s.(Class<:Groups) implies Class.(Teacher<:Teaches)
+inv14 U: all s : Student | some s.(Class<:Groups) implies some Class.(Teacher<:Teaches)
+inv14 T: all s : Student | some s.Class
+inv14 T: all s : Student | some Class.s
+inv14 T: all s : Student | some s.Class
+inv14 B: all s : Student | some s.(Class.Groups) and some Teacher.Teaches implies some (Teacher<:Tutors).s
+inv14 S: all s : Student | some s.(Class.Groups) and  implies some (Teacher<:Tutors).s
+inv14 B: all s : Student | some s.(Class.Groups)   implies some (Teacher<:Tutors).s
+inv14 B: all s : Student | some s.(Class.Groups) and some Teacher<:Teaches implies some (Teacher<:Tutors).s
+inv14 T: all s : Student | some s.(Class.Groups) and some Teacher:>Teaches implies some (Teacher<:Tutors).s
+inv14 T: all s : Student | some s.(Class.Groups) and some Teacher:>Teaches implies some (Teacher:>Tutors).s
+inv14 B: all s : Student | some s.(Class.Groups) and some Teacher<:Teaches implies some (Teacher<:Tutors).s
+inv14 O: all s, t : Person | some s.(Class.Groups) and some t<:Teaches implies some (t<:Tutors).s
+inv14 O: all s, t : Person | some s.(Class.Groups) and some t<:Teaches implies some t<:(Tutors.s)
+inv14 T: all s, t : Person | some s.(Class.Groups) and some t<:Teaches implies some t.(Tutors.s)
+inv14 O: all s, t : Person | some s.(Class.Groups) and some t<:(Teaches.Class) implies some t<:(Tutors.s)
+

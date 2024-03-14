@@ -1,0 +1,7 @@
+inv2 O: some Workstation.workers && one workstation.Worker
+inv2 B: some Workstation.workers && one workers.Worker
+inv2 U: all x: Workstation | some (x.workers)
+inv2 C: all x: Workstation | some (x.workers)	all y: Worker | one (workers.y)
+inv2 U: all x: Workstation, y: Worker | some (x.workers) && one (workers.y)
+inv2 C: all x: Workstation | some (x.workers) && all y: Worker | one (workers.y)
+

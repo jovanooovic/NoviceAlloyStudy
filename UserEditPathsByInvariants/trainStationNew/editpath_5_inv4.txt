@@ -1,0 +1,8 @@
+inv4 S: all t1,t2:Track| t in Entry iff t1 not in t2.*succ
+inv4 S: all t1,t2:Track| t1 in Entry iff t1 not in t2.*succ
+inv4 B: all t1,t2:Track| t1 in Entry iff t1 not in t2.*succs
+inv4 O: all t1,t2:Track| t1 in Entry iff t1 not in t2.^succs
+inv4 C: all t1,t2:Track| t1 in Entry iff t1 not in Track.^succs
+inv4 B: all t1:Track|all t2:Track-t1| t1 in Entry iff t1 not in t2.^succs
+inv4 C: all t:Track| t in Entry iff t not in Track.^succs
+

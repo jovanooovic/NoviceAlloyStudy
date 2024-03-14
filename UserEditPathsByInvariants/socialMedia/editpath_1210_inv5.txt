@@ -1,0 +1,5 @@
+inv5 T: all x : Influencer | all y : User | y.follows.x
+inv5 B: all x : Influencer | all y : User | y->x in follows
+inv5 U: all x : Influencer | all y : User | y != x implies y->x in follows
+inv5 U: all x : Influencer | all y : User | y != x implies y->x in follows
+

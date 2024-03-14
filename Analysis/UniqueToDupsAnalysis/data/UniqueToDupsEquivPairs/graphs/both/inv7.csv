@@ -1,0 +1,46 @@
+Pairs,14
+,,"Node.adj = Node",1
+,,"Node = Node.^adj",1
+,,"Node in Node.^adj",12
+
+Pairs,2
+,,"Node in ^adj.Node",2
+
+Pairs,5
+,,"Node in Node.adj & adj.Node",4
+,,"Node in (Node.^adj & ^adj.Node )",1
+
+Pairs,1
+,,"one n: Node | n.*adj = Node",1
+
+Pairs,3
+,,"all n1 : Node| n1 in n1.adj",1
+,,"all n:Node | n in n.~adj",1
+,,"all n1,n2 : Node| n1 in n1.adj",1
+
+Pairs,2
+,,"some n: Node | n.*adj = Node",1
+,,"some { n: Node | n.*adj = Node }",1
+
+Pairs,2
+,,"lone n: Node | n.*adj = Node",2
+
+Pairs,1
+,,"^(adj + ~adj) = (Node -> Node )",1
+
+Pairs,6
+,,"all n:Node | Node = n.^adj + n.^~adj",2
+,,"all n:Node | Node in n.^adj+n.^~adj",4
+
+Pairs,1
+,,"no Node or one n: Node | n.*adj = Node",1
+
+Pairs,1
+,,"all n:Node | Node-n = n.^adj + n.^~adj",1
+
+Pairs,1
+,,"all x, y: Node | x in y.^(adj) or x in adj.y",1
+
+Pairs,1
+,,"all n:Node | Node in n.^adj or Node in n.^~adj",1
+

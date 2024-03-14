@@ -1,0 +1,6 @@
+inv8 U: all x : Person | x in Professor implies x not in x.teaches
+inv8 U: all x : Person | x in Professor implies (x not in x.teaches)
+inv8 U: all x,y : Person | y in Professor and x in y.teaches implies x != y
+inv8 U: all x,y : Person |  x in y.teaches implies x != y
+inv8 C: all x : Person | all y : Course | y in x.enrolled implies y not in x.teaches
+

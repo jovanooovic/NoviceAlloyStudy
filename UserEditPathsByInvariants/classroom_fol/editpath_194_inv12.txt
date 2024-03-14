@@ -1,0 +1,26 @@
+inv12 B: all t : Teacher | all c : Class, s: Student | some g : Group | c->s->g in Groups implies t->c in Teaches
+inv12 B: all t : Teacher, c : Class | some g : Group | c->t->g in Groups implies t->c in Teaches
+inv12 B: all c : Class, s : Person, g : Group | some t : Person | c->s->g in Groups implies t->c in Teaches and t in Teacher
+inv12 B: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups implies t->c in Teaches and t in Teacher
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher
+inv12 S: all t : Person | some c : Class, s : Person, g : Group | c->t->g in and t in Teacher
+inv12 B: all t : Person | some c : Class, s : Person, g : Group | c->t->g in Groups and t in Teacher
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->t->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 B: all t : Person , c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 O: all t,s : Person | some c : Class, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 S: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher, s in Student
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and  s in Student
+inv12 O: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches and t in Teacher and s in Student
+inv12 B: all t : Person | some c : Class, s : Person, g : Group | t in Teacher and s in Student implies  c->s->g in Groups and t->c in Teaches
+inv12 S: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches  t in Teacher and s in Student
+inv12 S: all t : Person | some c : Class, s : Person, g : Group | c->s->g in Groups and t->c in Teaches  t in Teacher and s in Student
+inv12 S: all t : Person | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups)
+inv12 O: all t : Person | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups)
+inv12 O: all t : Person | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->(s->g) in Groups)
+inv12 O: all t : Person | some c : Class | t->c in Teaches and (some g : Group| some s : Person | c->(s->g) in Groups)
+inv12 O: all t : Person | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups)
+inv12 C: all t : Teacher | some c : Class | t->c in Teaches and (some g : Group, s : Person | c->s->g in Groups)
+

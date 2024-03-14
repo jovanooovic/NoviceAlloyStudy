@@ -1,0 +1,15 @@
+inv5 S: Junction = some (Track.succ)
+inv5 S: Junction = some ~succs.Track
+inv5 T: Junction = #(~succs.Junction) > 1
+inv5 B: #(~succs.Junction) > 1
+inv5 B: #(~succs.Track) > 1 implies Track in Junction
+inv5 B: #(~succs.Track) > 2 implies Track in Junction
+inv5 B: all t : Track | #(~succs.t) > 1 implies t in Junction
+inv5 T: all t : Track | #(~succs.t) > 1 implies t.Junction
+inv5 B: all t : Track | #(~succs.t) > 1 implies t in Junction
+inv5 U: all t : Track | #(succs.t) > 1 implies t in Junction
+inv5 B: all t : Track | #(t.succs) > 1 implies t in Junction
+inv5 B: all t : Track | not lone (~succs.Track) implies t in Junction
+inv5 B: all t : Track | not lone (~succs.t) implies t in Junction
+inv5 C: Junction = { t : Track | not lone succs.t }
+

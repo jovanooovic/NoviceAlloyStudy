@@ -1,0 +1,8 @@
+inv7 B: all x : User | suggested.x not in follows.x and suggested.x in follows.follows.x
+inv7 B: all x : User | suggested.x not in follows.x and suggested.x in follows.follows.x and x not in suggested.x
+inv7 S: all x : User | all suggested.x not in follows.x and all suggested.x in follows.follows.x and x not in suggested.x
+inv7 U: all x : User | no suggested.x & follows.x and suggested.x in follows.follows.x and x not in suggested.x
+inv7 U: all x : User | no x.suggested & x.follows and x.suggested in x.follows.follows and x not in x.suggested
+inv7 U: all x : User | no x.suggested & x.follows and x.suggested in x.follows.follows and x not in x.suggested
+inv7 U: all x,y : User | x not in x.suggested and x != y and y not in x.follows and y in x.follows.follows implies y in x.suggested
+

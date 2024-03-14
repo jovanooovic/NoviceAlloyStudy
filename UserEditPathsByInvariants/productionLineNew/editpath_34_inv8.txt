@@ -1,0 +1,4 @@
+inv8 S: all x:Worker,all z:Dangerous | all w:Workstation | w in z.workstation implies x in Robot
+inv8 O: all x:Worker|all z:Dangerous | all w:Workstation | w in z.workstation implies x in Robot
+inv8 O: all x:Worker|all z:Dangerous | all w:Workstation | (w in z.workstation and x in w.workers)implies x in Robot
+

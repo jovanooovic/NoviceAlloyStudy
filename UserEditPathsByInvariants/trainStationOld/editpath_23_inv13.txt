@@ -1,0 +1,9 @@
+inv13 O: always ( all t:Train | no t.pos implies always (no t.pos))
+inv13 B: ( all t:Train | no t.pos implies always (no t.pos))
+inv13 O: always ( all t:Train | no t.pos implies always (no t.pos))
+inv13 B: always ( all t:Train | eventually always no t.pos implies  always(no t.pos))
+inv13 B: ( all t:Train | eventually always no t.pos implies  always(no t.pos))
+inv13 B: ( all t:Train | no t.pos since  no t.pos)
+inv13 O: always ( all t:Train | no t.pos since  no t.pos)
+inv13 C: always (all t:Train | (once some t.pos and no t.pos ) => always no t.pos)
+

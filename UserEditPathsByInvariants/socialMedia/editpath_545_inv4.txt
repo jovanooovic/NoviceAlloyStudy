@@ -1,0 +1,10 @@
+inv4 S: some p : Photo, u : User | p in u.posts and p = Ad implies all x in u.posts | x = Ad
+inv4 S: some p : Photo, u : User | p in u.posts and p = Ad implies all x in u.posts x == Ad
+inv4 T: some p : Photo, u : User | p in u.posts and p = Ad implies none (u.posts - Ad)
+inv4 S: some p | p in Ad -> none User.posts - Ad
+inv4 B: some p : Photo, u : User | p in u.posts and p = Ad implies no u.posts - Ad
+inv4 S: some p : Photo, all u : User | p in u.posts and p = Ad implies no u.posts - Ad
+inv4 S: some p : Photo, | p in User.posts and p = Ad implies no User.posts - Ad
+inv4 B: some p : Photo | p in User.posts and p = Ad implies no User.posts - Ad
+inv4 B: some p : Photo | p in User.posts and p = Ad implies no User.posts - Ad
+

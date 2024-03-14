@@ -1,0 +1,4 @@
+inv8 B: posts . (User . sees) in (User . follows + User . suggested)
+inv8 B: all u:User | not some a:Ad | u->a in sees and posts . a not in u.follows+u.suggested
+inv8 B: all u, v:User, a:Ad  | u->a in sees and v->a in posts=> u->v in follows+suggested
+

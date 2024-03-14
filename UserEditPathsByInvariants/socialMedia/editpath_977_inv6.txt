@@ -1,0 +1,14 @@
+inv6 S: all u : User | u in Influencer implies (all d : Date | some u.posts.d)
+inv6 T: all u : User | u in Influencer implies (all d : Day | some u.posts.d)
+inv6 T: all u : User | u in Influencer implies (all d : Day | some u.posts.d)
+inv6 T: all u : User, d : Day | u in Influencer implies some u.posts.d
+inv6 O: all u : User, d : Day | u in Influencer implies some posts.d
+inv6 T: all u : User, d : Day | u in Influencer implies some d in posts.Day
+inv6 O: all u : User, d : Day | u in Influencer implies d in posts.Day
+inv6 S: all u : User | u in Influencer implies (one d : Day | some u.posts
+inv6 U: all u : User | u in Influencer implies (all d : Day | some u.posts )
+inv6 T: all u : User | u in Influencer implies (some d : Day | u.posts.d )
+inv6 S: all u : User | u in Influencer implies (all d : Day | d in u.posts.day )
+inv6 C: all u : User | u in Influencer implies (all d : Day | d in u.posts.date )
+inv6 C: all u : User | u in Influencer implies (all d : Day | d in u.posts.date)
+

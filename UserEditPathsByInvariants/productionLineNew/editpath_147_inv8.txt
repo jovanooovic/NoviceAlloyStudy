@@ -1,0 +1,4 @@
+inv8 U: all c:Component | c in Dangerous implies workstation.c.workers in Robot
+inv8 U: all c:Component | c in Dangerous implies (no workstation.c.workers & Human)
+inv8 C: all c: Component & Dangerous | all x : c.workstation | no (x.workers & Human)
+

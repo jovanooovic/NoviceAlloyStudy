@@ -1,0 +1,5 @@
+inv4 S: all c : Components | all p : c.parts | p in c.position.prevs.parts
+inv4 O: all c : Component | all p : c.parts | p in c.position.prevs.parts
+inv4 O: all c : Component | all p : c.parts | some pos : c.position.prevs | p.position = pos
+inv4 C: all c : Component | all p : c.parts | not (some pos: c.position.^next | p.position = pos)
+

@@ -1,0 +1,34 @@
+inv5 O: File = Protected
+inv5 O: Trash = File	no Protected
+inv5 O: Trash = File + Protected	no Protected
+inv5 S: Trash = no Protected
+inv5 T: no Protected = Trash
+inv5 S: Protected = no Trash
+inv5 O: Trash = File + Protected	no Protected
+inv5 S: Trash = no Protected
+inv5 B: all p : Protected | no Trash
+inv5 O: File = Protected + Trash	no Protected & Trash
+inv5 S: File = no Protected & Trash
+inv5 S: File in Trash	no Proteected
+inv5 O: File in Trash	no Protected
+inv5 O: File in Trash	no Protected & Trash
+inv5 T: Trash = (File in Trash)
+inv5 O: File in Trash
+inv5 T: (no Protected) in Trash
+inv5 O: Trash = File	no Protected
+inv5 O: File = Trash + Protected	no Protected
+inv5 B: no Trash & Protected
+inv5 S: File & Trash & no Protected
+inv5 T: File & Trash
+inv5 S: all Trash & no Protected
+inv5 S: all Trash & Protected
+inv5 B: no Trash & Protected
+inv5 B: all p : Protected | p not in Trash
+inv5 O: Trash = File	no Protected
+inv5 S: File = Trash & no Protected
+inv5 S: Trash = no Protected	File = Trash
+inv5 O: File = Trash + Protected	no Protected
+inv5 C: File = Trash + Protected
+inv5 B: no Protected & Trash
+inv5 B: no Trash & Protected
+

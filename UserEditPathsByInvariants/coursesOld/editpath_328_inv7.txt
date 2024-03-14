@@ -1,0 +1,7 @@
+inv7 B: all student: Student | lone student.enrolled.projects
+inv7 B: all student: Student | lone student.enrolled.projects
+inv7 T: all student: Student | lone proj: Project | student.enrolled.proj
+inv7 T: all student: Student | lone proj: Project | student.enrolled.proj = 1 or student.enrolled.proj = 0
+inv7 U: all student: Student | all proj: Project | all course: Course | proj in student.projects and proj in course.projects implies lone proj
+inv7 U: all student: Student | all p1, p2: Project | all course: Course | (p1+p2) in student.projects and (p1+p2) in course.projects implies p1 = p2
+

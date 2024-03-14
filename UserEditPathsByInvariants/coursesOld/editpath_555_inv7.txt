@@ -1,0 +1,7 @@
+inv7 B: all s : Student | all c : Course | c in s.enrolled implies some c.projects
+inv7 B: all s : Student | all c : Course | c in s.enrolled implies lone c.projects
+inv7 O: all c : Course | lone c.projects
+inv7 B: all s : Student | all c : Course | all w : Project | c in s.enrolled and w in s.projects implies lone c.projects
+inv7 B: all s : Student | all c : Course | all w : Project | c in s.enrolled and w in s.projects implies lone s.projects
+inv7 U: all s : Student | all c : Course | lone s.projects&c.projects
+

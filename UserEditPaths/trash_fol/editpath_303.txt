@@ -1,0 +1,22 @@
+NA H: THEME UPDATE
+inv1 S: all f:File | f not in trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv5 S: all f not in Protected | f in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv7 T: all x,y : File | (x->y) implies (x not in Trash) and (y not in Trash)
+inv7 S: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked[g:file]{	some f:File | f->g in link
+inv1 C: all f:File | f not in Trash
+inv8 S: all f:file | f not in link
+inv8 T: all f:File | f not in link
+inv1 C: all f:File | f not in Trash
+inv1 C: all f:File | f not in Trash
+inv10 S: all f,g : File | f in trash implies g in Trash
+inv1 C: all f:File | f not in Trash
+

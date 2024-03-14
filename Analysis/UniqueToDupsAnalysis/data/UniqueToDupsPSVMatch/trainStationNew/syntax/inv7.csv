@@ -1,0 +1,38 @@
+"no ^succ & iden",1
+"all t : Track |",1
+"succ not in ^succ",1
+"Track not in t.^succs",1
+"all t: Trak | t.*(succs)",1
+"all t : Track | no t^.succs",1
+"all x,y:Track| x in Exit and",1
+"Track.^succ & Track.^succ = id",1
+"all t:Track | t not in t.^succ",2
+"no (t: Track | t in t.*(succs))",3
+"all t: Track | t not in t.^succ",3
+"all x :Track | x not in x.^succ",1
+"no t : Track | t in p.^(~succs)",1
+"all t.Track | t not in t.^succs",1
+"all t : Track | t not in t.^succ",2
+"all t: Track| t not in t.^tracks",1
+"all x :Tracks | x not in x.^succ",1
+"Track.^succs & Track.^succs = id",1
+"all t:Tracks | no t in t.(^succs)",1
+"all t : Track | t not in t.succs^",1
+"all t:track | t not in t.^(succs)",1
+"all x : Track : x not in x.^(succs)",1
+"all t in Track | t not in t.(^succs)",1
+"all t : Track | t not in t.^(tracks)",1
+"all t : Track | t.succ not in succs.t",1
+"all t1,t2 : Tracks | t1 in t2.succs implies t1!=t2",1
+"all x,y,z:Track| x->y in succs and y->z in succs and",5
+"all t:track | t not in ^succs.t and t not in t.^succs",1
+"all t: Track | all s: t.succs | succs.^p not in s.succs",1
+"all t: Track | all s: t.succs | succs^.p not in s.succs",1
+"all t: Track | all p: succ.t | all s: t.succ | p not in s",1
+"all t: Track | all p: succ.t | all s: t.succs | p not in s",1
+"all t:Track | t in Exit => not in Entry
+all t:Track | t in Entry => not in Exit",1
+"all t:Track | t not in t.succs
+all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs",1
+"all t:Track | t not in Exit implies some t2:Track | t->t2 in succs
+all t:Track | t in Exit implies all t2 Track | t->t2 not in succs",1

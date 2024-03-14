@@ -1,0 +1,6 @@
+inv5 B: Human in Workstation.workers implies Robot not in Workstation.workers
+inv5 B: Human in Workstation.workers implies Robot not in Workstation.workers	Robot in Workstation.workers implies Human not in Workstation.workers
+inv5 B: all w: Workstation | (Robot in w.workers => Human not in w.workers) or (Human in w.workers => Robot not in w.workers)
+inv5 T: all w: Workstation | (Robot in w.workers => no Human in w.workers) or (Human in w.workers => Robot not in w.workers)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+

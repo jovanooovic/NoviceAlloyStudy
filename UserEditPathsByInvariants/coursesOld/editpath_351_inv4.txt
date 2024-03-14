@@ -1,0 +1,13 @@
+inv4 S: Project = Courses one -> projects
+inv4 S: Project in Courses one -> projects
+inv4 T: Project in Course one -> projects
+inv4 S: Project = Course one -> projects
+inv4 T: Course one -> projects
+inv4 S: all p:Project | one c1,c2:Course | c1->p in Projects and c2->p in Projects implies c1=c2
+inv4 B: all p:Project | one c1,c2:Course | c1->p in projects and c2->p in projects implies c1=c2
+inv4 B: all p:Project | one c1,c2:Course | c1->p in projects and c2->p in projects implies c1=c2
+inv4 B: all p:Project | one c1,c2:Course | c1->p in projects and c2->p in projects implies c1=c2
+inv4 B: all p:Project | one c1,c2:Course | no p1:Person | c1->p in projects and c2->p in projects implies c1=c2 and p1->p in projects
+inv4 S: Course <: projects in Course one -> Project
+inv4 C: Course <: projects in Course one -> Project
+

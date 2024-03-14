@@ -1,0 +1,8 @@
+inv12 S: all p : Person | all g : Grande | all c : Course | c in p.enrolled implies lone p->g
+inv12 S: all p : Person | all g : Grande | all c : Course | c in p.enrolled implies lone p->g
+inv12 U: all p : Person | all g : Grade | all c : Course | c in p.enrolled implies lone p->g
+inv12 T: all p : Person | lone g : Grade | all c : Course | c in p.enrolled implies p->g
+inv12 B: all p : Person | lone g : Grade | all c : Course | p->g in c.grades
+inv12 B: all p : Student | lone g : Grade | all c : Course | p->g in c.grades
+inv12 U: all p : Student | all c : Course | lone g : Grade | p->g in c.grades
+

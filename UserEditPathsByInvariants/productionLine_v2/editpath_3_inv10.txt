@@ -1,0 +1,16 @@
+inv10 S: all c1, c2 : Compoment | c1!=c2 and c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c1!=c2 and c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c1!=c2 and c2 in c1.^parts implies c2.workstation in c1.workstation.*succ
+inv10 B: all c1, c2 : Component | c1!=c2 and c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2.workstation in c1.workstation.^succ implies c2 in c1.^parts
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation in c1.workstation.^succ	all c1, c2 : Component | c2.workstation in c1.workstation.^succ implies c2 in c1.^parts
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c1.workstation in c2.workstation.^succ	all c1, c2 : Component | c1.workstation in c2.workstation.^succ implies c2 in c1.^parts
+inv10 B: all c1, c2 : Component | c2 in c1.^parts <=> c2.workstation in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts <=> c2.workstation not in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation not in c1.workstation.^succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation not in c1.workstation.*succ
+inv10 B: all c1, c2 : Component | c2 in c1.^parts implies c2.workstation not in c1.workstation.*succ
+

@@ -1,0 +1,6 @@
+inv7 B: (Person <: projects) in Student lone -> Project
+inv7 U: all c:Course, s:Student | lone (s.projects) & (c.projects)
+inv7 U: all c:Course, s:Student | lone ((s.projects) & (c.projects))
+inv7 U: all c:Course, s:Student | lone s.projects & c.projects
+inv7 B: all c:Course, s:Student | one s.projects & c.projects
+

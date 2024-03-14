@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all p : Photo | one u : User | u -> p in Posts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 S: /all u : user | u -> u not in follows
+inv2 S: all u : user | u -> u not in follows
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 S: all p : Photo | one u : User | u -> p in osts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 C: all u : User | u -> u not in follows
+inv2 C: all u : User | u -> u not in follows
+inv3 S: all u : User | all p : Photos | u -> p in posts
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 O: all u : User | all p : Photo | u -> p in follows
+inv2 C: all u : User | u -> u not in follows
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv1 C: all p : Photo | one u : User | u -> p in posts
+inv2 C: all u : User | u -> u not in follows
+inv3 O: all u : User | one p : Photo | u -> p in follows
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 B: all u : User | all p : Photo | u -> p in sees
+inv3 B: one u : User | all p : Photo | u -> p in sees
+inv3 S: one u : User | all p : Photo | u -> p in sees | u -> p follows
+inv3 S: all u : User | not Ad in u.follow.post
+inv3 S: all u : User | not Ad in u.follows.post
+inv3 B: all u : User | not Ad in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 S: all u : User | no object.Ad in u.follows.posts
+inv3 T: all u : User | no Ad in u.follows.posts
+inv3 S: all u : User | not in Ad.sees in u.follows.posts
+inv3 S: all u : User | not in Ad in u.follows.posts
+inv3 S: all u : User | not in Ad. in u.follows.posts
+

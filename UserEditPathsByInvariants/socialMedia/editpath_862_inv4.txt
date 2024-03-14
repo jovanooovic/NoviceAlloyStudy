@@ -1,0 +1,15 @@
+inv4 T: all u: User | one a: Ad | one u.posts = a => u.posts in Ad
+inv4 T: all u: User | one a: Ad | one (u.posts = a) => u.posts in Ad
+inv4 B: all u: User | one a: Ad | u.posts in a => u.posts in Ad
+inv4 O: all u: User | one a: Ad | u.posts in a && #u.posts = 1
+inv4 S: all u: User, a: Ad | a in u.posts => u.posts = p
+inv4 O: all u: User, a: Ad | a in u.posts => u.posts = a
+inv4 O: all u: User, a: Ad | a in u.posts => (all p: User.posts | p = a)
+inv4 B: all u: User | one a: Ad | a in u.posts => u.posts = a
+inv4 B: all u: User | one a: Ad | a in u.posts => all d: Ad | u.posts = d
+inv4 B: all u: User | one a: Ad | a in u.posts => all d: Ad | u.posts in d
+inv4 B: all u: User | one a: Ad | a in u.posts => (all d: Ad | u.posts in d)
+inv4 O: all u: User, a: Ad | a in u.posts => (all d: Ad | u.posts in d)
+inv4 O: all u: User, a: Ad | a in u.posts => u.posts in a
+inv4 B: all u : User | one a : Ad | a in u.posts => u.posts in Ad
+

@@ -1,0 +1,8 @@
+inv12 T: Teacher -> Groups != none
+inv12 T: Teacher.Groups != none
+inv12 S: Teaches in Teacher -> some Class | some c:Class, s:Student, g:Group | c -> s -> g in Groups
+inv12 B: Teaches in Teacher -> some Class
+inv12 B: some p:Person, c:Class | p -> Class in Teaches implies p in Teacher
+inv12 B: some p:Person, c:Class | p -> c in Teaches implies p in Teacher
+inv12 B: all p:Person, c:Class | p -> c in Teaches implies p in Teacher
+

@@ -1,0 +1,19 @@
+inv6 O: lone link
+inv6 B: lone (link - iden)
+inv6 T: lone (File - iden)
+inv6 B: lone (link - iden)
+inv6 B: one (link - iden)
+inv6 B: lone (link - iden)
+inv6 O: lone link
+inv6 O: lone (iden - link)
+inv6 O: lone link
+inv6 B: no (iden & ^link)
+inv6 T: no (iden & ^link.File)
+inv6 T: no (iden & ^(link.File))
+inv6 T: no (iden & ~(link.File))
+inv6 O: lone (File <: link)
+inv6 O: one (File <: link)
+inv6 B: lone (File <: link) - iden
+inv6 B: lone ((File <: link)-iden)
+inv6 O: all f,f1 : File | f1 in f.link => f1 != f	lone (File <: link)
+

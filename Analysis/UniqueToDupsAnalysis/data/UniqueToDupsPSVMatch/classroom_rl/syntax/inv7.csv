@@ -1,0 +1,24 @@
+"all c : Class",1
+"all c: Class |",1
+"all Teacher.Class",1
+"all Class.Teaches",1
+"Class  in Teacher.class",1
+"Class in Teacher.teaches",1
+"Class in Teachers.Teaches",1
+"some t:Teacher | all t.Teaches",2
+"#(Teaches :> Class) == #Teaches",1
+"Teacher <: Persson.Teaches.Class",1
+"all c : Class | some t : Teacher",1
+"all c: Class | c -> eacher.Teaches",1
+"all c:Class | some t:Teacher | t->",2
+"all c: Class, some t: Teacher | t.c",1
+"all c:Class | c in some Teaches.~Teaches",1
+"all c: Class | some (Teaches.c & Teachers)",1
+"all c:Class, some t:Teacher | t.Teaches = c",1
+"all c:Class { some t:Teacher | c in t.Teaches",1
+"all c:Class, some t:Teacher | t in c.~Teaches",1
+"all c : Class | some t : Teacher | c in p.Teaches",2
+"all c : Class, t : Teacher | (#t.(c.Groups)) > 0
+}",1
+"all c : Class | (all t : Teacher | t in c.Groups)
+}",1

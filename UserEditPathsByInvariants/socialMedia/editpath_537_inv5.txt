@@ -1,0 +1,13 @@
+inv5 S: all x : Influencers | all y : User | x in follows.y
+inv5 B: all x : Influencer | all y : User | x in follows.y
+inv5 T: all x : Influencer | all y : User | y not Influencer and x in follows.y
+inv5 B: all x : Influencer | all y : User | x in follows.y or y = x
+inv5 O: all x : Influencer | all y : User | x in follows.y and y != x
+inv5 B: all x : Influencer | all y : User | x !=y implies x in follows.y
+inv5 O: all x : User | all y : Influencer | x != y and y in follows.x
+inv5 O: all x : User | all y : Influencer | x != y and y in follows.x
+inv5 O: all x : User | all y : Influencer | x != y and y in x.follows
+inv5 O: all u : User | all i : Influencer | i in u.follows and u != i
+inv5 U: all u : User | all i : Influencer | i in u.follows or u = i
+inv5 U: all u : User | all i : Influencer | i in u.follows or u = i
+

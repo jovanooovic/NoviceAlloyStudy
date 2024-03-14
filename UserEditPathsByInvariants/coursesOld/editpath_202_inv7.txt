@@ -1,0 +1,9 @@
+inv7 T: all s:Student, c1, c2:Course | s->c1 in projects and s->c2 in projects => c1=c2
+inv7 T: all s:Student, c1, c2:Course | s->c1 in projects and s->c2 in projects => c1=c2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => c1!=c2 and proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects iff c1!=c2 and proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => c1!=c2 or proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => proj1=proj2
+inv7 B: not some s:Student | some p1, p2:Project, c:Course | s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects
+inv7 U: not some s:Student | some p1, p2:Project, c:Course | p1!=p2 and s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects
+

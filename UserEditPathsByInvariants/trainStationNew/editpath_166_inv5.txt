@@ -1,0 +1,26 @@
+inv5 S: all t : Track | t in Junction iff some t.succ
+inv5 B: all t : Track | t in Junction iff some t.succs
+inv5 B: all t : Track | t in Junction iff some succs.t
+inv5 B: all t : Track | t in Junction iff (some succs.t and t not in succs.t)
+inv5 B: all t : Track | t in Junction iff (some succs.t and t not in ^succs.t)
+inv5 B: all t : Track | t in Junction iff (some t2:Track | succs in t2 -> t and t != t2)
+inv5 B: all t : Track | t in Junction iff (some t2:Track | succs in t2 -> t and t != t2)
+inv5 S: Junctions = all t : Track | some succ.t
+inv5 S: Junctions = all t : Track | lone succ.t
+inv5 S: Junctions = all t : Track | succ.t
+inv5 S: Junctions in all t : Track | succ.t
+inv5 S: all j : Junction | some succ.j
+inv5 U: all j : Junction | some succs.j
+inv5 U: all j : Junction | some succs.j
+inv5 U: all j : Junction | some succs.j
+inv5 S: all j : Junction | some p1:Track-j), p2:(Track-j) | p1 -> j in succs and p2 -> j in succs
+inv5 U: all j : Junction | some p1:(Track-j), p2:(Track-j) | p1 -> j in succs and p2 -> j in succs
+inv5 B: all j : Junction | some p1:(Track-j), p2:(Track-j) | p1 -> j in succs and p2 -> j in succs and p1 != p2
+inv5 U: all j : Junction | some p1, p2 : Track | p1 -> j in succs and p2 -> j in succs and p1 != p2
+inv5 B: all j : Junction | some p1, p2 : Track | p1 -> j in succs and p2 -> j in succs and p1 != p2 and j != p1 and j != p2
+inv5 S: all j : Junction | some p1, p2 : Track - j| p1 -> j in succs and p2 -> j in succs
+inv5 U: all j : Junction | some p1, p2 : Track - j| p1 -> j in succs and p2 -> j in succs
+inv5 B: all j : Track | (j in Junction) iff (some p1, p2 : Track - j| p1 -> j in succs and p2 -> j in succs)
+inv5 B: all j : Track | (j in Junction) iff (some p1, p2 : Track| p1 -> j in succs and p2 -> j in succs)
+inv5 C: all j : Track | (j in Junction) iff (some p1, p2 : Track| p1 -> j in succs and p2 -> j in succs and p1!=p2)
+

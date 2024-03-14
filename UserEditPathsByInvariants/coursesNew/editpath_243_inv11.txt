@@ -1,0 +1,6 @@
+inv11 S: all s: Student| all c: Course| all g: Grade| c in s.enrolled implies x in c.grades.g
+inv11 B: all s: Student| all c: Course| all g: Grade| c in s.enrolled implies s in c.grades.g
+inv11 B: all s: Student| all c: Course| all g: Grade| c in s.enrolled implies s in g.grades.c
+inv11 B: all s: Student| all c: Course| all g: Grade| c in s.enrolled implies s in c.grades.g
+inv11 U: all s: Student| all c: Course| all g: Grade| s in c.grades.g implies c in s.enrolled
+

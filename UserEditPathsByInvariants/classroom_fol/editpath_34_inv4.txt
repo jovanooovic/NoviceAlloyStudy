@@ -1,0 +1,20 @@
+inv4 B: all p:Person | p in Student implies p not in Teacher
+inv4 B: all p:Person | p in Teacher implies p not in Student
+inv4 B: all p:Person | p not in Teacher implies p not in Student
+inv4 B: all p:Person | p not in Student implies p not in Teacher
+inv4 B: all p:Person | p not in Student or p not in Teacher
+inv4 B: all p:Person | p not in Student and p not in Teacher
+inv4 C: all p:Person | p in Student or p in Teacher
+inv4 B: all p:Person | p not in Student and p not in Teacher
+inv4 B: all p:Person | not (p in Student and p in Teacher)
+inv4 B: all p:Person | not (p in Student or p in Teacher)
+inv4 O: all p:Person | not (p in Student implies p in Teacher)
+inv4 O: all p:Person | not (p in Student implies p not in Teacher)
+inv4 O: all p:Person | not (p not in Student implies p not in Teacher)
+inv4 B: all p:Person | not (p not in Student implies p in Teacher)
+inv4 O: all p:Person | not (p in Student implies p in Teacher)
+inv4 C: all p:Person | p in Student or p in Teacher
+inv4 B: all p:Person | p not in Student and p not in Teacher
+inv4 C: all p:Person | not (p not in Student and p not in Teacher)
+inv4 C: all p:Person | not (p not in Student and p not in Teacher)
+

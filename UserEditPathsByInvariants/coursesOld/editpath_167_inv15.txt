@@ -1,0 +1,5 @@
+inv15 B: all disj s : Student | all m1 : s.(Course.grades), m2 : (s.projects.~projects - s).(Course.grades) | m1 in m2 + prev[m2] + next[m2]
+inv15 T: all disj s1, s2 : Student | all c : (s1.projects & s2.projects).~projects | s1.(c.grades) in s2.1.(c.grades) + next[s2.1.(c.grades)] + prev[s2.1.(c.grades)]
+inv15 T: all disj s1, s2 : Student | all c : (s1.projects & s2.projects).~(Student <: projects) | s1.(c.grades) in s2.1.(c.grades) + next[s2.1.(c.grades)] + prev[s2.1.(c.grades)]
+inv15 T: all disj s1, s2 : Student | all c : (s1.projects & s2.projects).~(Student <: projects) | s1.(c.grades) in (s2.1.(c.grades) + next[s2.1.(c.grades)] + prev[s2.1.(c.grades)])
+

@@ -1,0 +1,5 @@
+inv7 S: all s : State | some i: Init | s.isReachableFromState[i] implies i.isReachableFromState[s]	}		pred isReachableFromState[s: State, i: State]{	  	s in i.^onlyStates
+inv7 S: all s : State | some i: Init | s.isReachableFromState[i] implies i.isReachableFromState[s]	}		pred isReachableFromState[s: State, i: State]{	  	s = i or s in i.*onlyStates
+inv7 S: all s : State | some i1,i2: Init | s.isReachableFromState[i1] implies i2.isReachableFromState[s]	}		pred isReachableFromState[s: State, i: State]{	  	s in i.*onlyStates
+inv7 S: all s : State | some i1,i2: Init | s.isReachableFromState[i1] implies i2.isReachableFromState[s]	}		pred isReachableFromState[s: State, i: State]{	  	s in i.*onlyStates
+

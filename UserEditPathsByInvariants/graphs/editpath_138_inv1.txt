@@ -1,0 +1,10 @@
+inv1 S: all n1, n2: Node |
+inv1 E:
+inv1 C: all n1, n2: Node | n2 in n1.adj iff n1 in n2.adj
+inv1 B: all n: Node | n in n.adj.adj
+inv1 U: all n: Node | no n.adj or n in n.adj.adj
+inv1 U: all n: Node | n not in n.adj or n in n.adj.adj
+inv1 B: all n: Node | n not in n.adj and n in n.adj.adj
+inv1 B: all n: Node | no n.adj or n not in n.adj and n in n.adj.adj
+inv1 B: all n: Node | no n.adj or (n not in n.adj and n in n.adj.adj)
+

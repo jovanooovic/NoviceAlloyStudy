@@ -1,0 +1,8 @@
+inv5 T: all p : Project | p.~(projects) in Student
+inv5 T: all p : Project | p.~(projects) in Student
+inv5 T: all p : Project | Person.p in Student
+inv5 U: all p : Project | all pr : Person | pr in p.~(projects) implies pr in Student
+inv5 B: all p : Project | all pr : Person | pr in p.~(projects) iff pr in Student
+inv5 S: all p : Project | all pr : Person | | all c : Course | (pr in p.~(projects) iff pr in Student) and (p.~(projects)!=none)
+inv5 S: all p : Project | all pr : Person | | all c : Course | (pr in p.~(projects) iff pr in Student) and (p.~(projects)!=none)
+

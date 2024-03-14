@@ -1,0 +1,4 @@
+inv2 O: all u : User , s : u.profile | s.source = u or s.source = Institution
+inv2 S: all u : User , s : u.profile | s.source = u or s.source = one Institution
+inv2 C: all u : User , s : u.profile | some (s.source & u) or some (s.source & Institution)
+

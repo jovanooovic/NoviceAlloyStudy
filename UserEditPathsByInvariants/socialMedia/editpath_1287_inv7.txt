@@ -1,0 +1,25 @@
+inv7 S: all u1, u2 : User | (u1 not in follows.u2 and u2 in u1^follows) implies u2 in u1.suggested
+inv7 S: all u1, u2 : User | (u1 not in follows.u2 and u2 in u1^follows) implies u2 in u1.suggested
+inv7 B: all u1, u2 : User | (u1 not in follows.u2 and u2 in u1.^follows) implies u2 in u1.suggested
+inv7 B: all u1, u2 : User | (u1 not in follows.u2 and u2 in u1.^follows) implies u2 in suggested.u1
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.^follows)
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies (u2 not in u1.follows and (u2 in u1.^follows or u1 in u2.follows))
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.^follows)
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.^follows and u1 != u2)
+inv7 U: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested
+inv7 U: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 : User | u1 not in u1.suggested
+inv7 U: all u1, u2 : User | (u2 not in Influencer and u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 : User | u1 not in u1.suggested
+inv7 U: all u1, u2 : User | (u2 not in Influencer and u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested
+inv7 B: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 , u2 : User | u2 in Influencer implies u2 not in u1.suggested
+inv7 B: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 , u2 : User | u2 in Influencer implies u2 not in u1.suggested	all u1 : User | u1 not in u1.suggested
+inv7 B: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 , u2 : User | u2 in Influencer implies u2 not in u1.suggested	all u1 : User | u1 not in u1.suggested	all u1, u2 : User | u2 not in u1.^follows implies u2 not in u1.suggested
+inv7 O: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.^follows and u1 != u2) implies u2 in u1.suggested	all u1 , u2 : User | u2 in Influencer implies u2 not in u1.suggested	all u1 : User | u1 not in u1.suggested	all u1, u2 : User | (u2 not in u1.^follows or u2 in u1.follows) implies u2 not in u1.suggested
+inv7 B: all u1, u2 : User | u2 in u1.suggested implies u2 not in u1.follows	all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in u2.follows implies u2 in u1.suggested
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in u2.follows implies u2 in u1.suggested
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in u2.follows implies u2 in u1.suggested	all u : User | u not in u.suggested
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in u2.follows implies u2 in u1.suggested	all u : User | u not in u.suggested	all u1 , u2 : User | u2 in u1.follows implies u2 not in u1.suggested
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in u2.follows implies u2 in u1.suggested	all u : User | u not in u.suggested	all u1 , u2 : User | u2 in u1.follows implies u2 not in u1.suggested	all u : User | #(u.follows)=0 implies #(u.suggested) =0
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in follows.u2 implies u2 in u1.suggested	all u : User | u not in u.suggested	all u1 , u2 : User | u2 in u1.follows implies u2 not in u1.suggested	all u : User | #(u.follows)=0 implies #(u.suggested) =0
+inv7 B: all u1, u2 , u3 : User | u3 in u1.follows and u3 in follows.u2 and u1 not in follows.u2 implies u2 in u1.suggested	all u : User | u not in u.suggested	all u1 , u2 : User | u2 in u1.follows implies u2 not in u1.suggested	all u : User | #(u.follows)=0 implies #(u.suggested) =0	all u : User | all i : Influencer | i not in u.suggested
+inv7 B: all u1, u2 , u3 : User | u1 not in u3.follows and u3 in u1.follows and u3 in follows.u2 and u1 not in follows.u2 implies u2 in u1.suggested	all u : User | u not in u.suggested	all u1 , u2 : User | u2 in u1.follows implies u2 not in u1.suggested	all u : User | #(u.follows)=0 implies #(u.suggested) =0	all u : User | all i : Influencer | i not in u.suggested
+

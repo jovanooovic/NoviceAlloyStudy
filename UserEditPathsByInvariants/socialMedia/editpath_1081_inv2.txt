@@ -1,0 +1,16 @@
+inv2 T: all u : User | no u.follows.u and u=u
+inv2 T: all u : User | no u.follows.u and u=u
+inv2 T: all u : User | no u.follows.u and u=u
+inv2 O: all u : User | u -> u in follows and u != u
+inv2 T: all u : User | no u->u in follows
+inv2 S: no u.follows.u
+inv2 T: all u : User | no u.follows.u
+inv2 T: all u : User | no u.follows.u
+inv2 S: all u : User | not in u.follows.u
+inv2 O: all u1 : User| all u2 : User | u1 -> u2 in follows and u1 != u2
+inv2 C: all u1 : User| all u2 : User | u1 -> u2 in follows implies u1 != u2
+inv2 C: all u1 : User | u1 not in u1.follows
+inv2 C: all u1 : User | u1 not in follows.u1
+inv2 C: all u1 : User | u1 not in u1.follows
+inv2 C: all u1 : User | u1 not in u1.follows
+

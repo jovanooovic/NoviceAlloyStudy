@@ -1,0 +1,5 @@
+inv11 U: all s : Student, c : Course - s.enrolled | no c.grades.s
+inv11 U: all s : Student, c : Course - (s.enrolled) | no c.grades.s
+inv11 U: all s : Student, c : Course - (s.enrolled) | c not in c.grades.Grade
+inv11 U: all s : Student, c : Course - (s.enrolled) | s not in c.grades.Grade
+

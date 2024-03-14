@@ -1,0 +1,7 @@
+inv5 O: all s1,s2:State | s1.trans = s2.trans
+inv5 U: all s1,s2:State | s1.trans.Event = s2.trans.Event
+inv5 U: all s1,s2:State | (s1.trans).Event = (s2.trans).Event
+inv5 B: all s1,s2:State | Event.(s1.trans) = Event.(s2.trans)
+inv5 U: all s1,s2:State | State.(s1.trans) = State.(s2.trans)
+inv5 C: all s1,s2:State | (s1.trans).State = (s2.trans).State
+

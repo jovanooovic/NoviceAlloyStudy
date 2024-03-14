@@ -1,0 +1,11 @@
+inv4 T: all proj:Project | projects.proj
+inv4 T: all proj:Project | one projects.proj
+inv4 B: all proj:Project | one Course<:projects
+inv4 C: all proj:Project | one (Course<:projects).proj
+inv4 S: one (Course<:projects).proj
+inv4 B: one (Course<:projects).Project
+inv4 T: (Course<:projects).Project
+inv4 T: Project.(Course<:projects)
+inv4 C: all proj:Project | one (Course<:projects).proj
+inv4 T: all proj:Project | one (Course.projects).proj
+

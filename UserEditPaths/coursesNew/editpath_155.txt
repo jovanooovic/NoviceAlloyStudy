@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person-Professor | p.enrolled
+inv1 T: all p : Person-Professor | p.enrolled
+inv1 B: all p : Person-Professor, c : Course | p.enrolled in c
+inv1 B: all p : Person-Professor, c : Course | c in p.enrolled
+inv1 B: all s : Student, c : Course | c in s.enrolled and (c not in (Person.enrolled) or c not in (Professor.enrolled))
+inv1 U: all p : Person | p in Student implies p.enrolled in Course
+inv1 U: all p : Person-Student | p.enrolled in Course
+inv1 U: all p : Person-Professor | p.enrolled in Course
+inv1 C: all p : Person-Student | no p.enrolled
+inv2 C: all p : Person-Professor | no p.teaches
+inv2 C: all p:Person | p not in Professor implies no p.teaches
+inv1 C: all p:Person | p not in Student implies no p.enrolled
+inv3 T: all c : Course | teaches.c
+inv3 C: all c : Course | some teaches.c
+inv4 S: all p:Project, one c:Course|p in c.projects
+inv4 C: all p:Project| one c:Course | p in c.projects
+inv4 C: all p:Project| one c:Course | p in c.projects
+inv5 B: all ps : Person, pr : Project | ((ps not in Student) implies (no ps.projects)) and (pr in ps.projects)
+inv5 B: all ps : Person, pr : Project | ((ps not in Student) implies (no ps.projects) and (pr in ps.projects))
+

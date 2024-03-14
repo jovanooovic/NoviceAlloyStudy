@@ -1,0 +1,8 @@
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | s1.grades
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | grades.s1
+inv15 S: all disj s1,s2:Student, c:Course, p:Project | s1.(Course.grade)
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | s1.(Course.grades)
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | s1.(Course.grades)
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | 	  		p in s1.projects and p in s2.projects	  		implies	  		s1.(c.grades)
+inv15 T: all disj s1,s2:Student, c:Course, p:Project | 	  		p in s1.projects and p in s2.projects	          implies	          s1.(c.grades) - s2.(c.grades) <=1	          or 	  		  s2.(c.grades) - s1.(c.grades) <=1
+

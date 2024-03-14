@@ -1,0 +1,15 @@
+inv4 B: all u: User | some p: u.posts | p in Ad => u.posts in Ad
+inv4 B: all u: User | one p: u.posts | p in Ad => u.posts in Ad
+inv4 U: all u: User | u.posts in Ad => u.posts in Ad
+inv4 B: all u: User |  some p: u.posts | all a: Ad| u.posts in a => u.posts in a
+inv4 B: all u: User |  some p: u.posts | all a: Ad| p in a => u.posts in a
+inv4 B: all u: User, a: Ad |  some p: u.posts | p in a => u.posts in a
+inv4 B: all u: User, a: Ad | some p: u.posts | p in a => u.posts = a
+inv4 O: all u: User | all p: u.posts | p in Ad
+inv4 B: all u: User, a: Ad | some p: u.posts | p in a => u.posts = a
+inv4 C: all u : User, a: Ad | u in a.~posts => u.posts in Ad
+inv4 O: all u: User, a: Ad | all p: u.posts | p in a => u.posts = a
+inv4 B: all u: User, a: Ad | some p: u.posts | p in a => u.posts = Ad
+inv4 B: all u: User, a: Ad | some p: u.posts | p in a => u.posts in Ad
+inv4 O: all u : User, a: Ad | u in a.~posts => u.posts = Ad
+

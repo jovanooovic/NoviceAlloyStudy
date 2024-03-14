@@ -1,0 +1,6 @@
+inv14 T: all s: Student | Teacher in Teaches.Groups.(s->Group)
+inv14 T: all s: Student | Teaches.Groups.(s->Group) in Teacher
+inv14 T: all s: Student | some g: Group | Teaches.Groups.(s->g) in Teacher
+inv14 T: all s: Student | all g: Group | Teaches.Groups.(s->g) in Teacher
+inv14 T: all s: Student | some g: Group | Teaches.Groups.(s->g) in Teacher
+

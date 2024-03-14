@@ -1,0 +1,9 @@
+inv3 O: all s: Source | all id1, id2: (source.s).ids | id1 != id2
+inv3 O: all s: Source | all id1, id2: ((source.s) & User.profile).ids | id1 != id2
+inv3 O: all s: Source, u: User | all id1, id2: ((source.s) & u.profile).ids | id1 != id2
+inv3 O: all s: Source | all id1, id2: ((source.s) & User.profile).ids | id1 != id2
+inv3 U: all s: Source | all disj id1, id2: ((source.s) & User.profile).ids | id1 != id2
+inv3 B: all s: Source | all disj w, w1: ((source.s) & User.profile) | w.ids != w1.ids
+inv3 O: all s: Source | all disj w, w1: ((source.s) & User.profile) | no (w.ids & w1.ids)
+inv3 C: all s: Source, u: User | all disj w, w1: ((source.s) & u.profile) | no (w.ids & w1.ids)
+

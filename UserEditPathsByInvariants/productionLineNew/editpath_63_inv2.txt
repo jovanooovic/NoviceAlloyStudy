@@ -1,0 +1,5 @@
+inv2 U: all w : Worker | some ws : Workstation | w in ws.workers
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers
+inv2 U: all ws : Workstation | some ws.workers
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker | one ws : Workstation | w in ws.workers
+

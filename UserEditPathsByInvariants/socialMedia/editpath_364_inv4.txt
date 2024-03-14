@@ -1,0 +1,7 @@
+inv4 T: all u:User | all ad:Ad | u->ad in u.posts implies u.posts in Ad
+inv4 T: all u:User | all ad:Ad | u->ad in u.posts implies u.^posts in Ad
+inv4 T: all u:User | all p:Photo | u->p in u.posts and p in Ad implies p in Ad
+inv4 T: all u:User | all p:Photo | u->p in u.posts and p in Ad implies u->p in Ad
+inv4 T: all u:User | all p:Photo | u->p in u.posts and p in Ad implies (u->p in Ad )
+inv4 C: all u:User | all p:u.posts | p in Ad implies u.posts in Ad
+

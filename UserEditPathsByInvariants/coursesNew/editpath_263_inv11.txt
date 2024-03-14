@@ -1,0 +1,7 @@
+inv11 U: all s : Student | all c : Course | some g : Grade | s->g in c.grades implies c in s.enrolled
+inv11 S: all s : Student | all c : s.enrolled | ( some g : Grade | p->g in c.grades)
+inv11 B: all s : Student | all c : s.enrolled | ( some g : Grade | s->g in c.grades)
+inv11 B: all s : Student | ( all c : s.enrolled | some g : Grade | s->g in c.grades)
+inv11 S: all c : Course | ( all g : Grade , p : Person | p->g in c.grades implies s in enrolled.c )
+inv11 C: all c : Course | ( all g : Grade , p : Person | p->g in c.grades implies p in enrolled.c )
+

@@ -1,0 +1,12 @@
+inv5 B: all u1 : User, i : Influencer | i in u1.follows
+inv5 B: all u : User, i : Influencer | i in u.follows
+inv5 S: all u : User-i, i : Influencer | i in u.follows
+inv5 T: all u : User-Influencer, i : Influencer | some i in u.follows
+inv5 U: all i : Influencer, u : User-i | some i & u.follows
+inv5 U: all u : User-Influencer, i : Influencer | some i & u.follows
+inv5 U: all i : Influencer, u : User - i | some i & u.follows
+inv5 T: all i : Influencer, u : User - i | some i and u.follows
+inv5 U: all i : Influencer, u : User - i | some i & u.follows
+inv5 T: some i : Influencer| all u : User - i | i & u.follows
+inv5 U: all i : Influencer, u : User - i | some i & u.follows
+

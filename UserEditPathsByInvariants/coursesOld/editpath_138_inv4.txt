@@ -1,0 +1,22 @@
+inv4 S: all p: Project | one propose.p
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one Course.projects.p
+inv4 S: all p: Project | one c:Course | p in c.project
+inv4 C: all p: Project | one c:Course | p in c.projects
+inv4 C: all p: Project | one c:Course | p in c.projects
+inv4 T: all p:Project | one projects.p
+inv4 T: all p:Project | one projects.Course.p
+inv4 T: all p:Project | one projects.p in Course
+inv4 T: all p:Project | one (projects.p in Course)
+inv4 C: all p:Project | one (projects.p & Course)
+inv4 C: all p:Project | one (projects.p & Course)
+inv4 T: all p:Project | one (projects.p.Course)
+inv4 T: all p:Project | one (projects.Course.p)
+inv4 T: all p:Project | one (projects.p)
+inv4 T: all p:Project | one (Course.projects.p)
+inv4 S: all p:Project | one (projects:Course.p)
+inv4 S: all p:Project | one projects:Course.p
+inv4 E:
+inv4 S: all p:Project | one projects:Course.p
+inv4 C: all p:Project | one (projects.p & Course)
+

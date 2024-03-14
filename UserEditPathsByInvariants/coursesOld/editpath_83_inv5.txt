@@ -1,0 +1,28 @@
+inv5 U: all p:Project , s: Person | s->p in projects implies s in Student
+inv5 B: all p:Project , s: Person | s->p in projects implies s in Student and s not in Professor
+inv5 B: all p:Project | one s: Person | s->p in projects implies s in Student and s not in Professor
+inv5 B: all p:Project | one s: Person | s->p in projects implies s in Student and s not in Professor
+inv5 T: some projects.Project in Student
+inv5 S: all p:porject | Person <:proejcts.pr in Student	  all p:project | some pe:Person <: projects.pr
+inv5 S: all p:porject | Person <:proejcts.p in Student	  all p:project | some pe:Person <: projects.pr
+inv5 S: all p:project | Person <:projects.p in Student	  all p:project | some pe:Person <: projects.pr
+inv5 S: all p:Project | Person <:projects.p in Student	  all p:Project | some pe:Person <: projects.pr
+inv5 E:
+inv5 T: all p:Project | projects.Project in Student
+inv5 T: all p:Project | projects.Project <:Project in Student
+inv5 T: all p:Project | projects.Project in Student
+inv5 T: all p:Project | projects.Project in Student
+inv5 T: all p:Project | projects.Project in Student <:Person
+inv5 T: all p:Project | projects.Project in Student
+inv5 T: all p:Project | projects.Project in Student
+inv5 U: all p:Project | Person<:projects.Project in Student
+inv5 U: all p:Project | Person<:projects.p in Student
+inv5 S: all p:Project | Person<:projects.p in Student	  all p:Project | some x:Person x<:projects.p
+inv5 T: all p:Project | some s:Student | s.projects.p
+inv5 U: all p:Project | some Student<:projects.p
+inv5 S: all p:Project | Person<:projects.p in Student	  all p:Project | Some Person<:projects.p
+inv5 C: all p:Project | Person<:projects.p in Student	  all p:Project | some Person<:projects.p
+inv5 C: all p:Project | some Student<:projects.p	  	  all p:Project | Person<:projects.p in Student	  all p:Project | some Person<:projects.p
+inv5 C: all p:Project | Person<:projects.p in Student	  all p:Project | some Person<:projects.p
+inv5 C: all p:Project | Person<:projects.p in Student	  all p:Project | some Person<:projects.p
+

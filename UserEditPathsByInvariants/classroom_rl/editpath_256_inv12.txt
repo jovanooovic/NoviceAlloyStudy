@@ -1,0 +1,16 @@
+inv12 S: all t : Teacher | some (t.Teaches).Groupos
+inv12 C: all t : Teacher | some (t.Teaches).Groups
+inv12 B: some (Teacher<:Teaches).Groups
+inv12 S: Teacher<:Teaches).Groups
+inv12 T: Teacher in (Teacher<:Teaches).Groups
+inv12 T: Teacher in Groups
+inv12 U: all t : Teacher | some (Teacher<:Teaches).Groups
+inv12 C: all t : Teacher | some (t<:Teaches).Groups
+inv12 C: all t : Teacher | some t<:(Teaches.Groups)
+inv12 B: some Teacher<:(Teaches.Groups)
+inv12 T: Teacher<:(Teaches.Groups)
+inv12 T: Teacher in Teacher<:(Teaches.Groups)
+inv12 T: Teacher in (Teaches.Groups)
+inv12 U: all t : Teacher | some Teacher<:(Teaches.Groups)
+inv12 C: all t : Teacher | some t<:(Teaches.Groups)
+

@@ -1,0 +1,9 @@
+inv11 B: not Protected & Protected' = File
+inv11 B: Protected' = File
+inv11 T: (not Protected) + Protected' = File
+inv11 B: Protected + Trash = Protected'
+inv11 B: all f:File' | f in Protected
+inv11 O: always (File - Protected) = Protected'
+inv11 O: always ((File - Protected) = Protected')
+inv11 C: always all f:File | f not in Protected implies f in Protected'
+

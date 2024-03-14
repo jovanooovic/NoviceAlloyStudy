@@ -1,0 +1,29 @@
+inv4 T: all i : Init | State = i.^trans
+inv4 T: all i : Init | State = i.^trans
+inv4 T: all i : Init | State = ^(i.trans)
+inv4 B: all i : Init, e : Event | State = e.^(i.trans)
+inv4 B: all i : Init, e : Event | State = e.(i.trans)
+inv4 T: all i : Init, e : Event | State = ^e.(i.trans)
+inv4 B: all i : Init, e : Event | State = e.^(i.trans)
+inv4 T: State = Init.^trans
+inv4 T: State = ^Init.trans
+inv4 T: all e : Event | State = ^Init.trans
+inv4 S: all e : Event | State = r.^(Init.trans)
+inv4 B: all e : Event | State = e.^(Init.trans)
+inv4 T: State = ^(Init.trans)
+inv4 T: all e : Event | State = e.^trans
+inv4 B: all e : Event | State = e.^(Init.trans)
+inv4 T: all e : Event | State = ^(e.(Init.trans))
+inv4 B: all e : Event | State = (e.^(Init.trans))
+inv4 B: all e : Event | State = (e.^(Init.trans)) + Init
+inv4 S: all e : Event | State = Init + (e.^(Init.trans))		/*	All the states have the same events available.	*/
+inv4 S: all e : Event | State = Init + (e.^(Init.^trans))		/*	All the states have the same events available.	*/
+inv4 S: all e : Event | State = (e.^(Init.^trans))		/*	All the states have the same events available.	*/
+inv4 S: all e : Event | State = (e.(Init.^trans))		/*	All the states have the same events available.	*/
+inv4 B: all e : Event | State = Init + (e.^(Init.trans))
+inv4 T: all e : Event | State = Init + (e.(^Init.trans))
+inv4 S: all e : Event | State = Init + ((e.Init).^trans))
+inv4 T: all e : Event | State = Init + ((e.Init).^trans)
+inv4 T: all e : Event | State = Init.^trans
+inv4 E:
+

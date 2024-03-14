@@ -1,0 +1,17 @@
+inv7 S: no user.sugested
+inv7 S: no User.sugested
+inv7 B: no User.suggested
+inv7 T: User.suggested is User.follows.suggested
+inv7 T: User.suggested is User.follows.follows
+inv7 B: all user : User | user in User.follows
+inv7 B: all user : User | user in User.follows implies user in User.follows.follows
+inv7 U: all user : User | user in User.suggested implies user in User.follows.follows
+inv7 U: all user : User | user in User.suggested implies user in User.follows.follows and user not in user.suggested
+inv7 B: all user : User | user in User.suggested implies user in User.follows.follows and user not in user.suggested and user not in user.follows
+inv7 B: all user : User | user in User.suggested implies (user in User.follows.follows and user not in user.suggested and user not in user.follows)
+inv7 S: all user : User | user in User.suggested implies (user in User.follows.follows and user not in user.suggested and user.sugested not in user.follows)
+inv7 B: all user : User | user in User.suggested implies (user in User.follows.follows and user not in user.suggested and user.suggested not in user.follows)
+inv7 B: all user1, user2 : User | user1 in user2.suggested implies (user1 in user1.follows.follows and user1 not in user1.suggested and user1.suggested not in user1.follows)
+inv7 B: all user : User | user in User.suggested implies (user in User.follows.follows and user not in user.suggested and user.suggested not in user.follows)
+inv7 B: all user : User.suggested | user in User.follows.follows and user not in User.suggested and user.suggested not in user.follows
+

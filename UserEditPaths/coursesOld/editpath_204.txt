@@ -1,0 +1,70 @@
+NA H: THEME UPDATE
+inv1 O: all c: Course | enrolled.c in Student - Professor
+inv1 C: all c: Course | enrolled.c in Student
+inv1 C: all c: Course | enrolled.c in Student
+inv1 O: enrolled.Course = Student
+inv1 C: enrolled.Course in Student
+inv1 B: Student in enrolled.Course
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv1 C: enrolled.Course in Student
+inv3 O: Course in teaches.Course
+inv2 C: teaches.Course in Professor
+inv3 O: Course = teaches.Course
+inv3 C: Course = Person.teaches
+inv4 S: all p: Projects | one projects.p
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.p
+inv4 T: all p: Project | one projects.Project
+inv4 T: projects.Project in Course
+inv4 B: all p: Project | one (Course<:projects).Project
+inv4 C: all p: Project | one (Course<:projects).p
+inv4 B: one (Course<:projects).Project
+inv4 C: all p: Project | one (Course<:projects).p
+inv4 C: all p: Project | one (Course<:projects).p
+inv5 S: p.projects in Student and some (Person<:projects).Project & Person
+inv4 C: all p: Project | one (Course<:projects).p
+inv5 O: Person.projects in Student and some (Person<:projects).Project & Person
+inv5 B: some (Person<:projects).Project & Student
+inv5 T: some (Person<:projects).Project = Student
+inv5 B: some (Person<:projects).Project & Student
+inv5 B: some (Person<:projects).Project & Person - Professor
+inv5 B: some (Person<:projects).Project & (Person - Professor)
+inv5 B: Person.projects in Student
+inv5 T: projects.Project in Student
+inv5 U: (Person<:projects).Project in Student
+inv5 B: (Person<:projects).Project = Student
+inv5 U: (Person<:projects).Project in Student
+inv5 B: (Person<:projects).Project in Student && some (Person<:projects).Project & Student
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course = Person.teaches
+inv4 C: all p: Project | one (Course<:projects).p
+inv5 B: (Person<:projects).Project in Student && some (Person<:projects).Project & Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+inv5 B: all p: Project | some (Person<:projects).p & Person - Professor
+inv5 T: all p: Project | some (Person<:projects).p in Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+inv5 T: all p: Project | some (Person<:projects).p = Student
+inv5 B: all p: Project | some ((Person<:projects).p & Person - Professor)
+inv5 U: all p: Project | some ((Person<:projects).p & Student)
+inv5 U: all p: Project | some (Person<:projects).p
+inv5 T: all p: Project | some (Person<:projects).p not in Professor
+inv5 T: all p: Project | some (Person<:projects).p != Professor
+inv5 U: all p: Project | some (Student<:projects).p
+inv5 C: all p: Project | some (Person<:projects).p and (Person<:projects).p in Student
+inv5 B: some (Person<:projects).Project and (Person<:projects).Project in Student
+inv5 C: all p: Project | some (Person<:projects).p and (Person<:projects).p in Student
+inv5 U: all p: Project | some (Person<:projects).p & Student
+inv6 T: projects.Project in enrolled.projects.Project
+inv6 U: (Person<:projects).Project in enrolled.(Course<:projects).Project
+inv6 U: (Person<:projects).Project in enrolled.projects.Project
+inv6 C: all p: Project | (Person<:projects).p in enrolled.projects.p
+inv7 B: all s: Student | lone s.enrolled.projects
+inv7 B: all c: Course | lone enrolled.c.projects
+inv7 T: all c: Course | lone enrolled.c.projects.Project
+inv7 T: all s: Student, c: Course | lone s.enrolled.c.projects
+inv7 B: all s: Student | lone s.enrolled.projects
+

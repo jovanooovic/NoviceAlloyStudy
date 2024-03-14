@@ -1,0 +1,15 @@
+na H: THEME UPDATE
+na H: THEME UPDATE
+inv1 C: all n1,n2:Node | some n1.adj:>n2 implies some n2.adj:>n1
+inv2 C: all n1,n2:Node | some n1.adj:>n2 implies no n2.adj:>n1
+inv4 C: all n1:Node | n1.adj:>Node = Node
+inv5 C: all n1,n2:Node | some n1.adj:>n2 implies n1 != n2
+inv6 O: all n1:Node | ((^adj.n1:>Node) + (n1.^adj:>Node)) = Node
+inv7 O: all n1:Node | n1.^adj:>Node = Node
+inv8 C: all n1,n2,n3:Node | some (n1.adj:>n2) and some (n2.adj:>n3) implies some n1.adj:>n3
+inv6 O: all n1:Node | ((^adj.n1:>Node) + (n1.^adj:>Node)) = Node
+inv6 S: all n1:Node | ((^adj.n1:>Node) + (n1.^adj:>Node) + (n1.^adk:>n1)) = Node
+inv6 O: all n1:Node | ((^adj.n1:>Node) + (n1.^adj:>Node) + (n1.^adj:>n1)) = Node
+inv6 T: all n1:Node | some ((^adj.n1:>Node) + (n1.^adj:>Node)) = Node
+inv6 O: all n1:Node | ((^adj.n1:>Node) + (n1.^adj:>Node)) = Node and some n1.adj:>n1
+

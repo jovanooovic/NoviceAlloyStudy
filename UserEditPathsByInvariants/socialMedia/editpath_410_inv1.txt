@@ -1,0 +1,14 @@
+inv1 S: all p: Photo | lone u.posts
+inv1 B: all u: User | lone u.posts
+inv1 U: all u: Photo | lone u.posts
+inv1 B: all u: User | one u.posts
+inv1 B: all u: User | one posts.u
+inv1 C: all u: Photo | one posts.u
+inv1 U: all u: Photo | lone posts.u
+inv1 C: all u: Photo | one posts.u
+inv1 C: all p: Photo | one posts.p
+inv1 S: all: Photo | one posts.p
+inv1 S: all : Photo | one posts.p
+inv1 S: all Photo | one posts.p
+inv1 C: all p: Photo | one posts.p
+

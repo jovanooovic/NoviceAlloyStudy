@@ -1,0 +1,19 @@
+inv9 S: no (succs.Junction).signals :> Sempahores
+inv9 S: no (succs.Junction).signals :> Sempahore
+inv9 B: no (succs.Junction).signals :> Semaphore
+inv9 B: no (succs :> Junction).signals.Semaphore
+inv9 B: no (succs :> (Track - Junction)).signals.Semaphore
+inv9 B: no succs.(Track - Junction).signals :> Semaphore
+inv9 C: all t : Track | no t.succs & Junction implies no t.signals :> Semaphore
+inv9 B: no (succs.(Track - Junction)).signals :> Semaphore
+inv9 T: no succs.(Track - Junction).signals.Semaphore
+inv9 T: no succs.(Track - Junction).signals.Semaphore
+inv9 T: no (succs.(Track - Junction)).signals.Semaphore
+inv9 B: no succs.(Track - Junction) & signals.Semaphore
+inv9 O: signals.Semaphore = succs.Junction
+inv9 B: no signals.Semaphore & succs.(Track - Junction)
+inv9 U: no (succs.Track - succs.Junction).signals :> Semaphore
+inv9 C: no (Track - succs.Junction).signals :> Semaphore
+inv9 C: no (Track - succs.Junction).signals :> Semaphore
+inv9 C: no (Track - succs.Junction).signals :> Semaphore
+

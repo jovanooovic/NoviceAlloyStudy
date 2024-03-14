@@ -1,0 +1,9 @@
+inv10 B: all x : Person - Student | no x.enrolled.grades
+inv10 B: all x : Person - Student | all c : x.enrolled | no c.grades
+inv10 B: all x : Person - Student | all c : x.enrolled | no c.grades
+inv10 B: all x : Person - Student | all c : x.enrolled | no x -> c.grades
+inv10 T: all x :Student | all c : x.enrolled | x->c.grades in c.grades implies x in c.grades
+inv10 T: all x :Person | all c : Course| all g: Grade | x ->g implies x in Student
+inv10 T: all x :Person | all c : Course| all g: Grade | x->g implies x in Student
+inv10 C: all x :Person | all c : Course| all g: Grade | x->g in c.grades implies x in Student
+

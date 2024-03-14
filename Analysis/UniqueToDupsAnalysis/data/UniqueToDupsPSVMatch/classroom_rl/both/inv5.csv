@@ -1,0 +1,45 @@
+"(#Teaches ) > 0",1
+"Teacher in Class",1
+"no Teacher.Teaches",1
+"some Teacher -> Group",2
+"Class in Teaches.Class",1
+"Teacher in Teaches.Class",3
+"Teaches.Class in Teacher",1
+"~Teaches.Teaches in iden",1
+"Class->Teacher->Group in Groups",1
+"all s:Student | no s.Teaches",2
+"all c : Class | some Teaches.c",3
+"all t : Class | some t.Teaches",1
+"~((Groups.Group):>Teacher) in Teaches",1
+"all x:Class | some Teaches.x",1
+"all c: Class | some c.Teaches",2
+"all t: Teacher | some t.Tutors",2
+"all p : Person | some p.Teaches",1
+"some c:Class | lone Teaches.c",1
+"all t:Teacher| some t.Teaches",30
+"all t:Teacher | lone t.Teaches",3
+"all t: Teacher | not no t.Teaches",1
+"all c: Class | some c.~Teaches",1
+"all t: Teacher | some ~Tutors.t",1
+"all t: Teacher | some ~Teaches.t",1
+"all c : Class | Teaches.c in Teacher",2
+"some c : Class |  Teaches.c in Teacher",1
+"some c : Class | some c->Teacher->Group",1
+"some c : Class, p : Person | (p.Teaches) = c",1
+"all t : Teacher, s : Student | some t.Teaches",1
+"all p : Person | p in Teacher implies some p.Teaches",1
+"some c : Class, t : Teacher | some (c -> t -> Group)",1
+"all p:Person {some c:Class | c in p.Teaches}",1
+"all t: Teacher | some c: Class | t.Teaches = c",1
+"some c:Class | all t:Teacher | t.Teaches = c",1
+"all t:Teacher { some c:Class | t.Teaches in c}",2
+"some c:Class {all t:Teacher |c in t.Teaches}",1
+"all t:Teacher {some c:Class | c in t.Teaches}",1
+"all t:Teacher | some c:Class | t->c in Teaches",1
+"no Student & Teacher and 
+ 	all t:Teacher { some t.Teaches}",1
+"some c: Class | some t: Teacher | some t.(c.Groups)",1
+"some t : Teacher | (some c : Class | some c->Groups->t)",1
+"some c : Class, t : Teacher, g: Group | c->t->g in Groups",1
+"all t : Teacher, s : Student | some t.Teaches and no s.Teaches",1
+"all t: Teacher, s: Student | not no t.Teaches and no s.Teaches",1

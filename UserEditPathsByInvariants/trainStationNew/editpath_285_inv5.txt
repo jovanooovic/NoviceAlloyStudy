@@ -1,0 +1,7 @@
+inv5 B: all t : Track | lone t2 : Track | t2 in t.succs implies t in Junction
+inv5 B: all t : Track | #Track.succs > 1 iff t in Junction
+inv5 B: all t, t2, t3 : Track | (t in t2.succs and t2 in t3.succs) iff t in Junction
+inv5 B: all t, t2, t3 : Track | t not in t3 and (t in t2.succs and t2 in t3.succs) iff t in Junction
+inv5 B: all t, t2 : Track | t in t2.succs iff t in Junction
+inv5 B: all t, t2 : Track | t in t2.succs implies t in Junction
+

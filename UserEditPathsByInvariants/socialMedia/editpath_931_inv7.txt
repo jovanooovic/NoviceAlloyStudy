@@ -1,0 +1,31 @@
+inv7 B: all u : User | some (u.follows).follows
+inv7 T: all u : User | (u.follows).follows - (u.follows) in suggested
+inv7 T: all u : User | ((u.follows).follows - (u.follows)) in suggested
+inv7 B: all u : User | u -> ((u.follows).follows - (u.follows)) in suggested
+inv7 B: all u : User | (u -> ((u.follows).follows - (u.follows))) in suggested
+inv7 O: all u : User | (u -> ((u.follows).follows - (u.follows))) = suggested
+inv7 O: all u : User | (u -> ((u.follows).follows - (u.follows + u))) = suggested
+inv7 U: all u : User | (u -> ((u.follows).follows - (u.follows + u))) in suggested
+inv7 O: all u : User | (u -> ((u.follows).follows - (u.follows + u))) = suggested
+inv7 T: all u : User | (u -> ((u.follows).follows - (u.follows + u))) iden suggested
+inv7 O: all u : User | (u -> ((u.follows).follows - (u.follows + u))) = suggested
+inv7 B: all u : User | (u -> ((u.follows).follows - (u.follows + u + (u.follows).follows))) = suggested
+inv7 E:
+inv7 S: all u : User | suggested =  (u -> ((u.follows).follows - (u.follows))
+inv7 O: all u : User | suggested = u -> ((u.follows).follows - (u.follows))
+inv7 B: all u : User | suggested = u -> ((u.follows).follows - (u.follows - follows.u))
+inv7 B: all u : User | suggested = u -> ((u.follows).follows - (u.follows + follows.u ))
+inv7 B: all u : User | suggested = u -> ((u.follows).follows - (u.follows + follows.u + u))
+inv7 B: all u : User | suggested = u -> ((u.follows).follows - (follows.u + u))
+inv7 B: all u : User | suggested = ((u.follows).follows - (follows.u + u)) -> u
+inv7 O: all u : User | suggested = ((u.follows).follows - (u.follows + u)) -> u
+inv7 B: all u : User | suggested = u -> (follows.(u.follows) - (u.follows))
+inv7 B: all u : User | suggested = u -> (follows.(u.follows) - (follows.u))
+inv7 B: all u : User | suggested = u -> (follows.(u.follows) - (follows.u))
+inv7 S: all u : User | suggested = one (u.follows).follows
+inv7 T: all u : User | suggested = (u.follows).follows
+inv7 T: all u : User | suggested = (u.follows)
+inv7 B: all u : User | suggested = u -> (u.follows)
+inv7 T: all u : User | suggested = u -> (u.follows).follows - u.follows
+inv7 O: all u : User | suggested = u -> ((u.follows).follows - u.follows)
+

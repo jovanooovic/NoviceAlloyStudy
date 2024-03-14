@@ -1,0 +1,9 @@
+inv5 S: all t : Track |  ((some s : Track | t in s.succs) and (some u : Track | t in u.succs) and s!=u) iff t is Junction
+inv5 T: all t : Track |some s,u : Track | ((t in s.succs) and (t in u.succs) and s!=u) iff t is Junction
+inv5 S: all t : Track |some s,u : Track | ((t in s.succs) and (t in u.succs) and s!=u) iff (t is Junction)
+inv5 S: all t : Track| some j: Junction |some s,u : Track | ((t in s.succs) and (t in u.succs) and s!=u) iff (t ==j)
+inv5 S: all t : Track | some y,z : Track |  t in Junction iff ((t in y.succs) and (t in z.succs) and (y!=z))
+inv5 S: all t : Track | some y,z : Track |  t in Junction iff (t in y.succs and t in z.succs and y!=z)
+inv5 U: all t : Track | some y,z : Track |  t in Junction iff (t in y.succs and t in z.succs and y!=z)
+inv5 C: all t : Track |  t in Junction iff (some y,z : Track | t in y.succs and t in z.succs and y!=z)
+

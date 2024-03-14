@@ -1,0 +1,79 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | p in Student
+inv2 C: all p : Person | p not in Teacher
+inv3 B: all p : Person | p in Student or p in Teacher
+inv3 C: all p : Person | p in Student implies p not in Teacher
+inv4 C: all p : Person | p in Student or p in Teacher
+inv5 O: some t : Teacher | t in Class
+inv5 O: some c : Class | c in Teacher
+inv5 T: all x,y : Teacher | x->y in Class
+inv5 T: all x,y : Person | x->y in Class
+inv5 T: some x,y : Person | x->y in Class
+inv5 O: some x : Teacher | x in Class
+inv6 O: some x : Person | x in Teacher and x in Class
+inv5 O: some x : Person | x in Teacher and x in Class
+inv6 O: all x : Person | x in Teacher implies x in Class
+inv5 O: some x : Class | x in Teacher
+inv5 T: some x,y : Class | x->y in Teacher
+inv5 O: some x : Class | x in Teacher
+inv5 U: some x : Class | x in Group implies x in Teacher
+inv5 O: some x : Class | x in Group and x in Teacher
+inv5 O: some x : Person | x in Teacher and x in Group and x in Class
+inv5 T: some x : Teacher  | x in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv6 B: all x : Teacher, y : Class  | x->y in Teaches
+inv6 C: all x : Teacher | some y : Class  | x->y in Teaches
+inv6 C: all x : Teacher | some y : Class  | x->y in Teaches
+inv7 C: all x : Class | some y : Teacher | y->x in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv6 C: all x : Teacher | some y : Class  | x->y in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv8 B: all x : Teacher | some y,z : Class  | (x->y in Teaches and x->z in Teaches) implies y=z
+inv8 C: all x : Teacher, y,z : Class  | (x->y in Teaches and x->z in Teaches) implies y=z
+inv9 U: all x : Class, y,z : Teacher  | (x->y in Teaches and x->z in Teaches) implies y=z
+inv9 C: all x : Class, y,z : Teacher  | (y->x in Teaches and z->x in Teaches) implies y=z
+inv10 S: all x : Class, y in Student | y in Group
+inv10 S: all x : Class, y in Student | y in Group
+inv10 S: all x : Class, y in Student | y in Group
+inv9 C: all x : Class, y,z : Teacher  | (y->x in Teaches and z->x in Teaches) implies y=z
+inv10 O: all x : Class, y : Student | y in Group
+inv10 O: all x : Student | x in Group
+inv10 S: all x : Class | all y : Students | x->y in Group
+inv10 T: all x : Class | all y : Student | x->y in Group
+inv10 T: all x : Class | all y : Student | x->y in Group
+inv10 T: all x : Class | x in Groups
+inv10 T: all x : Class, y : Student | x->y in Groups
+inv10 T: all x : Class, y : Student | x->y in Group
+inv10 T: all x : Student | x in Groups
+inv10 O: all x : Class , y : Student | y in Group
+inv10 S: all x : Class , y : Student | some g : Group | x,y,c in Groups
+inv10 S: all x : Class , y : Student | some g : Group | x->y->c in Groups
+inv10 C: all x : Class , y : Student | some g : Group | x->y->g in Groups
+inv11 B: all x : Class | some y : Teacher | some g : Group | x->y->g in Groups
+inv11 B: some x : Class | some y : Teacher | some g : Group | x->y->g in Groups
+inv11 B: some x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 B: all x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 B: some x : Class | some y : Person | some g : Group | x->y->g in Groups implies y in Teacher
+inv11 C: all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches
+inv12 B: all p : Person | some c : Class, g :Group | c->p->g in Groups
+inv12 B: all p : Teacher | some c : Class, g :Group | c->p->g in Groups
+inv12 B: all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies all t : Teacher | t->c in Teaches
+inv12 S: all p : Person | (some c : Class, g : Group | c->p->g in Groups) implies some t : Teacher | t->c in Teaches
+inv12 S: some p : Person | (some c : Class, g : Group | c->p->g in Groups) implies all t : Teacher | t->c in Teaches
+inv12 S: all c : Class | (some p : Person, g : Group | c->p->g in Groups) implies p in Teacher
+inv12 B: all c : Class | some p : Person, g : Group | c->p->g in Groups implies p in Teacher
+inv12 S: all t : Teacher | some g : Group, g : Group | c->p->g in Groups
+inv12 S: all t : Teacher | some g : Group, c : Class | c->p->g in Groups
+inv12 B: all t : Teacher | some g : Group, c : Class | c->t->g in Groups
+inv13 C: all x,y : Person | x->y in Tutors implies x in Teacher and y in Student
+inv14 B: all s : Student | (some t : Teacher | t->s in Tutors) implies s in Class
+inv14 B: all s : Student | some t : Teacher | t->s in Tutors implies s in Class
+inv14 S: all s : Student | in Class implies some t : Teacher | t->s in Tutors
+inv14 S: all s : Student | in Class implies some t : Teacher | t->s in Tutors
+inv14 U: all s : Student | s in Class implies some t : Teacher | t->s in Tutors
+inv14 U: all s : Student | s in Class implies some t : Teacher | t->s in Tutors and t in Class
+inv14 U: all s : Student | s in Class implies (some t : Teacher | t->s in Tutors)
+inv14 B: all s : Student | some t : Teacher | t->s in Tutors
+inv14 B: all s : Student | some t : Teacher, c : Class | t->s in Tutors implies s in Class and t in Class
+

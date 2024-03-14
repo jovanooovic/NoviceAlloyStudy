@@ -1,0 +1,6 @@
+inv8 O: all x:Entry | all y:Exit | y in x.^succs
+inv8 O: all x:Entry | all y:Exit | y in x.succs
+inv8 O: all x:Entry | all y:Exit | y in x.^succs and x!=y
+inv8 S: all x:Entry | all y:Exit | y in x.^succs or x==y
+inv8 C: all x:Entry | all y:Exit | y in x.^succs or x=y
+

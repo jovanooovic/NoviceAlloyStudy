@@ -1,0 +1,7 @@
+inv1 U: all p : Photo | some u : User | p in u.posts
+inv1 U: all p : Photo | some u : User | p in u.posts
+inv1 S: all p : Photo | photo in User.posts	all p : Photo | all user1, user2: User | (photo in user1.posts and photo in user2.posts) implies user1=user2
+inv1 C: all p : Photo | p in User.posts	all p : Photo | all user1, user2: User | (p in user1.posts and p in user2.posts) implies user1=user2
+inv1 U: all p : Photo | p in User.posts
+inv1 C: all p : Photo | some u : User | p in u.posts	all p : Photo | all user1, user2: User | (p in user1.posts and p in user2.posts) implies user1=user2
+

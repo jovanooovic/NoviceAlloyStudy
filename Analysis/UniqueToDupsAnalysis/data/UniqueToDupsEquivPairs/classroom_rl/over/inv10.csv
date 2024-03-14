@@ -1,0 +1,70 @@
+Pairs,4
+,,"all c:Class| one c.Groups.Student",1
+,,"all c:Class | some c.Groups.Student",2
+,,"all c: Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)",1
+
+Pairs,3
+,,"(Groups . Group) = (Class -> Person)",3
+
+Pairs,6
+,,"Student . (Class . Groups) = Student",1
+,,"all s: Student | one s.Groups",3
+,,"all s: Student | some s.Groups",1
+,,"all s:Student { some g:Group | g in Class.Groups.s}",1
+
+Pairs,40
+,,"(Group . Groups) = (Class -> Student)",1
+,,"all c: Class | Student.(c.Groups) = Student",1
+,,"all c: Class | c.Groups.Student = Student",1
+,,"all c:Class, s:Student | one c.Groups.s",1
+,,"all c: Class , s: Student | one c.(s.Groups)",2
+,,"all c:Class, s:Student | some c.Groups.s",15
+,,"all c : Class, s : Student | some s.Groups.c",1
+,,"all c : Class, s : Student | some (c -> s).Groups",3
+,,"all c : Class, s : Student | some c & s & Group",1
+,,"all c: Class | all s: Student | some s.Groups",2
+,,"all c: Class | all s: Student | some c.Groups.s",5
+,,"all c: Class | all s: Student | s in c.Groups.Person",4
+,,"all c:Class, s:Student | some g:Group | c->g->s in Groups",1
+,,"all c:Class { all s:Student | some g:Group | g in c.Groups.s}",1
+,,"all c:Class | all s:Student | some g:Group | s->s->g in Groups",1
+
+Pairs,14
+,,"(Groups . Group) = (Class -> Student)",11
+,,"all c: Class | c.Groups.Group = Student",3
+
+Pairs,1
+,,"(Groups . Group) = (Student -> Class)",1
+
+Pairs,1
+,,"all s:Student | some g:Group | no  Class",1
+
+Pairs,10
+,,"all c: Class,s:Student | one s.(c.Groups)",4
+,,"all c: Class | all s: Student | one Groups[c][s]",1
+,,"all s: Student, c: Class { one g: Group | s->g in c.Groups }",1
+,,"all c : Class | all s: Student | one g : Group  |  s->g in c.Groups",3
+,,"all c: Class | all s: Student | one g: Group |  c->s->g in Groups",1
+
+Pairs,1
+,,"all c:Class | some g:Group | (Student->g) in c.Groups",1
+
+Pairs,1
+,,"(Groups . Group) = (Class -> Student) + (Class -> Teacher)",1
+
+Pairs,1
+,,"all s: Student, c: Class { one g: Group | c.Groups.g = s }",1
+
+Pairs,1
+,,"all s: Student, c: Class { some g: Group | c.Groups.g = s }",1
+
+Pairs,4
+,,"iden in ~(Student <: Class.Groups) . (Student <: Class.Groups)",3
+,,"iden in (~(Class.Groups) :> Student) . (Student <: Class.Groups)",1
+
+Pairs,1
+,,"all s: Student, c: Class { one g: Group | s->g in c.Groups and s.Teaches = none }",1
+
+Pairs,4
+,,"all c : Class | all p:Person | one g: Group |  p in Student implies p->g in c.Groups",4
+

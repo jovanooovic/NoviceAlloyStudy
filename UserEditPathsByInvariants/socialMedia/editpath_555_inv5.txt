@@ -1,0 +1,6 @@
+inv5 S: all x:User | all y:Influencers | y in x.follows
+inv5 S: all x:User | all Influencers in x.follows
+inv5 S: all x:User | all y:Influencers | y in x.follows
+inv5 S: all x:User | (all y:Influencers | y in x.follows)
+inv5 S: all x:!Influencers | (all y:Influencers | y in x.follows)
+

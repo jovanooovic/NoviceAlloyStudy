@@ -1,0 +1,20 @@
+inv11 T: all c : Class | some (Teaches.c) implies some c.Person.Group in Groups
+inv11 T: all c : Class | some (Teaches.c) implies some c -> Person -> Group in Groups
+inv11 B: all c : Class | some Teaches.c implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some Teaches.c & Teacher implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some (Teaches.c & Teacher) implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some (Teaches.c & Teacher) implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some Teaches.c implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some Teaches.c & Teacher implies c -> Person -> Group in Groups
+inv11 B: all c : Class | some Teaches.c & Teacher implies c -> Person -> Group in Groups
+inv11 B: all c : Class | (some Teaches.c & Teacher) implies c -> Person -> Group in Groups
+inv11 U: all c : Class | (some Teaches.c & Teacher) implies c.Groups in Person -> Group
+inv11 O: all c : Class | (some Teaches.c & Teacher) and c.Groups in Person -> Group
+inv11 U: all c : Class | (some Teaches.c & Teacher) implies c.Groups in Person -> Group
+inv11 O: all c : Class | c.Groups in Person -> Group implies (some Teaches.c & Teacher)
+inv11 C: all c : Class | (some p : Person, g : Group | c -> p -> g in Groups) implies (some t : Teacher | t -> c in Teaches)
+inv11 C: all c : Class | some c.Groups implies (some Teaches.c & Teacher)
+inv11 U: all c : Class | some c.Groups implies (some Teaches.c)
+inv11 C: all c : Class | some c.Groups implies some Teaches.c & Teacher
+inv11 C: all c : Class | some c.Groups implies some Teaches.c & Teacher
+

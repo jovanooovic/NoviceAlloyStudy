@@ -1,0 +1,15 @@
+inv7 T: all s:State | s in trans.State implies s in ^trans.State
+inv7 T: all s:State | s in trans.State implies s in State.^trans
+inv7 T: all s:State | s in Event.(trans.State) implies s in Event.(State.^trans)
+inv7 T: all s:State | s in Event.(trans.State) implies s in Event.(^trans.State)
+inv7 T: all s:State | one i:Init | i in (^trans.s)
+inv7 T: all s:State | one i:Init | i in Event.(^trans.s)
+inv7 T: all s:State | one i:Init | i in (^trans.s).Event
+inv7 T: all s:State | one i:Init | i in Event.(s.^trans)
+inv7 T: all s:State | one i:Init | i in State.(s.^trans)
+inv7 T: all s:State | one i:Init | i in (s.^trans).Event
+inv7 T: all s:State | one i:Init | i in (s.^trans).State
+inv7 T: all s:State | one i:Init | i in (s.^trans)
+inv7 S: all s:State | one i:Init | i in
+inv7 S: all s:State | one i:Init
+

@@ -1,0 +1,6 @@
+inv2 T: all x,y: User | y in x.follows implies x no y.follows
+inv2 T: all x: User | some follows.x	all x: User | x no follows.x
+inv2 T: all x: User | some follows.x	all x: User | x no follows.x
+inv2 T: all x: User | some follows.x	all x: User | x no follows.x
+inv2 C: all x : User | x not in follows.x
+

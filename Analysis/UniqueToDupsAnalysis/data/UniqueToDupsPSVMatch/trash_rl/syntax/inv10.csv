@@ -1,0 +1,41 @@
+"all f: File |",3
+"link.Trash in",1
+"all f : File |",2
+"Trash. in Trash",1
+"all l : File.link |",3
+"File.link in Trash and",1
+"Link.link & File in Trash",1
+"all t : Trash | all link.t",1
+"link.Trash & File.link,Trash",1
+"link.Trash implies Trash.link~",1
+"all f: File | f+.link in Trash",1
+"link.Trash implies Trash.linkº",1
+"all l : File.link | l in Trash =>",1
+"all f: Deleted | f.link in Deleted",1
+"for f: Deleted | f.link in Deleted",1
+"all f:File | f in Trash | f.link in Trash",1
+"!(any f: File - Trash | f.^link in Trash)",1
+"all f:File | f in Trash { f.link in Trash}",1
+"(f.link in Trash) => (f.link.link in Trash)",1
+"let x = File.link & Trash | x.Link in Trash",1
+"all f : f in Trash  implies f.link in Trash",1
+"all l: Filel.ink | l in Trash => l.link in Trash",1
+"all f : File | f in Trash implies f^.link in Trash",1
+"any f: File | (some f.^link & Trash) and f in Trash",1
+"any f: File | (some f.^link & Trash) and (f in Trash)",1
+"no f: File - Trash | f.^link != empty and f.^link in Trash",1
+"all f : File | f in Trash => f.link in Trash
+
+f.~f in iden",1
+"all f: File | f.link in Trash implies all f.^link in Trash",2
+"File.link = one and File in Trash implies File.link in Trash",1
+"all f : (f.link = one and f in Trash ) implies f.link in Trash",1
+"all f : File | some f.link | f in Trash implies f.link in Trash",1
+"all f : File | f in Trash => f.link in Trash
+
+File.File~ in iden",1
+"all f : File | some link.f and f in trash implies f.link in Trash",1
+"all f: File | f.link in Trash implies f.+link in Trash and f in Trash",1
+"all f: File | all fl in f.link |  (fl in Trash and f in Trash) or f not in Trash",2
+"all fl: File.link | set f: File | fl in Trash and fl->f in link implies f in Trash",1
+"all f1,f2, f3 | f1->f2 in link and f2->f3 in link and f2 in Trash implies f3 in Trash",1

@@ -1,0 +1,104 @@
+NA H: THEME UPDATE
+inv1 S: all x : x in Photo | User - Photo in posts
+inv1 U: all x : univ | x in Photo implies some u : univ | u->x in posts
+inv1 C: all x : univ | x in Photo implies one u : univ | u->x in posts
+inv2 S: all x, y : univ | x in User and y in User and follows(x, y) implies x!=y
+inv2 S: all x : univ | x in User implies not follow(x,x)
+inv2 S: all x : univ | x in User implies not follows(x,x)
+inv1 C: all x : univ | x in Photo implies one u : univ | u->x in posts
+inv2 C: all x, y : univ | x in User and y in User and x->y in follows implies x!=y
+inv1 C: all image : univ | image in Photo implies one user : univ | user->image in posts
+inv2 C: all user, follower : univ | user in User and follower in User and user->follower in follows implies user!=follower
+inv2 C: all user, follower : univ | user in User and follower in User and user->follower in follows implies user!=follower
+inv3 O: all user : univ | user in User and some photo : univ | user->photo in posts implies (photo in Ad)
+inv3 O: all user : univ | user in User and some photo : univ | user->photo in posts implies (photo in Ad) or	(some follower : univ | follower->photo in posts and user->follower in follows)
+inv3 O: all user : univ | user in User and all photo : univ | user->photo in posts implies (photo in Ad) or	(some follower : univ | follower->photo in posts and user->follower in follows)
+inv2 C: all user, follower : univ | user in User and follower in User and user->follower in follows implies user!=follower
+inv3 O: all user : univ | user in User and all photo : univ | user->photo in posts implies (photo in Ad) or	(some follower : univ | follower->photo in posts and user->follower in follows)
+inv3 O: all user : univ | user in User and all photo : univ | user->photo in posts implies	(some follower : univ | follower->photo in posts and user->follower in follows)
+inv8 S: }			run pred inv4			pred inv4{
+inv8 S: }			run pred inv4 for 4			pred inv4{
+inv4 E: 
+inv3 O: all user : univ | user in User and all photo : univ | user->photo in sees implies (photo in Ad) or	(some follower : univ | follower in User and follower->photo in posts and user->follower in follows)
+inv3 S: all user, photo : univ | user in User and photo in Photo and user->photo in sees implies (photo in Ad) or	(all followed : univ | followed in User and followed->photo in posts implies user->followed in follows
+inv3 B: all user, photo : univ | user in User and photo in Photo and user->photo in sees implies (photo in Ad) or	(all followed : univ | followed in User and followed->photo in posts implies user->followed in follows)
+inv4 B: all user : User | some Photo
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv1 C: all image : univ | (image in Photo) implies (one user : univ | user->image in posts)
+inv2 C: all user, follower : univ | (user in User) and (follower in User) and (user->follower in follows) implies (user!=follower)
+inv4 S: all user : univ | (user in User) and some ad : (user->ad in posts) and (ad in Ad) implies (all photo : univ | photo in Photo and user->photo in posts and photo in Ad)
+inv4 S: all user : univ | user in User and some ad : user->ad in posts and (ad in Ad) implies all photo : univ | photo in Photo and user->photo in posts and photo in Ad
+inv4 E: 
+inv4 O: all user : univ | user in User and some ad : univ | user->ad in posts and (ad in Ad) implies all photo : univ | photo in Photo and user->photo in posts and photo in Ad
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user in User and user->influencer in follows
+inv2 C: all user, follower : univ | (user in User) and (follower in User) and (user->follower in follows) implies (user!=follower)
+inv1 E: 
+inv1 C: all image : univ | (image in Photo) implies (one user : univ | user->image in posts)
+inv2 C: all user, follower : univ | (user in User) and (follower in User) and (user->follower in follows) implies (user!=follower)
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user in User and user->influencer in follows
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user->influencer in follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies user->influencer in follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies influencer in user.follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies influencer in user.follows
+inv5 U: all x: User | all y : Influencer | x!= y implies x in follows.y
+inv5 U: all x: User | all y : Influencer | x!= y implies y in x.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies user in follows.influencer
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies user->influencer in follows
+inv6 B: all influencer : univ | influencer in Influencer implies some photo : univ | influencer->photo in posts and some day : univ | photo->day in date
+inv6 O: all influencer : univ | influencer in Influencer implies all day : univ | some photo : univ | photo->day in date and influencer->photo in posts
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv8 S: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv8 C: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv7 S: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows and user->followed in follows and not user->suggest in suggested
+inv7 S: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows and user->followed in follows and not user->suggest in suggested
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv7 S: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows
+inv7 S: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : followed->suggest in follows
+inv4 E: 
+inv7 B: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : univ | followed->suggest in follows and user->followed in follows and not user->suggest in suggested
+inv7 U: all user, suggest : univ | user in User and suggest in User and user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv7 U: all user, suggest : univ | user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv4 T: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and posts in Ad
+inv7 U: all user, suggest : univ | user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv7 U: all user, suggest : univ | user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 U: all user : User | some ad : univ | user->ad in posts and ad in Ad implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : Influencer | some ad : Ad | user->ad in posts implies all post : univ | user->post in posts and post in Ad
+inv4 B: all user : User | some ad : Ad | user->ad in posts implies (user.posts) in Ad
+inv4 O: all user : User | (user.posts in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (user.posts in Photo and user.post not in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (user.posts in Photo and not user.post in Ad)
+inv4 S: all user : User | (user.posts in Ad) or (none user.posts in Ad)
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad)
+inv4 S: all user : User | some ad : Ad | user-> ad in posts implies user.posts in Ad
+inv4 B: all user : User | some ad : Ad | user-> ad in posts implies user.posts in Ad
+inv4 S: all user : User | some ad : Ad | (user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | (some ad : Ad | user-> ad in posts implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | user->ad in posts and ad in Ad implies user.posts in Ad) or (none ad : Ad | user-> ad in posts)
+inv4 S: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv1 C: all image : univ | (image in Photo) implies (one user : univ | user->image in posts)
+inv2 C: all user, follower : univ | (user in User) and (follower in User) and (user->follower in follows) implies (user!=follower)
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv7 U: all user, suggest : univ | user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv8 C: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv8 C: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv7 U: all user, suggest : User | user->suggest in suggested implies some followed : univ | user->followed in follows and followed->suggest in follows and not user->suggest in follows
+inv1 C: all image : univ | (image in Photo) implies (one user : univ | user->image in posts)
+inv2 C: all user, follower : univ | (user in User) and (follower in User) and (user->follower in follows) implies (user!=follower)
+inv3 B: all user, photo : univ | (user in User) and (photo in Photo) and (user->photo in sees) implies (photo in Ad) or	(all followed : univ | (followed in User) and (followed->photo in posts) implies (user->followed in follows))
+inv4 C: all user : User | all ad : Ad | user->ad in posts implies user.posts in Ad
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv6 C: all influencer, day : univ | influencer in Influencer and day in Day implies some photo : univ | photo->day in date and influencer->photo in posts
+inv7 E: 
+inv8 C: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+

@@ -1,0 +1,33 @@
+"no iden",1
+"adj = ~iden",1
+"no ~adj.adj",1
+"no adj + iden",1
+"no adj.~adj",1
+"no adj & ~adj",1
+"no ^adj & iden",6
+"no iden & ^adj",6
+"no iden & *adj",1
+"Node not in Node . *adj",1
+"no Node->Node & adj",1
+"adj = Node->Node - iden",1
+"no adj.Node & Node.adj",1
+"no iden & Node<:^adj",1
+"all n : Node | no n->n",3
+"all n: Node | no n.adj",1
+"all n : Node | no n.*adj",1
+"all n : Node | no n.^adj",3
+"all n : Node |no n.~adj",1
+"all n:Node | n not in ^adj.n",1
+"all a:Node | a not in a.^adj",1
+"all n:Node | n not in n.^adj",14
+"all n:Node | n not in n.*adj",6
+"no n1: Node | n1 in n1.^adj",4
+"no n1: Node | n1 in n1.*adj",2
+"all a:Node | no a & a.^adj",1
+"all n : Node | no n.(adj.~adj)",1
+"all n1: Node | not (n1 in n1.^adj)",1
+"all a:Node | a.next not in a",1
+"all a : Node | no (a.^adj & ^adj.a)",1
+"all x, y : Node | x->y in adj implies not y->x in adj",4
+"all x, y, z : Node | x->y in adj implies not y->x in adj",1
+"all n1,n2: Node | not ((n2 in n1.adj) and (n1 in n2.^adj))",1

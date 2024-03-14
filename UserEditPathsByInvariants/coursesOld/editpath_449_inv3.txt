@@ -1,0 +1,8 @@
+inv3 O: all c : Course | some p : Professor | c in Course implies p->c in teaches
+inv3 O: all c : Course | some p : Professor | p->c in teaches
+inv3 S: teaches.course
+inv3 T: teaches.Course
+inv3 O: all c : Course | some p : Professor | p->c in teaches
+inv3 C: all c : Course | some (c & Person.teaches)
+inv3 O: all c : Course | some (c & Professor.teaches)
+

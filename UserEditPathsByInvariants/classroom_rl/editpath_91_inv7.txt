@@ -1,0 +1,8 @@
+inv7 U: Class = Person.Teaches
+inv7 U: Class in Person.Teaches
+inv7 T: Class = (Class . Person.Teaches)
+inv7 T: Class = (Person.Teaches . Class)
+inv7 T: all c : Class | some c . Teacher.Teaches
+inv7 T: all c : Class | some c . Teacher->Teaches
+inv7 C: (Teacher . Teaches) = Class
+

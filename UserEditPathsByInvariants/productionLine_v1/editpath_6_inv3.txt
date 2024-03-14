@@ -1,0 +1,11 @@
+inv3 T: (position.~position)
+inv3 T: iden & Component->Robot in (Component:>(position.~position)).~(Component:>(position.~position))
+inv3 T: iden & Component->Robot in (Component:>(position.~position)).~(Component:>(position.~position))
+inv3 T: all c: Component | c.position.~position
+inv3 T: all r: Robot | r.position.~position
+inv3 T: all c: Component | c.position.~position
+inv3 T: all c: Component | c.position
+inv3 B: all c: Component, r: Robot | one c.position & r.position
+inv3 B: all c: Component, r: Robot | some c.position & r.position
+inv3 C: Component.position in Robot.position
+

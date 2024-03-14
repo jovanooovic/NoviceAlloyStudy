@@ -1,0 +1,4 @@
+inv13 C: all p : Person, t : p.Tutors | p->t in Tutors => p in Teacher && t in Student
+inv13 T: Teacher in (Teacher <: Teaches) and Student in (Teaches :> Student)
+inv13 C: Person.Tutors in Student and Tutors.Person in Teacher
+

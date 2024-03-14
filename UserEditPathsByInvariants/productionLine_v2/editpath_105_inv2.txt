@@ -1,0 +1,6 @@
+inv2 U: all ws:Workstation, w:Worker | some w1:Worker | ws->w1 in workers implies (one ws1:Workstation | ws1->w in workers)
+inv2 S: all ws:Workstation | one ws1:Workstation | some w1:Worker | ws->w1 in workers and ws1->w in workers
+inv2 U: all ws:Workstation | one ws1:Workstation | some w1:Worker | ws->w1 in workers and ws1->w1 in workers
+inv2 C: all ws:Workstation |some w1:Worker | ws->w1 in workers	all w:Worker | one ws:Workstation | ws->w in workers
+inv2 C: all ws:Workstation |some w1:Worker | ws->w1 in workers	all w:Worker | one ws:Workstation | ws->w in workers
+

@@ -1,0 +1,10 @@
+inv14 B: all s1, s2 : Student | (s1 != s2) => (s1.projects & s2.projects = none)
+inv14 T: all s1, s2 : Student | s1.projects & s2.projects => s1 = s2
+inv14 T: all s1, s2 : Student | s1.projects & s2.projects => s1 = s2
+inv14 T: all s1, s2 : Student | s1.projects & s2.projects => s1 = s2
+inv14 T: all s1, s2 : Student | (s1.projects & s2.projects) => s1 = s2
+inv14 B: all s1, s2 : Student | (s1.projects in s2.projects) => s1 = s2
+inv14 B: all s1, s2 : Student | (#(s1.projects & s2.projects) > 0) => s1 = s2
+inv14 B: all s1, s2 : Student | (s1 != s2) => (#(s1.projects & s2.projects) = 1)
+inv14 U: all s : Student | all c : Student - s | lone (s.projects & c.projects)
+

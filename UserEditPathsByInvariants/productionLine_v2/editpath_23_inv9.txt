@@ -1,0 +1,5 @@
+inv9 S: all ws1,ws2: Workstation | ws2 in begin and ws1 != ws2 implies ws1 in ws2.^(succ)	all ws: Workstation | ws not in ws.succ	all ws: Workstation | ws not in end implies one w.succ
+inv9 U: all ws1,ws2: Workstation | ws2 in begin and ws1 != ws2 implies ws1 in ws2.^(succ)	all ws: Workstation | ws not in ws.succ	all ws: Workstation | ws not in end implies one ws.succ
+inv9 U: all ws1,ws2: Workstation | (ws2 in begin and ws1 != ws2) implies ws1 in ws2.^(succ)	all ws: Workstation | ws not in ws.succ	all ws: Workstation | ws not in end implies one ws.succ
+inv9 C: all ws1,ws2: Workstation | (ws2 in begin and ws1 != ws2) implies ws1 in ws2.^(succ)	all ws: Workstation | ws not in ws.^(succ)	all ws: Workstation | ws not in end implies one ws.succ
+

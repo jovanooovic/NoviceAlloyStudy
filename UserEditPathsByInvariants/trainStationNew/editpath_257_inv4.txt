@@ -1,0 +1,20 @@
+inv4 B: all t:Track | t not in Track.^succs implies Entry in t
+inv4 B: all t,t2:Track | Entry in t implies t2 not in t.^succs
+inv4 B: all t,t2:Track | t2 not in t.^succs implies Entry in t
+inv4 B: all t:Track | t not in Track.^succs implies Entry in t
+inv4 B: all t:Track | t not in (Track-t).^succs implies Entry in t
+inv4 B: all t:Track | t not in Track.^succs implies Entry in t
+inv4 B: all t:Track | t not in Track.^succs implies Entry in t	all t:Track | Entry in t implies no t.succs
+inv4 B: all t:Track | t not in Track.^succs implies Entry in t	all t:Track | Entry in t implies t.succs=none
+inv4 B: all t,t2:Track | t not in t2.succs implies Entry in t
+inv4 B: all t,t2:Track | t not in t2.succs implies t in Entry
+inv4 T: no (Track-Track.^succs) & (Entry in Track)
+inv4 B: all t,t2:Track | t not in t2.succs implies t in Entry
+inv4 U: all t1,t2:Track | t2 in t1.succs implies no (t2 & Entry)
+inv4 B: all t1,t2:Track | t1 in t2.^succs implies no (t2 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+inv4 B: all t1,t2:Track | t1 in t2.^succs implies no (t2 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+inv4 C: all t1,t2:Track | t1 in t2.succs implies no (t1 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+inv4 C: all t1,t2:Track | t1 in t2.succs implies no (t1 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+inv4 C: all t1,t2:Track | t1 in t2.succs implies no (t1 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+inv4 C: all t1,t2:Track | t1 in t2.succs implies no (t1 & Entry)		all t1:Track | no (t1 & Entry) implies (some t2:Track | t1 in t2.^succs)
+

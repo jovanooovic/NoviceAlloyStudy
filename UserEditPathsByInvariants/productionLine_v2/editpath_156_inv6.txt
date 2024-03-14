@@ -1,0 +1,9 @@
+inv6 U: all c1,c2 : Component | c1->c2 in parts implies c1!=c2
+inv6 U: all c1,c2 : Component | c1->c2 in parts implies c2->c1 not in parts
+inv6 U: all c1,c2 : Component | c1->c2 in parts implies c2->c1 not in parts
+inv6 S: all c1 | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and path[c3,c2])
+inv6 S: all c1 : Component | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and path[c3,c2])
+inv6 S: all c1 : Component | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and path[c3,c2])
+inv6 S: all c1 : Component | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	(all c3 : Component | c1->c3 in parts implies c3->c2 not in parts and	path[c3,c2])
+inv6 S: all c1 : Component | not path[c1,c1]		}		pred path [c1 : Component,c2:Component]{	all c3 : Component | c1->c3 in parts implies (c3->c2 not in parts) and path[c3,c2]
+

@@ -1,0 +1,17 @@
+inv5 T: all w : workstation | no (w.Robot & w.Human)
+inv5 T: all w : workstation | not (w.Robot & w.Human)
+inv5 T: all w : workstation | no (w.Robot & w.Human)
+inv5 E:
+inv5 E:
+inv5 T: all w : workstation | no (w.workers.Human & w.workers.Robot)
+inv5 T: all w : workstation | w.workers in Human or w.workers in Robot
+inv5 T: all w : workstation | (w.workers in Human) or (w.workers in Robot)
+inv5 T: all w : workstation | (w.workers in Human)
+inv5 O: all w : Workstation | (w.workers in Human)
+inv5 O: all w : Workstation | (w.workers in Human) or (w.workers in Robot)
+inv5 T: all w : Workstation | no (w.workers.Human & w.workers.Robot)
+inv5 S: all w : Workstation | w.wokers not in (Robot + Human)
+inv5 B: all w : Workstation | w.workers not in (Robot + Human)
+inv5 B: all w : Workstation | w.workers not in (Robot & Human)
+inv5 C: no (Robot.~workers & Human.~workers)
+

@@ -1,0 +1,27 @@
+inv3 S: all w: Work | all disj i1,i2: Id | all disj s1, s2: Source | profile.w and w.s1 and w.i1 implies
+inv3 T: all w: Work | all disj i1,i2: Id | all disj s1, s2: Source | profile.w and w.s1 and w.i1 implies no w.s2 and no w.i2
+inv3 T: all w: Work | all disj i1,i2: Id | all disj s1, s2: Source | profile.w and s1 in w.source and i1 in w.ids implies no w.s2 and no w.i2
+inv3 T: all w: Work | all disj i1,i2: Id | all disj s1, s2: Source | profile.w and s1 in w.source and i1 in w.ids implies no s2 in w.source and no i2 in w.ids
+inv3 T: all w: Work | some s: Source | profile.w in w.s
+inv3 T: all w: Work | some s: Source | profile.w in w.s implies one w.ids
+inv3 T: all w: Work | some s: Source | profile.w in w.Source implies one w.ids
+inv3 T: all w: Work | some s: Source | User.profile in w.s implies one w.ids
+inv3 T: all w: Work | some s: Source | profile.w in w.s implies one w.ids
+inv3 T: all w: Work | some s: Source | profile.w and w.s implies one w.ids
+inv3 T: all w: Work | some s: Source | profile.w and w.s implies one w.ids
+inv3 T: all s1, s2: Source | Work.s1 != Work.s2
+inv3 T: all s1, s2: Source | all w1, w2: Work| s1.profile.w1 and s2.profile.w2 and s1= s2 implies  w1.ids not in w2.ids
+inv3 T: all s1, s2: Source | s1= s2 implies  s1.profile.Id != s2.profile.Id
+inv3 T: all s1, s2: Source | s1= s2 implies  s1.profile.Id not in s2.profile.Id
+inv3 S: all s1, s2: Source | s1 == s2 implies  s1.profile.Id not in s2.profile.Id
+inv3 T: all s1, s2: Source | s1 = s2 implies  s1.profile.Id no s2.profile.Id
+inv3 T: all s1, s2: Source | s1 = s2 implies  s1.profile.Id != s2.profile.Id
+inv3 O: all s1, s2: Source | s1 = s2 implies  s1.profile.ids != s2.profile.ids
+inv3 O: all s1, s2: Source | s1 = s2 implies  s1.profile.ids not in s2.profile.ids
+inv3 O: all s1, s2: Source | s1 = s2 implies s1.profile.ids not in s2.profile.ids
+inv3 B: all s1, s2: Source| all u: User | s1 = s2 and u.profile.source = s1 or u.profile.source = s2 implies one u.profile.ids
+inv3 B: all s1, s2: Source| all u: User | s1 = s2 and u.profile.source = s1 or u.profile.source = s2 implies one u.profile.ids
+inv3 B: all s1, s2: Source| all u: User | s1 = s2 and u.profile.source = s1 or u.profile.source = s2 implies one u.profile.ids
+inv3 B: all s1, s2: Source| all u: User | s1 = s2 and u.profile.source = s1 or u.profile.source = s2 implies one u.profile.ids
+inv3 B: all s1, s2: Source| all u: User | s1 = s2 and u.profile.source = s1 or u.profile.source = s2 implies one u.profile.ids
+

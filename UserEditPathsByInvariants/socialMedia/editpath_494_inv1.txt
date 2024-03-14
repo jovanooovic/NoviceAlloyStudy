@@ -1,0 +1,7 @@
+inv1 T: all p : Photo, u1, u2 : User | p -> u1 and p -> u2 implies u1 = u2
+inv1 S: photo in posts lone -> one User
+inv1 S: photo in Photo | photo in posts lone -> one User
+inv1 C: all p : Photo, u1, u2 : User | u1 -> p in posts and u2 -> p in posts => u1 = u2	all p : Photo | some u : User | u -> p in posts
+inv1 C: posts in User lone -> Photo	posts in User some -> Photo
+inv1 C: posts in User one -> Photo
+

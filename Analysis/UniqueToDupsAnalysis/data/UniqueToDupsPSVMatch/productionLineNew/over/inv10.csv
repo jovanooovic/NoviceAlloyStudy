@@ -1,0 +1,7 @@
+"all c1,c2 : Component | c2 in c1.*(parts) implies c1 not in c2.*(parts)",1
+"all c:Component | c.^parts.workstation in ^succ.(c.workstation)",2
+"all x: Component, y: Product | x in y.parts implies y in x.workstation.succ",1
+"all comp : Component | (Component &comp.parts).workstation in (^succ).comp.workstation",1
+"all c: Component | all p: c.parts | p.workstation in c.workstation.^workstation",2
+"all c : Component | all p : Product | p in c.parts => (p.workstation.succ = c.*workstation)",1
+"all c : Component | all p : Product | p in c.parts => (p.workstation.*succ = c.*workstation)",1

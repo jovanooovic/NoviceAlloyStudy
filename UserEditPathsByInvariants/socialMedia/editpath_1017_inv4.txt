@@ -1,0 +1,8 @@
+inv4 B: all u1: User | some p1: Ad | p1 in u1.posts implies (all p2: Photo | p2 in u1.posts and p2 in Ad)
+inv4 T: all u1: User | some u1.posts in Ad implies (all p: Photo | p in u1.posts and p in Ad)
+inv4 T: all u1: User | some u1.posts in Ad implies (all p: Photo | p in u1.posts and p in Ad)
+inv4 O: all u1: User | some u1.posts & Ad implies (all p: Photo | p in u1.posts and p in Ad)
+inv4 C: all u1: User | some u1.posts & Ad implies u1.posts in Ad
+inv4 C: all u1: User | all p: Photo | p in u1.posts and p in Ad implies u1.posts in Ad
+inv4 C: all u1: User | some u1.posts & Ad implies u1.posts in Ad
+

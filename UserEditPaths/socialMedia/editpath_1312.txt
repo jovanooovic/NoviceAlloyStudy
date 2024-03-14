@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 C: all p:Photo | one posts.p
+inv2 C: no (follows & iden)
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv3 T: all p:Photo | sees.p.follows
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.sees.Ad
+inv3 T: all p:Photo-Ad |	all a:Ad | sees.a
+inv3 T: all a:Ad | sees.a
+inv3 T: all u:User | u.sees.Ad
+inv3 T: all u:User | sees.Ad
+inv3 S: all p:Photo-Ad | u.follows.posts	all u:User |
+inv3 S: all p:Photo-Ad | follows.posts.p	all u:User |
+inv3 S: all p:Photo-Ad | u:User | u.follows.posts.p
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 B: all u:User | u.sees-Ad in follows.u.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv3 E: 
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User-Ad | u.sees in u.follows.posts
+inv3 O: all u:User-Ad | u.sees in u.follows.posts
+inv3 C: all u:User | u.sees-Ad in u.follows.posts
+inv4 S: all p_Photo | posts.p.Ad
+inv4 S: all p_Photo | posts.p.Ad
+inv4 S: all p_Photo | posts.p $ p=Ad
+inv4 S: all p_Photo | posts.p & p=Ad
+inv4 S: all p_Photo | posts.p & p==Ad
+inv4 S: all p:Photo | posts.p & p==Ad
+inv4 S: all u:User | a.Ad | u.posts.a
+inv4 S: all u:User | u.post.Ad
+inv4 T: all u:User | u.posts.Ad
+inv4 S: all u:User | u.posts.Ad implies all p:Photo | p==Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p is Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p in Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p in Ad	all x:univ | x in Ad implies posts.p and p is Ad
+inv4 S: all x:univ | x in Ad implies posts.p and p is Ad
+inv4 T: all x:univ | x in Ad implies posts.Photo and Photo is Ad
+inv4 T: all x:univ and p in Photo | x in Ad implies posts.p and p is Ad
+NA H: THEME UPDATE
+

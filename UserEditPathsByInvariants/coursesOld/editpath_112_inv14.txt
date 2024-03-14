@@ -1,0 +1,8 @@
+inv14 U: all disj s1, s2 : Student | lone (s1.projects & s2.projects)
+inv14 S: all disj s1, s2: Student, all pj: Project | pj in s1.projects implies pj not in s2.projects
+inv14 B: all disj s1, s2: Student, pj: Project | pj in s1.projects implies pj not in s2.projects
+inv14 U: all disj s1, s2: Student, pj: Project | pj in s1.projects implies pj not in s2.projects && pj in s2.projects implies pj not in s1.projects
+inv14 B: all disj s1, s2: Student, pj: Project | (pj in s1.projects implies pj not in s2.projects) && (pj in s2.projects implies pj not in s1.projects)
+inv14 U: all disj s1, s2 : Student | lone (s1.projects & s2.projects)
+inv14 U: all disj s1, s2 : Student | lone (s1.projects & s2.projects)
+

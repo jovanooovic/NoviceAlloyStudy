@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv2 C: all c : Course | teaches.c in Professor
+inv3 C: all c : Course | #(teaches.c) > 0
+inv4 S: all p : Projects | one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 T: all p : Project | Person.projects.p in Student and #(Person.projects.p) > 0
+inv5 T: all p : Project | projects.p in Student and #(projects.p) > 0
+inv5 B: all p : Project | some p1 : Student | p1.projects in Student
+inv5 U: all p : Project | some p1 : Student | p in p1.projects
+inv5 U: all p : Project | all p1 : Person | p in p1.projects implies p1 in Student
+inv5 C: all p : Project | all p1 : Person | p in p1.projects implies p1 in Student	  	all p : Project | #(projects.p & Student) > 0
+inv6 U: all s : Student | all p : s.projects | p in s.enrolled.projects
+inv7 S: all s : Students | #(s.projects) <= #(s.enrolled)
+inv7 B: all s : Student | #(s.projects) <= #(s.enrolled)
+inv7 T: all s : Student | all p : s.projects | p & s.enrolled.projects <= 1
+inv7 U: all s : Student | all p : s.projects | all c : s.enrolled | #(p & c.projects) <= 1
+inv7 B: all s : Student | all p : s.projects | some c : s.enrolled | p = c.projects
+inv7 S: all s : Student | all p : s.projects | some c : s.enrolled | p = c.projects	  	  all s:Student | all c:s.enrolled | lone ((c.projects) & (s.projects))	}
+inv7 S: all s:Student | all c:s.enrolled | lone ((c.projects) & (s.projects))	}
+inv7 U: all s:Student | all c : s.enrolled | lone ((c.projects) & (s.projects))
+inv7 U: all s:Student | all c : s.enrolled | #((c.projects) & (s.projects)) <= 1
+inv8 U: all p : Professor | all c : Course | c not in (p.enrolled & p.teaches)
+inv9 B: all p : Professor | all p1 : Person | all c : p1.enrolled | c in p.enrolled implies p.teaches not in c
+inv9 B: all p : Professor | all p1 : Person | all c : p1.enrolled | c in p.enrolled implies p.teaches not in p1.enrolled
+inv9 B: all p : Professor | all c : p.enrolled | all colleagues : enrolled.c - p | p.teaches not in colleagues.enrolled
+

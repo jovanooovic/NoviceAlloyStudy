@@ -1,0 +1,78 @@
+"link",1
+"File.link",2
+"link.link",1
+"File.link > 0",1
+"link.File > 0",1
+"~link.link",1
+"link -> one File",1
+"all f,g:File | f->g",1
+"link File -> one File",1
+"link File -> some File",1
+"all f,x,y : File | f->x",1
+"link in File one -> link",1
+"some f:File | f link File",1
+"all x,y : File | x link y",1
+"all f : File | (link.f) > 0",1
+"all f:File | link.f in iden",1
+"all f:File | ~link.f in iden",2
+"all f : File | f -> link > 0",1
+"link in File one -> set link",1
+"all x,y : File | x->y link x",1
+"all x,y : File | x->y link y",2
+"all x,y : File | x->y in File",1
+"all f : File | some l : link | f->l",1
+"all f: File | some l: link | f -> l",1
+"all f : File | (some l : link | l in f)",3
+"all f: File | some l: link | f implies l",2
+"all disj f1,f2 : File |  (f1->f2) & link",1
+"all f1, f2 : File | f1->f2 implies f2->f1",2
+"all f : File | (some l : link | l in f.l)",2
+"all f1,f2 : File | lone (f1 -> f2) in link",1
+"all f : File | some l : link | f->l in link",1
+"all disj f1,f2 : File | some f1->f2 in link",1
+"all f,x,y : File | f->x and f->y implies x=y",1
+"all f1,f2 : File | f1->f2 in File and f1->f2",1
+"all f: File | some l: link | f implies some l",4
+"all disj f1,f2 : File | some (f1->f2) in link",1
+"all f: File | some l: link | l implies some f",1
+"all disj f1,f2 : File | some (f1->f2 in link )",2
+"all disj f1,f2 : File | some ( (f1->f2) in link )",1
+"all a,b,c:File | a->b and a->c in link implies b=c",1
+"all x,y : File | x->y implies x in link and y in link",1
+"all f,g,h : File | f->g in link implies f not in link",1
+"all x, y, z : File | x->y in link and x->z implies y=z",1
+"all x,y,z : File | (x->y in link and x->z implies y=z)",1
+"all f : File | (some l : link | f.l in f)",2
+"all f1, f2, f3 : File | f1->f2 and f1->f3 implies f2=f3",1
+"all x, y, z : File | (x->y in link and x->z) implies y=z",3
+"all f,g,h:File| f->g in link and f-h in link implies g=h",1
+"all f1, f2, f3 : File | f1 -> f2 and f1 -> f3 => f2 = f3",1
+"all f1,f2,f3:File | f1->f2 in link and f1->f3 implies f2=f3",1
+"all f1,f2,f3:File | f1->f2 and f1->f3 in link implies f2=f3",8
+"all x, y, z : File | (x -> y in link and x -> z) implies y=z",1
+"all x,y,z : File | x->y in File and x->z in File implies y=z",1
+"all f1,f2,f3:File | f1 -> f2 and f1->f3 in link implies f2=f3",1
+"all x, y, z : File | x->y in File and x->z in File implies y=z",1
+"all f1,f2,f3:File | f1 -> f2 and f1 -> f3 in link implies f2=f3",1
+"all f1,f2,f3:File | f1 -> f3 and f2 -> f3 in link implies f1 = f2",1
+"all f : File, l,t: link | f->l in link and f->t in link implies l=t",2
+"all f1,f2,f3:File | (f1 -> f3 and f2 -> f3 in link) implies f1 = f2",1
+"all f1,f2,f3:File | (f1 -> f2 and f1 -> f3) in link implies f2 = f3",1
+"all f : File, l,t: link | f->l in File and f->t in File implies l=t",1
+"all f : File, t,u : link  |f->t in link and f->u in link implies t=u",1
+"all l : link , g,f : File | g->l in link and f->l in link implies g=f",1
+"all f1:File,f2:File,f3:File | f1->f2 in link and f1->f3 implies f2=f3",1
+"all f1,f2,f3:File | ((f1 -> f3 and f2 -> f3) in link) implies f1 = f2",1
+"all f1,f2,f3:File | ((f1 -> f2 and f1 -> f3) in link) implies f2 = f3",1
+"all f1,f2,f3 : File | f1->f2 in File and f1->f3 in File implies f2 = f3",1
+"all f,g : File | all l : link | g->l in link and f->l in link implies f=g",1
+"some f,g : File | all l : link | g->l in link and f->l in link implies f=g",1
+"all l : link , g,f : File | g->l->f in link and f->l->g in link implies g=f",1
+"all f1,f2,f3 : File | f1 -> f2 in File and f1 -> f3 in File implies f2 = f3",1
+"all f1,f2,f3 : File | (f1 -> f2 in link and f1 -> f3 in link) implies f2  f3",1
+"all f,g : File, l,t : link | f->l->g in link and f->t->g in link implies l=t",1
+"all f1,f2,f3:File | ((f1 -> f3 in link and f2 -> f3) in link) implies f1 = f2",1
+"all f1, f2 : File | f1.link = f2.link implies f1 = f2 and no f1.link = f2.link",1
+"all f,g : File | all l,t : link | f->l->g in File and f->t->g in File implies l=t",1
+"all f,g : File | all l,t : link | f->l->g in link and f->t->g in link implies l=t",1
+"all f1,f2,f3 : File, l : link | f1->f2 in link and f1->f3 in link implies f2=f3",1

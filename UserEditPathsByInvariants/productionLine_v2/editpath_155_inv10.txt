@@ -1,0 +1,18 @@
+inv10 O: all c : Component, p : c.parts | c in c.workstation.^succ
+inv10 O: all c : Component, p : c.parts | p in c.workstation.^succ
+inv10 B: all c : Component, p : c.parts | p.workstation in c.workstation.^succ
+inv10 B: all c : Component, p : c.parts | p.workstation in c.workstation.succ.^succ
+inv10 O: all c : Component, p : c.parts | p.workstation in c.workstation.~succ.^~succ
+inv10 B: all c : Component, p : c.parts | p.workstation in c.workstation.succ.^succ
+inv10 O: all c : Component, p : c.parts | p.workstation in c.workstation.~succ.^~succ
+inv10 B: all c : Component, p : c.parts | p.workstation in c.workstation.succ.^succ
+inv10 T: all c : Component, p : c.parts | some p.workstation in c.workstation.succ.^succ
+inv10 B: all c : Component, p : c.parts | p.workstation in c.workstation.succ.^succ
+inv10 O: all c : Component, p : c.parts | p.workstation in c.workstation.~succ.^~succ
+inv10 O: all c : Component, p : c.parts | some p.workstation && p.workstation in c.workstation.~succ.^~succ
+inv10 B: all c : Component, p : c.parts | some p.workstation && p.workstation in c.workstation.succ.^succ
+inv10 O: all c : Component, p : c.parts | p.workstation in c.workstation.~succ.^~succ
+inv10 S: all c : Components | c.p.workstation in (^succ).(c.workstation)
+inv10 S: all c : Components | c.parts.workstation in (^succ).(c.workstation)
+inv10 C: all c : Component | c.parts.workstation in (^succ).(c.workstation)
+

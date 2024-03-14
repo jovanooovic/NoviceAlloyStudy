@@ -1,0 +1,51 @@
+inv7 B: some ex:Exit, e:Entry | e not in ex.succs
+inv7 B: some ex:Exit, e:Entry | e not in ex.succs and ex not in ex.succs
+inv7 B: all ex:Exit, e:Entry | e not in ex.succs and ex not in ex.succs
+inv7 E:
+inv7 U: all t:Track | t not in t.succs
+inv7 U: all t:Track | t not in t.succs and t not in succs.t
+inv7 U: all t:Track | t not in t.succs and t not in t.~(Track<:succs)
+inv7 U: all t:Track | t not in t.succs and t not in t.~(t<:succs)
+inv7 B: all t:Track | t not in t.succs and t.succs not in t
+inv7 U: all t:Track | t not in t.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all t1,t2:Track | t2 in t1.succs => t1 not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs) and (t1 in t2.succs => t2 not in t1.succs)
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 U: all t:Track | t not in t.succs =>	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 U: all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs)
+inv7 S: all t:Track | t not in t.succs	all disj t1,t2:Track | (t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 B: all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 B: all disj t1,t2:Track | (t1 not in t1.succs and t2 not in t2.succs) and (t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs)
+inv7 B: all disj t1,t2:Track | (t1 not in t1.succs) and (t2 not in t2.succs) and (t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs)
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1 not in t2.succs and t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 O: all t:Track | t not in t.succs and t.succs not in t.succs
+inv7 B: all t:Track | t not in t.succs		all disj t1,t2:Track | t1.succs not in t2.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t1.succs not in t2.succs and t2.succs not in t1.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2:Track | t1.succs not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs => t1.succs not in t2.succs
+inv7 U: all t:Track | t not in t.succs	all disj t1,t2:Track | t2 in t1.succs and t2.succs in t1.succs => t1.succs not in t2.succs
+inv7 O: all t:Track | t not in t.succs and t.succs not in Track.succs
+inv7 U: all t:Track, e:Entry, ex:Exit | (t not in t.succs) and ex in e.succs => e not in ex.succs
+inv7 B: all t:Track | one e:Entry, ex:Exit | (t not in t.succs) and ex in e.succs => e not in ex.succs
+inv7 B: all e:Entry, ex:Exit, j:Junction | (ex in e.succs => e not in ex.succs) and j not in ex.succs
+inv7 B: all t:Track | t not in t.succs	all e:Entry, ex:Exit, j:Junction | (ex in e.succs => e not in ex.succs) and j not in ex.succs
+inv7 B: all t:Track, ex:Exit | t not in t.succs and no ex.succs	all e:Entry, ex:Exit, j:Junction | (ex in e.succs => e not in ex.succs) and j not in ex.succs
+inv7 B: all t:Track, ex:Exit | t not in t.succs and no ex.succs	all e:Entry, ex:Exit, j:Junction | (ex in e.succs => e not in ex.succs) and e not in Track.succs
+inv7 B: all t:Track, ex:Exit, e:Entry, j:Junction | t not in t.succs and no ex.succs and e not in t.succs
+inv7 B: all t:Track, ex:Exit, e:Entry, j:Junction | t not in t.succs and no ex.succs and e not in Track.succs
+inv7 B: all t:Track | t not in t.succs	all ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2 : Track | t1 in t2.succs => t2 not in t1.succs	all ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2 : Track | (t1 in t2.succs => t2 not in t1.succs) and t2.succs not in t1.succs	all ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2 : Track | (t1 in t2.succs => t2 not in t1.succs) and t2.succs not in t1.succs	all disj ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2 : Track | (t1 in t2.succs => t2 not in t1.succs) and t2.succs not in t1.succs	all ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs and ex not in j
+inv7 B: all t:Track | t not in t.succs	all disj t1,t2 : Track | (t1 in t2.succs => t2 not in t1.succs) and t2.succs not in t1.succs	all ex:Exit, e:Entry, j:Junction | no ex.succs and e not in j.succs and j in e.succs
+

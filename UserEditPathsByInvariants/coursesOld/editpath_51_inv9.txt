@@ -1,0 +1,5 @@
+inv9 S: all p : Professor |  all co : Professor - p | no (p.teaches & col.enrolled))
+inv9 S: all p : Professor |  all co : Professor - p | no (p.teaches & c.enrolled))
+inv9 B: all p : Person - Student | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+inv9 B: all prof : Professor | all cl : Professor - prof | no c : Course | c in (prof.teaches & cl.enrolled)
+

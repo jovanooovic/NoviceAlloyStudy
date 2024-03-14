@@ -1,0 +1,16 @@
+inv1 O: always some State.trans.Event
+inv1 O: always (all s: State | some s.trans.Event)
+inv1 C: always (all s: State | some s.trans)
+inv1 T: always (State in trans.(Event->State))
+inv1 T: always (trans.(Event->State))
+inv1 T: always (State in trans)
+inv1 O: always (State in Event.trans.State)
+inv1 T: ~trans.trans in iden
+inv1 T: ~trans.trans in iden
+inv1 T: ~trans.trans in iden
+inv1 E:
+inv1 T: ~trans.trans in iden
+inv1 B: ~(trans.State).(trans.State) in iden
+inv1 C: all s: State | some s.trans
+inv1 C: all s: State | some s.trans
+

@@ -1,0 +1,17 @@
+inv3 S: all x:User | some y:Photo | y in x.follows.posts or y in add
+inv3 S: all x:User | some y:Photo | y in posts.follow.x or y in add
+inv3 S: all x:User | some y:Photo | y in add
+inv3 S: all x:User | some y:Photo | y in ad
+inv3 B: all x:User | some y:Photo | y in Ad
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 B: one x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts and y not in x.posts
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 O: all x:User | all y:Photo | y in Ad or y in x.follows.posts
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 B: all x:User | some y:Photo | y in Ad or y in x.follows.posts
+inv3 B: all x:User | some y:x.sees | y in Ad or y in x.follows.posts
+inv3 C: all x:User | all y:x.sees | y in Ad or y in x.follows.posts
+inv3 C: all x:User | all y:x.sees | y in Ad or y in x.follows.posts
+

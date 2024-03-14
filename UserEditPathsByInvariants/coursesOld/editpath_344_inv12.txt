@@ -1,0 +1,7 @@
+inv12 U: all s : Student , c : Course | lone ((c.grades).s)
+inv12 U: all s : Student , c : Course | lone (s.(c.grades))
+inv12 S: all c : Course | lone ((Course.grades).s)
+inv12 U: all s : Student | lone ((Course.grades).s)
+inv12 U: all s : Student | lone (Course.grades.s)
+inv12 U: all s : Student , c : Course | lone (s.(c.grades))
+

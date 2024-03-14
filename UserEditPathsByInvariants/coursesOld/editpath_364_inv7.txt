@@ -1,0 +1,10 @@
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies (one proj:Project | stud->c in projects)
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies (one proj:Project | stud->c in projects)
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies (one proj:Project | stud->c in projects)
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies (not stud->c in projects or one proj:Project | stud->c in projects)
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies (not stud->c in projects or one proj:Project | stud->c in projects)
+inv7 T: all stud:Student, c:Course | stud->c in enrolled implies ((all proj:Project | not stud->c in projects) or (one proj:Project | stud->c in projects))
+inv7 E:
+inv7 T: all s:Student,c:Course | lone (s.enrolled).(c.projects)
+inv7 B: all s:Student | lone (s.enrolled.projects)
+

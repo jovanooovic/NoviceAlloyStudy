@@ -1,0 +1,24 @@
+inv4 O: all u :User , v1,v2 : u.visible | v1 != v2
+inv4 S: disj (User.visible)
+inv4 S: all u :User, disj v1,v2 : u.visible
+inv4 U: all u :User, disj v1,v2 : u.visible | v1 != v2
+inv4 B: all u :User, disj v1,v2 : u.visible | no (v1.ids & v2.ids)
+inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids)
+inv4 B: all u :User, disj v1,v2 : u.visible | no (v1.ids & v2.ids)
+inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids)
+inv4 T: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and no (v1.source = v2.source)
+inv4 S: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source)
+inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source
+inv4 O: all u :User, v1,v2 : u.visible | no (v1.ids & v2.ids) and v1.source != v2.source
+inv4 U: all u :User, v1,v2 : u.visible | v1.source = v2.source implies no (v1.visible & v2.visible)
+inv4 O: all u :User, v1,v2 : u.visible | v1.source = v2.source implies no (v1.ids & v2.ids)
+inv4 O: all u :User, v1,v2 : u.visible |  no (v1.ids & v2.ids)
+inv4 B: all u :User,disj v1,v2 : u.visible |  no (v1.ids & v2.ids)
+inv4 B: all u :User,disj v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+inv4 U: all u :User,disj v1,v2 : u.visible |  v1 != v2
+inv4 O: all u :User, v1,v2 : u.visible |  v1 != v2
+inv4 O: all u :User, v1,v2 : u.visible |  v1.ids not in v2.ids
+inv4 O: all u :User, v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+inv4 B: all u :User,disj v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+inv4 O: all u :User, v1,v2 : u.visible |  v1.source = v2.source implies v1.ids not in v2.ids
+

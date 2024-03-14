@@ -1,0 +1,7 @@
+inv5 S: all w,w1 : Worker | all ws:Worstation | (w+w1) in ws.workers and w in Human | implies w1 not in Robot
+inv5 S: all w,w1 : Worker | all ws:Worstation | w in ws.workers and w1 in w1.workers and w in Human | implies w1 not in Robot
+inv5 S: all w,w1 : Worker | all ws:Worstation | w in ws.workers and w1 in w1.workers and w in Human | implies w1 in Human
+inv5 S: all w,w1 : Worker | all ws:Worstation | w in ws.workers and w1 in ws.workers and w in Human | implies w1 in Human
+inv5 S: all w,w1 : Worker | all ws:Worstation | w in ws.workers and w1 in ws.workers and w in Human implies w1 in Human
+inv5 O: all w,w1 : Worker | all ws:Workstation | w in ws.workers and w1 in ws.workers and w in Human implies w1 in Human
+

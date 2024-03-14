@@ -1,0 +1,61 @@
+na H: THEME UPDATE
+inv1 T: adj + ~adj
+inv1 T: adj + ~adj in Node
+inv1 T: Node = adj + ~adj
+inv1 C: adj = adj + ~adj
+inv2 O: no adj + ~adj
+inv2 C: no adj & ~adj
+inv3 S: no *.adj
+inv3 S: no ^.adj
+inv3 S: no Node^.adj
+inv3 O: no Node.*adj
+inv3 O: no Node.^adj
+inv3 O: no Node.*adj
+inv3 O: no Node.^adj
+inv3 O: no Node.*adj
+inv3 S: not in Node.^adj
+inv3 C: all n : Node | n not in n.^adj
+inv4 U: all n : Node | n in n.*adj
+inv4 T: all n : Node | n.*adj
+inv4 T: Node.*adj
+inv4 T: all n: Node | n.*adj
+inv4 T: all n: Node | n.*adj in adj
+inv4 U: all n: Node | n in n.*adj
+inv5 O: all n: Node | n not in n.*adj
+inv8 T: adj.^adj
+inv8 O: adj = adj.^adj
+inv4 T: all n: Node | n.adj
+inv4 T: all n1, n2: Node | n1->n2 && n2->n1 in adj
+inv4 U: all n1, n2: Node | n1->n2 & n2->n1 in adj
+inv4 T: all n1, n2: Node | n1->n2 implies n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 S: all n1, n2: Node | n1->n2 + n2->n1 in adj	all Node.adj
+inv5 O: all n: Node | no n.adj
+na M: MOD BASE MODEL
+inv5 T: no Node.~Node
+inv5 O: no adj.~adj
+inv4 U: all disj n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj
+inv4 C: all n1, n2: Node | n1->n2 + n2->n1 in adj	all n: Node | Node = n.adj
+inv4 S: all n1, n2: Node | n1->n2 + n2->n1 in adj	Node = n.adj
+inv5 T: all n1, n2: Node | no n1->n2->n1 in adj
+inv5 T: all n1, n2: Node | no n1->n2->n1 in Node
+inv5 T: all n: Node | no n->n in adj
+inv5 C: all n: Node | not n->n in adj
+inv5 C: all n: Node | not n->n in adj	all n: Node | n not in n.adj
+inv5 C: all n: Node | n->n not in adj	all n: Node | n not in n.adj
+inv5 C: all n: Node | n->n not in adj
+inv5 C: all n: Node | not n->n in adj	all n: Node | n not in n.adj
+inv8 T: adj.^adj
+inv8 O: adj = adj.^adj
+inv8 C: all n1, n2, n3 : Node | n1->n2 in adj and n2->n3 in adj implies n1->n3 in adj
+inv8 S: all n1, n2, n3 : Node | n1->n2 in adj and n2->n3 in adj implies n1->n3 in adj	all Node.^adj
+inv8 T: all n1, n2, n3 : Node | n1->n2 in adj and n2->n3 in adj implies n1->n3 in adj	Node.^adj
+inv8 C: all n1, n2, n3 : Node | n1->n2 in adj and n2->n3 in adj implies n1->n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n3->n2 implies n1->n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n3->n2 implies n1.^n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n3->n2 implies n1.*n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n2->n3 implies n1.*n3 in adj
+inv6 T: all n1, n2, n3:  Node | n1->n2 in adj and n2->n3 implies n1.*n3 in adj
+

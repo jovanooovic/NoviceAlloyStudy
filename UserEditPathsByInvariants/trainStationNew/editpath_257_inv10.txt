@@ -1,0 +1,33 @@
+inv10 S: all t1,t2:Tracks | t2 in t1.succs and Junction in t2 implies Semaphore in t1.signals
+inv10 B: all t1,t2:Track | t2 in t1.succs and Junction in t2 implies Semaphore in t1.signals
+inv10 B: all t1,t2:Track,s:Signal | t2 in t1.succs and Junction in t2 implies s in Semaphore and s in t1.signals
+inv10 B: all t1,t2:Track,s:Signal | t2 in t1.succs and Junction in t2 implies s in Semaphore and s in t1.signals
+inv10 B: all t1:Track | some t2:Track | t1 in t2.^succs and one (Junction & t1) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t1 in t2.^succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 U: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Signal | s in t1.signals and s in Semaphore)
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and some (Junction & t2) implies Semaphore in t1.signals
+inv10 T: all t1:Track | some t2:Track | t2 in t1.succs and (Junction & t2) implies Semaphore in t1.signals
+inv10 T: all t1:Track | some t2:Track | t2 & t1.succs and (Junction & t2) implies Semaphore in t1.signals
+inv10 T: all t1:Track | some t2:Track | t2 & t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 B: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 T: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies one (Semaphore in t1.signals)
+inv10 S: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (lone s:Semaphore) | s in t1.signals)
+inv10 B: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (lone s:Semaphore | s in t1.signals)
+inv10 O: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (one s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 U: all t1:Track | some t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1:Track,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 B: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies Semaphore in t1.signals
+inv10 O: all t1,t2:Track | some s:Semaphore | t2 in t1.succs and one (Junction & t2) implies s in t1.signals
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+inv10 C: all t1,t2:Track | t2 in t1.succs and one (Junction & t2) implies (some s:Semaphore | s in t1.signals)
+

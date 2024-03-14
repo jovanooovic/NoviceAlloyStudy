@@ -1,0 +1,15 @@
+inv4 T: all c: Component | c.parts in c.^~next
+inv4 T: all c: Component | c.parts in c.^~next
+inv4 T: all c: Component | c.parts not in c.^~next
+inv4 T: all c: Component | c.parts not in c.^next
+inv4 B: all c: Component | (c.parts).position not in (c.position).^~next
+inv4 O: all c: Component | (c.parts).position in (c.position).^~next
+inv4 B: all c: Component | (c.parts).position not in (c.position).^next
+inv4 B: all c: Component | ((c.parts):>Component).position not in (c.position).^next
+inv4 B: all c: Component | ((c.parts) & Component).position not in (c.position).^next
+inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next
+inv4 O: all c: Component | ((c.^parts) & Component).position not in (c.position).*next
+inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next
+inv4 B: all c: Component | ((c.^parts) & Component).position not in (c.position).^next or no c.^parts
+inv4 U: all c: Component | ((c.^parts) & Component).position not in (c.position).^next or no (c.^parts & Component)
+

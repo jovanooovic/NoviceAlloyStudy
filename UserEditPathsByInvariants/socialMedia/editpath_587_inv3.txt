@@ -1,0 +1,18 @@
+inv3 T: all x:User | some p:Photo | p not Ad
+inv3 T: all x:User | some p:Photo | p not Ad
+inv3 T: all x:User | all a:Ad | sees.a.x
+inv3 T: all x:User | all a:Ad | a.sees.x
+inv3 T: all x:User | all a:Ad | sees.x.a
+inv3 B: all x:User | all a:Ad | x in sees.a
+inv3 S: all x:User | all p:Photo in set Ad | x in sees.p
+inv3 S: all x:User | all p:Photo not in set Ad
+inv3 S: all x:User | all p:Photo not in set Ad | p in follows.x
+inv3 S: all x:User | all p:Photo not in sig Ad | p in follows.x
+inv3 S: all x:User | all p:Photo not Ad |
+inv3 S: all x:User | all p:Photo not  Ad | p in follows.x
+inv3 S: all x:User | all p:Photo not Ad | p not in follows.x
+inv3 S: all x:User | all p:Photo not in Ad
+inv3 T: all x:User | all p:Photo not in Ad | posts.p in follows.x
+inv3 B: all x:User | all p:Photo  | posts.p in follows.x
+inv3 B: all x:User | all p:Photo | posts.p in follows.x
+

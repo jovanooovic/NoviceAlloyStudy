@@ -1,0 +1,9 @@
+inv7 B: all x : Student, y : Course, z, w : Project | x->z in projects and x->w in projects and x->y in enrolled implies w = z
+inv7 U: all x : Student, y : Course, z, w : Project | x->z in projects and x->w in projects and y->z in projects and y->w in projects implies w = z
+inv7 B: all x : Course, y : Student | one y.projects & (y.enrolled & x).projects
+inv7 B: all y : Student, x : Course | one y.projects & (y.enrolled & x).projects
+inv7 U: all y : Student, x : Course | lone y.projects & x.projects
+inv7 B: all y : Student | lone y.projects & Course.projects
+inv7 U: all y : Student, x : Course | lone y.projects & x.projects
+inv7 U: all y : Student, x : Course | lone y.projects & x.projects
+

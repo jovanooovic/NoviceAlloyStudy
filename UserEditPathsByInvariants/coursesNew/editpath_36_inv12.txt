@@ -1,0 +1,11 @@
+inv12 T: all x: Person | all y: Course | some g: Grade | g in y.grades(x) && x in Students
+inv12 T: all x: Person | all y: Course | one g: Grade | y.grades(x)
+inv12 E:
+inv12 S: all x: Person | all y: Course | one y.grades(x)
+inv12 S: all x: Person | all y: Course | one y.grades(x) && x in Student
+inv12 S: all x: Student | all y: Course | one y.grades(x)
+inv12 S: all s: Student | all y: Course | one y.grades(s)
+inv12 B: all s: Student | all y: Course | one y.grades.s
+inv12 B: all s: Student | all y: Course | one y.grades
+inv12 S: all s: Student | all y: Course | one y.grades(s)
+

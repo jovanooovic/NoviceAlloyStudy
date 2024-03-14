@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all x : univ | x in Photo implies some y y->x in posts
+inv1 U: all x : univ | x in Photo implies some y: univ | y->x in posts
+inv1 C: (all x : univ | x in Photo implies some y: univ | y->x in posts) and (all x, y, z: univ| x->y in posts and z->y in posts implies x=z)
+inv2 C: all x : univ | not x->x in follows
+inv3 S: all x, y : univ | x->y in sees implies y in Ad or (All z : univ | z->y in posts implies x->z in follows)
+inv3 S: all x, y : univ | x->y in sees implies y in Ad or All z : univ | z->y in posts implies x->z in follows
+inv3 B: all x, y : univ | x->y in sees implies y in Ad or all z : univ | z->y in posts implies x->z in follows
+inv4 C: all x, y : univ | x->y in posts and y in Ad implies (all z : univ | x->z in posts implies z in Ad)
+inv5 E: 
+inv5 E: 
+inv4 U: all x, y : univ | x->y in posts and x in Influencer and y in Ad implies (all z : univ | x->z in posts implies z in Ad)
+inv4 C: all x, y : univ | x->y in posts and y in Ad implies (all z : univ | x->z in posts implies z in Ad)
+inv5 T: all x, y : univ| x in Influencer and y in User implies y->x follows
+inv5 T: all x, y : univ | x in Influencer and y in User implies y->x follows
+inv5 B: all x, y : univ | x in Influencer and y in User implies y->x in follows
+inv5 B: all x, y : univ | x in Influencer and y in User implies y->x in follows
+inv5 T: all x : univ | x in Influencer implies all y : univ | y in User and x!=y implies y->x follows
+inv5 U: all x : univ | x in Influencer implies all y : univ | y in User and x!=y implies y->x in follows
+inv5 S: all x, y : univ | x in Influencer and y in User and x|=y implies y->x in follows
+inv5 U: all x, y : univ | x in Influencer and y in User and x!=y implies y->x in follows
+inv6 C: all i, d : univ | i in Influencer and d in Day implies some p : univ | i->p in posts and p->d in date
+inv8 T: all x, y : univ | x in User and y in Ad and x->y sees and z->y in posts implies x->z in follows or x->z in suggested
+inv8 S: all x, y : univ | x in User and y in Ad and x->y in sees and z->y in posts implies x->z in follows or x->z in suggested
+inv6 C: all i, d : univ | i in Influencer and d in Day implies some p : univ | i->p in posts and p->d in date
+inv8 B: all x, y,z : univ | x in User and y in Ad and x->y in sees and z->y in posts implies x->z in follows or x->z in suggested
+inv7 E: 
+inv8 B: all x, y,z : univ | x in User and y in Ad and x->y in sees and z->y in posts implies x->z in follows or x->z in suggested
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested
+inv7 U: all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows and x!=z implies x->z in suggested
+inv7 U: all x, y, z : univ | x->y in follows and y->z in follows and x->z not in follows and x!=z implies x->z in suggested
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and x->z not in follows implies x->z in suggested
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and x->z not in follows implies z->x in suggested
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and x->z not in follows implies x->z in suggested
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested
+inv7 S: all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested and not x->y in suggesdted
+inv7 B: all x, y, z : univ | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested and not x->y in suggested
+inv7 C: all disj x, y, z : User | x->y in follows and y->z in follows and not x->z in follows implies x->z in suggested	all x, y : User | x->y in suggested implies x!=y and x->y not in follows and some z: User | x->z in follows and z->y in follows
+

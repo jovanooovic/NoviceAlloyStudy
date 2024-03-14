@@ -1,0 +1,8 @@
+inv4 O: all c: Component, p: c.parts | gt[c.position, p.position]
+inv4 B: all c: Component, p: c.parts | lt[c.position, p.position]
+inv4 B: all c: Component, p: c.parts & Component | lt[c.position, p.position]
+inv4 O: all c: Component, p: c.parts & Component | gt[c.position, p.position]
+inv4 C: all c: Component, p: c.parts & Component | gte[c.position, p.position]
+inv4 O: all c: Component, p: c.parts | gte[c.position, p.position]
+inv4 C: all c: Component, p: c.parts & Component | gte[c.position, p.position]
+

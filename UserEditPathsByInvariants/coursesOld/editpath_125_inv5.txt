@@ -1,0 +1,5 @@
+inv5 B: all p1 : Project | some pr1 : Person | pr1->p1 in projects	  	all p2 : Project | one pr2 : Person | pr2->p2 in projects
+inv5 B: all p1 : Project | some pr1 : Person | pr1->p1 in projects	  	all p2 : Project | one pr2 : Person | pr2->p2 in projects implies pr2 in Student
+inv5 B: all p1 : Project | some pr1 : Student | pr1->p1 in projects	  	all p2 : Project | one pr2 : Person | pr2->p2 in projects implies pr2 in Student
+inv5 C: all p1 : Project | some pr1 : Student | pr1->p1 in projects	  	all p2 : Project | all pr2 : Person | pr2->p2 in projects implies pr2 in Student
+

@@ -1,0 +1,62 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv1 C: no Trash
+inv2 C: File = Trash
+inv3 C: some Trash
+inv4 B: Protected != Trash
+inv4 C: all x : Protected | x not in Trash
+inv4 O: all x : Protected | no Trash
+inv4 O: all x : Protected | no Trash
+inv4 S: Protected = no Trash
+inv4 S: Protected = no Trash
+inv3 C: some Trash
+inv4 C: all x : Protected | x not in Trash
+inv4 B: Protected = Trash
+inv4 S: Protected = no Trash
+inv4 T: Protected = (no Trash)
+inv4 T: Protected =  ~ Trash
+inv4 S: all Protected | not Trash
+inv4 T: no Protected in Trash
+inv4 T: no Protected in Trash
+inv4 B: Protected in Trash
+inv4 B: Protected not in Trash
+inv4 C: no Trash & Protected
+inv5 S: Unprotected in Trash
+inv5 C: File - Protected in Trash
+inv6 O: lone link
+inv6 B: some link
+inv6 O: all x : File | lone link
+inv6 C: all x : File | lone x.link
+inv7 S: all x :
+inv7 S: all x :
+inv8 C: all x : File | no x.link
+inv8 C: no link
+inv7 T: all f : File | no f.link in Trash
+inv7 T: all f : File | ~ f.link in Trash
+inv7 B: all f : File | f.link not in Trash
+inv7 B: all f : File | link.f not in Trash
+inv7 C: all f : File | f.link in (File - Trash)
+inv9 T: all f : File | link.f in (File - link)
+inv9 T: all f : File | link.f in (File - link)
+inv9 T: all f : File | link.f in link
+inv9 T: all f : File | f.link implies no link.f.link
+inv9 T: all f : File | f.link implies no f.link
+inv9 T: all f : File | f.link implies no link.(f.link)
+inv9 T: all f : File | f.link implies no f.link.link
+inv9 S: all f : File | f.link		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f : File | some f.link		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f : File | lone f.link		/* If a link is deleted, so is the file it links to. */
+inv9 B: all f : File | lone f.link
+inv9 T: all f : File | f.link implies no f.link.link
+inv9 C: all f : File | some f.link implies no f.link.link
+inv10 T: all f : File | some f.link & f in Trash implies f.link in Trash
+inv10 S: all f : File | some f.link | f in Trash implies f.link in Trash
+inv10 C: all f : File | some f.link and f in Trash implies f.link in Trash
+inv10 T: all f : File | some f.link & f in Trash implies f.link in Trash
+inv10 C: all f : File | some f.link and f in Trash implies f.link in Trash
+inv10 T: all f : File | f.link and f in Trash implies f.link in Trash
+inv10 C: all f : Trash | f.link in Trash
+inv9 C: all f : File | no f.link.link
+inv2 C: File = Trash
+

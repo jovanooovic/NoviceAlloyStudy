@@ -1,0 +1,14 @@
+inv13 T: all c : Course, s : Student | last(Person.c.grades) = s.c.grades implies c in s.projects.~projects
+inv13 T: all c : Course, s : Student | last(Person.(c.grades)) = s.c.grades implies c in s.projects.~projects
+inv13 T: all c : Course | c.grades.last(Person.(c.grades)) in projects.(c.projects)
+inv13 T: all c : Course | c.grades.last(Person.(c.grades)) in projects.(c.projects)
+inv13 T: all c : Course | c.grades.last[Person.(c.grades)] in projects.(c.projects)
+inv13 T: all c : Course | c.grades.(last[Person.(c.grades)]) in projects.(c.projects)
+inv13 T: all c : Course | c.grades.last[Person.(c.grades)] in projects.(c.projects)
+inv13 T: all c : Course | c.grades.last[Person.(c.grades)] in (Person <: projects).(c.projects)
+inv13 T: all c : Course | c.grades.last[Person.(c.grades)] in (Person <: projects).(c.projects)
+inv13 T: all c : Course | (c.grades).last[Person.(c.grades)] in (Person <: projects).(c.projects)
+inv13 T: all c : Course | (c.grades).last[Person.(c.grades)] in projects.(c.projects)
+inv13 T: all c : Course | (c.grades).last[Person.(c.grades)] in projects.(c.projects)
+inv13 C: all c : Course | (c.grades).last[] in projects.(c.projects)
+

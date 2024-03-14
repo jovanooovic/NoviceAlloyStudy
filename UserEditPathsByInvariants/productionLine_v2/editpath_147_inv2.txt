@@ -1,0 +1,6 @@
+inv2 T: all wks : Workstation | some w : workers | wks->w in workers	all w : workers | one wks: Workstation | wks->w in workers
+inv2 T: all wks : Workstation | some w : workers | w->wks in workers	all w : workers | one wks: Workstation | w->wks in workers
+inv2 T: all wks : Workstation | some w : workers | wks->w in workers	all w : Workers | one wks: Workstation | wks->w in workers
+inv2 S: all wks : Workstation | some w : Workers | wks->w in workers	all w : Workers | one wks: Workstation | wks->w in workers
+inv2 C: all wks : Workstation | some w : Worker | wks->w in workers	all w : Worker | one wks: Workstation | wks->w in workers
+

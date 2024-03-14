@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: visible in profile
+inv2 C: all u:User | u.profile.source in Institution+u
+inv4 S: all u:user | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+NA M: MOD BASE MODEL
+inv4 O: all u:User | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+NA M: MOD BASE MODEL
+inv3 C: all u:User, s:Source | all disj w1,w2:(u.profile & source.s) | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.visible | no (w1.ids & w2.ids)
+inv4 O: all u:User | all disj w1,w2 : u.(visible + profile) | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.(visible) | no (w1.ids & w2.ids)
+inv4 O: all u:User | all disj w1,w2 : u.profile | no (w1.ids & w2.ids)
+inv4 B: all u:User | all disj w1,w2 : u.profile | w1.ids != w2.ids
+

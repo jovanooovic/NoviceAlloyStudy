@@ -1,0 +1,11 @@
+inv10 S: no (Person-Students).Grades
+inv10 S: no (Person-Student).Grades
+inv10 T: no (Person-Student).Grade
+inv10 C: all p : (Person-Student) | p not in Course.grades.Grade
+inv10 S: Course.grades.Grade not in (Person-Students)
+inv10 B: Course.grades.Grade not in (Person-Student)
+inv10 B: Course.grades.Grade in (Person-Professor)
+inv10 B: Course.grades.Grade not in (Person-Student)
+inv10 T: no Course.grades.Grade in (Person-Student)
+inv10 C: all p : (Person-Student) | p not in Course.grades.Grade
+

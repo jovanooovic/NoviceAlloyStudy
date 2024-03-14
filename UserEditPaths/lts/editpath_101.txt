@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all s: State | some s.transition
+inv1 C: all s: State | some s.trans
+inv2 C: one Init
+inv2 C: one Init
+inv3 C: all s: State, e: Event | lone s.trans[e]
+inv4 T: State in Init.^trans[Event]
+inv3 C: all s: State, e: Event | lone s.trans[e]
+inv3 C: all s: State, e: Event | lone s.trans[e]
+inv4 O: State in Init.trans[Event]
+inv4 T: State in Init.^trans[Event]
+inv4 T: State in ^Init.trans[Event]
+inv4 T: State in Init <: ^trans[Event]
+inv4 T: State in Init <: ^(trans[Event])
+inv4 T: State in Init <: ^(trans.Event)
+inv4 U: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		State in Init.*rel
+inv4 U: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		all s: State - Init | s in Init.*rel
+inv4 C: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		all s: State | s in Init.^rel
+inv4 C: let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		State in Init.^rel
+inv5 E: 
+inv5 C: all s1, s2: State | s1.trans.State = s2.trans.State
+inv5 C: all s1, s2: State | s1.trans.State = s2.trans.State
+inv6 C: all e: Event | some s: State | e in s.trans.State
+inv7 S: all s: State | from[Init, to] => from[to, Init]
+inv7 S: all to: State | from[Init, to] => from[to, Init]
+inv6 C: all e: Event | some s: State | e in s.trans.State
+inv7 O: all to: State | reachable[Init, to] => reachable[to, Init]	}		pred reachable[from, to: State]{	   	let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		to in from.^rel
+inv7 U: all to: State | one Init and reachable[Init, to] => reachable[to, Init]	}		pred reachable[from, to: State]{	   	let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		to in from.^rel
+

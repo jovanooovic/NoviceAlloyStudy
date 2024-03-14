@@ -1,0 +1,3 @@
+inv3 B: all u: User, p: Photo | p in u.sees => p.~posts in u.follows
+inv3 B: all u: User, p: Photo | ((p not in Ad && p in u.sees) => p.~posts in u.follows)
+

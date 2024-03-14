@@ -1,0 +1,13 @@
+inv10 T: all u : univ | u not in Student implies grades.Grade = none
+inv10 O: all u : univ | u not in Student implies no grades.Grade
+inv10 O: all u : univ | u not in Student implies no u.grades.Grade
+inv10 U: all u : Person-Student| no u.grades.Grade
+inv10 T: all u : Person-Student| none u.grades.Grade
+inv10 U: all u : Person-Student| u.grades.Grade=none
+inv10 U: all u : Person-Student| no u.grades.Grade
+inv10 U: all u : Person-Student| u not in Grade
+inv10 T: all u : Person-Student| u not in teaches implies u not in Grade
+inv10 U: all u : Person-Student| no u.teaches implies u not in Grade
+inv10 U: all u : Person-Student | no u.teaches implies u not in Grade
+inv10 U: all u : Person-Student | u not in Professor implies u not in Grade
+

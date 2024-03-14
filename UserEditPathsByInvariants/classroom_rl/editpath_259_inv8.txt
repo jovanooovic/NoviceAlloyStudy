@@ -1,0 +1,17 @@
+inv8 T: one Person.Teacher
+inv8 O: one Teacher.Teaches
+inv8 S: one Person.teacher Teacher.Teaches
+inv8 T: one Person.Teacher Teacher.Teaches
+inv8 T: one Person.Teacher + Teacher.Teaches
+inv8 T: one Person.Teacher & Teacher.Teaches
+inv8 T: one Teacher in Teacher.Teaches
+inv8 T: one Person.Teacher in Teacher.Teaches
+inv8 T: one (Teacher.Teaches).Teacher
+inv8 T: one Teacher in (Teacher.Teaches)
+inv8 T: one Teacher in Teaches.Class
+inv8 B: one Teaches.Class
+inv8 S: no some Teaches.Class
+inv8 B: one Teaches.Class
+inv8 S: -(Teacher<:Teaches).(Teacher<:Teaches) in Iden
+inv8 S: ~(Teacher<:Teaches).(Teacher<:Teaches) in Iden
+

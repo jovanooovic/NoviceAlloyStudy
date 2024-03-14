@@ -1,0 +1,18 @@
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) = 1)
+inv11 B: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) >= 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 B: all c : Class | (#(Teaches.c & Teacher) > 0) implies (#c.Groups > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 B: all c : Class, t : Teacher | t->c not in Teaches => no c.Groups
+inv11 O: all c : Class | some t : Teacher | t->c not in Teaches => no c.Groups
+inv11 B: all c : Class, t : Teacher | 	  		t->c not in Teaches => (some p : Person, g : Group | c->p->g not in Groups)
+inv11 B: all c : Class | some t : Teacher | 	  		t->c not in Teaches => (some p : Person, g : Group | c->p->g not in Groups)
+

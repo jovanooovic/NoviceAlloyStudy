@@ -1,0 +1,9 @@
+inv4 S: some u : User, p : Post | p in u.posts => all po : u.posts | po in Ad
+inv4 B: some u : User, p : Ad | p in u.posts => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : Ad | p in u.posts => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 B: all u : User | some p : u.posts | p in Ad => (all po : u.posts | po in Ad)
+inv4 B: all u : User | some p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 C: all u : User | all p : u.posts | p in Ad => all po : u.posts | po in Ad
+inv4 C: all u : User, p : u.posts | p in Ad => all po : u.posts | po in Ad
+

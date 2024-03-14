@@ -1,0 +1,12 @@
+inv4 E:
+inv4 B: one a:Track|all b:Track-a| b->a not in succs implies a in Entry
+inv4 B: one a:Track|all b:Track-a| a->b not in succs implies a in Entry
+inv4 B: one a:Track|all b:Track-a| a->b in succs implies a in Entry
+inv4 B: some a:Track| all b:Track-a | b->a in succs and a->b not in succs implies a in Entry
+inv4 T: all a:Track, b:Track-a| a in Exit implies some b->a not in succs
+inv4 S: all a:Track| a in Exit implies some b:Track-b| b->a not in succs
+inv4 S: all a:Track| a in Exit implies (some b:Track-b| b->a not in succs)
+inv4 B: all a:Track| a in Exit implies (some b:Track-a| b->a not in succs)
+inv4 B: all a:Track, b:Track-a| a in Exit implies b->a not in succs
+inv4 B: all a:Track, b:Track-a| a in Exit implies b->a not in succs
+

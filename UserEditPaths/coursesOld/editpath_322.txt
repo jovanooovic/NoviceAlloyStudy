@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv1 O: all p: Person | p.enrolled-Student = none
+inv1 O: all p: Person | p.enrolled-((Course.grades.Grade)&Student) = none
+inv1 T: all p: Person | p.enrolled.Course-Student = none
+inv1 T: all p: Person | (p.enrolled.Course)-Student = none
+inv1 C: no enrolled.Course-Student
+inv2 B: no enrolled.Course-Professor
+inv2 C: no teaches.Course-Professor
+inv3 C: all c: Course | c in Person.teaches
+inv4 U: all p : Project | one Course.projects&p
+inv4 T: all p : Project | one projects&p
+inv4 T: all p : Project | one Course <: projects&p
+inv4 C: all p : Project | one Course <: projects&Course->p
+inv5 T: one projects.Course-Student
+inv5 T: one Person <: projects.Course-Student
+inv5 T: some Person <: projects.Course-Student
+inv5 O: some (Person <: projects).Course-Student
+inv5 T: some Person.projects.Course-Student
+inv5 T: some Person.projects-Student->Project
+inv5 T: some (Person.projects)-(Student->Project)
+inv5 T: some (Person->projects)-(Student->Project)
+inv5 T: some (projects)-(Student->Project)
+inv5 B: some (Person <: projects)-(Student->Project)
+inv5 B: one (Person <: projects)-(Student->Project)
+inv5 U: lone (Person <: projects)-(Student->Project)
+inv5 B: some (Person <: projects)-(Student->Project)
+inv5 B: no (Person <: projects)-(Student->Project)	    some (Person <: projects)&(Student->Project)
+inv5 T: (Person <: projects)-(Student->Project) = none	    some (Person <: projects)&(Student->Project)
+inv5 B: no (Person <: projects)&(Professor->Project)	    some (Person <: projects)&(Student->Project)
+inv5 B: no Person <: projects-Student->Project	    some (Person <: projects)&(Student->Project)
+inv5 B: no Person <: projects-Student->Project	    some Person <: projects&Student->Project
+inv5 B: all s : Student| no Person <: projects-s->Project	    all s : Student| some Person <: projects&s->Project
+inv5 T: all s : Student| Person <: projects-s->Project = none	    all s : Student| some Person <: projects&s->Project
+inv5 T: all s : Student| Person <: projects.s = none	    all s : Student| some Person <: projects&s->Project
+inv6 S: all s: Student| all p : Project | c in s.projects implies all c : Course | p in c.projects and c in s.enrolled
+inv6 B: all s: Student| all p : Project | p in s.projects implies all c : Course | p in c.projects and c in s.enrolled
+inv6 B: all s: Student| all p : Project | all c : Course | p in s.projects and p in c.projects implies c in s.enrolled
+inv6 B: all s: Student| all p : Project | all c : Course | p in s.projects and p in c.projects implies c in s.enrolled
+inv7 B: all s: Student| all p : Project | all c : Course | p in c.projects implies s.projects-p = none
+inv7 B: all s: Student| all p : Project | all c : Course | p in c.projects and p in s.projects implies s.projects-p = none
+inv7 U: all s: Student| all p : Project | all c : Course | p in c.projects and p in s.projects implies s.projects&c.projects-p = none
+inv8 B: all t : Professor | t.teaches not in t.enrolled
+inv8 B: all t : Professor | no t.teaches-t.enrolled
+inv8 U: all t : Professor | no t.teaches&t.enrolled
+inv8 C: no teaches&enrolled
+inv9 T: all p : Professor | p not in p.^(teaches.~Course)
+inv9 T: all p : Professor | p not in p.^(teaches.Person)
+inv9 U: all p : Professor | p not in p.^(teaches)
+inv9 T: all p : Professor | p not in p.^(teaches.Person)
+inv9 T: all p : Professor | p not in p.^(teaches.Course)
+inv9 T: all p : Professor | p not in p.^(teaches.~Course)
+inv9 B: all p : Professor | p not in p.^(teaches.grades.Grade)
+inv9 U: all p : Professor | p not in p.^(teaches.enrolled)
+inv9 B: all p : Professor | p not in p.^(teaches.~enrolled)
+inv9 B: all p : Professor | p not in p.^(teaches.~teaches)
+inv9 B: all p : Professor | p not in p.^(teaches.~enrolled)
+

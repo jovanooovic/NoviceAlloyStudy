@@ -1,0 +1,33 @@
+"all c: Course, p: Project, s1: Student, s2: Student| p in s1.projects && p in s2.projects => (s1 -> c.grades) = (s2 -> c.grades)",1
+"all disj s1,s2 : Student | all c : Course | all p: c.projects | p in s1.projects and p in s2.projects => s1.(c.grades) = s2.(c.grades)",1
+"all c: Course, p: Project, s1: Student, s2: Student, g: Grade | p in s1.projects && p in s2.projects => (s1 -> c.grades) = (s2 -> c.grades)",1
+"all disj s1,s2 : Student | all c : Course | some p: Project | p in s1.projects and p in s2.projects => s1.((projects.p).grades) = s2.((projects.p).grades)",1
+"all disj s1, s2 : Student |
+  		all g1 : s1.(Course.grades) |
+  			all g2 : s2.(Course.grades) |
+  				some (s1.projects & s2.projects) implies (g2 in g1.prev or g1 in g2.prev)",1
+"all disj s1,s2 : Student | all c : Course | all p: c.projects | p in s1.projects and p in s2.projects => (s1.(c.grades) = s2.(c.grades) + 1) or (s1.(c.grades) = s2.(c.grades) - 1)",2
+"all disj s1, s2 : Student |
+  		all g1 : s1.(Course.grades) |
+  			all g2 : s2.(Course.grades) |
+  				some (s1.projects & s2.projects) implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)",1
+"all s1, s2 : Student | all p:Project, c:Course | (s1!=s2 and p in s1.projects and p in s2.projects) implies (all g1,g2:Grade | g2=prev[g1] or g1=prev[g2] or g1=g2)",1
+"all disj s1, s2 : Student |
+  		all g1 : s1.(Course.grades) |
+  			all g2 : s2.(Course.grades) |
+  				(some (s1.projects & s2.projects) and some g1 and some g2 )implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)",1
+"all s1, s2: Student| all c: Course| all p: Project| (s1!=s2 and p in s1.projects and p in s2.projects) implies (all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 
+  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))",1
+"all disj s1, s2 : Student |
+  		all c : s1.enrolled & s2.enrolled |
+          all g1 : s1.(c.grades), g2 : s2.(c.grades) |
+                  (some (s1.projects & s2.projects & c.projects) and some g1 and some g2 )implies (g2 in g1.prev or g1 in g2.prev or g1 = g2)",1
+"all s1 : Student | all s2 : Student - s1 | all c : Course | (one c.projects & s1.projects & s2.projects) implies (all g1 : Grade | all g2 : Grade | s1->g1 in c.grades and s2->g2 in c.grades implies (g2.next = g1 or g1.next = g2))",1
+"all s1,s2: Student | all p: Project | all c: Course | all g1,g2: Grade |
+  	s1->p in projects and s2->p in projects and c->p in projects and c->s1->g1 in grades and c->s2->g2 in grades =>
+  	g1 = g2 or g1 = prev[g2] or g2 = prev[g1]",1
+"all s1:Student, s2:Student, c:Course, p:Project| (s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies ( all g1,g2:Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) implies (g1=prev[g2] or g2 = prev[g1] or g1=g2) )",1
+"all s1:Student, s2:Student, c:Course, p:Project| (s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies ( all g1,g2:Grade | s1->g1 in c.grades and g2 in s2.(c.grades) implies (g1=prev[g2] or g2 = prev[g1] or g1=g2) )",1
+"all s1:Student, s2:Student, c:Course, p:Project| (s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies ( all g1,g2:Grade | c->s1->g1 in grades and g2 in s2.(c.grades) implies (g1=prev[g2] or g2 = prev[g1] or g1=g2) )",3
+"all p : Project | all s1,s2 : Student | all c : Course | (s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies (all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) implies (g1=prev[g2] or g2=prev[g1] or g1=g2))",9
+"all s1, s2: Student| all c: Course| all p: Project| (s1!=s2 && p in s1.projects && p in s2.projects && p in c.projects) => (all g1,g2 : Grade | g1 in s1.(c.grades) && g2 in s2.(c.grades) => (g1=prev[g2] || g2=prev[g1] || g1=g2))",2

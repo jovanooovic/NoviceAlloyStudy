@@ -1,0 +1,12 @@
+inv4 S: all s:State |
+inv4 S: States in init.^trans
+inv4 S: State in init.^trans
+inv4 T: State in Init.^trans
+inv4 T: all i :Init | State in i.^trans
+inv4 T: all i :Init | State in ^(i.trans)
+inv4 B: all i :Init | some e:Event| State in e.^(i.trans)
+inv4 B: all i :Init | some e:Event| State in e.*(i.trans)
+inv4 B: all i :Init | some e:Event| State in e.*(i.trans)
+inv4 O: some e:Event| State in e.^(Init.trans)
+inv4 S: some e:Event, some s:State| Init in ^trans.(e->s)
+

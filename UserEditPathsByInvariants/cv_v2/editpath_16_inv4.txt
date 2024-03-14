@@ -1,0 +1,6 @@
+inv4 S: all u:User, x, y:Work | (x in u.visible and y in u.visible) implies not (x.id = y.id)
+inv4 O: all u:User, x, y:Work | (x in u.visible and y in u.visible) implies no (x.ids & y.ids)
+inv4 O: all u:User, x, y:Work | (x in u.visible and y in u.visible) implies not (x.ids = y.ids)
+inv4 O: all u:User, x, y:Work | (x in u.visible and y in u.visible) implies not (x = y)
+inv4 O: all u:User, x, y:Work | (x in u.visible and y in u.visible and x.source = y.source) implies no (x.ids & y.ids)
+

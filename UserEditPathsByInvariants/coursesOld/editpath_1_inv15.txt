@@ -1,0 +1,6 @@
+inv15 B: all disj s1,s2 : Student, c : Course<:projects.(s1.projects & s2.projects) | 	  	s1.(c.grades) in s2.(c.grades) + prev[s2.(c.grades)] + next[s2.(c.grades)]
+inv15 S: all disj g1,g2 : c.grades, c : Course | one (s1.projects & s2.projects & c.projects) implies  	  	s1.(c.grades) in s2.(c.grades) + prev[s2.(c.grades)] + next[s2.(c.grades)]
+inv15 S: all disj g1,g2 : c.grades, c : Course | one (s1.projects & s2.projects & c.projects)
+inv15 S: all disj g1,g2 : c.grades, c : Course | one (c.projects)
+inv15 B: all disj g1,g2 : Grade, c : Course | one (c.projects)
+

@@ -1,0 +1,35 @@
+inv10 S: all c: Class | all s: Student | s in c.groups
+inv10 T: all c: Class | all s: Student | s in c.Groups
+inv10 T: all c: Class | all s: Student | s in Groups.c
+inv10 T: all c: Class | all s: Student | s in c.Groups
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student | s in
+inv10 S: all c: Class | all s: Student
+inv10 T: all c: Class | all c: Student | c -> c.Groups
+inv10 T: all c: Class | all s: Student | s -> c.Groups
+inv10 T: all c: Class | all s: Student | s -> c.Groups
+inv10 T: all c: Class | all s: Student | s -> c.Groups.Person
+inv10 S: all c: Class | all s: Student | s -> c.groups.Person
+inv10 O: all c: Class | all s: Student | s in c.Groups.Person
+inv10 O: all c: Class | all s: Student | s in c.Groups.Person
+inv10 T: all c: Class | all s: Student | c.Groups.s
+inv10 O: all c: Class | all s: Student | some s.Groups
+inv10 O: all s: Student | some s.Groups
+inv10 S: all c: Class | all s: in Student | s in c.Groups.g
+inv10 S: all c: Class | g: Group | all s: in Student | s in c.Groups.g
+inv10 S: all c: Class | g: Group, s: Student | s in c.Groups.g
+inv10 U: all c: Class | all s: Student | lone c.Groups.s
+inv10 O: all c: Class | all s: Student | some c.Groups.s
+inv10 U: all c: Class | all s: Student | s.Groups in c.Groups
+inv10 U: all c: Class | all s: Student | Groups.s in c.Groups
+inv10 U: all c: Class | all s: Student | s.Groups in c.Groups
+inv10 T: all c: Class | all s: Student | Groups in c.Groups
+inv10 O: all c: Class | all s: Student | s in c.Groups.Person
+inv10 S: all c: Class | all s: Student | s in c.^(g: Group | Groups.g)
+inv10 S: all c: Class | all s: Student | g in Group and s in c.Groups.g
+inv10 C: all c: Class | all s: Student | some g: Group | s in c.Groups.g
+

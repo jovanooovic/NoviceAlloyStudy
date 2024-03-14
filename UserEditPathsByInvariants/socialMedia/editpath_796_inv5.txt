@@ -1,0 +1,11 @@
+inv5 B: all u:User, i:Influencer | u->i in follows implies u not in Influencer
+inv5 U: all u:User, i:Influencer | u->i in follows implies u != i
+inv5 T: all u:User, i:Influencer | u->i in follows implies u != i and none i->u in follows
+inv5 U: all u:User, i:Influencer | i != u implies u->i in follows
+inv5 U: all u:User, i:Influencer | i != u implies u->i in follows
+inv5 U: all u:User, i:Influencer | i not in follows.i
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+

@@ -1,0 +1,11 @@
+inv14 B: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects implies proj2 in s.projects implies proj2 not in s2.projects
+inv14 B: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects implies (proj2 in s.projects implies (proj2 not in s2.projects))
+inv14 B: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 implies (proj2 in s.projects implies (proj2 not in s2.projects))
+inv14 S: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 implies ( p2 not in s1.projects) or (p2 not in s2.projects)
+inv14 S: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 implies ( proj2 not in s1.projects) or (proj2 not in s2.projects)
+inv14 B: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 implies ( proj2 not in s.projects) or (proj2 not in s2.projects)
+inv14 U: all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 and proj1 != proj2 implies ( proj2 not in s.projects) or (proj2 not in s2.projects)
+inv14 S: all x: Student, all col : Student - x | lone (x.projects & col.projects)
+inv14 S: all x: Student, all col : Student - x | lone (x.projects & col.projects)
+inv14 U: all x: Student, col : Student - x | lone (x.projects & col.projects)
+

@@ -1,0 +1,4 @@
+inv12 B: all s:Student| all c:Course| one g:Grade| s->c in enrolled implies (c->s->g in grades)
+inv12 B: all s:Student| all c:Course| lone g:Grade| s->c in enrolled implies (c->s->g in grades)
+inv12 U: all s:Student| all c:Course| s->c in enrolled implies (lone g:Grade|c->s->g in grades)
+

@@ -1,0 +1,11 @@
+inv2 T: all workstation : Workstation | all workers : Worker | workers in workstation.workers != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | (workers in workstation.workers) != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | workstation.workers != none and worker in Workstation.workers
+inv2 T: all workstation : Workstation | all workers : Worker | Workstation.workers != none and worker in Workstation.workers
+inv2 S: all workers : Worker | workstation.workers != none and worker in Workstation.workers
+inv2 T: all workers : Worker | Workstation.workers != none and worker in Workstation.workers
+inv2 U: all worker : Worker | (Workstation.workers != none) and (worker in Workstation.workers)
+inv2 U: all worker : Worker | (Workstation.workers != none) and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+inv2 U: Workstation.workers != none and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+inv2 C: all w : Workstation | w.workers != none and (all worker : Worker | one workstation : Workstation | worker in workstation.workers)
+

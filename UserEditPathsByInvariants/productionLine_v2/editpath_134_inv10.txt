@@ -1,0 +1,11 @@
+inv10 S: all c : Component | all p : c.parts |
+inv10 S: all c : Component | all p : c.parts |
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => some(p.workstation)
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => some(p.workstation)
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => after(some(p.workstation))
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => before(some(p.workstation))
+inv10 B: all c : Component | all p : c.parts | some (c.workstation) => before(some(p.workstation))
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => some(p.workstation) and all w: p.workstation | c.workstation in w.^succ
+inv10 B: all c : Component | all p : c.parts | some (c.workstation) => some(p.workstation) and all w: p.workstation | c.workstation in w.^succ
+inv10 B: all c : Component | all p : c.parts & Component | some (c.workstation) => some(p.workstation) and all w: p.workstation | c.workstation in w.^succ
+

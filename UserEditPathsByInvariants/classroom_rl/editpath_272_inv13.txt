@@ -1,0 +1,7 @@
+inv13 B: all p: Person | {(some p.Tutors => p in Student) (some p.Teaches => p in Teacher)}
+inv13 B: all p: Person | {(some p.Teaches => p in Teacher)}
+inv13 B: all p: Person | {((some p.Teaches) => (p in Teacher))}
+inv13 B: all p: Person | (some p.Teaches) => (p in Teacher)
+inv13 U: all p: Person | (some p.Tutors) => (p in Teacher)
+inv13 C: all p: Person | {((some p.Tutors) => (p in Teacher)) ((some Tutors.p) => (p in Student))}
+

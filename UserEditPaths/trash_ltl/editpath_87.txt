@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv1 S: no Trash;	no Protected;
+inv1 C: no Trash	no Protected
+inv2 C: no File and after some File
+inv3 C: always some File
+inv4 U: eventually some File
+inv4 C: eventually some Trash
+inv5 B: some File and eventually some Trash
+inv5 S: f in File	File' = File - f	Trash' = Trash +f
+inv5 S: f in File	Trash' = Trash + f
+inv5 S: some f in File	Trash' = Trash + f
+inv5 S: some f: File	Trash' = Trash + f
+inv5 S: some f:File	Trash' = Trash + f
+inv5 S: some f:File and eventually Trash' = Trash + f
+inv5 B: some f:File | eventually Trash' = Trash + f
+inv5 O: eventually some f:File | File' = File- f
+inv5 O: eventually some f:File | File' = File - f
+inv5 O: eventually some f:File | f not in File
+inv5 B: eventually all f:File | f not in File
+inv5 C: eventually some f:File | f not in File'
+inv6 B: eventually some f:File | always f not in File'
+inv6 B: eventually some f:File | f not in File' and always f not in File'
+inv6 S: eventually some f:File | f not in File' | always f not in File'
+inv6 B: eventually some f:File | always f not in File'
+inv6 B: eventually some f:File | always f in Trash'
+inv6 B: eventually some f:File | always f in Trash
+inv6 B: some f:File | always f in Trash
+inv6 B: some f:File | always f in Trash'
+inv6 B: all f:File | always f in Trash'
+inv6 B: all f:File | always f in Trash
+inv6 B: all f:File | f in Trash and always f in Trash'
+inv6 S: all f:File | f in Trash	always f in Trash'
+inv6 S: all f:File | f in Trash always f in Trash'
+inv6 U: all f:Trash | always f in Trash'
+inv6 U: all f:Trash | always f in Trash
+inv6 C: always all f:Trash | always f in Trash
+inv5 C: eventually some f:File | f not in File'
+inv10 E: 
+inv6 C: always all f:Trash | always f in Trash
+inv8 B: eventually some f:File | f.link in Trash'
+inv8 B: eventually some f:File | f.link not in File'
+inv8 B: all f:File | eventually f.link not in File'
+inv8 S: always all f:File | some f.link eventually f in Trash
+inv8 C: always all f:File | some f.link implies eventually f in Trash
+inv10 U: always all f:Protected | f in Protected
+inv10 U: all f:Protected | always f in Protected
+inv10 U: all f:Protected | always f in Protected'
+inv10 S: all f:Protected implies always f in Protected
+

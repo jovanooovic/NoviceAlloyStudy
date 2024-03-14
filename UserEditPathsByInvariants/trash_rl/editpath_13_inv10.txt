@@ -1,0 +1,20 @@
+inv10 T: some link.Trash.File
+inv10 B: all f,g : File | link.f in Trash and link.g in Trash
+inv10 O: all f,g : File | f.link in Trash and g.link in Trash
+inv10 T: all f,g : File | f.link.Trash and g.link.Trash
+inv10 T: File.link.Trash
+inv10 T: link.Trash -> File.Trash
+inv10 T: link.Trash & File.Trash
+inv10 B: link.Trash & File in Trash
+inv10 O: link.Trash + File in Trash
+inv10 O: link.File + File in Trash
+inv10 B: link.File & File in Trash
+inv10 S: Link.link & File in Trash
+inv10 O: File.link & File in Trash
+inv10 B: link.Trash & File in Trash
+inv10 O: File in Trash
+inv10 T: link in Trash
+inv10 T: link.Trash
+inv10 T: File in Trash = Trash.link
+inv10 C: Trash.link in Trash
+

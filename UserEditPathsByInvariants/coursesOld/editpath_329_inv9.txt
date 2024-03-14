@@ -1,0 +1,18 @@
+inv9 B: not some x,x1: Professor | some c: Course | x->c in teaches and x1->c in enrolled
+inv9 B: not some x,x1: Professor | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1
+inv9 S: not some x,x1 in Professor | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1
+inv9 B: not some x: Professor,x1: Professor | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1
+inv9 B: not some x,x1: Professor | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1 and x in Professor and x1 in Professor
+inv9 B: all x,x1: Professor | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1 implies x1 not in Professor
+inv9 B: all x,x1: Person | some c: Course | x->c in teaches and x1->c in enrolled and x!=x1 implies x1 not in Professor
+inv9 B: not some p1,p2: Professor | some c: Course | p1->c in teaches and p2->c in enrolled and p1!=p2
+inv9 B: not some p1,p2: Professor | some c: Course | p1->c in teaches and p2->c in enrolled and p1!=p2
+inv9 B: not some p1,p2: Professor | some c: Course | p1->c in teaches and p2->c in enrolled and p1!=p2
+inv9 B: not some p1,p2: Professor, c: Course | p1->c in teaches and p2->c in enrolled and p1!=p2
+inv9 B: all p1,p2: Professor, c: Course | p1->c in teaches and p2->c in enrolled implies p1!=p2
+inv9 B: all p1,p2: Professor, c: Course | p1->c in teaches and p2->c in enrolled implies p1!=p2 and p1 not in Student and p2 in Student
+inv9 B: all p1,p2: Professor| some c: Course | p1->c in enrolled and p2->c in enrolled and p1!=p2  implies (not (p1->c in teaches or p2->c in teaches) )
+inv9 B: all p1,p2: Professor, c: Course | p1->c in enrolled and p2->c in enrolled and p1!=p2  implies (not (p1->c in teaches or p2->c in teaches) )
+inv9 S: all p1,p2: Professor| some c: Course | p1->c in enrolled and p2->c in enrolled and p1!=p2  implies (p1->c not in teaches and p2->c not in teaches) )
+inv9 B: all p1,p2: Professor| some c: Course | p1->c in enrolled and p2->c in enrolled and p1!=p2  implies (p1->c not in teaches and p2->c not in teaches)
+

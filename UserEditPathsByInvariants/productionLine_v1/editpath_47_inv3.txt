@@ -1,0 +1,9 @@
+inv3 T: all p : Position | p in Component.position => some position.p
+inv3 T: all p : Position | p in Component.position => some position.p
+inv3 S: all p : Position | p in Component.position => some positionr.p
+inv3 T: all p : Component.Position | some r : Robot | r->p in position
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+inv3 T: all p : Component.position | some Robot->p in position
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+inv3 C: all p : Component.position | some r : Robot | r->p in position
+

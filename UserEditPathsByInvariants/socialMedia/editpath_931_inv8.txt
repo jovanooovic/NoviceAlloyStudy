@@ -1,0 +1,23 @@
+inv8 B: all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 T: all u : User | u.sees.Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 T: all u : User | some u.sees.Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 S: all u : User | some u.sees.ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 S: all u : User | some ad.(u.sees)		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 T: all u : User | some Ad.(u.sees)		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 T: all u : User | some (u.sees).Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 B: all u : User | some (u.sees) & Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 T: all u : User | (u.sees) & Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 B: all u : User | one (u.sees) & Ad		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 B: all u : User | some posts.((u.sees) & Ad)		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 B: all u : User | u->(posts.((u.sees) & Ad)) in follows		all u : User | all ad: Ad | u->ad in sees and (u->(posts.ad) in follows or u->(posts.ad) in suggested)
+inv8 B: all u : User | u->(posts.((u.sees) & Ad)) in follows
+inv8 S: all u : User | u->(posts.((u.sees) & Ad)) in follows or in suggested
+inv8 S: all u : User | u->(posts.((u.sees) & Ad)) (in follows or in suggested)
+inv8 S: all u : User | u->(posts.((u.sees) & Ad)) in follows or u->(posts.((u.sees) & Ad)) in suggested)
+inv8 B: all u : User | u->(posts.((u.sees) & Ad)) in follows or u->(posts.((u.sees) & Ad)) in suggested
+inv8 B: all u : User | u->(posts.((u.sees) & Ad)) in follows and u->(posts.((u.sees) & Ad)) in suggested
+inv8 B: all u : User | u->(posts.((u.sees) & Ad)) in follows or u->(posts.((u.sees) & Ad)) in suggested
+inv8 T: all u : User | ((u.sees) & Ad)
+inv8 B: all u : User | some ((u.sees) & Ad)
+inv8 B: all u : User | posts.((u.sees) & Ad) in u.follows + u.suggested
+

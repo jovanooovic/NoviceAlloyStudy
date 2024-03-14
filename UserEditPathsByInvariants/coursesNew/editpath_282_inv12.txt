@@ -1,0 +1,10 @@
+inv12 S: all s : Student | all g : Grades | all c : Course | lone s->g & c.grades
+inv12 U: all s : Student | all g : Grade | all c : Course | lone s->g & c.grades
+inv12 B: all s : Student | all g : Grade | one c : Course | lone s->g & c.grades
+inv12 U: all s : Student | all g : Grade | all c : Course | lone s->g & c.grades
+inv12 T: all s : Student |  all c : Course | all g : c.grades | lone s->g
+inv12 T: all s : Student |  all c : Course | all g : c.grades | lone s->g & c.grades
+inv12 S: all s : Student |  all c : Course | all g : c.grades |all g2 : Grades | lone s->g2 & c.grades
+inv12 T: all s : Student |  all c : Course | all g : c.grades |all g2 : Grade | lone s->g2 & c.grades
+inv12 U: all s : Student |  all c : Course | lone g : Grade | s->g in c.grades
+

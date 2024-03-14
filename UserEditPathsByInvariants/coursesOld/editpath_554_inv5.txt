@@ -1,0 +1,9 @@
+inv5 U: all pro : Project | some per : Person | per->pro in projects && per in Student
+inv5 B: all pro : Project | all per : Person | per->pro in projects && per in Student
+inv5 U: all pro : Project | some per : Person | per->pro in projects => per in Student
+inv5 B: all pro : Project | some per : Person | per->pro in projects => per in Student && per not in Professor
+inv5 U: all pro : Project | all per : Person | per->pro in projects => per in Student
+inv5 B: all pro : Project | all per : Person | per->pro in projects => per in Student && per not in Professor
+inv5 C: all pro : Project, per : Person | per->pro in projects => per in Student		all pro : Project | some per : Person | per->pro in projects
+inv5 C: all pro : Project, per : Person | per->pro in projects => per in Student				all pro : Project | some per : Person | per->pro in projects
+

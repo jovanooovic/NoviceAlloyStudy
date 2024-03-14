@@ -1,0 +1,20 @@
+inv9 B: all c:Class | one Teacher.Teaches:>c
+inv9 U: all c:Class | lone Teacher.Teaches:>c
+inv9 U: all c:Class | lone Teacher.Teaches:>c
+inv9 S: all c:Class | t:Teacher | one t.Teaches:>c
+inv9 B: all c:Class,t:Teacher | one t.Teaches:>c
+inv9 T: all c:Class,t:Teacher | one t->c in Teaches
+inv9 U: all c:Class,t:Teacher | lone t.Teaches:>c
+inv9 T: all c:Class,t:Teacher | lone t.Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 U: all c:Class | lone Teacher.Teaches<:c
+inv9 U: all c:Class | lone Teacher.Teaches:>c
+inv9 U: all c:Class | lone Teacher.Teaches:>c
+inv9 O: all c:Class | lone Teaches.c
+inv9 U: all c:Class,t:Teacher | lone Teaches.c:>t
+inv9 O: all c:Class,t:Teacher | lone Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 T: all c:Class,t:Teaches | lone t in Teaches.c
+inv9 O: all c:Class | lone Teaches.c
+inv9 C: all c:Class | lone Teaches.c:>Teacher
+

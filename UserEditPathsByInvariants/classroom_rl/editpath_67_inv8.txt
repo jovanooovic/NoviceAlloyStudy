@@ -1,0 +1,14 @@
+inv8 C: all t : Teacher | lone t.Teaches
+inv8 T: lone Teacher in Teaches.Class
+inv8 B: lone Teacher & Teaches.Class
+inv8 B: lone (Teacher & Teaches.Class)
+inv8 B: one (Teacher & Teaches.Class)
+inv8 B: lone (Teacher & Teaches.Class)
+inv8 B: #(Teacher & Teaches.Class) <= 1
+inv8 O: #(Teacher & Teaches.Class) < 1
+inv8 O: let c = ~Teaches | c.~c in iden
+inv8 T: let c = Teacher :> ~Teaches | c.~c in iden
+inv8 T: let c = Teacher :> (~Teaches) | c.~c in iden
+inv8 C: let c = (~Teaches) :> Teacher | c.~c in iden
+inv8 C: let c = ~Teaches :> Teacher | c.~c in iden
+

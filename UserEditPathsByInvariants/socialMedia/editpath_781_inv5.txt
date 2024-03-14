@@ -1,0 +1,7 @@
+inv5 U: (User -> Influencer - iden) in follows
+inv5 T: (User -> Influencer - Influencer) in follows
+inv5 U: (User -> Influencer - iden) in follows
+inv5 S: all i: Influencer | (User.follows = i + User.follows)s
+inv5 B: all i: Influencer | (User.follows = i + User.follows)
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+

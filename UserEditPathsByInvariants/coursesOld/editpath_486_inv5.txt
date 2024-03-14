@@ -1,0 +1,12 @@
+inv5 T: Student <: projects
+inv5 C: (this/Person <: projects) in Student some -> Project
+inv5 C: (Person <: projects) in Student some -> Project
+inv5 S: (Person <: projects) in Student some
+inv5 T: (Person <: projects) in Student
+inv5 C: (Person <: projects) in Student some -> Project
+inv5 O: (Person <: projects) in Student some -> one Project
+inv5 S: (Person <: projects) in Student some -> all Project
+inv5 C: (Person <: projects) in Student some -> Project	  	  all p: Person, p1:Project | (p->p1 in projects => p in Student)
+inv5 U: all p: Person, p1:Project | (p->p1 in projects => p in Student)
+inv5 C: (Person <: projects) in Student some -> Project
+

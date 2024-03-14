@@ -1,0 +1,4 @@
+inv14 S: all s:Student | disj s2:Student | s2 in projects(s.projects) & Person
+inv14 S: all s:Student | disj s2:Student | s2 in (projects(s.projects) & Person)
+inv14 S: all s1,s2: Student | s1 != s2 implies one (s1.project | s2.project)
+

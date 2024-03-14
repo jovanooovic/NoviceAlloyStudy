@@ -1,0 +1,6 @@
+inv1 B: all t:Track | one ent:Entry | one ex:Exit | t in Entry and t in Exit
+inv1 S: all t:Track | t in one Entry and t in one Exit
+inv1 O: one t:Track | t in Entry and t in Exit
+inv1 B: one t:Track, s:Signal | t->s in signals implies t in Entry and t in Exit
+inv1 S: all t:Track, s:Signal | t->s in signals implies t in one Entry and t in one Exit
+

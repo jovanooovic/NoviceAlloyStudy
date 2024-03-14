@@ -1,0 +1,4 @@
+inv4 B: all u:User | one p:Photo | (p in Ad) implies (u.posts in Ad)
+inv4 C: all u:User | all a:Ad | a in u.posts implies u.posts in Ad
+inv4 C: all u:User | all a:Ad | a in u.posts implies not (u.posts not in Ad)
+

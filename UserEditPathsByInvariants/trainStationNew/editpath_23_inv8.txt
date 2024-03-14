@@ -1,0 +1,17 @@
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in Exit + e
+inv8 B: all e:Entry | (e.^succs + e) in Exit
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in Exit	all t:Track | t in Entry implies t not in Exit
+inv8 B: all e:Entry | e.^succs in Exit	all e:Entry | e not in Exit
+inv8 O: all e:Entry | Exit = (e.^succs & Exit)
+inv8 O: all e:Entry | Exit in (e.^succs & Exit)
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 T: all e:Entry | e.^succs
+inv8 T: all e:Entry | e.^succs
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in (Exit - e)
+inv8 B: all e:Entry | e.^succs in Exit
+inv8 B: all e:Entry | e.^succs in Exit
+

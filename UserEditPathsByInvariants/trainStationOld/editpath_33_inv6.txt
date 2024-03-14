@@ -1,0 +1,12 @@
+inv6 S: always (Signal in Green => Signal not in Green' || no Signal & Green => Signal in Green'
+inv6 U: always (Signal in Green => Signal not in Green' || no Signal & Green => Signal in Green')
+inv6 U: always (Signal in Green => no Signal & Green' || no Signal & Green => Signal in Green')
+inv6 U: always all s : Signal | s in Green => no s & Green' or no s & Green => s in Green'
+inv6 U: always all s : Track.signal | s in Green => s not in Green' or s not in Green' => s in Green
+inv6 S: always all s : Signal ignal | s in Green => s not in Green' or s not in Green' => s in Green
+inv6 U: always all s : Signal | s in Green => s not in Green' or s not in Green => s in Green'
+inv6 B: always Signal & Green not in Signal & Green'
+inv6 B: always Signal & Green not in Signal & Green' or Signal - Green in Signal' & Green'
+inv6 B: always Signal & Green not in Signal' & Green' or Signal - Green in Signal' & Green'
+inv6 B: always Signal in Green and after no Green' or no Green and Signal in Green'
+

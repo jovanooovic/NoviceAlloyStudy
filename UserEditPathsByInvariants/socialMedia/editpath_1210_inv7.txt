@@ -1,0 +1,18 @@
+inv7 B: all user : User | all suggested : user.suggested | all following : user.follows | following != suggested and suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | suggested not in user.follows and some following : user.follows | suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all user_suggested : user.suggested | (user_suggested != user and user_suggested not in user.follows and some following : user.follows | user_suggested in following.follows)
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 B: all user : User | some suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 S: all user : User | set suggested : user.suggested | (suggested != user and suggested not in user.follows and some following : user.follows | suggested in following.follows)
+inv7 B: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and all following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all suggested : user.suggested | (suggested != user and suggested not in user.follows and one following : user.follows | suggested in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | (all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows))
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 B: all user : User | some suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+inv7 U: all user : User | all suggested_user : user.suggested | (suggested_user != user and suggested_user not in user.follows and some following : user.follows | suggested_user in following.follows)
+

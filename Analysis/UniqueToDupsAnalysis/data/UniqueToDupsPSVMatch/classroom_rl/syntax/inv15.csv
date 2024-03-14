@@ -1,0 +1,44 @@
+"^tutors :> Teacher",1
+"Teacher in Person.^Tutor",1
+"^Tutors.Person & some Teacher",1
+"all ((Person.(^Tutors)) -> Teacher)",1
+"for p : Person | (p.*Tutors) in Teacher",1
+"all s:Person | some Teacher & s.+Tutors",1
+"all p: Person  some ^Tutors.p & Teacher",1
+"all s:Person | some Teacher & s.Tutors+",1
+"all s:Student |some Teacher i s.^Tutors",1
+"all p : Person | (p.+Tutors) in Teacher",1
+"for p in Person | (p.*Tutors) in Teacher",3
+"all p : Person | (p*Tutors.p) in Teacher",1
+"for p in Person | p . *Tutors in Teacher",1
+"all s : Person | some Tutors^.s & Teacher",1
+"all p : Person | some (Teacher & ^Tutors.p",1
+"all p: Person | some (Tutors*.p & Teacher)",1
+"all Student:s | some (s.^Tutors & Teacher)",1
+"all s:Person | some(s.^Tutors & Teacher)
+)",1
+"all p:Person | (some Teacher in (p.^Tutors)",1
+"all s : Person | some (Tutors^.s & Teacher)",3
+"all p:Person | (some Teacher) in p.^Tutors)",1
+"all s : Student | some Teacher & in s.^Tutors",1
+"all s : Student | some t : Teacher t.(s.^Tutors)",1
+"all p: Person | some t: Teacher | t in p.^Tutors",1
+"all p1:Person | some p2:person | p2->p1 in Tutors",1
+"all p:Person | some Tutors.p implies (Teacher in Tutors^.p)",1
+"all p : Person | some (p.+Tutors) implies some (p.+Tutors & Teacher)",1
+"all p1: Person | (p1 not in Teacher implies (some p2:Person | p2->p1 in Tutors)",1
+"all p1, p2:Person |
+  	
+  	((p2->p1 in Tutors and p2 in not in Teacher) implies some p3:Person | p3->p2 in Tutors)",1
+"all p1:Person | some p2, p3:Person |
+  	(p2->p1 in Tutors) and (p2 in Teachers) or (
+  		(p3->p2 in Tutors) and (p2 in Teachers) or (
+      		(p1->p3 in Tutors) and (p1 in Teacher)
+  		)
+  	)",1
+"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors)
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) and not some p3:Person | p3->p2 in Tutors)",1
+"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors) 
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) and not some p3:Person | p3->p2 in Tutors)",1

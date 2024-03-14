@@ -1,0 +1,13 @@
+inv9 E:
+inv9 T: all ws:Workstation | no ws in ws.^succ
+inv9 T: all ws:Workstation | no ws in ws.^(succ)
+inv9 T: all ws:Workstation | no ws in ws.(^succ)
+inv9 T: all ws:Workstation | no ws in ws.(^succ)
+inv9 U: all ws:Workstation | no ws & ws.(^succ)
+inv9 U: all ws:Workstation | no ws & ws.(^succ)	no end.succ	no succ.begin
+inv9 U: all ws:Workstation | no ws & ws.(^succ)	no end.succ	no succ.begin	end in begin.*succ
+inv9 U: all ws:Workstation | no ws & ws.(^succ)	no end.succ	no succ.begin	Workstation in begin.*succ
+inv9 C: all ws:Workstation-end | one ws.succ	no end.succ	no succ.begin	Workstation in begin.*succ
+inv9 O: all ws:Workstation-end | one ws.succ	no end.succ	no succ.begin	Workstation in begin.(^succ)
+inv9 C: all ws:Workstation-end | one ws.succ	no end.succ	no succ.begin	Workstation in begin.*succ
+

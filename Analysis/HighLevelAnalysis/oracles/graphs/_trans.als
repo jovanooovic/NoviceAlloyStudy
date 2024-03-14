@@ -1,0 +1,3 @@
+pred transc {
+	adj = ^adj
+}

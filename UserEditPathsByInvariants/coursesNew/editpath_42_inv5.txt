@@ -1,0 +1,7 @@
+inv5 T: all s : Person | lone s.projects implies s in Student	  all p : Project | lone projects.p
+inv5 T: all p : Person - Student | no p.projects	  all p : Project | lone projects.p
+inv5 T: all p : Person - Student | no p.projects	  all a : Project | lone projects.a
+inv5 B: all p : Person - Student | no p.projects	  all a : Project | lone s : Student | s in projects.a
+inv5 C: all p : Person - Student | no p.projects	  all a : Project | some s : Student | s in projects.a
+inv5 C: all p : Person - Student | no p.projects	  all a : Project | some s : Student | a in s.projects
+

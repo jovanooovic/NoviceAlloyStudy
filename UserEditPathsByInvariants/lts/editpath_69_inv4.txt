@@ -1,0 +1,9 @@
+inv4 B: all x : Init | State in x.trans.Event
+inv4 B: all x : Init | State in (x.trans).Event
+inv4 T: all x : Init | State in *(x.trans)
+inv4 B: all x : Init, y : Event | State in y.*(x.trans)
+inv4 B: all x : Init, y : Event | State in x.*(trans.y)
+inv4 B: all x  : Event | State in Init.*(trans.x)
+inv4 B: all x  : Event | State in Init.(*(trans.x))
+inv4 B: all x  : Event | State in *(Init.trans).x
+

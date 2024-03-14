@@ -1,0 +1,7 @@
+inv10 S: all x, y : File | isLink[x] is in Trash implies isLinked[x]	}			pred isLinked[f:File]{	some g:File | g->f in link	}		/* There are no links. */		pred isLink[f:File]{	some g:File | f->g in link
+inv10 T: all x, y : File | isLink[x] in Trash implies isLinked[x]	}			pred isLinked[f:File]{	some g:File | g->f in link	}		/* There are no links. */		pred isLink[f:File]{	some g:File | f->g in link
+inv10 T: all x, y : File | isLink[x] in Trash implies isLinked[x] in trash	}			pred isLinked[f:File]{	some g:File | g->f in link	}		/* There are no links. */		pred isLink[f:File]{	some g:File | f->g in link
+inv10 S: all x, y : File | x->y in link and x- in Trash implies y in trash
+inv10 S: all x, y : File | x->y in link and x in Trash implies y in trash
+inv10 C: all x, y : File | x->y in link and x in Trash implies y in Trash
+

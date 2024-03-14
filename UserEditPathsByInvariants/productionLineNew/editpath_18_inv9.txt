@@ -1,0 +1,4 @@
+inv9 C: all b, w : Workstation | b in begin and b != w implies w in b.^succ	all w : Workstation | w not in w.^succ	all w : Workstation | w not in end implies one w.succ
+inv9 S: all ws: Workstation |	(ws = begin) => #ws.succ = 1	(ws = end) => #ws.succ = 0	(ws != begin && ws != end) => #ws.succ = 1	all ws1: Workstation, ws2: Workstation |	(ws1.succ[ws2]) => (ws2.succ[ws1] not in ws2.succ)
+inv9 S: all ws: Workstation |	(ws = begin) => #ws.succ = 1	(ws = end) => #ws.succ = 0	(ws != begin && ws != end) => #ws.succ = 1	all ws1: Workstation, ws2: Workstation |	(ws1.succ[ws2]) => (ws2.succ[ws1] not in ws2.succ)
+

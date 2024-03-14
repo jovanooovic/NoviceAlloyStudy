@@ -1,0 +1,13 @@
+Pairs,1
+,,"all c:Course , p:Person| some(teaches.c)",1
+
+Pairs,2
+,,"all c: Course, p: Professor | #c.~teaches>0",1
+,,"all x : Course | all y : Professor | #(teaches.x) > 0",1
+
+Pairs,1
+,,"all x : Course | some y : Person | y in teaches.Course",1
+
+Pairs,2
+,,"all c:Course | some p:Person | p in Professor implies c in p.teaches",2
+

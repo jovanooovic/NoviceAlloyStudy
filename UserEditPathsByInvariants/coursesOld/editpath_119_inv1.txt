@@ -1,0 +1,20 @@
+inv1 T: grades.Grade in Student
+inv1 B: Course.grades.Grade in Student
+inv1 S: Courses.grades.Grade - Students = none
+inv1 S: Course.grades.Grade - Students = none
+inv1 B: Course.grades.Grade - Student = none
+inv1 S: all c : Courses | c.grades.Grade - Student = none
+inv1 B: all c : Course | c.grades.Grade - Student = none
+inv1 B: all c : Course | c.grades.Grade - Student = none
+inv1 B: all c : Course | c.grades.Grade in Student
+inv1 O: all c : Course | c.grades.Grade in Student	   all p : Person | some p.enrolled implies p in Student
+inv1 C: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+inv1 S: all p : Person | some p.enrolled implies p in Student
+

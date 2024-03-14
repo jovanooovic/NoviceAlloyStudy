@@ -1,0 +1,8 @@
+inv5 S: all t : Track | t in Junctions => #(succs.t) > 1
+inv5 U: all t : Track | t in Junction => #(succs.t) > 1
+inv5 S: all t : Track | t in Junction => t.succs.size > 1
+inv5 T: all t : Track | t in Junction => (t.succs) > 1
+inv5 B: all t : Track | t in Junction => #(t.succs) > 1
+inv5 B: all t : Track | t in Junction => #(t.succs) > 1 and (t not in t.succs)
+inv5 C: all t : Track | t in Junction iff #succs.t>1
+

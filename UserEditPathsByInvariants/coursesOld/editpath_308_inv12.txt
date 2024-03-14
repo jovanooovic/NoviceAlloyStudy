@@ -1,0 +1,25 @@
+inv12 T: all g1,g2 : Grade | all c : Course | g1 in c.grades and g2 in c.grades implies g1 != g2
+inv12 U: all g1,g2 : Grade | all c : Course | g1 in c.grades.Person and g2 in c.grades.Person implies g1 != g2
+inv12 U: all g1,g2 : Grade | all s : Student |  (g1+g2) in s.enrolled.grades.Person implies g1 != g2
+inv12 U: all g1,g2 : Grade | all s : Student |  (g1+g2) in s.enrolled.grades.Grade implies g1 != g2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2
+inv12 O: all g : Grade | g in Course.grades.Person		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2
+inv12 T: all g : Grade | g in Course.grades.~Person		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2
+inv12 T: all g : Grade | g in Course.^(grades.~Person)		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1=s2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2
+inv12 T: all s : Student | all c : Course | #(s in c.grades.Grade)=1
+inv12 T: all s : Student | all c : Course | #(s in c.grades.Grade)=1
+inv12 S: all s : Student | all c : Course |
+inv12 S: all s : Student | all c : Course |
+inv12 E:
+inv12 B: all u1,u2 : Student | all c : Course | u1 in c.grades.Grade and u2 in c.grades.Grade implies u1!=u2
+inv12 B: all g1,g2 : Grade | all u : Student | all c : Course | (u->g1 + u->g2) in c.grades implies g1!=g2
+inv12 U: all g1,g2 : Grade | all u : Student | all c : Course | (u->g1 + u->g2) in c.grades implies g1=g2
+inv12 B: all u1,u2 : Student | all c : Course | u1 in c.grades.Grade and u2 in c.grades.Grade implies u1=u2
+inv12 B: all u1,u2 : Student | all g : Grade | all c : Course | (u1->g + u2->g) in c.grades implies u1=u2
+inv12 B: all u1,u2 : Student | all g : Grade | all c : Course | (u1->g + u2->g) in c.grades implies u1!=u2
+inv12 U: all g1,g2 : Grade | all u : Student | all c : Course | (u->g1 + u->g2) in c.grades implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | (s->g1 + s->g2) in c.grades implies g1=g2
+inv12 U: all g1,g2 : Grade | all s : Student | all c : Course | (s->g1 + s->g2) in c.grades implies g1=g2
+

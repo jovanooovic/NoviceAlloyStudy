@@ -1,0 +1,15 @@
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | c.grades[0]
+inv13 T: all s : Student, c :Course | s in Person implies c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 T: all s : Student, c :Course | s in c.grades{0}
+inv13 B: all s : Student, c :Course | s in c.grades[0]
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in first.c.grades implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in c.first.grades implies #s.projects&c.projects>0
+inv13 B: all s : Student, c :Course | s in c.grades.first implies #s.projects&c.projects>0
+inv13 U: all s : Student, c :Course | s in c.grades.last implies #s.projects&c.projects>0
+inv13 U: all s : Student, c :Course | s in last implies #s.projects&c.projects>0
+inv13 T: all s : Student, c :Course | s in c.grades implies #s.projects&c.projects>0
+

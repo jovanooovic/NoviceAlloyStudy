@@ -1,0 +1,25 @@
+na H: THEME UPDATE
+inv1 C: adj = ~adj
+inv2 U: not some disj n1, n2:Node | n1->n2 in adj and n2->n1 in adj
+inv2 C: not some n1, n2:Node | n1->n2 in adj and n2->n1 in adj
+inv3 C: all n:Node | n not in n.^adj
+inv4 U: all n:Node | Node in n.^adj
+inv4 U: all n:Node | Node in n.*adj
+inv4 U: all n:Node | Node in n.^adj
+inv4 U: all n:Node | n in Node.^adj
+inv4 U: all n:Node | n in Node.*adj
+inv4 U: Node in Node.*adj
+inv5 O: Node not in Node . *adj
+inv5 B: Node not in Node . ^adj
+inv5 O: all n:Node | n not in n.*adj
+inv5 O: all n:Node | n not in n.^adj
+inv5 T: no ^adj in iden
+inv5 O: no ^adj & iden
+inv3 C: no ^adj & iden
+inv5 O: no Node->Node & adj
+inv6 U: Node in Node.*adj
+inv6 B: Node in Node.^adj
+inv6 U: Node in Node.*adj
+inv6 O: all n:Node | Node in n.*adj
+inv7 C: all n:Node | Node in n.*adj
+

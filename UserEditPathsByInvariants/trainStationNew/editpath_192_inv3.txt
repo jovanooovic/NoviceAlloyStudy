@@ -1,0 +1,11 @@
+inv3 U: all x:Exit | no x.succs
+inv3 U: no Exit.succs
+inv3 U: no (succs.Track & Exit)
+inv3 B: no (Track.succs & Exit)
+inv3 U: no Exit.^(succs)
+inv3 U: all t:Exit |  no t.^(succs)
+inv3 S: all t:Track | t in Exit iff no .^(succs)
+inv3 C: all t:Track | t in Exit iff no t.^(succs)
+inv3 C: all t:Track | t in Exit iff no t.(succs)
+inv3 C: all t:Track | t in Exit iff no t.succs
+

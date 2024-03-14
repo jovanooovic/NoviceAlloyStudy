@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 C: all c : Component | some c.parts
+inv2 U: all c : Component | c not in c.parts
+inv2 T: all c : Component | c not in *(c.parts)
+inv2 O: all c : Component | c not in c.*parts
+inv2 C: all c : Component | c not in (c.parts).*parts
+inv3 C: all c : Component | some r : Robot | r.position in c.position
+inv4 S: noprev
+inv4 T: no prev
+inv4 U: no prev[Component]
+inv4 T: no *prev[Component]
+inv4 T: no *(prev[Component])
+inv4 T: no prev[*Component]
+inv4 U: no prev[Component]
+

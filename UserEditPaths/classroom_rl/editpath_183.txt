@@ -1,0 +1,69 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 S: no Teachers
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person in Student + Teacher
+inv4 C: Person in Student + Teacher
+inv6 T: Teacher.Teaches
+inv6 S: Teachers in Teacher.Teaches
+inv6 S: Teachers in Teaches.Teacher
+inv6 O: Teacher in Teaches.Teacher
+inv6 O: Teacher in Teacher.Teaches
+inv6 T: Teacher.Teaches
+inv6 T: Teacher in Teaches.~Teaches
+inv6 T: Teacher in Teaches.~Teaches
+inv6 T: Teacher in ~Teaches
+inv6 T: Teacher in Teaches.Teaches
+inv6 C: Teacher in Teaches.Class
+inv7 B: some Teaches.Class
+inv7 B: Teaches.Class in Teacher
+inv7 T: Teaches.Class
+inv7 T: some Teaches.Class.Teacher
+inv7 B: some Teacher <: Teaches.Class
+inv5 C: some Teacher.Teaches
+inv5 C: some Teacher.Teaches
+inv7 T: Class in Teacher.Class
+inv7 O: Class in (Teacher <: Teaches.Class)
+inv7 S: Teacher <: Persson.Teaches.Class
+inv7 T: Teacher <: Person.Teaches.Class
+inv7 U: Teacher.Teaches in Class
+inv7 B: Teacher.Teaches in Teaches.Class
+inv7 O: some Teacher.Teaches & Teaches.Class
+inv7 B: some  Teacher & Teaches.Class
+inv7 C: Class in Teacher.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 O: lone  Teacher.Teaches
+inv8 S: (Teacher.Teaches).Teaches in ident
+inv8 T: (Teacher.Teaches).Teaches in iden
+inv8 T: Teaches.(Teacher.Teaches) in iden
+inv8 T: (Teacher.Teaches).~(Teacher.Teaches) in iden
+inv8 T: Teacher.(Teacher.Teaches) in iden
+inv8 T: Teacher.(Teacher.Teaches) in iden
+inv8 T: (Teacher.Teaches).Teaches in iden
+inv8 T: (Teacher.Teaches).Teacher in iden
+inv8 T: (Teacher.Teaches).Person in iden
+inv9 T: one Teacher.Student
+inv8 T: ~(Teacher.Teaches) . (Teacher . Teaches) in iden
+inv8 T: Teacher in (~Teaches.Teaches in iden)
+inv8 S: (Teachers in ~Teaches.Teaches)
+inv8 T: (Teacher in ~Teaches.Teaches)
+inv8 C: ~(Teacher <: Teaches).(Teacher <: Teaches) in iden
+inv10 U: (Student <: Class.Groups.Group) in Student
+inv10 T: all s : Student, c : Class | c.Groups.s
+inv10 T: all s : Student, c : Class | c.s.Groups
+inv10 T: all s : Student, c : Class | s.(c.Groups)
+inv10 T: all s : Student, c : Class | s.(c.Groups)
+inv10 C: all s : Student, c : Class | some s.(c.Groups)
+inv15 S: ^tutors :> Teacher
+inv15 T: ^Tutors :> Teacher
+inv15 B: all s : Student | s.^Tutors in Teacher
+inv15 T: all s : Student | s.^Tutors.Teacher
+inv15 T: all s : Student | some s.^Tutors.Teacher
+inv15 B: all s : Student | some s.^Tutors & Teacher
+inv15 B: all s : Student | some (s.^Tutors & Teacher)
+inv15 B: all s : Student | some (s.*Tutors & Teacher)
+inv15 B: all s : Student | some (s.^Tutors & Teacher)
+inv15 B: all s : Person | some (s.^Tutors & Teacher)
+inv15 C: all s : Person | some (^Tutors.s & Teacher)
+

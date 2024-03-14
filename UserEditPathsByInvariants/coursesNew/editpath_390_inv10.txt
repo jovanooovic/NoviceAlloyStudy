@@ -1,0 +1,5 @@
+inv10 B: all s:Professor | all c:s.enrolled | no c.grades
+inv10 S: all c:Course |(all s:Person,g:Grade | s->g  in c.grades implies p in Student
+inv10 S: all c:Course |(all s:Person,g:Grade | s->g  in c.grades implies p in Student)
+inv10 C: all c:Course |(all s:Person,g:Grade | s->g  in c.grades implies s in Student)
+

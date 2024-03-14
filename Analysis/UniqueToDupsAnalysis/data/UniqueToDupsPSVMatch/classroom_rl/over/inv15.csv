@@ -1,0 +1,23 @@
+"some t : Teacher | some ^Teaches.t",1
+"all p : Person | p in Teacher.Tutors",1
+"some t:Teacher | t in (Person.^Teaches)",1
+"some t : Teacher | t in Teacher.(^Teaches)",1
+"some t : Teacher | t in (^Teaches).Teacher",1
+"all s:Person |some  (^Tutors.(s & Teacher))",1
+"all p : Person | some (Teacher & ^Teaches.p)",1
+"all p1, p2:Person |
+  	p1 in Teacher and p2 not in Teacher",1
+"some t:Teacher |all p:Person | t in p.^Teaches",1
+"some t:Teacher |all p:Person | t in p.^~Tutors",1
+"all p:Person | some t:Teacher | t in p.^~Teaches",1
+"all p1:Person | (some p2:Person | p2->p1 in Tutors and p2 in Teacher)",2
+"all p : Person | some t : Teacher | p not in Teacher and p->t in ^Tutors",1
+"all p1, p2:Person | 
+  		p1 != p2 and
+		((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors and p2 != p3)",1
+"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors)
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) and (no p3:Person | p3->p2 in Tutors))",1
+"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors)
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) and (not some p3:Person | p3->p2 in Tutors))",1

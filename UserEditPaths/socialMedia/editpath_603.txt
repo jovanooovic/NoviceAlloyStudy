@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv7 B: all u1, u2 : User | u1->u2 in suggested implies (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv1 U: all p : Photo | some u : User | u->p in posts
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u->u not in follows
+inv7 B: all u1, u2 : User | u1->u2 in suggested implies (some u3 : User | u3->u1 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2 and u2->u1 not in follows)
+inv7 C: all u1, u2 : User | u1->u2 in suggested iff (some u3 : User | u1->u3 in follows and u3->u2 in follows and u1->u2 not in follows and u1 != u2)
+inv2 S: u.follows not in iden
+inv2 S: u.follows not in iden
+inv2 B: follows not in iden
+inv2 S: follows.u not in iden
+inv2 T: all u : User | follows.u not in iden
+inv2 T: none follows & iden
+inv2 T: none (follows & iden)
+inv2 T: follows & iden = none
+inv2 T: follows & iden is none
+inv2 T: follows & iden is in none
+inv2 T: (follows & iden) is in none
+inv2 T: (follows & iden) is in none
+inv2 O: follows - iden = iden
+inv2 C: iden - follows = iden
+inv2 C: no iden & follows
+inv2 C: no follows & iden
+inv2 C: no (follows & iden)
+inv3 C: all u1 : User, i : Photo | (i not in Ad and u1 in sees.i) implies (some u2 : User | u1->u2 in follows and u2->i in posts)
+inv3 C: all u1 : User, i : Photo | (i not in Ad and u1 in sees.i) implies (some u2 : User | u1 in follows.u2 and u2 in posts.i)
+inv3 T: all u1 : User, i : Photo | (no Ad.i and u1 in sees.i) implies (some u2 : User | u1 in follows.u2 and u2 in posts.i)
+inv3 T: all u1 : User, i : Photo | ((no Ad.i) and u1 in sees.i) implies (some u2 : User | u1 in follows.u2 and u2 in posts.i)
+inv3 C: all u1 : User, i : Photo | (i not in Ad and u1 in sees.i) implies (some u2 : User | u1 in follows.u2 and u2 in posts.i)
+inv3 T: all u1 : User, i : Photo | (i not in Ad and u1 in sees.i) implies (some u2 : User | some u1.follows.u2 and u2 in posts.i)
+inv3 C: all u1 : User, i : Photo | (i not in Ad and u1 in sees.i) implies (some u2 : User | u1 in follows.u2 and u2 in posts.i)
+inv3 S: all u : User | post.(sees.u - Ad) in u.follows
+inv3 U: all u : User | posts.(sees.u - Ad) in u.follows
+inv3 T: all u : User | User.posts.(sees.u - Ad) in u.follows
+inv3 U: all u : User | posts.(sees.u - Ad) in u.follows
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv4 T: all u : User | u.posts & (u.posts & Ad)
+inv4 O: all u : User | u.posts = (u.posts & Ad)
+inv4 T: all u : User | (some u.posts in Ad) implies u.posts in Ad
+inv4 T: all u : User | (some u.posts) in Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts = (u.posts - Ad) or none u.posts - Ad
+inv4 C: all u : User | u.posts = (u.posts - Ad) or no u.posts - Ad
+inv4 C: all u : User | u.posts = u.posts - Ad or no u.posts - Ad
+inv4 S: all u : User | all u.posts in Ad or no u.posts - Ad
+inv5 T: all i : Influencer | follows.i
+inv5 S: all i : Influencer |
+inv4 U: all u : User | u.posts in Ad or u.posts not in Ad
+inv4 C: all u : User | u.posts in Ad or u.posts in Photo - Ad
+

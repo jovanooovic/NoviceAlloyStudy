@@ -1,0 +1,15 @@
+Pairs,58
+,,"all p : Person | p in Teacher.^Tutors",1
+,,"all s:Person | some(^Tutors.s & Teacher)",10
+,,"all s : Person | some Teacher & ^Tutors.s",2
+,,"all p: Person| some ^Tutors.p & Teacher",18
+,,"all p: Person | some Teacher & ^Tutors.p",3
+,,"all p : Person | some Teacher <: (^ Tutors) . p",2
+,,"all p:Person | some (p.^(~Tutors) & Teacher)",5
+,,"all p:Person | some Teacher <:(p.^~Tutors)",2
+,,"all p:Person | some t:Teacher | t in p.^~Tutors",2
+,,"all p1 : Person | some p2, p3 : Person |
+  (p2->p1 in Tutors) and ((p2 in Teacher) or
+  (p3->p2 in Tutors) and ((p3 in Teacher) or
+  (p1->p3 in Tutors) and  (p1 in Teacher)))",13
+

@@ -1,0 +1,28 @@
+inv7 B: all s : Student | lone s.projects
+inv7 T: all s : Student, p : Project | lone s.projects.p
+inv7 T: all s : Student, p : Project | lone projects.p
+inv7 T: all s : Student, p : Project | lone p in s.projects
+inv7 B: all s : Student, p : Project | lone s.projects
+inv7 T: all s : Student, p : Project, c : Course | (p & c.projects)
+inv7 T: all s : Student, p : Project, c : Course | (p & c.projects) implies p in s.projects
+inv7 B: all s : Student, p : Project, c : Course | (p in c.projects) implies p in s.projects
+inv7 S: all s : Student, p : Project, c : Course | no no (p & c.projects) implies p in s.projects
+inv7 T: all s : Student, p : Project, c : Course | lone (s.projects & c.projects) iff (s.enrolled & c)
+inv7 T: all s : Student, p : Project, c : Course | lone s.projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone s.projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone s.projects.^p
+inv7 T: all s : Student, p : Project, c : Course | lone s.^projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone s.projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone Student.projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone Person.projects.p
+inv7 T: all s : Student, p : Project, c : Course | lone c.projects.p
+inv7 B: all s : Student, p : Project, c : Course | lone s.projects
+inv7 T: all s : Student, p : Project, c : Course | (p & c.projects & s.projects) && (c & s.enrolled) lone s.projects
+inv7 T: all s : Student, p : Project, c : Course | (p & c.projects & s.projects) && (c & s.enrolled) implies lone s.projects
+inv7 T: all s : Student, p : Project, c : Course | (p & c.projects & s.projects) && (c & s.enrolled) implies p in s.projects
+inv7 B: all s : Student, p : Project, c : Course | no (p & c.projects & s.projects) or no (c & s.enrolled) implies p not in s.projects
+inv7 S: lone s : Student
+inv7 B: all c : Course | lone s : Student | c in s.enrolled
+

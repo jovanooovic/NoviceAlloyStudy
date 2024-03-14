@@ -1,0 +1,18 @@
+inv5 S: eventually some no File
+inv5 B: eventually no File
+inv5 O: some f: File | eventually no f
+inv5 T: some f: File | eventually no f in File
+inv5 S: eventually some no File
+inv5 T: some f: File | eventually no f in File
+inv5 O: some f: File | eventually File = File - f
+inv5 O: some f: File | eventually (always File = File - f)
+inv5 T: some f: File | eventually (always no f in File)
+inv5 T: some f: File | eventually (always no f in Trash)
+inv5 T: some f: File | eventually (always no f in Trash implies no f in File)
+inv5 T: some f: File | eventually (always no f in Trash implies always no f in File)
+inv5 T: some f: File | eventually no f in Trash implies always no f in File
+inv5 T: some f: File | eventually no f in Trash and always no f in File
+inv5 T: some f: File | always no f in File since eventually no f in Trash
+inv5 T: some f: File | always no f in File since eventually f in Trash
+inv5 O: eventually some f: File | f not in File
+

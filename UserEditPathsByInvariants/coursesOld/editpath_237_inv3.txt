@@ -1,0 +1,13 @@
+inv3 S: Courses in Professor
+inv3 O: Course in Professor
+inv3 B: Course.projects in Professor
+inv3 B: teaches.Course in Professor
+inv3 T: all c: Course | one Professor in c
+inv3 T: all c: Course | some Professor in c
+inv3 T: all c: Course, p: Person | some p->c in teaches
+inv3 B: all c: Course, p: Person | p->c in teaches
+inv3 T: all c: Course, p: Person | some(p->c in teaches)
+inv3 B: all c: Course, p: Person | p->c in teaches
+inv3 S: all c: Course, some p: Person | p->c in teaches
+inv3 C: all c: Course| some p: Person | p->c in teaches
+

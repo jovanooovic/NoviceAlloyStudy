@@ -1,0 +1,16 @@
+inv2 T: all x : User | none follows.x
+inv2 T: all y : User | none follows.y
+inv2 T: all x : User | none follows.x
+inv2 B: all x : User | lone follows.x
+inv2 B: one x : User | lone follows.x
+inv2 B: all x : User | lone follows.x
+inv2 O: all x : User | no follows.x
+inv2 B: one x : User | no follows.x
+inv2 B: all x : User | some follows.x
+inv2 B: all x : User + Influencer | some follows.x
+inv2 B: all x : User | some follows.x
+inv2 E:
+inv2 B: all x : User | some follows.x
+inv2 C: all x : User | x not in follows.x
+inv2 C: all x : User | x not in x.follows
+

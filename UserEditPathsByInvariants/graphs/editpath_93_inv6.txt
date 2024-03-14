@@ -1,0 +1,20 @@
+inv6 O: all n : Node | n.^adj = Node
+inv6 O: all n : Node | n.*adj = Node
+inv6 O: all n : Node | n.^adj = Node
+inv6 O: all n : Node | n.*adj = Node
+inv6 O: all n : Node | n.^adj = Node
+inv6 O: all n : Node | (n.^adj & n.^~adj) = Node
+inv6 O: all n : Node | (n.^adj + n.^~adj) = Node
+inv6 O: all n : Node | ^adj.n = Node
+inv6 O: all n : Node | *adj.n = Node
+inv6 S: all n : Node | (+adj.n + ~adj.n) = Node
+inv6 S: all n : Node | (+adj.n + ^~adj.n) = Node
+inv6 O: all n : Node | (^adj.n + ^~adj.n) = Node
+inv6 O: all n : Node | n.^adj = Node
+inv6 S: all n : Node | (n.^adj + n^~adj) = Node
+inv6 O: all n : Node | (n.^adj + n.^~adj) = Node
+inv6 O: all n : Node | (n.^(adj + ~adj)) = Node
+inv6 O: all n : Node | (n.^(adj + ~adj)) = Node
+inv6 C: all n : Node | (n.*(adj + ~adj)) = Node
+inv6 C: all n : Node | n.*(adj + ~adj) = Node
+

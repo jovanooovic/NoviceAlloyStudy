@@ -1,0 +1,33 @@
+inv7 E:
+inv7 B: all x : User | x.suggested = x.follows.follows
+inv7 B: all x : User | (x.suggested = x.follows.follows)
+inv7 B: all x : User | (x.suggested = x.follows.follows) or some y : User | y in x.follows and x in y.follows implies y in x.suggested
+inv7 U: all x : User | (x.suggested = x.follows.follows) or (some y : User | y in x.follows and x in y.follows implies y in x.suggested) or (no x.follows implies x in x.suggested)
+inv7 U: all x : User | (x.suggested = x.follows.follows)  or (no x.follows implies x in x.suggested)
+inv7 U: all x : User | (x.suggested = x.follows.follows)  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | (not no x.suggested implies x.suggested = x.follows.follows)  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | (not no x.suggested implies x.suggested in x.follows.follows)  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | (not no x.suggested implies x.suggested = x.follows.follows)  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows)  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies (x.suggested = x.follows.follows))  or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | ((not (no x.follows)) implies (x.suggested = x.follows.follows))  or ((no x.follows) implies (x in x.suggested))
+inv7 B: all x : User | x.suggested = x.follows.follows
+inv7 B: all x : User | (not no x.follows) implies x.suggested = x.follows.follows
+inv7 B: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) and (no x.follows implies x in x.suggested)
+inv7 B: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) and ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies (x in x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies (x in x.suggested) or (no x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies (x = x.suggested) or (no x.suggested))
+inv7 U: all x : User | ((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies (x in x.suggested) or (no x.suggested))
+inv7 U: all x : User | (((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies (x in x.suggested) or (no x.suggested)))
+inv7 U: all x : User | (((not no x.follows) implies x.suggested = x.follows.follows) or ((no x.follows) implies ((x in x.suggested) or (no x.suggested))))
+inv7 B: all x : User | x.suggested = x.follows.follows
+inv7 B: all x : User | (x.suggested = x.follows.follows)
+inv7 B: all x : User | (x.suggested = x.follows.follows and x.suggested not in x.follows)
+inv7 B: all x : User | (x.suggested = x.follows.follows and (not no x.suggested implies x.suggested not in x.follows) )
+inv7 B: all x : User | (x.suggested = x.follows.follows and x.suggested not in x.follows)
+inv7 B: all x : User |not no x.suggested implies (x.suggested = x.follows.follows and x.suggested not in x.follows)
+inv7 B: all x : User |(x.suggested = x.follows.follows and x.suggested not in x.follows)
+inv7 B: all x : User |(x.suggested = x.follows.follows and x.suggested not in x.follows)
+inv7 B: all x : User |(x.suggested = x.follows.follows and x.suggested not in x.follows)
+

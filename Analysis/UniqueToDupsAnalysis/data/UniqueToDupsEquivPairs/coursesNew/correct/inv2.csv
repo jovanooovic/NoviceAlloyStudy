@@ -1,0 +1,58 @@
+Pairs,215
+,,"teaches.Course in Professor",15
+,,"teaches in Professor -> Course",5
+,,"no (Person-Professor).teaches",6
+,,"no (teaches.Course - Professor)",1
+,,"(Person-Professor).teaches = none",2
+,,"all x : teaches.Course | x in Professor",2
+,,"all p : teaches.Course | p in Professor",2
+,,"all c:Course | teaches.c in Professor",9
+,,"all t : teaches.Course | t in Professor",1
+,,"all x:Person-Professor | no x.teaches",19
+,,"all t : Person - Professor | no t.teaches",1
+,,"all p:Person-Professor | no p.teaches",24
+,,"all s:Person-Professor | no s.teaches",4
+,,"all p : Person - Professor | #p.teaches=0",2
+,,"all p:Person | p not in Professor implies no p.teaches",3
+,,"all x: Person | some x.teaches implies x in Professor",2
+,,"all p:Person| some p.teaches => p in Professor",16
+,,"all p:Person | not (no p.teaches) implies p in Professor",1
+,,"all p : Person | #p.teaches>0 implies p in Professor",5
+,,"all student : Person - Professor | no student.teaches",2
+,,"all x: Person | #x.teaches > 0 => x in Professor",2
+,,"all x: Person | x not in Professor implies #(x.teaches)=0",3
+,,"all p : Person | p not in Professor implies p.teaches=none",4
+,,"all p : Person | p.teaches != none => p in Professor",1
+,,"all s : Person | s not in Professor implies #(s.teaches)=0",1
+,,"all p : Person | p in teaches.Course => p in Professor",2
+,,"all c : Course | all p : teaches.c | p in Professor",1
+,,"all p: Person | p not in Professor => p not in Course.~teaches",2
+,,"all p:Person,c:Course | p in teaches.c => p in Professor",9
+,,"all p:Person, c:Course| c in p.teaches implies p in Professor",9
+,,"all c : Course, p :Person | p in teaches.c => p in Professor",4
+,,"all c : Course, p : Person | c in p.teaches implies p in Professor",1
+,,"all x: Person, y: Course | y in x.teaches implies x in Professor",1
+,,"all p:Person, c:Course| p->c in teaches implies p in Professor",2
+,,"all x:Person, y:Course| x->y in teaches implies x in Professor",7
+,,"all u:Person, c:Course| u->c in teaches implies u in Professor",1
+,,"all x:Person, c:Course| x->c in teaches implies x in Professor",2
+,,"all x: Person , y: Course | (x not in Professor) implies (y not in x.teaches)",1
+,,"all x: Person - Professor |all c: Course| c not in x.teaches",1
+,,"all x: Person, y: Course | x not in Professor => x not in y.~teaches",2
+,,"all p: Person, c: Course | p not in Professor => p not in c.~teaches",1
+,,"all c : Course | all p : Person-Professor | no p & teaches.c",1
+,,"all x: Person, y: Course | not (x not in Professor) or x not in y.~teaches",1
+,,"all p: Person| all c: Course| p in teaches.c implies p in Professor",5
+,,"all x: Person | all c: Course | c in x.teaches => x in Professor",3
+,,"all x : Person | all y : Course | x in teaches.y implies x in Professor",2
+,,"all p:Person |all c:Course | c in p.teaches implies p in Professor",14
+,,"all p:Person | all c:Course | p->c in teaches implies p in Professor",4
+,,"all x : Person | all y : Course | x not in Professor implies x not in teaches.y",1
+,,"all p1 : Person | all c1 : Course | c1 in p1.teaches implies p1 in Professor",1
+,,"all p1: Person | all c1 : Course | p1->c1 in teaches implies p1 in Professor",2
+,,"all p : Person | some p.teaches implies p in Professor
+  	all p : Person, c : Course | p->c in teaches implies p in Professor",1
+,,"all p : Person | some p.teaches implies p in Professor
+  	all p : Person, c : Course | p->c in teaches implies p in Professor
+  	all p : Person, c : Course | c in p.teaches => p in Professor",1
+

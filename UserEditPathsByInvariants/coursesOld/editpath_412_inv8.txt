@@ -1,0 +1,8 @@
+inv8 S: all t:Professor | some c:t.teaches => c not in t.projects
+inv8 T: all t:Professor | some c:Course | c in t.teaches => c not in t.projects
+inv8 B: all t:Professor | some c:Course | c in t.teaches => c not in t.enrolled
+inv8 O: no enrolled.Course & teaches.Course
+inv8 U: all t:Professor, c:Course | c in t.teaches => c not in t.enrolled
+inv8 U: all t:Professor, c:t.teaches | c not in t.enrolled
+inv8 U: all t:Professor, c:t.teaches | c not in t.enrolled
+

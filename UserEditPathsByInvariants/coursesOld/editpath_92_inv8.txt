@@ -1,0 +1,7 @@
+inv8 U: no iden & teaches
+inv8 U: all c:Course | no c.teaches & c.enrolled
+inv8 C: all c:Course | no teaches.c & enrolled.c
+inv8 C: no teaches & enrolled
+inv8 C: all p:Person | no p.teaches & p.enrolled
+inv8 C: all p:Person,c:Course | p->c not in teaches or p->c not in enrolled
+

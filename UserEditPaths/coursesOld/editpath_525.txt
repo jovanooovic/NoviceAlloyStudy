@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person, c : Course | no(p & Student) implies not c in p.enrolled
+inv1 C: all p : Person, c : Course | no(p & Student) implies not c in p.enrolled
+inv2 C: no Course.~teaches - Professor
+inv3 B: all p : Person, c : Course |  (no p & Student) implies not c in p.teaches
+inv3 C: all c:Course | some p : Person | c in p.teaches
+inv4 S: all p:Project, lone c : Course | p in c.projects
+inv4 S: lone p:Project, all c : Course | p in c.projects
+inv4 S: lone p:Project, all c : Course | p in c.projects
+inv4 S: all p:Project, lone c : Course | p in c.projects
+inv4 S: all p:Projects| one c : Course | p in c.projects
+inv4 C: all p:Project| one c : Course | p in c.projects
+inv5 S: all p : Person, c : Course,  pr:Project  | no (p & Student) implies not c in p.projects| pr in p.projects
+inv5 T: all p : Person, c : Course,  pr:Project  | no (p & Student) implies not c in p.projects	  all  pr:Project | some b : Person | pr in b.projects
+inv5 T: all p : Person, c : Course,  pr:Project  | no (p & Student) implies not c in p.projects	  all  pr:Project | some b : Person | pr in b.projects
+inv5 T: all p : Person, c : Course,  pr:Project  | no (p & Student) implies not c in p.projects	  all  pr:Project | some b : Person | pr in b.projects
+NA M: MOD BASE MODEL
+

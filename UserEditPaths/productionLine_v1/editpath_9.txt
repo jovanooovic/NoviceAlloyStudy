@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: all c : Component | some c.parts
+inv2 C: all c : Component | c not in c.^parts
+inv3 T: all c : Component | some r:Robot | r in c.position
+inv2 C: all c : Component | c not in c.^parts
+inv3 C: all c : Component | some r:Robot | r.position = c.position
+inv2 C: all c : Component | c not in c.^parts
+inv3 B: all c : Component | all r:Robot | r.position = c.position
+inv3 C: all c : Component | some r:Robot | r.position = c.position
+inv3 C: all c : Component | some r:Robot | r.position = c.position
+inv4 O: all c : Component, p : c.parts | p not in c.^parts
+inv4 B: all c : Component, p : c.parts | p not in c.parts.^parts
+inv4 T: all c : Component, p : c.parts | not p.*parts
+inv4 B: all c : Component, p : Product | p in c.parts implies p not in c.parts.^parts
+inv4 T: all c : Component, p : c.parts | p.position < c.position
+inv4 S: all c : Component, p : c.parts | c.position <= p.position.one
+inv4 S: all c: Component | all p: c.parts | c.position <= p.position.one
+inv4 T: all c : Component, p : c.parts | c.position <= p.position
+inv4 T: all c : Component, p : c.parts | c.position < p.position
+inv4 O: all c : Component, p : c.parts | p.position in c.position.prev
+

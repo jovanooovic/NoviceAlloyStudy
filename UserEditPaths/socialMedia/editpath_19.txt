@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 C: all x: Photo | one posts.x
+inv2 C: all x: User | x not in x.follows
+inv3 C: all x: User, y: Photo | y in x.sees implies y in Ad or y in x.follows.posts
+inv4 C: all x: User, y: Photo | y in Ad and y in x.posts implies x.posts in Ad
+inv5 B: all x, y: User | x in Influencer implies x in y.follows
+inv6 O: all x: User, y: Day | x in Influencer implies y in x.posts
+inv6 S: all x: User, y: Date | x in Influencer implies y in x.posts.date
+inv6 C: all x: User, y: Day | x in Influencer implies y in x.posts.date
+inv7 U: all x, y, z: User | z in x.suggested implies z in x.follows.follows
+inv7 U: all x, y: User | y in x.suggested implies y in x.follows.follows and y not in x.follows
+inv7 U: all x, y, z: User | z in x.suggested implies z not in x.follows and z in x.follows.follows
+inv7 B: all x, y, z: User | z in x.suggested implies z not in x.follows and y in x.follows and z in y.follows
+inv7 U: all x, z: User | z in x.suggested implies z not in x.follows and z in x.follows.follows
+inv8 B: all x: User, y: Photo | y in x.sees implies some z: User | z in x.follows or z in x.suggested
+inv8 U: all x: User, y: Photo | y in x.sees and y in Ad implies some z: User | z in x.follows or z in x.suggested
+inv8 C: all x: User, y: Photo | y in x.sees and y in Ad implies y in x.follows.posts or y in x.suggested.posts
+

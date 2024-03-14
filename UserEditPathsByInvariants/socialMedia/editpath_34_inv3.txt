@@ -1,0 +1,3 @@
+inv3 O: all u : User | (u.sees - Ad) in(u.follows.posts - Ad) && Ad in u.sees
+inv3 C: all u : User, p : Photo | p in u.sees => p in u.follows.posts or p in Ad
+

@@ -1,0 +1,10 @@
+inv3 S: all x : univ | x in Courses implies some y : uni | y in Professor and y->x in enrolled
+inv3 S: all x : univ | x in Course implies some y : uni | y in Professor and y->x in enrolled
+inv3 B: all x : univ | x in Course implies some y : univ | y in Professor and y->x in enrolled
+inv3 B: all x : univ | x in Course implies some y : univ | y in Professor and not y in Student and y->x in enrolled
+inv3 O: all x : univ | x in Course implies some y : univ | y in Professor and not y in Student and y->x in teaches
+inv3 O: all x : univ | x in Course implies some y : univ | y in Professor and not y->x in enrolled and y->x in teaches
+inv3 U: all x : univ | some y : univ | y in Professor and  x in Course implies y->x in teaches
+inv3 U: all x : univ | some y : univ | y in Professor and  x in Course implies y->x in teaches and not y->x in enrolled
+inv3 C: all x : univ | x in Course implies (some y : univ | y->x in teaches)
+

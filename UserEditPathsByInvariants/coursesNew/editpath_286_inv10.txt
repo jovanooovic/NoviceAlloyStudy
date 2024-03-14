@@ -1,0 +1,6 @@
+inv10 T: all p:Person - Student , c:Course | p not in c.grades
+inv10 T: all p:Person - Student , c:Course | p not in c.grades
+inv10 O: all p:Person - Student , c:Course | no p->grades
+inv10 T: all p:Person, g:grades , c:Course | p->g in c.grades => p in Student
+inv10 C: all p:Person, g:Grade , c:Course | p->g in c.grades => p in Student
+

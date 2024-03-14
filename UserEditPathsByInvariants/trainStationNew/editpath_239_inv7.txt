@@ -1,0 +1,9 @@
+inv7 B: all t:Track | t in Entry implies t not in Exit
+inv7 B: all t:Track | (t in Entry implies t not in Exit) and (t in Exit implies t not in Entry)
+inv7 B: all t:Track | t in Entry iff t not in Exit
+inv7 B: all t:Track | (t in Entry iff t not in Exit) and (t in Exit iff t not in Entry)
+inv7 B: all t1:Track, t2:Track | t1 in Entry and t2 in Exit implies t2 not in succs.t1
+inv7 B: all t1:Track, t2:Track | t1 in Entry and t2 in Exit implies t2 not in ^succs.t1
+inv7 B: no (Entry & Exit)
+inv7 C: no t : Track | t in t.^succs
+

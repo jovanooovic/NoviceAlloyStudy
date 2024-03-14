@@ -1,0 +1,3 @@
+inv7 T: all u: User | u.suggested in (u.follows.follows + (u.follows.follows not in u.follows))
+inv7 T: all u: User | u.suggested implies (u.follows.follows and (u.follows.follows not in u.follows))
+

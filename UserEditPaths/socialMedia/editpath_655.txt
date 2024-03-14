@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all x : Photo | some y : User | y->x in posts
+inv1 C: all x : Photo | some y : User | y->x in posts	all x : Photo | all y,z : User | y->x in posts and z->x in posts implies y = z
+inv1 C: all x : Photo | one posts.x
+inv2 C: all x : User | x not in follows.x
+inv5 B: all x : User | all y : Influencer | x in follows.y
+inv5 B: all x : User | all y : Influencer | x in follows.y
+inv5 B: all x : User | all y : Influencer | x in follows.y and y in follows.y
+inv5 B: all x : User | all y : Influencer | y in follows.x
+inv5 B: all x : User | all y : Influencer | x != y implies y in follows.x
+inv5 U: all x : User | all y : Influencer | x != y implies x in follows.y
+inv7 B: all x : User | suggested.x not in follows.x and suggested.x in follows.follows.x
+inv7 B: all x : User | suggested.x not in follows.x and suggested.x in follows.follows.x and x not in suggested.x
+inv7 S: all x : User | all suggested.x not in follows.x and all suggested.x in follows.follows.x and x not in suggested.x
+inv7 U: all x : User | no suggested.x & follows.x and suggested.x in follows.follows.x and x not in suggested.x
+inv7 U: all x : User | no x.suggested & x.follows and x.suggested in x.follows.follows and x not in x.suggested
+inv7 U: all x : User | no x.suggested & x.follows and x.suggested in x.follows.follows and x not in x.suggested
+inv7 U: all x,y : User | x not in x.suggested and x != y and y not in x.follows and y in x.follows.follows implies y in x.suggested
+

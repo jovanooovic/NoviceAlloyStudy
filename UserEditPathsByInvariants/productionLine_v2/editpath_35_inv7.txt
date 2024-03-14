@@ -1,0 +1,7 @@
+inv7 S: all c:Components | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c:Component | c.parts in Dangerous implies c in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 T: parts.Dangerous in Dangerous	all c:Component  | some c.parts in Dangerous -> c in Dangerous
+inv7 T: parts.Dangerous in Dangerous	all c:Component  | some c.parts & Dangerous -> c in Dangerous
+inv7 O: parts.Dangerous in Dangerous	all c:Component  | some c.parts & Dangerous implies c in Dangerous
+

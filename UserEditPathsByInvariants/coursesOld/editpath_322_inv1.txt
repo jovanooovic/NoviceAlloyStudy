@@ -1,0 +1,6 @@
+inv1 O: all p: Person | p.enrolled-Student = none
+inv1 O: all p: Person | p.enrolled-((Course.grades.Grade)&Student) = none
+inv1 T: all p: Person | p.enrolled.Course-Student = none
+inv1 T: all p: Person | (p.enrolled.Course)-Student = none
+inv1 C: no enrolled.Course-Student
+

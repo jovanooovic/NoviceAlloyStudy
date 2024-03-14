@@ -1,0 +1,41 @@
+inv7 S: all s, u : User | u->s in sugested => (some f : User | u->f in follows)
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows)
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows)
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows) and u->s not in follows
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows) and u->s not in follows
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 B: all s, u : User | s->u in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 B: all s, u : User | u->s in suggested => (some f : User | u->f in follows and s->f in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | u->s in suggested => (some f : User | u->f in follows and f->s in follows) and u->s not in follows and s != u
+inv7 U: all s, u : User | (s != u and u->s in suggested) => (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows
+inv7 U: all s, u : User | u->s in suggested => (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows)
+inv7 U: all s, u : User | u->s in suggested => (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows)
+inv7 U: all s, u : User | (s != u and (some f : User | u->f in follows and f->s in follows) and u->s not in follows) => u->s in suggested
+inv7 U: all s, u : User | u->s in suggested => (s != u and u->s not in follows and (some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	s != u and	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	s != u and	u->s not in follows and	(some f : User | u->f in follows and f->s in follows))
+inv7 U: all s, u : User | u->s in suggested => (	(s != u) and	(u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))
+inv7 B: all s, u : User |	((u->s not in follows) and	(some f : User | u->f in follows and f->s in follows)) =>	u->s in suggested
+inv7 U: all s, u : User |	((u != s) and	(u->s not in follows) and	(some f : User | u->f in follows and f->s in follows)) =>	u->s in suggested
+inv7 U: all s, u : User | ((u != s) and (u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))	=> (u->s in suggested)
+inv7 B: all s, u : User | ((u->s not in follows) and	(some f : User | u->f in follows and f->s in follows))	=> (u->s in suggested)	all s, u : User | u->s in suggested => u != s
+inv7 S: all u1, u2, u3 | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 S: all u1, u2, u3 : Users | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 O: all u1, u2, u3 : User | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 O: all u1, u2, u3 : User | (u1 != u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 B: all u1, u2, u3 : User | u1 != u3 => ((u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested))
+inv7 O: all u1, u2, u3 : User | (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)	<=> (u1->u3 in suggested)
+inv7 B: all u1, u2, u3 : User | (u1->u3 in suggested) => (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 B: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u3->u2 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows)
+inv7 O: all u1, u2, u3 : User | (u1->u3 in suggested) <=> (u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3)
+inv7 C: all u1, u3 : User | (u1->u3 in suggested) <=> (u1->u3 not in follows and u1 != u3 and some u2 : User | u1->u2 in follows and u2->u3 in follows)
+inv7 C: all u1, u3 : User | (u1->u3 in suggested) <=>	(u1->u3 not in follows and u1 != u3) and	(some u2 : User | u1->u2 in follows and u2->u3 in follows)
+

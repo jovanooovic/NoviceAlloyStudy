@@ -1,0 +1,27 @@
+Pairs,3
+,,"(0 = 0)",1
+,,"all	f1, f2:File | f1->f2 in link => f1->f2 in link",1
+,,"all f,x :File | f->x in link implies after  f->x in link",1
+
+Pairs,1
+,,"no f: Trash | File.link = f",1
+
+Pairs,1
+,,"File in Trash =>  no File.link",1
+
+Pairs,1
+,,"all t : Trash | t not in t.link",1
+
+Pairs,6
+,,"all f : File | some f.link => f.link not in Trash",5
+,,"all f:File | (f.link != none) => f.link not in Trash",1
+
+Pairs,1
+,,"all f : File | some f1 : File | f->f1 in link implies f not in Trash",1
+
+Pairs,1
+,,"all f1 : File | some f : File | f->f1 in link implies f1 not in Trash",1
+
+Pairs,3
+,,"all f,f1:File | f->f1 in link and f not in Trash implies f1 not in Trash",3
+

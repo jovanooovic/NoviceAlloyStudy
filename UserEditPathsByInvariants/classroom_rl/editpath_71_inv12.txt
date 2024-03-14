@@ -1,0 +1,24 @@
+inv12 T: all g:Groups | some (g.Person & Teacher)
+inv12 T: all c:Class | some (c.Groups & Teacher)
+inv12 B: all c:Class,g:Group | some (c.Groups.g & Teacher)
+inv12 T: Teacher in Groups.Group
+inv12 T: Teacher in ~(Teacher<:Groups).Teacher
+inv12 T: Teacher in ~(Teacher<:Groups)
+inv12 T: Teacher in Teacher<:Groups
+inv12 T: Teacher in Teacher<:Groups
+inv12 S: all t:Teachers | some(Groups.t)
+inv12 O: all t:Teacher | some(Groups.t)
+inv12 S: all t:Teacher |
+inv12 S: all t:Teacher |
+inv12 S: all t:Teacher |
+inv12 O: all t:Teacher | some t.Groups
+inv12 T: all t:Teacher | some(Class.Groups.Group.t)
+inv12 T: all t:Teacher | some t.(Class.Groups.Group)
+inv12 T: all t:Teacher | some t.Person
+inv12 T: all t:Teacher | some Person.t
+inv12 T: all t:Teacher | some Person.Teacher
+inv12 B: all t:Teacher | some g:Group | some (Class.Groups.g & t)
+inv12 S: some g:Group | some (Class.Groups.g & Teaches.c)
+inv12 B: some g:Group | some (Class.Groups.g & Teaches.Class)
+inv12 B: some g:Group | some (Class.Groups.g & Teaches.Class & Teacher)
+

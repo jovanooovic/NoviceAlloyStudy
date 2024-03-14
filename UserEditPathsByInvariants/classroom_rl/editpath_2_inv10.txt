@@ -1,0 +1,11 @@
+inv10 T: all c : Class | all s : c.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Person | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 U: all c : Class | all s : c.Groups.Student | #s.Groups > 0
+inv10 T: all c : Class | all s : c.Groups.Student | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups.Person | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups | #s.Group > 0
+inv10 T: all c : Class | all s : c.Groups | #s.Student > 0
+inv10 T: all c : Class | all g : c.Groups | #g->Student > 0
+

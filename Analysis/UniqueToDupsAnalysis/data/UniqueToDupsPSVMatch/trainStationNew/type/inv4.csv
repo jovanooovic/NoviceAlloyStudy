@@ -1,0 +1,40 @@
+"no (succs & Entry)",1
+"no Track.^succs.Entry",1
+"no Track.*succs.Entry",1
+"no Entry in Track.^succs",1
+"no (Entry in Track.succs )",1
+"all e:Entry| no succs.^(e)",1
+"all t:Entry| no (succs).^t",1
+"Track - Track.^succs",2
+"succs in Entry none -> Track",1
+"Entry = Track - ^(succs.Track)",1
+"all e : Entry | e not in succs",2
+"Entry = Track - ~(succs.Track)",1
+"all en : Entry | en not in succs",1
+"all e:Entry | no (e.succs).prev[e]",1
+"all t:Track| t in Entry iff t.^succs",1
+"all t:Track | t in Entry <=> t.^(succs)",1
+"all t : Track | t in Entry => not succs.t",1
+"no (Track-Track.^succs) & (Entry in Track)",1
+"all t: Track | t in Entry iff no (succs).^t",1
+"all e : Track | e in Entry iff none succs.e",1
+"all t: Track | t in Entry <=> not ^(succs).t",1
+"all t: Track | t not in Track.succs => Entry",1
+"all t: Track | t not in Track.succs <=> Entry",2
+"all t:Track | none succs.t implies t in Entry",2
+"all t : Track | (^t.succs)=none iff t in Exit",1
+"all t:Track | t in Entry implies t not succs.t",2
+"all x:Track-Entry | some succs.x
+not succs.Entry",1
+"all t:Track | t in Entry implies t not i succs.t",1
+"all t:Track | t in Entry implies t not t.succs.t",1
+"all t:Track | Entry implies Entry not in succs.t",1
+"all t: Track | t in Entry <=> no t in Track.succs",1
+"all t,e : Track| t is Entry iff (t not in e.succs)",1
+"all t: Track | (t in Entry) <=> no t.succs in Entry",1
+"all t1,t2: Track| t1 in t2.succs implies t1 not Entry",1
+"all a:Track, b:Track-a| a in Exit implies some b->a not in succs",1
+"all t1 : Track | all t2 : Track | no t1 in t2.succs iff t1 in Entry",1
+"all t1 : Track | all t2 : Track | (no t1 in t2.succs) iff t1 in Entry",1
+"all y : Track | all x : Signal | (x in Entry and x in y.signals) implies all k : Track | no k in succs.y",2
+"all y : Track | all x : Signal | (x in Entry and x in y.signals) implies (all k : Track | no k in succs.y)",1

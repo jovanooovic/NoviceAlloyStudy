@@ -1,0 +1,5 @@
+inv6 U: all e:Entry | some e.signals
+inv6 C: all e:Entry | some e.signals&Speed
+inv6 C: all e:Track | e in Entry implies some s:Signal | e->s in signals and s in Speed
+inv6 C: all e:Entry | some s:Signal | e->s in signals and s in Speed
+

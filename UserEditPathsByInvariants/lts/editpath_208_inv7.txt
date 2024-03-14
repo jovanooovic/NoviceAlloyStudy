@@ -1,0 +1,13 @@
+inv7 B: all s1,s2:State | some e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 B: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans or s1->e2->s1 in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 T: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans and s1 in s1.trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans and s1 in e2.(s1.trans)
+inv7 O: all e:Event,s1,s2:State |some e1:Event| s1->e->s2 in trans implies s2->e1->s1 in trans
+inv7 O: all s1,s2:State, e1,e2,e3,e4:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans	  	all s:State,e1,e2:Event | s->e1->s in trans implies s->e2->s in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans	  	all s:State,e1,e2:Event | s->e1->s in trans implies s->e1->s in trans
+inv7 O: all s1,s2:State, e1,e2:Event  | s1->e1->s2 in trans implies s2->e2->s1 in trans
+

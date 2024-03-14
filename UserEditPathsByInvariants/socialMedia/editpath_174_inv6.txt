@@ -1,0 +1,4 @@
+inv6 C: all i:Influencer | i.posts <: date in Photo some -> Day
+inv6 O: all i:Influencer,d:Day | some p:Photo | i->p in posts and i->d in date
+inv6 C: all i:Influencer,d:Day | some p:Photo | i->p in posts and p->d in date
+

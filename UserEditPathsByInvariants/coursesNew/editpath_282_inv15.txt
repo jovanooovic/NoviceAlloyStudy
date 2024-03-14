@@ -1,0 +1,3 @@
+inv15 T: all s1 : Student | all s2 : Student - s1 | all c : Course | (one c.projects & s1.projects & s2.projects) implies (all g1 : Grade | all g2 : Grade | s1->g1 in c.grades and s2->g2 in c.grades implies g2-g1<=1)
+inv15 B: all s1 : Student | all s2 : Student - s1 | all c : Course | (one c.projects & s1.projects & s2.projects) implies (all g1 : Grade | all g2 : Grade | s1->g1 in c.grades and s2->g2 in c.grades implies (g2.next = g1 or g1.next = g2))
+

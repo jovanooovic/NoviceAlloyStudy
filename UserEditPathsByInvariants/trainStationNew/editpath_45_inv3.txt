@@ -1,0 +1,17 @@
+inv3 U: no (Exit:>Track).succs
+inv3 U: no (Exit<:Track).succs
+inv3 U: no (Exit<:Track).^succs
+inv3 U: all e : Exit | no e.succs
+inv3 T: all e : Exit | no ((e.succs) and (e&Junction) and (e&Entry))
+inv3 B: all e : Track-Junction-Entry | no e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all t : Track | some t&Exit implies no t.succs
+inv3 B: all t : Track | some t&Exit implies (no t.succs and no t.signals)
+inv3 S: all t : Track | some e&Exit implies (no t.succs and no t.signals)
+inv3 B: all t : Track | some t&Exit implies (no t.succs and no t.signals)
+inv3 T: all t : Track | some t&Exit implies no (t.succs and t.signals)
+inv3 B: all t : Track | some t&Exit implies no t.succs and no t.signals
+inv3 S: no Track.succ
+inv3 B: no Track.succs
+inv3 U: no (Exit:>Track).succs
+

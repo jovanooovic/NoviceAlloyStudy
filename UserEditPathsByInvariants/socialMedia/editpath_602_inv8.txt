@@ -1,0 +1,8 @@
+inv8 B: all u:User, p:Photo | p in u.sees and posts.p in u.follows implies p in Ad
+inv8 S: all u:User, p:Photo | p in u.sees and posts.p in u.follows or u.sugested implies p in Ad
+inv8 T: all u:User, p:Photo | p in u.sees and posts.p in u.follows or u.suggested implies p in Ad
+inv8 T: all u:User, p:Photo | p in u.sees and posts.p in (u.follows or u.suggested) implies p in Ad
+inv8 B: all u:User, p:Photo | p in u.sees and posts.p in u.follows or posts.p in u.suggested implies p in Ad
+inv8 S: all u:User, p:Ad | p in u.sees implies posts.a in u.follows or posts.p in u.suggested
+inv8 B: all u:User, p:Ad | p in u.sees implies posts.p in u.follows or posts.p in u.suggested
+

@@ -1,0 +1,9 @@
+inv1 S: all u:User | u->u not in Follows
+inv1 B: all u:User | u->u not in follows
+inv1 B: all u1,u2 : User, p1 : Photo | (u1->p1 in posts and u2->p1 in posts) implies u1=u2		all u:User | u->u not in follows
+inv1 B: all p:Photo | some u:User | u->p in posts	all u:User | u->u not in follows
+inv1 C: all u1,u2 : User, p1 : Photo | (u1->p1 in posts and u2->p1 in posts) implies u1=u2	all p:Photo | some u:User | u->p in posts
+inv1 B: all u:User | u->u not in follows	all u:User | u not in u.follows
+inv1 S: all p:Photo | onde posts.p
+inv1 C: all p:Photo | one posts.p
+

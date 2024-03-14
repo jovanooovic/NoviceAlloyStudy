@@ -1,0 +1,19 @@
+"Work.source in (User+Institution)",1
+"Work.~profile in User + Institution",1
+"all w : Work | w.source in Source",1
+"all u : User | u.profile in (source.Source)",1
+"User.profile in (source.Institution + source.User)",1
+"profile.User in profile.User + profile.Institution",1
+"profile.User = profile.User.source + profile.Institution.source",1
+"all w : Work | source.w = profile.User + profile.Institution",1
+"all u : User | Work.(u<:profile) in u.(Work<:source) + Institution.(Work<:source)",1
+"all u : User | Work.(u<:profile) in (Work<:source).u + (Work<:source).Institution",6
+"all u : User | Work.(u<:profile) in u.(Work<:source) + (Work<:source).Institution",1
+"all u : User | Work.(u<:profile) in (Work<:source).u & (Work<:source).Institution",1
+"all x : User | x.profile.source & x.visible.source in Institution + x",1
+"all u : User | some (u<:profile).Work implies some (Work<:source).u + (Work<:source).Institution",1
+"all u : User | some (u<:profile).Work implies some (Work<:source).u or some (Work<:source).Institution",1
+"all u:User, w:Work | w in u.profile implies (u.source in Institution or u.source in User)",1
+"all u : User, w : Work | u->w in profile implies (w.source in User or w.source in Institution)",1
+"all u : User, w : Work | u->w in profile implies (u.source in User or u.source in Institution)",1
+"all w:Work,u:User | u->w in profile implies lone (w.source:>u + w.source:>Institution)",1

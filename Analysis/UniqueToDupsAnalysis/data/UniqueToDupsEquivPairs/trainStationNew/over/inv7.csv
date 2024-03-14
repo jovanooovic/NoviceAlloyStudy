@@ -1,0 +1,22 @@
+Pairs,2
+,,"no (*succs)",1
+,,"succs not in ^succs",1
+
+Pairs,10
+,,"no Track.^(succs)",1
+,,"all t:Track | no t.^succs",4
+,,"all t: Track | t not in Track.^succs",1
+,,"all t1, t2 : Track | t1 in succs.t2 implies t2 not in t1.succs",1
+,,"all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in t1.succs
+all t : Track | t not in succs.t",2
+,,"all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t1 not in succs.t2
+all t : Track | t not in succs.t",1
+
+Pairs,10
+,,"all t : Track | no t.*succs",1
+,,"all t : Track | t not in t.*succs",5
+,,"all x : Track | x not in x.*succs",1
+,,"all x : Track | no x & x.*succs",1
+,,"all t:Track | t not in t.succs and t.succs not in t.succs",1
+,,"all t:Track | t not in t.succs and t.succs not in Track.succs",1
+

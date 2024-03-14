@@ -1,0 +1,8 @@
+inv5 U: User->Influencer - iden in follows
+inv5 T: all u : User | u.Influencer - iden in follows
+inv5 U: all u : User | u->Influencer - iden in follows
+inv5 O: all u : User | u in follows.Influencer - u
+inv5 O: all u : User | u in (follows.Influencer-u)
+inv5 T: all u : User | u->Influencer - iden in follows.Influencer
+inv5 U: all u : User | u->Influencer - iden in follows
+

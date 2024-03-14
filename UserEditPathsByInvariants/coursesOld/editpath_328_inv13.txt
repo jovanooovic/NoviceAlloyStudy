@@ -1,0 +1,6 @@
+inv13 B: all student: Student | all grade: Grade | all course: Course | all proj: Project | student->grade in course.grades implies(proj in course.projects and proj in student.projects)
+inv13 S: es - es.^(~(Ord.Next))	  lone grade {grades - grades.^(~(Ord.grades))}
+inv13 B: all s: Student | all c: Course | s in c.grades.last implies (all p: Project | p in c.projects and p in s.projects)
+inv13 U: all s: Student | all c: Course | s in c.grades.last implies (some p: Project | p in c.projects and p in s.projects)
+inv13 B: all s: Student | all c: Course | s in c.grades.last implies (one p: Project | p in c.projects and p in s.projects)
+

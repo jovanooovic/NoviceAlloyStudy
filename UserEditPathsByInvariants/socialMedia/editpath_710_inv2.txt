@@ -1,0 +1,18 @@
+inv2 T: all x : User | not one follows.x	all x : User | all y : User | y.follows.x
+inv2 T: all x : User | not one follows.x	all x : User | all y : User | y.follows and x.follows
+inv2 T: all x : User | not follows.x
+inv2 T: all x : User | not x -> follows.x
+inv2 S: all x : User | not some follows.x	all y : User | some follows.x
+inv2 T: all x : User | not some follows.x	all x : User | all y : User | some y.follows.x
+inv2 T: all x : User | not some follows.x	all x, y : User | some y.follows.x
+inv2 S: all x : User | some not follows.x
+inv2 S: follows in User -> User | x.follows | follows.x
+inv2 S: follows in User -> User | x.follows | follows.x
+inv2 S: all x : User | some not follows.x
+inv2 O: all x : User | not some follows.x
+inv2 S: all x : User | not in follows.x
+inv2 T: all x : User | x not in follows
+inv2 T: all x : User | x not follows.x
+inv2 C: all x : User | x !in follows.x
+inv2 C: all x : User | x !in x.follows
+

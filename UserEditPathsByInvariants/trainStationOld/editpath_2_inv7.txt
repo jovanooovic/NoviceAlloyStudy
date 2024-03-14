@@ -1,0 +1,5 @@
+inv7 U: all t : Train | eventually t.pos in Exit
+inv7 U: all t : Train | eventually t.pos in Entry
+inv7 B: all t : Train | always (eventually t.pos not in Entry)
+inv7 B: all t : Train | always (eventually t.pos not in Entry + Exit)
+

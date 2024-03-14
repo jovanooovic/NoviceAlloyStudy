@@ -1,0 +1,13 @@
+inv1 C: all p:Photo | one u:User | u->p in posts
+inv1 T: no User->Photo in posts
+inv1 U: no User->Photo.posts
+inv1 U: no (User->Photo).posts
+inv1 O: all p:Photo | some posts.User
+inv1 T: all u:User->Photo | one posts.u
+inv1 S: all u:User->Photo
+inv1 B: all u:User-Photo | one posts.u
+inv1 B: all u:User-Photo | some posts.u
+inv1 S: all all p:Photo | one post.p
+inv1 S: all p:Photo | one post.p
+inv1 C: all p:Photo | one posts.p
+

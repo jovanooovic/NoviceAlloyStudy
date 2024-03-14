@@ -1,0 +1,6 @@
+inv1 S: all w : Workstation | w.workers in Human or w.worker in Robot
+inv1 B: all w : Workstation | w.workers in Human or w.workers in Robot
+inv1 U: all ws : Workstation, w : Worker |w in ws.workers implies w in Robot or w in Human
+inv1 U: all ws : Workstation, w : Worker | w in ws.workers implies (w in Robot or w in Human)
+inv1 C: all w : Worker | w in Human or w in Robot
+

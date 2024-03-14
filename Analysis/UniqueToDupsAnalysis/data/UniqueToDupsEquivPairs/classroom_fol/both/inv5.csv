@@ -1,0 +1,137 @@
+Pairs,3
+,,"Class in Teacher",1
+,,"Class in Class.Teaches",1
+,,"all c:Class | some c.Teaches",1
+
+Pairs,6
+,,"Teacher in Class",1
+,,"all t: Teacher| t in Class",1
+,,"all t:Teacher | t in Group",1
+,,"all p : Person | p in Teacher implies p in Group",1
+,,"all p : Person | p in Teacher implies p in Class",2
+
+Pairs,22
+,,"Teacher in Teaches.Class",1
+,,"all t:Teacher | some t.Teaches",3
+,,"all t : Teacher | #(t.Teaches) > 0",1
+,,"all t:Teacher | some c:Class | c in t.Teaches",1
+,,"all t: Teacher | some c: Class | some t.Teaches",1
+,,"all x : Teacher | some y : Class | x->y in Teaches",2
+,,"all x: Teacher | some c: Class | x->c in Teaches",1
+,,"all p:Teacher | some c:Class | p->c in Teaches",3
+,,"all t:Teacher | some c:Class | t->c in Teaches",6
+,,"all t: Teacher | some p: Person | p in Teacher and some t.Teaches",1
+,,"all t : Teacher | some c : Class | teaches_class[t,c]
+}
+
+pred teaches_class[t : Teacher, c : Class]{
+  	t->c in Teaches",1
+,,"all t : Teacher | (some c : Class | teaches_class[t,c])
+}
+
+pred teaches_class[t : Teacher, c : Class]{
+  	t->c in Teaches",1
+
+Pairs,4
+,,"all p:Person | some Teaches.p",1
+,,"all t:Person| t in Teacher and t in Class",1
+,,"all p:Person | some c:Class | c->p in Teaches",2
+
+Pairs,4
+,,"Teaches in Person some -> Class",1
+,,"all c:Class | some Teaches.c",2
+,,"all c:Class | c in Person.Teaches",1
+
+Pairs,1
+,,"all t : Teacher | some t->Group",1
+
+Pairs,1
+,,"Teaches in Teacher some -> Class",1
+
+Pairs,1
+,,"Teaches in Teacher -> some Class",1
+
+Pairs,1
+,,"all f : Person | #(f.Teaches) > 1",1
+
+Pairs,1
+,,"all c : Class, t: Teacher | t in c",1
+
+Pairs,3
+,,"some c : Class | Teacher->c in Teaches",1
+,,"some c : Class | all t : Teacher | c in t.Teaches",1
+,,"some c: Class | all t: Teacher | t->c in Teaches",1
+
+Pairs,5
+,,"all t:Teacher,c:Class | t->c in Teaches",3
+,,"all c: Class | all t: Teacher | t->c in Teaches",1
+,,"all t : Teacher | all c : Class | t -> c in Teaches",1
+
+Pairs,1
+,,"some t:Person| t in Teacher => t in Class",1
+
+Pairs,1
+,,"all x : Person, c : Class | x->c in Teaches",1
+
+Pairs,2
+,,"all p:Person | some c: Class | p->c in Teaches",1
+,,"all x : Person | some c : Class | x->c in Teaches",1
+
+Pairs,1
+,,"some c : Class, t : Teacher | some c->t->Group",1
+
+Pairs,1
+,,"some c:Class | lone t:Person | t->c in Teaches",1
+
+Pairs,1
+,,"all c:Class | lone t:Teacher | t->c in Teaches",1
+
+Pairs,1
+,,"some c: Class | all p: Person | p->c in Teaches",1
+
+Pairs,1
+,,"some p: Person | all c: Class | p->c in Teaches",1
+
+Pairs,1
+,,"some c:Class | lone t:Teacher | t->c in Teaches",1
+
+Pairs,3
+,,"all c: Class | some t: Teacher | t->c in Teaches",3
+
+Pairs,5
+,,"some t:Teacher | (all c:Class | t->c in Teaches)",2
+,,"some x : Teacher | all c : Class | x->c in Teaches",1
+,,"some x : Teacher | all y : Class | x->y in Teaches",1
+,,"always (some t:Teacher | (all c:Class | t->c in Teaches))",1
+
+Pairs,1
+,,"some c : Class, t : Teacher | c->t->Group in Groups",1
+
+Pairs,1
+,,"all x : Person, c : Class | x in Teacher and x->c in Teaches",1
+
+Pairs,1
+,,"all p:Person | p in Teacher and some c:Class | p->c in Teaches",1
+
+Pairs,7
+,,"some c : Class, g : Group, t : Teacher | c -> t -> g in Groups",1
+,,"some c : Class, t : Teacher, g : Group | c->t->g in Groups",3
+,,"some c : Class | some t : Teacher, g : Group | c -> t -> g in Groups",1
+,,"some c : Class | some g : Group | some t : Teacher | c -> t -> g in Groups",1
+,,"some c : Class | some t : Teacher | some g : Group | c -> t -> g in Groups",1
+
+Pairs,3
+,,"all x: Person, t: Class | x->t in Teaches implies x in Teacher",1
+,,"all c : Class, p : Person | p -> c in Teaches implies p in Teacher",2
+
+Pairs,1
+,,"all x : Class | some t : Teacher, g : Group | x -> t -> g in Groups",1
+
+Pairs,1
+,,"all p:Person | some c: Class | p in Teacher implies (p->c in Teaches)",1
+
+Pairs,1
+,,"some p : Person | all t : Teacher, c : Class {
+    t->c in Teaches
+  }",1
+

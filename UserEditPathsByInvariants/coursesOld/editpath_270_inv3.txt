@@ -1,0 +1,5 @@
+inv3 O: all c: Course | some p: Professor | p->c in teaches
+inv3 C: all c: Course | one (c & Person.teaches)
+inv3 C: all c: Course | some (c & Person.teaches)
+inv3 O: all c: Course | some (c & Professor.teaches)
+

@@ -1,0 +1,6 @@
+inv9 S: all p:Professor, pp:Professor-p | some(c:p.teaches & pp.teaches) => c not in pp.enrolled
+inv9 S: all p:Professor, pp:Professor-p | some(c:p.teaches && pp.teaches) => c not in pp.enrolled
+inv9 T: all p:Professor, pp:Professor-p | some(p.teaches && pp.teaches) => c not in pp.enrolled
+inv9 S: all p:Professor, pp:Professor-p | some(p.teaches & pp.teaches) => c not in pp.enrolled
+inv9 U: all p:Professor, pp:Professor-p | some(p.teaches & pp.teaches) => no (p.teaches & pp.enrolled)
+

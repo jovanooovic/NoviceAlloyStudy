@@ -1,0 +1,10 @@
+inv5 S: all t: Tracks | some t.succs = Junction
+inv5 T: all t: Track | some t.succs = Junction
+inv5 S: Junction = some succ.Tracks
+inv5 S: Junction = Tracks - Exit - Entry
+inv5 B: Junction = Track - Exit - Entry
+inv5 S: all j: Junction | all t: Track | j in some t.succs
+inv5 C: Junction = { t : Track | not lone succs.t  }
+inv5 B: Junction = { t : Track | some succs.t  }
+inv5 C: Junction = { t : Track | not lone succs.t  }
+

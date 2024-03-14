@@ -1,0 +1,22 @@
+inv3 B: all u : User | all a : Ad | u.sees in u.follows.posts and a in u.sees
+inv3 B: all u : User | all a : Ad | u.sees in u.follows.posts and a in u.sees and u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees and a in u.sees and u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees or a in u.sees or u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees and a in u.sees or u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees and a in u.sees and u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees and a in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees and u.posts in u.sees
+inv3 B: all u : User | all a : Ad | u.follows.posts in u.sees or u.posts in u.sees
+inv3 B: all u : User | all a : Ad | (u.follows.posts & a) in u.sees
+inv3 B: all u : User | all a : Ad | (u.follows.posts & a & u.posts) in u.sees
+inv3 B: all u : User | all a : Ad | (u.follows.posts + a + u.posts) in u.sees
+inv3 O: all u : User | all p : Photo | p in u.sees iff p in Ad or p in u.follows.posts
+inv3 O: all u : User | all p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 B: all u : User | some p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 B: all u : User | one p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 O: all u : User | all p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 B: all u : User | some p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 O: all u : User | all p : Photo | p in u.sees iff (p in Ad or p in u.follows.posts)
+inv3 C: all u : User | all p : Photo | p in u.sees implies (p in Ad or p in u.follows.posts)
+

@@ -1,0 +1,5 @@
+inv12 T: all s: Student| all c: Course | one s in c.grades.g
+inv12 T: all s: Student| all c: Course | all g: Grade| some s in c.grades.g
+inv12 S: all s: Student| all c: Course | c in s.enrolled implies (lone g: Grade| s in c.grade.g)
+inv12 U: all s: Student| all c: Course | c in s.enrolled implies (lone g: Grade| s in c.grades.g)
+

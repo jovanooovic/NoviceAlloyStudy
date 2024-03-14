@@ -1,0 +1,7 @@
+inv5 S: all
+inv5 S: all s,s1:Stat|  s.trans in s1.trans
+inv5 O: all s,s1:State|  s.trans in s1.trans
+inv5 O: all s,s1:State|  s.trans in s1.trans and s1.trans in s.trans
+inv5 O: all s,s1:State|  no( s.trans  - s1.trans )
+inv5 C: all s,s1:State|  no( (s.trans).State  -  (s1.trans).State   )
+

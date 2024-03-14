@@ -1,0 +1,11 @@
+inv15 T: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2] && not larger[g1,g2]
+inv15 T: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2] && not larger[g1,g2]
+inv15 S: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 U: all c: Project, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2
+inv15 T: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2+1]
+inv15 T: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not smaller[g1,g2]
+inv15 S: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => not gt[sub[g1,g2], 1]
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2.prev || g1=g2 || g1=g2.next
+inv15 B: all c: Course, g1, g2: Grade, p: Project, disj s1, s2:Student | c->p in projects && s1->p+s2->p in projects && c->s1->g1+c->s2->g2 in grades => g1=g2.prev || g1=g2 || g1=g2.next
+

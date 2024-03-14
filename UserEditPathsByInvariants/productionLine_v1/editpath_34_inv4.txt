@@ -1,0 +1,10 @@
+inv4 B: all c: Component | no c.parts.^parts
+inv4 B: all c: Component | no c.parts.parts
+inv4 S: all c: Component | c.parts.position = prevs[c.parts]
+inv4 S: all c: Component | c.parts.position in prevs[c.parts]
+inv4 S: all c: Component | c.^parts in prevs[c.parts]
+inv4 O: all c: Component | c.^parts.position in prevs[c.parts.position] + c.position
+inv4 O: all c: Component | c.^parts.position in (prevs[c.parts.position] + c.position)
+inv4 O: all c: Component | c.^parts.position in (prevs[c.^parts.position] + c.position)
+inv4 C: all c: Component | c.^parts.position in (prevs[c.position] + c.position)
+

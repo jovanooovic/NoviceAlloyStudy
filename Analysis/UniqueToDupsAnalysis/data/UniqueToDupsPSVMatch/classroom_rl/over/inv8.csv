@@ -1,0 +1,24 @@
+"one Teacher.Teaches",4
+"lone Person.Teaches",1
+"lone Teacher.Teaches",12
+"one Teacher->Teaches",1
+"#Teacher.Teaches < 2",1
+"~Teaches.Teaches in iden",11
+"lone (Teacher.Teaches & Class)",1
+"Teaches in Teacher  -> lone Class",1
+"no ~Teaches.Teaches - iden",1
+"#(Teacher & Teaches.Class) < 1",1
+"iden in ~ Teaches . Teacher <: Teaches",1
+"let c = ~Teaches | c.~c in iden",1
+"all t:Person | lone t.Teaches",1
+"all t:Teacher | one t.Teaches",2
+"all t: Teacher | #t.Teaches = 1",1
+"all t : Teacher | lone Teacher.Teaches",1
+"all t : Teacher | #Teacher.Teaches < 2",1
+"some t : Teacher | lone t.Teaches + Class",1
+"all t: Teacher { one c: Class | t.Teaches = c }",1
+"all t:Teacher { one c:Class | c in t.Teaches }",2
+"all t:Teacher { one c:Class | t in c.~Teaches }",1
+"all t : Teacher, c, c1 : Class | (t->c + t->c1) in Teaches => c != c1",1
+"all disj c1,c2: Class | c1 in Teacher.Teaches iff c2 not in Teacher.Teaches",1
+"all disj c1,c2: Class | c1 in Teacher.Teaches and c2 not in Teacher.Teaches or c1 not in Teacher.Teaches and c2 in Teacher.Teaches",1

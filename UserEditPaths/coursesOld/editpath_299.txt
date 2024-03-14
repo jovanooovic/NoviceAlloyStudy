@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv1 T: no (Person.Student) & enrolled.Course
+inv1 T: no (Person.Student) & enrolled.Course
+inv1 T: all p:Person | p.enrolled implies p=Student
+inv1 T: no (Person.Student) & enrolled.Course
+inv1 T: all p:Person | p is enrolled implies p=Student
+inv1 T: all p:Person | p in enrolled implies p=Student
+inv1 U: all p:Person | p in p.enrolled implies p=Student
+inv1 C: no (Person-Student) & enrolled.Course
+inv1 T: Person-Professor & enrolled.Course
+inv1 T: (Person-Professor) & enrolled.Course
+inv2 C: no (Person-Professor) & teaches.Course
+inv3 B: Professor in Course.grades.Person
+inv3 B: Professor in Course.grades.Grade
+inv3 B: Professor in Course.^(grades.Grade)
+inv3 B: Professor in Course.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor.teaches in c.grades.Grade
+inv3 T: all c:Course | Person.Professor in c.grades.Grade
+inv3 T: all c:Course | no (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 B: all c:Course | Professor in c.^(grades.Grade)
+inv3 B: all c:Course | Professor in c.grades.Grade
+inv3 T: all c:Course | Person.Professor in c.grades.Grade
+inv3 B: all c:Course | some p:Professor | p in c.grades.Grade
+inv3 E: 
+inv3 B: all c:Course | some p:Professor | p in c.grades.Grade
+inv5 B: no (Person-Professor) & projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv3 B: all c:Course | Professor-Student in c.grades.Grade
+inv3 B: all c:Course | (Professor-Student) in c.grades.Grade
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+inv3 T: all c:Course | no (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+inv3 B: all c:Course | some p:Person | p in c.grades.Grade implies p=Professor
+inv3 B: all c:Course | (Person-Student) in c.grades.Grade
+NA H: THEME UPDATE
+

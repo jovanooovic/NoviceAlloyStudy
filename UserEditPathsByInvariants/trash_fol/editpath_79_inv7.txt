@@ -1,0 +1,12 @@
+inv7 B: all f1,f2:File | f1->f2 in link implies f1 not in Trash
+inv7 O: all f1,f2:File | f1->f2 in link implies (f1 not in Trash and f2 not in Trash)
+inv7 U: all f1,f2:Trash | f1->f2  not in link
+inv7 B: not some f1,f2:File | f1->f2 in link and f1 in Trash
+inv7 C: not some f1,f2:File | f1->f2 in link and f2 in Trash
+inv7 U: all f1,f2:Trash | f1->f2 in link implies (f2 not in Trash)
+inv7 T: not some f1,f2: File | f1->f2 not in File
+inv7 T: not some f1,f2: File | f1->f2 not in File
+inv7 B: not some f1,f2: File | f1->f2 not in link
+inv7 B: not some f1,f2: File | f1->f2 not in link and f2 in Trash
+inv7 C: not some f1,f2: File | f1->f2 in link and f2 in Trash
+

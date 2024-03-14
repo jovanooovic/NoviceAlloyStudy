@@ -1,0 +1,5 @@
+inv5 T: no (Person-Student) & Person.projects	  	all p : Project | some Person.p
+inv5 T: no (Person-Student) & Person.projects	  	all p : Project | some (Person :> projects.p)
+inv5 U: no (Person-Student) & (Person :> Person.projects)	  	all p : Project | some (Person :> projects.p)
+inv5 C: no (Person-Student) & (Person :> projects.Project)	  	all p : Project | some (Person :> projects.p)
+

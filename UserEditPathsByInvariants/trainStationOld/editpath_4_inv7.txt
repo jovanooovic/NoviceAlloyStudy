@@ -1,0 +1,7 @@
+inv7 B: all t:Train | some (t.pos & Entry ) implies eventually some (t.pos & Exit)
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies eventually some (t.pos & Exit) )
+inv7 U: always (all t:Train | always some (t.pos & Entry ) implies eventually some (t.pos & Exit) )
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies  always (eventually some (t.pos & Exit) ))
+inv7 B: (all t:Train | some (t.pos & Entry ) implies   eventually some (t.pos & Exit) )
+inv7 B: always (all t:Train | some (t.pos & Entry ) implies   eventually some (t.pos & Exit) )
+

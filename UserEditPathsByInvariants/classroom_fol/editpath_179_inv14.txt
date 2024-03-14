@@ -1,0 +1,25 @@
+inv14 T: all s:Student,c:Class|some t:Teacher | t->c in Teaches and c.Groups.s and  c.Groups.t implies t in s.^~Tutors
+inv14 T: all s:Student,c:Class|some t:Teacher | t->c in Teaches and c.Groups.s
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches
+inv14 T: all s:Student,c:Class|some t:Teacher | t->c in Teaches and c.Groups.s
+inv14 T: all s:Student,c:Class|some t:Teacher | t->c in Teaches and c.Groups
+inv14 T: all s:Student,c:Class,g:Group|some t:Teacher | t->c in Teaches and c.Groups.g
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | some Teacher
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | some c.Groups
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | some c.Groups.s
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | some s.(c.Groups)
+inv14 T: all s:Student,c:Class,g:Group|some t:Teacher | t->c in Teaches and some s.(c.Groups) and  t.(c.Groups) implies t in s.^~Tutors
+inv14 T: all s:Student,c:Class,g:Group|some t:Teacher | t->c in Teaches and some s.(c.Groups) and  t.(c.Groups)
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | t->c in Teaches and some s.(c.Groups) and some t.(c.Groups)
+inv14 B: all s:Student,c:Class,g:Group|some t:Teacher | t->c in Teaches and some s.(c.Groups) and some t.(c.Groups) implies t in s.^~Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and some s.(c.Groups) and some t.(c.Groups) implies t in s.^~Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.^~Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.~Tutors
+inv14 U: all s:Student,c:Class,t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.~Tutors
+inv14 T: all s:Student,c:Class|some t:Teacher,g:Group | t->c in Teaches and one s.(c.Groups).g and one t.(c.Groups) implies t in s.^Tutors
+inv14 T: all s:Student,c:Class|some t:Teacher,g:Group | t->c in Teaches and  s.(c.Groups).g and one t.(c.Groups) implies t in s.^Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.^Tutors
+inv14 B: all s:Student,c:Class, t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.^Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.^~Tutors
+inv14 B: all s:Student,c:Class|some t:Teacher | t->c in Teaches and one s.(c.Groups) and one t.(c.Groups) implies t in s.^Tutors
+

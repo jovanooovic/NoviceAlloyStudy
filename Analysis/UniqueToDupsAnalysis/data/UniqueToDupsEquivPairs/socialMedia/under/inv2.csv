@@ -1,0 +1,41 @@
+Pairs,22
+,,"iden not in posts",1
+,,"iden not in follows",9
+,,"iden not in follows.follows",1
+,,"all u: User | one u",1
+,,"iden not in follows.~follows",1
+,,"all u: User | u->u in iden",1
+,,"all x: User | x not in x.posts",1
+,,"all u : User | u not in u.posts",2
+,,"all u : User | u -> u not in posts",1
+,,"all u : User | not u in u.sees",1
+,,"all u : User | not u -> u in posts",1
+,,"all u:User | u not in u.follows.posts",1
+,,"all x, y : univ | x in User or x in Influencer and x.follows = y implies x != y",1
+
+Pairs,8
+,,"all x : User | x != follows.x",1
+,,"all u : User | follows.u != u",2
+,,"all x : User | follows.x != x",1
+,,"all u1 : User | follows.u1 != u1",1
+,,"all u : User+Influencer | follows.u != u",1
+,,"all u : User | follows.u != u
+all i : Influencer | follows.i != i",2
+
+Pairs,15
+,,"all u : User |u . follows != u",1
+,,"all x : User | x.follows != x",4
+,,"all x: User | !x.follows = x",3
+,,"all u1 : User | u1.follows != u1",1
+,,"all x, y : User | x.follows = y implies x !=y",3
+,,"all x, y : univ | x.follows = y implies x != y",1
+,,"all x, y : univ | x in User and x.follows = y implies x != y",1
+,,"all x, y : User | x.follows = y implies x != y
+all x, y : Influencer | x.follows = y implies x != y",1
+
+Pairs,1
+,,"all x : User | User not in follows.x",1
+
+Pairs,1
+,,"all disj a, b : User | a not in a.follows",1
+

@@ -1,0 +1,15 @@
+"all e : Entry | some Speed",2
+"all e:Entry | some e.signals",11
+"all t:Entry | #t.signals>0",1
+"all e:Entry | some (signals.Speed)",1
+"all e : Entry | e.signals in Signal",1
+"all t : Track & Entry | some t.signals",1
+"all e : Entry | some e.signals & Signal",4
+"all e: Entry | (e in Track) implies some e.signals",1
+"all t:Track| t in Entry => some t.signals",5
+"all e: Entry | (e in Track) implies some Track.signals",1
+"all e:Entry| some s:Signal | s in e.signals",4
+"all e:Entry | some s:Signal | e->s in signals",1
+"all t : Track, s : Speed | t in Entry implies some t.signals & Speed",1
+"all x : Entry | some y : Signal |  y in Speed implies y in x.signals",1
+"all t:Entry|some s:Signal| t->s in signals implies s in Speed",2

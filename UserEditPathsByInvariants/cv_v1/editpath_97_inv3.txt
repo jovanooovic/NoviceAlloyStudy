@@ -1,0 +1,13 @@
+inv3 B: ~ids.ids in iden
+inv3 O: ids.~ids in iden
+inv3 U: User.profile.~ids.ids in User.profile.iden
+inv3 B: one profile.ids
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv3 U: User.(profile.ids) in Id
+inv3 B: Id in User.(profile.ids)
+inv3 S: ~(profile.ids).(profiles.ids) in iden
+inv3 B: ~(profile.ids).(profile.ids) in iden
+inv3 O: iden in (profile.ids).~(profile.ids)
+inv3 B: (profile.ids).~(profile.ids) in iden
+

@@ -1,0 +1,9 @@
+inv3 O: let R = State.trans | ~R.R in iden
+inv3 O: let R = State.trans | iden in ~R.R
+inv3 T: all s : State, e : s.trans | ~e.e in iden
+inv3 T: all s : State, e : s.trans | ~e.e in iden
+inv3 T: all s : State, e : s.trans | ~e.e in iden
+inv3 S: all s : State, e | ~(s.trans).(s.trans) in iden
+inv3 C: all s : State| ~(s.trans).(s.trans) in iden
+inv3 O: ~(State.trans).(State.trans) in iden
+

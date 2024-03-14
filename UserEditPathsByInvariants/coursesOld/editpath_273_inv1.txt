@@ -1,0 +1,12 @@
+inv1 U: all c : Course | c.enrolled in Student
+inv1 B: all c : Course | c.enrolled = Student
+inv1 U: all s : Student | s.enrolled in Course
+inv1 S: all s : Student | s.enrolled in Course - Professor.enroleed in Course
+inv1 S: all s : Student | s.enrolled in Course - Professor.enroled in Course
+inv1 T: all s : Student | s.enrolled in Course - Professor.enrolled in Course
+inv1 B: all c : Course | Student.enrolled in c
+inv1 T: all c : Course | Student.enrolled in c - Professor.enrolled in c
+inv1 S: all c : Course | Student.enrolled in c not Professor.enrolled in c
+inv1 C: all c : Course |enrolled.c in Student
+inv1 C: all c : Course | enrolled.c in Student
+

@@ -1,0 +1,6 @@
+inv11 B: all s:Student | all c:Course | no Course.grades implies s->c in enrolled
+inv11 U: all s : Student | no s->Grade & (Course-s.enrolled).grades
+inv11 U: all s : Professor | no s->Grade & (Course-s.enrolled).grades
+inv11 U: all s : Student | no s->Grade & (Course-s.enrolled).grades
+inv11 U: all s : Student | no s->Grade & (Course-s.enrolled).grades
+

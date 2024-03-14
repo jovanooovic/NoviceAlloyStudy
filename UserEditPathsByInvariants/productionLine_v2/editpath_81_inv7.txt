@@ -1,0 +1,12 @@
+inv7 S: all c1, c2 : Component | c2 in Dangerous | c2 in c.^parts implies c2 in Dangerous
+inv7 S: all c1, c2 : Component | c2 in Dangerous and c2 in c.^parts implies c2 in Dangerous
+inv7 U: all c1, c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | some c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | some c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 U: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c2 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 B: all c1 : Component | all c2 : Component | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 U: all c1 : Component | some c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+inv7 O: all c1 : Component | all c2 : Product | c2 in Dangerous and c2 in c1.^parts implies c1 in Dangerous
+

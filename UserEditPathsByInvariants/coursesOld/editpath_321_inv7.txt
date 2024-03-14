@@ -1,0 +1,4 @@
+inv7 B: all p:Person | one pr:Project | p->pr in projects implies (some c:Course|p->c in enrolled and c->pr in projects)
+inv7 B: all p:Student | one pr:Project | p->pr in projects implies (some c:Course|p->c in enrolled and c->pr in projects)
+inv7 U: all p:Student | all pr1,pr2:Project | all c:Course| (p->pr1 in projects and p->pr2 in projects) and (c->pr1 in projects and c->pr2 in projects) implies pr1=pr2
+

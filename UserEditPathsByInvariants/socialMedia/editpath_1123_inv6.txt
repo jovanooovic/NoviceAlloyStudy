@@ -1,0 +1,15 @@
+inv6 S: all d: Day | all p : Influencer.posts | p.day in d
+inv6 S: all p : Influencer.posts | p.day in Day
+inv6 U: all p : Influencer.posts | p.date in Day
+inv6 B: all p : Influencer.posts.date | p - Day = Day
+inv6 B: all i : Influencer | all p : i.posts.date | p - Day = p
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | p - d = p
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | p & d = d
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d - p = d
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d & p = p
+inv6 B: all i : Influencer | all p : i.posts.date | all d : Day | d = p
+inv6 B: all i : Influencer | all p : i.posts | all x : p.date | all d : Day | x = p
+inv6 B: all i : Influencer | all p : i.posts | all x : p.date | all d : Day | x & d = d
+inv6 B: all i : Influencer | all p : i.posts | all x : p.date | all d : Day | x  = d
+inv6 O: all i : Influencer | some  p : i.posts | all x : p.date | all d : Day | x  = d
+

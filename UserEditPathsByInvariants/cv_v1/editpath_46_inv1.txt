@@ -1,0 +1,19 @@
+inv1 T: all w : Work | source.profile
+inv1 U: all w : Work.visible | one source.profile
+inv1 T: Work.visible in source.profile
+inv1 U: Work.visible in Source.profile
+inv1 T: Work.visible in source.profile
+inv1 T: visible.Work implies User.profile
+inv1 T: profile.source & visible.Work implies User.profile
+inv1 T: profile.source and visible.Work implies User.profile
+inv1 T: profile.source and source.visible implies User.profile
+inv1 T: profile.source and source.visible implies User.profile
+inv1 T: profile.source and source.visible
+inv1 T: source.profile and source.visible
+inv1 T: profile.source and source.visible
+inv1 T: User.visible implies User.profile
+inv1 T: User.visible implies profile.User
+inv1 T: (User.visible).profile
+inv1 T: profile.(User.visible)
+inv1 C: all u : User | u.visible in u.profile
+

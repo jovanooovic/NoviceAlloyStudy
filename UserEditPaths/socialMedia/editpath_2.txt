@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv6 S: all x:Influencer | x.photos.date = Day
+inv6 S: all x:Influencer | x.photo.date = Day
+inv6 C: all x:Influencer | x.posts.date = Day
+inv7 B: all x:User | x.suggested = x.follows.follows - x.follows
+inv7 B: all x:User | x.suggested = (x.follows.follows - x.follows)
+inv7 C: all x:User | x.suggested = (x.follows.follows - x.follows - x)
+inv8 S: all x: User | (x.sees & Ads) in (x.follows.posts + x.suggested.posts)
+inv8 C: all x: User | (x.sees & Ad) in (x.follows.posts + x.suggested.posts)
+

@@ -1,0 +1,10 @@
+inv13 B: all c : Course, g : max[Person.(c.grades)] | c.grades.g.projects in c.projects
+inv13 B: all c : Course, g : max[Person.(c.grades)] | c.grades.g.projects in c.projects	  	all c : Course | some c.grades implies some c.projects
+inv13 B: all c : Course, g : Grade| g in max[Person.(c.grades)] implies c.grades.g.projects in c.projects
+inv13 B: all c : Course, g : Grade | g in max[Person.(c.grades)] implies c.grades.g.projects in c.projects	  	all c : Course | some c.grades implies some c.projects
+inv13 B: all c : Course, s : c.grades.last | some s.projects - c.projects
+inv13 B: all c : Course | some s : c.grades.last | some s.projects - c.projects
+inv13 S: all c : Course | some s : c.grades.last some s.projects & c.projects
+inv13 B: all c : Course | some s : c.grades.last | some s.projects & c.projects
+inv13 U: all c : Course, s : Student | s in c.grades.last implies some s.projects & c.projects
+

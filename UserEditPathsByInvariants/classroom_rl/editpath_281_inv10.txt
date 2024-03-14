@@ -1,0 +1,35 @@
+inv10 T: all g : Class.Groups | g.Person in Student implies g.Group
+inv10 T: all g : Class.Groups | g.Person in Student implies g.Group
+inv10 S: all c : Class | all s: Student  |  s->g in c.Groups
+inv10 B: all c : Class | all s: Student | all g: Group |  s->g in c.Groups
+inv10 B: all c : Class | some s:Student, g: Group |  s->g in c.Groups
+inv10 B: all c : Class | one s:Student, g: Group |  s->g in c.Groups
+inv10 B: all c : Class | all p:Person, g: Group |  p in Student implies p->g in c.Groups
+inv10 O: all c : Class | all p:Person | one g: Group |  p in Student implies p->g in c.Groups
+inv10 O: all c : Class | all p:Person | one g: Group |  p in Student implies p->g in c.Groups
+inv10 B: all c : Class | all p:Person | all g: Group |  p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all s:Student | one g : c.Groups  |  s-> g in c.Groups
+inv10 T: all c : Class | all p: Person | one g : c.Groups  | p in Student implies p-> g in c.Groups
+inv10 T: Student -> one Group
+inv10 T: all c : Class | all p: Person | one g : c.Groups  | p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all p: Person | one g : c.Groups  | p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all p: Person | one g : c.Groups  | p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all p: Person | all g : c.Groups  | p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all p: Person | all g : c.Groups  | p in Student implies p->g in c.Groups
+inv10 T: all c : Class | all p: Person | all g : Groups  | p in Student and g in c.Groups implies p->g in c.Groups
+inv10 O: all c : Class | all p: Person | one g : Group  | p in Student implies p->g in c.Groups
+inv10 O: all c : Class | all s: Student | one g : Group  |  s->g in c.Groups
+inv10 B: all c : Class | all s: Student | all g : Group  |  s->g in c.Groups
+inv10 O: all c : Class | all s: Student | one g : Group  |  s->g in c.Groups
+inv10 B: all c : Class | some s: Student | one g : Group  |  s->g in c.Groups
+inv10 O: all c : Class | all s: Student | one g : Group  |  s->g in c.Groups
+inv10 O: all c : Class | all p: Person | one g : Group  |  p in Student implies p->g in c.Groups
+inv10 U: all c : Class | all s: Student | s<:c.Groups in c.Groups
+inv10 S: all c : Class |  s: Student | s<:c.Groups in c.Groups
+inv10 B: all c : Class |  some s: Student | s<:c.Groups in c.Groups
+inv10 E:
+inv10 B: all c : Class |  one s:Student | one g:Group |  s->g in c.Groups
+inv10 B: all c : Class |  some s:Student | one g:Group | s->g in c.Groups
+inv10 T: all c : Class |  Student<:c.Groups ->  Group:>c.Groups in c.Groups
+inv10 T: all c : Class |  one Student<:c.Groups -> one Group:>c.Groups in c.Groups
+

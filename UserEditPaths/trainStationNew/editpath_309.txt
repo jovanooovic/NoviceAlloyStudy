@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 B: all s : Track | some e: Entry | some e1 : Exit | (e + e1) in s
+inv1 C: some e : Entry | some s : Exit | (e+s) in Track
+inv2 U: all s: Signal | all t,t1 : Track | s in t.signals and s in t1.signals implies t=t1
+inv2 C: all s: Signal | s in Track.signals	all s: Signal | all t,t1 : Track | s in t.signals and s in t1.signals implies t=t1
+inv3 U: all e: Exit | all t: Track| e in t implies t.succs=none
+inv3 U: all e: Exit | e.succs=none
+inv4 S: all t : Tracks | t in Entry implies t.succs = none
+inv4 B: all t : Track | t in Entry implies t.succs = none
+inv4 B: all t : Track | t in Entry implies t.succs = 0
+inv4 U: all t,t1 : Track | t!=t1 and t in Entry implies t not in t1.succs
+inv4 U: all t,t1 : Track | t in Entry implies t not in t1.succs
+inv4 U: all t : Track |  t in Entry implies t not in Track.succs
+inv4 U: all t : Track |  t in Entry implies t not in (Track-t).succs
+inv4 U: all t : Track |  t in Entry implies t not in Track.succs
+

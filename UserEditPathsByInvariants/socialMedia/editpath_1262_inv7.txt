@@ -1,0 +1,5 @@
+inv7 B: all s:User | some u:User-s | s in u.suggested iff some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows
+inv7 B: all s:User | some u:User-s | s in u.suggested iff some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows and s not in u.follows
+inv7 U: all s:User | all u:User-s | s in u.suggested iff some u1:User-s | u1 != u and s in u1.follows and u1 in u.follows and s not in u.follows
+inv7 C: all s:User | all u:User | s in u.suggested iff some u1:User | u!=s and s in u1.follows and u1 in u.follows and s not in u.follows
+

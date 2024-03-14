@@ -1,0 +1,13 @@
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and x->p in projects implies x->k in projects and x->p not in projects
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and x->p not in projects
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and y->k not in projects
+inv14 O: one x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and y->k not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects and y -> i not in projects
+inv14 B: all x,y:Person, p:Project, i:Project| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects and y -> i not in projects
+inv14 O: all x,y:Person, p:Project, i:Project| x-> p in projects and y-> p in projects implies x-> i in projects and y -> i not in projects
+inv14 S: all x:Person, y:Person-x, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects a y -> i not in projects
+inv14 B: all x:Person, y:Person-x, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects and y -> i not in projects
+inv14 B: all x:Person, y:Person, p:Project, i:Project| x-> p in projects and y-> p in projects and x in Student and y in Student implies x-> i in projects and y -> i not in projects
+

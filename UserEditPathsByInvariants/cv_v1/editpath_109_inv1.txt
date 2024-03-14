@@ -1,0 +1,6 @@
+inv1 U: all w:Work | w in User.visible implies w in User.profile
+inv1 C: all w:Work,u:User | w in u.visible implies w in u.profile
+inv1 U: all w:Work | w in User.visible:>Work implies w in User.profile:>Work
+inv1 T: all w:Work | User.visible:>w and User.profile:>w
+inv1 C: all w:Work,u:User | w in u.visible implies w in u.profile
+

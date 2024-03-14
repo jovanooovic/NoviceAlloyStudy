@@ -1,0 +1,32 @@
+inv10 T: all c : Class | no c.Student.Groups
+inv10 T: all c : Class | some c.Student.Groups
+inv10 T: all c : Class | some c in Student.Groups
+inv10 T: all c : Class | c in Student.Groups
+inv10 T: all c : Class | c in Person.Groups
+inv10 T: all c : Class | c in Person->Groups
+inv10 T: all c : Class | c.Groups in c.Person->c.Groups
+inv10 T: all c : Class | c.Groups in c.Student->c.Groups
+inv10 T: all c : Class | c.Groups in c.Student->Groups
+inv10 T: all c : Class | c.Groups in c.Tutors->c.Groups
+inv10 T: all c : Class | c in c.Student->c.Groups
+inv10 U: all c : Class | no Student.Groups
+inv10 B: all c : Class | no Student->Groups
+inv10 B: all c : Class | no Student->c.Groups
+inv10 T: all c : Class | Student->c.Groups
+inv10 B: all c : Class | some Student->c.Groups
+inv10 T: all c : Class | c in Student->c.Groups
+inv10 T: all c : Class | c in Student->Groups
+inv10 T: all c : Class | Student->c.Groups in c
+inv10 T: all c : Class | c in Student->Groups
+inv10 T: all c : Class | Student->Groups
+inv10 T: all c : Class | all s : Student | s in c.Groups
+inv10 T: all c : Class | all s : Student | c.Groups in s
+inv10 T: all c : Class | all s : Student | c in s->Groups
+inv10 T: all c : Class | all s : Student | s->Groups in c
+inv10 T: all c : Class | Student->Groups in c
+inv10 T: all c : Class | c.Student->Groups
+inv10 T: all c : Class | c & Student->Groups
+inv10 T: all c : Class | c->Groups
+inv10 T: all c : Class | c.Groups
+inv10 B: all c : Class | some c.Groups
+

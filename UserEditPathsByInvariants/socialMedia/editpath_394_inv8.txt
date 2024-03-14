@@ -1,0 +1,7 @@
+inv8 U: all x: User | all p: Photo | p in Ad && x in p.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts
+inv8 U: all x: User | all p: Photo | p in Ad && x in p.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts && x != u
+inv8 U: all x: User | all p: Photo | p in Ad && x in p.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts && x != u
+inv8 U: all x: User | all p: Photo | p in Ad && x in p.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts && x != u
+inv8 U: all x: User | all p: Photo | p in Ad && x in p.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts
+inv8 C: all x: User | all p: Photo | p in Ad && p in x.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts
+

@@ -1,0 +1,12 @@
+inv4 S: all p : Project | lone p.courses
+inv4 S: all p : Project | lone p.course
+inv4 T: all p : Project | lone p.Course
+inv4 S: all p : Project | one couse.p
+inv4 S: all p : Project | one course.p
+inv4 T: all p : Project | one Course.p
+inv4 T: all p : Project ,c : Course | one p.Course.c
+inv4 S: all p : Project ,c : Course | one project.p
+inv4 S: all p : Project | one (Course c : projects).p
+inv4 S: all p : Project , c: | one (Course <: projects).p
+inv4 C: all p : Project | one (Course <: projects).p
+

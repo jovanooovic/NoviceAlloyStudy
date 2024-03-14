@@ -1,0 +1,6 @@
+inv5 B: all t : Track | (one t1 : Track | t in t1.succs and (one t2 : Track | t in t2.succs and t1 != t2)) iff t in Junction
+inv5 B: all t : Track | (all t1,t2 : Track | t in t1.succs and t in t2.succs and t1 != t2) iff t in Junction
+inv5 B: all t : Track | (all t1,t2 : Track - t| t in t1.succs and t in t2.succs and t1 != t2) iff t in Junction
+inv5 B: all t : Track | (all t1,t2 : Track - t | t in t1.succs and t in t2.succs and t1 != t2) iff t in Junction
+inv5 B: all t : Track | (all t1,t2 : Track - t | (t in t1.succs) and (t in t2.succs) and t1 != t2) iff t in Junction
+

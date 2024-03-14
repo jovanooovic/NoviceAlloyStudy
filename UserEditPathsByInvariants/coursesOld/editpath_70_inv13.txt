@@ -1,0 +1,6 @@
+inv13 T: all c : Course | c.grades.first
+inv13 T: all c : Course | c.grades.first & Person
+inv13 B: all c : Course | no c.grades.first & Person
+inv13 O: all c : Course, s : c.grades.last | one c.projects & s.projects
+inv13 B: all c : Course, s : c.grades.last | one  s.projects
+

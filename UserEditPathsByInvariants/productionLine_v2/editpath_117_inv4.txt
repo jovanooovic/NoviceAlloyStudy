@@ -1,0 +1,9 @@
+inv4 B: all c : Component, m : Material, p : Product, p1 : Product | (c in Product and p->p1 in parts) and (m in Product and p->p1 not in parts)
+inv4 B: all c : Component, m : Material, p : Product, p1 : Product, p2 : Product, p3 : Product | (c in Product and p->p1 in parts) and (m in Product and p2->p3 not in parts)
+inv4 B: all c : Component, m : Material | (c in Product and c->c in parts) and ( m in Product and m->m not in parts )
+inv4 B: all c : Component, m : Material | (c in Product and c->c in parts) and ( m in Product and m->m not in parts )
+inv4 B: all c : Component, c1 : Component, m : Material | (c in Product and c->c1 in parts) and ( m in Product and m->m not in parts )
+inv4 B: all c : Component, c1 : Component, m : Material, m1 : Material | (c in Product and c->c1 in parts) and ( m in Product and m->m1 not in parts )
+inv4 S: all c : Component, m : Material | (c in Product and c->c1 in parts) and ( m in Product and m->m not in parts )
+inv4 B: all c : Component, m : Material | (c in Product and c->c in parts) and ( m in Product and m->m not in parts )
+

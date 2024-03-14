@@ -1,0 +1,120 @@
+NA H: THEME UPDATE
+inv1 C: all x: Person - Student | no x.enrolled
+inv2 S: all x: Person - Teacher | no x.enrolled
+inv2 B: all x: Person - Professor | no x.enrolled
+inv2 C: all x: Person - Professor | no x.teaches
+inv3 S: all c: Courses | (some p : Professor | c in professor.teaches  )
+inv3 S: all c: Course | (some p : Professor | c in professor.teaches  )
+inv3 O: all c: Course | (some p : Professor | c in p.teaches  )
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv6 S: all u : User | (all p: u.projects | p in u.enrolled )
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv5 C: all x: Person - Student | no x.projects	  all p: Project | (some s: Student | p in s.projects)
+inv6 B: all u : Student | (all p: u.projects | p in u.enrolled )
+inv5 C: all x: Person - Student | no x.projects	  all p: Project | (some s: Student | p in s.projects)
+inv6 S: all u : Student | (all p: u.projects | (some c : course | c in u.enrolled and p in c.projects ) )
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+inv5 C: all x: Person - Student | no x.projects	  all p: Project | (some s: Student | p in s.projects)
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+inv7 U: all s: Student | (all c : s.enrolled | lone (c.projects &  s.projects)  )
+inv8 U: all p : Professor | (all c : p.teaches | c not in p.enrolled)
+inv9 U: all p : Professor | (all c : p.teaches | Professor not in p.enrolled)
+inv9 U: all p : Professor | (all c : p.teaches | no Professor & p.enrolled)
+inv9 U: all p : Professor | (all c : p.teaches | no (Professor & p.enrolled) )
+inv9 B: all p : Professor | (all c : p.teaches | (all col : Professor - p | c not in col.enrolled ))
+inv9 S: all p : Professor | (all col: Professor - p:  no (p.teaches & col.enrolled) )
+inv9 S: all p : Professor | (all col: Professor - p :  no (p.teaches & col.enrolled) )
+inv9 B: all p : Professor | (all col : Professor - p |  no (p.teaches & col.enrolled))
+inv9 B: all p : Professor | (all col : Professor |  no (p.teaches & col.enrolled))
+inv9 B: all p : Professor | (all col : Professor - p |  no (p.teaches & col.enrolled))
+inv9 B: all p : Professor | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+inv9 B: all p : Person - Student | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+inv10 T: all c : Course | no (c.grades & (Person - Student))
+inv10 T: all c : Course | no (c.grades & (Person - Student))
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv11 C: all c: Course | (all p: Person, g: Grade | p->g in c.grades implies c in p.enrolled)
+inv12 S: all c: Course | (all p: Person, lone g: Grade | p->g in c.grades)
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv13 S: all c : Course | gt(c.grades)
+inv14 S: all x: Student | all Student - x : col | all p : x.projects | lone (x.projects & col.projects)
+inv14 U: all x: Student | all col : Student - x | all p : x.projects | lone (x.projects & col.projects)
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies 	  (all g1,g2 : Grade | x->g1  and col-> g2 )
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies 	  (all g1,g2 : Grade | (x->g1 in c.grades and col-> g2 in c.grades) implies g1-g2 < 2 and g1-g2>-2)
+inv15 T: all x: Student | all col : Student - x | all p: x.projects & col.projects | all c: Course | p in c.projects implies (all g1,g2 : Grade | (x->g1 in c.grades and col-> g2 in c.grades) implies g1-g2 < 2 and g1-g2>-2)
+inv1 C: all x: Person - Student | no x.enrolled
+inv2 C: all x: Person - Professor | no x.teaches
+inv3 O: all c: Course | (some p : Professor | c in p.teaches  )
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv5 C: all x: Person - Student | no x.projects	  all p: Project | (some s: Student | p in s.projects)
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+inv7 U: all s: Student | (all c : s.enrolled | lone (c.projects &  s.projects)  )
+inv8 U: all p : Professor | (all c : p.teaches | c not in p.enrolled)
+inv9 B: all p : Person - Student | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv11 C: all c: Course | (all p: Person, g: Grade | p->g in c.grades implies c in p.enrolled)
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv13 E: 
+inv14 U: all x: Student | all col : Student - x | lone (x.projects & col.projects)
+inv15 E: 
+inv9 B: all p : Person - Student | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+NA H: THEME UPDATE
+inv9 S: all p : Person - Student | (all col : Person - Student - p | all c: col.teaches & p.teaches | c not in col.enrolled
+inv9 U: all p : Person - Student | (all col : Person - Student - p | all c: col.teaches & p.teaches | c not in col.enrolled)
+inv9 U: all p : Professor | (all col : Professor - p | (all c: col.teaches & p.teaches | c not in col.enrolled))
+inv9 S: all p : Professor | (all col : Professor - p | (all c: col.teaches & p.teaches | no (col.enrolled & p.teaches))
+inv9 U: all p : Professor | (all col : Professor - p | (all c: col.teaches & p.teaches | no (col.enrolled & p.teaches)))
+inv9 S: all p : Professor | (all col : Professor - p | some col.teaches & p.teaches implies no (col.enrolled & p.teaches)))
+inv9 S: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches)))
+inv9 U: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches))
+NA H: THEME UPDATE
+inv12 C: all c: Course | (all p: Person| lone g: Grade | p->g in c.grades)
+inv12 U: all p: Person | (all c : p.enrolled | lone g : Grade | p->g in c.grades)
+inv1 T: all x: Person - Student | none x.enrolled
+inv1 C: all x: Person - Student | no x.enrolled
+inv3 S: some Course.p
+inv4 U: all p : Project | (lone c : Course | p in c.projects)
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv5 S: all x: Person - Student | no x.projects	  some Project.p
+inv5 S: all x: Person - Student | no x.projects	  Student in Project.p
+inv5 S: all x: Person - Student | no x.projects	  	  some project.p : Project
+inv6 S: all s : Student | all s.enrolled : Course | s.projects in s.enrolled
+inv6 S: all s : Student | all s.enrolled : Course | s.projects in s.enrolled
+inv6 B: all s : Student | all enr : s.enrolled | s.projects in enr
+inv6 B: all s : Student | all p : s.projects | (some c : s.enrolled | p in c)
+inv6 B: all s : Student | all p : s.projects | (some c : s.enrolled | p in c)
+inv6 B: all s : Student | all p : s.projects | (some c : s.enrolled | p in c)
+inv6 U: all s : Student | all p : s.projects | (some c : s.enrolled | p in c.projects)
+inv7 S: all s : Student | (all c : p.enrolled | #(c.projects) <= 1 )
+inv6 U: all s : Student | all p : s.projects | (some c : s.enrolled | p in c.projects)
+inv7 B: all s : Student | (all c : s.enrolled | #(c.projects) <= 1 )
+inv7 S: all s : Student | (all x,y : s.projects.c | x != y)
+inv7 S: all s : Student | (all p,q : Projects | (some c : s.enrolled | p in c implies q not in c))
+inv7 B: all s : Student | (all p,q : Project | (some c : s.enrolled | p in c implies q not in c))
+inv7 B: all s : Student | (all p,q : Project | (some c : s.enrolled | p in c.projects implies q not in c.projects))
+inv7 B: all s : Student | (all p,q : Project | (all c : s.enrolled | p in c.projects implies q not in c.projects))
+inv7 B: all s : Student | (all p,q : s.projects | (all c : s.enrolled | p in c.projects implies q not in c.projects))
+inv9 T: all p,q : Professor | all pt : p.teaches | (all qt : q.teaches | pt not in q.enrolled & qt not in p.enrolled)
+inv9 B: all p,q : Professor | all pt : p.teaches | (all qt : q.teaches | pt not in q.enrolled and qt not in p.enrolled)
+inv9 B: all p,q : Professor | all pt : p.teaches | pt not in q.enrolled
+inv9 S: all p,q : Professor | all pt : p.teaches (all qe : q.enrolled | pt not in q.enrolled and qe not in p.teaches)
+inv9 B: all p,q : Professor | all pt : p.teaches | (all qe : q.enrolled | pt not in q.enrolled and qe not in p.teaches)
+inv9 U: all p : Professor | (all col : Professor - p | some (col.teaches & p.teaches) implies no (col.enrolled & p.teaches))
+inv10 B: all p : Professor | (all c : Course | (all g : Grade | no c->p->g))
+inv10 B: all p : Professor | (all c : p.enrolled | (all g : Grade | no c->p->g))
+inv10 T: all p : Professor | (all c : Course | (all g : c.grades | no p->g))
+inv10 B: all c : Course | (all p : Professor | all grades : Grade | no c->p->grades)
+inv10 S: all c : Course | (all p : Professor, all grades : Grade | no c->p->grades)
+inv11 T: all c : Course | all p: Person, g : Grade | c->p->g implies c in p.enrolled
+inv11 C: all c : Course | all p: Person, g : Grade | p->g in c.grades implies c in p.enrolled
+inv12 U: all s : Student, g: Grade | all c : s.enrolled | lone c->s->g
+inv12 U: all s : Student | all c : s.enrolled | lone g : Grade | s->g in c.grades
+inv13 S: all x,y : Student | all g,h : Grade | all c : Course | all p: x.project| x->g in c.grades and y->h in c.grades and x->g > y->h implies p in c.projects
+inv13 T: all x,y : Student | all g,h : Grade | all c : Course | all p: x.projects| x->g in c.grades and y->h in c.grades and x->g > y->h implies p in c.projects
+inv13 T: one x : Student | all y : Student - x | all g,h : Grade | all c:Course | all p: x.projects| x->g in c.grades and y->h in c.grades and g > h implies p in c.projects
+inv13 T: all x : Student, g : Grade | all p : x.projects | all c : Course | x->g in c.grades and x->g = max(c.grades) implies p in c.projects
+inv13 E: 
+inv14 U: all x : Student | all resto : Student - x | all p : x.projects | all p2 : resto.projects | lone (p & p2)
+

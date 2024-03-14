@@ -1,0 +1,15 @@
+inv4 T: all u : User | Ad & u.posts
+inv4 T: all u : User | Ad & u.posts
+inv4 B: all u : User | lone (u.posts & Ad)
+inv4 B: all u : User | some (u.posts & Ad)
+inv4 S: all u : User | all (u.posts & Ad)
+inv4 S: all u : User |  (u.posts & Ad) + (u.posts & not Ad)
+inv4 T: all u : User | (u.posts & Ad) + (no u.posts & Ad)
+inv4 T: all u : User | (u.posts - Ad) + (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) or (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) + (no u.posts - Ad)
+inv4 T: all u : User | (u.posts - Ad) + (u.posts - Ad)
+inv4 S: all u : User | (u.posts - Ad) + no (u.posts - Ad)
+inv4 T: all u : User | (no iden & posts - Ad) or (no u.posts - Ad)
+inv4 C: all u : User | u.posts in Ad or u.posts in Photo - Ad
+

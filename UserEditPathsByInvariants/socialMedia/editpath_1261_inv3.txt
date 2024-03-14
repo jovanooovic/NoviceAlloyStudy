@@ -1,0 +1,23 @@
+inv3 B: all u: User | u.follows.posts not in Ad
+inv3 S: all u: User |  u not in u.follows | u.follows.posts not in Ad
+inv3 S: all u: User | u not in u.follows | u.follows.posts not in Ad
+inv3 S: all u: User | u.follows.posts not in Ad | no (follows & iden)
+inv3 S: no (follows & iden) | u.follows.posts not in Ad
+inv3 B: all u: User | u.follows.posts not in Ad
+inv3 S: all u: User | u.follows.posts not in Ad | u.sees in Ad
+inv3 B: all u: User | u.follows.posts not in Ad	all u: User | u.sees.posts in Ad
+inv3 B: all u: User | u.follows.posts not in Ad	all u: User | u.sees.posts in Ad
+inv3 S: all u: User | u.follows.posts not in Ad | u.sees.posts in Ad
+inv3 B: all u: User | u.follows.posts not in Ad and u.sees.posts in Ad
+inv3 T: all u: User | all p: Photo | u.follows.posts in p.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.sees in p.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.sees in u.sees.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.sees in u.sees.p-Ad
+inv3 S: all u: User | all p: Photo | u.follows.see.posts in p.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.sees.posts in p.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.posts in p.Photo-Ad
+inv3 T: all u: User | all p: Photo | u.follows.posts in p.Photo-Ad
+inv3 B: all u: User | all p: Photo-Ad | u.follows.posts in p
+inv3 S: all u: User | all a: Ad | all p: Photo-Ad | u.follows.posts in p | u.sees in a
+inv3 C: all u: User | u.sees-Ad in u.follows.posts
+

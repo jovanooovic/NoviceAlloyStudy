@@ -1,0 +1,5 @@
+inv3 B: all u:User | all ad :Ad | ad in u.sees implies ad not in u.posts
+inv3 B: all u:User | all ad :Ad | ad not in u.posts implies ad in u.sees
+inv3 B: all u:User | u.posts not in u.sees
+inv3 T: all u:User | u.posts not in u.sees	all u:User | all p:Photo | p in u.sees implies u.follows->posts
+

@@ -1,0 +1,5 @@
+inv10 B: all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 B: all x:Component | x.parts.workstation not in  x.workstation and x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 S: all x:component | x.parts.workstation !=  x.workstation	all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+inv10 B: all x:Component | x.parts.workstation !=  x.workstation	all x:Component | x.parts.workstation.succ in  x.workstation or x.parts.workstation.succ in x.parts.workstation
+

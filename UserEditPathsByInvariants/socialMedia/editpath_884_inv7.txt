@@ -1,0 +1,25 @@
+inv7 U: all disj e,s,o: User | (e in s && s in o && e not in o) => o in e.suggested
+inv7 U: all disj u,uu:User | u in uu.follows.follows && u not in uu.follows implies u in uu.suggested
+inv7 B: all u: User | u.suggested in u.follows.follows and u.suggested not in u.follows
+inv7 U: all e,s,o: User | (e in s && s in o && e not in o) => o in e.suggested
+inv7 S: all e,s,o: User | (e in s.follow && s in o.follow && e not in o.follow) => o in e.suggested
+inv7 B: all e,s,o: User | (e in s.follows && s in o.follows && e not in o.follows) => o in e.suggested
+inv7 B: all disj e,s,o: User | (e in s.follows && s in o.follows && e not in o.follows) => o in e.suggested
+inv7 U: all disj e,s,o: User | (s in e.follows && o in s.follows && o not in e.follows) => o in e.suggested
+inv7 U: all disj e,s,o: User | (s in e.follows && o in s.follows && o not in e.follows) => (o in e.suggested && e not in e.suggested)
+inv7 B: all u: User | u.suggested = (u.follows.follows - u.follows) - u.follows
+inv7 B: all u: User | u.suggested = (u.follows.follows - u.follows)
+inv7 B: all u: User | u.suggested = (u.follows.follows)
+inv7 B: all u,o: User | o in u.follows.follows && o not in u.follows => o in u.suggested
+inv7 U: all disj u,o: User | o in u.follows.follows && o not in u.follows => o in u.suggested
+inv7 U: all disj u,o: User | o in u.follows.follows && o not in u.follows => o in u.suggested
+inv7 U: all disj u,o: User | o in u.follows.follows && o not in u.follows => o in u.suggested
+inv7 U: all disj u,o: User | (o in u.follows.follows && o not in u.follows) => o in u.suggested
+inv7 U: all disj u,o: User | (o in u.follows.follows && o not in u.follows && u not in u.follows) => o in u.suggested
+inv7 B: all u: User | u.suggested = (u.follows.follows).follows
+inv7 B: all u: User | u.suggested = (u.follows.follows) - u.follows
+inv7 U: all u,o: User | (o in (u-o).follows.follows && o not in (u-o).follows) => o in u.suggested
+inv7 B: all u,o: User | (o in (u).follows.follows && o not in (u).follows) => o in u.suggested
+inv7 E:
+inv7 U: all disj u,o: User | (o in u.follows.follows && o not in u.follows && u not in u.follows) => o in u.suggested
+

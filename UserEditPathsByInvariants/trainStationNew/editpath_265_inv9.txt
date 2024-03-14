@@ -1,0 +1,12 @@
+inv9 B: all t:Track | all j:Junction | j not in t.succs implies(all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | all j:Junction | t not in j.succs implies(all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | all j:Junction | j not in t.succs implies(all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | all j:Junction | j not in t.^(succs) implies(all s:Semaphore | s not in t.signals)
+inv9 B: all disj t1,t2:Track | t2 in Junction and t2 not in t1.^(succs) implies(all s:Semaphore | s not in t1.signals)
+inv9 B: all t:Track | all j:Junction | j not in t.^(succs) implies(all s:Semaphore | s not in t.signals)
+inv9 C: all t:Track | no t.succs & Junction implies(all s:Semaphore | s not in t.signals)
+inv9 C: all t:Track | no t.succs & Junction implies(all s:Semaphore | s not in t.signals)
+inv9 T: all t:Track | all j:Junction | no t.succs in j  implies(all s:Semaphore | s not in t.signals)
+inv9 B: all t:Track | all j:Junction | no t.succs & j  implies(all s:Semaphore | s not in t.signals)
+inv9 C: all t:Track | no t.succs & Junction  implies(all s:Semaphore | s not in t.signals)
+

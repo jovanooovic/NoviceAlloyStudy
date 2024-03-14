@@ -1,0 +1,9 @@
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => (p in Ad) || (p not in Ad && u -> f in follows && f -> p in posts)	}
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts	}								all a: Ad, u : User | u -> a in sees
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => (p not in Ad && u -> f in follows && f -> p in posts)	}								all a: Ad, u : User | u -> a in sees
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts	}								all a: Ad, u : User | u -> a in sees
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts	}								all a: Ad, u1, u2 : User | u1 -> a in sees => u2 -> a in posts && u1 != u2
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts	}								all a: Ad, u1, u2 : User | u1 -> u2 in follows && u2 -> a in posts && u1 != u2 => u1 -> a in sees
+inv3 S: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts
+inv3 O: all u, f : User, p : Photo {	u -> p in sees => p not in Ad && u -> f in follows && f -> p in posts	}								all a: Ad, u1, u2 : User | u1 -> a in sees => u1 -> u2 in follows && u2 -> a in posts && u1 != u2
+

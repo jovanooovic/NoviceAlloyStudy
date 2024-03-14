@@ -1,0 +1,5 @@
+inv11 S: all st :Student, c:st.enrolled, g : Grade | p->g in c.grades
+inv11 B: all st :Student, c:st.enrolled, g : Grade | st->g in c.grades
+inv11 O: all st :Student, c:st.enrolled, g : Grade | st->g in c.grades	    all c: Course | (all p: Person, g: Grade | p->g in c.grades implies c in p.enrolled)
+inv11 U: all st :Student, c:Course, g : Grade | st->g in c.grades implies c in st.enrolled
+

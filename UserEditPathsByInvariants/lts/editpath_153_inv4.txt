@@ -1,0 +1,13 @@
+inv4 T: all s:State | s :> Init.trans
+inv4 T: all s:State | s :> Init.trans
+inv4 T: all s:State | s :>(Init.trans)
+inv4 T: all s:State | s <:(Init.trans)
+inv4 T: all s:State | s in (Init.trans)
+inv4 S: all s:State | s in :>(Init.trans)
+inv4 T: all s:State | s :>(Init.trans)
+inv4 T: all s:State | s :>(Init.^trans)
+inv4 T: all s:State | s :>(Init.trans.^trans)
+inv4 T: all s:State | Init.trans :> s
+inv4 T: all s:State | Init <: s.trans
+inv4 T: all s:State | Init <: s.trans
+

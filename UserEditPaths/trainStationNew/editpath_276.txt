@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: some t,x:Track| t in Entry and x in Exit
+inv2 C: all s:Signal| one t:Track| t->s in signals
+inv3 C: all t:Track| t in Exit iff no t.^succs
+inv4 B: all t:Track, x:Track-t| t in Entry iff t not in x.^succs
+inv4 O: all t:Track, x:Track| t in Entry iff t not in x.^succs
+inv4 C: all t:Track| t in Entry iff t not in Track.^succs
+inv5 B: all t:Track| t in Junction iff #t.succs>1
+inv5 C: all t:Track| t in Junction iff #succs.t>1
+inv6 S: all t:Entry, some s:Signal| t->s in signals implies s in Speed
+inv6 U: all t:Entry| some s:Signal| t->s in signals implies s in Speed
+inv6 C: all t:Entry| some s:Speed| t->s in signals
+inv6 C: all t:Entry| some s:Speed| t->s in signals
+inv7 C: all t:Track| t not in t.^succs
+inv8 E: 
+inv9 B: all t:Junction, x:Track| some s:Semaphore| t in x.^succs implies x->s in signals
+inv10 B: all t:Junction, x:Track| some s:Semaphore| t->x in succs implies x->s in signals
+inv10 S: all t:Junction, x:Track| some s:Semaphore| j in x.succs implies x->s in signals
+inv10 O: all t:Junction, x:Track| some s:Semaphore| t in x.succs implies x->s in signals
+

@@ -1,0 +1,17 @@
+inv3 O: lone State.trans
+inv3 O: all s:State | lone s.trans
+inv3 B: all s:State | lone trans.s
+inv3 T: trans.~trans in iden
+inv3 U: all s:State, e:Event | lone s.trans.e
+inv3 U: all s:State, e:Event | lone s.trans.e
+inv3 T: all s:State, e:Event | s.trans -> lone trans.e
+inv3 T: all s:State, e:Event | s.trans lone ->  trans.e
+inv3 T: all s:State, e:Event | trans.e lone ->  s.trans
+inv3 U: lone trans.Event
+inv3 U: lone trans.Event
+inv3 U: lone Event.trans
+inv3 T: all s,p:State | s.trans in Event & p.trans in Evente implies s=p
+inv3 T: all s,p:State | s.trans in Event & p.trans in Event implies s=p
+inv3 T: all s,p:State , e:Event | s.trans in e & p.trans in e implies s=p
+inv3 T: all s,p:State , e:Event | s.trans in e & p.trans in e implies s=p
+

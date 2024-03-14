@@ -1,0 +1,8 @@
+inv4 S: all t: Track | t in Entry <=> t not in Track.^succ
+inv4 C: all t: Track | t in Entry <=> t not in Track.^succs
+inv4 S: Track - Tracks.^succs
+inv4 T: Track - Track.^succs
+inv4 T: Track - Track.^succs
+inv4 C: Entry = Track - Track.^succs
+inv4 C: Entry = Track - Track.^succs
+

@@ -1,0 +1,19 @@
+Pairs,14
+,,"all l : link.File | eventually l in Trash",2
+,,"all f : link.File | eventually f in Trash",1
+,,"all f:File | some f.link implies eventually f in Trash",5
+,,"all f,g: File| f->g in link implies eventually f in Trash",1
+,,"all f: File| f in link.File implies eventually f in Trash",1
+,,"all f1,f2:File | f1->f2 in link implies eventually f1 in Trash",3
+,,"all f1:File , f2:File | f1->f2 in link implies eventually f1 in Trash",1
+
+Pairs,2
+,,"eventually all f:File | one f.link implies eventually f in Trash",1
+,,"eventually(all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)",1
+
+Pairs,1
+,,"always all l: File.link | eventually l in Trash since l in File.link",1
+
+Pairs,1
+,,"eventually (all f1,f2:File | eventually (f1->f2 in link implies f1 in Trash))",1
+

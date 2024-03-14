@@ -1,0 +1,6 @@
+inv2 S: all s : Signall | one signals.s
+inv2 C: all s : Signal | one signals.s
+inv2 B: all s1,s2 : Signal, t : Track | t -> s1 in signals and t -> s2 in signals implies s1=s2
+inv2 U: all s: Signal, t1,t2 : Track | t1 -> s in signals and t2 -> s in signals implies t1=t2
+inv2 C: all s: Signal, t1,t2 : Track | t1->s in signals and t2->s in signals implies t1=t2	all s : Signal | some t : Track | t->s in signals
+

@@ -1,0 +1,20 @@
+"all c : Class | no Student.Groups",1
+"(Student <: Class.Groups.Group) in Student",1
+"Group.~(Student <: Class.Groups) in Student",2
+"all c:Class | c.Groups in (Person ->Group)",1
+"all c : Class | Student.(c.Groups) in Group",4
+"all s : Student | s in Class implies s in Group",2
+"all c : Class, s : Student | some c.Groups",2
+"all c: Class | Student in Class.Groups.Group",1
+"all c : Class, s : Student | some c->s->Group",1
+"all c : Class | (Student.(c.Groups) & Group) in Group",1
+"all c: Class, s: Student | c.Groups[s] in Group",1
+"all s : Student, c : Class | s in c implies s in Group",2
+"all c : Class | all s : Student | some (c.Groups)",1
+"all c: Class | all s: Student | lone c.Groups.s",1
+"all c: Class | all s: Student | s.Groups in c.Groups",2
+"all c: Class | all s: Student | Groups.s in c.Groups",2
+"all c : Class | all s : c.Groups.Person | #s.Groups > 0",1
+"all c : Class | all s : c.Groups.Student | #s.Groups > 0",3
+"all c : Class | all s: Student | s<:c.Groups in c.Groups",1
+"all x:Class, p:Student| some g:Group | some (x.Groups).g",1

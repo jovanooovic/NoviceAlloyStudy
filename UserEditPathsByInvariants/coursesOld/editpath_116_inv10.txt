@@ -1,0 +1,4 @@
+inv10 T: all s:Student, c:Course | s->c not in enrolled implies all g:Grade | s->g not in grades
+inv10 B: all s:Student, c:Course | s->c not in enrolled implies all g:Grade | c->s->g not in grades
+inv10 C: all p:Person | p not in Student implies all c:Course, g:Grade | c->p->g not in grades
+

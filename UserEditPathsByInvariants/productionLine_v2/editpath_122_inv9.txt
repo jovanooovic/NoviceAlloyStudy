@@ -1,0 +1,13 @@
+inv9 U: one w: Workstation | Workstation in w.*succ
+inv9 U: all b: begin | Workstation in b.*succ
+inv9 B: all b: begin | Workstation in b.*succ	all e: end | e in (Workstation-e).*succ
+inv9 B: all w: Workstation | w = begin or w = end	all b: begin | Workstation in b.*succ
+inv9 U: all w: Workstation | w = begin or w = end or end in w.^succ	all b: begin | Workstation in b.*succ
+inv9 U: all w: Workstation | w = begin or w = end or end in w.^succ
+inv9 B: #Workstation > 1	all w: Workstation | w = begin or w = end or end in w.^succ
+inv9 U: all w: Workstation | w = begin or w = end or end in w.^succ
+inv9 U: all w: Workstation | w = begin => Workstation in w.*succ
+inv9 B: all w:Workstation-end | one succ	all w: Workstation | w = begin => Workstation in w.*succ
+inv9 U: all w:Workstation-end | one w.succ	all w: Workstation | w = begin => Workstation in w.*succ
+inv9 C: all w:Workstation-end | one w.succ	no end.succ	Workstation in begin.*succ
+

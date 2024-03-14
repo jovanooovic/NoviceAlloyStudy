@@ -1,0 +1,7 @@
+inv7 T: all x:Course, y:Project | x->y in projects implies some z:Student | lone z->y in projects
+inv7 T: all x:Course, y:Project | x->y in projects implies lone projects.y
+inv7 T: all x:Course, y:Project, z:Student | x->y in projects implies lone (z->y in projects)
+inv7 U: all x:Course, y:Project, z:Student | lone(z.projects & x.projects)
+inv7 U: all x:Course, z:Student | lone(z.projects & x.projects)
+inv7 U: all x:Course, z:Student | lone(z.projects & x.projects)
+

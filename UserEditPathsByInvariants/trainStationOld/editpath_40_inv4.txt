@@ -1,0 +1,13 @@
+inv4 U: pos.~pos in iden
+inv4 T: Train.pos.~pos in iden
+inv4 T: all t : Train, p : t.pos | pos.~p in iden
+inv4 T: all t : Train | t.~pos in iden
+inv4 T: all t : Train | t.pos.~pos in iden
+inv4 T: Train.pos in iden
+inv4 T: all t : Train | t.pos in iden
+inv4 T: all t : Train | t.~pos in iden
+inv4 B: all t1,t2 : Train | no (t1.pos & t2.pos)
+inv4 O: always (all t1,t2 : Train | no (t1.pos & t2.pos))
+inv4 C: always (all disj t1,t2 : Train | no (t1.pos & t2.pos))
+inv4 C: always (all disj t1,t2 : Train | no (t1.pos & t2.pos))
+

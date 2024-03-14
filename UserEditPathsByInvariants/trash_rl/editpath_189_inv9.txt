@@ -1,0 +1,13 @@
+inv9 T: all f,l : univ | f->l in link implies not l.link
+inv9 B: all o : univ | File->o not in link
+inv9 T: all f,l : univ | f->l in link implies not l.link
+inv9 O: all f,l : univ | f->l in link implies l not in File.link
+inv9 O: all f,l : univ | f->l in link implies l not in File.link
+inv9 O: no File.link
+inv9 O: all f,l : File | f->l in link implies l not in File.link
+inv9 T: all f1,f2 : univ | f1->File implies no File.link
+inv9 T: all f1,f2 : univ | f1->f2 implies no f2.link
+inv9 T: all f1,f2 : univ | f1->f2 implies File.link not in f2
+inv9 B: all f1,f2 : univ | f1->f2 in link implies File.link not in f2
+inv9 C: all f1,f2 : univ | f1->f2 in link implies no f2.link
+

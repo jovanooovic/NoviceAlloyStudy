@@ -1,0 +1,9 @@
+inv4 S: all u : User | all u.posts in Ad or all u.posts not in Ad
+inv4 U: all u : User | u.posts in Ad or  u.posts not in Ad
+inv4 T: all u : User | some u.posts in Ad => all p : u.posts | p in Ad
+inv4 T: all u : User | (some u.posts in Ad) => all p : u.posts | p in Ad
+inv4 T: all u : User | (some u.posts in Ad) => (all p : u.posts | p in Ad)
+inv4 C: all u : User | (some pt : u.posts | pt in Ad) => (all p : u.posts | p in Ad)
+inv4 C: all u : User | (some pt : u.posts | pt in Ad) => (all p : u.posts | p in Ad)
+inv4 C: all u : User | (some pt : u.posts | pt in Ad) => (all p : u.posts | p in Ad)
+

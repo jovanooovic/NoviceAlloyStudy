@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 C: some Exit and some Entry
+inv2 C: all s:Signal | one signals.s
+inv3 C: all t:Track | no t.succs <=> t in Exit
+inv4 C: all t:Track | no succs.t <=> t in Entry
+inv5 C: all t:Track | some succs.t and not one succs.t <=> t in Junction
+inv6 C: all e:Entry | some s:Speed | e->s in signals
+inv7 C: all t:Track | t not in t.^succs
+inv8 C: all e:Entry, x:Exit | x in e.*succs
+inv9 B: all t:Track, j:Junction | not t->j in succs => (not some s:Semaphore | t->s in signals)
+inv10 C: all j:Junction, t:Track | t in succs.j => (some s:Semaphore | t->s in signals)
+NA H: THEME UPDATE
+

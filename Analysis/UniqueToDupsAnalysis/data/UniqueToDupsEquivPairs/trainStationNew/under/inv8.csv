@@ -1,0 +1,17 @@
+Pairs,4
+,,"Exit in Track.*succs",1
+,,"all t1: Track, t2: 1.^succs | some t1&Entry implies some t2&Exit",1
+,,"all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => x.^(succs) in Entry",1
+,,"all x : Track | x in Entry-Exit => x.^(succs) in Exit && x in Exit-Entry => ^(succs).x in Entry",1
+
+Pairs,1
+,,"(Entry - Exit)->(Exit - Entry) in ^succs",1
+
+Pairs,8
+,,"all e : Entry | Exit in e.^succs or e in Exit",2
+,,"all e : Entry |e not in Exit implies Exit in e.^succs",1
+,,"all e : Entry, ex : Exit | ex in e.(^succs) or e in Exit",2
+,,"all e : Entry | all ex:Exit | ex in e.^succs or e in Exit",1
+,,"all t: Track| some t&Entry implies (Exit in t.^succs or some t&Exit)",1
+,,"all t: Track | some t&Entry implies (Exit in t.*succs or some t&Exit)",1
+

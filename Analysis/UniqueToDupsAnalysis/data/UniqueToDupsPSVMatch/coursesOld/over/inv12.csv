@@ -1,0 +1,36 @@
+"lone Course.grades",3
+"grades in Course -> Student -> one Grade",2
+"grades in Course -> Student -> lone Grade",7
+"all c:Course | lone c.grades",6
+"grades in Course some -> set Person -> lone Grade",1
+"grades in Course some -> some Person -> lone Grade",1
+"all c:Course,g:Grade | lone c.grades",1
+"all s : Person, c: Course | lone c.grades",2
+"all c : Course | c.grades in Person -> one Grade",1
+"all c : Course | c.grades in Person lone -> one Grade",1
+"all c : Course | c.grades in Person lone -> lone Grade",1
+"all c : Course | all g: Grade | g in c.grades.Person",1
+"all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2",5
+"all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and s1 != none",1
+"all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and g1 != none and g2 != none",1
+"all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and s1 != none and s2 != none",1
+"all g : Grade | g in Course.grades.Person
+	all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1!=s2",1
+"all c : Course | all g: Grade | g in c.grades.Grade
+	all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2",1
+"all c : Course | all g: Grade | g in c.grades.Person
+	all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2",2
+"all g : Grade | g in Course.grades.Person
+	all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2",1
+"all c : Course | c.grades.Grade != none implies c.grades.Person != none
+	all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2",4
+"all c : Course | (c.grades.Grade != none) <=> (c.grades.Person != none)
+	all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2",1
+"all p: Person | all g : Grade | p->g in Course.grades
+	all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2",1
+"all g : Grade | some s : Student | s->g in Course.grades
+	all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2",1
+"all c : Course | all g: Grade | g in c.grades.Person
+	all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled",2
+"all c : Course | all p : Person | p in c.grades.Grade implies p in Student
+	all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled",1

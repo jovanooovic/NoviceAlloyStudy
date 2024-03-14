@@ -1,0 +1,13 @@
+inv2 U: all w : Workstation, wr : Worker | some w.workers and lone workers.wr
+inv2 U: all w : Workstation, wr : Worker | some w.workers and one workers.wr
+inv2 U: all w : Workstation, wr : Worker | some w.workers and one workers.wr
+inv2 T: all w : Workstation, wr : Worker | some w.workers and one w.workers.wr
+inv2 T: all w : Workstation, wr : Worker | some w.workers and one w.workers.wr
+inv2 T: all w : Workstation, wr : Worker | some w.workers and wr in workers
+inv2 B: all w : Workstation, wr : Worker | some w.workers and wr in w.workers
+inv2 T: all w : Workstation | some w.workers	all wr : Worker | one Workstation.workers.wr
+inv2 U: all w : Workstation | some w.workers	all wr : Worker | wr in Workstation.workers
+inv2 C: all w : Workstation | some w.workers	all wr : Worker | one workers.wr
+inv2 U: all w : Workstation, wr : Worker | some w.workers and one workers.wr
+inv2 U: all w : Workstation, wr : Worker | (some w.workers) and one workers.wr
+

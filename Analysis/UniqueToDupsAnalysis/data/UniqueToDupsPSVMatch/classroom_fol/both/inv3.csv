@@ -1,0 +1,15 @@
+"Student != Teacher",2
+"Student not in Teacher",2
+"Person = Student + Teacher",2
+"Person = Teacher + Student",1
+"not (all p : Person | p in Student)",1
+"(Person in Teacher) iff not (Person in Student)",1
+"all p:Person | p in Student or p in Teacher",14
+"all p:Person | p in Teacher or p in Student",4
+"all p:Person | p in Student implies p in Teacher",1
+"all p:Person | p in Teacher implies p in Student",1
+"not (all p : Person | p in Student and p in Teacher)",3
+"all p : Person { 
+    all p : Person | p in Teacher or p in Student
+  }",1
+"all p : Person | p not in Teacher implies p in Student or p not in Student implies p in Teacher",1

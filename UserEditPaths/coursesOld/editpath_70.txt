@@ -1,0 +1,46 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+inv2 C: all p : Person, c : Course | c in p.teaches implies p in Professor
+inv3 S: all c : Courses | some p : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all pr : Project | some p : Person | pr in p.projects
+inv6 B: all p : Person, pr : Project, c : Course | pr in p.projects and pr in c.projects implies c in p.enrolled
+inv6 B: all s: Student, p: s.projects | no (p & (Course-(s.enrolled)).projects)
+inv5 U: all p : Person | some p.projects implies p in Student
+inv5 C: all p : Person | some p.projects implies p in Student	  	all pr : Project | some p : Person | pr in p.projects
+inv7 B: all s : Student, c : s.enrolled, p : c.projects | one p & s.projects
+inv7 B: all s : Student, c : s.enrolled, p : c.projects | one p & s.projects
+inv7 B: all s : Student | one (s.projects & s.enrolled.projects)
+inv7 B: all s : Student | lone (s.projects & s.enrolled.projects)
+inv7 B: all s : Student | lone s.enrolled.projects & s.projects
+inv7 S: all s : Student, c : course | c in s.enrolled implies lone c.projects & s.projects
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone c.projects & s.projects
+inv8 B: no Professor.enrolled & Professor.teaches
+inv8 U: all p : Professor, c : Course | c in p.enrolled implies c not in p.teaches
+inv8 U: all p:Professor | no (p.teaches & p.enrolled)
+inv9 B: all p, p2 : Professor, c : Course | c in p.teaches and c in p2.teaches implies c not in p2.teaches
+inv9 B: all p1,p2:Professor | some (p1.teaches & p2.teaches) implies no (p1.teaches & p2.enrolled) and no (p1.enrolled & p2.teaches)
+inv10 B: no Course.grades.Grade & Professor
+inv10 C: Course.grades.Grade in Student
+inv10 C: no Course.grades.Grade & Person-Student
+inv11 U: all s : Student, c : Course - s.enrolled | no c.grades.s
+inv11 U: all s : Student, c : Course - (s.enrolled) | no c.grades.s
+inv11 U: all s : Student, c : Course - (s.enrolled) | c not in c.grades.Grade
+inv11 U: all s : Student, c : Course - (s.enrolled) | s not in c.grades.Grade
+inv12 U: all s : Student, c : Course | c in s.enrolled implies lone s & c.grades.Grade
+inv12 U: all s : Student | lone Course.grades.Grade & s
+inv12 U: all s : Student, c : s.enrolled | lone g : Grade | s in c.grades.g
+inv13 T: all c : Course | c.grades.first
+inv13 T: all c : Course | c.grades.first & Person
+inv13 B: all c : Course | no c.grades.first & Person
+inv13 O: all c : Course, s : c.grades.last | one c.projects & s.projects
+inv13 B: all c : Course, s : c.grades.last | one  s.projects
+inv14 B: all s, s2 : Student | lone s.projects & s2.projects
+inv14 U: all s, s2 : Student | s not in s2 implies lone s.projects & s2.projects
+inv14 U: all s, s2 : Student | s != s2 implies lone s.projects & s2.projects
+inv15 B: all s1, s2: Student, p: Project, c: Course, g1, g2: Grade | s1 != s2 and p in s1.projects and p in s2.projects and p in c.projects and g1 in s1.(c.grades) and g2 in s2.(c.grades) => g1 = prev[g2] or g2 = prev[g1] or g1 = g2
+inv15 B: all s1, s2: Student, p: Project, c: Course, g1, g2: Grade | s1 != s2 and p in s1.projects and p in s2.projects  and g1 in s1.(c.grades) and g2 in s2.(c.grades) => g1 = prev[g2] or g2 = prev[g1] or g1 = g2
+inv15 B: all s1, s2: Student, p: Project, c: Course, g1, g2: Grade | s1 != s2 and p in s1.projects and p in s2.projects and p in c.projects and g1 in s1.(c.grades) and g2 in s2.(c.grades) => g1 = prev[g2] or g2 = prev[g1] or g1 = g2
+

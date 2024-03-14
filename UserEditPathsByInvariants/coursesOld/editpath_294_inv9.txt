@@ -1,0 +1,9 @@
+inv9 B: all disj p1, p2 : Professor, c : p1.teaches | p2 not in enrolled.c
+inv9 U: all disj p1, p2 : Professor, c : Course | (p1 in teaches.c and p2 in teaches.c) implies p2 not in enrolled.c
+inv9 U: all disj p1, p2 : Professor, c : Course | (p1 in teaches.c and p2 in teaches.c) implies (all c : p1.teaches | p2 not in enrolled.c)
+inv9 B: all disj p1, p2 : Professor, c : Course | (p1 & p2) in teaches.c implies (all c : p1.teaches | p2 not in enrolled.c)
+inv9 T: all disj p1, p2 : Professor, c : Course | (p1 and p2) in teaches.c implies (all c : p1.teaches | p2 not in enrolled.c)
+inv9 B: all disj p1, p2 : Professor, c : Course | (p1 & p2) in teaches.c implies (all c : p1.teaches | p2 not in enrolled.c)
+inv9 U: all disj p1, p2 : Professor, c : Course | (p1 in teaches.c and p2 in teaches.c) implies (all c : p1.teaches |p2 not in enrolled.c)
+inv9 U: all disj p1, p2 : Professor, c : Course | (p1 in teaches.c and p2 in teaches.c) implies (all c : p1.teaches |p2 not in enrolled.c)
+

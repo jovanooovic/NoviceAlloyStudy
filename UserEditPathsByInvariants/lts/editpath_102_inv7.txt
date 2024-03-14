@@ -1,0 +1,9 @@
+inv7 S: some i: Initial, r: Event.State.trans | i in r.^trans
+inv7 T: some i: Init, r: Event.State.trans | i in r.^trans
+inv7 T: some i: Init, r: Event.(State.trans) | i in r.^trans
+inv7 B: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  some i: Init, r: Event.(State.trans) | i in r.^adj
+inv7 S: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all r: Event.(State.trans) | some i: Init,  | i in r.^adj
+inv7 O: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all r: Event.(State.trans) | some i: Init | i in r.^adj
+inv7 S: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all r: Init.^ts | some i: Init | i in r.^adj
+inv7 C: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all r: Init.^adj | some i: Init | i in r.^adj
+

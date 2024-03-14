@@ -1,0 +1,13 @@
+inv12 T: all c:Class,t:Teacher,g:Group | lone t in c.Groups.g
+inv12 B: all c:Class,t:Teacher,g:Group | t in c.Groups.g
+inv12 T: all c:Class,t:Teacher,g:Group | one t in c.Groups.g
+inv12 B: all c:Class,t:Teacher,g:Group | one c.Groups.g
+inv12 T: all c:Class,t:Teacher,g:Group | one c.Groups.t.g
+inv12 B: all c:Class,t:Teacher,g:Group | one c.Groups.g
+inv12 T: all c:Class,t:Teacher,g:Group | lone t.(c.Groups.g)
+inv12 T: all c:Class,t:Teacher,g:Group | c.Groups.g
+inv12 B: all c:Class,t:Teacher,g:Group | lone c.Groups.g
+inv12 B: all c:Class,t:Teacher,g:Group | t in c.Groups.g
+inv12 B: all c:Class,g:Group |some t:Teacher | t in c.Groups.g
+inv12 T: all c:Class,g:Group |some t:Teacher | lone t in c.Groups.g
+

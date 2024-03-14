@@ -1,0 +1,8 @@
+inv10 S: all p : Person, c : Courses | no (p & Students) implies p not in c.grades
+inv10 S: all p : Person, c : Courses| no (p & Students) implies p not in c.grades
+inv10 S: all p : Person, c : Course | no (p & Students) implies p not in c.grades
+inv10 T: all p : Person, c : Course | no (p & Student) implies p not in c.grades
+inv10 T: all p : Person - Student , c : Course | p not in c.grades
+inv10 C: all p : Person - Student , c : Course | p not in c.grades.Grade
+inv10 C: all p : Person - Student , c : Course | p not in c.grades.Grade
+

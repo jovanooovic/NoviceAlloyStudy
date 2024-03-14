@@ -1,0 +1,4 @@
+inv7 E:
+inv7 S: all u1, u2, u3 | (u1->u2 in follows && u2->u3 in follows && not u1->u3 in follows) => u1->u3 in suggested
+inv7 S: all u1, u3 : User | some u2 | (u1->u2 in follows && u2->u3 in follows && not u1->u3 in follows && u1 != u2 && u2 != u3 && u1 != u3) <=> (u1->u3 in suggested)
+

@@ -1,0 +1,21 @@
+inv3 T: all x, y : User | x sees y.posts -> x.follows.y
+inv3 T: all x, y : User | x sees y.posts -> x.follows.y
+inv3 T: all x, y : User | x sees y.posts -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in x.follows
+inv3 T: all x, y : User | y.posts in sees.x -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in x.follows
+inv3 T: all x, y : User | y.posts in x.sees -> y in follows.x
+inv3 T: all x, y : User | posts.y in sees.x -> y in follows.x
+inv3 T: all x, y : User |  x.sees.posts.y -> y in follows.x
+inv3 T: all x, y : User |  x.sees.y.posts -> y in follows.x
+inv3 T: all x, y : User |  y in follows.x -> y.posts in x.sees
+inv3 T: all x, y : User |  y in follows.x -> posts.y in x.sees
+inv3 T: all x, y : User |  y in x.follows -> posts.y in x.sees
+inv3 S: all x, y : User |  y in x.follows | posts.y in x.sees
+inv3 S: all x, y : User |  y in x.follows | y.posts in x.sees
+inv3 S: all x, y : User |  y in x.follows | x.sees in y.posts
+inv3 S: all x : User | all y : User |  y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User |  y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts
+inv3 S: some x : User | all y : User | y in x.follows | x.sees in y.posts
+

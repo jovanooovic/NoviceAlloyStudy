@@ -1,0 +1,7 @@
+inv12 B: all s:Student | lone g: Grade | all c:Course | c->s->g in grades
+inv12 T: all s:Student | all g1,g2: Grade | all c:Course | c->s->g1 in grades and c->s->g2 => g1=g2
+inv12 U: all s:Student | all g1,g2: Grade | all c:Course | c->s->g1 in grades and c->s->g2 in grades => g1=g2
+inv12 B: all s:Student | lone g1,g2: Grade | all c:Course | c->s->g1 in grades and c->s->g2 in grades => g1=g2
+inv12 U: all s:Student | all g1,g2: Grade | all c:Course | c->s->g1 in grades and c->s->g2 in grades => g1=g2
+inv12 U: all s:Student  | all c:Course | s in enrolled.c => lone g: Grade | c->s->g in grades
+

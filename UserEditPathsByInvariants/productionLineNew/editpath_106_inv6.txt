@@ -1,0 +1,6 @@
+inv6 S: all c: Components | c not in c.parts
+inv6 U: all c: Component | c not in c.parts
+inv6 U: all c: Component | not (c in c.parts)
+inv6 U: all c: Component | not (c in parts.c)
+inv6 O: all c: Component | not (some p : Product | c in p.parts)
+

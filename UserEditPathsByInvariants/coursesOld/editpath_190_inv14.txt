@@ -1,0 +1,11 @@
+inv14 S: all s1, s2 : Student, p : Project | (p in s1.projects and p in s2.projects) => all p1 : (Project - p) | p1 not in s1.projects or p2 not in s2.projects
+inv14 B: all s1, s2 : Student, p : Project | (p in s1.projects and p in s2.projects) => all p1 : (Project - p) | p1 not in s1.projects or p1 not in s2.projects
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 O: all s1, s2 : Person | lone s1.projects & s2.projects
+inv14 C: all s1, s2 : Person | lone s1.projects & s2.projects or s1 = s2
+inv14 S: all s1, s2 : Person | lone s1.projects & s2.projects or s1 == s2
+inv14 U: all s1, s2 : Student | lone s1.projects & s2.projects or s1 = s2
+inv14 U: all s1, s2 : Student | lone s1.projects & s2.projects or s1 = s2
+inv14 B: all s1, s2 : Student | lone s1.projects & s2.projects
+inv14 U: all s1, s2 : Student | s1 != s2 => lone s1.projects & s2.projects
+

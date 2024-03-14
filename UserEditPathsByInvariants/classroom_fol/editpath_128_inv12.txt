@@ -1,0 +1,24 @@
+inv12 O: all t:Teacher | some g : Group | t->g in Tutors
+inv12 S: all t:Teacher | some p->Person | t->p in Tutors
+inv12 B: all t : Teacher | some p:Person | t->p in Tutors
+inv12 S: all x : Class | (some p: Person, g : Group | x->p->g in Groups) implies (some t : Teacher | t->g in Tutors)
+inv12 S: all x : Class | (some p: Person, g : Group | x->p->g in Groups) implies (some t : Teacher | t->g in Tutors)
+inv12 S: all t: Teacher , x :Class | (some g : Group | x->p->g in Groups) implies t->g in Tutors
+inv12 S: all t: Teacher , x :Class | (some g : Group | x->t->g in Groups) implies t->g in Tutors
+inv12 S: all t: Teacher , x :Class | some g : Group | x->t->g in Groups | t->g in Tutors
+inv12 B: all t: Teacher , x :Class | (t->x in Teaches) implies some g : Group | t->g in Tutors
+inv12 O: all t: Teacher | some g : Group| t->g in Tutors
+inv12 O: all t: Teacher | some g : Group| t->g in Tutors
+inv12 S: all t: Teacher| (some x:Class | t->x in Teachers) implies some g:Group | t->g in Tutors
+inv12 B: all t: Teacher| (some x:Class | t->x in Teaches) implies some g:Group | t->g in Tutors
+inv12 S: all t: Teacher| (some x:Class | t->x in Teaches) implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 B: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->t->g in Groups
+inv12 T: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->g in Groups
+inv12 B: all t: Teacher| some x:Class | t->x in Teaches implies some g:Group | x->t->g in Groups
+

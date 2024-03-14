@@ -1,0 +1,6 @@
+inv1 B: all t1,t2,t : Track | t1 in Entry and t2 in Exit implies (t1 in t.succs and t2 in t.succs)
+inv1 B: all t : Track | some exit : Exit | some entry : Entry | exit in t.succs and entry in t.succs
+inv1 T: all t : Track | some exit : Exit | some entry : Entry | t implies exit in t.succs and entry in t.succs
+inv1 S: some exit : Exit | some entry : Entry | exit in Track and entry in Tracck
+inv1 C: some exit : Exit | some entry : Entry | exit in Track and entry in Track
+

@@ -1,0 +1,7 @@
+inv1 O: some x : Track | x = Entry	some x : Track | x = Exit
+inv1 S: some Entry : Track	some Exit : Track
+inv1 T: (Entry & Track)	(Exit & Track)
+inv1 C: some (Entry & Track)	some (Exit & Track)
+inv1 C: some x : Entry | x in Track	some x : Exit | x in Track
+inv1 C: #Entry >= 1	#Exit >= 1
+

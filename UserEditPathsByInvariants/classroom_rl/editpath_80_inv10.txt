@@ -1,0 +1,5 @@
+inv10 T: all c:Class { all s:Student { some g:Group | g in s.Class }}
+inv10 O: all c:Class { all s:Student | some g:Group | g in c.Groups.s}
+inv10 O: all s:Student { some g:Group | g in Class.Groups.s}
+inv10 T: all s:Student { some g:Group | g in Class.s.Groups}
+

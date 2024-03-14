@@ -1,0 +1,36 @@
+inv15 S: for p in Person | p . *Tutors in Teacher
+inv15 S: for p in Person | (p.*Tutors) in Teacher
+inv15 S: for p in Person | (p.*Tutors) in Teacher
+inv15 S: for p in Person | (p.*Tutors) in Teacher
+inv15 S: for p : Person | (p.*Tutors) in Teacher
+inv15 B: all p : Person | (p.*Tutors) in Teacher
+inv15 S: all p : Person | (p.+Tutors) in Teacher
+inv15 B: all p : Person | (p.^Tutors) in Teacher
+inv15 B: all p : Person | (*Tutors.p) in Teacher
+inv15 B: all p : Person | p in Teacher or (p.*Tutors) in Teacher
+inv15 B: all p : Person | (p -> p in Tutors and p in Teacher) or (p.*Tutors) in Teacher
+inv15 B: all p : Person | (p.*Tutors) in Teacher
+inv15 B: all p : Person | (*Tutors.p) in Teacher
+inv15 S: all p : Person | (p*Tutors.p) in Teacher
+inv15 T: all p : Person | (p.*Tutors.p) in Teacher
+inv15 B: all p : Person | (*Tutors.p) in Teacher
+inv15 B: all p : Person | (p.^Tutors) in Teacher
+inv15 B: all p : Person | p in Teacher or (p.^Tutors) in Teacher
+inv15 B: all p : Person | some (p.*Tutors) & Teacher
+inv15 B: all p : Person | some (p.*Tutors & Teacher)
+inv15 B: all p : Person | some (p.*Tutors) & Teacher
+inv15 B: all p : Person | some (p.^Tutors) & Teacher
+inv15 U: all p : Person | some (p.^Tutors) + (^Tutors.p) & Teacher
+inv15 U: all p : Person | some ((p.^Tutors) + (^Tutors.p)) & Teacher
+inv15 B: all p : Person | some p.^Tutors & Teacher
+inv15 B: all p : Person | some p.^Tutors & Teacher
+inv15 B: all p : Person | some p.^Tutors & Teacher
+inv15 B: all p : Person | one p.^Tutors & Teacher
+inv15 B: all p : Person | some p.^Tutors & Teacher or p in Teacher
+inv15 B: all p : Person | some p.^Tutors & Teacher or (p -> p in Tutors and p in Teacher)
+inv15 C: all p : Person | some ^Tutors.p & Teacher
+inv15 T: all p : Person | some ^Tutors.p in Teacher
+inv15 C: all p : Person | some ^Tutors.p & Teacher
+inv15 T: all p : Person | some ^Tutors.p in Teacher
+inv15 C: all p : Person | some ^Tutors.p & Teacher
+

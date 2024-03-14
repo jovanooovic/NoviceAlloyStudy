@@ -1,0 +1,9 @@
+inv2 C: all x: User | all y: follows.x | y != x
+inv2 B: all x: User | all y: follows.x | y = x
+inv2 C: all x: User | all y: follows.x | y != x
+inv2 S: all x: User | all y: User | follows.x | y!=x
+inv2 S: all x: User | all y: User | follows.x | y!=x
+inv2 C: all x: User | all y: follows.x | y!=x
+inv2 S: all x, y: User | y =follows.x | x not in y
+inv2 C: all x: User | x not in follows.x
+

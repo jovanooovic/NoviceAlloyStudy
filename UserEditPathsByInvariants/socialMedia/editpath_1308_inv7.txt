@@ -1,0 +1,31 @@
+inv7 B: all u1:User | some u2:u1.follows | u2.follows-u1 in u1.suggested
+inv7 B: all u1:User | some u2:u1.follows | u2.follows-u1.follows in u1.suggested
+inv7 B: all u1:User | some u2:u1.follows | u2.follows-u1.follows-u1 in u1.suggested
+inv7 B: all u1:User | some u2:u1.follows | (u2.follows-u1.follows)-u1 in u1.suggested
+inv7 U: all u1,s:User | s in u1.suggested implies s in u1.follows.follows
+inv7 S: all u,s:User | s in u1.suggested implies s in u.follows.follows
+inv7 U: all u,s:User | s in u.suggested implies s in u.follows.follows
+inv7 U: all u:User | some s:User | s in u.suggested implies s in u.follows.follows
+inv7 S: all u:User | s: u.suggested | s in u.follows.follows
+inv7 U: all u:User | all s: u.suggested | s in u.follows.follows
+inv7 U: all u:User | all s: u.suggested | s in u.follows.follows and s!=u
+inv7 S: disj u,s:User | s in u.suggested implies s in u.follows.follows
+inv7 S: disj u,s:User | s in u.suggested iff s in u.follows.follows
+inv7 B: all disj u,s:User | s in u.suggested iff s in u.follows.follows
+inv7 B: all disj u,s:User | s in u.suggested iff s in u.follows.follows and s!=u
+inv7 S: all disj u,s:User | s in u.suggested implies s in u.follows.follows
+inv7 S: all u:User | some s: u.suggested | s in u.follows.follows and s!=u	all disj u,s:User | s in u.suggested iff s in u.follows.follows
+inv7 S: all u:User | some s: u.suggested | s in u.follows.follows and s!=u
+inv7 S: all u:User | some s: u.suggested | s in u.follows.follows and s!=u
+inv7 B: all u:User | some s: u.suggested | s in u.follows.follows and s!=u
+inv7 U: all u:User | all s: u.suggested | s in u.follows.follows and s!=u
+inv7 U: all u:User | all s: u.suggested | s in u.follows.follows and s!=u	all u,s:User | s not in u.follows and s in u.suggested implies s in u.follows.follows
+inv7 U: all u,s:User | s not in u.follows and s in u.suggested implies s in u.follows.follows
+inv7 U: all u,s:User | s in u.suggested implies s in u.follows.follows and s not in u.follows
+inv7 O: all u,s:User | (s in u.suggested implies s in u.follows.follows) and s not in u.follows
+inv7 B: all disj u,s:User | (s in u.suggested implies s in u.follows.follows) and s not in u.follows
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: disj all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: disj all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and u!=s)
+inv7 C: all u,s : User | s in u.suggested iff (s in u.follows.follows and s not in u.follows and u!=s)
+

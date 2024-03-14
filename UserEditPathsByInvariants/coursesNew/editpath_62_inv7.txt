@@ -1,0 +1,5 @@
+inv7 O: all pro1,pro2 : Project | all per : Person | all c : Course | (pro1 in per.projects and pro2 in per.projects and pro1 in c.projects) implies pro2 not in c.projects
+inv7 B: all pro1,pro2 : Project | all per : Person | all c : Course | (per in Student and pro1 in per.projects and pro2 in per.projects and pro1 in c.projects) implies pro2 not in c.projects
+inv7 U: all pro1,pro2 : Project | all per : Person | all c : Course | (per in Student and pro1 in per.projects and pro2 in per.projects and pro1 in c.projects and pro1 != pro2) implies pro2 not in c.projects
+inv7 C: all pro1,pro2 : Project | all per : Person | all c : Course | ( pro1 in per.projects and pro2 in per.projects and pro1 in c.projects and pro1 != pro2) implies pro2 not in c.projects
+

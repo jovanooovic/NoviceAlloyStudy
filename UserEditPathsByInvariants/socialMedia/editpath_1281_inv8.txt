@@ -1,0 +1,10 @@
+inv8 T: all u,v: User| u.sees in Ad implies u.follows or u.suggested
+inv8 T: all u: User| u.sees in Ad implies u.follows or u.suggested
+inv8 T: all u: User| u.sees in Ad implies (u.follows or u.suggested)
+inv8 T: all u: User| u.sees in Ad implies (follows.u or suggested.u)
+inv8 T: all u: User| u.sees in Ad and follows.u or suggested.u
+inv8 T: all u: User| u.sees + Ad and follows.u or suggested.u
+inv8 T: all u: User| u.sees in Ad + follows.u or suggested.u
+inv8 T: all u,v: User| u.sees in Ad and v.posts implies u in v.follows or u in v.suggests
+inv8 T: all u,v: User| u.sees in Ad and v.posts implies u in follows.v or u in suggested.v
+

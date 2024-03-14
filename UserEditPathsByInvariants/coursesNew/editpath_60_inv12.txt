@@ -1,0 +1,9 @@
+inv12 T: all x: Student, c : x.enrolled | lone c.x.Grade
+inv12 U: all x: Student, c : x.enrolled | lone c.grades.x
+inv12 U: all x: Student, c : x.enrolled | lone c.grades.x
+inv12 U: all x: Student, c : x.enrolled | lone (x & c.grades.Grade)
+inv12 U: all x: Person, c: x.enrolled | lone (x & c.grades.Grade)
+inv12 U: all x: Person, c: x.enrolled | lone (x & Course.grades.Grade)
+inv12 B: all x: Person, c: x.enrolled | lone (Person & Course.grades.Grade)
+inv12 U: all x: Course, y: enrolled.x | lone (y & x.grades.Grade)
+

@@ -1,0 +1,5 @@
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone c.grades.s
+inv7 B: all s: Student, c: Course | c in s.enrolled implies lone c.grades.Grade
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone s & c.grades.Grade
+inv7 U: all s: Student, c: Course, proj1: Project, proj2: Project | proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj2 in c.projects implies proj1 = proj2
+

@@ -1,0 +1,11 @@
+inv4 S: all a: Ad | all ps in posts.a.posts | ps in Ad	all u: User | some p: u.posts | (p in Ad) -> all ps in u.posts
+inv4 S: all a: Ad | all ps in posts.a.posts | ps in Ad
+inv4 S: all u: User | some p in u.posts => (all ps in u.posts | ps in Ad)
+inv4 S: all u: User | some p in u.posts => p in Ad
+inv4 S: all u: User | (some p in u.posts) => (p in Ad)
+inv4 S: all u: User | (some p in u.posts | p in Ad) => (all ps in u.posts | ps in Ad)
+inv4 S: all u: User | (some p in u.posts | p in Ad) => (u.posts in Ad)
+inv4 E:
+inv4 S: all u: User | (some p in u.posts | p in Ad) => (u.posts in Ad)
+inv4 S: all u: User | (some p in u.posts | p in Ad) => (u.posts in Ad)
+

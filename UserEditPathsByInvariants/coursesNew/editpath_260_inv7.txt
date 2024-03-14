@@ -1,0 +1,5 @@
+inv7 S: all s1 : Person | all ps1,ps2 : project | ps1 in s1.projects and ps2 in s1.projects implies ps1 = ps2
+inv7 O: all s1 : Person | all ps1,ps2 : Project | ps1 in s1.projects and ps2 in s1.projects implies ps1 = ps2
+inv7 O: all s1 : Person | all ps1,ps2 : Project | ps1 in s1.projects and ps2 in s1.projects implies ps1 = ps2
+inv7 C: all s1 : Person | all ps1,ps2 : Project | ps1 in s1.projects and ps2 in s1.projects and (some c1 : Course | ps1 in c1.projects and ps2 in c1.projects) implies ps1 = ps2
+

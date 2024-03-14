@@ -1,0 +1,7 @@
+NA H: THEME UPDATE
+inv3 C: all u : User, p : Photo | u->p in sees =>	p in Ad	|| some f : User | u->f in follows && f->p in posts
+inv3 C: all u : User, p : Photo | u->p in sees =>	p in Ad || some f : User | u->f in follows && f->p in posts
+inv7 U: all u, s : User | u->s in suggested =>	u->s not in follows && some f : User | u->f in follows && f->s in follows
+inv7 U: all u, s : User | u->s in suggested =>	u->s not in follows && some f : User | u != s && u->f in follows && f->s in follows
+inv7 B: all u, s : User |	u->s in suggested =>	u->s not in follows	&& s not in Influencer	&& some f : User | u != s && u->f in follows && f->s in follows
+

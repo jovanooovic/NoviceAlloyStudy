@@ -1,0 +1,18 @@
+inv12 S: all s : Student , c : s.enrolled| lone c.grades.grade.s
+inv12 T: all s : Student , c : s.enrolled| lone c.grades.Grade.s
+inv12 T: all s : Student , c : s.enrolled | lone c.grades.Grade.s
+inv12 T: all s : Student , c : Grade | lone c.grades.Grade.s
+inv12 T: all s : Student , c : Course | lone c.grades.Grade.s
+inv12 T: all s : Student , c : Course | lone c.grades.Person.s
+inv12 U: all s : Student , c : Course | lone c.grades.Person
+inv12 B: all s : Student , c : Course | lone c.grades.Grade
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled	  	  	all s : Student, c : s.enrolled | lone c.grades.Grade
+inv12 T: all s : Student | lone grades.Grade.s & s.enrolled	  	  	all s : Student, c : s.enrolled | lone c.grades.Grade.s
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled	  	  	all s : Student, c : s.enrolled | lone grades.Grade.s
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled	  	  	all s : Student | lone grades.Grade.s
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled
+inv12 B: all s : Student | lone grades.Grade.s & s.enrolled
+inv12 S: /all s : Student | lone grades.Grade.s
+inv12 B: all s : Student | lone grades.Grade.s
+

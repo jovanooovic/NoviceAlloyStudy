@@ -1,0 +1,17 @@
+inv5 B: all t : Train.pos | some (t & Exit) implies  no t'
+inv5 B: all t : Train | some (t.pos & Exit) implies  Train' = Train - t
+inv5 B: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) else( t.pos' in t.pos.prox)
+inv5 T: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) else( t.pos' & t.pos.prox)
+inv5 S: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t) ( else( t.pos' & t.pos.prox))
+inv5 S: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t)  else( t.pos' & t.pos.prox))
+inv5 T: all t : Train | some (t.pos & Exit) implies  Train' = (Train - t)  else( t.pos' & t.pos.prox)
+inv5 T: all t : Train | some (t.pos & Exit) implies  (Train' = (Train - t) and no t.pos')  else( t.pos' & t.pos.prox)
+inv5 T: all t : Train | no (t.pos & Exit) implies (t.pos' & t.pos.prox)
+inv5 B: all t : Train | no (t.pos & Exit) implies (t.pos' in t.pos.prox)
+inv5 B: all t : Train | no (t.pos & Exit) implies (t.pos' in t.pos.prox) else (Train' = Train - t)
+inv5 B: all t : Train | t.pos' != t.pos
+inv5 S: all t : Train | t.pos' != t.pos | no Green
+inv5 B: all t : Train | t.pos' != t.pos implies t.pos' in t.pos.prox
+inv5 B: all t : Train | t.pos' != t.pos and no (t.pos & Exit) implies (t.pos' in t.pos.prox)
+inv5 B: all t : Train | t.pos' != t.pos and no (t.pos & Exit) implies (t.pos' in t.pos.prox)	all t : Train | t.pos' != t.pos implies Train' = Train - t
+

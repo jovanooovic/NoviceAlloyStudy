@@ -1,0 +1,12 @@
+inv15 B: some Person->Teacher & ^Tutors
+inv15 B: some Person->Teacher & ^~Tutors
+inv15 B: some Teacher.^Tutors
+inv15 B: some ^Tutors.Teacher
+inv15 B: some ^~Tutors.Teacher
+inv15 B: some ^Tutors.Teacher
+inv15 B: some ^~Tutors :> Teacher
+inv15 B: some Teacher & ^Tutors.Person
+inv15 B: some Teacher & ^~Tutors.Person
+inv15 O: all p : Person | some (Teacher & ^Teaches.p)
+inv15 C: all p : Person | some (Teacher & ^Tutors.p)
+

@@ -1,0 +1,11 @@
+inv9 B: all p1 : Person, p2 : Professor | p1 != p2 implies p1.enrolled not in p2.teaches
+inv9 B: all p1,p2 : Person | p1.enrolled not in p2.teaches
+inv9 O: all p1,p2 : Person | no p1.enrolled & p2.teaches
+inv9 B: all p1 : Person, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all p1 : Professor, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all p1,p2 : Professor | p1 != p2 implies p1.enrolled not in p2.teaches
+inv9 B: all p1,p2 : Professor | p1.enrolled not in p2.teaches
+inv9 T: all p1,p2 : Professor | p1.teaches & p2.teaches implies p1.enrolled not in p2.teaches
+inv9 B: all p1,p2 : Professor | some p1.teaches & p2.teaches implies p1.enrolled not in p2.teaches
+inv9 B: all p1,p2 : Professor | some p1.teaches & p2.teaches implies no p1.enrolled & p2.teaches
+

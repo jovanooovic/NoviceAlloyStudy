@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | all c : Course | p->c in enrolled implies p in Student
+inv2 C: all c : Course | all p : Person | p->c in teaches implies p in Professor
+inv3 C: all c : Course | some p : Person | p->c in teaches
+inv3 C: all c : Course | some p : Person | p->c in teaches
+inv4 T: all p : Project | one c : Course | p->c in projects
+inv4 C: all p : Project | one c : Course | c->p in projects
+inv5 S: all p : Project | some s : Person | s->p in workes implies p in Student
+inv5 B: all p : Project | some s : Person | s->p in projects implies p in Student
+inv5 U: all p : Project | some s : Person | s->p in projects implies s in Student
+inv5 B: all p : Project | some s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv6 B: all p : Project | all s : Person | s->p in projects and (all c : Course | c->p in projects and s->c in enrolled)
+inv6 B: all p : Project | all s : Person | s->p in projects and (all c : Course | c->p in projects and s->c in enrolled)
+inv6 B: all p : Project | all s : Person | s->p in projects implies (all c : Course | c->p in projects and s->c in enrolled)
+inv6 C: all p : Project | all s : Person | s->p in projects implies (some c : Course | c->p in projects and s->c in enrolled)
+inv5 B: all p : Project | some s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv5 B: all p : Project | all s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv7 B: all s : Person | one p : Project | one c : Course | c->p in projects and s->p in projects
+inv7 O: all s : Person | all c : Course | one p : Project | s->c in enrolled and c->p in projects and s->p in projects
+inv7 B: all s : Person | all c : Course | some p : Project | (s->c in enrolled and c->p in projects) implies (s->p in projects or s->p not in projects)
+inv7 O: all s : Person | all c : Course | one p : Project | (s->c in enrolled and c->p in projects) implies (s->p in projects or s->p not in projects)
+inv7 O: all s : Person | all c : Course | one p : Project | (s->c in enrolled and c->p in projects and s->p in projects)
+inv8 U: all a : Person | all b : Person | a->b not in teaches
+inv8 U: all a : Professor | a->a not in teaches
+inv8 U: all a : Professor | a->a not in teaches
+inv6 C: all p : Project | all s : Person | s->p in projects implies (some c : Course | c->p in projects and s->c in enrolled)
+inv8 U: all a : Professor | a->a not in teaches
+inv8 U: all a : Person | a in Professor implies a->a not in teaches
+inv8 U: all a : Person | a in Professor implies (a->a not in teaches)
+inv9 U: all a : Person | all b : Person | a in Professor and b in Professor implies (a->b not in teaches and b->a not in teaches)
+inv9 U: all a : Person | all b : Person | (a in Professor and b in Professor) implies (a->b not in teaches and b->a not in teaches)
+inv9 U: all a : Professor | all b : Professor | (a->b not in teaches and b->a not in teaches)
+

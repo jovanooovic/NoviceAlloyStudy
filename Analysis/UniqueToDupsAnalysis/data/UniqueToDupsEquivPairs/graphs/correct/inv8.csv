@@ -1,0 +1,30 @@
+Pairs,94
+,,"^adj in adj",1
+,,"adj.adj in adj",17
+,,"adj.^adj in adj",2
+,,"all n: Node | n.adj.adj in n.adj",6
+,,"all n : Node | n->n.adj.adj in adj",2
+,,"all e1 : Node | e1.adj.adj in e1.adj",1
+,,"all n,nn : Node | nn in n.adj.adj implies nn in n.adj",1
+,,"all n1, n2: Node | n1 in n2.^adj iff n1 in n2.adj",1
+,,"all n1,n2 : Node | n2 in n1.adj.adj => n2 in n1.adj",4
+,,"all n,nn,nnn : Node | nn in n.adj.adj implies nn in n.adj",1
+,,"all n:Node, x:Node | n in x.^adj => n in x.adj",1
+,,"all  a,b,c : Node | (a in adj.b and c in b.adj) => c in a.adj",1
+,,"all a,b,c : Node | c in b.adj and b in a.adj implies c in a.adj",1
+,,"all x, y, z: Node | x in y.adj and y in z.adj implies x in z.adj",1
+,,"all a,b,c:Node | a->b in adj and b->c in adj implies a->c in adj",3
+,,"all x, y, z : Node | x->y in adj and y->z in adj implies x->z in adj",4
+,,"all n,o,p:Node | n->o in adj and o->p in adj implies n->p in adj",1
+,,"all n1, n2, n3: Node | n2 in n1.adj && n3 in n2.adj implies n3 in n1.adj",3
+,,"all n, n1, n2 : Node | n->n1 in adj and n1->n2 in adj => n->n2 in adj",2
+,,"all n1, n2, n3:Node | n1->n2 in adj and n2->n3 in adj => n1->n3 in adj",36
+,,"all v1,v2,v3:Node | v1->v2 in adj and v2->v3 in adj implies v1->v3 in adj",2
+,,"all a:Node , b:Node, c:Node | (a->b in adj && b->c in adj) implies a->c in adj",1
+,,"all n1,n2,n3:Node | some (n1.adj:>n2) and some (n2.adj:>n3) implies some n1.adj:>n3",1
+,,"all  a,b,c : Node | (a in adj.b and c in b.adj) => c in a.adj
+
+all n1,n2 : Node | n2 in n1.adj.adj => n2 in n1.adj
+
+all disj n1,n2 : Node | n2 in n1.adj.adj => n2 in n1.adj",1
+

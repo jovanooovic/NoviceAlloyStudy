@@ -1,0 +1,54 @@
+Pairs,56
+,,"iden in iden",1
+,,"no grades.Professor",1
+,,"no Professor & Grade",1
+,,"no grades.(Person-Student)",1
+,,"no (Person-Student).grades",3
+,,"no grades.Professor->Grade",1
+,,"no grades.(Professor->Grade)",2
+,,"no (Course.grades & enrolled)",1
+,,"all p : Person | p in Person",3
+,,"no Course.grades.(Person-Student)",1
+,,"no Professor & Course.grades.Person",2
+,,"all p : Professor | p in Professor",2
+,,"all u : Person-Student| u not in Grade",1
+,,"no (Person-Student) & Course.grades.Person",1
+,,"all x : Professor | no grades.(x->Grade)",1
+,,"all x:Person-Student | no x.grades",2
+,,"all p : Course.grades.Person | p in Grade",1
+,,"all c : Course | Grade.(c.grades) in Student",3
+,,"all p : Course.~(grades.Grade) | p in Grade",1
+,,"all p: Person | p in Grade implies p in Student",1
+,,"all c : Course | c.grades.Person in Student",2
+,,"all u : Person-Student| no u.grades.Grade",2
+,,"all p:Person | some grades.p implies p in Student",1
+,,"all u : Person-Student| u.grades.Grade=none",1
+,,"all p:Person | some Course.grades.p implies p in Student",1
+,,"all x:Person-Student, y:Grade | no x.grades.y",1
+,,"all u : Person-Student| no u.teaches implies u not in Grade",2
+,,"all u : Person-Student | u not in Professor implies u not in Grade",1
+,,"all c: Course, p,pe: Person | p in c.grades.pe implies p in Student",1
+,,"all p: Person, c: Course | p in (c.grades.Person) implies p in Student",1
+,,"all p:Person | all c:Course | p in c.grades.Person implies p in Student",1
+,,"all p: Person, c: Course, g: Grade | g in c.grades.p implies p in Student",1
+,,"all c : Course | all p : Person | p in c.grades.Person implies p in Student",3
+,,"all p: Person, c: Course,g: Grade | (p->c)->g in grades implies p in Student",1
+,,"all p:Person,c:Course,g:Grade | p->c->g in grades implies p in Student",2
+,,"all p : Person | p not in Student implies all c : Course | p->c->Grade not in grades",1
+,,"all p : Person, c : Course, g : Grade | (g in c.grades.Grade) implies p in Student",1
+,,"all p : Person | all c : Course | all g : Grade |p->c->g in grades implies p in Student",2
+,,"all p1 : Person | all c : Course | all g : Grade | p1->c->g in grades implies p1 in Student",1
+
+Pairs,3
+,,"all x : Professor-Student | no x->Grade & Course.grades",3
+
+Pairs,1
+,,"all x : Professor-Student | no x->Grade & (x.teaches).grades",1
+
+Pairs,7
+,,"all p : Person - Student, c : Course | p->Grade not in c.grades",1
+,,"all x: Person-Student, y:Course | y-> x-> Grade not in grades",1
+,,"all c : Course, p : Person | c.grades[p] = Grade => p in Student",1
+,,"all p : Person | p not in Student implies all c : Course | c->p->Grade not in grades",2
+,,"all person : Person | all course : Course | person->Grade in course.grades implies person in Student",2
+

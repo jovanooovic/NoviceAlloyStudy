@@ -1,0 +1,13 @@
+inv8 U: all p: Professor | p->p not in teaches
+inv8 B: all p,j: Professor | p->j in teaches and p!=j
+inv8 S: all p,j: Professor | p->j in implies and p!=j
+inv8 S: all p,j: Professor | p->j in implies p!=j
+inv8 U: all p,j: Professor | p->j in teaches implies p!=j
+inv8 U: all p,j: Person | p->j in teaches implies p!=j
+inv8 U: all p,j: Person | p->j in teaches implies p!=j
+inv8 S: all p,, c: Course | p->c in teaches implies p->c not in enrolled
+inv8 U: all p, c: Course | p->c in teaches implies p->c not in enrolled
+inv8 C: all p: Person, c: Course | p->c in teaches implies p->c not in enrolled
+inv8 U: all p: Professor, c: Course | p->c in teaches implies p->c not in enrolled
+inv8 U: all p: Professor, c: Course | p->c in teaches implies p->c not in enrolled
+

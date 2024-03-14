@@ -1,0 +1,6 @@
+inv8 E:
+inv8 S: all t: Teachers | lone c: Class | t.Teaches = c
+inv8 U: all t: Teacher | lone c: Class | t.Teaches = c
+inv8 O: all disj c1,c2: Class | c1 in Teacher.Teaches iff c2 not in Teacher.Teaches
+inv8 O: all disj c1,c2: Class | c1 in Teacher.Teaches and c2 not in Teacher.Teaches or c1 not in Teacher.Teaches and c2 in Teacher.Teaches
+

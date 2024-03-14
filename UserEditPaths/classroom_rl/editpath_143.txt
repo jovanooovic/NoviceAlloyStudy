@@ -1,0 +1,209 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no(Student & Teacher)
+inv4 T: no ((Person & Student ) and (Person & Teacher))
+inv4 B: no ((Person & Student ) & (Person & Teacher))
+inv4 S: no (Person & Student ) and no (Person & Teacher))
+inv4 B: no (Person & Student ) and no (Person & Teacher)
+inv4 B: no ((Person & Student) & Teacher)
+inv4 B: no (Person & Student & Teacher)
+inv4 B: no (Person & Student) and no (Person & Teacher)
+inv4 T: no(no (Person & Student) and no (Person & Teacher) )
+inv4 B: not(no (Person & Student) and no (Person & Teacher) )
+inv4 T: no (no (Person & Student) and no(Person & Teacher) )
+inv4 T: (Person & Student) &(Person & Teacher)
+inv4 T: (Person & Student) and (Person & Teacher)
+inv4 B: not (no (Person & Student) and no(Person & Teacher) )
+inv4 S: not (no (Person & Student)  & no(Person & Teacher) )
+inv4 C: all p:Person | not (p not in Student and p not in Teacher)
+inv4 C: all p:Person |  (p  in Student or p  in Teacher)
+inv4 B: no (Person & Student)  or no(Person & Teacher)
+inv4 T: (Person & Teacher) or (Person &Student )
+inv4 O: (Person in Teacher) or (Person in Student )
+inv4 B: some (Person & Teacher) or some (Person & Student )
+inv4 S: Person in  no (Teacher & Student )
+inv4 O: Person in  (Teacher & Student )
+inv4 B: no (Teacher & Student )
+inv4 O: (Person in Teacher) or (Person in Student )
+inv4 C: Person  in (Teacher + Student )
+inv5 S: some  Teacher and some Class in Theches
+inv5 U: some c:Class | some Teaches.c
+inv5 U: some Teaches
+inv5 B: some c:Class | lone Teaches.c
+inv5 U: some c:Class | some Teaches.c
+inv5 T: some c:Class | some Teaches.c->c in Teaches
+inv5 U: some c:Class | some Teaches.c
+inv5 C: some t:Teacher | some t.Teaches
+inv6 C: all t:Teacher | some t.Teaches
+inv7 S: some t:Teacher | all t.Teaches
+inv7 S: some t:Teacher | all t.Teaches
+inv7 T: all c:Class | some Teaches.c in Teacher
+inv7 B: all c:Class | Teaches.c in Teacher
+inv7 T: all c:Class |  some (Teaches.c in Teacher)
+inv7 T: all c:Class |  (some Teaches.c in Teacher)
+inv7 U: all c:Class |  some Teaches.c
+inv7 T: all c:Class | ( some Teaches.c ) in Teacher
+inv7 B: all c:Class | ( Teaches.c ) in Teacher
+inv7 T: all c:Class | ( Teaches.c )some Teacher
+inv7 C: all c:Class | some ( Teaches.c  & Teacher)
+inv8 C: all t:Teacher | lone t.Teaches
+inv8 C: all t:Teacher | lone t.Teaches
+inv9 O: all c:Class | lone Teaches.c
+inv9 T: all c:Class | no (some Teaches.c)
+inv9 O: all c:Class | not (some Teaches.c)
+inv9 B: all c:Class |  (some Teaches.c)
+inv9 B: all c:Class |  some Teaches.c
+inv9 O: all c:Class |  lone Teaches.c
+inv9 C: all c:Class |  lone (Teaches.c & Teacher)
+inv10 C: all c:Class |all s:Student|some g:Group |c->s->g in Groups
+inv10 T: all s:Student | some g:Group | no ( Class - Groups.(s->g ))
+inv10 T: all s:Student | some g:Group | no ( Class - Groups.s->g )
+inv10 T: all s:Student | some g:Group | ( Class - Groups.s->g )
+inv10 T: all s:Student | some g:Group | ( Class - Groups.(s->g ) )
+inv10 O: all s:Student | some g:Group | no  Class
+inv10 S: all s:Student | some g:Group | no  Class - Groups.(s->g) )
+inv10 T: all s:Student | some g:Group | no  (Class - Groups.(s->g) )
+inv10 T: all s:Student | some g:Group |  Groups.(s->g)
+inv10 T: all s:Student | some g:Group |  Groups.(s->g) in Class
+inv10 T: all s:Student | some g:Group |  Groups.(s->g)
+inv10 B: all s:Student | some g:Group | no Groups.(s->g)
+inv10 T: all s:Student | some g:Group | some ( Groups.(s->g) & Class)
+inv10 T: all s:Student | some g:Group | no Groups.(s->g) & Class
+inv10 B: all s:Student | some g:Group | no Groups.(s->g)
+inv10 B: all s:Student | some g:Group |  no (Groups.(s->g))
+inv10 T: all s:Student | some g:Group |  no (Class -(Groups.(s->g))   )
+inv10 T: all p:Person | some g:Group |  no (Class -(Groups.(p->g))   )
+inv10 S: all s:Student | some g:Group |   (Class - (Groups.(s->g))
+inv10 T: all s:Student | some g:Group |   (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |   no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | all g:Group |   no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |  no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |   (Class & (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |    Groups.(s->g)  & Class
+inv10 C: all c:Class |all s:Student|some g:Group |c->s->g in Groups
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv10 E: 
+inv11 B: all c:Class|  some c.Groups   implies Teaches.c in Teacher
+inv11 B: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)   implies Teaches.c in Teacher
+inv11 T: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)   implies Teaches.c + Teacher
+inv11 C: all c:Class | (some g:Group |some p:Person | c->p->g in Groups)   implies some (Teaches.c & Teacher)
+inv11 C: all c:Class | some c.Groups   implies some (Teaches.c & Teacher)
+inv11 C: all c:Class | some c.Groups   implies some (Teaches.c & Teacher)
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  t.Teaches.Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  (t.Teaches).Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some  (t.Teaches).Groups
+inv12 T: all t:Teacher | some t.Teaches in Class  and  some g:Group, p:Person | t.Teaches->p->g in Groups
+inv12 T: all t:Teacher | some t.Teaches in Class
+inv12 E: 
+inv12 E: 
+inv13 U: all s: Student , t:Teacher | t.Tutors in Student and Tutors.s in Teacher
+inv13 T: all s: Student , t:Teacher | t.Tutors.s
+inv13 U: all s: Student , t:Teacher | t.Tutors in Student and Tutors.s in Teacher
+inv13 B: all t:Teacher , s:Student | t->s in Tutors
+inv13 S: all p1,p2 | p1.Tutors in Student and Tutors.p2 in Teacher
+inv13 C: all p1,p2:Person | p1.Tutors in Student and Tutors.p2 in Teacher
+inv14 T: all p:Person, c:Class| some t:Teacher, g:Group |t->c  and c->p->g in Groups implies t->p in Tutors
+inv14 S: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  (some t:Teacher| t->c in Teaches )															   implies t->p in Tutors
+inv14 B: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  (some t:Teacher| t->c in Teaches 															   implies t->p in Tutors)
+inv14 B: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  some t:Teacher| t->c in Teaches 															   implies t->p in Tutors
+inv14 U: all p:Person, c:Class| (some g :Group |c->p->g in Groups) implies  some t:Person| t->c in Teaches 															   implies t->p in Tutors
+inv14 C: all p:Person, c:Class| (some g :Group |c->p->g in Groups) implies  all t:Person| t->c in Teaches 															   implies t->p in Tutors
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches 															   implies t->s in Tutors)
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 C: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 S: all p:Person |some g:Group | all t:Teacher | t-> Groups.(p,g)  in Teaches implies t->p in Tutors
+inv14 S: all p:Person |some g:Group | all t:Teacher | t-> Groups.(p,g) in Teaches
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)  in Teaches implies t->p in Tutors
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)  in Teaches
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)
+inv14 B: all p:Person |some g:Group | all t:Teacher | no t->Groups.(p->g)
+inv14 S: some c:Class | {(x,y)| (x,y) in c.Groups } implies no Person
+inv14 S: some c:Class | {(x,y)| (x,y) in c.Groups }
+inv14 S: some c:Class | {(x,y)| (x,y) : c.Groups }
+inv14 S: some c:Class |all t:Teacher | t->c in. Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: some c:Class |all t:Teacher | t->c in Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: all c:Class |all t:Person | t->c in Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: all c:Class, t:Person | t->c in Teaches implies {(s->g): c.Groups | t->s in Tutors}
+inv14 T: all c:Class, t:Person | t->c in Teaches implies {s,g: c.Groups | t->s in Tutors}
+inv12 S: some c:Class |  all a: Teaches.c and some a->s->g in Groups
+inv12 S: some c:Class |  all a: Teaches.c | some a->s->g in Groups
+inv12 S: some c:Class |  all t: Teaches.c | some a->t->g in Groups
+inv12 S: some c:Class |  all t: Teaches.c | some c->t->g in Groups
+inv12 S: some c:Class| somee (Teaches.c - Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c - Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Person) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) implies  some g:Group, p:Person | c->p->g in Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Teacher) and  some g:Group, p:Person | c->p->g in Groups
+inv12 B: some c:Class| some (Teaches.c & Person) and  some g:Group, p:Person | c->p->g in Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some c.Groups
+inv12 B: some c:Class| some (Teaches.c) and  some c.Groups
+inv12 B: some c:Class| some Teaches.c + Teacher and  some c.Groups
+inv12 B: some c:Class| no(Teaches.c -Teacher) and  some c.Groups
+inv12 B: some c:Class| no(Teaches.c -Person) and  some c.Groups
+inv12 O: some c:Class| all t:Teacher |t->c in Teaches and  some c.Groups
+inv12 C: all t: Teacher | some c:Class | t->c in Teaches and some c.Groups
+inv12 O: some c:Class |all t: Teacher | t->c in Teaches and some c.Groups
+inv12 U: all t: Teacher | some t.Teaches and some c:Class| some c.Groups
+inv12 C: all t: Teacher | some t.Teaches.Groups
+inv10 S: all c:Class | all c.Groups
+inv10 B: all c:Class | some c.Groups
+inv10 T: all s:Student| some g:Group | no (Groups.(s->g) - Class)
+inv10 T: all s:Student| some g:Group | some (Groups.(s->g) & Class)
+inv10 S: all s:Student| some g:Group |  (Groups.(s->g) in Class
+inv10 T: all s:Student| some g:Group |  Groups.(s->g) in Class
+inv10 S: all c:Class,s:Student| c->s->g in Groups
+inv10 S: all c:Class | (x->y):c.Groups implies x in Student
+inv10 S: all c:Class | (x,y):c.Groups in c
+inv10 U: all c:Class | c.Groups in (Person ->Group)
+inv10 B: all c:Class | c.Groups in (Student->Group)
+inv10 T: all c:Class | some c.Groups in (Student->Group)
+inv10 B: all c:Class | some c.Groups
+inv10 B: all c:Class | some (c.Groups &(Student->Group) )
+inv10 B: all c:Class | some (c.Groups -(Student->Group) )
+inv10 B: all c:Class | some (c.Groups &(Student->Group) )
+inv10 S: all c:Class, s:Student |some g:Group (c.Groups (s->g) )
+inv10 S: all c:Class, s:Student |some g:Group (c.Groups.(s->g) )
+inv13 C: all p1,p2:Person | p1.Tutors in Student and Tutors.p2 in Teacher
+inv10 T: all c:Class | c.Groups implies Students in Group
+inv10 T: all c:Class | c.Groups
+inv10 B: all c:Class | some c.Groups
+inv10 S: all c:Class |all s:Students | s<:c.Groups :> some Group
+inv10 S: all c:Class |all s:Students | some (s<:c.Groups)
+inv10 S: all c:Class |all s:Students | some s <: c.Groups
+inv10 C: all c:Class |all s:Student | some s <: c.Groups
+inv10 C: all c:Class |all s:Student | some (s <: c.Groups)
+inv14 C: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Student, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Student, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c) & (Tutors.s) )
+inv14 T: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c in Teacher) & (Tutors.s) )
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c & Teacher) & (Tutors.s) )
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no (Teaches.c & Teacher)  implies no ( (Teaches.c & Teacher) & (Tutors.s) )
+inv14 T: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c & Teacher) & (Tutors.s) ) in Teacher
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies   ( (Teaches.c & Teacher) & (Tutors.s) ) in Teacher
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no  (Teaches.c  & Tutors.s)
+inv14 T: all s:Student | all t:Teacher | t->s in Tutors implies t <:Groups
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no((Teacher & Teaches.c) - (Tutors.s) )
+inv15 B: Teacher.^Tutors in Teacher
+inv15 B: no( Teacher.^Tutors - Teacher)
+inv15 T: all p:Person | Teacher.p.^Tutors
+inv6 C: all t:Teacher | some t.Teaches
+inv9 C: all c:Class |  lone (Teaches.c & Teacher)
+inv15 T: all s:Person | (^Tutors.s & Teacher)
+inv15 C: all s:Person |some  (^Tutors.s & Teacher)
+

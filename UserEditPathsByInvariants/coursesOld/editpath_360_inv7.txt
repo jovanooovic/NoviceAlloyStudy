@@ -1,0 +1,15 @@
+inv7 B: all s: Student | one (s.projects & s.enrolled.projects)
+inv7 S: some p1, p2: Projects, 	         c1,c2: course| 	    all s: Student| (p1+p2) in s.projects and 	  					p1 in c1.projects and p2 in c2.projects	  					implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: some p1, p2: Project, 	         c1,c2: course| 	    all s: Student| (p1+p2) in s.projects and 	  					p1 in c1.projects and p2 in c2.projects	  					implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: some p1, p2: Project, 	         c1,c2: Course| 	    all s: Student| (p1+p2) in s.projects and 	  					p1 in c1.projects and p2 in c2.projects	  					implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: some p1, p2: Project, 	         c1,c2: Course| 	    all s: Student| (p1+p2) in s.projects and 	  					p1 in c1.projects and p2 in c2.projects	  					implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: some p1, p2: Project, c1,c2: Course| all s: Student| ((p1+p2) in s.projects and (p1 in c1.projects) and (p2 in c2.projects)) implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: some p1, p2: Project, c1,c2: Course| all stu: Student| ((p1+p2) in stu.projects and (p1 in c1.projects) and (p2 in c2.projects)) implies c1 != c2	  	  	  s.projects in s.enrolled.projects
+inv7 S: s.projects in s.enrolled.projects
+inv7 B: some p1, p2: Project, c1,c2: Course | all stu: Student| ((p1+p2) in stu.projects and (p1 in c1.projects) and (p2 in c2.projects)) implies c1 != c2
+inv7 B: some p1, p2: Project | all c1,c2: Course | all s: Student| ((p1+p2) in s.projects and (p1 in c1.projects) and (p2 in c2.projects)) implies c1 != c2
+inv7 B: some p1, p2: Project | all c1,c2: Course | all s: Student| ((p1+p2) in s.projects and (p1 in c1.projects) and (p2 in c2.projects)) implies c1 != c2
+inv7 S: some p1, p2: Project | all c1,c2: Course | all s: Student| ((p1+p2) in s.projects and (p1 in c1.projects) and (p2 in c2.projects) and (c1+c2) in s.enrolls ) implies c1 != c2
+inv7 B: some p1, p2: Project | all c1,c2: Course | all s: Student| ((p1+p2) in s.projects and (p1 in c1.projects) and (p2 in c2.projects) and (c1+c2) in s.enrolled ) implies c1 != c2
+inv7 U: all s : Student, c : Course | lone ((s.projects) & (c.projects))
+

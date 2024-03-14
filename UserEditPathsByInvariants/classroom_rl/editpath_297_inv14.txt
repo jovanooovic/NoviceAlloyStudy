@@ -1,0 +1,31 @@
+inv14 S: all s : Student, c : class, t : Teacher | some c.(s.Groups) and some Teches.c implies s.Tutors
+inv14 S: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teches.c implies s.Tutors
+inv14 T: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teaches.c implies s.Tutors
+inv14 T: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teaches.c implies s.Tutors
+inv14 U: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teaches.c implies t.Tutors in Student
+inv14 U: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teaches.c implies t.Tutors in Student
+inv14 S: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teaher & Teaches.c implies some Tutors.s
+inv14 U: all s : Student, c : Class, t : Teacher | some c.(s.Groups) and some Teacher & Teaches.c implies some Tutors.s
+inv14 U: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teacher & Teaches.c implies some Tutors.s
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teacher & Teaches.c implies some Tutors.t
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teacher & Teaches.c implies some t.Tutors
+inv14 U: all s : Student, c : Class | some s.(c.Groups) and some Teacher & Teaches.c implies some Tutors.s
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teacher & Teaches.c implies some s.Tutors
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies some s.Tutors
+inv14 U: all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies some Tutors.s
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies some t.Tutors
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies some Tutors.t
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies Tutors.s in ( Teacher & Teaches.c)
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some t.Teaches implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class, t : Teacher | some s.(c.Groups) and t.Teaches in Class implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 E:
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class | some s.(c.Groups) implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 S: all s : Student, c : Class | some s.(c.Groups) and some Teacher Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 B: all s : Student, c : Class | some s.(c.Groups) and some Teacher & Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))
+inv14 U: all p : Student, c : Class | some p.(c.Groups) implies (Teacher & Teaches.c) in Tutors.p
+inv14 U: all p : Student, c : Class | some p.(c.Groups) implies (Teacher & Teaches.c) in Tutors.p
+

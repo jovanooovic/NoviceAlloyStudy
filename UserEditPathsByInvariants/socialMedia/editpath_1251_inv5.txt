@@ -1,0 +1,6 @@
+inv5 U: all u:User | u in Influencer implies (all u2:User-Influencer | u in u2.follows)
+inv5 S: all u:User | u in Influencer implies u2 not in follows.u2
+inv5 U: all u:User | u in Influencer implies u not in follows.u
+inv5 U: all u:User, i:Influencer | i in u.follows or i = u
+inv5 U: all u:User, i:Influencer | i!=u implies i in u.follows
+

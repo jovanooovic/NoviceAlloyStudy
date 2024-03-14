@@ -1,0 +1,12 @@
+inv12 B: always( all f: File | f not in Trash and eventually f in Trash and after always f in Trash)
+inv12 O: always( some f: File | f not in Trash and eventually f in Trash and after always f in Trash)
+inv12 O: always( some f: File | f not in Trash and eventually always f in Trash)
+inv12 O: always( some f: File | eventually always f in Trash)
+inv12 O: some f: File |always( eventually always f in Trash)
+inv12 O: some f: File |eventually always f in Trash
+inv12 O: some f: File |always( eventually always f in Trash)
+inv12 B: all f: File | eventually f in Trash and after always f in Trash
+inv12 O: some f: File | eventually f in Trash and after always f in Trash
+inv12 C: eventually some f: File |  f in Trash and after always f in Trash
+inv12 C: eventually some f: Trash | always f in Trash
+

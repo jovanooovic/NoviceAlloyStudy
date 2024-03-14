@@ -1,0 +1,6 @@
+inv2 T: all u:User | u.profile implies (u.source in Institution)
+inv2 T: all u:User | u.profile implies (u.source in Institution or u.source in User)
+inv2 U: all u:User, w:Work | w in u.profile implies (u.source in Institution or u.source in User)
+inv2 C: all u:User, w:Work | w in u.profile implies (u in w.source or w.source in Institution)
+inv2 O: all u:User, w:Work | w in u.profile implies ( w.source in Institution)
+

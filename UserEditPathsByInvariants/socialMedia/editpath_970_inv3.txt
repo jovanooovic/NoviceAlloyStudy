@@ -1,0 +1,12 @@
+inv3 S: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u1->u2 in follows
+inv3 T: all u : User, p : Photo - Ad | sees.u implies posts.p = follows.u
+inv3 T: all u : User, p : Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u : User, p : Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.p implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.p implies posts.p = follows.u
+inv3 T: all u:User, p:Photo-Ad | sees.u implies posts.p = follows.u
+inv3 B: all u1: User, u2 : User, p : Photo | (p not in Ad and u1->p in sees and u2->p in posts) implies u1->u2 in follows
+

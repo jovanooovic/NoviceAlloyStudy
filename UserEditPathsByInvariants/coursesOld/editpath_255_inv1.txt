@@ -1,0 +1,14 @@
+inv1 B: all c:Course | Professor not in enrolled.c
+inv1 T: all c:Course | Professor not in enrolled
+inv1 B: all p:Person | some c:Course | c in p.enrolled implies p in Student
+inv1 B: all p:Person | some c:Course | c in p.enrolled implies p in Student and p not in Professor
+inv1 B: Course.enrolled = Student
+inv1 O: all c: Course | enrolled.c = Student
+inv1 C: all p:Person | (some c:Course | c in p.enrolled) implies p in Student
+inv1 B: all p:Person | some c:Course | c in p.enrolled implies p in Student
+inv1 C: all p:Person | (some c:Course | c in p.enrolled) implies p in Student
+inv1 C: all p:Person | (some c:Course | c in p.enrolled) implies p in Student
+inv1 B: all p:Person | some c:Course | c in p.enrolled implies p in Student
+inv1 C: all p:Person | some p.enrolled implies p in Student
+inv1 B: all s:Student | some s.enrolled
+

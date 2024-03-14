@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 T: all s: Student | s.enrolled
+inv1 T: all s:Person-Professor | s.enrolled
+inv1 C: all p:Person | all c:Course | c in p.enrolled implies p in Student
+inv2 T: all p:Person | p.teaches implies p in Professor
+inv2 B: all p:Person | Course in p.teaches implies p in Professor
+inv2 C: all p:Person |all c:Course | c in p.teaches implies p in Professor
+inv2 C: all p:Person |all c:Course | c in p.teaches implies p in Professor
+inv3 B: all c:Course | some p:Professor | p.teaches in c
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 S: all per:Person | all p:Project | p in per.projects implies per in Student	    all pro:project | some p:Person | pro in p.projects
+

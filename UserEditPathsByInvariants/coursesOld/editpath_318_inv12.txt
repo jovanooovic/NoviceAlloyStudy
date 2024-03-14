@@ -1,0 +1,6 @@
+inv12 B: all s:Student, c:Course | s->c in enrolled => c.grades in s one -> Grade
+inv12 B: all s:Student, c:Course | s->c in enrolled => c.grades in s lone -> Grade
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone c.grades . s
+inv12 T: all s:Student, c:Course | s->c in enrolled => lone s.c.grades
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone s.~(c.grades)
+

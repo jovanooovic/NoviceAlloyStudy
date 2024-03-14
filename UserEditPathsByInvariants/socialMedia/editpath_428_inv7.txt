@@ -1,0 +1,5 @@
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows )
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows and u not in s )
+inv7 U: all u : User | all s : User | s in u.suggested implies (one u2 : User | u2 in u.follows and s in u2.follows and s not in u.follows and u not in s and s not in u)
+inv7 U: all u : User | all s : User | s in u.suggested implies (some u2 : u.follows | s in u2.follows and s not in u.follows and u not in s and s not in u)
+

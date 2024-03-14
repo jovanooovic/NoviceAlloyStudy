@@ -1,0 +1,9 @@
+inv7 S: all s:Student
+inv7 S: all s:Student
+inv7 B: all student:Student | some p:Project | one course:Course | p in student.projects && p in course.projects
+inv7 B: all student:Student, course:Course | some p:Project | p in student.projects & student.enrolled.projects
+inv7 B: all student:Student | some p:Project | p in student.projects & student.enrolled.projects
+inv7 S: all student:Student | all studentCourses:student.enrolled | lone p:Project | p in studentCourses.project
+inv7 B: all student:Student | all studentCourses:student.enrolled | lone p:Project | p in studentCourses.projects
+inv7 U: all student:Student | all studentCourses:student.enrolled | lone p:Project | p in studentCourses.projects & student.projects
+

@@ -1,0 +1,11 @@
+inv11 S: all c : Class | some t : Teacher & c.Groups
+inv11 T: all c : Class | some t : Teacher | t.(c.Groups)
+inv11 T: all c : Class | some t : Teacher | t.(c.Groups)
+inv11 T: all c : Class | some t : Teacher | t.(c.Groups)
+inv11 S: all c : Class in Teacher.Teaches
+inv11 T: all c : Class | Teacher.Teaches
+inv11 S: all c : Class | c.Grouops in Teacher.Teaches
+inv11 T: all c : Class | c.Groups in Teacher.Teaches
+inv11 T: all c : Class | Teacher.Teaches.(c.Groups)
+inv11 T: all c : Class | (Teacher.Teaches).(c.Groups)
+

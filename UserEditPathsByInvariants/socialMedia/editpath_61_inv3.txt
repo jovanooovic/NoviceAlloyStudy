@@ -1,0 +1,14 @@
+inv3 E:
+inv3 S: all x : User, all y : Photo | x,y all follows.x.y
+inv3 S: all x : User, all y : Photo | x,y->follows.x.y
+inv3 S: all x : User, all y : Photo | x -> follows.x
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in follows.y)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in follows)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in follows.x)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in follows.y)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in x.follows)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in y.follows)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or y in y.follows)
+inv3 S: all x : User, all y : Photo | y in x.sees implies (y in Ad or follows.x in follows.y)
+

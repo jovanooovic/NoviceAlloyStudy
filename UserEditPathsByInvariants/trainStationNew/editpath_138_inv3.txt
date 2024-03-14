@@ -1,0 +1,8 @@
+inv3 U: no Exit.succs
+inv3 B: Exit = succs.none
+inv3 T: Exit & succs.none
+inv3 O: some succs.none
+inv3 O: some succs.(none)
+inv3 C: all t : Track | t in Exit iff no t.succs
+inv3 C: Exit = Track - succs.Track
+

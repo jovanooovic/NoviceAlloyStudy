@@ -1,0 +1,19 @@
+inv5 U: all p : Person | some p.projects implies p in Student
+inv5 U: all p : Person | some p.projects implies p in Student and some p.projects
+inv5 B: all p : Person | (some p.projects implies p in Student) and some p.projects
+inv5 T: all p : Person | (some p.projects implies p in Student) and some projects.p
+inv5 B: all p : Person | some p.projects implies p in Student	  	some Person.projects
+inv5 B: all p : Person | some p.projects implies p in Student	  	some Student.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Student.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Person.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Person.projects	    all proj : Project | proj in Student.projects
+inv5 U: all proj : Project | proj in Person.projects	    all proj : Project | proj in Student.projects
+inv5 U: all proj : Project | proj in Student.projects
+inv5 B: all proj : Project, p:Person | proj in Person.projects implies p in Student
+inv5 U: all proj : Project, p:Person | proj in p.projects implies p in Student
+inv5 C: all proj : Project | proj in Person.projects	    all proj : Project, p:Person | proj in p.projects implies p in Student
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Person.projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Person.projects
+inv5 T: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in projects
+inv5 C: all p : Person | some p.projects implies p in Student	  	all proj : Project | proj in Person.projects
+

@@ -1,0 +1,36 @@
+inv4 T: Init.(*trans) = State
+inv4 T: Init.(*trans) = State
+inv4 T: Init.(*trans.(State.Event)) = State
+inv4 S: Init.*trans_bin = State	}		fun trans_bin : State -> State {	    {s1:Book, s2:Addr | s1->Event->s2 in trans }
+inv4 B: Init.*trans_bin = State	}		fun trans_bin : State -> State {	    {s1, s2 : State | s1->Event->s2 in trans }
+inv4 B: Init.^trans_bin = State	}		fun trans_bin : State -> State {	    {s1, s2 : State | s1->Event->s2 in trans }
+inv4 B: Init.*trans_bin = State	}		fun trans_bin : State -> State {	    {s1, s2 : State | s1->Event->s2 in trans }
+inv4 T: Init.*{s1, s2 : State | s1->Event->s2 in trans} = State	}		fun trans_bin : State -> State {
+inv4 B: Init.*{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: Init.*{s1 : State, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: Init.^{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: Init.*{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: (Init.*{s1, s2 : State | s1->Event->s2 in trans}) = State
+inv4 B: all i : Init | i.*{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: all i : Init | i.^{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: all i : Init | i.^{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: all i : Init | i.*{s1, s2 : State | s1->Event->s2 in trans} = State
+inv4 T: all i : Init, s : State | some i.*{s1, s2 : State | s1->Event->s2 in trans}.s
+inv4 T: all i : Init, s : State | some i.(*{s1, s2 : State | s1->Event->s2 in trans}).s
+inv4 B: all i : Init, s : State | s in i.(*{s1, s2 : State | s1->Event->s2 in trans})
+inv4 B: all i : Init, s : State | s in i.(^{s1, s2 : State | s1->Event->s2 in trans})
+inv4 B: all i : Init, s : State | s in i.(^{s1, s2 : State | some e : Event | s1->e->s2 in trans})
+inv4 B: all i : Init | i.(^{s1, s2 : State | some e : Event | s1->e->s2 in trans}) = State
+inv4 B: all i : Init | i.(^{s1, s2 : State |s1->Event->s2 in trans}) = State
+inv4 B: all i : Init | i.(^{s1, s2 : State | s1->Event->s2 in trans}) = State
+inv4 U: all i : Init | i.(^{s1, s2 : State | s1->Event->s2 in trans}) in State
+inv4 T: {s1 : State, s2 : State | s1->Event->s2 in trans}
+inv4 S: Initial.{s1 : State, s2 : State | s1->Event->s2 in trans} = State
+inv4 B: Init.{s1 : State, s2 : State | s1->Event->s2 in trans} = State
+inv4 O: Init.{s1 : State, s2 : State | some e : Event | s1->e->s2 in trans} = State
+inv4 S: let trans_bin = {s1 : State, s2 : State | some s1.trans.s2}	    Init.*trans_bin = State
+inv4 U: let trans_bin = {s1 : State, s2 : State | some s1.trans.s2} |	    Init.*trans_bin = State
+inv4 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init.*trans_bin = State
+inv4 C: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init.^trans_bin = State
+inv4 C: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init.^trans2 = State
+

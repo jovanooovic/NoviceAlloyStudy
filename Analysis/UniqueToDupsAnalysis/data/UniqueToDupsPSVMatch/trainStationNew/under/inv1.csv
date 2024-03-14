@@ -1,0 +1,42 @@
+"some Entry",4
+"Exit in Track",1
+"Entry in Track",1
+"some Exit & Track",1
+"some Entry & Track",1
+"some Entry or one Exit",1
+"some Entry or some Exit",1
+"all e:Entry | some e",2
+"Entry in Track
+Exit in Track",3
+"some t : Track | t in Entry",1
+"all t:Track | lone (t & Entry & Exit)",1
+"all t: Track| some Entry and some Exit",3
+"(all x: Track| some Entry && some Exit)",1
+"all t:Track | some Exit and some Entry",1
+"all e: Entry | some Exit and some Entry",1
+"some t: Track | t in Entry or t in Exit",2
+"some t : Track | t in Exit or t in Entry",1
+"all t:Track | #Entry > 0 and #Exit >0",1
+"Entry in Track.*(succs) and Exit in Track.*(succs)",1
+"all e: Entry, x: Exit | some e && some x",1
+"all t : Track | Entry in Track and Exit in Track",1
+"some t: Track | Entry in Track and Exit in Track",1
+"all x: Entry, y : Exit | x in Track && y in Track",1
+"all ex:Exit, e:Entry | e in Track && ex in Track",1
+"all ex : Exit, en: Entry | ex in Track and en in Track",1
+"all t : Track | some Entry & Track and some Exit & Track",1
+"(all t: Entry| some Entry) && (all t: Exit | some Exit)",1
+"all t : Track | some Entry
+all t : Track | some Exit",1
+"(all x: Track| some Entry) && (all y: Track| some Exit)",1
+"all e : Entry | all ex : Exit | e in Track and ex in Track",1
+"all t : Track & Entry | some t
+all t : Track & Exit | some t",1
+"all t:Track | some e:Entry ,ex:Exit | #e>=1 and #ex>=1",1
+"all t1 : Track & Entry | all t2 : Track & Exit | some t1 and some t2",1
+"Entry in Track or Exit in Track or Entry in Track.^(succs) or Exit in Track.^(succs)",1
+"Entry in Track or Exit in Track and Entry in Track.^(succs) or Exit in Track.^(succs)",1
+"some e,z:Track| e->z not in succs implies e in Exit and e->z in succs implies e in Exit",1
+"some e,z:Track| e->z not in succs implies e in Exit or e->z in succs implies e in Exit",1
+"some e,z:Track| e->z not in succs implies e in Exit
+some e,z:Track| e->z in succs implies e in Exit",1

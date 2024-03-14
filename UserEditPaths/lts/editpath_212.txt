@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 O: all s: State | #(s.trans) >= 1
+inv1 C: all s: State | some s.trans
+inv1 O: all s: State | #(s.trans) > 0
+inv2 E: 
+inv2 C: one Init
+inv3 E: 
+inv1 S: all s: State | some s.trans) > 0
+inv1 C: all s: State | some s.trans
+inv3 O: all s: State | lone s.trans
+inv3 O: all s: State | one s.trans
+inv3 O: all s: State | lone s.trans
+inv3 T: all s: State, e: Event | lone e.s.trans
+inv3 C: all s: State, e: Event | lone e.(s.trans)
+inv4 S: all s: State | s in Init.trans^
+inv4 T: all s: State | s in ^Init.trans
+inv4 S: let adj = {s1,s2: State | some e s1.e.s2}	  all s: State | some i: Init | s in ^adj
+inv4 S: let adj = {s1,s2: State | s1 -> e -> s2 in trans}	  all s: State | some i: Init | s in ^adj
+inv4 S: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans}	  all s: State | some i: Init | s in ^adj
+inv4 T: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all s: State | some i: Init | s in ^adj
+inv4 C: let adj = {s1,s2: State | some e: Event | s1 -> e -> s2 in trans} |	  all s: State | some i: Init | s in i.^adj
+

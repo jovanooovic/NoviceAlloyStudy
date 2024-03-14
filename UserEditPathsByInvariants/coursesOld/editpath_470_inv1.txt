@@ -1,0 +1,7 @@
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Person, c : Course | p.c iff Student
+inv1 T: all p : Person, c : Course | c in p.enrolled iff Student
+inv1 T: all p : Person, c : Course | c in p.enrolled iff ~p=Student
+inv1 U: all p : Person | no p.enrolled & Professor
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+

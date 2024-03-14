@@ -1,0 +1,75 @@
+"some teaches",2
+"some Taeches",1
+"some classes",1
+"Teacher.class",1
+"some c: Class:",1
+"some t.Teaches",1
+"all t:Teacher |",1
+"Teacher.teaches",1
+"all Teaches.Class",1
+"some Teacher.Teach",1
+"some teaches.Class",1
+"no Teascher.Teaches",1
+"some Teacher.teaches",4
+"some Teachers.Teaches",1
+"Teacher.Teaches = some",1
+"some  p.Teaches in Class",1
+"some t.Teaches & Teacher",1
+"Teachers in Teaches.Class",1
+"all t : Teacher | some c->t",1
+"some p : person | p.Teaches",1
+"some Classes in Teaches.Class",1
+"all t: Teacher | some t.Tutor",1
+"all t:Teacher | t.Teaches = c",5
+"Teacher.Teaches = some Classes",1
+"all t:Teacher | some t.teaches",1
+"all c : Class | some t.Teaches",1
+"all t : Teacher | some class.t",1
+"all t: Teacher: some t.Teaches",1
+"all t : Teacher : some t.Class",1
+"all t: Teacher | some t.teaches",1
+"some t : Class | some c.Teaches",1
+"all t : Teacher | some t.teaches",3
+"for t: Teachers | some t.teaches",1
+"some c:Class, t:Teacher | t->c in",1
+"some (Teaches . Class & Teacher)
+}
+
+run test{ inv5 and not inv5o
+}
+
+pred inv5{
+  some (Teaches . Class & Teacher)
+}
+
+run test{ inv5 and not inv5o",1
+"some c:Class | Techear.Teaches = c",1
+"some t: Teacher | t.Teaches = Classes",1
+"all c : Class |  teaches.c in Teacher",1
+"Class->Teacher->Group in Groups
+}
+
+run test{ inv5 and not inv5o
+}
+
+pred inv5{
+	Class->Teacher->Group in Groups
+}
+
+run test{ inv5 and not inv5o",8
+"some  Teacher and some Class in Theches",1
+"some c : Class, p : Teacher | p.(c.groups)",1
+"all t:Teacher, some x: Class | t.Teaches.x",1
+"some c: Class |all t: Teacher | c.groups->t",1
+"all t:Teacher, some c:Class | t->c in Teaches",1
+"all p:Person | some x: Class | some t.Teaches.x",1
+"all t:Teacher, some c:Class | t -> c in Teaches",1
+"all t:Teacher; some c:Class | t -> c in Teaches",1
+"all t : Teacher, all c : Class | some t.Teaches.c",1
+"all t : Teacher | (some c : Class| (c -> t) not none)",1
+"all t : Teacher | (some c : Class | (c -> t) not none)",1
+"some c: Class |all t: Teacher | c.groups->t in Teacher",1
+"some c : Class, t : Teacher, g: Group c->t->g in groups",1
+"some c : Class, t : Teacher, g: Group | c->t->g in groups",1
+"all t : Teacher, s : Student | some t.Teaches & no s.Teaches",1
+"all t : Teacher, s : Student | some t.Teaches | no s.Teaches",1

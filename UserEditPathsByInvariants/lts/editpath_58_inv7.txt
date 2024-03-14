@@ -1,0 +1,31 @@
+inv7 B: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans_bin.^trans_bin
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.*trans_bin.*trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    all s : State | s in (Init.^trans_bin) implies Init in s.^trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in ^trans_bin . ^trans_bin
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in *trans_bin . *trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in ^trans_bin . *trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in *trans_bin . ^trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in ^trans_bin . ^trans_bin
+inv7 O: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in ^trans_bin
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    iden in *trans_bin
+inv7 B: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    some iden & trans_bin
+inv7 T: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    State.^trans_bin.Init = State
+inv7 B: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    State.^trans_bin = State
+inv7 B: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init in State.^trans_bin
+inv7 U: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init in State.*trans_bin
+inv7 B: let trans_bin = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans_bin
+inv7 T: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    State.trans2
+inv7 T: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    iden in Init.^trans2
+inv7 O: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    iden in ^trans2
+inv7 B: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans2
+inv7 U: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.*trans2
+inv7 B: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.(^trans2 + trans2)
+inv7 B: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans2
+inv7 U: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans2 + Init
+inv7 B: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init = Init.^trans2
+inv7 B: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in Init.^trans2
+inv7 T: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in (Init.^trans2 + Init->Init)
+inv7 T: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in (Init.^trans2 + Init->Init)
+inv7 T: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in (Init.^trans2 + (Init->Init))
+inv7 U: let trans2 = {s1, s2 : State | some s1.trans.s2} |	    Init in (Init.^trans2 + Init)
+

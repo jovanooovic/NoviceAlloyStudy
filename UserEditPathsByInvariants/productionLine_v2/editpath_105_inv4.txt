@@ -1,0 +1,8 @@
+inv4 B: all c1,c2:Component | c1->c2 in parts	all m1,m2:Material | m1->m2 not in parts
+inv4 B: all c1,c2:Component | c1->c2 in parts implies c1 != c2	all m1,m2:Material | m1->m2 not in parts implies m1 != m2
+inv4 B: some c1,c2:Component | c1->c2 in parts	all m1,m2:Material | m1->m2 not in parts
+inv4 B: some c1,c2:Component | c1->c2 in parts	some m1,m2:Material | m1->m2 not in parts
+inv4 B: all c1,c2:Component | c1->c2 in parts	all m1,m2:Material | m1->m2 not in parts
+inv4 C: all x : Component | some x.parts	all x : Material | no x.parts
+inv4 C: all c:Component | some c.parts	all m:Material | no m.parts
+

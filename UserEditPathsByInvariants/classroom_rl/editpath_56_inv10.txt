@@ -1,0 +1,12 @@
+inv10 O: all c: Class | some c.Groups.Student
+inv10 T: all c: Class | Student in c.Groups.Groups
+inv10 C: all c: Class | Student in c.Groups.Group
+inv10 B: all c: Class | (c.Groups).~(c.Groups) in iden
+inv10 B: all c: Class | ~(c.Groups).(c.Groups) in iden
+inv10 T: all c: Class | (~Groups.c).(c.Groups) in iden
+inv10 T: all c: Class | (~Groups).(Groups) in iden
+inv10 B: ~(Groups.Group).(Groups.Group) in iden
+inv10 B: (Groups.Group).~(Groups.Group) in iden
+inv10 B: ~(Groups.Group).(Groups.Group) in iden
+inv10 C: all c: Class | Student in c.Groups.Group
+

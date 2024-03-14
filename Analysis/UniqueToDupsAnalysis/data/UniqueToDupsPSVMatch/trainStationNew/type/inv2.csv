@@ -1,0 +1,39 @@
+"no Signal - signals",2
+"one Signal in Track",3
+"Signal one -> some Track",1
+"all s : Signal | succs.s",1
+"one t : Track | t.signals",1
+"all s: Signal | #s.Track = 1",1
+"all s : Signal | one Track.s",1
+"all s : Signal | lone Track.s",1
+"Signal in signals -> one Track",1
+"all s : Signal | one s in Track",1
+"signals in Track -> one signals",1
+"all s:Signal | one (s in Track)",1
+"(signals in Track) one -> Signal",1
+"all s:Signal | one signals in Speed",1
+"all s : Signal | lone s in signals.s",2
+"some x: Signal | one Track.signals.x",1
+"all s : Signal | one Track.signals.s",1
+"all s:Signal | one Track in signals.s",1
+"all s:Signal | one Track in signals.~s",1
+"all s : Signal | one s.(Track.signals)",1
+"all x: Signal | one x in Track.signals",1
+"all s:Signal | one Track in ~signals.s",1
+"all s : Signal | one s in Track.signals",1
+"all x : Signal | one x in Track.signals",1
+"all s : Signal, t: Track | one t.signals.s",1
+"all s: Signal| some t: Track| #t.signals.s=1",1
+"all s: Signal| some t: Track| one t.signals.s",1
+"all s : Signal| all t: Track | one t.signals.s",1
+"all s : Signal, t : Track | one s in t.signals",1
+"all s : Signal | some x : Track | x.signals <=> s",1
+"one signal: Signal, track:Track | signal => track",1
+"all s : Signal | all t : Track| one s in t.signals",1
+"all s : Signal | all t : Track | one s in t.signals",1
+"all t : Track | all s : Signal | one s in t.signals",1
+"all s : Signal | all t: Track | lone (t in signals.s)",1
+"all s : Signal | some t : Track| lone (t in signals.s)",1
+"all sinal : univ | sinal in Signal implies one track : Track | track->sinal",1
+"all t1,t2: Track | no ((t1.signals and t1.succs.^signals) & (t2.signals and t2.succs.^signals))",1
+"all t1,t2: Track | no ((t1.signals and t1.^succs.signals) & (t2.signals and t2.^succs.signals))",1

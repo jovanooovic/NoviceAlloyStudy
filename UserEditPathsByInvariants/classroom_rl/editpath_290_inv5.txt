@@ -1,0 +1,10 @@
+inv5 B: some c:Class {all t:Teacher |c in t.Teaches}
+inv5 B: all t:Teacher {some c:Class | c in t.Teaches}
+inv5 B: all p:Person {some c:Class | c in p.Teaches}
+inv5 T: all t:Teacher { t.Teaches}
+inv5 B: all t:Teacher { some t.Teaches}
+inv5 B: no Student & Teacher and 	 	all t:Teacher { some t.Teaches}
+inv5 B: all t:Teacher { some c:Class | t.Teaches in c}
+inv5 B: all t:Teacher { some c:Class | t.Teaches in c}
+inv5 C: some Teacher.Teaches
+

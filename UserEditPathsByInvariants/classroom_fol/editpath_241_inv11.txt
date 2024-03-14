@@ -1,0 +1,10 @@
+inv11 B: all c:Class, s: Student | some g:Group, t:Teacher | c -> s -> g in Groups iff t -> c in Teaches
+inv11 B: all c:Class | some s: Student, g:Group, t:Teacher | c -> s -> g in Groups iff t -> c in Teaches
+inv11 B: all c:Class | some s: Student, g:Group, t:Teacher | c -> s -> g in Groups implies t -> c in Teaches
+inv11 B: all c:Class | some s: Student, g:Group, t:Teacher | (c -> s -> g in Groups) implies (t -> c in Teaches)
+inv11 B: all c:Class | some s:Person, g:Group, t:Teacher | (c -> s -> g in Groups) implies (t -> c in Teaches)
+inv11 B: all c:Class | some s:Person, g:Group | (c -> s -> g in Groups) implies (some t:Teacher | t -> c in Teaches)
+inv11 C: all c:Class | (some s:Person, g:Group | c -> s -> g in Groups) implies (some t:Teacher | t -> c in Teaches)
+inv11 U: all c:Class | (some s:Student, g:Group| c -> s -> g in Groups) implies (some t:Teacher | t -> c in Teaches)
+inv11 C: all c:Class | (some s:Person, g:Group| c -> s -> g in Groups) implies (some t:Teacher | t -> c in Teaches)
+

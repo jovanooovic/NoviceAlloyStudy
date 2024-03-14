@@ -1,0 +1,23 @@
+inv4 U: all u : User, disj w1, w2 : u.visible | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 O: all u : User, disj w1, w2 : u.visible + u.profile | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 O: all u : User, disj w1, w2 : u.profile | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 U: all u : User, disj w1, w2 : u.visible | w1 + w2 in u.profile => no w1.ids & w2.ids
+inv4 O: all u : User, w : u.visible | no (u.profile - w).ids & w.ids
+inv4 B: all u : User, w : u.visible | no (u.visible - w).ids & w.ids
+inv4 B: all u : User, w : u.visible | no (u.visible & u.profile - w).ids & w.ids
+inv4 B: all u : User, w : u.visible | no ((u.visible & u.profile) - w).ids & w.ids
+inv4 O: all u : User, w : u.visible | no ((u.visible + u.profile) - w).ids & w.ids
+inv4 O: all u : User, w : u.visible | no (u.profile - w).ids & w.ids
+inv4 C: all u: User | (u.visible->u.visible) & ^((u.profile<:ids).~(u.profile<:ids)) in iden
+inv4 C: all u: User | (u.visible->u.visible) & *((u.profile<:ids).~(u.profile<:ids)) in iden
+inv4 C: all u: User | (u.visible->u.visible) & ^((u.profile<:ids).~(u.profile<:ids)) in iden
+inv4 C: all u: User | ((u.visible->u.visible) & ^((u.profile<:ids).~(u.profile<:ids))) in iden
+inv4 S: all u: User, w1, w2 : u.visible | (w1->w2) & ^((u.profile<:ids).~(u.profile<:ids))) in iden
+inv4 S: all u: User, w1, w2 : u.visible | (w1->w2) & ^((u.profile<:ids).~(u.profile<:ids))) in iden
+inv4 S: all u: User | all w1, w2 : u.visible | (w1->w2) & ^((u.profile<:ids).~(u.profile<:ids))) in iden
+inv4 S: all u: User | (u.visible->u.visible) & ^((u.profile<:ids).~(u.profile<:ids))) in iden
+inv4 C: all u: User | (u.visible->u.visible) & ^((u.profile<:ids).~(u.profile<:ids)) in iden
+inv4 C: all u: User, w1, w2 : u.visible | (w1->w2) & ^((u.profile<:ids).~(u.profile<:ids)) in iden
+inv4 C: all u: User, disj w1, w2 : u.visible | no (w1->w2) & ^((u.profile<:ids).~(u.profile<:ids))
+inv4 C: all u: User, disj w1, w2 : u.visible | no w1->w2 & ^((u.profile<:ids).~(u.profile<:ids))
+

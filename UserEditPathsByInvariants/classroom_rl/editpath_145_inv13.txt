@@ -1,0 +1,21 @@
+inv13 B: all t : Teacher, s : Student | s in t.Tutors
+inv13 T: all t : Teacher, s : Student | s in t.Tutors & t in Tutors.Person
+inv13 T: all p : Person, t : Teacher, s : Student | s in t.Tutors & t in Tutors.p
+inv13 B: all p : Person, t : Teacher, s : Student | s in t.Tutors and t in Tutors.p
+inv13 B: all p : Person, t : Teacher, s : Student | s in p.Tutors and t in Tutors.p
+inv13 B: all p : Person, t : Teacher, s : Student | t not in p.Tutors and t in Tutors.p
+inv13 B: all p : Person, t : Teacher, s : Student | t not in p.Tutors and s not in Tutors.p
+inv13 B: all p : Person, t : Teacher | p->t not in Tutors
+inv13 T: all p : Person, t : Teacher | t->p in Tutors => t in Teacher & p in Student
+inv13 U: all p : Person, t : Teacher | t->p in Tutors => t in Teacher and p in Student
+inv13 B: all p : Person, t : Teacher | p->t in Tutors => t in Teacher and p in Student
+inv13 U: all p : Person, t : Teacher | p->t in Tutors => p in Teacher and t in Student
+inv13 U: all p : Person, t : Teacher | p->t in Tutors => p in Teacher && t in Student
+inv13 C: all p : Person, t : p.Tutors | p->t in Tutors => p in Teacher && t in Student
+inv13 C: all p : Person, t : p.Tutors | p in Teacher && t in Student
+inv13 O: all p : Person | p in Teacher && p.Tutors in Student
+inv13 C: all p : Person, t : p.Tutors | p in Teacher && p.Tutors in Student
+inv13 C: all p : Person, t : p.Tutors | p in Teacher && p.Tutors in Student
+inv13 O: all p : Person | p in Teacher && p.Tutors in Student
+inv13 C: all p : Person, t : p.Tutors | p in Teacher && t in Student
+

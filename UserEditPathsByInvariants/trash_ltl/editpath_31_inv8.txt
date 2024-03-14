@@ -1,0 +1,30 @@
+inv8 B: eventually File.link in Trash
+inv8 B: eventually (all f:File| f+f.link in Trash)
+inv8 B: eventually (all f:File| f.link in Trash)
+inv8 B: eventually (File.link  in Trash)
+inv8 B: (all f:File| some f.link implies eventually f+f.link in Trash)
+inv8 B: (all f:File| some f.link implies eventually f.link in Trash)
+inv8 B: (all f:File| some f.link implies eventually f.link in Trash)
+inv8 U: all f:File| some f.link implies (eventually f in Trash)
+inv8 B: all f:File| some f.link implies (eventually f+f.link in Trash)
+inv8 B: all f:File| some f.^link implies (eventually f+f.^link in Trash)
+inv8 B: all f:File| eventually f.*link  in Trash
+inv8 B: all f:File| eventually f.^link  in Trash
+inv8 B: all f:File| eventually f.*link  in Trash
+inv8 T: all f:File| eventually some link  in Trash
+inv8 S: all f:File| some  f.*link eventually f.*link  in Trash
+inv8 B: all f:File| eventually  f.*link    in Trash
+inv8 B: always (all f:File| eventually  f.*link    in Trash)
+inv8 B: always (all f:File| some f.*link implies eventually  f.*link  in Trash)
+inv8 T: always (all f:File|  f.*link implies eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.*link  implies eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.*link  implies always eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.^link  in Trash)
+inv8 S: always (all f:File| some link^.f  implies  eventually  link^.f  in Trash)
+inv8 S: always (all f:File| some link^.f  implies  eventually  link^.f  in Trash)
+inv8 E:
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.^link  in Trash)
+inv8 O: always (all f:File| some f.^link  implies  eventually  f+f.^link  in Trash)
+inv8 O: always (all f:File| some f.^link  implies  eventually after f+f.^link  in Trash)
+inv8 B: always (all f:File| some f.^link  implies  eventually after f.^link  in Trash)
+

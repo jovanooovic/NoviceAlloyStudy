@@ -1,0 +1,45 @@
+inv5 T: no (Person-Student) & projects
+inv5 T: no (Person-Student) & projects
+inv5 T: no (Person-Student) & Person.projects
+inv5 T: no (Person-Student) & Person.projects
+inv5 T: no (Person-Student) & Person.projects
+inv5 S: no (Person-Student) & Person.projects.p
+inv5 T: no (Person-Student) & Person.projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv5 T: no (Person-Student) & Person.projects.Project
+inv5 S: all p:Person | p in p.projects implies p in Student and not in Professor
+inv5 T: all p:Person | p in p.projects implies p in Student
+inv5 U: all p:Person,pr:Project | pr in p.projects implies p in Student
+inv5 U: no (Person-Student) & projects.Project
+inv5 U: no ((Person-Student) & projects.Project)
+inv5 U: no (Person-Student) & projects.Project
+inv5 S: no (Person-Student) & projects.Project			  	all p:Projects | some Person.projects.p
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 U: no (Person-Student) & projects.Project
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 U: no (Person-Student) & projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv5 S: all p:Person : no (Person-Student) & p.projects.Project
+inv5 T: all p:Person | no (Person-Student) & p.projects.Project
+inv5 U: no (Person-Student) & projects.Project
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some projects.p
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Student.projects.p
+inv5 T: all p:Project | some Person.projects.p
+inv5 T: some Person.projects.Project
+inv5 T: all p:Project | some projects.p
+inv5 T: all p:Project | some Project.projects.p
+inv5 O: all p:Project | some Project.projects
+inv5 O: some Project.projects
+inv5 O: no (Person-Student) & projects.Project			  	some Project.projects
+inv5 T: no (Person-Student) & (Person <: projects)
+inv5 U: no (Person-Student) & (Person <: projects.Project)
+inv5 O: no (Person-Student) & projects.Project			  	some Project.projects
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects.p
+inv5 U: no (Person-Student) & projects.Project			  	all p:Project | some Person.projects
+inv5 T: no (Person-Student) & projects.Project			  	all p:Project | some projects.p
+inv5 C: no (Person-Student) & projects.Project			  	all p:Project | some (Person <: projects.p)
+inv5 C: no (Person-Student) & projects.Project			  	all p:Project | some (Person <: projects.p)
+

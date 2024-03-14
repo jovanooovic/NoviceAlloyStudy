@@ -1,0 +1,8 @@
+inv7 B: all s:Student | one p:Project | p in s.enrolled.projects
+inv7 B: all s:Student | lone p:Project | p in s.enrolled.projects
+inv7 S: all s:Student, c:Course | lone p:Project | s in projects.p and p in c.projects
+inv7 S: all s:Student, c:Course | lone p:Project | s in projects.p and p in c.projects
+inv7 U: all s:Student, c:Course | lone p:Project | s in projects.p and p in c.projects
+inv7 S: all s:Student, c:Course | lone p:Project | s in projects.proj and p in c.projects
+inv7 U: all s:Student, c:Course | lone p:Project | s in projects.p and p in c.projects
+

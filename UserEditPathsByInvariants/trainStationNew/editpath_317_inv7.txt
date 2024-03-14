@@ -1,0 +1,11 @@
+inv7 S: all t: Track | all p: succ.t | all s: t.succ | p not in s
+inv7 S: all t: Track | all p: succ.t | all s: t.succs | p not in s
+inv7 U: all t: Track | all p: succs.t | all s: t.succs | p not in s
+inv7 U: all t: Track | all p: succs.t | all s: t.succs | p not in s.succs
+inv7 S: all t: Track | all s: t.succs | succs^.p not in s.succs
+inv7 S: all t: Track | all s: t.succs | succs.^p not in s.succs
+inv7 T: all t: Track | all s: t.succs | succs.^t not in s.succs
+inv7 B: all t: Track | all p: succs.t | t.^succs not in p
+inv7 B: all t: Track | t.^succs not in t
+inv7 C: all t: Track | t not in t.^succs
+

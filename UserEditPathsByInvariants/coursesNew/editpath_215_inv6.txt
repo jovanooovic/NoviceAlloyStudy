@@ -1,0 +1,4 @@
+inv6 S: all s:Student | all c:Courses|  s.enrolled = projects.c
+inv6 T: all s:Student | all c:Course|  s.enrolled = projects.c
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+

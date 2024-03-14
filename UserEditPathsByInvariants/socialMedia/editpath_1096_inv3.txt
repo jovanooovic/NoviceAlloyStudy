@@ -1,0 +1,19 @@
+inv3 B: all u,uu:User, pht:Photo | uu->pht in posts and u->uu not in follows and pht in Ad implies u->pht not in sees				all ad:Ad, u:User | u->ad in sees
+inv3 B: all u,uu:User, pht:Photo | uu->pht in posts and u->uu not in follows and pht in Ad implies u->pht not in sees				all ad:Ad, u:User | u->ad in sees
+inv3 S: all u:User | u.sees == u.follows.posts.~Ad					all u:User | u.sees.Ad == Ad
+inv3 S: all u:User | u.sees == u.follows.posts.Photo-Ad					all u:User | u.sees.Ad == Ad
+inv3 S: all u:User | u.sees == u.follows.posts.Photo-Ad					all u:User | u.sees.Ad == Ad
+inv3 S: all u:User | u.sees == u.follows.posts.Photo-Ad					all u:User | u.sees.Ad == Ad
+inv3 S: all u:User | u.sees = u.follows.posts.Photo-Ad					all u:User | u.sees.Ad == Ad
+inv3 T: all u:User | u.sees = u.follows.posts.Photo-Ad					all u:User | u.sees.Ad = Ad
+inv3 T: all u:User | none u.sees-u.follows.posts.Photo-Ad					all u:User | none u.sees.Ad-Ad
+inv3 T: all u:User | u.sees-u.follows.posts.Photo-Ad = none					all u:User | u.sees.Ad-Ad = none
+inv3 T: all u:User | u.sees-u.follows.posts.Photo-Ad = none					all u:User | u.sees.Ad = Ad
+inv3 T: all u:User | u.sees = u.follows.posts.Photo-Ad					all u:User | u.sees.Ad = Ad
+inv3 T: all u:User | u.sees.Photo-Ad = u.follows.posts.Photo					all u:User | u.sees.Ad = Ad
+inv3 T: all u:User | u.sees.(Photo-Ad) = u.follows.posts.Photo					all u:User | u.sees.Ad = Ad
+inv3 S: all u:User | u.sees.-Ad = u.follows.posts					all u:User | u.sees.Ad = Ad
+inv3 T: all u:User | u.sees-Ad in u.follows.posts					all u:User | u.sees.Ad = Ad
+inv3 O: all u:User | u.sees-Ad in u.follows.posts					all u:User | u.sees<:Ad = Ad
+inv3 C: all u:User | u.sees-Ad in u.follows.posts					all u:User | u.sees<:Ad in Ad
+

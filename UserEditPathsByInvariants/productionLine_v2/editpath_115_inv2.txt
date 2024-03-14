@@ -1,0 +1,7 @@
+inv2 S: all ws: Workstation | one w: woker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 S: all ws: Workstation | one w: worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 S: all ws: Workstation | one w: Worker | ws.succ == none and w in ws.workers	all w: Worker | one ws: Workstation | ws.succ == none and w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | ws.succ = none and w in ws.workers	all w: Worker | one ws: Workstation | ws.succ = none and w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+

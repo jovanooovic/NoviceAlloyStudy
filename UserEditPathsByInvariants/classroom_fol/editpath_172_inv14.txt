@@ -1,0 +1,16 @@
+inv14 T: all s : Student | some t : Teacher | some c : Class | some g : Group | c->s->g in Group and t->c in Teaches => t->s in Teaches
+inv14 B: all s : Student | some t : Teacher | some c : Class | some g : Group | c->s->g in Groups and t->c in Teaches => t->s in Teaches
+inv14 B: all s : Student | some t : Teacher | some c : Class | some g : Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+inv14 B: all s : Student | some t : Teacher | some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches => t->s in Tutors
+inv14 S: all s : Student | some t : Teacher (| some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 B: all s : Student | some t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 U: all s : Student | all t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 B: all s : Student | all t : Teacher | (all c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 U: all s : Student | all t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 B: all s : Student | some t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 B: all s : Student | some t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) and t->s in Tutors
+inv14 B: all s : Person | some t : Teacher | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 U: all s : Person | some t : Person | (some c : Class | (some g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 B: all s : Person | all t : Person | (all c : Class | (all g : Group | c->s->g in Groups) and t->c in Teaches) => t->s in Tutors
+inv14 C: all s : Person | all t : Person | all c : Class | all g : Group | c->s->g in Groups and t->c in Teaches => t->s in Tutors
+

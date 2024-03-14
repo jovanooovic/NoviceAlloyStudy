@@ -1,0 +1,5 @@
+inv7 T: all s : Student | Course <: Course.projects
+inv7 S: all s : Student | lone Course.projects.(project.s)
+inv7 T: all s : Student | lone Course.projects.(projects.s)
+inv7 U: all c : Course, s : Student | lone (c.projects & s.projects)
+

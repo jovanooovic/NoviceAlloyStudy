@@ -1,0 +1,8 @@
+inv6 S: all i : Influencer | all d : Date | (some p : Photo | i->p in posts)
+inv6 U: all i : Influencer | all d : Day | (some p : Photo | i->p in posts)
+inv6 T: all i : Influencer | all d : Day | (some p : Photo | i->p in posts and d in date)
+inv6 S: all i : Influencer | all d : Day | (some p : Photo | i->p in posts and d is date)
+inv6 O: all d : Day | (all i : Influencer | (some p : Photo | i->p in posts and p in d))
+inv6 O: all d : Day | all i : Influencer | (some p : Photo | i->p in posts and p in d)
+inv6 C: all d : Day | (all i : Influencer | (some p : Photo | i->p in posts and p->d in date))
+

@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 C: Person=Student
+inv2 S: no teachers
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person=Student + Teacher
+inv5 S: all t: Teacher | some t.teaches
+inv5 B: all t: Teacher | some t.Teaches
+inv5 T: some x:Class, t:Teacher | t.Teaches.x
+inv5 T: all x:Class, t:Teacher | some t.Teaches.x
+inv5 S: all t:Teacher, some x: Class | t.Teaches.x
+inv5 U: all t:Teacher | some x: Class | some Teaches.x
+inv5 T: all t:Teacher | some x: Class | some t.Teaches.x
+inv5 S: all p:Person | some x: Class | some t.Teaches.x
+inv5 T: all p:Person | some x: Class | some p.Teaches.x
+inv5 T: some x:Class|(all t:Teacher | t.Teaches.x)
+inv6 T: all t:Teacher| some x:Class | t.Teaches.x
+inv5 B: all x:Class | some Teaches.x
+inv6 C: all t:Teacher | some t.Teaches
+inv7 U: all x:Class | some Teaches.x
+inv7 T: all x:Class, t:Teacher | some t.Teaches.x
+inv7 T: all x:Class| some t: Teacher| some t.Teaches.x
+inv7 U: all x:Class| some Teaches.x
+NA M: MOD BASE MODEL
+inv9 T: all x:Class| some t:Teacher | lone t.Teaches.x
+NA H: THEME UPDATE
+

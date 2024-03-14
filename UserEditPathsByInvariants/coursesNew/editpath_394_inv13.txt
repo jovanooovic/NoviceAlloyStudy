@@ -1,0 +1,17 @@
+inv13 S: all c : Course | gt(c.grades)
+inv13 E:
+inv13 T: all c: Course | last[c.grades]
+inv13 S: all c: Course | u = last[c.grades] implies some (u.projects & c.projects)
+inv13 S: all c: Course | one u : User | u = last[c.grades] and some (u.projects & c.projects)
+inv13 O: all c: Course | one u : Student | u = last[c.grades] and some (u.projects & c.projects)
+inv13 B: all c: Course | one u : last[c.grades] |  some (u.projects & c.projects)
+inv13 S: all c: Course, one u : last[c.grades] |  some (u.projects & c.projects)
+inv13 B: all c: Course | one u : last[c.grades] |  some (u.projects & c.projects)
+inv13 B: all c: Course | one u : first[c.grades] |  some (u.projects & c.projects)
+inv13 B: all c: Course |   some (last[c.grades].projects & c.projects)
+inv13 B: all c: Course |  no (last[c.grades].projects & c.projects)
+inv13 B: all c: Course |  one (last[c.grades].projects & c.projects)
+inv13 B: all c: Course |  some (last[c.grades].projects & c.projects)
+inv13 B: all c: Course | some c.projects implies some (last[c.grades].projects & c.projects)
+inv13 B: all c: Course | (some c.projects) implies some (last[c.grades].projects & c.projects)
+

@@ -1,0 +1,11 @@
+inv4 T: one c : Course | c.projects
+inv4 B: all c : Course | one c.projects
+inv4 U: all c1,c2 : Course, p : Project | p in c1.projects and p in c2.projects implies c1=c2
+inv4 B: one c : Course | one c.projects
+inv4 B: one c : Course | some c.projects
+inv4 B: all p : Project | one c : Course | some c.projects
+inv4 T: all p : Project | one c : Course | some p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv4 B: all p : Project | all c : Course | p in c.projects
+inv4 B: all p : Project, c : Course | p in c.projects
+

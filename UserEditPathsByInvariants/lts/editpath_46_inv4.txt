@@ -1,0 +1,12 @@
+inv4 T: some r1: State->Event | some r2: Event->State | r1.Event->r2 = trans && State in Init.^(r1.r2)
+inv4 T: some r1: State->Event | some r2: Event->State | r1.Event->r2 = trans && State in Init.^(r1.r2)
+inv4 U: State in Init.^(State->State)
+inv4 U: State in Init.^(State->State) or #State = 1
+inv4 B: State in Init.^(State->State) and #State != 1
+inv4 U: State in Init.^(State->State.trans[Event])
+inv4 T: State in Init.trans.^(State->State.trans[Event])
+inv4 U: State in Init.^(State->State.trans[Event])
+inv4 U: State in Init.^(State->State.trans[Event])
+inv4 U: State in Init + Event.(Init.trans) + Event.((Event.(Init.trans)).trans) + Event.((Event.((Event.(Init.trans)).trans)).trans)
+inv4 C: State in Event.(Init.trans) + Event.((Event.(Init.trans)).trans) + Event.((Event.((Event.(Init.trans)).trans)).trans)
+

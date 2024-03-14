@@ -1,0 +1,20 @@
+inv8 S: always l in link | eventually l in Trash
+inv8 S: l in link
+inv8 S: all f,f1 in File | f.f1 in link
+inv8 S: all f,f1 in File | f->f1 in link
+inv8 S: all f,f1: in File | f->f1 in link
+inv8 S: all f,f1: in File | no Trash
+inv8 E:
+inv8 B: some f:File | some f.link
+inv8 B: always all f:File | some f.link implies eventually f.link in Trash
+inv8 S: always all f:File | all f.link implies eventually f.link in Trash
+inv8 S: always all f:File | some f.link implies eventually all f.link in Trash
+inv8 B: always all f:File | some f.link implies eventually  f.link in Trash
+inv8 T: always all f,g:File | f->g in link implies eventually  f->g in Trash
+inv8 B: always all f:File | isLink[f] implies eventually f.link in Trash	}		pred isLink[f:File]{	some g:File | g->f in link
+inv8 B: all f:File | isLink[f] implies eventually f.link in Trash	}		pred isLink[f:File]{	some g:File | g->f in link
+inv8 S: all f:File | some g:File | f->g in Link implies eventually f->g in Trash
+inv8 B: always all f,g:File | some f.link implies eventually  f.link in Trash
+inv8 B: always all f:File | some f.link implies eventually  f.link in Trash
+inv8 C: always all f:File | some f.link implies eventually  f in Trash
+

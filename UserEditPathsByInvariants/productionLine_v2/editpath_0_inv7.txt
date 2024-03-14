@@ -1,0 +1,8 @@
+inv7 T: all p:Product | lone d:Dangerous | p->d in parts implies p is Dangerous
+inv7 S: all c:Component | lone d:Dangerous | c->d in parts implies p is Dangerous
+inv7 T: all c:Component | lone d:Dangerous | c->d in parts implies c is Dangerous
+inv7 B: all c:Component | lone d:Dangerous | c->d in parts implies c in Dangerous
+inv7 B: all c:Component | some d:Dangerous | c->d in parts implies c in Dangerous
+inv7 B: all c:Component | one d:Dangerous | c->d in parts implies c in Dangerous
+inv7 C: all c:Component | all d:Dangerous | c->d in parts implies c in Dangerous
+

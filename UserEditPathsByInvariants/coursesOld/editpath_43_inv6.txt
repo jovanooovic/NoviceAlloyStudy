@@ -1,0 +1,7 @@
+inv6 S: all p:Project, s:Student | s in (Person <: projects).p implies p in x.enrolled.projects
+inv6 U: all p:Project, s:Student | s in (Person <: projects).p implies p in s.enrolled.projects
+inv6 S: all p:Project, s:Student | p in x.projects implies p in s.enrolled.projects
+inv6 U: all p:Project, s:Student | p in s.projects implies p in s.enrolled.projects
+inv6 U: all p:Project, s:Student | p in s.projects implies not p not in s.enrolled.projects
+inv6 U: all p:Project, s:Student | p in s.projects implies p in s.enrolled.projects
+

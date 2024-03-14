@@ -1,0 +1,31 @@
+NA H: THEME UPDATE
+inv1 C: not some p:Person | some c:Course | p not in Student and p->c in enrolled
+inv2 B: not some p:Person | some c:Course | p not in Student and p->c in teaches
+inv2 C: not some p:Person | some c:Course | p not in Professor and p->c in teaches
+inv3 O: all c:Course | some t:Professor | t->c in teaches
+inv4 C: all proj:Project | one c:Course | c->proj in projects
+inv4 U: all proj:Project, c1, c2:Course | c1->proj in projects and c2->proj in projects => c1=c2
+inv4 C: all proj:Project, c1, c2:Course | c1->proj in projects and c2->proj in projects => c1=c2	  	all proj:Project | some c:Course | c->proj in projects
+inv5 C: not some p:Person-Student | some proj:Project | p->proj in projects	  all proj:Project | some s:Student | s->proj in projects
+inv6 S: not some s:Student | some proj:Proj, c:Course | c->proj in projects s->proj in projects and s->c not in enrolled
+inv6 S: not some s:Student | some proj:Proj, c:Course | c->proj in projects and s->proj in projects and s->c not in enrolled
+inv6 B: not some s:Student | some proj:Project, c:Course | c->proj in projects and s->proj in projects and s->c not in enrolled
+inv7 T: all s:Student, c1, c2:Course | s->c1 in projects and s->c2 in projects => c1=c2
+inv7 T: all s:Student, c1, c2:Course | s->c1 in projects and s->c2 in projects => c1=c2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => c1!=c2 and proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects iff c1!=c2 and proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => c1!=c2 or proj1=proj2
+inv7 B: all s:Student, proj1,proj2:Project, c1, c2:Course | s->c1 in enrolled and s->c2 in enrolled and s->proj1 in projects and s->proj2 in projects => proj1=proj2
+inv7 B: not some s:Student | some p1, p2:Project, c:Course | s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects
+inv7 U: not some s:Student | some p1, p2:Project, c:Course | p1!=p2 and s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects
+inv8 U: all t:Professor, p:Person | t->p in teaches => t!=p
+inv8 U: all t:Professor, p:Person | t->p in teaches => t!=p
+inv8 U: not some t:Professor | t->t in teaches
+inv8 U: not some t:Professor | some c:Course |  t->c in enrolled and t->c in teaches
+inv8 U: not some t:Professor | some c:Course | t->c in enrolled and t->c in teaches
+inv9 B: all t1, t2:Professor, c:Course | t1->c in teaches and t1!=t2 => t2->c not in enrolled
+inv9 B: all t1, t2:Professor, c:Course | t1->c in teaches  => t2->c not in enrolled
+inv9 B: all t1, t2:Professor, c:Course | t1->c in teaches and t1!=t2 => t2->c not in enrolled
+inv10 S: all c:Courses, p:Person, g:Grade | c->p->g in grades => p in Student
+inv10 C: all c:Course, p:Person, g:Grade | c->p->g in grades => p in Student
+

@@ -1,0 +1,24 @@
+inv4 T: all s: State | some (*trans.s & Init)
+inv4 T: all s: State | some (*trans[Event].s & Init)
+inv4 B: all s: State | some (*(trans[Event]).s & Init)
+inv4 T: all s: State | some (*{ss: State, e: Event | ss.trans.e}.s & Init)
+inv4 T: all s: State | some (*{ss: State, e: Event | ss.trans}.s & Init)
+inv4 T: all s: State | some (*{ss: State | ss.trans.Event}.s & Init)
+inv4 T: all s: State | some (*{ss: State | ss.trans}.s & Init)
+inv4 T: all s: State | some (*{s1, s2: State | some s1.trans[Event].s2}.s & Init)
+inv4 U: all s: State | some (*{s1, s2: State | s2 in s1.trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1 in s2.trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->s2 in trans[Event]}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->s2 in trans.Event}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | s1->Event->s2 in trans}.s & Init)
+inv4 U: all s: State | some (*{s1, s2: State | some (s1 <: trans :> s2)}.s & Init)
+inv4 U: all s: State | some ((*{s1, s2: State | some (s1 <: trans :> s2)}.s & Init))
+inv4 S: all s: State | some (*{s1, s2: State | some (s2 <: trans :> s1}.s & Init)
+inv4 B: all s: State | some (*{s1, s2: State | some (s2 <: trans :> s1)}.s & Init)
+inv4 T: Init.*trans = State
+inv4 U: Init.*{s1, s2: State | some e: Event | s1->e->s2 in trans} = State
+inv4 U: Init.*{s1, s2: State | some e: Event | s1->e->s2 in trans} = State
+inv4 T: Init.*{s1, s2: State | s1.trans.s2} = State
+inv4 U: Init.*{s1, s2: State | some s1.trans.s2} = State
+inv4 C: Init.^{s1, s2: State | some s1.trans.s2} = State
+

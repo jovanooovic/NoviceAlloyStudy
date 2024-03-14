@@ -1,0 +1,24 @@
+Pairs,4
+,,"no Course.grades",1
+,,"all c : Course | Person.(c.grades) in Student",1
+,,"all u : univ | u not in Student implies no grades.Grade",1
+,,"all u : univ | u not in Student implies no u.grades.Grade",1
+
+Pairs,1
+,,"all c : Course, p : Person | c.grades[p]=Student",1
+
+Pairs,1
+,,"all c: Course, p: Person | p in  c.grades.Person",1
+
+Pairs,1
+,,"all p:Person | some Person <: Course.grades implies p in Student",1
+
+Pairs,1
+,,"all p:Person,c:Course,g:Grade | c->p->g in grades and p in Student",1
+
+Pairs,1
+,,"all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p in Student",1
+
+Pairs,1
+,,"all p : Person, c: Course, g: Grade | c -> p -> g in grades <=> p not in Professor and p in Student",1
+

@@ -1,0 +1,10 @@
+inv8 U: all u : User | all ad : u.sees | all ad_p : ad.posts | ad_p in u.follows || ad_p in u.suggested
+inv8 U: all u : User | all ad : u.sees | all ad_p : ad.posts | ad_p in follows.u || ad_p in suggested.u
+inv8 S: all u : User | all ad : Ad | all u_ad in u.sees.ad | u_ad.posts in u.follows || u_ad.posts in u.suggested
+inv8 T: all u : User | all ad : Ad | all u_ad : u.sees.ad | u_ad.posts in u.follows || u_ad.posts in u.suggested
+inv8 U: all u : User | all ad : Ad | ad in sees.u => (posts.ad in suggested.u || posts.ad in follows.u)
+inv8 B: all u : User | all ad : Ad | u in sees.ad => (posts.ad in follows.u || posts.ad in suggested.u)
+inv8 B: all u : User | all ad : Ad | u in sees.ad => (posts.ad in u.follows || posts.ad in u.suggested)
+inv8 U: all u : User | all ad : Ad | u in sees.ad => (ad.posts in u.follows || ad.posts in u.suggested)
+inv8 B: all u : User | all ad : Ad | u in sees.ad => (posts.ad in u.follows || posts.ad in u.suggested)
+

@@ -1,0 +1,24 @@
+inv3 T: all x: User | x.sees
+inv3 T: all x: User | sees.x not Ad
+inv3 S: all x: User | all y: User | x.sees in y.post -> y in x.follows
+inv3 T: all x: User | all y: User | x.sees in y.posts -> y in x.follows
+inv3 T: all x,y: User | x.sees in y.posts -> y in x.follows
+inv3 O: all x,y: User | x.sees in y.posts && y in x.follows
+inv3 T: all x,y: User | all p: Photo | p not Ad && x.sees in y.posts && y in x.follows
+inv3 O: all x,y: User | x.sees in y.posts && y in x.follows
+inv3 S: all x,y: User | x.sees in y.posts && y in x.follows && y.post not Ad
+inv3 T: all x,y: User | x.sees in y.posts && y in x.follows && y.posts not Ad
+inv3 O: all x,y: User | x.sees in y.posts && y in x.follows && y.posts != Ad
+inv3 T: all x,y: User | all p: Photo | p != Ad implies (p in x.sees && p in x.posts)-> x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad implies (p in x.sees && p in x.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad  && x != y implies (p in x.sees && p in x.posts) implies x in y.follows
+inv3 T: all x,y: User | all p: Photo | p != Ad  & x != y implies (p in x.sees && p in x.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad  && x != y implies (p in x.sees && p in x.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad  && x != y implies (p in x.sees && p in y.posts) implies x in y.follows
+inv3 T: all x,y: User | all p: Photo | p not Ad  and x != y implies (p in x.sees && p in y.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies ((p in x.sees and p in y.posts) implies x in y.follows)
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies ((p in x.sees and p in y.posts) implies x in y.follows)
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies x in y.follows
+inv3 B: all x,y: User | all p: Photo | p != Ad and x != y implies (p in x.sees and p in y.posts) implies y in x.follows
+

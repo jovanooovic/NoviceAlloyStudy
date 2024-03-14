@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 C: all x : Photo | some y : User | y->x in posts	all x : Photo | all y,z : User | y->x in posts and z->x in posts implies y = z
+inv1 C: all x : Photo | some y : User | y->x in posts	all x : Photo | all y,z : User | y->x in posts and z->x in posts implies y = z
+inv2 S: all x,y : User | x->y in follow implies x != y
+inv2 S: all x,y : User | x->y in follow implies x != y
+inv1 C: all x : Photo | one posts.x
+inv1 B: all x : Photo | one posts
+inv1 C: all x : Photo | one posts.x
+inv1 B: all x : Photo | one posts
+inv2 S: all x,y : User | x->y in follow implies x != y
+inv2 S: all x,y : User | x->y in follow implies x != y
+inv2 S: all x,y : User | x->y in follow implies x != y
+inv2 S: all x,y : User | x->y in follow implies x!=y
+inv2 S: all x,y : User | x->y in follow implies !x=y
+inv2 S: all x : User | x not in follow.x
+inv2 S: all x,y : User | x->y in follow implies x!=y
+inv2 C: all x,y : User | x->y in follows implies x!=y
+inv2 S: all x,y : User | x->y in follow implies x!=y
+inv2 C: all x: User | x not in follows.x
+inv3 B: all x,y: User | all z: Photo | x->y in follows and y->z in posts and z in Ad implies z not in x.sees
+inv3 B: all x,y: User | all z: Photo | x->y in follows and y->z in posts and z in Ad implies x->z not in sees
+inv3 B: all x,y: User | all z: Ad | x->y in follows and y->z in posts implies x->z not in sees
+inv3 B: all x,y: User | all z: Ad | x->y in follows and y->z in posts implies x->z not in sees
+

@@ -1,0 +1,9 @@
+inv3 B: all c : Course, p : Professor | p in c.grades.Grade
+inv3 B: all c : Course | Professor in c.grades.Grade
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+inv3 T: all p : Person, c : Course | p in c.grades.Grade~teaches implies p in Professor
+inv3 U: all p : Person, c : Course | p in c.grades.Grade.~teaches implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.grades.Grade implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+inv3 B: all p : Person, c : Course | p in c.~teaches implies p in Professor
+

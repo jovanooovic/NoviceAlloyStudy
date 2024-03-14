@@ -1,0 +1,13 @@
+inv3 U: all c:Component | some Robot
+inv3 T: all c:Component, p:Position | c->p in Position implies some (Robot.p)
+inv3 T: all c:Component, p:Position | c->p in Position
+inv3 T: all c:Component, p:Position | c.p
+inv3 S: all c:Component, p:Position | p in c.position
+inv3 O: all c:Component, p:Position | p in c.position
+inv3 T: all c:Component, p:Position | p in c.position implies some Robot.p
+inv3 T: all c:Component, p:Position | some r : Robot | p in c.position implies some (r.p)
+inv3 U: all c:Component, p:Position | some r : Robot | p in c.position implies some Robot
+inv3 T: all c:Component, p:Position | some r : Robot | p in c.position implies some p in r.position
+inv3 C: all c:Component, p:Position | some(c.position & Robot.position)
+inv3 C: all c:Component | some(c.position & Robot.position)
+

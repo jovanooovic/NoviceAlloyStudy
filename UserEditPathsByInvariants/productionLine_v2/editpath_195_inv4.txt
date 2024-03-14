@@ -1,0 +1,18 @@
+inv4 S: Components in Parts.parts and no (Material in Parts.parts)
+inv4 T: Component in Product.parts and no (Material in Product.parts)
+inv4 T: Component in Product.parts and no Material in Product.parts
+inv4 B: Component in Product.parts
+inv4 B: Component in Product.parts and all m: Material, p: Product | m not in p.parts
+inv4 B: all c: Component, p: Product | c in p.parts and all m: Material, p: Product | m not in p.parts
+inv4 B: all c: Component | some p: Product | c in p.parts and all m: Material, p: Product | m not in p.parts
+inv4 B: all c: Component | some p: Product | c in p.parts and all m: Material | no p: Product | m in p.parts
+inv4 B: all c: Component | some p: Product | c in p.parts and all m: Material | no p: Product | m->p in parts
+inv4 S: (all c: Component | p: Product | c in p.parts) and (all m: Material, p: Product | m not in p.parts)
+inv4 S: (all c: Component | p: Product | c in p.parts) and	(all m: Material, p: Product | m not in p.parts)
+inv4 S: (all c: Component | p: Product | c in p.parts ) and	(all m: Material, p: Product | m not in p.parts )
+inv4 B: (all c: Component | some p: Product | c in p.parts)	and	(all m: Material | no p: Product | m in p.parts)
+inv4 B: (all c: Component | some p: Product | c in p.parts)	and	(all m: Material | no p: Product | m->p in parts)
+inv4 C: (all c: Component | some p: Product | c-> p in parts)	and	(all m: Material | no p: Product | m->p in parts)
+inv4 C: (all c: Component | some p: Product | c in parts.p)	and	(all m: Material | no p: Product | m->p in parts)
+inv4 C: (all c: Component | some p: Product | c in parts.p)	and	(all m: Material | no p: Product | m->p in parts)
+

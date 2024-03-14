@@ -1,0 +1,9 @@
+inv8 S: all u : user | u.sees & Ad in u.follows and u.suggested
+inv8 T: all u : User | u.sees & Ad in u.follows and u.suggested
+inv8 T: all u : User | u.sees & Ad = u.follows and u.suggested
+inv8 T: all u : User | u.sees & Ad in u.follows or u.suggested
+inv8 T: all u : User | u.sees & Ad in u.follows.posts or u.suggested.posts
+inv8 T: all u : User | u.sees & Ad = u.follows.posts or u.suggested.posts
+inv8 T: all u : User | u.sees = Ad in u.follows.posts or u.suggested.posts
+inv8 T: all u : User | u.sees & Ad implies u.follows.posts or u.suggested.posts
+

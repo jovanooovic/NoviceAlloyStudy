@@ -1,0 +1,7 @@
+inv12 U: all t : Teacher | some c : Class | t->c in Teaches
+inv12 U: all t : Teacher | some c : Class | t->c in Teaches and some c->Person->Group
+inv12 C: all t : Teacher | some c : t.Teaches | some c.Groups
+inv12 S: all t : Techer | some (t.Teaches.Groups)
+inv12 C: all t : Teacher | some (t.Teaches.Groups)
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

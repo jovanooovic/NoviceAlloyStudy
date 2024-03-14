@@ -1,0 +1,75 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv2 C: File in Trash
+inv3 T: some File in Trash
+inv3 C: some f:File | f in Trash
+inv4 C: all f:File | f in Protected implies f not in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv6 O: all f:File | one f.link
+inv6 O: all f:File | lone f->link
+inv6 C: all f:File | lone f.link
+inv7 S: all f:file | none f.link in Trash
+inv7 T: all f:File | none f.link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 B: all f:File | link.f not in Trash
+inv7 T: all l:link | l not in Trash
+inv7 T: all l:link | l not in l.Trash
+inv7 T: all l:link | l not in l->Trash
+inv7 T: all l:link | l not in l.Trash
+inv7 T: all l:link | l not in Trash.l
+inv7 B: all f:File | link.f not in Trash
+inv8 C: no link
+inv10 S: all F:File | link.f in Trash implies f.link in Trash
+inv10 B: all f:File | link.f in Trash implies f.link in Trash
+inv10 T: all f:File | link in Trash implies f.link in Trash
+inv9 T: all f:File | f.link implies no f.*link
+inv9 T: all f:File | f in link implies no f.*link
+inv9 S: all f:File | f in link implies no f in .*link
+inv9 T: all f:File | f in link implies not f.*link
+inv9 T: all f:File | f.link implies not f.*link
+inv9 T: all f:File | f.link implies not f.*link
+inv9 T: all f:File | f.link implies not f.*link
+inv10 T: all f:File | link in Trash implies f.link in Trash
+inv7 B: all f:File | link.f not in Trash
+inv7 T: no link in Trash
+inv7 T: not link in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f.link implies f not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 T: all f:File | f in link not in Trash
+inv7 T: all f:File | f->link not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv9 T: all f:File | f.link implies not f.link.link
+inv9 T: all f:File | f.link implies no f.link.link
+inv10 T: link in Trash implies File.*link in Trash
+inv10 T: link in Trash implies File.*link in Trash
+inv10 B: all f:File | f.link in Trash implies f.*link in Trash
+inv7 T: all f:File | f->link not in Trash
+inv7 T: all f:File | f->link implies f not in Trash
+inv7 B: all f,g:File | f->g in link implies f not in Trash
+inv7 C: all f,g:File | f->g in link implies g not in Trash
+inv10 T: all f,g:File | f->g in Trash implies g in Trash
+inv10 T: all f,g:File | f->g in link in Trash implies g in Trash
+inv10 T: all f,g:File | (f->g in link in Trash) implies g in Trash
+inv10 S: all f,g:File | f->g in link | g in Trash
+inv10 T: all f,g:File | f->g in link and f->g in Trash implies g in Trash
+inv10 O: all f,g:File | f->g in link implies g in Trash
+inv10 C: all f:Trash,g:File | f->g in link implies g in Trash
+inv9 T: all f,g:File| f->g in link implies not g.link
+inv9 T: all f,g:File| f->g in link implies g in link
+inv9 C: all f,g,h:File| f->g in link implies not g->h in link
+inv1 C: no Trash
+inv2 C: File in Trash
+NA H: THEME UPDATE
+inv1 C: no Trash
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv9 C: all f,g,h:File| f->g in link implies not g->h in link
+inv8 C: no link
+inv7 C: all f,g:File | f->g in link implies g not in Trash
+inv6 C: all f:File | lone f.link
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv4 C: all f:File | f in Protected implies f not in Trash
+inv3 C: some f:File | f in Trash
+

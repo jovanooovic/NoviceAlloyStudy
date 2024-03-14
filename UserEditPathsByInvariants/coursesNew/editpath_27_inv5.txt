@@ -1,0 +1,6 @@
+inv5 T: all p : Person | (p in Student => some p.projects) and (p in Professor => no p.projects)	    all prj:Project | some prj.Person
+inv5 T: all p : Person | (p in Student implies some p.projects) and (p in Professor implies no p.projects)	    all prj:Project | some prj.Person
+inv5 C: all x : Project | all y : Person | x in y.projects implies y in Student	  all x : Project | some y : Person | x in y.projects
+inv5 T: all x : Project | all y : Person | x in y.projects implies y in Student	  	all x : Project | some projects.x
+inv5 C: all x : Project | all y : Person | x in y.projects implies y in Student	  	all x : Project | some y : Person | x in y.projects
+

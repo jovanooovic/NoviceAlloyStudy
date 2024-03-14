@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 C: all p : Person | #(p.enrolled)>0 implies p in Student
+inv2 C: all p : Person | #(p.teaches)>0 implies p in Professor
+inv3 C: all c : Course | some p : Person | c in p.teaches
+inv4 S: all c : Course |
+inv3 C: all c : Course | some p : Person | c in p.teaches
+inv4 B: all c1,c2 : Course | c1.projects != c2.projects
+inv4 T: all c1,c2 : Course | all p : Project | p = c1.projects implies c2.projects
+inv4 T: all c1,c2 : Course | all p : Project | (p = c1.projects) implies c2.projects
+inv4 B: all c1,c2 : Course | all p : Project | (p = c1.projects) implies (c1.projects != c2.projects)
+inv4 B: all p : Project | all c1,c2 : Course | p in c1.projects implies p not in c2.projects
+inv4 U: all p : Project | some c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: all p : Person | #(p.projects)> 0 implies p in Student	  all project : Project | some person : Person | project in person.projects
+inv6 B: all p : Person | some c : Course | p.projects in c.projects
+inv6 S: all per : Person | some c : Course | all pro : Project | (pro in per.projetcs and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | some c : Course | all pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | some c : Course | one pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | all c : Course | all pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+inv7 O: all pro1,pro2 : Project | all per : Person | all c : Course | (pro1 in per.projects and pro2 in per.projects and pro1 in c.projects) implies pro2 not in c.projects
+inv7 B: all pro1,pro2 : Project | all per : Person | all c : Course | (per in Student and pro1 in per.projects and pro2 in per.projects and pro1 in c.projects) implies pro2 not in c.projects
+inv7 U: all pro1,pro2 : Project | all per : Person | all c : Course | (per in Student and pro1 in per.projects and pro2 in per.projects and pro1 in c.projects and pro1 != pro2) implies pro2 not in c.projects
+inv7 C: all pro1,pro2 : Project | all per : Person | all c : Course | ( pro1 in per.projects and pro2 in per.projects and pro1 in c.projects and pro1 != pro2) implies pro2 not in c.projects
+inv8 U: all p : Person | all c : Course | (p in Professor and c in p.teaches) implies ( c not in p.enrolled )
+inv9 O: all p1,p2 : Person | all c : Course | c in p1.teaches implies (c not in p2.enrolled)
+inv9 B: all p1,p2 : Person | all c1 : Course | c1 in p1.teaches and c1 in p2.teaches implies (c1 not in p2.enrolled or c1 not in p1.enrolled)
+inv9 O: all p1,p2 : Person | all c1,c2 : Course | (c1 in p1.teaches and c1 in p2.teaches) and (c2 in p1.enrolled) implies (c2 not in p2.teaches)
+inv8 C: all p : Person | all c : Course | (c in p.teaches) implies ( c not in p.enrolled )
+inv10 C: all p1: Person | all c : Course | all g : Grade | p1->g in c.grades implies p1 in Student
+inv11 C: all p : Person | all g : Grade | all c : Course | p->g in c.grades implies c in p.enrolled
+inv12 S: all p : Person | all g : Grande | all c : Course | c in p.enrolled implies lone p->g
+inv12 S: all p : Person | all g : Grande | all c : Course | c in p.enrolled implies lone p->g
+inv12 U: all p : Person | all g : Grade | all c : Course | c in p.enrolled implies lone p->g
+inv12 T: all p : Person | lone g : Grade | all c : Course | c in p.enrolled implies p->g
+inv12 B: all p : Person | lone g : Grade | all c : Course | p->g in c.grades
+inv12 B: all p : Student | lone g : Grade | all c : Course | p->g in c.grades
+inv12 U: all p : Student | all c : Course | lone g : Grade | p->g in c.grades
+inv14 S: all p1,p2 : Person | all pro1,pro2 | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies pro2 not in p2.projects
+inv14 S: all p1,p2 : Person | all pro1,pro2 | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies (pro2 not in p2.projects)
+inv14 O: all p1,p2 : Person | all pro1,pro2 : Project | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2) implies (pro2 not in p2.projects)
+inv14 C: all p1,p2 : Person | lone pro : Project | pro in p1.projects and pro in p2.projects and p1 != p2
+inv14 C: all p1,p2 : Person | all pro1,pro2 : Project | (pro1 in p1.projects and pro1 in p2.projects and pro2 in p1.projects and pro1 != pro2 and p1!=p2) implies (pro2 not in p2.projects)
+NA H: THEME UPDATE
+

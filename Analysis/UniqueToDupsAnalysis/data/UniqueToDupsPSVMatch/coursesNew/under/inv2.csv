@@ -1,0 +1,7 @@
+"no (teaches.Person & Student)",2
+"no teaches.Person - Professor",3
+"all p: Student| no teaches.p",1
+"all p: Person| p in Student implies no teaches.p",1
+"all c: Course, p: Person |
+    (p in c.teaches) => p in Professor",1
+"all p : Person, c : Course | c->p in teaches implies p in Professor",1

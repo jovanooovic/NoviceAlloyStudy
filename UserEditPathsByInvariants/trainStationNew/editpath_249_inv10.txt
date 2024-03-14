@@ -1,0 +1,8 @@
+inv10 B: all t:Track, j:Junction, s:Semaphore | j in t.succs => s in t.signals
+inv10 B: all t:Track, j:Junction, s:Semaphore | j in t.succs <=> s in t.signals
+inv10 T: all t:Track, j:Junction, s:Semaphore | j in t.succs[0] <=> s in t.signals
+inv10 T: all t:Track, j:Junction, s:Semaphore | j = t.succs[0] <=> s in t.signals
+inv10 T: all t:Track, j:Junction | some s:Semaphore | j in t.succs[0] <=> s in t.signals
+inv10 O: all t:Track, j:Junction | some s:Semaphore | j in t.succs <=> s in t.signals
+inv10 O: all t:Track, j:Junction | some s:Semaphore | j in t.succs => s in t.signals
+

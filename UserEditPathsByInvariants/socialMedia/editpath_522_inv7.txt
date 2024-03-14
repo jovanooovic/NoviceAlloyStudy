@@ -1,0 +1,5 @@
+inv7 S: all x, y : User | x in y.suggested implies x not in y.follows and some z: User | z in x.follows and yi n z.follows
+inv7 B: all x, y : User | x in y.suggested implies x not in y.follows and some z: User | z in x.follows and y in z.follows
+inv7 B: all x, y : User | x in y.suggested implies x not in y.follows and one z: User | z in x.follows and y in z.follows
+inv7 C: all x, y: User | x -> y in suggested iff (x != y and some z: User | x -> z in follows and z -> y in follows and not x -> y in follows)
+

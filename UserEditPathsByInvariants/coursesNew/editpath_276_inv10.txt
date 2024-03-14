@@ -1,0 +1,7 @@
+inv10 S: all x:Person | all z:Course | x in z.grade implies x not in Professor
+inv10 T: all x:Person | all z:Course | x in z.grades implies x not in Professor
+inv10 B: all x:Person | all z:Course | some y:Grade | x->y in z.grades implies x not in Professor
+inv10 B: all x:Person | all z:Course | all y:Grade | x->y in z.grades implies x not in Professor
+inv10 C: all x:Person | all z:Course | all y:Grade | x->y in z.grades implies x in Student
+inv10 C: all x:Person | all z:Course | all y:Grade | x->y in z.grades implies x in Student
+

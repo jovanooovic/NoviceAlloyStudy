@@ -1,0 +1,7 @@
+inv5 T: all p : Project | Person.projects.p in Student and #(Person.projects.p) > 0
+inv5 T: all p : Project | projects.p in Student and #(projects.p) > 0
+inv5 B: all p : Project | some p1 : Student | p1.projects in Student
+inv5 U: all p : Project | some p1 : Student | p in p1.projects
+inv5 U: all p : Project | all p1 : Person | p in p1.projects implies p1 in Student
+inv5 C: all p : Project | all p1 : Person | p in p1.projects implies p1 in Student	  	all p : Project | #(projects.p & Student) > 0
+

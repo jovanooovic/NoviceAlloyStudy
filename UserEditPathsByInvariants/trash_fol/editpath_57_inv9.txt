@@ -1,0 +1,5 @@
+inv9 B: all f:File | some f1:File | f != f1 and f.link not in f1.link
+inv9 B: all f:File | some f1:(File - f) | f.link not in f1.link
+inv9 B: all f:File | some f1:(File - f) | f.link not in f1.link		all l1:File.link | some l2:File.link | l1 not in l2
+inv9 B: all l1:File.link | some l2:File.link | l1 not in l2
+

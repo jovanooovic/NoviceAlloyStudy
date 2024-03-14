@@ -1,0 +1,20 @@
+inv1 T: all p: Professor | no p.Course
+inv1 T: all p: Professor | no p in Course
+inv1 T: all p: Professor | no p in Course
+inv1 T: all c : Course, p : Professor | c -> p not in grades
+inv1 U: all c : Course, p : Professor | c -> p not in grades.Person
+inv1 U: all c : Course, p : Professor | c -> p not in Person.grades
+inv1 U: all c : Course, p : Person | p in c implies p in Person
+inv1 U: all c : Course, p : Person | p in c implies p in Student
+inv1 T: all c : Course, p : Person | p -> c implies p in Student
+inv1 C: all c : Course, p : Person | p -> c in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c) in enrolled implies p in Student
+inv1 T: all c : Course, p : Person | p -> (c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c) in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | p -> c in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+

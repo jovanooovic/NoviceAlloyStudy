@@ -1,0 +1,21 @@
+inv1 T: all p : Photo | some u : User | p in Photo implies u->p in User
+inv1 S: all p : Photo , some u : User | p in Photo implies p in u->p
+inv1 S: all p : Photo , some u : User | p in u->p implies p in Photo
+inv1 S: all p : Photo implies some u : user
+inv1 S: all p : Photo | some u : user | u->p in posts
+inv1 U: all p : Photo | some u : User | u->p in posts
+inv1 T: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| u1->p in u1.posts and u2->p in u2.posts implies u1 = u2
+inv1 S: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| u1->p in u1.posts and u2->p in u2.posts implies u1 == u2
+inv1 T: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| u1->p in u1.posts and u2->p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| u1->p in u1->posts and u2->p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| p in u1->posts and p in u2.posts implies u1 = u2
+inv1 O: (all p : Photo | some u : User | u->p in posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 O: (all p : Photo | some u : User | p in u.posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | u->p in u.posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | u->p implies p in u.posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | u->p implies p in u.posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | p in u.posts implies u->p) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 T: (all p : Photo | some u : User | p in u.posts implies u->p) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 S: (all p : Photo | some u : User | p in u.posts implies (all user : User | p not in user.posts) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+inv1 B: (all p : Photo | some u : User | p in u.posts implies (all user : User | p not in user.posts)) &&	all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2
+

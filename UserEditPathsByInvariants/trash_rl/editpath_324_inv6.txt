@@ -1,0 +1,21 @@
+inv6 S: all f: File | lone g: File | f.file = g
+inv6 U: all f: File | lone g: File | f.link = g
+inv6 S: all f: File, lone g: File | f.link = g
+inv6 U: all f: File | lone g: File | f.link = g
+inv6 O: lone f: File | f.link in File
+inv6 O: one f: File | f.link in File
+inv6 B: some f: File | f.link in File
+inv6 O: lone f: File | f.link in File
+inv6 U: all f1: File | lone f2: File | f1.link = f2
+inv6 S: all f1: File | lone f2: File | f1.link == f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2 and f1 != f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2 and f1 not = f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2 and f1.link != f2
+inv6 B: all f1: File | lone f2: File | f2.link = f1
+inv6 U: all f1: File | lone f2: File | f1.link = f2
+inv6 B: all f1: File | lone f2: File | f1.link in f2
+inv6 U: all f1: File | lone f2: File | f1.link = f2
+inv6 U: all f1: File | lone f2: File | f1 != f2 and f1.link = f2
+inv6 U: all f1: File | lone f2: File | f1 != f2 and f2.link != f1 and f1.link = f2
+

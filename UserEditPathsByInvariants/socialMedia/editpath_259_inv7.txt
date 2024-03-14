@@ -1,0 +1,4 @@
+inv7 O: all u, s : User | u->s in suggested =>	u->s not in follows	&& some f : User |	u != s && u->f in follows && f->s in follows	all u : User | u.suggested = u.follows.follows-u.follows
+inv7 B: all u : User | u.suggested = u.follows.follows-u.follows
+inv7 B: all u : User | u.suggested = u.follows.follows-(u.follows&u)
+

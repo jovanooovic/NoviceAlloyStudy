@@ -1,0 +1,47 @@
+-- equiv pair start,3
+all s : Person | all c : Course | one s.projects&c.projects
+-- div,2
+all s : Person | all c : Course | one p : Project | p in s.projects and p in c.projects
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+one project : Project, course:Course | project in course.enrolled
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all s : Person | all c : Course | one s.projects&c.projects and s in Student
+-- div,1
+-- equiv pair end
+-- equiv pair start,2
+all s1 : Person | all ps1,ps2 : Project | ps1 in s1.projects and ps2 in s1.projects implies ps1 = ps2
+-- div,2
+-- equiv pair end
+-- equiv pair start,1
+all p : Person, c : Course , ps1,ps2 : Project | ps1 in p.projects && ps2 in p.projects implies ps1 = ps2
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all s:Person, c:Course| one p:Project| s in Student and s->c in enrolled and c->p in projects and s->p in projects
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all x : Person | all y : Project | all z1,z2 : Course | y in x.projects implies y in z1.projects and y not in z2.projects
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all x:Person,y:Course|one z:Project| x->y in enrolled and x in Student and y-> z in projects and one enrolled.y and one Person <: projects.z
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all x: Student, p: Project | x->p in projects implies (some c:Course | x->c in enrolled and c->p in projects)
+	all c: Course | #(c.projects)=1
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all p : Person, c : Course , ps1,ps2 : Project | ps1 in p.projects && ps2 in p.projects implies ps1 in c.projects && ps2 in c.projects && ps1 = ps2
+-- div,1
+-- equiv pair end
+-- equiv pair start,1
+all pro1,pro2 : Project | all per : Person | all c : Course | (pro1 in per.projects and pro2 in per.projects and pro1 in c.projects) implies pro2 not in c.projects
+-- div,1
+-- equiv pair end

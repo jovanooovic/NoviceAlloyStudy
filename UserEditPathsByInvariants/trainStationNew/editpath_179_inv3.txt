@@ -1,0 +1,9 @@
+inv3 T: all t:Track | (t& Exit) implies no(t.succs)
+inv3 U: all t:Track | some(t& Exit) implies no(t.succs)
+inv3 U: all t:Track | t in  Exit implies no(t.succs)
+inv3 S: all t:Track | t in  Exit and t not in Exist and t not in Junction implies no(t.succs)
+inv3 U: all t:Track | t in  Exit and t not in Entry and t not in Junction implies no(t.succs)
+inv3 B: all t:Track | no (t.succs & Exit)
+inv3 U: all e:Exit | no e.succs
+inv3 C: all t:Track |no t.succs iff t in Exit
+

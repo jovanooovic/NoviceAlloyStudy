@@ -1,0 +1,15 @@
+inv9 O: all t : Track | t in succs.Junction - signals.Semaphore
+inv9 B: all t : Track, j : Junction | t in succs.j implies t not in signals.Semaphore
+inv9 B: all t : Track, j : Junction | t not in succs.j implies t not in signals.Semaphore
+inv9 B: all t : Track, j : Junction | j in t.succs implies t not in signals.Semaphore
+inv9 B: all t : Track, j : Junction | j not in t.succs implies t not in signals.Semaphore
+inv9 B: all t : Track, j : Junction, s : Semaphore | j not in t.succs implies s not in t.signals
+inv9 C: all t : Track | t in signals.Semaphore implies t in succs.Junction
+inv9 C: all t : Track | t not in succs.Junction implies t not in signals.Semaphore
+inv9 O: all t : Track | t not in succs.Junction + signals.Semaphore
+inv9 C: all t : Track | t in signals.Semaphore implies t in succs.Junction
+inv9 O: all t : Track | signals.Semaphore = succs.Junction
+inv9 C: all t : Track | signals.Semaphore in succs.Junction
+inv9 O: signals.Semaphore = succs.Junction
+inv9 C: signals.Semaphore in succs.Junction
+

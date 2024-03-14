@@ -1,0 +1,15 @@
+inv9 S: all t : Track | (t.succ not in Junction) => (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.succs not in Junction) => (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.^succs not in Junction) => (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.*succs not in Junction) => (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.^succs not in Junction) => (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.^succs not in Junction) <=> (t.signals not in Semaphore)
+inv9 B: all t : Track | (t.*succs not in Junction) <=> (t.signals not in Semaphore)
+inv9 B: all t : Track | (succs.t not in Junction) <=> (t.signals not in Semaphore)
+inv9 B: all t: Track | t in succs.Junction implies t not in signals.Semaphore
+inv9 B: all t: Track | t in Junction.succs implies t not in signals.Semaphore
+inv9 B: all t: Track | t in Junction.*succs implies t not in signals.Semaphore
+inv9 B: all t: Track | t in Junction.succs implies t not in signals.Semaphore
+inv9 B: all t: Track | t in succs.Junction implies t not in signals.Semaphore
+inv9 C: all t: Track | t not in succs.Junction implies t not in signals.Semaphore
+

@@ -1,0 +1,13 @@
+inv7 B: all u1 : User, u2 : u1.follows, u3 : u2.follows |  u3 not in u1.follows iff u3 in u1.suggested
+inv7 B: all u1 : User, u2 : u1.follows, u3 : u2.follows |  u3 != u2 and u3 not in u1.follows iff u3 in u1.suggested
+inv7 U: all u1 : User, u2 : u1.follows, u3 : u2.follows |  u3 != u1 and u3 not in u1.follows iff u3 in u1.suggested
+inv7 U: all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 U: all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 B: no follows & iden	all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 U: no suggested & iden	all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 U: no suggested & iden	all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 B: no suggested & iden	all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u1 in u3.suggested
+inv7 U: no suggested & iden	all u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 != u1 and u3 not in u1.follows) iff u3 in u1.suggested
+inv7 S: no suggested & iden	disj u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 not in u1.follows) iff u3 in u1.suggested
+inv7 S: no suggested & iden	disj u1 : User, u2 : u1.follows, u3 : u2.follows |  (u3 not in u1.follows) iff (u3 in u1.suggested)
+

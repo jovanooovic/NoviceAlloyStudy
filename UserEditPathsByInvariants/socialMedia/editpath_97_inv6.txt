@@ -1,0 +1,7 @@
+inv6 S: all p : Photo | i->Influencer in posts implies p.date&Day = Day
+inv6 B: all p : Photo | Influencer->p in posts implies p.date&Day = Day
+inv6 U: all i : Influencer | all p : Photo | i->p in posts implies no p.date-Day
+inv6 B: all i : Influencer | all p : Photo | i->p in posts implies p.date&Day = Day
+inv6 O: all i : Influencer | i.posts&Photo&Day = Day
+inv6 C: all i : Influencer | (i.posts&Photo).date&Day = Day
+

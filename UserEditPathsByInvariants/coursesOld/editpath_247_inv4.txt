@@ -1,0 +1,6 @@
+inv4 S: all p : Projects | one Course.p
+inv4 T: all p : Project | one Course.p
+inv4 T: all p : Project | one Course.projects.p
+inv4 T: all p : Project | one p.~projects.Course
+inv4 T: all p : Project | one p.(Course<:~projects)
+

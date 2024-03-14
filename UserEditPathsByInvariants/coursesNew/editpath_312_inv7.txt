@@ -1,0 +1,7 @@
+inv7 S: all s : Student | all c : Course | one proj : Project | proj in s.projects and c in p.enrolled implies #(s.projects)<1
+inv7 B: all s : Student | all c : Course | one proj : Project | proj in s.projects and c in s.enrolled implies #(s.projects)<1
+inv7 S: all s : Student | all c : Course | all proj1 : Project | all proj2 : Project | (proj1 in s.projects and proj2 in s.projects and proj1 in c.projects) implies proj2 not in c.projects	  	  	  c in s.enrolled implies #(s.projects)<1
+inv7 B: all s : Student | all c : Course | all proj1 : Project | all proj2 : Project | (proj1 in s.projects and proj2 in s.projects and proj1 in c.projects) implies proj2 not in c.projects
+inv7 U: all s : Student | all c : Course | all proj1 : Project | all proj2 : Project | (proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj1 != proj2) implies proj2 not in c.projects
+inv7 U: all s : Student | all c : Course | all proj1 : Project | all proj2 : Project | (proj1 in s.projects and proj2 in s.projects and proj1 in c.projects and proj1 != proj2) implies proj2 not in c.projects
+

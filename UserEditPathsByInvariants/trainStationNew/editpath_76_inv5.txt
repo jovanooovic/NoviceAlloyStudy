@@ -1,0 +1,4 @@
+inv5 S: all t : Track | t in Junctions <=> (all p1, p2 : Track| t in p1.succs and t in p2.succs and p1 != p2)
+inv5 B: all t : Track | t in Junction <=> (all p1, p2 : Track| t in p1.succs and t in p2.succs and p1 != p2)
+inv5 B: all t : Track | t in Junction <=> (all p1, p2 : Track| t in p1.succs and t in p2.succs implies p1 != p2)
+

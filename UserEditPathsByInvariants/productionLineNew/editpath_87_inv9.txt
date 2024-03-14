@@ -1,0 +1,9 @@
+inv9 S: all ws:Workstation-Begin| ws in Begin.^succ	no End.succ
+inv9 U: all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| ws!=begin implies ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| ws not in begin implies ws in begin.^succ	no end.succ
+inv9 U: all ws:Workstation| begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 O: all ws:Workstation| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 C: all ws:Workstation-end| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+inv9 C: all ws:Workstation-end| one ws.succ and begin not in ws.succ	all ws:Workstation-begin| ws in begin.^succ	no end.succ
+

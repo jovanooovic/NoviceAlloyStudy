@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all Person in Studnet
+inv1 S: all Person in Student
+inv1 O: all p:Person | p = Student
+inv14 E: 
+inv1 S: all Student
+inv1 S: all Student in Person
+inv1 S: all Person in Student
+inv1 S: all p:Person in Student
+inv14 E: 
+inv14 E: 
+inv4 T: no Teacher or Student
+inv4 S: all p: Person | no p = Student and no p = Teacher)
+inv4 T: all p: Person | no p = Student and no p = Teacher
+inv4 T: all p: Person | no p in Student and no p in Teacher
+inv14 E: 
+inv5 S: Teacher.Teaches = some Classes
+inv5 S: some t: Teacher | t.Teaches = Classes
+inv5 T: some t: Teacher | t.Teaches not none
+inv14 E: 
+inv6 S: all t: Teacher | t.Teaches = some Class
+inv14 E: 
+inv7 T: some t: Teacher | all c: Class| t in c.Groups
+inv7 T: some t: Teacher | all c: Class| c.Groups = t
+

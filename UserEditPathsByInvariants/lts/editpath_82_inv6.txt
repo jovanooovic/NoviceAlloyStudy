@@ -1,0 +1,10 @@
+inv6 O: all e:Event | some e.trans :> State
+inv6 T: all e:Event | some State.e.State
+inv6 T: all e:Event | some State.e
+inv6 T: all e:Event | some State->e in trans
+inv6 O: all e:Event | some (State.trans).e
+inv6 O: all e:Event | some (State.trans).e
+inv6 C: all e:Event | some e.(State.trans)
+inv6 C: all e:Event | some e.(State.trans)
+inv6 T: all e:Event | e.(State.trans)
+

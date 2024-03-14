@@ -1,0 +1,4 @@
+inv2 U: all t : Worker | all w1,w2 : Workstation | w1.workers!=none and w2.workers!=none and t in w1.workers and t in w2.workers implies w2=w1
+inv2 C: all w1,w2 : Workstation | w1.workers!=none and w2.workers!=none	all t : Worker | one w : Workstation | t in w.workers
+inv2 C: all w : Workstation | w.workers!=none	all t : Worker | one w : Workstation | t in w.workers
+

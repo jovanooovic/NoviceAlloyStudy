@@ -1,0 +1,208 @@
+Pairs,2
+,,"no Signal",1
+,,"no Signal
+no Semaphore
+no Speed",1
+
+Pairs,1
+,,"one (Entry & Exit)",1
+
+Pairs,3
+,,"Exit in Entry.succs",1
+,,"all e:Exit | e in Entry.succs",1
+,,"all ex : Exit | some en : Entry | en in succs.ex",1
+
+Pairs,1
+,,"Exit = Entry.*succs",1
+
+Pairs,2
+,,"Exit = Entry.^succs",1
+,,"all t:Track | t in Entry.^succs iff t in Exit",1
+
+Pairs,13
+,,"Entry in ^succs.Exit",1
+,,"all e : Entry | some Exit&e.^succs",1
+,,"all t: Entry | some (t.^succs & Exit)",1
+,,"all x : Entry | some y: Exit | y in x.^(succs)",1
+,,"all e : Entry | some x : Exit | x in e.^succs",1
+,,"all e: Entry | some s: Exit | s in e.^(succs)",1
+,,"all t: Entry | some x: Exit | x in t.^succs",1
+,,"all x :Track | x in Entry => some (Exit & x.^(succs))",1
+,,"all e: Entry | some ex: Exit | ex in e.^succs",2
+,,"all t: Track | some t&Entry implies some (t.^succs)&Exit",2
+,,"all entry : Entry | some exit : Exit | exit in entry.^succs",1
+
+Pairs,22
+,,"Exit in Entry.*succs",15
+,,"Exit = Exit & Entry.*succs",1
+,,"Exit in Entry + Entry.^succs",1
+,,"all e : Exit | e in Entry.*succs",2
+,,"all t:Track | t in Exit implies t in Entry.*succs",2
+,,"all exit : Exit | some entry : Entry | exit in entry.*(succs)",1
+
+Pairs,6
+,,"Entry in *succs.Exit",1
+,,"all e: Entry | some s: Exit | s in e.*(succs)",2
+,,"all e : Entry | some x : Exit | x in e.*succs",1
+,,"all e:Entry | some ex:Exit | e->ex in *succs",1
+,,"all t: Track | (some t&Entry implies some (t.^succs)&Exit) or some t&Entry&Exit",1
+
+Pairs,31
+,,"Exit in Entry.^succs",14
+,,"Entry.^succs & Exit = Exit",1
+,,"Exit = (Entry.^succs)&Exit",4
+,,"all e:Exit | e in Entry.^succs",6
+,,"all ex:Exit | ex in Entry.^(succs)",1
+,,"all x:Track | x in Exit => x in Entry.^(succs)",1
+,,"all ex : Exit | some en : Entry | en in (^succs).ex",1
+,,"all ex : Exit | some en : Entry | ex in en.^(succs)",2
+,,"all exit : Exit | some entry : Entry | exit in entry.^(succs)",1
+
+Pairs,1
+,,"Entry in Exit.*(succs)",1
+
+Pairs,1
+,,"Track in Entry.*(succs)",1
+
+Pairs,2
+,,"all ex:Exit | ex in Entry",1
+,,"all t:Track | one (Exit & t) implies one (Entry & t)",1
+
+Pairs,12
+,,"all e:Entry | e.^succs in Exit",8
+,,"all t: Track | t in Entry implies t.^succs in Exit",3
+,,"all t1: Track, t2: t1.^succs | some t1&Entry implies some t2&Exit",1
+
+Pairs,1
+,,"all e:Entry | Exit not in e.*succs",1
+
+Pairs,2
+,,"all e:Entry | e.^succs in Exit + e",1
+,,"all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies some t2&Exit",1
+
+Pairs,5
+,,"all t: Entry | some (t.succs & Exit)",2
+,,"all t: Entry | some x: Exit | x in t.succs",1
+,,"all x:Entry | some y: Exit | x->y in succs",2
+
+Pairs,1
+,,"all e:Entry | e.^succs in (Exit - e)",1
+
+Pairs,1
+,,"all e:Entry | (e.^succs + e) in Exit",1
+
+Pairs,1
+,,"Exit in Entry.^(succs) or Exit = Entry",1
+
+Pairs,6
+,,"all e: Entry, ex: Exit | e in ex.^succs",1
+,,"all en : Entry, ex : Exit | en in ex.^succs",1
+,,"all t:Track | one (Exit & t) implies Entry in t.^succs",1
+,,"all entry : Entry | all exit : Exit | entry in exit.^succs",1
+,,"all t1,t2: Track|t1 in Entry and t2 in Exit =>  t1 in t2.^succs",1
+,,"all t1,t2:Track | one (t1 & Entry) and one (t2 & Exit) implies t1 in t2.^succs",1
+
+Pairs,1
+,,"all e: Entry | Junction not in e.^succs",1
+
+Pairs,1
+,,"Exit = (Entry.^succs)&Exit
+Exit != Entry",1
+
+Pairs,2
+,,"all e: Entry, ex: Entry | ex in e.^succs",2
+
+Pairs,1
+,,"all t : Track | t in Exit and t in Entry",1
+
+Pairs,1
+,,"all en : Entry, ex : Exit | ex in en.~succs",1
+
+Pairs,3
+,,"all e:Entry, ex:Exit | ex in Entry.^(succs)",1
+,,"all ex:Exit, en:Entry | ex in Entry.^(succs)",1
+,,"all e:Entry, ex:Exit | Exit in Entry.^(succs)",1
+
+Pairs,1
+,,"all x : Entry | some y: Exit-x | y in x.^(succs)",1
+
+Pairs,1
+,,"all t : Track | Entry in t implies Exit in t.succs",1
+
+Pairs,1
+,,"all t: Track | some t&Entry implies t.^succs=Entry",1
+
+Pairs,1
+,,"all t : Track | t in Entry implies t.succs in Exit",1
+
+Pairs,1
+,,"all t : Track | t in Track-Exit iff Exit in t.^succs",1
+
+Pairs,1
+,,"all x : Entry | some y: Exit-Entry | y in x.^(succs)",1
+
+Pairs,4
+,,"all x :Track | x in Entry => one (Exit & x.^(succs))",3
+,,"all entry : Entry | one exit : Exit | exit in entry.^succs",1
+
+Pairs,1
+,,"all x :Track | x in Entry => lone (Exit & x.^(succs))",1
+
+Pairs,1
+,,"all x :Track | x in Entry <=> one (Exit & x.^(succs))",1
+
+Pairs,2
+,,"all t: Entry | all x: t.succs | some (x.succs & Exit)",2
+
+Pairs,2
+,,"all t:Track | one (Exit & t) implies t in Track.^succs",2
+
+Pairs,2
+,,"all t: Track | some t&Entry implies some t.^succs&Entry",2
+
+Pairs,1
+,,"all t : Track | t in Track-Exit implies Exit in t.^succs",1
+
+Pairs,1
+,,"all en : Entry, ex : Exit | en in ex.^succs and en != ex",1
+
+Pairs,1
+,,"all t: Track | some t.succs&Entry implies t.^succs=Entry",1
+
+Pairs,1
+,,"all x : Entry-Exit | some y: Exit-Entry | y in x.^(succs)",1
+
+Pairs,2
+,,"all e:Entry | e.^succs in Exit
+all e:Entry | e not in Exit",1
+,,"all e:Entry | e.^succs in Exit
+all t:Track | t in Entry implies t not in Exit",1
+
+Pairs,1
+,,"all t1: Track, t2: t1.^succs | some t1&Entry implies Exit = t2",1
+
+Pairs,1
+,,"all t1: Track, t2: t1.^succs | some t1&Entry implies Exit in t2",1
+
+Pairs,2
+,,"all disj t1, t2 : Track | t1 in Entry && t2 in Exit => t1 in t2.succs",1
+,,"all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in succs.t1",1
+
+Pairs,4
+,,"all t:Track | one (Exit & t) and no (Entry & t) implies t in Track.^succs",1
+,,"all t:Track | one (Exit & t) implies t in Track.^succs or one (Entry & t)",2
+,,"all t:Track | one (Exit & t) implies one (Entry & t) or t in Track.^succs",1
+
+Pairs,1
+,,"all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies t2=Exit",1
+
+Pairs,1
+,,"all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies Exit in t2",1
+
+Pairs,2
+,,"all t1,t2:Track |  t1!=t2 and one (t1 & Entry) and one (t2 & Exit) implies t1 in t2.^succs",1
+,,"all t1,t2:Track | one (t1 & Entry) and one (t2 & Exit) implies t1 in t2.^succs or (t1=t2)",1
+
+Pairs,2
+,,"all e : Entry | some t : Track | e->t in succs and (some k : Track | t->k in succs and k in Exit)",2
+

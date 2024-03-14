@@ -1,0 +1,7 @@
+inv8 O: all t : Teacher | one c : Class | t->c in Teaches
+inv8 S: all t : Teacher | one c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches impplies c1=c2
+inv8 O: all t : Teacher | one c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 B: all t : Teacher | some c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 C: all t : Teacher | all c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+inv8 C: all t : Teacher, c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2
+

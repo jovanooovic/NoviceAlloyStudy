@@ -1,0 +1,6 @@
+inv11 S: always (t:Train | one t.pos implies once t.pos in Entry)
+inv11 U: always (all t:Train | one t.pos implies once t.pos in Entry)
+inv11 U: all t:Train | always one t.pos implies once t.pos in Entry
+inv11 U: always (all t:pos.Track | once t.pos in Entry)
+inv11 U: always (all t:pos.Track | once (t.pos in Entry))
+

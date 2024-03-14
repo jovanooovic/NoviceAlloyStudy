@@ -1,0 +1,8 @@
+inv4 C: all u : User | some u.posts & Ad implies u.posts in Ad
+inv4 B: all u : User | Ad in u.posts implies u.posts in Ad
+inv4 C: all u : User | u in posts.Ad implies u.posts in Ad
+inv4 C: all u : User | u.posts in Ad or u.posts in Photo-Ad
+inv4 C: (posts.Ad).posts in Ad
+inv4 U: all u : User | some u.posts - Ad implies u.posts not in Ad
+inv4 C: all u : User | some u.posts - Ad implies no u.posts & Ad
+

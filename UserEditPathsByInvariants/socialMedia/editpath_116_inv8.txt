@@ -1,0 +1,10 @@
+inv8 E:
+inv8 T: all u : User, a : Ad | u.sees.a in u.follows.posts + u.follows.follows.posts
+inv8 T: all u : User, a : Ad | u.sees.a in (u.follows.posts + u.follows.follows.posts)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in (u.follows.posts + u.follows.follows.posts)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in (u.follows.posts + u.follows.follows.posts & Ad)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in ((u.follows.posts + u.follows.follows.posts) & Ad)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in ((u.follows.posts + u.follows.follows.posts + u.posts) & Ad)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in (u.follows.posts + u.follows.follows.posts + u.posts)
+inv8 B: all u : User, a : Ad | a in u.sees implies a in (u.follows.posts + u.follows.follows.posts - u.posts)
+

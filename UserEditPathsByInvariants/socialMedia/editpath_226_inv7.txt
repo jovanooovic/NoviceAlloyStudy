@@ -1,0 +1,10 @@
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies u2 in u1.follows and u in u2.follows
+inv7 B: all u,u1,u2 : User | u in u1.suggested and u2 in u1.follows and u in u2.follows
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies u2 in u1.follows and u in u2.follows
+inv7 C: all u1,u2 : User | u2 in u1.suggested <=> u2 not in u1.follows and u2!=u1 and u2 in u1.follows.follows
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies u2 in u1.follows and u in u2.follows and u not in u1.suggested
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies (u2 in u1.follows and u in u2.follows and u not in u1.suggested)
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies (u2 in u1.follows and u in u2.follows and u not in u1.follows)
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies u2 in u1.follows and u in u2.follows and u not in u1.follows
+inv7 B: all u,u1,u2 : User | u in u1.suggested implies u2 in u1.follows and u in u2.follows and u not in u1.follows and u!=u1
+

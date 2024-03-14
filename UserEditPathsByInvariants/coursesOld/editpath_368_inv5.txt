@@ -1,0 +1,24 @@
+inv5 E:
+inv5 U: all p : Project | some (Person :>projects.p)
+inv5 T: all p : Project | some (Person :>projects.p) in Student
+inv5 U: all p : Project | some (Student :> projects.p)
+inv5 U: all p : Project | some (Person :> projects.p)
+inv5 T: all p : Project | some (Person :> projects.p in Student)
+inv5 S: all p : Project | Person -> Project & some (projects.p)
+inv5 T: all p : Project | some Person -> Project & projects.p
+inv5 T: all p : Project | some Person -> Project & projects.p
+inv5 S: all p : Project | Person -> Project &
+inv5 B: all p : Project | some (Person-Professor :> projects.p)
+inv5 B: all p : Project | some ((Person-Professor) :> projects.p)
+inv5 S: all p : Project |
+inv5 U: all p : Project | some (Person :> projects.p)
+inv5 B: all p : Project | some ((Person-Professor) :> projects.p)
+inv5 T: all p : Project | some ( Person :> projects.p)	    all p : Project | projects.p in Student
+inv5 C: all p : Project | some (Person :> projects.p)	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+

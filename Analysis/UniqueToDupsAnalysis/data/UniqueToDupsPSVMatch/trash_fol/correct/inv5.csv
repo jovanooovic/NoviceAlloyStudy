@@ -1,0 +1,19 @@
+"File = Protected + Trash",1
+"File-Protected in Trash",31
+"(File - (File & Protected)) in Trash",1
+"all f:(File-Protected) | f in Trash",16
+"all u: File - Protected | u in Trash",1
+"(File - Protected) & Trash = (File - Protected)",1
+"all f : File | f in Protected or f in Trash",1
+"all f: File | f not in Protected => f in Trash",112
+"all f:File | f not in Trash implies f in Protected",1
+"all x: File | x not in Protected implies x in Trash",9
+"all w : File | w not in Protected implies w in Trash",1
+"all f:File | not f in Protected => f in Trash",6
+"all f : File {
+always(f not in Protected implies f in Trash)
+}",3
+"not some f : File | not f in Protected and not f in Trash",1
+"all bruh : File | ((bruh not in Protected) implies (bruh in Trash))",1
+"all f: File - Protected | one t : Trash | f in t",2
+"all f : File | f in Protected or (f in Trash and f not in Protected)",1

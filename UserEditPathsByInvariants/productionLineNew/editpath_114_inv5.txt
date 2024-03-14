@@ -1,0 +1,11 @@
+inv5 U: all w: Workstation | no (w.workers & Human & Robot)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 O: all w: Workstation | all wo : w.workers | wo in Human
+inv5 T: all w: Workstation | #(w.workers in Human) = 0 or #(w.workers in Robot) = 0
+inv5 T: all w: Workstation | #w.workers in Human = 0 or #w.workers in Robot = 0
+inv5 T: all w: Workstation | #(w.workers in Human) = 0 or #(w.workers in Robot) = 0
+inv5 T: all w: Workstation | (#w.workers in Human) = 0 or (#w.workers in Robot) = 0
+inv5 S: all w: Workstation | (#w.workers in Human) == 0 or (#w.workers in Robot) == 0
+inv5 T: all w: Workstation | (#w.workers in Human) =0 or (#w.workers in Robot) = 0
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+

@@ -1,0 +1,4 @@
+inv1 T: all img : Photo | #(img.(User.posts)) = 1
+inv1 T: all p : Photo | #(p.(User.posts)) = 1
+inv1 C: all p: Photo | one u : User | p in u.posts
+

@@ -1,0 +1,12 @@
+inv9 U: all w : Workstation | w not in w.^succ
+inv9 S: one Workstation & Begin	one Workstation & End	all w : Workstation | w not in w.^succ
+inv9 U: one Workstation & begin	one Workstation & end	all w : Workstation | w not in w.^succ
+inv9 B: one Workstation & begin	one Workstation & end	no Workstation & begin & end	all w : Workstation | w not in w.^succ
+inv9 U: one Workstation & begin	one Workstation & end		all w : Workstation | w not in w.^succ
+inv9 T: one Workstation & begin	one Workstation & end	all w : Workstation | w in ^succ
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | w in ^succ.Workstation
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | one w & ^succ.Workstation
+inv9 B: one Workstation & begin	one Workstation & end	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+inv9 T: one Workstation & begin	one Workstation & end	no begin in Workstation.^succ	no end in ^succ.Workstation	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+inv9 B: one Workstation & begin	one Workstation & end	begin not in Workstation.^succ	end not in ^succ.Workstation	all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)
+

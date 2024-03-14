@@ -1,0 +1,7 @@
+inv8 S: all t: Teacher | not (t -> t in teaches)
+inv8 S: all t: Teacher, s: Student | not (t -> s in teaches)
+inv8 S: all t: Teacher, s: Student | t -> s in teaches and t != s
+inv8 S: all t: Teacher, c: Course | t -> c in teaches and not(t -> c in enrolled)
+inv8 B: all t: Professor, c: Course | t -> c in teaches and not(t -> c in enrolled)
+inv8 U: all t: Professor, c: Course | t -> c in teaches implies not(t -> c in enrolled)
+

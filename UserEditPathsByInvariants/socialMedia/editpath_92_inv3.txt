@@ -1,0 +1,12 @@
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows
+inv3 T: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all user : User | all photo : Photo | all ad : Ad | (photo or add) in user.sees
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all user : User | all photo : Photo | all ad : Ad | (photo in user.sees) or (ad in user.sees)
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all user : User | all photo : Photo | all ad : Ad | (photo in user.sees) or (ad in user.sees)
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all user : User | all ad : Ad | ad in user.sees
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	some user : User | all ad : Ad | ad in user.sees
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	some user : User | Ad in user.sees
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all user : User | Ad in user.sees
+inv3 B: all user1, user2 : User | all photo : Photo | (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all ad : Ad | ad in User.sees
+inv3 B: all user1, user2 : User | all photo : Photo - Ad| (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows	all ad : Ad | ad in User.sees
+inv3 B: all user1, user2 : User | all photo : Photo - Ad| (photo in user1.posts and photo in user2.sees) implies user1 in user2.follows
+

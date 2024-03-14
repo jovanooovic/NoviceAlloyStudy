@@ -1,0 +1,8 @@
+inv10 S: all c: Class | s: Student | some c.Groups.s
+inv10 S: all c: Class | s: Student | s in c.Groups.Person
+inv10 O: all c: Class | all s: Student | s in c.Groups.Person
+inv10 U: all c: Class | all s: Student | Groups.s in c.Groups
+inv10 B: all c: Class | all s: Student | s -> Group in c.Groups
+inv10 S: all c: Class | s: Student | s -> Group in c.Groups
+inv10 O: all c: Class | all s: Student | some c.Groups.s
+

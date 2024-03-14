@@ -1,0 +1,11 @@
+inv7 T: no l: link | l in File -> Trash
+inv7 B: no f: File | File.link = f
+inv7 U: no f: Trash | File.link = f
+inv7 B: no f: File | Trash.link = f
+inv7 S: no f,f': Trash | f.link = f'
+inv7 S: no f, f' : Trash | f.link = f'
+inv7 B: File -> File = File -> Trash
+inv7 B: File -> File = Trash -> File
+inv7 B: link[Trash] = none
+inv7 C: link.Trash = none
+

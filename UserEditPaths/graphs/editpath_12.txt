@@ -1,0 +1,25 @@
+na H: THEME UPDATE
+inv1 T: Node.adj implies adj.Node
+inv1 U: some Node.adj implies some adj.Node
+inv1 C: all a,b : Node | b in a.adj implies a in b.adj
+inv2 C: all a,b : Node | b in a.adj implies a not in b.adj
+inv3 C: all n : Node | n not in n.^adj
+inv4 U: all disj a,b : Node | a in b.^adj
+inv4 U: all a,b : Node | a in b.^adj
+inv4 C: all a,b : Node | a in b.adj
+inv5 C: all n : Node | n not in n.adj
+inv5 C: all n : Node | n not in n.adj
+inv6 O: all a, b : Node | a in b.^adj or b in a.^adj
+inv6 O: all a, b : Node | a in b.*adj or b in a.*adj
+inv6 O: all a, b : Node | b in (a.adj + adj.a)
+inv6 T: all a, b : Node | b in (a.*adj + adj.*a)
+inv7 C: all a, b : Node | a in b.*adj
+inv8 C: all a,b,c : Node | c in b.adj and b in a.adj implies c in a.adj
+inv6 E: 
+na M: MOD BASE MODEL
+inv6 S: all a, b : Node | a in conn[b]
+na M: MOD BASE MODEL
+na M: MOD BASE MODEL
+inv6 S: fun conn(a : Node) : set Node {	a.adj + adj.a	}		all a, b : Node | b in a.*conn
+inv6 C: all a, b : Node | b in a.*(~adj + adj)
+

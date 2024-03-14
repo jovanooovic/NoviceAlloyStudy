@@ -1,0 +1,8 @@
+inv3 S: all p: Photo | all u: user |  p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User |  p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 S: all p: Photo | all u: User | p in u.sees implies p in u.follows or p in u.sees implies p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 O: all p: Photo | all u: User | p in u.sees implies (p in u.follows or p in Ad)
+inv3 C: all u: User | all p: Photo | p in u.sees implies (p in u.follows.posts or p in Ad)
+

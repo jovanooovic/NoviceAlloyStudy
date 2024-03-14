@@ -1,0 +1,16 @@
+inv4 S: all c: Components, m: Material| #c.parts <0 and no m.parts
+inv4 B: all c: Component, m: Material| #c.parts <0 and no m.parts
+inv4 B: all c: Component, m: Material| #c.parts <1 and no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >=1 and no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >0 and no m.parts
+inv4 U: all c: Component, m: Material|  no m.parts
+inv4 U: all m: Material| no m.parts
+inv4 U: all c: Component, m: Material| #c.parts >0 and no m.parts
+inv4 S: all c: Component, m: Material| iff(c not in Dangerous) #c.parts >0 and no m.parts
+inv4 B: all c: Component, m: Material| c not in Dangerous and #c.parts >0 and no m.parts
+inv4 S: all c: Component, m: Material| iff (c not in Dangerous) #c.parts >0 else #c.part =0 and no m.parts
+inv4 S: all c: Component, m: Material| iff (c not in Dangerous) #c.parts >0 else #c.part = 0 and no m.parts
+inv4 C: all c : Component | #c.parts > 0	all m : Material | #m.parts = 0
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+

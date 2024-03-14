@@ -1,0 +1,6 @@
+inv5 S: all p : Projects | (some x : Person - Professor | p in x.projects)
+inv5 B: all p : Project | (some x : Person - Professor | p in x.projects)
+inv5 B: all p : Project | (some x : Person| x not in Professor and p in x.projects)
+inv5 C: all x : Person - Student | no x.projects	  			  		all p : Project | (some pp : Person | p in pp.projects)
+inv5 C: all x : Person - Student | no x.projects	  			  		all p : Project | (some s : Student | p in s.projects)
+

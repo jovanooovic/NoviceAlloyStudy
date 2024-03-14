@@ -1,0 +1,14 @@
+inv5 U: all x: User, y: Influencer | x not in Influencer implies x->y in follows
+inv5 U: all x: User | x not in Influencer implies (all y: Influencer | x->y in follows)
+inv5 U: all u:User | u not in Influencer implies (all i:Influencer | u->i in follows)
+inv5 U: all x: User | x not in Influencer implies (all y: Influencer | x->y in follows and x!=y)
+inv5 U: all x: User| x not in Influencer implies (all y: Influencer | x->y in follows)
+inv5 B: all x: Influencer, y: User | x!=y implies x->y in follows
+inv5 U: all i:Influencer, u:User | i!=u implies u->i in follows
+inv5 S: all x: User| (x in not Influencer) implies (all y: Influencer | x->y in follows)
+inv5 U: all x: User| (x not in Influencer) implies (all y: Influencer | x->y in follows)
+inv5 O: all x: User, y: Influencer| (x not in Influencer) and x->y in follows
+inv5 O: all x: User, y: Influencer| x!=y and x->y in follows
+inv5 U: all x: User, y: Influencer| x not in Influencer implies x->y in follows
+inv5 U: all i: Influencer, u: User | i!=u implies u->i in follows
+

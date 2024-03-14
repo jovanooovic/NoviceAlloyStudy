@@ -1,0 +1,13 @@
+inv11 O: all p:Person, c: Class | some p.(c.Groups) implies one p.Teaches&Teacher
+inv11 S: some Person.(Class.Groups) implies one p.Teaches&Teacher
+inv11 O: some Person.(Class.Groups) implies one Person.Teaches&Teacher
+inv11 B: some Person.(Class.Groups) implies one Class.~Teaches&Teacher
+inv11 U: some Person.(Class.Groups) implies some Class.~Teaches&Teacher
+inv11 T: Person.(Class.Groups) implies one Class.~Teaches&Teacher
+inv11 S: all Person.(Class.Groups) implies one Class.~Teaches&Teacher
+inv11 B: some Person.(Class.Groups) implies one Class.~Teaches&Teacher
+inv11 B: some Class.Groups implies one Class.~Teaches&Teacher
+inv11 U: some Class.Groups implies some Class.~Teaches&Teacher
+inv11 U: some Class.Groups implies some Class.~Teaches & Teacher
+inv11 C: all c: Class | some c.Groups implies some c.~Teaches & Teacher
+

@@ -1,0 +1,16 @@
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0
+inv11 U: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) = 1)
+inv11 B: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) >= 0)
+inv11 O: all c : Class | (#c.Groups > 0) and (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 B: all c : Class | (#(Teaches.c & Teacher) > 0) implies (#c.Groups > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) implies (#(Teaches.c & Teacher) > 0)
+inv11 B: all c : Class | (#c.Groups > 0) <=> (#(Teaches.c & Teacher) > 0)
+inv11 U: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0)
+inv11 T: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0) ' #c.Groups = 0
+inv11 O: all c : Class | (#c.Groups > 0) => (#(Teaches.c & Teacher) > 0) else #c.Groups = 0
+

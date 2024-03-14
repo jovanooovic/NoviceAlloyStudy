@@ -1,0 +1,4 @@
+inv4 T: all p : Project | #(projects.p) = 1
+inv4 S: all p : Project | #(projects.p & Course->Entry) = 1
+inv4 C: all p : Project | #(Course <: projects.p) = 1
+

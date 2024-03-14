@@ -1,0 +1,10 @@
+inv6 U: all c1,c2:Component | c1->c2 in parts implies c1 != c2
+inv6 B: all c1,c2:Component | c1->c2 not in parts implies c1 = c2
+inv6 B: all c1,c2:Component | c1->c2 in parts implies c1 = c2
+inv6 B: all c1,c2:Component | c1->c2 not in parts
+inv6 C: all c1:Component | no c1 & c1.^(parts)
+inv6 O: all c1:Component | no c1.^(parts)
+inv6 T: all c1,c2:Component | no c1->c2 in parts
+inv6 T: all c1,c2:Component | no (c1->c2 in parts)
+inv6 C: all c1:Component | no c1 & c1.^parts
+

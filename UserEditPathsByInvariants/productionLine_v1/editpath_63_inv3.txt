@@ -1,0 +1,6 @@
+inv3 T: (Robot <: position).(Component <: Position.position) = (Robot <: position)
+inv3 B: (Robot <: position).(Component <: Position.position) = (Robot <: position.Position)
+inv3 B: (Robot <: position).(Component <: Position.position) = (Robot <: position).Position
+inv3 C: all c : Component, p : c.position | some (Robot <: position).p
+inv3 C: all c : Component, p : c.position | some (Robot <: position).p
+

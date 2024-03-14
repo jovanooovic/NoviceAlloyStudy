@@ -1,0 +1,10 @@
+inv5 T: all e : Track | not lone e.Track.(^succs) iff e in Junction
+inv5 T: all e : Track | not lone e.Track.succs iff e in Junction
+inv5 B: all e : Track | not lone e.succs iff e in Junction
+inv5 B: all e : Track | not lone (e & Track.succs) iff e in Junction
+inv5 B: all e : Track | not lone (e & Track.(^succs)) iff e in Junction
+inv5 B: all e : Track | not lone (e & (^succs).Track) iff e in Junction
+inv5 B: all e : Track | not lone (e & (^succs).Track) iff e in Junction
+inv5 B: all e : Track | not lone (e & succs.Track) iff e in Junction
+inv5 C: all e : Track | not lone succs.e iff e in Junction
+

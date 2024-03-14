@@ -1,0 +1,6 @@
+inv6 B: all c: Course, s: Student, p: Project | p in s.projects iff c in s.enrolled
+inv6 B: all c: Course, s: Student, p: Project | s->p in projects iff s->c in enrolled
+inv6 B: all c: Course, s: Student, p: Project | s->p in projects iff s->c in enrolled and c->p in projects
+inv6 B: all c: Course, s: Student, p: Project | s->c in enrolled and c->p in projects implies s->p in projects
+inv6 B: all c: Course, s: Student | some p: Project | s->c in enrolled and c->p in projects implies s->p in projects
+

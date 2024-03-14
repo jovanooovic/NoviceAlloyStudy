@@ -1,0 +1,6 @@
+inv4 T: all u:User | some (u.posts in Ad) implies u.posts in Ad
+inv4 T: all u:User | some (u.posts in Ad) implies u.posts in Ad
+inv4 B: all u:User | some p:Photo | ((p in u.posts) and (p in Ad)) iff u.posts in Ad
+inv4 O: all u:User | all p:Photo | ((p in u.posts) and (p in Ad)) iff u.posts in Ad
+inv4 C: all u:User | all p:Photo | ((p in u.posts) and (p in Ad)) implies u.posts in Ad
+

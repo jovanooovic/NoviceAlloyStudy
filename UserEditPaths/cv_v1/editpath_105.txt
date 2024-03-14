@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv1 B: all w : Work | visible.w in w.source
+inv1 B: all w : Work | visible.w = w.source
+inv1 O: all w : Work | w.visible = w.source
+inv1 U: all w:Work | w.visible in w.source
+inv1 U: all w:Work | w.visible in source.w
+inv1 O: all w:Work | w.visible = w.source
+inv1 U: all w:Work | w.visible in source.w
+inv1 U: all w:Work | w.visible = source.w
+inv1 O: all w:Work | w.visible = w.source
+inv1 B: all w:Work | visible.w = w.source
+inv1 B: all w:Work | visible.w in w.source
+inv1 S: all w:Work | visible.w = some w.source
+inv1 T: all w:Work | some visible.w in w.source
+inv1 B: all w:Work | w.source in visible.w
+inv1 B: all w:Work | w.source = visible.w
+inv1 T: all w:Work | w.source.visible.w
+inv1 U: all w:Work | w.visible = w.profile
+inv1 O: all w:Work | visible.w = profile.w
+inv1 C: all w:Work | visible.w in profile.w
+inv2 S: all u : User |
+inv1 C: all w:Work | visible.w in profile.w
+inv1 C: all u:User | u.visible in u.profile
+inv1 C: all u:User | u.visible in u.profile	  	all w:Work | visible.w in profile.w
+inv2 T: all u:User | profile.u
+inv2 T: all w:Work | source.w = w.profile + w.Institution
+

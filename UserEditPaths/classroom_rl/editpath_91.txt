@@ -1,0 +1,55 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 O: (Teacher & Student) = 0
+inv3 C: no Teacher & Student
+inv4 C: Teacher + Student = Person
+inv5 U: some Person.Teaches
+inv5 C: some Teacher.Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 U: Class = Person.Teaches
+inv7 U: Class in Person.Teaches
+inv7 T: Class = (Class . Person.Teaches)
+inv7 T: Class = (Person.Teaches . Class)
+inv8 C: all t : Teacher | lone t.Teaches
+inv7 T: all c : Class | some c . Teacher.Teaches
+inv7 T: all c : Class | some c . Teacher->Teaches
+inv9 O: no (Class -> Teacher)
+inv9 O: no Teaches
+inv9 O: no (Teaches . Class)
+inv9 O: (Teaches . Class) = Class
+inv9 O: (Teaches . Class) = Class
+inv7 C: (Teacher . Teaches) = Class
+inv6 B: no (Teaches . Class)
+inv6 S: Teachers in (Teaches . Class)
+inv6 C: Teacher in (Teaches . Class)
+inv9 U: no (Class . Teaches)
+inv9 O: no (Teaches . Class)
+inv9 O: (Teaches . ~Teaches) in iden
+inv9 B: (~Teaches . Teaches) in iden
+inv9 O: (Teaches . ~Teaches) in iden
+inv9 B: (Teaches . ~Teaches) in (Teacher -> Teacher)
+inv9 O: (Teaches . ~Teaches) in iden
+inv10 B: no (Groups . Group)
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 O: (Groups . Group) = (Class -> Person)
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 C: all c : Class, s : Student | some g : Group | c->s->g in Groups
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 T: (Groups . Group) = (Class )
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 O: (Groups . Group) = (Class -> Person)
+inv10 B: no (Groups . Group)
+inv10 E: 
+inv9 B: (Teaches . ~Teaches) in (Teacher -> Teacher)
+inv9 U: (Teaches . ~Teaches) in (Person -> Person)
+inv9 O: (Teaches . ~Teaches) in iden
+inv10 B: no (Groups . Group)
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 O: (Groups . Group) = (Class -> Person)
+inv10 O: (Groups . Group) = (Class -> Student)
+inv10 E: 
+inv10 O: (Groups . Group) = (Class -> Student)
+

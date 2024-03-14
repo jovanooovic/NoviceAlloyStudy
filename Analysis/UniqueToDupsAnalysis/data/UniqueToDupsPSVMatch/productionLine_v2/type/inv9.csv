@@ -1,0 +1,102 @@
+"^begin.succ",1
+"begin.^succ.end",2
+"begin.^succ",2
+"^Workstation.succ",1
+"none (begin & end)",1
+"one begin.^succ.end",1
+"begin . ^ succ . end",1
+"one begin.(^succ).end",1
+"one begin.^(succ.end)",1
+"one ^Workstation.succ",1
+"(begin . ^ succ) . end",2
+"one begin.^(begin.succ.end)",1
+"one begin.(^begin.succ).end",1
+"one begin.^succ.Workstation",1
+"no Workstation.^succ & iden",1
+"begin.^succ.end in Workstation",1
+"one begin.^succ.Workstation.end",1
+"one (begin.^succ :> end - iden)",1
+"all b:begin | one end in b.^succ",1
+"lone (begin.^succ :> end - iden)",1
+"one begin.^(succ.Workstation).end",1
+"begin.(^succ - ^(succ).end) = end",1
+"one Workstation.^Workstation.succ",1
+"(begin.^succ :> (end - begin))",1
+"all w: Workstation | w.begin != w.end",1
+"one w : Workstation | begin.^succ.end",1
+"all ws:Workstation | no ws in ws.^succ",1
+"all w : workstation | one w.succ",1
+"all ws:Workstation | no ws in ws.^(succ)",1
+"all ws:Workstation | no ws in ws.(^succ)",2
+"Workstation in begin^succ and no end.succ",1
+"one begin.^{w : Workstation | one succ.w}",1
+"one w : Workstation | begin.^(succ.w).end",1
+"begin in ^{w : Workstation | one w.succ}.end",1
+"succ un Workstation lone -> lone Workstation",1
+"end in begin.^{w : Workstation | one succ.w}",1
+"one begin.^{w,z : Workstation | one w.succ.z}",1
+"one begin.^{w : Workstation | one succ.w}.end",3
+"one begin.^{w : Workstation | some succ.w}.end",1
+"one begin.^({ w:Workstation | some succ.w}).end",1
+"all x : Workstation | one x.succ
+begin.^succ.end",1
+"one begin.^{w,z : Workstation | one w.succ.z}.end",2
+"one begin.^{some w : Workstation | one succ.w}.end",1
+"all x : Workstation | one x.succ
+begin.(^succ).end",1
+"all x : Workstation | one x.succ
+one begin.^succ.end",1
+"one begin.^{all w,z : Workstation | one w.succ.z}.end",2
+"all w:Workstation-end | one w.succ
+no end.succ
+begin.*succ",2
+"all w1,w2,w3: Workstation | w1 in begin & w3 in begin & w2.^succ",1
+"some w : Workstation | one begin.^{y : Workstation | one w.succ.y}.end",1
+"one Workstation & begin
+one Workstation & end
+all w : Workstation | w in ^succ",1
+"all w: Workstation | (Workstation-w or w in end or some w.succ) and w not in w.^succ",2
+"all w : Workstation | no succ.w <=> w = begin
+all w : workstation | no w.succ <=> w = end",2
+"begin.*succ = Workstation
+no Workstation.^succ & iden
+all w : Workstation-end | one w.succ",2
+"all w : Workstation | no succ.w <=> w in begin
+all w : workstation | no w.succ <=> w in end",1
+"begin not in begin.^succ
+end begin.^succ
+no end.succ
+all w : Workstation - end | one w.succ",1
+"one w : Workstation | w in end and no w.succ
+one w : Workstation | w in begin and w not in succ",2
+"one w : Workstation | w in end and no w.succ
+one w : Workstation |
+
+w in begin and w not in succ",1
+"all w: workstation | w not in Workstation.succ => w in begin
+all w: Workstation | w not in w.^(succ)
+all w: Workstation | no w.succ => w in end",1
+"all w : Workstation | w in begin implies Workstation-{w} in w.^(succ)
+all w : Workstation | w not in w.^(succ)
+all w : Workstation | w in end implies not w.succ",1
+"all w : Workstation | no succ.w iff w = begin
+all w : Workstation | no w.succ iff w = end
+all w : Workstation | end in w.^succ and begin in w.^~succ
+none end & begin",1
+"all w,wb : Workstation | wb in begin and w != wb implies w in wb.^(succ)
+all w : Workstation | w not in w.^(succ)
+all w : Workstation | w not int end implies one w.succ",1
+"all w,wb : Workstation | (wb in begin and w != wb) implies w in wb.^(succ)
+all w : Workstation | w not in w.^(succ)
+all w : Workstation | w not int end implies one w.succ",3
+"one Workstation & begin
+one Workstation & end
+no begin in Workstation.^succ
+no end in ^succ.Workstation
+all w : Workstation | one w & (^succ.Workstation + Workstation.^succ)",1
+"all ws, wsb : Workstation | (wsb in begin and ws != wsb) implies ws in wsb.^(succ)
+all ws : Workstation | ws not in ws.^(succ)
+all ws : Workstation | ws not in end implies ws.succ",1
+"all ws, wsb : Workstation | (wsb in begin and ws != wsb) implies ws in wsb.^(succ)
+all ws : Workstation | ws not in ws.^(succ)
+all ws : Workstation | (ws not in end) implies ws.succ",1

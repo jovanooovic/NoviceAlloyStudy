@@ -1,0 +1,13 @@
+inv3 S: let s = {u : User, w : Work, s : source | u -> w -> -> s in profile . source} |
+inv3 S: let s = {u : User, w : Work, s : source | u -> w -> -> s in profile . source} |
+inv3 S: let s = {u : User, w : Work, s : source | u -> w -> -> s in profile . source}
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source}
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source |
+inv3 O: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source | s in Institution
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source | 	  		all disj (u1, w1) , (u2, w2) : aux.s | no w1.ids & w2.ids
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source | 	  		all disj (u1, w1), (u2, w2) : aux.s | no w1.ids & w2.ids
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source | 	  		all disj u1, w1, (u2, w2) : aux.s | no w1.ids & w2.ids
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source 	  		| all disj (u1, w1), (u2, w2) : aux.s | no w1.ids & w2.ids
+inv3 S: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source 	  		| all disj [u1, w1], [u2, w2] : aux.s | no w1.ids & w2.ids
+inv3 T: let aux = {u, User, w : Work, s : Source | u -> w in profile and w -> s in source} | all s : Source 	  		| all disj p1, p2 : aux.s | no User.p1.ids
+

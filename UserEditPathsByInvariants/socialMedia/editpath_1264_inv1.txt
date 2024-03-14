@@ -1,0 +1,7 @@
+inv1 S: all x : photos | one posts.
+inv1 S: all p : Photo | all y,z: User | y->x in posts and z->x in posts implies y=z
+inv1 U: all p : Photo | all y,z: User | y->p in posts and z->p in posts implies y=z
+inv1 C: all x : Photo | some y : User | y->x in posts	all p : Photo | all y,z: User | y->p in posts and z->p in posts implies y=z
+inv1 S: all p : Photo | one posts.x
+inv1 C: all p : Photo | one posts.p
+

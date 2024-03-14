@@ -1,0 +1,9 @@
+inv6 S: all d: Day | all u: User | all p: Photos | u in Influencer and p in u.posts implies (p in d*)
+inv6 S: all d: Day | all u: User | some p: Photos | u in Influencer and p in u.posts and p.date = d
+inv6 O: all d: Day | all u: User | some p: Photo | u in Influencer and p in u.posts and p.date = d
+inv6 O: all d: Day | all u: User | some p: Photo | u in Influencer and p in u.posts and d in p.date
+inv6 S: all d: Day | all u: User | u in Influencer and d in p.date
+inv6 O: all d: Day | all u: User | u in Influencer and d in u.posts.date
+inv6 C: all d: Day | all u: User | u in Influencer implies (d in u.posts.date)
+inv6 C: all d: Day | all u: User | u in Influencer implies (d in u.posts.date)
+

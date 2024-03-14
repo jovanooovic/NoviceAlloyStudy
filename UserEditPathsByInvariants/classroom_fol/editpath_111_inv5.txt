@@ -1,0 +1,19 @@
+inv5 O: some t : Teacher | t in Class
+inv5 O: some c : Class | c in Teacher
+inv5 T: all x,y : Teacher | x->y in Class
+inv5 T: all x,y : Person | x->y in Class
+inv5 T: some x,y : Person | x->y in Class
+inv5 O: some x : Teacher | x in Class
+inv5 O: some x : Person | x in Teacher and x in Class
+inv5 O: some x : Class | x in Teacher
+inv5 T: some x,y : Class | x->y in Teacher
+inv5 O: some x : Class | x in Teacher
+inv5 U: some x : Class | x in Group implies x in Teacher
+inv5 O: some x : Class | x in Group and x in Teacher
+inv5 O: some x : Person | x in Teacher and x in Group and x in Class
+inv5 T: some x : Teacher  | x in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+inv5 C: some x : Teacher, y : Class  | x->y in Teaches
+

@@ -1,0 +1,22 @@
+"adj.n = Node",1
+"no v.~adj + v",1
+"adj = Node -> Node",2
+"all n Node | some n.adj",1
+"Node.^adj = Node - node",1
+"all n : Nodes | n in adj",1
+"all n Node | Node in n.adj",1
+"all n1 : Node | n.adj = Node",1
+"all n1,n2: Node | (n1,n2) in *adj",2
+"all a:Node | a in a.^adj implies a->not a",1
+"all n:Node | n in adj.Node & b in Node.adj",1
+"all  n1,n2 :Node | n1->n2 in adj",1
+"all n1, n2 Node | n1 in n2.^adj or n2 in n1.^adj",1
+"all disj n1,n2: Node | (n1 == n2) || (n1 in n2.^adj)",1
+"all disj n1, n2 Node | n1 in n2.^adj or n2 in n1.^adj",1
+"all n1, n2: Node | n1->n2 + n2->n1 in adj
+Node = n.adj",1
+"all disj n1,n2: Node | ((n1 == n2) || (n1 in n2.^adj))",1
+"all n1, n2: Node | n1->n2 + n2->n1 in adj
+all Node.adj",1
+"all n1,n2:Node | n1 != n2 | n1 in n2.^adj <=> n2 in n1.^adj",2
+"all n1,n2:Node | n2 in (univ - n1) | n1 in n2.^adj <=> n2 in n1.^adj",1

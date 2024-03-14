@@ -1,0 +1,15 @@
+inv13 B: all c: Course | some c.projects&c.grades.last.projects
+inv13 S: all c: Course | some c.grades.last.projects&c.ptojects
+inv13 B: all c: Course | some c.grades.last.projects&c.projects
+inv13 T: all c: Course | some c.grades.last implies c.grades.last.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 U: all c: Course, s: Student | s in c.grades.last implies some s.projects&c.projects
+inv13 S: all c: Course | s in c.grades.last implies some s.grades.last.projects&c.projects
+inv13 S: all c: Course | s in c.grades.last implies some c.grades.last.projects&c.projects
+inv13 U: all c: Course | some c.grades.last implies some c.grades.last.projects&c.projects
+inv13 T: all c: Course, s: Student | s in c.grades.last implies s.projects&c.projects
+inv13 U: all c: Course, s: Student | s in c.grades.last implies some s.projects&c.projects
+inv13 T: all c: Course, s: Student | s.c.grades = last implies some s.projects&c.projects
+inv13 U: all c: Course, s: Student | s.(c.grades) = last implies some s.projects&c.projects
+

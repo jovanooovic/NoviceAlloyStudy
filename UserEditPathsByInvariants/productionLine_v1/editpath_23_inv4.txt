@@ -1,0 +1,10 @@
+inv4 T: all c:Component, p:c.parts | c.position < c.prevs
+inv4 T: all c:Component, p:c.parts | c.position < c.prevs.position
+inv4 T: all c:Component, p:c.parts | c.position < c.prevs.position
+inv4 T: all c:Component, p:c.parts | c.position < p.position
+inv4 T: all c:Component, p:c.parts | c.position > p.position
+inv4 O: all c:Component, p:c.parts | p in Component implies c.position in p.position.nexts
+inv4 C: all c:Component, p:c.parts | p in Component implies c.position in p.position.*next
+inv4 C: all c:Component, p:c.parts & Component | c.position in p.position.*next
+inv4 C: all c:Component | c.parts.position in c.position.*prev
+

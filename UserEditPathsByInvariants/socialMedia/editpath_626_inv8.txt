@@ -1,0 +1,11 @@
+inv8 T: all u : User | u.sees.Ad in u.follows or u.suggested
+inv8 T: all u : User | u.sees.Ad in (u.follows.posts.Ad or u.suggested.follows.posts.Ad)
+inv8 T: all u : User | u.sees.Ad = (u.follows.posts.Ad or u.suggested.posts.Ad)
+inv8 T: all u : User | all a : Ad | a in u.follows.posts or u.suggested.posts
+inv8 T: all u : User | all a : Ad | a in u.follows.posts.Ad or u.suggested.posts.Ad
+inv8 T: all u : User | all a : Ad | u.sees.a in u.follows.posts.Ad or u.suggested.posts.Ad
+inv8 T: all u : User | u.sees.Photo.Ad
+inv8 T: all u : User | u.sees.Ad
+inv8 T: all a : Ad | User.sees.a
+inv8 C: all u: User |all ad: Ad | u -> ad in sees implies ad in u.follows.posts or ad in u.suggested.posts
+

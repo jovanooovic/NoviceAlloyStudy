@@ -1,0 +1,5 @@
+inv7 U: all u:User | all b:u.suggested | b in u.follows.follows implies b not in u.follows
+inv7 U: all u:User-Influencer | all b:u.suggested | b in u.follows.follows implies b not in u.follows
+inv7 U: all u:User-Influencer | all b:u.suggested-Influencer | b in u.follows.follows implies b not in u.follows
+inv7 C: all u : User | u.suggested = (u.follows.follows - (u.follows + u))
+

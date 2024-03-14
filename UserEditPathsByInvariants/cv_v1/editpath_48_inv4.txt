@@ -1,0 +1,24 @@
+inv4 T: all u:User | (u.visible.ids)
+inv4 T: all u:User | (u.visible.ids)
+inv4 T: all id:Id,u:User | lone ~(u.visible.ids.id)
+inv4 U: all id:Id,u:User | lone (u.visible.ids & id)
+inv4 S: Profile.ids in User -> lone Id
+inv4 B: profile.ids in User -> lone Id
+inv4 B: profile.ids in User -> lone Id and profile.source in User -> lone Source
+inv4 B: profile.ids in User -> lone Id
+inv4 B: profile.ids in User -> lone Id
+inv4 B: visible.ids in User -> lone Id
+inv4 B: visible.ids in User lone -> Id
+inv4 B: ~(visible.ids) in Id -> lone User
+inv4 U: ids.visible in Id -> lone User
+inv4 B: ~(visible.ids) in Id -> lone User
+inv4 S: ~(visible.ids) in Id -> lone User and
+inv4 B: ~(visible.ids) in Id -> lone User
+inv4 B: ~(visible.ids) in Id -> lone User and source in Work -> lone Source
+inv4 B: ~(visible.ids) in Id -> lone User and visible.source in User -> lone Source
+inv4 B: ~(visible.ids) in Id -> lone User
+inv4 B: ~(visible.ids) in Id lone -> lone User
+inv4 B: ~(visible.ids) in Id -> lone User
+inv4 O: visible in User -> lone Work
+inv4 T: all u:User | (u.visible.ids)
+

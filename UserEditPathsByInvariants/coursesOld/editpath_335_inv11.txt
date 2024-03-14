@@ -1,0 +1,26 @@
+inv11 U: all s:Student | no (Course-s.enrolled) & Course.grades.Grade
+inv11 U: no (Person-Student) & Course.grades.Grade & Course
+inv11 T: all s:Student,c:Course,g:Grade | g in s.enrolled.Course implies g in s.enrolled.Course
+inv11 T: all s:Student,c:Course,g:Grade | g in s.grades implies g in s.grades
+inv11 T: all s:Student,c:Course,g:Grade | g in s.enrolled.grades implies g in s.enrolled.grades
+inv11 T: all p:Person,c:Course,g:Grade | g in c.grades implies g in c.grades
+inv11 U: all p:Person,c:Course,g:Grade | g in c.grades.Grade implies g in c.grades.Grade
+inv11 T: all p:Person,c:Course,g:Grade | g in grades implies g in grades
+inv11 T: all p:Person,c:Course,g:Grade | c.p.g in grades implies c.p.g in grades
+inv11 C: all p:Person,c:Course,g:Grade | (c->p->g in grades) implies (p->c in enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (c->p->g in grades) implies (c in p.enrolled)
+inv11 T: all p:Person,c:Course,g:Grade | (g in c.p.grades) implies (c in p.enrolled)
+inv11 T: all p:Person,c:Course,g:Grade | (g in p.g.grades) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (p->g in c.grades) implies (c in p.enrolled)
+inv11 T: all p:Person,c:Course,g:Grade | (g in p.c.grades) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (p->g in c.grades) implies (c in p.enrolled)
+inv11 U: all p:Person,c:Course,g:Grade | (g in c.grades.p) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (p->g in c.grades) implies (c in p.enrolled)
+inv11 T: all p:Person,c:Course,g:Grade | (g in c.p.grades) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (p->g in c.grades) implies (c in p.enrolled)
+inv11 U: all p:Person,c:Course,g:Grade | (g in c.grades.p) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (p->g in c.grades) implies (c in p.enrolled)
+inv11 S: all p:Person,c:Course,g:Grade | (g in p.(c.grades) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | (g in p.(c.grades)) implies (c in p.enrolled)
+inv11 C: all p:Person,c:Course,g:Grade | g in p.(c.grades) implies (c in p.enrolled)
+

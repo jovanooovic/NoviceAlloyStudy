@@ -1,0 +1,9 @@
+inv10 T: all p : grades.Grade | p in Student
+inv10 T: all p : Grade.~grades | p in Student
+inv10 T: all p : Course.~grades | p in Grade
+inv10 U: all p : Course.grades.Person | p in Grade
+inv10 C: all p : Course.grades.Grade | p in Student
+inv10 T: all p : Course.~grades.Grade | p in Grade
+inv10 U: all p : Course.~(grades.Grade) | p in Grade
+inv10 C: all p : Course.grades.Grade | p in Student
+

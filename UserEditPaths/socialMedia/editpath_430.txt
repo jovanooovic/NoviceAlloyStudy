@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 S: all i : Image | one posts.i
+inv1 C: all i : Photo | one posts.i
+inv2 C: no follows & iden
+inv2 C: no follows & iden
+inv3 B: all u : User | no posts.(u.sees - Ad) - u.follows
+inv3 B: all u : User | no posts.(u.sees - Ad) - u.follows
+inv4 T: all u : User | Ad & u.posts implies no u.posts - Ad
+inv4 T: all u : User | Ad & u.posts implies no u.posts - Ad
+inv4 T: all u : User | Ad & u.posts implies no u.posts - Ad
+inv4 C: all u : User | some Ad & u.posts implies no u.posts - Ad
+inv5 C: all i : Influencer | follows.i = User - i
+inv6 B: Influencer.posts.date = Day
+inv6 S: all i : Influencer | i.posts.day = Day
+inv6 C: all i : Influencer | i.posts.date = Day
+inv8 S: all u : User | (u.sees & Ad) in u.followes.posts + u.suggested.posts
+inv8 C: all u : User | (u.sees & Ad) in u.follows.posts + u.suggested.posts
+inv7 B: all u : User | u.suggested = u.follows.follows - u.follows
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u
+

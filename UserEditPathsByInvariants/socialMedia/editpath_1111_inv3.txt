@@ -1,0 +1,8 @@
+inv3 S: all x,y : User | x.follows.y | x.sees.(y.posts)
+inv3 S: all x : Users | all y : follows.x | y in sees.x	all u : Users | all a : Ad | x.sees.a
+inv3 S: all x : User | all y : follows.x | y in sees.x	all u : User | all a : Ad | x.sees.a
+inv3 T: all x : User | all y : follows.x | y in sees.x	all u : User | all a : Ad | u.sees.a
+inv3 T: all x : User | all y : follows.x | y in sees.x	all u : User | all a : Ad | u.sees.a
+inv3 T: all x : User | all y : follows.x | y in sees.x	all u : User | all a : Ad | u.sees.a
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees  implies ((some u2 : User | ph in u2.posts and u2 in u1.follows ) or ph  in Ad)
+

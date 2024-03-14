@@ -1,0 +1,9 @@
+inv7 B: all x: Student, p: Project | x->p in projects implies (some c:Course | x->c in enrolled and c->p in projects and #(c->p)=1)
+inv7 T: all x: Student, p: Project | x->p in projects implies (some c:Course |lone x->c in enrolled and c->p in projects)
+inv7 S: all x: Student, lone p: Project | x->p in projects implies (some c:Course |x->c in enrolled and c->p in projects)
+inv7 S: all x: Student, lone p: Project | x->p in projects implies (some c:Course |x->c in enrolled and c->p in projects and #(x.projects)=1)
+inv7 S: all x: Student | one p: Project | x->p in projects implies (some c:Course | stud->c in enrolled and c->p in projects)
+inv7 B: all x: Student | one p: Project | x->p in projects implies (some c:Course | x->c in enrolled and c->p in projects)
+inv7 O: all x: Student, p: Project | x->p in projects implies (some c:Course | x->c in enrolled and c->p in projects)		all c: Course | #(c.projects)=1
+inv7 B: all x: Student, p: Project | x->p in projects implies (some c:Course | x->c in enrolled and c->p in projects)		all x: Student | #(x.projects)=1
+

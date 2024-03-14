@@ -1,0 +1,11 @@
+inv13 T: all c : Course | c.grades.last in (Person.(c.projects))
+inv13 T: all c : Course | c.grades.last in (Person.(c.projects))
+inv13 B: all c : Course | c.grades.last in Student
+inv13 T: all c : Course | c.grades.last in ((c.projects))
+inv13 C: all c : Course | c.grades.last in ((c.projects).~(projects))
+inv13 C: all c : Course | c.grades.last in (projects.(c.projects))
+inv13 C: all c : Course | c.grades.last in ((c.projects).~projects)
+inv13 T: all c : Course | c.grades in ((c.projects).~projects)
+inv13 C: all c : Course | c.grades.last in ((c.projects).~projects)
+inv13 C: all c : Course | c.grades.last in ((c.projects).~projects)
+

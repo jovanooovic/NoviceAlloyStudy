@@ -1,0 +1,18 @@
+inv7 B: all usr1, usr2, usr3 : User	|	usr1->usr2 in follows	and usr2->usr3 in follows	and usr1->usr3 not in follows implies usr1->usr3 in suggested
+inv7 B: all usr1, usr2, usr3 : User	|	usr1->usr2 in follows	and usr2->usr3 in follows	and usr1->usr3 not in follows implies usr1->usr3 in suggested		all usr1, usr2, usr3 : User	|	usr1->usr2 in follows	and usr2->usr3 in follows	and usr1->usr3 in follows implies  usr1->usr3 not in suggested
+inv7 U: all usr1:User	| some usr2, usr3: User	| usr1->usr2 in follows	and  usr2->usr3 in follows	and usr1->usr3 not in follows		implies usr1->usr3 in suggested
+inv7 S: all usr1, usr2:User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 S: all usr1, usr2:User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 S: all usr1,usr2 : User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 S: all usr1,usr2 : User | usr1->usr2 in follows some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 B: all usr1,usr2 : User | usr1->usr2 in follows implies some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 B: all usr1,usr2 : User | usr1->usr2 in follows implies some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 B: all usr1,usr2 : User | usr1->usr2 in follows implies some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 B: all usr1,usr2 : User | usr1->usr2 in follows implies some usr3:User | usr2->usr3 in follows implies usr1->usr3 in suggested
+inv7 B: all user1, user2, user3 : User |	user1->user2 in follows and user2->user3 in follows and user1->user3 not in follows implies user1->user3 in suggested
+inv7 B: all user1, user2, user3 : User |	user1->user2 in follows and user2->user3 in follows and user1->user3 not in follows implies user1->user3 in suggested				all user1, user2, user3 : User |	user1->user2 in follows and user2->user3 in follows and user1->user3 in follows implies user1->user3 not in suggested
+inv7 O: all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 not in follows implies user1->user3 in suggested				all user1, user2, user3 : User |	user1->user2 in follows and user2->user3 in follows and user1->user3 in follows implies user1->user3 not in suggested
+inv7 B: all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 not in follows implies user1->user3 in suggested				all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 in follows implies user1->user3 not in suggested
+inv7 B: all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 not in follows and user3 != user1 and user1 != user2 implies user1->user3 in suggested				all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 in follows implies user1->user3 not in suggested
+inv7 B: all user1, user2 : User |	user1->user2 in follows and some user3:User | user2->user3 in follows and user1->user3 not in follows and user3 != user1 and user1 != user2 implies user1->user3 in suggested
+

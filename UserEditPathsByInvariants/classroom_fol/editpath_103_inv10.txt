@@ -1,0 +1,9 @@
+inv10 T: (all c : Class | all s : Student | some g : Group | (s->g)->c in Class)
+inv10 O: (all c : Class | all s : Student | some g : Group | (s->g)->c in Groups)
+inv10 T: (all c : Class | all s : Student | some g : Group | some gi : Groups | gi->c in Class)
+inv10 T: (all c : Class | all s : Student | some g : Group | c->(s->g) in Class implies s->g in Groups)
+inv10 C: (all c : Class | all s : Student | some g : Group | c->s->g in Groups)
+inv10 C: (all c : Class | all s : Student | some g : Group | c->s->g in Groups)
+inv10 T: (all c : Class | all s : Student | some g : Group | c->s->g in Class)
+inv10 C: (all c : Class | all s : Student | some g : Group | c->s->g in Groups)
+

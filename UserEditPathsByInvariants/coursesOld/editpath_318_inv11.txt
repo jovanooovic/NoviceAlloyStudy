@@ -1,0 +1,11 @@
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 B: all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades
+inv11 T: all c:Course, s:Student, g:Grade | no s.enrolled.c.grades
+inv11 T: all c:Course, s:Student, g:Grade | no s.enrolled.c.grades
+inv11 U: all s:Student | grades.Grade.s in (s.enrolled)
+inv11 U: all s:Student | grades.Grade.Course in (s.enrolled)
+inv11 T: all s:Student | grades.Grade.s.Person in (s.enrolled)
+inv11 U: all s:Student | grades.Grade.s in (s.enrolled)
+

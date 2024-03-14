@@ -1,0 +1,9 @@
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y and no x.workstation & (Workstation-y)
+inv3 O: all x : Component | some y : Workstation | one x.workstation & y & x.workstation & (Workstation-y)
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y and no x.workstation & (Workstation-y)
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y + x.workstation & (Workstation-y)
+inv3 U: all x : Component | some y : Workstation | one x.workstation & y - x.workstation & (Workstation-y)
+inv3 U: all x : Component | some y : Workstation | one (x.workstation & y) - x.workstation & (Workstation-y)
+inv3 U: all x : Component | some y : Workstation | one (x.workstation & y) - (x.workstation & (Workstation-y))
+inv3 C: all x : Component | some y : Workstation | one (x.workstation & y) + (x.workstation & (Workstation-y))
+

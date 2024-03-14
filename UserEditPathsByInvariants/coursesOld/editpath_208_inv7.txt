@@ -1,0 +1,16 @@
+inv7 B: all s : Student, p : Project | p in s.projects => p in s.enrolled.projects
+inv7 S: all s : Student, p : Project | p in s.projects => p in one s.enrolled.projects
+inv7 B: all s : Student, c : Course | one p : Project | p in s.projects
+inv7 B: all s : Student, c : Course | one p : Project | p in s.projects => p in s.enrolled.projects
+inv7 B: all s : Student, c : Course | one p : Project | p in s.projects => p in c.projects
+inv7 B: all s : Student| one c : Course | one p : Project | p in s.projects => p in c.projects
+inv7 B: all s : Student| one c : Course | lone p : Project | p in s.projects => p in c.projects
+inv7 B: all s : Student, c : Course | lone p : Project | p in s.projects => p in c.projects
+inv7 B: all s : Student, c : Course | lone p : Project | p in c.projects => p in s.projects
+inv7 B: all s : Student | one c : Course | lone p : Project | p in s.projects => p in c.projects
+inv7 B: all s : Student, disj c,c2 : Course, p : Project | p in s.projects => p in c.projects and p not in c2.projects
+inv7 T: all s : Student, c : Course, p1,p2 : Project | p1 in s.projects and (p1 and p2) in c.projects => p2 not in s.projects
+inv7 B: all s : Student, c : Course, p1,p2 : Project | p1 in s.projects and p1 in c.projects and p2 in c.projects => p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects and p1 in c.projects and p2 in c.projects => p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects and p1 in c.projects and p2 in c.projects => p2 not in s.projects
+

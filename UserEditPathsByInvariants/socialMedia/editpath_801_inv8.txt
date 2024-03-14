@@ -1,0 +1,5 @@
+inv8 S: all u: User, a: Ad | u->a in sees implies (all f: User | x->f in follows or x->f in suggested)
+inv8 B: all u: User, a: Ad | u->a in sees implies (all f: User | u->f in follows or u->f in suggested)
+inv8 S: all u: User, u2: User, a: Ad | u->a in sees and u2->a in posts implies (u->f in follows or u->f in suggested)
+inv8 B: all u: User, u2: User, a: Ad | u->a in sees and u2->a in posts implies (u->u2 in follows or u->u2 in suggested)
+

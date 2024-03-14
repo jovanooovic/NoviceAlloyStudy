@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 C: no Trash
+inv2 C: all b:File | b in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv6 S: all f:File: lone f.link
+inv6 S: all f:File: #f.link <= 1
+inv6 S: all f:File: #(f.link) <= 1
+inv5 C: all f:(File - Protected) | f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv9 S: all f:File | some f':(File - f) | f.link in f'.link
+inv7 T: all f:File | no f.link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv7 T: all f:File | no f.link in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+inv10 E: 
+inv9 B: all f:File | some f1:(File - f) | f.link not in f1.link
+inv8 C: all f:File | #(f.link) = 0
+inv10 S: all t:Trash, fl:File.links | f1 in Trash implies (no f1 in File)
+inv10 S: all t:Trash, fl:File.link | f1 in Trash implies (no f1 in File)
+inv10 S: all t:Trash, fl:File.link | f1 in Trash
+inv10 S: all t:Trash, fl:File | f1 in Trash
+inv10 S: all t:Trash, fl:File.link | f1 in Trash implies (no f1 in File)
+inv10 T: all t:Trash, fl:File.link | fl in Trash implies (no fl in File)
+inv8 C: all f:File | #(f.link) = 0
+inv8 C: all f:File | #(f.link) = 0
+inv10 T: all fl:File.link | fl in Trash implies (no fl in File)
+inv8 C: all f:File | #(f.link) = 0
+inv10 O: all fl:File.link | fl in Trash
+inv10 T: all fl:File.link | fl in Trash implies (no fl in File)
+inv10 T: all fl:File.link | (fl in Trash implies (no fl in File))
+inv10 U: all fl:File.link | fl in Trash implies (fl in File)
+inv10 B: all fl:File.link | fl in Trash implies (fl not in File)
+inv10 B: all fl:File.link | fl in Trash implies (fl not in File)
+NA H: THEME UPDATE
+inv1 C: no Trash
+

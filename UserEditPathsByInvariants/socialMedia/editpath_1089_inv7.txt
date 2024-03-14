@@ -1,0 +1,7 @@
+inv7 B: all x,y,z:User| z->x in suggested implies x->y in follows and y->z in follows and x->z not in follows
+inv7 B: all x,y,z:User| z->x in suggested implies x->y in follows and y->z in follows and x->z not in follows and x!=y and x!=z
+inv7 B: all x,z:User| z->x in suggested implies some y:User| x->y in follows and y->z in follows and x->z not in follows and x!=y and x!=z
+inv7 B: all x,z:User| z->x in suggested implies some y:User| x->y in follows and y->z in follows and x->z not in follows
+inv7 B: all x,z:User| z->x in suggested implies (some y:User| x->y in follows and y->z in follows and x->z not in follows)
+inv7 U: all x,z:User| x->z in suggested implies (some y:User| x->y in follows and y->z in follows and x->z not in follows)
+

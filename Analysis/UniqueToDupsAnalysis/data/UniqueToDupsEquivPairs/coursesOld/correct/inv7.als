@@ -1,0 +1,12 @@
+-- equiv pair start,5
+all c:Course,p:Person | lone p.projects & c.projects
+-- div,1
+all c:Course | Person <: projects :> c.projects in Person -> lone Project
+-- div,1
+all s:Person, c:Course, p1,p2 : Project | p1 in s.projects and p1 in c.projects and p2 in s.projects and p2 in c.projects implies p1=p2
+-- div,1
+all c:Course,j1,j2:Project | (j1 in c.projects and j2 in c.projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+-- div,1
+all c:Course,j1,j2:Project | (c->j1 in projects and c->j2 in projects and some p:Person | p->j1 in projects and p->j2 in projects) implies j1 = j2
+-- div,1
+-- equiv pair end

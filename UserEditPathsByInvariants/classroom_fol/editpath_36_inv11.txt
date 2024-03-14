@@ -1,0 +1,4 @@
+inv11 S: all c:Classes | (some p:Person,g:Group | c->p->g in Groups) implies (some t:Teacher | t->c in Teaches)
+inv11 C: all c:Class | (some p:Person,g:Group | c->p->g in Groups) implies (some t:Teacher | t->c in Teaches)
+inv11 B: all c:Class | some p:Person,g:Group | c->p->g in Groups implies some t:Teacher | t->c in Teaches
+

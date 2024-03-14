@@ -1,0 +1,9 @@
+inv6 S: all s : Students | Person <: s.projects in(Course <: s.enrolled.projects)
+inv6 U: all s : Student | Person <: s.projects in(Course <: s.enrolled.projects)
+inv6 U: all s : Student | Person <: s.projects in(Course <: s.enrolled.projects)
+inv6 U: all s : Student | Student <: s.projects in (Course <: s.enrolled.projects)
+inv6 B: all s : Student | s.projects in (Course <: s.enrolled.projects)
+inv6 U: all s : Student | s.projects in ( s.enrolled.projects)
+inv6 B: all s : Student | s.projects in (Course <: s.enrolled.projects)
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+

@@ -1,0 +1,5 @@
+inv5 U: no Person.~(Person <: projects) - Student
+inv5 U: no (Person.~(Person <: projects) - Student)
+inv5 T: no (Project.~(Person <: projects) - Student.projects)
+inv5 C: no Project.~(Person<:projects) - Student	  	all p:Project | some s:Student | s in p.~(Person<:projects)
+

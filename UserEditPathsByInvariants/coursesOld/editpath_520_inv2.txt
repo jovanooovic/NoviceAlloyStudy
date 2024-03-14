@@ -1,0 +1,6 @@
+inv2 S: all p : Person | p in teaches.Course implies p in Teacher
+inv2 C: all p : Person | p in teaches.Course implies p in Professor
+inv2 B: no ((Person - Professor).enrolled)
+inv2 C: no ((Person - Professor).teaches)
+inv2 C: teaches.Course in Professor
+

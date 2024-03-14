@@ -1,0 +1,21 @@
+inv1 S: all Station
+inv1 S: all Station
+inv1 S: all Station
+inv1 S: all Station
+inv1 S: some t: Track | one t.succ and one succ.t
+inv1 B: some t: Track | one t.succs and one succs.t
+inv1 B: some t: Track | lone t.succs and lone succs.t
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv1 T: some t: Track | some t.succs in Exit and some succs.t in Entry
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 O: one t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 S: sig Station in Track {}
+inv1 E:
+inv1 S: sig Station in Track {}
+inv1 E:
+inv1 O: some t: Track | some (t.succs & Exit) and some (succs.t & Entry)
+inv1 C: some Exit	some Entry
+

@@ -1,0 +1,4 @@
+inv7 O: all p:Product | some Dangerous&p.^parts implies p in Dangerous
+inv7 B: all p:Product | some d:Dangerous | d in p.^parts implies p in Dangerous
+inv7 O: all p:Product | (some d:Dangerous | d in p.^parts) implies p in Dangerous
+

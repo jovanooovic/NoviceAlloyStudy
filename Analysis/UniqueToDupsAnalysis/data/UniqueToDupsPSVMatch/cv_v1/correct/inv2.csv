@@ -1,0 +1,19 @@
+"(profile.source :> User) in iden",1
+"(User <: profile.source :> User) in iden",1
+"all u:User | u.profile.source in u+Institution",16
+"all x : User | x.profile.source in Institution + x",2
+"all u:User | u.profile.source in (Institution+u)",11
+"all u : User | u.profile in (source.Institution + source.u)",1
+"all u : User | (u.profile) in (source.u + source.Institution)",3
+"all u:User | all w:(u.profile) | (w.source) in (u + Institution)",1
+"all u: User, w: u.profile | w.source = u or w.source in Institution",2
+"all u : User, w : Work | w in u.profile => w.source in Institution + u",1
+"all u:User | all w:u.profile | w.source = u or w.source in Institution",1
+"all u : User | all w : u.profile | w.source in u or w.source in Institution",1
+"all u:User, s:Source, w:u.profile | (w.source in Institution) or (w.source = u)",1
+"all u:User, w:Work | w in u.profile implies (u in w.source or w.source in Institution)",1
+"all w:Work,u:User | w in u.profile implies u in w.source or w.source in Institution",1
+"all w:Work,u:User | w in u.profile implies (u in w.source or w.source in Institution)",1
+"all w:Work,u:User | u->w in profile implies one (w.source:>u + w.source:>Institution)",1
+"all u : User | all w : Work | (w in u.profile) implies (w.source=u or w.source in Institution)",1
+"all u:User, w:Work | w in u.profile implies (u in w.source or some i:Institution | i in w.source)",3

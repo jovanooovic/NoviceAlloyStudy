@@ -1,0 +1,13 @@
+inv14 B: some Groups.Group
+inv14 T: all s:Groups.Group | some Groups
+inv14 B: all c:Class,s:Student | s in c.Groups.Group
+inv14 S: all c:Class,s:Student,s:Teacher |some g:Group| s in c.Groups.Group and c->t->g in Groups
+inv14 B: all c:Class,s:Student,s:Teacher |some g:Group,t:Teacher| s in c.Groups.Group and c->t->g in Groups
+inv14 T: all c:Class,s:Student,t:Teacher,g:Groups | c->s->g in Groups and c->t->g in Groups
+inv14 T: all c:Class,s:Student,t:Teacher,g:Groups | c->s->g in Groups
+inv14 B: all c:Class,s:Student|some g:Group| c->s->g in Groups
+inv14 B: all c:Class,s:Student,t:Teacher|some g:Group| c->s->g in Groups and c->t->g in Groups
+inv14 B: all c:Class,s:Student,t:Teacher,g:Group| c->s->g in Groups and c->t->g in Groups
+inv14 B: all c:Class,s:Student,t:Teacher,g:Group| c->s->g in Groups and c->t->g in Groups implies t in s.^(~Tutors)
+inv14 U: all c:Class,s:Student,t:Teacher,g:Group| c->s->g in Groups and c in t.Teaches implies t in s.^(~Tutors)
+

@@ -1,0 +1,38 @@
+inv5 S: all j:Junction | |(one j.succ) and (some j.succ)
+inv5 S: all j:Junction | !(one j.succ) and (some j.succ)
+inv5 B: all j:Junction | !(one j.succs) and (some j.succs)
+inv5 T: all j:Junction | no (one j.succs) and (some j.succs)
+inv5 S: all t:Tracks | (some t.succs and !(one t.succs)) iff t in Junction
+inv5 B: all t:Track | (some t.succs and !(one t.succs)) iff t in Junction
+inv5 B: all t:Track, j:Junction | some Junction & t.succs
+inv5 B: all t:Track, j:Junction | some j & t.succs
+inv5 B: all t:Track, j:Junction | some j & t.succs and !(one j & t.succs)
+inv5 S: some Junction & Track.succ
+inv5 B: some Junction & Track.succs
+inv5 U: Junction in Track.succs
+inv5 B: Junction in Track.succs.succs
+inv5 S: all Junction in Track.succs.succs
+inv5 T: Junction in succs.succs
+inv5 T: Junction in ^(Track.succs)
+inv5 T: Junction in ^(succs)
+inv5 S: Junction in Tracks.^(succs)
+inv5 U: Junction in Track.^(succs)
+inv5 U: Junction in Track.*(succs)
+inv5 B: Junction in Track.^(succs.succs)
+inv5 U: Junction in Track.^succs
+inv5 B: Junction in Track.succs.^succs
+inv5 B: Junction in (Track.succs.^succs - Junction)
+inv5 B: all j: Junction | j in (Track.succs.^succs)
+inv5 B: all j: Junction | j in (Track.succs.^succs - j)
+inv5 B: all j: Junction | j in (Track.^succs - j)
+inv5 B: all j: Junction | j in (Track.succs.^succs)
+inv5 B: all j: Junction | #(j & Track.succs) > 2
+inv5 B: all j: Junction | #(j & Track.succs) > 2
+inv5 B: all j: Junction | #(j & Track.succs) > 1
+inv5 B: all j: Junction | j in (Track.succs.^succs)
+inv5 B: all j: Junction | j in (Track.succs.^succs) and j not in j.succs
+inv5 T: all t : Track | t in succs.^succs iff t in Junction
+inv5 B: all t : Track | t in Track.succs.^succs iff t in Junction
+inv5 T: all t : Track | Junction in t.Track.succs.^succs
+inv5 B: all t : Track | Junction in t.succs.^succs
+

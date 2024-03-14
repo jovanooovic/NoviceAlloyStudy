@@ -1,0 +1,5 @@
+inv4 S: all s: State.trans.Event | s.^{y,x: State | some x.trans.y} = Initial
+inv4 U: all s: State.trans.Event | s.^{y,x: State | some x.trans.y} = Init
+inv4 U: all s: State.trans.Event | s.^{y,x: State | some e : Event | x->e->y in trans} = Init
+inv4 U: all s: State.trans.Event | s.^{y,x: State | some e : Event | x->e->y in trans} = Init
+

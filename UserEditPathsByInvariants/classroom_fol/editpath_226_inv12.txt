@@ -1,0 +1,6 @@
+inv12 S: all t:Teacher | some g:Group |
+inv12 S: all t:Teacher | some g:Group |
+inv12 B: all t:Teacher | some c:Class | some s:Student | some g:Group | (c->s->g in Groups) implies (some t:Teacher | t->c in Teaches)
+inv12 B: some c:Class | some s:Student | some g:Group | (c->s->g in Groups) implies (some t:Teacher | t->c in Teaches)
+inv12 B: all t:Teacher | some c:Class | some s:Student | some g:Group | (c->s->g in Groups) implies (t->c in Teaches)
+

@@ -1,0 +1,4 @@
+inv6 T: all s: Student, c: Course | s.projects.Project = c => c in s.enrolled
+inv6 B: all s: Student, c: Course | some p: Project | p in s.projects && p in c.projects => c in s.enrolled
+inv6 B: all s: Student, c: Course, p: Project | p in s.projects && p in c.projects => c in s.enrolled
+

@@ -1,0 +1,20 @@
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv4 B: all u:User | u.sees-Ad in u.follows.posts
+inv4 S: all p_Photo | posts.p.Ad
+inv4 S: all p_Photo | posts.p.Ad
+inv4 S: all p_Photo | posts.p $ p=Ad
+inv4 S: all p_Photo | posts.p & p=Ad
+inv4 S: all p_Photo | posts.p & p==Ad
+inv4 S: all p:Photo | posts.p & p==Ad
+inv4 S: all u:User | a.Ad | u.posts.a
+inv4 S: all u:User | u.post.Ad
+inv4 T: all u:User | u.posts.Ad
+inv4 S: all u:User | u.posts.Ad implies all p:Photo | p==Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p is Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p in Ad
+inv4 T: all u:User | u.posts.Ad implies all p:Photo | p in Ad	all x:univ | x in Ad implies posts.p and p is Ad
+inv4 S: all x:univ | x in Ad implies posts.p and p is Ad
+inv4 T: all x:univ | x in Ad implies posts.Photo and Photo is Ad
+inv4 T: all x:univ and p in Photo | x in Ad implies posts.p and p is Ad
+

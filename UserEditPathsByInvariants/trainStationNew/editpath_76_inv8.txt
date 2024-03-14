@@ -1,0 +1,8 @@
+inv8 B: all en : Entry, ex : Exit | en in ex.^succs
+inv8 B: all en : Entry, ex : Exit | en in ex.^succs and en != ex
+inv8 S: all en, ex : Tracks | en in Entry and ex in Exit ex in en.^succs
+inv8 S: all en, ex : Track | en in Entry and ex in Exit ex in en.^succs
+inv8 O: all en, ex : Track | en in Entry and ex in Exit and ex in en.^succs
+inv8 O: all en, ex : Track | en in Entry and ex in Exit implies ex in en.^succs
+inv8 C: all en, ex : Track | en in Entry and ex in Exit and en != ex implies ex in en.^succs
+

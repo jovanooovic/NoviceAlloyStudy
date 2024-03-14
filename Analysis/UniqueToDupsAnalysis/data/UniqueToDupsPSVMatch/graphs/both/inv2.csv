@@ -1,0 +1,46 @@
+"some Node",2
+"adj = ~adj",1
+"~adj != adj",1
+"adj!=~adj",6
+"adj not in ~adj",4
+"not adj=~adj",1
+"!(~adj=adj)",2
+"no adj - ~adj",2
+"adj.~adj in iden",2
+"~adj.adj in iden",1
+"adj = adj & ~adj",1
+"adj != adj + ~adj",1
+"adj not in adj & ~adj",1
+"Node.adj != adj.Node",1
+"no adj - ~adj - iden",2
+"no (adj - (~adj - iden))",1
+"! inv1
+}
+
+pred inv1{
+adj = ~adj",1
+"some n : Node | no adj.n",1
+"all n : Node | some adj.n",1
+"all n: Node | n.adj not in n",1
+"all n:Node | n.adj != adj.n",2
+"all n:Node | adj.n not in n.adj",1
+"all n:Node | n.adj not in adj.n",4
+"all n : Node | n.adj.(~adj) = n",1
+"all n : Node | n.adj->n not in adj",1
+"all n : Node | n in n.adj.~adj",1
+"all n:Node| n.adj != n.~adj",1
+"all n:Node | not n.adj in adj.n",2
+"all n1:Node | n1.adj != adj.n1",1
+"all n : Node | n<:adj != adj:>n",1
+"all n:Node, n2:n.adj | n in n2.adj",1
+"not inv1
+}
+
+pred inv1{
+all n : Node, n2 : n.adj | n in n2.adj",3
+"all x, y : Node | (x in ^adj.y) and (y in ^adj.x)",1
+"all n1, n2: Node | n1->n2 in adj implies n2->n1 in adj",1
+"some disj n1, n2: Node | n1 in n2.adj and n2 !in n1.adj",1
+"all disj n1,n2: Node | n1 in n2.adj iff n2 not in n1.adj",2
+"all n, n1 : Node | n->n1 in adj and n1->n in adj <=> n1 = n",1
+"all n, n1 : Node | n->n1 in adj and n1->n in adj <=> n1 != n",1

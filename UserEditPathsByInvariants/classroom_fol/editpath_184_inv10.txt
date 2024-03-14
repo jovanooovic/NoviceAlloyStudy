@@ -1,0 +1,13 @@
+inv10 S: all c:Class | (all p:Person | p is Student and (some g:Group | (p->g) in Groups ))
+inv10 T: all c:Class | all s:Student , g:Group | s->g in Groups
+inv10 T: all c:Class | all s:Student , g:Group | s->g in Groups
+inv10 T: all c:Class | all s:Student , g:Groups | s->g in Groups
+inv10 T: all c:Class | all s:Student | c->s in Groups
+inv10 U: all c:Class , g:Group | c in Class
+inv10 U: all c:Class , g:Group | c in Class and g in Group
+inv10 T: all c:Class , g:Group | all s:Student | s->g in Groups
+inv10 T: all c:Class , g:Group | all s:Student | s in Class and s->g in Groups
+inv10 B: all c:Class , g:Group | all s:Student | s in Class
+inv10 S: all c:Class , g:Group | all s:Student | g:Groups
+inv10 T: all c:Class , g:Group | all s:Student | g in Groups
+

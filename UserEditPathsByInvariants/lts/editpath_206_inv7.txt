@@ -1,0 +1,5 @@
+inv7 T: all s : State | s.*(trans + ~trans)
+inv7 T: all s : State | some (s + ~s)
+inv7 O: let t = {x,y : State | some z : Event | x->z->y in trans} |		State in Init.(^(~t))
+inv7 B: let t = {x,y : State | some z : Event | x->z->y in trans} |		State in Init.(*(~t))
+

@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv1 C: all s : State | some (s.trans)
+inv2 C: one Init
+inv3 C: all s : State, e : Event | lone(e.(s.trans))
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { s1, s2 : State | some e : Event | s1->e->s2 in trans }
+inv5 C: all s1, s2 : State | State.(~(s1.trans)) = State.(~(s2.trans))
+inv6 C: Event = (State.trans).State
+

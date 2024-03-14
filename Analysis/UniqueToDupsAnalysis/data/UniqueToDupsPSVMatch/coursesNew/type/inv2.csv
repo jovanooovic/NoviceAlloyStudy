@@ -1,0 +1,9 @@
+"all p: Student| p.teaches",1
+"all x : Professor | x.teaches",1
+"all x: Person - Student | x.teaches",1
+"all x: Person - Student |  x.teaches",1
+"all p:Person | p.teaches implies p in Professor",1
+"all p : Person | p.teaches implies p in Professor",2
+"all p: Person, c:Course | p not in Professor => p not c.~teaches",1
+"all p: Person, c: Course | p not in Professor => p not c.~teaches",2
+"all p:Person | all c:Course | c in p.grades implies p in Professor",1

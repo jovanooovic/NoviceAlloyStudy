@@ -1,0 +1,6 @@
+inv7 T: all s: Student, p:Project, c1,c2:Course | c1->p in Project and c2->p in Project and s->c1 in enrolled and s->c2 in enrolled	  and s->p in projects implies c1=c2
+inv7 B: all s: Student, p:Project, c1,c2:Course | c1->p in projects and c2->p in projects and s->c1 in enrolled and s->c2 in enrolled	  and s->p in projects implies c1=c2
+inv7 O: this/Course <:projects in Course -> one Project
+inv7 B: all s:Student, p1,p2:Project, c:Course | s->c in enrolled and c->p1 in projects and c->p2 in projects implies p1=p2
+inv7 U: all s:Student, p1,p2:Project, c:Course | s->c in enrolled and c->p1 in projects and c->p2 in projects and s->p1 in projects and s->p2 in projects implies p1=p2
+

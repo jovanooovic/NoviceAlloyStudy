@@ -1,0 +1,9 @@
+inv5 S: all s:State, e:Event | all s->e in trans
+inv5 T: all s:State, e:Event | some s->e in trans
+inv5 S: all s:State, e:Events | some e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+inv5 B: all s:State, e:Event | lone e.(s.trans)
+inv5 O: all s:State, e:Event | some e.(s.trans)
+inv5 C: all disj s1,s2 :State |  no ((s1.trans).State) -((s2.trans).State) and no ((s2.trans).State) - ((s1.trans).State)
+

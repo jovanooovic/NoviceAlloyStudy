@@ -1,0 +1,62 @@
+inv7 B: all f:File | f.link not in Trash
+inv7 T: all f:File | no f->link in Trash
+inv7 T: all f:File | no f.link in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 T: all f:File | f:>link not in Trash
+inv7 T: all f:File | no f:>link in Trash
+inv7 T: all f:File | no f:>link
+inv7 T: all f:File | f:>link not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 B: all f:File |f.link not in Trash
+inv7 S: all f:File |no (f in link and f in Trash)		/* There are no links. */
+inv7 S: all f:File |no (f in link and f in Trash)		/* There are no links. */
+inv7 S: all f:File |f in link implies f not in Trash		/* There are no links. */
+inv7 S: /* There are no links. */
+inv7 S: /* There are no links. */
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f:>link implies f not in Trash
+inv7 T: all f:File | f:>link implies f not in Trash
+inv7 T: all f:File | f.link implies f not in Trash
+inv7 T: no link in Trash
+inv7 T: no File.link in Trash
+inv7 T: no File.link in Trash
+inv7 T: all f:File | f:>link not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f.link not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 O: all f:File | f.link not in Trash and f not in Trash
+inv7 T: all f:File | f:>link not in Trash
+inv7 T: all f:File | f<:link not in Trash
+inv7 T: all f:File | f->link not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 B: all f:File | f.^link not in Trash
+inv7 T: all f:File | no f.^link in Trash
+inv7 B: all f:File | f.^link not in Trash
+inv7 T: all f:File | f in link implies f.^link not in Trash
+inv7 T: all f:File | f in link and f.link implies f.^link not in Trash
+inv7 T: all f:File | (f in link and f.link) implies f.^link not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f in link implies f not in Trash
+inv7 T: all f:File | f.link implies f not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 T: all f:File,l:link | f.l not in Trash
+inv7 T: all f:File,l:link | f in l implies l not in Trash
+inv7 T: all f:File,l:link | no l in Trash
+inv7 E:
+inv7 T: all l:link | no link in Trash
+inv7 T: all l:link | no File.link in Trash
+inv7 T: all l:link | no link.File in Trash
+inv7 T: all l:link | link.File not in Trash
+inv7 T: all l:link | File.link not in Trash
+inv7 B: all f:File | f.link not in Trash
+inv7 B: all f:File | link.f not in Trash
+

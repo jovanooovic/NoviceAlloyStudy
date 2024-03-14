@@ -1,0 +1,6 @@
+inv1 O: all c : Course | all p : Person | p->c in enrolled iff p = Student
+inv1 O: all c : Course | all p : Person | p->c in enrolled implies p = Student
+inv1 C: all c : Course | all p : Person | p->c in enrolled implies p in Student
+inv1 S: all c : Course | c.~enrolled in Students
+inv1 C: all c : Course | c.~enrolled in Student
+

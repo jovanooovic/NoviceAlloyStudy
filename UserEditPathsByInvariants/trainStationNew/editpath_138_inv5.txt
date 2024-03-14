@@ -1,0 +1,8 @@
+inv5 S: all t : Track | t in Junction iff some disj x,y in t.(~succs)
+inv5 S: all t : Track | t in Junction iff some disj x,y | t.(~succs)
+inv5 T: all t : Track | t in Junction iff some disj x,y : Track | t.(~succs)
+inv5 S: all t : Track | t in Junction iff some disj x,y : t.(~succs)
+inv5 S: all t : Track | t in Junction iff (some disj x,y : t.(~succs))
+inv5 S: all t : Track | t in Junction iff (some disj x,y : t.(~succs) |)
+inv5 C: all t : Track | t in Junction iff (some disj x,y : Track | x in t.(~succs) and y in t.(~succs))
+

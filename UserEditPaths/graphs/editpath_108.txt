@@ -1,0 +1,16 @@
+na H: THEME UPDATE
+inv1 E: 
+inv1 C: all n:Node, n2:Node| n2 in n.adj => n in n2.adj
+inv1 C: all n:Node, n2:Node | n2 in n.adj => n in n2.adj
+inv1 S: all n:Node, n2:Node | n2 in n.adj => false
+inv1 S: all n:Node, n2:Node | n2 in n.adj => FALSE
+inv1 O: all n:Node, n2:Node | n2 in n.adj => not n2 in n.adj
+inv1 C: all n:Node, n2:Node | n2 in n.adj => n in n2.adj
+inv2 S: all n:Node
+inv1 O: all n:Node, n2:n.adj | n in n2
+inv2 U: all n:Node, n2:n.adj | not n in n2
+inv1 O: all n:Node, n2:n.adj | n in n2
+inv1 C: all n:Node, n2:n.adj | n in n2.adj
+inv2 C: all n:Node, n2:n.adj | not n in n2.adj
+inv2 B: all n:Node, n2:n.adj | n in n2.adj
+

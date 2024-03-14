@@ -1,0 +1,6 @@
+inv3 S: all u1,u2 : User, p : Photo | p in u1.seen implies p in u2.posts and u2 in u1.follows
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows and u1 != u2
+inv3 O: all u1,u2 : User, p : Photo | p in u1.sees implies p in u2.posts and u2 in u1.follows and p not in Ad
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+

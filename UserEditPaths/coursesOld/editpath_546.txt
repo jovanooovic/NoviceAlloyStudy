@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv1 S: enrolled.Course in Studente
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 O: Course in Professor.teaches
+inv4 U: Project in Course.projects
+inv4 T: one projects.Project
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv4 T: all p : Project | one ((Course - Course) + projects.p)
+NA M: MOD BASE MODEL
+inv4 T: all p : Project | one projects.p
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 B: all s : Student, c : s.enrolled | one (c.projects & s.projects)
+inv7 U: all s : Student, c : s.enrolled | lone (c.projects & s.projects)
+inv8 C: all p : Person | no (p.teaches & p.enrolled)
+inv9 B: all p : Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled))
+inv9 B: all p : Professor | no (enrolled.(p.teaches) & (enrolled.(p.enrolled) + teaches.(p.teaches)))
+inv9 S: all p : Professor | no (enrolled.(p.teaches) & (enrolled.(p.enrolled))
+inv9 B: all p : Professor | no (enrolled.(p.teaches) & enrolled.(p.enrolled))
+inv9 B: all p : Professor | no (enrolled.(p.teaches) & teaches.(p.teaches))
+inv10 C: Course.grades.Grade in Student
+inv11 B: all c : Course | c in (c.grades.Grade).enrolled
+inv11 C: all c : Course, s : c.grades.Grade | c in s.enrolled
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv14 U: all disj s1, s2 : Student | lone (s1.projects & s2.projects)
+inv13 B: all c : Course, g : max[Person.(c.grades)] | c.grades.g.projects in c.projects
+inv13 B: all c : Course, g : max[Person.(c.grades)] | c.grades.g.projects in c.projects	  	all c : Course | some c.grades implies some c.projects
+inv13 B: all c : Course, g : Grade| g in max[Person.(c.grades)] implies c.grades.g.projects in c.projects
+inv13 B: all c : Course, g : Grade | g in max[Person.(c.grades)] implies c.grades.g.projects in c.projects	  	all c : Course | some c.grades implies some c.projects
+inv15 T: all c : Course, disj s1, s2 : Student | c in (s1.enrolled & s2.enrolled) and (c.grades.s1 > c.grades.s2 + 1 or c.grades.s1 < c.grades.s2 - 1) implies (s1.projects & s2.projects) not in c.projects
+inv15 T: all c : Course, disj s1, s2 : Student | c in (s1.enrolled & s2.enrolled) and (c.grades.s1 > c.grades.s2 + 1 or c.grades.s1 < c.grades.s2 - 1)
+inv15 B: all c : Course, disj s1, s2 : Student | c in (s1.enrolled & s2.enrolled)
+NA H: THEME UPDATE
+inv13 B: all c : Course, s : c.grades.last | some s.projects - c.projects
+inv13 B: all c : Course | some s : c.grades.last | some s.projects - c.projects
+inv13 S: all c : Course | some s : c.grades.last some s.projects & c.projects
+inv13 B: all c : Course | some s : c.grades.last | some s.projects & c.projects
+inv13 U: all c : Course, s : Student | s in c.grades.last implies some s.projects & c.projects
+inv15 B: all disj s1, s2 : Student, c : Course | some (s1.projects & s2.projects & c.projects) implies	  	s1.(c.grades) in (prev[s2.(c.grades)] + s2.(c.grades) + next[s2.(c.grades)])
+inv15 B: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies	  	s1.(c.grades) in (prev[s2.(c.grades)] + s2.(c.grades) + next[s2.(c.grades)])
+inv15 B: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies (all g1 : s1.(c.grades), g2 : s2.(c.grades) |	  	g1=prev[g2] or g2=prev[g1] or g1=g2)
+inv15 B: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies (all g1 : s1.(c.grades), g2 : s2.(c.grades) |	  	g1=prev[g2] or g1=next[g2] or g1=g2)
+inv15 S: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies (all g1 : s1.(c.grades), g2 : s2.(c.grades) |	  	g1 in (prev[g2] + g1=next[g2] + g2)
+inv15 T: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies (all g1 : s1.(c.grades), g2 : s2.(c.grades) |	  	g1 in (prev[g2] + g1=next[g2] + g2))
+inv15 B: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies (all g1 : s1.(c.grades), g2 : s2.(c.grades) |	  	g1 in (prev[g2] + next[g2] + g2))
+inv15 U: all disj s1, s2 : Student, c : Course | some ((s1.projects & s2.projects) & c.projects) implies 	  	s1.(c.grades) in (prev[s2.(c.grades)] + next[s2.(c.grades)] + s1.(c.grades))
+inv15 B: all disj s1, s2 : Student, c : Course | some s1.projects & s2.projects & c.projects implies 	   (all g1 : s1.(c.grades), g2 : s2.(c.grades) | g1 in prev[g2] + next[g2] + g2)
+NA H: THEME UPDATE
+inv5 S: Person <: projects.Project in Student	  	 all p : Project | some <: projects.p
+inv4 C: all p : Project | one Course <: projects.p
+inv5 S: Person <: projects.Project in Student	  	 all p : Project | some <: projects.p
+inv5 C: Person <: projects.Project in Student	  	 all p : Project | some Person <: projects.p
+inv13 C: all c : Course, s : c.grades.last | some s.projects & c.projects
+NA H: THEME UPDATE
+

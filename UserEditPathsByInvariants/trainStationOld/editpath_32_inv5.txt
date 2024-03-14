@@ -1,0 +1,8 @@
+inv5 U: all t: Train | after t.pos in t.pos + t.pos.prox
+inv5 B: always all t: Train | t.pos' in t.pos + t.pos.prox
+inv5 B: always all t: Train | t not in Exit implies t.pos' in t.pos + t.pos.prox
+inv5 U: always all t: Train | t.prox not in Exit implies t.pos' in t.pos + t.pos.prox
+inv5 U: always all t: Train | t.pos not in Exit implies t.pos' in t.pos + t.pos.prox
+inv5 B: always all t: Train | no t.pos & Exit implies t.pos' in t.pos + t.pos.prox
+inv5 B: always all t: Train | no t.pos & Exit implies t.pos' in t.pos + t.pos.prox
+

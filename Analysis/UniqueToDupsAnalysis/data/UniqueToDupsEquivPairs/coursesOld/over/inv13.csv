@@ -1,0 +1,41 @@
+Pairs,1
+,,"all disj g1:Grade | #g1 = 0",1
+
+Pairs,7
+,,"all c: Course | one (c.grades).max",1
+,,"all c: Course | some c.grades.max",1
+,,"all c : Course, s,g : univ | s->g in c.grades",1
+,,"all c : Course | c in c.grades.last.(Person<:projects)",1
+,,"all c : Course, s,g : univ | s->g in c.grades and (all x,y : univ | x->y in c.grades)",1
+,,"all c1 : Course | all g1 : Grade |
+  	one s1:Student  | c1->s1->g1 in grades and g1=max[]",1
+,,"all c : Course, s,g : univ | s->g in c.grades and (all x,y : univ | x->y in c.grades implies ordering/gte[g,y])",1
+
+Pairs,3
+,,"grades.(max[Grade]) in projects.(~projects :> Student)",3
+
+Pairs,1
+,,"all s:Person, c: Course | some (s.projects & c.projects)",1
+
+Pairs,5
+,,"all c : Course | all s : Person |  s.(c.grades) in Student",1
+,,"all c: Course | some c.grades implies one c.grades.max",1
+,,"all c: Course | some c.grades implies some c.grades.max",1
+,,"all c: Course | some c.grades implies some s: Student | s = max[c.grades]",2
+
+Pairs,1
+,,"grades.Grade in (Course <: projects).(~projects :> Student)",1
+
+Pairs,2
+,,"all c : Course, s : c.grades.last | one (s.projects & c.projects)",1
+,,"all c : Course, s : c.grades.last | one c.projects & s.projects",1
+
+Pairs,9
+,,"all c : Course |(c.grades.(max[Person.(c.grades)])) in projects.(c.projects)",6
+,,"all c : Course, s,g : univ | s->g in c.grades and (all x,y : univ | x->y in c.grades implies ordering/gte[g,y]) implies c in (this/Course <: projects).(s.(Person <: projects))",1
+,,"all c : Course, s,g : univ | s->g in c.grades and (all x,y : univ | x->y in c.grades implies ordering/gte[g,y]) implies (some p : s.(Person <: projects) | p in c.(Course <: projects))",2
+
+Pairs,2
+,,"all c : Course, s : c.grades.Grade | (all e : grades.Grade.c | ordering/gte[c.grades.s,c.grades.e]) implies c in (Course <: projects).(s.projects)",1
+,,"all c : Course, s : c.grades.Grade | (all e : c.grades.Grade | ordering/gte[c.grades.s,c.grades.e]) implies c in (Course <: projects).(s.projects)",1
+

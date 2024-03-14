@@ -1,0 +1,22 @@
+inv5 T: one projects.Course-Student
+inv5 T: one Person <: projects.Course-Student
+inv5 T: some Person <: projects.Course-Student
+inv5 O: some (Person <: projects).Course-Student
+inv5 T: some Person.projects.Course-Student
+inv5 T: some Person.projects-Student->Project
+inv5 T: some (Person.projects)-(Student->Project)
+inv5 T: some (Person->projects)-(Student->Project)
+inv5 T: some (projects)-(Student->Project)
+inv5 B: some (Person <: projects)-(Student->Project)
+inv5 B: one (Person <: projects)-(Student->Project)
+inv5 U: lone (Person <: projects)-(Student->Project)
+inv5 B: some (Person <: projects)-(Student->Project)
+inv5 B: no (Person <: projects)-(Student->Project)	    some (Person <: projects)&(Student->Project)
+inv5 T: (Person <: projects)-(Student->Project) = none	    some (Person <: projects)&(Student->Project)
+inv5 B: no (Person <: projects)&(Professor->Project)	    some (Person <: projects)&(Student->Project)
+inv5 B: no Person <: projects-Student->Project	    some (Person <: projects)&(Student->Project)
+inv5 B: no Person <: projects-Student->Project	    some Person <: projects&Student->Project
+inv5 B: all s : Student| no Person <: projects-s->Project	    all s : Student| some Person <: projects&s->Project
+inv5 T: all s : Student| Person <: projects-s->Project = none	    all s : Student| some Person <: projects&s->Project
+inv5 T: all s : Student| Person <: projects.s = none	    all s : Student| some Person <: projects&s->Project
+

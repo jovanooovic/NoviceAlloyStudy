@@ -1,0 +1,8 @@
+inv11 B: one Person.(Course.grades)
+inv11 T: Person.(grades)
+inv11 T: all c: Course | all grade: c.grades | no grade.Grade
+inv11 T: all c: Course | all grade: c.grades | no univ
+inv11 U: all c: Course | all grade: c.grades.Person | no univ
+inv11 O: all c: Course | all grade: Person.(c.grades) | no univ
+inv11 C: all c: Course | all p: (c.grades).Grade | c in p.enrolled
+

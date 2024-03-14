@@ -1,0 +1,31 @@
+inv7 S: all s1 : Student |one s.Person<:projects.~(Course<:projects)
+inv7 T: all s1 : Student |one s1.Person<:projects.~(Course<:projects)
+inv7 B: all s1 : Student |one s1.projects.~(Course<:projects)
+inv7 B: all s1 : Student |lone s1.projects.~(Course<:projects)
+inv7 B: all s1 : Student | lone s1.projects.~(Course<:projects)
+inv7 B: all s1 : Student | lone s1.projects.~(Course<:projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.~(c.projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.projects)
+inv7 T: all s1 : Student, c : Course | lone (s1.projects).(c.projects)
+inv7 B: all s1 : Student, c : Course | lone s1.projects
+inv7 S: all s1 : Student, c : Course | lone s1.projects.(c.<:projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.Course<:projects)
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.(Course<:projects))
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.projects)
+inv7 T: all s1 : Student, c : Course | lone (s1.projects.(c.projects))
+inv7 B: all s1 : Student, c : Course | lone c.projects
+inv7 S: all s1 : Student, c : Course | lone s1.projets.~(Course<:projects).c
+inv7 T: all s1 : Student, c : Course | lone s1.projects.~(Course<:projects).c
+inv7 T: all s1 : Student, c : Course | lone s1.projects.(c.projects)
+inv7 T: all s1 : Student, c : Course | (lone s1.projects ) in c.projects
+inv7 T: all s1 : Student, c : Course | (lone s1.projects ) in c.projects
+inv7 B: all p : Student, c : Course | one ~(c.grades).p
+inv7 B: all p : Student, c : Course | lone ~(c.grades).p
+inv7 T: all p : Student, c : Course | p in enrolled.c and lone p.projects.(c.projects)
+inv7 T: all p : Student, c : Course | lone p.projects.(c.projects)
+inv7 T: all p : Student, c : Course | lone p.projects && (c.projects)
+inv7 U: all p : Student, c : Course | lone p.projects & (c.projects)
+inv7 U: all p : Student, c : Course | lone p.projects & (c.projects)
+

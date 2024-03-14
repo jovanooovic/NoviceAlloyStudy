@@ -1,0 +1,11 @@
+inv5 S: some p : person | p.Teaches
+inv5 T: some p : Person | p.Teaches
+inv5 B: all p : Person | some p.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv5 U: some Teacher
+inv5 O: some Teacher and all t : Teacher | some t.Teaches
+inv5 T: all g : Class.Groups | some g.Person in Teacher
+inv5 T: all g : Class.Groups | some g in Teacher
+inv5 T: all g : Class.Groups | some g->Person in Teacher
+

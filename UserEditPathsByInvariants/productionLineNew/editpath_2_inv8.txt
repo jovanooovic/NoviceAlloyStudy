@@ -1,0 +1,6 @@
+inv8 S: all c: Components + Dangerous | no h: Human | some wc: c.workstation | h in wc.workers
+inv8 O: all c: Component + Dangerous | no h: Human | some wc: c.workstation | h in wc.workers
+inv8 O: all c: Component + Dangerous | no h: Human | some wc: c.^workstation | h in wc.workers
+inv8 U: all wc: Human.workstation | no d: Dangerous | d in wc
+inv8 O: all d: Dangerous | all wc: d.workstation | wc.workers in Robot
+

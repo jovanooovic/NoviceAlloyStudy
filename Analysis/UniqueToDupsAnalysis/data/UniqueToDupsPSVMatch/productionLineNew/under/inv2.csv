@@ -1,0 +1,119 @@
+"all x:Worker | one workers.x",1
+"all ws : Workstation | some Worker",1
+"all w: Worker | lone w.workstation",1
+"all w:Workstation | some w.workers",1
+"all x: Workstation | some (x.workers)",1
+"all ws: Workstation| some ws.workers",4
+"all s : Workstation | #s.workers>0",1
+"all ws: Workstation | #(ws.workers) > 0",1
+"all w : Worker | w in Workstation.workers",2
+"all w : Worker | one w & Workstation.workers",1
+"all w : Worker | lone w & Workstation.workers",1
+"all w:Workstation,wor:Worker |  some w.workers",2
+"all w:Workstation,wor:Worker |   one workers.wor",2
+"all w:Workstation,wor:Worker |   some workers.wor",1
+"some workers
+all w : Worker | w in Workstation.workers",1
+"all w: Workstation| some p: Worker| p in w.workers",1
+"all x : Workstation | some y : Worker | y in x.workers",1
+"all w:Worker | some a:Workstation | w in a.workers",1
+"all w : Workstation | some t : Worker | t in w.workers",1
+"all ws: Workstation | all w: Worker | some ws.workers",1
+"all w:Workstation| some x:Worker| w->x in workers",1
+"some Workstation.workers
+all w : Worker | one workers.w",1
+"all wo:Worker | one w:Workstation | wo in w.workers",1
+"all ws: Workstation | some w: Worker | w in ws.workers",3
+"all w : Worker | some ws : Workstation | w in ws.workers",1
+"all w,x : Workstation | w != x implies no (w.workers & x.workers)",1
+"all x: Workstation, y: Worker | some (x.workers) && one (workers.y)",1
+"all a : Worker, b : Workstation | some b.workers and some workers.a",1
+"all ws: Workstation, w: Worker | some ws.workers and one workers.w",3
+"all ws: Workstation  | #ws.workers> 0  && one ws.workers.~workers",1
+"all ws: Workstation, w: Worker | some ws.workers and some workers.w",1
+"all w:Workstation,wor:Worker | some w.workers and one workers.wor",3
+"all ws: Workstation, w: Worker | some ws.workers  &&  one w.~workers",3
+"all w:Workstation,wor:Worker |  some w.workers and some workers.wor",1
+"all w:Workstation,wor:Worker | some w.workers and lone workers.wor",1
+"all w:Workstation,wor:Worker |   some w.workers => some workers.wor",1
+"all w : Worker, wt : Workstation | #(wt.workers) > 0 and #(workers.w) > 0",1
+"all ws: Workstation, w: Worker | #ws.workers>0 && #w.~workers = 1",1
+"all x : Workstation | some x.workers and
+all y : Worker | some workers.y",2
+"all w : Workstation | some w.workers
+all w : Worker | some workers.w",1
+"some workers
+all w,x : Workstation | w != x implies no (w.workers & x.workers)",1
+"all x : Workstation | all y : Worker | some x.workers and some workers.y",1
+"all w: Workstation| some p: Worker| p in w.workers and one workers.p",1
+"all a : Worker | all b : Workstation | some b.workers and some workers.a",1
+"all w:Workstation| some x:Worker| w->x in workers and one workers.x",1
+"all w : Workstation | some t : Worker | t in w.workers and w in workers.t",1
+"all ws : Workstation, w : Worker | some ws.workers and w in Workstation.workers",1
+"all ws : Workstation | some ws.workers
+all w : Worker | some workers.w",2
+"all w : Workstation, worker : Worker | #w.workers>0 and #workers.worker=1",2
+"all ws: Workstation | all w: Worker | some ws.workers && one w.~workers",3
+"all w : Worker | all ws : Workstation | one (w.(~workers)) and some (ws.workers)",3
+"all w : Workstation, worker : Worker | #w.workers>0 and #workers.worker>0",1
+"all w : Worker | #(workers.w) > 0
+all  wt : Workstation | #(wt.workers) > 0",1
+"all ws: Workstation | all w: Worker | some ws.workers && #w.~workers=1",1
+"all w : Workstation | all worker : Worker | some w.workers and one workers.worker",1
+"all ws: Workstation | all w: Worker | #ws.workers> 0  && #w.~workers=1",2
+"all w : Workstation | all worker : Worker | some w.workers and lone workers.worker",1
+"all w : Workstation | some worker : Worker | worker in w.workers and
+#(w.workers)>0",1
+"all w : Workstation|all worker : Worker | #w.workers>0 and #workers.worker=1",1
+"all W:Workstation | some W.workers
+all w:Worker | one (Workstation.workers & w)",1
+"all w : Worker | one w & Workstation.workers
+all ws: Workstation | some ws.workers",2
+"all ws : Workstation | some w : ws.workers | all w2 : Worker | w2 in Workstation.workers",1
+"all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ",1
+"all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in succ.ws1",1
+"all w : Workstation, v : Worker | some worker : Worker | worker in w.workers and some workers.v",1
+"all w: Workstation | some workers
+all w: Worker | (one work : Workstation | w in work.workers)",1
+"all x : Workstation | #(x.workers) > 0
+all x : Worker | some y : Workstation | x in y.workers",1
+"all s : Workstation | some s.workers
+all w,x : Workstation | w != x implies no (w.workers & x.workers)",1
+"all s : Workstation | #s.workers>0
+all w,x : Workstation | w != x implies no (w.workers & x.workers)",1
+"all s : Workstation | #s.workers>=0
+all w,x : Workstation | w != x implies no (w.workers & x.workers)",1
+"all ws : Workstation | #ws.workers > 0
+all w : Worker | some ws : Workstation | w in ws.workers",1
+"some w : Workstation | some w.workers
+all w : Worker | one work : Workstation | w in work.workers",2
+"all ws : Workstation | ws.workers != none
+all w : Worker | some ws : Workstation | w in ws.workers",1
+"all ws: Workstation | all w: Worker | one ws2: Workstation |#ws.workers> 0  &&  w in ws2.workers",1
+"all w : Worker | some wor : Workstation | w in wor.workers
+all wor : Workstation | some wor.workers",1
+"all ws1,ws2 : Workstation | all worker : Worker | worker in workers.ws1 implies worker not in workers.ws2 and ws1 != ws2",1
+"all ws1,ws2 : Workstation | all worker : Worker | worker in workers.ws1 implies worker not in ws2.workers and ws1 != ws2",1
+"all ws : Workstation | some ws.workers
+all ws : Workstation, w : Worker | w in ws.workers implies w not in ws.succ",1
+"all ws:Workstation, w1:Worker | one ws1:Workstation | some w:Worker | w in ws.workers and w1 in ws1.workers",1
+"all x : Workstation | some y : Worker | y in x.workers
+all x : Worker | some y : Workstation | x in y.workers",1
+"all ws : Workstation | some ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers && w in ws1.workers implies ws = ws1",1
+"all ws : Workstation | some ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers && ws != ws1 implies w not in ws1.workers",1
+"all x : Workstation | #(x.workers)>0
+all x : Worker | all z,w : Workstation | (x in z.workers and z!=w) implies x not in w.workers",1
+"all ws : Workstation | some w : Worker | w in ws.workers
+all ws : Workstation, w : Worker | w in ws.workers implies w not in ws.succ",2
+"all w : Workstation | some worker : Worker | worker in w.workers
+all w : Workstation | some worker : Worker | #(w.workers)>0",1
+"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers implies w not in ws.succ",1
+"all x : Workstation | #(x.workers)>0
+all x,y : Worker | all z,w : Workstation | (x in z.workers and y in w.workers and z!=w) implies x!=y",1
+"all x: Workstation | some y : Worker | y in x.workers
+all x: Worker | all y, z : Workstation | x in y.workers and x in z.workers implies y = z",2
+"all ws : Workstation | some w : Worker | w in ws.workers
+all ws,ws1 : Workstation, w : Worker | w in ws.workers && w in ws1.workers implies w != ws1",1

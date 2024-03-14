@@ -1,0 +1,7 @@
+inv11 T: all s:Student | s.enrolled.grades
+inv11 T: all s:Student |  (no Course-s.enrolled).grades
+inv11 B: all s:Student |  no (Course-(s.enrolled)).grades
+inv11 B: all s:Student |  no Course.grades - s.enrolled.grades
+inv11 B: all s:Student, c:Course |  c not in s.enrolled implies c.grades not in s.enrolled.grades
+inv11 U: all s:Student, c:Course | c not in s.enrolled implies no s.(c.grades)
+

@@ -1,0 +1,30 @@
+inv7 U: all x, z: User | x in z.suggested => some y: User | x in y.follows && y in z.follows && x not in z.follows
+inv7 U: all x, z: User | x in z.suggested => some y: User | y in z.follows && x in y.follows && x not in z.follows
+inv7 E:
+inv7 B: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows => x in z.suggested
+inv7 U: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows && x != z => x in z.suggested
+inv7 U: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows && x != z && x != y => x in z.suggested
+inv7 U: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows && x != z => x in z.suggested
+inv7 B: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows => x in z.suggested
+inv7 B: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows => x in z.suggested
+inv7 B: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows => x in z.suggested
+inv7 T: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows && y != x && x y != z => x in z.suggested
+inv7 T: all x, y, z: User | x in y.follows && y in z.follows && x not in z.follows && y != x && x y != z => x in z.suggested
+inv7 U: all x, z: User | x in z.suggested => some y: User | y in z.follows && x in y.follows
+inv7 U: all x, z: User | x in z.suggested => some y: User | y in z.follows && x in y.follows && x not in z.follows
+inv7 U: all x, z: User | x in z.suggested && x not in z.follows => some y: User | y in z.follows && x in y.follows
+inv7 U: all x, z: User | x in z.suggested && x not in z.follows && z != x => some y: User | y in z.follows && x in y.follows
+inv7 U: all x, z: User | x in z.suggested && x not in z.follows && z!=x => some y: User | y in z.follows && x in y.follows && y!=z && y!=x
+inv7 U: all x, z: User | x in z.suggested && x not in z.follows && z!=x => (some y: User | y in z.follows && x in y.follows)
+inv7 U: all x: User | all z: User-x| x in z.suggested && x not in z.follows => (some y: User | y in z.follows && x in y.follows)
+inv7 U: all x: User | all z: User-x| x in z.suggested && x not in z.follows => (some y: z.follows | x in y.follows && x!=y)
+inv7 U: all x: User | all z: User-x| x in z.suggested && x not in z.follows => (some y: z.follows | x in y.follows && x!=y)
+inv7 S: all x: User | all z: User-x| x in z.suggested => x not in z.follows && some y: z.follows | x in y.follows && x!=y)
+inv7 U: all x: User | all z: User-x| x not in z.follows && x in z.suggested => (some y: User-z | y in z.follows && x in y.follows && x!=y)
+inv7 U: all x: User | all z: User-x| x in z.suggested => (some y: User-z | y in z.follows && x in y.follows && x!=y)
+inv7 U: all x,z: User | x!=z && x in z.suggested => (some y: User-z | y in z.follows && x in y.follows && x!=y)
+inv7 T: all z: User | all x: z.suggested | some y: User-z | y in z.follows && x in y.follows && x!=y & x!=z
+inv7 U: all z: User | all x: z.suggested | some y: User-z | y in z.follows && x in y.follows && x!=y && x!=z
+inv7 S: all x,y: User | y in x.suggested <=> ( some z: User | y in z.follows && z in x.follows && y not in x.follows) && x!=y && y!=z
+inv7 C: all x,y: User | y in x.suggested <=> ( some z: User | y in z.follows && z in x.follows && y not in x.follows) && x!=y
+

@@ -1,0 +1,18 @@
+inv7 U: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (some u3: User | u3 in u1.follows and u2 in u3.follows)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows
+inv7 B: all u1,u2: User | u1.suggested = (u1.follows.follows - u1.follows)
+inv7 C: all u1,u2: User | u1.suggested = (u1.follows.follows - u1.follows - u1)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows and u1 != u2
+inv7 U: all u1,u2: User | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.follows.follows and u1 != u2)
+inv7 B: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (all u3: User | u3 in u1.follows and u2 in u3.follows)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (some u3: User | u3 in u1.follows and u2 in u3.follows)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (some u3: User | u3 in u1.follows and u2 in u3.follows) and u2 != u1
+inv7 B: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (all u3: User | u3 in u1.follows and u2 in u3.follows) and u2 != u1
+inv7 S: all u1,u2: User | u2 in u1.suggested implies u2 not in u1.follows and (set u3: User | u3 in u1.follows and u2 in u3.follows) and u2 != u1
+inv7 B: all u1,u2,u3: User | u2 in u1.suggested implies u2 not in u1.follows and u3 in u1.follows and u2 in u3.follows and u2 != u1
+inv7 U: all u1,u2: User | u2 in u1.suggested implies (u2 != u1 and u2 not in u1.follows and u2 in u1.follows.follows)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies (u2 != u1 and u2 in u1.follows.follows - u1.follows)
+inv7 U: all u1,u2: User | u2 in u1.suggested implies (u2 in u1.follows.follows - u1.follows - u1)
+inv7 T: all u1,u2: User | u2 in u1.suggested = (u2 in u1.follows.follows - u1.follows - u1)
+inv7 O: all u1,u2: User | u2 in u1.suggested and (u2 in u1.follows.follows - u1.follows - u1)
+

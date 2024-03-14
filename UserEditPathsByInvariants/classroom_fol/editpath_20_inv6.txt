@@ -1,0 +1,9 @@
+inv6 C: all t:Teacher | some c:Class | t->c in Teaches
+inv6 S: all Teacher.Teaches
+inv6 U: Teacher.Teaches in Class
+inv6 O: Teacher in Class.Teaches
+inv6 C: Teacher in Class.~Teaches
+inv6 C: Teacher in Teaches.Class
+inv6 C: Teacher in Class.~Teaches
+inv6 C: Teacher in Class.~Teaches
+

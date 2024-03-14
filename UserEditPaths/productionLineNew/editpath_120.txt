@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv6 C: all c : Component | c not in c.^parts
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv8 C: all c : Component | c in Dangerous implies #(c.workstation.workers & Human) = 0
+inv9 U: all ws : Workstation | ws not in ws.^succ
+inv9 U: all ws : Workstation - begin | #(begin.^succ & ws) = 1
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#ws.succ = 0 and ws = end)
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#ws.succ = 0 and ws in end)
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#(ws.succ) = 0 and ws in end)
+

@@ -1,0 +1,77 @@
+inv5 T: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some p in s.projects
+inv5 T: all s : Person, p : Project | (no ( s & Student ) implies p not in s.projects) and some p in s.projects
+inv5 U: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 B: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and p in s.projects
+inv5 T: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some p in s.projects
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and p in some s.projects
+inv5 B: all s : Person, p : Project | p in s.projects
+inv5 U: all s : Person, p : Project | p in s.projects and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | some s.projects.p and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | some s.projects.p
+inv5 T: all s : Person, p : Project | some projects.p
+inv5 T: all s : Person, p : Project | some p in s.projects
+inv5 T: all s : Person, p : Project | some (p in s.projects)
+inv5 B: all s : Person, p : Project | some s.projects
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.enrolled
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.projects
+inv5 U: all s : Person, p : Project | ( some s.projects ) and no ( s & Student ) implies p not in s.projects
+inv5 B: all s : Person, p : Project | ( some s.projects ) and ( no ( s & Student ) implies p not in s.projects )
+inv5 T: all s : Person, p : Project | some s.projects.p
+inv5 T: all s : Person, p : Project | some Student.projects.p
+inv5 B: all s : Person, p : Project | s in projects.p
+inv5 T: all s : Person, p : Project | some p in s.projects
+inv5 T: all s : Person, p : Project | s.projects
+inv5 B: all s : Person, p : Project | some s.projects
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.enrolled
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.enrolled
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | ( s & Student ) implies some s.projects
+inv5 T: all s : Person, p : Project | ( s & Student ) implies some s.projects
+inv5 T: all s : Person, p : Project | ( s & Student ) implies some p in s.projects
+inv5 S: all s : Person, p : Project | some s.projects | no ( s & Student ) implies p not in s.enrolled
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.enrolled
+inv5 U: all s : Person, p : Project | some s.projects and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | some Person.projects.p and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | some projects.p and no ( s & Student ) implies p not in s.projects
+inv5 T: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some p in s.projects
+inv5 T: all s : Person, p : Project | ( no ( s & Student ) implies p not in s.projects ) and some p in s.projects
+inv5 B: all s : Person, p : Project | ( no ( s & Student ) implies p not in s.projects ) and some s.projects
+inv5 B: all s : Person, p : Project | ( no ( s & Student ) implies p not in s.projects ) and p in  s.projects
+inv5 T: all s : Person, p : Project | ( no ( s & Student ) implies p not in s.projects ) and some s.projects.p
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects | some s.projects.p
+inv5 T: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some s.p
+inv5 T: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and p some s.projects
+inv5 S: all s : Person, p : Project | some s1 : Student | no ( s & Student ) implies p not in s.projects and p in s1.projects
+inv5 S: all s : Person, p : Project | some s1 : Student | no ( s & Student ) implies p not in s.projects and p in s1.projects
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and p in s1.projects
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 S: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 U: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 U: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects
+inv5 B: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some p & s.projects
+inv5 B: all s : Person, p : Project | no ( s & Student ) implies p not in s.projects and some (p & s.projects)
+inv5 U: all s : Person, p : Project | some (p & s.projects) and no ( s & Student ) implies p not in s.projects and some (p & s.projects)
+inv5 S: all s : Person, p : Project | some (p & s.projects) and no ( s & Student ) implies p not in s.projects
+inv5 S: all s : Person, p : Project | ( some (p & s.projects) ) and no ( s & Student ) implies p not in s.projects
+inv5 S: all s : Person, p : Project | ( some (p & s.projects) ) and ( no ( s & Student ) implies p not in s.projects )
+inv5 B: all s : Person, p : Project | ( some (p & s.projects) ) and ( no ( s & Student ) implies p not in s.projects )
+inv5 B: all p : Person, c : Course | some s : Student | no ( p & Professor ) implies c not in p.teaches
+inv5 B: all p : Person, c : Course, pr : Project | some s : Student | pr in s.projects and no ( p & Professor ) implies c not in p.teaches
+inv5 B: all p : Person, c : Course, pr : Project | some s : Student | pr in s.projects and no ( p & Student ) implies c not in p.enrolled
+inv5 B: all p : Person, c : Course, pr : Project | some s : Student | pr in s.projects and (no ( p & Student ) implies c not in p.enrolled)
+inv5 T: some p : Person, c : Course | all pr : projects | no ( p & Student ) implies c not in p.enrolled and pr in s.projects
+inv5 T: some p : Person, c : Course | all pr : projects | no ( p & Student ) implies c not in p.enrolled and pr in p.projects
+inv5 T: some p : Person, c : Course | all pr : projects | no ( p & Student ) implies c not in p.enrolled and pr in p.projects
+inv5 T: some p : Person, c : Course | all pr : projects | no ( p & Student ) implies c not in p.enrolled and pr in p.projects
+inv5 S: some p : Person, c : Course | all pr : Projects | no ( p & Student ) implies c not in p.enrolled and pr in p.projects
+inv5 B: some p : Person, c : Course | all pr : Project | no ( p & Student ) implies c not in p.enrolled and pr in p.projects
+inv5 S: all p : Person, c : Course,  pr : Projec | some s : Student | no ( p & Student ) implies c not in p.enrolled and pr in s.projects
+inv5 B: all p : Person, c : Course,  pr : Project | some s : Student | no ( p & Student ) implies c not in p.enrolled and pr in s.projects
+inv5 U: all p : Person, c : Course,  pr : Project | some s : Student | no ( p & Student ) implies pr not in p.projects and pr in s.projects
+inv5 B: all p : Person, c : Course,  pr : Project | some s : Student | no ( p & Student ) implies pr not in p.projects and pr in p.projects
+inv5 U: all p : Person, c : Course,  pr : Project | some s : Student | (no ( p & Student ) implies pr not in p.projects) and pr in s.projects
+inv5 U: all p : Person, pr : Project | some s : Student | (no ( p & Student ) implies pr not in p.projects) and pr in s.projects
+inv5 U: all p : Person, pr : Project | some s : Student | ( no ( p & Student ) implies pr not in p.projects )                                                               and pr in s.projects
+inv5 U: all p : Person, pr : Project | some s : Student | ( no ( p & Student ) implies pr not in p.projects )                                                                 and pr in s.projects
+

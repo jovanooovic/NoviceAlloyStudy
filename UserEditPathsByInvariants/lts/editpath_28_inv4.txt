@@ -1,0 +1,48 @@
+inv4 B: all x : Init, y : Event | State in y.(x.trans)
+inv4 B: all x : Init, y : Event | State in y.*(x.trans)
+inv4 B: all x : Init, y : Event | State in y.^(x.trans)
+inv4 B: all x : Init, y : Event | State in y.(x.trans)
+inv4 B: all x : Init | State in Event.*(x.trans)
+inv4 B: all x : State | State in Event.*(x.trans)
+inv4 B: all x : State | State in Event.*(x.trans)
+inv4 B: all x : Init | State in Event.*(x.trans)
+inv4 B: all x : Init, y : State | State in y.^(x.trans)
+inv4 B: all x : Init, y : State | State in y.(x.trans)
+inv4 B: all x : Init | State in Event.*(x.trans)
+inv4 B: all x : Init | State in Event.*(x.trans) + x
+inv4 S: all x : Init | State in lone Event.*(x.trans)
+inv4 T: all x : Init, y : State | some (Event.(x.trans)).y
+inv4 S: all x : Init, y : State | Node x.*(trans.Event)		/*	All the states have the same events available.	*/
+inv4 S: all x : Init  | Node in x.*(trans.Event)		/*	All the states have the same events available.	*/
+inv4 S: all x : Init | Node in x.*(trans.Event)		/*	All the states have the same events available.	*/
+inv4 S: all x : Init | Node in (*(x.trans)).Event		/*	All the states have the same events available.	*/
+inv4 S: all x : Init | Node in (*(x.trans)).Event
+inv4 B: all x : Init | State in (*(x.trans)).Event
+inv4 S: all x : Init, all y : Event | State in *(x.trans).y
+inv4 B: all x : Init, y : Event | State in *(x.trans).y
+inv4 B: all x : Init, y : Event | State in y.*(x.trans)
+inv4 B: all x : Init, y : Event | State in y.*(x.trans) + x
+inv4 B: all x : Init, y : Event | State in y.*(x.trans)
+inv4 B: all u : Init | State in u.*{ x : State, y : State | x->Event->y in trans}
+inv4 S: all u : Init | Node in  u.*{ x : State, y : State | x->Event->y in trans}
+inv4 B: all u : Init | State in u.*{ x : State, y : State | x->Event->y in trans}
+inv4 B: all u : Init | State in u.*{ x : State, y : State | some e : Event | x->e->y in trans}
+inv4 B: all u : Init | State in u.*{ x : State, y : State | some e : Event | x->e->y in trans}
+inv4 B: all u : Init | State in (u.*{ x : State, y : State | some e : Event | x->e->y in trans}) + u
+inv4 B: some u : Init | State in u.*{ x : State, y : State | some e : Event | x->e->y in trans}
+inv4 S: let t = { x : State, y : State | some e : Event | x->e->y in trans}	  all u : Init | State in u.*t
+inv4 S: let t = { x : State, y : State | some e : Event | x->e->y in trans},	  all u : Init | State in u.*t
+inv4 B: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : Init | State in u.*t
+inv4 B: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : Init | State in u.^t
+inv4 T: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : State | some Init in u.^t
+inv4 T: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : State | some Init in u.(^t)
+inv4 B: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : State | Init in u.(^t)
+inv4 B: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : State | some e : Init | e in u.(^t)
+inv4 B: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all u : State | one e : Init | e in u.(^t)
+inv4 S: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  some e : Init | Node in e.(^t)
+inv4 O: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  some e : Init | State in e.(^t)
+inv4 C: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all s:State | some i:Init | s in  i.(^t)
+inv4 C: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  all s:State | s in  Init.(^t)
+inv4 C: let t = { x : State, y : State | some e : Event | x->e->y in trans} |	  State in Init.(^t)
+inv4 C: State in Init.(^{ x : State, y : State | some e : Event | x->e->y in trans})
+

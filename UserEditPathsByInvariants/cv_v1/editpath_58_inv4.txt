@@ -1,0 +1,5 @@
+inv4 B: all u:User | lone (u.profile & u.visible)
+inv4 U: all u:User, w:Work | lone (u.visible & w)
+inv4 U: all u:User, w:Work | w in u.profile implies lone (u.visible & w)
+inv4 U: all u:User, w:Work | w in u.profile implies lone (u.visible & w)
+

@@ -1,0 +1,12 @@
+inv9 U: all professor : Professor | all person : Person | professor->person in teaches implies person in Student
+inv9 T: all professor : Professor | all colleague : Professor | professor != colleague implies no professor->colleague in teaches
+inv9 U: all professor : Professor | all colleague : Professor | professor != colleague implies colleague not in professor.teaches
+inv9 U: all professor : Professor | all colleague : Professor | professor != colleague implies colleague not in professor.teaches
+inv9 E:
+inv9 E:
+inv9 E:
+inv9 S: all professor : Professor | none colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 S: all professor : Professor | none colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 B: all professor : Professor | all colleagues : Professor | all course : Course | professor->course in teaches and colleagues->course in enrolled
+inv9 S: all professor : Professor | all course : Course | professor->course in teaches implies none colleague : Professor | colleagues->course in enrolled
+

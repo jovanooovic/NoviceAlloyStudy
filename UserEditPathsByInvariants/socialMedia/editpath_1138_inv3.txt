@@ -1,0 +1,8 @@
+inv3 B: all u1,u2 : User | all p1 : Photo | p1 not in Ad
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u1 in u2.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+inv3 B: all u1,u2 : User | all p1 : Photo | all ad : Ad | p1 in u1.sees and p1 in u2.posts and p1 != ad implies u2 in u1.follows	all ad : Ad | all u1 : User | ad in u1.sees or ad not in u1.sees
+

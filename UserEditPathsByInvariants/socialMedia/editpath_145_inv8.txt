@@ -1,0 +1,7 @@
+inv8 T: all u: User | all a : Ad | a in u.sees => u.follows.posts or u.suggested.posts
+inv8 T: all u: User | all a : Ad | a in u.sees => u.follows.posts or u.suggested.posts
+inv8 S: all u: User, all a : Ad | a in u.sees => u.follows.posts or u.suggested.posts
+inv8 S: all u: User, all a : Ad | a in u.sees => u.follows.posts or a in u.suggested.posts
+inv8 S: all u: User, all a : Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+inv8 C: all u: User, a : Ad | a in u.sees => a in u.follows.posts or a in u.suggested.posts
+

@@ -1,0 +1,13 @@
+inv7 B: all u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows => u3 in u1.follows
+inv7 B: all u1, u2, u3 : User | (u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows) => u3 in u1.follows
+inv7 B: all u1, u2, u3 : User | (u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows) => u3 in u1.suggested
+inv7 B: all u1, u2, u3 : User | u3 in u1.suggested => (u3 not in u1.follows and u3 in u2.follows and u2 in u1.follows)
+inv7 U: all u1, u2, u3 : User | u3 in u1.suggested => (u3 not in u1.follows)
+inv7 U: all u1, u3 : User | u3 in u1.suggested => (u3 not in u1.follows)
+inv7 B: all u1, u2, u3 : User | u3 in u1.suggested => u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows
+inv7 U: all disj u1, u2, u3 : User | u3 in u1.suggested => u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows
+inv7 B: all u1, u2, u3 : User | u3 in u1.suggested => u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows and u1 != u2 and u2 != u3 and u1 != u3
+inv7 B: all u1, u2, u3 : User | u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows => u3 in u1.suggested
+inv7 U: all u1, u2, u3 : User | (u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows and u1 != u2 and u1 != u3 and u2 != u3) => u3 in u1.suggested
+inv7 B: some u1, u2, u3 : User | (u2 in u1.follows and u3 in u2.follows and not u3 in u1.follows and u1 != u2 and u1 != u3 and u2 != u3) => u3 in u1.suggested
+

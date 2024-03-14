@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 T: iden parts.~parts
+inv1 O: iden in parts.~parts
+inv1 O: iden in ~parts.parts
+inv1 B: some Component.parts
+inv1 C: all c : Component | some c.parts
+inv1 O: iden in ~parts.parts and Component in parts.Product
+inv1 O: iden in parts.~parts and Component in parts.Product
+inv1 S: iden in parts.~parts and (Component + Resources) in parts.Product
+inv1 O: iden in parts.~parts and (Component + Resource) in parts.Product
+inv1 O: let R = Component <: parts | iden in R.~R
+inv2 U: no iden & parts
+inv2 U: no iden & Component <: parts :> Component
+inv2 C: no iden & ^parts
+inv3 T: (Robot <: position).(Component <: Position.position) = (Robot <: position)
+inv3 B: (Robot <: position).(Component <: Position.position) = (Robot <: position.Position)
+inv3 B: (Robot <: position).(Component <: Position.position) = (Robot <: position).Position
+inv3 C: all c : Component, p : c.position | some (Robot <: position).p
+inv1 S: all c : Component | some c.part
+inv1 C: all c : Component | some c.parts
+inv4 T: all disj c, c1 : Component | c.position < c1.position
+inv4 T: all disj c, c1 : Component | c.position before c1.position
+inv4 T: all disj c, c1 : Component | smaller[c.position, c1.position]
+inv4 S: all disj c, c1 : Component | smaller[c.position, c1.position :Position]
+inv4 S: all disj c, c1 : Component | smaller[c.position, c1.position : Position]
+inv4 T: all disj c, c1 : Component | smaller[c.position, c1.position]
+inv4 O: all disj c, c1 : Component | c.position.lt[c1.position]
+inv4 O: all c : Component, pos : c.position, p : c.parts | p.position = pos
+inv4 O: all c : Component, pos : c.position | all p : c.parts | p.position = pos
+inv4 S: all c : Component, pos : c.position | all p : c.parts | p.position.leq[pos]
+inv4 C: all c : Component, pos : c.position | all p : c.parts | p.position.lte[pos]
+inv4 C: all c : Component, pos : c.position, p : c.parts | p.position.lte[pos]
+inv3 C: all c : Component, p : c.position | some (Robot <: position).p
+inv2 C: no (iden & ^parts)
+inv1 C: all c : Component | some c.parts
+inv4 S: Component.parts.postion.lte[Component.parts]
+inv4 S: Component.parts.position.lte[Component.parts]
+inv4 B: Component.parts.position in prevs[Component.position]
+inv4 B: Component.parts.position in prevs[Component.position + 1]
+inv4 B: Component.parts.position in prevs[Component.position.next]
+inv4 B: Component.parts.position in prev[Component.position.next]
+inv4 S: Component.parts.position in prevs[Components.position.next]
+inv4 B: Component.parts.position in prevs[Component.position.next]
+

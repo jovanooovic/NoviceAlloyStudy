@@ -1,0 +1,5 @@
+inv11 T: all p:Person,g:Grade|  p->g in Grade implies p->g in p.enrolled.grades
+inv11 T: all p:Person,g:Grade|  p->g in Grade implies p->g in p.enrolled.grades
+inv11 U: all p:Person,g:Grade|  p->g in Course.grades implies p->g in p.enrolled.grades
+inv11 C: all p:Person,g:Grade,c:Course|  p->g in c.grades implies c in p.enrolled
+

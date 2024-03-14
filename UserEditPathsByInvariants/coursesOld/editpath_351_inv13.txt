@@ -1,0 +1,6 @@
+inv13 T: all s:Student,c:Course,g:Grade| one g1:Grade | c->s->g1 in grades and c->s->g in grades and g1>=g implies (one p:Project | c->p in projects and s->p in projects)
+inv13 T: all s:Student,c:Course,g:Grade| one g1:Grade | c->s->g1 in grades and c->s->g in grades and g1 >= g implies (one p:Project | c->p in projects and s->p in projects)
+inv13 T: all s:Student,c:Course,g:Grade| one g1:Grade | c->s->g1 in grades and c->s->g in grades and (g1 >= g) implies (one p:Project | c->p in projects and s->p in projects)
+inv13 T: all s:Student,c:Course,g:Grade| one g1:Grade | c->s->g1 in grades and c->s->g in grades and (g>=g) implies (one p:Project | c->p in projects and s->p in projects)
+inv13 T: all s:Student,c:Course,g:Grade| one g1:Grade | c->s->g1 in grades and c->s->g in grades and (g>=g) implies (one p:Project | c->p in projects and s->p in projects)
+

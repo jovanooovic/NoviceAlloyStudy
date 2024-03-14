@@ -1,0 +1,59 @@
+Pairs,3
+,,"lone Teacher.Teaches",3
+
+Pairs,1
+,,"lone Teacher->Teaches",1
+
+Pairs,4
+,,"all t:Teacher | one t.Teaches",1
+,,"Teacher <:Teaches in Teacher -> one Class",1
+,,"all t : Teacher | one c : Class | t->c in Teaches",1
+,,"all p:Teacher | some c: Class | p -> c in Teaches
+  Teacher <:Teaches in Teacher -> one Class",1
+
+Pairs,2
+,,"Teaches in Person -> one Class",2
+
+Pairs,2
+,,"Teaches in Teacher -> one Class",2
+
+Pairs,3
+,,"Teaches in Person -> lone Class",3
+
+Pairs,5
+,,"Teaches in Teacher -> lone Class",5
+
+Pairs,1
+,,"Teaches in Person one -> lone Class",1
+
+Pairs,1
+,,"Teaches in Teacher one -> one Class",1
+
+Pairs,2
+,,"Teaches in Teacher one -> lone Class",2
+
+Pairs,1
+,,"Teaches in Teacher lone -> lone Class",1
+
+Pairs,1
+,,"Teacher <:Teaches in Person -> one Class",1
+
+Pairs,4
+,,"all t:Teacher | all c:Class | t->c in Teaches implies c=1",1
+,,"all t:Teacher | all c1,c2 :Class |t->c1 in Teaches implies t->c2 not in Teaches",2
+,,"all x : Teacher | all c : Class | all d : Class | x->c in Teaches implies x->d not in Teaches",1
+
+Pairs,1
+,,"all t : Teacher | one c1,c2 : Class | t->c1 in Teaches and t->c2 in Teaches implies c1=c2",1
+
+Pairs,3
+,,"all t : Teacher | all c1, c2 : Class | c1 != c2 and (t->c1 in Teaches and t->c2 in Teaches)",1
+,,"all t1, t2 : Teacher | all c : Class | t1 != t2 and (t1->c in Teaches and t2->c in Teaches)",2
+
+Pairs,1
+,,"all p:Person | some c: Class | p -> c in Teaches
+  Teacher <:Teaches in Teacher -> one Class",1
+
+Pairs,1
+,,"all t1, t2 : Teacher | some c : Class | t1 != t2 and (t1->c in Teaches and t2->c in Teaches)",1
+

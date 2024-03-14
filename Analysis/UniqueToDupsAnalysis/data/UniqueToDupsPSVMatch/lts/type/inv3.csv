@@ -1,0 +1,91 @@
+"trans",1
+"(Init.trans)",1
+"lone State.Init",1
+"lone State.Event",1
+"~trans.trans in id",1
+"lone trans & Event",1
+"trans.~trans in iden",1
+"~trans.trans in iden",1
+"lone State.~trans.Event",1
+"all s : State | s.trans",2
+"all e:Event| some e.~trans",1
+"all s:State | lone s.~trans",1
+"all t:trans | lone t",1
+"~trans.trans in trans->trans",1
+"~trans.trans in State->State",1
+"all s:State | lone s'=s.trans",1
+"all s : State | Event.s.trans",1
+"all s : State | lone s.~trans",2
+"all s:State | lone s.(~trans)",1
+"all s : State | lone ^s.trans",1
+"all s : State | lone ~trans.s",1
+"all s:State,e:Event | lone s.e",1
+"all e:Event| lone e.State.trans",1
+"all s : State | Event.(s.trans)",1
+"trans in Event some -> one State",2
+"all e : Event | State in trans.e",2
+"all e:Event| lone e.~State.trans",1
+"let k = ~trans.State | k.~k in iden",1
+"all e: Event, s:State | e in s.trans",1
+"all s:State,e:Event | lone e.s.trans",1
+"all s : State | lone (trans&s.trans)",1
+"all s:State, e:Event | trans in e->s",1
+"lone State->Event in s.(State.~trans)",1
+"all s : State | lone e : Event | s.e.S",1
+"all s:State,e:Event | lone s.e in trans",1
+"all s: State, e: Event | lone e.s.trans",1
+"all s:State, e:Event | one trans in e->s",1
+"all s : State, e: Event | lone e.s.trans",1
+"all s:State | all e:Event | e in s.trans",3
+"all s:State,e:Event | lone s->e in trans",2
+"all s:State, e:Event | lone s.trans <: e",1
+"all s : State | lone s.trans.State.Event",1
+"all s: State, e: Event | lone s.trans.~e",1
+"all s : State, e : Event | lone s.e.trans",3
+"all e : Event | State in trans.(e->State)",2
+"all s : State, e : Event | lone e.s.trans",4
+"all e:Event |some s:State | lone e.s.trans",1
+"all e : Event | State in trans.(e -> State)",1
+"all s: State | (~s.trans).(s.trans) in iden",2
+"all s : State | (Event.s).(s.Event) in iden",1
+"all s:State | lone Event in State.~(s.trans)",1
+"all s:State, e:Event | lone  s.trans.State.e",1
+"all s : State, e : Event | lone s.trans <: e",1
+"all s:State, e:Event | s.trans -> lone trans.e",1
+"all s:State |one e: Event | lone e->s in trans",1
+"all s : State, e : Event | lone (s.trans <: e)",3
+"all x : State, y : Event | lone x.trans.y.State",1
+"all s: State |one e: Event | lone s->e in State",1
+"all s:State, e:Event | s.trans lone ->  trans.e",1
+"all s:State, e:Event | trans.e lone ->  s.trans",1
+"all s,s1:State,e:Event | lone s->e->s1 in trans",1
+"all s:State, e:Event | lone t:trans | t in e->s",1
+"all s:State | all e:Event | lone e->s in s.trans",2
+"all s : State, e : Event | lone ((s.trans) <: e)",1
+"all s : State, e : Event | lone (~(s.trans) <: e)",3
+"all e:Event , s:State | lone e in s.(State.~trans)",1
+"all s:State |one e: Event | lone trans.e in s.trans",1
+"all s1, s2:State, e:Event | lone s1->e->s2 in trans",1
+"all e:Event |some s:State | lone e.s.trans in State",2
+"all e:Event |some s:State | lone e.(s.trans) in State",1
+"all s1, s2:State, e:Event | lone (s1->e->s2 in trans)",1
+"all s1,s2:State, e:Event | lone  (s1->e->s2) in trans",2
+"all s:State |some e: Event | s.trans implies lone e->s",1
+"all s : State.trans, e : Event | lone s.e",1
+"all s:State, s1:State, e:Event | lone e->s1 in s.trans",1
+"all s:State | all e:Event | lone e in s.(State.~trans)",1
+"all s : State | all t : trans.s | lone t",1
+"all s : State, e : s.trans | ~e.e in iden",3
+"all s:State |some e: Event | s.trans implies lone trans.e",1
+"all s:State | all e:Event | lone s->e in s.(State.~trans)",1
+"all s:State |some e: Event | s.trans implies lone trans.e->s",2
+"all s:State |some e: Event | s.trans implies lone e in trans",1
+"all s : State, e : Event | lone (e <: s.trans)
+}
+
+fun onlyStates : set State->State {
+	{ aux : Event.(Init.trans) | Init -> aux }",4
+"all s,p:State | s.trans in Event & p.trans in Event implies s=p",1
+"all s,p:State | s.trans in Event & p.trans in Evente implies s=p",1
+"all s,p:State , e:Event | s.trans in e & p.trans in e implies s=p",2
+"Init + Event.(Init.trans) + Event.((Event.(Init.trans)).trans) + Event.((Event.((Event.(Init.trans)).trans)).trans)",1

@@ -1,0 +1,13 @@
+inv5 S: all t: Track | some succs.t <=> t in Junctions
+inv5 B: all t: Track | some succs.t <=> t in Junction
+inv5 T: all t, t1, t2: Track | t1 in succs.t && t2.succs.t <=> t in Junction
+inv5 T: all t, t1, t2: Track | t1 in succs.t && t2.succs.t => t in Junction
+inv5 B: all t, t1, t2: Track | t1 in succs.t && t2 in succs.t => t in Junction
+inv5 B: all t, t1, t2: Track | t1 in succs.t && t2 in succs.t <=> t in Junction
+inv5 B: all t, t1, t2: Track | t1 in succs.t && t2 in succs.t => t in Junction
+inv5 B: all t: Track | some succs.t <=> t in Junction
+inv5 B: all t: Track | lone succs.t <=> t in Junction
+inv5 B: all t: Track |some x: Track | some succs.t && x in succs.t <=> t in Junction
+inv5 C: all t : Track | #succs.t > 1 <=> t in Junction
+inv5 C: all t : Track | #succs.t > 1 <=> t in Junction
+

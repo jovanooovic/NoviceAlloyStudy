@@ -1,0 +1,12 @@
+inv8 T: all a:Ad, u1:User, u2:User, u3:User | u1.sees = (u1.follows.posts or u1.suggested.posts)
+inv8 O: all u1:User | u1.sees = (u1.follows.posts + u1.suggested.posts)
+inv8 C: all u:User | all p:u.sees | p not in Ad or p in u.follows.posts or p in u.suggested.posts
+inv8 C: all u:User | all p:u.sees | p not in Ad or p in u.follows.posts or p in u.suggested.posts
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+inv8 C: all u : User | all p : u.sees | p not in Ad or p in u.follows.posts or p in u.suggested.posts
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+inv8 O: all u1:User | u1.sees in (u1.follows.posts + u1.suggested.posts)
+

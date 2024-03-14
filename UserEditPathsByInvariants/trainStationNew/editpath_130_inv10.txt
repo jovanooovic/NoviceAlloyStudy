@@ -1,0 +1,8 @@
+inv10 T: all t:Track | one Junction in succs.t
+inv10 B: all t:Track | one Junction & succs.t
+inv10 B: all t:Track | one Junction & succs.t => some (Semaphore & t.signals)
+inv10 B: all t:Track | one (Junction & succs.t) => some (Semaphore & t.signals)
+inv10 U: all t:Track | one (Junction & t.succs) => some (Semaphore & t.signals)
+inv10 C: all t:Track | some (Junction & t.succs) => some (Semaphore & t.signals)
+inv10 C: all t:Track | some (Junction & t.succs) => some (Semaphore & t.signals)
+

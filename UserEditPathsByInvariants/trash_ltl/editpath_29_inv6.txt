@@ -1,0 +1,7 @@
+inv6 B: all f:File | f in Trash triggered (always f in Trash)
+inv6 S: all f:File | (f in Trash) triggered (f always in Trash)
+inv6 B: all f:File | (f in Trash) triggered (f in Trash)
+inv6 U: all f:File | f in Trash implies always (f in Trash)
+inv6 U: all f:File | some (f & Trash) implies always (f in Trash)
+inv6 C: always (all t:Trash | after t in Trash)
+

@@ -1,0 +1,6 @@
+inv3 S: no Exit.succ
+inv3 U: no Exit.succs
+inv3 U: all t: Track | no t.succs => t in Exit
+inv3 U: all t: Track | t in Exit => no t.succs
+inv3 C: all t: Track | no t.succs <=> t in Exit
+

@@ -1,0 +1,6 @@
+inv7 T: no (link & Trash)
+inv7 B: all f:File | (f.link) not in Trash
+inv7 B: some f:File | (f.link) not in Trash
+inv7 T: all f,l:File | (l in f.link) not in Trash
+inv7 C: all f,l:File | (l in f.link) implies l not in Trash
+

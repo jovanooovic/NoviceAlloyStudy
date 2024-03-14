@@ -1,0 +1,16 @@
+na H: THEME UPDATE
+inv1 C: adj = ~adj
+inv1 C: adj = ~adj
+inv1 C: adj = ~adj
+inv1 C: adj = ~adj
+inv3 B: all n: Node| n in n.adj
+inv3 U: all n: Node| n !in n.adj
+inv3 C: all n: Node| n !in n.^adj
+inv2 B: ! inv1	}		pred inv1{	adj = ~adj
+inv2 B: some disj n1, n2: Node | n1 in n2.adj and n2 !in n1.adj
+inv2 C: all n:Node | n !in n.adj.adj
+inv2 C: all n:Node | n !in n.adj.adj
+inv2 C: all n:Node | n !in n.adj.adj
+inv4 U: all n:Node | Node in n.^adj
+na H: THEME UPDATE
+

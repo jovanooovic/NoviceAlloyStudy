@@ -1,0 +1,6 @@
+inv5 O: all w:Workstation,r:Robot  | some h:Human | h in w.workers => r not in w.workers	all w:Workstation,h:Human | some r:Robot | r in w.workers => h not in w.workers
+inv5 O: all w:Workstation,r:Robot  | one h:Human | h in w.workers => r not in w.workers	all w:Workstation,h:Human | one r:Robot | r in w.workers => h not in w.workers
+inv5 O: all w:Workstation,r:Robot  | some h:Human | h in w.workers => r not in w.workers	all w:Workstation,h:Human | some r:Robot | r in w.workers => h not in w.workers
+inv5 O: all w:Workstation,r:Robot | some h:Human | h in w.workers => r not in w.workers	all w:Workstation,h:Human | some r:Robot | r in w.workers => h not in w.workers
+inv5 C: all w:Workstation,r:Robot,h:Human| r not in w.workers or h not in w.workers
+

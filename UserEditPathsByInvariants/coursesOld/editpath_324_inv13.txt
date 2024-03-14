@@ -1,0 +1,8 @@
+inv13 B: all s:Student, c:Course | s in c.grades.last implies one s.projects & c.projects
+inv13 B: all s:Student, c:Course | s in Course.grades.last implies one s.projects & Course.projects
+inv13 U: all s:Student, c:Course | s in Course.grades.last implies some s.projects & Course.projects
+inv13 U: all s:Student, c:Course | s in c.grades.last implies some s.projects & c.projects
+inv13 B: all s:Student, c:Course | s in c.grades.last implies lone s.projects & c.projects
+inv13 B: all s:Student, c:Course | s in c.grades.last implies one s.projects & c.projects
+inv13 U: all s:Student, c:Course | s in c.grades.last implies some s.projects & c.projects
+

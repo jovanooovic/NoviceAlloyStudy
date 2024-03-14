@@ -1,0 +1,12 @@
+inv7 U: all studi: Student | all pro: studi.projects | #(pro & studi.enrolled.projects) <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Person | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 B: all studi: Student | #{studi.projects & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1
+inv7 B: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1	  	    	#(Person-Student).projects = 0
+inv7 U: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled | #{studi.projects & kursPro.projects} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled | #{studi.projects & kursPro.projects} <= 1
+

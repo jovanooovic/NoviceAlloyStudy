@@ -1,0 +1,11 @@
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows implies a in b.suggested
+inv7 U: all a,b : User | a != b && a in b.follows.follows && a not in b.follows implies a in b.suggested
+inv7 U: all disj a,b : User | a in b.follows.follows && a not in b.follows implies a in b.suggested
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows implies a in b.suggested
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows => a in b.suggested
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows <=> a in b.suggested
+inv7 T: all a,b : User | a in b.follows.follows && a not in b.follows -> a in b.suggested
+inv7 S: all a,b : User | a in b.follows.follows && a not in b.follows <-> a in b.suggested
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows => a in b.suggested
+inv7 B: all a,b : User | a in b.follows.follows && a not in b.follows <=> a in b.suggested
+

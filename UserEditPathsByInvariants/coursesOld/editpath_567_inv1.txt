@@ -1,0 +1,16 @@
+inv1 B: all i : univ | i in Student implies some x : univ | i->x in enrolled
+inv1 B: all i : univ | i in Student implies some x : Course | i->x in enrolled
+inv1 B: all i : univ | i in Student implies some x : univ | i->x in enrolled
+inv1 B: all i : univ | i in Student and i != Professor  implies some x : univ | i->x in enrolled
+inv1 B: all i : univ | i in Person and i = Student and i != Professor  implies some x : univ | i->x in enrolled
+inv1 B: all i : univ | i in Student implies some x : univ | i->x in enrolled
+inv1 B: all i : univ | i in Student implies some enrolled.i
+inv1 B: all i : univ | i in Student and i!=Professor implies some enrolled.i
+inv1 S: all i : univ | i in Student and i!=Professor implies some enrolled.i and implies !teaches.i
+inv1 S: all i : univ | i in Student and i!=Professor implies some enrolled.i and implies ~teaches.i
+inv1 B: all i : Student | some enrolled.i
+inv1 B: all i : Student - Professor | some enrolled.i
+inv1 T: all i : univ | i in Student and i!=Professor implies some enrolled.~i
+inv1 B: all i : univ | i in Student and i!=Professor implies some enrolled.i
+inv1 B: all i : univ | i in Student and i!=Professor implies some enrolled.i
+

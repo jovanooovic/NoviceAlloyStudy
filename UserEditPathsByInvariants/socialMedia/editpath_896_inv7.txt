@@ -1,0 +1,9 @@
+inv7 C: all s:User | all u:User | (u in suggested.s) iff (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+inv7 C: all s:User | all u:User | (u in suggested.s) iff (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+inv7 C: all s:User, u:User | (u in suggested.s) iff (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+inv7 U: all s:User, u:User-s | some v:User | (u in suggested.s) iff (u not in follows.s and u in follows.v and v in follows.s)
+inv7 S: all s:User, u:User | (u in suggested.s) iff (u != s and u not in follows.s and u in follows.v and v in follows.s)
+inv7 C: all s:User, u:User | (u in suggested.s) iff (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+inv7 T: all s:User, u:User | (u in suggested.s) = (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+inv7 C: all s:User, u:User | (u in suggested.s) iff (u != s and u not in follows.s and some v:User | u in follows.v and v in follows.s)
+

@@ -1,0 +1,31 @@
+inv13 S: all c: Course | let m = max[g in c.grades | c.grades[g]] |	some s: Student | s in c.enrolled && c.grades[s] = m =>	some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course | let m = max[g in c.grades | c.grades[g]] |	    some s: Student | s in c.enrolled && c.grades[s] = m =>	    some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course | let m = max[g in c.grades | c.grades[g]] |	    some s: Student | s in c.enrolled && c.grades[s] = m =>	    some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course | let m = max[g in c.grades | c.grades[g]] |	    some s: Student | c in s.enrolled && c.grades[s] = m =>	    some p: Project | p in c.projects && p in s.projects
+inv13 T: all c: Course | let m = max[g in c.grades] |	    some s: Student | c in s.enrolled && c.grades[s] = m =>	    some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades.g) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades.g) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades.g) => some p: Project | p in project.c && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades.g) => some p: Project | p in project.c && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades) => some p: Project | p in project.c && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades.g) => some p: Project | p in project.c && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades[g]) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades[g]) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = lone Int { es - es.^prev } => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = lone Int { c.grades - c.grades.^prev } => some p: Project | p in c.projects && p in s.projects
+inv13 U: all c: Course, s: Student, g: Grade | s->g in c.grades && g = c.grades.max => some p: Project | p in c.projects && p in s.projects
+inv13 U: all c: Course, s: Student, g: Grade | s->g in c.grades && g = c.grades.max => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade| s->g in c.grades && g = c.grades.max => one (c.projects & u.projects)
+inv13 U: all c: Course, s: Student, g: Grade| s->g in c.grades && g = c.grades.max => one (c.projects & s.projects)
+inv13 U: all c: Course, s: Student, g: Grade| s->g in c.grades && g = c.grades.max => some (c.projects & s.projects)
+inv13 T: all c: Course, s: Student, g: Grade| s->g in c.grades && s->g = c.grades.max => some (c.projects & s.projects)
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && (forall g2 : Grade | s->g2 in c.grades => g >= g2) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && (not (exists g2 : Grade | s->g2 in c.grades && g2 > g)) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && (not ( g2 : Grade | s->g2 in c.grades 	&& g2 > g)) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades) => some p: Project | p in c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(c.grades) => some p: Project | p in 	  c.projects && p in s.projects
+inv13 T: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(grades) => some p: Project | p in 	  c.projects && p in s.projects
+inv13 S: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(grades.c) => some p: Project | p in 	  c.projects && p in s.projects
+inv13 T: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(grades) => some p: Project | p in 	  c.projects && p in s.projects
+inv13 T: all c: Course, s: Student, g: Grade | s->g in c.grades && g = max(grades) => some p: Project | p in 	  c.projects && p in s.projects
+

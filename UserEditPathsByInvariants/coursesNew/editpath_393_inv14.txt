@@ -1,0 +1,13 @@
+inv14 S: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.project and c1 in p2.projects and c2 in p1.project) implies (c2 in p2.project=
+inv14 S: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.project and c1 in p2.projects and c2 in p1.projects) implies (c2 in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects) implies (c2 in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects) implies (c2 in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects) implies ( c2 in p1.projects implies c2 in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects) implies (c2 in p1.projects implies c2 not in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects) implies ( c2 not in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects and p1!=p2) implies (c2 not in p2.projects)
+inv14 B: all p1,p2 : Person | some c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects and p1!=p2 and c1!=c2) implies (c2 not in p2.projects)
+inv14 C: all p1,p2 : Person | all c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects and p1!=p2 and c1!=c2) implies (c2 not in p2.projects)
+inv14 O: all p1,p2 : Person | all c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects and p1!=p2 ) implies (c2 not in p2.projects)
+inv14 C: all p1,p2 : Person | all c1,c2 : Project | (c1 in p1.projects and c1 in p2.projects and c2 in p1.projects and p1!=p2 and c1!=c2 ) implies (c2 not in p2.projects)
+

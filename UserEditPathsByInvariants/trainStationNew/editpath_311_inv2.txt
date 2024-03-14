@@ -1,0 +1,12 @@
+inv2 B: one Track
+inv2 U: all x : Signal | one x & Track.signals
+inv2 T: all x : Signal | one x in Track.signals
+inv2 S: all x : Signal |  x in one Track.signals
+inv2 S: all x : Signal, some t: Track | x in t.signals
+inv2 S: all x : Signal, some t: Track | some x in t.signals
+inv2 U: all x : Signal | some x & Track.signals
+inv2 U: all x : Signal | one x & Track.signals
+inv2 B: all t1, t2 : Track | no t1.signals & t2.signals
+inv2 B: all t1, t2 : Track | no t1.signals & t2.signals and t1 != t2
+inv2 C: all x : Signal | some t : Track | x in t.signals and no x & (Track-t).signals
+

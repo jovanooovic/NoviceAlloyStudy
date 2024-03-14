@@ -1,0 +1,40 @@
+"some File.link",1
+"#(link.File) > 0",1
+"#(File.link) > 0",1
+"link.~link in iden",1
+"link in File lone -> set File",1
+"all f : File | some link",1
+"all f,g,h:File| no Trash",1
+"all f : File | some link.f",3
+"all f : File | some f.link",8
+"all f : File | not no f.link",2
+"all f : File | some f->link",1
+"all f : File | #(link.f) > 0",1
+"all f : File | #(f.link) > 0",2
+"all x,y : File | x->y in link",2
+"all f,g:File | f->g in link",2
+"all f : File | #(f.link) >= 1",1
+"some x,y : File | x->y in link",1
+"all f,g,h:File| f->g in link",1
+"all f : File | some f->f.link",1
+"all f1,f2:File | f1->f2 in link",1
+"all disj f1,f2 : File | (f1->f2) in link",1
+"all f:File | f not in Protected implies f in Trash",1
+"all f : File | all g : File | f->g in link",1
+"all f,g:File | f->g in link implies g->f in link",1
+"all x : File | all y : File | x->y in link",1
+"all f : File | some g : File | f->g in link",1
+"all x : File | some y : File | x->y in link",3
+"all f1, f2 : File | f1.link = f2.link implies f1 = f2",3
+"all f,g,h:File| f->g in link and f->h in link",2
+"all f,g,h : File | f->g in link implies g->h not in link",1
+"all f1,  f2: File | f1.link != f2.link implies f1 = f2",1
+"all f1:File | some f2:File | f1->f2 in link",1
+"all f1,  f2: File | f1 != f2 implies no f1.link & f2.link",5
+"all f1,  f2: File | f1->f2 in link implies no f1.link & f2.link",1
+"all f, f1, f2 : File | (f -> f1 in link and f1 -> f2 in link) implies f1 = f2",2
+"all f1,f2,f3 : File | (f1->f2 in link and f3->f2 in link) => f1 = f3",1
+"all f : File | some g : File | f->g in link implies g->f not in link",1
+"all f1,f2,f3:File | ((f1 -> f3 in link and f2 -> f3 in link)) implies f1 = f2",2
+"some f1,f2,f3:File | f1->f2 in link and f1->f3 in link implies f2=f3",4
+"all f : File | some g,h : File | f->g in link implies f->h not in link",1

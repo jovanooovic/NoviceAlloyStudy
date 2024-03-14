@@ -1,0 +1,7 @@
+inv14 S: Person<:Projects
+inv14 T: Person<:projects
+inv14 S: s1.(Person<:projects)
+inv14 S: all s1:User | s1.(Person<:projects)
+inv14 T: all s1:Student | s1.(Person<:projects)
+inv14 U: all disj s1,s2:Student | lone s1.(Person<:projects) & s2.(Person<:projects)
+

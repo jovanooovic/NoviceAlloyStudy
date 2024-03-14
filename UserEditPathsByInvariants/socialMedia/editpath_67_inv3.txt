@@ -1,0 +1,8 @@
+inv3 O: all u1,u2:User, p:Photo | u1->p in sees and u2->p in posts and u1->u2 in follows
+inv3 S: all u:User, p:Photo | u->p in sees implies ( some u2:Person | u2->p in posts and u->u2 in follows) or p in Ad
+inv3 C: all u:User, p:Photo | u->p in sees implies ( some u2:User | u2->p in posts and u->u2 in follows) or p in Ad
+inv3 O: all u1,u2:User, p:Photo | (u1->p in sees and u2->p in posts and u1->u2 in follows) or p in Ad
+inv3 O: all u1,u2:User, p:Photo | u1->p in sees implies  (u2->p in posts and u1->u2 in follows) or p in Ad
+inv3 S: all u:User, p:Photo | u->p in sees implies (some u2:User | u2->p in posts and u1->u2 in follows) or p in Ad
+inv3 C: all u:User, p:Photo | u->p in sees implies (some u2:User | u2->p in posts and u->u2 in follows) or p in Ad
+

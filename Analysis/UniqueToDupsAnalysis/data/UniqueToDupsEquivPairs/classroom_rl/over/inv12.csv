@@ -1,0 +1,28 @@
+Pairs,3
+,,"some ~Teaches&Teacher.Groups",1
+,,"iden in  (~Teaches :> Teacher) . (Teacher <: Teaches)",1
+,,"~iden.iden in ~((Teacher.Teaches).Groups).((Teacher.Teaches).Groups)",1
+
+Pairs,21
+,,"all t:Teacher  | some Groups.t",2
+,,"all t:Teacher | some t.Groups",3
+,,"Teacher in Tutors.Class.Groups.Group",1
+,,"all t : Teacher | some (t <: Group)",2
+,,"all t : Teacher | some t.Groups.Group",1
+,,"all t: Teacher | some (Class.Groups).(t.Tutors)",1
+,,"all t : Teacher | some (((t.Teaches).Groups).Person)",1
+,,"all t: Teacher | some g: Group | t->g in Teaches",1
+,,"all t: Teacher | t in (Class.Groups.Group & t.Teaches)",1
+,,"all t : Teacher | some t.Teaches & Groups.Person.Group",7
+,,"all t: Teacher | some g: Group | some (t.Groups).g",1
+
+Pairs,2
+,,"Teaches.(Groups.Group.Person) = Teacher",1
+,,"Teaches.Groups.Group.Person = Teacher",1
+
+Pairs,2
+,,"some c:Class| all t:Teacher |t->c in Teaches and  some c.Groups",2
+
+Pairs,1
+,,"all t: Teacher | some c: Class | some g: Group | t->c in Teaches and c->t->g in Groups",1
+

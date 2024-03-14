@@ -1,0 +1,8 @@
+inv8 T: all p:Person | p not in p.^(teaches.~p)
+inv8 T: all p:Person | p not in p.^(teaches.p)
+inv8 U: all p:Person | p not in p.^(teaches)
+inv8 T: all p:Person | p not in p.^(teaches.Course)
+inv8 T: all p:Person, c: Course | p not in p.^(teaches.c)
+inv8 S: all p:Person, c: Course | p in teaches.c implies p not in enrollec.c
+inv8 C: all p:Person, c: Course | p in teaches.c implies p not in enrolled.c
+

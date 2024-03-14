@@ -1,0 +1,3 @@
+inv7 U: all u : User | all s : User - u | s in u.suggested implies s not in u.follows
+inv7 B: all u : User | all segui : u.follows| all s : User - u | s in u.suggested implies (s not in u.follows and s in segui.follows )
+

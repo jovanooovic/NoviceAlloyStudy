@@ -1,0 +1,15 @@
+inv12 S: all c : Class,, g : Group	  		| some t : Teacher | c->t->g
+inv12 T: all c : Class, g : Group	  		| some t : Teacher | c->t->g
+inv12 U: all c : Class, g : Group	  		| c in Class
+inv12 T: all c : Class, g : Group	  		| (some t : Teacher | c->t->g)
+inv12 B: all c : Class, g : Group	  		| (some t : Teacher | t in Teacher)
+inv12 B: all c : Class, g : Group	  		| some t : Teacher | c->t->g in Groups
+inv12 S: all t : Teacher	  		| some c : Class, g : Group | c->t->g in Groups
+inv12 B: all t : Teacher	  		| (some c : Class, g : Group | c->t->g in Groups)
+inv12 B: all t : Teacher	  		| (some c : Class, g1,g2 : Group | c->t->g1 in Groups and c->t->g2 in Groups and g1 != g2)
+inv12 B: all t : Teacher	  	| some c1,c2 : Class, g1,g2 : Group | c1->t->g1 in Groups and c2->t->g2 in Groups
+inv12 B: all t : Teacher	  	| some c : Class, g : Group | c->t->g in Groups
+inv12 B: all t : Teacher	  	| some c : Class, g : Group | c->t->g in Groups
+inv12 E:
+inv12 B: all t : Teacher | some c : Class, g : Group | c->t->g in Groups
+

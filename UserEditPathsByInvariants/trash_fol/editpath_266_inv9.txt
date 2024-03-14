@@ -1,0 +1,5 @@
+inv9 B: not some f1, f2, f3, f4 : File | ((f1->f2 in link) && (f3->f4 in link)) => not (f1 = f3 && f2 = f4)
+inv9 S: all f1, f2, f3 : File | f1->f2 in link => not some f3:File | f2->f3 in link	all f1, f2 : File
+inv9 C: all f1, f2, f3 : File | f1->f2 in link => not some f3:File | f2->f3 in link
+inv9 C: all f1, f2 : File | f1->f2 in link => not some f3:File | f2->f3 in link
+

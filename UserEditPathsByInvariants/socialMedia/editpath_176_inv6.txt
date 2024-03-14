@@ -1,0 +1,5 @@
+inv6 S: all inf : Influencer, d : day | some p : Photo | inf -> p in posts
+inv6 U: all inf : Influencer, d : Day | some p : Photo | inf -> p in posts
+inv6 U: all inf : Influencer, d : Day | (some p : Photo | (inf -> p in posts))
+inv6 C: all inf : Influencer, d : Day | (some p : Photo | (inf -> p in posts and p->d in date))
+

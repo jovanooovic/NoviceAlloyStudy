@@ -1,0 +1,9 @@
+inv7 O: all x,y,z : User | y in x.follows and z in y.follows and z not in x.follows and z in x.suggested
+inv7 C: all x,y,z : User | x.suggested = (x.follows.follows - (x.follows + x))
+inv7 C: all x : User | x.suggested = (x.follows.follows - (x.follows + x))
+inv7 B: all x : User | x.suggested = (x.follows.follows - (x.follows ))
+inv7 O: all x,y,z : User | y in x.follows and z in y.follows and z not in x.follows and z in x.suggested and x not in z
+inv7 S: all x : User | x.suggested = (x.follows.follows - x.follows - x)
+inv7 S: all x : User | x.suggested = (x.follows.follows - x.follows - x)
+inv7 C: all x : User | x.suggested = (x.follows.follows - x.follows - x)
+

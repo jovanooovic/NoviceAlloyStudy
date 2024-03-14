@@ -1,0 +1,27 @@
+inv4 U: all e:Entry | no e.prev
+inv4 U: all e:Entry | no e.succs.prev
+inv4 U: all e:Entry | no (e.succs).prev
+inv4 T: all e:Entry | no (e.succs).prev[e]
+inv4 U: all e:Entry | no prev[e]
+inv4 U: all e:Entry | #prev[e]=0
+inv4 S: all e:Entry | #prevs[e]=0
+inv4 S: all e:Entry | no prevs[e]
+inv4 S: all e:Entry | no e.succs.prevs[e]
+inv4 S: all e:Entry | first = e
+inv4 S: all e:Entry | Track.succs.first = e
+inv4 S: all e:Entry, t:Track | t.succs.first = e
+inv4 S: all e:Entry, t:Track | t.succs.first = Entry
+inv4 S: all e:Entry, t:Track | e in t.succs => t.succs.first = e
+inv4 S: some first e:Entry | e in Track
+inv4 S: some first e:Entry | e in Track
+inv4 S: some first e:Entry | e in Track
+inv4 U: all t:Track | t in Entry => t not in Track.^(succs)
+inv4 U: all disj t,t2:Track | t in Entry => t not in t2.^(succs)
+inv4 B: all disj t,t2:Track | t in Entry <=> t not in t2.^(succs)
+inv4 U: all disj t,t2:Track | t in Entry <=> t not in Track.^(succs)
+inv4 C: all disj t:Track | t in Entry <=> t not in Track.^(succs)
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+inv4 C: all t:Track | t in Entry <=> t not in Track.^(succs)
+

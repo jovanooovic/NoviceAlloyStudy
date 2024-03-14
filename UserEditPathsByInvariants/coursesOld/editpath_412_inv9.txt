@@ -1,0 +1,14 @@
+inv9 S: all t1,t2:Teacher, c:t1.teaches | t2 not in enrolled.c
+inv9 B: all t1,t2:Professor, c:t1.teaches | t2 not in enrolled.c
+inv9 B: all t1,t2:Professor, c:Course | c in t1.teaches => c not in t2.enrolled
+inv9 B: all t1,t2:Professor, c:Course | c in t1.enrolled and c in t2.enrolled => not some c2:t1.teaches | c2 in t2.enrolled
+inv9 B: all t1,t2:Professor, c:t1.enrolled | c in t2.enrolled => not some c2:t1.teaches | c2 in t2.enrolled
+inv9 T: all t1,t2:Professor, c:Course | c in t1.enrolled and c in t2.enrolled => 	  		no t1->c in teaches and no t2->c in teaches
+inv9 B: all t1,t2:Professor, c:Course | c in t1.enrolled and c in t2.enrolled => 	  		(t1->c not in teaches and t2->c not in teaches)
+inv9 B: all t1,t2:Professor, c:Course | c in t1.enrolled and c in t2.enrolled => 	  		(t1->c not in teaches and t2->c not in teaches)
+inv9 B: all t1,t2:Professor, c:Course | t1 != t2 and c in t1.enrolled and c in t2.enrolled => 	  		(t1->c not in teaches and t2->c not in teaches)
+inv9 B: all t1,t2:Professor, c:Course | t1 != t2 and c in t1.enrolled and c in t2.enrolled => 	  		not some c2:Course | (c in t1.enrolled and c in t2.teaches) or (c in t2.enrolled and c in t1.teaches)
+inv9 B: all t1,t2:Professor, c:Course | t1 != t2 and c in t1.enrolled and c in t2.enrolled => 	  		not some c2:Course | (c2 in t1.enrolled and c2 in t2.teaches) or (c2 in t2.enrolled and c2 in t1.teaches)
+inv9 B: all t1,t2:Professor, c:t1.enrolled | t1 != t2 and c in t2.enrolled => 	  		not some c2:Course | (c2 in t1.enrolled and c2 in t2.teaches) or (c2 in t2.enrolled and c2 in t1.teaches)
+inv9 U: all t1,t2:Professor, c:t1.teaches | t1 != t2 and c in t2.teaches =>  	  		not some c2:Course | (c2 in t1.enrolled and c2 in t2.teaches) or (c2 in t2.enrolled and c2 in t1.teaches)
+

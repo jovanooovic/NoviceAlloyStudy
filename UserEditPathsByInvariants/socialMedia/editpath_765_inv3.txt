@@ -1,0 +1,8 @@
+inv3 T: all u : User | u.sees implies some z: User | z.posts and z in u.follows
+inv3 T: all u : User, p : Photo | p in u.sees implies some z: User | z.posts and z in u.follows
+inv3 O: all u : User, p : Photo | p in u.sees implies some z: User | p in z.posts and z in u.follows
+inv3 C: all u : User, p : Photo | p in u.sees and p not in Ad implies some z: User | p in z.posts and z in u.follows
+inv3 O: all u : User, p : Photo | p in u.sees and p not in Ad implies some z: User | p in u.posts.posts
+inv3 C: all u : User, p : Photo | p in u.sees and p not in Ad implies some z: User | p in u.follows.posts
+inv3 C: all u : User, p : Photo | p in u.sees and p not in Ad implies p in u.follows.posts
+

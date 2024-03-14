@@ -1,0 +1,42 @@
+"no prev",1
+"no *prev[Component]",1
+"no prev[*Component]",1
+"no *(prev[Component])",1
+"all c:Component | (c.^parts)",1
+"all c: Component| c.parts.position",1
+"all c:Component | (c.^parts).position",2
+"all c: Component | c.parts in c.^~next",2
+"all c: Component | c.parts not in c.^next",1
+"all c: Component | c.parts not in c.^~next",1
+"all c : Component, p : c.parts | not p.*parts",1
+"all c:Component | c.parts(c.^position.~^next)",1
+"all c:Component | c.parts:>(c.position.~^next)",1
+"all c:Component | c.parts.position < c.position",1
+"all c: Component | c.parts.position < c.position",1
+"all c:Component | c.parts  not in c.position.next",1
+"all c:Component, p:c.parts | c.position < c.prevs",1
+"all c:Component | (c.parts.position) < c.position",1
+"all c:Component | c.parts.position in c.^~position",1
+"all c:Component | c.parts.position in c.~^position",1
+"all c : Component |  c.^parts not in c.^next.^parts",2
+"all c:Component, p:c.parts | c.position < p.position",1
+"all c:Component, p:c.parts | c.position > p.position",1
+"all disj c, c1 : Component | c.position < c1.position",1
+"all c : Component |  c.^parts not in (c.^next).^parts",2
+"all c : Component, p : c.parts | c.position < p.position",1
+"all c : Component, p : c.parts | p.position < c.position",1
+"all c : Component, p : c.parts | c.position <= p.position",1
+"all disj c, c1 : Component | c.position before c1.position",1
+"all c:Component, p:c.parts | c.position < c.prevs.position",2
+"all disj c, c1 : Component | smaller[c.position, c1.position]",2
+"all c : Component | c.parts.position implies (after (c.position))",1
+"all p : Position | no position.p.parts & position.(p.^next).*parts",1
+"all p : Position | no position.p.*parts & position.(p.^next).*parts",2
+"all p : Position | Component.p.parts not in Component.(p.^next).parts",1
+"all p1,p2:Position | (Component.p1).parts not in (Component.p2).parts",1
+"all p : Position | no (position.p).*parts & (position.(p.^next)).*parts",1
+"all c: Component | let parts = p.parts | gt[parts.Position, c.position]",1
+"all c: Component | let parts = p.parts | lt[parts.position, c.position]",1
+"all disj c1, c2: Component | c1.parts & c2.parts => c1.position = c2.position",1
+"all p : Position | no (position.p).*parts & (position.(p.^next)).*parts
+  	all c : Component | no c.parts.position",1

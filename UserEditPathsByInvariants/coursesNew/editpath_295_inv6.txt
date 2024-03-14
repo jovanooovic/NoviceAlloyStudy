@@ -1,0 +1,6 @@
+inv6 T: all p: Project | all s:Student | p in s.projects implies p.Course in s.enrolled
+inv6 U: all p: Project | all s:Student | p in s.projects implies p.projects in s.enrolled
+inv6 B: all s: Student | one p:Project | p in s.projects implies p in (s.enrolled).projects
+inv6 B: all s: Student | some p:Project | p in s.projects implies p in (s.enrolled).projects
+inv6 U: all s: Student | all p: s.projects | p in (s.enrolled).projects
+

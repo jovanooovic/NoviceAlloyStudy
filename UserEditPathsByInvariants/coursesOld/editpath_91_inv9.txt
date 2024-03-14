@@ -1,0 +1,6 @@
+inv9 S: all p : Professor | all c : Course | p->c in teaches implies (all s : student | s->c in enrolled implies not s in Professor )
+inv9 B: all p : Professor | all c : Course | p->c in teaches implies (all s : Student | s->c in enrolled implies not s in Professor )
+inv9 S: all p : Professor | all c : Course | p->c in teaches implies (all s : Student | s->c in enrolled and
+inv9 B: all p : Professor | all c : Course | p->c in teaches implies (all s : Student | s->c in enrolled and not s in Professor )
+inv9 B: all p : Professor | all c : Course | p->c in teaches implies (all s : Person | s->c in enrolled implies not s in Professor )
+

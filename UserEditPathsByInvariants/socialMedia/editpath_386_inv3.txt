@@ -1,0 +1,18 @@
+inv3 T: all x : User | all y : User | all z : Photo | x <: sees.z[y]
+inv3 T: all x : User | all y : User | all z : Photo | x :> sees.z[y]
+inv3 T: all x : User | all y : User | all z : Photo | x follows.y && x :> sees.z[y]
+inv3 T: all x : User | all y : User | all z : Photo | x follows.y => x :> sees.z[y]
+inv3 T: all x : User | all y : User | all z : Photo | x follows.y && y posts.z => x sees.z
+inv3 T: all x : User | all y : User | all z : Photo | x follows.y && y posts.z => x sees.z
+inv3 T: all x : User | all y : User | all z : Photo | y->x in follows && z->y in posts => x sees.z
+inv3 T: all x : User | all y : User | all z : Photo | y->x in follows && z->y in posts -> x sees.z
+inv3 U: all x : User | all y : User | all z : Photo | y->x in follows && z->y in posts => z->x in sees
+inv3 B: all x : User | all y : User | all z : Photo | y->x in follows && z->y in posts => z->x in sees		all x : Ad | one sees.x
+inv3 T: all x : User | x sees in x.follos.posts		all x : Ad | one sees.x
+inv3 T: all x : User | x sees in (x.follos.posts + Ad)
+inv3 T: all x : User | x sees in (x.follows.posts)		all x : Ad | one sees.x
+inv3 T: all x : User | x sees in x.follows.posts		all x : Ad | one sees.x
+inv3 T: all x : User | x sees in (x.follows.posts + Ad)
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+

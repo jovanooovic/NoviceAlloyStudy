@@ -1,0 +1,17 @@
+inv1 T: all p : Person | (p & Professor) implies none p.enrolled
+inv1 T: all p : Person | (p & Student) => some p.enrolled
+inv1 T: all p : Person | (p & Student) implies some p.enrolled
+inv1 T: all p : Person | (p & Student) implies some p.enrolled
+inv1 B: no (Student & Professor).enrolled
+inv1 B: no Professor.enrolled
+inv1 C: all x : Person | all y : Course | x in enrolled.y implies x in Student
+inv1 B: all p:Person | (p in Student => some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 B: all p:Person | (p in Professor implies no p.enrolled)
+inv1 B: all p : Person | (p in Professor implies no p.enrolled)
+inv1 B: all p:Person | (p in Student => some p.enrolled) and (p in Professor => no p.enrolled)
+inv1 B: all p:Person | (p in Student implies some p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 T: all p:Person | (p in Student implies set p.enrolled) and (p in Professor implies no p.enrolled)
+inv1 C: all x : Person | all y : Course | x in enrolled.y implies x in Student
+

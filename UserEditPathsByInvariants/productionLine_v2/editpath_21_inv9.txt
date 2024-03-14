@@ -1,0 +1,13 @@
+inv9 U: all w: Workstation | no (w.^succ & w)
+inv9 B: all w: Workstation | no (w.^succ & w) and (begin != end)
+inv9 B: all w1, w2: Workstation | (w1 = begin and w2 = end) implies w1 != w2	all w: Workstation | w not in w.^succ
+inv9 B: all w1, w2: Workstation | (begin in w1 and end in w2) implies w1 != w2	all w: Workstation | w not in w.^succ
+inv9 B: all w1, w2: Workstation | (begin in w1 and end in w2) implies w1 != w2
+inv9 U: lone ((begin.^succ :> (end + begin)) - begin)
+inv9 E:
+inv9 U: lone ((begin.^succ :> (end + begin)) - begin)
+inv9 T: all w: Workstation | w.begin != w.end
+inv9 B: no (begin & end)
+inv9 T: none (begin & end)
+inv9 U: no (begin-end & end-begin)
+

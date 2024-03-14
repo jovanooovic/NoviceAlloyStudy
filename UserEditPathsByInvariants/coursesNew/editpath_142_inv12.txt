@@ -1,0 +1,7 @@
+inv12 S: all x : Person | all y : Course | one x(y.course)
+inv12 S: all x : Person | all y : Course | one x.(y.course)
+inv12 O: all x : Person | all y : Course | one x.(y.grades)
+inv12 T: all x : Person | all y : Course | one z : Grade | x in enrolled.y and z in y.grades
+inv12 T: all x : Person | all y : Course | one z : Grade | (x in enrolled.y) and (z in y.grades)
+inv12 C: all x : Person | all y : Course | lone x.(y.grades)
+

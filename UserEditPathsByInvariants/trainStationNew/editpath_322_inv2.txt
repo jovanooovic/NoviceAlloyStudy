@@ -1,0 +1,13 @@
+inv2 B: all s:Signal | one Track
+inv2 B: all s:Signal, t1,t2:Track | s in t1.signals => s not in t2.signals
+inv2 S: all s:Signal, t1,t2:Track | s in t1.signals => s not in Track.signals - t
+inv2 B: all s:Signal, t1:Track | s in t1.signals => s not in Track.signals - t1
+inv2 B: all s:Signal, t1:Track | s in t1.signals and s not in Track.signals - t1
+inv2 B: all s:Signal, t1:Track | s in t1.signals and s not in Track.signals - t1.signals
+inv2 U: all s:Signal, t1:Track | s in t1.signals => s not in Track.signals - t1.signals
+inv2 B: all s:Signal, t1:Track | s not in Track.signals - t1.signals
+inv2 B: all s:Signal, t1:Track | s not in (Track.signals - t1.signals)
+inv2 U: all s:Signal | one t1:Track | s not in (Track.signals - t1.signals)
+inv2 S: all s:Signal | one t1:Track | s in t.signals
+inv2 C: all s:Signal | one t:Track | s in t.signals
+

@@ -1,0 +1,9 @@
+inv6 S: all s : Student, all p : Project | p in s.projects iff p in s.enrolled.Project
+inv6 T: all s : Student, p : Project | p in s.projects iff p in s.enrolled.Project
+inv6 T: all s : Student, p : Project | p in s.(Person<:projects) iff p in s.enrolled.Project
+inv6 B: all s : Student, p : Project | p in s.projects iff p in s.enrolled.projects
+inv6 B: all s : Student, p : Project | p in s.projects iff s in p.~(Course<:projects).~enrolled
+inv6 B: all s : Student | one p : Project | p in s.projects iff s in p.~(Course<:projects).~enrolled
+inv6 B: all s : Student, p : Project | p in s.projects iff s in p.~(Course<:projects).~enrolled
+inv6 U: all s : Student, p : Project | p in s.projects implies s in p.~(Course<:projects).~enrolled
+

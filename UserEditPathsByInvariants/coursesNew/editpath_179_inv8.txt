@@ -1,0 +1,7 @@
+inv8 S: all t:Teacher | t not in t.teaches
+inv8 U: all t:Professor | t not in t.teaches
+inv8 B: all p:Professor | p.enrolled != p.teaches
+inv8 B: all p:Professor | all coursesTeached:p.teaches | p.enrolled not in coursesTeached
+inv8 S: all p:Professor | all coursesTeached:p.teaches | c not in p.enrolled
+inv8 U: all p:Professor | all courseTeached:p.teaches | courseTeached not in p.enrolled
+

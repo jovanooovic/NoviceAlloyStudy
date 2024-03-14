@@ -1,0 +1,120 @@
+Pairs,8
+,,"one posts.User",1
+,,"one Photo.posts",1
+,,"one Photo & User",1
+,,"iden in posts.~posts",1
+,,"one u: User| u in u.posts",1
+,,"some u:User| u in Photo.posts",1
+,,"all i1, i2 : univ | some u : univ | i1 -> u in posts and i2 -> u in posts",2
+
+Pairs,94
+,,"Photo in posts.Photo",1
+,,"posts in Photo -> one User",3
+,,"all p:Photo| one p.posts",13
+,,"all x:Photo | one x.posts",12
+,,"all u:Photo| one u.posts",1
+,,"all p:Photo| some p.posts",2
+,,"all p: Photo| p in posts.p",3
+,,"all p: Photo| p in p.posts",2
+,,"all p: Photo | one sees.User",1
+,,"all x : Photo | #x.posts = 1",2
+,,"all p:Photo | one ~posts.p",1
+,,"all p : Photo | p in posts.User",1
+,,"all p:Photo | some posts.User",1
+,,"all img : Photo | one posts.User",1
+,,"all p: Photo | p in posts.Photo",1
+,,"all img:Photo | sum posts.img != 0",2
+,,"all img : Photo | img in posts.User",2
+,,"all x: Photo | x in (one posts.User)",1
+,,"all i : univ | i in  Photo implies i in User",1
+,,"all i : Photo | one u : User | i in u",2
+,,"all p: Photo | one u: User | u in p.posts",1
+,,"all p:Photo|one u: User| u in u.posts",3
+,,"all p: Photo| one u :User| p in posts.u",3
+,,"all x: Photo | one y: User | y in x.posts",1
+,,"all x : Photo | some y: User | one posts.y",1
+,,"all i: Photo | one u: User | u in  u.posts",1
+,,"all image : Photo | one u : User | image in u",1
+,,"all p:Photo | one u:User | p->u in posts",3
+,,"all u:Photo | one p:Photo | p in u.posts",1
+,,"all i : Photo | one u : User | i -> u in posts",1
+,,"all p:Photo | some u:User | p in posts.u",1
+,,"all i : Photo | some u : User | u in i.posts",1
+,,"all x : Photo | some u : User | x->u in posts",2
+,,"all x : Photo | some y : User | x->y in posts",3
+,,"all p : Photo | one u : User | u->p in follows",1
+,,"all p : Photo | some u : User | u->p in follows",2
+,,"all x,y : univ | x in Photo implies y in User and y->x in posts",1
+,,"all i1, i2 : Photo | some u : User | i1 -> u in posts and i2 -> u in posts",4
+,,"all x,y,z : univ | x in Photo implies y->x in posts and z->x in posts and z = y",2
+,,"all x,y,z : univ | x in Photo implies y in User and z in User and y->x in posts and z->x in posts and z=y",5
+,,"all p:Photo | some u:User | p in u.posts and all u2:User | u2 != u and p not in u.posts",1
+,,"all p:Photo | some u:User | p in u.posts and all u2:User | u2 != u and p not in u2.posts",1
+,,"all p:Photo | some u:User | p-> u in posts
+all p:Photo,u1:User,u2:User | u1 -> p in posts and u2 -> p in posts implies u1=u2",1
+
+Pairs,3
+,,"posts in User one -> one Photo",3
+
+Pairs,2
+,,"posts in User one -> lone Photo",1
+,,"all y : univ | y in Photo implies some x : User | x.posts=y
+all x,y,z : univ | x in User and z in User and y in Photo and x->y in posts and z->y in posts implies x=z",1
+
+Pairs,3
+,,"one posts.Photo
+Photo in User.posts",3
+
+Pairs,3
+,,"one u:User| all p:Photo| one posts.p",1
+,,"one u: User | all p: Photo | some p.~posts",2
+
+Pairs,3
+,,"one u: User | all p: Photo | p.~posts = u",1
+,,"one x:User | all p:Photo | x->p in posts
+all x,y:User| all p:Photo | x->p in posts and y->p in posts implies x=y",1
+,,"one x:User | all p:Photo | x->p in posts
+all x,y:User| all p:Photo | x->p in posts and y->p in posts implies x=y
+
+all p : Photo | one u:User | u->p in posts
+all p: Photo | all u,v: User |u->p in posts and v->p in posts implies u=v",1
+
+Pairs,4
+,,"User.posts = Photo
+all p1,p2 : User | p1.posts != p2.posts",2
+,,"User.posts = Photo
+all p1,p2 : User | p1.posts != p2.posts or p1!=p2",1
+,,"User.posts = Photo
+all p1,p2 : User | p1.posts != p2.posts && p1!=p2",1
+
+Pairs,1
+,,"one posts.Photo
+Photo in User.posts
+
+all u : User | u not in u.follows",1
+
+Pairs,3
+,,"all p:Photo | one u:User | u -> p in posts
+all u:User | u -> u not in follows",3
+
+Pairs,2
+,,"all u : User | all p : Photo | p in u.posts
+all p : Photo | one u : User | p in u.posts",1
+,,"all f : Photo | f in User.posts
+all f : Photo | all u1, u2 : User | f in u1.posts+u2.posts implies u1 = u2",1
+
+Pairs,1
+,,"User.posts = Photo
+all p1,p2 : User | p1.posts != p2.posts or p1=p2
+all p : Photo | lone posts.p",1
+
+Pairs,1
+,,"posts in User one -> Photo
+not some p:Photo | all disj u1, u2:User | u1->p in posts and u2->p in posts",1
+
+Pairs,2
+,,"(all p : Photo | some u : User | p in u.posts) &&
+all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2",1
+,,"(all p : Photo | some u : User | u->p in posts) &&
+all u1,u2 : User | one p : Photo| p in u1.posts and p in u2.posts implies u1 = u2",1
+

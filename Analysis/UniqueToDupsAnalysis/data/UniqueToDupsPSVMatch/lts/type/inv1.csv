@@ -1,0 +1,61 @@
+"iden[State]",1
+"trans.State",1
+"State.trans",3
+"(State:>trans)",1
+"(State :> trans)",1
+"some State:>trans",1
+"all e : Event | e",1
+"always State.trans",2
+"trans.State = State",3
+"State in Event.trans",1
+"State.trans in State",1
+"~trans.trans in iden",4
+"iden in ~trans.trans",1
+"iden in trans.~trans",1
+"some (State :> trans)",1
+"all e : Event | trans",1
+"all s:State | s.trans",3
+"all e : Event | e.trans",1
+"always (State in trans)",1
+"all s : State | s.trans",3
+"all e : Event | trans.e",2
+"some State.trans & State",1
+"iden in trans.State.Event",3
+"iden in trans.Event.State",1
+"iden in State.trans.~trans",1
+"all e : Event | trans.State",2
+"State = trans.(Event->State)",1
+"all s : State | iden in ~s.s",1
+"all s:State | s.trans != none",3
+"no s : State | s.trans = none",2
+"all e : Event | trans.e.trans",1
+"always (trans.(Event->State))",1
+"all e : Event | trans.State.e",1
+"iden in State.trans.~trans.State",1
+"all s : State | s.trans in State",1
+"all s : State | some Event.s.trans",1
+"all s : State | iden in ~s.Event.s",1
+"all s:State | some t:trans | t in s",1
+"let t = trans | iden in trans.trans",1
+"let r = State->trans | iden in ~r.r",1
+"let s = State <: trans | s.~s in iden",1
+"let t = trans | iden in (trans.trans)",1
+"always (State in trans.(Event->State))",1
+"all s:State |some e:Event | e in s.trans",1
+"let k = trans.State | iden[State] in ~k.k",1
+"all s:State | some t:trans | t in s.trans",1
+"let k = trans.State | iden(State) in ~k.k",1
+"all s : State, e : Event | lone e.s.trans",1
+"let k = trans.State | iden{State} in ~k.k",1
+"all s:State , e:Event | some e->s in trans",1
+"all s: State | some e: State | s.trans = e",1
+"all s: State | some e: State | s.Event = e",1
+"all s:State , e:Event | some e->s in s.trans",1
+"let t = trans | iden in (trans.trans <: Event)",1
+"let t = trans | iden in (trans.trans) <: State",1
+"let t = trans | iden in (trans.trans) :> State",1
+"let t = trans | iden in (trans.trans :> Event)",1
+"all s:State , e:Event | some (e->s) in s.trans",1
+"all s1 : State | some s2 : State | s1 -> s2 in trans",1
+"all s1, s2:State | some e:Event | (s1->e->s2 in trans and e not in iden)",2
+"all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1.~s2 not in iden)",1

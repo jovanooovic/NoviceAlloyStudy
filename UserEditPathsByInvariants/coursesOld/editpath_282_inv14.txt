@@ -1,0 +1,10 @@
+inv14 S: all p1, p2:Project, all s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 S: all p1, p2:Project, all s1, s2: Student | (p1 in s1.projects && p1 in s2.projects) && (p2 in s1.projects && p2 in s2.projects) => p1=p2
+inv14 S: all p1, p2:Project, all s1, s2: Student | p1+p2 in s1.projects && p1+p2 in s2.projects => p1=p2
+inv14 B: all p1, p2:Project, s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!= s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 B: all p1, p2:Project, s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!=s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, s1, s2: Student | s1!=s2 && p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+inv14 U: all p1, p2:Project, disj s1, s2: Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects && p2 in s2.projects => p1=p2
+

@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv4 E: 
+inv3 S: all x : User , y : Photo | y not in Ad and p in x.sees implies  p in x.follows.posts
+inv3 S: all x : User , y : Photo | y not in Ad and p in x.sees implies  p in x.follows.posts
+inv3 S: all x : User , y : Photo | y not in Ad and p in x.sees implies  p in x.follows.posts
+inv3 S: all x : User , y : Photo | y not in Ad and p in x.sees implies  p in x.follows.posts
+inv5 B: all x : Influencer , u :  User | x in u.follows
+inv5 U: all x : Influencer , u :  (User-x) | x in u.follows
+inv7 S: all u : User , p : User-x | p in u.suggested iff p in x.follows.follows
+inv7 S: all u : User , p : User-x | p in u.suggested iff p in u.follows.follows
+inv7 B: all u : User , p : User-u | p in u.suggested iff p in u.follows.follows
+inv7 B: all u : User , p : User | p in u.suggested iff p in u.follows.follows
+inv7 U: all u : User , p : User | p in u.suggested implies p in u.follows.follows
+inv7 U: all u : User , p : User-u | p in u.suggested implies p in u.follows.follows
+inv7 S: all u : User , p : User-u | p in u.suggested implies (p in u.follows.follows p not in u.follows)
+inv7 U: all u : User , p : User-u | p in u.suggested implies (p in u.follows.follows and p not in u.follows)
+inv7 U: all u : User , p : User | p in u.suggested implies (p in u.follows.follows and p not in u.follows)
+inv7 B: all u : User , p : User | p in u.suggested iff (p in u.follows.follows and p not in u.follows)
+inv7 U: all u : User , p : (User-u) | p in u.suggested iff (p in u.follows.follows and p not in u.follows)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 S: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u=!s)
+inv7 C: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u!=s)
+inv7 U: all u : User , s : User-u| s in u.suggested iff( s in u.follows.follows and s not in u.follows)
+inv7 C: all u,s : User | s in u.suggested iff( s in u.follows.follows and s not in u.follows and u!=s)
+inv8 T: all u : User , a : Ad | a in u.sees implies (u.follows.posts and u.suggested.posts)
+inv8 T: all u : User , a : Ad | a in u.sees implies (u.follows.posts and u.suggested.posts)
+

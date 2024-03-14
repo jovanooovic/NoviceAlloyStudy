@@ -1,0 +1,17 @@
+inv5 T: all s,p : univ | s in Person and s->p in projects implies s in Student and some per : Person | per in projects.Project
+inv5 T: all s,p : univ | s in Person and s->p in projects implies s in Student and some per : Person | all proj: Project | per in projects.proj
+inv5 T: all s,p : univ | s in Person and s->p in projects implies s in Student and all proj: Project | some per : Person | per->proj in projects
+inv5 T: all s,p : univ | s in Person and s->p in projects implies s in Student and all proj: Project | some per : Person | per->proj in projects
+inv5 T: all s,p : univ | s in Person and s->p in projects implies s in Student and all proj: Project | some per : Person | per->proj in projects
+inv5 U: all p : Project | some per: Person | per in projects.p implies per in Student
+inv5 B: all p : Project | some per: Person | per in projects.p implies per = Student
+inv5 B: all p : Project | some per,per2: Person | per in projects.p and per2 in projects.p implies per = Student and per2 = Student
+inv5 B: all p : Project | some per: Person - Professor | per in projects.p
+inv5 B: all p : Project | some per: Person | per in projects.p and all s: Person - Professor | s in projects.p
+inv5 T: all p : Project | some per: univ | per in projects.p and all s: Person | s in projects.p implies s = Student
+inv5 T: all p : Project | some per: univ | per in projects.p and all s: Person | s in projects.p implies s in Student
+inv5 S: all p : Project | some per: Person | per in projects.p 	    all s: Person | s in projects.p implies s in S
+inv5 S: all p : Project | some per: Person | per in projects.p and	    all s: Person | s in projects.p implies s in S
+inv5 C: all p : Project | some per: Person | per in projects.p and	    all s: Person | s in projects.p implies s in Student
+inv5 C: all p : Project | some per: Person | per in projects.p and	    all s: Person | s in projects.p implies s in Student
+

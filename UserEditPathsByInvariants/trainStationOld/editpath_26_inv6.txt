@@ -1,0 +1,26 @@
+inv6 B: always all s: Signal | s in Green implies s' not in Green
+inv6 U: always all s: Signal | always s in Green implies s' not in Green
+inv6 O: always all s: Signal | always s != s'
+inv6 O: all s: Signal | always s != s'
+inv6 O: always Signal != Signal'
+inv6 O: always Signal != Signal'
+inv6 O: always some s : Signal | eventually s' != s
+inv6 O: always some s : Signal | always s' != s
+inv6 O: always one s : Signal | always s' != s
+inv6 O: always all s : Signal | always s' != s
+inv6 O: always all s : Signal | eventually s' != s
+inv6 O: always all s : Signal | always eventually s' != s
+inv6 B: always all s : Signal | s in Green implies s' not in Green
+inv6 B: always all s : Signal | always (s in Green implies s' not in Green)
+inv6 B: always all s : Signal | always (s in Green implies s' not in Green) or	always (s not in Green implies s' in Green)
+inv6 B: always all s : Signal | always (s in Green implies s' not in Green) or	always (s not in Green implies s' in Green)
+inv6 U: always all s : Signal | (s in Green implies s' not in Green) or	(s not in Green implies s' in Green)
+inv6 B: always one s : Signal | (s in Green implies s' not in Green) or	(s not in Green implies s' in Green)
+inv6 B: always some s : Signal | (s in Green implies s' not in Green) or	(s not in Green implies s' in Green)
+inv6 B: all s : Signal | always (s in Green implies s' not in Green) or	(s not in Green implies s' in Green)
+inv6 B: all s : Signal | always (s in Green implies s' not in Green) or always	(s not in Green implies s' in Green)
+inv6 S: all s : Signal | always s!= s'
+inv6 S: all s : Signal | always s != s'
+inv6 O: all s : Signal | always s != s'
+inv6 O: all s : Signal | always s != s'
+

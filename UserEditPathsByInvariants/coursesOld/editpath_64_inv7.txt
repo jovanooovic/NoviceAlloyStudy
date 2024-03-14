@@ -1,0 +1,4 @@
+inv7 B: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects and not (c->p1 in projects and c->p2 in projects)
+inv7 B: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects => not (c->p1 in projects and c->p2 in projects)
+inv7 U: all s: Student | all c: Course | all p1, p2 : Project | s->p1 in projects and s->p2 in projects and c->p1 in projects and c->p2 in projects => p1 = p2
+

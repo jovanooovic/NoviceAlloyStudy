@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv1 C: some en : Track | en in Entry	some ex : Track | ex in Exit
+inv2 C: all s : Signal | one (s.~(signals))
+inv3 C: all t : Track | (t.succs=none) iff (t in Exit)
+inv4 C: all t : Track | (t.~(succs)=none) iff (t in Entry)
+inv4 C: all t : Track | (t.~succs=none) iff (t in Entry)
+inv5 C: all t : Track | (#(t.~succs)>1) iff (t in Junction)
+inv6 C: all en : Entry | some s : Speed | s in en.signals
+inv7 S: no t : Track | t in p.^(~succs)
+inv7 C: no t : Track | t in t.^(~succs)
+inv8 O: all en : Entry | all ex : Exit | en in ex.^(~succs)
+inv8 O: all en : Entry | all ex : Exit | ex in en.^(succs)
+inv8 C: all en : Entry | all ex : Exit | ex in en.*(succs)
+

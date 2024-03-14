@@ -1,0 +1,13 @@
+inv5 B: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student
+inv5 B: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student		Course<:projects in Course one -> set Project
+inv5 T: all c: Course | all s: Person | some g: Grade | c->s->g in grades => s in Student	  	Course<:projects in Course
+inv5 S: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | c->project => some(c->s->g in grades)
+inv5 S: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in project => some(c->s->g in grades)
+inv5 T: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in Course<:projects => some(c->s->g in grades)
+inv5 T: all c: Course | all s: Person | all g: Grade | c->s->g in grades => s in Student	  		all c: Course | all s: Person | some g: Grade | all p:Project | c->p in Course<:projects => some(c->s->g in grades)
+inv5 T: projects.Project in Student
+inv5 U: Person<:projects.Project in Student
+inv5 T: Person<:projects.Project in Student	  		Project in Person<:projects.Project
+inv5 O: Person<:projects.Project in Student	  		Project in Project.(Person<:projects)
+inv5 C: Person<:projects.Project in Student	  		Project in Person.(Person<:projects)
+

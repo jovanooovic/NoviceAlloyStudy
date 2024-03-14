@@ -1,0 +1,5 @@
+inv8 B: all c : Component | c in Dangerous implies c.workstation.workers not in Human
+inv8 B: all c : Component & Dangerous | c.workstation.workers not in Human
+inv8 T: all c : Component & Dangerous | no c.workstation.workers in Human
+inv8 O: all c : Component & Dangerous | c.workstation.workers in Robot
+

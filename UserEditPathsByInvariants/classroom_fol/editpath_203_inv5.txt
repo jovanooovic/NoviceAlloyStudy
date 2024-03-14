@@ -1,0 +1,17 @@
+inv5 T: some t:Teacher | some g:Group | t->g in Group
+inv5 S: some t:Teacher | some g:Group
+inv5 S: all p:Person | some c : Classe | p->c in Teaches
+inv5 S: all p:Person | some c : Classe | p->c in Teaches
+inv5 S: all p:Person |
+inv5 S: all p:Person | p in Person
+inv5 U: all p:Person | p in Person
+inv5 U: all p:Person | some c: Class |p in Person
+inv5 B: all p:Person | some c: Class | p->c in Teaches
+inv5 B: all p:Person | some c: Class | p in Teacher implies (p->c in Teaches)
+inv5 B: all p:Teacher | some c: Class | (p->c in Teaches)
+inv5 S: all p:Teacher |
+inv5 S: some c : Classes | some t : Teacher | p->c in Groups
+inv5 B: all t:Teacher,c:Class | t->c in Teaches
+inv5 C: some t:Teacher,c:Class | t->c in Teaches
+inv5 C: some t:Teacher,c:Class | t->c in Teaches
+

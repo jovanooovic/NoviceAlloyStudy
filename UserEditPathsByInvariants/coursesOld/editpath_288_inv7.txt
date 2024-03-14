@@ -1,0 +1,6 @@
+inv7 B: all s: Student, p: s.projects | one (Course<:projects).p
+inv7 B: all s: Student, c: s.enrolled | one (Course<:projects).c
+inv7 B: all s: Student, c: s.enrolled | one (Person<:projects).c
+inv7 B: all s: Student, c: s.enrolled | one (Person<:projects).c
+inv7 B: all s: Student, c: s.enrolled | one c.(Course<:projects)
+

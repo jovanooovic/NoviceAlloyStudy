@@ -1,0 +1,5 @@
+inv6 O: all n : Node | Node in n.^adj || one Node
+inv6 O: all n : Node | Node in n.^adj && Node in ^adj.n || one Node
+inv6 O: all n : Node | Node in n.^adj && inv1 || one Node	}		pred inv1{	adj in ~adj
+inv6 O: inv1	all n : Node | Node in n.^adj || one Node	}		pred inv1{	adj in ~adj
+

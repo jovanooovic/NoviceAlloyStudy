@@ -1,0 +1,29 @@
+inv5 S: all y:Student, c:Course, p:Project | y->p in project
+inv5 B: all y:Student, c:Course, p:Project | y->p in projects
+inv5 T: all y:Student, p:Project | y->p in projects and some projects.p
+inv5 B: all y:Student, p:Project | y->p in projects and some p.projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects and y in Student implies y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all y:Person, p:Project, c:Course | y->p in projects and y in Student and y->c in enrolled and c->p in projects
+inv5 B: some y:Person, p:Project, c:Course | y->p in projects and y in Student and y->c in enrolled and c->p in projects
+inv5 B: some y:Person|all p:Project, c:Course | y->p in projects and y in Student and y->c in enrolled and c->p in projects
+inv5 B: some y:Person|all p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all p:Project, c:Course |some y:Person| y->p in projects implies y in Student and y->c in enrolled and c->p in projects
+inv5 B: all p:Project, c:Course |some y:Person| y->p in projects and y in Student implies y->c in enrolled and c->p in projects
+inv5 B: all p:Project, c:Course |some y:Person| y->p in projects and y in Student implies y->c in enrolled and c->p in projects
+inv5 B: all p:Project, c:Course |some y:Person| y->p in projects and y in Student implies y->c in enrolled and c->p in projects
+inv5 B: all p:Project| one c:Course |some y:Person| y->c in enrolled and c->p in projects implies y in Student and y->p in projects
+inv5 B: some p:Project| one c:Course |some y:Person| y->c in enrolled and c->p in projects implies y in Student and y->p in projects
+inv5 B: all p:Project| one c:Course |some y:Person| y->c in enrolled and c->p in projects implies y in Student and y->p in projects
+inv5 B: all p:Project| one c:Course |some y:Person| y->c in enrolled and c->p in projects implies y->p in projects
+inv5 B: all p:Project| one c:Course |some y:Person| y->c in enrolled and c->p in projects implies y->p in projects and y in Student
+inv5 B: all p:Project| one c:Course |some y:Person| c->p in projects implies y->c in enrolled and  y->p in projects and y in Student
+inv5 B: all p:Project| one c:Course |some y:Person| c->p in projects implies y->p in projects and y in Student
+inv5 B: all p:Project| one c:Course |some y:Person| c->p in projects and y in Student implies y->p in projects
+inv5 B: all p:Project| one c:Course |some y:Person| c->p in projects and y in Student implies y->p in projects and y->c in enrolled
+inv5 B: all p:Project| some c:Course |some y:Person| c->p in projects and y in Student implies y->p in projects and y->c in enrolled
+

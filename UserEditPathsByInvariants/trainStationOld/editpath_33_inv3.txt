@@ -1,0 +1,12 @@
+inv3 B: all t : Train | always t.pos in Entry
+inv3 B: all t : Train | always t.pos in Entry or t.pos in Exit
+inv3 O: all t : Train | always no t.pos
+inv3 B: all t : Train | always t.pos in Entry
+inv3 B: all t : Train | always t.pos in Entry or always t.pos in Exit
+inv3 B: always no Green
+inv3 B: all t : Train | always no Green & t.pos.signal
+inv3 C: all t : Train | always t.pos = t.pos'
+inv3 C: always pos = pos'
+inv3 U: always pos in pos'
+inv3 C: always pos = pos'
+

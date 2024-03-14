@@ -1,0 +1,7 @@
+inv7 S: all s : Student | all c: s.enrolled | one p in c
+inv7 B: all s : Student | all c: s.enrolled | one p: Project | p in c
+inv7 B: all s : Student | all c : s.enrolled | (one p : Project | p in c)
+inv7 S: all s : Student | all c : s.enrolled | ((one p : Project | p in c) or no p)
+inv7 S: all s : Student | all c : s.enrolled | lone (p : Project | p in c)
+inv7 U: all s : Student | all c : s.enrolled | lone (c.projects & s.projects)
+

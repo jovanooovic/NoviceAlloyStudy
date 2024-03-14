@@ -1,0 +1,4 @@
+inv8 S: all x : User | all a : Ad | (a in x.sees) implies a in x.follows.posts | (a in x.sees) implies a in x.suggested.posts
+inv8 O: all x : User | all a : Ad | (a in x.sees) implies a in x.follows.posts
+inv8 C: all x : User | all a : Ad | (a in x.sees) implies a in x.follows.posts + x.suggested.posts
+

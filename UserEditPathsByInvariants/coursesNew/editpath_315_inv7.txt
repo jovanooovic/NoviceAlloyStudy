@@ -1,0 +1,7 @@
+inv7 T: all s:Student | all pr:Project | lone (s.enrolled.projects in pr)
+inv7 T: all s:Student | all pr:Project | lone (s.enrolled.projects in pr)
+inv7 S: all s:Student | all pr:Project | lone (s.enrolled.projects
+inv7 S: all s:Student | all pr:Project | lone (pr s.enrolled.projects)
+inv7 T: all s:Student | all pr:Project | pr in s.projects implies lone( pr in s.enrolled.projects )
+inv7 S: all s:Student | all pr:Project | pr in s.projects implies pr in lone(s.enrolled.projects )
+

@@ -1,0 +1,6 @@
+inv2 U: all s : Signal, t1,t2 : Track | s in t1.signals && s in t2.signals implies t1 = t2
+inv2 B: all s : Signal, t : Track | s in t.signals implies s not in t.succs.signals
+inv2 B: all s : Signal, t : Track | s in t.signals implies s not in t.^(succs).signals
+inv2 B: all s : Signal, t : Track | s in t.signals implies s not in t.*(succs).signals
+inv2 C: all s : Signal | one signals.s
+

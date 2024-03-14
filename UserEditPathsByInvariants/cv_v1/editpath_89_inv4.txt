@@ -1,0 +1,10 @@
+inv4 B: all u : User | some w : Work | some (u<:visible).w implies lone w
+inv4 T: all u : User | some w1,  w2 : Work | some (u<:visible).w1 and (u<:visible).w1 implies w1=w2
+inv4 T: all u : User | some w1,  w2 : Work | some (u<:visible).w1 and (u<:visible).w1 implies w1 = w2
+inv4 T: all u : User | some w1,  w2 : Work | (some (u<:visible).w1 and (u<:visible).w1) implies w1 = w2
+inv4 B: all u : User | some w1,  w2 : Work | (some (u<:visible).w1 and some (u<:visible).w1) implies w1 = w2
+inv4 B: all u : User | some w1,  w2 : Work | (some (u<:visible).w1 & (u<:visible).w2) implies w1 = w2
+inv4 B: all u : User | some w1,  w2 : Work | (some (u<:visible).w1 and  some (u<:visible).w2) implies w1 = w2
+inv4 B: all u : User | some w : Work | some (u<:visible).w implies lone w
+inv4 U: all u : User | all w : Work | some (u<:visible).w implies lone w
+

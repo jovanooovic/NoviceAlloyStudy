@@ -1,0 +1,3 @@
+pred undirc {
+	adj = ~adj
+}

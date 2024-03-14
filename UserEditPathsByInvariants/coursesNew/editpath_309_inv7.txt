@@ -1,0 +1,4 @@
+inv7 S: all s:Student | all c1,c2:Course | s->c1 in enrolled and s->c2 in enrolled implies (some pr:Project | s->c in projects and c1 = c2 )
+inv7 B: all s:Student | all c1,c2:Course | s->c1 in enrolled and s->c2 in enrolled implies (some pr:Project | s->pr in projects and c1 = c2 )
+inv7 U: all s:Student | all c1:Course | all z,w:Project | s->z in projects and s ->w in projects and c1->z in projects and c1->w in projects implies z=w
+

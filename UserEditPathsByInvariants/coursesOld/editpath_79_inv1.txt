@@ -1,0 +1,6 @@
+inv1 B: all x:Course | Student->x in enrolled
+inv1 C: all x:Course, y:Person-Student | y->x not in enrolled
+inv1 S: all x:Course, y:Person-Studet | y not in enrolled.x
+inv1 C: all x:Course, y:Person-Student | y not in enrolled.x
+inv1 C: all x:Course, y:Person-Student | x not in y.enrolled
+

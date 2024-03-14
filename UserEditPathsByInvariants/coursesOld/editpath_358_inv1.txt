@@ -1,0 +1,16 @@
+inv1 B: all profs: Professor | #profs.enrolled = 0
+inv1 S: all profs: Personen-Student | #profs.enrolled = 0
+inv1 C: all profs: Person-Student | #profs.enrolled = 0
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student		all p: Person | p.enrolled in Course implies p=Student
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student
+inv1 B: all c: Course | all p: Person | c in p.enrolled implies p in Person-Student
+inv1 B: all c: Course | all p: Person | c in p.enrolled implies p in {Person-Student}
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in {Student}
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in Student
+inv1 O: all p: Person | p.enrolled in Course implies p in Student
+inv1 C: all p: Person | #p.enrolled > 0 implies p in Student
+inv1 B: all profs: Student | #profs.enrolled = 0
+inv1 B: all profs: Professor | #profs.enrolled = 0
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in Student
+

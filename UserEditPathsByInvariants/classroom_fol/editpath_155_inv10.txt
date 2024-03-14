@@ -1,0 +1,6 @@
+inv10 B: all c:Class, s:Student | s->Group in c.Groups
+inv10 T: all c:Class, s:Student | s.Group in c.Groups
+inv10 T: all c:Class, s:Student | c.s.Group in Groups
+inv10 T: all c:Class, s:Student | c.s->Group in Groups
+inv10 C: all c:Class, s:Student | some g:Group | c->s->g in Groups
+

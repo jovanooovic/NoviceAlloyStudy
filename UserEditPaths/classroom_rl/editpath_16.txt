@@ -1,0 +1,44 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Student + Teacher = Person
+inv5 C: some Teacher . Teaches
+inv5 C: some Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 U: all c : Class | some Teaches.c
+inv7 B: all c : Class | Teaches.c in Teacher
+inv7 C: all c : Class { some t : Teacher | c in t.Teaches }
+inv8 O: lone Teacher.Teaches
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 C: all c : Class { lone t : Teacher | c in t.Teaches }
+inv10 T: all c : Class, s : Student | some c.s.Groups
+inv10 O: all c : Class, s : Student | some c.Groups.s
+inv10 B: all c : Class, s : Student | s->Group in c.Groups
+inv10 C: all c : Class, s : Student | some s->Group & c.Groups
+inv11 C: all c : Class { some c.Groups implies some t : Teacher | c in t.Teaches }
+inv12 C: all t : Teacher { some t.Teaches.Groups }
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv12 B: some Teacher.Teaches.Groups
+inv12 U: all t : Teacher | some Teacher.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv13 U: all p : Person { some p.Tutors implies p in Teacher }
+inv13 C: all p : Person { some p.Tutors implies p in Teacher }	  	all p : Person { some Tutors.p implies p in Student }
+inv13 C: all p : Person { some p.Tutors implies p in Teacher }	  	all p : Person { some p[Tutors] implies p in Student }
+inv13 C: all p : Person { some p.Tutors implies p in Teacher }	  	all p : Person { some Tutors.p implies p in Student }
+inv14 B: all c : Class, s : Student | some c.Groups.s
+inv14 B: all c : Class, s : Student | some c.Groups
+inv14 S: all c : Class { 	      all s : Student | s->Group in c.Groups {	        all t : Teacher | c in t.Teaches {	          s in t.Tutors	        }	      }	    }
+inv14 B: all c : Class, t : Teacher, s : Student {	      c in t.Teaches implies s in t.Tutors	    }
+inv15 B: some Person.*Tutors & Teacher
+inv14 B: all c : Class | some c.Groups.Group
+inv14 O: all c : Class | no c.Groups.Group
+inv14 B: all c : Class | some c.Groups.Group
+inv14 T: all c : Class | c.Groups.Group
+inv14 T: all c : Class | c.Groups.Group :> Student
+inv14 T: all c : Class | c.Groups.Group <: Student
+inv14 U: all c : Class, s : Student, t : Teacher | s in c.Groups.Group and c in t.Teaches implies s in t.Tutors
+inv15 O: all p : Person | p in Teacher.Tutors
+inv15 U: all p : Person | p in Teacher.*Tutors
+inv15 C: all p : Person | p in Teacher.^Tutors
+

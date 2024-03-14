@@ -1,0 +1,9 @@
+inv12 U: all t : Teacher | some Class.Groups->t
+inv12 B: all t : Teacher | #Class.Groups->t > 0
+inv12 B: some Teacher.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv12 T: some (Teacher & Teaches.Groups)
+inv12 T: #(Teacher & Teaches.Groups) > 1
+inv12 T: #(Teacher & Teaches.Groups) > 1
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

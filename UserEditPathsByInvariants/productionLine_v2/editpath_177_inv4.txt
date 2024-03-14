@@ -1,0 +1,11 @@
+inv4 S: all p: Product | p in Component implies some p.parts and p in Materials implies no p.parts
+inv4 U: all p: Product | p in Component implies some p.parts and p in Material implies no p.parts
+inv4 C: all p: Product | (p in Component implies some p.parts) and (p in Material implies no p.parts)
+inv4 S: all c: Componet | some c.parts	all m: Material | no p.parts
+inv4 S: all c: Component | some c.parts	all m: Material | no p.parts
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv4 U: all c: Component, m: Material | some c.parts and no m.parts
+inv4 U: all c: Component, m: Material | (some c.parts) and no m.parts
+inv4 U: all c: Component, m: Material | (some c.parts) and (no m.parts)
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+

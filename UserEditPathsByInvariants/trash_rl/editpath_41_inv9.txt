@@ -1,0 +1,15 @@
+inv9 T: all f : File | link.f in (File - link)
+inv9 T: all f : File | link.f in (File - link)
+inv9 T: all f : File | link.f in link
+inv9 T: all f : File | f.link implies no link.f.link
+inv9 T: all f : File | f.link implies no f.link
+inv9 T: all f : File | f.link implies no link.(f.link)
+inv9 T: all f : File | f.link implies no f.link.link
+inv9 S: all f : File | f.link		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f : File | some f.link		/* If a link is deleted, so is the file it links to. */
+inv9 S: all f : File | lone f.link		/* If a link is deleted, so is the file it links to. */
+inv9 B: all f : File | lone f.link
+inv9 T: all f : File | f.link implies no f.link.link
+inv9 C: all f : File | some f.link implies no f.link.link
+inv9 C: all f : File | no f.link.link
+

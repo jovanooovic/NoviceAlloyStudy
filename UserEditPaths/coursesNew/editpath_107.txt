@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv14 T: one (projects & Course)
+inv14 T: one (projects & Person -> Course)
+inv14 T: one (Person -> Course & projects)
+inv14 S: all p: Person | getProjectStudents[project]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 T: all p: Person | getProjectStudents[p.projects]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | one getProjectStudents[p.projects]	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | no (getProjectStudents[project] & getProjectStudents[Project - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | p = (getProjectStudents[project] & getProjectStudents[Project - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 T: all p: Person | all project: p.projects | (getProjectStudents[project] & getProjectStudents[p.projects - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 O: all p: Person | all project: p.projects | p = (getProjectStudents[project] & getProjectStudents[p.projects - project])	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv14 C: all p: Person | all project: p.projects | no ((getProjectStudents[project] & getProjectStudents[p.projects - project]) - p)	}		fun getProjectStudents[project : Project]: set Student {	  	(projects.project & Person)
+inv4 S: all p: Project | one project.p
+inv4 T: all p: Project | one projects.p
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv4 S: all p: Project | one getProjectCourse[p]
+inv5 C: all p: Person | some p.projects implies p in Student		all proj: Project | some p: Person | p->proj in projects
+inv7 S: all s: Student | all c: s.enrolled | lone p: s.projects & projects.c
+inv7 S: all s: Student | all c: s.enrolled | one p: s.projects & projects.c
+inv7 T: all s: Student | all c: s.enrolled | lone s.projects & projects.c
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & projects.c)
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & getCourseProjects[c])	}		fun getCourseProjects[course: Course]: set Project {		projects.course & Project
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)	}		fun getCourseProjects[course: Course]: set Project {		projects.course & Project
+inv7 U: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)
+inv7 U: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)
+inv7 B: all s: Student | all c: s.enrolled | one (s.projects & c.projects)
+

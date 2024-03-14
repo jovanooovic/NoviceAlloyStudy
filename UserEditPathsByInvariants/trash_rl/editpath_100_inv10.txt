@@ -1,0 +1,9 @@
+inv10 T: all f,g: File | f.link.g in Trash
+inv10 B: all f: File | link.f in Trash implies f in Trash
+inv10 U: all f: File | (f.link + f) in Trash implies f in Trash
+inv10 B: all f: File | (f.link + f) in Trash implies link.f in Trash
+inv10 B: all f: File | link.f in Trash implies f in Trash
+inv10 B: all f: File | f.link in Trash implies f in Trash
+inv10 U: all f: File | f.link in Trash implies f.link in Trash
+inv10 B: all f: File | f.link in Trash implies f in Trash
+

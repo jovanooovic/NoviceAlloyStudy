@@ -1,0 +1,62 @@
+inv7 S: all s, f, nf : univ | all u: User | u.follows in f and nf in not u.follows
+inv7 O: all s, f, nf : univ | all u: User | u.follows in f and nf in u.follows
+inv7 O: all s, f, nf : univ | all u: User | u.follows in f and nf in u.follows
+inv7 O: all s, f, nf : univ | all u: User | u.follows in f and nf in u.follows
+inv7 O: all s, f, nf : univ | all u: User | u.follows in f and u.follows not in nf
+inv7 B: all s, f, nf : univ | all u: User | u.follows in f and u.follows not in nf implies f-nf in s
+inv7 B: all u: User | u.follows - (u - u.follows) in u.suggested
+inv7 B: all u: User | u.follows.follows - (u - u.follows) in u.suggested
+inv7 B: all u: User | u.follows - u.follows.follows in u.suggested
+inv7 B: all u: User | u.follows.follows - u.follows in u.suggested
+inv7 B: all u: User | (u.follows.follows - u.follows) in u.suggested
+inv7 B: all u: User | not (u.follows.follows & u.follows) in u.suggested
+inv7 T: all u: User | not (u.follows.follows & u.follows)
+inv7 B: all u: User | (u.follows.follows - u.follows) in u.suggested
+inv7 U: all u: User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 U: all u: User | (u.follows.follows - (u.follows + u)) in u.suggested
+inv7 U: all u: User | (u.follows.follows - u.follows - u) in u.suggested
+inv7 T: all u: User | (u.follows.follows - u.follows - iden) in u.suggested
+inv7 T: all u: User | (u.follows.follows - u.follows) - iden in u.suggested
+inv7 T: all u: User | (u.follows.follows - u.follows) in u.suggested and not (u.suggested & iden)
+inv7 T: all u: User | (u.follows.follows - u.follows) in u.suggested and not (u.suggested & u)
+inv7 B: all u: User | (u.follows.follows - u.follows) in u.suggested and no (u.suggested & u)
+inv7 B: all u: User | (u.follows.follows - (u.follows & u)) in u.suggested
+inv7 T: all u: User | (u.follows.follows - (u.follows and u)) in u.suggested
+inv7 T: all u: User | (u.follows.follows - (u.follows && u)) in u.suggested
+inv7 B: all u: User | (u.follows.follows - (u.follows & u)) in u.suggested
+inv7 B: all u: User | u.follows.follows in u.suggested
+inv7 B: all u: User | u.follows.follows-u.follows in u.suggested
+inv7 B: all u: User | u.follows.follows - u.follows in u.suggested
+inv7 U: all u: User | no (u & u.follows.follows) implies u.follows.follows - u.follows in u.suggested
+inv7 U: all u: User | no (u & u.follows.follows) implies u.follows.follows - u.follows in u.suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows implies y -> u in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows and u != y implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows  implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y implies u -> y in suggested
+inv7 U: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and u -> y not in follows implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows and u -> y not in follows implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows and u -> y not in follows and y -> y not in suggested implies u -> y in suggested
+inv7 U: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and u -> y not in follows and u-> y not in suggested implies u -> y in suggested
+inv7 S: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and no (u.follows y) implies u -> y in suggested
+inv7 S: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and no (u.follows y) implies u -> y in suggested
+inv7 U: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and no (u.follows & y) implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows implies u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and no (u.follows & y) iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 U: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and u -> y not in follows implies u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows  and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User+Influencer | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff y -> u in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 S: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y and y-> x not in follows and not in follows iff u -> y in suggested
+inv7 S: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y and not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 B: all u,x,y : User | u -> x in follows and x -> y in follows and y->x not in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+inv7 O: all u,x,y : User | u -> x in follows and x -> y in follows and u != x and u != y and x != y and u -> y not in follows iff u -> y in suggested
+

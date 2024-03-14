@@ -1,0 +1,77 @@
+NA H: THEME UPDATE
+inv1 B: all profs: Professor | #profs.enrolled = 0
+inv1 S: all profs: Personen-Student | #profs.enrolled = 0
+inv1 C: all profs: Person-Student | #profs.enrolled = 0
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student		all p: Person | p.enrolled in Course implies p=Student
+inv1 O: all c: Course | all p: Person | c in p.enrolled implies p=Student
+inv1 B: all c: Course | all p: Person | c in p.enrolled implies p in Person-Student
+inv1 B: all c: Course | all p: Person | c in p.enrolled implies p in {Person-Student}
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in {Student}
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in Student
+inv1 O: all p: Person | p.enrolled in Course implies p in Student
+inv1 C: all p: Person | #p.enrolled > 0 implies p in Student
+inv1 B: all profs: Student | #profs.enrolled = 0
+inv1 B: all profs: Professor | #profs.enrolled = 0
+inv1 C: all c: Course | all p: Person | c in p.enrolled implies p in Student
+inv2 C: all profs: Person-Professor | #profs.teaches = 0
+inv3 B: all p: Project | all c: Course | p in c.projects		all c: Course | #c.projects = 1
+inv4 B: all p: Project | all c: Course | p in c.projects		all c: Course | #c.projects = 1
+inv3 T: all kurs: Course | kurs in teaches
+inv3 C: all kurs: Course | kurs in Person.teaches
+inv4 S: all pro: Project | proj in Course.projects
+inv4 U: all pro: Project | pro in Course.projects
+inv4 T: all pro: Project | #Course.projects.pro = 1
+inv4 S: all pro: Project | #Course.projects.ident.pro = 1
+inv4 T: all pro: Project | #Course.projects.iden.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project<:iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project:>iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{iden :> Project}.pro = 1
+inv4 S: all pro: Project | #Course.projects.{Projects<:iden}.pro = 1
+inv4 T: all pro: Project | #Course.projects.{Project<:iden}.pro = 1
+inv4 B: all pro: Project | #Course.projects.{Project<:iden} = 1
+inv4 T: all pro: Project | ~{Course.projects}
+inv4 T: all pro: Project | ~{Course.projects}.pro
+inv4 T: all pro: Project | ~{Course<:projects}.pro
+inv4 T: all pro: Project | {Course<:projects}.pro
+inv4 T: all pro: Project | {Course<:projects}
+inv4 T: all pro: Project | ~{Course:>projects}.pro
+inv4 T: all pro: Project | ~{Course<:projects}.pro
+inv4 T: all pro: Project | ~{Course <: projects}.pro
+inv4 E: 
+inv4 B: all pro: Project | #Course.projects.{Project<:iden} = 1
+inv4 T: all pro: Project | ~{Course <: projects}.pro
+inv4 T: all pro: Project | ~{Course <: projects}
+inv4 T: all pro: Project | ~{Course <: projects}[pro]
+inv4 T: all pro: Project | ~{Course <: projects}
+inv4 C: all pro: Project | #pro.~{Course <: projects} = 1
+inv4 C: all pro: Project | #pro.~{Course <: projects} = 1
+inv5 U: all pro: Project | #pro.~{Person <: projects} >= 1
+inv5 U: all pro: Project | #pro.~{Student <: projects} >= 1
+inv5 S: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{Personen-Student <: projects} >= 1
+inv5 T: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{Person-Student <: projects} >= 1
+inv5 B: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{{Person-Student} <: projects} >= 1
+inv5 C: all pro: Project | #pro.~{Student <: projects} >= 1 and #pro.~{{Person-Student} <: projects} = 0
+inv5 B: all p: Person | (p in Student) => (p.projects = Project)
+inv5 U: #(Person-Student).projects = 0
+inv5 C: #(Person-Student).projects = 0	  		all p: Project | p in Student.projects
+inv6 U: all studi: Student | all pro: studi.projects | pro in studi.enrolled.projects
+inv7 U: all studi: Student | all pro: studi.projects | #(pro & studi.enrolled.projects) <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 U: all studi: Person | all pro: studi.projects | #{pro & studi.enrolled.projects} <= 1
+inv7 B: all studi: Student | #{studi.projects & studi.enrolled.projects} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1
+inv7 B: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1	  	    	#(Person-Student).projects = 0
+inv7 U: all studi: Student | all kursPro: studi.enrolled.projects | #{studi.projects & kursPro} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled | #{studi.projects & kursPro.projects} <= 1
+inv7 U: all studi: Student | all kursPro: studi.enrolled | #{studi.projects & kursPro.projects} <= 1
+inv8 S: all cours: Courses | cours not in cours.~teaches.enrolled
+inv8 C: all cours: Course | cours not in cours.~teaches.enrolled
+inv9 U: all profCourse: Professor.teaches | Professor not in profCourse
+inv9 B: all profCourse: Professor.teaches | Professor.enrolled not in profCourse
+inv9 B: all profCourse: Professor.teaches | all profBel: Professor.enrolled | profBel not in profCourse
+inv9 B: all profBel: Professor.enrolled | profBel not in Professor.teaches
+inv9 B: all profBel: Professor.enrolled | #{profBel & Professor.teaches} = 0
+

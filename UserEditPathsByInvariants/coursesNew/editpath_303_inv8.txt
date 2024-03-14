@@ -1,0 +1,6 @@
+inv8 B: all x : Professor | x.enrolled in x.teaches
+inv8 B: all x : Professor | x.enrolled not in x.teaches
+inv8 T: all x : Professor | x.enrolled => not(x.teaches)
+inv8 T: all x : Professor | some x.enrolled => not(x.teaches)
+inv8 U: all x : Professor | all y: x.enrolled | y not in x.teaches
+

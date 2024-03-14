@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 S: User . visible in User . Profile
+inv1 U: User . visible in User . profile
+inv1 C: all u:User| u . visible in u . profile
+inv1 C: all u:User | u . visible in u . profile
+inv2 E: 
+inv2 C: all u:User | u . profile . source in u + Institution
+inv3 E: 
+inv3 B: all s:User . profile . source | one (source . s) . ids
+inv3 B: all s:User . profile . source | lone (source . s) . ids
+inv3 B: all s:Source | lone (source . s) . ids
+inv3 B: all s:Source | one (source . s) . ids
+inv4 E: 
+inv3 B: all s:Source, w:Work | w in (source . s) => one w.ids
+inv3 B: all s:Source, w:Work | w in (source . s) <=> one w.ids
+inv4 B: all u:User | lone u . visible . ids
+inv4 B: all u:User | some u . visible . ids
+inv4 O: all u:User | one ids . (u . visible . ids)
+inv4 T: all u:User | one ids . (u . visible . ids) = Work
+inv4 B: all u:User | ids . (u . visible . ids) = Work
+inv4 B: all u:User | some ids . (u . visible . ids)
+inv4 O: all u:User | one ids . (u . visible . ids)
+

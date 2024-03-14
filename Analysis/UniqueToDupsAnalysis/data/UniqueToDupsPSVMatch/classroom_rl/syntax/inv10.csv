@@ -1,0 +1,72 @@
+"all c: Class",1
+"all c : Class",2
+"Teacher.teaches",2
+"all disj c: Class |",3
+"Groups: Student -> Group",1
+"all c: Class, s: Student |",2
+"all c:Class | all c.Groups",1
+"all c : Class | lone c.Group",1
+"all c : Class, s : Student |",1
+"all c: Class | all s: Student",1
+"all c:Class | (x,y):c.Groups in c",1
+"all c.Class,s:Student | c.Group.s",1
+"all c : Class | Student.(c.Groups)",1
+"all c:Class | some c.Group | Student",1
+"all c: Class | all s: Student | s in",6
+"all s : Student,c : class | some c->",5
+"all c : Class | Students in c.Groups",1
+"all c : Class | all s : c->Student |",1
+"all c:Class | some c.Groups | Student",1
+"all c : Class | lone Student.c.Groups",1
+"all c:Class,s:Student| c->s->g in Groups",1
+"(Groups . Group) = no (Class -> Teacher)",1
+"all s: Student,c:Class | c.s -> one Group",1
+"(Groups . Group) = all (Class -> Student)",1
+"all s: Student,c:Class | s.c -> one Group",1
+"all c:Class, s:Student | some p.(c.Groups)",1
+"all c : Class, student | some s.(c.Groups)",2
+"all c : Class | lone c.Groups",1
+"all c : Class, Student | some s.(c.Groups)",1
+"all c.Class,s:Student | s.Group :> c.Groups",1
+"all c: Class | s: Student | some c.Groups.s",1
+"all c : Class | Students in (c.Groups).Group",1
+"all c : Class | c.Groups in (Student x Group)",1
+"all c: Class | all s: Student | s in c.groups",1
+"all s : Student,c : class | some c->s . Groups",1
+"all c:Class | all s:Student | c->s->g in Groups",1
+"all c : Class, s : Student | some (c, s).Groups",2
+"all c:Class |all s:Students | some s <: c.Groups",1
+"all c : Class, s : Student | some {(c,s)}.Groups",1
+"all c: Class | all s: Student | some c.Groups[s]",1
+"all c: Class | s: Student | s in c.Groups.Person",1
+"all c:Class |all s:Students | some (s<:c.Groups)",1
+"all c : Class, all s: Student | some (s.c.Groups)",1
+"all c: Class | all s: in Student | s in c.Groups.g",1
+"all c:Class | (x->y):c.Groups implies x in Student",1
+"all c: Class | s: Student | s -> Group in c.Groups",1
+"all s: Student | some g: Group | (s->g) in c.Groups",1
+"all c:Class | (c.Groups.Group) in Person.(c.Grupos)",1
+"all c:Class | all s:Student | some s in <: c.Groups",1
+"all c : Class | all s: Student  |  s->g in c.Groups",1
+"all c : Class | lone Student.(c.Groups)",1
+"all c: Class | all s: Student | c.gropus->s in Group",1
+"all c: Class | all s: Student | s -> c.groups.Person",1
+"all c: Class | all s: Student | c.groups->s in Group",1
+"all c: Class | g: Group, s: Student | s in c.Groups.g",1
+"all c : Class |  s: Student | s<:c.Groups in c.Groups",1
+"all s:Student| some g:Group |  (Groups.(s->g) in Class",1
+"all c:Class |all s:Students | s<:c.Groups :> some Group",1
+"all c:Class, s:Student |some g:Group (c.Groups (s->g) )",1
+"all c:Class, s:Student |some g:Group (c.Groups.(s->g) )",1
+"all s:Student | some g:Group |   (Class - (Groups.(s->g))",1
+"all s:Student | some g:Group | no  Class - Groups.(s->g) )",1
+"all s: Student, c: Class | some g : Group c->s->g in Groups",2
+"all c: Class | all s: Student | s in c.^(g: Group | Groups.g)",1
+"all c: Class | g: Group | all s: in Student | s in c.Groups.g",1
+"all c: Class | all s: Student | g in Group and s in c.Groups.g",1
+"all c:Class, s:Student | some s.(c.Groups)",2
+"iden in ~(Students <: Class.Groups) . (Students <: Class.Groups)",1
+"for c Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)",1
+"for c: Class | iden in ~(Student <: c.Groups) . (Student <: c.Groups)",1
+"all c : Class, s : Student | some g : Group | c -> s -> g in Groups 
+  	all c : Class, s : Student |",2

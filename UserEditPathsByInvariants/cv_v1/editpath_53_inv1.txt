@@ -1,0 +1,7 @@
+inv1 T: all w : Work | visible.w => profile.w
+inv1 T: all w : Work, u : User | some u.visible[w] => some u.profile[w]
+inv1 O: all w : Work, u : User | w in u.visible => u in u.profile
+inv1 C: all w : Work, u : User | w in u.visible => w in u.profile
+inv1 U: all w : Work | w in User.visible => w in User.profile
+inv1 C: all w : Work, u : User | w in u.visible => w in u.profile
+

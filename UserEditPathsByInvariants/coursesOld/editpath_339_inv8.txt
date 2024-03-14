@@ -1,0 +1,5 @@
+inv8 B: all c: Course | some p1, p2: Professor | p1!=p2 && c in p1.teaches && c in p2.teaches
+inv8 B: all c: Course | some p: Person | c in p.teaches => c not in p.enrolled
+inv8 B: all c: Course | some p: Person | c in p.enrolled => c not in p.teaches
+inv8 C: all c: Course, p: Person | c in p.teaches => c not in p.enrolled
+

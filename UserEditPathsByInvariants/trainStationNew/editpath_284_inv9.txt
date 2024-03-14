@@ -1,0 +1,5 @@
+inv9 T: all t : Track | no (Junction & t->succs) implies no (Semaphores & t->sucks)
+inv9 T: all t : Track | no (Junction & t->succs) implies no (Semaphores & t->signals)
+inv9 S: all t : Track | no (Junction & t.succs) implies no (Semaphores & t.signals)
+inv9 C: all t : Track | no (Junction & t.succs) implies no (Semaphore & t.signals)
+

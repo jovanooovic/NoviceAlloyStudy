@@ -1,0 +1,25 @@
+Pairs,1
+,,"~Teaches.Teaches in iden",1
+
+Pairs,1
+,,"Teacher.Teaches in Teacher",1
+
+Pairs,1
+,,"all p:Person,c:Class | p->c in Teaches",1
+
+Pairs,16
+,,"all t:Teacher,c:Class | t->c in Teaches",8
+,,"all x : Teacher, y : Class  | x->y in Teaches",1
+,,"all x : Teacher | all c : Class | x->c in Teaches",1
+,,"all t:Teacher | all c:Class | t->c in Teaches",3
+,,"all p:Person,c:Class | p in Teacher implies p->c in Teaches",3
+
+Pairs,1
+,,"all t:Teacher, c:Class | c->t in Teaches",1
+
+Pairs,1
+,,"all p:Person,c:Class,g:Group | p in Teacher implies c->p->g in Groups",1
+
+Pairs,1
+,,"all p:Person |some c:Class | (p in Teacher and p not in Student) implies p->c in Teaches",1
+

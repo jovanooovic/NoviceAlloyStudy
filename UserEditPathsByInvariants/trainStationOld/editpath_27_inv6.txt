@@ -1,0 +1,25 @@
+inv6 B: always (no Green & Green')
+inv6 T: always all s : Signal | Green
+inv6 U: always (all s : Signal | s in Green implies s not in Green' or s not in Green implies s in Green')
+inv6 O: always Green' = Signal - Green
+inv6 O: always Green' = Signal - Green
+inv6 S: always (all s : Signal | (s in Green implies eventually s not in Green) or (s not in Green implies s eventually s in Green))
+inv6 S: always (all s : Signal | (s in Green implies eventually s not in Green) or (s not in Green implies s eventually s in Green))
+inv6 S: always all s : Signal |	(s in Green implies eventually s not in Green) or	(s not in Green implies s eventually s in Green)
+inv6 S: always all s : Signal |	(s in Green implies (eventually s not in Green)) or	(s not in Green implies s eventually s in Green)
+inv6 S: always (all s : Signal |	(s in Green implies (eventually s not in Green)) or	(s not in Green implies s eventually s in Green)	)
+inv6 S: always (all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+inv6 T: always all s : Signal {	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	}
+inv6 T: always (all s : Signal {	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	})
+inv6 S: always (all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+inv6 E:
+inv6 S: always all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green	)
+inv6 T: always all s : Signal |	s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green
+inv6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green)
+inv6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies s eventually s in Green))
+inv6 S: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies eventually s in Green
+inv6 U: always (all s : Signal | s in Green implies eventually s not in Green or	s not in Green implies eventually s in Green)
+inv6 U: always (all s : Signal | (s in Green implies (eventually s not in Green)) or	s not in Green implies (eventually s in Green))
+inv6 B: always (eventually Green not in Green')
+inv6 U: all s : Signal | eventually (s in Green or s not in Green)
+

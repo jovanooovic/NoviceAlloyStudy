@@ -1,0 +1,4 @@
+inv8 O: all u1,u2 : User | all a : Ad | a in u1.sees <=> a in u2.posts and (u2 in u1.follows or u2 in u1.suggested)
+inv8 O: all u1,u2 : User | all a : Ad | a in u1.sees <=> a in u2.posts and u1!=u2 and (u2 in u1.follows or u2 in u1.suggested)
+inv8 B: all u1,u2 : User | all a : Ad | a in u1.sees and a in u2.posts implies a in u2.posts and u1!=u2 and (u2 in u1.follows or u2 in u1.suggested)
+

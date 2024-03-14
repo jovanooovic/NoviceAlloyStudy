@@ -1,0 +1,11 @@
+inv1 U: all x,y,z : univ | x in User and z in User and y in Photo and x -> y in posts and z -> y in posts implies x=z
+inv1 U: all x,y,z : univ | x in User and z in User and y in Photo and x->y in posts and z->y in posts implies x=z
+inv1 U: all x,y,z : univ | x in User and z in User and y in Photo and y->x in posts and y->z in posts implies x=z
+inv1 U: all x,y,z : univ | x->y in posts and z->y in posts implies x=z
+inv1 S: all x,y,z : univ | x in User and z in User and y in Photo and posts(x,y) and posts(z,y) implies x=z
+inv1 U: all x,y,z : univ | x in User and z in User and y in Photo and x.posts=y and z.posts=y implies x=z
+inv1 B: all y : univ | y in Photo implies some x : User | x.posts=y	all x,y,z : univ | x in User and z in User and y in Photo and x.posts=y and z.posts=y implies x=z
+inv1 O: all y : univ | y in Photo implies some x : User | x.posts=y	all x,y,z : univ | x in User and z in User and y in Photo and x->y in posts and z->y in posts implies x=z
+inv1 C: all y : univ | y in Photo implies some x : User | x->y in posts	all x,y,z : univ | x in User and z in User and y in Photo and x->y in posts and z->y in posts implies x=z
+inv1 C: all y : univ | y in Photo implies some x : User | x->y in posts	all x,y,z : univ | x in User and z in User and y in Photo and x->y in posts and z->y in posts implies x=z
+

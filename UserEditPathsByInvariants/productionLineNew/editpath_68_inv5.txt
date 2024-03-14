@@ -1,0 +1,8 @@
+inv5 U: all w: Workstation | no (w.workers & Human & Robot)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 U: all w: Workstation | all wo: Worker|wo not in (w.workers & Robot) or wo not in (w.workers & Human)
+inv5 C: all w: Workstation | no (w.workers & Robot) or no (w.workers & Human)
+inv5 U: all w: Workstation |all tr: Worker| (tr not in (w.workers & Robot)) or (tr not in (w.workers & Human))
+inv5 C: all w: Workstation| no (w.workers & Robot) or no (w.workers & Human)
+inv5 C: all w: Workstation| no (w.workers & Robot) or no (w.workers & Human)
+

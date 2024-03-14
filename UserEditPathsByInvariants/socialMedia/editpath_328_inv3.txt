@@ -1,0 +1,21 @@
+inv3 S: all  i:In
+inv3 S: all  i:In
+inv3 S: all  i:In
+inv3 S: all  i:In
+inv3 S: all  i:In
+inv3 S: all u:User | all p:Photos | u -> p in sees iff p not add
+inv3 S: all u:User |sees in u.follow.post
+inv3 S: all u:User | not Ad in u.follow.post
+inv3 S: all u:User | u.sees in u.follow.post
+inv3 S: all u:User |  in u.follow.post
+inv3 T: all u:User |  no Ad in u.follow.posts
+inv3 T: all u:User |  no Ad in u.follow.posts
+inv3 T: all u:User |  no Ad in u.follow.posts
+inv3 T: all u:User |  no Ad in u.follow.posts
+inv3 S: all u:User |   Ad in u.follow.posts
+inv3 T: all u:User | no  Ad in u.follows.posts
+inv3 T: all u:User | no Ad in u.follows.posts
+inv3 B: all u:User | Ad in u.follows.posts
+inv3 B: all u:User | Ad not in u.follows.posts
+inv3 C: all u:User | u.sees - Ad in u.follows.posts
+

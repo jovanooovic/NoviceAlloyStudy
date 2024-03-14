@@ -1,0 +1,18 @@
+inv7 B: all x : User | all y : x.suggested | y not in x and (all z: x.follows | y in z.follows)
+inv7 U: all x : User | all y : x.suggested | y not in x and (some z: x.follows | y in z.follows)
+inv7 U: all x : User | all y : x.suggested | (y not in x) and (some z: x.follows | y in z.follows)
+inv7 S: all x : User | all y : x.suggested | (y not in z.follws+x) and (some z: x.follows | y in z.follows)
+inv7 S: all x : User | all y : x.suggested | (y not in x.follws+x) and (some z: x.follows | y in z.follows)
+inv7 U: all x : User | all y : x.suggested | (y not in x.follows+x) and (some z: x.follows | y in z.follows)
+inv7 U: all x : User | all y : x.suggested | (y not in (x.follows+x)) and (some z: x.follows | y in z.follows)
+inv7 U: all x : User | all y : x.suggested | (y not in x.follows+x) and (some z: x.follows | y in z.follows)
+inv7 T: all x : User | all y : suggested | (y not in x.follows+x) and (some z: x.follows | y in z.follows) and y in x.suggested
+inv7 T: all x : User | all y : suggested | (y not in x.follows+x) and (some z: x.follows | y in z.follows) and  y in x.suggested
+inv7 T: all x : User | all y : suggested | (y not in x.follows+x) and (some z: x.follows | y in z.follows) and (y in x.suggested)
+inv7 T: all x : User | all y : suggested | ((y not in x.follows+x) and (some z: x.follows | y in z.follows)) and (y in x.suggested)
+inv7 U: all x : User | all y : User | (y not in x.follows+x and (some z : x.follows | y in z.follows)) => y in x.suggested
+inv7 U: all x : User | all y : User | ((y not in x.follows+x) and (some z : x.follows | y in z.follows)) => y in x.suggested
+inv7 C: all x : User | all y : User | ((y not in x.follows+x) and (some z : x.follows | y in z.follows)) <=> y in x.suggested
+inv7 C: all x : User | all y : User | ((y not in x.follows+x) and (some z : x.follows | y in z.follows)) <=> y in x.suggested
+inv7 C: all x : User | all y : User | ((y not in x.follows+x) and (some z : x.follows | y in z.follows)) <=> y in x.suggested
+

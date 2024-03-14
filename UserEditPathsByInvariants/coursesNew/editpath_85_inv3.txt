@@ -1,0 +1,6 @@
+inv3 T: all c:Course | c.teaches not empty
+inv3 B: all c:Course | some p:Person | c in p.teaches implies p in Professor
+inv3 U: all c:Course | some p:Person | p in Professor implies c in p.teaches
+inv3 U: all c:Course | some p:Person | (p in Professor) implies c in p.teaches
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+

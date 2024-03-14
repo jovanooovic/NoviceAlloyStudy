@@ -1,0 +1,4 @@
+inv7 B: all s : Student, p1,p2 : Project | (p1 in s.projects and p2 in s.projects) implies (one c : Course | c in (projects.p1 & projects.p2))
+inv7 B: all s : Student, p1,p2 : Project | (p1 in s.projects and p2 in s.projects) implies (lone c : Course | c in (projects.p1 & projects.p2))
+inv7 U: all s : Student, c : Course | lone p : Project | p in s.projects and p in c.projects
+

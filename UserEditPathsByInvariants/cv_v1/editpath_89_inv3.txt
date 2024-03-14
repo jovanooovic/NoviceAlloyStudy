@@ -1,0 +1,15 @@
+inv3 S: no Work.id = Work.id
+inv3 T: no Work.ids = Work.ids
+inv3 T: no Work<:ids = Work<:ids
+inv3 B: ~ids.ids in iden
+inv3 O: Work<:ids != Work<:ids
+inv3 O: Work<:ids != Work<:ids
+inv3 O: Work<:ids != Work<:ids
+inv3 O: all x, y : Work | x.ids != y.ids
+inv3 O: all x, y : Work | x<:ids != y<:ids
+inv3 T: all x, y : Work | no x<:ids = y<:ids
+inv3 T: all x, y : Work | no x.ids = y.ids
+inv3 S: all x, y : Work | no x.ids == y.ids
+inv3 T: all x, y : Work | no x.ids = y.ids
+inv3 O: all x, y : Work | no x.ids & y.ids
+

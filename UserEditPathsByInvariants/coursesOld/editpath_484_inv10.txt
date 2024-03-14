@@ -1,0 +1,9 @@
+inv10 U: all p : Professor | p in Professor
+inv10 T: Professor not in Person.grades
+inv10 T: Professor not in grades.Grade
+inv10 B: Professor not in Course.grades.Grade
+inv10 U: all p : Professor | p in Professor
+inv10 B: all p : Professor | p not in p.teaches.grades.Grade
+inv10 B: all p : Person | p not in p.teaches.grades.Grade
+inv10 U: all p : Person | p in Person
+

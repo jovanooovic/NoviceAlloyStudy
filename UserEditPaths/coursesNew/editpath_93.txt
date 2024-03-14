@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 S: all prof : Person - Student | not prof in Person.enrolled.grades.Grade
+inv1 S: no (Person - Student).enrolled
+inv1 S: no (Person - Student).enrolled
+inv1 C: no (Person - Student).enrolled
+inv2 C: no (Person - Professor).teaches
+inv3 C: all course : Course | course in Person.teaches
+inv4 O: one course : Course | all projects : Project | projects in course
+inv4 O: one course : Course | some projects : Project | projects in course
+inv4 C: all p : Project | one (Course<:projects).p
+inv5 B: all project : Project, student : Student | project in student.projects
+inv5 B: all project : Project, student : (Person - Professor) | project in student.projects
+inv5 C: no (Person - Student).projects && Project in Student.projects
+inv6 T: all student : Student | student.projects && student.enrolled.projects
+inv6 U: all student : Student | student.projects in student.enrolled.projects
+inv7 S: o projeto que esta a fazer pertence a só um curso que esta enrolled e vice versa 	  one project : Project, couse:Course | project in course.enrolled
+inv7 S: o projeto que esta a fazer pertence a só um curso que esta enrolled e vice versa 	  one project : Project, couse:Course | project in course.enrolled
+inv7 S: one project : Project, couse:Course | project in course.enrolled
+inv7 O: one project : Project, course:Course | project in course.enrolled
+

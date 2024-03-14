@@ -1,0 +1,4 @@
+inv11 T: all c:Class | all g:Group | g in c.Groups implies c in Teacher.Teaches
+inv11 B: all c:Class|some s:Student | all g:Group | s->g in c.Groups implies c in Teacher.Teaches
+inv11 C: all c:Class|some c.Groups implies some Teaches.c & Teacher
+

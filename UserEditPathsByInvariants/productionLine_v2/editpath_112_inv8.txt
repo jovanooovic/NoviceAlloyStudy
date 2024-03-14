@@ -1,0 +1,8 @@
+inv8 S: all c:Component, ws:c.worstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 S: all c:Component, ws:c.Worstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 T: all c:Component, ws:c.Workstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 C: all c:Component, ws:c.workstation | c in Dangerous implies no w:ws.workers | w in Human
+inv8 C: all c:Dangerous, ws:c.workstation, w:ws.workers | w not in Human
+inv8 C: all c:Dangerous, w:c.workstation.workers | w not in Human
+inv8 C: no Dangerous.workstation.workers & Human
+

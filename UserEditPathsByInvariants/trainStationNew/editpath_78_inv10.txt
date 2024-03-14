@@ -1,0 +1,6 @@
+inv10 S: }		run { some t: Track | t in Junction implies #succs.t > 1
+inv10 O: all t: Track | t in Junction implies all t1: *(succs).t | some s: Semaphore | s in t1.signals
+inv10 O: all t: Track | t in Junction implies all t1: ^(succs).t | some s: Semaphore | s in t1.signals
+inv10 O: all t: Track | t in Junction implies all t1: *(succs).t | some s: Semaphore | s in t1.signals
+inv10 O: all t: Track | t in Junction implies all t1: ^(succs).t | some s: Semaphore | s in t1.signals
+

@@ -1,0 +1,14 @@
+inv5 B: all i : Influencer , u : User | u in follows.i
+inv5 O: all i : Influencer , u : User | u in follows.i and i not in follows.i
+inv5 S: all i : Influencer , u : User implies u->i in follows
+inv5 B: all i : Influencer , u : User | u->i in follows
+inv5 S: all i : Influencer , u : User implies u->i in follows
+inv5 S: all i : Influencer , u : User implies u in follows.i
+inv5 S: all i : Influencer implies all u : User  | u in follows.i
+inv5 S: all i : Influencer , u : User implies u in follows.i
+inv5 B: all i : Influencer , u : User | u in follows.i
+inv5 S: all i : Influencer , u : User implies u in follows.i
+inv5 B: all i : Influencer , u : User | u in follows.i
+inv5 S: all i : Influencer , u : User - i | u in follows.i a
+inv5 U: all i : Influencer , u : User - i | u in follows.i
+

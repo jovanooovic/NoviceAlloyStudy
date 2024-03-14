@@ -1,0 +1,16 @@
+inv3 T: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all p: Photo | p in Ad implies p in sees
+inv3 T: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all a: Ad | a in sees
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | u in sees.a
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in u1.sees and p not in Ad and p in u2.posts implies u2 in u1.follows
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in u1.sees and p not in Ad and u2 in u1.follows implies p in u2.posts	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in Ad and p in u1.sees and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in Ad and p in u1.sees and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | a in u.sees
+inv3 T: all u1: User, u2: User, p: Photo | u1 != u2 and p in Ad and p in u1.sees and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | sees.a = iden
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in Ad and p in u1.sees and p in u2.posts implies u2 in u1.follows	all a: Ad, u: User | u in sees.a
+inv3 B: all u1: User, u2: User, p: Photo | u1 != u2 and p in u1.sees and p in u2.posts and u2 not in u1.follows implies p in Ad
+inv3 B: all u1: User, u2: User, p: Photo | p in u1.sees and p in u2.posts and u2 not in u1.follows implies p in Ad
+

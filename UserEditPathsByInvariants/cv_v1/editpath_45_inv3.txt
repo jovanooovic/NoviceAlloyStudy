@@ -1,0 +1,8 @@
+inv3 O: all u: User, w1, w2: u.profile | w1.ids != w2.ids
+inv3 O: all u: User, w1, w2: u.profile, i: w1.ids | i not in w2.ids
+inv3 O: all u: User, w1, w2: u.profile | all i: w1.ids | i not in w2.ids
+inv3 S: all u: User, w1, w2: u.profile | not (w1.ids = w2.ids)
+inv3 S: all u: User, w1, w2: u.profile | not w1.ids = w2.ids
+inv3 S: all u: User | all w1, w2: u.profile | not w1.ids = w2.ids
+inv3 O: all u: User | all w1, w2: u.profile | not w1.ids = w2.ids
+

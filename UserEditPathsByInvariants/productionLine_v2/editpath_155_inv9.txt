@@ -1,0 +1,16 @@
+inv9 U: no end.succ+succ.begin	all w : Workstation-end-begin | one w.succ && one w.succ
+inv9 U: no end.succ+succ.begin	all w : Workstation-end-begin | one w.succ && one succ.w
+inv9 B: no end.succ+succ.begin	one succ.end	one begin.succ	all w : Workstation-end-begin | one w.succ && one succ.w
+inv9 B: no end.succ+succ.begin	one succ.end	one begin.succ	begin != end	all w : Workstation-end-begin | one w.succ && one succ.w
+inv9 B: no end.succ+succ.begin	one succ.end	one begin.succ	begin not in end	all w : Workstation-end-begin | one w.succ && one succ.w
+inv9 B: no end.succ+succ.begin	one succ.end	one begin.succ	begin != end	all w : Workstation-end-begin | one w.succ && one succ.w
+inv9 O: no end.succ+succ.begin	one succ.end	one begin.succ	begin != end	all w : Workstation-end-begin | one w.succ && one succ.w && w.succ != succ.w
+inv9 S: no end.succ+succ.begin	one succ.end	one begin.succ	all w : Workstation | w != begin&suc	all w : Workstation-end-begin | one w.succ && one succ.w && w.succ != succ.w
+inv9 O: no end.succ+succ.begin	one succ.end	one begin.succ	all w : Workstation | w != begin&end	all w : Workstation-end-begin | one w.succ && one succ.w && w.succ != succ.w
+inv9 O: no end.succ+succ.begin	one succ.end	one begin.succ	all w : Workstation | w not in begin&end	all w : Workstation-end-begin | one w.succ && one succ.w && w.succ != succ.w
+inv9 C: all w : Workstation | (no succ.w <=> w in begin) and (no w.succ <=> w in end) and lone w.succ and w not in w.^succ
+inv9 O: all w : Workstation | no succ.w && w in begin and (no w.succ <=> w in end) and lone w.succ and w not in w.^succ
+inv9 S: all w : Workstation | no succ.w w in begin and (no w.succ <=> w in end) and lone w.succ and w not in w.^succ
+inv9 U: all w : Workstation | no succ.w <=> w in begin and (no w.succ <=> w in end) and lone w.succ and w not in w.^succ
+inv9 C: all w : Workstation | (no succ.w <=> w in begin) and (no w.succ <=> w in end) and lone w.succ and w not in w.^succ
+

@@ -1,0 +1,7 @@
+inv3 U: all p : Product | (some p.parts => p in Component) or p in Material
+inv3 U: all p : Product | some p.parts => p in Component or p in Material
+inv3 B: all p : Product | (some p.parts and p in Component) or p in Material
+inv3 B: all p : Product | some p.parts and p in Component or p in Material
+inv3 B: all c : Component | some c.parts	all m : Material | no m.parts
+inv3 C: all c : Component | one c.workstation
+

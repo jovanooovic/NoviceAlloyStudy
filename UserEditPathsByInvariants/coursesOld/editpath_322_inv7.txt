@@ -1,0 +1,4 @@
+inv7 B: all s: Student| all p : Project | all c : Course | p in c.projects implies s.projects-p = none
+inv7 B: all s: Student| all p : Project | all c : Course | p in c.projects and p in s.projects implies s.projects-p = none
+inv7 U: all s: Student| all p : Project | all c : Course | p in c.projects and p in s.projects implies s.projects&c.projects-p = none
+

@@ -1,0 +1,7 @@
+inv9 B: all p:Professor, c : p.teaches, p2:Professor | p2 not in enrolled.c
+inv9 S: all p:Professor, c : p.teaches, p2:Professor | p1 != p2 implies p2 not in enrolled.c
+inv9 B: all p:Professor, c : p.teaches, p2:Professor | p != p2 implies p2 not in enrolled.c
+inv9 B: all p:Professor, c : p.teaches, p2:Professor | p2 in teaches.c implies (all c2 : p2.teaches | p not in teaches.c2)
+inv9 B: all p1:Professor, p2:Professor, c:Course | p1 in teaches.c and p2 in teaches.c implies (all c2:Course | p1 in teaches.c2 implies p2 not in enrolled.c2)
+inv9 B: all p:Professor, c : p.teaches, p2:Professor | p2 in teaches.c implies (all c2:Course | p in teaches.c2 implies p2 not in enrolled.c2)
+

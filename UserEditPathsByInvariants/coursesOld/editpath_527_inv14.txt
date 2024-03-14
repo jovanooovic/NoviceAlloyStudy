@@ -1,0 +1,5 @@
+inv14 B: all s : Student , u : Student - s, p :Project, r : Project-p | p in s.projects and p in u.projects implies r in s.projects or r in u.projects
+inv14 B: all s : Student , u : Student - s | lone u.projects & u.projects
+inv14 B: all s : Student , u : Student - s | lone( u.projects & u.projects )
+inv14 U: all s : Student , u : Student - s | lone( s.projects & u.projects )	  	all s : Student, t : Student - s | lone (s.projects & t.projects)
+

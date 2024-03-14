@@ -1,0 +1,48 @@
+Pairs,1
+,,"iden not in ^parts",1
+
+Pairs,94
+,,"no c:Component | c in c.parts",1
+,,"all x:Component | x not in x.parts",7
+,,"all c : Component | c !in c.parts",43
+,,"all c:Component | c not in parts.c",1
+,,"all c: Component | not (c in parts.c)",1
+,,"all c:Component| not c in c.parts",9
+,,"all x1 : Component | x1 not in x1.parts",1
+,,"all c: Component | no c & c.parts",1
+,,"all x1,x2 : Component | x1 not in x1.parts",1
+,,"all x,y:Component | x in y.parts implies x!=y",2
+,,"all c,c1 : Component | c=c1 implies c not in c.parts",2
+,,"all c: Component | all x: c.parts | x!=c",1
+,,"all c:Product | c in Component implies c not in c.parts",1
+,,"all p : Product | p in Component implies p not in p.parts",3
+,,"all x:Product | x in Component implies x not in x.parts",1
+,,"all c : Component | all p : c.parts | p != c",1
+,,"all c : Component | all p : c.parts | c not in p",1
+,,"all c1,c2 : Component | c2 in c1.parts implies c1!=c2",1
+,,"all c1, c2 : Component | c2 in c1.parts implies c2!=c1",2
+,,"all x1,x2 : Component | x2 in x1.parts implies x2 != x1",2
+,,"all c:Product | c in Component implies not c in c.parts",1
+,,"all x:Component | x not in x.parts and x not in parts.x",1
+,,"all c1, c2: Component| c1 not in c1.parts and c2 not in c2.parts",2
+,,"all x, y: Product | x in Component and y in x.parts implies y != x",1
+,,"all x,y:Component | (x in y.parts or y in x.parts)implies x!=y",1
+,,"all c : Component | all p : Product | c in p.parts implies c !=p",2
+,,"all x:Product | x in Component implies x not in x.parts and x not in parts.x",1
+,,"all c1, c2: Component| c1 in c2.parts and c2 in c1.parts implies c1!=c2",1
+,,"all p : Product | p in Component && p in p.parts implies p not in Component.parts",1
+,,"all c : Component | c not in c.parts
+all c : Component | Component not in c.parts",1
+
+Pairs,3
+,,"all c: Component | Component not in c.parts",3
+
+Pairs,2
+,,"all c : Component, d: Dangerous | c not in c.parts",2
+
+Pairs,1
+,,"all c,c1 : Component | c!=c1 implies c not in c.parts",1
+
+Pairs,1
+,,"all c1, c2: Component| c1 in c2.parts and c2 in c1.parts implies c1=c2",1
+

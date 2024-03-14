@@ -1,0 +1,6 @@
+inv9 B: no Professor.teaches & Professor.enrolled
+inv9 B: all p:Professor, p1:Professor | no p.teaches & p1.enrolled
+inv9 B: all disj p,p1:Professor | no p.teaches & p1.enrolled
+inv9 B: all disj p,p1:Professor | some p.enrolled & p1.teaches implies no p.teaches & p1.enrolled
+inv9 U: all disj p,p1:Professor | some p.teaches & p1.teaches implies no p.teaches & p1.enrolled
+

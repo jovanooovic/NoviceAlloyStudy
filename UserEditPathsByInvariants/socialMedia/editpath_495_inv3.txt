@@ -1,0 +1,7 @@
+inv3 S: all u:User | all p:u.sees | f:u.follows | p in f.posts
+inv3 O: all u:User, p:Photo | p in u.sees => p in u.follows.posts
+inv3 O: all u:User, p:Photo | p in u.sees => p in u.follows.posts
+inv3 C: all u:User, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 S: all u:user, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv3 C: all u:User, p:Photo | p in u.sees => p in u.follows.posts or p in Ad
+

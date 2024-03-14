@@ -1,0 +1,7 @@
+inv15 T: Teacher in ^Tutors
+inv15 O: some t : Teacher | some ^Teaches.t
+inv15 B: some t : Teacher | some t.^Teaches
+inv15 T: some t : Teacher | t in (t.^Teaches).Teacher
+inv15 O: some t : Teacher | t in (^Teaches).Teacher
+inv15 O: some t : Teacher | t in Teacher.(^Teaches)
+

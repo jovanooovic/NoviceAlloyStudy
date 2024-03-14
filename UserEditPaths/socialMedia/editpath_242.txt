@@ -1,0 +1,52 @@
+NA H: THEME UPDATE
+inv2 T: User.follows & User.follows not in iden
+inv2 T: User.follows & User.follows not in iden
+inv2 T: User.follows & User.follows & iden = none
+inv2 T: User.follows & iden = none
+inv2 T: User.follows + iden = none
+inv2 T: User.follows-iden = User.follows
+inv2 T: User.follows not in iden
+inv1 C: all p : Photo | one posts.p
+inv2 B: follows not in iden
+inv3 S: all u : User |  in u.follows.post
+inv3 S: all u : User | u.sees not in u.follows.post
+inv3 B: all u : User | u.sees not in u.follows.posts
+inv2 U: iden not in follows
+inv2 T: iden not in follows.User
+inv3 T: all u : User | u.sees not in Ad not in u.follows.posts
+inv3 S: all u : User | u.sees not in Ad and not in u.follows.posts
+inv3 O: all u : User | u.sees in u.follows.posts
+inv3 O: all u : User | u.sees in u.follows.posts and u.sees in Ad
+inv2 C: no iden & follows
+inv2 C: no iden & follows
+inv3 O: all u : User | u.sees in Ad and u.sees in u.follows.posts
+inv3 B: all u : User | u.sees in Ad implies u.sees in u.follows.posts
+inv3 O: all u : User | u.sees not in Ad and u.sees in u.follows.posts
+inv3 B: all u : User | u.sees&Ad in u.follows.posts
+inv3 T: all u : User | no u.sees&Ad in u.follows.posts
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+inv4 T: all u : User | u.posts+Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts implies u.posts in Ad
+inv4 T: all u : User | u.posts&Ad implies u.posts in Ad
+inv4 T: all u : User | u.posts&Ad implies u.posts-Ad = none
+inv4 T: all u : User | u.posts&Ad
+inv4 T: all u : User | u.posts
+inv4 T: all u : User | u
+inv4 E: 
+inv4 B: all u : User | u.sees-Ad in u.follows.posts
+inv4 C: all u : User | u.posts&Ad != none implies u.posts-Ad = none
+inv5 U: all i : Influencer | i.follows in User
+inv5 B: all i : Influencer | User-i.follows = none
+inv4 C: all u : User | some u.posts&Ad implies u.posts-Ad = none
+inv5 B: all i : Influencer | User-i.follows = none
+inv5 B: all u : User | Influencer-u.follows = none
+inv5 B: all u : User | no Influencer-u.follows
+inv5 B: all u: User | no u.follows-Influencer
+inv5 B: all u: User | u.follows&Influencer = Influencer
+inv5 U: all u: User | u.follows&Influencer in Influencer
+inv5 U: all u : User | no u.follows&Influencer-Influencer
+inv5 B: all u : User | u.follows&Influencer = Influencer
+inv5 C: all u : User | u.follows&Influencer = Influencer-u
+inv6 U: all i : Influencer | no i.posts.date-Day
+inv6 C: all i : Influencer | i.posts.date&Day = Day
+

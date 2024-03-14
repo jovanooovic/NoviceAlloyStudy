@@ -1,0 +1,13 @@
+inv10 T: all x:Person-Student, y:Grade | x->y not in grades
+inv10 U: all x:Person-Student | no x.grades
+inv10 U: all x:Person-Student | no x.grades
+inv10 U: all x:Person-Student, y:Grade | no x.grades.y
+inv10 U: no (Person-Student).grades
+inv10 U: no (Person-Student).grades
+inv10 T: no Course.(Person-Student).grades
+inv10 T: no Course.(Person-Student).grades
+inv10 O: no Course.grades
+inv10 T: no (Course.grades & Person-Student)
+inv10 U: no (Course.grades & enrolled)
+inv10 C: all x:Person-Student, y:Course, z:Grade | y->x->z not in grades
+

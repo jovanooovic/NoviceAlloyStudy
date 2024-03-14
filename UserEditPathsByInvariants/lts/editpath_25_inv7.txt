@@ -1,0 +1,18 @@
+inv7 B: inv4	}		pred inv4{	  Init.^({x: State, y: State | some (x.trans).y }) = State
+inv7 S: let t = {x: State, y: State | some (x.trans).y };	  Init in Init.^t
+inv7 S: let t = {x: State, y: State | some (x.trans).y }	  Init in Init.^t
+inv7 B: let t = {x: State, y: State | some (x.trans).y } |	  Init in Init.^t
+inv7 B: let t = {x: State, y: State | some (x.trans).y } |	    Init in Init.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	    all s : Init.^t | Init in s.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	    all s: Init.^t | Init in s.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init |	    all s: i.^t | i in s.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.^t | i in s.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.*t | i in s.^t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.*t | i in s.*t
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.*t | i in s.^t
+inv7 S: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.*t | i in s.^t or i == s
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.*t | i in s.^t or i = s
+inv7 O: let t = {x: State, y: State | some (x.trans).y } |	  	all i: Init | all s: i.^t | i in s.^t or i = s
+inv7 S: let t = {x: State, y: State | some (x.trans).y } |	  	all s: i.^t | some s.^t & Init
+inv7 C: let t = {x: State, y: State | some (x.trans).y } |	  	all s: Init.^t | some s.^t & Init
+

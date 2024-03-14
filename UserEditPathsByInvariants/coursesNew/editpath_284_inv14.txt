@@ -1,0 +1,6 @@
+inv14 O: all x1,x2 : Person | all y1,y2 : Project | y1 in x1.projects and y2 in x2.projects implies (y2 in x1.projects implies y2 not in x2.projects) or (y2 in x2.projects implies y2 not in x1.projects)
+inv14 S: all x1,x2 : Person | all y1 : Project | lone(y in x1.projects and y in x2.projects )
+inv14 T: all x1,x2 : Person | all y : Project | lone(y in x1.projects and y in x2.projects )
+inv14 T: all x1,x2 : Person | all y : Project | lone(y in x1.projects and y in x2.projects )
+inv14 C: all x1,x2 : Person | lone y : Project | y in x1.projects and y in x2.projects and x1!=x2
+

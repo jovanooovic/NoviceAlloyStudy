@@ -1,0 +1,9 @@
+inv3 O: all s : State, e : Event | one s.trans.e
+inv3 O: all s : State, e : Event | one s.trans[e]
+inv3 B: all s : State {	    	all disj e1,e2 : Event | some s.trans[e1] implies no s.trans[e2]	    }
+inv3 U: all s : State, e : Event | lone s1 : State | s.trans[e] = s1
+inv3 O: all s : State, e : Event | no s.trans[e]
+inv3 O: all s : State, e : Event | one s.trans[e]
+inv3 C: all s : State, e : Event | lone s.trans[e]
+inv3 S: all s : State, e : Event | lone s.trans[e]	}		/*	All states are reachable from an initial state.	*/	fun reachable : State -> set State {	  let s : State | s->s.trans[Event]
+

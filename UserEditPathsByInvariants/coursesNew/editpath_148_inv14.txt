@@ -1,0 +1,6 @@
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and x->p in projects implies x->k in projects and x->p not in projects
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and x->p not in projects
+inv14 B: all x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and y->k not in projects
+inv14 O: one x,y:Person, p,k:Project| x in Student and y in Student and x->p in projects and y->p in projects implies x->k in projects and y->k not in projects
+inv14 B: all x,y:Person, p:Project, i:Project-p| x-> p in projects and y-> p in projects and x in Student and y in Student and x-> i in projects implies y -> i not in projects
+

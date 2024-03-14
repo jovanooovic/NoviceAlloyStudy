@@ -1,0 +1,12 @@
+inv7 B: Dangerous.parts = Dangerous
+inv7 B: all d:Dangerous | some d.parts
+inv7 B: all d:Dangerous | some d1: Dangerous | d->d1 in parts
+inv7 B: all d1, d2:Dangerous | d1->d2 in parts
+inv7 B: all d2:Dangerous | some d1:Dangerous | d1->d2 in parts
+inv7 B: Dangerous.parts = Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous in Dangerous
+inv7 O: parts.Dangerous = Dangerous
+inv7 C: all c:Component | some c.parts & Dangerous implies c in Dangerous
+inv7 O: parts.Dangerous = Dangerous
+

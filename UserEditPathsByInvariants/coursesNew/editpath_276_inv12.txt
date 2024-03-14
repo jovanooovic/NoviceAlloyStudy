@@ -1,0 +1,10 @@
+inv12 T: all x:Student|all y:Course|one z:Grade | y in x.enrolled implies (x->z in y.Course or x->z not in y.Course)
+inv12 B: all x:Student|all y:Course|one z:Grade | y in x.enrolled implies (x->z in y.grades or x->z not in y.grades)
+inv12 S: all g1,g2:Grades | all s:Student | all c1,c2:Course | (s->g1 in c1.grades and s->g2 in c2.grades) implies c1!=c2
+inv12 B: all g1,g2:Grade | all s:Student | all c1,c2:Course | (s->g1 in c1.grades and s->g2 in c2.grades) implies c1!=c2
+inv12 S: all g1,g2:Grade | all s:Student | all c1,c2:Course | (c1 in s.enrolled and c2 in s.enrolled and s->g1 in c1.grades and s->g2 in c2.grades and ) implies c1!=c2	  all x:Student | all y:Grade | all z:Course |
+inv12 S: all g1,g2:Grade | all s:Student | all c1,c2:Course | (c1 in s.enrolled and c2 in s.enrolled and s->g1 in c1.grades and s->g2 in c2.grades and ) implies c1!=c2
+inv12 B: all g1,g2:Grade | all s:Student | all c1,c2:Course | (c1 in s.enrolled and c2 in s.enrolled and s->g1 in c1.grades and s->g2 in c2.grades) implies c1!=c2
+inv12 U: all g1,g2:Grade | all s:Student | all c1,c2:Course | (c1 in s.enrolled and c2 in s.enrolled and s->g1 in c1.grades and s->g2 in c2.grades and g1!=g2) implies c1!=c2
+inv12 U: all x:Student | all y:Course | lone z:Grade | x->z in y.grades
+

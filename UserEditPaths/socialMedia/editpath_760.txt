@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv5 T: all x : Influencer | all y : User | y.follows(x)
+inv5 B: all x : Influencer | all y : User | x in y.follows
+inv5 B: all x : Influencer | (all y : User | x in y.follows)
+inv5 S: all x : User | x.follows in all y : Influencer
+inv5 S: all x : User | x.follows in (User - not Influencer)
+inv5 B: all x : User | x.follows in (User - Influencer)
+inv5 B: all x : User | x.follows in (Influencer)
+

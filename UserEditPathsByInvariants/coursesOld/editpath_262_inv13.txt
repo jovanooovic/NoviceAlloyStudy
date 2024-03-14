@@ -1,0 +1,8 @@
+inv13 T: all c : Course, p : Project, disj s,s2 : Student, g : Grade | c.grades[s] > c.grade[s2] => p in s.projects and p in c.projects
+inv13 T: all c : Course, p : Project, disj s,s2 : Student, g : Grade | c.grades[s] > c.grade[s2] => p in s.projects and p in c.projects
+inv13 B: all c : Course, p : Project, disj s,s2 : Student, g : Grade | g in c.grades[s] => p in s.projects and p in c.projects
+inv13 B: all c : Course, p : Project, s: Student, g : Grade | g in c.grades[s] => p in s.projects and p in c.projects
+inv13 B: all c : Course, p : Project, s: Student, g : Grade | g in c.grades[s] and p in c.projects => p in s.projects
+inv13 B: all c : Course, p : Project, s: Student, g : Grade | g in c.grades[s] and p in c.projects => p in s.projects
+inv13 B: all c : Course, p : Project, s: Student, g : Grade | g in c.grades[s] and p in c.projects => p in s.projects
+

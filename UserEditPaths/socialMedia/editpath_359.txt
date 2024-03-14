@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv7 S: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=y
+inv7 S: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=y
+NA M: MOD BASE MODEL
+inv5 B: all x : Influencer | all u : User | x in u.follows
+inv5 B: all x : Influencer | all u : User | x in u.follows
+inv5 O: all x : Influencer | all u : User | x in u.follows and x != u
+NA H: THEME UPDATE
+inv5 U: all i : Influencer | all u : User - Influencer| i in u.follows
+inv6 C: all d : Day | all i : Influencer | some p: i.posts | p.date = d
+inv8 C: all u : User | all p : u.sees & Ad | p in u.follows.posts || p in u.suggested.posts
+inv6 C: all d : Day | all i : Influencer | some p: i.posts | p.date = d
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s in f.follows and s not in u.follows
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s in f.follows and s not in u.follows
+inv7 B: all u : User | all s: u.suggested | all f: u.follows  | s in f.follows and s not in u.follows
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s in f.follows and s not in u.follows
+inv7 B: all u : User | all s: u.suggested | all f: u.follows  | s in f.follows
+inv5 U: all i:Influencer, u:User | i!=u implies u->i in follows
+inv5 U: all i : Influencer | all u : User - Influencer| i in u.follows
+inv5 S: all i : Influencer | all u : User - u | i in u.follows )
+inv5 S: all i : Influencer | all u : User| i in u.follows )
+inv5 B: all i : Influencer | all u : User| i in u.follows
+inv5 S: all i : Influencer | all u : User -u | i in u.follows
+inv5 O: all i : Influencer | all u : User | i in u.follows and i != u
+inv5 U: all i:Influencer, u:User | i!=u => i in u.follows
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+

@@ -1,0 +1,4 @@
+inv6 U: all s:Student | s.projects in s.enrolled.projects
+inv6 S: all x:Student | all p:Project x in Person<:projects.p implies Course<:projects.p in x.enrolled
+inv6 B: all x:Student | all p:Project | x in Person<:projects.p implies Course<:projects.p in x.enrolled
+

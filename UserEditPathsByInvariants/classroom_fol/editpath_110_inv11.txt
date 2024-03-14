@@ -1,0 +1,4 @@
+inv11 U: all c:Class,g:Group,t:Teacher | c->g->t in Groups implies t->c in Teaches
+inv11 O: all c:Class | some t:Teacher | some c.Groups implies t->c in Teaches
+inv11 B: all c:Class,t:Teacher | some c.Groups implies t->c in Teaches
+

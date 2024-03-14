@@ -1,0 +1,10 @@
+inv3 U: all t: Track | no t.succs implies t in Exit
+inv3 B: all t1,t2: Track | t2 not in t1.succs implies t1 in Exit
+inv3 B: all t1,t2: Track | t1!=t2 and t2 not in t1.succs implies t1 in Exit
+inv3 B: all t1,t2: Track | t2 not in t1.succs implies t1 in Exit
+inv3 U: all t1: Exit | no t1.succs
+inv3 U: all t1: Track | no t1.succs implies t1 in Exit
+inv3 U: all t1: Track | no t1.^succs implies t1 in Exit
+inv3 U: all t1: Track | no t1.*succs implies t1 in Exit
+inv3 U: all t1: Track | some t2: Track | t1 in t2.^succs and no t1.succs implies t1 in Exit
+

@@ -1,0 +1,73 @@
+NA H: THEME UPDATE
+inv1 T: none (Person-Student).enrolled
+inv1 S: (Person-Student).enrolled = empty
+inv1 S: Professor.enrolled = empty
+inv1 B: Professor.enrolled = none
+inv1 C: (Person-Student).enrolled = none
+inv2 C: (Person-Professor).teaches = none
+inv3 O: Course in Professor.teaches
+inv4 T: projects in Course
+inv4 B: all p : Project, c : Course | p in c.projects
+inv4 S: all p : Project, one c : Course | p in c.projects
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: (Person-Student).projects = none	  	 Project in Student.projects
+inv6 U: Student.projects in Student.enrolled.projects
+inv6 B: (Student.enrolled-Student).projects = none
+inv6 B: ((Student.enrolled)-Student).projects = none
+inv6 B: (Student.enrolled.projects)-Student.projects = none
+inv6 B: (Student-Student.enrolled).projects = none
+inv6 U: (Student.projects)-(Student.enrolled.projects) = none
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv1 C: (Person-Student).enrolled = none
+inv2 C: (Person-Professor).teaches = none
+inv3 O: Course in Professor.teaches
+inv4 C: all p : Project | one c : Course | p in c.projects
+inv5 C: (Person-Student).projects = none	  	 Project in Student.projects
+inv1 C: no (Person-Student).enrolled
+inv2 C: no (Person-Professor).teaches
+inv5 C: no (Person-Student).projects	  	Project in Student.projects
+inv6 T: all p : Project, s : Student | p in s.projects => p.enrolled.projects
+inv6 U: all p : Project, s : Student | p in s.projects => p in s.enrolled.projects
+inv7 B: lone Student.enrolled.projects
+inv7 B: lone (Student.enrolled.projects & Student.projects)
+inv7 B: all c: Course | lone (c.projects & Student.projects)
+inv7 B: all c: Course | lone ((c.projects) & (Student.projects))
+inv7 U: all c: Course, s : Student | lone ((c.projects) & (s.projects))
+inv8 T: Professor.teaches - iden
+inv8 T: (Professor.teaches) - iden
+inv8 C: no (teaches & enrolled)
+inv9 B: all p1,p2 : Professor | p1 not in p2.teaches.~teaches
+inv9 B: no (teaches & (Professor <: enrolled).~teaches.teaches)
+inv9 B: no (teaches - (Professor <: enrolled))
+inv9 T: teaches - (Professor <: enrolled).~teaches.teaches
+inv9 B: no (teaches & (Professor <: enrolled).~teaches.teaches)
+inv10 T: (Person-Student) not in Course.~grades
+inv10 T: (Person-Student) not in Course.~grades.grades
+inv10 T: (Person-Student) not in Course.~grades
+inv10 B: (Person-Student) not in Course.grades.Grade
+inv10 B: Course.grades.Grade not in (Person-Student)
+inv10 C: Course.grades.Grade in Student
+inv11 T: Course.grades.Grade in Student.enrolled.grades
+inv11 O: Course.grades.Grade in Student.enrolled
+inv11 C: ~(grades.Grade) in enrolled
+inv11 T: grades in enrolled
+inv11 T: ~grades in enrolled
+inv11 U: ~(Person.grades) in enrolled
+inv11 C: ~(grades.Grade) in enrolled
+inv12 S: lone ~~grades.Grade)
+inv12 B: lone ~(grades.Grade)
+inv12 T: lone (grades.Grade in ~(grades.Grade))
+inv12 S: all s : Student, c : course | lone g : Grade | c->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | c->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+inv13 C: grades.(max[Grade]) in projects.~projects
+inv14 U: all s : Student, t : Student - s | lone (s.projects & t.projects)
+inv15 O: all p : Project, g,h : (projects.p).grades[projects.p] | g in (h + prev[h] + next[h])
+NA H: THEME UPDATE
+NA H: THEME UPDATE
+inv13 O: grades.(max[Grade]) = projects.~projects
+inv13 C: grades.(max[Grade]) in projects.~projects
+inv13 T: grades.max[Grade] in projects.~projects
+

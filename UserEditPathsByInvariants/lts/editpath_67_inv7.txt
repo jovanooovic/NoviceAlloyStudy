@@ -1,0 +1,11 @@
+inv7 E:
+inv7 T: all s : State | Init in s.~(trans)
+inv7 T: all s : State | Init in s.^(trans)
+inv7 T: all s : State | Init in ^(s.trans)
+inv7 T: all s : State | some (Init & ^(s.trans))
+inv7 O: all s : State | some (^(s.trans) :> Init)
+inv7 O: all s : State | some e : Event | (e->Init) in (^(s.trans))
+inv7 T: Init in ^(Init.trans)
+inv7 B: Init in Event.^(Init.trans)
+inv7 O: all s : State | Init in Event.^(s.trans)
+

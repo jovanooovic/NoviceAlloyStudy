@@ -1,0 +1,6 @@
+inv4 T: all u: User | one Ad in u.posts => no Photo in u.posts
+inv4 T: all u: User | some u.posts & Ad implies no Photo in x.posts
+inv4 S: all u: User | some u.posts & Ad implies no x.posts in Ad
+inv4 T: all u: User | some u.posts & Ad implies no u.posts in Ad
+inv4 C: all u: User | some u.posts & Ad implies u.posts in Ad
+

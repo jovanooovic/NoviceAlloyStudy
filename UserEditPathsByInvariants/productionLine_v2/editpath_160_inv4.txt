@@ -1,0 +1,11 @@
+inv4 O: all c:Component | some p:Product | c->p in parts	all m:Material | no parts
+inv4 S: all c:Component | some p:Product | c->p in parts	all m:Material, p:Products | no m->p in parts
+inv4 T: all c:Component | some p:Product | c->p in parts	all m:Material, p:Product | no m->p in parts
+inv4 C: all c:Component | some p:Product | c->p in parts	all m:Material, p:Product |  m->p not in parts
+inv4 C: all c:Component | some p:Product | c->p in parts	all m:Material, p:Product | m->p not in parts
+inv4 C: all c:Component | some p:Product | c->p in parts	all m:Material, p:Product | m->p not in parts
+inv4 B: Component in Component.parts
+inv4 S: Component in parts.Product and Material.part = none
+inv4 C: Component in parts.Product and Material.parts = none
+inv4 C: Component = parts.Product
+

@@ -1,0 +1,38 @@
+inv3 S: all u:User | u not u.sees	all u:User | a:Ad | u -> a.sees
+inv3 S: all u:User | u not u.sees	all u:User | a:Ad | a.sees
+inv3 S: all u:User | u not u.sees	all u:User | a:Ad | u sees a
+inv3 S: all u:User | u.follows.posts	all u:User | a:Ad | u.sees -> a
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts
+inv3 T: all u:User | u.follows.posts in posts
+inv3 B: all u:User | u.follows.posts in u.posts
+inv3 S: all p: Posts | p.Photo - Ad in u.follows.posts
+inv3 S: all p: Photo | p.posts - Ad in u.follows.posts
+inv3 S: all p: Photo | u:User | p.posts - Ad in u.follows.posts
+inv3 B: all u:User | u.posts - Ad in u.follows.posts
+inv3 B: all u:User | (u.posts - Ad) in u.follows.posts
+inv3 C: all u:User | (u.sees - Ad) in u.follows.posts
+inv3 C: all u:User | (u.sees - Ad) in u.follows.posts
+inv3 B: all u: User, p: Photo, us: User | u->p in sees implies (p in Ad || (us->p in posts implies u->us in follows))
+inv3 T: all u:User | (u.sees - Ad) implies u.follows.posts
+inv3 T: all u:User | (u.sees - Ad) -> u.follows.posts
+inv3 T: all u:User | (u.sees - Ad) in posts -> u.follows.posts
+inv3 T: all u:User | (u.sees - Ad) in posts -> u.follows.posts in posts
+inv3 T: all u:User | u -> (u.sees - Ad) implies u -> u.follows.posts
+inv3 T: all u:User | u -> (u.sees - Ad) in sees implies u -> u.follows.posts
+inv3 B: all u:User | u -> (u.sees - Ad) in sees implies u -> u.follows.posts in sees
+inv3 B: all u:User | u -> (u.sees - Ad) in sees implies u -> u.follows.posts in sees
+inv3 B: all u1: User, p: Photo, u2: User | u1->p in sees implies (p in Ad || (u2->p in posts implies u1->u2 in follows))
+inv3 B: all u1:User , u2:User | u1 -> (u1.sees - Ad) in sees implies u2 -> u1.follows.posts in sees
+inv3 B: all u1:User , u2:User | u1 -> (u2.posts - Ad) in sees  implies u2 -> u1.follows.posts in sees
+inv3 S: all u1:User | (u.posts - Ad) in u1.follows.posts
+inv3 S: all u:User | (u.posts - Ad) in u1.follows.posts
+inv3 B: all u:User | (u.posts - Ad) in u.follows.posts
+

@@ -1,0 +1,7 @@
+inv8 C: Entry->Exit in *succs
+inv8 C: all disj t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1:Track ,t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+inv8 O: all t1:Track | all t2:Track | t1 in Entry and t2 in Exit implies t2 in t1.^(succs)
+

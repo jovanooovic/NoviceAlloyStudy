@@ -1,0 +1,9 @@
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows-u.follows
+inv7 U: all u : User | all s : u.suggested | s in u.follows.follows-u.follows-u
+inv7 U: all u : User | u.suggested in u.follows.follows-u.follows
+inv7 U: all u : User | u.suggested in (u.follows.follows-u.follows)-u
+inv7 U: all u : User | no u.suggested - (u.follows.follows-u.follows)
+inv7 B: all u : User |  u.suggested = (u.follows.follows-u.follows)
+inv7 C: all u : User |  u.suggested = (u.follows.follows-u.follows-u)
+

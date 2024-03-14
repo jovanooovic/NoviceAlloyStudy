@@ -1,0 +1,12 @@
+inv5 S: all p : Project |
+inv5 S: all p : Project |
+inv5 S: all p : Project |
+inv5 U: all p : Project | some p.~(Student<:projects)
+inv5 T: all p : Project | some projects.p
+inv5 U: all p : Project | some (Student<:projects).p
+inv5 U: all p : Project | some (Person<:projects).p
+inv5 T: all p : Project | some (Person<:projects).p in Student
+inv5 C: all p : Project | some (Person<:projects).p and (Person<:projects).p in Student
+inv5 C: all p : Project | (some (Person<:projects).p) and ((Person<:projects).p in Student)
+inv5 C: all p : Project | (some (Person<:projects).p) and ((Person<:projects).p in Student)
+

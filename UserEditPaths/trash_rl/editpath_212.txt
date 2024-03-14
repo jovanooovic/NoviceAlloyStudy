@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv2 C: File = Trash
+inv1 C: no Trash
+inv3 C: some f : File | f in Trash
+inv4 C: no Protected & Trash
+inv4 C: no Protected & Trash
+inv5 O: File = Trash - Protected
+inv5 T: File = Trash & ^Protected
+inv5 T: all f : File | f in Trash & f not in Protected
+inv5 O: all f : File | f in Trash and f not in Protected
+inv5 C: all f : File | f not in Protected implies f in Trash
+inv6 B: some f : File | lone f.link
+inv6 S: lone f.link
+inv6 O: lone File.link
+inv6 C: all f : File | lone f.link
+inv7 O: no link
+inv8 C: no link
+inv9 U: link.link in iden
+inv9 U: link.link in iden
+inv9 U: link.link in iden
+inv9 U: link.link in iden
+inv9 U: link.link in iden
+inv7 T: no link <: Trash
+inv7 T: no Trash :> link
+inv9 U: link.link in iden
+inv7 S: all f : File |
+inv7 S: all f : File |
+inv5 O: all f : File | f in Trash <=> f not in Protected
+inv5 B: all f : File | f in Trash => f not in Protected
+inv5 C: all f : File | f not in Protected => f in Trash
+inv7 S: all f : File |
+inv6 C: all f : File | lone f.link
+inv7 U: File in Trash =>  no File.link
+inv8 C: no link
+inv9 T: all l : link | no l.link
+inv9 C: no link.link
+inv5 S: File not in Protected => f in Trash
+inv5 O: File not in Protected => File in Trash
+inv5 C: all f : File | f not in Protected => f in Trash
+inv3 S: some f in Trash
+inv3 T: some File in Trash
+inv3 T: some File = Trash
+inv3 S: some f : File = Trash
+inv3 O: some f : File | f = Trash
+

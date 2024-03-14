@@ -1,0 +1,4 @@
+inv3 T: all u: User | all p: Photo | p is Ad or p in u.follows.posts
+inv3 O: all u: User | all p: Photo | p in Ad or p in u.follows.posts
+inv3 C: all u: User | all p: Photo | p in Ad or p in u.follows.posts or p not in u.sees
+

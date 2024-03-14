@@ -1,0 +1,13 @@
+inv11 O: all c:Class | some t:Teacher | some c.Groups.Group implies t->c in Teaches
+inv11 S: all c:Class | some t:Teacher | if some c.Groups.Group implies t->c in Teaches
+inv11 S: all c:Class | some t:Teacher | if(some c.Groups.Group) then t->c in Teaches else no Class
+inv11 O: all c:Class | some t:Teacher | some c.Groups.Group implies t->c in Teaches
+inv11 B: all c:Class | some t:Teacher | some c.Groups.Person implies t->c in Teaches
+inv11 O: all c:Class | some t:Teacher | some c.Groups.Group implies t->c in Teaches
+inv11 B: all c:Class,p:Person | some t:Teacher | some c.Groups.p implies t->c in Teaches
+inv11 O: all c:Class | some t:Teacher | some c.Groups implies t->c in Teaches
+inv11 O: all c:Class,g:Group | some t:Teacher | some c.Groups.g implies t->c in Teaches
+inv11 O: all c:Class,g:Group | some t:Teacher | some c.Groups.g implies t->c in Teaches and t->g in c.Groups
+inv11 T: all c:Class,g:Group | some t:Teacher,s:Student | some s in c.Groups.g implies t->c in Teaches and t->g in c.Groups
+inv11 B: all c:Class,g:Group | some t:Teacher,s:Student | s in c.Groups.g implies t->c in Teaches and t->g in c.Groups
+

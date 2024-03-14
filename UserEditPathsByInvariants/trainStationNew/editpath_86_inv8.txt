@@ -1,0 +1,7 @@
+inv8 S: all e:Entry | Exit in t.^succs
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 C: all e:Entry | Exit in e.*succs
+inv8 C: all t1,t2:Track | t1 in Entry and t2 in Exit implies t1->t2 in *succs
+inv8 C: all t1,t2:Track | t1 in Entry and t2 in Exit implies t1->t2 in *succs
+inv8 C: all t1:Entry,t2:Exit | t1->t2 in *succs
+

@@ -1,0 +1,6 @@
+inv6 S: all u:User | (Course-u.enrolled).projects
+inv6 S: all studt:Student | (Course-u.enrolled).projects
+inv6 T: all studt:Student | (Course-studt.enrolled).projects
+inv6 T: all studt:Student | (Course-studt.enrolled).projects
+inv6 B: all studt:Student | no studt.projects & (Course-studt.enrolled).projects
+

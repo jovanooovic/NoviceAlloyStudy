@@ -1,0 +1,9 @@
+inv3 B: all w: Workstation | one workstation.w
+inv3 S: all c: Component, w: Workstation | w in c.workstation one workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.c
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies one workstation.w
+inv3 U: all c: Component, w: Workstation | w in c.workstation implies some workstation.w
+inv3 B: all c: Component, w: Workstation | w in c.workstation implies lone workstation.w
+inv3 C: all c: Component | one w: Workstation | c->w in workstation
+

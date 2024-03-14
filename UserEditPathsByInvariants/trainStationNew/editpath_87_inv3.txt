@@ -1,0 +1,10 @@
+inv3 U: no Exit.succs
+inv3 B: no Exit.succs and no Exit.signals
+inv3 U: no Exit.succs
+inv3 S: Exit = Tracks-Tracks.succs						no Exit.succs
+inv3 S: Exit = Track-Tracks.succs						no Exit.succs
+inv3 B: Exit = Track-(Track.succs)						no Exit.succs
+inv3 T: Exit = Track-(all t : Track | some t.succs)						no Exit.succs
+inv3 S: Exit = Track-({ t : Track | some t.succs)						no Exit.succs
+inv3 C: Exit = Track-({ t : Track | some t.succs})						no Exit.succs
+

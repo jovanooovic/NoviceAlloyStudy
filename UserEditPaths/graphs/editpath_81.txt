@@ -1,0 +1,40 @@
+na H: THEME UPDATE
+inv1 S: a->b in adj implies b->a in adj
+inv1 C: all a, b : Node | a->b in adj implies b->a in adj
+inv1 C: adj in ~adj
+inv1 C: adj = ~adj
+inv2 B: adj not in ~adj
+inv2 C: no adj & ~adj
+inv3 S: +adj not in id
+inv3 S: +adj not in iden
+inv3 B: *adj not in iden
+inv3 O: iden not in *adj
+inv3 S: iden not in +adj
+inv3 U: iden not in ^adj
+inv3 U: iden not in (^adj - adj)
+inv3 U: iden not in ^adj
+inv3 U: iden not in ^adj
+inv3 B: iden not in (*adj - adj)
+inv3 B: iden not in (*adj) - adj
+inv3 O: iden in ^adj
+inv3 U: iden not in ^adj
+inv3 U: iden not in ^adj or iden in adj
+inv3 S: all n | n->n not in ^adj
+inv3 C: all n : Node | n->n not in ^adj
+inv3 U: not iden in ^adj
+inv3 T: not iden & ^adj
+inv3 C: no iden & ^adj
+inv4 U: adj = ^adj
+inv4 O: adj = *adj
+inv4 C: all n : Node | n.adj = Node
+inv4 O: *adj in Node set -> set Node
+inv4 O: *adj = Node set -> set Node
+inv4 U: Node set -> set Node in *adj
+inv5 C: no adj & iden
+inv6 O: all n : Node | n.(adj + ~adj) = Node
+inv6 O: all n : Node | n.(adj + ~adj) = Node - n
+inv6 C: all n : Node | n.(*(adj + ~adj)) = Node
+inv6 C: all n : Node | n.*(adj + ~adj) = Node
+inv7 C: all n : Node | n.*adj = Node
+inv8 C: adj.adj in adj
+

@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 T: all p : Person | p.enrolled implies p & Person
+inv1 T: all p : Person | p.enrolled implies p in Person
+inv1 T: all p : Person | p.enrolled implies p in Student
+inv1 B: all p : Person| all c : Course | p.enrolled in c implies p in Student
+inv1 C: all p : Person| all c : Course | c in p.enrolled implies p in Student
+inv2 S: all p : Personc| all c: Course | c in p.teaches implies p in Professor
+inv2 C: all p : Person| all c: Course | c in p.teaches implies p in Professor
+inv3 O: all c : Course | some p : Person- Student | p in teaches.c
+inv3 O: all c : Course | some p : Person- Student | p in c.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 B: all c  : Course | one p : Project | p in c.projects
+inv4 B: one c  : Course | all p : Project | p in c.projects
+inv4 B: one c  : Course | all p : Project | p in c.projects
+inv4 C: all p : Project | (one c : Course | p in c.projects)
+inv4 C: all p : Project |one c  : Course|  p in c.projects
+inv4 C: all p : Project | one c  : Course | p in c.projects
+inv5 T: all p : Project | all a : Person | a.projects implies a in Student	 	 and	  	all p : Project | some a: Student | p in a.projects
+inv5 C: all x: Person - Student | no x.projects	    all p: Project | (some s: Student | p in s.projects)
+inv6 S: all s : Students | all p : Project | s.projects implies p in s.enrolled.project
+inv6 T: all s : Student | all p : Project | s.projects implies p in s.enrolled.project
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+inv7 U: all s: Student | (all c : s.enrolled | lone (c.projects &  s.projects)  )
+inv8 U: all p : Person | all pro: Professor | p not in p.teaches
+inv9 S: all p : Professor |  all co : Professor - p | no (p.teaches & col.enrolled))
+inv9 S: all p : Professor |  all co : Professor - p | no (p.teaches & c.enrolled))
+inv9 B: all p : Person - Student | (all col : Person - Student - p |  no (p.teaches & col.enrolled))
+inv9 B: all prof : Professor | all cl : Professor - prof | no c : Course | c in (prof.teaches & cl.enrolled)
+

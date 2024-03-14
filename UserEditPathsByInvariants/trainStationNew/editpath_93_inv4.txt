@@ -1,0 +1,21 @@
+inv4 T: no Track.*succs.Entry
+inv4 T: no Track.^succs.Entry
+inv4 B: no Track.^succs
+inv4 T: no Entry in Track.^succs
+inv4 B: Entry not in Track.^succs
+inv4 B: Entry not in Track.^succs	all t : Track | t not in Track.^succs implies t in Entry
+inv4 C: all t : Entry | t not in Track.^succs	all t : Track | t not in Track.^succs implies t in Entry
+inv4 B: Entry not in Track.^succs	all t : Track | t not in Track.^succs implies t in Entry
+inv4 O: Entry not in Track.*succs	all t : Track | t not in Track.^succs implies t in Entry
+inv4 B: all t : Entry | t not in Track.*succs	all t : Track | t not in Track.*succs implies t in Entry
+inv4 O: all t : Track | all e : Entry | e not in t.^succs	all t1,t2 : Track | t1 not in t2.succs implies t1 in Entry
+inv4 O: all t : Track | all e : Entry | e not in t.^succs	all t1,t2 : Track | t1 not in t2.^succs implies t1 in Entry
+inv4 B: all t : Track | all e : Entry | e not in t.^succs	all disj t1,t2 : Track | t1 not in t2.^succs implies t1 in Entry
+inv4 O: all t : Track | all e : Entry | e not in t.^succs	all t1,t2 : Track | t1 not in t2.^succs implies t1 in Entry
+inv4 O: all t : Track | all e : Entry | e not in t.^succs	all t1,t2 : Track | t1 not in t2.succs implies t1 in Entry
+inv4 C: all t : Track | all e : Entry | e not in t.^succs	all t : Track | t not in Track.^succs implies t in Entry
+inv4 O: all t : Entry | t not in Track.^succs	all t1,t2 : Track | t1 not in t2.succs implies t1 in Entry
+inv4 O: all t : Entry | t not in Track.^succs	all t1,t2 : Track | t1 not in t2.succs implies t1 in Entry
+inv4 O: all t : Entry | t not in Track.^succs	all t1,t2 : Track | t1 not in t2.^succs implies t1 in Entry
+inv4 C: all t : Entry | t not in Track.^succs	all t : Track | t not in Track.^succs implies t in Entry
+

@@ -1,0 +1,9 @@
+inv4 B: all disj s1, s2 : Signal | s1.pos != s2.pos
+inv4 B: all disj s1, s2 : Signal | always s1.pos != s2.pos
+inv4 B: all disj s1, s2 : Signal-Entry | always s1.pos != s2.pos
+inv4 B: all disj s1, s2 : (Signal-(Entry+Exit)) | always s1.pos != s2.pos
+inv4 O: all disj t1, t2 : Train | always t1.pos != t2.pos
+inv4 O: all disj t1, t2 : Train | always t1.pos != t2.pos
+inv4 C: all t : Track | always lone t.~pos
+inv4 C: all t : Track | always lone t.~pos
+

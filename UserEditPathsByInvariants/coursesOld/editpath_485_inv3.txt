@@ -1,0 +1,8 @@
+inv3 S: all p:Person ,c:Courses| no(p & Student) implies c in p.teaches
+inv3 B: all p:Person ,c:Course| no(p & Student) implies c in p.teaches
+inv3 B: all p:Person ,c:Course| no (p & Student) implies c in p.teaches
+inv3 S: all p:Professer,c:Course| c in p.teaches
+inv3 B: all p:Professor,c:Course| c in p.teaches
+inv3 B: all p:Professor,c:Course| c in p.teaches
+inv3 O: all c:Course|some p:Professor | c in p.teaches
+

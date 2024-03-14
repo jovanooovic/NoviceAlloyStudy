@@ -1,0 +1,23 @@
+inv3 U: no Exit.succs
+inv3 U: all x:Exit| no x.succs
+inv3 U: all x:Exit| no x.^(succs)
+inv3 U: no Exit.succs
+inv3 B: all x:Track| x in Entry => no x.succs
+inv3 U: all x:Track| x in Exit => no x.succs
+inv3 B: all x:Track - (Junction + Entry)| no x.succs
+inv3 U: all x:Exit - (Junction + Entry)| no x.succs
+inv3 U: all x:Exit | no x.succs
+inv3 U: all x:Track | x in Exit => no x.succs
+inv3 B: no Entry & Junction	no Exit & Entry	no Exit & Junction	all x:Track | x in Exit => no x.succs
+inv3 B: no Entry & Junction	no Entry & Junction & Exit	no Exit & Entry	no Exit & Junction	all x:Track | x in Exit => no x.succs
+inv3 B: all x:Track | x in Exit => one x.succs
+inv3 U: all x:Track | x in Exit => no x.succs
+inv3 S: all x:Track | no x.succ => x in Exit
+inv3 U: all x:Track | no x.succs => x in Exit
+inv3 T: all x:Track | no x.succs => x is Exit
+inv3 T: all x:Track | no x.succs => x & Exit
+inv3 S: all t:Track | t in Exit <=> no t.succ
+inv3 C: all t:Track | t in Exit <=> no t.succs
+inv3 U: all t:Track | t in Exit => no t.succs
+inv3 C: all t:Track | t in Exit <=> no t.succs
+

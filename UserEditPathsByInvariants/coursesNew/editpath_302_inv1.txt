@@ -1,0 +1,8 @@
+inv1 S: all c : courses | c.grades in Student
+inv1 S: all c : courses | grades.c in Student
+inv1 T: all c : Course | grades.c in Student
+inv1 C: all s : Person - Student | no s.enrolled
+inv1 B: all s : Person - Professor | no s.enrolled
+inv1 C: all s : Person - Student | no s.enrolled
+inv1 C: all s : Person - Student | no s.enrolled
+

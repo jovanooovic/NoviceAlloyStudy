@@ -1,0 +1,17 @@
+inv8 B: lone (^teaches)
+inv8 U: all x:Professor | x not in x.^(teaches)
+inv8 T: all x:Professor | x not in x.^(teaches.~projects)
+inv8 T: all x:Professor | x not in x.^(teaches.~projects.Course)
+inv8 B: all x:Professor | x not in x.^(teaches.~enrolled)
+inv8 B: teaches.~teaches not in iden
+inv8 T: all x:Professor | x not in x.^({x:Professor | some x.teaches})
+inv8 T: all x:Professor | x not in x.^({x:Professor | some teaches})
+inv8 T: all x:Professor | x not in x.^({some teaches})
+inv8 T: all x:Professor | x not in x.^({x:Professor | ~teaches})
+inv8 U: all x:Professor | x not in x.^(~teaches)
+inv8 T: all x:Professor | x not in x.^(~x.teaches)
+inv8 T: all x:Professor | x not in x.^(~teaches.x)
+inv8 U: all x:Professor | x not in x.^(teaches.teaches)
+inv8 T: all x:Professor | x not in x.^(grades.grades)
+inv8 U: all x:Professor | x not in x.^(teaches)
+

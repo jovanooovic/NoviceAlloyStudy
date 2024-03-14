@@ -1,0 +1,70 @@
+Pairs,82
+,,"no follows",1
+,,"#(follows) = 0",1
+,,"no follows.iden",1
+,,"no follows.User",7
+,,"no User.follows",2
+,,"(User.follows) = none",2
+,,"no follows.~follows",1
+,,"no follows.User.iden",1
+,,"no User & User.follows",1
+,,"User.follows & User = none",3
+,,"User.follows & User in none",1
+,,"all x: User | no x.follows",5
+,,"all u:User| no u.follows",6
+,,"all x: User | no follows.x",21
+,,"all u:User | no follows.u",16
+,,"all u : User | no follows->u",1
+,,"all u:User | no iden.follows",1
+,,"all u:User|  #u.follows=0",1
+,,"all u: User | no u->follows.u",1
+,,"all u: User | no u.follows->u",1
+,,"all y : User | not some follows.y",1
+,,"all x : User | not some follows.x",1
+,,"all u : User | u not in follows.User",2
+,,"all u: User | no u->follows->u",1
+,,"no follows.User and no follows.Influencer",2
+,,"all u1,u2:User | u1->u2 not in follows",1
+
+Pairs,16
+,,"no User.iden",1
+,,"all x : User | x -> x in posts",1
+,,"all u:User | u not in u.*follows",2
+,,"all x : User | x.follows not in x.follows",1
+,,"all u:User | u.follows not in u.follows",1
+,,"all x, y: User | x->y in follows - iden",1
+,,"all x : User | x.follows not in User.follows",1
+,,"all u : User | u -> u in follows and u != u",1
+,,"all x: User, y: User | x->y in follows - iden",1
+,,"all x: User, y: User | x->y in follows and x != y",2
+,,"all x : User | all y : User | x.follows = y and x != y",2
+,,"all x: User | all y: User | x->y in follows and x != y",1
+,,"all u1 : User| all u2 : User | u1 -> u2 in follows and u1 != u2",1
+
+Pairs,7
+,,"iden in follows",2
+,,"no iden - follows",1
+,,"no follows + iden",1
+,,"User.follows not in User",2
+,,"follows - iden = iden",1
+
+Pairs,15
+,,"no iden & ^follows",1
+,,"no ^follows & iden",2
+,,"all u:User | u not in u.^follows",12
+
+Pairs,1
+,,"no follows.User and no suggested.User",1
+
+Pairs,1
+,,"all u:User,u2:User | u=u2 and u2 not in u.follows",1
+
+Pairs,1
+,,"one u1,u2:User | u1->u2 in follows implies u1!=u2",1
+
+Pairs,4
+,,"all u : User | u not in u.follows and u not in u.suggested",1
+,,"all u:User | u->u not in follows and u->u not in suggested",2
+,,"all u:User | u->u not in follows
+all u:User | u->u not in suggested",1
+

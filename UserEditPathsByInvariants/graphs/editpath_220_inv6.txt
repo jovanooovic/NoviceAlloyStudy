@@ -1,0 +1,9 @@
+inv6 S: all x: Node | x in x.(^)adj
+inv6 B: all x: Node | x in x.^(adj)
+inv6 T: all x: Node | x in x.^(adj) or adj.x
+inv6 B: all x: Node | x in x.^(adj) or x in adj.x
+inv6 T: all x: Node | x in x.^(adj) or x in adj.^(x)
+inv6 B: all x: Node | x in x.^(adj) or x in Node.^(adj)
+inv6 B: all x: Node | x in Node.^(adj) or x in adj.Node
+inv6 O: all x, y: Node | x in y.^(adj) or x in adj.y or x = y
+

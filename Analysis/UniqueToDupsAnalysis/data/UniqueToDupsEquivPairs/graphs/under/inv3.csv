@@ -1,0 +1,50 @@
+Pairs,24
+,,"no adj & iden",2
+,,"no iden & ~adj",1
+,,"no n:Node | n in n.adj",2
+,,"all x: Node | x not in x.adj",1
+,,"all n : Node | n not in adj.n",2
+,,"all n: Node| n !in n.adj",6
+,,"all n: Node | n->n not in adj",1
+,,"no p: Node | p in p.~adj",1
+,,"all v : Node | no v.adj & v",1
+,,"all n:Node | n not in n.~adj",2
+,,"all v1, v2 : Node | v1->v2 in adj implies not v1->v1 in adj",1
+,,"all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies not v1 = v2 & v1",2
+,,"all v1, v2 : Node | v1->v2 in adj implies not (v1->v1 in adj and v2->v2 in adj)",1
+,,"all v1, v2 : Node | v1->v2 in adj implies not (v2->v1 in adj and v2->v2 in adj)",1
+
+Pairs,9
+,,"iden not in ^adj",5
+,,"not iden in ^adj",2
+,,"iden not in (^adj - adj)",1
+,,"iden not in ^adj or iden in adj",1
+
+Pairs,1
+,,"no n:Node | Node in n.adj",1
+
+Pairs,2
+,,"all n : Node | n != n.adj",2
+
+Pairs,1
+,,"no n:Node | Node in n.^adj",1
+
+Pairs,10
+,,"all x, y : Node | x->y in adj implies y->x not in adj",4
+,,"all x, y : Node | x->y in adj implies ^(y->x) not in adj",1
+,,"all x, y : Node | ^(x->y) in adj implies (y->x) not in adj",1
+,,"all x, y : Node | ^(x->y) in adj implies ^(y->x) not in adj",1
+,,"all v1, v2 : Node | v1->v2 in adj implies not v2->v1 in adj",1
+,,"inv2
+}
+
+pred inv2{
+all n1, n2 : Node | n1->n2 in adj implies not n2->n1 in adj",1
+,,"all v1, v2, v3 : Node | v1->v2 in adj and v2->v3 in adj implies not v1 = v3",1
+
+Pairs,1
+,,"all n1:Node| some n2:Node | n1->n2 in adj implies n2->n1 not in adj",1
+
+Pairs,1
+,,"all v1, v2 : Node | v1->v2 in adj and v2->v1 in adj implies v1 = v2 & v1",1
+

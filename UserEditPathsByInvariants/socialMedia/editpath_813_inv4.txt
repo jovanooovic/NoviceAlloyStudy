@@ -1,0 +1,5 @@
+inv4 T: all u : User, a: Ad, p : Photo | a in u.posts -> p not in Ad and p not in u.posts
+inv4 T: all u : User, a: Ad, p : Photo | a in u.posts -> (p not in Ad) and (p not in u.posts)
+inv4 O: all u : User, a: Ad, p : Photo | a in u.posts implies (p not in Ad) and (p not in u.posts)
+inv4 C: all u : User, a: Ad, p : Photo | a in u.posts and p in u.posts implies p in Ad
+

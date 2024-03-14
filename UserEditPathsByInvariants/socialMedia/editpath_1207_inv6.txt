@@ -1,0 +1,6 @@
+inv6 T: all i : Influencer, d : Day, p : Photo | i->p in follows and p->date = d
+inv6 T: all i : Influencer, d : Day, p : Photo | i->p in posts and p->date = d
+inv6 B: all i : Influencer, d : Day, p : Photo | i->p in posts and p.date = d
+inv6 C: all i : Influencer, d : Day | some p : Photo | i->p in posts and p->d in date
+inv6 C: all i : Influencer, d : Day | some p : Photo | i->p in posts and p->d in date
+

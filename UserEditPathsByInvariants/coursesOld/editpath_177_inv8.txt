@@ -1,0 +1,11 @@
+inv8 U: all p : Professor | p not in p.teaches
+inv8 B: Professor not in Course.(grades.Grade)
+inv8 S: Professor not in (Course-p.teaches).(grades.Grade)
+inv8 S: all p : Professor | not in (Course-p.teaches).(grades.Grade)
+inv8 B: all p : Professor | p not in (Course-p.teaches).(grades.Grade)
+inv8 B: all p : Professor | p not in p.teaches.(grades.Grade)
+inv8 B: all p : Professor | p not in (p.teaches).(grades.Grade)
+inv8 B: all p : Professor | p.enrolled not in (p.teaches).(grades.Grade)
+inv8 B: all p : Professor | p.enrolled not in (p.teaches)
+inv8 U: all p : Professor | no p.enrolled & (p.teaches)
+

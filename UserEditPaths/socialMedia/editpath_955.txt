@@ -1,0 +1,39 @@
+NA H: THEME UPDATE
+inv5 S: all x : Influencers | x in y.follows
+inv5 S: all x : Influencer | x in y.follows
+inv5 O: all x : Influencer | all y : User | x in y.follows and x not in x.follows
+inv7 S: all x : User |
+inv7 S: all x : User |
+inv5 S: all x : Influencer | (all y : User | x in y.follows	9
+inv7 S: all x : User |
+inv5 B: all x : Influencer | (all y : User | x in y.follows)
+inv7 U: all x : User | x.suggested in x.follows.follows
+inv7 U: all x : User | x.suggested in x.follows.follows && x not in x.suggested
+inv7 U: all x : User | (x.suggested in x.follows.follows) && (x not in x.suggested)
+inv7 B: all x : User | (x.suggested in x.follows.follows) && (x not in x.suggested) && (x.suggested not in x.follows)
+inv1 C: all x : Photo | one posts.x	posts in User one -> set Photo
+inv2 C: all x : User | x not in x.follows
+inv3 O: all x : User | x.sees in Ad or x.sees in x.follows.posts		all x : User | x.sees in (x.follows.posts + Ad)
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+inv6 C: all x : Influencer | all d : Day | d in x.posts.date
+inv8 C: all x : User | all y : Ad | (y in x.sees => y in (x.follows.posts + x.suggested.posts))
+inv7 B: all x : User | (x.suggested in x.follows.follows) && (x not in x.suggested) && (x.suggested not in x.follows)
+inv7 B: all x : User | (x.suggested in x.follows.follows) && (x.suggested not in x.follows)
+inv7 U: all x : User | (x.suggested in x.follows.follows) || (x.suggested not in x.follows)
+inv7 B: all x : User | (x.suggested in x.follows.follows) && (x.suggested not in x.follows)
+inv7 T: all x : User | (x.suggested in x.follows.follows) && no (x.suggested in x.follows)
+inv7 S: all x : User | (x.suggested in x.follows.follows) & no (x.suggested in x.follows)
+inv7 T: all x : User | (x.suggested in x.follows.follows) & (x.suggested not in x.follows)
+inv7 S: all x : User | (x.suggested in (x.follows.follows & not in x.follows)
+inv7 B: all x : User | (x.suggested in x.follows.follows) && not (x.suggested in x.follows)
+inv7 B: (all x : User | suggested.x in follows.follows.x) && (no x : User | suggested.x in follows.x)
+inv7 B: (all x : User | suggested.x in follows.follows.x) && (no x : User | suggested.x in follows.x) && (no x: User | x in suggested.x)
+inv7 U: (all x : User | suggested.x in follows.follows.x) && (no x : User | suggested.x in follows.x && x in suggested.x)
+inv7 U: no x : User | (x.suggested in x.follows) && (x in x.suggested)
+inv7 B: all x : User | (x.suggested not in x.follows) && (x not in x.suggested)
+inv7 B: all x : User | (x.suggested not in x.follows) && (x not in x.suggested)
+inv7 B: all x : User | (suggested.x not in x.follows) && (x not in x.suggested)
+inv7 B: all x : User | (suggested.x not in x.follows) && (x not in suggested.x)
+inv7 U: all x : User | (x not in x.suggested)
+inv5 B: all x : Influencer | (all y : User | x in y.follows)
+

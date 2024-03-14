@@ -1,0 +1,11 @@
+inv1 E:
+inv1 T: all w:Worker | (w & Human) or (w & Robot)
+inv1 T: all w:Worker | Workstation.w implies (w & Human or w & Robot)
+inv1 S: all w:Worker | Workstation.w | (w & Human or w & Robot)
+inv1 T: all w:Worker | all wo:Workstation | (wo.w & Human or wo.w & Robot)
+inv1 T: no (Workstation.workers & Human and Workstation.workers & Robot)
+inv1 B: no (Workstation.workers & Human) and no (Workstation.workers & Robot)
+inv1 T: (Workstation.workers & Human) or  (Workstation.workers & Robot)
+inv1 T: (Workstation.workers & Human) or (Workstation.workers & Robot)
+inv1 T: (Workstation.workers & Human) implies no (Workstation.workers & Robot)
+

@@ -1,0 +1,56 @@
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u1 in suggested.u3)
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u3 in follows.u2)) implies (u3 in suggested.u1)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1) && u1 != u2 && u2 != u3) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)	all u4 : User | u4 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3) && (u3 not in follows.u1)) implies (u3 in suggested.u1)	all u4 : User | u4 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | u1 in follows.u2 implies u2 not in suggested.u1
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u2 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u2 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u1, u2 : User | (u1 in follows.u2) implies (u1 not in suggested.u2)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4 && u4 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies ((u5 not in suggested.u4) && (u4 not in suggested.u4))
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies u5 not in suggested.u4
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u1, u3 : User | (u1 in follows.u3) implies (u3 not in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)		all u : User | u not in suggested.u	all u1, u3 : User | (u1 in follows.u3) implies (u1 not in suggested.u3)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none suggested.u6)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none suggested.u6)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (u6.suggested none)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested none)
+inv7 S: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)	all u6 : User | (none u6.follows) implies (none u6.suggested)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u3 in suggested.u1)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u5 not in suggested.u4)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5)
+inv7 B: all u1, u2, u3 : User | ((u1 in follows.u2) && (u2 in follows.u3)) implies (u1 in suggested.u3)	all u : User | u not in suggested.u	all u4, u5 : User | (u4 in follows.u5) implies (u4 not in suggested.u5 && u5 not in suggested.u4)
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows in suggested.u1
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows in suggested.u1	all u : User | u not in suggested.u
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows-u1 in suggested.u1	all u : User | u not in suggested.u
+inv7 B: all u1, u2 : User | u1 in follows.u2 implies u2.follows-u1 in suggested.u1
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-u1 in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies ((u2.follows)-u1 in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-(u1+u2) in suggested.u1)
+inv7 B: all u1, u2 : User | (u1 in follows.u2) implies (u2.follows-u1 in suggested.u1)
+inv7 E:
+inv7 B: all u1, u2, u3 : User | (u1 in follows.u2 && u2 in follows.u3 && u1 not in follows.u3) implies (u3 in suggested.u1)
+

@@ -1,0 +1,25 @@
+inv1 T: one Entry in Track	one Exit in Track
+inv1 U: Entry in Track	Exit in Track
+inv1 U: Exit in Track
+inv1 E:
+inv1 B: some t : Track | t = Entry
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+inv1 O: some t : Track | t = Entry	one t : Track | t = Exit
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+inv1 E:
+inv1 O: some disj t1, t2 : Track | t1 = Entry and t2 = Exit
+inv1 O: some t1, t2 : Track | t1 = Entry and t2 = Exit
+inv1 O: some t1, t2 : Track | t1 = Entry and t2 = Exit	Track = Junction
+inv1 E:
+inv1 U: Entry in Track
+inv1 B: some t : Track | t = Entry
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+inv1 O: some t : Track | t = Entry and t != Junction	some t : Track | t = Exit and t != Junction
+inv1 O: some t : Track | t = Entry and t = Junction	some t : Track | t = Exit and t = Junction
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+inv1 O: one t : Track | t = Entry	some t : Track | t = Exit
+inv1 O: one t : Track | t = Entry	one t : Track | t = Exit
+inv1 O: some t : Track | t = Entry	one t : Track | t = Exit
+inv1 O: some t : Track | t = Entry	some t : Track | t = Exit
+

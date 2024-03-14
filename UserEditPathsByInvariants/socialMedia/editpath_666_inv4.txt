@@ -1,0 +1,6 @@
+inv4 B: all u:User | some a:Ad | u->a in posts => (not some p:Photo-Ad | u->p in posts)
+inv4 S: all u:User | some p:Photo-Ad | u->p in posts => u.post in Ad
+inv4 B: all u:User | some p:Photo-Ad | u->p in posts => u.posts in Ad
+inv4 B: all u:User | some p:Ad | u->p in posts => u.posts in Ad
+inv4 C: all u:User | (some p:Ad | u->p in posts) => u.posts in Ad
+

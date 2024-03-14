@@ -1,0 +1,53 @@
+NA H: THEME UPDATE
+inv3 B: (profile.ids).~(profile.ids) in iden
+inv2 C: all u : User | u.profile.source in (Institution + u)
+inv3 U: (profile.ids.source).~(profile.ids.source) in iden
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv4 O: ~visible.visible in iden
+inv4 B: (visible.ids).~(visible.ids) in iden
+inv4 B: one ~(visible.ids).(visible.ids)
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv4 O: ~(visible.ids).(visible.ids) in (User -> Id)
+inv4 B: ~(visible.source).(visible.source) in iden
+inv4 B: one ~(visible.ids).(visible.ids)
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv4 O: ~(visible).(visible) in iden
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv2 C: all u : User | u.profile.source in (Institution + u)
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv3 B: all s : Source | (profile.ids).~(profile.ids) in iden
+inv4 B: one (visible.ids).~(visible.ids)
+inv4 B: lone (visible.ids).~(visible.ids)
+inv4 B: (visible.ids).~(visible.ids) in iden
+inv3 C: all s: Source, u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+inv4 B: (visible.ids).~(visible.ids) in iden
+inv4 B: ~(visible.ids).(visible.ids) in iden
+inv4 U: ~(ids.visible).(ids.visible) in iden
+inv4 B: ~((visible:>(User.profile)).ids).((visible:>(User.profile)).ids) in iden
+inv4 B: all w: Work | ~((visible:>w).ids).((visible:>w).ids) in iden
+inv4 B: ~((visible:>(User.profile)).ids).((visible:>(User.profile)).ids) in iden
+inv4 B: all u : User | ~((visible:>(u.profile)).ids).((visible:>(u.profile)).ids) in iden
+inv4 B: all u : User | ~((visible:>(u.profile))).((visible:>(u.profile))) in iden
+inv4 B: all w : Work | ~(((profile.w)<:visible).ids).(((profile.w)<:visible).ids) in iden
+inv4 S: all w : Work, u : User |  ~(visible.((u.profile)<:ids).(visible.((u.profile)<:ids) in iden
+inv4 S: all w : Work, u : User |  ~(visible.((u.profile)<:ids).(visible.((u.profile)<:ids)) in iden
+inv4 B: all w : Work, u : User |  ~(visible.((u.profile)<:ids)).(visible.((u.profile)<:ids)) in iden
+inv4 U: all w : Work |  visible.w in User
+inv4 B: all w : Work |  visible.w in User and ~ids.ids in iden
+inv4 O: all w : Work |  visible.w in User and ids.~ids in iden
+inv4 B: all w : Work |  visible.w in User and ~ids.ids in iden
+inv4 B: all w : Work |  visible.w in User and ~ids.ids in iden
+inv4 O: all w : Work |  visible.w in User and ~ids.ids in iden and ids.~ids in iden
+inv4 O: all w : Work |  visible.w in User and ids.~ids in iden
+inv4 U: all w : Work |  visible.w in User
+inv4 O: all w : Work |  visible.w in User and ~ids.ids in iden and ids.~ids in iden
+inv4 T: all w : Work | some (visible.w in User and ~ids.ids in iden and ids.~ids in iden)
+inv4 O: all w : Work | some u : User | visible.w in User and ~ids.ids in iden and ids.~ids in iden
+inv4 O: all w : Work | some u : User | visible.w in User and ~ids.ids in iden and ids.~ids in iden and u.visible in Work
+inv4 O: some u : User | u.visible in u.profile and ~ids.ids in iden and ids.~ids in iden
+inv4 O: some u : User | u.visible in Work and ~ids.ids in iden and ids.~ids in iden
+inv4 B: some u : User | u.visible in Work and ~ids.ids in iden
+inv4 O: some u : User | u.visible in Work and ~ids.ids in iden and ids.~ids in iden
+inv4 O: all u : User | u.visible in Work and ~ids.ids in iden and ids.~ids in iden
+

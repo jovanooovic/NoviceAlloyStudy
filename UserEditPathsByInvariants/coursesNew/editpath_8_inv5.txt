@@ -1,0 +1,21 @@
+inv5 B: all p : Project | one s : Student | p in s.projects
+inv5 B: all p : Project | one s : Student | p in s.projects and no Professor.projects
+inv5 B: all p : Project | one s : Student | p in s.projects and no (Professor - Student).projects
+inv5 B: all p : Project | one s : Student | p in s.projects and no Professor.projects
+inv5 S: all p : Project | one s : Student | p in s.projects and no Professor-Student).projects
+inv5 B: all p : Project | one s : Student | p in s.projects and no (Professor-Student).projects
+inv5 U: all p : Project | some s : Student | p in s.projects and no (Professor-Student).projects
+inv5 B: all p : Project | some s : Student | p in s.projects and no Professor.projects
+inv5 B: all p : Project | some s : Student | some t : Professor | 	  		no Professor.projects 	  			and	  		(p in s.projects or p in t.teaches)
+inv5 B: all p : Project | some s : Student | some t : Professor | 	  		no Professor.projects 	  			and	  		(p in s.projects or p in t.teaches)
+inv5 B: all p : Project | some s : Student | some t : Professor | 	  		no Professor.projects
+inv5 B: all p : Project  | 	  		no Professor.projects
+inv5 B: no Professor.projects
+inv5 S: no (Professor-Students).projects
+inv5 U: no (Professor-Student).projects
+inv5 B: no (Professor-Student).projects and (some s : Student | all p : Project | p in s.projects)
+inv5 B: no (Professor-Student).projects and (some s : Student | all p : Project | p in s.projects)
+inv5 U: no (Professor-Student).projects
+inv5 B: no (Professor-Student).projects 	  	and (some s : Person | all p : Project | p in s.projects)
+inv5 B: no (Professor-Student).projects 	  	and 	  (some s : Person | all p : Project | p in s.projects)
+

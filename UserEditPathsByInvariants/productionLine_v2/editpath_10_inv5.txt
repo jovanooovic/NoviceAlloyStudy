@@ -1,0 +1,7 @@
+inv5 B: all ws : Workstation | Human in ws.workers iff Robot not in ws.workers
+inv5 B: all ws : Workstation | Human in ws.workers implies Robot not in ws.workers
+inv5 B: all ws : Workstation | Human in ws.workers implies Robot not in ws.workers	all ws : Workstation | Robot in ws.workers implies Human not in ws.workers
+inv5 S: all ws : Workstation, some h : Human, some r : Robot | h in ws.workers iff r not in ws.workers
+inv5 B: all ws : Workstation | some h : Human | some r : Robot | h in ws.workers iff r not in ws.workers
+inv5 O: all ws:Workstation | ws.workers in Human iff ws.workers not in Robot
+

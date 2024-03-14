@@ -1,0 +1,12 @@
+inv3 T: all u : User | u.sees.u.follows.posts
+inv3 T: all u : User | u.sees implies u.follows.posts - Ad
+inv3 T: all u : User | u.sees implies u.follows.posts
+inv3 T: all u : User | u.sees implies u.follows.posts not Ad
+inv3 T: all u : User | u.sees some u.follows.posts not Ad
+inv3 T: all u : User | u.sees some u.follows.posts not Ad	all a : Ad | User.sees.a
+inv3 T: all u : User, p : Photo | u.sees.p implies u.follows.posts.p not Ad
+inv3 T: all u : User | u.sees - Ad implies u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 T: all u : User | u.sees in u.follows.posts not Ad
+inv3 O: all u : User | u.sees in u.follows.posts - Ad
+

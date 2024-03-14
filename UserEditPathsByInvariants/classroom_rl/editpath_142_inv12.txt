@@ -1,0 +1,12 @@
+inv12 B: all t: Teacher | some Class.Groups[t]
+inv12 O: Teacher in Tutors.Class.Groups.Group
+inv12 B: Teacher in Tutors.(Class.Groups.Group)
+inv12 B: all t: Teacher | some g: Group | t in Class.Groups.g
+inv12 O: all t: Teacher | some (Class.Groups).(t.Tutors)
+inv12 B: all t: Teacher | some (t.Tutors).(Class.Groups)
+inv12 B: Teacher in Class.Groups.Group
+inv12 S: Teacher in Class.Groups.Group	  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group
+inv12 S: Teacher in Class.Groups.Group	  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group
+inv12 S: Teacher in Class.Groups.Group && 	  for t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group
+inv12 B: Teacher in Class.Groups.Group && 	  all t: Teacher | some c: Class | c in t.Teaches implies t in c.Groups.Group
+

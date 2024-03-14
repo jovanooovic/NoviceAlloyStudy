@@ -1,0 +1,20 @@
+inv7 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |		all  disj s1,s2 :State |some e:Event |  (s1->e->s2) in trans implies ( Init in s2.^adj  )
+inv7 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |		all   s1,s2 :State |some e:Event |  (s1->e->s2) in trans implies ( Init in s2.^adj  )
+inv7 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |		all disj s1,s2 :State |some e:Event |  (s1->e->s2) in trans implies ( Init in s2.^adj )
+inv7 S: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  Init.^adj & adj^.Init
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  Init.^adj & adj.^Init
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  some Init in (Init.^adj).^adj
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  some i:Init| i.^adj  implies (some Init in (i.^adj).^adj )
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  some i:Init| some i.^adj  implies (some Init in (i.^adj).^adj )
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i: Init.^adj|  (some Init in (i.^adj).^adj )
+inv7 T: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i: Init.^adj|  (some Init in i.^adj )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some Init.^adj implies some ((Init.^adj).^adj &Init)
+inv7 S: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   all Init.^adj implies some ( (Init.^adj).^adj & Init )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some Init.^adj implies some ( (Init.*adj).^adj & Init )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some Init.^adj implies some ( (Init.^adj).^adj & Init )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some (Init.^adj)-Init implies some ( (Init.^adj).^adj & Init )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some (Init.^adj)-Init implies some ( ((Init.^adj)-Init).^adj & Init )
+inv7 U: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some (Init.^adj) implies some ( (Init.^adj).^adj & Init )
+inv7 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	   some (Init.^adj) implies lone ( (Init.^adj).^adj & Init )
+inv7 C: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	    all s:(Init.^adj) | some ( s.^adj & Init )
+

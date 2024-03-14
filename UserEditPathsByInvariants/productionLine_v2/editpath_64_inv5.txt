@@ -1,0 +1,17 @@
+inv5 T: all h :  Human | all r : Robot | all w : workstation | h->w in workers implies r->w not in workers
+inv5 S: all h :  Human | all r : Robot | all w : workstation | h->w in workers
+inv5 S: all h :  Human | all r : Robot | all w : Workstation | h->w in workers
+inv5 S: all h :  Human | all r : Robot | all w : Workstation
+inv5 S: all h :  Human | all r : Robot | all w : Workstation ! h -> w in workers
+inv5 S: all h :  Human | all r : Robot | all w : Workstation ! h -> w in workers implies r->w not in workers
+inv5 S: all h :  Human | all r : Robot | all w : Workstation | h -> w in workers implies r->w not in workers
+inv5 U: all h :  Human | all r : Robot | all w : Workstation | h -> w in workers implies r->w not in workers
+inv5 S: all w : Workers | all w1 :  Workstation | w1->w in workers
+inv5 B: all w : Worker | all w1 :  Workstation | w1->w in workers
+inv5 T: all w1,w2 : Worker | all ws1,ws2 :  Workstation | (ws1->w1 in workers and ws2->w2 and w2 in Human) implies ( w2 in Human)
+inv5 T: all w1,w2 : Worker | all ws1,ws2 :  Workstation | (ws1->w1 in workers and ws2->w2 and w2 in Human) implies (w2 in Human)
+inv5 U: all w1,w2 : Worker | all ws1,ws2 :  Workstation | (ws1->w1 in workers and ws2->w2 in workers and w2 in Human) implies (w2 in Human)
+inv5 O: all w1,w2 : Worker | all ws1,ws2 :  Workstation | (ws1->w1 in workers and ws2->w2 in workers and w1 in Human) implies (w2 in Human)
+inv5 O: all w1,w2 : Worker | all ws1,ws2 :  Workstation | (ws1->w1 in workers and ws2->w2 in workers and w2 in Human) implies (w1 in Human)
+inv5 O: all w1,w2 : Worker | all ws :  Workstation | (ws->w1 in workers and ws->w2 in workers and w2 in Human) implies (w1 in Human)
+

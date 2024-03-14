@@ -1,0 +1,15 @@
+inv5 S: some x : Person |
+inv5 S: some x : Person |
+inv5 S: some x : Person |
+inv5 S: some x : Person |
+inv5 B: all x : Person, c : Class | x in Teacher and x->c in Teaches
+inv5 S: all x : Person, c : Class | x->c in Teaches
+inv5 B: all x : Person, c : Class | x->c in Teaches
+inv5 B: all x : Person | some c : Class | x->c in Teaches
+inv5 U: some x : Person | some c : Class | x->c in Teaches
+inv5 T: all x : Person | all c : Class | one x->c in Teaches
+inv5 B: some x : Teacher | all c : Class | x->c in Teaches
+inv5 C: some x : Teacher | some c : Class | x->c in Teaches
+inv5 C: some x : Teacher | some c : Class | x->c in Teaches
+inv5 C: some c : Class | some x : Teacher | x->c in Teaches
+

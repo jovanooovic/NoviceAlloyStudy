@@ -1,0 +1,5 @@
+inv8 O: all u1, u2 : User | all ad : Ad | ad in u1.sees implies ((ad in u2.posts and u2 in u1.follows) or (ad in u2.posts and u2 in u1.suggested))
+inv8 O: all u1 : User | some u2 : User | all ad : Ad | ad in u1.sees implies ((ad in u2.posts and u2 in u1.follows) or (ad in u2.posts and u2 in u1.suggested))
+inv8 C: all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)
+inv8 O: all u1 : User | some u2 : User | all ad : Ad | ad in u1.sees	implies	(ad in u2.posts and u2 in u1.follows) or (ad in u2.posts and u2 in u1.suggested)
+

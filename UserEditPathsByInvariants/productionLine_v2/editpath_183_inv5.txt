@@ -1,0 +1,5 @@
+inv5 O: all h : Human, r : Robot, w : Workstation | not h -> w in workers and r -> w in workers
+inv5 U: all h : Human, r : Robot, w : Workstation | not h -> w in workers and not r -> w in workers
+inv5 U: all h : Human, r : Robot, w : Workstation | not (h -> w in workers and r -> w in workers)
+inv5 C: all h : Human, r : Robot, w : Workstation | not (w -> h in workers and w -> r in workers)
+

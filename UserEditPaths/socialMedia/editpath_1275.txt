@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo | one posts.p
+inv2 C: all u: User | u not in u.follows
+inv3 T: all u : User | u.follows
+inv3 T: all u : User | u.sees & u.follows
+inv3 T: all u : User | u.sees & u.follows.posts
+inv3 T: all u : User | u.sees & u.follows.posts
+inv3 O: all u1 : User | all ph : Photo |	ph in u1.sees implies (some u2:User | ph in u2.posts and u2 in u1.follows)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees implies (some u2:User | ph in u2.posts and u2 in u1.follows) or ph in Ad
+inv4 S: all u1 : User | all ph : Photo |	ph in u1.posts and ph in ad implies u1.posts in Ad
+inv4 C: all u1 : User | all ph : Photo |	ph in u1.posts and ph in Ad implies u1.posts in Ad
+inv5 U: all i1 : Influencer | i1.follows in User
+inv5 B: all i1 : Influencer | User in i1.follows
+inv5 S: all i1 : Influencer | all User in i1.follows
+inv5 B: all i1 : Influencer | User in i1.follows
+inv5 B: all i1 : Influencer | User-i1 in i1.follows
+inv5 T: all i1 : Influencer | i1.follows is User-i1
+inv5 U: all i1 : Influencer | i1.follows in User-i1
+inv5 B: all i1 : Influencer | all u : User |	i1 in u.follows
+inv5 T: all i : Influencer | all u : User |	follows.i
+inv5 B: all i : Influencer | all u : User |	i in u.follows
+inv5 B: all i : Influencer | some u : User |	i in u.follows
+inv5 B: all i : Influencer | all u : User |	i in u.follows
+inv5 O: all i : Influencer | all u : User |	i in u.follows-i
+

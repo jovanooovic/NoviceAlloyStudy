@@ -1,0 +1,17 @@
+inv11 T: all c : Class  | c.Groups iff c in  Teacher.Teaches
+inv11 T: all c : Class  | c.Groups iff c in  Teacher.Teaches
+inv11 T: all c : Class  | c.Groups iff c in  Teacher.Teaches
+inv11 T: all c : Class  |  c not in   Teacher.Teaches =>  none c.Groups
+inv11 T: all c : Class  |  c not in  Teacher.Teaches => not  c.Groups
+inv11 B: all c : Class  | c not in  Teacher.Teaches
+inv11 S: all c : Class  | c.groups in  Teacher.Teaches
+inv11 S: all c : Class  | some c.Groups | c  in  Teacher.Teaches
+inv11 O: all c : Class  | c  in  Teacher.Teaches
+inv11 S: Class not in Teacher.Teaches => Class.Groups = empty
+inv11 T: Class not in Teacher.Teaches => Class.Groups = none
+inv11 S: all c : Class | c not in Teacher.Teaches => class.Groups = none
+inv11 T: all c : Class | c not in Teacher.Teaches => c.Groups = none
+inv11 T: Class not in Teacher.Teaches => Class.Groups = none
+inv11 U: all c: Class | some c.Groups implies some Teacher.Teaches
+inv11 C: all c: Class | some c.Groups implies c in Teacher.Teaches
+

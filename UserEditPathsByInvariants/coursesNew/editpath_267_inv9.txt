@@ -1,0 +1,9 @@
+inv9 T: all p1,p2 : Professor | no p2 in p1.(teaches.~enrolled)
+inv9 B: all p1,p2 : Professor | p2 not in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | no p2 : Professor | p2 in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | no p2 : Professor | p2 in p1.^(teaches.~enrolled)
+inv9 B: no p1 : Professor | no p2 : Professor | p2 in p1.^(teaches.~enrolled)
+inv9 B: no p1,p2 : Professor | p2 in p1.(teaches.~enrolled)
+inv9 B: all p1 : Professor | all p2 : Person | (p2 in p1.(teaches.~enrolled)) implies (p2 not in Professor)
+inv9 B: all p1,p2 : Professor | ((p1.teaches) & (p2.teaches) != none) implies ((p1 not in p2.(teaches.~enrolled)) and (p2 not in p1.(teaches.~enrolled)))
+

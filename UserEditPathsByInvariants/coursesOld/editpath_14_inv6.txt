@@ -1,0 +1,5 @@
+inv6 T: all person : Student | all projects : Project | projects in person.projects implies projects in person.enrolled.projects
+inv6 T: all person : Student | all projects : Project | projects in person.projects implies projects in person.enrolled.projects
+inv6 T: all person : Student | all projects : Project | all course : Course | (projects in person.projects and projects in course.projects) implies course in person.enrolled
+inv6 B: all person : Student | all project : Project | all course : Course | (project in person.projects and project in course.projects) implies course in person.enrolled
+

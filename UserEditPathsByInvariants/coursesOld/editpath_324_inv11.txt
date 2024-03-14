@@ -1,0 +1,23 @@
+inv11 T: all s:Student | s.grades in s.enrolled
+inv11 T: all s:Student | s.grades in s.enrolled
+inv11 S: all s:Student | (s->Grades).grades in s.enrolled
+inv11 T: all s:Student | (s->Grade).grades in s.enrolled
+inv11 T: all s:Student | grades in s.enrolled
+inv11 T: all s:Student | grades.s in s.enrolled
+inv11 S: all s:Student | Grades.grade in s.enrolled
+inv11 S: all s:Student | Grade.grade in s.enrolled
+inv11 T: all s:Student | Grade.grades in s.enrolled
+inv11 T: all s:Student | grades in s.enrolled
+inv11 T: all s:Student | s.grades in s.enrolled
+inv11 T: all s:Student | Course.grades in s.enrolled
+inv11 T: all s:Student | grades.(s->Grade) in s.enrolled
+inv11 T: all s:Student | grades.s in s.enrolled
+inv11 U: all s:Student | grades.s.Grade in s.enrolled
+inv11 T: all s:Student | s.Grade in s.enrolled
+inv11 S: all s:Student | (s -> Grades) in s.enrolled
+inv11 T: all s:Student | (s -> Grade) in s.enrolled
+inv11 T: all s:Student | grades.(s -> Grade) in s.enrolled
+inv11 T: all s:Student | s.Grade in s.enrolled
+inv11 T: all s:Student | s. Grade in s.enrolled
+inv11 T: all s:Student | grades.(Person -> Grade)
+

@@ -1,0 +1,9 @@
+inv5 B: Influencer.follows = User.follows - Influencer
+inv5 B: all i : Influencer | i.follows = User.follows - i
+inv5 B: all i : Influencer | follows.i = User.follows - i
+inv5 C: all i : Influencer | follows.i = User - i
+inv5 B: all i : Influencer | follows.i = User
+inv5 B: follows.Influencer = User
+inv5 B: follows.Influencer = User - Influencer
+inv5 C: all i : Influencer | follows.i = User - i
+

@@ -1,0 +1,24 @@
+inv5 S: Students.projects :> Project && some Person <: projects.Project
+inv5 T: Student.projects :> Project && some Person <: projects.Project
+inv5 T: Student.projects && some Person <: projects.Project
+inv5 T: Student.projects && some projects.Project
+inv5 B: all x: Person | x in projects.Project & Student
+inv5 B: all x: Person | x in projects.Project & Student	  			  	  some x: Person | x in projects.Project
+inv5 T: all x: Person | x in projects.Project & Student	  			  	  some Person in projects.Project
+inv5 T: all x: Person | x in projects.Project & Student	  			  	  some projects.Project
+inv5 B: all x: Person | x in projects.Project & Student	  			  	  some  Person <: projects.Project
+inv5 S: all Student in projects.Project  			  	  some  Person <: projects.Project
+inv5 B: all x: Person | x in projects.Project => x in Student	  			  	  some  Person <: projects.Project
+inv5 T: Student <: projects.Project	  			  	  some  Person <: projects.Project
+inv5 T: all x : Person | x.projects :> Project => x in Student	  			  	  	some  Person <: projects.Project
+inv5 T: all x : Person | (x.projects :> Project) => x in Student	  			  	  	some  Person <: projects.Project
+inv5 T: all x : Person | (x.projects :> Project) => x in Student
+inv5 U: all x : Person | (some x.projects :> Project) => x in Student
+inv5 B: all x : Person | some y : Project | x in projects.y => x not in teaches.(Course<:projects.y)
+inv5 B: all x : Person | all y : Project | x in projects.y => x not in teaches.(Course<:projects.y)
+inv5 B: all x : Person | all y : Course | x.projects in y.projects => y not in x.teaches
+inv5 U: all x : Person | (some x.projects) => x in Student
+inv5 B: all x : Person | (some x.projects) => x in Student	  			  	  	some  Person <: projects.Project
+inv5 B: all x : Person | (some x.projects) => x in Student && x not in Professor	  			  	  	some  Person <: projects.Project
+inv5 B: some  Person <: projects.Project
+

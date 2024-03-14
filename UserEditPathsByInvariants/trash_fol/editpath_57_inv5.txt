@@ -1,0 +1,3 @@
+inv5 T: all f:File | f not in Protected -> f in Trash		}		run inv5 for 3		/* A file links to at most one file. */		pred inv5{	all f:File | f not in Protected -> f in Trash
+inv5 C: all f:(File - Protected) | f in Trash
+

@@ -1,0 +1,4 @@
+inv3 S: all p : Photo - Ad | all u1, u2 : User | (p in u1.sees and p in u2.posts) implies u2 in u.follows
+inv3 B: all p : Photo - Ad | all u1, u2 : User | (p in u1.sees and p in u2.posts) implies u2 in u1.follows
+inv3 C: all u : User, p : Photo | u -> p in sees => p in Ad + u.follows.posts
+

@@ -1,0 +1,12 @@
+inv5 T: all x: Person, y: Project| lone x-> y in projects implies x in Student
+inv5 B: all x: Person, y: Project| lone y.(Person<: projects) implies x -> y in projects and x in Student
+inv5 U: all x: Person, y: Project| some y.(Person<: projects) implies x -> y in projects and x in Student
+inv5 U: all x: Person, y: Project| some y.(Person<: projects) implies x -> y in projects and x in Student
+inv5 B: all x: Person, y: Project| some (Person<: projects).y implies x -> y in projects and x in Student
+inv5 U: all x: Person, y: Project| x->y in projects implies x in Student and some (Person <: projects).y
+inv5 U: all x: Person, y: Project| x->y in projects implies x in Student and some x.(Person <: projects)
+inv5 U: all x: Person-Professor, y: Project| some (Person <: projects).y
+inv5 T: all x: Person-Professor, y: Project| some x.(Person <: projects).y
+inv5 U: all y: Project| some (Person <: projects).y implies ( all x: Person |  x-> y in projects implies x in Student)
+inv5 U: all y: Project, x: Person| some (Person <: projects).y and x->y in projects implies x in Student
+

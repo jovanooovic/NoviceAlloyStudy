@@ -1,0 +1,27 @@
+inv9 O: ~Teaches.Teaches in iden and Teaches.~Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 B: ~Teaches.Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 T: (Teacher.Teaches).~Teaches in iden
+inv9 T: Teacher & ((Teacher.Teaches).~Teaches) in iden
+inv9 T: iden(Teacher) & (Teaches.~Teaches) in iden
+inv9 T: iden[Teacher] & (Teaches.~Teaches) in iden
+inv9 O: (Teaches.~Teaches) in iden
+inv9 T: (Teaches.~Teaches).Teacher in iden
+inv9 T: Teacher.(Teaches.~Teaches) in iden
+inv9 O: (Teacher <: Teaches).~Teaches in iden
+inv9 U: (Teacher <: Teaches).~(Teaches :> Teacher) in iden
+inv9 O: (Teacher <: Teaches).~(Teaches) in iden
+inv9 S: ((Teacher + Students) <: Teaches).~(Teaches) in iden
+inv9 O: ((Teacher + Student) <: Teaches).~(Teaches) in iden
+inv9 O: (Teaches).~(Teaches) in iden
+inv9 O: all c : Class | lone (Teacher->c)
+inv9 O: all c : Class | #(Teacher->c) < 2
+inv9 O: all c : Class |  lone Teaches.c
+inv9 T: (Teacher <: Teaches)
+inv9 O: (Teacher <: Teaches).(~Teaches) in iden
+inv9 U: (Teacher <: Teaches).(~(Teaches :> Teacher)) in iden
+inv9 C: (Teacher <: Teaches).(~(Teacher <: Teaches)) in iden
+inv9 T: (Teacher <: Teaches).(~Teacher <: Teaches) in iden
+inv9 C: (Teacher <: Teaches).~(Teacher <: Teaches) in iden
+

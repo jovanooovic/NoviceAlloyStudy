@@ -1,0 +1,12 @@
+inv7 U: all x,y: User | y in x.suggested implies some p: User | (y in p.follows) and (y not in x.follows) and (p in x.follows)
+inv7 S: all x: User | all y: x.follows | p:User in x.suggested implies (p in y.follows) and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | (p in (x.follows).follows) and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 S: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows - x.follows - x and (p not in x.follows)
+inv7 S: all x: User | x.suggested = (x.follows).follows - x.follows - x
+inv7 S: all x: User | x.suggested = (x.follows).follows-x.follows-x
+inv7 U: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows and (p not in x.follows)
+inv7 U: all x,y: User | y in x.suggested implies some p:User | p in (x.follows).follows - x.follows - x and (p not in x.follows)
+inv7 C: all x: User | x.suggested = (x.follows).follows - x.follows - x
+

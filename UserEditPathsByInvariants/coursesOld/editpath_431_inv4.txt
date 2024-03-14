@@ -1,0 +1,4 @@
+inv4 U: all s : Person | all tp : s.projects | tp in Course.projects
+inv4 B: all c1, c2 : Course | some tp : Project | tp in c1.projects and tp in c2.projects implies c1 = c2
+inv4 C: all tp : Project | one c : Course | tp in c.projects
+

@@ -1,0 +1,11 @@
+inv3 S: all u : User | Ad in u.sees	all u : User | all p : u.sees - Add | some u : u.follows | p in u.posts
+inv3 O: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | some u : u.follows | p in u.posts
+inv3 O: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | some f : u.follows | p in f.posts
+inv3 B: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | some f : u.follows | p in f.posts or p in u.posts
+inv3 O: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | some f : u.follows | p in f.posts
+inv3 S: all u : User | Ad in u.sees	all u : User | some p in u.sees - Add => p in u.follows.posts
+inv3 S: all u : User | Ad in u.sees	all u : User | all p : u.sees - Add | p in u.follows.posts
+inv3 O: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | p in u.follows.posts
+inv3 O: all u : User | Ad in u.sees	all u : User | all p : u.sees - Ad | p in u.follows.posts
+inv3 C: all u : User | all p : u.sees - Ad | p in u.follows.posts
+

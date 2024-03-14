@@ -1,0 +1,9 @@
+inv4 T: all u:User| u.posts in Ad implies all x:User| x.posts.Ad
+inv4 T: all u:User| one u.posts in Ad implies u.posts= Ad
+inv4 T: all u:User| one u.posts in Ad implies u.posts= Ad
+inv4 S: all u:User| one u.posts in Ad implies u.posts== Ad
+inv4 S: all u:User| u.posts in Ad implies x.follows.sees in Ad
+inv4 T: all u:User| one u.posts in Ad implies all x:User| x.posts in Ad
+inv4 T: all u:User| one u.posts in Ad implies u.follows.sees in Ad
+inv4 T: some u:User| one u.posts in Ad implies u.follows.sees in Ad
+

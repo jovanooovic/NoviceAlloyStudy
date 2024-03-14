@@ -1,0 +1,11 @@
+inv10 O: all s: Student | one s.Groups
+inv10 B: all s: Student | one s->Groups
+inv10 T: all s: Student | s one->Groups
+inv10 T: all s: Student | s one->Group
+inv10 S: all s: Student,c:Class | s.c -> one Group
+inv10 S: all s: Student,c:Class | c.s -> one Group
+inv10 T: one Group.Student
+inv10 T: all c:Class| one c.Group.Student
+inv10 O: all c:Class| one c.Groups.Student
+inv10 T: all c:Class| one c.~Groups.Student
+

@@ -1,0 +1,25 @@
+Pairs,1
+,,"no User",1
+
+Pairs,5
+,,"all u:User | u.visible=u.profile",3
+,,"all w:Work | visible.w = profile.w",2
+
+Pairs,9
+,,"User.visible in User.profile & User",2
+,,"all w: User.visible | w in profile.w",1
+,,"all w: Work | visible.w in User.profile",1
+,,"all w : Work | some (User<:visible).w implies some w.(User<:profile)",4
+,,"all w : Work, u : User | w in u.visible => u in u.profile",1
+
+Pairs,5
+,,"all w1, w2 : Work | w1->w2 in profile",1
+,,"all w:Work | w.visible = w.source",3
+,,"all w1, w2 : Work | w1->w2 in visible and w1->w2 in profile",1
+
+Pairs,1
+,,"all u : User, w : Work | u->w in profile",1
+
+Pairs,2
+,,"all u : User, w : Work | u->w in visible and u->w in profile",2
+

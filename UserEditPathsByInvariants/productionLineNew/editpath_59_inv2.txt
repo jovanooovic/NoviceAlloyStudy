@@ -1,0 +1,6 @@
+inv2 B: all p: Workstation | one p.workers	all x: Worker | x in Workstation.workers
+inv2 O: all p: Workstation | one p.workers	all x: Worker | one v: Workstation | x in v.workers
+inv2 O: all p: Workstation | one p.workers	all x: Worker | (one v: Workstation | x in v.workers)
+inv2 C: all p: Workstation | some p.workers	all x: Worker | (one v: Workstation | x in v.workers)
+inv2 C: all p: Workstation | some p.workers	all x: Worker | one v: Workstation | x in v.workers
+

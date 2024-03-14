@@ -1,0 +1,11 @@
+inv3 S: all u,u2:User , all p:Photo | u != u2 and u->u2 in follows and u->p in sees implies u2->p in posts
+inv3 S: all u,u2:User , all p:Photo | u != u2 and u->u2 in follows and u->p in sees implies (u2->p in posts )
+inv3 B: all u,u2:User | all p:Photo | u != u2 and u->u2 in follows and u->p in sees implies (u2->p in posts )
+inv3 T: all u,u2:User | all p:Photo | u != u2 and u->u2 in u.follows and u->p in sees implies (u2->p in posts )
+inv3 T: all u,u2:User | all p:Photo | u != u2 and u->u2 in u.follows and u->p in sees implies (u2->p in u2.posts )
+inv3 B: all u,u2:User | all p:Photo | u != u2 and u->u2 in follows and u->p in sees implies (u2->p in posts )
+inv3 B: all u,u2:User | all p:Photo | u != u2 and u->u2 in follows and u->p in sees implies (u2->p in posts )	all u:User | all ad:Ad | u->ad in sees implies u->ad not in posts
+inv3 B: all u:User | all ad:Ad | u->ad in sees implies u->ad not in posts
+inv3 T: all u:User | all ad:Ad | u->ad not in posts implies ad in sees
+inv3 B: all u:User | all ad:Ad | u->ad not in posts implies u->ad in sees
+

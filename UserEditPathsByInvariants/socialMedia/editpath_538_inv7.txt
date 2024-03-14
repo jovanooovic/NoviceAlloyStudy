@@ -1,0 +1,15 @@
+inv7 S: all u : user | all s : u.suggested | (s not in u.follows) and s in u.follows.follows
+inv7 U: all u : User | all s : u.suggested | (s not in u.follows) and s in u.follows.follows
+inv7 U: all u : User | all s : u.suggested | (s not in u.follows) and (s in u.follows.follows)
+inv7 U: all u : User | all s : u.suggested | (s in u.follows.follows) and (s not in u.follows)
+inv7 U: all u : User | all s : u.suggested - u | (s not in u.follows) and (s in u.follows.follows)
+inv7 S: all u : User | all s : u.suggested D| all f : u.follows | (s not in u.follows) and (s in f.follows)
+inv7 S: all u : User | all s : u.suggested D| all f : u.follows | (s not in f) and (s in f.follows)
+inv7 B: all u : User | all s : u.suggested | all f : u.follows | (s not in f) and (s in f.follows)
+inv7 B: all u : User | u.suggested = u.follows.follows - u.follows
+inv7 B: all u : User | all s : u.suggested | all f : u.follows | (s not in f) and (s in f.follows) and s != u
+inv7 B: all u : User | all s : u.suggested | all f : u.follows | (s not in f) and (s in f.follows) and (s != u)
+inv7 T: all u : User | all s : u.suggested | all f : u.follows |s = (s not in f) and (s in f.follows) and (s != u)
+inv7 T: all u : User | all s : u.suggested | all f : u.follows |s =  (s in f.follows) - (s not in f) - (s != u)
+inv7 T: all u : User | all s : u.suggested | all f : u.follows | s = (s in f.follows) - (s not in f) - (s != u)
+

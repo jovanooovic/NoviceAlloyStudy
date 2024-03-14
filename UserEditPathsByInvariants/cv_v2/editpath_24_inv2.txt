@@ -1,0 +1,11 @@
+inv2 O: all u:User| u.profile.source = u + Institution
+inv2 O: all u:User| some i:Institution | u.profile.source = u + i
+inv2 T: all u:User| some i:Institution | no u.profile.source in u + i
+inv2 T: all u:User| some i:Institution | no u.profile.source in u & i
+inv2 T: all u:User| some i:Institution | no u.profile.source = u&i
+inv2 T: all u:User| all i:Institution | no u.profile.source = u&i
+inv2 T: all u:User| no u.profile.source = u&Institution
+inv2 T: all u:User| no u.profile.source in u&Institution
+inv2 C: all u:User| u.profile.source in (u + Institution)
+inv2 C: all u:User| u.profile.source in (u + Institution)
+

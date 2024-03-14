@@ -1,0 +1,6 @@
+inv7 T: all s: Student, p: Project, c: Course | one (s.enrolled).p
+inv7 B: all s: Student | one (s.enrolled.projects)
+inv7 U: all s: Student, p: Project, c : Course | s in (Person<:projects).p and p in (Course<:projects).c implies one p
+inv7 U: all s: Student, p: Project, c : Course | s in (Person<:projects).p and p in (Course<:projects).c implies one p
+inv7 E:
+

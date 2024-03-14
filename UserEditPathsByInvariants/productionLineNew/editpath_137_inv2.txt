@@ -1,0 +1,20 @@
+inv2 S: all ws : Workstation | some ws.workers | all w : Worker | w in Workstation.workers
+inv2 S: all ws : Workstation | some ws.workers | all w : Worker | w in Workstation.workers
+inv2 S: some Workstation.workers | all w : Worker | w in Workstation.workers
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 S: all ws : Workstation | some sw.workers | all w : Worker | w in Workstation.workers
+inv2 S: all ws : Workstation | some sw.workers | all w : Worker | w in Workstation.workers
+inv2 S: all ws : Workstation | some ws.workers | all w : Worker | w in Workstation.workers
+inv2 U: all w : Worker | w in Workstation.workers
+inv2 S: all w : Worker | lone w & Workstation.workers | all ws : Workstation | some ws.workers
+inv2 U: all w : Worker | lone w & Workstation.workers
+inv2 U: all w : Worker | one w & Workstation.workers
+inv2 S: all w : Worker | one w & Workstation.workers | some Workstation.workers
+inv2 S: all w : Worker | one w & Workstation.workers | all ws: Workstation | some ws.workers
+inv2 U: all w : Worker | one w & Workstation.workers	all ws: Workstation | some ws.workers
+inv2 U: all w : Worker | one w & Workstation.workers	all ws: Workstation | some ws.workers
+inv2 B: all w : Worker | all ws: Workstation | one w & ws.workers	all ws: Workstation | some ws.workers
+inv2 C: all w : Worker | one ws: Workstation | one w & ws.workers	all ws: Workstation | some ws.workers
+inv2 T: all w : Worker | one ws: Workstation | w & ws.workers	all ws: Workstation | some ws.workers
+inv2 C: all w : Worker | one ws: Workstation | some w & ws.workers	all ws: Workstation | some ws.workers
+

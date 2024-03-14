@@ -1,0 +1,17 @@
+inv8 B: all p:Professor | p.teaches not in p.enrolled
+inv8 B: all p:Professor | p.enrolled not in p.teaches
+inv8 T: all p:Professor | (p.enrolled not in p.teaches)&Professor
+inv8 B: all p:Professor | p.enrolled not in p.teaches
+inv8 B: all p:Professor | enrolled.p not in teaches.p
+inv8 S: all c:Course | enrolled.p not in teaches.p
+inv8 B: all c:Course | enrolled.c not in teaches.c
+inv8 B: all c:Course | teaches.c not in enrolled.c
+inv8 T: all c:Course | (teaches.c not in enrolled.c)&Professor
+inv8 B: all c:Course | (teaches.c&Professor) not in enrolled.c
+inv8 B: all c:Course | (teaches.c&Professor) not in enrolled.c&Professor
+inv8 B: all c:Course | (teaches.c&Professor) not in (enrolled.c&Professor)
+inv8 B: all c:Course | teaches.c not in enrolled.c
+inv8 B: all c:Course | (teaches.c&Professor) not in enrolled.c
+inv8 B: all p:Professor | p.teaches not in p.enrolled
+inv8 B: all p:Professor | p.teaches not in p.enrolled
+

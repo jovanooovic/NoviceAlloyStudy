@@ -1,0 +1,24 @@
+inv2 S: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source | i in w.source)
+inv2 S: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source | i in w.source)
+inv2 S: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source | i in w.source)
+inv2 S: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source) | (i in w.source)
+inv2 B: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source || i in w.source)
+inv2 B: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source or i in w.source)
+inv2 S: all w1, w2:Work, u:User, i:Institution | w1, w2 in u.profile implies (u in w1.source and i in w2.source)
+inv2 O: all u:User, w:Work | w in u.profile implies u in w.source
+inv2 B: all u:User, w:Work, i:Institution | w in u.profile implies u in w.source or i in w.source
+inv2 B: all u:User, w:Work, i:Institution | w in u.profile implies (u in w.source or i in w.source)
+inv2 O: all u:User, w:Work | some i:Institution | w in u.profile implies (u in w.source or i in w.source)
+inv2 T: all u:User, w:Work |  w in u.profile implies (u in w.source or some Institution in w.source)
+inv2 O: all u:User, w:Work | some i:Institution | w in u.profile implies (u in w.source or i in w.source)
+inv2 O: all u:User , w:Work |some i:Institution| (w in u.profile) implies (w.source = u || w.source = i)
+inv2 O: all u:User, w:Work | some i:Institution | w in u.profile implies u in w.source or i in w.source
+inv2 O: all u:User, w:Work | some i:Institution | w in u.profile implies (u in w.source or i in w.source)
+inv2 E:
+inv2 S: all u:User, w:Work | w in u.profile implies (u in w.source or (some Intitution in w.source))
+inv2 T: all u:User, w:Work | w in u.profile implies (u in w.source or (some Institution in w.source))
+inv2 T: all u:User, w:Work | w in u.profile implies (u in w.source) or (some Institution in w.source)
+inv2 T: all u:User, w:Work | w in u.profile implies (u in w.source) or (some Institution in w.source)
+inv2 T: all u:User, w:Work | w in u.profile implies (u in w.source) or (some Institution in w.source)
+inv2 C: all u:User, w:Work | w in u.profile implies (u in w.source or some i:Institution | i in w.source)
+

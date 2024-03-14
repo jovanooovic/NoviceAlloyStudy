@@ -1,0 +1,9 @@
+inv10 T: all c: Class | Student <: c.Group = Student
+inv10 T: all c: Class | Student <: c.Groups = Student
+inv10 T: all c: Class | (Student <: c.Groups) = Student
+inv10 O: all c: Class | Student.(c.Groups) = Student
+inv10 O: all c: Class | c.Groups.Student = Student
+inv10 T: all c: Class | Groups.c = Student
+inv10 O: all c: Class, s: Student | some c.Groups.s
+inv10 C: all c: Class, s: Student | some s.(c.Groups)
+

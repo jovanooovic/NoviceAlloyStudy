@@ -1,0 +1,6 @@
+inv9 S: Worstation.^succs = Workstation
+inv9 S: Workstation.^succs = Workstation
+inv9 B: Workstation.^succ = Workstation
+inv9 B: all w : Workstation | w.^succ = Workstation
+inv9 C: all w: Workstation | w not in w.^succ	all w, wb : Workstation | (wb in begin and w != wb) implies w in wb.^(succ)	all w : Workstation | w not in end implies one w.succ
+

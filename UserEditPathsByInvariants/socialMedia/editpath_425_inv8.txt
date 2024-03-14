@@ -1,0 +1,9 @@
+inv8 T: all u: User, a: Ad | a in u.follows.posts or u.suggested.posts
+inv8 O: all u: User, a: Ad | a in u.follows.posts or a in u.suggested.posts
+inv8 O: all u: User, a: Ad | a in u.follows.posts + u.suggested.posts
+inv8 S: all u: User, a: Ad in u.seed | a in u.follows.posts + u.suggested.posts
+inv8 T: all u: User, a: Ad in u.sees | a in u.follows.posts + u.suggested.posts
+inv8 T: all u: User, a: Ad in u.sees | a in u.follows.posts or a in u.suggested.posts
+inv8 T: all u: User, a: u.sees in Ad | a in u.follows.posts or a in u.suggested.posts
+inv8 T: all u: User, a: u.sees | (Ad in a) in u.follows.posts or (Ad in a) in u.suggested.posts
+

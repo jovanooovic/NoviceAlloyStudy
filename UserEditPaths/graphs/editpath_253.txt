@@ -1,0 +1,31 @@
+na H: THEME UPDATE
+inv1 C: all a,b: Node | a->b in adj implies b->a in adj
+inv2 C: no adj & ~adj
+inv4 T: all n:Node | n
+inv4 T: all n:Node | n
+inv4 C: all n:Node | Node in n.adj
+inv5 O: no adj + iden
+inv5 B: no adj - iden
+na M: MOD BASE MODEL
+na M: MOD BASE MODEL
+na M: MOD BASE MODEL
+na H: THEME UPDATE
+na M: MOD BASE MODEL
+na M: MOD BASE MODEL
+na M: MOD BASE MODEL
+inv3 C: all n:Node | n not in n.^adj
+inv1 C: all a,b: Node | a->b in adj implies b->a in adj
+inv2 C: no adj & ~adj
+inv4 C: all n:Node | Node in n.adj
+inv5 O: all n:Node | n not in n.^adj
+inv5 C: all n:Node | n not in n.adj
+inv6 O: all n:Node | Node in n.^adj
+inv6 O: all n:Node | Node in n.*adj
+inv6 O: all n:Node | (Node-n)  in n.^adj
+inv6 O: all n:Node | Node in n.^adj
+inv6 B: Node in Node.^adj
+inv8 S: n,nn,nnn : Node | nn in n.adj.adj implies nn in n.adj
+inv8 C: all n,nn,nnn : Node | nn in n.adj.adj implies nn in n.adj
+inv8 C: all n,nn : Node | nn in n.adj.adj implies nn in n.adj
+na H: THEME UPDATE
+

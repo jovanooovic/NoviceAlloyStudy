@@ -1,0 +1,6 @@
+inv3 S: all a,b:Node |
+inv3 T: all a:Node | no ^a.adj & ~(^a.adj)
+inv3 T: all a:Node | no ^(a.adj) & ~(^a.adj)
+inv3 T: all a:Node | no a.^adj & ~(a.^adj)
+inv3 C: all a:Node | no a.^adj & a.~(^adj)
+

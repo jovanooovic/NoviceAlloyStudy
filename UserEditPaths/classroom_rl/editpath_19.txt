@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv4 C: Person in Student + Teacher
+inv4 C: Person in Student + Teacher
+inv5 C: some Teacher.Teaches
+inv6 U: all t : Teacher | inv5	}		pred inv5{		some Teacher.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv5 B: all t : Teacher | some t.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv6 C: all t : Teacher | some t.Teaches
+inv7 U: all c : Class | some Teaches.c
+inv7 C: all c : Class | some (Teaches.c :> Teacher)
+inv8 C: all t : Teacher | lone t.Teaches
+inv9 O: lone Teaches.~Teaches
+inv9 O: Teaches.~Teaches in iden
+inv9 B: ~Teaches.Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 O: Teacher <: Teaches.~Teaches in iden
+inv9 T: (Teaches.~Teaches :> Teacher->Teacher) in iden
+inv9 T: (Teaches.~Teaches) :> (Teacher->Teacher) in iden
+inv9 S: (Teaches.~Teaches) :> (Teacher,Teacher) in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 B: ~Teaches.Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 O: Teaches.~Teaches in iden
+inv9 O: all c : Class | lone Teaches.c
+inv9 C: all c : Class | lone (Teaches.c :> Teacher)
+inv10 C: all c : Class, s : Student | some s.(c.Groups)
+inv10 O: all c : Class, s : Student | one s.(c.Groups)
+inv11 O: all c: Class | some Groups implies some Teaches.c :> Teacher
+inv11 B: all c: Class | some Groups implies some Teaches.c
+inv11 U: all c: Class | some c.Groups implies some Teaches.c
+inv11 C: all c: Class | some c.Groups implies some Teaches.c :> Teacher
+inv12 C: all t : Teacher | some (t.Teaches).Groups
+inv13 C: Person.Tutors in Student	  	Tutors.Person in Teacher
+inv13 C: Teacher.Tutors in Student	  	Tutors.Person in Teacher
+inv13 U: Teacher.Tutors in Student	  	Tutors.Student in Teacher
+inv13 C: Person.Tutors in Student	  	Tutors.Person in Teacher
+inv14 S: all s : Student | 	  		(some c : Class | s in c.Groups.Group) implies (	        	all t : Teaches.c :> Teacher | s in t.Tutors	        )
+inv14 B: all s : Student | 	  		some c : Class | (s in c.Groups.Group) implies (	        	all t : Teaches.c :> Teacher | s in t.Tutors	        )
+NA H: THEME UPDATE
+

@@ -1,0 +1,12 @@
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 O: all p:Person | p.enrolled in Course implies p = Student
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 T: all p:Person | p.enrolled in Course implies Student.p
+inv1 T: all p:Person | p.enrolled in Course implies p & Student
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 T: all p:Person | p.enrolled & Course implies p in Student
+inv1 O: all p:Person | enrolled.p in Course implies p in Student
+inv1 O: all p:Person | p.enrolled in Course implies p in Student
+inv1 C: all p:Person,c:Course | p->c in enrolled implies p in Student
+inv1 C: all p:Person,c:Course | p in enrolled.c implies p in Student
+

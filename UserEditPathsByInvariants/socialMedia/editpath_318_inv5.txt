@@ -1,0 +1,12 @@
+inv5 U: all i:Influencer | all nu:User-Influencer | i in nu.follows
+inv5 B: all i:Influencer | all nu:User-Influencer | i in follows.nu
+inv5 U: all i:Influencer | all nu:Influencer-User | i in nu.follows
+inv5 B: all i:Influencer | all u:User | i in u.follows
+inv5 U: all i:Influencer | all u:User | i-u in u.follows
+inv5 B: all i:Influencer | all u:User | u-i in u.follows
+inv5 U: all i:Influencer | all u:User | i-u in u.follows
+inv5 B: all i:Influencer | all u:User | u->i in follows
+inv5 U: all i:Influencer | all u:User-i | u->i in follows
+inv5 U: all i:Influencer | all u:User-i | u in follows.i
+inv5 U: all i:Influencer | all u:User-i | u in follows.i
+

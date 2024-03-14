@@ -1,0 +1,5 @@
+inv8 U: all f1,f2:File | f1->f2 in link implies eventually f1 in Trash
+inv8 B: eventually (all f1,f2:File | f1->f2 in link implies f1 in Trash)
+inv8 U: eventually (all f1,f2:File | eventually (f1->f2 in link implies f1 in Trash))
+inv8 C: always (all f1,f2:File | f1->f2 in link implies eventually f1 in Trash)
+

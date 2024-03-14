@@ -1,0 +1,29 @@
+inv5 B: all t1, t2, t3: Track | t1 in t2.succs && t1 in t3.succs <=> t1 in Junction
+inv5 S: all t: Track | t in Track.succs <=> t1 in Junction
+inv5 B: all t: Track | t in Track.succs <=> t in Junction
+inv5 O: all t, t1: Track | t in (Track-t1).succs && t in t1.succs <=> t in Junction
+inv5 B: all disj t, t1: Track | t in (Track-t1).succs && t in t1.succs <=> t in Junction
+inv5 O: all t, t1: Track | t!=t1 && t in (Track-t1).succs && t in t1.succs <=> t in Junction
+inv5 O: all t, t1: Track | t in (Track-t1).succs && t in t1.succs <=> t in Junction
+inv5 T: all t, t1: Track | some t in Track.succs <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all disj t, t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all t: Track | t in Track.succs <=> t in Junction
+inv5 U: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 <=> t in Junction
+inv5 T: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2!=t <=> t in Junction
+inv5 B: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 && t1!=t && t2!=t <=> t in Junction
+inv5 B: all t, t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 && t1!=t && t2!=t <=> t in Junction
+inv5 O: all t, t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 <=> t in Junction
+inv5 B: all t, t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 && t1!=t && t2!=t <=> t in Junction
+inv5 B: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs && t1!=t2 && t1!=t && t2!=t <=> t in Junction
+inv5 B: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs  <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs  <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | (t in t1.succs && t in t2.succs) || (t1 in t.succs && t2 in t.succs) <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs => t in Junction
+inv5 B: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs => t in Junction
+inv5 B: all t: Track | some t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+inv5 B: all t: Track | some disj t1, t2: Track | t in t1.succs && t in t2.succs <=> t in Junction
+

@@ -1,0 +1,11 @@
+inv5 S: all x : Project | y : Person | x in y.projects implies y in Student
+inv5 S: all x : Project | y : Person | x in y.projects implies y in Student
+inv5 U: all x : Project | all y : Person | x in y.projects implies y in Student
+inv5 U: all x : Project | some y : Person | x in y.projects implies y in Student
+inv5 B: all x : Project | some y : Person | x in y.projects implies y in Student	  some x : Project | all y : Person | x in y.projects
+inv5 B: all x : Project | some y : Person | x in y.projects implies y in Student	  all y : Person | some x : Project  | x in y.projects
+inv5 B: all x : Person | #(x.projects) > 0 implies x in Student	  all y : Person | some x : Project  | x in y.projects
+inv5 B: all x : Person | #(x.projects) > 0 implies x in Student	  all y : Person | all x : Project  | x in y.projects
+inv5 B: all x : Person | #(x.projects) > 0 implies x in Student	  all x : Project | all y : Person | x in y.projects
+inv5 C: all x : Person | #(x.projects) > 0 implies x in Student	  all x : Project | some y : Person | x in y.projects
+

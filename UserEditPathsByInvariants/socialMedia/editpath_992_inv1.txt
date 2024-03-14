@@ -1,0 +1,16 @@
+inv1 E:
+inv1 S: all p, u : univ | u in User and u->p in Photo implies all p | u->p
+inv1 S: all p, u : univ | u in User and p in Photo implies all p | u->p
+inv1 S: all p,u : univ | u in User and p in Photo implies all p | u->p
+inv1 S: all u : User | u->p in posts implies all p | u->p
+inv1 S: all one u : User | u->p in posts implies all p | u->p
+inv1 S: all one u,p : univ |u in User and p in u.posts implies all p | u->p
+inv1 S: all u : User | p : posts |p in u.posts implies all p | u->p
+inv1 C: all p : Photo | p in User.posts	all p : Photo | one u : User | p in u.posts
+inv1 S: all p : Photo | p in User.posts | one u : User | p in u.posts
+inv1 S: all p : Photo | one u : User |p in User.posts | p in u.posts
+inv1 S: all p : Photo | one u : User | p in User.posts | p in u.posts
+inv1 U: all p : Photo | one u : User | p in User.posts implies p in u.posts
+inv1 S: all p : Photo, one u : User | p in User.posts implies p in u.posts
+inv1 C: all p : Photo | one u : User | p in u.posts
+

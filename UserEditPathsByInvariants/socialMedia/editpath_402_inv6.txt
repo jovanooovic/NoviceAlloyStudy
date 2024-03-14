@@ -1,0 +1,12 @@
+inv6 S: date.(Influencers.posts) in Day
+inv6 U: date.(Influencer.posts) in Day
+inv6 U: Influencer.posts.date in Day
+inv6 U: Influencer.posts.date in Day
+inv6 S: all i:Influencer | no i.posts.day-Day
+inv6 U: all i:Influencer | no i.posts.date-Day
+inv6 T: all i:Influencer, d:Day | some i.posts.date.d
+inv6 S: all i:Influencer, d:Day | all p:i.posts | some p.data = d
+inv6 T: all i:Influencer, d:Day | all p:i.posts | some p.date = d
+inv6 T: all i:Influencer, d:Day | all p:i.posts | some p.date in d
+inv6 C: all i:Influencer, d:Day | some p:i.posts | p.date = d
+

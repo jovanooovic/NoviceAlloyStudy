@@ -1,0 +1,3 @@
+inv7 B: all s:Student | all p1,p2: Project| p1 in s.projects and p2 in s.projects implies (one disj c1,c2:Course| p1 in c1.projects and p2 in c2.projects)
+inv7 U: all s:Student | all p1,p2: Project| all c: Course| p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects implies p1=p2
+

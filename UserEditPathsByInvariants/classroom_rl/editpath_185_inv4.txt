@@ -1,0 +1,9 @@
+inv4 B: all p : Person | p not in Student && p not in Teacher
+inv4 B: all p : Person | p not in Student || p not in Teacher
+inv4 B: all p : Person | p not in Student && p not in Teacher
+inv4 B: all p : Person | p not in (Student + Teacher)
+inv4 S: all p : Person | p not in (Student + Teacher) and no p.teaches
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches and no p.Tutors
+inv4 B: all p : Person | p not in (Student + Teacher) and no p.Teaches and no p.Tutors
+

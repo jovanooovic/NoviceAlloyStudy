@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 U: all x : Worker | no x & Human or no x & Robot
+inv1 C: all x : Worker | one x & Human or one x & Robot
+inv2 U: all x : Workstation | some x.workers	all x : Worker | one x & Workstation.workers
+inv2 B: all x : Workstation | some x.workers	all x : Worker, y : Workstation | one x & y.workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | one x & Workstation.workers
+inv2 S: all x : Workstation | some x.workers	all x : Worker, one y : Workstation | one x & y.workers
+inv2 S: all x : Workstation | some x.workers	all x : Worker, some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv2 C: all x : Workstation | some x.workers	all x : Worker|  some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y and no x.workstation & (Workstation-y)
+inv3 O: all x : Component | some y : Workstation | one x.workstation & y & x.workstation & (Workstation-y)
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y and no x.workstation & (Workstation-y)
+inv4 S: all x : Components |
+inv4 S: all x : Components |
+inv4 S: all x : Components |
+inv4 S: all x : Components |
+inv3 C: all x : Component | some y : Workstation | one x.workstation & y + x.workstation & (Workstation-y)
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers + x & (Workstation-y).workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers + (x & (Workstation-y).workers)
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) + (x & (Workstation-y).workers)
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) and no (x & (Workstation-y).workers)
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) + (x & (Workstation-y).workers)
+inv4 S: all x : Components |
+inv3 U: all x : Component | some y : Workstation | one x.workstation & y - x.workstation & (Workstation-y)
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) - (x & (Workstation-y).workers)
+inv3 U: all x : Component | some y : Workstation | one (x.workstation & y) - x.workstation & (Workstation-y)
+inv3 U: all x : Component | some y : Workstation | one (x.workstation & y) - (x.workstation & (Workstation-y))
+inv3 C: all x : Component | some y : Workstation | one (x.workstation & y) + (x.workstation & (Workstation-y))
+inv4 S: all x : Components | some x.parts	all x : Material | no x.parts
+inv4 C: all x : Component | some x.parts	all x : Material | no x.parts
+inv5 U: all x : Workstation | no x.workers & Human & Robot
+inv5 B: all x : Workstation | some x.workers & Human or some x.workers & Robot
+inv5 C: all x : Workstation | no x.workers & Human or no x.workers & Robot
+inv6 U: all x : Component | no x.parts & x
+inv6 U: all x : Component | one x - x.parts
+inv6 B: all x : Component | one x.^parts+x
+inv6 U: all x : Component | no x & x.parts
+inv6 T: all x : Component | no x & x.^(x.parts)
+inv6 C: all x : Component | no x & x.^(parts)
+inv7 C: all x : Component | no x.parts & Dangerous or x in Dangerous
+inv7 C: all x : Component | no x.parts & Dangerous or one x & Dangerous
+NA H: THEME UPDATE
+

@@ -1,0 +1,14 @@
+inv1 U: Photo = User . posts
+inv1 C: posts in User one -> Photo
+inv1 O: posts in User one -> Photo	not some p:Photo | all disj u1, u2:User | u1->p in posts and u2->p in posts
+inv1 B: not some p:Photo | all disj u1, u2:User | u1->p in posts and u2->p in posts
+inv1 B: not some p:Photo | all  u1, u2:User | u1->p in posts and u2->p in posts
+inv1 U: not some p:Photo | all  u1, u2:User | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all  u1, u2:User | not some p:Photo | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all u1, u2:User | not some p:Photo | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts
+inv1 S: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts	all p:Photo | some u:user | u->p in posts
+inv1 C: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts	all p:Photo | some u:User | u->p in posts
+inv1 U: all p:Photo | some u:User | u->p in posts
+inv1 C: posts in User one -> Photo
+

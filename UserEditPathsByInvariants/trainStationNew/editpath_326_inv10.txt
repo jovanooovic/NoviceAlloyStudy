@@ -1,0 +1,9 @@
+inv10 S: all a,b:Track, s:Semaphore| b in junction and b->a in succs implies a->s in signal
+inv10 S: all a,b:Track, s:Semaphore| b in Junction and b->a in succs implies a->s in signal
+inv10 B: all a,b:Track, s:Semaphore| b in Junction and b->a in succs implies a->s in signals
+inv10 B: all a,b:Track| one s:Semaphore| b in Junction and b->a in succs implies a->s in signals
+inv10 O: all a,b:Track| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals
+inv10 B: all a:Track,b:Track-a| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals
+inv10 B: some a:Track,b:Track-a| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals
+inv10 B: all a:Track,b:Track-a| one s:Semaphore| b in Junction and a->b in succs implies a->s in signals
+

@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 C: (enrolled . Course) in Student
+inv2 C: (teaches . Course) in Professor
+inv3 C: Course in (Person . teaches)
+inv4 C: (this/Course <: projects) in Course one -> Project
+inv5 C: (this/Person <: projects) in Student some -> Project
+inv6 B: all s : Student |	  (s . (this/Person <: projects) . ~(this/Course <: projects))	  in s . enrolled
+inv7 E: 
+inv7 B: all s : Student, c : s.enrolled |	  one (s.(this/Person <: projects) & s.(this/Course <: projects))
+inv7 B: all s : Student, c : s.enrolled |	  one (s.(this/Person <: projects) & s.(this/Course <: projects))
+inv7 B: all s : Student, c : s.enrolled |	  one (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv7 U: all s : Student, c : s.enrolled |	  lone (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv7 U: all s : Student, c : s.enrolled |	  lone (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv12 U: all s : Student, c : Course | lone c.(s.grades)
+inv12 U: all s : Student, c : Course | lone c.(s.grades)
+inv12 U: all s : Student, c : Course | lone c.(s.grades)
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv8 U: all p : Professor | p not in (p . teaches . ~enrolled)
+inv9 B: all p : Professor | no (p . teaches . ~enrolled) & Professor
+inv9 B: all p : Professor | no (p.teaches.~enrolled & Professor)
+inv9 B: all p : Professor | no (p.teaches.~enrolled & p.enrolled.~enrolled)
+inv10 C: grades in Course -> Student -> Grade
+inv11 U: all s : Student | (grades . Grade . s) in (s . enrolled)
+inv10 C: grades in Course -> Student -> Grade
+inv12 U: all s : Student, c : Course | lone s.(c.grades)
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : enrolled.c - s | lt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : enrolled.c - s | gt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv13 B: all c : Course | some s : enrolled.c	  | (all s2 : (enrolled.c - s) | gt[s.(c.grades), s2.(c.grades)])	  and some (s.(this/Person <: projects) & c.(this/Course <: projects))
+inv14 B: all s1 : Student, s2 : s1.projects.~(this/Person <: projects) |	  lone (s1.projects & s2.projects)
+

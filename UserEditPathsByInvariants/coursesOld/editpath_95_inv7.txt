@@ -1,0 +1,4 @@
+inv7 U: all s : Student, c : Course | lone c.projects & s.projects
+inv7 T: all s : Student, c : s.enrolled | lone s.projects & Course<:projects.c
+inv7 U: all s : Student, c : s.enrolled | lone s.projects & c.projects
+

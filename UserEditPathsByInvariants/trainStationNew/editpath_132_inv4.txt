@@ -1,0 +1,4 @@
+inv4 U: all t : Track | t in Entry => succs.t = none
+inv4 U: all t : Track | t in Entry => t !in Track.^succs
+inv4 C: all t : Track | t in Entry <=> t !in Track.^succs
+

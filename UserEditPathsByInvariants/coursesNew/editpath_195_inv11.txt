@@ -1,0 +1,7 @@
+inv11 T: all x: Person | all c: Course | x in Student && c.grades(x) => c in x.enrolled
+inv11 T: all x: Student | all c: Course | c.grades(x) => c in x.enrolled
+inv11 T: all x: Student | all c: Course | some n: Grade | n in c.grades(x) => c in x.enrolled
+inv11 T: all x: Student | all c: Course | c.grades.x => c in x.enrolled
+inv11 T: all x: Student | all c: Course | c in (grades.x) => c in x.enrolled
+inv11 U: all s : Student | (all c : Course, g : Grade | s->g in c.grades implies c in s.enrolled)
+

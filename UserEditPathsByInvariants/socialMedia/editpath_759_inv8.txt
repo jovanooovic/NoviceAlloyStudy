@@ -1,0 +1,3 @@
+inv8 T: all u:User, a:Ad | a in u.sees implies a in u.follows.posts or u.suggested.posts
+inv8 C: all u:User, a:Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)
+

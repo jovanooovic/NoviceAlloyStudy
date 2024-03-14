@@ -1,0 +1,14 @@
+inv12 E:
+inv12 S: lone (Course.grades.Grade & Students)
+inv12 B: lone (Course.grades.Grade & Student)
+inv12 U: all c: Course | all s: Student | c in s.enrolled implies (lone (s & c.grades.Grade))
+inv12 U: all c: Course, s: Student | (lone (s & c.grades.Grade))
+inv12 U: all c: Course, s: Student | lone (s & (c.grades.Grade))
+inv12 S: all c: Course | lone (Students & (c.grades.Grade))
+inv12 B: all c: Course | lone (Student & (c.grades.Grade))
+inv12 B: all c: Course | some s: Student | lone (s & (c.grades.Grade))
+inv12 U: all c: Course,  s: Student | lone (s & (c.grades.Grade))
+inv12 U: all s : Student, c : Course | lone (s.(c.grades))
+inv12 U: all s : Student, c : Course | lone ((c.grades).s)
+inv12 U: all s : Student, c : Course | lone (s.(c.grades))
+

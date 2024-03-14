@@ -1,0 +1,15 @@
+inv10 B: always (all f:File | f in Protected since f in Protected)
+inv10 S: all f:File | f in protected implies always (f in protected)
+inv10 S: all f:File | f in Protected implies always (f in protected)
+inv10 U: all f:File | f in Protected implies always (f in Protected)
+inv10 B: all f:File | always (f in Protected) since f in Protected
+inv10 U: always (all f:File | f in Protected implies always (f in Protected))
+inv10 T: once Protected always Protected
+inv10 T: once Protected always Protected
+inv10 U: always (all f:File | f in Protected implies after f in Protected)
+inv10 U: always (Protected in Protected')
+inv10 U: always (Protected in Protected')
+inv10 U: always (Protected in Protected')
+inv10 U: always (Protected in Protected')
+inv10 U: always (Protected in Protected)
+

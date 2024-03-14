@@ -1,0 +1,17 @@
+"no (teaches.~teaches & iden)",1
+"no ^(teaches.~enrolled) & iden",1
+"no (Person.teaches & Person.enrolled)",1
+"no enrolled.Course & teaches.Course",1
+"all p:Person | some (Person <: teaches).p",1
+"all p:Person | p in (Person <: teaches).p",2
+"all p:Person | p in p.teaches",1
+"Person.teaches & Person.enrolled = none",1
+"all p:Person | some ^(Person <: teaches).p",1
+"all p:Person | some (Person <: ~teaches).p",1
+"all p:Person | some (Person <: ^teaches).p",1
+"all c : Course, p : Person | p->c in teaches and c not in p.enrolled",1
+"all p : Person , c: Course | c not in p.teaches and c not in p.enrolled",1
+"all c : Course, p : Person | p->c in teaches and p->c not in enrolled",3
+"all p:Person, c:Course | p->c in teaches and not(p->c in enrolled)",2
+"all c : Course, p : Person | p->c in teaches and p->c not in enrolled and p not in Student",1
+"all c : Course, p : Person | p in Professor and p->c in teaches and p->c not in enrolled",1

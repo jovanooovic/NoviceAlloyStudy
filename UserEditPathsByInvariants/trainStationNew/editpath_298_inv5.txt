@@ -1,0 +1,8 @@
+inv5 S: all t:Track | #t.~succs > 1 iff in Junction
+inv5 S: all t:Track | #t.~succs > #1 iff in Junction
+inv5 S: all t:Track | t.~succs > #1 iff in Junction
+inv5 S: all t:Track | #(t.~succs) > 1 iff in Junction
+inv5 S: all t:Track | no #(t.~succs) iff in Junction
+inv5 S: all t:Track | #(t.~succs) iff in Junction
+inv5 C: all t:Track | #(t.~succs) > 1 iff t in Junction
+

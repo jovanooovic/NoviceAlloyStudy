@@ -1,0 +1,20 @@
+inv10 T: all c:Class | some c.Group & Student
+inv10 S: all c:Class | some c.Group | Student
+inv10 T: all c:Class | some c.Group
+inv10 T: all c:Class | lone c.Group
+inv10 B: all c:Class | lone c.Groups
+inv10 S: all c:Class | some c.Groups | Student
+inv10 T: all c:Class | some c.Groups & Student
+inv10 B: all c:Class | some c.Groups
+inv10 T: all c:Class | all s:Student | some s.c.Groups
+inv10 O: all c:Class, s:Student | some c.Groups.s
+inv10 O: all c:Class | some c.Groups.Student
+inv10 T: all c:Class | some c.Groups.Group.Student
+inv10 T: all c:Class, g:Group | some c.Groups.g.Student
+inv10 C: all c:Class , s:Student | some s.(c.Groups)
+inv10 T: all c:Class , s:Student | some s.c.Groups
+inv10 C: all c:Class , s:Student | some s.(c.Groups)
+inv10 C: all c:Class , s:Student | some s.(c.Groups)
+inv10 C: all c:Class , s:Student | some s.(c.Groups)
+inv10 C: all c:Class , s:Student | some s.(c.Groups)
+

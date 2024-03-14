@@ -1,0 +1,23 @@
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in next+prev
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1 != s2 implies s1.(c.grades)->s2.(c.grades) in next+prev
+inv15 O: all c : Course, s1, s2 : Person<:projects.(c.projects) | s1 != s2 implies s1.(c.grades)->s2.(c.grades) in next+prev
+inv15 O: all c : Course, s1, s2 : Person<:projects.(c.projects) | s1 != s2 implies s1.(c.grades)->s2.(c.grades) in next+prev+iden
+inv15 O: all c : Course, s1, s2 : Person<:projects.(c.projects) | s1 != s2 implies s1.(c.grades)->s2.(c.grades) in next+prev or s1.(c.grades) = s2.(c.grades)
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1 != s2 implies s1.(c.grades)->s2.(c.grades) in next+prev or s1.(c.grades) = s2.(c.grades)
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in next+prev or s1.(c.grades) = s2.(c.grades)
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in next+prev+iden
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in prev+iden+next
+inv15 T: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1->s2 in (prev+iden+next).(c.grades)
+inv15 T: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in (prev+iden+next).(c.grades)
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in prev+iden+next
+inv15 O: all c : Course, p : c.projects, s1, s2 : projects.p.(c.grades) | s1->s2 in prev+iden+next
+inv15 T: all c : Course, p : c.projects, s1, s2 : projects.p | s1.(c.grades)->s2.(c.grades) in prev+iden+next
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in prev+iden+next
+inv15 O: all c : Course, p : c.projects, s1, s2 : Person<:projects.p | s1.(c.grades)->s2.(c.grades) in prev+iden+next
+inv15 O: all c : Course, p : c.projects, g1, g2 : projects.p.(c.grades) | g1->g2 in prev+iden+next
+inv15 S: all c : Course, p : c.projects, | projects.p.(c.grades) in prev+iden+next	}
+inv15 S: all c : Course, p : c.projects, | projects.p.(c.grades)->projects.p.(c.grades) in prev+iden+next	}
+inv15 S: all c : Course, p : c.projects, | (projects.p.(c.grades))->(projects.p.(c.grades)) in prev+iden+next	}
+inv15 S: all c : Course, p : c.projects | projects.p.(c.grades) in prev+iden+next	}
+inv15 O: all c : Course, p : c.projects, g1, g2 : projects.p.(c.grades) | g1->g2 in prev+iden+next
+

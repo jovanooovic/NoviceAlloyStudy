@@ -1,0 +1,6 @@
+inv5 B: all s : Person | all p : Project | s in projects.p implies s in Student	  	all s : Person | some p : Project | s in projects.p
+inv5 B: all s : Person | all p : Project | p in s.projects implies s in Student	  	all s : Person | some p : Project | s in projects.p
+inv5 B: all s : Person | all p : Project | p in s.projects implies s in Student	  	all s : Person | some p : Project | p in s.projects
+inv5 O: all s : Person | all p : Project | p in s.projects implies s in Student	  	some s : Person | all p : Project | s in projects.p
+inv5 C: all s : Person | all p : Project |  (p in s.projects) implies (s in Student) 	  	all  p : Project | some s : Person | s in projects.p
+

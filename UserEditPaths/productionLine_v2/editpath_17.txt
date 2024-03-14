@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 S: all w : Worker | w==Robot or w==Human
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 T: all w : Worker ,  ws : Workstation | (some ws.workers) and (one w.^Workstation)
+inv2 T: all w : Worker ,  ws : Workstation | (some ws.workers) and (one w.Workstation)
+inv2 T: all w : Worker ,  ws : Workstation | (some ws.workers) and (one Workstation.^w)
+inv2 T: all w : Worker ,  ws : Workstation | (some ws.workers) and (one Workstation.~w)
+inv2 T: all w : Worker ,  ws : Workstation | (some ws.workers) and (one Workstation.w)
+inv2 U: all w : Worker ,  ws : Workstation | (some ws.workers) and (one w.(~workers))
+inv2 U: all w : Worker ,  ws, ws2 : Workstation | (some ws.workers) and (one w.(~workers))
+inv2 S: all w : Worker ,  ws, ws2 : Workstation | (some ws.workers) and (w in w2 implies w not in w)
+inv2 U: all w : Worker ,  ws, ws2 : Workstation | (some ws.workers) and (w in ws2 implies w not in ws)
+inv2 C: workers in Workstation one -> some Worker	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv3 C: all c : Component | one c.workstation
+inv4 U: all c : Component, m : Material | (some c.parts) and (no m.parts)
+inv5 E: 
+inv5 O: all r : Robot, h : Human, w : Workstation | r in w iff h not in w
+inv5 O: all r : Robot, h : Human, w : Workstation | (r in w) iff (h not in w)
+inv5 U: all r : Robot, h : Human, w : Workstation | ((r in w) implies (h not in w)) and ((h in w) implies (r not in w))
+inv5 S: all w1, w2 : Worker, ws : Workstation | w1,w2 in ws implies (w1,w2 in Robot or w1,w2 in Human)
+inv5 S: all w1, w2 : Worker, ws : Workstation | (w1,w2 in ws) implies ((w1,w2 in Robot) or (w1,w2 in Human))
+inv5 S: all w1, w2 : Worker, ws : Workstation | (w1,w2 in ws) implies ((w1,w2 = Robot) or (w1,w2 = Human))
+

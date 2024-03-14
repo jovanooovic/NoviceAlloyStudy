@@ -1,0 +1,10 @@
+inv4 S: all c : Components | c in Components.~parts	no Material & Products.~parts
+inv4 S: all c : Component | c in Component.~parts	no Material & Products.~parts
+inv4 O: all c : Component | c in Component.~parts	no Material & Product.~parts
+inv4 T: all c : Component | c in Component.~parts		all m : Material | no m in Component.~parts
+inv4 B: all c : Component | c in Component.~parts		all m : Material | m not in Component.~parts
+inv4 B: all c : Component | c in Component.~parts		all m : Material | m not in Component.~parts
+inv4 O: all c : Component | c in Component.~parts		all m : Material | m not in Product.~parts
+inv4 C: all c : Component | c in Product.~parts		all m : Material | m not in Product.~parts
+inv4 C: all c : Component | c in Product.~parts	no Material & Product.~parts
+

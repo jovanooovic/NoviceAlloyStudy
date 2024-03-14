@@ -1,0 +1,31 @@
+inv5 T: all p: Project | some projects.p in Student
+inv5 B: all p: Project | all x: Person | x = projects.p and x in Student
+inv5 S: all p: Project | some projects.p and projects.p in Student
+inv5 S: all p: Project | some projects.p and projects.p in Student
+inv5 S: all p: Project | some projects.p and projects.p in Student
+inv5 T: all p: Project | some projects.p and projects.p in Student
+inv5 T: all p: Project | some projects.p and projects.p in Student
+inv5 T: all p: Project | some projects.p and projects.p in Student
+inv5 T: all p: Project | some projects.p and projects.p in Student
+inv5 U: all p: Project | some s:Student | p in s.projects
+inv5 T: all p: Project | some s:Student | p in s.projects and projects.p in Student
+inv5 T: all p: Project | some s:Student | p in s.projects and (Student)projects.p in Student
+inv5 U: all p: Project | all x: Person | x in projects.p => x in Student
+inv5 T: all p: Project | all x: Person | x in projects.p => x in Student and some projects.x
+inv5 U: all p: Project | some x: Person | x in projects.p => x in Student
+inv5 S: all p: Project | all x: Person | x in projects.p => x in Student	  	all p: Project | some project.p
+inv5 T: all p: Project | all x: Person | x in projects.p => x in Student	  	all p: Project | some projects.p
+inv5 S: all p: Project | some x: Person | x = projects.p => x in Student
+inv5 U: all p: Project | some x: Person | x = projects.p => x in Student
+inv5 U: all p: Project | some x: Person | projects.p = x => x in Student
+inv5 U: all p: Project | all x: Person | p = x.projects => x in Student
+inv5 T: all p: Project | all x: Person | p = x.projects => x in Student and some projects.p
+inv5 U: all p: Project | all x: Person | x in projects.p => x in Student
+inv5 S: all p: Project | all x: Person | x in projects.p => x in Student 	  	some p1: Person | p1 = projects.p
+inv5 O: all p: Project | all x: Person | x in projects.p => x in Student 	  	some p1: Person | all p: Project| p1 = projects.p
+inv5 S: all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student
+inv5 C: all p1 : Project | some pr1 : Student | pr1->p1 in projects	  	all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student
+inv5 C: all p1 : Project | some pr1 : Student | pr1->p1 in projects	  	all p2 : Project | all pr2 : Person   | pr2->p2 in projects => pr2 in Student
+inv5 T: all p1 : Project | some pr1 : Student | pr1.projects.p1 	  	all p2 : Project | all pr2 : Person   | pr2->p2 in projects => pr2 in Student
+inv5 C: all p1 : Project | some s: Student  | s->p1 in projects	  	all p2 : Project | all  p: Person   | p->p2 in projects => p in Student
+

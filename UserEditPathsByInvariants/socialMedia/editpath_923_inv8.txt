@@ -1,0 +1,7 @@
+inv8 B: all x : User | all x2 : User | all p : Photo | p in x.sees implies (x2 in x.follows or x2 in x.suggested)
+inv8 B: all x : User | all x2 : User | all p : Photo | p in x.sees implies ((x2 in x.follows) or (x2 in x.suggested))
+inv8 B: all x : User | all x2 : User | all p : Photo | (p in x.sees and p in Ad) implies ((x2 in x.follows) or (x2 in x.suggested))
+inv8 S: all x : User | all x2 : User | all p : Photo | (p in x.sees and ((x2 in x.follows) or (x2 in x.suggested)) implies p in Ad
+inv8 B: all x : User | all x2 : User | all p : Photo | (p in x.sees and ((x2 in x.follows) or (x2 in x.suggested)) ) implies p in Ad
+inv8 B: all x : User | all x2 : User | all p : Photo | (p in x.sees and ((x2 in x.follows) or (x2 in x.suggested)) ) implies p in Ad
+

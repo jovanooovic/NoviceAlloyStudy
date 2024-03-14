@@ -1,0 +1,14 @@
+NA H: THEME UPDATE
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=s
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and x!=s
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+inv7 B: all u : User | some f: u.follows.follows  | f != u and f in u.suggested and f not in u.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows
+inv7 U: all x : User | all s : x.suggested | s in x.follows.follows and s not in x.follows and s!=x
+inv7 B: all x : User | all y: User | all z: User | z in x.suggested => (z in y.follows and y in x.follows)
+inv7 B: all x : User | all y: User | all z: User | z in x.suggested => (z in y.follows and y in x.follows) and z not in x.follows
+inv7 B: all x : User | all y: User | all z: User | (z in x.suggested and z not in x.follows  )=> (z in y.follows and y in x.follows)
+inv7 B: all x : User | all y: User | all z: User | (z in x.suggested and z not in x.follows  ) => (z in y.follows and y in x.follows)
+inv7 O: all x : User | all y: User | all z: User |( (z in x.suggested) => (z in y.follows and y in x.follows) ) and z not in x.follows
+

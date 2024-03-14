@@ -1,0 +1,15 @@
+inv3 B: all t: Track | Exit in t implies #(t.succs)=0
+inv3 U: all t: Track | t in Exit  implies #(t.succs)=0
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 B: all t: Exit | #(t.succs)=1
+inv3 U: all t: Exit | #(t.succs)=0
+inv3 C: all t: Exit | #(t.succs)=0	all t: Track - Exit | some s : Track | s in t.succs
+inv3 U: all t: Track - Exit | some s : Track | s in t.succs
+inv3 C: all t: Exit | #(t.succs)=0	all t: Track - Exit | some s : Track | s in t.succs
+inv3 C: all t: Exit | #(t.succs)=0	all t: Track - Exit | some s : Track | s in t.succs
+inv3 C: all t: Exit | #(t.succs)=0	all t: Track - Exit | some s : Track | s in t.succs
+

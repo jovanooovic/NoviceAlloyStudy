@@ -1,0 +1,7 @@
+inv9 B: all x,y:Professor, c:Course | x!=y implies c in x.teaches implies c not in y.enrolled
+inv9 B: all p: Professor, c:Course | p in teaches.c implies p not in teaches.c
+inv9 B: all p, p1: Professor, c:Course | p in teaches.c implies p1 not in teaches.c
+inv9 B: all p, p1: Professor, c:Course | p in teaches.c implies p1 not in enrolled.c
+inv9 B: all p, p1: Professor, c:Course |p != p1 and p in teaches.c implies p1 not in enrolled.c
+inv9 B: all p, p1: Professor, c:Course | p != p1 and p in teaches.c implies p1 not in enrolled.c
+

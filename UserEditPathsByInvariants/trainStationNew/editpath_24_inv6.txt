@@ -1,0 +1,17 @@
+inv6 S: all s: speed | one signals.s in Entry
+inv6 T: all s: Speed | one signals.s in Entry
+inv6 S: all s: Speed, all e: Entry | one signals.s in e
+inv6 T: all s: Speed | Entry implies one signals.s
+inv6 T: all s: Speed | Entry.signals.s
+inv6 T: one Entry.signals.Speed
+inv6 T: one Entry.signals in Speed
+inv6 T: all e: Entry | e implies signals.Speed
+inv6 O: all e: Entry | one (e.signals & signals.Speed)
+inv6 T: all e: Entry | e.signals in Signal implies signals.Speed
+inv6 T: all e: Entry | one e.signals.Speed
+inv6 T: Entry.signals.Speed
+inv6 T: one Entry.signals.Speed
+inv6 T: one Entry.signals and signals.Speed
+inv6 B: Entry.signals = Speed
+inv6 T: Entry.signals implies one Speed
+

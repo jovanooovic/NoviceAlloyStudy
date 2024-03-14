@@ -1,0 +1,8 @@
+inv15 S: all p: Person | some t: Teacher | t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | some p.^Tutors && t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | some p.Tutors && t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | (some (p.Tutors)) && t in p.^Tutors
+inv15 B: all p: Person | some t: Teacher | some p.Tutors && t in p.^Tutors
+

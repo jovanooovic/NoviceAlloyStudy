@@ -1,0 +1,14 @@
+inv4 S: all product: Product | (product == Component implies not no product.parts) and  (product == Material implies no product.parts)
+inv4 U: all product: Product | (product = Component implies not no product.parts) and  (product = Material implies no product.parts)
+inv4 B: all product: Product | (product != Material implies some product.parts) and  (product = Material implies no product.parts)
+inv4 U: all product: Product | (product != Material implies some product.parts) or  (product = Material implies no product.parts)
+inv4 B: all product: Product | (product != Material implies some product.parts) and  (product = Material implies no product.parts)
+inv4 O: all product: Product | (product != Material implies some product.parts)	all mat: Material | no mat.parts
+inv4 O: all product: Product | product != Material implies some product.parts	all mat: Material | no mat.parts
+inv4 O: all product: Product | product != Material implies not no product.parts	all mat: Material | no mat.parts
+inv4 C: all product: Component | not no product.parts	all mat: Material | no mat.parts
+inv4 O: all product: Component | not no product.parts	all product: Product | product != Material implies some product.parts	all mat: Material | no mat.parts
+inv4 C: all product: Component | not no product.parts	all product: Product | product not in Material implies some product.parts	all mat: Material | no mat.parts
+inv4 C: all product: Product | product not in Material implies some product.parts	all mat: Material | no mat.parts
+inv4 C: all c: Component | some c.parts	all mat: Material | no mat.parts
+

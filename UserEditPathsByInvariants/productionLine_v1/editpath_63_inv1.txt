@@ -1,0 +1,14 @@
+inv1 T: iden parts.~parts
+inv1 O: iden in parts.~parts
+inv1 O: iden in ~parts.parts
+inv1 B: some Component.parts
+inv1 C: all c : Component | some c.parts
+inv1 O: iden in ~parts.parts and Component in parts.Product
+inv1 O: iden in parts.~parts and Component in parts.Product
+inv1 S: iden in parts.~parts and (Component + Resources) in parts.Product
+inv1 O: iden in parts.~parts and (Component + Resource) in parts.Product
+inv1 O: let R = Component <: parts | iden in R.~R
+inv1 S: all c : Component | some c.part
+inv1 C: all c : Component | some c.parts
+inv1 C: all c : Component | some c.parts
+

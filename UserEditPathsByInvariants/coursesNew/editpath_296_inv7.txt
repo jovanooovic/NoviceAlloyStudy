@@ -1,0 +1,4 @@
+inv7 B: all s : Student | all p, y :  s.projects | (Course <: projects.p) not in (Course <: projects.y)
+inv7 T: all s : Student | all p :  s.projects | #((Course <: projects.p) & (Course <: projects.p).projects) < 2
+inv7 T: all s : Student | all p :  s.projects | #( (Course <: projects.p) & (Course <: projects.p).projects ) = 1
+

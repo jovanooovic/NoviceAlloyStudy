@@ -1,0 +1,6 @@
+inv3 S: all x : User | sees.x not in Ad | sees.x in follows.x.posts		all a : Ad | some x : User | x.sees = a
+inv3 S: all x : User | sees.x not in Ad | sees.x in follows.x.posts
+inv3 S: all p,x,u : Photo-Ad,User,follows.x | p in sees.x -> u
+inv3 S: all p,x : Photo-Ad,User | p in sees.x -> follows.x
+inv3 T: all p : Photo-Ad | all x : User | p in sees.x -> follows.x
+

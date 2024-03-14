@@ -1,0 +1,5 @@
+inv8 S: all c : Component | c.parts in Danger iff c.workstation.workers in Robot
+inv8 S: all c : Component | some (c & Danger) implies c.workstation.workers in Robot
+inv8 O: all c : Component | some (c & Dangerous) implies c.workstation.workers in Robot
+inv8 O: all c : Component | some (c & Dangerous) implies c.workstation.workers in Robot
+

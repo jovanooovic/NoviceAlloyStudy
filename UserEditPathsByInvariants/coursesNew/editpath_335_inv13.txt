@@ -1,0 +1,9 @@
+inv13 S: all s: Student | all c:Course| all g1: Grade|	  	c->s->g in grades and  g in c.grades.last => some p:Project s->p in projects and c->p in projects
+inv13 S: all s: Student | all c:Course| all g1: Grade|	  	c->s->g in grades and  g in c.grades.last => some p:Project | s->p in projects and c->p in projects
+inv13 U: all s: Student | all c:Course| all g: Grade|	  	c->s->g in grades and  g in c.grades.last => some p:Project | s->p in projects and c->p in projects
+inv13 U: all s: Student | all c:Course| all g: Grade|	  	c->s->g in grades and  g in c.grades.last => some p:Project | s->p in projects and c->p in projects
+inv13 U: all s: Student | all c:Course| s = c.grades.last => (some p: Project | s in projects.p and c in projects.p)
+inv13 U: all s: Student | all c:Course| s = c.grades.last => (some p: Project | p in s.projects and p in c.projects)
+inv13 U: all s: Student | all c:Course| s in c.grades.last => (some p: Project | p in s.projects and p in c.projects)
+inv13 U: all s: Student | all c:Course| s in c.grades.last => (some p: Project | p in s.projects and p in c.projects)
+

@@ -1,0 +1,23 @@
+inv15 T: Person.^Tutors.Teacher
+inv15 T: Person.(^Tutors).Teacher
+inv15 T: all p : Person |  some (p.(^Tutors).Teacher)
+inv15 B: all p : Person |  some (p.(^Tutors) -> Teacher)
+inv15 T: Person.(^Tutors) -> Teacher
+inv15 T: Person.(^Tutors) -> Teacher
+inv15 B: some ((Person.(^Tutors)) -> Teacher)
+inv15 S: all ((Person.(^Tutors)) -> Teacher)
+inv15 T: all p : Person | p.(^Tutors) -> Teacher
+inv15 B: all p : Person | some p.(^Tutors) -> Teacher
+inv15 T: Person.(^Tutors).Teacher
+inv15 T: some (Person.(^Tutors).Teacher)
+inv15 B: some (Person.(^Tutors)->Teacher)
+inv15 T: all p : Person | some (p.(^Tutors).Teacher)
+inv15 T: all p : Person | some (p.(^Tutors).Teacher)
+inv15 T: all p : Person | some (p.(^Tutors).Person)
+inv15 B: all p : Person | some (p.(^Tutors)->Person)
+inv15 B: all p : Person | some (p.(^Tutors)->Teacher)
+inv15 U: all p : Person | some (Teacher.(^Tutors)->p)
+inv15 B: all p : Person | some (p.(^Tutors)->Teacher)
+inv15 B: all p : Person | lone (p.(^Tutors)->Teacher)
+inv15 B: all p : Person | some (p.(^Tutors)->Teacher)
+

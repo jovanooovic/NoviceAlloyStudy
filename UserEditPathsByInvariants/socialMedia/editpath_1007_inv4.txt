@@ -1,0 +1,19 @@
+inv4 B: all x: User | some y: Photo | y in x.posts and y in Ad => (all p: Photo | p in x.posts and p in Ad)
+inv4 B: all x: User | some y: Photo | (y in x.posts and y in Ad => (all p: Photo | p in x.posts and p in Ad))
+inv4 B: all x: User | some y: Photo | (y in x.posts and y in Ad => (all p: Photo | p in x.posts => p in Ad))
+inv4 B: all x: User | some y: Photo | (y in x.posts and y in Ad => (all p: Photo | p in x.posts && p in Ad))
+inv4 E:
+inv4 B: all x: User | some y: Photo | y in x.posts and y in Ad => (all p: Photo | p in x.posts && p in Ad)
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => (all p: Photo | p in x.posts && p in Ad)
+inv4 S: all x: User | some y: Photo | y in x.posts && y in Ad => all p: Photo || p in x.posts && p in Ad
+inv4 S: all x: User | some y: Photo | y in x.posts && y in Ad => (all p: Photo || p in x.posts && p in Ad)
+inv4 S: all x: User | some y: Photo | y in x.posts && y in Ad => (all p: Photo || p in x.posts && p in Ad)
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => (all p: Photo | p in x.posts && p in Ad)
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => (all p: Photo | p in x.posts => p in Ad)
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => all p: Photo | p in x.posts => p in Ad
+inv4 B: all x: User | some y: Photo | (y in x.posts && y in Ad => (all p: Photo | (p in x.posts => p in Ad)))
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => all p: Photo | p in x.posts => p in Ad
+inv4 B: all x: User | some y: Photo | y in x.posts && y in Ad => all p: x.posts | p in Ad
+inv4 C: all x: User | x.posts in (Photo - Ad) or x.posts in Ad
+inv4 C: all x: User | x.posts in (Photo - Ad) or x.posts in Ad
+

@@ -1,0 +1,13 @@
+inv4 O: User.visible != User.visible
+inv4 O: User.visible != User.visible
+inv4 O: User.visible.ids != User.visible.ids
+inv4 O: all u:User | u.visible.ids != u.visible.ids
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids && i != i1
+inv4 T: all u:User , i:Id, i1:Id | i in u.visible.ids & i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , w:Work, w1:Work | w in u.visible && w1 in u.visible implies w != w1
+inv4 O: all u:User , w:Work, w1:Work | (w in u.visible and w1 in u.visible) implies w != w1
+inv4 B: all u:User , w:Work, w1:Work | (w in u.profile and w1 in u.profile and w in u.visible and w1 in u.visible) implies w != w1
+inv4 U: all u:User , w:Work | w in u.profile implies (lone u.visible & w)
+

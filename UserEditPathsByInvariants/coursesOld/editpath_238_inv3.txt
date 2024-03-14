@@ -1,0 +1,9 @@
+inv3 T: all c : Course, p : Person | p -> c in teaches => (some p in Professor)
+inv3 C: all c : Course | some p : Person | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Student | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv3 B: all c : Course | all p : Professor | c in p.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+

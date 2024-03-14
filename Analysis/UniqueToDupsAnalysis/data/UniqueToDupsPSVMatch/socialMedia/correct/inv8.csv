@@ -1,0 +1,135 @@
+"sees & (univ -> Ad) in (suggested + follows).posts",1
+"sees :> Ad in (follows+suggested).posts :> Ad",3
+"sees.(Ad->Ad & iden) in (suggested + follows).posts",1
+"all u:User | u.sees&Ad in u.(follows+suggested).posts",4
+"all u: User | (u.sees & Ad) in (u.follows + u.suggested).posts",2
+"all u : User, a : u.sees&Ad | a in u.(follows+suggested).posts",1
+"all u : User | (Ad & u.sees) in ((u.follows + u.suggested).posts & Ad)",1
+"all u:User | u.sees & Ad in u.follows.posts + u.suggested.posts",22
+"all x : User | x.sees&Ad in (x.follows.posts + x.suggested.posts)",4
+"all u:User | Ad & u.sees in (u.follows.posts + u.suggested.posts)",1
+"all u:User | no (u.sees & Ad) - ((u.follows+u.suggested).posts & Ad)",1
+"all u: User , a: Ad | u.sees & Ad  in  (u.follows + u.suggested).posts",1
+"all u: User |  u.sees&Ad in (u.follows.posts + u.suggested.posts)&Ad",2
+"all a : Ad, u : User | a in u.sees => a in u.(suggested + follows).posts",1
+"all u1 : User | u1.sees&Ad in (u1.follows.posts+u1.suggested.posts)&Ad",3
+"all u : User, a : Ad | a in u.sees implies a in (u.follows + u.suggested).posts",2
+"all user : User |
+user.sees & Ad in user.follows.posts + user.suggested.posts",1
+"all u:User | (u.sees & Ad) in ((u.follows.posts & Ad) + (u.suggested.posts & Ad))",1
+"all u: User, a : Ad |a in u.sees => a in u.follows.posts + u.suggested.posts",5
+"all x:Ad,y:User| x in y.sees implies x in (y.follows.posts + y.suggested.posts)",1
+"all u:User, a: u.sees&Ad | (a in u.follows.posts) or (a in u.suggested.posts)",1
+"all a : Ad, u : User | a in u.sees implies a in u.follows.posts + u.suggested.posts",5
+"all u: User, p: u.sees&Ad | p in u.suggested.posts or p in u.follows.posts",1
+"all u: User | all p: u.sees | p in Ad implies p in (u.follows + u.suggested).posts",1
+"all u : User | all a : Ad | u->a in sees implies a in ( (u.follows + u.suggested).posts )",1
+"all u : User, ad : Ad | ad in u.sees => ad in (u.follows.posts + u.suggested.posts )",2
+"all ad:Ad,u:User| ad in u.sees implies ad in (u.follows.posts + u.suggested.posts)",1
+"all u1: User, a: Ad | a in u1.sees implies a in (u1.follows.posts + u1.suggested.posts)",1
+"all x:Ad,y:User| x in y.sees implies x in y.follows.posts or x in y.suggested.posts",1
+"all x : User, a : Ad | a in x.sees implies a in x.follows.posts or a in x.suggested.posts",3
+"all u:User, a:Ad | a in u.sees=> a in u.follows.posts or a in u.suggested.posts",18
+"all u:User, p:u.sees|p in Ad implies p in u.follows.posts or p in u.suggested.posts",2
+"all u : User, p:u.sees | p in Ad implies (p in u.follows.posts or p in u.suggested.posts)",1
+"all u:User, a:Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)",7
+"all u :User, p : Ad | p in u.sees => p in u.follows.posts or p in u.suggested.posts",1
+"all u:User,a:Ad | a in u.sees => a in u.suggested.posts or a in u.follows.posts",1
+"all a : Ad, u : User | a in u.sees => a in u.follows.posts or a in u.suggested.posts",34
+"all u:User,p:Ad | p in u.sees implies (p in u.follows.posts or p in u.suggested.posts)",2
+"all x : User, y : Ad | y in x.sees implies (y in x.follows.posts or y in x.suggested.posts)",1
+"all u:User | all a : u.sees & Ad | a in (u.follows.posts + u.suggested.posts & Ad)",1
+"all u: User | all p: u.sees | p in Ad implies p in (u.follows + u.suggested).posts & Ad",1
+"all u : User | all p : u.sees & Ad | p in u.follows.posts || p in u.suggested.posts",2
+"all x : User | all a : Ad | (a in x.sees) implies a in x.follows.posts + x.suggested.posts",1
+"all u : User | all a : Ad | a in u.sees implies a in (u.follows.posts + u.suggested.posts)",2
+"all a: Ad | all u: User | a in u.sees implies a in (u.follows.posts + u.suggested.posts)",1
+"all x : User | all y : Ad | (y in x.sees => y in (x.follows.posts + x.suggested.posts))",2
+"all u:User,a:Ad | u->a in sees implies u->a in follows.posts or u->a in suggested.posts",1
+"all u: User, a: Ad | (u in a.~sees) => (a in u.follows.posts or a in u.suggested.posts)",1
+"all u : User, ad : Ad | ad in u.sees implies (ad in u.follows.posts or ad in u.suggested.posts)",3
+"all ad : Ad, u : User | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts",2
+"all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts",4
+"all u : User | all ad : u.sees & Ad | ad in u.follows.posts or ad in u.suggested.posts",2
+"all u2 : User, ad : Ad | (ad in u2.sees) implies (ad in u2.follows.posts or ad in u2.suggested.posts)",1
+"all u:User | all p:u.sees | p not in Ad or p in u.follows.posts or p in u.suggested.posts",5
+"all u:User, a:Ad|u->a in sees => (some u2:u.follows+u.suggested | u2->a in posts )",1
+"all u: User | all p : u.sees| p in Ad => p in  u.follows.posts or p in u.suggested.posts",2
+"all u : User | all p : Ad | p in u.sees implies p in u.follows.posts or p in u.suggested.posts",4
+"all p : Ad | all u : User | p in u.sees implies (p in u.follows.posts) or (p in u.suggested.posts)",1
+"all x : User | all a : x.sees | a in Ad => a in x.follows.posts or a in x.suggested.posts",2
+"all a : Ad | all u : User | a in u.sees implies a in u.suggested.posts or a in u.follows.posts",1
+"all u:User| all p: u.sees| p in Ad implies (p in u.follows.posts or p in u.suggested.posts)",4
+"all a : Ad | all u : User | a in u.sees implies a in u.follows.posts or a in u.suggested.posts",2
+"all u: User | all s: u.sees | s in Ad implies (s in u.follows.posts or s in u.suggested.posts)",1
+"all u: User | all a : u.sees | a in Ad implies ( a in u.follows.posts or a in u.suggested.posts)",1
+"all u:User | all a:Ad | a in u.sees implies a in u.follows.posts or a in u.suggested.posts",10
+"all u : User | all p : Ad | p in u.sees implies (p in u.follows.posts or p in u.suggested.posts )",3
+"all u:User | all a:Ad | a in u.sees implies (a in u.follows.posts or a in u.suggested.posts)",7
+"all u : User | all a : u.sees & Ad | some uad : u.follows + u.suggested | a in uad.posts",1
+"all u : User | all f : Photo | f in u.sees&Ad => f in u.follows.posts+u.suggested.posts",1
+"all ad : Ad | all u : User | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts",2
+"all u : User| all ad : Ad| ad in u.sees implies (ad in u.follows.posts or ad in u.suggested.posts)",2
+"all u: User |all ad: Ad | u -> ad in sees implies ad in u.follows.posts or ad in u.suggested.posts",2
+"all ad : Ad , user : User | ad in user.sees => (ad in user.follows.posts or ad in user.suggested.posts)",1
+"all u: User, p: Photo | p in u.sees and p in Ad implies p in u.follows.posts or p in u.suggested.posts",1
+"all x: User, y: Photo | y in x.sees and y in Ad implies y in x.follows.posts or y in x.suggested.posts",2
+"all ad : Ad | all u1 : User | ad in u1.sees implies (ad in u1.follows.posts or ad in u1.suggested.posts)",1
+"all ad : Ad | all u1,u2 : User | ad in u1.sees implies (ad in u1.follows.posts or ad in u1.suggested.posts)",1
+"all x : User, a : Ad | a in x.sees implies (some y: User | a in y.posts and (y in x.follows + x.suggested))",1
+"all u:User | all a : u.sees & Ad | some p : User | a in p.posts and p in (u.follows + u.suggested)",1
+"all u:User,a:Ad | u->a in sees implies (some u1:User | u1->a in posts and u->u1 in follows+suggested )",1
+"all u:User, a:Ad|u->a in sees => (some u2:User | u2->a in posts and u->u2 in follows + suggested)",2
+"all user : User | all ad : Ad | ad in user.sees implies (ad in user.follows.posts or ad in user.suggested.posts)",4
+"all ad: Ad | all user: User |  ad in user.sees implies (ad in user.follows.posts or ad in user.suggested.posts)",1
+"all u:User,a:Ad | a in u.sees implies (some u1:User | a in u1.posts and u1 in u.follows + u.suggested)",1
+"all u1 : User, a : Ad | u1 in sees.a implies some u2 : User | u2 in posts.a and u1 in follows.u2 + suggested.u2",2
+"all a : Ad, u : User | a in u.sees implies some i : User | a in i.posts and (i in u.follows or i in u.suggested)",1
+"all x : User, a : Ad | a in x.sees implies (some y: User | a in y.posts and (y in x.follows or y in x.suggested))",1
+"all x : User, y: Ad | y in x.sees implies some z: User | y in z.posts and (z in x.follows or z in x.suggested)",1
+"all u : User, a : Ad | a in u.sees implies (some z : User | a in z.posts and (z in u.follows or z in u.suggested))",1
+"all u:User | all a:Ad | a in u.sees implies some p:User | p in (u.follows + u.suggested) and  a in p.posts",1
+"all u:User | all a:Ad | a in u.sees implies some p:User | a in p.posts and p in (u.follows + u.suggested)",3
+"all x: User | all y: Ad | y in x.sees implies some p: User | p in (x.follows + x.suggested) and y in p.posts",1
+"all x:User | all a:Ad | a in x.sees implies some p:User | a in p.posts and p in (x.follows + x.suggested)",1
+"all u: User, a: Ad | a in u.sees =>
+some u2: User | a in u2.posts and (u2 in u.follows or u2 in u.suggested)",1
+"all u : User, a: Ad | some u1: User| a in u.sees implies a in u1.posts and (u1 in u.follows or u1 in u.suggested)",3
+"all x : User, a : Ad | x->a in sees implies some y : User | y->a in posts and (x->y in follows or x->y in suggested)",1
+"all a:Ad,u:User | u -> a in sees implies (some p:User | p -> a in posts and (u -> p in follows or u -> p in suggested))",1
+"all u : User, ad : Ad | ad in u.sees implies (some u2 : User | ad in u2.posts && (u2 in u.follows or u2 in u.suggested))",1
+"all u:User, a:Ad | u->a in sees implies (some u1: User | u1->a in posts and (u->u1 in follows or u->u1 in suggested))",3
+"all u:User, a:Ad | u->a in sees implies (some u2:User | u2->a in posts and (u->u2 in follows or u->u2 in suggested))",6
+"all u1 : User, a : Ad | u1 in sees.a implies some u2 : User | u2 in posts.a and (u1 in follows.u2 or u1 in suggested.u2)",1
+"all a : Ad | all u : User | u in sees.a implies (some y : User | (a in y.posts) and ((y in u.follows) or (y in u.suggested)))",2
+"all u : User | all a : Ad | u in sees.a implies
+( some y : User | a in y.posts and(
+(y in u.follows ) or
+(y in u.suggested)
+)
+)",2
+"all a: Ad | all u: User | a in u.sees implies some z: User | (z in u.follows or z in u.suggested) and (a in z.posts)",1
+"all u1 : User, a : Ad | u1->a in sees implies some u2 : User | u2->a in posts and (u1->u2 in follows or u1->u2 in suggested)",1
+"all a: Ad | all u: User | u->a in sees implies some z: User | (u->z in follows or u->z in suggested) and (z->a in posts)",2
+"all u:User | all a:Ad| u->a in sees implies (some u2:User | u2->a in posts and (u->u2 in follows or u->u2 in suggested))",1
+"all u1 : User | all a : Ad | a in u1.sees implies some u2 : User | a in u2.posts and (u1->u2 in follows or u1->u2 in suggested)",3
+"all x: User | all p: Photo | p in Ad && p in x.sees => some u: User | (u in x.suggested || u in x.follows) && p in u.posts",8
+"all u: User, ad : Ad |
+some f, s : User |
+u->ad in sees
+=> (f->ad in posts && u->f in follows)
+|| (s->ad in posts && u->s in suggested)",6
+"all u : User | (all p : Photo | u->p in sees and p in Ad implies ( some u2:User | (u->u2 in follows or u->u2 in suggested) and u2->p in posts))",2
+"all user : User | all ad : user.sees | ad in Ad implies ((some following : user.follows | following->ad in posts) or some suggested : user.suggested | suggested->ad in posts)",2
+"all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and followed in u.follows) or (suggest->a in posts and u->suggest in suggested)",2
+"all u : User | all a : Ad | a in u.sees implies some followed, suggest : univ | (followed->a in posts and u->followed in follows) or (suggest->a in posts and u->suggest in suggested)",1
+"all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts or ad in u.suggested.posts
+all u : User, ad : Ad | ad in u.sees implies ad in u.follows.posts + u.suggested.posts",1
+"all user, ad : univ | user in User and ad in Ad and user->ad in sees implies some followed, suggest : univ | (followed->ad in posts and user->followed in follows) or (suggest->ad in posts and user->suggest in suggested)",5
+"all u1 : User, a : Ad | u1->a in sees implies some u2 : User | u2->a in posts and (u1->u2 in follows or u1->u2 in suggested)
+
+all u : User, a : Ad | a in u.sees implies u in (follows+suggested).posts.a",1
+"all u: User |all ad: Ad | u -> ad in sees implies ad in u.follows.posts or ad in u.suggested.posts
+
+
+all u:User | all a: Ad | a in u.sees implies a in u.suggested.posts or a in u.follows.posts",1

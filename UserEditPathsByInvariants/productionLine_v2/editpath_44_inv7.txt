@@ -1,0 +1,6 @@
+inv7 T: all d: Dangerous, c: Component | c in d.parts implies d
+inv7 B: all d: Dangerous, c: Component | c in d.parts
+inv7 T: all d: Dangerous, c: Component | c & d.parts
+inv7 C: all p: Product | p in Component and some(p.parts & Dangerous) implies p in Dangerous
+inv7 C: all c: Component |some(c.parts & Dangerous) implies c in Dangerous
+

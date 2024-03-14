@@ -1,0 +1,8 @@
+inv4 B: all p : Photo-Ad | all u : User | u.posts not in p
+inv4 B: all p:Photo-Ad | all a : Ad | all u : User | u.posts not in a
+inv4 B: all p:Photo-Ad | all a : Ad | all u : User | u.posts in a implies u.posts not in p
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | u.posts in p
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | all u.posts in p
+inv4 S: all p: Ad-(Photo-Ad) | some u : User | u in posts.p | all p1 in u.posts | p1 in p
+inv4 S: all u : User | all a : Ad | a in u.posts implies all u.posts in a
+

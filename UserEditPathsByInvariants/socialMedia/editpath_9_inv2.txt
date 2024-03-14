@@ -1,0 +1,6 @@
+inv2 S: one x : User | x.follows <: not x
+inv2 S: x.follows : set User | x.follows <: not x
+inv2 C: all y : User | y not in y.follows
+inv2 C: all x : User | x not in x.follows
+inv2 C: all x : User | x not in x.follows
+

@@ -1,0 +1,15 @@
+inv3 S: all x, y z : Node | x->y in adj and z->y in adj implies y = z
+inv3 B: all x, y, z : Node | x->y in adj and z->y in adj implies y = z
+inv3 B: all x, y, z : Node | x->y in adj and z->y in adj implies y = z and z = x
+inv3 U: all x, y : Node | x->y in adj implies y->x not in adj
+inv3 U: all x, y : Node | x->y in adj implies y->x not in adj
+inv3 U: all x, y : Node | x->y in adj implies ^(y->x) not in adj
+inv3 U: all x, y : Node | ^(x->y) in adj implies ^(y->x) not in adj
+inv3 U: all x, y : Node | ^(x->y) in adj implies (y->x) not in adj
+inv3 U: all x, y : Node | x->y in adj implies y->x not in adj
+inv3 U: all x, y : Node | x->y in adj implies y->x not in adj
+inv3 T: all x, y : Node | x->y in adj implies y->x not in adj and no ^(x.adj) & x
+inv3 C: all x, y : Node | x->y in adj implies y->x not in adj and no x.(^adj) & x
+inv3 C: all x : Node | no x.(^adj) & x
+inv3 C: all x : Node | no x.(^adj) & x
+

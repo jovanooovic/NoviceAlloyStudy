@@ -1,0 +1,10 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 C: ( all work : Workstation | some w : Worker | work->w in workers)	and	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv2 B: ( all work : Workstation | all w : Worker | work->w in workers)	and	(all w : Worker | one ws : Workstation | ws->w in workers)
+inv3 C: all c : Component | one w : Workstation | c->w in workstation
+inv4 U: all c : Component | all m : Material | some p : Product | c->p in parts and m->p not in parts
+inv5 S: all w1,w2 : Worker | all w : workstation |( w->w1 in workers and w->w2 and w1 in ) implies w2 in Human)
+inv5 S: all w1,w2 : Worker | all w : Workstation |( w->w1 in workers and w->w2 in workers and w1 in Human ) implies w2 in Human)
+inv5 O: all w1,w2 : Worker | all w : Workstation |( w->w1 in workers and w->w2 in workers and w1 in Human ) implies w2 in Human
+

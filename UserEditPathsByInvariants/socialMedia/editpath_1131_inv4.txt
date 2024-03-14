@@ -1,0 +1,7 @@
+inv4 B: one a:Ad, x:User| x->a in posts implies x.posts in Ad
+inv4 B: one a:Ad, x:User| x->a in posts implies posts.x in Ad
+inv4 B: one a:Ad|all x:User| x->a in posts implies x.posts in Ad
+inv4 B: one a:Ad | all x:User, p:Photo| x->a in posts and x->p in posts implies p in Ad
+inv4 B: one a:Ad|all x:User| x->a in posts implies x.posts in Ad
+inv4 C: all x:User, a:Ad| x->a in posts implies x.posts in Ad
+

@@ -1,0 +1,12 @@
+inv8 T: all p: Professor | p not in p.teaches.grades
+inv8 U: all p: Professor | p not in p.teaches.grades.Person
+inv8 U: all p: Professor , st: Course.grades.Person| p not in p.teaches.grades.Person
+inv8 U: all p: Professor , st: Course.grades.Grade| p not in p.teaches.grades.Person
+inv8 B: all p: Professor , st: Course.grades.Grade| p not in p.teaches.grades.Grade
+inv8 B: all p: Professor| p not in p.teaches.grades.Grade
+inv8 B: all p: Professor , c : p.teaches , st: c.grades.Grade| p not in st
+inv8 B: all p: Professor , c : p.teaches| p not in c.grades.Grade
+inv8 B: all p: Professor , c : p.teaches| p not in c.grades.Grade
+inv8 U: all p : Professor | no p.teaches & p.enrolled
+inv8 U: all p : Professor, c : Course | c in p.teaches => c not in p.enrolled
+

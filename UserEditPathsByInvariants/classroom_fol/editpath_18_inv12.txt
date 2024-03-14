@@ -1,0 +1,5 @@
+inv12 T: all t:Teacher | some c:Class, g:Group, p:Person | t->c in Teaches => c->p->g
+inv12 T: all t:Teacher | some c:Class, g:Group, p:Person | t->c in Teaches => c->p->g
+inv12 U: all t:Teacher | some c:Class, g:Group, p:Person | t->c in Teaches => c->p->g in Groups
+inv12 C: all t:Teacher | some c:Class, g:Group, p:Person | t->c in Teaches and c->p->g in Groups
+

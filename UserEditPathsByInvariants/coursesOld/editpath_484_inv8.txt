@@ -1,0 +1,33 @@
+inv8 T: all p : Professor | p not in p.teaches.grades
+inv8 T: all p : Professor | p not in p.teaches.grades
+inv8 U: all p : Professor | p not in p.teaches.grades.Person
+inv8 T: all p : Professor | p not in Person.p.teaches.grades
+inv8 U: all p : Professor | p not in (p.teaches.grades).Person
+inv8 U: all p : Professor | p not in Person.(p.teaches.grades)
+inv8 B: all p : Professor | no p.(p.teaches.grades)
+inv8 B: all p : Professor | no p.(p.teaches.grades)
+inv8 U: all p : Professor | no (p.teaches.grades).p
+inv8 U: all p : Professor | no (p.teaches.grades).none
+inv8 U: all p : Professor | no (p.teaches.grades).none
+inv8 B: all p : Professor | no (p.teaches.grades).Grade
+inv8 B: all p : Professor | p not in (p.teaches.grades).Grade
+inv8 B: all p : Professor | p not in (p.teaches.grades).Grade
+inv8 B: all p : Professor | p not in p.teaches.grades.Grade
+inv8 U: all p : Professor | p not in Grade.(p.teaches.grades)
+inv8 B: all p : Professor | p not in p.teaches.grades.Grade
+inv8 B: all p : Professor | p in p.teaches.grades.Grade
+inv8 S: all p : Professor
+inv8 U: all p : Professor | p in Professor
+inv8 T: iden
+inv8 U: all p : Professor | p in Professor
+inv8 B: all p : Professor | p not in p.teaches.grades.Grade
+inv8 U: none=none
+inv8 U: Professor =Professor
+inv8 U: all p : Professor | p in Professor
+inv8 U: all p : Professor | p in Professor
+inv8 B: all p : Professor | p not in (p.teaches.grades).Grade
+inv8 B: all p : Professor | p not in (p.teaches.grades).Grade
+inv8 B: all p : Professor | p not in (p.teaches.grades).Grade
+inv8 T: all p : Professor | p not in (p.teaches.grades)
+inv8 U: all p : Professor | no p.teaches&p.enrolled
+

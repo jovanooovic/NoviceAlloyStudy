@@ -1,0 +1,9 @@
+inv7 T: all s:Student | all p:Project | lone p in s.enrolled.projects
+inv7 B: all s:Student | lone p:Project | p in s.enrolled.projects
+inv7 B: all s:Student | lone p:Project | p in s.projects
+inv7 B: all s:Student | lone p:Project | p in s.projects
+inv7 T: all s:Student | all p:Project | p in s.projects implies lone p in s.projects
+inv7 T: all s:Student | all p:Project | p in s.projects implies lone p in s.projects
+inv7 T: all s:Student | all p:Project | p in s.projects implies lone p in s.projects
+inv7 U: all x : Student, y : Course, z, w : Project | x->z in projects and x->w in projects and y->z in projects and y->w in projects implies w = z
+

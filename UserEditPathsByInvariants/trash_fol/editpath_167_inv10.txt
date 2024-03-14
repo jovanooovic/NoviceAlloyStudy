@@ -1,0 +1,21 @@
+inv10 S: all f:file | f.link in Trash implies f in Trash
+inv10 B: all f:File | f.link in Trash implies f in Trash
+inv10 S: all f:File | f.link in Trash implies f:>linkn in Trash
+inv10 T: all f:File | f.link in Trash implies f:>link in Trash
+inv10 S: all f:File | (f in link and in Trash) implies f.link in Trash
+inv10 O: all f:File | f.link in Trash
+inv10 B: all f:File | f.link in Trash implies f in Trash
+inv10 B: all f:File | f.link in Trash implies f in Trash
+inv10 T: all l:link | l in Trash  implies File.l in Trash
+inv10 B: all f :File | f.link in Trash implies link.f in Trash
+inv10 B: all f :File | f.link in Trash implies link.f in Trash
+inv10 T: all f :File,l:link | f.l in Trash implies l in Trash
+inv10 T: all f :File,l:link | l in Trash
+inv10 T: all l:link | l in Trash
+inv10 T: all l:link | l not in Trash
+inv10 T: all l:link |no  l in Trash
+inv10 T: all l:link |no l in Trash
+inv10 T: all l:link |no File.l in Trash
+inv10 T: all f:File | f.link in Trash implies link in Trash
+inv10 B: all f:File | f.link in Trash implies link.f in Trash
+

@@ -1,0 +1,9 @@
+inv7 T: all c: Component | some c.^(parts) in Dangerous -> c in Dangerous
+inv7 T: all c: Component | c.^(parts) in Dangerous -> c in Dangerous
+inv7 T: all c: Component | c not in Dangerous -> c.^(parts) not in Dangerous
+inv7 T: all c: Component | c not in Dangerous -> Dangerous not in c.^(parts)
+inv7 B: all c: Component | c not in Dangerous
+inv7 T: all c: Component | some c2: Component | c2 in c^parts && c2 in Dangerous -> c in Dangerous
+inv7 T: all c: Component | some c2: Component | c2 in c.^(parts) && c2 in Dangerous -> c in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+

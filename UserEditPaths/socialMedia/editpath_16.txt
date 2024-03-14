@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv2 C: all u: User | u not in u.follows
+inv3 C: all u: User, p: Photo | p in u.sees => p in u.follows.posts or p in Ad
+inv4 C: all u: User, a: Ad | a in u.posts => u.posts in Ad
+inv5 U: all u: User, i: Influencer | i != u => i in u.follows
+inv6 C: all d: Day, i: Influencer | d in i.posts.date
+inv8 B: all u: User, uu: User, a: Ad | a in u.sees and a in uu.posts => uu in u.follows or uu in u.suggested
+

@@ -1,0 +1,55 @@
+"(position.~position)",1
+"all c: Component | c.position",1
+"all c:Component, p:Position | c.p",1
+"all r: Robot | r.position.~position",1
+"all c: Component | position[c.position]",1
+"all c: Component | c.position.~position",2
+"all c: Component | some c.position.Robot",1
+"all c: Component | some Robot[c.position]",2
+"all c:Component | some Robot.(c.position)",2
+"all c:Component | some (c.position).Robot",2
+"all c: Component | some c.(Robot.position)",1
+"all c: Component | some Robot.(c.position)",1
+"all c:Component | some Robot.~(c.position)",1
+"all c: Component | some position.c.position",2
+"all c: Component | some position(c.position)",1
+"all c: Component | some c.position.~position",1
+"all c: Component | some position.(c.position)",6
+"all c:Component | some (c.position).~position",1
+"all c : Component | some (c.position & Robot)",1
+"all c : Component | some position.(c.position)",2
+"all c:Component | some ((c.position).Position)",1
+"all c: Component | Robot.position & c.position",1
+"all c: Component | some (c.position).~position",1
+"all c:Component, p:Position | c->p in Position",1
+"all c: Component | c.position & Robot.position",1
+"all c: Component | let p = c.position | position.p",1
+"all c : Component | some r:Robot | r in c.position",1
+"all c:Component | some Robot.position in c.position",1
+"all c:Component | some c.position in Robot.position",1
+"all c:Component.position | some Robot.position in c",1
+"all c: Component | some Robot.position & c.Position",1
+"all c:Component | some (c.position && Robot.position)",1
+"all p : Component.position | some Robot->p in position",1
+"all c: Component | some (Robot:>position).(c.position)",2
+"all c: Component | let p = c.position | some position.p",1
+"all c:Component | some ((c.position) && Robot.position)",1
+"all c: Component | some (position:>Position).(c.position)",1
+"all c: Component | some (Position:>position).(c.position)",1
+"all c:Component | some r:Robot | r.Component = c.Component",1
+"all p : Position | some position.p implies some position.p",1
+"all p : Position | p in Component.position => some position.p",2
+"all c:Component, p:c.Position | some r:Robot | r.position = p",2
+"all p : Component.Position | some r : Robot | r->p in position",1
+"all c:Component, p:c.Position | (some r:Robot | r.position = p)",1
+"all c : Component | some p : Position | c.p implies some Robot.p",1
+"all c:Component, p:Position | p in c.position implies some Robot.p",1
+"all c:Component, p:Position | c->p in Position implies some (Robot.p)",1
+"all c : Component | some p : Position | some p.c implies some Robot.p",1
+"all c : Component | some p : Position | some c.p implies some Robot.p",5
+"all c: Component | some (position:>Position).(c.(Component:>position))",1
+"(Robot <: position).(Component <: Position.position) = (Robot <: position)",1
+"all c:Component, p:Position | some r : Robot | p in c.position implies some (r.p)",1
+"all c:Component, p:Position | some r:Robot | c.p in position implies r.p in Position",1
+"all c:Component, p:Position | some r : Robot | p in c.position implies some p in r.position",1
+"iden & Component->Robot in (Component:>(position.~position)).~(Component:>(position.~position))",2

@@ -1,0 +1,15 @@
+inv10 B: some Student.(Class.Groups)
+inv10 B: all s : Student | some s.(Class.Groups)
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->
+inv10 S: all s : Student,c : class | some c->s . Groups
+inv10 B: Student in Class.Groups.Group
+inv10 B: Student = Class.Groups.Group
+inv10 S: all s: Student, c: Class | some g : Group c->s->g in Groups
+inv10 S: all s: Student, c: Class | some g : Group c->s->g in Groups
+inv10 C: all s: Student, c: Class | some g : Group | c->s->g in Groups
+inv10 C: all s: Student, c: Class | some s.(c.Groups)
+

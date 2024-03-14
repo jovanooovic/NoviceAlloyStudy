@@ -1,0 +1,7 @@
+inv13 S: all c : Course | n : c.grades.last | some n.projects in c.projects
+inv13 T: all c : Course , n : c.grades.last | some n.projects in c.projects
+inv13 C: all c : Course , n : c.grades.last | some n.projects & c.projects
+inv13 S: all c : Course | n : c.grades.last | some n.projects & c.projects
+inv13 C: all c : Course, n : c.grades.last | some n.projects & c.projects
+inv13 C: all c : Course | all n : c.grades.last | some n.projects & c.projects
+

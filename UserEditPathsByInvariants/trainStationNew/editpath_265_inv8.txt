@@ -1,0 +1,8 @@
+inv8 T: all t:Track | all e:Exit | t in Entry implies e t.succs
+inv8 O: all t:Track | all e:Exit | t in Entry implies e in t.succs
+inv8 O: all e:Exit, en:Entry | e in en.succs
+inv8 O: all e:Exit, en:Entry | e in en.^succs
+inv8 O: all disj e:Exit, en:Entry | e in en.^succs
+inv8 O: all disj e:Exit, en:Entry | e in en.(^succs)
+inv8 C: all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+

@@ -1,0 +1,7 @@
+inv12 O: all t:Teacher | some c: Class | some g: Group, s : Student | c->s->g in Groups and t->c in Teaches
+inv12 S: all t:Teacher | (some c: Class | some g: Group, s : Student | c->s->g in Groups) and t->c in Teaches
+inv12 O: all t:Teacher | some c: Class | (some g: Group, s : Student | c->s->g in Groups) and t->c in Teaches
+inv12 O: all t:Teacher | some c: Class | t->c in Teaches and (some g: Group, s : Student | c->s->g in Groups)
+inv12 C: all t:Teacher | some c: Class | t->c in Teaches and (some g: Group, s : Person | c->s->g in Groups)
+inv12 C: all t:Teacher | some c: Class | t->c in Teaches and some g: Group, p : Person | c->p->g in Groups
+

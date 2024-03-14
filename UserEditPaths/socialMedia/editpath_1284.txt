@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in follows.follows.u
+inv7 B: all u : User | u.suggested not in follows.u and u.suggested in follows.follows.u
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in follows.follows.u
+inv7 B: all u : User | u.suggested not in u.follows and u.suggested in u.follows.follows
+inv7 U: all u : User | no (u.suggested & u.follows) and u.suggested in u.follows.follows
+

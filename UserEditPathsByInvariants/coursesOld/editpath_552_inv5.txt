@@ -1,0 +1,24 @@
+inv5 T: all p: Project | some (projects.p in Student)
+inv5 T: all p: Project | (projects.p in Student)
+inv5 T: all p: Project | some (projects.p in Student)
+inv5 T: all p: Project | some projects.p in Student
+inv5 T: all p: Project | projects.p in Student and some projects.p
+inv5 T: all p: Project | projects.p in Student and some Student.projects
+inv5 S: all p: Project, some s: Student | projects.p in Student and (some s.projects)
+inv5 S: all p: Project, some s: Student | projects.p in Student and (s.projects)
+inv5 S: all p: Project, some s: Student | projects.p in Student and s.projects
+inv5 S: all p: Project some s: Student | projects.p in Student and s.projects
+inv5 T: all p: Project | some s: Student | projects.p in Student and s.projects
+inv5 S: all p: Project, some s: Student | projects.p in Student and s.projects
+inv5 T: all p: Project | some s: Student | projects.p in Student and s.projects
+inv5 T: all p: Project | one s: Student | projects.p in Student and s.projects
+inv5 T: all p: Project | some s: Student | projects.p in Student and s.projects in Project
+inv5 T: all p: Project | some s: Student | projects.p in Student and s.projects in Project
+inv5 T: all p: Project | projects.p in Student and some projects.Project
+inv5 T: all p: Project | projects.p in Student and some Student.projects.Project
+inv5 T: all p: Project | projects.p in Student and some Student.projects
+inv5 U: all p: Project | some Student.projects
+inv5 T: some Student.projects and projects.Project in Student
+inv5 T: some Student.projects and Person.projects.Project in Student
+inv5 T: some Student.projects and some Student.(projects.Project)
+

@@ -1,0 +1,8 @@
+inv11 T: all s : Student | no s.enrolled - (s->Grade).~grades
+inv11 T: all s : Student | no s.enrolled.grades - Grade.~(Course.grades)
+inv11 U: all s : Student | no s.enrolled.grades.s - Grade.~(Course.grades)
+inv11 U: all s : Student | no s.enrolled.grades.s - Grade.~(Course.grades)
+inv11 T: all s : Student | no s.enrolled.grades - Grade.~(Course.grades)
+inv11 B: all s : Student | no s.(s.enrolled.grades) - Grade.~(Course.grades)
+inv11 B: all s : Student | no s.(s.enrolled.grades) - Course.grades.Grade
+

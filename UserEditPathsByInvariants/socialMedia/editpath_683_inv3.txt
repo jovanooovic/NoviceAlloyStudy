@@ -1,0 +1,4 @@
+inv3 O: all x,u:User, p:Photo| x->p in sees implies x->u in follows and u->p in posts
+inv3 O: all x,u:User, p:Photo-Ad| x->p in sees implies x->u in follows and u->p in posts
+inv3 C: all x:User, p:Photo-Ad| x->p in sees implies (some u:User| x->u in follows and u->p in posts)
+

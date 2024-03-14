@@ -1,0 +1,27 @@
+inv12 B: one Course.grades.Grade
+inv12 B: lone Course.grades.Grade
+inv12 U: all c:Course,p:Person | lone c.grades.p
+inv12 U: all c:Course,p:Person | lone c.grades.p
+inv12 S: all c:Course,g:Garde | lone c.grades.g
+inv12 B: all c:Course,g:Grade | lone c.grades.g
+inv12 U: all c:Course,p:Person | lone c.grades.p
+inv12 B: all c:Course,p:Person | lone c.grades.Grade
+inv12 T: all c:Course,p:Person | lone c.grades.Grade.p
+inv12 U: all c:Course,p:Person | lone grades.p
+inv12 U: all c:Course,p:Person | lone c.grades.p
+inv12 U: all c:Course,p:Person | lone c.grades.p
+inv12 S: all g1,g2:grade,s:Student,c:Course | g1 in s.enrolled.c.grades implies g1 in s.enrolled.c.grades
+inv12 T: all g1,g2:Grade,s:Student,c:Course | g1 in s.enrolled.c.grades implies g1 in s.enrolled.c.grades
+inv12 B: all c:Course,g:Grade | lone c.grades.g
+inv12 B: all c:Course,g:Grade | lone c.grades.g
+inv12 T: all c:Course,g:Grade | lone c.(^grades.g)
+inv12 T: all c:Course,g:Grade | lone c.~grades.g
+inv12 T: all c:Course,g:Grade | lone c.~grades.g
+inv12 T: all c:Course,g:Grade | lone c.(~grades).g
+inv12 T: all c:Course,g:Grade | lone c.(~grades.g)
+inv12 T: all c:Course,g:Grade | lone c.(~grades)
+inv12 O: all c:Course,g:Grade | lone c.grades
+inv12 O: lone Course.grades
+inv12 O: all c:Course | lone c.grades
+inv12 O: all c:Course | lone c.grades
+

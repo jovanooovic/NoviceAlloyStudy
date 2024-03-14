@@ -1,0 +1,17 @@
+inv7 U: all t1, t2 : Track | t1 in succs.t2 implies t2 not in succs.t1
+inv7 O: all t1, t2 : Track | t1 in succs.t2 implies t2 not in t1.succs
+inv7 U: all t1, t2 : Track | t1 in succs.t2 implies t2 not in succs.t1 and t1 != t2
+inv7 C: all t:Track | t not in t.^(succs)
+inv7 U: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in succs.t1 and t1 != t2
+inv7 U: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in succs.t1 and t1 != t2	all t : Track | t not in succs.t
+inv7 U: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in succs.t1	all t : Track | t not in succs.t
+inv7 O: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in t1.succs	all t : Track | t not in succs.t
+inv7 O: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t1 not in succs.t2	all t : Track | t not in succs.t
+inv7 U: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t1 not in t2.succs	all t : Track | t not in succs.t
+inv7 O: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in t1.succs	all t : Track | t not in succs.t
+inv7 U: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in succs.succs.t1	all t : Track | t not in succs.t
+inv7 B: all t1, t2 : Track | t1 in succs.t2 and t1 != t2 implies t2 not in t1.succs.succs	all t : Track | t not in succs.t
+inv7 U: all t : Track | t not in succs.t
+inv7 U: all t : Track | t not in succs.t	all t : Track | t not in t.succs
+inv7 B: all disj t1, t2 : Track | t1 in succs.t2 implies t2 not in t1.succs.succs	all t : Track | t not in succs.t
+

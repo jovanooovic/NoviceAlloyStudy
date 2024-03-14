@@ -1,0 +1,12 @@
+inv6 T: all p:Person,c:Class | p in Teacher implies p->c
+inv6 T: all p:Person,c:Class,g:Group | p in Teacher implies c->p->g
+inv6 T: all p:Person,c:Class,g:Group | p in Teacher implies c->p->g in Class
+inv6 T: all p:Person,c:Class,g:Group | p in Teacher implies c->p->g in Class
+inv6 B: all p:Person,c:Class | p in Teacher implies p->c in Teaches
+inv6 S: all p:Person,some c:Class | p in Teacher implies p->c in Teaches
+inv6 B: all p:Person,c:Class,g:Group | p in Teacher implies c->p->g in Groups
+inv6 S: all t:Teacher | (some c:Class) t->c in Teaches
+inv6 S: all t:Teacher, some c:Class | t->c in Teaches
+inv6 B: all t:Teacher,c:Class | t->c in Teaches
+inv6 C: all t:Teacher | (some c:Class | t->c in Teaches)
+

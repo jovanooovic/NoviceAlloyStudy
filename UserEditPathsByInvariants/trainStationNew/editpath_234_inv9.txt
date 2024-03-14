@@ -1,0 +1,19 @@
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| y in succs.x implies z not in x.signals
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| (y in succs.x and x!=y)implies z not in x.signals
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| (x in y.^succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x in y.^succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x in y.succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x not in y.succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | (x not in y.succs and x!=y)implies z not in x.signals
+inv9 T: all x:Track | all z:Semaphore| all y : Junction | (y not in succs.^x) implies z not in x.signals
+inv9 S: all x:Track | all z:Semaphore| all y : Junction | (y not in succs^.x) implies z not in x.signals
+inv9 S: all x:Track | all z:Semaphore| all y : Junction | y not in succs^.x implies z not in x.signals
+inv9 T: all x:Track | all z:Semaphore| all y : Junction | y not in succs.^x implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | y not in x.^succs implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | y not in x.succs implies z not in x.signals
+inv9 B: all x:Track | some z:Semaphore| all y : Junction | z in x.signals implies x not in y.^succs
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| z in x.signals implies x not in y.^succs
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in y.succs or z not in x.signals
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in succs.y or z not in x.signals
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in y.^succs or z not in x.signals
+

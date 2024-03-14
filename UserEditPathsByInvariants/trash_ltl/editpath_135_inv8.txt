@@ -1,0 +1,15 @@
+inv8 B: always( all f: File | eventually f.link in Trash)
+inv8 B: always(all f: File | eventually f.link in Trash)
+inv8 T: always(all f: File | f.link implies eventually f.link in Trash)
+inv8 B: always(all f: File | some f.link implies eventually f.link in Trash)
+inv8 S: eventually f.link in Trash
+inv8 B: eventually File.link in Trash
+inv8 B: eventually link.File in Trash
+inv8 B: eventually link.File in Trash
+inv8 B: always(eventually link.File in Trash)
+inv8 B: always(eventually File.link in Trash)
+inv8 B: always(eventually File.link in Trash)
+inv8 B: always(after eventually File.link in Trash)
+inv8 B: always(after (eventually File.link in Trash))
+inv8 B: always(eventually File.link in Trash)
+

@@ -1,0 +1,10 @@
+inv7 S: all s: Student | all c: s.enrolled | lone p: s.projects & projects.c
+inv7 S: all s: Student | all c: s.enrolled | one p: s.projects & projects.c
+inv7 T: all s: Student | all c: s.enrolled | lone s.projects & projects.c
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & projects.c)
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & getCourseProjects[c])	}		fun getCourseProjects[course: Course]: set Project {		projects.course & Project
+inv7 T: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)	}		fun getCourseProjects[course: Course]: set Project {		projects.course & Project
+inv7 U: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)
+inv7 U: all s: Student | all c: s.enrolled | lone (s.projects & c.projects)
+inv7 B: all s: Student | all c: s.enrolled | one (s.projects & c.projects)
+

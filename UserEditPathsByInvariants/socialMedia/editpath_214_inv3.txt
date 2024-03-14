@@ -1,0 +1,14 @@
+inv3 T: all x : User | one x in photos.follows.x
+inv3 T: all x : User | one x in sees.posts.follows.x
+inv3 B: all x : User | all y : User | x.sees in y.posts
+inv3 S: all x : User | all y : User | x.sees in y.posts | not x.sees in x.posts
+inv3 O: all x : User | all y : User | x.sees in y.posts && not x.sees in x.posts
+inv3 B: all x : User | some y : User | x.sees in y.posts && not x.sees in x.posts
+inv3 B: all x : User | some y : User | x.sees in y.posts
+inv3 B: all x : User | some y : User | x.sees in y.posts && not x.sees in posts.x
+inv3 S: all x : User | all y : User | y in x.follows | x.sees in y.posts && not x.sees in posts.x
+inv3 S: all x : User | all y : User | y in x.follows | x.sees in y.posts & not x.sees in posts.x
+inv3 S: all x : User | all y : User | y in x.follows | x.sees in y.posts & not x.sees in posts.x
+inv3 S: all x : User | all y : User | y in x.follows | x.sees in y.posts & not x.sees in posts.x
+inv3 S: all x : User | all y : User | y in x.follows | x.sees in y.posts & not x.sees in posts.x
+

@@ -1,0 +1,6 @@
+inv5 E:
+inv5 T: all a:Person-Professor | some projects.a	  all a: Person-Student | no a.projects
+inv5 B: all a:Person-Professor | some a.projects	  all a: Person-Student | no a.projects
+inv5 B: all a:Person-Professor | some c:Project | c in a.projects	  all a: Person-Student | no a.projects
+inv5 C: all a:Project| some c:Student | a in c.projects	  all a: Person-Student | no a.projects
+

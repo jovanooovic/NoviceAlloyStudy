@@ -1,0 +1,19 @@
+inv14 S: all s1,s2: Student, p1,p2: Projects | p1 in s1.ptojects and p1 in s1.projects and p1 in s2.projects implies p2 not in s2.projects
+inv14 S: all s1,s2: Student, p1,p2: Project | p1 in s1.ptojects and p1 in s1.projects and p1 in s2.projects implies p2 not in s2.projects
+inv14 B: all s1,s2: Student, p1,p2: Project | p1 in s1.projects and p1 in s1.projects and p1 in s2.projects implies p2 not in s2.projects
+inv14 B: all s1,s2: Student, p1,p2: Project | p1 in s1.projects and p2 in s1.projects and p1 in s2.projects implies p2 not in s2.projects
+inv14 S: all s1,s2: Students | s1 != s2 and lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | s1 != s2 and lone s1.projects&s2.projects
+inv14 B: all s1,s2: Student | s1 != s2 and one s1.projects&s2.projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 T: all s1: Student | lone s1.projects&Student-s1.projects
+inv14 B: all s1: Student | lone s1.projects&(Student-s1).projects
+inv14 B: all s1: Student | lone s1.projects&(Person-s1).projects
+inv14 B: all s1: Student | lone s1.projects&(Student).projects
+inv14 B: all s1: Student | lone s1.projects&(Student-s1).projects
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+inv14 S: all s1,s2: Student, p: Projects | p in s1.projects and p in s2.projects implies no s1.projects-p&s2.projects-p
+inv14 B: all s1,s2: Student, p: Project | p in s1.projects and p in s2.projects implies no s1.projects-p&s2.projects-p
+inv14 B: all s1,s2: Student, p: Project | p in s1.projects and p in s2.projects implies no s1.projects-p&s2.projects-p
+inv14 B: all s1,s2: Student | lone s1.projects&s2.projects
+

@@ -1,0 +1,7 @@
+inv4 S: all u:User | (u.posts & Ad) => all u.posts in Ad
+inv4 S: all u:User | (u.posts & Ad) => all u.posts in Ad
+inv4 S: posts in (User one -> Photo in (Ad + Photo))
+inv4 C: no (posts.Ad & posts.(Photo - Ad))
+inv4 C: all u:User | all p:Photo | p in Ad and u in posts.p implies (all ph : Photo | u->ph in posts implies ph in Ad)
+inv4 C: no (posts.Ad & posts.(Photo - Ad))
+

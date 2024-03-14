@@ -1,0 +1,7 @@
+inv6 S: all d : day, i : Influencer | one d in i.posts.date
+inv6 T: all d : Day, i : Influencer | one d in i.posts
+inv6 T: all d : Day, u : User | u in Influencer implies one d in i.posts
+inv6 T: all d : Day, u : User | u in Influencer implies some d in u.posts.date
+inv6 T: all d : Day, i : Influencer | one d in i.posts.date
+inv6 C: all d : Day, i : Influencer | d in i.posts.date
+

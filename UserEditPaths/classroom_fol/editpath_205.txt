@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 B: all p:Person | p not in Teacher
+inv1 C: all p:Person | p in Student
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv2 C: all p:Person | p not in Teacher
+inv3 C: no Student & Teacher
+inv3 C: all s:Student | s not in Teacher
+inv4 S: People in Student or Teacher
+inv4 S: People in Student + Teacher
+inv4 C: Person in Student + Teacher
+inv4 C: all p:Person | p in Student or p in Teacher
+inv5 T: some t:Teacher,c:Class | t->c in Class
+inv5 C: some t:Teacher,c:Class | t->c in Teaches
+inv5 C: some Teacher.Teaches
+inv6 S: all Teaches.Teaches
+inv6 S: all Teacher.Teaches
+inv6 B: Teacher.Teaches in Teacher
+inv6 C: all t:Teacher | some c:Class | t->c in Teaches
+inv6 C: Teacher in Teaches.Class
+inv7 C: Class in Teacher.Teaches
+NA H: THEME UPDATE
+

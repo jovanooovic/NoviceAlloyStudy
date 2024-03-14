@@ -1,0 +1,11 @@
+inv8 T: all u:User | u.sees in Ad in (u.follows.posts or u.suggested.posts)
+inv8 T: all u:User | u.sees in (u.follows.posts or u.suggested.posts)
+inv8 T: all u:User | u.sees in u.follows.posts or u.suggested.posts
+inv8 O: all u:User | u.sees in u.suggested.posts
+inv8 T: all u:User | u.sees in Ad in u.suggested.posts
+inv8 B: all u:User | u.sees in Ad
+inv8 T: all u:User | u.sees in Ad  implies u.sees in (u.follows.posts or u.suggested.posts)
+inv8 B: all u:User | u.sees in Ad  implies u.sees in u.follows.posts
+inv8 T: all u:User | some u.sees & Ad in u.follows.posts + u.suggested.posts
+inv8 C: all u:User | u.sees & Ad in u.follows.posts + u.suggested.posts
+

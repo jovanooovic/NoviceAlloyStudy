@@ -1,0 +1,20 @@
+NA H: THEME UPDATE
+inv1 C: all x: Person-Student | no x.enrolled
+inv2 C: all x: Person-Professor | no x.teaches
+inv3 O: all c : Course | some p : Professor | c in p.teaches
+inv4 C: all p: Project | one c : Course | p in c.projects
+inv5 C: all x: Person - Student | no x.projects	  all p: Project | some x: Student | p in x.projects
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 S: all s: Student | s.enrolled.projects.project in s.projects
+inv7 T: all s: Student | s.enrolled.projects.projects in s.projects
+inv7 U: all s: Student, c: Course | #(s.projects & c.projects) <= 1
+inv7 B: all s: Student, c: Course | #(s.projects & c.projects) <= 1 && c in s.enrolled
+inv8 U: all p: Professor | all c: p.teaches | c not in p.enrolled
+inv10 T: all p: Person | all c: Course | p in c.grades implies p in Student
+inv10 C: all p: Person | all c: Course, g: Grade | p->g in c.grades implies p in Student
+inv11 C: all p: Person | all c: Course, g: Grade | p->g in c.grades implies c in p.enrolled
+inv12 C: all c: Course | all p: Person | lone g: Grade | p->g in c.grades
+NA H: THEME UPDATE
+inv7 U: all s: Student | all c : s.enrolled | lone (c.projects &  s.projects)
+inv7 U: all s: Student | all c : s.enrolled | lone c.projects &  s.projects
+

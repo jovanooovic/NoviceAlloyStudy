@@ -1,0 +1,9 @@
+inv14 B: all s1,s2 : Student | lone s1.projects & s2.projects
+inv14 B: all s1,s2 : Student | lone s1.projects - s2.projects
+inv14 U: all s1,s2 : Student | lone s2 & (Person<:projects).(s1.projects)
+inv14 B: all s1,s2 : Student | lone s2.projects & s1.projects
+inv14 U: all s1,s2 : Student | all p : s1.projects | lone s2->p
+inv14 S: all s1,s2 : Student | all p : s1.projects | lone s2->p & Projects
+inv14 T: all s1,s2 : Student | all p : s1.projects | lone s2->p & Project
+inv14 U: all s1,s2 : Student | all p : s1.projects | lone s2->p & projects
+

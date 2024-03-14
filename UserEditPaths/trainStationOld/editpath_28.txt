@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv2 C: all s:Signal | eventually s in Green
+inv3 S: always (t.pos)' = t.pos
+inv3 U: always (Train.pos)' = Train.pos
+inv3 C: always (all t:Train | (t.pos)'=t.pos)
+inv4 C: always pos.~pos in iden
+inv5 U: always (all t:pos.Track | (t.pos)' in t.pos + t.pos.prox or t.pos in Exit)
+inv5 U: always (all t:pos.Track | (t.pos)' in t.pos + t.pos.prox or (t.pos in Exit and (t.pos)' in t.pos))
+inv7 U: always (all t:pos.Train | eventually no t.pos)
+inv7 C: always (all t:pos.Track | eventually no t.pos)
+inv10 T: always (all j:Junction | lone (prox.Junction).signal.Green)
+inv10 C: always (all j:Junction | lone (prox.Junction).signal & Green)
+inv10 C: always (all j:Junction | lone (prox.j).signal & Green)
+inv10 C: always (lone (prox.Junction).signal & Green)
+inv10 C: always (all j:Junction | lone (prox.j).signal & Green)	always (lone (prox.Junction).signal & Green)
+inv11 S: always (t:pos.Track | once t.pos in Entry)
+inv11 U: always (all t:pos.Track | once t.pos in Entry)
+inv11 U: always (all t:Train | some t.pos implies once t.pos in Entry)
+inv12 E: 
+inv12 E: 
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv14 T: always (all t:(pos.Track).signal.Green | eventually ((t.pos)' != t.pos and after t.pos.signal not in Green))
+inv15 B: always eventually (Train.pos)' != Train.pos
+inv15 B: always eventually (some Train implies (Train.pos)' != Train.pos)
+inv15 B: always eventually (some Train implies ((Train.pos)' != Train.pos))
+inv15 C: always (all t:pos.Track | eventually (t.pos)' != t.pos)
+inv16 O: always (all t:pos.Exit | (historically some t.pos) since t.pos in Entry)
+inv16 B: always (all t:pos.Exit | (always some t.pos) since t.pos in Entry)
+inv17 O: always (some t:Train | once (t.pos in Entry and historically no Entry) and eventually(t.pos in Exit and historically no Exit))
+inv17 S: always (some t:Train | historically no Train.pos) and eventually(t.pos in Exit and historically no Exit))
+inv17 O: always (some t:Train | historically no Train.pos and eventually(t.pos in Exit and historically no Exit))
+inv17 O: always (some t:Train | before historically no Train.pos and eventually(t.pos in Exit and historically no Exit))
+inv17 T: always (some t:Train | historically lone (Train.pos + t) and eventually (t.pos in Exit and historically lone (Train.Exit + t)))
+inv17 O: always (some t:Train | historically lone (Train.pos + t) and eventually (t.pos in Exit and historically lone (pos.Exit + t)))
+inv16 B: always (all t:pos.Exit | (always some t.pos) since t.pos in Entry)
+inv16 U: always (all t:pos.Exit | (some t.pos) since t.pos in Entry)
+

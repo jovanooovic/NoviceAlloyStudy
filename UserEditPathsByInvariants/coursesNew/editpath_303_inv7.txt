@@ -1,0 +1,11 @@
+inv7 S: all x : Student | y in x.enrolled :> Course =>
+inv7 T: all x : Student | all y : x.projects | one projects.y in x.enrolled
+inv7 T: all x : Student | all y : x.projects | one Course <: projects.y in x.enrolled
+inv7 T: all x : Student | all y : x.projects | one (Course <: projects.y in x.enrolled)
+inv7 T: all x : Student | all y : x.projects | one projects.y
+inv7 B: all x : Student | all y : x.projects | one Course <: projects.y
+inv7 B: all x : Student | all y : x.enrolled | one y.projects
+inv7 B: all x : Student | all y : x.enrolled | lone y.projects
+inv7 U: all x : Student | all y : x.enrolled | lone (y.projects & x.projects)
+inv7 B: all x : Student | all y : x.enrolled | lone (x.projects)
+

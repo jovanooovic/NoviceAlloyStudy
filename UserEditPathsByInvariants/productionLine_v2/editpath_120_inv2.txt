@@ -1,0 +1,7 @@
+inv2 U: all w : Workstation | some w.workers	Workstation.workers = Worker
+inv2 U: Workstation.workers = Worker
+inv2 U: all w : Workstation | some w.workers	Workstation.workers = Worker
+inv2 U: all w : Workstation | some w.workers	all w : Worker | one Workstation.workers&w
+inv2 U: all w : Workstation | some w.workers	all w : Worker | all disj w1,w2 : Workstation | w in w1.workers and w in w2.workers implies w1=w2
+inv2 C: all w : Workstation | some w.workers	Workstation.workers = Worker	all w : Worker | all disj w1,w2 : Workstation | w in w1.workers and w in w2.workers implies w1=w2
+

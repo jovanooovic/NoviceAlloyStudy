@@ -1,0 +1,6 @@
+inv8 S: all u: User | all p: Photo | p in Ad and u.sees.p =>
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv8 B: all u: User | all p: Photo | p in Ad and u in sees.p => posts.p in u.suggested + u.follows
+inv8 B: all u: User | all p: Ad | u in sees.p => posts.p in u.suggested + u.follows
+

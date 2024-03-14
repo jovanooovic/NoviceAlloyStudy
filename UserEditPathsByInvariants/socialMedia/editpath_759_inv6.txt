@@ -1,0 +1,7 @@
+inv6 S: all i:Influencer | one d:Date | d in i.posts
+inv6 S: all i:Influener | one d:Day | d in i.posts
+inv6 O: all i:Influencer | one d:Day | d in i.posts
+inv6 B: all i:Influencer, p:Photo | one d:Day | p in i.posts implies d in p
+inv6 B: all i:Influencer, p:Photo | one d:Day | p in i.posts.date implies d in p
+inv6 C: all i:Influencer, d:Day | d in i.posts.date
+

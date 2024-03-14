@@ -1,0 +1,18 @@
+"always pos",2
+"always Train",1
+"always Train.pos",1
+"always Train.pos.Track",1
+"always Train.pos = iden",1
+"all t: Train | always t.pos",2
+"all t : Train | always t.pos",1
+"all t : Track | always t.pos",1
+"always all t: Train | (before t.pos) = t.pos",1
+"always all t: Train | t.pos implies after t.pos",2
+"always all t: Train | (before t.pos) = (after t.pos)",1
+"always all t: Train | {let x = t.pos | t} after t.pos = x",1
+"always all t: Train | always t.pos implies after t' in t.pos",1
+"always all t: Train | {let x = t.pos | Train} after t.pos = x",1
+"always (all t:Train, k:Track | some t.pos :> k implies after t.pos :> k)",2
+"always pos = pos and (Train->Track not in pos) = (Train->Track not in pos)",1
+"always (all t:Train, k:Track | some t->k in pos implies after t->k in pos)",3
+"always all t: Train, tk: Track | t.pos.tk in pos implies after t.pos.tk in pos",1

@@ -1,0 +1,20 @@
+inv3 T: all e : Exit | none e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: no Exit.succs
+inv3 U: no Exit.succs
+inv3 U: no Exit.succs
+inv3 B: no Exit.succs	no Exit.signals
+inv3 U: all t : Track | t not in Exit.succs
+inv3 U: all t : Track-Exit | t not in Exit.succs
+inv3 U: no Exit.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | lone e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | lone e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: all e : Exit | no e.succs
+inv3 U: no Exit.succs
+inv3 U: all e : Exit | no e.succs
+inv3 C: all t:Track | t in Exit <=> no t.^(succs)
+

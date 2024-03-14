@@ -1,0 +1,89 @@
+NA H: THEME UPDATE
+inv1 C: all c : Course | enrolled.c in Student
+inv12 U: all s : Student , c : Course | lone (s.(c.grades))
+inv13 C: all c : Course | c.grades.last in ((c.projects).~projects)
+inv14 S: all s : Student , p,p1:Process | (p+p1) in s.projects
+inv14 S: all s : Student , p,p1:Projects | (p+p1) in s.projects
+inv14 B: all s : Student , p,p1:Project | (p+p1) in s.projects
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not p.projects-{s} & p1.projects-{s})
+inv14 B: all s : Student , p,p1:Project | (p+p1) in s.projects
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not p.projects-{s})
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s})
+inv14 U: all s : Student , p,p1:Project | (p+p1) in s.projects implies (s not in (p.projects)-{s})
+inv14 S: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s}) and (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s}) & (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not (p.projects)-{s}) & (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not (p.projects)) & (p1.projects)))
+inv14 U: all s1,s2 : Student | all p1,p2 : Project |	  	(s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies	  	( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 T: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not p.~projects & p1.~projects)
+inv14 T: all s : Student , p,p1:Project | (not p.~projects & p1.~projects)
+inv14 T: all s : Student , p,p1:Project | (not projects.p & projects.p1)
+inv14 T: all s : Student , p,p1:Project | (no projects.p & projects.p1)
+inv14 T: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (no p.~projects & p1.~projects)
+inv14 U: all s : Student , p:s.projects | p in s.projects
+inv14 T: all s : Student , p:s.projects | (p.~projects)
+inv14 T: all s : Student , p:s.projects | (p.~projects) not in s.projects
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 T: all s : Student , p:s.projects | ((p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv4 C: all p : Project | one (Course :> projects.p)
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and one (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and some (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects) implies s!=s1
+inv14 T: all s,s1 : Student | s!s1 implies lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 S: all disj (s,s1) : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 S: disj (s,s1) : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 iff lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv15 B: all s,s1 : Student , p : (s.projects & s1.projects) | s.((Course :>projects.p).grades) = s1.((Course :>projects.p).grades)
+inv15 S: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , s1: ((Course :>projects.p).grades) | g = g1
+inv15 T: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , g1: ((Course :>projects.p).grades) | g = g1
+inv15 T: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , g1: ((Course :>projects.p).grades) | g = g1
+inv15 B: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , g1: s1.((Course :>projects.p).grades) | g = g1
+inv15 S: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , g1: s1.((Course :>projects.p).grades) | g = g1 or g1=prev[g2] or g2=prev[g1]
+inv15 B: all s,s1 : Student , p : (s.projects & s1.projects) , g :s.((Course :>projects.p).grades) , g1: s1.((Course :>projects.p).grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 U: all p : Project , g,g1 : (Course :>projects.p).grades.Person |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 U: all p : Project , g,g1 : (Course :>projects.p).grades.Person |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 U: all p : Project , g,g1 : ((Course :>projects.p).grades).Person |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 T: all p : Project , g,g1 : (Course :>projects.p).grades.~Person |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : Person.((Course :>projects.p).grades) |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 B: all p : Project , g,g1 : Student.((Course :>projects.p).grades) |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : Person.((Course :>projects.p).grades) |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 S: all p : Project  g,g1 : (Person :> projects.p).((Course :> projects.p).grade) |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 S: all p : Project  g,g1 : (Person :> projects.p).((Course :> projects.p).grades) |  g = g1 or g1=prev[g] or g=prev[g1]
+inv15 S: all p : Project  g,g1 : (Person :> projects.p).((Course :> projects.p).grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : (Person :> projects.p).((Course :> projects.p).grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 S: all p : Project , g,g1 : (Person :> projects.p).(projects.p).grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 T: all p : Project , g,g1 : (Person :> projects.p).(projects.p).grades | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : (Person :> projects.p).((projects.p).grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : (Person :> projects.p).(projects.p.grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv15 O: all p : Project , g,g1 : (projects.p).(projects.p.grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv6 U: all s : Student | s.projects in (s.enrolled.projects)
+inv15 O: all p : Project , g,g1 : (projects.p).(projects.p.grades) | g = g1 or g1=prev[g] or g=prev[g1]
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv13 C: all c : Course | c.grades.last in ((c.projects).~projects)
+inv12 U: all s : Student , c : Course | lone (s.(c.grades))
+inv11 C: all c : Course | c.grades.Grade in (c.~enrolled)
+inv10 C: all c : Course | (c.grades.Grade) in Student
+inv9 B: all t : Professor | no (t.teaches.~enrolled) & ((t.teaches).~teaches)
+inv8 U: all t : Professor | t not in (enrolled.(t.teaches))
+inv7 U: all s : Student , c:Course | lone (s.projects & c.projects)
+inv6 U: all s : Student | s.projects in (s.enrolled.projects)
+inv5 C: all p : Project | some (Person :> projects.p)	  	    	    all p : Project | (Person :> projects.p) in Student
+inv4 C: all p : Project | one (Course :> projects.p)
+inv3 C: all c : Course | some teaches.c
+inv2 C: all c : Course | teaches.c in Professor
+inv1 C: all c : Course | enrolled.c in Student
+inv4 C: all p : Project | one (Course :> projects.p)
+

@@ -1,0 +1,4 @@
+inv5 O: all x, y: User | x in Influencer => y in x.follows and y != x
+inv5 O: all x: User | x in Influencer => all y: User| y in x.follows and y != x
+inv5 O: all x: User | x in Influencer => all y: User| y != x && y in x.follows
+

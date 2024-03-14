@@ -1,0 +1,11 @@
+inv2 T: all s : Signal | succs.s
+inv2 O: all s : Signal | some succs.s
+inv2 U: all s : Signal | some signals.s
+inv2 C: all s : Signal | one signals.s
+inv2 U: all s : Signal | some t : Track | s in t.signals
+inv2 S: all s : Signal | some t : Track | s in t.signals and #s == 1
+inv2 S: all s : Signal | some t : Track | s in t.signals and #(s) == 1
+inv2 S: all s : Signal | some t : Track | s in t.signals and #t.signals == 1
+inv2 C: all s : Signal | one t : Track | s in t.signals
+inv2 C: all s : Signal | one t : Track | s in t.signals
+

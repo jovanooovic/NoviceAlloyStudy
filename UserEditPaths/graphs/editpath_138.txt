@@ -1,0 +1,28 @@
+na H: THEME UPDATE
+inv1 S: all n1, n2: Node |
+inv1 E: 
+inv1 C: all n1, n2: Node | n2 in n1.adj iff n1 in n2.adj
+inv2 E: 
+inv2 O: no adj.adj
+inv2 C: all n: Node | n not in n.adj.adj
+inv2 C: all n: Node | n not in n.adj.adj
+inv1 B: all n: Node | n in n.adj.adj
+inv1 U: all n: Node | no n.adj or n in n.adj.adj
+inv1 U: all n: Node | n not in n.adj or n in n.adj.adj
+inv1 B: all n: Node | n not in n.adj and n in n.adj.adj
+inv1 B: all n: Node | no n.adj or n not in n.adj and n in n.adj.adj
+inv1 B: all n: Node | no n.adj or (n not in n.adj and n in n.adj.adj)
+inv3 C: all n: Node | n not in n.^(adj)
+inv4 U: all n1, n2: Node | n2 in n1.^(adj)
+inv4 B: all n1, n2: Node | n2 in n1.^(adj) and n2 not in n2.adj
+inv4 U: all n1, n2: Node | n2 in n1.^(adj) and n2 in n2.adj
+inv4 B: all n1, n2: Node | n2 in n1.^(adj) and n2 not in n2.adj
+inv4 U: all n : Node | n in n.^(adj)
+inv4 U: all n1 : Node | no n2: Node | n2 not in n1.^(adj)
+inv4 C: all n1, n2 : Node | n1 in n2.adj
+inv5 C: all n: Node | n not in n.adj
+inv6 E: 
+inv6 O: all n1, n2: Node | n2 in n1.^(adj)
+inv7 O: all n1, n2: Node | n2 in n1.^(adj)
+inv8 C: all n1, n2: Node | n1 in n2.^adj iff n1 in n2.adj
+

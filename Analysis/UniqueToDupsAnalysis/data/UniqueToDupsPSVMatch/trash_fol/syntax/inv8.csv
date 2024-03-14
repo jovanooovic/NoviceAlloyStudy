@@ -1,0 +1,30 @@
+"link in Empty",1
+"link in empty",1
+"all f:file | f not in link",1
+"all l:File | l not in Link",1
+"all l:Link | l not in Link",1
+"all f:File | not isLisnk[k]",1
+"all f:File | not isLisnk[f]",1
+"all f : File | f.link = empty",1
+"all x,y : File | f->g not in link",1
+"all f1,f2:Files | f1->f2 not in link",1
+"all x: File, y: File | x->y in link implies false",1
+"all x: File, y: File | x->y in link implies False",1
+"all f | not is_link[f]
+}
+
+/* A link does not link to another link. */
+
+pred is_link[f : File]{
+some g : File | f->g in link",2
+"all f | not is_linked[f]
+}
+
+/* A link does not link to another link. */
+
+pred is_linked[f : File]{
+some g : File | g->f in link
+}
+
+pred is_link[f : File]{
+some g : File | f->g in link",1

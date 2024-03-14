@@ -1,0 +1,4 @@
+inv4 S: all c : Component | all m : Materials | c.parts != none and m.parts = none
+inv4 U: all c : Component | all m : Material | c.parts != none and m.parts = none
+inv4 C: (all c : Component | some p : Product | p in c.parts) and (all m : Material | no p : Product | p in m.parts)
+

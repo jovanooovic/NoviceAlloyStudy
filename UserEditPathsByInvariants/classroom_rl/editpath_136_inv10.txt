@@ -1,0 +1,23 @@
+inv10 T: Student.Groups in Student
+inv10 T: Student.Groups in Student
+inv10 T: Class.Groups.Student
+inv10 T: Class.Groups.Student in iden
+inv10 T: Class.Groups
+inv10 T: Student.Class.Groups
+inv10 T: Student.(Class.Groups)
+inv10 T: Student.(Class.~Groups)
+inv10 T: ~Groups
+inv10 T: ~Groups.Class
+inv10 B: Group.~(Class.Groups) in Student
+inv10 B: Student in Group.~(Class.Groups)
+inv10 B: Student in (Group.~(Class.Groups) :> Student)
+inv10 B: Student in (Group.~(Class.Groups) :> Student)
+inv10 T: (~(Class.Groups) . Student) . (Student <: Class.Groups) in iden
+inv10 B: (~(Class.Groups) :> Student) . (Student <: Class.Groups) in iden
+inv10 O: iden in (~(Class.Groups) :> Student) . (Student <: Class.Groups)
+inv10 S: iden in ~(Students <: Class.Groups) . (Students <: Class.Groups)
+inv10 O: iden in ~(Student <: Class.Groups) . (Student <: Class.Groups)
+inv10 B: Student in Group.~(Student <: Class.Groups)
+inv10 U: Group.~(Student <: Class.Groups) in Student
+inv10 U: Group.~(Student <: Class.Groups) in Student
+

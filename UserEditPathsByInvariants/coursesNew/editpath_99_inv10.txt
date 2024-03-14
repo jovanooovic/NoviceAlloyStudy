@@ -1,0 +1,6 @@
+inv10 T: all p:Person | p in grades.Grade implies p in Student
+inv10 C: all c : Course, p : Person, g : Grade | g in c.grades[p] => p in Student
+inv10 C: all c : Course, p : Person, g : Grade | g in c.grades[p] implies p in Student
+inv10 C: all p : Person, g : Grade | g in Course.grades[p] implies p in Student
+inv10 C: all p : Person, g : Grade | g in Course.grades[p] implies p in Student
+

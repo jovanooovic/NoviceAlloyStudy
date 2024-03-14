@@ -1,0 +1,13 @@
+inv3 U: all a:Exit | no a.succs
+inv3 C: all a:Track | a in Exit iff no a.succs
+inv3 S: all a:Track | a in Exit iff all a2:Track | a->a1 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv3 O: all a,a2:Track | a in Exit iff a->a2 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv3 O: all a:Exit, a2:Track | a->a2 not in succs	all a:Track,a2:Track | a->a2 not in succs implies a in Exit
+inv3 S: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | all a2:Track | a->a2 not in succs implies a in Exit iff
+inv3 O: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | all a2:Track | a->a2 not in succs implies a in Exit
+inv3 C: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | (all a2:Track | a->a2 not in succs) implies a in Exit
+inv3 C: all a:Exit,a2:Track | a->a2 not in succs	all a:Track | (all a2:Track | a->a2 not in succs) implies a in Exit
+

@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 S: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws2.wokers and ws1 != ws2
+inv2 U: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in succ.ws1
+inv2 U: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in succ
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies no worker in succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies no worker in succ.workers
+inv2 T: some ws1 : Workstation | all worker : Worker | worker in ws1.workers implies no worker in succ.workers
+inv2 T: some ws1 : Workstation | all worker : Worker | worker in workers.ws1 implies no worker in ws1.succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies no worker in ws1.succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker |some worker in ws1.workers implies no worker in ws1.succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker |some worker in ws1.workers and no worker in ws1.succ.workers
+inv2 T: all worker : Worker | worker in workers and no worker in succ.workers
+inv2 T: all worker : Worker | worker in workers and worker not in succ.workers
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers and worker not in ws1.succ.workers
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker | some worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 T: all ws1 : Workstation | all worker : Worker | some worker in ws1.workers implies no worker in ws1.succ.workers
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 T: all ws : Workstation | all worker : Worker | some ws.workers.worker and no worker in ws.succ.workers
+inv2 S: all ws : Workstation | all worker : Worker | worker in ws.workers implies worker not in ws1.succ.workers
+inv2 B: all ws : Workstation | all worker : Worker | worker in ws.workers implies worker not in ws.succ.workers
+inv2 B: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws2.workers and ws1 != ws2
+inv2 U: all ws1,ws2 : Workstation | all worker : Worker | worker in workers.ws1 implies worker not in ws2.workers and ws1 != ws2
+inv2 U: all ws1,ws2 : Workstation | all worker : Worker | worker in workers.ws1 implies worker not in workers.ws2 and ws1 != ws2
+inv2 B: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws2.workers and ws1 != ws2
+inv2 B: all ws1,ws2 : Workstation | some worker : Worker | worker in ws1.workers implies worker not in ws2.workers and ws1 != ws2
+inv2 B: all ws1 : Workstation | some worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 S: all ws1 : Workstation | all w1,w2 : Worker | w1 in ws1.workers  and w2 in ws1.workers implies ws1 != ws2
+inv2 B: all ws1 : Workstation | all w1,w2 : Worker | w1 in ws1.workers  and w2 in ws1.workers implies w1 != w2
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers and no succ.workers.worker
+inv2 T: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers and no succ.*(workers.worker)
+inv2 B: all ws1 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws1.succ.workers
+inv2 B: all ws1,ws2 : Workstation | all worker : Worker | worker in ws1.workers implies worker not in ws2.workers
+

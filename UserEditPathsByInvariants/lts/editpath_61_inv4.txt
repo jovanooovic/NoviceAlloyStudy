@@ -1,0 +1,19 @@
+inv4 T: trans in Init.*trans
+inv4 S: Node in Init.*trans
+inv4 T: State in Init.*trans
+inv4 T: all s:State | s in Init.(*trans)
+inv4 T: all s:State | s in Init.(trans)
+inv4 E:
+inv4 T: State.(Event.trans) in Init.(Event.*trans)
+inv4 T: Event.trans in Init.*trans
+inv4 T: Event.trans in State.*trans
+inv4 T: State.trans in Init.*trans
+inv4 U: State.(Event.trans) in Init.*(Event.trans)
+inv4 U: State.(Event.trans) in Init.*(Event.trans)
+inv4 B: State in Init.*(Event.trans)
+inv4 O: State in Init.(Event.trans)
+inv4 U: Init.*(Event.trans) in State
+inv4 T: Init.*trans in State
+inv4 T: Init.Event.*trans in State
+inv4 T: Init.(Event.*trans) in State
+

@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 C: all u : User | u.visible in u.profile
+inv2 O: all u : User | u.profile.ids in u + Institution
+inv2 O: all u : User | u.profile.ids in (u + Institution)
+inv2 C: all u : User | u.profile.source in (u + Institution)
+inv2 C: all u : User | u.profile.source in u + Institution
+inv3 T: all u : User | ~allIds[u].allIds[u] in iden	}		fun allIds[u : User] : one User -> set Id {		u <: profile.Work.ids
+inv3 T: all u : User | ~allIds[u].allIds[u] in iden	}		fun allIds[u : User] : one User -> set Id {		profile.Work.ids
+inv3 S: all u : User | ~allIds[u].allIds[u] in iden	}		fun allIds[u : User] : set Id {		u.profile.Work.ids
+inv3 S: all u : User | ~allIds[u].allIds[u] in iden	}		fun allIds[u : User] : set Id {		u.profile.Work.ids
+inv3 S: all u : User | ~allIds[u].allIds[u] in iden	}		fun allIds(u : User) : set Id {		u.profile.Work.ids
+inv3 S: all u : User, some id1, id2 : Id | some u.profile.Work.id1 and u.profile.Work.id2 implies id1 != id2
+inv3 S: all u : User, some id1, id2 : Id | some u.profile.Work.id1 and u.profile.Work.id2 implies id1 != id2
+inv3 T: all u : User | some id1, id2 : Id | some u.profile.Work.id1 and u.profile.Work.id2 implies id1 != id2
+inv3 T: all u : User | some id1, id2 : Id | some u.profile.ids.id1 and u.profile.ids.id2 implies id1 != id2
+inv3 T: all u : User | some id1, id2 : Id | some u.profile.ids.id1 and u.profile.ids.id2 implies id1 != id2
+inv4 O: all u : User | all w1, w2 : Work | (w1 + w2) in u.visible implies w1 != w2
+inv4 O: all u : User | all w1, w2 : Work | (w1 + w2) in u.visible implies w1.ids != w2.ids
+inv4 U: all u : User | all w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies w1.ids != w2.ids
+inv4 U: all u : User | all w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies no w1.ids & w2.ids
+inv4 U: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies no w1.ids & w2.ids
+inv4 T: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies no w1.source != w2.source
+inv4 B: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies w1.source != w2.source
+inv4 U: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies (w1.ids != w2.ids or w1.source != w2.source)
+inv4 U: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies (no w1.ids & w2.ids or w1.source != w2.source)
+inv4 B: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies (no w1.ids & w2.ids and w1.source != w2.source)
+inv4 B: all u : User | all w1, w2 : Work | (w1 != w2 and (w1 + w2) in u.visible) implies (w1.ids != w2.ids and w1.source != w2.source)
+inv4 O: all u : User | all w1, w2 : Work | (w1 + w2) in u.visible implies (w1.ids != w2.ids and w1.source != w2.source)
+inv3 B: all w1, w2 : Work | some u : User | w1 != w2 and (w1 + w2) in u.profile implies no w1.ids & w2.ids
+inv3 B: all w1, w2 : Work | some u : User, s : Source | w1 != w2 and (w1 + w2) in u.profile and (w1.source = w2.source) implies no w1.ids & w2.ids
+inv3 B: all w1, w2 : Work | some u : User | w1 != w2 and (w1 + w2) in u.profile and (w1.source = w2.source) implies no w1.ids & w2.ids
+inv3 C: all w1, w2 : Work | all u : User | w1 != w2 and (w1 + w2) in u.profile and (w1.source = w2.source) implies no w1.ids & w2.ids
+inv3 C: all w1, w2 : Work, u : User | w1 != w2 and (w1 + w2) in u.profile and (w1.source = w2.source) implies no w1.ids & w2.ids
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.profile implies (w1.source != w2.source) or (w1.ids != w2.ids)
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.profile implies (w1.source != w2.source) or (no w1.ids & w2.ids)
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.profile implies (w1.source != w2.source) and (no w1.ids & w2.ids)
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source) and (no w1.ids & w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source) or (no w1.ids & w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (no w1.ids & w2.ids)
+inv4 B: all w1, w2 : Work | w1 != w2 and (w1 + w2) in User.visible implies (no w1.ids & w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.ids != w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies w1.source != w2.source or (w1.ids != w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source or w1.ids != w2.ids)
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source and w1.ids != w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source or w1.ids != w2.ids)
+inv4 S: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible and (w1.source != w2.source) implies w1.ids != w2.ids)
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible and (w1.source != w2.source) implies w1.ids != w2.ids
+inv4 U: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source or w1.ids != w2.ids)
+inv4 B: all u : User, w1, w2 : Work | w1 != w2 and (w1 + w2) in u.visible implies (w1.source != w2.source and w1.ids != w2.ids)
+

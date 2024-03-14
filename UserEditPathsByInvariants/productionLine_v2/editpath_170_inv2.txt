@@ -1,0 +1,4 @@
+inv2 S: all ws: Workstation | all w: Worker | ws.workers != none and w in one ws.workers
+inv2 B: all ws: Workstation | all w: Worker | ws.workers != none and w in ws.workers
+inv2 C: all ws: Workstation | ws.workers != none and (all w: Worker | one wks: Workstation | w in wks.workers)
+

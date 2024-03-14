@@ -1,0 +1,9 @@
+inv3 S: all e : Exit | #e.succs == 0
+inv3 S: all e : Exit | #(e.succs) == 0
+inv3 U: all e : Exit | #(e.succs) = 0
+inv3 U: all t : Track | #(t.succs) = 0 implies t in Exit
+inv3 C: all t : Track | #(t.succs) = 0 implies t in Exit	all e : Exit | #(e.succs) = 0
+inv3 C: all t : Track | #(t.succs) = 0 iff t in Exit
+inv3 C: all t : Track | #(t.succs) = 0 iff t in Exit
+inv3 C: all t : Track | #(t.succs) = 0 iff t in Exit
+

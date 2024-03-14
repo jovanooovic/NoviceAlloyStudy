@@ -1,0 +1,20 @@
+inv4 B: all c: Component | some c.parts && (all m: Material | #m.parts = none )
+inv4 B: all c: Component | all m: Material | some c.parts && #m.parts = none
+inv4 B: all c: Component | all m: Material | #c.parts>0 && #m.parts = none
+inv4 B: all p: Product, c: Component | p.parts in c && (all m: Material | #m.parts = none)
+inv4 B: all c: Component | all m: Material | #c.parts>0 && #m.parts = none
+inv4 B: all c: Component, p: c.parts-(c+Dangerous) | all m: Material | p in c && #m.parts = none
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 C: all c: Component | some c.parts	all m: Material | no m.parts
+inv4 U: all c: Component | some c.parts && (all m: Material | no m.parts)
+inv4 C: all c: Component | some c.parts	(all m: Material | no m.parts)
+inv4 C: all c: Component | #c.parts>0	(all m: Material | no m.parts)
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 U: all c: Component | #c.parts>0 && (all m: Material | no m.parts)
+inv4 U: all c: Component |all m: Material | #c.parts>0 &&  no m.parts
+inv4 U: all c: Component, m: Material | #c.parts>0 &&  no m.parts
+inv4 U: all c: Component | #c.parts>0 &&  all m: Material | no m.parts
+inv4 C: all c: Component | #c.parts>0	all m: Material | no m.parts
+inv4 O: all c: Component | #c.parts>0	all m: Material | #m.parts = none
+inv4 C: all c: Component | #c.parts>0	all m: Material | #m.parts = 0
+

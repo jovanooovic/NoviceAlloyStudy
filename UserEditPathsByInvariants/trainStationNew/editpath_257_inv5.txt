@@ -1,0 +1,59 @@
+inv5 B: all t1:Track | some t2,t3:Track | Junction in t1 implies t1 in t2.succs and t1 in t3.succs and t2!=t3
+inv5 B: all t1:Track | Junction in t1 implies some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3
+inv5 S: all t1:Track | Junction in t1 implies some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3 and t2!=t and t3!=t
+inv5 B: all t1:Track | Junction in t1 implies some t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3 and t2!=t1 and t3!=t1
+inv5 S: all t1:Track | some t2,t2:Track | p1!=t2!=t3 implies p1!=t2!=t3
+inv5 S: all t1:Track | some t2,t2:Track | t1!=t2!=t3 implies t1!=t2!=t3
+inv5 T: all t1:Track | some t2,t3:Track | t1!=t2!=t3 implies t1!=t2!=t3
+inv5 U: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 implies t1!=t2 and t2!=t3 and t1!=t3
+inv5 S: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and (t1 in t2.succs and t1 in.succs) implies Junction in t1
+inv5 S: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and (t1 in t2.succs and t1 in.succs) implies t1
+inv5 S: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and (t1 in t2.succs and t1 in.succs) implies t1!=t2
+inv5 U: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs implies t1!=t2
+inv5 U: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 in t3.succs implies t1!=t2
+inv5 U: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 in t3.succs implies one Junction & t1
+inv5 U: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 in t3.succs implies one Junction & t1	all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and (t1 not in t2.succs or t1 not in t3.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 in t3.succs implies one Junction & t1	all t1:Track,t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and (t1 not in t2.succs or t1 not in t3.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1!=t2 and t2!=t3 and t1!=t3 and t1 in t2.succs and t1 in t3.succs implies one Junction & t1	all t1:Track,t2,t3:Track |  (t1 not in t2.succs or t1 not in t3.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one Junction & t1	all t1:Track,t2,t3:Track |  (t1 not in t2.succs or t1 not in t3.succs) implies no (Junction & t1)
+inv5 T: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs implies (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t2.succs implies one (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)
+inv5 T: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)	all t1:Track | lone t1 in Track.succs implies no (Junction & t1)
+inv5 T: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)	all t1:Track | lone (t1 in Track.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 B: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 S: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)	all t1:Track | no lone (t1 & Track.succs) implies one (Junction & t1)
+inv5 O: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)	all t1:Track | some (t1 & Track.succs) implies one (Junction & t1)
+inv5 O: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)	all t1:Track | some (t1 & Track.succs-1) implies one (Junction & t1)
+inv5 O: all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)	all t1:Track | some (t1 & Track.succs) implies one (Junction & t1)
+inv5 B: all t1:Track | some t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 O: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 O: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t1!=t2 and t1!=t3 implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 O: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t1!=t2 and t1!=t3 implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 O: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t1!=t2 and t1!=t3 implies one (Junction & t1)	all t1:Track | lone (t1 & Track.succs) implies no (Junction & t1)
+inv5 U: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3 implies one (Junction & t1)
+inv5 U: all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3 implies one (Junction & t1)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 in (Track-t1).succs implies one (Junction & t1)
+inv5 U: all t1,t2:Track | t1 in t2.succs and t1 in ((Track-t1)-t2).succs implies one (Junction & t1)
+inv5 U: all t1,t2:Track | t1 in t2.succs and t1 in ((Track-t1)-t2).succs and t1!=t2 implies one (Junction & t1)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in ((Track-t1)-t2).succs and t1!=t2 implies no (Junction & t1)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in ((Track-t1)-t2).succs implies no (Junction & t1)
+inv5 T: all t1,t2:Track | t1 in t2.succs and t1 not in ((Track-t1)-t2).succs implies no (Junction & t1)	all t1:Track | (Entry & t1) implies no (Junction & t1)
+inv5 T: all t:Track | (Entry & t) implies no (Junction & t)
+inv5 B: all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in ((Track-t1)-t2).succs implies no (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in ((Track-t1)-t2).succs and t1!=t2 implies no (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 in ((Track-t1)-t2).succs and t1!=t2 implies one (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 in (Track-t2).succs and t1!=t2 implies one (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t:Track | one (Entry & t) implies no (Junction & t)	all t1,t2,t3:Track | t1 in t2.succs and t1 in t3.succs and t2!=t3 implies one (Junction & t1)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs and t1!=t2 implies no (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs implies no (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs implies no (Junction & t1)		all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs implies no (Junction & t1)	all t1,t2:Track | t1 in t2.succs and t1 in (Track-t2).succs implies one (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs implies no (Junction & t1)	all t1,t2:Track | t1 in t2.succs and t1 in (Track-t2).succs implies one (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+inv5 B: all t1,t2:Track | t1 in t2.succs and t1 not in (Track-t2).succs implies no (Junction & t1)	all t1,t2:Track | t1 in t2.succs and t1 in (Track-t2).succs implies one (Junction & t1)	all t:Track | one (Entry & t) implies no (Junction & t)
+

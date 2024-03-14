@@ -1,0 +1,16 @@
+inv3 U: all x : User, y : Ad | y not in follows.x
+inv3 U: all x : User, y : Ad | y not in follows.x
+inv3 U: all x : User, y : Ad | y not in x.follows
+inv3 U: all x : User - Ad | x not in sees.x
+inv3 O: all x : Photo - Ad, y : User | y not in sees.x
+inv3 U: all x : Photo - Ad, y : User | x not in sees.y
+inv3 O: all x : Photo - Ad, y : User | y not in sees.x
+inv3 O: all x : Photo, y : User | y not in sees.x
+inv3 B: all x : Ad, y : User | y not in sees.x
+inv3 T: all x : Photo, y : User | y some sees.x & y not in Ad.x
+inv3 T: all x : Photo, y : User | y some sees.x & y not in x.Ad
+inv3 T: all x : Photo, y : User | y some sees.x
+inv3 T: all x : Photo, y : User | x some sees.y
+inv3 T: all x : Photo, y : User | y some folows.x
+inv3 T: all x : Photo, y : User | y some follows.x
+

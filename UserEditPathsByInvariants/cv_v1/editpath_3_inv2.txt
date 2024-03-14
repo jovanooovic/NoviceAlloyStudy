@@ -1,0 +1,9 @@
+inv2 O: all u:User | Work = profile.u.source + profile.Institution.source
+inv2 O: all u:User | Work = profile.u.source + profile.Institution.source
+inv2 S: Profile.User = Profile.User.source + Profile.Institution.source
+inv2 S: Profile.User = profile.User.source + profile.Institution.source
+inv2 U: profile.User = profile.User.source + profile.Institution.source
+inv2 U: all w : Work | source.w = profile.User + profile.Institution
+inv2 U: profile.User in profile.User + profile.Institution
+inv2 O: all w : User + Institution | some profile.w
+

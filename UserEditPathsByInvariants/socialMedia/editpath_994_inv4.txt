@@ -1,0 +1,57 @@
+inv4 O: all u: User, a: Ad | u.posts = a
+inv4 B: all u: User, a: Ad | u.posts = a => u.posts - Ad = 0
+inv4 S: all u: User, a: Ad | u.posts = a => u.posts - ad = 0
+inv4 B: all u: User, a: Ad | u.posts = a => u.posts - a = 0
+inv4 U: all u: User, a: Ad | u.posts = a => no(u.posts - a)
+inv4 U: all u: User, a: Ad | u.posts = a => no(u.posts - Ad)
+inv4 T: all u: User, a: Ad, p = Photo | u.posts = a => no(u.posts = p)
+inv4 T: all u: User, a: Ad, p : Photo | u.posts = a => no(u.posts = p)
+inv4 B: all u: User, a: Ad, p : Photo | u.posts = a =>u.posts != p
+inv4 B: all u: User, a: Ad, p : Photo | u.posts = a => u.posts != p
+inv4 B: all u: User, a: Ad, p: Photo | u.posts = a => u.posts != p
+inv4 O: all u: User, a: Ad, p: Photo | no(u.posts - a)
+inv4 S: all u: User, a: Ad, p: Photo | nu.posts = a implies no (u.posts = p)
+inv4 T: all u: User, a: Ad, p: Photo | u.posts = a implies no(u.posts = p)
+inv4 T: all u: User, a: Ad, p: Photo | u.posts = a => no(u.posts = p)
+inv4 B: all u: User, a: Ad, p: Photo | u.posts = a => u.posts!=p
+inv4 T: all u: User, a: Ad, p: Photo | u.posts = a => no(u.posts=p)
+inv4 B: all u: User, a: Ad, p: Photo | u.posts = a => u.posts=p
+inv4 U: all u: User, a: Ad, p: Photo | u.posts = a => u.posts=a
+inv4 S: all u: User, a: Ad, p: Photo | u.posts = a => all u.posts=a
+inv4 S: all u: User, a: Ad, p: Photo | u.posts = a =>  u.posts==a
+inv4 T: all u: User, a: Ad, p: Photo | u.posts = a => no u.posts=p
+inv4 B: all u: User, a: Ad, p: Photo | u.posts = a => not u.posts=p
+inv4 T: all u: User, a: Ad, p: Photo | u.posts = a => no u.posts=p
+inv4 S: all u: User, a: Ad, p: Photo | u.posts = a => all u.posts=p
+inv4 S: all u: User, a: Ad, p: Photo | u.posts = a =>  u.posts==p
+inv4 S: all u: User, a: Ad, p: Photo | one u.posts = a =>  all u.posts=a
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts = a =>   u.posts=a
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts = a =>  no (u.posts= p)
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts = a implies  no (u.posts= p)
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts = a
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts=a
+inv4 T: all u: User, a: Ad, p: Photo | one u.p=a
+inv4 T: all u: User, a: Ad, p: Photo | one u.Photo=a
+inv4 T: all u: User, a: Ad, p: Photo | one Photo=a
+inv4 T: all u: User, a: Ad, p: Photo | one u. Photo=a
+inv4 T: all u: User, a: Ad, p: Photo | one u.Photo
+inv4 T: all u: User, a: Ad, p: Photo | one u.Photo
+inv4 O: all u: User, a: Ad, p: Photo | one u.posts
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts  =a
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts =a
+inv4 T: all u: User, a: Ad, p: Photo | one u.a
+inv4 S: all u: User, a: Ad, p: Photo | one u.pots.a
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts.a
+inv4 O: all u: User, a: Ad, p: Photo | one u.posts
+inv4 T: all u: User, a: Ad, p: Photo | one u.Photo
+inv4 O: all u: User, a: Ad, p: Photo | one u.posts
+inv4 T: all u: User, a: Ad, p: Photo | one u.posts = a
+inv4 O: all u: User, a: Ad, p: Photo | one u.posts
+inv4 T: all u: User, a: Ad, p: Photo | one p.a
+inv4 S: all u: User, a: Ad, p: Photo | one
+inv4 S: all u: User, a: Ad, p: Photo | one
+inv4 T: all u: User, a: Ad, p: Photo | one a in u.posts => not p in u.posts
+inv4 T: all u: User, a: Ad, p: Photo | one (a in u.posts) => (not p in u.posts)
+inv4 T: all u: User, a: Ad, p: Photo | one a in u.posts => not p in u.posts
+inv4 O: all u: User, a: Ad, p: Photo | a in u.posts => not p in u.posts
+

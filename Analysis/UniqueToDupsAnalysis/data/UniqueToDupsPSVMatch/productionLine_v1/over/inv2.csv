@@ -1,0 +1,13 @@
+"no Component.^parts",1
+"no (Component.*parts)",1
+"no (Component<:*parts)",1
+"all c : Component | no c->c",1
+"no (Component.^parts)<:Component",1
+"all c : Component | no c.^(parts)",2
+"all c : Component | no (c.*parts)",1
+"all c : Component | no c->parts->c",1
+"all c : Component | c not in c.*parts",1
+"all c : Component | no c.(c<:parts)",3
+"all c : Component | no c.parts.*parts",1
+"all c:Component | c.parts in (univ-c-c.parts)",1
+"all c1,c2 : Component | always no (c1.parts & c2.parts)",1

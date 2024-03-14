@@ -1,0 +1,7 @@
+inv14 S: all p1,p2:Person | p1->p2 in Tutor => (p1 in Teacher and p2 in Student)
+inv14 S: all p1,p2:Person | p1->p2 in Tutor => (p1 in Teacher and p2 in Student)
+inv14 B: all s:Student,c:Class,g:Group | (c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s:Student,c:Class,g:Group | (c->s->g in Groups => all t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 O: all s:Person,c:Class,g:Group | (c->s->g in Groups => all t:Person | t->c in Teaches and t->s in Tutors)
+inv14 C: all s:Person,c:Class,g:Group | (c->s->g in Groups => all t:Person | t->c in Teaches => t->s in Tutors)
+

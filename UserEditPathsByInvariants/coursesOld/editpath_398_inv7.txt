@@ -1,0 +1,13 @@
+inv7 T: all s : Student, c : Course | c in s.enrolled implies lone s.enrolled.c.projects
+inv7 U: all s : Student, l : s.enrolled | lone l.projects.~(Person<:projects) & s
+inv7 T: all s : Student, c : Course | c in s.Student implies lone s.projects.~(Course<:projects).c
+inv7 T: all s : Student, c : Course | c in s.enrolled implies lone s.projects.~(Course<:projects).c
+inv7 T: all s : Student | one c : Course | lone s.enrolled.c.projects
+inv7 T: all s : Student | one c : Course | lone s.enrolled.c
+inv7 T: all s : Student, c : s.enrolled | s
+inv7 T: all s : Student, c : Course | s.enrolled.c
+inv7 T: all s : Student, c : Course | s.enrolled.c
+inv7 U: all s : Student, c : Course | c in s.enrolled implies lone c.projects.~(Person<:projects) & s
+inv7 E:
+inv7 T: all s : Student, c : Course | s.enrolled.c
+

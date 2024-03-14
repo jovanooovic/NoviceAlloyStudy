@@ -1,0 +1,28 @@
+inv5 T: all p:Person | p is Student
+inv5 B: all p:Person | p in Student
+inv5 U: all p:Person | p in Student implies p.projects in Person.projects
+inv5 U: all p:Person | p.projects in Student implies p.projects in Person.projects
+inv5 B: all p:Person | p.projects in Student and p.projects in Person.projects
+inv5 T: all p:Person | p.projects in Student and p.projects implies Person.projects
+inv5 U: all p:Person | p.projects in Student implies p.projects in Person.projects
+inv5 U: all p:Person, pj:Project | pj in Student implies pj in p.projects
+inv5 U: all p:Person, pj:Project | pj in Student implies pj in p.projects
+inv5 U: all p:Person, pj:Project | pj in Student implies p in pj.projects
+inv5 T: all p:Person, pj:Project | pj in Student implies p in p.projects
+inv5 T: all p:Project | p in Student.projects and p implies Person.projects
+inv5 T: all p:Project | p in Student.enrolled and p implies Person.projects
+inv5 T: all p:Project | p in Student.p and p implies Person.projects
+inv5 T: all p:Project | p in Student.enrolled and p implies Person.projects
+inv5 T: all p:Project | p in Student.projects and p implies Person.projects
+inv5 T: all p:Project | p implies Student.projects and p in Person.projects
+inv5 T: all p:Project | p implies Student.projects
+inv5 S: all p:Project | p implies all Student.projects
+inv5 T: all p:Project | p implies p.Person in Student.projects
+inv5 T: all p:Project | Person.p implies Person.Student
+inv5 T: all p:Project | Person.p implies Person in Student
+inv5 B: all p:Project | one (Person <: projects).p
+inv5 U: all p:Project, ps:Person | ps in (Person <: projects).ps implies ps in Student
+inv5 U: all p:Project, ps:Person | ps in (Person <: projects).ps implies ps in Student	  	all p:Project | some (Person <: projects).p
+inv5 C: all p:Project, ps:Person | ps in (Person <: projects).p implies ps in Student	  	all p:Project | some (Person <: projects).p
+inv5 C: all p:Project, ps:Person | ps in (Person <: projects).p implies ps in Student	  	all p:Project | some (Person <: projects).p
+

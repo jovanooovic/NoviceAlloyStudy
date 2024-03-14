@@ -1,0 +1,22 @@
+inv8 B: all e : Exit | e in Entry.^succs
+inv8 O: all ex : Exit | all en : Entry | ex in en.^succs
+inv8 B: no Signal
+inv8 O: all ex : Exit | all en : Entry | ex in en.^succs	no Signal
+inv8 O: all ex : Exit | all en : Entry | ex in en.^succs	no Signal	no Semaphore	no Speed
+inv8 B: no Signal	no Semaphore	no Speed
+inv8 O: all ex : Exit | all en : Entry | ex in en.^succs
+inv8 O: all ex : Exit | all en : Entry | ex in en.^succs	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs
+inv8 O: all en : Entry | Exit in en.^succs	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs
+inv8 O: all en : Entry | Exit in en.^succs	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs
+inv8 O: all en : Entry | Exit in en.^succs	no Signal	no Semaphore	no Speed
+inv8 T: all en : Entry | en.^succs&Exit	no Signal	no Semaphore	no Speed
+inv8 S: all en : Entry | all en.^succs&Exit	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs	no Signal	no Semaphore	no Speed
+inv8 O: all en : Entry | Exit in en.^succs
+inv8 O: all e : Entry | Exit in e.^succs
+inv8 O: all e : Entry | Exit = e.^succs&Exit
+

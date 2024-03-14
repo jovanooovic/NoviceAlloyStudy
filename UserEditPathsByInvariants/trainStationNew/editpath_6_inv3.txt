@@ -1,0 +1,4 @@
+inv3 S: all t: Tracks | t in Exit implies no t.succs
+inv3 U: all t: Track | t in Exit implies no t.succs
+inv3 C: all t: (Track-Exit) |  some t.succs	all e: Exit, t: Track | e in t implies no t.succs
+

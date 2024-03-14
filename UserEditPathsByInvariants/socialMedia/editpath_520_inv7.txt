@@ -1,0 +1,14 @@
+inv7 T: all x : User | all y : User | y in x.suggested implies x.suggested - x.follows
+inv7 T: all x : User | all y : User | (y in x.suggested) implies x.suggested - x.follows
+inv7 B: all x : User | all y : User | (x != y) implies y in x.follows and y not in x.suggested
+inv7 B: all x : User | all y : User | (x != y) implies y not in x.follows and y in x.suggested
+inv7 B: all x : User | all y : User | (x != y) implies x in y.follows and x.follows - y.follows in y.suggested
+inv7 T: all x : User | all y : User | x.follows.follows - x.follows
+inv7 T: all x : User | all y : User | (x.follows.follows - y.follows) implies y not in x.follows
+inv7 B: all x : User | all y : User | x.follows.follows not in x.suggested
+inv7 B: all x : User | all y : User | x.suggested = (x.follows.follows - x.follows)
+inv7 B: all x : User | x.suggested = (x.follows.follows - x.follows)
+inv7 S: all x : User | x.suggested = (x.follows.follows - x.follows + u)
+inv7 B: all x : User | x.suggested = (x.follows.follows - x.follows + x)
+inv7 C: all x : User | x.suggested = (x.follows.follows - (x.follows + x))
+

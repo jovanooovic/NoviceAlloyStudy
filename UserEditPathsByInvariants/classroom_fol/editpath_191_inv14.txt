@@ -1,0 +1,5 @@
+inv14 B: all c:Class,s:Student | s in c.Groups.Group
+inv14 B: all c:Class,s:Student| some t:Teacher | s in c.Groups.Group implies t in s.^(~Tutors)
+inv14 B: all c:Class,s:Student| some t:Teacher | s in c.Groups.Group and t in c.Groups.Group implies t in s.^(~Tutors)
+inv14 B: all c:Class,s:Student| some t:Teacher | s in c.Groups.Group and t in c.Groups.Group implies t in s.^(~Tutors)
+

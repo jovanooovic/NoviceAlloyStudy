@@ -1,0 +1,10 @@
+inv4 U: all p:Project | p in Course.projects
+inv4 U: all p:Project | one (Course.projects & p)
+inv4 B: all c:Course | one (c.projects)
+inv4 S: all g.Grade | one (projects.g)
+inv4 T: all g:Grade | one (projects.g)
+inv4 O: all g:Grade | one ( (Course <: projects).g)
+inv4 C: all g:Project | one ( (Course <: projects).g)
+inv4 C: all g:Project | one ( (Course <: projects).g)
+inv4 C: all g:Project | one ( (Course <: projects).g)
+

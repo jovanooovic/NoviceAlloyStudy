@@ -1,0 +1,5 @@
+inv3 S: all u:User, w:Work, w1:Work | w,w1 in u.profile implies w.ids != w1.ids
+inv3 O: all u:User, w:Work, w1:Work | w1 in u.profile && w in u.profile implies w.ids != w1.ids
+inv3 O: all u:User, w:Work, w1:Work | w.source = w1.source && w1 in u.profile && w in u.profile implies w.ids != w1.ids
+inv3 U: all u:User , s:Source| lone (u.profile.source & s).ids
+

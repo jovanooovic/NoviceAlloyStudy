@@ -1,0 +1,5 @@
+inv2 U: all s:Signal | some signals.s
+inv2 C: all s:Signal | one signals.s
+inv2 C: all a1,a2:Track | (some b:Signal | a1->b in signals and a2->b in signals) implies a1 = a2	all b:Signal | some a:Track | a->b in signals
+inv2 C: all a1,a2:Track | (some b:Signal | a1->b in signals and a2->b in signals) implies a1 = a2	all b:Signal | some a:Track | a->b in signals
+

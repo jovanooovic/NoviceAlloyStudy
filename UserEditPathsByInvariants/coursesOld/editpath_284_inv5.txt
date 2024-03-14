@@ -1,0 +1,19 @@
+inv5 E:
+inv5 S: all p:Person | p in Student implies some pr in Projects | p->pr in Projects
+inv5 S: all p:Person | p in Student implies some pr in Projects | p->pr in Projects and all pr in Projects | some p:Student | p->pr in Projects
+inv5 S: all p:Person | p in Student implies some pr:Project | p->pr in Projects and all pr:Project | some p:Student | p->pr in Projects
+inv5 S: all p:Person | p in Student implies some pr:Project | p->pr in Projects and all pr:Project | some p:Student | p->pr in projects
+inv5 B: all p:Person | p in Student implies some pr:Project | p->pr in projects and all pr:Project | some p:Student | p->pr in projects
+inv5 B: (all p:Person | p in Student implies some pr:Project | p->pr in projects) and (all pr:Project | some p:Student | p->pr in projects)
+inv5 B: (all p:Person | p not in Student implies some pr:Project | p->pr not in projects) and (all pr:Project | some p:Student | p->pr in projects)
+inv5 U: all pr:Project | some p:Student | p->pr in projects
+inv5 B: all p:Professor, pr:Project | p->pr not in projects and some s:Student | s->pr in projects
+inv5 B: all p:Professor, pr:Project | p->pr not in projects	  	all p:Project | some s:Student | s->p in projects
+inv5 S: all p:Professor, pr:Project | p->pr not in projects	  	all p:Project | some p:Person | s->p in projects
+inv5 T: all p:Professor, pr:Project | p->pr not in projects	  	all p:Project | some p:Person | p->p in projects
+inv5 B: all p:Professor, pr:Project | p->pr not in projects	  	all p:Project | some per:Person | per->p in projects
+inv5 B: all p:Professor, pr:Project | p->pr not in projects	  	all pr2:Project | some per:Person | per->pr2 in projects
+inv5 B: all p:Professor, pr:Project | p->pr not in projects	  	all pr2:Project | some per:Person | per->pr2 in projects
+inv5 C: all p:Person, pr:Project | p->pr in projects implies p in Student	  	all pro:Project | some pe:Person | pe->pro in projects
+inv5 C: all p:Person, pr:Project | p->pr in projects implies p in Student	  	all pro:Project | some pe:Person | pe->pro in projects
+

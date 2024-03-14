@@ -1,0 +1,63 @@
+inv10 C: all c:Class |all s:Student|some g:Group |c->s->g in Groups
+inv10 T: all s:Student | some g:Group | no ( Class - Groups.(s->g ))
+inv10 T: all s:Student | some g:Group | no ( Class - Groups.s->g )
+inv10 T: all s:Student | some g:Group | ( Class - Groups.s->g )
+inv10 T: all s:Student | some g:Group | ( Class - Groups.(s->g ) )
+inv10 O: all s:Student | some g:Group | no  Class
+inv10 S: all s:Student | some g:Group | no  Class - Groups.(s->g) )
+inv10 T: all s:Student | some g:Group | no  (Class - Groups.(s->g) )
+inv10 T: all s:Student | some g:Group |  Groups.(s->g)
+inv10 T: all s:Student | some g:Group |  Groups.(s->g) in Class
+inv10 T: all s:Student | some g:Group |  Groups.(s->g)
+inv10 B: all s:Student | some g:Group | no Groups.(s->g)
+inv10 T: all s:Student | some g:Group | some ( Groups.(s->g) & Class)
+inv10 T: all s:Student | some g:Group | no Groups.(s->g) & Class
+inv10 B: all s:Student | some g:Group | no Groups.(s->g)
+inv10 B: all s:Student | some g:Group |  no (Groups.(s->g))
+inv10 T: all s:Student | some g:Group |  no (Class -(Groups.(s->g))   )
+inv10 T: all p:Person | some g:Group |  no (Class -(Groups.(p->g))   )
+inv10 S: all s:Student | some g:Group |   (Class - (Groups.(s->g))
+inv10 T: all s:Student | some g:Group |   (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |   no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | all g:Group |   no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |  no (Class - (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |   (Class & (Groups.(s->g)))
+inv10 T: all s:Student | some g:Group |    Groups.(s->g)  & Class
+inv10 C: all c:Class |all s:Student|some g:Group |c->s->g in Groups
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 E:
+inv10 S: all c:Class | all c.Groups
+inv10 B: all c:Class | some c.Groups
+inv10 T: all s:Student| some g:Group | no (Groups.(s->g) - Class)
+inv10 T: all s:Student| some g:Group | some (Groups.(s->g) & Class)
+inv10 S: all s:Student| some g:Group |  (Groups.(s->g) in Class
+inv10 T: all s:Student| some g:Group |  Groups.(s->g) in Class
+inv10 S: all c:Class,s:Student| c->s->g in Groups
+inv10 S: all c:Class | (x->y):c.Groups implies x in Student
+inv10 S: all c:Class | (x,y):c.Groups in c
+inv10 U: all c:Class | c.Groups in (Person ->Group)
+inv10 B: all c:Class | c.Groups in (Student->Group)
+inv10 T: all c:Class | some c.Groups in (Student->Group)
+inv10 B: all c:Class | some c.Groups
+inv10 B: all c:Class | some (c.Groups &(Student->Group) )
+inv10 B: all c:Class | some (c.Groups -(Student->Group) )
+inv10 B: all c:Class | some (c.Groups &(Student->Group) )
+inv10 S: all c:Class, s:Student |some g:Group (c.Groups (s->g) )
+inv10 S: all c:Class, s:Student |some g:Group (c.Groups.(s->g) )
+inv10 T: all c:Class | c.Groups implies Students in Group
+inv10 T: all c:Class | c.Groups
+inv10 B: all c:Class | some c.Groups
+inv10 S: all c:Class |all s:Students | s<:c.Groups :> some Group
+inv10 S: all c:Class |all s:Students | some (s<:c.Groups)
+inv10 S: all c:Class |all s:Students | some s <: c.Groups
+inv10 C: all c:Class |all s:Student | some s <: c.Groups
+inv10 C: all c:Class |all s:Student | some (s <: c.Groups)
+

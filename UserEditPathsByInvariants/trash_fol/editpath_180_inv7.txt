@@ -1,0 +1,5 @@
+inv7 T: all f,g:File | f->g in link implies f and g not in Trash
+inv7 T: all f,g:File | f->g in link implies (f and g not in Trash)
+inv7 C: all f:File | isLink[f] implies f not in Trash	}		pred isLink[f:File]{	some g:File | g->f in link
+inv7 B: all f:File | isLink[f] implies f not in Trash	}		pred isLink[f:File]{	some g:File | f->g in link
+

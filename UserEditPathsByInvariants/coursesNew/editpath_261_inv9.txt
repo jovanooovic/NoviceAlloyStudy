@@ -1,0 +1,6 @@
+inv9 B: all p1,p2 : Professor | p1 not in p2.teaches.~teaches
+inv9 B: no (teaches & (Professor <: enrolled).~teaches.teaches)
+inv9 B: no (teaches - (Professor <: enrolled))
+inv9 T: teaches - (Professor <: enrolled).~teaches.teaches
+inv9 B: no (teaches & (Professor <: enrolled).~teaches.teaches)
+

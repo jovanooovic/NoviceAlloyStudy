@@ -1,0 +1,4 @@
+inv8 O: all u: User, a: Ad | u->a in sees iff (some u1: User | u1->a in posts && (u->u1 in follows || u->u1 in suggested))
+inv8 C: all u: User, a: Ad | u->a in sees implies (some u1: User | u1->a in posts && (u->u1 in follows || u->u1 in suggested))
+inv8 O: all u: User, a: Ad | u->a in sees iff (some u1: User | u1->a in posts && (u->u1 in follows || u->u1 in suggested))
+

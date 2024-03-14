@@ -1,0 +1,53 @@
+NA H: THEME UPDATE
+inv1 C: all s : State | some s.trans
+inv2 C: one Init
+inv3 T: all s : State, e : Event | lone s.trans <: e
+inv3 T: all s : State, e : Event | lone (s.trans <: e)
+inv3 T: all s : State, e : Event | lone (s.trans <: e)
+inv3 T: all s : State, e : Event | lone (s.trans <: e)
+inv5 C: all s1, s2 : State | s1.trans.State = s2.trans.State
+inv3 T: all s : State, e : Event | lone ((s.trans) <: e)
+inv3 T: all s : State, e : Event | lone (~(s.trans) <: e)
+inv3 T: all s : State, e : Event | lone (~(s.trans) <: e)
+inv3 T: all s : State, e : Event | lone (~(s.trans) <: e)
+inv6 S: all e : Event | some s1 : State | e1 in s1.trans.State
+inv6 C: all e : Event | some s1 : State | e in s1.trans.State
+inv6 C: all e : Event | some s : State | e in s.trans.State
+inv6 S: all e : Event | some s.trans.State <: e
+inv6 C: all e : Event | some State.trans.State <: e
+inv3 C: all s : State, e : Event | lone e.(s.trans)
+inv3 S: all s : State, e : Event | lone e.(s.trans)  	}		adj = {x,y : State | some e : Event | x -> e -> y in trans
+inv3 C: all s : State, e : Event | lone e.(s.trans)  	}		fun adj : State -> State {		{x, y : State | some e : Event | x -> e -> y in trans}
+inv4 S: all i : Init | State in i . ^adj
+inv4 S: all i : Init | State in i . *adj
+inv4 S: all i : Init | State in i.*adj
+inv4 S: State in Init.*adj
+inv4 S: all s : State | s in Init.*adj
+inv4 S: State in Init.*adj
+inv4 S: State-Init in Init.*adj
+inv4 S: State in Init.*adj
+inv4 S: State in Init.*adj
+inv4 S: State in Init.*adj
+inv7 S: all s : Init.*adj | Init in s.*adj
+inv7 S: Init in Init.*adj
+inv7 S: all s : Init.^adj | Init in s.^adj
+inv4 S: State in Init.*adj
+inv4 S: State in Init.*adj
+inv4 S: State in Init.^adj
+inv7 S: all s : Init.^adj | Init in s.^adj
+inv7 S: all s : Init.^adj | Init in s.*adj
+inv7 S: all s : Init.*adj | Init in s.*adj
+inv7 S: all s : Init.^adj | Init in s.*adj
+inv7 S: Init in Init.^adj.*adj
+inv7 S: Init in Init.*adj
+inv7 S: Init in Init.^adj
+inv7 S: Init in Init.^adj.*adj
+inv7 S: Init in Init.*adj
+inv4 S: State in Init.*adj
+inv4 S: State in Init.^adj
+inv4 S: State in Init.^adj
+inv7 S: all s : Init.*adj | some s.*adj <: Init
+inv7 S: all s : Init.*adj | some s.^adj <: Init
+inv7 S: all s : Init.^adj | some s.^adj <: Init
+inv7 S: all s : Init.^adj | some s.^adj & Init
+

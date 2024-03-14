@@ -1,0 +1,8 @@
+inv6 B: all c : Course, s : Student | c in s.enrolled and c.projects in s.projects
+inv6 B: all s : Student, c : Course | s.projects in c.projects implies c in s.enrolled
+inv6 B: all s : Student | some c : Course | c in s.enrolled and s.projects in c.projects
+inv6 B: all s : Student | some c : Course | s.projects in c.projects implies c in s.enrolled
+inv6 U: all s : Student, p : s.projects | some c : Course | c in s.enrolled and p in c.projects
+inv6 B: all s : Student | some c : Course | c in s.enrolled and (all p : s.projects | p in c.projects)
+inv6 B: all s : Student, p : s.projects | some c : Course | c in s.enrolled and (all p : s.projects | p in c.projects)
+

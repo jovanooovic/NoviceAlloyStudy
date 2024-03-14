@@ -1,0 +1,6 @@
+inv16 B: all f : File | f in Protected implies always f in Protected
+inv16 U: always all f : File | f in Protected implies once f in Protected
+inv16 B: all f : File | f in Protected implies once not (f in Protected)
+inv16 B: always all f : File | f in Protected implies once not (f in Protected)
+inv16 C: always all p : Protected | historically p in Protected
+

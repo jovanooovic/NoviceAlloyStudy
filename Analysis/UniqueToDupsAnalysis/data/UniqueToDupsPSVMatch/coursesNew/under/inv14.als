@@ -1,0 +1,100 @@
+all s1,s2 : Student | lone s2 & (Person<:projects).(s1.projects)
+-- div,1
+all disj x,y : Student | lone(x.projects & y.projects)
+-- div,1
+all disj s1,s2:Student , p:Project | #s1&s2<2
+-- div,1
+all disj s, s2: Student | lone s.projects & s2.projects
+-- div,1
+all disj s,ss:Student | lone s.projects & ss.projects
+-- div,1
+all disj s1,s2 : Student | lone s1.projects & s2.projects
+-- div,4
+all disj s1,s2:Student | #s1.projects&s2.projects<2
+-- div,4
+all s1,s2 : Student | all p : s1.projects | lone s2->p
+-- div,1
+all x, y:Student | x!=y implies lone x.projects & y.projects
+-- div,2
+all s1, s2 : Student | s1 != s2 implies lone s1.projects & s2.projects
+-- div,4
+all s: Student, x: Student -s | lone(s.projects & x.projects)
+-- div,1
+all s : Student, c : Student - s | lone (s.projects & c.projects)
+-- div,1
+all s : Student, t : Student - s | lone (s.projects & t.projects)
+-- div,2
+all s:Student, ss:Student-s | lone(s.projects & ss.projects)
+-- div,1
+all s: Student, col : Student - s | lone (s.projects & col.projects)
+-- div,2
+all x: Student, col : Student - x | lone (x.projects & col.projects)
+-- div,2
+all s1 : Student, s2 : Student - s1 | lone (s1.projects & s2.projects)
+-- div,1
+all s1,s2 : Student | all p : s1.projects | lone s2->p & projects
+-- div,1
+all a:Student |all b:Student-a |lone ( a.projects & b.projects )
+-- div,1
+all s : Student | all c : Student - s | lone (s.projects & c.projects)
+-- div,1
+all s : Student | all s2 : Student-s | lone s.projects & s2.projects
+-- div,3
+all x: Student | all col : Student - x | lone (x.projects & col.projects)
+-- div,25
+all s : Student | all col : Student - s | lone (s.projects & col.projects)
+-- div,3
+all s1:Student|all s2:Student-s1| lone (s1.projects & s2.projects)
+-- div,5
+all x,y:Student | lone z:Project | z in x.projects and z in y.projects and x!=y
+-- div,1
+all x,y:Student | lone w:Project | w in x.projects and w in y.projects and x!=y
+-- div,2
+all s1:Student, s2:Student, p1:Project, p2:Project | s1 not in p2.projects and s2 not in p1.projects
+-- div,1
+all s: Student, col : Student - s | lone p : Project | p in s.projects and p in col.projects
+-- div,1
+all x : Student | all y : Student - x | lone p: Project | p in x.projects and p in y.projects
+-- div,1
+all x: Student | all col : Student - x | all p : x.projects | lone (x.projects & col.projects)
+-- div,1
+all x : Student | all resto : Student - x | all p : x.projects | all p2 : resto.projects | lone (p & p2)
+-- div,1
+all disj s1,s2 : Student | all p : Project | p in s2.projects and p in s1.projects implies no (s2.projects - p) & s1.projects
+-- div,2
+all disj s1,s2 : Student | all p : Project | (s1->p in projects and s2->p in projects) => no (s2.projects - p) & s1.projects
+-- div,2
+all disj p1,p2 : Project, disj s1,s2 : Student | p1 in s1.projects && p1 in s2.projects && p2 in s1.projects implies p2 not in s2.projects
+-- div,3
+all disj s1,s2 : Student, p1,p2 : Project | (p1 in s1.projects && p2 in s1.projects) && (p1 in s2.projects && p2 in s2.projects) implies p1 = p2
+-- div,1
+all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in pp.projects) => (pp in s.projects && pp in pp.projects)
+-- div,1
+all x,y:Student | all z,w:Project | (z in x.projects and z in y.projects and w in x.projects and x!=y and z!=w) implies w not in y.projects
+-- div,1
+all s1,s2: Student | all p1,p2: Project |
+  	s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2 => s1+s2 not in projects.p2
+-- div,1
+all s1, s2 : Student, p1, p2 : Project | (s1 in projects.p1 and s1 in projects.p2 and s2 in projects.p1 and s2 in projects.p2 and s1 != s2) implies p1 = p2
+-- div,1
+all x:Student, y:Student-x, p:Project, g:Project-p| x->p in projects and y->p in projects and x->g in projects implies y->g not in projects
+-- div,1
+all s1,s2 : Student | all p1,p2 : Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies (p2 not in s1.projects) or (p2 not in s2.projects)
+-- div,2
+all s1,s2:Student | all p1,p2:Project | p1 in s1.projects and p1 in s2.projects and s1 != s2 and p1 != p2 implies( (p2 not in s1.projects) or (p2 not in s2.projects) )
+-- div,1
+all s1, s2: Student| all p1, p2: Project| (s1!=s2 and p1!=p2 and p1 in s1.projects and p2 in s2.projects) implies ((p2 not in s1.projects) or (p1 not in s2.projects))
+-- div,1
+all s1:Student, s2:Student, p1:Project, p2:Project | 
+  	(p1 in s1.projects and p2 in s1.projects and s1!=s2 and p1!=p2) implies (s1 not in p2.projects and s2 not in p1.projects)
+-- div,2
+all s1,s2 : Student | all p1,p2 : Project |
+  	(s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies
+  	( (s1->p2 not in projects) or (s2->p2 not in projects) )
+-- div,4
+all s1:Student, s2:Student, p1:Project, p2:Project | p1 in s1.projects and p1 in s2.projects and s1!=s2 and p1!=p2 implies ( p2 not in s1.projects) or (p2 not in s2.projects)
+-- div,5
+(all ref0,ref1:(one Student),ref2,ref3:(one Project)|((((ref0 -> ref2) in (Person <: projects)) && ((ref0 -> ref3) in (Person <: projects)) && ((ref1 -> ref2) in (Person <: projects)) && (ref0 != ref1) && (ref2 != ref3)) => ((ref1 -> ref3) !in (Person <: projects))))
+-- div,1
+all s:Student, s2:Student, proj1:Project, proj2:Project | proj1 in s.projects and proj1 in s2.projects and s!=s2 and proj1 != proj2 implies ( proj2 not in s.projects) or (proj2 not in s2.projects)
+-- div,1

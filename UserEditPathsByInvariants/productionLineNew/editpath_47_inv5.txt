@@ -1,0 +1,6 @@
+inv5 T: all ws : Workstation | no (Human & Robot) in ws.workers
+inv5 O: all ws : Workstation, w : Human + Robot | w not in ws.workers
+inv5 B: all ws : Workstation | (Human not in ws.workers and Robot in ws.workers) or (Human in ws.workers and Robot not in ws.workers)
+inv5 B: all ws : Workstation | (Human not in ws.workers iff Robot in ws.workers) and (Human in ws.workers iff Robot not in ws.workers)
+inv5 B: all ws : Workstation | (Human not in ws.workers iff Robot not in ws.workers)
+

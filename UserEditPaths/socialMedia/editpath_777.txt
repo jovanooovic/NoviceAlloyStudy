@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 C: all p: Photo| one u:User | u->p in posts
+inv2 C: all u: User | not u->u in follows
+inv2 C: all u: User | not u->u in follows
+inv3 O: all p: Photo - Ad, u1,u2: User | u1->p in sees => u2->p in posts and u1->u2 in follows
+inv3 O: all p: Photo - Ad, u1,u2: User | u1->p in sees => u2->p in posts and u1->u2 in follows
+inv3 C: all p: Photo - Ad, u1: User | some u2: User | u1->p in sees => u2->p in posts and u1->u2 in follows
+inv3 C: all p: Photo - Ad, u1: User | some u2: User | u1->p in sees => u2->p in posts and u1->u2 in follows
+inv4 O: all u: User, p: Photo | u->p in posts and p in Ad
+inv4 C: all u: User, a: Ad, p: Photo - Ad | u->a in posts => u->p not in posts
+inv4 C: all u: User, a: Ad, p: Photo - Ad | u->a in posts => u->p not in posts
+inv5 B: all i: Influencer, u: User | u->i in follows
+inv5 U: all i: Influencer, u: User-Influencer | u->i in follows
+inv5 B: all i: Influencer, u: User-Influencer | i->u in follows
+inv5 U: all i: Influencer, u: User-Influencer | u->i in follows
+

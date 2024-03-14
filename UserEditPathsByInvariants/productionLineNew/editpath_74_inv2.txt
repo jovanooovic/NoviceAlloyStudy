@@ -1,0 +1,13 @@
+inv2 B: all ws:Workstation, w:Worker | (w in ws.workers)
+inv2 B: all ws:Workstation, w:Worker | (some w.workstation) and (some ws.workers)
+inv2 O: all ws:Workstation | some ws.workers &&	all w:Worker | one w.workstation
+inv2 S: all ws:Workstation | some ws.workers and (all w:Workers | one w.workstation)
+inv2 O: all ws:Workstation | some ws.workers and (all w:Worker | one w.workstation)
+inv2 T: all ws:Workstation, w:Worker | some w in ws.workers
+inv2 U: all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 C: workers in Workstation one -> some Worker
+inv2 S: all w:Worker, ws:Workstation | some w -> one ws in ws.workers		workers in Workstation one -> some Worker
+inv2 S: all w:Worker, ws:Workstation | some w -> one ws in ws.workers
+inv2 C: all ws: Workstation | some w: Worker | ws -> w in workers	and	all w:Worker | one ws:Workstation | ws -> w in workers
+inv2 C: (all ws: Workstation | some w: Worker | ws -> w in workers)	and	(all w:Worker | one ws:Workstation | ws -> w in workers)
+

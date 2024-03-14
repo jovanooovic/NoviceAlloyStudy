@@ -1,0 +1,7 @@
+inv8 S: all c:Component |some w:Workstation |Dangerous in c implies (w.worksers & Robot)
+inv8 T: all c:Component |some w:Workstation |Dangerous in c implies (w.workers & Robot)
+inv8 T: all c:Component |all w:Workstation | Dangerous in c implies (w.workers & Robot)
+inv8 T: all c:Component & Dangerous |all w: c.Workstation | no (w.workers & Human)
+inv8 T: all c:Component & Dangerous |all w: c.Workstation | no (w.workers & Human)
+inv8 C: all c:Component & Dangerous |all w: c.workstation | no (w.workers & Human)
+

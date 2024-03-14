@@ -1,0 +1,9 @@
+inv2 O: no File
+inv2 O: no File
+inv2 O: all f : File | ((f not in Protected) and (f in Trash))
+inv2 C: all f : File | f in Trash
+inv2 O: File = Trash + Protected	no Protected
+inv2 S: File = Trash + Protected	no Protected | all Trash
+inv2 C: File = Trash
+inv2 S: all Trash
+

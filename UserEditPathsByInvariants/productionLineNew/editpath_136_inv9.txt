@@ -1,0 +1,13 @@
+inv9 E:
+inv9 B: all w : Workstation | (w in begin and one w.succ) or (w in end and one succ.w) or (one w.succ and one succ.w)
+inv9 B: all w : Workstation | (w in begin and one w.succ) or (w in end and one succ.w) or (one w.succ and one succ.w)
+inv9 B: all w : Workstation | (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w)
+inv9 U: all w : Workstation | (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin and w in end)
+inv9 S: all w : Workstation | (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin and w in end and one Worstation)
+inv9 U: all w : Workstation | (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin and w in end and one Workstation)
+inv9 U: all w : Workstation | (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin and w in end and no succ)
+inv9 U: all w : Workstation | (no succ & iden) and (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin and w in end and no succ)
+inv9 B: all w : Workstation | (no succ & iden) and (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w)
+inv9 U: all w : Workstation | (no succ & iden) and (w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end)
+inv9 U: all w : Workstation | (no succ & iden) and ((w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end))
+

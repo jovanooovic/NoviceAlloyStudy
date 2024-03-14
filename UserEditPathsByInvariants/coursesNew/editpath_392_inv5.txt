@@ -1,0 +1,6 @@
+inv5 U: all p : Project | some s : Student | p in s.projects
+inv5 S: all p : Project | some s : Person | s in STudent => p in s.projects
+inv5 U: all p : Project | some s : Person | s in Student => p in s.projects
+inv5 U: all x: Person - Student | no x.projects	  	all p : Project | some s : Person | s in Student => p in s.projects
+inv5 C: all x: Person - Student | no x.projects	  	all p : Project | some s : Student |  p in s.projects
+

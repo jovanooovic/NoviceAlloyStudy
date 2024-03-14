@@ -1,0 +1,16 @@
+inv6 S: all f : File | x->y link f
+inv6 S: all f : File | f->y link f
+inv6 T: all x,y : File | x->y link y
+inv6 T: all x,y : File | x->y link x
+inv6 S: all (x,y) : File | x->y link y
+inv6 S: all x,y : File | x link y		/* There is no deleted link. */
+inv6 T: all x,y : File | x link y
+inv6 T: all x,y : File | x->y link y
+inv6 B: all x,y : File | x->y in link
+inv6 B: some x,y : File | x->y in link
+inv6 T: all x,y : File | x->y in File
+inv6 B: all x,y : File | x->y in link
+inv6 T: all x,y : File | x->y implies x in link and y in link
+inv6 C: all x,y,z : File | (x->y in link and x->z in link) implies y=z
+inv6 C: all x,y,z : File | (x->y in link and x->z in link) implies y=z
+

@@ -1,0 +1,36 @@
+NA H: THEME UPDATE
+inv1 C: all p:Person-Student| no p.enrolled
+inv2 C: all p:Person-Professor | no p.teaches
+inv3 O: all c:Course | some p:Professor | c in p.teaches
+inv4 C: all p:Project | one c:Course | p in c.projects
+inv5 U: all p:Person-Student | no p.projects
+inv5 C: all p:Person-Student | no p.projects	  	all p:Project | some s:Student | p in s.projects
+inv6 T: all s:Student, p:s.projects | p in s.Course.projects
+inv6 U: all s:Student, p:s.projects | p in s.enrolled.projects
+inv7 U: all s:Student, c:s.enrolled | lone p:Project | p in c.projects && p in s.projects
+inv8 U: all p:Professor, c: p.teaches | c not in p.enrolled
+inv9 S: all p:Professor, pp:Professor-p | some(c:p.teaches & pp.teaches) => c not in pp.enrolled
+inv9 S: all p:Professor, pp:Professor-p | some(c:p.teaches && pp.teaches) => c not in pp.enrolled
+inv9 T: all p:Professor, pp:Professor-p | some(p.teaches && pp.teaches) => c not in pp.enrolled
+inv9 S: all p:Professor, pp:Professor-p | some(p.teaches & pp.teaches) => c not in pp.enrolled
+inv9 U: all p:Professor, pp:Professor-p | some(p.teaches & pp.teaches) => no (p.teaches & pp.enrolled)
+inv10 T: all p:Person - Student , c:Course | p not in c.grades
+inv10 T: all p:Person - Student , c:Course | p not in c.grades
+inv10 O: all p:Person - Student , c:Course | no p->grades
+inv10 T: all p:Person, g:grades , c:Course | p->g in c.grades => p in Student
+inv10 C: all p:Person, g:Grade , c:Course | p->g in c.grades => p in Student
+inv11 U: all s:Student,c:Course,g:Grade | s->g in c.grades => c in  s.enrolled
+inv12 S: all s:Student, c:s:enrolled | lone g:Grade | s->g in c.grades
+inv12 U: all s:Student, c:s.enrolled | lone g:Grade | s->g in c.grades
+inv14 T: all s:Student, ss: Student-s,p:projects, pp:projects-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:projects, pp:projects-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => (pp not in s.projects & pp not in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 U: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in pp.projects) => (pp in s.projects && pp in pp.projects)
+inv14 S: all s:Student, ss: Student-s | some(s.projects & pp.projects) => (pp in s.projects && pp in pp.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp in s.projects && pp in pp.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp in s.projects && pp in ss.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp not in s.projects && pp not in ss.projects)
+

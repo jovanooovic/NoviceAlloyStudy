@@ -1,0 +1,9 @@
+inv4 B: all x: User | (one p: Photo | p in Ad implies (x.posts & Ad = x.posts))
+inv4 B: all x: User | (one p: Photo | p in Ad implies (x.posts & Ad = x.posts))
+inv4 B: all x: User | (some p: Photo | p in Ad implies (x.posts & Ad = x.posts))
+inv4 B: all x: User | (some p: Photo | p in Ad implies (x.posts & Ad = x.posts))
+inv4 B: all x: User | Ad in x.posts implies (all p: x.posts | p in Ad)
+inv4 B: all x: User | Ad in x.posts implies (all p: x.posts | p in Ad)
+inv4 B: all x: User | Ad in x.posts implies (x.posts & Ad = x.posts)
+inv4 B: all x: User | (Ad in x.posts) implies (x.posts & Ad = x.posts)
+

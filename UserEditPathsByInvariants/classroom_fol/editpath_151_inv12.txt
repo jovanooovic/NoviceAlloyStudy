@@ -1,0 +1,5 @@
+inv12 O: all t:Teacher | some g:Group, s:Student, c:Class | t->c in Teaches and s->g in c.Groups
+inv12 B: all t:Teacher | some g:Group, s:Student, c:Class | t->c in Teaches implies s->g in c.Groups
+inv12 B: all t:Teacher, c:Class | some g:Group, s:Student| t->c in Teaches implies s->g in c.Groups
+inv12 B: all t:Teacher, c:Class | some g:Group, s:Student| t->c in Teaches and s->g in c.Groups
+

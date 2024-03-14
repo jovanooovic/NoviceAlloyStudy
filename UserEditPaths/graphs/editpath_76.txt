@@ -1,0 +1,24 @@
+na H: THEME UPDATE
+inv1 B: all n,m: Node | n.adj = m iff m.adj = n
+inv1 S: all n | n.adj.adj = n
+inv1 O: all n: Node | n.adj.adj = n
+inv1 O: all n: Node | n.adj in Node implies n.adj.adj = n
+inv1 T: all n: Node | n.adj in Node implies lone n.adj.adj = n
+inv1 T: all n: Node | n.adj in Node implies some n.adj.adj = n
+inv1 U: all n: Node | some m: Node | n.adj = m implies m.adj = n
+inv1 B: all n: Node | n.adj in Node implies n in n.adj.adj
+inv1 B: all n: Node | n.adj in Node and n in n.adj.adj
+inv1 B: all n: Node | n.adj in Node implies n in n.adj.adj
+inv1 O: all n1,n2: Node | n1 in n2.adj iff n1.adj = n2
+inv1 O: all n1,n2: Node | n1 in n2.adj iff n1.adj in n2
+inv1 O: all n1,n2: Node | n1 in n2.adj and n1 in n2.adj iff n1.adj in n2
+inv1 S: all n1, some n2: Node | n1 in n2.adj iff n1.adj in n2
+inv1 B: all n1: Node | some n2: Node | n1 in n2.adj iff n1.adj in n2
+inv1 B: all n1: Node | lone n2: Node | n1 in n2.adj iff n1.adj in n2
+inv1 O: all n1,n2: Node | n1 in n2.adj iff n1.adj in n2
+inv1 S: all n: Node | n in n^
+inv1 T: all n: Node | n in ^n
+inv1 B: all n: Node | n in n.^adj
+inv1 U: all n: Node | n in n.*adj
+inv1 B: all n: Node | n in n.^adj
+

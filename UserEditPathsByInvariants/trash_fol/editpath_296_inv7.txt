@@ -1,0 +1,27 @@
+inv7 T: all x, y : File | x->y and y not in Trash
+inv7 O: all x, y : File | x->y in link and y not in Trash
+inv7 O: all x, y : File | x->y in link and y not in Trash and x not in Trash
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies (x not in Trash and y not in Trash)
+inv7 S: all x, y : File | x->y in and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies x not in Trash and y not in Trash
+inv7 O: all x, y : File | x->y in link implies (x not in Trash and y not in Trash)
+inv7 S: all x, y : File | x->y in link implies (x (not in Trash) and y (not in Trash))
+inv7 O: all x, y : File | x->y in link implies ((x not in Trash) and (y not in Trash))
+inv7 S: all x, y : File | x->y in link implies x not in Trash) and y not in Trash
+inv7 B: all x, y : File | x->y in link implies x not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash
+inv7 O: all x, y : File | x->y in link and x not in Trash
+inv7 S: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : Link]{	some g : File | f->g in link
+inv7 B: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | f->g in link
+inv7 O: all f : File | isLink[f] and f not in Trash	}		pred isLink[f : File]{	some g : File | f->g in link
+inv7 C: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | g->f in link
+inv7 C: all f : File | isLink[f] implies f not in Trash	}		pred isLink[f : File]{	some g : File | g->f in link
+inv7 S: all f : File | isLink[f] implies f not in Trash
+

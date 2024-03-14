@@ -1,0 +1,25 @@
+na H: THEME UPDATE
+inv6 O: all x : Node | Node in x.^adj + ^adj.x
+inv6 O: all x : Node | Node in x.^adj + ^adj.x + x
+inv6 S: all n:Node | some n2:Node | n1 in (n2.^adj + ~(~adj).x)
+inv6 S: all n:Node | some n2:Node | n in (n2.^adj + ~(~adj).x)
+inv6 B: all n, x :Node | some n2:Node | n in (n2.^adj + ~(~adj).x)
+inv6 U: all n, x :Node | some n2:Node | n in (n2.*adj + ~(~adj).x)
+inv6 O: all x : Node | Node in x.*adj + ~(*adj).x
+inv6 O: all x : Node | Node in x.*adj + (~(*adj)).x
+inv6 O: all x : Node | Node in x.*adj + x.~(*adj)
+inv6 O: all x : Node | Node in x.*adj + x.*(~adj)
+inv6 O: all x : Node | Node in x.*adj + (*~adj).x
+inv6 O: all x : Node | Node in x.*adj + (*adj).x
+inv6 O: all x : Node | Node in x.*adj + (~*adj).x
+inv6 O: all x : Node | Node in x.*adj + x.(~*adj)
+inv6 O: all x : Node | Node in x.*adj + x.~adj
+inv6 O: all x : Node | Node in x.*adj + x.*(~adj)
+inv7 C: all x : Node | Node in x.*adj
+inv7 C: all x : Node | Node in x.*adj
+inv6 O: all x : Node | Node in x.*adj + *adj.x
+inv6 O: all x : Node | Node in x.*adj + *(~adj).x
+inv6 O: all x : Node | Node in x.*adj + x.*(~adj)
+inv6 O: all x : Node | Node in x.*adj + x.~(*adj)
+inv6 O: all x : Node | Node in x.*adj + x.~(^adj)
+

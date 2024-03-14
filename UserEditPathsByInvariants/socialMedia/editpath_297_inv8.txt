@@ -1,0 +1,9 @@
+inv8 B: all a : Ad | all u1,u2 : User | u1 in sees.a implies (u2 in u1.follows or u2 in u1.suggested)
+inv8 B: all a : Ad | all disj u1,u2 : User | u1 in sees.a implies (u2 in u1.follows or u2 in u1.suggested)
+inv8 S: all u : User | u.sees & Ad in (u.follows or u.suggested)
+inv8 S: all u : User | u.sees & Ad in (u.follows.posts or u.suggested.posts)
+inv8 S: all u : User | (u.sees & Ad) in (u.follows.posts + u.suggested.posts)
+inv8 C: all u : User | (u.sees & Ad) in (u.follows.posts + u.suggested.posts)
+inv8 T: all u : User | (u.sees & Ad) in (u.follows.posts or u.suggested.posts)
+inv8 C: all u : User | (u.sees & Ad) in (u.follows.posts + u.suggested.posts)
+

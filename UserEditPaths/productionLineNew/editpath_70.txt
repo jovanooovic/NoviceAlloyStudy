@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Robot or w in Human
+inv3 U: all c : Component | (some ws : Workstation | ws in c.workstation)
+inv5 T: all h : Human | all r : Robot | all ws : workstation | r in ws.workers implies h not in ws.workers
+inv5 S: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (h not in ws.workers(
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (h not in ws.workers)
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (not(h in ws.workers))
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) iff (not(h in ws.workers))
+inv5 T: all r : Robot | all ws : workstation | (r in ws.workers) iff (not(some h : Human| h in ws.workers))
+inv5 T: all r : Robot | all ws : workstation | r in ws.workers iff (not(some h : Human| h in ws.workers))
+inv5 O: all r : Robot | all ws : Workstation | r in ws.workers iff (not(some h : Human| h in ws.workers))
+inv5 O: all h : Human | all r : Robot | all ws : Workstation | (r in ws.workers) iff (not(h in ws.workers))
+inv5 C: all h : Human | all r : Robot | all ws : Workstation | (r in ws.workers) implies (not(h in ws.workers))
+inv6 S: all c: Components | c not in c.parts
+inv6 U: all c: Component | c not in c.parts
+inv6 U: all c: Component | not (c in c.parts)
+inv6 U: all c: Component | not (c in parts.c)
+inv6 O: all c: Component | not (some p : Product | c in p.parts)
+inv7 S: all c : Components | (some d : Dangerous | d in c.parts) implies c in Dangerous
+inv7 C: all c : Component | (some d : Dangerous | d in c.parts) implies c in Dangerous
+inv9 B: all ws: Workstation | (some prec : Workstation | ws in prec.succ) or (some post : Workstation | post in ws.succ)
+inv9 B: all ws: Workstation | (some prec : Workstation | ws in prec.succ) or (some post : Workstation | post in ws.succ) or (ws in ws.succ)
+NA H: THEME UPDATE
+

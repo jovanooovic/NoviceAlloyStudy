@@ -1,0 +1,5 @@
+inv4 S: all u:User | some p:Post | u->p in posts and p in Ad implies all u -> p in Ad
+inv4 S: all u:User | some p:Post | u->p in posts and p in Ad implies all p1:Photo | u -> p in Ad
+inv4 S: all u:User | (some a:Ad | u->a in posts) implies (all p1:Photo | u -> p in posts implies p in Ad)
+inv4 C: all u:User | (some a:Ad | u->a in posts) implies (all p:Photo | u -> p in posts implies p in Ad)
+

@@ -1,0 +1,4 @@
+inv2 U: all w: Workstation | some w1: Worker | w->w1 in workers and (one w2: Workstation | w2->w1 in workers)
+inv2 S: all w: Workstation | some w1: Worker | w->w1 in workers and (one w2: Workstation | all w3: Workers | w2->w3 in workers)
+inv2 B: all w: Workstation | some w1: Worker | w->w1 in workers and (one w2: Workstation | all w3: Worker | w2->w3 in workers)
+

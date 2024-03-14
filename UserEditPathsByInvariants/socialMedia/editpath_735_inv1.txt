@@ -1,0 +1,15 @@
+inv1 U: all u : User | posts.u in Photo
+inv1 U: all u : User | u.posts in Photo
+inv1 O: all p : Photo | p in posts.p
+inv1 T: all p : Photo | p in posts
+inv1 S: all p : Photo | u->p in posts
+inv1 O: all p : Photo | p in p.posts
+inv1 O: all p : Photo | p in posts.p
+inv1 T: all p : Photo | posts.p in posts
+inv1 T: all p : Photo | p.posts in posts
+inv1 U: all p : Photo | p in User.posts
+inv1 T: all p : Photo | one p in User.posts
+inv1 T: all p : Photo | one p in posts.p
+inv1 T: all p : Photo | one p in posts
+inv1 C: all p : Photo | one posts.p
+

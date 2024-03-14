@@ -1,0 +1,7 @@
+inv11 E:
+inv11 S: all c: Course | c in (s.enrolled)&(grades.Grade)
+inv11 T: all c: Course, s: Student | c in (s.enrolled)&(grades.Grade)
+inv11 B: all c: Course, s: Student | c in (s.enrolled)&((grades.Grade).s)
+inv11 U: all c: Course, s: Student | (grades.Grade).s in s.enrolled
+inv11 U: all s: Student | (grades.Grade).s in s.enrolled
+

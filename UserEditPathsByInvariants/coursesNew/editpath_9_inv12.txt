@@ -1,0 +1,5 @@
+inv12 T: all c: Course, p: Student, g: Grade | lone (p->g in c.grades )
+inv12 B: all c: Course, p: Student | one g: Grade | p->g in c.grades
+inv12 O: all c: Course, p: Person | one g: Grade | p->g in c.grades
+inv12 C: all c: Course, p: Person | lone g: Grade | p->g in c.grades
+

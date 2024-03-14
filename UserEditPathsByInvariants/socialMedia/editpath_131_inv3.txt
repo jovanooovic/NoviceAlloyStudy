@@ -1,0 +1,22 @@
+inv3 E:
+inv3 S: all x: suggested | all suggested.x
+inv3 S: all x: suggested | all x.suggested
+inv3 T: all x: User |  x.sees in suggested
+inv3 S: all u: User, all s: suggested | s in u.sees
+inv3 S: all u: User, all s: Photo | s in u.sees
+inv3 S: one a: Ad, all u: User | a in u.sees
+inv3 S: one a: Ad, all u: User | u->a in sees
+inv3 S: one a: A | all u: User | u->a in sees
+inv3 B: one a: Ad | all u: User | u->a in sees
+inv3 S: one a: Ad | all u: User | u->a in sees	one x: User | all p: x.follos.Photo-Ad | x->p in sees
+inv3 T: one a: Ad | all u: User | u->a in sees	one x: User | all p: x.follows.Photo-Ad | x->p in sees
+inv3 B: all x: User | x->x.follows in sees
+inv3 B: one x: User | x->x.follows in sees
+inv3 B: all x: User | x->follows.x in sees
+inv3 B: all x: User | x->x.follows.posts in sees
+inv3 B: all x: User | x->x.follows.posts in sees
+inv3 B: all x: User | x->x.follows.posts in sees
+inv3 O: all x: User | x.sees in x.follows.posts
+inv3 C: all x: User | x.sees-Ad in x.follows.posts
+inv3 C: all x: User | x.sees-Ad in x.follows.posts
+

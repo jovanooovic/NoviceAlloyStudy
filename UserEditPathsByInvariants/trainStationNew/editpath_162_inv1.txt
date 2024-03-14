@@ -1,0 +1,17 @@
+inv1 S: some j : Juntion | some e : Entry | j in Track and e in Track
+inv1 B: some j : Junction | some e : Entry | j in Track and e in Track
+inv1 T: some Entry in Track and some Junction in Track
+inv1 T: all t : Track | some (t in Junction or t in Entry)
+inv1 B: some j : Junction | some e : Entry | j in Track or e in Entry
+inv1 B: some j : Junction | some e : Entry | j in Track or e in Track
+inv1 S: (all x : Exit | all y : Track | x->y not in succs) and	(all x : Entry | all y : Track | y->x not in succs) and	(all x : Junction | some y,z : Track | y->x in succs and x->z in succs) and	(some x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs))	}
+inv1 B: (all x : Exit | all y : Track | x->y not in succs) and	(all x : Entry | all y : Track | y->x not in succs) and	(all x : Junction | some y,z : Track | y->x in succs and x->z in succs) and	(some x : Track | some y : Track | (y->x in succs and y in Entry) implies (some z : Track | z in Exit and x->z in succs))
+inv1 T: (some Junction in Track) and some (Entry in Track)
+inv1 S: (some Junction in Track) and some Entry in Track)
+inv1 T: (some Junction in Track) and (some Entry in Track)
+inv1 T: some t : Track | some Entry in t.^succs or some Junction in t.^succs
+inv1 B: some j : Junction | some e : Entry | j in Track or e in Track
+inv1 S: some ex : Exit | some e : Entry
+inv1 C: some ex : Exit | some e : Entry | ex in Track or e in Track
+inv1 C: some ex : Exit | some e : Entry | ex in Track or e in Track
+

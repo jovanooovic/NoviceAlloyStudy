@@ -1,0 +1,6 @@
+inv8 T: all c: Component, h: Human | c.Dangerous and h in c.workstation =>	not h.Worker
+inv8 T: all c: Component, h: Human | c.Dangerous and h in c.workstation =>	not h.Worker
+inv8 T: all c: Component | c.Dangerous implies  c.workstation.worker not in Human
+inv8 S: all c: Component | c in Dangerous implies  c.workstation.worker not in Human
+inv8 B: all c: Component | c in Dangerous implies  c.workstation.workers not in Human
+

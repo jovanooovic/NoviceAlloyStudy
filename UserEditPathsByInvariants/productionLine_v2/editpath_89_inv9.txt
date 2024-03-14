@@ -1,0 +1,15 @@
+inv9 B: all wk:Workstation | wk in begin => wk in end
+inv9 B: all wk:Workstation | wk in begin => wk.succ in end
+inv9 B: all wk:Workstation | wk in begin => wk in end
+inv9 S: all wk:Workstation | wk in wk.^(succs)
+inv9 B: all wk:Workstation | wk in wk.^(succ)
+inv9 U: all e:end, b:begin | e in b.^(succ) or b=e
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 U: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w in end implies no w.succ
+inv9 U: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w in end implies no w.^(succ)
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all disj w,wb : Workstation | (wb in begin) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all disj w,wb : Workstation | (wb in begin) => w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all disj w,wb : Workstation | (wb in begin) => w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end => one w.succ
+

@@ -1,0 +1,6 @@
+inv10 O: all p:Product | p.^parts in p.workstation.~^succ
+inv10 O: all p:Component | p.^parts in p.workstation.~^succ
+inv10 O: all p:Component | p.^parts.workstation in p.workstation.~^succ
+inv10 O: ^parts.workstation in workstation.~^succ
+inv10 O: all p:Component,w:Workstation | p->w in ^parts.workstation implies p->w in workstation.~^succ
+

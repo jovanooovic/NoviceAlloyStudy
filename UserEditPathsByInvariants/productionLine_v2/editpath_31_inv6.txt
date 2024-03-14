@@ -1,0 +1,30 @@
+inv6 U: all c:Component | c not in c.parts
+inv6 B: one c:Component | c not in c.parts
+inv6 U: all c:Component | c not in c.parts
+inv6 O: all c:Component | c not in c.parts and c.parts not in c.parts
+inv6 B: all c:Component | c not in c.parts and c.parts not in c
+inv6 U: all c,c2:Component | (c not in c.parts) and (c2 in c.parts => c not in c2.parts)
+inv6 B: all c2:Component, p:Product | p in c2.parts => p not in Component
+inv6 U: all c:Component | c not in c.parts
+inv6 U: all c:Component | c not in c.parts.parts
+inv6 U: all c:Component | c not in c.parts.parts.parts
+inv6 U: all c:Component | c not in c.parts
+inv6 U: all c:Component | c not in c.parts
+inv6 U: all c:Component | c not in c.parts	all p:Product | p in p.parts => p not in Component
+inv6 B: all c:Component | c not in c.parts	all p:Product | p not in p.parts => p in Component
+inv6 B: all c:Component | c not in c.parts	all p:Product | p not in p.parts => p in Component
+inv6 B: one c:Component | c not in c.parts
+inv6 B: lone c:Component | c not in c.parts
+inv6 B: some c:Component | c not in c.parts
+inv6 S: let c:Component | c not in c.parts
+inv6 B: no c:Component | c not in c.parts
+inv6 U: no c:Component | c in c.parts
+inv6 B: all c:Component | c in c.parts
+inv6 U: all c:Component | some c.parts => c not in c.parts
+inv6 B: all c:Product | c not in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 U: all c : Component | c -> c not in parts
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^(parts)
+inv6 C: all c : Component | c not in c.^(parts)
+

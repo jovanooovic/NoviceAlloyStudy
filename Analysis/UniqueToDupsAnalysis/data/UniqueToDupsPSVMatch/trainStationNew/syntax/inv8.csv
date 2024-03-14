@@ -1,0 +1,58 @@
+"all t: Entry |",3
+"all t: Track |",1
+"Track in ^succ",1
+"Exit in Entry.succ",1
+"End in Entry.(^succs)",1
+"all ex:Exit, | ex in Entry",1
+"all e:Entry | Exit in e.^succ",1
+"all e: Entry | Exit in e.*succ",1
+"all e:Entry | Exit in t.^succs",1
+"all e : Entry | Exit in e.^succ",1
+"all t : Track | Track in t.^succ",1
+"all e : Entry | some Exit&t.^succs",1
+"all e:Entry,ex:Exit| ex in e.^succ",1
+"all e:Entry, x:Exit | x in e.^parts",1
+"all ex:Exit, | ex in Entry.^(succs)",3
+"all e: Entry, x: Exit| x in e.^occurs",1
+"all t: Entry | #(t.succs & Exit) == #Exit",1
+"all e : Entry | Exit in e.^succs or en=ex",1
+"all t: Entry | #(t.^succs & Exit) == #Exit",1
+"all e: Entry| all c: Exit| c in e*(succes)",1
+"all en : Entry, ex : Exit | ex in en.*succ",1
+"all e: Entry | all ex : Exit |  in e.*succs",1
+"all e:Entry, ex:Exit | ex in all e.^(succs)",1
+"all e: Entry, all ex: Exit | ex in e.^succs",1
+"all en : Entry | ex : Exit | ex in en.^succs",1
+"all e : Entry | all s : Exit | s in e.*(.Exit)",1
+"all en : Entry, ex : Exit | all ex & en.^succs",1
+"all en : Entry, ex : Exit | all (ex & en.^succs)",1
+"all x:Entry | all y:Exit | y in x.^succs or x==y",1
+"all t : Track | t in Entry implies t.succ in Exit",1
+"all t : Track | t in entry implies t.succ in exit",1
+"all exit:Exit, entry:Entry | exit in entry^.succs",1
+"all exit:Exit, entry:Entry | exit in entry^.succs)",1
+"all en : Entry | all e : Exit-en |  | e in en.^succs",1
+"all exit:Exit, all entry:Entry | exit in entry.succs",1
+"all entry : Entry | exit : Exit | exit in entry.^succs",1
+"all en : Entry, ex : Exit | ex in en.^succs && t1 != t2",1
+"all t: Entry | all x: t.succs | #(x.succs & Exit) == #Exit",1
+"all t: Entry | all x: t.succs | #(x.^succs & Exit) == #Exit",1
+"all x,y:Tracks | y in Exit  implies  x in Entry and x.succs.y",1
+"all disj x,y:Track| x in Entry and y in End => y in x.^(succs)",1
+"all en, ex : Track | en in Entry and ex in Exit ex in en.^succs",1
+"all en, ex : Tracks | en in Entry and ex in Exit ex in en.^succs",1
+"all t1: Track, t2: t.^succs | some t1&Entry implies some t2&Exit",1
+"all en : Entry | all en.^succs&Exit
+no Signal
+no Semaphore
+no Speed",1
+"all disj t,t1:Track | t in Entry and t1 in Exit implies t1 in t^.succs",1
+"all disj t1,t2 : Track | t1 in Entry and t2 in Exit implies t2 in succ.t1",1
+"all disj t1,t2:Track | t in Entry and t2 in Exit implies t2 in t1.^(succs)",1
+"all disj t1,t2:Track | t1 in Entry && t2 in Exit implies t2 in t1.^(succs)
+}",1
+"all t1,t2:Track | t1!=t2 |  t1 in Entry && t2 in Exit implies t2 in t1.^(succs)",1
+"all entry : univ | entry in Entry implies all exit : Exit | exit in entry.succs^",1
+"all t1,t2:Track  -> t1!=t2 |  t1 in Entry && t2 in Exit implies t2 in t1.^(succs)",1
+"all t1,t2:Track | t1!= t2  t1 in Entry && t2 in Exit && t1 != t2 implies t2 in t1.^(succs)",1
+"all t1,t2:Track | one (t1 & Entry) and one (t2 & Exit) implies t1 in t2.^succs or (t1==t2)",1

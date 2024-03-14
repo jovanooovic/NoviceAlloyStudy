@@ -1,0 +1,13 @@
+inv1 U: User.posts = Photo
+inv1 B: one u : User | u.posts = Photo
+inv1 B: some u: User | u.posts = Photo
+inv1 B: some u: User | u.posts = (Photo - Ad)
+inv1 B: all u1: User | u1 != u1
+inv1 E:
+inv1 B: posts in User set -> one User
+inv1 B: posts in User set -> one Photo
+inv1 C: posts in User one -> set Photo
+inv1 T: some u: User | u->posts = Photo
+inv1 B: some u: User | u.posts = Photo
+inv1 T: some u: User | u->posts = Photo
+

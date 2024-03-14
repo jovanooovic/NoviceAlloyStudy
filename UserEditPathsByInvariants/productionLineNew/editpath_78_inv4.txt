@@ -1,0 +1,11 @@
+inv4 S: (all c : Component | some p : Product | c in p.parts)	and	(all m : Material | no p Product | m in p.parts )
+inv4 S: all c : Component | some p : Product | c in p.parts	and	all m : Material | no p Product | m in p.parts
+inv4 S: (all c : Component | some p : Product | c in p.parts)	and	(all m : Material | no p Product | m in p.parts)
+inv4 B: (all c : Component | some p : Product | c in p.parts)	and	(all m : Material | no p : Product | m in p.parts)
+inv4 C: (all c : Component | some p : Product | c->p in parts)	and	(all m : Material | no p : Product | m->p in parts)
+inv4 B: (all c : Component | some p : Product | c in p.parts)	and	(all m : Material | no p : Product | m in p.parts)
+inv4 B: (all c : Component | some p : Product | p.parts in c)	and	(all m : Material | no p : Product | p.parts in m)
+inv4 B: (all c : Component | some p : Product | c in p.parts)	and	(all m : Material | no p : Product | m in p.parts)
+inv4 T: no m : Material | m.parts	and	all c : Componente | some m.parts
+inv4 T: (no m : Material | m.parts)	and	(all c : Componente | some m.parts)
+

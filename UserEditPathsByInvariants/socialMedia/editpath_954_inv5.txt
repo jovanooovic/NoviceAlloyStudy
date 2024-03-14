@@ -1,0 +1,17 @@
+inv5 B: follows.Influencer = User - Influencer
+inv5 B: follows.Influencer = User
+inv5 S: all u : User | u in follows.Influencer
+inv5 S: all i : Influencer | all u : User | i != u implies i in u.follows
+inv5 S: all i : Influencer | all u : User | i != u implies u->i in follows
+inv5 S: all i : Influencer | all u : User | u->i in follows
+inv5 S: all i : Influencer | all u : User | i != u implies u->i in follows
+inv5 U: all i : Influencer | all u : User | i != u implies u->i in follows
+inv5 B: all i : Influencer | all u : User |  u->i in follows
+inv5 T: Influencer.follows
+inv5 B: no Influencer.follows
+inv5 S: follows.Influencer = User - Iden
+inv5 T: follows.Influencer = User - iden
+inv5 B: follows.Influencer = User
+inv5 B: (follows - iden).Influencer = User
+inv5 U: all i: Influencer, u: User | i != u => i in u.follows
+

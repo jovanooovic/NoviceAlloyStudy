@@ -1,0 +1,14 @@
+inv1 S: all p: Person, c:Course | p not in Student and p->c in enroleed
+inv1 B: all p: Person, c:Course | p not in Student and p->c in enrolled
+inv1 O: all p: Person, c:Course | p  in Student and p->c in enrolled
+inv1 B: all p: Person, c:Course | p not in Student or p->c in enrolled
+inv1 O: all p: Person, c:Course | p = Student and p->c in enrolled
+inv1 C: all p: Person, c:Course | p->c in enrolled implies p in Student
+inv1 T: all p: Person, c:Course | p.enrolled implies p in Student
+inv1 T: all p: Person, c:Course | p.enrolled and  p in Student
+inv1 O: all p: Person, c:Course | p.enrolled in Student
+inv1 C: all p: Person, c:Course | p->c in enrolled implies p in Student
+inv1 B: all p: Person | p.enrolled & p=Student
+inv1 U: all p: Person | p.enrolled & p in Student
+inv1 T: all p: Person | p.enrolled and p in Student
+

@@ -1,0 +1,23 @@
+inv5 B: eventually some Trash
+inv5 B: eventually some Trash
+inv5 O: some f: File | eventually (f not in File)
+inv5 O: some t: Trash | eventually (t not in File)
+inv5 B: some f: File | eventually (f in Trash)
+inv5 O: some f: File | eventually (f not in (File + Trash + Protected))
+inv5 O: some f: File | eventually (f not in univ)
+inv5 B: some t: Trash | once t in Trash
+inv5 B: some t: Trash | once t in File
+inv5 T: some f: File | after no f in File
+inv5 O: some f: File | after f not in File
+inv5 B: some f: File | after f not in Trash
+inv5 B: some f: File | after f in Trash
+inv5 B: some f: File | f not in Trash implies after f in Trash
+inv5 B: always (some f: File | f not in Trash implies after f in Trash)
+inv5 B: eventually (some f: File | f not in Trash implies after f in Trash)
+inv5 O: eventually some f: File | f not in File
+inv5 C: eventually some f: File | eventually f not in File
+inv5 C: eventually some f: File | eventually f not in File
+inv5 O: some f: File | eventually f not in File
+inv5 C: eventually some f: File | eventually f not in File
+inv5 O: always some f: File | eventually f not in File
+

@@ -1,0 +1,21 @@
+inv12 E:
+inv12 O: Teacher in Person.Teaches
+inv12 T: Teacher in Group.~Groups
+inv12 B: no Class.Groups
+inv12 T: no Class.~Groups
+inv12 B: no Class.Groups
+inv12 T: no ~Groups
+inv12 T: no Group.~Groups
+inv12 T: no Class.Group.~Groups
+inv12 T: no Group.~Class.Groups
+inv12 B: no Class.Groups
+inv12 B: no ~(Class.Groups)
+inv12 U: no Person.~(Class.Groups)
+inv12 B: no Group.~(Class.Groups)
+inv12 B: Teacher in Group.~(Class.Groups)
+inv12 U: no Class.Groups.Teacher
+inv12 B: Group in Class.Groups.Teacher
+inv12 T: Group in Class.Groups->Teacher
+inv12 T: all t:Teacher | some c:Class,g:Group | c->t->g in Teaches
+inv12 B: all t:Teacher | some c:Class,g:Group | c->t->g in Groups
+

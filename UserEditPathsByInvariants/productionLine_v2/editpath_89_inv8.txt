@@ -1,0 +1,5 @@
+inv8 B: all c:Component | c in Dangerous => Human not in c.workstation.workers
+inv8 C: all c:Component, h:Human | c in Dangerous => h not in c.workstation.workers
+inv8 C: all c:Dangerous, h:Human | c in Component => h not in c.workstation.workers
+inv8 C: all c:Component, h:Human | c in Dangerous => h not in c.workstation.workers
+

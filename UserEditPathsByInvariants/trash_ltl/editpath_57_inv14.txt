@@ -1,0 +1,12 @@
+inv14 B: no Trash & Protected
+inv14 S: all f:File | f in (Trash & Protected) after f not in Protected
+inv14 U: all f:File | f in (Trash & Protected) implies f not in Protected'
+inv14 U: all f:File | (f in Trash and f in Protected) implies f not in Protected'
+inv14 U: all f:File | f in (Trash & Protected) implies f not in (Trash & Protected')
+inv14 U: all f:File | (f in Trash and f in Protected) implies (f in Trash and f not in Protected')
+inv14 B: all f:File | (f in Trash and f in Protected) implies (f in Trash' and f not in Protected')
+inv14 O: always all f:File | (f in Trash and f in Protected) implies (f in Trash' and f not in Protected')
+inv14 B: always some f:File | (f in Trash and f in Protected) implies (f in Trash' and f not in Protected')
+inv14 C: always all f:File | (f in Trash and f in Protected) implies (f not in Protected')
+inv14 C: always all f:File | f in Trash and f in Protected implies f not in Protected'
+

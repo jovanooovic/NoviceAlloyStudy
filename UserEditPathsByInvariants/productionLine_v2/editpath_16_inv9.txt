@@ -1,0 +1,13 @@
+inv9 T: begin.^succ.end
+inv9 T: begin.^succ.end in Workstation
+inv9 B: all w:Workstation | w in begin.^succ & ^succ.end
+inv9 B: all w:Workstation | w in begin.^succ & ^succ.end and begin != end
+inv9 S: aWorkstation in begin.^succ & ^succ.end
+inv9 B: Workstation in begin.^succ & ^succ.end
+inv9 U: Workstation in begin.*succ & *succ.end
+inv9 U: Workstation in begin.*succ	succ in Workstation lone -> lone Workstation
+inv9 B: Workstation in begin.*succ	succ in Workstation lone -> lone Workstation	no succ.end
+inv9 C: Workstation in begin.*succ	succ in Workstation lone -> lone Workstation	no end.succ
+inv9 U: all w:Workstation-begin | one succ.w	no end.succ	Workstation in begin.*succ
+inv9 C: all w:Workstation-end | one w.succ	no end.succ	Workstation in begin.*succ
+

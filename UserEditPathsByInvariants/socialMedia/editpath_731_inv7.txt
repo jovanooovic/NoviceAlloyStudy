@@ -1,0 +1,10 @@
+inv7 B: all user1, user2, user3 : User | (user1 in user2.follows and user3 in user1.follows and user3 not in user2.follows) implies user3 in user2.suggested
+inv7 S: all u, f, s: User | (f in user.follow and s in f.follow and s not in u.follow) implies s in user.suggested
+inv7 S: all u, f, s: User | (f in u.follow and s in f.follow and s not in u.follow) implies s in u.suggested
+inv7 S: all u, f, s: User | (f in u.follow and s in f.follows and s not in u.follows) implies s in u.suggested
+inv7 B: all u, f, s: User | (f in u.follows and s in f.follows and s not in u.follows) implies s in u.suggested
+inv7 B: all u, f, s: User | (f in u.follows and s in f.follows and s not in u.follows) implies s in u.suggested
+inv7 B: all u, f, s: User - Influencer | (f in u.follows and s in f.follows and s not in u.follows) implies s in u.suggested
+inv7 B: all u, f, s: User - Influencer | (f in u.follows and s in f.follows and s not in u.follows) implies s in u.suggested
+inv7 B: all u, f, s: User | (f in u.follows and s in f.follows and s not in u.follows) implies s in u.suggested
+

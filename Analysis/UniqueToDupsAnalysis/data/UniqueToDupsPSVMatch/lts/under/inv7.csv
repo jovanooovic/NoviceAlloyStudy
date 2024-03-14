@@ -1,0 +1,41 @@
+"all x : State | no iden & (x.trans)",1
+"all e : Event | some e.(Init.trans) implies some (e->Init).trans",1
+"all e : Event | some e.(Init.trans) implies some ~(Init.trans).e",1
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} |
+    iden in *trans_bin",1
+"let trans2 = {s1, s2 : State | some s1.trans.s2} |
+    Init in Init.*trans2",1
+"all s: State.trans.Event | s in s.^{y,x: State | some x.trans.y}",1
+"all s: Event.(State.trans) | s in *{x,y: State | some x.trans.y}.s",1
+"all s: Event.(State.trans) | s in s.*{x,y: State | some y.trans.x}",1
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} |
+    Init in (*trans_bin).State",1
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} |
+    Init in State.*trans_bin",1
+"let trans2 = {s1, s2 : State | some s1.trans.s2} |
+    Init in Init.^trans2 + Init",2
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} | Init in ~(*trans_bin).State",2
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} |
+    iden in *trans_bin . *trans_bin",1
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} |
+    Init in ((^trans_bin).State + Init)",1
+"let trans_bin = {s1, s2 : State | some s1.trans.s2} | Init in Init.*trans_bin.*trans_bin",2
+"let adj ={x,y:State | some e:Event |x->e->y in trans} |
+  
+   some Init.^adj implies some ((Init.^adj).^adj &Init)",3
+"let adj ={x,y:State | some e:Event |x->e->y in trans} |
+  
+   some Init.^adj implies some ( (Init.*adj).^adj & Init )",1
+"let adj ={x,y:State | some e:Event |x->e->y in trans} |
+  
+   some (Init.^adj)-Init implies some ( (Init.^adj).^adj & Init )",1
+"all s: State | s in Init.*{s1, s2: State | some s1.trans.s2} implies some (Init & s.*{s1, s2: State | some s1.trans.s2})",1
+"let adj ={x,y:State | some e:Event |x->e->y in trans} |
+  
+   some (Init.^adj)-Init implies some ( ((Init.^adj)-Init).^adj & Init )",1
+"all to: State | one Init and reachable[Init, to] => reachable[to, Init]
+}
+
+pred reachable[from, to: State]{
+   	let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |
+  		to in from.^rel",1

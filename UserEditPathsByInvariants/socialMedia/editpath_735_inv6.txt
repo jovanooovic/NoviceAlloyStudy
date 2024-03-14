@@ -1,0 +1,12 @@
+inv6 T: all i : Influencer | all d : Day | one i.posts.d
+inv6 T: all i : Influencer, d : Day | some i.posts.d
+inv6 T: all i : Influencer, d : Day , p : Photo| some p in i.posts.d
+inv6 T: all i : Influencer, d : Day , p : Photo| some d in i.posts.date
+inv6 T: all i : Influencer, d : Day , p : Photo| some i.p.d
+inv6 T: all i : Influencer, d : Day | some i.posts.d
+inv6 T: all i : Influencer, d : Day | some i.posts in day
+inv6 T: all i : Influencer, d : i.posts.date | some i.posts.d
+inv6 T: all i : Influencer, d : i.posts.date | some d in i.posts.date
+inv6 T: all i : Influencer, d : Day | some d in i.posts.date
+inv6 C: all i : Influencer, d : Day | d in i.posts.date
+

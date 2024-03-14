@@ -1,0 +1,9 @@
+inv13 S: one Grade/last
+inv13 U: one last
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and no g.next => some p:Project | s->p in projects
+inv13 B: all s:Student, c:Course, g:Grade | c->s->g in grades and no g.prev => some p:Project | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:Project | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | s->p in projects
+inv13 S: all c->s->g : grades | g in last => some p:c.projects | s->p in projects
+inv13 U: all s:Student, c:Course, g:Grade | c->s->g in grades and g in last => some p:c.projects | s->p in projects
+

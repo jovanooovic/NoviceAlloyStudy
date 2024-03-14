@@ -1,0 +1,47 @@
+NA H: THEME UPDATE
+inv1 U: Photo = User . posts
+inv1 C: posts in User one -> Photo
+inv1 O: posts in User one -> Photo	not some p:Photo | all disj u1, u2:User | u1->p in posts and u2->p in posts
+inv1 B: not some p:Photo | all disj u1, u2:User | u1->p in posts and u2->p in posts
+inv1 B: not some p:Photo | all  u1, u2:User | u1->p in posts and u2->p in posts
+inv1 U: not some p:Photo | all  u1, u2:User | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all  u1, u2:User | not some p:Photo | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all u1, u2:User | not some p:Photo | u1!=u2 and u1->p in posts and u2->p in posts
+inv1 U: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts
+inv1 S: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts	all p:Photo | some u:user | u->p in posts
+inv1 C: all p:Photo | not some disj u1, u2: User | u1->p in posts and u2->p in posts	all p:Photo | some u:User | u->p in posts
+inv1 U: all p:Photo | some u:User | u->p in posts
+inv1 C: posts in User one -> Photo
+inv2 C: not some u:User | u->u in follows
+inv3 S: all u:User | not some p:Photo-Ad | u->p in sees and posts . p not in u.folows
+inv3 S: all u:User | not some p:Photo-Ad | u->p in sees and posts . p not in u.follows
+inv2 C: not some u:User | u->u in follows
+inv3 B: all u:User | not some p:Photo-Ad | u->p in sees and posts . p not in u.follows
+inv4 S: all u:user, p:Ad | u->p in posts => u.posts in Ad
+inv4 C: all u:User, p:Ad | u->p in posts => u.posts in Ad
+inv5 B: User->Influencer in follows	all u:User, i:Influencer | u->i in follows
+inv5 B: User->Influencer in follows
+inv5 B: all u:User, i:Influencer | u->i in follows
+inv5 B: all disj u:User, i:Influencer | u->i in follows
+inv5 T: User-Influencer->Influencer in follows
+inv5 U: (User-Influencer)->Influencer in follows
+inv5 B: (User)->Influencer in follows
+inv5 U: all u:User, i:Influencer | u!=i => u->i in follows
+inv6 B: Influencer . posts . date = Day
+inv6 S: all i:Influencer | i . posts . date = Date
+inv6 C: all i:Influencer | i . posts . date = Day
+inv7 B: User . suggested = User . follows . follows
+inv7 B: User . suggested = User . follows . follows - User . follows
+inv7 B: User . suggested = (User . follows . follows) - (User . follows)
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows  => u1->u3 in suggested
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows  <=> u1->u3 in suggested
+inv7 U: all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 U: all u:User | u->u not in suggested	all disj u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 O: all u:User | u->u not in suggested	all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 B: all u:User | u->u not in suggested	all u1, u2, u3: User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows => u1->u3 in suggested
+inv8 B: posts . (User . sees) in (User . follows + User . suggested)
+inv8 B: all u:User | not some a:Ad | u->a in sees and posts . a not in u.follows+u.suggested
+inv7 S: all u:User | u->u not in suggested	all u1, u2, u3: User | u1 != u2 and u1!=u3 and au1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv7 O: all u:User | u->u not in suggested	all u1, u2, u3: User | u1 != u2 and u1!=u3 and u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows <=> u1->u3 in suggested
+inv8 B: all u, v:User, a:Ad  | u->a in sees and v->a in posts=> u->v in follows+suggested
+

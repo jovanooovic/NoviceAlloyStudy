@@ -1,0 +1,50 @@
+NA H: THEME UPDATE
+inv1 O: one posts.User
+inv1 U: all p : Photo, u : User | one posts.p
+inv1 O: all p : Photo | one p.posts
+inv1 C: all p : Photo | one posts.p
+inv2 C: all u : User | u not in u.follows
+inv2 C: all u : User | u not in follows.u
+inv3 C: all p : Photo, u : User | p in u.sees => (p in Ad || p in u.follows.posts)
+inv4 T: all u : User | some Ad in u.posts => all p : u.posts | p in Ad
+inv4 O: all u : User | some Ad : u.posts | all p : u.posts | p in Ad
+inv4 S: all ad : Ad | all posts : posts.ad.posts in Ad
+inv4 C: all ad : Ad | all posts : posts.ad.posts | posts in Ad
+inv5 U: all inf : Influencer | all u : User-inf | u in follows.inf
+inv6 U: all d : Day, i : Influencer | some p : i.posts | p.date in Day
+inv6 C: all d : Day, i : Influencer | some p : i.posts | p.date in d
+inv6 B: all i : Influencer | some p : i.posts | p.date in Day
+inv7 U: all u : User, sugg : u.suggested | sugg in u.follows.follows and sugg not in u.follows
+inv7 U: all u : User, sugg : u.suggested | sugg not in u.follows
+inv7 B: all u : User, sugg : u.suggested | sugg not in u.follows and sugg in follows.u.follows
+inv7 U: all u : User, sugg : u.suggested | sugg not in u.follows and sugg in u.follows.follows
+inv7 U: all u : User, sugg : u.suggested | u not in sugg and sugg not in u.follows and sugg in u.follows.follows
+inv7 S: all u : User | u not in u.suggested and all sug : u.suggested | sugg not in u.suggested and sugg in u.follows.follows
+inv7 B: all u : User | u not in u.suggested and all sugg : u.suggested | sugg not in u.suggested and sugg in u.follows.follows
+inv7 B: all u : User | u not in u.suggested and all sugg : u.suggested | sugg not in u.suggested and sugg in u.follows.follows and sugg not in u.follows
+inv7 T: all u : User, cand : u.follows.follows | cand not in u.follows => cand int u.suggested
+inv7 B: all u : User, cand : u.follows.follows | cand not in u.follows => cand in u.suggested
+inv7 B: all u : User, cand : u.follows.follows | cand not in u.follows => cand in u.suggested and u not in cand
+inv7 B: all u : User, cand : u.follows.follows | u not in u.suggested and (cand not in u.follows => cand in u.suggested)
+inv7 S: all u : User, sugg in u.suggested | u not in sugg && all uf : u.follows | uf not in sugg and sugg in u.follows.follows
+inv7 S: all u : User, sugg in u.suggested | u not in sugg && all uf : u.follows | uf not in sugg and sugg in u.follows.follows
+inv7 U: all u : User, sugg : u.suggested | u not in sugg && all uf : u.follows | uf not in sugg and sugg in u.follows.follows
+inv7 U: all u : User, sugg : u.suggested | u not in sugg && sugg not in u.follows && sugg in u.follows.follows
+inv7 B: all u : User, sugg : u.suggested | u not in sugg && sugg not in u.follows && sugg in u.follows.follows && sugg not in follows.u
+inv7 B: all u : User, cand : u.follows.follows | cand in u.suggested && u.follows not in cand
+inv7 B: all u : User, cand : u.follows.follows | cand in u.suggested && u.follows not in cand && u not in u.suggested
+inv7 C: suggested = (follows . follows) - follows - iden
+inv7 B: all u : User, sugg : u.follows.follows, foll : u.follows | foll not in sugg && u not in sugg && sugg in u.suggested
+inv7 B: all u : User, sugg : u.follows.follows, foll : u.follows | foll not in sugg && u not in u.suggested && sugg in u.suggested
+inv7 U: all u : User, sugg : u.suggested | ( u.follows.follows - u.follows - u ) in sugg
+inv7 T: all u : User, sugg : u.suggested | ( u.follows.follows - u.follows - iden ) in sugg
+inv7 U: all u : User, sugg : u.suggested | ( u.follows.follows - u.follows - u ) in sugg
+inv7 B: all u : User | u.follows.follows not in u.suggested && u not in u.suggested && u.follows not in u.suggested
+inv7 O: all u : User | u.follows.follows in u.suggested && u not in u.suggested && u.follows not in u.suggested
+inv7 B: all u : User | all sugg : u.suggested | all ff : u.follows.follows | ff in sugg && u.follows not in sugg and u not in sugg
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u.iden
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u
+inv7 O: all u : User | u.follows.follows in u.suggested && u.follows not in u.suggested && u not in u.suggested
+NA H: THEME UPDATE
+inv8 S: Ad = followed + suggested
+

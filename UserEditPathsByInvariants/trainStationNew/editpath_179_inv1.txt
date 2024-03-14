@@ -1,0 +1,16 @@
+inv1 S: all t:Track | some(entry&exit)
+inv1 B: all t:Track | some(Entry&Exit)
+inv1 T: all t:Track | some(Entry &Exit ) in t.succs
+inv1 U: all e:Entry | some e
+inv1 B: all t:Track | some (Entry &t.succs) and some(Exit &t.succs)
+inv1 B: all t:Track | some (Entry & t.succs) and some(Exit &t.succs)
+inv1 B: all t:Track | some (Entry & t.succs) and some (Exit & t.succs)
+inv1 O: one Entry and one Exit
+inv1 O: some Entry and one Exit
+inv1 O: some Entry and one Exit and no Entry & Exit
+inv1 O: one t1, t2: Track | t1 in Entry and t2 in Exit
+inv1 S: some t1 | one t2: Track | t1 in Entry and t1 not int Exit and t2 in Exit and t2 not in Entry
+inv1 T: some t1 :Track| one t2: Track | t1 in Entry and t1 not int Exit and t2 in Exit and t2 not in Entry
+inv1 O: some t1 :Track| one t2: Track | t1 in Entry and t1 not in Exit and t2 in Exit and t2 not in Entry
+inv1 C: some e:Entry, ex:Exit | e in Track and ex in Track
+

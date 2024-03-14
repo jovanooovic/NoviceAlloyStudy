@@ -1,0 +1,15 @@
+inv5 T: some c : Class | Person.c
+inv5 T: some c : Class | (Person.Teaches).c
+inv5 T: some c : Class, p : Person | (p.Teaches).c
+inv5 B: some c : Class, p : Person | (p.Teaches) = c
+inv5 O: some c : Class, p : Teacher | (p.Teaches) = c
+inv5 S: some c : Class, p : Teacher | p.(c.groups)
+inv5 T: some c : Class, p : Teacher | p.(c.Groups)
+inv5 T: some c : Class, p : Teacher | (c.Groups).p
+inv5 T: some c : Class | (Person.Teaches).c in Teacher
+inv5 T: some c : Class | (Person.Teaches).c in Teacher
+inv5 T: some c : Class | c.(Person.Teaches) in Teacher
+inv5 C: some c : Class, p : Person | c in (p.Teaches) and p in Teacher
+inv5 C: some c : Class, p : Person | c in p.Teaches and p in Teacher
+inv5 C: some c : Class, p : Teacher | c in p.Teaches
+

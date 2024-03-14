@@ -1,0 +1,5 @@
+inv2 U: all s: Signal | s in Track.signals
+inv2 U: all s: Signal, t1, t2: Track | s in t1.signals and s in t2.signals => t1=t2
+inv2 U: all s: Signal | s in Track.signals
+inv2 C: all s: Signal | one t: Track | s in t.signals
+

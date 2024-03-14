@@ -1,0 +1,13 @@
+inv13 S: all s : Student |
+inv13 S: all s : Student |
+inv13 S: all s : Student |
+inv13 S: all s : Student |
+inv13 S: all s : Student |
+inv13 S: all s : Student |
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies (some p : Project | p in c.projects and p in s.projects)
+inv13 S: all s : Student | all c : Course | s in c.grades.last implies some p : Project | p in c.projectsa and p in s.projects
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies some p : Project | p in c.projects and p in s.projects
+inv13 U: all s : Student | all c : Course | s in (c.grades).last implies some p : Project | p in c.projects and p in s.projects
+inv13 U: all s : Student | all c : Course | s in c.(grades.last) implies some p : Project | p in c.projects and p in s.projects
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies some p : Project | p in c.projects and p in s.projects
+

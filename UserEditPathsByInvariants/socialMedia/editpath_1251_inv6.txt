@@ -1,0 +1,5 @@
+inv6 S: all p1:Photo, p2:Photo, d1:Day, d2:Day, i:Influencer | p1 in i.posts and p2 in i.posts and d1 in p1.date and d2 in p2.data implies d1!=d2
+inv6 S: all p1:Photo, p2:Photo, d1:Day, d2:Day, i:Influencer | p1 in i.posts and p2 in i.posts and d1 in p1.date and d2 in p2.data implies d1!=d2
+inv6 B: all p1:Photo, p2:Photo, d1:Day, d2:Day, i:Influencer | p1 in i.posts and p2 in i.posts and d1 in p1.date and d2 in p2.date implies d1!=d2
+inv6 C: all i : Influencer | Day = i.posts.date
+

@@ -1,0 +1,21 @@
+inv3 S: all x : Exit | none p : Track | x->p in succs
+inv3 S: all x : Exit | none p : Track | x->p in succs
+inv3 U: all x : Exit | not (some p : Track | x->p in succs)
+inv3 B: all ta,td : Track | ta->td in succs implies td!=Exit
+inv3 U: all ta,td : Track | ta->td in succs implies ta!=Exit
+inv3 U: all ta,td : Track | ta->td in succs implies ta not in Exit
+inv3 B: all ta,td : Track | ta->td in succs implies td not in Exit
+inv3 U: all ta,td : Track | ta->td in succs implies ta not in Exit
+inv3 S: all e : univ | e : Exit iff all t : Track | not e->t in succs
+inv3 S: all e : univ | e : Exit iff all t : Track | not (e->t in succs)
+inv3 S: all e : univ | e : Exit iff all t : univ | t in Track not (e->t in succs)
+inv3 S: all e : univ | e : Exit iff all t : univ | t in Track and not e->t in succs
+inv3 S: all e : univ | e : Exit (iff all t : univ | t in Track and not e->t in succs)
+inv3 S: all e : univ | e : Exit iff all t : univ | t in Track and not e->t in succs
+inv3 S: all e : univ | e : Exit iff all t : univ | t in Track and e->t not in succs
+inv3 S: all e : univ | e : Exit iff all t : univ | t in Track and e->t not in succs
+inv3 S: all e : univ | e : Exit iff (all t : univ | t in Track and e->t not in succs)
+inv3 S: all e : univ | e : Exit
+inv3 O: all e : univ | e in Exit
+inv3 B: all e : univ | e in Exit iff (all t : univ | t in Track and e->t not in succs)
+

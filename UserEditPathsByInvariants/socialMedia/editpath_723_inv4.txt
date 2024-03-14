@@ -1,0 +1,10 @@
+inv4 T: all x : User | one x.posts in Ad => (all y : x.posts | y in Add)
+inv4 T: all x : User | some x.posts in Ad => (all y : x.posts | y in Add)
+inv4 T: all x : User | some x.posts in Ad => all y : x.posts | y in Ad
+inv4 S: all x : User | some x.posts in Ad | all y : x.posts | y in Ad
+inv4 T: all x : User | one x.posts in Ad => ( all p : x.posts | p in Ad)
+inv4 T: all x : User | one x.posts in Ad => ( all p : x.posts | p in Ad)
+inv4 T: all x : User | one x.posts in Ad and ( all p : x.posts | p in Ad)
+inv4 T: all x : User | one x.posts in Ad
+inv4 O: all x : User | one z: x.posts | z in Ad and ( all p : x.posts | p in Ad)
+

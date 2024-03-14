@@ -1,0 +1,8 @@
+inv7 U: all u, v : User | u->v in suggested implies (some z : User | u->z in follows and z->v in follows and u->v not in follows)
+inv7 B: all u, v : User | u->v in suggested iff (some z : User | u->z in follows and z->v in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested and v!=u  implies (some z : User | u->z in follows and z->v in follows and u->v not in follows)
+inv7 U: all u, v : User | u->v in suggested implies (some z : User | u->z in follows and z->v in follows and u->v not in follows and u!=v)
+inv7 C: all u, v : User | u->v in suggested iff (some z : User | u->z in follows and z->v in follows and u->v not in follows and u!=v)
+inv7 C: all u, v : User | u->v in suggested iff (some z : User | u->z in follows and z->v in follows and u->v not in follows and u!=v)
+inv7 C: all u, v : User | u->v in suggested iff (some z : User | u->z in follows and z->v in follows and u->v not in follows and u!=v)
+

@@ -1,0 +1,41 @@
+inv3 T: all u: User |  u.sees.(u.follows.posts)
+inv3 O: all u: User |  u.sees in u.follows.posts
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 B: all u: User | u.follows.posts in Photo-Ad
+inv3 S: all u: User | one u.post in u.follows.posts
+inv3 S: all u: User | in u.follows.posts
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 T: all u: User | u.sees in u.follows.posts and Photo-Ad
+inv3 S: all u: User | u.sees in u.follows.posts and not in Ad
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 O: all u: User | u.sees in u.follows.posts
+inv3 B: all u: User | u.follows.posts not in Ad
+inv3 T: all u: User | u.sees implies u.follows.posts not in Ad
+inv3 T: all u: User | u.sees implies u.follows.posts not in Ad
+inv3 B: all u: User | u.follows.posts not in Ad
+inv3 T: all u: User | u.sees in (u.follows.posts not in Ad)
+inv3 T: all u: User | u.sees.(u.follows.posts) not in Ad
+inv3 T: all u: User, p: Photo-Ad | u.sees.p in u.follows.posts
+inv3 O: all u: User, p: Photo-Ad | sees.p in u.follows.posts
+inv3 T: all u: User, p: Photo-Ad | u.sees.p in u.follows.posts
+inv3 T: all u: User, p: Photo-Ad | u.follows.posts.p
+inv3 B: all u: User, p: Photo-Ad | u.follows.posts in p
+inv3 T: all u: User, p: Photo-Ad | u.follows.posts implies u.sees
+inv3 T: all u: User, p: Photo-Ad | u.follows.posts implies u.sees in p
+inv3 T: all u: User, p: Photo-Ad | u.follows.posts implies u.sees in p
+inv3 B: all u: User, p: Photo-Ad | u.follows.posts in p
+inv3 B: all u: User, p: Photo-Ad | u.follows.posts in p
+inv3 S: all u: User, p: Photo-Ad | (u.follows.posts & not iden) in p
+inv3 B: all u: User, p: Photo-Ad | one posts.p and (u.follows.posts) in p
+inv3 B: all u: User, p: Photo-Ad | one posts.p and (u.follows.posts) in p
+inv3 B: all u: User, p: Photo-Ad | (u.follows.posts) in p
+inv3 S: all u: User, p: Photo-Ad | (u.follows.posts) in p and not in u.posts
+inv3 O: all u: User| u.sees in (u.follows.posts)
+inv3 C: all u: User| u.sees-Ad in (u.follows.posts)
+inv3 O: all u: User | u.sees in (u.follows.posts-Ad)
+inv3 S: all u: User | u.sees in (u.follows.posts) and not in Ad
+inv3 C: all u: User | u.sees-Ad in (u.follows.posts)
+inv3 C: all u: User | u.sees-Ad in (u.follows.posts)
+inv3 C: all u: User | u.sees-Ad in (u.follows.posts)
+inv3 C: all u: User | u.sees-Ad in (u.follows.posts)
+

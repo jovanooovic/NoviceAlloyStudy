@@ -1,0 +1,10 @@
+inv5 T: all ww:Workstation | Human & ww.workers implies no(Robot & ww.workers)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers&Robot)
+inv5 S: all ww:Workstation | disj Human,Worker in ww.workers
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers &Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers &Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) or (ww.workers & Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers & Robot)
+inv5 T: all ww:Workstation | (ww.workers & Human) implies no (ww.workers & Robot)
+inv5 C: all ww:Workstation | some (ww.workers & Human) implies no (ww.workers & Robot)
+

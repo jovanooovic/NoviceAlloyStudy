@@ -1,0 +1,9 @@
+inv3 B: all u : User | (User.sees - Ad) = User.follows.posts
+inv3 O: all u : User | (u.sees - Ad) = u.follows.posts
+inv3 O: all u : User | (u.sees - Ad) = u.follows.posts	User.sees in Ad
+inv3 O: all u : User | (u.sees - Ad) in u.follows.posts	User.sees in Ad
+inv3 O: all u : User | (u.sees - Ad) in u.follows.posts	Ad in User.sees
+inv3 O: all u : User | (u.sees - Ad) in u.follows.posts and Ad in u.sees
+inv3 C: all u : User | u.sees in u.follows.posts + Ad
+inv3 U: User.sees in User.follows.posts + Ad
+

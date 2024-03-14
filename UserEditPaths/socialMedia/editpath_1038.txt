@@ -1,0 +1,25 @@
+NA H: THEME UPDATE
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv5 E: 
+inv1 C: all p : Photo | one u : User | u->p in posts
+inv2 C: all u1 , u2 : User | u1->u2 in follows implies not u1=u2
+inv2 C: all u1 , u2 : User | u1->u2 in follows implies u1!=u2
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | lone u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | some u : User | u->a in sees
+inv3 B: all u1,u2 : User | all p : Photo | (u1->p in posts and u2->p in sees and p not in Ad) implies u1->u2 in follows	all a : Ad | all u : User | u->a in sees
+inv4 E: 
+inv4 O: all u : User | all a : Ad | u->a in posts implies ( all p : Photo | p in Ad)
+inv5 B: all u : User | all i : Influencer | u->i in follows
+inv5 S: all i : Influencer implies (all u : User | u->i in follows)
+inv5 B: all i : univ | i in Influencer implies all e : User | e->i in follows
+inv5 T: all i : Influencer | all u : User | u->i follows
+inv5 B: all i : Influencer | all u : User | u->i in follows
+inv5 B: all i : Influencer | all u : User | i->u in follows
+inv5 B: all i : Influencer | all u : User | u->i in follows
+inv5 B: all u1,u2 : User | u1->u2 in follows implies u2 in Influencer
+inv5 B: all i : Influencer | all u : User | u->i in follows
+

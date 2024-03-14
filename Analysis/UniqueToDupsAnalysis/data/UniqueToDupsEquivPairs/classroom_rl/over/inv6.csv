@@ -1,0 +1,36 @@
+Pairs,4
+,,"iden in Teaches",1
+,,"iden in ~Teaches.Teaches",2
+,,"some c : Class | some c.Teaches",1
+
+Pairs,15
+,,"Class.Teaches = Teacher",2
+,,"Teaches.Person = Teacher",1
+,,"Teaches.Teacher = Teacher",2
+,,"Teacher = Teaches.Teacher",1
+,,"Teacher = Teacher.Teaches",1
+,,"Teacher in Teaches.Teacher",2
+,,"Teacher in Teacher.Teaches",1
+,,"Teacher in Class.^Teaches",1
+,,"Teacher in ~Teaches.Person",1
+,,"Teacher in ~Teaches.Teacher",2
+,,"all t : Teacher | some Teaches.t",1
+
+Pairs,11
+,,"Teaches.Class = Teacher",8
+,,"Teacher = Teaches.Class",2
+,,"Class.~(Teaches) = Teacher",1
+
+Pairs,3
+,,"Teaches . Teacher = Person",1
+,,"Teacher . (Teacher <: Teaches) = Person",2
+
+Pairs,2
+,,"all t : Teacher | one t.Teaches",2
+
+Pairs,1
+,,"all p : Person | some p.Teaches",1
+
+Pairs,1
+,,"some c: Class | all t: Teacher | t->c in Teaches",1
+

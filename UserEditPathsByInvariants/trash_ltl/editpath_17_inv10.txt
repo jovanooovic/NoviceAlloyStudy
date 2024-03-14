@@ -1,0 +1,52 @@
+inv10 U: always all f: File | once f in Protected implies always f in Protected
+inv10 B: always all f: File | f in Protected since f in Protected
+inv10 U: always all f: Protected | f in Protected
+inv10 U: always all f: Protected | once f in Protected
+inv10 U: always all f: Protected | once f in Protected implies always f in Protected
+inv10 U: eventually all f: Protected | once f in Protected implies always f in Protected
+inv10 U: always all p: Protected | always p in Protected
+inv10 U: always all f: File | f in Protected implies always f in Protected
+inv10 U: always all f: File | always f in Protected implies always f in Protected
+inv10 U: always all f: File | once f in Protected implies always f in Protected
+inv10 B: always all f: File | f in Protected since f in Protected
+inv10 B: always all f: File | always f in Protected since f in Protected
+inv10 B: all f: File | always f in Protected since f in Protected
+inv10 S: all f: File | once f in Protected always f in Protected
+inv10 U: all f: File | once f in Protected implies always f in Protected
+inv10 S: always Protected
+inv10 S: always all f: Protected | always f in Protected
+inv10 U: always all f: Protected | always f in Protected
+inv10 U: always all f: File | always (eventually f in Protected implies f in Protected)
+inv10 U: always all f: File | always (eventually f in Protected implies always f in Protected)
+inv10 U: always all f: File | (eventually f in Protected implies always f in Protected)
+inv10 O: always all f: Protected | always f not in Trash and always f not in File
+inv10 O: always all f: Protected | f not in Trash and always f not in File
+inv10 O: always all f: Protected | f not in Trash and f not in File
+inv10 T: once Protected always Protected
+inv10 S: once in Protected always in Protected
+inv10 S: all p: File | once p in Protected always p in Protected
+inv10 U: all p: File | once p in Protected implies always p in Protected
+inv10 U: always all p: File | once p in Protected implies always p in Protected
+inv10 U: always all p: File | always (once p in Protected implies always p in Protected)
+inv10 U: always all p: File | always (p in Protected implies always p in Protected)
+inv10 U: always all p: File | always (p in Protected implies after p in Protected)
+inv10 U: always all p: Protected | always (after p in Protected)
+inv10 U: always all p: Protected | always (p in Protected)
+inv10 E:
+inv10 B: always all f: File | always f in Protected since f in Protected
+inv10 U: always all f: File | f in Protected implies always f in Protected
+inv10 B: always all f: File | f in Protected triggered f in Protected
+inv10 B: always all f: File | f in Protected since f in Protected
+inv10 B: always all f: File | always f in Protected since f in Protected
+inv10 B: all f: File | always f in Protected since f in Protected
+inv10 B: always all f: File | always f in Protected
+inv10 B: all f: File | always f in Protected
+inv10 S: always all f: File | once f in Proteced implies always f in Protected
+inv10 U: always all f: File | once f in Protected implies always f in Protected
+inv10 U: always all f: File | once f in Protected implies always after f in Protected
+inv10 U: always all f: File | once f in Protected implies always f in Protected
+inv10 U: always all f: File | always (once f in Protected implies always f in Protected)
+inv10 U: always all f: File | always (f in Protected implies always f in Protected)
+inv10 U: always all f: File | always (f in Protected implies after always f in Protected)
+inv10 U: always all f: File | always (f in Protected implies always f in Protected)
+

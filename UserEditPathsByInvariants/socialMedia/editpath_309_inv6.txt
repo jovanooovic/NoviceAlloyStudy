@@ -1,0 +1,14 @@
+inv6 C: all u:User | u in Influencer implies all d:Day | some p:Photo | u in posts.p and p in date.d
+inv6 C: all u:Influencer, d:Day | some p:Photo | u in posts.p and p in date.d
+inv6 T: all u:Influencer, d:Day | some p:Photo | u in posts.p & p in date.d
+inv6 C: all u:Influencer, d:Day | some p:Photo | u in posts.p and p in date.d
+inv6 S: all u:Influencer, d:Day | some p | u in posts.p and p in date.d
+inv6 C: all u:Influencer, d:Day | some p:Photo | u in posts.p and p in date.d
+inv6 O: all u:Influencer, d:Day | u in posts.d
+inv6 T: all u:Influencer, d:Day | u.posts.d
+inv6 O: all u:Influencer, d:Day | some p:Photo | u in posts.d
+inv6 C: all u:Influencer, d:Day | some p:Photo | u in posts.p and p in date.d
+inv6 S: all u:Influencer, d:Day | u.posts.d
+inv6 C: all u:Influencer, d:Day | some p:Photo | u in posts.date.d
+inv6 C: all u:Influencer, d:Day | u in posts.date.d
+

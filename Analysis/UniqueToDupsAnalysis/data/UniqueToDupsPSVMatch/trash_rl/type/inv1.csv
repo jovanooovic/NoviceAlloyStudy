@@ -1,0 +1,41 @@
+"}
+
+
+check inv1Ok {inv1 iff inv1o
+}
+
+pred inv1{
+
+}
+
+
+check inv1Ok {inv1 iff inv1o} for 4
+
+pred inv1o{
+no Trash",1
+"Trash",1
+"~Trash",1
+"Trash = {}",2
+"none Trash",1
+"Trash none",1
+"none trash{}",1
+"~ (some Trash)",1
+"Trash is empty",1
+"no File = Trash",1
+"none Trash.link",1
+"Trash.link = {}",1
+"no Trash in File",1
+"no File in Trash",7
+"lone File in Trash",1
+"all t:Trash | t.link={}",1
+"all f:File |lone Trash.f",1
+"all f : File | lone f.Trash",2
+"all f: File | no f in Trash",1
+"all f : File | no f in Trash",1
+"all t:Trash | lone File in t",1
+"~ (all file : File | ~ (file in Trash))",1
+"all files : univ | files in Trash implies none file",1
+"all files : univ | no files in Trash implies none Trash",1
+"all files : univ | no files in Trash implies none in Trash",1
+"all files : univ | files in Trash implies no files in Trash",1
+"all files : univ | no files in Trash implies none file in Trash",1

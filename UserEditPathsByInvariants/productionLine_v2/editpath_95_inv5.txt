@@ -1,0 +1,9 @@
+inv5 U: all h:Human, r:Robot, w:Workstation | h->w in workers implies h->r not in workers
+inv5 U: all h:Human, r:Robot, w:Workstation | (h->w in workers implies r->w not in workers)
+inv5 U: all h:Human, r:Robot, w:Workstation | (h->w in workers implies r->w not in workers) or (r->w in workers implies h->w not in workers)
+inv5 S: all ws:Workstation, w1,w2:Workers | w1->ws in workers and w2->ws in workers and w1 in Human implies w2 in Robot
+inv5 U: all ws:Workstation, w1,w2:Worker | w1->ws in workers and w2->ws in workers and w1 in Human implies w2 in Robot
+inv5 O: all ws:Workstation, w1,w2:Worker | ws->w1 in workers and ws->w2 in workers and w1 in Human implies w2 in Robot
+inv5 C: all h:Human, r:Robot, w:Workstation | (w->h in workers implies w->r not in workers) or (w->r in workers implies w->h not in workers)
+inv5 C: all h:Human, r:Robot, w:Workstation | (w->h in workers implies w->r not in workers)
+

@@ -1,0 +1,9 @@
+inv7 B: all s : Student, c : Course | one p : Project | p in s.projects && p in c.projects
+inv7 B: all s : Student, c : Course | one p : Project | p in s.projects implies p in c.projects
+inv7 B: all s : Student, c : Course, p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+inv7 B: all s : Student, c : Course, p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+inv7 U: all s : Student, c : Course, disj p1,p2 : Project | p1 in s.projects && p1 in c.projects && p2 in c.projects implies p2 not in s.projects
+

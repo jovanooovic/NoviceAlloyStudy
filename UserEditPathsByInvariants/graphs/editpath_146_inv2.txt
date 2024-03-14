@@ -1,0 +1,7 @@
+inv2 B: all n : Node | n.adj->n not in adj
+inv2 O: all n, m : Node | n->m in adj iff m->n not in adj
+inv2 C: all n, m : Node | n->m in adj implies m->n not in adj
+inv2 T: all n: Node | no n.adj.n
+inv2 T: all n: Node | no n.adj[n]
+inv2 C: all n: Node | n not in n.adj.adj
+

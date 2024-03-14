@@ -1,0 +1,13 @@
+inv3 S: all u : User | (u.sees not in ad) implies (u.sees in (u.follows).posts)
+inv3 O: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)
+inv3 O: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)
+inv3 S: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)		all p : Ad | p in Users.sees
+inv3 O: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)		all p : Ad | p in User.sees
+inv3 O: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)
+inv3 O: all u : User | (u.sees not in Ad) implies (u.sees in (u.follows).posts)				all p : Photo - Ad | all u : User | p in u.sees implies posts.p in u.follows
+inv3 B: all p : Photo - Ad | all u : User | p in u.sees implies posts.p in u.follows
+inv3 S: all u : User | (u.sees not in Ad) implies ((p in u.sees) and (p in (u.follows).posts)))
+inv3 S: all u : User | (u.sees not in Ad) implies ((p in u.sees) and (p in (u.follows).posts))
+inv3 B: all u :User | all p : u.sees | (p not in Ad) implies (posts.p in u.follows)
+inv3 B: all u :User | all p : u.sees | (p not in Ad) implies (posts.p in u.follows)
+

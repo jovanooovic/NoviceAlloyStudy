@@ -1,0 +1,6 @@
+inv7 B: all u1, u2, u3: User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) implies (u3 in suggested.u1)
+inv7 B: all u1, u2, u3: User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) implies (u1 in suggested.u3)
+inv7 O: all u1, u2, u3: User | ((u1 in follows.u2) && (u2 in follows.u3) && (u1 not in follows.u3)) && (u1 in suggested.u3)
+inv7 B: all u1, u2, u3: User | (u1 in suggested.u2) implies (u1 not in follows.u2 && u2 in follows.u3 && u3 in follows.u2)
+inv7 B: all u1, u2, u3: User - Influencer| (u1 in suggested.u2) implies (u1 not in follows.u2 && u2 in follows.u3 && u3 in follows.u2)
+

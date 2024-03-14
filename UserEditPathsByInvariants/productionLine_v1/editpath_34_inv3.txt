@@ -1,0 +1,18 @@
+inv3 T: all c: Component | some position.(c.position)
+inv3 T: all c: Component | some position.c.position
+inv3 S: all c: Component | some (position<:Robot)(.c.position)
+inv3 S: all c: Component | some (position<:(Robot->Position))(.c.position)
+inv3 S: all c: Component | some (position<:(Robot->Position))(.c.position)
+inv3 S: all c: Component | some position(.c.position)
+inv3 T: all c: Component | some position(c.position)
+inv3 T: all c: Component | some (Robot:>position).(c.position)
+inv3 T: all c: Component | some (Robot:>position).(c.position)
+inv3 T: all c: Component | some (Position:>position).(c.position)
+inv3 T: all c: Component | some (position:>Position).(c.position)
+inv3 S: all c: Component | some (position:>Position).(c.(Component:>position)
+inv3 T: all c: Component | some (position:>Position).(c.(Component:>position))
+inv3 T: all c: Component | some position.(c.position)
+inv3 T: all c: Component | Robot.position & c.position
+inv3 C: all c: Component | some Robot.position & c.position
+inv3 C: all c: Component | some Robot.position & c.position
+

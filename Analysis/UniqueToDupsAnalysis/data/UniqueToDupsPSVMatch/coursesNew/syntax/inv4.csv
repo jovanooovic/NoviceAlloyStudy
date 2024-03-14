@@ -1,0 +1,72 @@
+"all c : Course |",1
+"all p : Project | project.c",1
+"all p : Project | projects.c",1
+"all p:Project | one project.p",1
+"all x:Project| one projects.c",1
+"all p:project | one project.p",1
+"all g.Grade | one (projects.g)",1
+"all p: Project | one project.p",1
+"all p : Projects | p in Course",1
+"all p: Project| one projects.c",1
+"all p : Project | one projects.c",1
+"all p : Project | one proposes.p",1
+"all p : Project | p in one Course",1
+"all c:Course | one Course:projects.c",1
+"pojects in Course one -> set Project",1
+"all p:Projects | p in Course.projects",1
+"all p: project | p in Course.projects",1
+"all p : Project | one x in projects.p",1
+"all p: Project | one getProjectCourse[p]",1
+"all p : Project | one p : Course.projects",1
+"all p: Project | p in one Course.projects",1
+"all x: Project | x in one Course.projects",1
+"all x: Project |  x in one Course.projects",1
+"all p:Project |one c:Course | p in u.Course",1
+"all p:Project, one c:Course|p in c.projects",1
+"all p:project| one c:Course| c->p in projects",1
+"all p : Project | (Course <: #projects).p = 1",1
+"all p: Project, one c: course| p in c.project",1
+"all p:Project | one c:Curso | p in c.projects",2
+"all p:Progect| one c:Course| c->p in projects",2
+"all p : Project | (Course <: #projects).p = 1)",1
+"all p:Project | one c:Course | c->p in project",1
+"all x : Project | y : Course | x in y.projects",1
+"all p: Project, one c: course| p in c.projects",1
+"all p:Projects | one c:Course | c in projects.p",2
+"all p : Project | (Course <: #(projects.p) = 1)",1
+"all p: Project | one c: course| p in c.projects",1
+"some p:Project| one c:Courses| c->p in projects",1
+"all x: Project, y: Course  |x in one y.projects",1
+"all p : Project | (Course <: #projects).p = 1))",1
+"all p:Projects | one c:Course | p in c.projects",1
+"one c:Course | all p:Project | c->p in jrojects",1
+"all p : Project | one c :Course | p in c.project",2
+"some p:Projects| one c:Courses| c->p in projects",1
+"all p: Project | one c: Course | c.projects = p
+}",1
+"all p : Project, one c : Course | p in c.projects",1
+"all p : Person.projects | one p : Course.projects",1
+"all proj:Project | one c:Course | p in c.projects",1
+"all p : project | one c : course | p in c.projects",1
+"all p : Project | (Course <: (#(projects.p) = 1)))",1
+"all p : Project, c : Courses | one c in projects.p",1
+"all p : Projects | one c: Course | c in projects.p",2
+"all p : Project | one c : course | p in c.projects",2
+"all p : Projects | one c : Course | p in c.project",1
+"all p : Project , one c : Course | p in c.projects",1
+"all p : Project | one c : Course | p in c.projetcs",2
+"all p:Project | one c:Course | p in c.projects ghh",1
+"all p : Project | some c : Course | #(c.project)>0",1
+"all p : Project | one c : Courses | p in projects.c",1
+"all p : Project |(one c :Course | p in c.projects))",1
+"all p : Projects | one c : Course | p in c.projects",7
+"all p : Project | #(projects.p & Course->Entry) = 1",1
+"all pr: Project | one Course | pr in Course.projects",1
+"all x: Project, y: Course  | #(x in y.projects) == 1",1
+"all x: Project | all y: Courses | x in one y.projects",1
+"all p : Project | (lonw c : Course | p in c.projects)",1
+"all p: Project | p in Course.projects and one p.Courses",1
+"all project : Projects | one course : Course | course->project in projects",1
+"all p : Project
+  all x,y : Course | (#(x.projects)>0 and x!=y) implies #(y.projects)=0",1
+"all p : Project | all c : Course | all c1 : Course-c | p in c.projects | p not in c1.projects",1

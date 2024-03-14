@@ -1,0 +1,6 @@
+inv5 T: all s,s1:State,e:Event | s->e in trans
+inv5 O: all s,s1:State,e:Event | s->e->s1 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s3 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s2 in trans
+inv5 U: all s,s1:State,e:Event|some s2,s3:State | s->e->s2 in trans implies s1->e->s3 in trans
+

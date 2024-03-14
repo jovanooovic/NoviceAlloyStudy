@@ -1,0 +1,6 @@
+inv8 U: all t:Professor, p:Person | t->p in teaches => t!=p
+inv8 U: all t:Professor, p:Person | t->p in teaches => t!=p
+inv8 U: not some t:Professor | t->t in teaches
+inv8 U: not some t:Professor | some c:Course |  t->c in enrolled and t->c in teaches
+inv8 U: not some t:Professor | some c:Course | t->c in enrolled and t->c in teaches
+

@@ -1,0 +1,9 @@
+inv7 T: all c : Component | #(c.parts in Dangerous) > 0 implies c in Dangerous
+inv7 T: all c : Component | #(c.^parts in Dangerous) > 0 implies c in Dangerous
+inv7 T: all c : Component | #(Dangerous in c.^parts) > 0 implies c in Dangerous
+inv7 B: all c : Component | Dangerous in c.^parts implies some ( c & Dangerous & Component )
+inv7 S: all c : Component | Dangerous in c.^parts implies some in ( c & Dangerous & Component )
+inv7 B: all c : Component | Dangerous in c.^parts implies some ( c & Dangerous & Component )
+inv7 B: all c : Component | Dangerous in c.^parts implies some (c & Dangerous & Component)
+inv7 B: all c : Component | Dangerous in c.^parts implies c in Dangerous
+

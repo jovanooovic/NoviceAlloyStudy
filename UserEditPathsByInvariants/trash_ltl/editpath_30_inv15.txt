@@ -1,0 +1,19 @@
+inv15 S: eventually (f:File |
+inv15 S: eventually (f:File | f in Trash)
+inv15 B: eventually (all f:File | f in Trash)
+inv15 U: eventually (all f:File | eventually f in Trash)
+inv15 U: eventually (all f:File | eventually f in Trash)
+inv15 B: eventually (all f:File |  f in Trash)
+inv15 U: (all f:File | eventually f in Trash)
+inv15 U: eventually ( all f:File | f not in Trash implies eventually f in Trash)
+inv15 U: ( all f:File | f not in Trash implies eventually f in Trash)
+inv15 U: all f:File-Trash | eventually f in Trash
+inv15 B: eventually (File in Trash)
+inv15 B: eventually (all f:File | f in Trash)
+inv15 U: eventually (all f:File | eventually f in Trash)
+inv15 U: all f:File | f not in Trash implies eventually f in Trash
+inv15 U: all f:File | eventually (f not in Trash implies f in Trash)
+inv15 U: all f:File | eventually (f not in Trash implies after f in Trash)
+inv15 U: all f:File-Trash | eventually (f in Trash)
+inv15 U: eventually(all f:File-Trash | eventually (f in Trash))
+

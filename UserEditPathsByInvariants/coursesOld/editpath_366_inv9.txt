@@ -1,0 +1,6 @@
+inv9 S: all p1:Professor, c:Course | c in p.teaches implies all p2:Professor-p1 | c not in p.enrolled
+inv9 B: all p1:Professor, c:Course | c in p1.teaches implies all p2:Professor-p1 | c not in p2.enrolled
+inv9 B: all p1:Professor, c:Course | c in p1.teaches implies some p2:Professor-p1 | c not in p2.enrolled
+inv9 U: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies all c:Course | p->c in teaches implies p2->c not in enrolled
+inv9 U: all p:Professor | all p2:Professor-p | p2 in p.teaches.~teaches implies all c:Course | c in p.teaches implies c not in p2.enrolled
+

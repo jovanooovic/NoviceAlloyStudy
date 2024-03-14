@@ -1,0 +1,5 @@
+inv1 T: all t: Track | some Entry in t and some Exit in t
+inv1 S: all t: Track | some e: Entry in t| some s: Exit in t
+inv1 S: all t: Track | some e: Entry| in t.succs and some s: Exit| in t.succs
+inv1 B: all t: Track | some e: Entry| e in t.succs and some s: Exit|  s in t.succs
+

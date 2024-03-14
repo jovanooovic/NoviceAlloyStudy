@@ -1,0 +1,10 @@
+inv4 U: all t:Track | t in Entry implies all ts:Track | ts->t not in succs
+inv4 B: all t:Track | all t1:Track | t1->t not in succs implies t in Entry
+inv4 U: all e:Entry | all t:Track | t->e not in succs
+inv4 S: all t:Track | t in Entry implies all ts:Tracks | ts->t not in succs
+inv4 U: all t:Track | t in Entry implies all ts:Track | ts->t not in succs
+inv4 U: all t:Track | t in Entry implies all ts:Track | ts!=t implies ts->t not in succs
+inv4 B: all t:Track | t in Entry implies all ts:Track | ts!=t and ts->t not in succs
+inv4 C: all t:Track | t in Entry iff all ts:Track | t not in ts.succs
+inv4 C: all t:Track | t in Entry iff all ts:Track | t not in ts.succs
+

@@ -1,0 +1,5 @@
+inv13 T: all s: Student, c: Course, g: Grade, proj: Project | s->g in c.grades.last and proj in c.projects implies proj in s.projects
+inv13 T: all s: Student, c: Course, g: Grade, proj: Project | s->g in c.grades.last and proj in c.projects implies proj in s.projects
+inv13 B: all s: Student, c: Course, g: Grade, proj: Project | s in c.grades.last and proj in c.projects implies proj in s.projects
+inv13 B: all s: Student, c: Course, proj: Project | s in c.grades.last and proj in c.projects implies proj in s.projects
+

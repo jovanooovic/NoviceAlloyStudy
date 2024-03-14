@@ -1,0 +1,13 @@
+inv11 B: all c:Class, t:Teacher, g:Group | t->c not in Teaches implies c->t->g not in Groups
+inv11 B: all c:Class, t:Teacher, g:Group, p:Person | t->c not in Teaches implies c->p->g not in Groups
+inv11 B: all c:Class, t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class, t:Teacher, g:Group | t->c not in Teaches implies c->t->g not in Groups
+inv11 B: all c:Class, p:Person, g:Group | p->c not in Teaches implies c->p->g not in Groups
+inv11 B: all c:Class, t:Teacher, g:Group | t->c not in Teaches implies c->t->g not in Groups
+inv11 B: all c:Class, t:Teacher, g:Group | c->t->g in Groups implies t->c in Teaches
+inv11 B: all c:Class, t:Teacher, g:Group | t->c in Teaches implies c->t->g in Groups
+inv11 B: all c:Class, t:Teacher, g:Group, p:Person | t->c not in Teaches implies c->p->g in Groups
+inv11 S: all p:Person, c:Class | (some t:Teacher, g:Group | c->p->g in Groups implies t->c in Teaches
+inv11 B: all p:Person, c:Class | (some t:Teacher, g:Group | c->p->g in Groups implies t->c in Teaches)
+inv11 O: all p:Person, c:Class, g:Group | (some t:Teacher | c->p->g in Groups implies t->c in Teaches)
+

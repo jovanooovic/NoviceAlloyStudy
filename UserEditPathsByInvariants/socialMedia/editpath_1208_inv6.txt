@@ -1,0 +1,10 @@
+inv6 B: all d: Day, i: Influencer | i.posts.date in d
+inv6 B: all d: Day, i: Influencer | i.posts in d.~date
+inv6 B: all d: Day | (some i: Influencer | i.posts in d.~date)
+inv6 B: all d: Day | (all i: Influencer | i.posts in d.~date)
+inv6 S: all d: Day, i: Influencer |  ( some p: i.posts | in d.~date)
+inv6 C: all d: Day, i: Influencer |  ( some p: i.posts | p in d.~date)
+inv6 B: all i: Influencer | some i.posts.date
+inv6 S: all d: Day, i: Influencer |  some p: i.posts | p in d.~date)
+inv6 C: all d: Day, i: Influencer |  some p: i.posts | p in d.~date
+

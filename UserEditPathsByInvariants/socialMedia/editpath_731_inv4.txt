@@ -1,0 +1,10 @@
+inv4 S: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts
+inv4 S: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts
+inv4 T: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts)
+inv4 T: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts = Ad)
+inv4 T: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts -> Ad)
+inv4 T: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts = Ad)
+inv4 T: all user : User  | all ad : Ad | ad in user.posts implies user.^(posts = Ad)
+inv4 T: all ad: Ad | all user: User | ad in user.posts implies user.^(posts = Ad)
+inv4 C: all ad: Ad | all user: User | ad in user.posts implies user.posts in Ad
+

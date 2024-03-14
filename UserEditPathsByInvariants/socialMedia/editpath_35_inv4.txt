@@ -1,0 +1,18 @@
+inv4 S: All x : User | some x.posts in Ad implies x.posts in Ad
+inv4 S: All x : User | some x.posts in Ad implies x.posts in Ad
+inv4 T: all x : User | some x.posts in Ad implies (x.posts in Ad)
+inv4 T: all x : User | (some x.posts in Ad -> (x.posts in Ad))
+inv4 T: all x : User | some x.posts in Ad
+inv4 O: all x : User | x.posts in Ad
+inv4 T: all x : User | some y : Photo | y->x in Ad -> x.posts in Ad
+inv4 T: all x : User | some y : Photo | (y->x in Ad -> (x.posts in Ad))
+inv4 T: all x : User | some y : Photo | (x.y in Ad -> (x.posts in Ad))
+inv4 T: all x : User | some y : Photo | (y->x in Ad -> (x.posts in Ad))
+inv4 T: all x : User | some y : Photo | ((y->x in Ad) -> (x.posts in Ad))
+inv4 S: all x : User | some y : Ad | (y in x.posts) -> (x.posts in Ad))
+inv4 T: all x : User | some y : Ad | ((y in x.posts) -> (x.posts in Ad))
+inv4 B: all x : User | some y : Ad | ((y in x.posts) implies (x.posts in Ad))
+inv4 B: all x : User | some y : Photo | ((y in Ad) implies (x.posts in Ad))
+inv4 O: all x : User | (some y : Photo | y in Ad) implies (x.posts in Ad)
+inv4 C: all x : User | (some y : Photo | y in x.posts & Ad) implies (x.posts in Ad)
+

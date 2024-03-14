@@ -1,0 +1,115 @@
+Pairs,11
+,,"some Project.projects",1
+,,"some (Person <: projects).Course-Student",1
+,,"some Project.(Student <: projects)",2
+,,"no (Person - Student).projects
+  	some Project.projects",1
+,,"(Person<:projects).Person in Student
+  	some (Person<:projects).Person",1
+,,"(Person<:projects).Project in Student and some (Person<:projects).Person",1
+,,"no (Person-Student) & projects.Project
+	
+  	some Project.projects",2
+,,"Person.projects in Student and some (Person<:projects).Project & Person",1
+,,"Person.projects in Student
+    some (Person :> Project.~projects)",1
+
+Pairs,22
+,,"all p:Project | some Project.projects",1
+,,"all p : Project | p in Student.enrolled",1
+,,"all p:Project | some s:Student | s in p.projects",1
+,,"all p : Project | some s : Student | s in p.enrolled",1
+,,"Person<:projects.Project in Student
+  
+	Project in Project.(Person<:projects)",1
+,,"no Person.projects - Student
+  	all p : Project | some (Person <: projects).p",2
+,,"all p: Project | some s: Student | p in p.~(Student <: projects)",1
+,,"no (Person-Student) & projects.Project
+   all p:Project| some p.projects",1
+,,"Person <: projects.Project in Student
+  	Project in Person <: Person.projects",1
+,,"all x : Project | no (Person-Professor).projects & x and some x & Student",1
+,,"no (Person-Student) & projects.Project
+  all p:Project| some enrolled.p",1
+,,"no (Person-Student) & projects.Project
+  all p:Project| some p.enrolled",1
+,,"all p1 : Project | some pr1 : Person | pr1->p1 in projects and p1 in Student",1
+,,"all p: Project | some pe: Person | pe -> p in projects
+  all pe: Person , p: Project | p in Student or not(pe->p in projects)",1
+,,"all p : Project | some per : Person | per->p in projects
+  	all p : Project | all per : Person | per->p in projects implies p in Student",7
+
+Pairs,2
+,,"Person <: projects in Student some -> some Project",1
+,,"all p : Person | some p.projects <=> p in Student
+    all p : Project | p in Person.projects",1
+
+Pairs,1
+,,"(Person <: projects) in Student some -> one Project",1
+
+Pairs,1
+,,"no (Person-Student).projects
+  	Project in (Person-Professor).projects",1
+
+Pairs,3
+,,"Person <: projects.Project in Student
+  all p : Project | one Person <: projects.p",1
+,,"all p: Project | lone s: Person | p in s.projects
+  	Student.projects = Project",1
+,,"no (Person - Student).projects
+  all p : Project | one s : Student | p in s.projects",1
+
+Pairs,7
+,,"(Person<:projects).Project in Student
+    
+    some x:Student | x->Project in projects",1
+,,"some s : Student | all p : Project | s->p in projects
+	all person : Person, p2 : Project | person->p2 in projects implies person in Student",1
+,,"some s : Student | all p : Project | s->p in projects &&
+	all person : Person | all p : Project | (person->p in projects) implies person in Student",1
+,,"some s : Student | all p : Project | s->p in projects
+	all person : Person | all p : Project | (person->p in projects) implies person in Student",1
+,,"some s : Student | all p : Project | s->p in projects
+	all person : Person | all p2 : Project | person->p2 in projects implies person in Student",3
+
+Pairs,1
+,,"no Person & Student
+  no Professor.projects
+  all p : Project | some Student & projects.p",1
+
+Pairs,1
+,,"(Person<:projects).Project in Student 
+  	all p: Project | some s: Student | s.projects=p",1
+
+Pairs,1
+,,"all p:Person , pr:Project|p->pr in projects and p in Student
+    all p:Project |some s:Student | s->p in projects",1
+
+Pairs,5
+,,"all p : Person | some p.projects implies p in Student and p not in Professor 
+  	all p : Project | p in Student.projects",1
+,,"all x : univ | x in Project implies some y : Student | y->x in Person<:projects
+    
+    all x,y : univ | x->y in Person<:projects  implies x in Student and x not in Professor",1
+,,"all x,y : univ | x->y in Person<:projects  implies x in Student and x not in Professor
+    all x : univ | x in Project implies some y : Student | y->x in Person<:projects",1
+,,"all x,y : univ | x->y in Person<:projects implies x not in Professor and x in Student
+    all x : univ | x in Project implies some y : Student | y->x in Person<:projects",1
+,,"all x, y : univ | x in Person and y in Project and x->y in Person<:projects implies x in Student
+    all x,y : univ | x->y in Person<:projects  implies x in Student and x not in Professor
+    all x : univ | x in Project implies some y : Student | y->x in Person<:projects",1
+
+Pairs,1
+,,"(all a : Person, b : Project | b in a.projects implies a in Student) and (some c : Person | all d : Project | d in c.projects)",1
+
+Pairs,1
+,,"all p : Project | all e : Person | e->p in projects implies e = Student
+  	all p : Project | some e : Person | e->p in projects",1
+
+Pairs,1
+,,"all p:Project, p1: Person | p1 in projects.p implies p1 in Student
+	
+
+    all p: Project |not lone person: Person| person in projects.p",1
+

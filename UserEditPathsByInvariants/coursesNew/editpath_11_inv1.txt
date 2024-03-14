@@ -1,0 +1,10 @@
+inv1 S: all c:Course, all p:Person | p.enrolled.course & Student
+inv1 S: all c:Course, all p:Person | p.enrolled.course & Student
+inv1 S: all c:Course, all p:Person | enrolled.c & Student
+inv1 T: all c:Course, p:Person | enrolled.c & Student
+inv1 T: all c:Course | enrolled.c & Student
+inv1 C: all p:Person, c:Course | c in p.enrolled implies p in Student
+inv1 T: all p:Person, c:Course | c in p.enrolled & p in Student
+inv1 T: all p:Person, c:Course | (c in p.enrolled) & (Student)
+inv1 C: all p:Person, c:Course | c in p.enrolled implies p in Student
+

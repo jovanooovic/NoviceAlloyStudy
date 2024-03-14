@@ -1,0 +1,9 @@
+inv5 T: Junction = (all t:Track | succs . t)
+inv5 T: all t:Track | succs . t implies t in Junction
+inv5 B: all t:Track | some (succs . t) implies t in Junction
+inv5 U: not some j:Junction | lone (succs . j)
+inv5 U: all t:Track | #(succs . t)>1 implies t in Junction
+inv5 S: Junction = Track - (succs.Track in lone succs.Track)
+inv5 T: Junction = Track - (lone succs.Track in succs.Track)
+inv5 S: Junction = Track - (succs.Track in succs.Track lone)
+

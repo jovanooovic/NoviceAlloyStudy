@@ -1,0 +1,12 @@
+inv9 U: all x,y: Workstation | no succ.x and  no y.succ implies x = begin and y = end
+inv9 B: all x,y: Workstation | no succ.x and  no y.succ implies x = begin and y = end and x != y
+inv9 B: all x: Workstation | x not in x.^succ	all x,y: Workstation | no succ.x and no y.succ
+inv9 B: all x: Workstation | x not in x.^succ	all x,y: Workstation | no succ.x and no y.succ implies x != y
+inv9 B: all x: Workstation | x not in x.^succ	all x,y: Workstation | no succ.x and no y.succ implies x != y	no begin & end
+inv9 B: all x: Workstation | x not in x.^succ	all x,y: Workstation | no succ.x and no y.succ implies x != y	no (begin & end)
+inv9 B: no (begin & end)
+inv9 S: all x: Workstation | x in begin or x in end or some x.succ)
+inv9 S: all x: Workstation | x in begin or x in end or some x.succ)
+inv9 U: all x: Workstation | x in begin or x in end or some x.succ
+inv9 B: all x: Workstation | x not in x.^succ	all x,y: Workstation | no succ.x and no y.succ implies x != y	all x: Workstation | x in begin implies x not in end	all x: Workstation | x in end implies x not in begin
+

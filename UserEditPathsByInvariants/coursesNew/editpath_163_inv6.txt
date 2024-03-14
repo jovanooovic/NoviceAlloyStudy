@@ -1,0 +1,9 @@
+inv6 B: all p:Student | all c:Course | p.projects in c.projects implies c in p.enrolled
+inv6 S: all pe:Student | all c:Courses |some(p.projects=c.projects)  implies c in p.enrolled
+inv6 S: all pe:Student | all c:Course |some(p.projects=c.projects)  implies c in p.enrolled
+inv6 T: all pe:Student | all c:Course |some(pe.projects=c.projects)  implies c in p.enrolled
+inv6 T: all pe:Student | all c:Course |some (pe.projects=c.projects)  implies c in p.enrolled
+inv6 S: all pe:Student | all c:Course | (pe.projects=c.projects)  implies c in p.enrolled
+inv6 B: all pe:Student | all c:Course | (pe.projects=c.projects)  implies c in pe.enrolled
+inv6 U: all u : Student | (all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )
+

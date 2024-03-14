@@ -1,0 +1,11 @@
+inv12 U: all t : Teacher | some (t.Teaches)
+inv12 T: all t : Teacher | some p : Person, g : Group | some g.p.(t.Teaches)
+inv12 T: all t : Teacher | some p : Person, g : Group | some g.(p.(t.Teaches))
+inv12 T: all t : Teacher | some p : Person, g : Group | some g.(p.(t.Teaches).Groups)
+inv12 T: all t : Teacher | some p : Person, g : Group | some g.(p.(t.Teaches.Groups))
+inv12 S: all t : Teacher | some p : Person, g : Group | some g.(p.((t.Teaches).Groups)))
+inv12 C: all t : Teacher | some p : Person, g : Group | some (t.Teaches).Groups
+inv12 C: all t : Teacher | some (t.Teaches).Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+

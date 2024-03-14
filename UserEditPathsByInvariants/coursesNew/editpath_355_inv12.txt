@@ -1,0 +1,8 @@
+inv12 T: all s : Student, c : Course, g : Grade | c in s.enrolled implies lone s->g in c.grades
+inv12 T: all s : Student, c : Course, g : Grade | c in s.enrolled implies (lone s->g in c.grades)
+inv12 S: all s : Student, c : Course, lone g : Grade | s->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+inv12 U: all s : Student, c : Course, g : Grade | s->g in c.grades implies lone g
+inv12 B: all s : Student, c : Course, g : Grade | s->g in c.grades and lone g
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+

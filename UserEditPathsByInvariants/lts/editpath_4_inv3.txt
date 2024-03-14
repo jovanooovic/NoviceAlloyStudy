@@ -1,0 +1,6 @@
+inv3 O: always (all s: State | lone s.trans)
+inv3 U: always (all s: State, e: Event | lone s.trans.e)
+inv3 S: always (all s: State | lone s.state.State)
+inv3 B: always (all s: State | lone s.trans.State)
+inv3 B: all s: State | lone s.trans.State
+

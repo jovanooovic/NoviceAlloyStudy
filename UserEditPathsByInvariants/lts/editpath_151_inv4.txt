@@ -1,0 +1,24 @@
+inv4 U: State-Init in Init.(Init->(State-Init))
+inv4 U: no Init  implies no State
+inv4 T: no Init  implies no State and  all i :Init |  i.trans & State
+inv4 T: no Init  implies no State and  all i :Init|some e:Event |  e.(i.trans) & State
+inv4 U: no Init  implies no State and  all i :Init|some e:Event | some e.(i.trans) & State
+inv4 T: no Init  implies no State and  all i :Init|(State-Init).^~(i.trans)
+inv4 U: no Init  implies no State and  all i :Init|some (State-Init).^~(i.trans)
+inv4 U: no Init  implies no State and  all i :Init|(State-Init)in  (State-Init).~(i.trans)
+inv4 U: no Init  implies no State and  all i :Init|(State-Init)in  (State).~(i.trans)
+inv4 S: no Init  implies no State and (some e:Event | all s:(State-Init) | some(Init & trans^.(e->s)) )
+inv4 T: no Init  implies no State and (some e:Event | all s:(State-Init) | some (Init & trans.(e->s)) )
+inv4 T: no Init  implies no State and (some e:Event | all s:(State) | some (Init & trans.(e->s)) )
+inv4 S: let adj={x,y:State | some e:Event |x->e->y in trans}
+inv4 S: let adj={x,y:State | some e:Event |x->e->y in trans}	  	  all i:Init |(State-Init) in i.^adj
+inv4 S: let adj={x,y:State | some e:Event |x->e->y in trans}	  	  all i:Init |(State-Init) in i.^adj
+inv4 S: let adj={x,y:State | some e:Event |x->e->y in trans}	  	  all i:Init |(State-Init) in i.^adj
+inv4 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i:Init |(State-Init) in i.^adj
+inv4 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i:Init |(State) in i.^adj
+inv4 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i:Init |(State) in i.*adj
+inv4 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  all i:Init | some Init implies (State) in i.*adj
+inv4 B: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  some i:Init | (State) in i.*adj
+inv4 O: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	  some i:Init | (State) in i.^adj
+inv4 C: let adj ={x,y:State | some e:Event |x->e->y in trans} |	  	 (State) in Init.^adj
+

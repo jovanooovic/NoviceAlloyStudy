@@ -1,0 +1,15 @@
+NA H: THEME UPDATE
+inv1 C: visible in profile
+inv2 S: all u : User | u.profile + some Work implies source in u+Institution
+inv2 S: all u : User | profile.u + some Work implies source in u+Institution
+inv2 T: all u : User, w: Work | w.source -> u or w.source -> Institution
+inv2 T: all u : User, w: Work | w.source -> u or w.source -> Institution
+inv2 T: all u : User, w: Work | w.source -> u.profile or w.source -> Institution
+inv2 T: all u : User, w: Work | u->w implies w->u or w-> Institution
+inv2 S: work.source = u or work.source = Institution
+inv2 S: Work.source = u or Work.source = Institution
+inv2 B: Work.source = User or Work.source = Institution
+inv2 O: all u : User | Work.source = u or Work.source = Institution
+inv2 S: all w : Work | w.source = u or w.source = Institution
+inv2 O: all w : Work | w.source = User or w.source = Institution
+

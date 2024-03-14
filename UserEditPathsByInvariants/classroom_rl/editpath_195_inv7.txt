@@ -1,0 +1,21 @@
+inv7 T: all c : Class | some Teacher in c.Groups
+inv7 T: all c : Class | some Teacher in c->Groups
+inv7 B: all c : Class | (#c.Groups) > 0
+inv7 T: all c : Class | Teacher in c.Groups
+inv7 T: all c : Class | all t : Teacher | t in c.Groups
+inv7 S: all c : Class | (all t : Teacher | t in c.Groups)	}
+inv7 S: all c : Class, t : Teacher | (#t.(c.Groups)) > 0	}
+inv7 B: all c : Class, t : Teacher | (#t.(c.Groups)) > 0
+inv7 T: all c : Class | some Person.(c.Groups) in Teacher
+inv7 T: some Person.(Class.Groups) in Teacher
+inv7 B: all c : Class | #Person.(c.Groups) > 0
+inv7 B: all c : Class | Person.(c.Groups) in Teacher
+inv7 B: all c : Class | some Teacher.(c.Groups)
+inv7 B: all c : Class | lone Teacher.(c.Groups)
+inv7 B: all c : Class |  #Teacher.(c.Groups) > 0
+inv7 B: all c : Class | #Person.(c.Groups) > 0
+inv7 B: all c : Class | Person.(c.Groups) in Teacher
+inv7 B: all c : Class | no Teacher.(c.Groups)
+inv7 B: all c : Class | one Teacher.(c.Groups)
+inv7 B: all c : Class | some Teacher.(c.Groups)
+

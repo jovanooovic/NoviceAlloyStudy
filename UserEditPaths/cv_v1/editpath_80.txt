@@ -1,0 +1,8 @@
+NA H: THEME UPDATE
+inv1 C: all u : User | u.visible in u.profile
+inv2 E: 
+inv1 C: all u : User | u.visible in u.profile
+inv1 C: all u : User | u.visible in u.profile
+inv2 C: all u : User | all w : Work | (w in u.profile) implies (w.source=u or w.source in Institution)
+inv3 O: all w1 : Work | all w2 : Work | all u : User | (w1 in u.profile and w2 in u.profile and w1.source=w2.source) implies (w1.ids & w2.ids)=none
+

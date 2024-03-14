@@ -1,0 +1,6 @@
+inv10 U: all c : Course | (c.grades.Person) in Student
+inv10 C: all c : Course | (c.grades.Grade) in Student
+inv10 U: all c : Course | (Grade.(c.grades)) in Student
+inv10 C: all c : Course | (c.grades.Grade) in Student
+inv10 C: all c : Course | (c.grades.Grade) in Student
+

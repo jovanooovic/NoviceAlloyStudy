@@ -1,0 +1,16 @@
+inv6 U: all s:Student, p:Project | s -> p in projects implies (some c:Course | s -> c in enrolled and c -> p in projects)
+inv6 B: all s:Student | some p:Project, c:Course | s.projects = c.projects
+inv6 T: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 T: all s:Student | projects in s some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	enrolled in Student some -> Course and	    Course <: projects in Course -> Project
+inv6 B: Person <: projects in Student some -> Project implies	  	(enrolled in Student some -> Course and Course <: projects in Course -> Project)
+inv6 B: all s:Student, c:Course | s.projects & c.projects != none
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (s.projects & c.projects != none)
+inv6 S: all s:Student, c:Course | c in s.enrolled implies (some p:Proejct | p in s.projects and p in c.projects)
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Student, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Person, c:Course | c in s.enrolled implies (some p:Project | p in s.projects and p in c.projects)
+inv6 B: all s:Student, p:Project | some c:Course | c in s.enrolled implies (p in s.projects and p in c.projects)
+inv6 B: all s:Student, p:Project | some c:Course | c in s.enrolled implies (p in s.projects and p in c.projects)
+

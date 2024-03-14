@@ -1,0 +1,8 @@
+inv9 B: all p : Professor | no (Professor & (p . teaches . ~enrolled))
+inv9 B: all p : Professor | no ((p . enrolled . ~enrolled) & (p . teaches . ~enrolled))
+inv9 B: all p : Professor | no ((p . enrolled . ~teaches) & (p . teaches . ~enrolled))
+inv9 E:
+inv9 B: all p : Professor | no ((p . enrolled . ~teaches) & (p . teaches . ~enrolled) - p)
+inv9 E:
+inv9 U: all p : Professor, c : p . teaches | no (c . ~teaches - p) & (p . teaches . ~enrolled)
+

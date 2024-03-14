@@ -1,0 +1,7 @@
+inv3 T: all u : User | u.follows
+inv3 T: all u : User | u.sees & u.follows
+inv3 T: all u : User | u.sees & u.follows.posts
+inv3 T: all u : User | u.sees & u.follows.posts
+inv3 O: all u1 : User | all ph : Photo |	ph in u1.sees implies (some u2:User | ph in u2.posts and u2 in u1.follows)
+inv3 C: all u1 : User | all ph : Photo |	ph in u1.sees implies (some u2:User | ph in u2.posts and u2 in u1.follows) or ph in Ad
+

@@ -1,0 +1,19 @@
+inv7 S: all x : Student | #(x.enrolled.projects) = 1 | #(x.enrolled.projects) = 0
+inv7 B: all x : Student | #(x.enrolled.projects) = 1
+inv7 S: all x : Student | #(x.enrolled.projects) = 1 | #(x.enrolled.projects) = 0
+inv7 T: all x : Student | 1 > #(x.enrolled.projects) > 0
+inv7 B: all x : Student | (one c : Project | c in x.enrolled.projects )
+inv7 B: all x : Student | (lone c : Project | c in x.enrolled.projects )
+inv7 S: all x : Student | lone (c in x.enrolled.projects)
+inv7 B: all x : Student |lone(x.enrolled.projects)
+inv7 B: all x : Student | lone(x.enrolled.projects)
+inv7 B: all x : Student | all y : x.enrolled | lone(y.projects & x.enrolled.projects)
+inv7 B: all x : Student | (all y : x.enrolled | lone(y.projects & x.enrolled.projects))
+inv7 B: all x : Student | lone(x.enrolled.projects & x.projects)
+inv7 B: all x : Student | #(x.enrolled.projects) = 1
+inv7 B: all x : Student | #(x.enrolled.projects) = 1 and #(x.projects) = 1
+inv7 S: all x : Student | #(x.enrolled.projects) = 1 and #(x.projects) = 1 | #(x.enrolled.projects) = 0 and #(x.projects) = 0
+inv7 S: all x : Student | #(x.enrolled.projects) = 1 and #(x.projects) = 1 | #(x.enrolled.projects) = 0 and #(x.projects) = 0
+inv7 B: all x : Student | #(x.enrolled.projects) = 1 and #(x.projects) = 1
+inv7 U: all x : Student | all y : x.enrolled | lone(x.projects & y.projects)
+

@@ -1,0 +1,11 @@
+inv7 S: all u1 | u1.suggested in u1.follows.follows - u1.follows
+inv7 U: all u : User | u.suggested in u.follows.follows - u.follows
+inv7 U: all disj u : User | u.suggested in u.follows.follows - u.follows
+inv7 U: all disj u : User | u.suggested in u.follows.follows - u.follows - u
+inv7 U: all disj u : User | u.suggested in (u.follows.follows - u.follows - u)
+inv7 U: all disj u : User | u.suggested in u.follows.follows
+inv7 U: all disj u : User | u.suggested in u.follows.follows - u
+inv7 U: all disj u : User | u.suggested in (u.follows.follows - u) - u.follows
+inv7 U: all disj u : User | u.suggested in u.follows.follows - u.follows
+inv7 U: all disj u : User | u.suggested in u.follows.follows - u.follows - u
+

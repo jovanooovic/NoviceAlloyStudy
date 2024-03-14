@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv1 U: User.visible in User.profile
+inv1 C: all u:User | u.visible in u.profile
+inv1 O: User.visible in User.profile & User
+inv2 S: all w:User.profile |
+inv2 B: all u:User , w:Work | w in u.profile && one w.source
+inv2 S: all u:User , w:Work, i:Intitution | w in u.profile && w.source == u || w.source == i
+inv2 S: all u:User , w:Work, i:Intitution | w in u.profile && w.source = u || w.source = i
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && w.source = u || w.source = i
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && (w.source = u || w.source = i)
+inv2 B: all u:User , w:Work, i:Institution | w in u.profile && (w.source = u)
+inv2 B: all u:User ,i:Institution | u.profile.source = u
+inv2 B: all u:User ,i:Institution | u.profile.source = u || u.profile.source = i
+inv3 S: all u:User, w:Work, w1:Work | w,w1 in u.profile implies w.ids != w1.ids
+inv3 O: all u:User, w:Work, w1:Work | w1 in u.profile && w in u.profile implies w.ids != w1.ids
+inv3 O: all u:User, w:Work, w1:Work | w.source = w1.source && w1 in u.profile && w in u.profile implies w.ids != w1.ids
+inv4 O: User.visible != User.visible
+inv4 O: User.visible != User.visible
+inv4 O: User.visible.ids != User.visible.ids
+inv4 O: all u:User | u.visible.ids != u.visible.ids
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids && i != i1
+inv4 T: all u:User , i:Id, i1:Id | i in u.visible.ids & i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , i:Id, i1:Id | i in u.visible.ids && i1 in u.visible.ids implies i != i1
+inv4 O: all u:User , w:Work, w1:Work | w in u.visible && w1 in u.visible implies w != w1
+inv4 O: all u:User , w:Work, w1:Work | (w in u.visible and w1 in u.visible) implies w != w1
+inv4 B: all u:User , w:Work, w1:Work | (w in u.profile and w1 in u.profile and w in u.visible and w1 in u.visible) implies w != w1
+inv4 U: all u:User , w:Work | w in u.profile implies (lone u.visible & w)
+inv3 U: all u:User , s:Source| lone (u.profile.source & s).ids
+

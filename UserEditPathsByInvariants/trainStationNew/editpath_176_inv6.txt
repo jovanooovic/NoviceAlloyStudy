@@ -1,0 +1,8 @@
+inv6 S: all  x:Tracks, y:Signal| x in Entry implies x->y in signals and y in Speed
+inv6 B: all  x:Track, y:Signal| x in Entry implies x->y in signals and y in Speed
+inv6 O: all  x:Track|one y:Signal| x in Entry implies x->y in signals and y in Speed
+inv6 B: all  x:Track|one y:Signal| x in Entry and x->y in signals implies  y in Speed
+inv6 O: all  x:Track|some y:Signal| x in Entry  implies x->y in signals and  y in Speed
+inv6 O: all  x:Track|some y:Signal| x in Entry  implies x->y in signals and  y in Speed
+inv6 O: all  x:Track|some y:Signal| x in Entry  implies x->y in signals and  y in Speed
+

@@ -1,0 +1,6 @@
+inv2 S: all s:State | one s { Event.(s.trans) in Event.(State.trans) }
+inv2 B: one s:State | { Event.(s.trans) in Event.(State.trans) }
+inv2 S: one s:State | all s2.State | s not in Event.(s2.trans)
+inv2 S: one s:State | all s2.State | s not in Event.(s2.trans)
+inv2 C: one Init
+

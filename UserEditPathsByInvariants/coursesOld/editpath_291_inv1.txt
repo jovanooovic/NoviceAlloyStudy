@@ -1,0 +1,7 @@
+inv1 S: all p : Person c:Course | p->c in enrolled implies p in Student
+inv1 S: all p : Person c : Course | p->c in enrolled implies p in Student
+inv1 S: all p : Person c : Course | p not in Student implies p->c not in enrolled
+inv1 C: all p : Person ,c : Course | p not in Student implies p->c not in enrolled
+inv1 T: all p : Person ,c : Course | p->c implies p in Student
+inv1 C: all p : Person ,c : Course | p->c in enrolled implies p in Student
+

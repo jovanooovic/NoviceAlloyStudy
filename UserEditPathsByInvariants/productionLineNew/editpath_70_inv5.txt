@@ -1,0 +1,11 @@
+inv5 T: all h : Human | all r : Robot | all ws : workstation | r in ws.workers implies h not in ws.workers
+inv5 S: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (h not in ws.workers(
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (h not in ws.workers)
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) implies (not(h in ws.workers))
+inv5 T: all h : Human | all r : Robot | all ws : workstation | (r in ws.workers) iff (not(h in ws.workers))
+inv5 T: all r : Robot | all ws : workstation | (r in ws.workers) iff (not(some h : Human| h in ws.workers))
+inv5 T: all r : Robot | all ws : workstation | r in ws.workers iff (not(some h : Human| h in ws.workers))
+inv5 O: all r : Robot | all ws : Workstation | r in ws.workers iff (not(some h : Human| h in ws.workers))
+inv5 O: all h : Human | all r : Robot | all ws : Workstation | (r in ws.workers) iff (not(h in ws.workers))
+inv5 C: all h : Human | all r : Robot | all ws : Workstation | (r in ws.workers) implies (not(h in ws.workers))
+

@@ -1,0 +1,28 @@
+inv6 B: all f : File | #(link.f) > 0
+inv6 T: all f : File | (link.f) > 0
+inv6 T: link.File > 0
+inv6 B: #(link.File) > 0
+inv6 T: all f : File | f -> link > 0
+inv6 T: File.link > 0
+inv6 B: #(File.link) > 0
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | not no f.link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | some link
+inv6 B: all f : File | some link.f
+inv6 B: all f : File | some link.f
+inv6 B: some File.link
+inv6 B: all f : File | some f->link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | #(f.link) > 0
+inv6 B: all f : File | #(f.link) > 0
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | #(f.link) >= 1
+inv6 U: all f : File | (all l : f.link | some f->l)
+inv6 S: all f : File | some f->Link
+inv6 B: all f : File | some f->f.link
+inv6 B: all f : File | some f.link
+inv6 B: all f : File | some link.f
+inv6 C: all f : File | #(f.link) < 2
+inv6 C: all f : File | #(f.link) < 2
+

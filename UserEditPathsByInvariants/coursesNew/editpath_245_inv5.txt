@@ -1,0 +1,6 @@
+inv5 B: all p:Person, c:Course, proj:Project | proj in p.enrolled.projects
+inv5 B: all p:Person, proj:Project | proj in p.enrolled.projects
+inv5 B: all p:Person, proj:Project | proj in p.enrolled.projects implies p in Student
+inv5 B: all p:Person, proj:Project | proj in p.enrolled.projects and p in Student
+inv5 B: all proj:Project, p:Student | proj in p.projects.projects
+

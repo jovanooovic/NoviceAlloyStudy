@@ -1,0 +1,57 @@
+NA H: THEME UPDATE
+inv1 C: Person in Student
+inv2 C: no Teacher
+inv3 C: no Student & Teacher
+inv5 T: Teacher.Class
+inv4 S: not Teacher & not Student
+inv4 S: no Teacher & no Student
+inv4 B: no Teacher & Student
+inv3 T: Person
+inv3 C: no Student & Teacher
+inv4 T: Person not in Student and Teacher
+inv4 T: Person + Teacher
+inv4 C: Person = Student + Teacher
+inv5 T: Teacher.Class
+inv5 T: Teacher & Class
+inv5 T: Teacher.Teaches
+inv5 T: Person.Teaches
+inv5 T: some p:Person | p.Teaches
+inv5 U: some p:Person | p.Teaches in Class
+inv5 U: some p:Teacher | p.Teaches in Class
+inv5 T: some p:Teacher | p.Teaches + Class
+inv5 U: some p:Teacher | p.Teaches in Class
+inv5 S: some  p.Teaches in Class
+inv5 T: some  Teacher.Teaches in Class
+inv5 U: some p:Teacher | p.Teaches in Class
+inv5 U: Teacher.Teaches in Class
+inv5 U: Person.Teaches in Class
+inv5 U: Teacher.Teaches in Class
+inv6 U: Teacher.Teaches in Class
+inv6 T: Teacher.Teaches & Class
+inv5 U: Teacher.Teaches in Class
+inv5 U: Teacher.Teaches & Teacher in Class
+inv5 U: Teacher.Teaches & Teacher in Class
+inv6 T: Teaches.Class & Teacher
+inv6 T: Teaches.Class & Teacher
+inv6 O: Teaches.Class = Teacher
+inv6 C: Teacher in Teaches.Class
+inv5 T: Class.Teacher in Class
+inv5 C: some Teacher.Teaches
+inv7 C: Class in Teacher.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 O: lone Person.Teaches
+inv8 O: lone Teacher.Teaches
+inv8 C: all t:Teacher|lone t.Teaches
+inv9 T: all c:Class | lone Teacher.Class
+inv9 B: all c:Class | lone Teacher.Teaches
+inv9 T: all c:Class | lone Teacher.Class
+NA H: THEME UPDATE
+inv8 C: all t:Teacher | lone t.Teaches
+inv9 T: lone Class in Teacher.Teaches
+inv10 T: all s:Student,c:Class | s.c.Group
+inv10 T: all s:Student,c:Class | s.c.Groups
+inv10 C: all s:Student,c:Class | some s.(c.Groups)
+inv10 C: all s:Student,c:Class | some s.(c.Groups)
+NA H: THEME UPDATE
+inv9 U: all c:Class | lone c.Teaches
+

@@ -1,0 +1,24 @@
+inv9 E:
+inv9 B: no Professor.teaches&Professor.enrolled
+inv9 B: all p: Professor | p.teaches not in (Person-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p-Student).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-Student).enrolled
+inv9 B: all p: Professor | p.teaches not in (Person-p).enrolled
+inv9 B: all p: Person | p.teaches not in (Person-p).enrolled
+inv9 S: all p: Proofessor | p.teaches not in ((Professor&Student)-p).enrolled
+inv9 B: all p: Professor | p.teaches not in ((Professor&Student)-p).enrolled
+inv9 B: all p: Professor | ((Professor&Student)-p).enrolled not in p.teaches
+inv9 B: ((Professor&Student)).enrolled not in Professor.teaches
+inv9 B: all p: Professor | ((Professor&Student)-p).enrolled not in p.teaches
+inv9 B: all p: Professor | ((Professor&Student+Professor)-p).enrolled not in p.teaches
+inv9 B: all p: Person | (Professor&Student-p).enrolled not in p.teaches
+inv9 B: all p: Professor | (Professor&Student).enrolled not in p.teaches
+inv9 B: all p: Professor, pe: Person | pe in Professor&Student implies pe.enrolled not in p.teaches
+inv9 B: all p: Professor, pe: Person | pe in Professor&Student-p implies pe.enrolled not in p.teaches
+inv9 B: all p: Professor | (Professor&Student-p).enrolled not in p.teaches
+inv9 B: all p: Professor | (Professor-p).enrolled not in p.teaches
+inv9 B: all p: Professor | ((Professor-p)&Student).enrolled not in p.teaches
+inv9 B: all p: Professor | p.teaches not in ((Professor-p)&Student).enrolled
+

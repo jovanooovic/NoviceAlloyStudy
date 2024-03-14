@@ -1,0 +1,7 @@
+inv5 S: some x:Person| all p:Project| x->p in projects implies x in Studente
+inv5 B: some x:Person| all p:Project| x->p in projects implies x in Student
+inv5 U: all p:Project| (some x:Person|x->p in projects implies x in Student)
+inv5 U: all p:Project| (some x:Student |x->p in projects)
+inv5 U: all p:Project| (some x:Student | x->p in projects)
+inv5 C: all x:Person| all p:Project| x->p in projects implies x in Student	  	   all p:Project| (some x:Student | x->p in projects)
+

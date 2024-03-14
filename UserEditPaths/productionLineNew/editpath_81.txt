@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv9 S: one begin.succ and one succ.end and		(no succ & iden) and ((w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end))
+inv9 S: one begin.succ and one succ.end and		(no succ & iden) and ((w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end))
+inv9 S: one begin.succ and one succ.end and		(no succ & iden) and ((w in begin and one w.succ-w) or (w in end and one succ.w-w) or (one w.succ-w and one succ.w-w) or (w in begin+end))
+inv9 S: one begin.succ and one succ.end and
+inv9 S: one begin.succ and one succ.end and
+inv1 C: Worker in Human+Robot
+inv2 C: (all ws : Workstation | some ws.workers) and (all wo : Worker | one workers.wo)
+inv3 C: all c : Component | one c.workstation
+inv4 C: (all c : Component | some c.parts) and (no Material.parts)
+inv5 C: no workers.Human & workers.Robot
+inv6 C: all c : Component | c not in c.^parts
+inv7 O: all c : Component | some c.^parts & Dangerous implies c in Dangerous
+inv8 B: all d : Dangerous | d.workstation.workers not in Human
+inv9 E: 
+inv10 B: all c : Component, p : Product | p in c.^parts implies c.workstation in (p.workstation).^succ
+inv8 B: all d : Dangerous | d.workstation.workers not in Human
+inv7 O: all c : Component | some c.^parts & Dangerous implies c in Dangerous
+inv8 B: all d : Dangerous | d.workstation.workers not in Human
+inv8 T: no Dangerous.Workstation & workers.Human
+inv8 C: no Dangerous.workstation & workers.Human
+inv8 B: all d : Dangerous | d.workstation.workers not in Human
+

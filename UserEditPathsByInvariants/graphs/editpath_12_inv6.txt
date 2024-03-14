@@ -1,0 +1,9 @@
+inv6 O: all a, b : Node | a in b.^adj or b in a.^adj
+inv6 O: all a, b : Node | a in b.*adj or b in a.*adj
+inv6 O: all a, b : Node | b in (a.adj + adj.a)
+inv6 T: all a, b : Node | b in (a.*adj + adj.*a)
+inv6 E:
+inv6 S: all a, b : Node | a in conn[b]
+inv6 S: fun conn(a : Node) : set Node {	a.adj + adj.a	}		all a, b : Node | b in a.*conn
+inv6 C: all a, b : Node | b in a.*(~adj + adj)
+

@@ -1,0 +1,32 @@
+"no ^parts in iden",1
+"^parts & iden = none",2
+"^parts not in iden - {}",1
+"^parts not in iden - none",1
+"no (Component.^parts).Component",1
+"all c:Component | no ^(c.parts)",1
+"all c:Component | no c.(c.parts)",1
+"all c:Component | no c in c.parts",2
+"all c:Component | no (c.^parts).c",1
+"all c:Component | no c in c.^parts",2
+"all c : Component | no c.(parts.c)",1
+"all c : Component | no c.(c.parts)",1
+"all c : Component | c.parts in iden",1
+"all c : Component | no c.^(parts).c",1
+"all c:Component | c not in ^c.parts",1
+"all c : Component | no c->c in parts",4
+"all c:Component | c not in *(c.parts)",1
+"all c:Component | c not in ^(c.parts)",1
+"all c : Component | no c in c.^(parts)",1
+"Component.parts not in ^Component.parts",1
+"all c : Component | c not in *(c.parts)",1
+"all c : Component | no c.^(parts.parts).c",1
+"Component.parts not in ^(Component.parts)",1
+"all c : Component | (c.^parts).c not in parts",1
+"all c : Component | c & ^parts.c not in parts",1
+"all c : Component | c.^parts & c not in parts",1
+"all c : Component | no (c<:parts) & (parts.c)",1
+"(Component.^parts).~(Component.^parts) in iden",1
+"all c : Component | c & ^parts<:c not in parts",1
+"all c : Component | no (c<:parts) & (parts<:c)",1
+"all c,c1 : Component, p : Position | c not in c->parts and c1 not in c1->parts and c->p + c1->p in position => c = c1",1
+"all c,c1 : Component, p : Position | (c not in c->parts) and (c1 not in c1->parts) and c->p + c1->p in position => c = c1",1

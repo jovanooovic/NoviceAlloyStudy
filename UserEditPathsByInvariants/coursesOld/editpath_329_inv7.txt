@@ -1,0 +1,8 @@
+inv7 S: all s:Students | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in projects and pr2->c in projects implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in projects and pr2->c in projects implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in this/Course <: projects  and pr2->c in projects implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in this/Course <: projects  and pr2->c in this/Course <: projects  implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in Course <: projects  and pr2->c in Course <: projects  implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in (Course <: projects)  and pr2->c in Course <: projects  implies pr1 = pr2
+inv7 T: all s:Student | some pr1, pr2: Project| one c: Course | s->pr1 in Person <: projects and s->pr2 in Person <: projects and pr1->c in (Course <: projects)  and pr2->c in (Course <: projects) implies pr1 = pr2
+

@@ -1,0 +1,6 @@
+inv13 S: all c : Course | (sone s : c.enrolled & Student | (s.grades.c = max(c.enrolled.grades.c)) => s.projects & c.projects != none)
+inv13 S: all c : Course | (some s : c.enrolled & Student | (s.grades.c = max(c.enrolled.grades.c)) => s.projects & c.projects != none)
+inv13 S: all c : Course | (some s : c.enrolled & Student | (s.grades.c = max(c.enrolled.grades.c)) => s.projects & c.projects != none)
+inv13 S: all c : Course | (some s : c.enrolled & Student | (s.grades.c = max (c.enrolled.grades.c)) => s.projects & c.projects != none)
+inv13 S: all c : Course | (some s : c.enrolled & Student | (s.grades.c = max(c.enrolled.grades.c)) => s.projects & c.projects != none)
+

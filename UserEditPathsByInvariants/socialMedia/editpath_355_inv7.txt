@@ -1,0 +1,5 @@
+inv7 U: all u, s: User | s in u.suggested implies s not in u.follows and s in u.follows.follows
+inv7 U: all u, s: User | s in u.suggested implies s not in u.follows and s in u.follows.follows and s != u
+inv7 C: all u, s: User | s in u.suggested iff s not in u.follows and s in u.follows.follows and s != u
+inv7 C: all u, s: User | s in u.suggested iff s not in u.follows and s in u.follows.follows and s != u
+

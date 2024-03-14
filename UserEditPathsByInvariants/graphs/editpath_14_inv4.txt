@@ -1,0 +1,10 @@
+inv4 C: all n:Node , a:Node | n->a in adj
+inv4 U: all n:Node | n in adj.n
+inv4 U: all n:Node | n in n.adj
+inv4 T: all n:Node | n->(adj.n)
+inv4 U: all n:Node | n in Node.adj
+inv4 U: all n:Node | n in adj.Node
+inv4 S: all n:Node | n in adj.Node & b in Node.adj
+inv4 T: all n:Node | n in adj.Node & n in Node.adj
+inv4 C: adj = Node->Node
+

@@ -1,0 +1,6 @@
+inv6 S: all e : Event | some s1 : State | e1 in s1.trans.State
+inv6 C: all e : Event | some s1 : State | e in s1.trans.State
+inv6 C: all e : Event | some s : State | e in s.trans.State
+inv6 S: all e : Event | some s.trans.State <: e
+inv6 C: all e : Event | some State.trans.State <: e
+

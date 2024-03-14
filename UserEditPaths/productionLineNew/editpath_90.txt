@@ -1,0 +1,63 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 E: 
+inv1 C: no Worker - (Robot + Human)	Worker = Robot + Human			no Robot & Human
+inv1 C: no Worker - (Robot + Human)	Worker = Robot + Human			no Robot & Human
+inv1 C: no Worker - (Robot + Human)	Worker = Robot + Human
+inv1 C: Worker = Robot + Human
+inv1 C: no Worker - (Robot + Human)
+inv1 C: all x : Worker | x in Human+Robot
+inv1 C: all x : Worker | x in Human or x in Robot
+inv1 C: no Worker - (Robot + Human)	Worker = Robot + Human	all x : Worker | x in Human or x in Robot
+inv2 C: workers in Workstation one -> some Worker
+inv2 C: workers in Workstation one -> some Worker		all ws : Workstation | some ws.workers
+inv2 U: all ws : Workstation | some ws.workers
+inv2 C: all ws : Workstation | some ws.workers	all w : Worker       | one workers.w
+inv3 C: all c: Component | one c.workstation
+inv3 S: wokrstation in Component one -> set Workstation
+inv3 B: workstation in Component one -> set Workstation
+inv3 B: workstation in Component lone -> set Workstation
+inv3 B: workstation in Component one -> set Workstation
+inv3 C: workstation in Component set -> one Workstation
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv4 U: parts.Product in Component
+inv4 C: parts.Product = Component
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts		parts.Product = Component
+inv5 O: all ws : Workstation | ws.workers in Robot or ws.workers in Human
+inv6 S: all c : Components | c not in c.parts
+inv6 U: all c : Component | c not in c.parts
+inv6 C: all c : Component | c not in c.^parts
+inv6 O: no ^parts & iden
+inv7 S: parts^.Dangerous in Dangerous
+inv7 S: parts^.Dangerous in Dangerous	some ^parts & Dangerous implies iden in Dangerous
+inv7 T: some ^parts & Dangerous implies iden in Dangerous
+inv7 S: parts^.Dangerous in Dangerous
+inv7 O: ^parts.Dangerous in Dangerous
+inv8 O: Dangerous.workstation.workers = Robot
+inv8 O: Dangerous.workstation.workers in Robot
+inv8 S: all d : Dangerous, w: Worker | w in s.worksattion.workers implies w in Robot
+inv8 S: all d : Dangerous, w: Worker | w in d.worksation.workers implies w in Robot
+inv8 O: all d : Dangerous, w: Worker | w in d.workstation.workers implies w in Robot
+inv9 U: all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 T: not succ & iden	all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 U: no succ & iden	all ws : (Workstation-end) | one ws.succ	no end.succ	no succ.begin
+inv9 B: (Workstation-end).^succ = end
+inv9 U: begin.*succ = *succ.end
+inv9 B: begin.^succ = ^succ.end
+inv9 U: begin.*succ = *succ.end	no iden & succ
+inv9 B: end in begin.^succ	begin in ^succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in Workstation lone -> lone Workstation	no iden & succ
+inv9 O: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) one -> lone Workstation	no iden & succ
+inv9 B: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) one -> one (Workstation-end)	no iden & succ
+inv9 B: end in begin.*succ	begin in *succ.end	succ in (Workstation-begin) lone -> one Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	no iden & succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)	no iden & succ
+inv9 C: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)	no iden & ^succ
+inv9 U: end in begin.*succ	begin in *succ.end	succ in (Workstation-end) lone -> one Workstation	succ in Workstation one -> lone (Workstation-begin)
+inv10 B: all comp : Component | comp.parts not in comp.workstation.^succ
+inv10 B: all comp : Component | (comp.parts).workstation not in comp.workstation.^succ
+inv10 B: all comp : Component | (Component &comp.parts).workstation not in comp.workstation.^succ
+inv10 O: all comp : Component | (Component &comp.parts).workstation in (^succ).comp.workstation
+inv10 C: all comp : Component | (Component &comp.parts).workstation in (^succ).(comp.workstation)
+

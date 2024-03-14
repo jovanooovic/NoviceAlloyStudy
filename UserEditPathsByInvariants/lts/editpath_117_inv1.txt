@@ -1,0 +1,15 @@
+inv1 S: all s:State | some t:trans
+inv1 S: all s:State, some t:trans | t in s
+inv1 T: all s:State | some t:trans | t in s
+inv1 S: all s:State | some t:trans in s.trans
+inv1 T: all s:State | some t:trans | t in s.trans
+inv1 S: all s:State | some ss:State | e:Event | e->ss in s.trans
+inv1 S: all s:State | some s.trans		/*	There is a single initial state.	*/
+inv1 S: all s:State | some Event.(s.trans)		/*	There is a single initial state.	*/
+inv1 S: all s : State | some s.trans		/*	There is a single initial state.	*/
+inv1 S: all s : State | one s.trans		/*	There is a single initial state.	*/
+inv1 S: some State.trans		/*	There is a single initial state.	*/
+inv1 C: all s:State | some s.trans
+inv1 S: all s:State | some t:trans
+inv1 C: all s:State | some s.trans
+

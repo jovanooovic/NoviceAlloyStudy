@@ -1,0 +1,12 @@
+inv6 U: all t : Track & Entry | some t.signals
+inv6 U: all t : Track | t in Entry implies some t.signals
+inv6 B: all t : Track | t in Entry implies one t.signals
+inv6 B: all t : Track | t in Entry <=> some t.signals
+inv6 U: all t : Track | t in Entry implies some t.signals
+inv6 C: all t : Track | t in Entry implies some (t.signals & Speed)
+inv6 T: all t : Track, s : Speed | t in Entry implies some t.signals.s
+inv6 T: all t : Track, s : Speed | t in Entry implies some t.signals.s
+inv6 B: all t : Track, s : Speed | t in Entry implies s in t.signals
+inv6 U: all t : Track, s : Speed | t in Entry implies some t.signals & Speed
+inv6 C: all t : Track| t in Entry implies some t.signals & Speed
+

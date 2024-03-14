@@ -1,0 +1,93 @@
+"all",2
+"all p:Projects",2
+"all x: Student.project",1
+"all x: Student | y: x.projects",1
+"all s:Student, c:s.enrolled | p in c.projects",1
+"all s: Student | s.projects = s.courses.projects",1
+"all s : Students | s.enrolled in Student.projects",1
+"all s : Students | s.projects in s.Course.projects",1
+"all s:Student, p:Projet | p in s.enrolled.projects",1
+"all x : Student | x.project in x.enrolled.projects",1
+"all s:Student, p:s.projects | p in s.courses.projects",1
+"all u : User | (all p: u.projects | p in u.enrolled )",1
+"all S : Student | projects.(s.projects) in s.enrolled",1
+"all x: Students | some (x.projects implies x.enrolled)",1
+"Student <: projects).(~projects :> Course) in enrolled",1
+"all s:Student | all c:Courses|  s.enrolled = projects.c",1
+"all s: Student | all p : Course | s in erolled.p.projects",1
+"all s: Strudent | p: s.projects | p in s.enroled.projects",2
+"all s: Student | (s.projects) in s.enrolled
+}
+
+fun getProjectCourse[p : Project]: one Course {
+  	projects.p & Courses",1
+"all s: Student | all p : Courses | s in erolled.p.projects",1
+"all s : Student | p : s.projects => p in s.enrolled.projects",4
+"all s: Student | all p: s.projects | p in s.enroled.projects",1
+"all s: Strudent | all p: s.projects | p in s.enroled.projects",1
+"all s : Student, p : Project | p in s.projects => s in p.courses",1
+"all s : Student | all s.enrolled : Course | s.projects in s.enrolled",2
+"all s: Person-Student | (all c : Courses | s.enrolled and projects.c )",1
+"all s: Person-Students | (all c : Courses | s.enrolled and projects.c )",1
+"all s: Student, p: Project | p in s.projects => p in s.enrolled.project",1
+"all s: Students, p: Project| p in s.projects => p in s.enrolled.projects",1
+"all s : Student | Courses <: projects.s.Person <: projects in s.enrolled",1
+"all s: Student, p: Project | p in s.projects => projects.p in c.enrolled",1
+"all s: Student, p: Project | p in s.projects => projects.p in u.enrolled",1
+"all s : Student-Professor | all p : s.projects | p in u.enrolled.projects",1
+"all s : Student | all c : s.enrolled| all p : m.projects| p in c.projects",1
+"all s: Students, all p: Project| p in s.projects => p in s.enrolled.project",1
+"all s : Student | all p :  s.projects | (Course <: projects.p) in s.courses",1
+"all s : Student | all p :  s.projects | (Courses <: projects.p) in s.courses",1
+"all st:Studetn, c:Course| c in st.enrolled implies c.projects in st.projects",1
+"all s: Students, all p: Project| p in s.projects => p in s.enrolled.projects",1
+"all p: Project, s: Student | p in u.projects implies p in p.enrolled.projects",1
+"all p: Project, s: Student |
+    (s in p.people) => (p.courses in s.enrolled)",1
+"all s:Student | all p:Project | p in s.projects implies p in s.enrolled.projectsm",1
+"all s:Student | all p:Projects | p in s.projects implies p in s.enrolled.projects",1
+"all pe:Student | all c:Course | (pe.projects=c.projects)  implies c in p.enrolled",1
+"all s : Student | Courses <: projects.Student | s.Person <: projects in s.enrolled",1
+"all s : Student, p : Project, c : Courses | p in s.projects implies c in s.enrolled",1
+"all pe:Student | all c:Course |some(p.projects=c.projects)  implies c in p.enrolled",1
+"all pe:Student | all c:Courses |some(p.projects=c.projects)  implies c in p.enrolled",1
+"all u : Student, p: u.projects | some c : Course | c in u.enrolled and p in c.projects)",1
+"all p : Project, p : Person | some c : Course | p in s.projects implies p in c.projects",1
+"all p : Projects, s : Student | some c : Course | p in s.projects implies p in c.projects",1
+"all s:Student, p:Project | p in s.projects implies ( p in c.projects and c in s.enrolled)",1
+"all s : Student | some c : Course | c in s.enrolled and (all p : s.projects in c.projects)",1
+"all s : Student | some c : Course | c in s.enrolled and (all p : s.projects in c.projectcs)",1
+"all s : Student, p : s.projets | (some c : Course | p in projects.c implies p in enrolled.c)",1
+"all x : Person | one y : course | (x in projects.x and y in projects.x) implies x in enrolled.y",1
+"all u : Student | all p: u.projects | (some c : Course | c in u.enrolled and p in c.projects ) )",1
+"all u : Student | (all p: u.projects | (some c : course | c in u.enrolled and p in c.projects ) )",1
+"all s : Student | (all p : u.projects | (some c : Course | c in s.enrolled and p in c.projects ))",1
+"all s : Student, p : Project,c : Courses | p in s.projects and p in c.projects => c in p.enrolled",1
+"all s : Student | ( all p : u.projects | (some c : Course | c in projects.p and s in enrolled.c) )",1
+"all x:Studente, c:Course, p:Project| x->p in projects and c->p in projects implies x->c in enrolled",1
+"all p : Person, c : Course, ps : Project | ps in p.projects implies p in Student && c in p.enrolled &&",1
+"all s : Student, p : Projects | one c : Course | p in s.Projects and c in s.enrolled and p in c.projects",1
+"all s : Student, p : Projects | one c : Course | p in s.projects and c in s.enrolled and p in c.projects",1
+"all s : Student, p : Projects | some c : Course | p in s.projects and c in s.enrolled and p in c.projects",1
+"all s:Student | all c:Course | all p:Projects | p in s.projects implies p in c.projects and c in s.enrolled",1
+"all p:Person, c:Course, x:Project|p->x in projects and c->x in projects p in Student implies p->c in enrolled",1
+"all s : Student | ( all p : Project | p in s.projects (some c : Course | c in projects.p and s in enrolled.c) )",1
+"all s : Student | ( all p : Project | s in projects.p (some c : Course | c in projects.p and s in enrolled.c) )",1
+"all s : Student, p : Project | s in projects.p implies (some c : Course p in projects.c implies p in enrolled.c)",2
+"all s : Student | ( all p : Project | p in s.projects | (some c : Course | c in projects.p and s in enrolled.c) )",1
+"all y:Person, p:Project, c:Course | y->p in projects implies y in Student and y->c in enrolled and c->p in project",1
+"all s : Person| all p : Project | all c : Course (p in s.projects) and (p in c.projects) implies (s.enrolled in c)",1
+"all s : Student | all p : Project | s->p in projects implies (some c : Course | c->p in project and s->c in enrolled)",1
+"all u:Person, p:Project, all c:Course| u->p in projects and u in Student implies u->c in enrolled and c->p in projects",1
+"all s : Student | all p : Projects | s->p in projects implies (some c : Course | c->p in project and s->c in enrolled)",1
+"all s : Student | all p : Projects | s->p in projects implies (some c : Course | c->p in projects and s->c in enrolled)",1
+"all stud:Student, some p:Project | stud->p in projects implies (some c:Course | stud->c in enrolled and c->p in projects)",2
+"all s : Student | all c : Course | all proj : Project | proj in s.projects and proj in c.projects implies c in s.enrollde",1
+"all u:Person, p:Project| u->p in projects and u in Student implies some one c:Course u->c in enrolled and c->p in projects",1
+"all s1 : Person | all ps : Project | ps in s1.project implies (some c1 : Course | ps in c1.projects and c1 in s1.enrolled)",1
+"all u:Person, p:Project| u->p in projects and u in Student implies some one c:Course |u->c in enrolled and c->p in projects",1
+"all s : Student | all c : Course | all proj : Project | (proj in s.projects and proj in c.projects) implies c in s.enrollde",1
+"all s:Student, p:Project | p in s.projects implies p in c.projects and (some c:Course | p in c.projects and c in s.enrolled)",2
+"all per : Person | some c : Course | all pro : Project | (pro in per.projetcs and pro in c.projects) implies c in per.enrolled",1
+"all p1 : Project | some pr1 : Student | pr1->p1 in projects)
+  	all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student",1

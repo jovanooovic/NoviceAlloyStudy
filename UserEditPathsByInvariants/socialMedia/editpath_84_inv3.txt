@@ -1,0 +1,8 @@
+inv3 S: all u : User | all p : Photo | p in user.sees && not ad.p => (one u2 : User | p in p.posts | u2 in u.follows)
+inv3 S: all u : User | all p : Photo | p in user.sees && not ad.p => (one u2 : User | p in p.posts | u2 in u.follows)
+inv3 S: all u : User | all p : Photo | p in user.sees && not ad.p => one u2 : User | p in p.posts | u2 in u.follows
+inv3 O: all u1,u2 : User | all p : Photo - Ad | p in u2.posts && u2 in u1.follows
+inv3 O: all u1,u2 : User | all p : Photo - Ad | p in u2.posts and u2 in u1.follows
+inv3 O: all u1,u2 : User | all p : Photo - Ad | p in u2.posts and p in u1.sees and u2 in u1.follows
+inv3 B: all u1,u2 : User | all p : Photo - Ad | p in u2.posts and p in u1.sees implies u2 in u1.follows
+

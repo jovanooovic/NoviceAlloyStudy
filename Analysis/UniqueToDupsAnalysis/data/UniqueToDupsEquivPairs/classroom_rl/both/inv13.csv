@@ -1,0 +1,147 @@
+Pairs,1
+,,"no Student.Tutors",1
+
+Pairs,2
+,,"Person.Tutors in Teacher",1
+,,"all p1, p2: Person | some Tutors.p1 implies p1 in Teacher",1
+
+Pairs,1
+,,"Teacher = Student.Tutors",1
+
+Pairs,2
+,,"Student in Teacher.Tutors",2
+
+Pairs,1
+,,"Teacher in Teacher.Tutors",1
+
+Pairs,1
+,,"Teacher in Tutors.Teacher",1
+
+Pairs,1
+,,"Teacher in Student.Tutors",1
+
+Pairs,8
+,,"Teacher->Student in Tutors",1
+,,"all t : Teacher, s : Student | s in t.Tutors",1
+,,"all t:Teacher , s:Student | t->s in Tutors",3
+,,"all s:Student , t:Teacher | some Tutors.s :>t",1
+,,"all t:Teacher, s:Student | t in Tutors.s and s in t.Tutors",1
+,,"all t: Teacher, s: Student | t.Tutors in Person and t->s in Tutors",1
+
+Pairs,1
+,,"Student in Teacher.Teaches",1
+
+Pairs,1
+,,"no(Student & Person.Tutors)",1
+
+Pairs,1
+,,"Teaches in Teacher->Student",1
+
+Pairs,1
+,,"Tutors.Teacher in Student.Tutors",1
+
+Pairs,1
+,,"~((Groups.Group):>Teacher) in Teaches",1
+
+Pairs,4
+,,"no Student.Tutors && no Tutors.Teacher",4
+
+Pairs,1
+,,"no Student.Teaches and no Tutors.Teacher",1
+
+Pairs,1
+,,"all t: Person, s: Student | t->s in Tutors",1
+
+Pairs,1
+,,"no (Student.Tutors) and no (Tutors -> Teacher)",1
+
+Pairs,2
+,,"Person.Tutors in Student and no Student.Teaches",2
+
+Pairs,1
+,,"all p : Person, t : Teacher | p->t not in Tutors",1
+
+Pairs,1
+,,"all t:Teacher, s:Student | Teaches.t = s.Teaches",1
+
+Pairs,3
+,,"all p: Person | (some p.Teaches) => (p in Teacher)",3
+
+Pairs,1
+,,"not some s:Student | all p:Person | s->p in Tutors",1
+
+Pairs,1
+,,"Teacher = Person.Tutors and Person.Tutors = Student",1
+
+Pairs,2
+,,"Student in Person.Tutors and Teacher in Tutors.Person",1
+,,"Student in Person.Tutors and Teacher in Person.~Tutors",1
+
+Pairs,1
+,,"Teacher in Person.Tutors and Student in Tutors.Person",1
+
+Pairs,3
+,,"Person.Tutors in Teacher and Tutors.Person in Student",3
+
+Pairs,2
+,,"Student in Teacher.Tutors and Teacher in Tutors.Person",2
+
+Pairs,2
+,,"Student in Teacher.Tutors and Teacher in Tutors.Student",1
+,,"Student in Teacher.Tutors and Teacher in Student.~Tutors",1
+
+Pairs,1
+,,"Student in Teacher.Teaches and Teacher in Student.~Teaches",1
+
+Pairs,1
+,,"no Student.Tutors and (all p : Person.Tutors | p in Student)",1
+
+Pairs,1
+,,"no(Student & Person.Tutors) and no (Teacher & Person.Tutors)",1
+
+Pairs,1
+,,"no(Student & Person.Tutors) and no (Teacher & Tutors.Person)",1
+
+Pairs,1
+,,"all t: Teacher, s: Student| t->s in Tutors => Tutors = Tutors - t->s",1
+
+Pairs,1
+,,"all p : Person | all s: Student | s.Tutors = none and p.Tutors in Student",1
+
+Pairs,1
+,,"all p : Person, t : Teacher, s : Student | s in t.Tutors and t in Tutors.p",1
+
+Pairs,1
+,,"all p : Person, t : Teacher, s : Student | s in p.Tutors and t in Tutors.p",1
+
+Pairs,1
+,,"all p : Person, t : Teacher | p->t in Tutors => t in Teacher and p in Student",1
+
+Pairs,1
+,,"all p : Person, t : Teacher, s : Student | t not in p.Tutors and t in Tutors.p",1
+
+Pairs,1
+,,"no Student.Tutors and (all p : Person.Tutors | p in Student and p not in Teacher)",1
+
+Pairs,1
+,,"all t: Person, s: Student | t.Tutors in Person and t in Teacher and t->s in Tutors",1
+
+Pairs,1
+,,"all p : Person, t : Teacher, s : Student | t not in p.Tutors and s not in Tutors.p",1
+
+Pairs,1
+,,"all p: Person | {(some p.Tutors => p in Student) (some p.Teaches => p in Teacher)}",1
+
+Pairs,1
+,,"all s:Student,c:Class | some ( s<:c.Groups ) implies no((Teacher & Teaches.c)-(Tutors.s))",1
+
+Pairs,2
+,,"no Student.Tutors && Teacher.Tutors in Student
+    no Tutors.Teacher && Tutors.Student in Teacher",2
+
+Pairs,1
+,,"no Student.Tutors
+    some Teacher.Tutors && Teacher.Tutors in Student
+    no Tutors.Teacher
+    some Tutors.Student && Tutors.Student in Teacher",1
+

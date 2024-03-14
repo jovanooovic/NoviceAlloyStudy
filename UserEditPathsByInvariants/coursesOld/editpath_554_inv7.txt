@@ -1,0 +1,17 @@
+inv7 B: all s : Student | lone p : Project | s->p in projects
+inv7 S: all per : Person | per in Student => lone pro : Project | s->p in projects
+inv7 B: all per : Person | per in Student => lone pro : Project | per->pro in projects
+inv7 S: all s : Student | #s.projects.p < 2
+inv7 B: all s : Student | #s.projects < 2
+inv7 B: all s : Student | #s.projects = 1
+inv7 B: all s : Person | s in Student => #s.projects = 1
+inv7 B: all s : Person | s in Student => #s.projects <= 1
+inv7 B: all s : Person | s in Student && s not in Professor => #s.projects <= 1
+inv7 U: all s : Person | s in Student && s not in Professor => #s <= 1
+inv7 U: all per : Person | per in Student => all c : Course | lone pro : Project | c->pro in projects && per->pro in projects
+inv7 U: all per : Person | 	  		per in Student => all c : Course | lone pro : Project | 	  			c->pro in projects && per->pro in projects
+inv7 S: all s : Student | all c : Course | lone pro : Project | 	  			c->pro in projects && per->pro in projects
+inv7 U: all s : Student | all c : Course | lone p : Project | 	  			c->p in projects && s->p in projects
+inv7 U: all s : Student, c : Course | lone p : Project | 	  		c->p in projects && s->p in projects
+inv7 U: all s : Student, c : Course | lone p : Project | 	  		c->p in projects && s->p in projects
+

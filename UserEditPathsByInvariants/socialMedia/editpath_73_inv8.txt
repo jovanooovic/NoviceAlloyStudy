@@ -1,0 +1,13 @@
+inv8 S: all u1,u2 : User, a : Ad | a in u.sees => a in u2.posts and u2 in (u1.follows + u1.suggests)
+inv8 S: all u1,u2 : User, a : Ad | a in u1.sees => a in u2.posts and u2 in (u1.follows + u1.suggests)
+inv8 O: all u1,u2 : User, a : Ad | a in u1.sees => a in u2.posts and u2 in (u1.follows + u1.suggested)
+inv8 O: all u1,u2 : User, a : Ad | a in u1.sees => a in u2.posts and u2 in (u1.follows + u1.suggested)	all u : User | u not in u.suggested
+inv8 O: all u1,u2 : User, a : Ad | a in u1.sees => a in u2.posts and u2 in (u1.follows + u1.suggested)	all u : User | u not in u.suggested and u not in u.follows
+inv8 B: all u1,u2 : User, a : Ad | u1 != u2 and a in u1.sees => a in u2.posts and u2 in (u1.follows + u1.suggested)	all u : User | u not in u.suggested
+inv8 O: all u1,u2 : User, a : Ad |a in u1.sees =>  u1 != u2 and a in u2.posts and u2 in (u1.follows + u1.suggested)	all u : User | u not in u.suggested
+inv8 O: all u1,u2 : User, a : Ad |a in u1.sees =>  u1 != u2 and a in u1.follows.posts + u1.suggested.posts	all u : User | u not in u.suggested
+inv8 O: all u1,u2 : User, a : Ad |a in u1.sees =>  a in u1.follows.posts + u1.suggested.posts	all u : User | u not in u.suggested
+inv8 O: all u1,u2 : User, a : Ad |a in u1.sees =>  a in u2.posts and u2 in (u1.follows + u1.suggested)
+inv8 S: all u: User, a : Ad |a in u.sees => a in u.followed.posts + u.suggested.posts
+inv8 C: all u: User, a : Ad |a in u.sees => a in u.follows.posts + u.suggested.posts
+

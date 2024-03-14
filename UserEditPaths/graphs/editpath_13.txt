@@ -1,0 +1,58 @@
+na H: THEME UPDATE
+inv1 U: Node.adj = ~adj.Node
+inv2 S: not (Node.adj = )
+inv1 S: all Node a,b | a->b in adj implies b->a in adj
+inv1 S: all Node a,b | a->b in adj implies b->a in adj
+inv1 S: all Node: a,b | a->b in adj implies b->a in adj
+inv1 C: all a:Node,b:Node | a->b in adj implies b->a in adj
+inv2 C: all a:Node,b:Node | a->b in adj implies not (b->a in adj)
+inv2 S: no adj & -adj
+inv2 C: no adj & ~adj
+inv4 T: all n:Node | n.adj
+inv3 C: all a:Node| a not in a.^adj
+inv4 U: all a:Node | a in a.^adj
+inv5 U: all a:Node | not (a.adj=a)
+inv5 C: all a:Node | not a->a in adj
+inv4 U: all a:Node | a in a.^adj
+inv4 B: all a:Node | a in a.^adj and not a->a in adj
+inv4 T: all a:Node | a.adj
+inv4 U: all a:Node | a in a.adj
+inv4 U: all a:Node | a in adj.a
+inv4 U: all a:Node | a in a.adj
+inv4 T: all a:Node | a in a.adj implies a in ~a.adj
+inv4 T: all a:Node | a in a.^adj implies a in ~a.^adj
+inv4 U: all a:Node | a in a.^adj implies a in a.^adj
+inv4 S: all a:Node | a in a.^adj implies a->not a
+inv4 U: all a:Node,b:Node | a in a.^adj implies a->b in adj
+inv4 C: all a:Node,b:Node |  a->b in adj
+inv4 C: all a:Node,b:Node |  a->b in adj
+inv4 C: all a:Node,b:Node | a->b in adj
+inv4 C: adj = Node -> Node
+inv5 S: not a.aj
+inv5 S: not Node.aj
+inv5 T: not Node.adj
+inv5 T: Node.adj
+inv6 T: all a,b:Node | a.^adj + b.^adj
+inv6 T: all a,b:Node | a.^adj + b.^adj in iden
+inv6 T: all a,b:Node | a.^adj + b.^adj in iden
+inv6 B: all a,b:Node | a.^adj + b.^adj = a+b
+inv6 O: all a,b:Node | a.^adj + b.^adj = Node
+inv6 T: all a,b:Node | a.^adj + b.^adj = a->b in adj
+inv6 O: all a,b:Node | a->b in adj
+inv6 B: all a,b:Node | a->b in adj implies b->a in adj
+inv6 T: all a,b:Node | a.^b in adj implies b->a in adj
+inv6 T: all a,b:Node | a.^b in adj implies b->a in adj
+inv8 U: all a,b,c:Node | a->b in adj and a->c in adj implies a->b in adj
+inv8 C: all a,b,c:Node | a->b in adj and b->c in adj implies a->c in adj
+inv6 T: all a:Node | a.^adj
+inv6 O: all a,b:Node | a.^adj = b
+inv6 O: all a,b:Node | a->b in adj
+inv7 O: all a,b:Node | a->b in adj
+inv6 T: all a,b:Node | a.^b in adj
+inv6 O: all a,b:Node | a->b in adj and b->a in adj
+inv6 O: all a,b:Node | b in a.^adj and a in b.^adj
+inv6 O: all a,b:Node | b in a.^adj
+inv6 T: all a,b:Node | b in a.^adj and b in ~a.^adj
+inv6 O: all a,b:Node | b in a.^adj and b in a.^~adj
+inv6 O: all a,b:Node | b in a.^(adj+~adj)
+

@@ -1,0 +1,14 @@
+inv6 U: all c,p : univ | c in Component and p in Product and c->p in parts implies p!=c
+inv6 U: all c,p : univ | c in Component and p in Product and c->p in parts implies all par : Product | p->par in parts implies par!=c
+inv6 O: all c,p : univ | c in Component and p in Product and p->c in parts implies all par : Product | p->par in parts implies par!=c
+inv6 S: all disj c,p : univ | c in Component and p in Product and c->p in parts implies all par : Product | p->par in parts implies par!=c and
+inv6 U: all disj c,p : univ | c in Component and p in Product and c->p in parts implies all par : Product | p->par in parts implies par!=c
+inv6 U: all c : Component | not c->c in parts
+inv6 U: all p : Product | p in Component implies not p->p in parts
+inv6 U: all c : Component | not c->c in parts	all disj c,p : univ | c in Component and p in Product and c->p in parts implies all par : Product | p->par in parts implies par!=c
+inv6 S: all c,p : c in Component and p in Product and c->p in parts implies p!=c
+inv6 U: all c,p : univ | c in Component and p in Product and c->p in parts implies p!=c
+inv6 U: all disj c,p : univ | c in Component and p in Product and c->p in parts implies p->c not in parts
+inv6 U: all c,p : univ | c in Component and p in Product and c->p in parts implies p!=c and p->c not in parts
+inv6 C: all c,p : univ | c in Component and p in Product and c->p in parts implies p!=c and p->c not in parts and all p1 : Product | p->p1 in parts implies p1->c not in parts
+

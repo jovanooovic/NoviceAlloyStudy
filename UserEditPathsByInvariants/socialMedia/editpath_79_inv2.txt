@@ -1,0 +1,11 @@
+inv2 U: all x, y : User | x.follows = y implies x !=y
+inv2 U: all x, y : User | x.follows = y implies x != y
+inv2 S: all x, y : uni | x.follows = y implies x != y
+inv2 U: all x, y : univ | x.follows = y implies x != y
+inv2 U: all x, y : univ | x in User and x.follows = y implies x != y
+inv2 U: all x, y : univ | x in User or x in Influencer and x.follows = y implies x != y
+inv2 U: all x, y : User | x.follows = y implies x != y
+inv2 U: all x, y : User | x.follows = y implies x != y	all x, y : Influencer | x.follows = y implies x != y
+inv2 C: all x, y : User | x->y in follows implies x != y
+inv2 C: all x, y : User | x->y in follows implies x != y
+

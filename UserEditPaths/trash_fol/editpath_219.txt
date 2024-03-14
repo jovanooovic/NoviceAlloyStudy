@@ -1,0 +1,49 @@
+NA H: THEME UPDATE
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 S: all f : File | f->g in link implies g->h not in link
+inv9 C: all f,g,h : File | f->g in link implies g->h not in link
+inv9 C: all f,g,h:File | f->g in link implies g->h not in link
+inv8 C: all f:File | not isLinked[f]	}		pred isLinked(f:File){	some g:File | g->f in link
+NA H: THEME UPDATE
+inv1 B: all f:File | f in Trash
+inv1 C: all f:File | f not in Trash
+inv2 S: all f:file | f in Trash
+inv2 C: all f:File | f in Trash
+inv3 C: some f:File | f in Trash
+inv4 C: all p:Protected | p not in Trash
+inv5 S: all p:Unprotected | p in Trash
+inv5 C: all f:File | f not in Protected implies f in Trash
+inv6 T: some f:File | f link File
+inv6 E: 
+inv6 B: some f1,f2,f3:File | f1->f2 in link and f1->f3 in link implies f2=f3
+inv6 S: some f1,f2,f3:File | f1->f2 in link | f1->f3 in link implies f2=f3
+inv6 B: some f1,f2,f3:File | f1->f2 in link and f1->f3 in link implies f2=f3
+inv6 B: some f1,f2,f3:File | (f1->f2 in link and f1->f3 in link) implies f2=f3
+inv6 C: all f1,f2,f3:File | f1->f2 in link and f1->f3 in link implies f2=f3
+inv7 T: all f1,f2:File | f1->f2 not in Trash
+inv7 T: all f1,f2:File | f1->f2 not in Trash
+inv7 T: all f1,f2:File | (f1->f2) not in Trash
+inv7 T: all f1,f2:File | f1->f2 in link not in Trash
+inv7 C: all f1,f2:File | f1->f2 in link implies f2 not in Trash
+inv7 C: all f1,f2:File | f1->f2 in link implies f2 not in Trash
+inv7 O: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f->f2 in link implies f2 in Trash
+inv7 B: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f->f2 in link
+inv7 O: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f->f2 in link or f2->f in link
+inv7 C: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv7 C: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv7 C: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv9 T: all f:File | not isLinked[isLinked[f]]	}		/* If a link is deleted, so is the file it links to. */		pred isLinked(f:File){	some f2:File | f2->f in link
+inv9 T: all f1,f2:File | isLinked[f1] implies f1->f2 not link	}		/* If a link is deleted, so is the file it links to. */		pred isLinked(f:File){	some f2:File | f2->f in link
+inv7 C: all f:File | isLinked[f] implies f not in Trash	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv10 T: some f1,f2:File | (f1->f2 in link) in Trash implies f2 in Trash
+inv10 T: some f1,f2:File | (f1->f2 in link) in Trash implies f2 in Trash
+inv8 C: all f:File | not isLinked[f]	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv9 C: all f1,f2:File | isLinked[f1] implies f1->f2 not in link	}		pred isLinked(f:File){	some f2:File | f2->f in link
+inv10 T: some f1,f2:File | (f1->f2 in link) in Trash implies f2 in Trash
+inv10 B: some f1,f2:File | f1->f2 in link implies f2 in Trash
+inv10 B: some f1,f2:File | f1->f2 not in link implies f2 in Trash
+inv10 T: some f1,f2:File | f1->f2 in Trash implies f2 in Trash
+inv10 E: 
+NA H: THEME UPDATE
+

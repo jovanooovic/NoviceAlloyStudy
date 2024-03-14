@@ -1,0 +1,12 @@
+inv10 T: all c:Course, p:Person | p in c.grades implies p not in Professor
+inv10 T: all c:Course, p:Person | c -> p grades implies p not in Professor
+inv10 T: all c:Course, p:Person | c -> p in grades implies p not in Professor
+inv10 T: all c:Course, p:Person, g:Grade | c -> p in g implies p not in Professor
+inv10 B: all c:Course, p:Person, g:Grade | c -> p -> g in grades implies p not in Professor
+inv10 B: all c:Course, g:Grade | some p:Person | c -> p -> g in grades implies p not in Professor
+inv10 B: all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all o: Person - Student - Professor | all c: o.enrolled | no c.grades[o]
+inv10 B: no p: Person | p in Professor & Student	    all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all o: Person - Student - Professor | all c: o.enrolled | no c.grades[o]
+inv10 B: no p: Person | p in Professor & Student	    all p: Person | all c: p.enrolled | c.grades[p] in Grade	    all s: Student | all c: s.enrolled | c.grades[s] in Grade	    all p: Professor | all c: p.teaches | no c.grades[p]	    all c: Course | no c.enrolled implies all p: Professor | no c.grades[p]
+inv10 B: no p: Person | p in Professor & Student
+inv10 B: no p:Person | p in Professor & Student	  	all p:Person | p.enrolled != none
+

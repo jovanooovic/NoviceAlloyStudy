@@ -1,0 +1,25 @@
+inv10 T: all s : Student | s.Groups
+inv10 T: all s : Student | s.Groups
+inv10 T: all c : Class | c <: Groups :> Group
+inv10 C: all c : Class | all s : Student | some g : Group | c -> s -> g in Groups
+inv10 O: Student . (Class . Groups) = Student
+inv10 B: (Class . Groups) . Group = Student
+inv10 B: (Class . Groups) . Group in Student
+inv10 T: all s : Student | s <: (Class . Groups)
+inv10 B: all s : Student | some s <: (Class . Groups)
+inv10 B: all s : Student | some (Class . Groups) . Group
+inv10 B: some Student & (Class . Groups) . Group
+inv10 B: some Student & ((Class . Groups) . Group)
+inv10 B: Class . Groups . Group = Student
+inv10 B: ((Class . Groups) . Group) = Student
+inv10 B: (Class . Groups) . Group = Student
+inv10 B: (Class . Groups) . Group & Student = Student
+inv10 B: ((Class . Groups) . Group & Student) = Student
+inv10 O: all c : Class | c . Groups . Group = Student
+inv10 T: all c : Class | (c . Groups) . Group
+inv10 O: all c : Class | (c . Groups) . Group = Student
+inv10 C: all c : Class | ((c . Groups) . Group) & Student = Student
+inv10 B: ((Class . Groups) . Group) & Student = Student
+inv10 C: all c : Class | ((c . Groups) . Group) & Student = Student
+inv10 C: all c : Class | (c . Groups . Group) & Student = Student
+

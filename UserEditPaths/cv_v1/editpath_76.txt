@@ -1,0 +1,7 @@
+NA H: THEME UPDATE
+inv3 B: all s: Source | all w: s.profile, ww: Work | w.ids = ww.ids implies w = ww
+inv3 O: all s: Source | ((s.profile)<:ids).~((s.profile)<:ids) in iden
+inv4 O: ~visible.visible in iden
+inv4 B: all u: User | (visible:>u.profile).~(visible:>u.profile) in iden
+inv4 B: all u: User | ~(visible:>u.profile).(visible:>u.profile) in iden
+

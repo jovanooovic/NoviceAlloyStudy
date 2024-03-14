@@ -1,0 +1,6 @@
+inv3 O: all u1,u2 : User | u2 in u1.follows and u1.sees in u2.posts
+inv3 O: all u1,u2 : User | u2 in u1.follows and u1.sees in u2.posts and u1 != u2
+inv3 B: all a : Ad | all u : User | a in u.sees
+inv3 B: all a : Ad | all u : User | a in u.sees	all u : User | u.sees not in u.posts
+inv3 B: all a : Ad | all u : User | a in u.sees
+

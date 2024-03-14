@@ -1,0 +1,14 @@
+na H: THEME UPDATE
+inv6 O: all n : Node | Node in n.^adj
+inv6 O: all n : Node | Node in n.^(adj+~adj)
+inv6 C: all n : Node | Node in n.*(adj+~adj)
+inv1 B: all n : Node | n in n.adj.~adj
+inv1 C: all n : Node | adj.n in n.adj
+inv1 B: adj.~adj in iden
+inv1 C: adj in ~adj
+inv1 O: adj.~adj = iden
+inv7 B: Node in Node.^adj
+inv7 U: Node in Node.*adj
+inv5 O: all n : Node | n not in n.^adj
+inv5 C: all n : Node | n not in n.adj
+

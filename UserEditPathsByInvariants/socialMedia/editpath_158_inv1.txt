@@ -1,0 +1,20 @@
+inv1 S: all p : Photo, p -> one User
+inv1 S: all p : Photo, p -> one u in User
+inv1 S: all p : Photo | p -> one u in User
+inv1 S: all p : Photo, all u : User | p -> one u in User
+inv1 S: all p : Photo | p -> one u in User
+inv1 S: all p : Photo | p -> one u in User
+inv1 S: all p : Photo, some u : User | p -> one u in in posts
+inv1 S: all p : Photo, some u : User | p -> one u in posts
+inv1 S: all p : Photo | some u : User | p -> one u in posts
+inv1 S: photos in Photo one  -> User
+inv1 S: photos in Photo -> one  User
+inv1 S: all photos in Photo -> one User
+inv1 S: fact {	photos in Photo -> one User	}
+inv1 T: all p: Photo | some u:User | p in Photo -> one User
+inv1 C: all p: Photo | one u:User | u -> p in posts
+inv1 T: all p: Photo | one u:User | p in posts -> one u
+inv1 U: posts in User lone -> Photo
+inv1 C: posts in User one -> Photo
+inv1 C: posts in User one -> Photo
+

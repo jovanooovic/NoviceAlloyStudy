@@ -1,0 +1,13 @@
+inv4 S: one Course.proposed
+inv4 B: one Course.projects
+inv4 T: all x:Project | (one Course)->x in projects
+inv4 T: all x:Project | one Course->x in projects
+inv4 T: all x:Project | one Course in projects.x
+inv4 T: all x:Project | one projects.x
+inv4 T: all x:Project | one projects.x
+inv4 S: one projects.x
+inv4 C: all x:Project | one y:Course | y->x in projects
+inv4 B: one y:Course | one y.projects
+inv4 C: all x:Project | one y:Course | y in projects.x
+inv4 C: all x:Project | one y:Course | y->x in projects
+

@@ -1,0 +1,20 @@
+inv3 S: all u : User | some p : Photo | p in u.sees iff p.post.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff p.posts.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff posts.p.follows.u
+inv3 T: all u : User | some p : Photo | p in u.sees iff posts.p.follows.u
+inv3 B: all u : User | some p : Photo | p in u.sees iff u in (posts.p).follows
+inv3 S: all u : User | some p : Photo | p in u.sees p not in ad iff u in (posts.p).follows
+inv3 S: all u : User | some p : Photo | p in u.sees and p not in ad iff u in (posts.p).follows
+inv3 B: all u : User | some p : Photo | p in u.sees and p not in Ad iff u in (posts.p).follows
+inv3 B: all u : User | some p : Photo | sees.u - Ad in u.follows.posts
+inv3 U: all u : User | sees.u - Ad in u.follows.posts
+inv3 U: all u : User | sees.u  in u.follows.posts
+inv3 U: all u : User | sees.u - Ad in (u.follows).posts
+inv3 U: all u : User | (sees.u - Ad) in (u.follows).posts
+inv3 U: all u : User | sees.u - Ad in (u.follows).posts
+inv3 U: all u : User | sees.u - Ad in u.follows
+inv3 U: all u : User | sees.u - Ad in follows.u
+inv3 U: all u : User | sees.u - Ad in u
+inv3 S: all u : User | u.sees - Ad in (u.follows).post
+inv3 C: all u : User | u.sees - Ad in (u.follows).posts
+

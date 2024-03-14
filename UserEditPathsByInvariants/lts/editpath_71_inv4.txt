@@ -1,0 +1,18 @@
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some (s.^~trans):>Init
+inv4 T: all s:State | some (s.Event.^~trans):>Init
+inv4 B: all s:State | some s.trans :> Init
+inv4 T: all s:State | some s.^trans :> Init
+inv4 T: all s:State | some s.^~trans :> Init
+inv4 T: all s:State | some s.Event.^~trans :> Init
+inv4 T: all s:State | some (s.Event).^~trans :> Init
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 T: all s:State | some Init <: (Event.s)
+inv4 T: all s:State | some Init <: trans.(Event.s)
+inv4 O: all s:State | some Init <: (trans.Event.s)
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )	  	^adj
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )	  	^adj
+inv4 S: let adj = ( all x,y:State | some e:Event | x->e->y in trans )
+inv4 S: let adj =  {x,y:State | some e:Event | x->e->y in trans}
+inv4 S: let adj =  ({x,y:State | some e:Event | x->e->y in trans})
+

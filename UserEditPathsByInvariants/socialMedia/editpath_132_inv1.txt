@@ -1,0 +1,8 @@
+inv1 S: all p:Photo , one u:User | p in u.posts
+inv1 S: all p:Photo , one u:User | u.posts
+inv1 S: all p:Photo , one u:User | u implies p in posts
+inv1 T: all p:Photo | one u:User | u implies p in posts
+inv1 C: all p:Photo | one u:User | u -> p in posts
+inv1 T: all p:Photo | one u:User | u -> posts.p
+inv1 T: all p:Photo | one u:User | u -> p.posts
+

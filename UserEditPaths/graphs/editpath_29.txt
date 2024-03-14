@@ -1,0 +1,28 @@
+na H: THEME UPDATE
+inv1 C: all n, n1 : Node | n->n1 in adj => n1->n in adj
+inv1 C: all disj n, n1 : Node | n->n1 in adj => n1->n in adj
+inv1 C: all disj n, n1 : Node | n->n1 in adj <=> n1->n in adj
+inv1 C: all disj n, n1 : Node | n->n1 in adj => n1->n in adj
+inv1 C: all disj n, n1 : Node | n->n1 in adj <=> n1->n in adj
+inv1 O: all disj n, n1 : Node | n1 in n.adj && n in n1.adj
+inv1 C: all disj n, n1 : Node | n1 in n.adj <=> n in n1.adj
+inv1 C: adj = ~adj
+inv2 B: adj != ~adj
+inv2 O: all n, n1 : Node | n->n1 in adj iff n1->n not in adj
+inv2 C: all n, n1 : Node | n->n1 in adj => n1->n not in adj
+inv2 U: all n, n1 : Node | n->n1 in adj and n1->n in adj => n1 != n
+inv2 B: all n, n1 : Node | n->n1 in adj and n1->n in adj <=> n1 != n
+inv2 B: all n, n1 : Node | n->n1 in adj and n1->n in adj <=> n1 = n
+inv2 U: all n, n1 : Node | n->n1 in adj and n1->n in adj => n1 = n
+inv2 U: all disj n, n1 : Node | n->n1 in adj and n1->n in adj => n1 = n
+inv2 U: all n, n1 : Node | n->n1 in adj and n1->n in adj => n1 = n
+inv2 U: all n, n1 : Node | n->n1 in adj and n1->n in adj => n = n1
+inv3 C: all n : Node | n not in n.^adj
+inv4 C: adj = Node->Node
+inv5 C: no (iden & adj)
+inv8 C: all n, n1, n2 : Node | n->n1 in adj and n1->n2 in adj => n->n2 in adj
+inv6 T: all n : Node | n.^adj in Node->Node
+inv6 U: all n : Node | n->n.^adj in Node->Node
+inv6 U: all n : Node | n->(n.^adj) in Node->Node
+inv7 U: all n : Node | n->(n.^adj) in Node->Node
+

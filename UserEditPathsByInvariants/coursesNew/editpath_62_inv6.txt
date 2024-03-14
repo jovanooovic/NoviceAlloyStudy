@@ -1,0 +1,6 @@
+inv6 B: all p : Person | some c : Course | p.projects in c.projects
+inv6 S: all per : Person | some c : Course | all pro : Project | (pro in per.projetcs and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | some c : Course | all pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | some c : Course | one pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+inv6 B: all per : Person | all c : Course | all pro : Project | (pro in per.projects and pro in c.projects) implies c in per.enrolled
+

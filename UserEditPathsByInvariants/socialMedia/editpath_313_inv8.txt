@@ -1,0 +1,7 @@
+inv8 S: all x : User, y : Ad | y in x.sees => y.posts in x.follows + x.user
+inv8 U: all x : User, y : Ad | y in x.sees => y.posts in x.follows + x.suggested
+inv8 U: all x : User, y : Ad | y in x.sees <: Ad => y.posts in x.follows + x.suggested
+inv8 T: all x : User, y : Ad | y in x.sees in Ad => y.posts in x.follows + x.suggested
+inv8 T: all x : User, y : Ad | y in x.sees.Ad => y.posts in x.follows + x.suggested
+inv8 S: all x : User, y : Ad | y in x.sees.isAd => y.posts in x.follows + x.suggested
+

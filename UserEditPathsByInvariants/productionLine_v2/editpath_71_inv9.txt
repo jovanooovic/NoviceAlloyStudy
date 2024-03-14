@@ -1,0 +1,8 @@
+inv9 O: all w : Workstation | w in begin.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 S: all w : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w : Workstation-begin | w in begin.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: one begin	all w : Workstation-begin | w in begin.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: one begin	all w : Workstation-begin | w in begin.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation-end | one w.succ
+inv9 C: all w : Workstation-begin | w in begin.^(succ)	all w : Workstation-end | one w.succ	all w : Workstation | w not in w.^(succ)
+

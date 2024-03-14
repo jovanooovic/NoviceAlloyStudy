@@ -1,0 +1,14 @@
+inv3 S: && all a: Ad | all x: User | x in sees.a
+inv3 B: all x: User | all z: User | all p: Photo | p in z.posts and z in x.follows => x in sees.p && all a: Ad | all y: User | y in sees.a
+inv3 B: all x: User | all z: User | all p: Photo | x != z and p in z.posts and z in x.follows => x in sees.p && all a: Ad | all y: User | y in sees.a
+inv3 B: all x: User | all z: User - x| all p: Photo | p in z.posts and z in x.follows => x in sees.p && all a: Ad | all y: User | y in sees.a
+inv3 B: (all x, z: User | all p: Photo | p in z.posts and z in x.follows => x in sees.p) && all a: Ad | all y: User | y in sees.a
+inv3 B: (all x, z: User | all p: Photo | p in z.posts and z in x.follows => x in sees.p) && (all a: Ad | all y: User | y in sees.a)
+inv3 S: (all x, z: User | all p: Photo | p in z.posts and z in x.follows and => x in sees.p and z not in sees.p) && (all a: Ad | all y: User | y in sees.a)
+inv3 S: (all x, z: User | all p: Photo | p in z.posts and z in x.follows and => x in sees.p and z not in sees.p) && (all a: Ad | all y: User | y in sees.a)
+inv3 S: all x, z: User | all p: Photo | x in seen.p => (p in z.posts => x in follows.z) || p : Ad
+inv3 S: all x, z: User | all p: Photo | x in seen.p => (p in (x.follows).posts || p in Ad)
+inv3 C: all x, z: User | all p: Photo | x in sees.p => (p in (x.follows).posts || p in Ad)
+inv3 C: all x: User | all p: Photo | x in sees.p => (p in (x.follows).posts || p in Ad)
+inv3 C: all x: User | all p: Photo | x in sees.p => (p in (x.follows).posts || p in Ad)
+

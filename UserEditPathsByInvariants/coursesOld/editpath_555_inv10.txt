@@ -1,0 +1,13 @@
+inv10 T: all c : Course | Grade.(Course.(c.grades)) in Student
+inv10 T: all c : Course | Student.(Course.(c.grades)) in Student
+inv10 T: all c : Course | Grade.Course.c.grades in Student
+inv10 T: all c : Course | Course.c.grades in Student
+inv10 T: all c : Course | c.grades in Student
+inv10 T: all c : Course | Grade.c.grades in Student
+inv10 U: all c : Course | Grade.(c.grades) in Student
+inv10 B: all c : Course | Student.(c.grades) in Student
+inv10 T: all c : Course | (c.grades) in Student
+inv10 O: all c : Course | Person.(c.grades) in Student
+inv10 U: all c : Course | Grade.(c.grades) in Student
+inv10 C: all c : Course | (c.grades).Grade in Student
+

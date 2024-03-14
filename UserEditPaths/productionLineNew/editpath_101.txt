@@ -1,0 +1,37 @@
+NA H: THEME UPDATE
+inv1 C: all w : Worker | w in Human or w in Robot
+inv2 T: all ws : Workstation | some w : Worker | ws.workers	all w : Worker | one ws : Workstation | w in ws.workers
+inv2 C: all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | one ws : Workstation | w in ws.workers
+inv2 U: all ws : Workstation | some w : Worker | w in ws.workers
+inv2 B: all ws : Workstation | lone w : Worker | w in ws.workers
+inv2 C: all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | one ws : Workstation | w in ws.workers
+inv2 C: all ws : Workstation | some w : Worker | w in ws.workers	all w : Worker | one ws : Workstation | w in ws.workers
+inv4 S: all c : Component | some
+inv4 S: all c : Component | some
+inv4 S: all c : Component | some
+inv4 S: all c : Component | some
+inv4 S: all c : Component | some
+inv3 U: all p : Product | (some p.parts => p in Component) or p in Material
+inv3 U: all p : Product | some p.parts => p in Component or p in Material
+inv3 B: all p : Product | (some p.parts and p in Component) or p in Material
+inv3 B: all p : Product | some p.parts and p in Component or p in Material
+inv3 B: all c : Component | some c.parts	all m : Material | no m.parts
+inv3 C: all c : Component | one c.workstation
+inv4 U: all p : Product | some p.parts => p in Product or p in Material
+inv4 U: all p : Product | (some p.parts and p in Product) or p in Material
+inv5 C: all h : Human | all r : Robot | all ws : Workstation | (h in ws.workers => r not in ws.workers) and (r in ws.workers => h not in ws.workers)
+inv6 U: all c : Component | all p : c.parts | p != c
+inv6 U: all c : Component | all p : c.parts | c not in p
+inv6 C: all c : Component | not c in c.^parts
+inv4 U: all p : Product | (some p.parts and p in Component) or p in Material
+inv4 U: all p : Product | (some p.parts => p in Component) or p in Material
+inv4 S: all p : Product | some p.parts => p in Component ; p in Material	´
+inv4 S: all p : Product | some p.parts in Component or p in Material	´
+inv4 S: all p : Product | some p.parts in Component or p in Material	´
+inv4 T: all p : Product | some p.parts in Component or p in Material
+inv4 C: all c : Component | some c.parts	all m : Material | no m.parts
+inv7 O: all c : Component | all d : Dangerous | d in c.^parts => c in Dangerous
+inv8 B: all c : Component | some h : Human | c in Dangerous => h not in c.workstation.workers
+inv8 T: all c : Component & Dangerous | not (c.workstation & Human)
+inv8 C: all c : Component | all h : Human | c in Dangerous => h not in c.workstation.workers
+

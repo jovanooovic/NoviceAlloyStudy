@@ -1,0 +1,6 @@
+inv7 B: all f : File |	not (f.link in Trash)
+inv7 C: all f : File, l : f.link |	not (l in Trash)
+inv7 C: all l : File.link |	not (l in Trash)
+inv7 B: not (File.link in Trash)
+inv7 C: all l : File.link |	not (l in Trash)
+

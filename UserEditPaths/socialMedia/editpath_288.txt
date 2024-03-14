@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv5 U: all u: User | Influencer-u in u.follows
+inv6 C: all i: Influencer, d: Day | d in i.posts.date
+NA H: THEME UPDATE
+inv7 U: all u1: User, u2: User | u2 in u1.suggested implies u2 in u1.follows.follows
+inv7 B: all u1: User, u3: User | (some u2: User | u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows ) implies u3 in u1.suggested
+inv7 C: all u1, u3 : User | ( some u2 : User | u1->u2 in follows and u2->u3 in follows and u1->u3 not in follows and u1 != u3 ) iff u1->u3 in suggested
+inv7 B: all u1: User, u2: User | u2 in u1.follows.follows and u2 not in u1.follows implies u2 in u1.suggested
+inv7 U: all u1: User | some u2: User | u2 in u1.follows.follows and u2 not in u1.follows implies u2 in u1.suggested
+inv7 U: all u1: User | some u2: User | (u2 in u1.follows.follows and u2 not in u1.follows) implies u2 in u1.suggested
+inv7 B: all u1: User, u3: User | (some u2: User | u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows ) implies u3 in u1.suggested
+

@@ -1,0 +1,7 @@
+inv12 S: lone ~~grades.Grade)
+inv12 B: lone ~(grades.Grade)
+inv12 T: lone (grades.Grade in ~(grades.Grade))
+inv12 S: all s : Student, c : course | lone g : Grade | c->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | c->g in c.grades
+inv12 U: all s : Student, c : Course | lone g : Grade | s->g in c.grades
+

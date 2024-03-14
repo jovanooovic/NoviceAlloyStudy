@@ -1,0 +1,43 @@
+Pairs,3
+,,"some Class",2
+,,"some c : Class | no c.Teaches",1
+
+Pairs,35
+,,"some Teaches",15
+,,"some Teaches.Class",9
+,,"some Person.Teaches",5
+,,"some (Class & Person.Teaches)",1
+,,"some c:Class | some Teaches.c",5
+
+Pairs,4
+,,"some Teacher",1
+,,"some p:Teacher | p.Teaches in Class",3
+
+Pairs,4
+,,"some Class->Teacher",1
+,,"some c : Class, t : Teacher | some (c -> t)",3
+
+Pairs,1
+,,"some Teacher->Teaches",1
+
+Pairs,16
+,,"Person.Teaches in Class",1
+,,"Teaches.Teacher in Class",2
+,,"Teacher.Teaches in Class",7
+,,"Teacher.Teaches & Teacher in Class",2
+,,"all t: Teacher | lone t.Groups",1
+,,"all t: Teacher | lone t.~Teaches",1
+,,"all t:Teacher | t.Teaches in Class",1
+,,"all c : Class,t : Teacher | some t->c",1
+
+Pairs,2
+,,"all t : Teacher | some Teaches",1
+,,"all t:Teacher | some x: Class | some Teaches.x",1
+
+Pairs,2
+,,"all t : Teacher | some Class->t",1
+,,"all t : Teacher | (some c : Class| some (c -> t))",1
+
+Pairs,1
+,,"some p:Person | p.Teaches in Class",1
+

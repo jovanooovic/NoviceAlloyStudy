@@ -1,0 +1,9 @@
+inv9 B: all p : Professor | no p.teaches & Professor.enrolled
+inv9 B: all p : Professor | no p.teaches & Person.enrolled
+inv9 B: all p : Professor | all c : p.teaches |  no Person.enrolled & c
+inv9 B: all p : Professor | all c : p.teaches | no (enrolled & Professor->c)
+inv9 B: all p : Professor | all c : p.teaches | no (Person.teaches & c) & p.teaches
+inv9 B: all p : Professor | all c : p.teaches | no (Person.teaches-p & c) & p.teaches
+inv9 U: all p : Professor | all c : p.teaches | one (Person.teaches & c) & p.teaches
+inv9 B: all p : Professor | all c : p.teaches | no (teaches.c) & enrolled.(p.teaches)
+

@@ -1,0 +1,11 @@
+inv10 T: all x : Grade | grades.x in Student
+inv10 S: all x: Course | all p->g: x.grades | p in Student
+inv10 S: all x: Course | all p->g: x.grades | p in Student
+inv10 T: all x: Course | all p: x.grades->Grade | p in Student
+inv10 C: all x: Course | all p: x.grades.Grade | p in Student
+inv10 C: all p: Course.grades.Grade | p in Student
+inv10 S: student in Course.grades.Grade
+inv10 B: Student in Course.grades.Grade
+inv10 C: all p: Course.grades.Grade | p in Student
+inv10 C: all p: Course.grades.Grade | p in Student
+

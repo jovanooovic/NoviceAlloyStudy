@@ -1,0 +1,15 @@
+inv3 O: all x:Course | some y:Professor | y->x in teaches
+inv3 T: all x : Course | some y : Professor | y->x in teaches	  	some Professor in teaches.Course
+inv3 O: all x : Course | some y : Professor | y->x in teaches	  	some Professor & teaches.Course
+inv3 O: all x : Course | some y : Professor | y->x in teaches	  	no (Person - Professor) & teaches.Course
+inv3 B: no (Person - Professor) & teaches.Course
+inv3 B: no (Person - Professor) & teaches.Course
+inv3 O: all x : Course | some y : Professor | y->x in teaches	  	some Professor & teaches.Course
+inv3 O: all x : Course | some y : Professor | y->x in teaches
+inv3 O: all x : Course | some y : Professor | y->x in teaches
+inv3 S: all Course & teaches.Professor
+inv3 T: Course & teaches.Professor
+inv3 T: Course & Professor.teaches
+inv3 S: Course & some Professor.teaches
+inv3 C: all x : Course | some teaches.x
+

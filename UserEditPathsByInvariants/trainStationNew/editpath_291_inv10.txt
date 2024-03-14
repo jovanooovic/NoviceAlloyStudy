@@ -1,0 +1,12 @@
+inv10 B: all t : Track | succs.t not in Junction
+inv10 B: all t : Track | succs.t in Junction implies some t.signals
+inv10 B: all t : Track | some j : Junction | j in t.succs implies some t.signals
+inv10 B: all t : Track | t.succs in Junction implies some t.signals
+inv10 B: all t : Track | t.succs in Junction implies not lone t.signals
+inv10 B: all t : Track | t.succs in Junction iff not lone t.signals
+inv10 B: all t : Track | t.succs in Junction iff some t.signals
+inv10 U: all t : Track | all j : Junction | j in t.succs implies some t.signals
+inv10 U: all t : Track | all j : Junction | j in t.succs implies (some t.signals)
+inv10 U: all t : Track | all j : Junction | (j in t.succs) implies (some t.signals)
+inv10 C: all t : Track | all j : Junction | (j in t.succs) implies (some s : Semaphore | s in t.signals)
+

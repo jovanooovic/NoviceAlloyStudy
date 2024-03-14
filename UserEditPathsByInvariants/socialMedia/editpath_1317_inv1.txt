@@ -1,0 +1,25 @@
+inv1 E:
+inv1 E:
+inv1 E:
+inv1 E:
+inv1 E:
+inv1 E:
+inv1 S: all p:Photo | all u:User | all u2:User | p in u.posts and u != u2 implies none p2:Photo | p2 in u2.posts and p2 = p1
+inv1 U: all u:User | all u2:User | all p:Photo | p in u.posts and u != u2 implies p not in u2.posts
+inv1 T: all u:User |  all p:Photo | p in u.posts implies none all u2:User | p not in u2.posts
+inv1 S: all u:User |  all p:Photo | p in u.posts implies one all u2:User | p not in u2.posts
+inv1 U: all u:User,u2:User | all p:Photo | p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | all p:Photo | p in u.posts and u != u2 implies p not in u2.posts	all u.User | lone u.posts
+inv1 S: all u:User,u2:User | p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | p:Photo| p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | p:Photo | p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | p:Photo | p in u.posts and u != u2 implies p not in u2.posts
+inv1 S: all u:User,u2:User | p:Photo | p in u.posts and p in u2.posts implies u = u2
+inv1 U: all u:User,u2:User | all p:Photo | p in u.posts and p in u2.posts implies u = u2
+inv1 T: all u:User,u2:User | all p:Photo | p in u.posts and p in u2.posts implies u = u2	all u:User | all p:Photo | lone p in u.posts
+inv1 U: all p:Photo | p in User.posts
+inv1 C: all u:User,u2:User | all p:Photo | p in u.posts and p in u2.posts implies u = u2	all p:Photo | p in User.posts
+inv1 C: all u:User,u2:User | all p:Photo | p in u.posts and p in u2.posts implies u = u2	all p:Photo | p in User.posts
+inv1 C: all p:Photo | one u:User | p in u.posts
+

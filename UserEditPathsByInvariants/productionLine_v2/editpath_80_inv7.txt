@@ -1,0 +1,13 @@
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 T: all c : Component | c.parts & Dangerous implies c in Dangerous
+inv7 T: all c : Component | some c.parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 T: all c : Component | no(c.parts not in Dangerous) implies c in Dangerous
+inv7 T: all c : Component | no(c.parts in Dangerous) implies c  not in Dangerous
+inv7 T: all c : Component | no (c.parts in Dangerous) implies c  not in Dangerous
+inv7 B: all c : Component | no (c.parts & Dangerous) implies c  not in Dangerous
+inv7 B: all c : Component | no (c.parts & Dangerous) implies c not in Dangerous
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 C: all c : Component | some (c.parts & Dangerous) implies c in Dangerous
+inv7 C: all c : Component | some (c.parts & Dangerous) implies c in Dangerous
+

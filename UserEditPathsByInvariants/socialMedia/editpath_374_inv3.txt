@@ -1,0 +1,11 @@
+inv3 T: all x : User | all y : Photo | all u : User | y not Ad && u not in x.follows implies y not in x.sees
+inv3 B: all x : User | all y : Photo | all u : User | u not in x.follows implies y not in x.sees
+inv3 T: all x : User | all y : Photo | all u : User | y not Ad and u not in x.follows implies y not in x.sees
+inv3 B: all x : User | all y : Photo | all u : User | all a : Ad | y not in a and u not in x.follows implies y not in x.sees
+inv3 B: all x : User | all y : Photo | all u : User | all a : Ad | y in a and u not in x.follows implies y not in x.sees
+inv3 O: all x : User | all y : Photo | all u : User | u not in x.follows.posts implies y not in x.sees
+inv3 O: all x : User | all y : Photo | y not in x.follows.posts implies y not in x.sees
+inv3 B: all x : User | all y : Ad | y not in x.follows.posts implies y not in x.sees
+inv3 S: all x : User | all y : Photo | no(Ad y) and y not in x.follows.posts implies y not in x.sees
+inv3 C: all x : User | all y : Photo | y not in Ad and y not in x.follows.posts implies y not in x.sees
+

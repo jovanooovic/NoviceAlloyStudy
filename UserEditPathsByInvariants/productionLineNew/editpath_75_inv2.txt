@@ -1,0 +1,9 @@
+inv2 B: all w : Workstation | all worker : Worker | worker in w.workers and #(w.workers)>0
+inv2 B: some w : Workstation | all worker : Worker | worker in w.workers and	#(w.workers)>0
+inv2 U: all w : Workstation | some worker : Worker | worker in w.workers and	#(w.workers)>0
+inv2 U: all w : Workstation | some worker : Worker | worker in w.workers	all w : Workstation | some worker : Worker | #(w.workers)>0
+inv2 B: all w : Workstation | all worker : Worker | worker in w.workers	all w : Workstation | #(w.workers)>0
+inv2 B: all worker : Worker |all w : Workstation |  worker in w.workers	all w : Workstation | #(w.workers)>0
+inv2 B: all trab : Worker |all w : Workstation |  trab in w.workers	all w : Workstation | #(w.workers)>0
+inv2 C: all trab : Worker |one w : Workstation |  trab in w.workers	all w : Workstation | #(w.workers)>0
+

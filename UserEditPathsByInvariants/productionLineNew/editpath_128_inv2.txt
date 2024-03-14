@@ -1,0 +1,17 @@
+inv2 S: all ws in Workstation | #w.workers>0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 S: all ws in Workstation | #w.workers>0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 S: all ws in Workstation | #w.workers>0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 S: all ws in Workstation | #w.workers>0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 S: all ws in Workstation | #w.workers>0	all w: Worker | one w.workstation
+inv2 S: all ws in Workstation | #ws.workers>0	all w: Worker | one w.workstation
+inv2 S: all s in Workstation | #s.workers>0	all w: Worker | one w.workstation
+inv2 B: all w: Worker | one w.workstation
+inv2 S: all s in Workstation | #s.workers>0
+inv2 U: all s : Workstation | #s.workers>0
+inv2 O: all s : Workstation | #s.workers>0	all w: Worker | one w.workstation
+inv2 U: all s : Workstation | #s.workers>0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 C: workers in Workstation one -> some Worker	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 U: all s : Workstation | some s.workers	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 U: all s : Workstation | #s.workers>=0	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+inv2 C: workers in Workstation one -> some Worker	all w,x : Workstation | w != x implies no (w.workers & x.workers)
+

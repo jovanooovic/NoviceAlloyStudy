@@ -1,0 +1,6 @@
+inv7 U: all s : Student | all c : Course | lone (s.projects & c.projects)
+inv7 B: all s : Student | all c : Course | one (s.projects & c.projects)
+inv7 U: all s : Student | all c : Course | lone (s.projects & c.projects)
+inv7 S: all p1,p2 : Projects | all c : Course | c->p1 in projects and c->p2 in projects implies (all s1 : Student | s1->p1 in projects and s1->p2 in projects implies p1=p2)
+inv7 U: all p1,p2 : Project | all c : Course | c->p1 in projects and c->p2 in projects implies (all s1 : Student | s1->p1 in projects and s1->p2 in projects implies p1=p2)
+

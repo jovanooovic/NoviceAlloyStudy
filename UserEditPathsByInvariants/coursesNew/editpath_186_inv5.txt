@@ -1,0 +1,16 @@
+inv5 T: all p : Project | projects.p in Student
+inv5 T: all p : Project | projects.p in Student
+inv5 E:
+inv5 T: all p : Project | projects.p in Student
+inv5 U: all p : Project | Person <: projects.p in Student
+inv5 C: all p : Project | some Person <: projects.p and Person <: projects.p in Student
+inv5 U: all p : Project | some p : Person <: projects.p | p in Student
+inv5 U: all proj : Project | some per : Person <: projects.proj | per in Student
+inv5 U: all proj : Project | all per : Person <: projects.proj | some per and per in Student
+inv5 S: all p : Project | some p : Person <: projects.p and Person <: projects.p in Student
+inv5 S: all p : Project | some p : Person <: projects.p and Person <: projects.p in Student
+inv5 S: all p : Project | some p : Person <: projects.p and Person <: projects.p in Student
+inv5 S: all p : Project | some p : Person <: projects.p and Person <: projects.p in Student
+inv5 S: all p : Project | p : Person <: projects.p and Person <: projects.p in Student
+inv5 C: all p : Project | some Person <: projects.p and Person <: projects.p in Student
+

@@ -1,0 +1,28 @@
+NA H: THEME UPDATE
+inv1 C: enrolled in  (Student -> Course)
+inv1 T: enrolled in  (Student)
+inv1 U: enrolled in  (Person -> Course)
+inv1 C: enrolled in  (Student -> Course)
+inv2 C: teaches in (Professor -> Course)
+inv3 C: teaches in Person some -> set Course
+inv3 O: teaches in Person some -> one Course
+inv3 C: teaches in Person some -> set Course
+inv4 S: pojects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 T: Course.projects in Course one -> set Project
+inv4 T: projects in Course one -> set Project
+inv4 C: (Course<: projects) in Course one -> set Project
+inv2 C: teaches in (Professor -> Course)
+inv2 C: teaches in (Professor -> Course)
+inv3 C: teaches in Person some -> set Course
+inv3 C: teaches in Person some -> set Course
+inv5 U: (Person<: projects) in Person some -> set Project
+inv5 C: (Person<: projects) in Student some -> set Project
+inv6 E: 
+inv5 C: (Person<: projects) in Student some -> set Project
+inv6 U: all s : Student | s.projects in s.enrolled.projects
+inv7 B: all s : Student | all p1, p2 : s.projects | p1 != p2 => (Course<: projects.p1) != (Course<: projects.p2)
+inv7 B: all s : Student | all disj p1, p2 : s.projects |  (Course<: projects.p1) != (Course<: projects.p2)
+

@@ -1,0 +1,23 @@
+NA H: THEME UPDATE
+inv1 S: all t:Trash | t.link=empty
+inv1 T: all t:Trash | t.link={}
+inv1 S: all t:Trash | t.link = emptySet
+inv1 U: all t:Trash, f:File | not f in t.link
+inv1 T: none Trash
+inv1 S: none t:Trash
+inv1 S: no t:Trash
+inv1 C: no Trash
+inv2 C: all f:File | f in Trash
+inv3 C: some Trash
+inv4 C: all f:File | f in Protected => not f in Trash
+inv5 B: all f:File | f in Protected => not f in Trash
+inv5 C: all f:File | not f in Protected => f in Trash
+inv6 S: all f:File | lone f.links
+inv6 S: all f:File | lone f.links
+inv6 C: all f:File | lone f.link
+inv6 C: all f:File | lone f.link
+inv7 C: all f:File, f2:f.link | not f2 in Trash
+inv8 C: all f:File | no f.link
+inv9 C: all f:File, f2:f.link | no f2.link
+inv10 C: all f:File, f2:f.link | f in Trash => f2 in Trash
+

@@ -1,0 +1,49 @@
+"some Course.grades.Grade",1
+"grades in Course one -> Student -> Grade",1
+"Student in Student.enrolled.grades.Grade",1
+"all s: Student |some Course.grades.s",2
+"all s: Student |some ~(Course.grades).s",1
+"all s :Student |some Course.grades.Grade",1
+"Student not in (Person-Student).enrolled.grades.Grade",1
+"all c : Course | c in (c.grades.Grade).enrolled",1
+"all s: Student | s.enrolled = grades.s.Grade",1
+"all c : Course | enrolled.c in c.grades.Grade",1
+"all s : Student | s in s.enrolled.grades.Grade",1
+"all s:Student |  no (Course-(s.enrolled)).grades",1
+"all s:Student | s.(Course.grades) in s.enrolled",1
+"one p1 : Person | grades.Grade.p1 in p1.enrolled",1
+"all s : Student | no (Course-s.enrolled).grades.Grade",1
+"all s:Student |  no Course.grades - s.enrolled.grades",1
+"all s : Student, c : s.enrolled | grades.Grade.s in c",1
+"all s : Student, c : grades.Grade.s | c not in s.enrolled",1
+"all x:Student,y:Grade | x->y in enrolled.grades.x",1
+"all x:Student,y:Grade | x->y in x.enrolled.grades",1
+"all s:Student | one (Course-s.enrolled).grades & s->Grade",1
+"all c: Course, s: Student | c in (s.enrolled)&((grades.Grade).s)",1
+"all s: Student, c: Course |  some c.grades implies c in s.enrolled",1
+"all s : Student | no s.(s.enrolled.grades) - Course.grades.Grade",1
+"all c: Course | Person -> Grade in c.grades implies c in Person.enrolled",1
+"all c: Course | Student -> Grade in c.grades implies c in Person.enrolled",1
+"all s : Student | no s.(s.enrolled.grades) - Grade.~(Course.grades)",1
+"all c: Course | Student -> Grade in c.grades implies c in Student.enrolled",1
+"all s: Student, c: Course |  c in s.enrolled implies some c.grades.s",1
+"all s: Student, c: s.enrolled | no ((Course-c).grades & c.grades)",1
+"all s : Student, c : Course | some s.(c.grades) <=> c in s.enrolled",1
+"one p1 : Person | all c : Course | grades.Grade.p1 in p1.enrolled",1
+"all s:Student, c:Course | s in c.grades.Grade implies s in teaches.c",1
+"all c:Course,s:Student | s.grades in c.grades implies c in s.enrolled",1
+"all p:Student, c:Course | p in c.grades.Grade iff c in p.enrolled",1
+"all s : Student, c : s.enrolled | lone g : Grade | c->s->g in grades",1
+"all s:Student | all c:Course | no Course.grades implies s->c in enrolled",1
+"all s : Student | s in Course.grades.Grade implies s.enrolled in grades.s.Grade",1
+"all s : Student | s in Course.grades.Grade implies s.enrolled in grades.Grade.s",1
+"all s : Student | s in Course.grades.Grade iff grades.Grade.s in s.enrolled",1
+"all s : Student | s in Course.grades.Grade iff s.enrolled in grades.Grade.s",1
+"all c : Course | all s : Student | c in s.enrolled implies s in c.grades.Grade",1
+"all p : Person-Student | p not in (Course.grades.Grade)&(p.enrolled.grades.Grade)",1
+"all c : Course | all s : Student | s in c.grades.Grade implies (s in c.enrolled)",1
+"all s:Student, c:Course |  c not in s.enrolled implies c.grades not in s.enrolled.grades",1
+"all c:Course, s:Student, g:Grade | c->s not in enrolled => c->s->g not in grades",4
+"all p : Person | p not in Student implies all c : Course, g : Grade | c->p->g not in grades",1
+"all c : Course | all s : Student | all g : Grade | s->g in c.grades implies s in c.enrolled",2
+"all s: Student, c: Course | c not in s.enrolled => no (s.enrolled.grades.Grade & c.grades.Grade)",1

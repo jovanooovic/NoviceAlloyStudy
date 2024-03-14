@@ -1,0 +1,17 @@
+inv3 T: User.sees & User.follows.posts
+inv3 T: all u:User | u.sees & u.follows.posts
+inv3 T: all u: User | u.sees implies u.follows.posts
+inv3 T: all u: User | u.sees implies u.follows
+inv3 S: all u: User | all (u.sees & u.follows.posts)
+inv3 O: all u: User | (u.sees = u.follows.posts)
+inv3 O: all u: User | (u.sees = u.follows.posts + Ad)
+inv3 B: all u: User | (u.sees = u.follows.posts + Ad + u.posts)
+inv3 S: User.sees = User.follows.posts + Ad + User.posts)
+inv3 B: User.sees = User.follows.posts + Ad + User.posts
+inv3 B: User.sees = User.follows.posts + Ad + User.posts	Influencer.sees = Influencer.follows.posts + Ad + Influencer.posts
+inv3 S: User.sees = User.follows.posts + Ad + User.posts - User.suggests	Influencer.sees = Influencer.follows.posts + Ad + Influencer.posts
+inv3 B: User.sees = User.follows.posts + Ad + User.posts - User.suggested	Influencer.sees = Influencer.follows.posts + Ad + Influencer.posts
+inv3 B: User.sees = User.follows.posts + Ad + User.posts - User.suggested
+inv3 B: User.sees = (User.follows.posts + Ad + User.posts) + User.suggested
+inv3 B: User.sees = (User.follows.posts + Ad + User.posts)
+

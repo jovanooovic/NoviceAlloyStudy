@@ -1,0 +1,9 @@
+inv7 B: all s: Event.(State.trans) | s in ^{x,y: State | some x.trans.y}.s
+inv7 O: all s: Event.(State.trans) | s in ^{x,y: State | some x.trans.y}.Init
+inv7 B: all s: Event.(State.trans) | Init in ^{x,y: State | some x.trans.y}.s
+inv7 B: all s: Event.(State.trans) | s in Init.^{x,y: State | some x.trans.y}
+inv7 O: all s: Event.(State.trans) | Init in s.^{x,y: State | some x.trans.y}
+inv7 T: all s: Event.(State.trans) | Init in Event.(s.~trans)
+inv7 T: all s: Event.(State.trans) | Init in (s.~trans).Event
+inv7 T: all s: Event.(State.trans) | Init in (^trans.State.Event)
+

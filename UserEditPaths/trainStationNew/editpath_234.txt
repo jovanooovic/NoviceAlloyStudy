@@ -1,0 +1,55 @@
+NA H: THEME UPDATE
+inv1 U: all t : Track | Entry in Track and Exit in Track
+inv1 B: all t : Track | Entry in t and Exit in t
+inv1 S: all
+inv1 S: all
+inv1 S: all
+inv2 O: one t : Track | all s : Signal | s = t.signals
+inv2 B: one t : Track | all s : Signal | s in t.signals
+inv1 B: all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs
+inv1 B: all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z
+inv1 B: all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z and y!=z
+inv1 B: all x : Track | some y:Exit | some z:Entry | y in x.succs and z in x.succs and x!=y and x!=z and y!=z and x not in x.succs
+NA H: THEME UPDATE
+inv1 C: some x : Entry | some y : Exit | x in Track and y in Track
+inv1 C: some x : Entry | some y : Exit | x in Track and y in Track
+inv2 O: all x:Signal | one y: Track | x in y
+inv2 C: all x:Signal | one y: Track | x in y.signals
+inv3 U: all x : Track | x in Exit implies #(x.succs)=0
+inv3 C: all x : Track | x in Exit implies #(x.succs)=0	all x : Track | #(x.succs)=0 implies x in Exit
+inv4 B: all x : Track | x in Entry implies #(x.succs)=0	all x : Track | #(x.succs)=0 implies x in Entry
+inv4 C: all x : Track | x in Entry implies #(succs.x)=0	all x : Track | #(succs.x)=0 implies x in Entry
+inv5 U: all x : Track | x in Junction implies #(succs.x)>1
+inv5 C: all x : Track | x in Junction implies #(succs.x)>1	all x : Track |  #(succs.x)>1 implies x in Junction
+inv6 B: all x : Entry | all y:Speed| y in x.signals
+inv6 C: all x : Entry | some y:Speed| y in x.signals
+inv7 S: all x :Tracks | x not in x.^succ
+inv7 S: all x :Track | x not in x.^succ
+inv7 C: all x :Track | x not in x.^succs
+inv8 O: all x:Entry | all y:Exit | y in x.^succs
+inv8 O: all x:Entry | all y:Exit | y in x.succs
+inv8 O: all x:Entry | all y:Exit | y in x.^succs and x!=y
+inv8 S: all x:Entry | all y:Exit | y in x.^succs or x==y
+inv8 C: all x:Entry | all y:Exit | y in x.^succs or x=y
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| y in succs.x implies z not in x.signals
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| (y in succs.x and x!=y)implies z not in x.signals
+inv9 B: all x:Track | some y : Junction | all z:Semaphore| (x in y.^succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x in y.^succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x in y.succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| some y : Junction | (x not in y.succs and x!=y)implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | (x not in y.succs and x!=y)implies z not in x.signals
+inv9 T: all x:Track | all z:Semaphore| all y : Junction | (y not in succs.^x) implies z not in x.signals
+inv9 S: all x:Track | all z:Semaphore| all y : Junction | (y not in succs^.x) implies z not in x.signals
+inv9 S: all x:Track | all z:Semaphore| all y : Junction | y not in succs^.x implies z not in x.signals
+inv9 T: all x:Track | all z:Semaphore| all y : Junction | y not in succs.^x implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | y not in x.^succs implies z not in x.signals
+inv9 B: all x:Track | all z:Semaphore| all y : Junction | y not in x.succs implies z not in x.signals
+inv9 B: all x:Track | some z:Semaphore| all y : Junction | z in x.signals implies x not in y.^succs
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| z in x.signals implies x not in y.^succs
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in y.succs or z not in x.signals
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in succs.y or z not in x.signals
+inv9 B: all x:Track | all y : Junction | some z:Semaphore| x in y.^succs or z not in x.signals
+inv10 S: all x:Junction | some z:Semaphore | all y:Tracks | x in y.succs implies z in y.signals
+inv10 O: all x:Junction | some z:Semaphore | all y:Track | x in y.succs implies z in y.signals
+inv10 O: all x:Junction | all t :Track |some z:Semaphore | x in t.succs implies z in t.signals
+

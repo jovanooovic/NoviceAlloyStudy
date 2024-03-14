@@ -1,0 +1,6 @@
+inv3 B: all w1, w2 : Work, u : User | (w1 in u.profile && w2 in u.profile) => (w1.ids != w2.ids || w1 = w2)
+inv3 O: all u : User, w1,w2 : u.profile | w1.ids != w2.ids
+inv3 O: all u : User, w1,w2 : u.profile | w1.ids not in w2.ids and w2.ids not in w1.ids
+inv3 O: all u : User, w1,w2 : u.profile | w1.ids not in w2.ids and w2.ids not in w1.ids
+inv3 O: all u : User, w1,w2 : u.profile | w1.ids != w2.ids
+

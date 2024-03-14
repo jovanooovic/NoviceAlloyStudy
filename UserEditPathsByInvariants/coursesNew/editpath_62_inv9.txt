@@ -1,0 +1,4 @@
+inv9 O: all p1,p2 : Person | all c : Course | c in p1.teaches implies (c not in p2.enrolled)
+inv9 B: all p1,p2 : Person | all c1 : Course | c1 in p1.teaches and c1 in p2.teaches implies (c1 not in p2.enrolled or c1 not in p1.enrolled)
+inv9 O: all p1,p2 : Person | all c1,c2 : Course | (c1 in p1.teaches and c1 in p2.teaches) and (c2 in p1.enrolled) implies (c2 not in p2.teaches)
+

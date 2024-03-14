@@ -1,0 +1,21 @@
+inv6 S: All e: Entry : some e.signals
+inv6 S: All e: Entry | some e.signals
+inv6 U: all e: Entry | some e.signals
+inv6 U: all e: Entry | (e in Track) implies some Track.signals
+inv6 U: all e: Entry | (e in Track) implies some e.signals
+inv6 T: all t: Track | (t & Entry) implies t.signals
+inv6 T: all t: Track | (t & Entry) implies some t.signals
+inv6 U: all e: Entry | some e.signals
+inv6 U: all e: Entry | some e.signals
+inv6 T: all e: Entry | some s: Speed | some (e.signals in s)
+inv6 T: all e: Entry | some s: Speed | some (s in e.signals)
+inv6 C: all e: Entry | some s: Speed | (s in e.signals)
+inv6 B: all e: Entry | (Speed in e.signals)
+inv6 T: all e: Entry | some (Speed in e.signals)
+inv6 C: all e: Entry | some s: Speed | (s in e.signals)
+inv6 T: all e: Entry | (some Speed in e.signals)
+inv6 T: all e: Entry | (some Speed) in e.signals
+inv6 B: all e: Entry | Speed in e.signals
+inv6 T: all e: Entry | no Speed not in e.signals
+inv6 C: all e: Entry | some s: Speed | (s in e.signals)
+

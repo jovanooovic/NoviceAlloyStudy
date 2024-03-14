@@ -1,0 +1,14 @@
+inv1 E:
+inv1 T: all c : Course | no (c && Professor.enrolled)
+inv1 B: all c : Course | no (c & Professor.enrolled)
+inv1 B: all c : Course, p : Professor | no (c & p.enrolled)
+inv1 B: all c : Course | no (c & Professor.enrolled)
+inv1 B: all c : Course | no (c & Professor.enrolled)
+inv1 B: all c : Course | no (c & Professor.enrolled)
+inv1 T: all p : Person, c : Course | p.enrolled.c implies p = Student
+inv1 T: all p : Person, c : Course | p.enrolled.c implies p in Student
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+inv1 O: all p : Person, c : Course | c in p.enrolled implies p = Student
+inv1 C: all p : Person, c : Course | c in p.enrolled implies p in Student
+inv1 B: all c : Course | no (c & Professor.enrolled)
+

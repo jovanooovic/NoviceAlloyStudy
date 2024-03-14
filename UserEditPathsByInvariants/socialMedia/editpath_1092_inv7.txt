@@ -1,0 +1,3 @@
+inv7 B: all u,y : User | y in u.suggested iff (u != y and (y not in u.follows) and (some z : User | (z in y.follows) and (y in z.follows)))
+inv7 C: all u,y : User | y in u.suggested iff (u != y and (y not in u.follows) and (some z : User | (z in u.follows) and (y in z.follows)))
+

@@ -1,0 +1,43 @@
+NA H: THEME UPDATE
+inv1 S: Signal in Red
+inv1 C: no s:Green|   s  in Signal
+inv1 O: no Signal
+inv1 C: no (Signal &Green)
+inv2 O: eventually no (Signal-Green)
+inv2 C: all s:Signal | eventually s in Green
+inv2 O: eventually Signal in (Signal&Green)
+inv2 O: eventually (Signal in (Signal&Green))
+inv2 O: eventually (Signal in Green)
+inv2 C: all s:Signal | eventually s in Green
+inv3 U: Train.pos' =Train.pos
+inv3 U: always Train.pos' =Train.pos
+inv3 C: always all t:Train | t.pos' =t.pos
+inv4 U: all disj t1,t2:Train | no (t1.pos &t2.pos)
+inv4 U: all disj t1,t2:Train | some (t1.pos &t2.pos ) implies lone ((t1.pos &t2.pos ).signal &Green)
+inv4 U: all disj t1,t2:Train | some (t1.pos &t2.pos ) implies lone ((t1.pos &t2.pos ).signal &Green) or no (t1.pos &t2.pos )
+inv6 U: all s:Signal | (s in Green implies s not in Green') or (s not in Green implies s in Green')
+inv4 U: all disj t1,t2:Train | no (t1.pos & t2.pos )
+inv4 C: always all disj t1,t2:Train | no (t1.pos & t2.pos )
+inv6 U: always (all s:Signal | (s in Green implies s not in Green') or (s not in Green implies s in Green'))
+inv6 S: always (all s:Signal | (s in Green implies s not in Green') )
+inv6 S: always (all s:Green | after  s not in Green )
+inv6 S: always (all s:Signals |  (s in Green implies always (no (s &  Green'))) or no (s & Green) implies always (some (s &  Green'))  )
+inv6 S: always (all s:Signals |  (s in Green implies always (no (s &  Green'))) or no (s & Green) implies always (some (s &  Green')) )
+inv6 S: always (all s:Signals |  (s in Green implies always (no (s &  Green'))) )
+inv6 S: always (all s:Signals |  (s in Green implies always (no (s &  Green') )
+inv6 S: always (all s:Signals |  s in Green implies always (no (s &  Green') ))
+inv6 S: always (all s:Signals | s in Green implies  (no (s &  Green') ))
+inv6 S: always (all s:Signals | s in Green )
+inv6 S: always (all s:Signals |  (s in Green implies always (no (s &  Green'))) or no (s & Green) implies always (some (s &  Green'))) )
+inv6 S: always (all s:Signal |  (s in Green implies always (no (s &  Green'))) or no (s & Green) implies always (some (s &  Green'))) )
+inv6 S: always (some s:Signal |  (s in Green implies always (no (s &  Green'))) or no (s & Green) implies always (some (s &  Green'))) )
+inv6 B: always (some s:Signal |  (s in Green implies always (no (s &  Green'))) or	no (s & Green) implies always (some (s &  Green')))
+inv6 B: always (some s:Signal |  (s in Green implies always (no (s &  Green'))) or	no (s & Green) implies always (some (s &  Green')))
+inv6 U: always (all s:Signal |  (s in Green implies always (no (s &  Green'))) or	no (s & Green) implies always (some (s &  Green')))
+inv6 U: always (all s:Signal |  (s in Green implies eventually (no (s &  Green'))) or	no (s & Green) implies  eventually (some (s &  Green')))
+inv6 U: always (all s:Signal | always (s in Green) implies eventually (no (s &  Green'))  or	always (no (s & Green)) implies  eventually (some (s &  Green')))
+inv6 U: always (all s:Signal |  (s in Green) implies eventually (s not in Green ) or	s not in Green implies  eventually (s in  Green) )
+inv6 U: always (all s:Signal | always (s in Green) implies eventually (s not in Green ) or	always s not in Green implies  eventually (s in  Green) )
+inv3 C: always all t:Train | t.pos' = t.pos
+inv6 U: always (all s:Signal | always (s in Green) implies eventually (s not in Green ) or	always s not in Green implies  eventually (s in  Green) )
+

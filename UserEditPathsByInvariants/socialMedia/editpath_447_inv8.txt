@@ -1,0 +1,6 @@
+inv8 O: all u:User | (u.sees & Ad) = (u.follows.posts & Ad)
+inv8 O: all u:User | (u.sees & Ad) = ((u.follows+u.suggested).posts & Ad)
+inv8 O: all u:User | (u.sees & Ad) = ((u.follows+u.suggested).posts & Ad)
+inv8 O: all u:User | (u.sees & Ad) = ((u.follows.posts+u.suggested.posts) & Ad)
+inv8 C: all u:User | no (u.sees & Ad) - ((u.follows+u.suggested).posts & Ad)
+

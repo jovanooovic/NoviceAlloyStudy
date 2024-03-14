@@ -1,0 +1,58 @@
+na H: THEME UPDATE
+inv2 S: all n, n1 : Node | n->n1 in adj => n1->n not in adj		adj & ~adj in id
+inv3 C: all n : Node | n not in n.^adj
+inv3 C: all n : Node | n not in n.^adj
+inv2 C: all n, n1 : Node | n->n1 in adj => n1->n not in adj		adj & ~adj in iden
+inv1 C: adj in ~adj
+inv1 C: adj in ~adj
+inv4 U: adj in Node->Node
+inv4 C: adj = Node->Node
+inv5 C: no (iden & adj & ~adj)
+inv7 O: adj = Node->Node
+inv7 O: Node->Node = adj
+inv7 T: Node in ^adj
+inv7 B: Node in Node.^adj
+inv7 B: Node in ^adj.Node
+inv7 S: all n : Node | Node in n.^adj.
+inv7 O: all n : Node | Node in n.^adj
+inv7 O: all n : Node | Node in n.^adj and n->n in adj
+inv7 O: all n : Node | Node in n.^adj and iden in adj
+inv7 O: all n : Node | Node in n.^adj
+inv5 C: no (iden & adj & ~adj)	no (iden & adj)
+inv5 C: no (iden & adj)
+inv7 O: all n : Node | Node in n.^adj
+inv7 O: all n : Node | Node in n.^adj and some adj
+inv7 O: all n : Node | Node in n.^adj and (some adj)
+inv7 O: all n : Node | (some adj) && Node in n.^adj
+inv7 O: all n : Node | some n.adj && Node in n.^adj
+inv7 O: all n : Node | (some n.adj) && Node in n.^adj
+inv7 O: all n : Node | Node in ^adj.n
+inv7 O: all n : Node | Node in n.^adj
+inv7 O: all n : Node | Node = n.^adj
+inv7 B: Node in Node.^adj
+inv7 B: Node = Node.^adj
+inv7 O: all n : Node | Node in n.^adj
+inv8 C: all n, n1, n2 : Node | n->n1 in adj and n1->n2 in adj => n->n2 in adj
+inv8 O: adj = Node->Node
+inv8 T: all n : Node | n->n.adj.adj.Node in adj
+inv8 T: all n : Node | n->(n.adj.adj.Node) in adj
+inv8 T: all n : Node | (n->(n.adj.adj.Node)) in adj
+inv8 T: all n : Node | let n1 = n.adj.adj.Node | n->n1 in adj
+inv8 T: let n1 = n.adj.adj.Node | (all n : Node | n->n1 in adj)
+inv8 S: n.adj.adj.Node
+inv8 T: all n : Node | n.adj.adj.Node
+inv8 C: all n : Node | n->n.adj.adj in adj
+inv8 S: Node->n.adj.adj in adj
+inv8 O: Node->Node.adj.adj in adj
+inv8 C: all n : Node | n->n.adj.adj in adj
+inv7 O: all n : Node | Node in n.^adj
+inv7 O: all n : Node | Node in n.^adj and some adj
+inv7 U: all n : Node | Node.adj in n.^adj
+inv7 C: all n : Node | Node in n.^adj or one Node
+inv7 C: all n : Node | Node in n.^adj || one Node
+inv6 O: all n : Node | Node in n.^adj || one Node
+inv6 O: all n : Node | Node in n.^adj && Node in ^adj.n || one Node
+inv6 O: all n : Node | Node in n.^adj && inv1 || one Node	}		pred inv1{	adj in ~adj
+inv6 O: inv1	all n : Node | Node in n.^adj || one Node	}		pred inv1{	adj in ~adj
+inv7 C: one Node or all n : Node | Node in n.^adj
+

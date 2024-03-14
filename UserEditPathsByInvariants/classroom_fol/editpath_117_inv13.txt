@@ -1,0 +1,9 @@
+inv13 S: all t : Teacher, s : Person | t->s in s.tutors
+inv13 T: all t : Teacher, s : Person | t->s in s.Tutors
+inv13 S: all t : Teacher,s : student, s : Person | t->s in s.Tutors
+inv13 S: all p1,p2 : Person | p1->p2 in Tutors implies p1 in Teachers and p2 in Students
+inv13 S: all p1,p2 : Person | p1->p2 in Tutors implies p1 in Teachers and p2 in Students
+inv13 T: all p1,p2 : Person | p1->p2 in Tutors implies p1 in Teaches and p2 in Students
+inv13 T: all p1,p2 : Person | p1->p2 in Tutors implies p1 in Teaches and p2 in Student
+inv13 C: all p1,p2 : Person | p1->p2 in Tutors implies p1 in Teacher and p2 in Student
+

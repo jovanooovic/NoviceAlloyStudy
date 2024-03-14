@@ -1,0 +1,9 @@
+inv1 B: all x : Person | x in Professor implies no x.enrolled
+inv1 U: all x : Person | x in Professor-Student implies no x.enrolled
+inv1 B: all x : Person | (x in Professor) implies (no x.enrolled)
+inv1 C: all x : Person - Student | no x.enrolled
+inv1 B: all x : Professor | no x.enrolled
+inv1 C: all x : Person - Student | no x.enrolled
+inv1 C: all x : Person | x in (Person-Student) implies no x.enrolled
+inv1 C: all x : Person | x in (Person-Student) implies no x.enrolled
+

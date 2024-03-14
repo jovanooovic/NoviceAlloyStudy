@@ -1,0 +1,18 @@
+inv9 B: all t:Track, j:Junction, s:Semaphore | j not in t.succs => s not in t.signals
+inv9 B: all t:Track, j:Junction, s:Semaphore | j not in t.succs <=> s not in t.signals
+inv9 B: all t:Track, j:Junction, s:Semaphore | j not in t.^(succs) <=> s not in t.signals
+inv9 B: all t:Track, j:Junction, s:Semaphore | j in t.succs <=> s in t.signals
+inv9 B: all t:Track, j:Junction, s:Semaphore | j not in Track.^(succs) <=> s not in Track.signals
+inv9 B: all t:Track, j:Junction, s:Semaphore | j not in Track.^(succs) => s not in Track.signals
+inv9 T: all t:Track, s:Semaphore | t in Junction not in Track.^(succs) => s not in Track.signals
+inv9 T: all t:Track, s:Semaphore | t in Junction not in Track.^(succs) => s not in Track.signals
+inv9 B: all t:Track, s:Semaphore | t in Junction && t not in Track.^(succs) => s not in Track.signals
+inv9 B: all t:Track, s:Semaphore | t in Junction && t not in Track.^(succs) <=> s not in Track.signals
+inv9 B: all t:Track, s:Semaphore, j:Junction | t not in t.succs <=> s not in t.signals
+inv9 B: all t:Track, s:Semaphore, j:Junction | j not in t.succs <=> s not in t.signals
+inv9 B: all t:Track, s:Semaphore, j:Junction | j not in t.succs => s not in t.signals
+inv9 B: all t:Track, s:Semaphore, j:Junction | j not in t.succs <=> s not in t.signals
+inv9 B: all disj t,t2:Track, s:Semaphore, j:Junction | t2 in Junction && t2 not in t.succs => s not in t.signals
+inv9 B: all disj t,t2:Track, s:Semaphore | t2 in Junction && t2 not in t.succs => s not in t.signals
+inv9 E:
+

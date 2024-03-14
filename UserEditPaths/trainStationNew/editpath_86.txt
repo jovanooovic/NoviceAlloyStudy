@@ -1,0 +1,58 @@
+NA H: THEME UPDATE
+inv1 O: one Entry and one Exit
+inv1 C: some Entry and some Exit
+inv1 C: some t:Track | t in Entry	some t:Track | t in Exit
+inv2 U: all s:Signal | some signals.s
+inv2 C: all s:Signal | one signals.s
+inv2 C: all a1,a2:Track | (some b:Signal | a1->b in signals and a2->b in signals) implies a1 = a2	all b:Signal | some a:Track | a->b in signals
+inv2 C: all a1,a2:Track | (some b:Signal | a1->b in signals and a2->b in signals) implies a1 = a2	all b:Signal | some a:Track | a->b in signals
+inv3 U: all a:Exit | no a.succs
+inv3 C: all a:Track | a in Exit iff no a.succs
+inv3 S: all a:Track | a in Exit iff all a2:Track | a->a1 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv4 C: all a:Track | a in Entry iff all a2:Track | a2->a not in succs
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:t.~succ
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succ and t2 in t.~succ
+inv5 S: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succs and t2 in t.~succ
+inv5 C: all t:Track | t in Junction iff some disj t1,t2:Track | t1 in t.~succs and t2 in t.~succs
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2			all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv5 C: all t:Track | t in Junction iff some t1,t2:t.~succs | t1 != t2			all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv6 U: all e:Entry | some e.signals
+inv6 C: all e:Entry | some e.signals&Speed
+inv6 C: all e:Track | e in Entry implies some s:Signal | e->s in signals and s in Speed
+inv7 S: all t.Track | t not in t.^succs
+inv7 C: all t:Track | t not in t.^succs
+inv7 C: all t:Track | t->t not in ^succs
+inv8 S: all e:Entry | Exit in t.^succs
+inv8 O: all e:Entry | Exit in e.^succs
+inv8 C: all e:Entry | Exit in e.*succs
+inv8 C: all t1,t2:Track | t1 in Entry and t2 in Exit implies t1->t2 in *succs
+inv9 S: all t:Track | no Junction&t.succs implies no t.signal
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track-Exit | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track | t in Exit or no Junction&t.succs implies no t.signals
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 B: all t:Track | no Junction&t.~succs implies no t.signals
+inv9 O: all t:Track | no Junction&t.succs implies no t.signals
+inv9 S: all t:Track | no Junction&t.succs implies no t.signals&Semaphores
+inv9 C: all t:Track | no Junction&t.succs implies no t.signals&Semaphore
+inv9 C: all t:Track | (all t2:Track | t->t2 in succs implies t2 not in Junction) implies (all s:Signal | t->s in signals implies s not in Semaphore)
+inv10 B: all t:Track | (some t2:Track | t->t2 in succs and t2 in Junction) implies (some s:Signal | t->s in signals and s not in Semaphore)
+inv10 C: all t:Track | (some t2:Track | t->t2 in succs and t2 in Junction) implies (some s:Signal | t->s in signals and s in Semaphore)
+inv8 C: all t1,t2:Track | t1 in Entry and t2 in Exit implies t1->t2 in *succs
+inv8 C: all t1:Entry,t2:Exit | t1->t2 in *succs
+inv6 C: all e:Entry | some s:Signal | e->s in signals and s in Speed
+inv3 O: all a,a2:Track | a in Exit iff a->a2 not in succs
+inv3 C: all a:Track | a in Exit iff all a2:Track | a->a2 not in succs
+inv3 O: all a:Exit, a2:Track | a->a2 not in succs	all a:Track,a2:Track | a->a2 not in succs implies a in Exit
+inv3 S: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | all a2:Track | a->a2 not in succs implies a in Exit iff
+inv3 O: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | all a2:Track | a->a2 not in succs implies a in Exit
+inv3 C: all a:Track | a in Exit implies all a2:Track | a->a2 not in succs	all a:Track | (all a2:Track | a->a2 not in succs) implies a in Exit
+inv3 C: all a:Exit,a2:Track | a->a2 not in succs	all a:Track | (all a2:Track | a->a2 not in succs) implies a in Exit
+inv4 C: all a:Entry | all a2:Track | a2->a not in succs	all a:Track | (all a2:Track | a2->a not in succs) implies a in Entry
+NA H: THEME UPDATE
+inv5 C: all t:Track | t in Junction iff some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2
+inv5 C: all t:Junction | some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2	all t:Track | (some t1,t2:Track | t->t1 in ~succs and t->t2 in ~succs and t1 != t2) implies t in Junction
+

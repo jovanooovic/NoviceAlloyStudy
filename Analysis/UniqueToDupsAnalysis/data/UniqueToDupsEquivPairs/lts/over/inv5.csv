@@ -1,0 +1,87 @@
+Pairs,6
+,,"Event in State",1
+,,"Event in Event<:State",1
+,,"Event in State<:Event",1
+,,"Event in (State.(State.trans))",1
+,,"Event in Event.(State.trans)",2
+
+Pairs,1
+,,"one State->Event",1
+
+Pairs,6
+,,"State->Event in iden",1
+,,"all x : State | Event in x<:Event",1
+,,"all s : State | Event in s.(trans.Event)",1
+,,"all s:State | Event in Event.~(s.trans)",1
+,,"all s : State, e : Event | some (s.trans).e",2
+
+Pairs,9
+,,"State.trans = trans.State",1
+,,"trans:>State = Event<:trans",1
+,,"all s: State | Event <: trans = trans",2
+,,"all x : State | Event.(x.trans) in Event",5
+
+Pairs,7
+,,"State in State.(trans.Event)",3
+,,"all x : State | State in x<:Event",1
+,,"all x : State | State in x:>Event",1
+,,"all s : State | some (s.trans).Event",1
+,,"all s : State | some Event.(s<:trans)",1
+
+Pairs,19
+,,"all x, y : State | x.trans = y.trans",1
+,,"all x, y : State | x.trans in y.trans",1
+,,"all x : State | State.trans = x.trans",2
+,,"all x : State | x.trans = State.trans",5
+,,"all s : State | s.trans = State.trans",1
+,,"all s,s1:State|  s.trans in s1.trans",1
+,,"all x : State | State.trans in x.trans",1
+,,"all s1,s2:State | s1.trans = s2.trans",2
+,,"all s,s1:State|  no( s.trans  - s1.trans )",1
+,,"not some disj s1, s2:State | (s1.trans) != (s2.trans)",1
+,,"all s1,s2,s3:State | s3.~(s1.trans) = s3.~(s2.trans)",1
+,,"all s1,s2 : State, e : Event | e.(s1.trans) = e.(s2.trans)",1
+,,"all s,s1:State|  s.trans in s1.trans and s1.trans in s.trans",1
+
+Pairs,21
+,,"all s : State | Event = (s.trans).State",1
+,,"all s : State | Event in (s.trans).State",1
+,,"all s : State | State.(~(s.trans)) = Event",1
+,,"all s:State | Event in State.~(s.trans)",9
+,,"all s:State, e:Event | some e.(s.trans)",5
+,,"all s:State | all e:Event |  some e<:s.trans",2
+,,"all s:State | all e:Event | e in State.~(s.trans)",2
+
+Pairs,11
+,,"all x, y : State | x->Event->y in trans",1
+,,"all s:State | Event->State in s.trans",1
+,,"all x : State | x->Event->State in trans",2
+,,"all s1,s2 :State | Event->s2 in s1.trans",1
+,,"all x, y : State, e : Event | x->e->y in trans",1
+,,"all s,s1:State,e:Event | s->e->s1 in trans",1
+,,"all x : State, e : Event | x->e->State in trans",1
+,,"all s1, s2:State, e:Event | s1->e->s2 in trans",1
+,,"all s1, s2:State, e:Event | s1->e->s2 in trans and s1->e->s1 in trans",1
+,,"all x, y : State | all e : Event | x->e->y in trans and y->e->y in trans",1
+
+Pairs,1
+,,"all s:State, e:Event | s->e->s in trans",1
+
+Pairs,3
+,,"all s : State, e : Event | one e.(s.trans)",3
+
+Pairs,1
+,,"all x : State | some e : Event | x.trans = State.trans",1
+
+Pairs,2
+,,"all x: State, y: State | (x.trans).univ = (univ.trans).y",2
+
+Pairs,1
+,,"all x, y : State | some e : Event | x->Event->y in trans",1
+
+Pairs,1
+,,"all s:State | Event in State.~(s.trans) and Event in State.~(Init.trans)",1
+
+Pairs,1
+,,"{state: State, event: Event | some event.(state.trans)}.~{state: State, event: Event | some event.(state.trans)} = univ->univ",1
+

@@ -1,0 +1,10 @@
+inv6 S: all a,b : Component | a=b implies a->b not in partes
+inv6 U: all a,b : Component | a=b implies a->b not in parts
+inv6 S: all a,b : Component | a==b implies a->b not in parts
+inv6 U: all a,b : Component | a=b implies a->b not in parts
+inv6 U: all c : Component | all p : Product | p->c in parts implies p!=c
+inv6 U: all p : Product | all m : Material | all c : Component | (p->m in parts implies p not in Component) or (p->c in parts implies p not in Material)
+inv6 U: all a : Component | all b : Component | a->b in parts implies b->a not in parts
+inv6 U: all a : Component | all b : Component | (a->b in parts implies b->a not in parts) and (b->a in parts implies a->b not in parts)
+inv6 U: all a : Component | all b : Component | a=b implies (a->b not in parts and b->a not in parts)
+

@@ -1,0 +1,7 @@
+inv8 S: all u:User, a:Ad | a in u.sees iff ( a in u.follows.post + u.suggested)
+inv8 O: all u:User, a:Ad | a in u.sees iff ( a in u.follows.posts + u.suggested)
+inv8 O: all u:User, a:Ad | a in u.sees iff ( a in u.follows.posts or a in u.suggested)
+inv8 O: all u:User, a:Ad | a in u.sees iff ( a in u.follows.posts or a in u.suggested.posts)
+inv8 C: all u:User, a:Ad | a in u.sees implies ( a in u.follows.posts or a in u.suggested.posts)
+inv8 C: all u:User, a:Ad | a in u.sees implies ( a in u.follows.posts + u.suggested.posts)
+

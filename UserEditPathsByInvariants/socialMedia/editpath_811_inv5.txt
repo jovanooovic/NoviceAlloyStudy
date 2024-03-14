@@ -1,0 +1,9 @@
+inv5 B: all u,i: User | i in Influencer implies u->i in follows
+inv5 B: all u,i: User | i in Influencer implies u->i in follows
+inv5 O: all i:Influencer |(all u:User | u->i in follows and u != i)
+inv5 B: all u1,u2:User| u2 in Influencer implies u1->u2 in follows
+inv5 U: all u1,u2:User| u2 in Influencer and u1->u2 in follows implies u1!=u2
+inv5 B: all u1,u2:User| u2 in Influencer implies u1->u2 in follows
+inv5 B: all u1,u2:User| u2 in Influencer and u1->u2 in follows
+inv5 O: all u1,u2:User| u2 in Influencer implies u1->u2 in follows and u1 != u2
+

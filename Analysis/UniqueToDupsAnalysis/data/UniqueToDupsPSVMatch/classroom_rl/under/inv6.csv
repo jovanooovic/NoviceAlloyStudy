@@ -1,0 +1,13 @@
+"Teacher.Teaches in Class",4
+"all t : Teacher | no t.~Teaches",1
+"all t: Teacher | t.Teaches in Class",7
+"no t: Teacher | t.Teaches not in Class",2
+"all t : Teacher | no t.Teaches - Class",2
+"all t:Teacher | Teacher.Teaches != none",1
+"all t : Teacher | inv5
+}
+
+pred inv5{
+	some Teacher.Teaches",1
+"all t: Teacher | t.Teaches in Class and Class != none",1
+"all t: Teacher | lone c: Class | t.Teaches = c",1

@@ -1,0 +1,16 @@
+NA H: THEME UPDATE
+inv1 C: Component in parts.Product
+inv2 C: all c: Component | no (c & c.^parts)
+inv3 B: Robot in position.(Component.position)
+inv3 B: Robot = position.(Component.position)
+inv3 T: all c: Component | some position.c.position
+inv3 T: all c: Component | some position.(c.position)
+inv3 C: all c: Component | some Robot<:position.(c.position)
+inv2 C: all c: Component | no (c & c.^parts)
+inv3 C: all c: Component | some Robot<:position.(c.position)
+inv1 C: Component in parts.Product
+inv4 O: all c: Component | c.position.lt[(c.position).position]
+inv4 C: all c: Component | (c.^parts).position in c.position.prevs + c.position
+inv1 C: Component in parts.Product
+NA H: THEME UPDATE
+

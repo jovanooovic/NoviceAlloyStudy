@@ -1,0 +1,19 @@
+inv9 T: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in succ
+inv9 T: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in succ
+inv9 T: one w : Workstation | w in end and no w.succ	one w : Workstation |		w in begin and w not in succ
+inv9 U: one w : Workstation | w in end and no w.succ	one w : Workstation |		w in begin and w not in Workstation.succ
+inv9 O: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w : Workstation | one wb : begin | w in wb.^(succ)
+inv9 O: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w : Workstation | one wb : begin | w!=wb and w in wb.^(succ)
+inv9 O: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w : Workstation | one wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)
+inv9 U: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)
+inv9 U: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)
+inv9 C: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ	all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 U: one w : Workstation | w in end and no w.succ	one w : Workstation | w in begin and w not in Workstation.succ		all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: one w : Workstation | w in begin and w not in Workstation.succ	all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 U: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)		all w : Workstation | w not in end implies one w.succ
+inv9 U: all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+inv9 C: all w,wb : Workstation | (wb in begin and w!=wb) implies w in wb.^(succ)	all w : Workstation | w not in w.^(succ)	all w : Workstation | w not in end implies one w.succ
+

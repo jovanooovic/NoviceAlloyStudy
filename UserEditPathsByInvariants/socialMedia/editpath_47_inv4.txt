@@ -1,0 +1,18 @@
+inv4 S: all u : User | all p : u.posts | p in Ad -> all p in Ad
+inv4 S: all u : User | all p : u.posts | p in Ad -> all p in Ad
+inv4 O: all u : User | all p : u.posts | p in Ad
+inv4 U: all u : User | all p : u.posts | p in Ad or not p in Ad
+inv4 S: all u : User | all p : u.posts | p in Ad implies all p in Ad
+inv4 U: all u : User | all p : u.posts | p in Ad implies p in Ad
+inv4 T: all u : User | all p : u.posts | p in Ad implies some p in Ad
+inv4 U: all u : User | all p : u.posts | p in Ad implies p in Ad
+inv4 S: all u : User | all p : u.posts | p in Ad implies all p : Ad
+inv4 S: all u : User | u.posts in Ad or not u.post and Ad
+inv4 T: all u : User | u.posts in Ad or not u.posts and Ad
+inv4 T: all u : User | u.posts in Ad or not u.posts & Ad
+inv4 T: all u : User | u.posts in Ad or no u.posts and Ad
+inv4 C: all u : User | u.posts in Ad or no u.posts & Ad
+inv4 U: all u : User | u.posts in Ad or u.posts not in Ad
+inv4 T: all u : User | u.posts in Ad or u.posts & Ad
+inv4 C: all u : User | u.posts in Ad or no u.posts & Ad
+

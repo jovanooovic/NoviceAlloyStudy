@@ -1,0 +1,26 @@
+inv10 T: link.Trash
+inv10 B: some f : File | f in Trash implies f.link in Trash
+inv10 B: some f : File | f.link in Trash implies f in Trash
+inv10 T: Trash . link :> Trash
+inv10 T: (Trash . link) :> Trash
+inv10 T: link.Trash :> Trash
+inv10 T: link.link & Trash = link.link
+inv10 T: (link.link) & Trash = link.link
+inv10 T: Trash <: link => link :> Trash
+inv10 T: (Trash <: link) => (link :> Trash)
+inv10 B: File.link in Trash => link.File in Trash
+inv10 U: link.File in Trash => File.link in Trash
+inv10 U: link.File in Trash => File.link in Trash
+inv10 T: Trash <: link
+inv10 T: Trash <: link
+inv10 T: Trash <: link implies link :> Trash
+inv10 T: Trash <: link implies link :> Trash
+inv10 B: Trash.link in link.Trash
+inv10 B: link.Trash in Trash.link
+inv10 T: Trash <: link.Trash
+inv10 T: link.Trash :> Trash
+inv10 T: (link.Trash) :> Trash
+inv10 T: (Trash.link) :> Trash
+inv10 C: (Trash.link) in Trash
+inv10 C: Trash.link in Trash
+

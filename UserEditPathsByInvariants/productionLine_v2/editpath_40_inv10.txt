@@ -1,0 +1,6 @@
+inv10 S: all c : Component, p : c.parts | c.workstation in p.workstation.^succs
+inv10 B: all c : Component, p : c.parts | c.workstation in p.workstation.^succ
+inv10 B: all c : Component, p : c.parts | c.workstation in p.workstation.*succ
+inv10 B: all c : Component, p : c.parts | c.workstation in p.workstation.^succ
+inv10 B: all c : Component, p : c.parts-Material | c.workstation in p.workstation.^succ
+

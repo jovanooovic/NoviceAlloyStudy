@@ -1,0 +1,13 @@
+inv4 S: all c, q: Course, all p, j: Project | c->p in projects and q->j in projects implies q!=j
+inv4 S: all c, q: Course, all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 S: all c, q: Course, all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 U: all c, q: Course, p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 U: all c, q: Course | all p, j: Project | (c->p in projects and q->j in projects) implies q!=j
+inv4 B: all c, q: Course, p, j: Project | (c->p in projects and q->j in projects) implies p!=j
+inv4 S: one q: Course | all p: Project | c->p in projects
+inv4 B: one c: Course | all p: Project | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+inv4 B: one c: Course | all p: Project | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+inv4 C: all p: Project | one c: Course | c->p in projects
+

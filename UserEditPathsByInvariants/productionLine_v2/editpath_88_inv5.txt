@@ -1,0 +1,11 @@
+inv5 S: all wt:worktation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: all wt:Workstation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: no (Workstation.workers-Human) & (Workstation.workers-Robot)
+inv5 U: all wt:Workstation | no (wt.workers & Human) & (wt.workers & Robot)
+inv5 T: all wt:Workstation | (wt.workers & Human) & (wt.workers & Robot)
+inv5 T: all wt:Workstation | (wt.workers-Human) & (wt.workers-Robot)
+inv5 B: all wt:Workstation | (wt.workers-Human) & (wt.workers-Robot) = none
+inv5 B: all wt:Workstation | no (wt.workers-Human) & (wt.workers-Robot)
+inv5 S: all wt:Workstation,w:Worker | w in wt.Workers and w in Human implies no wt.Workers-Human
+inv5 O: all wt:Workstation,w:Worker | w in wt.workers and w in Human implies no wt.workers-Human
+

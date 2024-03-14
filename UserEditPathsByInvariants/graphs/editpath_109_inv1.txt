@@ -1,0 +1,7 @@
+inv1 T: all n:Node | n in Node.n
+inv1 B: all n:Node | n in Node.adj
+inv1 B: all n:Node | n in Node.adj or n in adj.Node
+inv1 B: all n:Node | n in Node.adj or n in Node.^adj
+inv1 S: all n:Node | n.adj = adj.n
+inv1 C: all n:Node | n.adj = adj.n
+

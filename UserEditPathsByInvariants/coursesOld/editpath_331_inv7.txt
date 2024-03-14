@@ -1,0 +1,8 @@
+inv7 T: all s : Student | all c : s.enrolled | lone s.enrolled & c.projects
+inv7 U: all s : Student | all c : s.enrolled | lone s.enrolled & Course <: c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone s.enrolled & c.projects
+inv7 T: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects)
+inv7 U: all s : Student | all c : s.enrolled | lone (s.enrolled & c.(Course <: projects))
+inv7 S: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects))
+inv7 T: all s : Student | all c : s.enrolled | lone (s.enrolled & c.projects)
+

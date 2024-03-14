@@ -1,0 +1,9 @@
+inv4 B: profile.~visible in iden
+inv4 B: (profile.~visible).(~(profile.~visible)) in iden
+inv4 S: all p: Profile | (p.~visible).(~(p.~visible)) in iden
+inv4 T: lone (User->Work) in visible
+inv4 O: lone (User->Work) & visible
+inv4 S: all u: User| ((source.s & u.profile)<:ids).~((source.s & u.profile)<:ids) in iden
+inv4 B: all u: User| (u.profile<:ids).~(u.profile<:ids) in iden
+inv4 B: all u: User| ((u.profile)<:ids).~(u.profile<:ids) in iden
+

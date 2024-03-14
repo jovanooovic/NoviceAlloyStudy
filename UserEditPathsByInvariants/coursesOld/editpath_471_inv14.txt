@@ -1,0 +1,7 @@
+inv14 B: all x,y:Student, p:Project | (x->p in projects and y->p in projects) implies all p1:Project-p | x->p1 not in projects or y->p1 not in projects
+inv14 B: all x,y:Student, p:Project | (x->p in projects and y->p in projects) implies all p1:Project-p | (x->p1 not in projects or y->p1 not in projects)
+inv14 B: all x,y:Student, p:Project | (x->p in projects and y->p in projects) implies (all p1:Project-p | x->p1 not in projects or y->p1 not in projects)
+inv14 B: all x,y:Student, p:Project | (x->p in projects and y->p in projects) implies (all p1:Project-p | x->p1 not in projects and y->p1 not in projects)
+inv14 B: all x,y:Student, p:Project | (x->p in projects and y->p in projects) implies (all p1:Project-p | x->p1 not in projects or y->p1 not in projects)
+inv14 U: all x,y:Student, p:Project | (x->p in projects and y->p in projects and x!=y) implies (all p1:Project-p | x->p1 not in projects or y->p1 not in projects)
+

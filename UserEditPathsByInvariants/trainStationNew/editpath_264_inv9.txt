@@ -1,0 +1,14 @@
+inv9 S: all t: Track | t.succs in Junctions => no Semaphore in t.signals
+inv9 T: all t: Track | t.succs in Junction => no Semaphore in t.signals
+inv9 T: all t: Track | t.succs in Junction => no Semaphore in t.signals
+inv9 T: all t: Track | t.succs in Junction => no (Semaphore in t.signals)
+inv9 B: all t: Track | t.succs in Junction => not (Semaphore in t.signals)
+inv9 B: all t: Track | t.^succs in Junction => not (Semaphore in t.signals)
+inv9 B: all t: Track | all j: Junction | j in t.^succs => not (Semaphore in t.signals)
+inv9 B: all t: Track | all j: Junction | j in t.succs => not (Semaphore in t.signals)
+inv9 T: all t: Track | all j: Junction | j in t.succs => not (Semaphore & t.signals)
+inv9 B: all t: Track | all j: Junction | j in t.succs => no Semaphore & t.signals
+inv9 B: all t: Track | all j: Junction | not j in t.succs => no Semaphore & t.signals
+inv9 B: all t: Track | all j: Junction | (not j in t.succs) => no Semaphore & t.signals
+inv9 C: all t: Track | no t.succs & Junction => no Semaphore & t.signals
+

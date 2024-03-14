@@ -1,0 +1,43 @@
+"not iden & ^parts",1
+"no ^parts in iden",1
+"Component.parts",1
+"Component.~Component",2
+"Component in parts.*(Product)",1
+"Component not Component.parts",1
+"all w : workstation | w.Robot",1
+"all c:Component | c not c.parts",1
+"all c : Component | not c.^parts",1
+"all c : Component | not c&c.parts",1
+"all c : Component | c in ~c.^parts",1
+"all c : Component | c not in parts",1
+"all c : Component | c not c.^parts",1
+"all c:Component | no c->c in parts",1
+"Component not in *(Component.parts)",1
+"Component not in *(parts.Component)",1
+"all c: Component | c->c !in c.parts",1
+"all c : Component | no c in c.parts",1
+"all c:Component | c not in ^c.parts",1
+"Component not in ^(Component.parts)",1
+"all c:Component | c->c.*parts = none",1
+"all c : Component | c not in c&parts",2
+"all c : Component | c not in ^c.parts",2
+"all c:Component |  no(c & (^c.parts))",1
+"all w : workstation | w.workers.Human",1
+"all c:Component |  no(c & ^(c.parts))",2
+"all c:Component | c->c not in c.parts",4
+"some c:Component | c not in *(c.parts)",1
+"some c:Component | c not in ^(c.parts)",1
+"all c:Component | c->c not in c.*parts",2
+"all c : Component | c in parts.*Product",1
+"all x : Component | no x & x.^(x.parts)",1
+"all c:Component | c->c not in ^(c.parts)",1
+"all c1,c2:Component | no c1->c2 in parts",1
+"all c: Component | c not in c.^(c.parts)",1
+"all c:Component | c->c not in *(c.parts)",2
+"all c:Component | c->c not in c.(*parts)",1
+"all c1,c2: Component | c1 in parts.*(c2)",1
+"all c:Component | c->c not in (c.*parts)",1
+"all c1,c2:Component | no (c1->c2 in parts)",1
+"all c: Component | c not in c.parts.^(Component.parts)",1
+"all c:Component | c not in c.parts and c not c.parts.parts",1
+"all c: Product, p: Product| c im Component and c->p in parts implies c!=p",1

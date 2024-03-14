@@ -1,0 +1,12 @@
+inv4 B: all u : User | some ad : Ad | all p : Photo | u -> ad in posts && u -> p in posts => p in Ad
+inv4 B: all u : User | some ad : Ad | all p : Photo | u -> ad in posts => u -> p in posts && p in Ad
+inv4 B: all u : User | some ad : Ad | all p : Photo | u -> ad in posts => u -> p in posts && p in Ad
+inv4 B: all u : User | some ad : Ad | u -> ad in posts =>  all p : Photo | u -> p in posts && p in Ad
+inv4 B: all u : User | some ad : Ad | u -> ad in posts => all p : Photo | u -> p in posts && p in Ad
+inv4 B: all u : User | some ad : Ad | u -> ad in posts => all p : Photo | u -> p in posts => p in Ad
+inv4 C: all u : User, ad : Ad | u -> ad in posts => all p : Photo | u -> p in posts => p in Ad
+inv4 C: all u : User, ad : Ad | u->ad in posts => all p : Photo | u->p in posts => p in Ad
+inv4 C: all u : User, ad : Ad |	u->ad in posts => all p : Photo |	u->p in posts => p in Ad
+inv4 C: all u : User, ad : Ad | u->ad in posts	=> all p : Photo | u->p in posts => p in Ad
+inv4 C: all u : User, ad : Ad | u->ad in posts	=> all p : Photo | u->p in posts => p in Ad
+

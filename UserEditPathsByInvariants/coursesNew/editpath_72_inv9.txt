@@ -1,0 +1,19 @@
+inv9 B: no Professor & enrolled.(Professor.teaches)
+inv9 B: no (Professor & enrolled.(Professor.teaches))
+inv9 T: no (Professor not in enrolled.(Professor.teaches))
+inv9 B: Professor not in enrolled.(Professor.teaches)
+inv9 B: no Professor & enrolled.(Professor.teaches)
+inv9 T: enrolled.teaches in Professor set -> none Professor
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches)
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches)
+inv9 B: all disj p1, p2 : Professor | p1 not in enrolled.(p2.teaches) and p2 not in enrolled.(p1.teaches)
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 E:
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: no Student & Professor	    all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor | no p1.enrolled & p2.teaches
+inv9 B: all disj p1, p2 : Professor |  p1.enrolled = p2.teaches
+inv9 B: no Professor.enrolled
+

@@ -1,0 +1,39 @@
+inv14 T: all p:Person, c:Class| some t:Teacher, g:Group |t->c  and c->p->g in Groups implies t->p in Tutors
+inv14 S: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  (some t:Teacher| t->c in Teaches )															   implies t->p in Tutors
+inv14 B: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  (some t:Teacher| t->c in Teaches 															   implies t->p in Tutors)
+inv14 B: all p:Person, c:Class|some g :Group |c->p->g in Groups implies  some t:Teacher| t->c in Teaches 															   implies t->p in Tutors
+inv14 U: all p:Person, c:Class| (some g :Group |c->p->g in Groups) implies  some t:Person| t->c in Teaches 															   implies t->p in Tutors
+inv14 C: all p:Person, c:Class| (some g :Group |c->p->g in Groups) implies  all t:Person| t->c in Teaches 															   implies t->p in Tutors
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches 															   implies t->s in Tutors)
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 C: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 C: all s:Person, c:Class| (some g :Group |c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 S: all p:Person |some g:Group | all t:Teacher | t-> Groups.(p,g)  in Teaches implies t->p in Tutors
+inv14 S: all p:Person |some g:Group | all t:Teacher | t-> Groups.(p,g) in Teaches
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)  in Teaches implies t->p in Tutors
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)  in Teaches
+inv14 T: all p:Person |some g:Group | all t:Teacher | t->Groups.(p->g)
+inv14 B: all p:Person |some g:Group | all t:Teacher | no t->Groups.(p->g)
+inv14 S: some c:Class | {(x,y)| (x,y) in c.Groups } implies no Person
+inv14 S: some c:Class | {(x,y)| (x,y) in c.Groups }
+inv14 S: some c:Class | {(x,y)| (x,y) : c.Groups }
+inv14 S: some c:Class |all t:Teacher | t->c in. Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: some c:Class |all t:Teacher | t->c in Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: all c:Class |all t:Person | t->c in Teaches implies {(s,g): c.Groups | t->s in Tutors}
+inv14 S: all c:Class, t:Person | t->c in Teaches implies {(s->g): c.Groups | t->s in Tutors}
+inv14 T: all c:Class, t:Person | t->c in Teaches implies {s,g: c.Groups | t->s in Tutors}
+inv14 C: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Student, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Person| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Person, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s :Student, c:Class | (some g:Group | c->s->g in Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c) & (Tutors.s) )
+inv14 T: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c in Teacher) & (Tutors.s) )
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c & Teacher) & (Tutors.s) )
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no (Teaches.c & Teacher)  implies no ( (Teaches.c & Teacher) & (Tutors.s) )
+inv14 T: all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c & Teacher) & (Tutors.s) ) in Teacher
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies   ( (Teaches.c & Teacher) & (Tutors.s) ) in Teacher
+inv14 B: all s:Student ,c:Class |  some (s <:c.Groups) implies  no  (Teaches.c  & Tutors.s)
+inv14 T: all s:Student | all t:Teacher | t->s in Tutors implies t <:Groups
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  (all t:Teacher| t->c in Teaches implies t->s in Tutors)
+inv14 U: all s:Student ,c:Class |  some (s <:c.Groups) implies  no((Teacher & Teaches.c) - (Tutors.s) )
+

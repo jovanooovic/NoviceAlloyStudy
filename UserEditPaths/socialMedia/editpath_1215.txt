@@ -1,0 +1,40 @@
+NA H: THEME UPDATE
+inv1 S: all p : Posts | p in User.posts
+inv1 U: all p : Photo | p in User.posts
+inv1 S: all p : Photo , one user : User | p in user.posts
+inv1 C: all p : Photo | one user : User | p in user.posts
+inv2 C: all user : User | user not in user.follows
+inv3 O: all user : User | user.sees in user.follows.posts
+inv3 O: all user : User | user.sees in user.follows.posts	all ad : Ad | ad in User.sees
+inv3 O: all user : User , p : Photo | p in user.sees => p in user.follows.posts	all ad : Ad | ad in User.sees
+inv3 C: all user : User , p : Photo | p in user.sees => p in user.follows.posts		or p in Ad
+inv3 S: all user : User | user.sees in user.follows.posts	or p : Photo | p in Ad
+inv3 S: all user : User , photo in Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 S: all user : User | photo in Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 S: all user : User | photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 O: all user : User | all photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 O: all user : User, photo : Photo | user.sees in user.follows.posts	or photo in Ad
+inv3 C: all user : User, photo : Photo | photo in user.sees => photo in user.follows.posts	or photo in Ad
+inv4 S: all ad : Ad | all user.add.posts in Ad
+inv4 S: all ad : Ad | user.add.posts in Ad
+inv4 S: all ad : Ad | add.user.posts in Ad
+inv4 S: all ad : Ad | add.user.posts in Ad
+inv4 T: all ad : Ad , user : User | ad in user.posts in Ad
+inv4 C: all ad : Ad , user : User | ad in user.posts => user.posts in Ad
+inv5 B: all inf : Influencer | inf in User.follows
+inv5 S: all inf : Influencer, user : User | inf != u => inf in u.follows
+inv5 S: all inf : Influencer, user : User | inf != user => inf in u.follows
+inv5 U: all inf : Influencer, user : User | inf != user => inf in user.follows
+inv6 U: all photo : Photo  |lone photo.date
+inv6 B: all inf : Influencer |lone inf.posts.date
+inv6 S: all inf : Influencer , date : Date | date in inf.posts.date
+inv6 T: all inf : Influencer , date : Day | date in inf.posts.date
+inv6 C: all inf : Influencer , d : Day | d in inf.posts.date
+inv7 S: all user : User | user in user.suggested => user.follows.follows != user.folowers
+inv7 U: all user : User | user in user.suggested => (user.follows.follows != user.follows)
+inv7 T: all user : User | user.suggested in (user.follows.follows != user.follows)
+inv7 U: all disj u, uu:User | u in uu.suggested => (u in uu.follows.follows && u not in uu.follows)
+inv7 U: all disj u, uu:User | u in uu.follows.follows && u not in uu.follows implies u in uu.suggested
+inv8 O: all ad : Ad , user : User | ad in user.sees => (ad in user.follows.posts && ad in user.suggested.posts)
+inv8 C: all ad : Ad , user : User | ad in user.sees => (ad in user.follows.posts or ad in user.suggested.posts)
+

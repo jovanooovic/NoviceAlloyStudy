@@ -1,0 +1,19 @@
+inv14 S: all p1 : Student, some t : Teacher | (all c: Class, some g: Group | c->g->p1) => t->p1 in Tutors
+inv14 S: all p1 : Student, some t : Teacher | (some c: Class, some g: Group | c->g->p1) and t->p1 in Tutors
+inv14 S: all p1 : Student | some t : Teacher | (some c: Class, some g: Group | c->g->p1) and t->p1 in Tutors
+inv14 S: all p : Student, some t : Teacher | (some c: Class, some g: Group | c->g->p) and t->p in Tutors
+inv14 T: all s : Student | some c:Class, g:Group | (c->s->g in Group and some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 S: all s: Student | some t:Teacher | (some c:Class, g:Group | c->s->g in Groups) and t->c in Teaches and t->s in Tutors
+inv14 S: all s: Student | some t:Teacher, some c:Class | (some g:Group | c->s->g in Groups) and t->c in Teaches and t->s in Tutors
+inv14 B: all s: Student | some c:Class, g:Group | (c->s->g in Groups and some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Student, c:Class, g:Group | c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors
+inv14 B: all s: Student, c:Class, g:Group | (c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Person, c:Class, g:Group | (c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Person, c:Class, g:Group | (c->s->g in Groups => some t:Person | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Student, c:Class, g:Group | (c->s->g in Groups => some t:Person | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Student, c:Class, g:Group | (c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 B: all s: Student, c:Class, g:Group | (c->s->g in Groups => all t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 U: all s: Student, c:Class, g:Group | (c->s->g in Groups => all t:Teacher | t->c in Teaches => t->s in Tutors)
+inv14 B: all s: Student, c:Class | some g:Group | (c->s->g in Groups => some t:Teacher | t->c in Teaches and t->s in Tutors)
+inv14 C: all s: Person, c:Class, g:Group | (c->s->g in Groups => all t:Person | t->c in Teaches => t->s in Tutors)
+

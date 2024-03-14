@@ -1,0 +1,12 @@
+inv14 T: all s:Student, ss: Student-s,p:projects, pp:projects-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:projects, pp:projects-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => (pp not in s.projects & pp not in pp.projects)
+inv14 T: all s:Student, ss: Student-s ,p:Project, pp:Project-p| (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 T: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in pp.projects) => no (pp in s.projects & pp in pp.projects)
+inv14 U: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in pp.projects) => (pp in s.projects && pp in pp.projects)
+inv14 S: all s:Student, ss: Student-s | some(s.projects & pp.projects) => (pp in s.projects && pp in pp.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp in s.projects && pp in pp.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp in s.projects && pp in ss.projects)
+inv14 B: all s:Student, ss: Student-s , p:Project, pp:Project-p | (p in s.projects && p in ss.projects) => (pp not in s.projects && pp not in ss.projects)
+

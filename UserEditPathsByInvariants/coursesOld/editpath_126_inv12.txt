@@ -1,0 +1,6 @@
+inv12 U: all s : Student, c : Course | lone (s.(c.grades))
+inv12 O: grades in Course some -> some Person -> lone Grade
+inv12 O: grades in Course some -> set Person -> lone Grade
+inv12 C: grades in Course set -> set Person -> lone Grade
+inv12 C: grades in Course set -> set Person -> lone Grade
+

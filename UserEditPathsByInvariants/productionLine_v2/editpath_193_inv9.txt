@@ -1,0 +1,12 @@
+inv9 E:
+inv9 B: no begin - end
+inv9 U: all b: begin | b not in Workstation.succ
+inv9 U: all b: begin, e: end | b not in Workstation.succ and no e.succ
+inv9 U: all b: begin, e: end | b not in Workstation.succ and no e.succ	all w: Workstation | w not in w.^succ
+inv9 U: all b: begin, e: end | b not in Workstation.succ and no e.succ	all w: Workstation | w not in w.^succ	all w: Workstation | w not in end implies some w.succ	all w: Workstation | w not in begin implies w in Workstation.succ
+inv9 U: all b: begin, e: end | b not in Workstation.succ and no e.succ	all w: Workstation | w not in w.^succ	all w: Workstation | w not in end implies some w.succ	all w: Workstation | w not in begin implies w in Workstation.succ
+inv9 C: all w: Workstation | lone w.succ	all w: Workstation | lone w.~succ	all w: Workstation | w in begin.*succ	no end.succ
+inv9 C: succ in Workstation lone -> lone Workstation	Workstation in begin.*succ	no end.succ
+inv9 U: all b: begin, e: end | b not in Workstation.succ and no e.succ	all w: Workstation | w not in w.^succ	all w: Workstation | w not in end implies some w.succ	all w: Workstation | w not in begin implies w in Workstation.succ
+inv9 C: all b: begin, e: end | b not in Workstation.succ and no e.succ	all w: Workstation | w not in w.^succ	all w: Workstation | w not in end implies one w.succ	all w: Workstation | w not in begin implies w in Workstation.succ
+

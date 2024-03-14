@@ -1,0 +1,4 @@
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone s.~(c.grades)
+inv12 U: all s:Student, c:Course | s->c in enrolled => lone s.(c.grades)
+inv12 U: all s:Student, c:Course | lone s.(c.grades)
+

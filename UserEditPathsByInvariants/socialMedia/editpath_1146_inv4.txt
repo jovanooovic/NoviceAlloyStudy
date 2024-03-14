@@ -1,0 +1,3 @@
+inv4 T: all u:User | u.posts.Ad implies u.posts.Ads
+inv4 C: all u:User, y:Ad | u->y in posts implies (all p:Photo | u->p in posts implies p in Ad)
+

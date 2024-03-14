@@ -1,0 +1,10 @@
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 T: all u:User | u.sees in follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts or u.sees in Ad
+inv3 T: all u:User | u.sees in u.follows.posts or Ad
+inv3 T: all u:User | u.sees in (u.follows.posts or Ad)
+inv3 O: all u:User | u.sees in u.follows.posts
+inv3 O: all u:User | u.sees in u.follows.posts & Ad
+inv3 C: all u:User | u.sees in u.follows.posts + Ad
+

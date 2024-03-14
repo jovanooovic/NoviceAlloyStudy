@@ -1,0 +1,11 @@
+inv6 S: all c : Components | no (c.parts).c
+inv6 T: all c : Component | no (c.parts).c
+inv6 O: all c : Component | no (c.parts)
+inv6 O: all c : Component | no parts.c
+inv6 T: all c : Component | no c.(parts.c)
+inv6 T: all c : Component | no c.parts = c
+inv6 O: all p : Product | no Component.parts
+inv6 S: all p : Product | p in component implies p not in component.parts
+inv6 U: all p : Product | p in Component && p in p.parts implies p not in Component.parts
+inv6 C: all c : Component | c not in c.^(parts)
+

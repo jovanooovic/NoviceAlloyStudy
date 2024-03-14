@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 B: some trans
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 O: all s:State, e:Event | lone s.trans
+inv3 O: all s:State | lone s.trans
+inv3 U: all s:State, e:Event | lone s.trans.e
+inv3 T: all s1, s2:State, e:Event | lone s1->e->s2 in trans
+inv3 T: all s1, s2:State, e:Event | lone (s1->e->s2 in trans)
+inv4 B: all s:State | Init->Event->s in trans
+inv4 T: all s:State | s in Init.^trans
+

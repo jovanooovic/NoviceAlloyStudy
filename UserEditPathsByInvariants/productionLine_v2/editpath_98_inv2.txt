@@ -1,0 +1,15 @@
+inv2 U: all x : Workstation | some x.workers	all x : Worker | one x & Workstation.workers
+inv2 B: all x : Workstation | some x.workers	all x : Worker, y : Workstation | one x & y.workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | one x & Workstation.workers
+inv2 S: all x : Workstation | some x.workers	all x : Worker, one y : Workstation | one x & y.workers
+inv2 S: all x : Workstation | some x.workers	all x : Worker, some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv2 C: all x : Workstation | some x.workers	all x : Worker|  some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers and no x & (Workstation-y).workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers + x & (Workstation-y).workers
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one x & y.workers + (x & (Workstation-y).workers)
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) + (x & (Workstation-y).workers)
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) and no (x & (Workstation-y).workers)
+inv2 U: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) + (x & (Workstation-y).workers)
+inv2 C: all x : Workstation | some x.workers	all x : Worker | some y : Workstation | one (x & y.workers) - (x & (Workstation-y).workers)
+

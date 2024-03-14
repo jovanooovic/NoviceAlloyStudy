@@ -1,0 +1,9 @@
+inv10 B: all c : Component | all p : Product | p in c.parts => (p.workstation.succ = c.workstation)
+inv10 B: all c : Component | all p : Product | p in c.parts => (p.workstation.succ = c.workstation)
+inv10 T: all c : Component | all p : Product | p & c.parts => (p.workstation.succ = c.workstation)
+inv10 B: all c : Component | all p : Product | p in c.parts => (p.workstation.succ = c.workstation)
+inv10 B: all c : Component | all p : Product | p in c.parts => (p.workstation.*succ = c.workstation)
+inv10 O: all c : Component | all p : Product | p in c.parts => (p.workstation.*succ = c.*workstation)
+inv10 O: all c : Component | all p : Product | p in c.parts => (p.workstation.succ = c.*workstation)
+inv10 B: all c : Component | all p : Product | p in c.parts => c.workstation = begin
+

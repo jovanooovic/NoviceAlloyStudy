@@ -1,0 +1,39 @@
+inv4 T: State = ^(Init.trans)
+inv4 O: State = ^(Init.trans).State
+inv4 O: State = ^(Init.trans).State
+inv4 O: State in ^(Init.trans).State
+inv4 O: all s : State | s in State.(Init.trans)
+inv4 O: all s : State | s in (Init.trans).State
+inv4 O: all s : State | s in ^(Init.trans).State
+inv4 T: all s : State | s in Init.trans
+inv4 O: all s : State | s in Init.trans.State
+inv4 O: all s : State | s in Event.(Init.trans)
+inv4 O: all s : State | s in Event.^(Init.trans)
+inv4 O: all s : State | s in Event.(Init.trans)
+inv4 O: State = Init.^(trans.State)
+inv4 O: all s : State | s in Init.^(trans.State)
+inv4 O: all s : State | s in Init.^(trans.State)
+inv4 O: State = Init.^(trans.State)
+inv4 O: State = Init.^(State.trans)
+inv4 T: State = Init.^(trans)
+inv4 O: State = Event.^(Init.trans)
+inv4 O: all s : State | some e : Event | s->e in ^(Init.trans)
+inv4 T: all s : State | some e : Event | s->e in Init.^(State.trans)
+inv4 B: all x : Init | State in Event.*(x.trans)
+inv4 C: let t = { x,y : State | some z : Event | x->z->y in trans} | State in Init.(^t)
+inv4 T: let t = { all x,y : State | some z : Event | x->z->y in trans} | State in Init.(^t)
+inv4 C: let t = { s1, s2 : State | some e : Event | s1->e->s2 in trans} | State in Init.(^t)
+inv4 T: let t = { some s1, s2 : State | some e : Event | s1->e->s2 in trans } | State in Init.(^t)
+inv4 B: let t = { s2, s1 : State | some e : Event | s1->e->s2 in trans } | State in Init.(^t)
+inv4 C: State in Init.(^onlyStates)	}		fun onlyStates : set State -> State {	  { s1,s2: State | some e: Event | s1->e->s2 in trans }
+inv4 S: State in Init.(^onlyStates)	}		fun onlyStates : set State -> State {	  s1,s2: State | some e: Event | s1->e->s2 in trans
+inv4 C: State in Init.(^onlyStates)	}		fun onlyStates : set State -> State {	  { s1,s2: State | some e: Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set State -> State {	  { s1,s2: State | some e: Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set State -> State {	  { s1, s2: State | some e : Event | s1->e->s2 in trans }
+inv4 C: State = Init.~(^onlyStates)	}		fun onlyStates : set State -> State {	  { s2, s1: State | some e : Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { s1, s2: State | some e : Event | s1->e->s2 in trans }
+inv4 S: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { (s1, s2) : State | some e : Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { s1, s2 : State | some e : Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { s1, s2 : State | some e : Event | s1->e->s2 in trans }
+inv4 C: State = Init.(^onlyStates)	}		fun onlyStates : set (State -> State) {	  { s1, s2 : State | some e : Event | s1->e->s2 in trans }
+

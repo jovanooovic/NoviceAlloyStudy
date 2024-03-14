@@ -1,0 +1,18 @@
+inv6 T: all p : Project | projects.p = enrolled.p
+inv6 O: all p : Project | (Person <: projects).p = enrolled.p
+inv6 O: all p : Project | (Person <: projects).p = enrolled.p
+inv6 O: all p : Project | (Person <: projects).p = enrolled.p
+inv6 T: all p : Project | some projects.enrolled.p
+inv6 O: all p : Project | some (Person <: projects).enrolled.p
+inv6 T: all p : Project | enrolled.p
+inv6 O: all p : Project | some (Person <: projects).p  & enrolled.p
+inv6 O: all p : Project | some p.(Person <: projects)  & enrolled.p
+inv6 T: all p : Project, pr : Person | some projects.enrolled.pr
+inv6 O: all p : Project, pr : Person | some (Person <: projects).enrolled.pr
+inv6 O: all pr : Person | some (Person <: projects).enrolled.pr
+inv6 O: all p : Person | some (Person <: projects).enrolled.p
+inv6 B: all s : Student | Course.(Person <: projects).enrolled = s.enrolled
+inv6 T: all s : Student | Course.(Person <: projects).s = s.enrolled
+inv6 B: all s : Student | (Course <: projects).(s.projects) in s.enrolled
+inv6 B: all s : Student | (Course <: projects).(s.projects) in s.enrolled
+

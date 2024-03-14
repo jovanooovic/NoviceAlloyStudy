@@ -1,0 +1,26 @@
+NA H: THEME UPDATE
+inv1 E: 
+inv1 U: all p : Photo | p in User.posts
+inv1 S: all p : Photo | p in User.posts	all p : Photos |
+inv1 U: all p : Photo | p in User.posts
+inv1 S: all p : Photo | p in User.posts	all p : Photo | one u.User | p in u.posts
+inv1 C: all p : Photo | p in User.posts	all p : Photo | one u : User | p in u.posts
+inv2 C: all u : User | u not in u.follows
+inv3 S: all u1,u2 : User | p : Photo | p in u2.posts and p in u1.sees implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p : Photo | p in u2.posts and p in u1.sees implies u2 in u1.follows
+inv3 B: all u1,u2 : User | all p : Photo | p in u2.posts and p in u1.sees implies u2 in u1.follows
+inv1 C: all p : Photo | one u : User | p in u.posts
+inv3 B: all u1,u2 : User | all p : Photo - Ad | p in u2.posts and p in u1.sees implies u2 in u1.follows
+inv4 C: all u : User | all ad : Ad | ad in u.posts implies u.posts in Ad
+inv5 U: all i : Influencer | all u : User - i | i in u.follows
+inv6 C: all i : Influencer | all d : Day | d in i.posts.date
+inv7 T: all u1,u2,u3 : User | u3 in u1.suggested implies u2 in u1.follows and u3 in u2.follows and u3 not in u1.follows and u1!=u2!=u3
+inv7 U: all u1,u2 : User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows
+inv7 U: all u1,u2 : User | u2 in u1.suggested and u2!=u1 implies u2 not in u1.follows and u2 in u1.follows.follows
+inv7 B: all u1,u2 : User | u2 in u1.suggested and u2!=u1 <=> u2 not in u1.follows and u2 in u1.follows.follows
+inv7 C: all u1,u2 : User | u2 in u1.suggested <=> u2 not in u1.follows and u2 in u1.follows.follows and u2!=u1
+inv8 S: all u1,u2 : User | all ad : AD | ad in u1.sees implies u2 in  u1.follow or u2 in u1.suggested
+inv8 S: all u1,u2 : User | all ad : AD | ad in u2.posts and ad in u1.sees implies u2 in  u1.follow or u2 in u1.suggested
+inv8 S: all u1,u2 : User | all ad : Ad | ad in u2.posts and ad in u1.sees implies u2 in  u1.follow or u2 in u1.suggested
+inv8 B: all u1,u2 : User | all ad : Ad | ad in u2.posts and ad in u1.sees implies u2 in  u1.follows or u2 in u1.suggested
+

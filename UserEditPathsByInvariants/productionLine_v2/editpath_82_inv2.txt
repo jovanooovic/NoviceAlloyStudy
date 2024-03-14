@@ -1,0 +1,5 @@
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 O: all ws: Workstation | one w: Worker | w in ws.workers and	all w: Worker | one ws: Workstation | w in ws.workers
+inv2 O: (all ws: Workstation | one w: Worker | w in ws.workers) and	(all w: Worker | one ws: Workstation | w in ws.workers)
+inv2 C: all ws: Workstation | some w: Worker | w in ws.workers	all w: Worker | one ws: Workstation | w in ws.workers
+

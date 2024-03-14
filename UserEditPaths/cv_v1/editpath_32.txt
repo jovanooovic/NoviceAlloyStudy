@@ -1,0 +1,12 @@
+NA H: THEME UPDATE
+inv1 O: all w:Work | visible.w = profile.w
+inv1 T: all w:Work | visible.w implies w in profile
+inv1 O: all u:User | u.visible=u.profile
+inv1 C: all u:User | u.visible in u.profile
+NA H: THEME UPDATE
+inv2 T: all u:User | u.profile implies (u.source in Institution)
+inv2 T: all u:User | u.profile implies (u.source in Institution or u.source in User)
+inv2 U: all u:User, w:Work | w in u.profile implies (u.source in Institution or u.source in User)
+inv2 C: all u:User, w:Work | w in u.profile implies (u in w.source or w.source in Institution)
+inv2 O: all u:User, w:Work | w in u.profile implies ( w.source in Institution)
+

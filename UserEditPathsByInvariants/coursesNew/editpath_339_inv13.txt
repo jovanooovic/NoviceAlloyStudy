@@ -1,0 +1,7 @@
+inv13 T: one pM : Student | all p : Student | all c : Course | all g : c.grades |  gte[g.pM, g.p] implies some pM.projects & c.projects
+inv13 S: all c : Course, all pM : Student | (all p : Student |  gte[pM.(c.grades), p.(c.grades)]) implies some pM.projects & c.projects
+inv13 B: all c : Course | all pM : Student | (all p : Student |  gte[pM.(c.grades), p.(c.grades)]) implies some pM.projects & c.projects
+inv13 B: all c : Course | all pM : c.grades.Grade | (all p : c.grades.Grade |  gte[pM.(c.grades), p.(c.grades)]) implies some pM.projects & c.projects
+inv13 S: all pM : Student | all p : Student | pM.(c.grades) = last implies some pM.projects & c.projects
+inv13 U: all pM : Student | all c : Course | pM.(c.grades) = last implies some pM.projects & c.projects
+

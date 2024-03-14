@@ -1,0 +1,6 @@
+inv4 T: all s:State | Init.Event.s in trans
+inv4 B: all s:State | Init->Event->s in trans
+inv4 B: all s:State | Init->Event->(s-Init) in trans
+inv4 T: all s:State | Init.trans:>s
+inv4 T: all s:State | Init.trans.trans:>s
+

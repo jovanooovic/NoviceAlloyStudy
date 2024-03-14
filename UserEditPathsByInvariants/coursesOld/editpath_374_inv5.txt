@@ -1,0 +1,4 @@
+inv5 C: Person <: projects in Student some -> Project
+inv5 C: all x : univ | x in Project implies some y : Student | y->x in Person<:projects	 all x, y : univ | x in Person and y in Project and x->y in Person<:projects implies x in Student
+inv5 C: all p : Project | (Person <: projects).p in Student and some (Person <: projects).p
+

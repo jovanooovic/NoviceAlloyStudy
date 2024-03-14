@@ -1,0 +1,16 @@
+inv8 B: Exit in Entry.^(succs)
+inv8 B: Exit in Entry.*(succs)
+inv8 B: Exit in Entry.*(succs)
+inv8 B: Exit in Entry.^(succs)
+inv8 T: all x:Track | x in Exit => Entry.^(succs)
+inv8 T: all x:Track | x in Exit => Entry.^(succs)
+inv8 B: all x:Track | x in Exit => x in Entry.^(succs)
+inv8 B: Exit in Entry.^(succs) or Exit = Entry
+inv8 B: Exit in Entry.^(succs)
+inv8 B: all x :Track | x in Entry => one (Exit & x.^(succs))
+inv8 B: all x :Track | x in Entry <=> one (Exit & x.^(succs))
+inv8 B: all x :Track | x in Entry => one (Exit & x.^(succs))
+inv8 B: all x :Track | x in Entry => lone (Exit & x.^(succs))
+inv8 B: all x :Track | x in Entry => one (Exit & x.^(succs))
+inv8 B: all x :Track | x in Entry => some (Exit & x.^(succs))
+

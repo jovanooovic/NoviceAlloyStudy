@@ -1,0 +1,69 @@
+inv12 T: all c : Course | all s : Student | c in s.enrolled implies lone(s in c.grades.Grade)
+inv12 T: all s : Student | all g1,g2 : Grade | all c : s.enrolled | c.g1 and c.g2 implies g1=g2
+inv12 T: all s1,s2 : Student | all c : Course | c.grades.s1 and c.grades.s2 implies s1 != s2
+inv12 T: all s1,s2 : Student | all c : Course | c.grades.s1 and c.grades.s2 implies s1 != s2
+inv12 T: all s1,s2 : Person | all c : Course | c.grades.s1 and c.grades.s2 implies s1 != s2
+inv12 T: all g1,g2 : Grade | all c : Course | c.grades.g1 and c.grades.g2 implies g1 != g2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all s : Student | all c : Course | c in s.enrolled implies s in c.grades.Grade		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all c : Course |  c.grades.Grade != none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | c.grades.Grade != none implies c.grades.Person != none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | c.grades.Grade != none implies c.grades.Person != none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | c.grades.Grade != none implies (c.grades.Person != none)		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | (c.grades.Grade != none) implies (c.grades.Person != none)		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | (c.grades.Grade != none) <=> (c.grades.Person != none)		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 T: all c : Course | c.grades.Person implies c.grades.Grade		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all c : Course | c.grades.Person != none implies c.grades.Grade != none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all c : Course | all g: Grade | g in c.grades.Person implies c.grades.Grade != none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 U: all c : Course | all g: Grade | g in c.grades.Person implies 		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | all g: Grade | g in c.grades.Person		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | all g: Grade | g in c.grades.Person
+inv12 E:
+inv12 B: all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | all g: Grade | g in c.grades.Person		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 O: all c : Course | all g: Grade | g in c.grades.Grade		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 T: all c : Course | all g: Grade | g in c.grades		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all c : Course | all p : Person | all g : Grade | p->g in c.grades		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 B: all c : Course | all p : Person | all g : Grade | p->g in c.grades implies p!=none		all s1,s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 T: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades.Grade implies s1 != s2
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and s1 != none
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and s1 != none and s2 != none
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2 and g1 != none and g2 != none
+inv12 O: all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all g : Grade | g in Course.grades.Person		all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 S: all Person: p | all g : Grade | p->g in Course.gradesn		all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 S: all Person : p | all g : Grade | p->g in Course.gradesn		all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 S: all Person : p | all g : Grade | p->g in Course.grades		all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all p: Person | all g : Grade | p->g in Course.grades		all s1,s2 : Person | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all p: Student | all g : Grade | p->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 T: all p: Student | all g : Grade | p->g implies p->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all p: Student | all g : Grade | g != none implies p->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all s: Student | all g : Grade | s->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all s: Student | all g : Grade | s->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 O: all g : Grade | some s : Student | s->g in Course.grades		all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->g1 in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 S: all s1,s2 : Student | all g1,g2 : Grade | all c : Course | s1->_ in c.grades and s2->g2 in c.grades implies s1 != s2
+inv12 B: all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2
+inv12 S: all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s.enrolled
+inv12 B: all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled
+inv12 B: all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 O: all c : Course | all p : Person | p in c.grades.Grade implies p in Student		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 B: all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 O: all c : Course | all g: Grade | g in c.grades.Person		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 O: all c : Course | all g: Grade | g in c.grades.Person 		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 T: all c : Course | all g: Grade | g in c.grades.^Person 		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 T: all c : Course | all g: Grade | g in c.grades.*Person 		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 T: all c : Course | all g: Grade | g in c.grades.~Person 		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 B: all c : Course | all s: Student| all g: Grade | s->g in c.grades		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 B: all c : Course | all s: Student| all g: Grade | s->g in c.grades implies c in s.enrolled		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 T: all c : Course | all s: Student| all g: Grade | g in c.grades implies c in s.enrolled		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+inv12 B: all c : Course | all s: Student| all g: Grade | c in s.enrolled implies s->g in c.grades 		all s1, s2 : Student | all c : Course | s1 in c.grades.Grade and s2 in c.grades.Grade implies s1 != s2 and c in s1.enrolled and c in s2.enrolled
+

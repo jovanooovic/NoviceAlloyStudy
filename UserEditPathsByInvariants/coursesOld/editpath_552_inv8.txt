@@ -1,0 +1,14 @@
+inv8 T: no Professor.teaches + iden
+inv8 S: no Professor*.teaches
+inv8 B: no Professor.^teaches
+inv8 B: no Professor.*teaches
+inv8 U: all p: Professor | no (p.teaches & teaches.p)
+inv8 B: one p: Professor | no (p.teaches & teaches.p)
+inv8 U: all p : Professor | Professor not in p.^teaches
+inv8 T: all p : Professor | Professor not in teaches.^p
+inv8 T: all p : Professor | Professor not in teaches.*p
+inv8 B: all p : Professor | Professor not in p.*teaches
+inv8 U: all p : Professor | no (p.teaches & enrolled.p)
+inv8 U: all p : Professor | no (p.teaches & p.enrolled)
+inv8 U: all p : Professor | no (p.teaches & p.enrolled)
+

@@ -1,0 +1,27 @@
+NA H: THEME UPDATE
+inv2 S: all u1:User | u1 not in u1.follows;
+inv2 S: all u1:User | u1 not in u1.follows;
+inv2 S: all u1:User | u1 not in u1.follows;
+inv2 S: all u1:User | u1 not in u1.follows;
+inv4 S: all u1:User | ((u1.posts - Ad) = Ad) or (none (u1.posts-Ad))
+inv4 S: all u1:User | ((u1.posts - Ad) = Ad) or (none (u1.posts-Ad))
+inv4 S: all u1:User | some ((u1.posts - Ad) = Ad) or (none (u1.posts-Ad))
+inv4 S: all u1:User | some ((u1.posts - Ad) = Ad) or (none (u1.posts-Ad))
+inv1 C: all x:Photo | one u:User | x in u.posts
+inv2 C: all u1:User | u1 not in u1.follows
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv5 S: all f:follower | all u in User-f | f in u.followers
+inv5 S: all f:follower | all u in User-f | f in u.follows
+inv5 S: all f:follower | all u:User-f | f in u.follows
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv2 C: all u1:User | u1 not in u1.follows
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts
+inv3 S: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u in User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User-Influencer | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | p not in Ad and p in u2.posts	all a:Ad | all u:User | a in u.sees
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad)
+inv3 B: all u1:User | all p:u1.posts | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad and p not in u1.posts)
+inv3 O: all u1:User | all p:u1.sees | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad and p not in u1.posts)
+inv3 O: all u1:User | all p:u1.sees | one u2:u1.follows | (p not in Ad and p in u2.posts) or (p in Ad)
+

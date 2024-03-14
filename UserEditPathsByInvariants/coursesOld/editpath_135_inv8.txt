@@ -1,0 +1,10 @@
+inv8 U: all p:Person | not( p->p in teaches )
+inv8 O: all p:Person, c:Course | p->c in teaches and not(p->c in enrolled)
+inv8 O: all p:Person, c:Course | p->c in teaches and not(p->c in enrolled)
+inv8 B: all p:Person, c:Course | p.teaches not in p.enrolled
+inv8 B: all p:Person, c:Course |p.enrolled not in p.teaches
+inv8 B: all p:Person, c:Course | p.enrolled not in p.teaches
+inv8 B: all p:Person, c:Course | p.teaches not in p.enrolled
+inv8 B: all p:Person| p.teaches not in p.enrolled
+inv8 B: all p:Person| not p.teaches  in p.enrolled
+

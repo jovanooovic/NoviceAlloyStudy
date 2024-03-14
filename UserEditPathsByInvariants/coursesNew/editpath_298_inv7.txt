@@ -1,0 +1,8 @@
+inv7 U: all c : Course | lone (c.projects.~(enrolled))
+inv7 B: all s : Student | lone (s.enrolled.projects)
+inv7 B: all s : Person | lone (s.enrolled.projects)
+inv7 B: all c : Course | all s1 : Student | all s2 : Student | (s1 in c.projects.~(enrolled) and s2 in c.projects.~(enrolled)) iff s1=s2
+inv7 T: all s : Student | lone(s.projects in s.enrolled.projects)
+inv7 B: all s : Student | lone(s.enrolled.projects)
+inv7 B: all s : Student | lone(s.enrolled.projects & s.projects)
+

@@ -1,0 +1,20 @@
+inv11 T: all s: Student | no (Course - s.enrolled).s.grades
+inv11 B: all s: Student | no (Course - s.enrolled)
+inv11 U: all s: Student | no (Course - s.enrolled).(s.grades)
+inv11 S: all p: Person, c: Course | c in p.enrolled => c in p.grades.dom
+inv11 O: all p: Person, c: Course | some c.grades => c in p.enrolled
+inv11 O: all p: Person, c: Course | some c.grades <=> c in p.enrolled
+inv11 O: all p: Person, c: Course | some c.grades => c in p.enrolled
+inv11 S: all p: Person, c: Course | (c in p.enrolled <=> c in p.grades.dom)
+inv11 S: all p: Person, c: Course |	(c in p.enrolled <=> c in (c: Course | c in p.grades))
+inv11 S: all p: Person, c: Course | (c in p.enrolled <=> c in (c: Course | c in p.grades))
+inv11 S: all p: Person, c: Course | (c in p.enrolled <=> c in (c: Course | c in p.grades))
+inv11 T: all p: Person, c: Course | (c in p.enrolled <=> c in {c: Course | c in p.grades})
+inv11 O: all p: Person, c: Course | some c.grades => c in p.enrolled
+inv11 U: all p: Person, c: Course | some c.grades.p => c in p.enrolled
+inv11 T: all p: Person, c: Course | some c.p.grades => c in p.enrolled
+inv11 U: all p: Person, c: Course | some c.(p.grades) => c in p.enrolled
+inv11 C: all p: Person, c: Course | some p.(c.grades) => c in p.enrolled
+inv11 C: all p: Person, c: Course | some p.(c.grades) => c in p.enrolled
+inv11 U: all p: Student, c: Course | some p.(c.grades) => c in p.enrolled
+

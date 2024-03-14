@@ -1,0 +1,4 @@
+inv12 S: all c : Course | all P : Person | some g : Grade | #(p->g in c.grades)=0 or #(p->g in c.grades)=1
+inv12 T: all c : Course | all p : Person | some g : Grade | #(p->g in c.grades)=0 or #(p->g in c.grades)=1
+inv12 C: all c : Course | all p : Person | lone g:Grade | p->g in c.grades
+

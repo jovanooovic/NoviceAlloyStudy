@@ -1,0 +1,45 @@
+inv14 S: all s : Student , p,p1:Process | (p+p1) in s.projects
+inv14 S: all s : Student , p,p1:Projects | (p+p1) in s.projects
+inv14 B: all s : Student , p,p1:Project | (p+p1) in s.projects
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not p.projects-{s} & p1.projects-{s})
+inv14 B: all s : Student , p,p1:Project | (p+p1) in s.projects
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not p.projects-{s})
+inv14 T: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s})
+inv14 U: all s : Student , p,p1:Project | (p+p1) in s.projects implies (s not in (p.projects)-{s})
+inv14 S: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s}) and (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p+p1) in s.projects implies (not (p.projects)-{s}) & (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not (p.projects)-{s}) & (p1.projects)-{s}))
+inv14 S: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not (p.projects)) & (p1.projects)))
+inv14 U: all s1,s2 : Student | all p1,p2 : Project |	  	(s1->p1 in projects and s2->p1 in projects and s1!=s2 and p1!=p2) implies	  	( (s1->p2 not in projects) or (s2->p2 not in projects) )
+inv14 T: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (not p.~projects & p1.~projects)
+inv14 T: all s : Student , p,p1:Project | (not p.~projects & p1.~projects)
+inv14 T: all s : Student , p,p1:Project | (not projects.p & projects.p1)
+inv14 T: all s : Student , p,p1:Project | (no projects.p & projects.p1)
+inv14 T: all s : Student , p,p1:Project | (p1!=p and (p+p1) in s.projects) implies (no p.~projects & p1.~projects)
+inv14 U: all s : Student , p:s.projects | p in s.projects
+inv14 T: all s : Student , p:s.projects | (p.~projects)
+inv14 T: all s : Student , p:s.projects | (p.~projects) not in s.projects
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 T: all s : Student , p:s.projects | ((p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)-{s}) not in (((s.projects)-{p}).~projects)-{s}
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv14 B: all s : Student , p:s.projects | (Person :> (p.~projects)) not in (((s.projects)-{p}).~projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and one (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and some (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 and lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | lone (s.projects & s1.projects) implies s!=s1
+inv14 T: all s,s1 : Student | s!s1 implies lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 S: all disj (s,s1) : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 S: disj (s,s1) : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 B: all s,s1 : Student | s!=s1 iff lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+inv14 U: all s,s1 : Student | s!=s1 implies lone (s.projects & s1.projects)
+

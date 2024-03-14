@@ -1,0 +1,3 @@
+inv5 U: always all t : Train | (t.pos).prox = Exit releases t.pos.prox in Track
+inv5 B: always all t : Train | some t1 : Track | t.pos = t1 implies after t.pos in (t1.prox + t1)
+

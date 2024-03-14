@@ -1,0 +1,15 @@
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+inv9 B: all x: Professor, z: Person, y: Course | x in teaches.y and z in enrolled.y implies z not in Professor
+inv9 B: all x,z: Professor, y: Course | x in teaches.y and z in teaches.y implies x not in enrolled.y and z not in enrolled.y
+inv9 B: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (x.teaches & enrolled.y)
+inv9 B: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (x.teaches & y.enrolled)
+inv9 B: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (teaches.x & y.enrolled)
+inv9 T: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (x.teaches & enrolled.y and y.teaches and enrolled.x)
+inv9 T: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (x.teaches & enrolled.y and y.teaches & enrolled.x)
+inv9 B: all x, y : Professor | some z: Course | x in teaches.z and y in teaches.z implies no (x.teaches & enrolled.y) and no (y.teaches & enrolled.x)
+inv9 B: all x, y : Professor | some z: Course | some (x.teaches & y.teaches) implies no (x.teaches & enrolled.y) and no (y.teaches & enrolled.x)
+inv9 B: all x, y : Professor | some z: Course | some (x.teaches & y.teaches) implies no (x.teaches & y.enrolled) and no (y.teaches & x.enrolled)
+inv9 B: all x, y : Professor | some (x.teaches & y.teaches) implies no (x.teaches & y.enrolled) and no (y.teaches & x.enrolled)
+inv9 B: all x, y : Professor | some (x.teaches & y.teaches) implies no (x.teaches & y.enrolled)
+inv9 B: all x, y : Professor | some (x.teaches & y.teaches) implies no (x.teaches & y.enrolled)
+

@@ -1,0 +1,7 @@
+inv7 B: all x : Person | all y : Project | x in projects.y implies ( one z : Course | y in z.projects )
+inv7 B: all x : Person | all y : Project | x in projects.y implies 	  			( one z : Course | y in z.projects )
+inv7 S: all x : Student | all y : course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in prjects.z )
+inv7 S: all x : Student | all y : Course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in prjects.z )
+inv7 B: all x : Student | all y : Course | x in enrolled.y implies 	  	( one z : Project | x in projects.z and y in projects.z )
+inv7 U: all x : Student | all y : Course | x in enrolled.y implies 	  	( lone z : Project | x in projects.z and y in projects.z )
+

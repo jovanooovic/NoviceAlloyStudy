@@ -1,0 +1,20 @@
+inv4 T: all s:State | some i:Init | s in i.trans
+inv4 T: all s:State | some i:Init | s in trans.i
+inv4 T: all s:State | s in s.trans
+inv4 T: all s:State | s in s->Event->s
+inv4 S: all s:State, some i:Init | s in i->Event->s
+inv4 T: all s:State| some i:Init | s in i->Event->s
+inv4 T: all s:State| some i:Init | i->Event->s in State
+inv4 B: all s:State| some i:Init | i->Event->s in trans
+inv4 T: all s : State, i:Init | s in i.trans
+inv4 B: all s : State, i:Init | s in i.trans.Event
+inv4 B: all s : State, i:Init | s in i.trans.State
+inv4 B: all s : State, i:Init | s in i.trans.s
+inv4 T: all s : State, i:Init | s in i.trans
+inv4 T: all s : State, i:Init | s in trans.i
+inv4 B: all s : State, i:Init, e:Event |  s in trans.i.e
+inv4 B: all s : State, i:Init, e:Event |  s in i.trans.e
+inv4 T: all s : State, i:Init, e:Event |  s in i.trans.e.s
+inv4 B: all s : State, i:Init, e:Event |  s in trans.e.i
+inv4 S: /*	All the states have the same events available.	*/
+

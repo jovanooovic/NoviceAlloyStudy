@@ -1,0 +1,114 @@
+"Person in Tutors.Person",1
+"Person in Tutors.Student",1
+"~((Groups.Group):>Teacher) in Teaches",1
+"all s : Student | some s.(Class<:Groups)",1
+"all c : Class | some c.Groups.Group",2
+"all c:Class | lone Student.(c.Groups)",1
+"all s : Student | some s.(Class.Groups)",2
+"all s : Student | some s.(Teacher<:Teaches)",1
+"all c : Class, s : Student | some c.Groups",1
+"all c : Class, s : Student | some c.Groups.s",1
+"all s,t : Person, c : Class | some s.(c.Groups)",1
+"all s : Student | some Tutors.s & Groups.s.Group",1
+"Tutors = (Teaches.Person) -> Group.~((Person.Teaches).Groups)",1
+"all s:Student , t:Teacher | some Tutors.s :>t",1
+"all c : Class | Teaches . c . Tutors = c . Groups . Group",1
+"all c : Class | (c . (Groups . Group)) = (Teaches . c . Tutors)",1
+"all c : Class | Teaches . c . Tutors in c . Groups . Group",1
+"all c : Class | (c.Groups).Group in ((Teaches.c).Tutors)",3
+"all c : Class | c . (Groups . Group) in (Teaches . c . Tutors)",5
+"all t : Teacher | some Tutors.((t.Teaches).Groups.Group)",1
+"all c : Class | Teaches . c . Tutors = Class . Groups . Group",1
+"all s : Student, t : Teacher, c : Class | some s.(c.Groups)",2
+"all c : Class | (c . (Groups . Group)) & Student = ((Teaches . c) . Tutors)",1
+"all c : Class | (c.Groups).Group in (Teaches.c & Person.Tutors)",1
+"all c : Class | (c.Groups).Group in (Teaches.c & Tutors.Person)",1
+"all c : Class | (c . (Groups . Group)) in (Teaches . c . Tutors) & Student",1
+"all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors)",2
+"all c: Class, s: Student, t: Teaches.c | t->s in Tutors",1
+"all c : Class | (c.Groups).Group in (Teaches.c & Teacher.Tutors)",1
+"all c: Class | Teaches.c in Tutors.(c.Groups.Group & Student)",1
+"all c : Class | (c.Groups).Group in (Teaches.c & Tutors.Student)",1
+"all c : Class | ((c.Groups).Group & Student) in ((Teaches.c).Tutors)",1
+"all c : Class | Student.(c.Groups) in (Teaches.c & Person.Tutors)",1
+"all c : Class | c . Groups . Group in (Teacher <: Teaches) . c . Tutors",1
+"all c : Class | Student.(c.Groups) in (Teaches.c & Teacher.Tutors)",1
+"all c : Class | Teaches.c -> (Class.Groups.Group & Student) in Tutors",5
+"Class in (Teacher<:Teaches).Class implies Student in (Teacher<:Tutors).Student",1
+"all s,t : Person, c : Class | some s.(c.Groups) and some t.Teaches",2
+"all s : Student | some s.(Class.Groups)   implies some (Teacher<:Tutors).s",1
+"all c : Class | (c.Groups).Group in (Tutors.(Teaches.c) & Tutors.Person)",1
+"all c : Class | (c.Groups).Group in ((Teaches.c).Tutors & Teacher.Tutors)",1
+"all c : Class | ((c.Groups).Group) in ((Teaches.c).Tutors + Teacher.Tutors)",1
+"all c : Class | (c . (Groups . Group)) & Student = (Teacher & (Teaches . c) . Tutors)",1
+"all c : Class | (c . (Groups . Group)) & Student in (Teacher & (Teaches . c)) . Tutors",2
+"all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors) & Student",1
+"all c : Class | (c . (Groups . Group)) & Student in (Teacher & (Teaches . c) . Tutors)",1
+"all c : Class | (c . (Groups . Group)) & Student in (Teaches . c . Tutors) & Teacher",1
+"all s,t : Person, c : Class | some s.(c.Groups) and some (t<:Teaches).c",2
+"all s : Person, c : Class | some s.(c.Groups) implies (Tutors.s in Teaches.c)",1
+"all s : Student, c : Class | some s.(c.Groups) implies (Tutors.s in Teaches.c)",2
+"all c : Class | (Teaches.c & Teacher) -> (Class.Groups.Group & Student) in Tutors",3
+"all s : Student, t : Teacher | some s.(Class.Groups) implies some t.(Class.Groups)",3
+"all c : Class, t : Teacher, s : Student {
+      c in t.Teaches implies s in t.Tutors
+    }",1
+"all c : Class | ((c.Groups).Group & Student) in ((Teaches.c).Tutors + Teacher.Tutors)",1
+"all s:Student ,c:Class |  some (s <:c.Groups) implies  no  (Teaches.c  & Tutors.s)",2
+"all c: Class, p: c.Groups.Group, t: Teacher & Teaches.c | p -> t in Tutors",2
+"all p:Person |some g:Group | all t:Teacher | no t->Groups.(p->g)",1
+"all c : Class, s : Student, t : Teaches.c | some g : Group | s in t.Tutors",1
+"all s : Student, c : Class | some s.(c.Groups) implies (Tutors.s in ( Teacher & Teaches.c))",2
+"all s : Person, c : Class | some s.(Teacher<:Tutors) implies some c.(Teacher<:Teaches)",1
+"all s : Student, c : Class | some (Teacher<:Teaches).c implies some s.(Teacher<:Tutors)",1
+"all s : Student, c : Class | some s.(Teacher<:Tutors) implies some c.(Teacher<:Teaches)",1
+"all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies some s.Tutors",1
+"all s : Student, c : Class | some (Teacher<:Teaches).c implies some s.(Teacher<:Teaches)",1
+"all s:Student | (all c:Class, t:Teacher | t->c in Teaches implies t->s in Tutors)",1
+"all s: Student, t: Teacher | some c: Class | c->t in Teaches implies t->s in Tutors",1
+"all s:Student | (some c:Class, t:Teacher | t->c in Teaches implies t->s in Tutors)",1
+"all s:Student | (some c:Class, t:Teacher | t->c in Teaches and t->s in Tutors)",1
+"all s:Student ,c:Class |  some (s <:c.Groups) implies  no ( (Teaches.c & Teacher) & (Tutors.s) )",1
+"all c: Class, p: Student & c.Groups.Group, t: Teacher & Teaches.c | p -> t in Tutors",1
+"all s: Student, t: Teacher | some c: Class | c->t->s in Groups implies t->s in Tutors",1
+"all s : Student | some s.(Class.Groups) and some Teacher.Teaches implies some (Teacher<:Tutors).s",1
+"all s : Student | some s.(Class.Groups) and some Teacher<:Teaches implies some (Teacher<:Tutors).s",2
+"all s : Student, c : Class | some s.(c.Groups) and some Teacher & Teaches.c implies some s.Tutors",1
+"all s: Student | one c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies some t.Tutors",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies some Tutors.t",1
+"all s: Student | some c: Class | all t: Teacher | c->t->s in Groups implies t->s in Tutors",2
+"all s : Student, c : Class | some s.(c.Groups) and some Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))",3
+"all s : Student, t : Teacher | some s.(Class.Groups) and some (t<:Teaches).Class implies some (t<:Tutors).s",1
+"all c : Class, s : Student, t : Teaches.c | some g : Group | 
+  		c->s->g in Groups && s in t.Tutors",1
+"all c : Class, s : Student, t : Teaches.c | some g : Group | 
+  		c->s->g in Groups => s in t.Tutors",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teacher & Teaches.c implies some Tutors.t",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teacher & Teaches.c implies some t.Tutors",1
+"all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (Teaches.c & t) implies some (Tutors:>t).s",1
+"all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some (t.Teaches).Groups implies some (t<:Tutors).s",1
+"all s : Student, c : Class | some s.(c.Groups) and some Teacher & Teaches.c implies (Tutors.s in ( Teacher & Teaches.c))",1
+"all c : Class, t : Teaches.c | all s : Student | some g : Group | c->s->g in Groups => s in t.Tutors",1
+"all s : Student | 
+  		some c : Class | (s in c.Groups.Group) implies (
+        	all t : Teaches.c :> Teacher | s in t.Tutors
+        )",1
+"all c : Class, t : Teaches.c | all s : Student | some g : Group | c->s->g in Groups and s in t.Tutors",1
+"all s : Student, t : Teacher, c : Class | some s.(c.Groups) and some Teaches.c & Teacher implies some (t<:Tutors).s",1
+"all p1, p2 : Person, c : Class | some g : Group | c -> p2 -> g in Groups and p1 -> c in Teaches implies p1 -> p2 in Tutors",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some t.Teaches implies (Tutors.s in ( Teacher & Teaches.c))",1
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and some Teaches.c implies Tutors.s in ( Teacher & Teaches.c)",2
+"all s : Student, c : Class, t : Teacher | some s.(c.Groups) and t.Teaches in Class implies (Tutors.s in ( Teacher & Teaches.c))",1
+"all s:Person, c:Class, t:Person | some g:Group | c->s->g in Groups and t->c in Teaches implies t->s in Tutors",1
+"all s:Student, c:Class, t:Person | some g:Group | c->s->g in Groups and t->c in Teaches implies t->s in Tutors",1
+"all s:Person, c:Class, t:Teacher | some g:Group | c->s->g in Groups and t->c in Teaches implies t->s in Tutors",1
+"all s:Student,c:Class, g:Group  | (c->s->g in Groups implies all t:Teacher | t->c in Teaches and t->s in Tutors)",1
+"all c : Class, t : Teacher | t->c in Teaches => (all s : Student | c->s->Group in Groups => s in t.(Tutors :> Student))",1
+"all s:Student,c:Class, g:Group  | (c->s->g in Groups implies some t:Teacher | t->c in Teaches and t->s in Tutors)",1
+"all s:Student, c:Class, t:Teacher | some g:Group | c->s->g in Groups and t->c in Teaches implies t->s in Tutors",1
+"all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.Tutors)",1
+"all p:Person, c:Class|some g :Group |c->p->g in Groups implies  some t:Teacher| t->c in Teaches 
+														   implies t->p in Tutors",2
+"all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.Teaches)",1
+"all c : Class, t : Teacher | t->c in Teaches => (all s : Student | some g : Group | c->s->g in Groups => s in t.(Tutors :> Student))",1

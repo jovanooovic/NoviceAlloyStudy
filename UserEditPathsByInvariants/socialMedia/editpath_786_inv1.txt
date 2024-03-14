@@ -1,0 +1,12 @@
+inv1 E:
+inv1 S: f in Photo | f in User.posts
+inv1 U: all f : Photo | f in User.posts
+inv1 U: all f : Photo | all u1, u2 : User | f in User.posts
+inv1 U: all f : Photo | all u1, u2 : User | f in u1.posts and f in u2.posts implies u1 = u2
+inv1 S: all f : Photo | f in User.photos	all f : Photo | all u1, u2 : User | f in u1.posts and f in u2.posts implies u1 = u2
+inv1 C: all f : Photo | f in User.posts	all f : Photo | all u1, u2 : User | f in u1.posts and f in u2.posts implies u1 = u2
+inv1 O: all f : Photo | f in User.posts	all f : Photo | all u1, u2 : User | f in u1.posts+u2.posts implies u1 = u2
+inv1 U: all f : Photo | all u1, u2 : User | f in User.posts and (f in u1.posts and f in u2.posts implies u1 = u2)
+inv1 C: all f : Photo | f in User.posts	all f : Photo | all u1, u2 : User | f in u1.posts and f in u2.posts implies u1 = u2
+inv1 C: all f : Photo | f in User.posts	all f : Photo | one u : User | f in u.posts
+

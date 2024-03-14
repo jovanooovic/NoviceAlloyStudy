@@ -1,0 +1,4 @@
+inv6 B: all i:Influencer | all p:Photo | i->p in posts implies (all d:Day | p ->d in date )
+inv6 B: all i:User-Influencer | all p:Photo | i->p in posts implies (all d:Day | p ->d in date )
+inv6 U: all i:User-Influencer | all p:Photo | i->p in posts implies (one d:Day | p ->d in date )
+

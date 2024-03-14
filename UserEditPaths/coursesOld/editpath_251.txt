@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+NA M: MOD BASE MODEL
+inv1 C: no (Person-Student).enrolled
+inv14 B: all s : Student, p : s.projects | ((Person<:projects).p)-s&(Person<:projects).((s.projects)-p)=none
+NA H: THEME UPDATE
+inv1 C: no (Person-Student).enrolled
+NA H: THEME UPDATE
+inv13 S: all c : Courses | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | Person.n >= nota ) implies (some proj : n.Grade | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade | proj in c.projects)
+inv2 C: no (Person-Professor).teaches
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv2 C: no (Person-Professor).teaches
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some n : c.grades | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+inv13 S: all c : Course, nota : Person.(c.grades) | (some grade : c.grades | gte[Person.grade,nota] ) implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course, nota : Person.(c.grades) | some grade : c.grades | gte[Person.grade,nota]  implies (some proj : grade.Grade.projects | proj in c.projects)
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+NA H: THEME UPDATE
+inv1 C: no (Person-Student).enrolled
+inv13 T: all c : Course | some n : c.grades | (all nota : Person.(c.grades) | gte[Person.n,nota] ) implies (some proj : n.Grade.projects | proj in c.projects)
+

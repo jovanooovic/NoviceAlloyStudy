@@ -1,0 +1,30 @@
+NA H: THEME UPDATE
+inv4 E: 
+inv4 S: all u: User, w1, w2: Work | ((some id: w1.ids | id in w2.ids) and w1 in u.visible) implies w2 not in u.visible
+inv4 O: all u: User, w1, w2: Work | ((some id: w1.ids | id in w2.ids) and w1 in u.visible) implies w2 not in u.visible
+inv4 O: all u: User, w1, w2: Work | (some (w1.ids & w2.ids) and w1 in u.visible) implies w2 not in u.visible
+inv4 U: all u: User, disj w1, w2: Work | (some (w1.ids & w2.ids) and w1 in u.visible) implies w2 not in u.visible
+inv4 B: all disj w1, w2: Work | (some (w1.ids & w2.ids) and w1 in User.visible) implies w2 not in User.visible
+inv1 C: visible in profile
+inv2 C: all u: User | u.profile.source in (u + Institution)
+inv3 S: all u: User | all disj w1, w2: a.profile | (w1.source = w2.source) implies no (w1.ids & w2.ids)
+inv3 C: all u: User | all disj w1, w2: u.profile | (w1.source = w2.source) implies no (w1.ids & w2.ids)
+inv4 B: all disj w1, w2: Work | (some (w1.ids & w2.ids) and w1 in User.visible) implies w2 not in User.visible
+inv4 B: all disj w1, w2: Work | (some (w1.ids & w2.ids) and w1 in User.profile) implies w2 not in User.visible
+inv4 B: all u: User | all disj w1, w2: Work | (some (w1.ids & w2.ids) and w1 in u.profile) implies w2 not in u.visible
+inv4 U: all id: Id | lone id <: ids
+inv4 O: all id: Id | lone ids :> id
+inv4 B: all id: User.profile.ids | lone ids :> id
+inv4 S: all u : User | all w1, w2: u.profile | (no (w1.ids <: w2.ids) && w1 in u.visible) implies not w2 u.visible
+inv4 T: all u : User | all w1, w2: u.profile | (no (w1.ids <: w2.ids) && w1 in u.visible) implies not w2 u.visible
+inv4 T: all u : User | all disj w1, w2: u.profile | (no (w1.ids <: w2.ids) && w1 in u.visible) implies not w2 u.visible
+inv3 C: all u: User | all disj w1, w2: u.profile | (w1.source = w2.source) implies no (w1.ids & w2.ids)
+inv4 B: all u : User | all disj w1, w2: u.profile | (no (w1.ids <: w2.ids) && w1 in u.visible) implies not w2 in u.visible
+inv4 U: all u : User | all disj w1, w2: u.profile | (some (w1.ids <: w2.ids) && w1 in u.visible) implies not w2 in u.visible
+inv4 B: all disj w1, w2: User.profile | (some (w1.ids <: w2.ids) && w1 in User.visible) implies not w2 in User.visible
+inv4 U: all u:User, w:Work | w in u.profile implies lone (u.visible & w)
+NA M: MOD BASE MODEL
+inv4 O: all u:User, w1,w2:Work | ((w1=w2) and (w1 in u.visible)) implies w2 not in u.visible
+inv4 O: all u:User, w1,w2:Work | ((w1=w2) and (w1 in u.visible)) implies w2 not in u.visible
+inv4 U: all u:User, disj w1,w2:Work | ((w1=w2) and (w1 in u.visible)) implies w2 not in u.visible
+

@@ -1,0 +1,9 @@
+inv5 B: all t:Track | t in Junction iff some ts:Track | t in ts.succs
+inv5 B: all t:Track | t in Junction iff all ts:Track | t in ts.succs
+inv5 B: all t:Track | t in Junction iff some ts:Track | ts in t.succs
+inv5 B: all t:Track | t in Junction iff some ts:Track | t in ts.succs
+inv5 U: all t:Track | t in Junction implies some ts:Track | t in ts.succs
+inv5 U: all t:Junction | some ts:Track | t in ts.succs
+inv5 U: all t:Junction | some ts:Track | t in ts.succs
+inv5 U: all t:Junction | some ts:Track | t in ts.succs
+

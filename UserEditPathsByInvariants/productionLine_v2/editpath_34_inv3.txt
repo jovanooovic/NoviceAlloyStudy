@@ -1,0 +1,7 @@
+inv3 U: workstation in Component -> some Workstation
+inv3 C: workstation in Component -> one Workstation
+inv3 O: all a:Workstation | some b:Worker | a->b in workstation	all a1,a2:Workstation | (some b:Component | a1->b in workstation and a2->b in workstation) implies a1 = a2
+inv3 O: all a:Workstation | some b:Component | a->b in workstation	all a1,a2:Workstation | (some b:Component | a1->b in workstation and a2->b in workstation) implies a1 = a2
+inv3 U: all a:Component | some b:Workstation | a->b in workstation	all a1,a2:Workstation | (some b:Component | a1->b in workstation and a2->b in workstation) implies a1 = a2
+inv3 C: all a:Component | some b:Workstation | a->b in workstation	all a1,a2:Workstation | (some b:Component | b->a1 in workstation and b->a2 in workstation) implies a1 = a2
+

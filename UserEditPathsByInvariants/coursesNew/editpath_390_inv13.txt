@@ -1,0 +1,4 @@
+inv13 S: all c: Course |	    all s: Student |	      let highestMark = max[Grade](s.^(grades.c)) |	        highestMark in s.grades.c => (s.projects & c) != none
+inv13 S: all c: Course |	    all s: Student |	      let highestMark = max[Grade](s.^(grades.c)) |	        highestMark in s.grades.c => (s.projects & c) != none
+inv13 S: all c: Course |	    let highestMark = max[Grade](grades.c) |	      all s: Student |	        (s.grades.c = highestMark) implies (s.projects & c) != none
+

@@ -1,0 +1,67 @@
+inv5 S: all i:Influencer | univ u:User  | u->i in follows
+inv5 S: all i:Influencer | u:User  | u->i in follows
+inv5 B: all i:Influencer | one u:User  | u->i in follows
+inv5 B: all u:User | one i:Influencer  | u->i in follows
+inv5 B: all u:User | one i:Influencer  | i->u in follows
+inv5 O: all u:univ | one i:Influencer  | i->u in follows
+inv5 O: all u:univ | one i:Influencer  | u->i in follows
+inv5 S: all u:univ |i:Influencer  | u->i in follows
+inv5 O: all u:univ | all i:Influencer  | u->i in follows
+inv5 S: all u:univ and i:Influencer  | u->i in follows
+inv5 S: all i:Influencer | u:univ | i in u.follows
+inv5 S: all i:Influencer | u:univ | i in u.follows
+inv5 S: all i:Influencer | u:univ | i in u.follows
+inv5 S: all i:Influencer | u:univ | i in u
+inv5 B: one i:Influencer | all u:User | u in i.follows
+inv5 B: all i:Influencer | all u:User | u in i.follows
+inv5 B: all i:Influencer | all u:User | u -Influencer in i.follows
+inv5 B: all i:Influencer | all u:User | u - i in i.follows
+inv5 O: all i:Influencer | all u:User | i  in u.follows-i
+inv5 S: all i:Influencer | all i.follows & univ
+inv5 S: all i:Influencer |  i.follows == univ
+inv5 S: all i:Influencer |  i.follows & iden  == univ
+inv5 T: all i:Influencer |  i.follows & iden  implies univ
+inv5 B: all i:Influencer | all u:User | i in u.follows
+inv5 B: one i:Influencer | all u:User | i in u.follows
+inv5 T: all i:Influencer | all u:User | one i in u.follows
+inv5 B: all i:Influencer | all u:User | i in u.follows
+inv5 B: all i:Influencer | all u:User | u in i.follows
+inv5 B: all i:Influencer | all u:User | u-i in i.follows
+inv5 B: one i:Influencer | all u:User | u-i in i.follows
+inv5 O: all i:Influencer | all u:univ | u-i in i.follows
+inv5 B: all i:Influencer | all u:User | u-i in i.follows
+inv5 B: one i:Influencer | all u:User | u-i in i.follows
+inv5 B: all i:Influencer | all u:User | u-i in i.follows
+inv5 B: all i:Influencer | all u:User | u in i.follows
+inv5 B: all i:Influencer | all u:User | u->i in follows
+inv5 S: all i:Influencer | all u:User | u in i.follows | i->i not in follows
+inv5 S: all i:Influencer | all u:User | u in i.follows | u->u not in follows
+inv5 S: all i:Influencer | all u:User | u in i.follows | u not in u.follows
+inv5 O: all i:Influencer | all u:User | u in i.follows and u not in u.follows
+inv5 O: all i:Influencer | all u:User | u in i.follows and u not in u.follows and i not in i.follows
+inv5 B: all i:Influencer | all u:User | u-i in i.follows
+inv5 S: all i:Influencer | all u:univ | u in Users implies u in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: one i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u in i.follows
+inv5 B: one i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: one i:Influencer | all u:univ | u in User implies u+i in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: all u:univ | u in User.follows implies u in Influencer
+inv5 S: all u:univ | u in User.follows implies u in i.follows
+inv5 B: all i:Influencer | all u:univ | u in User implies u-i in i.follows
+inv5 B: all u:univ | u in Influencer implies some t:User | t in u.follows
+inv5 B: all u:univ | u in Influencer implies all t:User | t in u.follows
+inv5 T: all u:univ | u in Influencer implies all t:User and t!=u | t in u.follows
+inv5 O: all u:univ | u in Influencer implies all t:User |t!=u and t in u.follows
+inv5 B: all u:univ | u in Influencer implies some t:User |t!=u and t in u.follows
+inv5 O: all u:univ | u in Influencer implies all t:User |t!=u and t in u.follows
+inv5 B: all u:univ | u in Influencer implies all t:User | t in u.follows
+inv5 B: all i:Influencer | all u:User | u in i.follows
+inv5 B: all i:Influencer | all u:User | i in u.follows
+inv5 B: all i:Influencer | all u:User | u->i in follows
+inv5 B: all i:Influencer | all u:User | u->i in follows
+inv5 U: all i:Influencer | all u:User | i!=u implies u->i in follows
+

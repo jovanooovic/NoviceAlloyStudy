@@ -1,0 +1,5 @@
+inv12 S: all t: Teacher | some c: Class | some Person.(c.Groups) | t->c in Teaches
+inv12 T: all t:Teacher | some g:Group | some t->g in Class.Groups
+inv12 T: all t:Teacher | some g:Group, c:Class | some t->g in c.Groups
+inv12 B: all t: Teacher|some c: Class | t->c in Teaches implies some s:Student, g:Group | c->s->g in Groups
+

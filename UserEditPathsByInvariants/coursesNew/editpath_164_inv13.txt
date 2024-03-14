@@ -1,0 +1,20 @@
+inv13 S: all c : Course | gt(c.grades)
+inv13 E:
+inv13 E:
+inv13 S: all c:Course, p:Student | (some p1: Student | c.grades[p1] = max c.grades) => p in c.projects.Student
+inv13 S: all c:Course, p:Student | (some p1: Student | c.grades[p1] = max c.grades) => p in c.projects.Student
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max c.grades)
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max c.grades)
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max c.grades)
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max (c.grades))
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max[Grade] c.grades)
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max[Grade] (c.grades.ran))
+inv13 S: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = max[Grade] (c.grades.ran))
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = maxGrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = maxGrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = maxgrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = maxGrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = maxGrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) && (c.grades[p] = maxGrade)
+inv13 T: all c:Course, p:Student | (p in c.projects.Student) => (c.grades[p] = (maxGrade))
+

@@ -1,0 +1,7 @@
+inv5 S: all p : Project | some s : Person | s->p in workes implies p in Student
+inv5 B: all p : Project | some s : Person | s->p in projects implies p in Student
+inv5 U: all p : Project | some s : Person | s->p in projects implies s in Student
+inv5 B: all p : Project | some s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv5 B: all p : Project | some s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+inv5 B: all p : Project | all s : Person | one z : Course | z->p in projects and s->p in projects implies s in Student
+

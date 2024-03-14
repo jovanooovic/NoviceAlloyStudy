@@ -1,0 +1,12 @@
+inv5 B: all p : Project | some s : Person - Professor | s -> p in projects
+inv5 B: all p : Project | all s : Person - Professor | s -> p in projects
+inv5 B: all p : Project | some s : Person - Professor | p in s.projects
+inv5 U: all p : Project | some s : Student | p in s.projects
+inv5 B: all p : Project | all s : Student | p in s.projects
+inv5 B: all p : Project | some s : Student, pr : Professor | p in s.projects and not p in pr.projects
+inv5 B: all p : Project, pr : Professor | some s : Student | p in s.projects and not p in pr.projects
+inv5 B: all p : Project | some s : Student - Professor | p in s.projects
+inv5 B: all p : Project | all s : Student - Professor | p in s.projects
+inv5 B: all p : Project | some s : Student - Professor | p in s.projects
+inv5 U: all p : Project | some s : Student | p in s.projects
+

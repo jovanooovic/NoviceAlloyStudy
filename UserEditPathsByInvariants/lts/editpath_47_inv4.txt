@@ -1,0 +1,7 @@
+inv4 B: all e: Event | e.(Init.trans) = State
+inv4 B: all i: Init | Event.(i.trans) = State
+inv4 B: all i: Init, e: Event | e.(i.trans) = State
+inv4 B: all i: Init | Event.(i.trans) = State
+inv4 T: all e: Event | e.(Init.^trans) = State
+inv4 C: Init.^{x, y: State | some (x.trans).y} = State
+

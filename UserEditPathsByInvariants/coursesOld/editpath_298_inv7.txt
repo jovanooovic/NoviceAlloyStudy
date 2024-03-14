@@ -1,0 +1,6 @@
+inv7 B: all s : Student | one proj : Project | proj in s.projects implies proj in s.enrolled.projects
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | (p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects) implies p1 = p2
+inv7 B: all s : Student | all p1,p2 : Project | all c : Course | (p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects) implies p1 = p2		  all s : Student | all p : Project | all c1, c2 : Course | p in c1.projects and p in c2.projects and p in s.projects implies c1 = c2
+inv7 B: all s : Student | all p : Project | all c1, c2 : Course | p in c1.projects and p in c2.projects and p in s.projects implies c1 = c2
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects implies p1 = p2
+

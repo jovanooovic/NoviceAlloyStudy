@@ -1,0 +1,42 @@
+NA H: THEME UPDATE
+inv1 B: lone Entry	lone Exit
+inv1 B: lone Entry	lone Exit	Entry != Exit
+inv1 O: one Entry	one Exit	Entry != Exit
+inv1 C: some Entry	some Exit
+inv1 S: some Entry, Exit
+inv1 T: some Entry and Exit
+inv2 C: all s : Signal | one signals.s
+inv2 C: all s : Signal | one signals.s
+inv3 C: all t : Track | t in Exit iff no t.succs
+inv4 C: all t : Track | t in Entry iff no succs.t
+inv5 C: all t : Track | t in Junction iff some p1, p2 : succs.t | p1 != p2
+inv6 B: some Entry.signals & Speed
+inv6 C: all e : Entry | some e.signals & Speed
+inv7 C: no ^succs & iden
+inv7 C: all t : Track | t not in t.^succs
+inv8 S: Track in ^succ
+inv8 T: Track in ^succs
+inv8 T: Track in ^Track.succs
+inv8 T: Track in ^Track.succs
+inv8 O: Track->Track in ^succs
+inv8 O: all t1, t2 : Track | t2 in t1.*succs
+inv8 C: all e : Entry | Exit in e.*succs
+inv8 C: all en : Entry, ex : Exit | ex in en.*succs
+inv9 B: all t : Track | t not in succs.Junction implies Semaphore not in t.signals
+inv9 S: all t : Track | t not in Juntion.succs implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in Junction.succs implies Semaphore not in t.signals
+inv9 S: all t : Track | t not in succs.Jumction implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in succs.Junction implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in succs.Junction iff Semaphore not in t.signals
+inv10 S: all t : Track | t in succs.Junction implies Semapthore in t.signals
+inv10 B: all t : Track | t in succs.Junction implies Semaphore in t.signals
+inv10 O: all t : Track | t in succs.Junction implies one Semaphore & t.signals
+inv10 E: 
+inv9 B: all t : Track | t not in succs.Junction implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in (*succs).Junction implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in (^succs).Junction implies Semaphore not in t.signals
+inv9 B: all t : Track | lone t & succs.Junction implies Semaphore not in t.signals
+inv9 B: all t : Track | t not in succs.Junction implies Semaphore not in t.signals and Speed not in t.signals
+inv9 T: all t : Track | t not in succs.Junction iff Semaphore not in t.signals and Speed
+inv9 B: all t : Track | t not in succs.Junction iff Semaphore not in t.signals
+

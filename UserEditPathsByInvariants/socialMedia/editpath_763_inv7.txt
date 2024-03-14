@@ -1,0 +1,11 @@
+inv7 S: all u : User | all u2 : User - u.follows |	u2 in u.suggested implies	(some u3 in u.follows | u2 in u3.follows)
+inv7 S: all u : User | all u2 : User - u.follows |	u2 in u.suggested =>	(some u3 in u.follows | u2 in u3.follows)
+inv7 U: all u : User | all u2 : User - u.follows |	u2 in u.suggested implies	(some u3 : u.follows | u2 in u3.follows)
+inv7 U: all u : User | all u2 : User - u.follows |	u2 in u.suggested =>	(some u3 : u.follows | u2 in u3.follows)
+inv7 U: all u : User | all u2 : User - u.follows - u|	u2 in u.suggested =>	(some u3 : u.follows | u2 in u3.follows)
+inv7 U: all u : User | all u2 : User - u.follows - u|	u2 in u.suggested =>	(some u3 : u.follows | u2 in u3.follows and u2 not in u.follows)
+inv7 U: all u : User | all u2 : User - u.follows - u|	u2 in u.suggested =>	((some u3 : u.follows | u2 in u3.follows) and u2 not in u.follows)
+inv7 U: all u : User | all u2 : User - u.follows - u|	u2 in u.suggested =>	(one u3 : u.follows | u2 in u3.follows)
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u
+inv7 C: all u : User | u.suggested = u.follows.follows - u.follows - u
+

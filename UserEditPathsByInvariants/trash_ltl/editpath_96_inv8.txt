@@ -1,0 +1,9 @@
+inv8 B: always ( all f:File | some f.^link implies eventually f.^link in Trash )
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.^link  in Trash)
+inv8 B: always (all f:File.^link| some f implies  eventually  f  in Trash)
+inv8 B: always (all f:File| some f.^link  implies  eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f &f.^link  implies  eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.*link  implies  eventually  f.*link  in Trash)
+inv8 B: always (all f:File| some f.link  implies  eventually  f.link  in Trash)
+inv8 C: always (all f:File| some f.link  implies  eventually  f  in Trash)
+

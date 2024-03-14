@@ -1,0 +1,28 @@
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 S: no ourse.{c : Course, p : Person | some c.grades} & Student
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Student
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Professor
+inv10 B: no (Course.{c : Course, p : Person | some c.grades} & Professor)
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} not in Professor
+inv10 B: no Course.{c : Course, p : Person | some c.grades} & Professor
+inv10 C: all p1 : Person | all c1 : Course | all g1 : Grade|	  	(c1->p1->g1 in grades) implies (p1 in Student)
+inv10 B: Course.{c : Course, p : Person | some c.grades} in Professor
+inv10 T: {p : Person | {c : Course, p : Person | some c.grades}.p} in Professor
+inv10 T: {p : Person | ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 T: {p : Person | ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 B: {p : Person | some ({c : Course, p : Person | some c.grades}.p)} in Professor
+inv10 B: Course.{c : Course, p : Person | some c.grades} in Professor
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 U: Professor.{c : Course, p : Person | some c.grades} in Student
+inv10 U: Person.{c : Course, p : Person | some c.grades} in Student
+inv10 O: Course.{c : Course, p : Person | some c.grades} in Student
+inv10 T: {p : Person, g : Grade | some grades.g} in Student
+inv10 O: {p : Person, g : Grade | some grades.g}.Grade in Student
+inv10 S: all p : Person {p : Person, g : Grade | some grades.g} in Student
+inv10 T: all p : Person | {p : Person, g : Grade | some grades.g} in Student
+inv10 S: all p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+inv10 S: p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+inv10 O: all p : Person, g : Grade | p->g in {p : Person, g : Grade | some grades.g} implies p in Student
+

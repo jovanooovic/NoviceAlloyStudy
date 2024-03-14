@@ -1,0 +1,8 @@
+inv3 T: all u : User, y : Photo| y in u.sees.Ad implies y in u.follows.posts
+inv3 C: all u : User, y : Photo| y in u.sees and y not in Ad implies y in u.follows.posts
+inv3 B: all u : User, y : Photo| y in u.sees & Ad implies y in u.follows.posts
+inv3 S: all u : User, y : Photo| y in u.sees not & Ad implies y in u.follows.posts
+inv3 O: all u : User, y : Photo| y in u.sees + Ad implies y in u.follows.posts
+inv3 O: all u : User| u.sees in u.follows.posts
+inv3 C: all u : User| u.sees - Ad in u.follows.posts
+

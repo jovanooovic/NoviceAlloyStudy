@@ -1,0 +1,8 @@
+inv4 S: all
+inv4 U: no Entry & Track.succs
+inv4 B: all t : Track | no t.succs => t in Entry
+inv4 C: all t : Track | no t & Track.succs => t in Entry	no Entry & Track.succs
+inv4 C: no Entry & Track.succs	all t : Track | no t & Track.succs => t in Entry
+inv4 C: no succs.Entry	all t : Track | no t & Track.succs => t in Entry
+inv4 C: no succs.Entry	all t : Track | no succs.t => t in Entry
+

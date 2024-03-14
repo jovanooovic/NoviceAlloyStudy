@@ -1,0 +1,5 @@
+inv10 B: all c: Component | c.^(parts.workstation) not in end implies c.workstation not in end
+inv10 T: all c: Component | c.^(parts.workstation not in end) implies c.workstation not in end
+inv10 B: all c1, c2: Component | all w1, w2: Workstation | w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies w2 in w1.^(succ)
+inv10 B: all c1, c2: Component | all w1, w2: Workstation | w1 in c1.workstation and w2 in c2.workstation and c2 in c1.^(parts) implies w1 in w2.^(succ)
+

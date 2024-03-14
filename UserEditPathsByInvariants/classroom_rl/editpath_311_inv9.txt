@@ -1,0 +1,6 @@
+inv9 B: all c : Class | some (Teacher.Teaches->c)
+inv9 B: all c : Class | lone (Teacher.Teaches->c)
+inv9 T: all c : Class | lone (Teacher.Teaches.c)
+inv9 B: all c : Class | lone ((Teacher.Teaches)->c)
+inv9 B: all c : Class, t : Teacher | lone ((t.Teaches)->c)
+

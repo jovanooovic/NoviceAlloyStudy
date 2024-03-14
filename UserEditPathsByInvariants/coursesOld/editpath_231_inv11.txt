@@ -1,0 +1,13 @@
+inv11 E:
+inv11 S: all s :Student |no (Course-(s.enroled)).grade.s
+inv11 S: all s :Student |no (Course-(s.enrolled)).grade.s
+inv11 U: all s :Student |no (Course-(s.enrolled)).grades.s
+inv11 U: all s :Student |no Course.grades.s
+inv11 B: all s :Student |some Course.grades.s
+inv11 B: all s :Student |some Course.grades.Grade
+inv11 B: some Course.grades.Grade
+inv11 B: all s: Student |some Course.grades.s
+inv11 T: all s: Student |some Course.~grades.s
+inv11 B: all s: Student |some ~(Course.grades).s
+inv11 U: all s: Student |no ~((Course-s.enrolled).grades).s
+

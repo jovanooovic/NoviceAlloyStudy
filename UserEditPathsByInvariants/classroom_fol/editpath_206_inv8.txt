@@ -1,0 +1,9 @@
+inv8 B: all x : Teacher | some y : Teacher | all c : Class | x->c in Teaches implies y->c not in Teaches
+inv8 B: all x : Teacher | all c : Class | x->c in Teaches
+inv8 B: all x : Teacher | some c : Class | some d : Class | x->c in Teaches implies x->d not in Teaches
+inv8 B: all x : Teacher | all c : Class | some d : Class | x->c in Teaches implies x->d not in Teaches
+inv8 O: all x : Teacher | all c : Class | all d : Class | x->c in Teaches implies x->d not in Teaches
+inv8 B: all x : Teacher | all c : Class | some d : Class | x->c in Teaches implies c!=d and x->d not in Teaches
+inv8 U: all x : Teacher | all c : Class | some d : Class | x->c in Teaches and c!=d implies x->d not in Teaches
+inv8 C: all x : Teacher | all c : Class | all d : Class | x->c in Teaches and c!=d implies x->d not in Teaches
+

@@ -1,0 +1,9 @@
+inv7 O: all c : Component | no ((c + c.*parts) & Dangerous) or ((c + c.*parts) in Dangerous)
+inv7 O: all c : Product | no ((c + c.*parts) & Dangerous) or ((c + c.*parts) in Dangerous)
+inv7 O: all p : Product | no (p.*parts & Dangerous) or (p.*parts in Dangerous)
+inv7 O: all p : Product | (no p.*parts & Dangerous) or (p.*parts in Dangerous)
+inv7 O: all p : Product | (no (p.*parts & Dangerous)) or (p.*parts in Dangerous)
+inv7 B: all p : Product | p in Dangerous => p.^parts in Dangerous
+inv7 B: all p : Product | p in Dangerous => p.parts in Dangerous
+inv7 O: all p : Product | p in Dangerous => parts.p in Dangerous
+

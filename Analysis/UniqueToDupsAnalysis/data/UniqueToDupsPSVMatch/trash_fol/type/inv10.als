@@ -1,0 +1,132 @@
+no Trash.link.File
+-- div,1
+link.Trash no Link
+-- div,2
+all f:File | f in link
+-- div,1
+all l:link | l in Trash
+-- div,1
+all l:link |no l in Trash
+-- div,1
+all l:link |no  l in Trash
+-- div,1
+all l:link | l not in Trash
+-- div,1
+all f,x:File | f->x in Trash
+-- div,1
+all l:link |no File.l in Trash
+-- div,1
+all f :File,l:link | l in Trash
+-- div,1
+all f:File | link.f implies f in Trash
+-- div,1
+all f,x:File | (f->x in link) in Trash
+-- div,2
+all x : Trash, y : Trash | x->y x in link
+-- div,1
+link in Trash implies File.*link in Trash
+-- div,2
+all f:File | f in link implies f in Trash
+-- div,1
+all f : File | f in Trash -> f.link in Trash
+-- div,1
+all f:File | link.f in iden implies f in Trash
+-- div,4
+all f,g:File | g in Trash implies f->g in Trash
+-- div,1
+all f,x:File | f->x in Trash implies x in Trash
+-- div,1
+all f,g:File | f->g in Trash implies g in Trash
+-- div,1
+all l:link | l in Trash  implies File.l in Trash
+-- div,1
+all f:File | f.link in Trash implies link in Trash
+-- div,1
+all f,u : File |  f->u in Trash implies u in Trash
+-- div,1
+all f:File | link in Trash implies f.link in Trash
+-- div,2
+all f1,f2:File | f1->f2 in Trash implies f1 in Trash
+-- div,1
+all f :File,l:link | f.l in Trash implies l in Trash
+-- div,1
+all f:File | f.link in Trash implies f:>link in Trash
+-- div,1
+some f1,f2:File | f1->f2 in Trash implies f2 in Trash
+-- div,1
+all f:Trash,g:File | f->g in Trash implies g in Trash
+-- div,1
+all f1,f2 : File | f1->f2 in Trash implies f2 in Trash
+-- div,1
+all fl:File.link | fl in Trash implies (no fl in File)
+-- div,2
+all f,g:File | (f->g and f in Trash) implies g in Trash
+-- div,1
+all f,g:File | f->g in link in Trash implies g in Trash
+-- div,1
+all fl:File.link | (fl in Trash implies (no fl in File))
+-- div,1
+all f,g:File | (f->g in link) in Trash implies g in Trash
+-- div,1
+all f,g:File | (f->g in link in Trash) implies g in Trash
+-- div,1
+all l1, l2 : File | l1->l2 in (link & Trash) => l2 in Trash
+-- div,1
+all f1,f2 : File | f1->f2 in link implies f1 and f2 in Trash
+-- div,1
+all f:File | (f in link and link in Trash) implies f in Trash
+-- div,1
+all t:Trash, fl:File.link | fl in Trash implies (no fl in File)
+-- div,1
+some f1,f2:File | (f1->f2 in link) in Trash implies f2 in Trash
+-- div,3
+all f,l : File | (f.l in link and f in Trash) implies l in Trash
+-- div,1
+all f,g:File | f->g in link and f->g in Trash implies g in Trash
+-- div,1
+all x,y: File | x->y in link and x->y in Trash implies y in Trash
+-- div,1
+all f,u : File |f->u in link and f->u in Trash implies u in Trash
+-- div,7
+all l1, l2 : File | (l1->l2 in link & l1 in Trash) => l2 in Trash
+-- div,1
+all f,g:File | (f->g in link) and f->g in Trash implies g in Trash
+-- div,1
+all f: File | f.link in Trash and f not Protected implies f in Trash
+-- div,1
+all f,u : File |  f->u in link implies f->u in Trash implies u in Trash
+-- div,1
+all f,u : File |  (f->u in link) implies (f->u in Trash implies u in Trash)
+-- div,2
+all f1,f2 : File | isLink[f1] and f1->f2 and f1 in Trash implies f2 in Trash
+}
+
+pred isLink[f1:File]{
+some f2 : File | f1->f2 in link
+-- div,1
+all x, y : File | isLink[x] in Trash implies isLinked[x]
+}
+
+
+pred isLinked[f:File]{
+some g:File | g->f in link
+}
+
+/* There are no links. */
+
+pred isLink[f:File]{
+some g:File | f->g in link
+-- div,1
+all x, y : File | isLink[x] in Trash implies isLinked[x] in trash
+}
+
+
+pred isLinked[f:File]{
+some g:File | g->f in link
+}
+
+/* There are no links. */
+
+pred isLink[f:File]{
+some g:File | f->g in link
+-- div,1

@@ -1,0 +1,10 @@
+inv1 B: one u:User | all p:Photo | u->p in posts
+inv1 T: all u1,u2:User | all p:Photo | u1->p in posts and u2->p implies u1=u2
+inv1 B: one u1:User | all p:Photo | u1->p in posts
+inv1 S: all p:Photo | one posts.x
+inv1 C: all p:Photo | one posts.p
+inv1 C: all x : Photo | one y : User | y -> x in posts
+inv1 C: all p : Photo | one y : User | y->p in posts
+inv1 B: one y : User | all p:Photo | y->p in posts
+inv1 C: all p:Photo | one u1:User | u1->p in posts
+

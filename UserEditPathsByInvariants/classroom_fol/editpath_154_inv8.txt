@@ -1,0 +1,18 @@
+inv8 E:
+inv8 B: some c:Class | (some t:Teacher | t->c in Teaches)
+inv8 B: all c:Class | (some t:Teacher | t->c in Teaches)
+inv8 B: some t1:Teacher , t2:Teacher , c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2
+inv8 B: all c:Class | (some t1:Teacher , t2:Teacher | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2)
+inv8 S: some t1:Teacher , t2:Teacher | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1-> and not t2->c)
+inv8 S: some t1:Teacher , t2:Teacher | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1->c and not t2->c)
+inv8 T: some t1:Teacher , t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1->c and not t2->c)
+inv8 T: some t1:Teacher , t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1->c and not t2->c)
+inv8 B: some t1:Teacher , t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1->c in Teaches and not t2->c in Teaches)
+inv8 B: some t1:Teacher , t2:Teacher, c:Class | (t1->c in Teaches and t2->c in Teaches) implies t1 = t2 or (not t1->c in Teaches or not t2->c in Teaches)
+inv8 B: some t1:Teacher , c:Class | t1->c in Teaches or not t1->c in Teaches
+inv8 U: all t1:Teacher , c:Class | t1->c in Teaches or not t1->c in Teaches
+inv8 C: all c1:Class,c2:Class,t:Teacher | (t->c1 in Teaches and t->c2 in Teaches) implies c1 = c2
+inv8 S: all c1:Class,c2:Class,t:Teacher | (t->c1 in Teaches implies not t1->c2 in Teaches
+inv8 S: all c1:Class,c2:Class,t:Teacher | (t->c1 in Teaches implies not( t1->c2 in Teaches)
+inv8 C: all c1:Class,c2:Class,t:Teacher | (t->c1 in Teaches and t->c2 in Teaches) implies c1 = c2
+

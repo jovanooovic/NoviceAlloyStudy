@@ -1,0 +1,12 @@
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | p1 in s.projects and p2 in s.projects and p1 in c.projects and p2 in c.projects implies p1=p2
+inv7 T: all s : Student | all p1,p2 : Project | all c : Course | (p1 and p2) in s.projects and (p1 and p2) in c.projects implies p1=p2
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | (p1 + p2) in s.projects and (p1 + p2) in c.projects implies p1=p2
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | (p1 + p2) in s.projects and (p1 + p2) in c.projects implies p1=p2
+inv7 B: all s : Student | one p : Project | p in s.projects
+inv7 B: all s : Student | lone p : Project | p in s.projects
+inv7 B: all s : Person - Professor | lone p : Project | p in s.projects
+inv7 B: all s : Student | #(s.projects)=1
+inv7 T: all s : Student | #(Project.s)=1
+inv7 T: all s : Student | #(s.Project)=1
+inv7 U: all s : Student | all p1,p2 : Project | all c : Course | (p1 + p2) in s.projects and (p1 + p2) in c.projects implies p1=p2
+

@@ -1,0 +1,5 @@
+inv10 U: all c: Course, p: Person,g:Grade | p in (grades.g.c) implies p in Student
+inv10 T: all x:Student, g:Grade | g in x.grades implies (x.enrolled.grades).gt
+inv10 C: all y:Course, g:Grade | (y.grades).g in Student
+inv10 C: all y:Course, g:Grade | (y.grades).g in Student
+

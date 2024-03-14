@@ -1,0 +1,13 @@
+inv7 B: all s : Student | lone s.projects & s.enrolled.projects
+inv7 B: all s : Student | all c : s.enrolled | one c.projects
+inv7 T: all s : Student | none s.projects . s.enrolled.projects
+inv7 T: all s : Student | none s.projects - s.enrolled.projects
+inv7 B: all s : Student | no s.projects - s.enrolled.projects
+inv7 B: all s : Student | lone s.enrolled.projects & s.projects
+inv7 B: all s : Student | all p1,p2 : Project | p1 in s.projects and p2 in s.projects implies Course <: projects.p1 != Course <: projects.p2
+inv7 S: all s : Student | all c : Courses | | all p : Project | p in s.projects and p in c.projects implies no s.projects & c.projects
+inv7 S: all s : Student | all c : Courses | | all p : Project | p in s.projects and p in c.projects implies no s.projects & c.projects.p
+inv7 S: all s : Student | all c : Courses | | all p : Project | p in s.projects and p in c.projects implies no s.projects & c.projects-p
+inv7 S: all s : Student | all c : Courses | all p : Project | p in s.projects and p in c.projects implies no s.projects & c.projects-p
+inv7 U: all s : Student | all c : Course | all p : Project | p in s.projects and p in c.projects implies no s.projects & c.projects-p
+

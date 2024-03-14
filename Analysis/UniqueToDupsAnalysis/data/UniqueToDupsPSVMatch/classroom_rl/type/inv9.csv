@@ -1,0 +1,51 @@
+"one Teacher.Student",1
+"(Teacher <: Teaches)",1
+"Teacher some -> one Class",1
+"all c : Class | Teaches.c",1
+"lone Class in Teacher.Teaches",3
+"all c: Class | lone Teacher.c",1
+"lone Teacher in Teaches.Class",1
+"all t : Teacher | not t.Teaches",1
+"all c:Class | lone Teacher.Class",2
+"Class.(Teacher<:Teaches) in iden",1
+"all c:Class | no (some Teaches.c)",1
+"(Teaches.~Teaches).Teacher in iden",1
+"(Teacher.Teaches).~Teaches in iden",1
+"Teaches . ~Teaches in iden.Teacher",1
+"Teacher.(Teaches.~Teaches) in iden",1
+"Teacher.Teaches some -> one Class",1
+"all c : Class | no (lone Teaches.c)",1
+"all c:Class| one Teacher = Teaches.c",1
+"lone (Teacher <: Teaches) in Teacher",1
+"lone ((Teacher <: Teaches) & Person)",1
+"all c : Class | one Teacher.Teaches.c",1
+"all c : Class | lone Teacher.Teaches.c",2
+"(Teaches.Class).~(Teaches.Class) = iden",1
+"all c: Class | lone Teaches & Teaches.c",1
+"all c:Class | lone Teacher in Teaches.c",1
+"all c:Class,t:Teacher | lone t.Teaches.c",1
+"all c : Class | lone (Teacher.Teaches.c)",1
+"all c: Class | lone (Teaches & Teaches.c)",1
+"all c : Class | #(Teacher.c & Teaches) < 2",1
+"~(Teaches<:Class).(Teaches<:Class) in iden",1
+"iden[Teacher] & (Teaches.~Teaches) in iden",1
+"iden(Teacher) & (Teaches.~Teaches) in iden",1
+"all c:Class,t:Teaches | lone t in Teaches.c",1
+"all c:Class,t:Teacher | one t->c in Teaches",1
+"all c : Class | #(c in Teacher.Teaches) < 2",1
+"all c : Class | lone (Teaches.c) in Teacher",1
+"all c : Class | lone (c in Teacher.Teaches)",1
+"all c : Class | (lone Teaches.c) in Teacher",1
+"all c : Class | #(c and Teacher.Teaches) < 2",1
+"all c : Class, s : Student | s->c in Groups z",3
+"all x:Class| some t:Teacher | lone t.Teaches.x",1
+"(Teaches.~Teaches :> Teacher->Teacher) in iden",1
+"all c : Class | lone t : Teacher | t.Teaches.c",1
+"Teacher & ((Teacher.Teaches).~Teaches) in iden",1
+"all t:Teacher | lone t.Teaches and ~(t.Teaches)",1
+"(Teaches.~Teaches) :> (Teacher->Teacher) in iden",1
+"all c : Class | one Person.(c.Groups) in Teacher",1
+"all c : Class | some Person.(c.Groups) in Teacher",1
+"(Teacher <: Teaches).(~Teacher <: Teaches) in iden",1
+"all c : Class | #(Person.(c.Groups) in Teacher) <= 1",1
+"all c : Class | all p : Person.(c.Groups) | some p in Teacher",1

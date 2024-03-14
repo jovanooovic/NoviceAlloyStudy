@@ -1,0 +1,10 @@
+inv4 U: all x, y: Node | x in y.^(adj) and y in x.^(adj)
+inv4 T: all x, y: Node | x in (y.adj or y.^(adj)) and y in (x.adj or x.^(adj))
+inv4 U: all x, y: Node | (x in y.^(adj) or x in y.adj) and (y in x.^(adj) or y in x.adj)
+inv4 U: all x, y: Node | x in y.^(adj)
+inv4 U: all x, y: Node | x in y.^(adj) and y in x.^(adj)
+inv4 U: all x: Node | Node in x.*adj
+inv4 U: all x: Node | (Node - x) in x.adj
+inv4 U: all x: Node | (Node - x) in x.^(adj)
+inv4 U: all x: Node | Node in x.^(adj)
+

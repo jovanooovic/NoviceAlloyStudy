@@ -1,0 +1,5 @@
+inv13 S: all p->P in Tutor | p in Teacher and (all s : P | s in Student)
+inv13 T: all p1, p2 : Person, ps : set Person | (p1->ps in Tutors and p2 in Tutors) => (p1 in Teacher and p2 in Student)
+inv13 T: all p1, p2 : Person, ps : set Person | (p1->ps in Tutors and p2 in ps) => (p1 in Teacher and p2 in Student)
+inv13 C: all p1, p2 : Person | p1->p2 in Tutors => (p1 in Teacher and p2 in Student)
+

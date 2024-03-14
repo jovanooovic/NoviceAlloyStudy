@@ -1,0 +1,11 @@
+inv3 B: no pos
+inv3 B: no Train.pos
+inv3 O: always (no Train.pos)
+inv3 U: Train.pos' = Train.pos
+inv3 U: always (Train.pos' = Train.pos)
+inv3 U: all t : Train , p : t.pos | always (t.pos = p)
+inv3 U: always(all t : Train , p : t.pos | always (t.pos = p))
+inv3 B: no Train.pos.prox
+inv3 B: always (no Train.pos.prox)
+inv3 C: always(all t : Train  | always (t.pos' = t.pos))
+

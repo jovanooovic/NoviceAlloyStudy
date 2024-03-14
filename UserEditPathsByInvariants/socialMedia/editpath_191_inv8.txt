@@ -1,0 +1,9 @@
+inv8 U: all x : User | Ad in x.sees implies Ad in ((x.follows).posts + x.suggested.posts )
+inv8 S: all x : User | all a: Add | a in x.sees implies p.User | a in p.posts and p in (x.follows + x.suggested)
+inv8 S: all x : User | all a: Add | a in x.sees implies some p.User | a in p.posts and p in (x.follows + x.suggested)
+inv8 S: all x : User | all a: Add | a in x.sees implies some p.User | a in p.posts and p in (x.follows + x.suggested)
+inv8 S: all x : User | all a: Ad | a in x.sees implies some p.User | a in p.posts and p in (x.follows + x.suggested)
+inv8 S: all x : User | all a:Ad | a in x.sees implies some p.User | a in p.posts and p in (x.follows + x.suggested)
+inv8 C: all u:User | all a:Ad | a in u.sees implies some p:User | a in p.posts and p in (u.follows + u.suggested)
+inv8 C: all x:User | all a:Ad | a in x.sees implies some p:User | a in p.posts and p in (x.follows + x.suggested)
+

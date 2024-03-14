@@ -1,0 +1,3 @@
+inv8 O: all ad : Ad , user : User | ad in user.sees => (ad in user.follows.posts && ad in user.suggested.posts)
+inv8 C: all ad : Ad , user : User | ad in user.sees => (ad in user.follows.posts or ad in user.suggested.posts)
+

@@ -1,0 +1,8 @@
+inv4 B: all u:User	| some pht:Photo	| pht in Ad and u->pht in posts implies all otherPht:Photo | u->otherPht in posts implies  otherPht in Ad
+inv4 B: all u:User | lone u.posts<:Ad implies u.posts = Ad
+inv4 B: all u:User | one u.posts<:Ad implies u.posts = Ad
+inv4 O: all u:User | some u.posts<:Ad implies u.posts = Ad
+inv4 B: all u:User | one u.posts<:Ad implies u.posts = Ad
+inv4 O: all u:User | some u.posts<:Ad implies u.posts = Ad
+inv4 O: all u:User | some u.posts<:Ad implies u.posts in Ad and Ad in u.posts
+

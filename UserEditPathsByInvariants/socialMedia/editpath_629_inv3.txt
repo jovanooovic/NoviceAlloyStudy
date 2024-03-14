@@ -1,0 +1,11 @@
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts
+inv3 T: all x:Photo,y:User| y.sees in y.follows.posts	all x:Ad,y:User| y.sees & x
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts and y.sees not in Ad
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts and y.sees in Ad
+inv3 O: all x:Photo,y:User| y.sees in y.follows.posts or y.sees in Ad
+inv3 O: all x:Photo,y:User| x!= Ad and x in y.sees implies x in y.follows.posts
+inv3 O: all x:Photo,y:User| x!=Ad and x in y.sees implies some z:User| z.posts = x and z in x.follows
+inv3 O: all x:Photo,y:User| x not in Ad and x in y.sees implies some z:User| x in z.posts and z in x.follows
+inv3 C: all x:Photo,y:User| x not in Ad and x in y.sees implies some z:User| x in z.posts and z in y.follows
+inv3 C: all x:Photo,y:User| x not in Ad and x in y.sees implies x in y.follows.posts
+

@@ -1,0 +1,20 @@
+inv5 T: eventually some Trash not in File
+inv5 S: eventually some (Trash & no File)
+inv5 T: eventually some (Trash and no File)
+inv5 T: eventually some (no Trash + File)
+inv5 B: eventually (no Trash + File)
+inv5 T: eventually some Trash not in File
+inv5 T: eventually some (Trash not in File)
+inv5 O: some t : Trash | once t in (File - Trash)
+inv5 O: some t : Trash | historically t in (File - Trash)
+inv5 O: some f : File | eventually f in Trash and f not in File
+inv5 B: some f : File | eventually always f in Trash
+inv5 B: eventually always some Trash
+inv5 B: some f : File | eventually f+link.f in Trash
+inv5 B: some f : File | eventually (f+link.f) in Trash
+inv5 B: some f : File | eventually (f+f.link) in Trash
+inv5 B: some f : File | eventually f in Trash and link.f in Trash
+inv5 B: eventually no File
+inv5 O: always some f : File | eventually f not in File
+inv5 C: eventually some f : File | eventually f not in File
+

@@ -1,0 +1,5 @@
+inv4 C: all u : User, ad : Ad | u -> ad in posts implies all p : Photo | u -> p in	posts implies p in Ad
+inv4 C: all u : User, ad : Ad | u in posts.ad implies all p : Photo | u -> p in	posts implies p in Ad
+inv4 C: all u : User, ad : Ad | u in posts.ad implies all p : Photo | u in	posts.p implies p in Ad
+inv4 C: all u : User | some (u.posts & Ad) implies no (u.posts - Ad)
+

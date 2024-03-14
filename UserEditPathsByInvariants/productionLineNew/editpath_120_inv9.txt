@@ -1,0 +1,6 @@
+inv9 U: all ws : Workstation | ws not in ws.^succ
+inv9 U: all ws : Workstation - begin | #(begin.^succ & ws) = 1
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#ws.succ = 0 and ws = end)
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#ws.succ = 0 and ws in end)
+inv9 S: all ws : Workstation | #(ws.succ) = 1 or (#(ws.succ) = 0 and ws in end)
+

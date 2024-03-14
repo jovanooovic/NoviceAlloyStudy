@@ -1,0 +1,7 @@
+inv6 S: all i:Influencer, p:Photo, d:Data | i in posts.p and p in date.d
+inv6 B: all i:Influencer, p:Photo, d:Day | i in posts.p and p in date.d
+inv6 S: all i:Influencer, p:Photo, one d:Day| i in posts.p and p in date.d
+inv6 B: all i:Influencer, p:Photo| one d:Day| i in posts.p and p in date.d
+inv6 C: all i : Influencer | Day = i.posts.date
+inv6 C: all i : Influencer | Day = i.posts.date
+

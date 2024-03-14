@@ -1,0 +1,36 @@
+inv13 T: all c : Course | first[c.grades.Grade] in c.projects
+inv13 T: all c : Course | first[c.grades].Grade in c.projects
+inv13 T: all c : Course | first[c.grades].Grade in c.projects
+inv13 S: all c : Course | s : first[c.grades].Grade | c in s.enrolled implies c.projects in s.projects
+inv13 T: all c : Course | one s : first[c.grades].Grade | c in s.enrolled implies c.projects in s.projects
+inv13 B: all c : Course | one s : first[c.grades] | c in s.enrolled implies c.projects in s.projects
+inv13 S: all c : Course | s : first[c.grades] in c.projects
+inv13 T: all c : Course | first[c.grades] in c.projects
+inv13 S: all s : Student
+inv13 T: all s : Student | all c : Course | s in first.c.grades.Grade implies s in c.projects
+inv13 T: all s : Student | all c : Course | s in first.(c.grades.Grade) implies s in c.projects
+inv13 T: all s : Student | all c : Course | s in first.c.grades.Grade implies s in c.projects
+inv13 T: all s : Student | all c : Course | s in first.c.grades implies s in c.projects
+inv13 T: all s : Student | all c : Course | s in first.(c.grades) implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in first.grades implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in first.grades.Grade implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in first.grades implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in first.grades implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in first.c implies s in c.projects
+inv13 T: all s : Student | all c : Course | all g : c.grades | c in s.enrolled and s in first.g implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s in last.Grade implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and s = last.Grade implies s in c.projects
+inv13 T: all s : Student | all c : Course | c in s.enrolled and last.grades.Grade = s implies s in c.projects
+inv13 S: all s : Student | all c : Course | all g : Grade | (s->g) in max.c.grades implies #[c.projects&s1.projects]=1
+inv13 T: all s : Student | all c : Course | all g : Grade | (s->g) in max.c.grades implies #(c.projects&s1.projects)=1
+inv13 T: all s : Student | all c : Course | all g : Grade | (s->g) in max.c.grades implies #c.projects&s1.projects=1
+inv13 T: all s : Student | all c : Course | all g : Grade | all p: c.projects&s.projects | (s->g) in max.c.grades implies #p=1
+inv13 T: all s : Student | all c : Course | all g : Grade | all p: c.projects&s.projects | (s->g) in max.c.grades implies #p=1
+inv13 T: all s : Student | all c : Course | all g : Grade | (s->g) in max.c.grades implies c.projects&s.projects != none
+inv13 T: all s : Student | all c : Course | all g : Grade | s in max.c.grades.Grade implies c.projects&s.projects != none
+inv13 T: all s : Student | all g : Grade | all c : Course | all g : Grade | g = max.c.grades and s->g in c.grades implies c.projects&s.projects != none
+inv13 T: all s : Student | all g : Grade | all c : Course | all g : Grade | s->g in c.grades and g = max.c.grades implies c.projects&s.projects != none
+inv13 T: all s : Student | all g : Grade | all c : Course | s->g in c.grades and g = max.c.grades implies c.projects&s.projects != none
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies c.projects&s.projects != none
+inv13 U: all s : Student | all c : Course | s in c.grades.last implies c.projects&s.projects != none
+

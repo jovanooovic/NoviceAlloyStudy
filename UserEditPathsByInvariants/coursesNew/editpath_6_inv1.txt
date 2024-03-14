@@ -1,0 +1,6 @@
+inv1 U: all p : Person | p.enrolled in Student.enrolled
+inv1 B: all s : Student | s.enrolled = s.enrolled	  all p : Person | p.enrolled = none => p in Professor
+inv1 T: all p : Person | p.enrolled => p in Student
+inv1 B: all p : Person | (p in Student) => (p.enrolled = p.enrolled)	  all p : Person | (p in Professor) => (p.enrolled = none)
+inv1 C: all p : Person | p.enrolled != none => p in Student
+

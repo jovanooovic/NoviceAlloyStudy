@@ -1,0 +1,11 @@
+inv10 T: all c : Course | no (c.grades & (Person - Student))
+inv10 T: all c : Course | no (c.grades & (Person - Student))
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 S: all c : Course | p->g : c.grades | p not in Professor
+inv10 S: all c : Course | par : c.grades | p->g in par implies p not in Professor
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+inv10 C: all c : Course | (all p : Person, g : Grade | p->g in c.grades implies p in Student)
+

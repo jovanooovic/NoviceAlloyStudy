@@ -1,0 +1,23 @@
+inv1 T: all p : Person | no Professor in p.enrolled
+inv1 O: all p : Person | no p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Professor | p not in enrolled
+inv1 T: all p : Professor | p.enrolled
+inv1 B: all p : Professor | no p.enrolled
+inv1 T: all p : Person | p.enrolled - Professor
+inv1 B: all p : Professor | no ~enrolled.p
+inv1 T: all p : Professor | p not in enrolled
+inv1 U: all p : Professor | p not in enrolled.Person
+inv1 U: all p : Professor | p not in enrolled.Person
+inv1 U: all p : Professor | p not in ~enrolled.Person
+inv1 B: all p : Professor | p not in Course.~enrolled
+inv1 T: all p : Professor | Course.~enrolled
+inv1 B: all p : Professor | p not in Course.~enrolled
+inv1 T: all p : Professor |  Course.~enrolled & p
+inv1 B: all p : Professor | no Course.~enrolled & p
+inv1 B: all c : Course | Professor not in c.~enrolled
+inv1 T: all c : Course | c.~enrolled - Professor
+inv1 T: all c : Course | none c.~enrolled.Professor
+inv1 T: all c : Course | no c.~enrolled.Professor
+inv1 T: all c : Course, p : Professor | no c.~enrolled.p
+

@@ -1,0 +1,34 @@
+NA H: THEME UPDATE
+inv1 C: no Green
+inv2 C: all s : Signal | eventually s in Green
+inv3 C: always pos = pos'
+inv4 C: all t : Track | always lone t.~pos
+inv5 B: always all t : Train {	(t.pos = Exit) implies no t.pos'	or	(one t.pos) implies (t.pos' in t.pos.prox)	}
+inv6 B: no (Green & Green')
+inv6 B: always no (Green & Green')
+inv6 O: always (Signal-Green = Green')
+inv6 O: always ((Signal-Green = Green') and (Green = Signal'-Green'))
+inv7 U: all t : Train | eventually no t.pos
+inv7 U: all t : Train | (some t.pos) implies (eventually no t.pos')
+inv7 O: all t : Train | (eventually always no t.pos')
+inv7 O: all t : Train | (eventually always no t.pos)
+inv7 B: all t : Train | one t.pos implies (eventually always no t.pos')
+inv7 O: all t : Train | (eventually always no t.pos')
+inv7 O: all t : Train | (eventually always no t.pos)
+inv6 O: always ((Signal-Green = Green') and (Green = (Signal-Green)'))
+inv6 U: always all s : Signal {	((s in Green) implies (eventually s not in Green))	or	((s not in Green) implies (eventually s in Green))	}
+inv8 S: always all t : ((Signal-Green).(~signal).(~pos)) | (t.pos' in t.pos.prox) after (t.pos.signal in Green)
+inv8 S: always all t : ((Signal-Green).(~signal).(~pos)) | (t.pos' in t.pos.prox) after (t.pos.signal in Green)
+inv8 U: always all t : ((Signal-Green).(~signal).(~pos)) | (t.pos' in t.pos.prox) implies (t.pos.signal in Green)
+inv15 C: always all t : Train | some t.pos implies eventually t.pos != t.pos'
+inv13 O: always all t : Train | no t.pos implies always no t.pos
+inv13 O: always all t : Train | no t.pos implies always no t.pos'
+inv13 O: always all t : Train | no t.pos implies always no t.pos
+inv13 T: always all t : Train | (t.pos and no t.pos') implies (always no t.pos')
+inv13 C: always all t : Train | (one t.pos and no t.pos') implies (always no t.pos')
+inv16 B: always all t : Train | (t.pos = Exit) implies ((always some t.pos) since (t.pos = Entry))
+inv8 U: always all t : ((Signal-Green).(~signal).(~pos)) | (t.pos' in t.pos.prox) implies (t.pos.signal in Green)
+inv7 O: all t : Train | (eventually always no t.pos)
+inv6 U: always all s : Signal {	((s in Green) implies (eventually s not in Green))	or	((s not in Green) implies (eventually s in Green))	}
+inv5 B: always all t : Train {	(t.pos = Exit) implies no t.pos'	or	(one t.pos) implies (t.pos' in t.pos.prox)	}
+

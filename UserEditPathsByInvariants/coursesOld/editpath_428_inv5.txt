@@ -1,0 +1,8 @@
+inv5 T: no Professor.projects	  all p : Project | some projects.p
+inv5 B: no Professor.projects	  all p : Project | some Person & projects.p
+inv5 B: no Professor.projects	  all p : Project | some Student & projects.p
+inv5 O: no Person & Student	  no Professor.projects	  all p : Project | some Student & projects.p
+inv5 B: no Professor.projects	  all p : Project | some Student & projects.p
+inv5 B: no Professor & projects.Project	  all p : Project | some Student & projects.p
+inv5 C: Person & projects.Project in Student	  all p : Project | some Student & projects.p
+

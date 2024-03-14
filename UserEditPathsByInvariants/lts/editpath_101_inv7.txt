@@ -1,0 +1,5 @@
+inv7 S: all s: State | from[Init, to] => from[to, Init]
+inv7 S: all to: State | from[Init, to] => from[to, Init]
+inv7 O: all to: State | reachable[Init, to] => reachable[to, Init]	}		pred reachable[from, to: State]{	   	let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		to in from.^rel
+inv7 U: all to: State | one Init and reachable[Init, to] => reachable[to, Init]	}		pred reachable[from, to: State]{	   	let rel = { s1, s2: State | some s1 -> Event -> s2 & trans } |	  		to in from.^rel
+

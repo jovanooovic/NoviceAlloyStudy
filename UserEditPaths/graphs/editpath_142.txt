@@ -1,0 +1,37 @@
+na H: THEME UPDATE
+inv1 E: 
+inv1 C: adj=~adj
+inv2 B: adj!=~adj
+inv2 T: no adj=~adj
+inv2 B: not adj=~adj
+inv2 S: all adj | adj != ~adj
+inv2 T: all adj:Node | adj != ~adj
+inv2 T: all adj:Node | not adj = ~adj
+inv2 T: all n:adj, x:adj | n in x.adj => x not in n.adj
+inv2 S: all n:adj x:adj | n in x.adj => x not in n.adj
+inv2 T: all n:adj, x:adj | n in x.adj => x not in n.adj
+inv2 S: all n:adj |all x in n.adj => n not in x.adj
+inv2 S: all n:adj |all x:n.adj => n not in x.adj
+inv2 T: all n:adj |all x:n.adj | n not in x.adj
+inv2 C: all n:Node.adj |all x:n.adj | n not in x.adj
+inv3 C: all n:Node | n not in n.^adj
+inv4 U: all n:Node, x:Node| n in x.^adj && x in n.^adj
+inv4 C: all n:Node, x:Node| n in x.adj && x in n.adj
+inv5 S: a
+inv3 U: all n:Node | n not in n.adj
+inv3 C: all n:Node | n not in n.^adj
+inv5 O: all n:Node | n not in n.^adj
+inv5 O: all n:Node | n not in n.*adj
+inv5 C: all n:Node | n not in n.adj
+inv6 O: all n:Node, x:Node| (n in x.^adj or n in x.~^adj)&& (x in n.^adj || x in n.~^adj)
+inv6 O: all n:Node, x:Node| (n in x.adj or n in x.~adj)&& (x in n.adj || x in n.~adj)
+inv6 O: all n:Node, x:Node| (n in x.adj or n in x.~adj) && (x in n.adj || x in n.~adj)
+inv7 O: all n:Node, x:Node| n in x.^adj && x in n.^adj
+inv6 O: all n:Node, x:Node| (n in x.adj or n in x.~adj) && (x in n.adj || x in n.~adj)
+inv6 O: all disj n:Node, x:Node| (n in x.adj or n in x.~adj) && (x in n.adj || x in n.~adj)
+inv6 O: all disj n:Node, x:Node| (n in x.adj or n in x.~adj) && (x in n.adj || x in n.~adj)
+inv8 C: all n:Node, x:Node | n in x.^adj => n in x.adj
+inv6 O: all disj n:Node, x:Node| (n in x.adj or n in x.~adj) && (x in n.adj || x in n.~adj)
+inv6 O: all disj n,x:Node| n in x.^adj || x in n.^adj
+inv6 O: all disj n,x:Node| n in x.^adj || n in x.~^adj
+

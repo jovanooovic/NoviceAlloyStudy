@@ -1,0 +1,38 @@
+NA H: THEME UPDATE
+inv1 S: all t : Track & Entry | some	all t : Track & Exit | some
+inv1 U: all t : Track & Entry | some t	all t : Track & Exit | some t
+inv1 U: all t1 : Track & Entry | all t2 : Track & Exit | some t1 and some t2
+inv1 B: all t : Track | some t & Entry	all t : Track | some t & Exit
+inv1 T: all t : Track | some t && Entry	all t : Track | some t && Exit
+inv1 B: all t : Track | some t & Entry	all t : Track | some t & Exit
+inv1 B: all t1,t2 : Track | t1 != t2 implies some t1 & Entry and some t2 & Exit
+inv1 C: some t : Track | t in Entry	some t : Track | t in Exit
+inv1 O: some t : Track | t in Entry and t in Exit
+inv1 C: some t1,t2 : Track | t1 in Entry and t2 in Exit
+inv1 C: some t : Track | t in Entry	some t : Track | t in Exit
+inv2 C: all s : Signal | one signals.s
+inv3 U: all t : Track | no t.succs implies t in Exit
+inv3 U: all t : Track | t in Exit implies no t.succs
+inv3 U: all t : Track & Exit | no t.succs
+inv3 U: all t : Track | t in Exit implies no t.^succs
+inv3 C: all t : Track | t in Exit <=> no t.^succs
+inv3 C: all t : Track | t in Exit <=> no t.succs
+inv3 C: all t : Track | t in Exit <=> no t.succs
+inv4 C: all t : Track | t in Entry <=> no succs.t
+inv5 S: all t : Track | t in Junctions <=> some succs.t
+inv5 B: all t : Track | t in Junction <=> some succs.t
+inv5 U: all t : Track | t in Junction implies some succs.t
+inv5 B: all t : Track | t in Junction <=> some succs.t
+inv5 B: all t : Track | t in Junction and t not in Exit <=> some succs.t
+inv5 B: all t : Track | t in Junction and t not in Exit and t not in Entry<=> some succs.t
+inv5 B: all t : Track - Entry - Exit | t in Junction <=> some succs.t
+inv5 C: all t : Track | t in Junction <=> #succs.t > 1
+inv5 C: all t : Track | t in Junction <=> #(succs.t) > 1
+inv6 U: all t : Track & Entry | some t.signals
+inv6 U: all t : Track | t in Entry implies some t.signals
+inv6 B: all t : Track | t in Entry implies one t.signals
+inv6 B: all t : Track | t in Entry <=> some t.signals
+inv6 U: all t : Track | t in Entry implies some t.signals
+inv6 C: all t : Track | t in Entry implies some (t.signals & Speed)
+NA H: THEME UPDATE
+

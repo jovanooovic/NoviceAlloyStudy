@@ -1,0 +1,5 @@
+inv5 B: all x:User,i:Influencer | i in x.follows
+inv5 O: all x:User,i:Influencer | i in x.follows and i != x
+inv5 U: all x:User,i:Influencer | i!=x implies i in x.follows
+inv5 U: all x:User,i:Influencer | i!=x implies i in x.follows
+

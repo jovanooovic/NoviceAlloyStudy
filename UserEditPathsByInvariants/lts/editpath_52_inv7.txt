@@ -1,0 +1,8 @@
+inv7 T: all s:State-Init | Init in ^(s.trans)
+inv7 S: all s:State-Init | Init in e.^(s.trans)
+inv7 B: all s:State-Init | Init in Event.^(s.trans)
+inv7 B: all s:State-Init | Init in Event.(s.trans)
+inv7 T: all s:State-Init | Init in Event.(s.^trans)
+inv7 T: all s:State-Init | Init in Event.(s.~trans)
+inv7 B: all s:State-Init | Init in Event.~(s.trans)
+

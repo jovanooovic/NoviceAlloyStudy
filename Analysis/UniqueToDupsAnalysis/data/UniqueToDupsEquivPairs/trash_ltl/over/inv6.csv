@@ -1,0 +1,17 @@
+Pairs,1
+,,"always Trash = Trash'",1
+
+Pairs,1
+,,"always all f: File | f not in Trash",1
+
+Pairs,2
+,,"always all f:File |  f in Trash implies Trash'=Trash",1
+,,"always all f:File |  f in Trash implies Trash'=Trash+f",1
+
+Pairs,2
+,,"always ( some f:File| f not in Trash  and after (always (f in Trash)))",1
+,,"always ( some f:File| f not in Trash  and after (f in Trash and after always f in Trash))",1
+
+Pairs,1
+,,"always all f:File | (f in Trash) releases (f not in Trash) and after always (f in Trash)",1
+

@@ -1,0 +1,6 @@
+inv8 B: all disj n1,n2,n3: Node | n1 in n3.adj and n2 in n3.adj implies n1 in n2.adj or n2 in n1.adj
+inv8 B: all disj n1,n2,n3: Node | (n1 in n3.adj and n2 in n3.adj) implies (n1 in n2.adj or n2 in n1.adj)
+inv8 T: all disj n1,n2,n3: Node | (n1 in (n3.adj or ~(n3.adj)) and n2 in n3.adj) implies (n1 in n2.adj or n2 in n1.adj)
+inv8 B: all disj n1,n2,n3: Node | (n1 in n3.adj or n3 in n1.adj) and (n3 in n2.adj or n2 in n3.adj) implies (n1 in n2.adj or n2 in n1.adj)
+inv8 C: all x, y, z : Node | x->y in adj and y->z in adj implies x->z in adj
+

@@ -1,0 +1,14 @@
+inv1 T: all p : Professor , p2 : Person| none p.enrolled + p2.enroller
+inv1 B: all p : Professor , p2 : Person| no p.enrolled + p2.enrolled
+inv1 B: all p : Professor , p2 : Person| no p.enrolled + p2.enrolled and no p.teaches & p2.enrolled
+inv1 S: all p : Professor , p2 : Person, s : student| no p.enrolled + p2.enrolled and no p.teaches & p.enrolled
+inv1 B: all p : Professor , p2 : Person| no p.enrolled + p2.enrolled and no p.teaches & p.enrolled
+inv1 B: all p : Person| no p.teaches & p.enrolled
+inv1 B: all p : Person| no (p.teaches & p.enrolled)
+inv1 B: all p : Person| no (p.teaches & p.enrolled)
+inv1 B: all p : Person| no p.teaches
+inv1 B: all p : Person| p.teaches not in p.enrolled
+inv1 C: all p : Person, c : Course| c in p.enrolled implies p in Student
+inv1 C: all p : Person, c : Course| c in p.enrolled implies p in Student
+inv1 C: all p : Person, c : Course| c in p.enrolled implies p in Student
+

@@ -1,0 +1,12 @@
+inv4 U: all entry : univ | entry in Entry implies no succs.entry
+inv4 U: all entry : univ | entry in Entry implies no succs.entry
+inv4 S: all entry : univ | entry in Tracks and no succs.entry implies entry in Entry
+inv4 U: all entry : univ | entry in Track and no succs.entry implies entry in Entry
+inv4 U: all entry : univ | entry in Track and no succs.entry and entry not in entry.^succs implies entry in Entry
+inv4 B: all entry : Entry | no entry.^succs
+inv4 B: all entry : Entry | no entry.^succs
+inv4 B: all entry : Entry | no entry.^succs and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv4 U: all entry : Entry | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv4 B: all entry : Track | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+inv4 B: all entry : Track | no succs.entry and (entry in Exit or entry not in Exit) and (entry in Junction or entry not in Junction)
+

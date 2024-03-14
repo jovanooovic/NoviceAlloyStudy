@@ -1,0 +1,10 @@
+inv15 S: all c : Course | all s1,s2 : Student | c in (s1&s2).enrolled and c.projects in (s1&s2).projects implies
+inv15 S: all s1,s2 : Student | all g1,g2 : Grade | all p : Project | all c : Course | s1!=s2 and p in s1.projects&s2.projects and (s1->g1 + s2->g2) in c.grades implies g1=prev[g2] or g2=prev[g1] or g1=G2
+inv15 B: all s1,s2 : Student | all g1,g2 : Grade | all p : Project | all c : Course | s1!=s2 and p in s1.projects&s2.projects and (s1->g1 + s2->g2) in c.grades implies g1=prev[g2] or g2=prev[g1] or g1=g2
+inv15 B: all s1,s2 : Student | all g1,g2 : Grade | all p : Project | all c : Course | s1!=s2 and p in s1.projects&s2.projects and (s1->g1 + s2->g2) in c.grades implies (g1=prev[g2] or g2=prev[g1] or g1=g2)
+inv15 B: all s1,s2 : Student |  all p : Project | all c : Course | s1!=s2 and p in s1.projects&s2.projects implies s1.(c.grades)=prev[s2.(c.grades)] or s2.(c.grades)=prev[s1.(c.grades)] or s1.(c.grades)=s2.(c.grades)
+inv15 B: all s1,s2 : Student |  all p : Project | all c : Course | s1!=s2 and p in s1.projects&s2.projects implies s1.(c.grades)=prev[s2.(c.grades)] or s2.(c.grades)=prev[s1.(c.grades)] or s1.(c.grades)=s2.(c.grades)
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course |	  	(s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies	  	(all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course |	  	(s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies	  	(all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+inv15 B: all p : Project | all s1,s2 : Student | all c : Course |	  	(s1!=s2 and p in s1.projects and p in s2.projects and p in c.projects) implies	  	(all g1,g2 : Grade | g1 in s1.(c.grades) and g2 in s2.(c.grades) 	  	implies (g1=prev[g2] or g2=prev[g1] or g1=g2))
+

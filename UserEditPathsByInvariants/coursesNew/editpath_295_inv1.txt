@@ -1,0 +1,8 @@
+inv1 O: all x: Person | x.enrolled in Student
+inv1 T: all x : Person | some x.enrolled in Student
+inv1 B: all x: Student | Course in x.enrolled
+inv1 B: all x: Student | x.enrolled = Course
+inv1 B: all x: Student | x in Course.enrolled
+inv1 T: all x: Person | x.enrolled implies x in Student
+inv1 C: all x: Person | some x.enrolled implies x in Student
+

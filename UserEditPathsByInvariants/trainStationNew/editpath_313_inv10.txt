@@ -1,0 +1,8 @@
+inv10 B: all t: Track | t.succs in Junction implies t.signals in Semaphore
+inv10 T: all t: Track | t.succs in Junction implies some t.signals in Semaphore
+inv10 B: all t: Track | t.succs in Junction implies some s: Semaphore| s in t.signals
+inv10 B: all t: Track | t.succs in Junction implies some s: Semaphore | s in t.signals
+inv10 S: all t: Track | some j: Juntion | j in t.succs implies some s: Semaphore | s in t.signals
+inv10 B: all t: Track | some j: Junction | j in t.succs implies some s: Semaphore | s in t.signals
+inv10 B: all t: Track | Junction in t.succs implies some s: Semaphore | s in t.signals
+

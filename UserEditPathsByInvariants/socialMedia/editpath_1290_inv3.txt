@@ -1,0 +1,6 @@
+inv3 B: all u: User | all a : Ad | a in u.sees
+inv3 B: all u: User | all p: u.follows.posts |  p in u.sees
+inv3 B: all u: User | all p: u.follows.posts | all ad: Ad |  p in u.sees and ad in u.sees
+inv3 B: all u: User | all p: u.follows.posts | all ad: Ad |  p in u.sees and ad in u.sees and u.posts in u.sees
+inv3 C: all u:User | all p: u.sees | p in Ad or p in u.follows.posts
+

@@ -1,0 +1,22 @@
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p in Professor and p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled and p not in Student
+inv8 B: all c : Course, p : Person | p->c in teaches and p not in Student
+inv8 B: all c : Course, p : Person | p->c in teaches and p not in Student
+inv8 O: all c : Course, p : Person | p->c in teaches and p->c not in enrolled
+inv8 O: all c : Course, p : Person | p->c in teaches and c not in p.enrolled
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 S: all c : Course, p : Professor, g : Grade | p->c in teaches and p->c not in enrolled and c->p->g not in grade
+inv8 B: all c : Course, p : Professor, g : Grade | p->c in teaches and p->c not in enrolled and c->p->g not in grades
+inv8 U: all p : Professor | no (p.teaches & p.enrolled)
+inv8 S: all c : Course, p : Professor | p->c in teachhes and p->c not in enrolled
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 B: all c : Course, p : Professor | p->c in teaches && p->c not in enrolled
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 T: all c : Course, p : Professor | p->c in teaches and p->c not in c.enrolled
+inv8 B: all c : Course, p : Professor | p->c in teaches and p->c not in enrolled
+inv8 U: all c : Course, p : Professor | p->c in teaches implies p->c not in enrolled
+inv8 U: all c : Course, p : Professor | p->c in teaches implies p->c not in enrolled
+

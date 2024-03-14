@@ -1,0 +1,9 @@
+inv3 S: all c:Course | c.teaches in no (Person - Professor)
+inv3 U: all c:Course | c.teaches in (Person - Student)
+inv3 U: all c:Course | c.teaches in (Person - Student).teaches
+inv3 U: all c:Course | c.teaches in Professor
+inv3 S: all c:Course | c.teaches in lone (Professor)
+inv3 O: all c:Course | c in Professor.teaches
+inv3 O: all c:Course | c in Professor.teaches
+inv3 O: all c:Course | c in Professor.teaches
+

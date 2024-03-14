@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 S: ~component.component in iden
+inv1 B: ~parts.parts in iden
+inv1 B: iden & Product->Product in ~parts.parts
+inv1 C: iden & Component->Product in parts.~parts
+inv1 O: iden & Product->Product in parts.~parts
+inv1 B: iden & Product->Product in ~parts.parts
+inv1 C: iden & Component->Component in parts.~parts
+inv2 C: no ^parts & iden
+inv3 C: Component.position in Robot.position
+inv4 S: all c: Component | c.^parts.position in c.positon + c.position.prevs
+inv4 C: all c: Component | c.^parts.position in c.position + c.position.prevs
+inv2 B: ^parts not in iden
+inv2 T: no ^parts in iden
+inv2 S: ^parts in iden == False
+inv2 B: ^parts not in iden
+inv2 B: *parts not in iden
+inv2 T: ^parts not in iden - {}
+inv2 T: ^parts not in iden - none
+inv2 B: ^parts not in iden
+inv2 T: ^parts & iden = none
+inv2 T: ^parts & iden = none
+inv2 C: no	^parts & iden
+

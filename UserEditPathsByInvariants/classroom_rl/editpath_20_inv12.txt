@@ -1,0 +1,8 @@
+inv12 B: some Teacher.Teaches.Groups
+inv12 S: all t : Teacher | some+ t.Teaches.Groups
+inv12 C: all t : Teacher | some t.Teaches.Groups
+inv12 S: iden in  ~(Teatcher <: Teaches.Groups) . (Teatcher <: Teaches.Groups)
+inv12 T: iden in  ~(Teacher <: Teaches.Groups) . (Teacher <: Teaches.Groups)
+inv12 T: iden in  (~Teaches.~Groups :> Teacher) . (Teacher <: Teaches.Groups)
+inv12 O: iden in  (~Teaches :> Teacher) . (Teacher <: Teaches)
+

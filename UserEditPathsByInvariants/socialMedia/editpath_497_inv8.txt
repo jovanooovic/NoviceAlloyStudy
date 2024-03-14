@@ -1,0 +1,7 @@
+inv8 S: all u : User |  no u.sees = Ads in u.follows or u.suggested
+inv8 T: all u : User |  no u.sees = Ad in u.follows or u.suggested
+inv8 T: all u : User |  no u.sees = Ad in u.follows or u.suggested
+inv8 T: all u : User |  no u.sees = Ad in u.follows or u.suggested
+inv8 T: all u : User,a : Ad |  no u.sees = Ad in u.follows or u.suggested
+inv8 S: all u : User,a : Ad |  a in u.sees => a in u.follows.photos or a in u.suggested => a in u.follows.photos
+

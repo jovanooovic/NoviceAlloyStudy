@@ -1,0 +1,6 @@
+inv7 U: all x:User| x.suggested in x.follows.follows
+inv7 B: all x:User| x.suggested in x.follows.follows and x.suggested not in x.follows
+inv7 U: all x:User| x.suggested in x.follows.follows and (all y:x.suggested| y not in x.follows)
+inv7 C: all x,y:User| y in x.suggested iff ( y in x.follows.follows and y not in x.follows and x!=y)
+inv7 U: all disj x,y:User| y in x.suggested iff ( y in x.follows.follows and y not in x.follows)
+

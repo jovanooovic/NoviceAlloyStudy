@@ -1,0 +1,15 @@
+inv11 S: all s:Student | (grades.p).Grade in s.enrolled
+inv11 U: all s:Student | (grades.s).Grade in s.enrolled
+inv11 U: all s:Student | Grade.(grades.s) in s.enrolled
+inv11 T: all s:Student | (grades.s) in s.enrolled
+inv11 S: all s:Student | p.(Course.grades) in s.enrolled
+inv11 B: all s:Student | s.(Course.grades) in s.enrolled
+inv11 T: all s:Student | (grades.s) in s.enrolled
+inv11 U: all s:Student | (grades.s).Grade in s.enrolled
+inv11 U: all s:Student | Grade.(grades.s) in s.enrolled
+inv11 S: all s:Student | (grades.s) in {Grade, Course}
+inv11 T: all s:Student | (grades.s) in {Grade: Course}
+inv11 U: all s:Student | (grades.Grade).s in {Grade: Course}
+inv11 U: all s:Student | (grades.Grade).s in Course
+inv11 U: all s:Student | (grades.Grade).s in s.enrolled
+

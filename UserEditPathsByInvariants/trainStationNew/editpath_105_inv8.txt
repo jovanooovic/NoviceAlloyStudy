@@ -1,0 +1,28 @@
+inv8 O: all t: Track | t in Entry implies t.^succs = Exit
+inv8 B: all t: Track | t in Entry implies t.^succs in Exit
+inv8 B: all t: Track | t in Entry implies t.^succs in Exit
+inv8 O: all t: Track | t in Entry implies t.^succs=Exit
+inv8 B: all t: Track | t in Entry implies t.^succs in Exit
+inv8 S: all t: Track |
+inv8 B: all t: Track | some t.succs&Entry implies t.^succs=Entry
+inv8 B: all t: Track | some t&Entry implies t.^succs=Entry
+inv8 B: all t: Track | some t&Entry implies some t.^succs&Entry
+inv8 T: all t: Track | some t&Entry implies some t.^(succs&Entry)
+inv8 B: all t: Track | some t&Entry implies some (t.^succs)&Entry
+inv8 B: all t: Track | some t&Entry implies some (t.^succs)&Exit
+inv8 B: all t: Track | (some t&Entry implies some (t.^succs)&Exit) or some t&Entry&Exit
+inv8 B: all t: Track | (some t&Entry implies some (t.^succs)&Exit)
+inv8 S: all t1: Track, t2: t.^succs | some t1&Entry implies some t2&Exit
+inv8 U: all t1: Track, t2: 1.^succs | some t1&Entry implies some t2&Exit
+inv8 B: all t1: Track, t2: t1.^succs | some t1&Entry implies some t2&Exit
+inv8 B: all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies some t2&Exit
+inv8 B: all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies t2=Exit
+inv8 B: all t1: Track, t2: t1.^succs | (t1 != t2 and some t1&Entry) implies Exit in t2
+inv8 B: all t1: Track, t2: t1.^succs | some t1&Entry implies Exit in t2
+inv8 B: all t1: Track, t2: t1.^succs | some t1&Entry implies Exit = t2
+inv8 O: all t: Track| some t&Entry implies Exit = t.^succs
+inv8 O: all t: Track| some t&Entry implies Exit in t.^succs
+inv8 U: all t: Track| some t&Entry implies (Exit in t.^succs or some t&Exit)
+inv8 U: all t: Track | some t&Entry implies (Exit in t.*succs or some t&Exit)
+inv8 C: all t: Track | some t&Entry implies (Exit in t.*succs)
+

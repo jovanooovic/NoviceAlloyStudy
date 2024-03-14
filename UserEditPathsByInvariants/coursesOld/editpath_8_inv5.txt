@@ -1,0 +1,18 @@
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 B: all  pessoa : enrolled.Course | pessoa in Student
+inv5 B: all pessoa : enrolled.Course, pessoa : enrolled.Course | pessoa in Student
+inv5 B: all curso: Course.projects, pessoa : enrolled.Course | pessoa in Student
+inv5 S: all curso: Course.projects| pessoa in Student
+inv5 B: all curso: Course.projects, pessoa: Person| pessoa in Student
+inv5 B: all curso: Course.projects, pessoa : enrolled.Course | pessoa in Student
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 S: all curso: Course.projects, pessoa : Pessoa.enrolled.curso | pessoa in Student
+inv5 T: all curso: Course.projects, pessoa : Person.enrolled.curso | pessoa in Student
+inv5 U: all curso: Course.projects, pessoa : enrolled.curso | pessoa in Student
+inv5 B: all curso: Course.projects | some pessoa : enrolled.curso | pessoa in Student
+inv5 E:
+inv5 C: all p : Project | Person <: projects.p in Student and some Person <: projects.p
+inv5 C: all p : Project | some Person.projects & p	  	all p : Person | some p.projects => p in Student
+inv5 C: all p : Project | some Person.projects & p	  all p : Person | some p.projects implies p in Student
+inv5 C: all p : Project | some Person.projects & p	  all p : Person | some p.projects implies p in Student
+

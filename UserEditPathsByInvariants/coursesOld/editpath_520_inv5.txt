@@ -1,0 +1,10 @@
+inv5 T: projects.Course in Student
+inv5 T: all p : Person | p.projects.Course in Student
+inv5 T: Person <: projects.Course in Student
+inv5 T: (Person & projects.Course) in Student
+inv5 T: some p : Person | p.projects.Course in Student
+inv5 T: projects.Course in Student
+inv5 S: no (Person - Students).projects
+inv5 U: no (Person - Student).projects
+inv5 C: no (Person - Student).projects	  	all p : Project | some pe : Person | p in pe.projects
+

@@ -1,0 +1,6 @@
+inv5 U: all p : Project | some projects & Student->p
+inv5 B: all p : Project | some projects & Student->p and no projects & Professor->p
+inv5 C: all p : Project | some projects & Student->p	  	all p : Person | some p.projects implies p in Student
+inv5 U: all p : Person | some p.projects implies p in Student
+inv5 C: all p : Project | some projects & Person->p	  	all p : Person | some p.projects implies p in Student
+

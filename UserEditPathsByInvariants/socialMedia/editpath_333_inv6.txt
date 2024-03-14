@@ -1,0 +1,11 @@
+inv6 O: all i : Influencer, d : Day | some p : Photo | d in date.p
+inv6 B: all i : Influencer, d : Day, p : Photo | d in date.p
+inv6 B: all i : Influencer, d : Day, p : Photo | d in p.date
+inv6 B: all i : Influencer, d : Day, p : Photo | d in p.date && i in posts.p
+inv6 C: all i : Influencer, d : Day | some p : Photo | d in p.date && i in posts.p
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+inv6 C: all i : Influencer, d : Day | some p : Photo | (i in posts.p) && (d in p.date)
+

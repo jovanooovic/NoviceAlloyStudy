@@ -1,0 +1,20 @@
+inv3 T: all u:User | ((u.follows.posts in u.sees) not in u.sees.ad)
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees
+inv3 B: all u:User | (u.follows.posts in u.sees)
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.Ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.Ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.posts.Ad
+inv3 T: all u:User | (u.follows.posts in u.sees) not in u.sees.posts.ad
+inv3 B: all u:User | (u.follows.posts in u.sees)
+inv3 T: all u:User | (u.follows.posts in u.sees) implies u.follows.posts != u.follows.posts.Ad
+inv3 T: all u:User | (u.follows.posts.Photo in u.sees)
+inv3 S: all u:User | (u.follows.posts in u.sees) implies u.follows.post != Ad
+inv3 S: all u:User | (u.follows.posts in u.sees) implies all p.Photo-Ad
+inv3 T: all u:User, p:Photo | (u.follows.posts in u.sees) implies p.Photo-Ad
+inv3 S: all u:User | (u.follows.posts in u.sees) implies
+inv3 S: all u:User | (u.follows.posts in u.sees) implies
+inv3 C: all u:User | (u.sees-Ad in u.follows.posts)
+

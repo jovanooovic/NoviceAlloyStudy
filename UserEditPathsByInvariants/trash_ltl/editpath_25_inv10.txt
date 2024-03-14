@@ -1,0 +1,14 @@
+inv10 U: always all f:File | f in Protected implies always f in Protected
+inv10 U: always all f:File | f in Protected implies f in Protected
+inv10 U: always all f : File | f in Protected implies f  in Protected
+inv10 U: all f : File {	always (f in Protected implies f in Protected)	always (f not in Protected implies f not in Protected)	}
+inv10 U: always all f : File | ((f in Protected implies f  in Protected) or ( f not in Protected implies f not in Protected))
+inv10 U: always all f : File | f in Protected implies f  in Protected
+inv10 U: always all f : File | f not in Protected implies f not in Protected
+inv10 U: always all f : File {	(f in Protected implies f in Protected)	(f not in Protected implies f not in Protected)	}
+inv10 U: always all f : File {	(f in Protected implies f in Protected)	(f not in Protected implies f not in Protected)	}
+inv10 U: always all f : File {	(f in Protected implies f in Protected)	(f not in Protected implies f not in Protected)	}
+inv10 U: always all f : File {	(f in Protected implies f in Protected)	}
+inv10 U: always all f : File | f  in Protected implies f  in Protected
+inv10 U: always File in Protected implies File in Protected
+

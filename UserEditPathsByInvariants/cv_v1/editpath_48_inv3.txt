@@ -1,0 +1,11 @@
+inv3 T: all s:Source,u:User | lone ((u.profile).s).id
+inv3 T: all s:Source,u:User | lone (u.profile).s
+inv3 B: all s:Source,u:User | lone ((u.profile)&(source.s)).ids
+inv3 O: all s:Source,u:User | lone ((u.profile)&(source.s))
+inv3 T: all s:Source,u:User | ((u.profile) & (source.s)).ids
+inv3 B: all s:Source,u:User | lone ((u.profile) & (source.s)).ids
+inv3 B: all s:Source,u:User | lone ((u.profile) & (source.s)).ids
+inv3 T: all s:Source,u:User | ((u.profile) & (source.s)).ids
+inv3 U: all s:Source,u:User | all disj i1,i2 : ((u.profile) & (source.s)).ids | i1 != i2
+inv3 U: all s:Source,u:User,id:Id | lone (((u.profile) & (source.s)).ids & id)
+

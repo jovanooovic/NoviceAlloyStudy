@@ -1,0 +1,5 @@
+inv7 U: all u,s : User | u != s => (s in u.suggested iff (s in u.follows.follows - u.follows))
+inv7 C: all u,s : User | u != s => (s in u.suggested iff (s in u.follows.follows - u.follows))	all u : User | u not in u.suggested
+inv7 C: all u,s : User | u != s => (s in u.suggested iff (s in u.follows.follows - u.follows))	all u : User | u not in u.suggested
+inv7 C: all u,s : User | u != s => (s in u.suggested iff (s in u.follows.follows - u.follows))	all u : User | u not in u.suggested
+

@@ -1,0 +1,4 @@
+inv9 T: all f1,f2 : File | (isLink[f1] and f1->f2) implies not isLink[f2]	}		/* If a link is deleted, so is the file it links to. */		pred isLink[f1:File]{	some f2 : File | f1->f2 in link
+inv9 T: all f1,f2 : File | (isLink[f1] and f1->f2) implies not isLink[f2]	}			/* If a link is deleted, so is the file it links to. */		pred isLink[f1:File]{	some f2 : File | f1->f2 in link
+inv9 C: all f1,f2 : File | (isLink[f1] and f1->f2 in link) implies not isLink[f2]	}		pred isLink[f1:File]{	some f2 : File | f1->f2 in link
+

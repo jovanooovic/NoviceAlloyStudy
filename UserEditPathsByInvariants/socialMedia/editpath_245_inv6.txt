@@ -1,0 +1,18 @@
+inv6 B: all disj p1,p2 : Influencer.posts | p1.date != p2.date
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 T: all d1 : Influencer.posts.date | all d2 : Day | (d1 - d2)
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | d2 in d1
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | no(d2 - d1)
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 S: all i : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 B: some d1 : Influencer.posts.date | all d2 : Day | no(d1 - d2)
+inv6 B: some d1 : Influencer.posts.date | all d2 : Day | d2 in d1
+inv6 B: some d1 : Influencer.posts.date | all d2 : Day | d2 = d1
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | d2 = d1
+inv6 S: all d1 : Influencer.posts.date | all d2 : Day | d2 == d1
+inv6 B: all d1 : Influencer.posts.date | all d2 : Day | (d2 in d1) and (d1 in d2)
+inv6 C: all d : Day | all u : User | u in Influencer implies (d in u.posts.date)
+inv6 C: all d : Day | all u : User | u in Influencer implies (d in u.posts.date)
+

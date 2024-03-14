@@ -1,0 +1,12 @@
+inv9 T: all p : Professor | p not in p.^(teaches.~Course)
+inv9 T: all p : Professor | p not in p.^(teaches.Person)
+inv9 U: all p : Professor | p not in p.^(teaches)
+inv9 T: all p : Professor | p not in p.^(teaches.Person)
+inv9 T: all p : Professor | p not in p.^(teaches.Course)
+inv9 T: all p : Professor | p not in p.^(teaches.~Course)
+inv9 B: all p : Professor | p not in p.^(teaches.grades.Grade)
+inv9 U: all p : Professor | p not in p.^(teaches.enrolled)
+inv9 B: all p : Professor | p not in p.^(teaches.~enrolled)
+inv9 B: all p : Professor | p not in p.^(teaches.~teaches)
+inv9 B: all p : Professor | p not in p.^(teaches.~enrolled)
+

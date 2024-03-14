@@ -1,0 +1,13 @@
+inv6 T: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects 	  		implies (c1->p1 in Course and p1->c1 in Course)
+inv6 T: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in Course and p1->c1 in Course)
+inv6 T: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in Course and s1->c1 in Course)
+inv6 T: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (s1->p1 in projects and s1->c1 in Course)
+inv6 B: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (s1->p1 in projects and s1->c1 in enrolled)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (s1->p1 in projects and s1->c1 in enrolled)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled)
+inv6 B: all s1 : Student | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled and p1 in Student)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled and s1 in Student)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled)
+inv6 B: all s1 : Person | all p1 : Project | all c1 : Course | 	  		s1->p1 in projects implies (c1->p1 in projects and s1->c1 in enrolled)
+

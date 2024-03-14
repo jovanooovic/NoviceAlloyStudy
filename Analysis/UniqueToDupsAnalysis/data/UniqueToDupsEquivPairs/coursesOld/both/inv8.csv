@@ -1,0 +1,198 @@
+Pairs,5
+,,"lone (^teaches)",1
+,,"all p : Person | p.enrolled not in p.teaches",3
+,,"all p: Professor , st: Course.grades.Grade| p not in p.teaches.grades.Grade",1
+
+Pairs,2
+,,"teaches not in iden",1
+,,"all x:Professor, c:Course | x in teaches.c iff c not in x.enrolled",1
+
+Pairs,6
+,,"no Professor.teaches",1
+,,"all p:Person| p.teaches not in p.enrolled",4
+,,"all t: Professor, c: Course | t -> c in teaches and not(t -> c in enrolled)",1
+
+Pairs,13
+,,"no Professor.enrolled",1
+,,"no (Professor.teaches & Person.enrolled)",1
+,,"all c : Course | enrolled.c in Student",1
+,,"all p : Professor, c : Course | p not in enrolled.c",1
+,,"all c : Course, p : Professor | p->c in teaches && p->c not in enrolled",8
+,,"no p:Professor| all c:Course | p->c in teaches and p->c in enrolled",1
+
+Pairs,1
+,,"no teaches - enrolled",1
+
+Pairs,19
+,,"no Professor.*teaches",1
+,,"no Professor.^teaches",1
+,,"teaches.~teaches not in iden",1
+,,"Professor not in Course.(grades.Grade)",1
+,,"no ^(grades.Grade).teaches & iden",1
+,,"no Professor.enrolled & Professor.teaches",2
+,,"no Professor.teaches - Professor.enrolled",1
+,,"no Professor.teaches&Professor.enrolled",8
+,,"all p: Person | p.teaches != p.enrolled",1
+,,"all p:Professor | enrolled.p not in teaches.p",1
+,,"all p,j: Professor | p->j in teaches and p!=j",1
+
+Pairs,4
+,,"all x:Professor | x.teaches != x.enrolled",1
+,,"all c : Course, p : Person | p->c in teaches and p not in Student",2
+,,"all t: Professor, c: Course | t -> c in teaches and not(t -> c in enrolled)",1
+
+Pairs,2
+,,"all p:Person| not p.teaches  in p.enrolled",1
+,,"all c : Course, p : Professor, g : Grade | p->c in teaches and p->c not in enrolled and c->p->g not in grades",1
+
+Pairs,5
+,,"all c:Course | teaches.c not in enrolled.c",2
+,,"all p: Professor , c : p.teaches| p not in c.grades.Grade",3
+
+Pairs,3
+,,"all c:Course | enrolled.c not in teaches.c",1
+,,"all p : Professor | no p.(p.teaches.grades)",2
+
+Pairs,2
+,,"all t : Professor | no t.teaches-t.enrolled",1
+,,"all x:Professor, c:Course | x not in ^teaches.c",1
+
+Pairs,10
+,,"Professor.teaches not in Professor.enrolled",1
+,,"no Professor.teaches&Professor.enrolled",8
+,,"all t : Professor | t.teaches not in t.enrolled",1
+
+Pairs,3
+,,"all p : Professor | p.teaches != p.enrolled",1
+,,"all t : Professor | t.teaches not in t.enrolled",1
+,,"all p : Professor | no (p.teaches.grades).Grade",1
+
+Pairs,11
+,,"all p:Professor | p.teaches not in p.enrolled",10
+,,"all p : Professor | p.enrolled not in (p.teaches).(grades.Grade)",1
+
+Pairs,8
+,,"all p:Professor | p.enrolled not in p.teaches",6
+,,"all p : Professor | all c : Course | c not in p.enrolled",1
+,,"all p: Professor , c : p.teaches , st: c.grades.Grade| p not in st",1
+
+Pairs,2
+,,"one p: Professor | no (p.teaches & teaches.p)",1
+,,"all p: Professor | all c1,c2 : Course | c1 in p.teaches",1
+
+Pairs,1
+,,"all x:Professor, c:Course | x not in teaches.c",1
+
+Pairs,3
+,,"all p : Professor | Professor not in p.*teaches",1
+,,"all c : Course, p : Person | p->c in teaches and p not in Student",2
+
+Pairs,2
+,,"all p : Professor | p in p.teaches.grades.Grade",1
+,,"all p : Professor | p not in p.teaches.^(grades.Grade)",1
+
+Pairs,2
+,,"all p : Professor | p not in teaches.(p.teaches)",1
+,,"all x:Professor, c:Course | x not in ^teaches.c",1
+
+Pairs,1
+,,"all x:Professor | x not in x.^(teaches.~enrolled)",1
+
+Pairs,11
+,,"all p: Professor| p not in p.teaches.grades.Grade",11
+
+Pairs,2
+,,"all p:Person, c:Course |p.enrolled not in p.teaches",2
+
+Pairs,4
+,,"all p:Person, c:Course | p in (Person <: teaches).c",3
+,,"all t:Professor | some c:Course | c in t.teaches => c not in t.enrolled",1
+
+Pairs,1
+,,"all p : Professor, c : Course | c not in p.enrolled",1
+
+Pairs,3
+,,"all p:Person, c:Course | p.teaches not in p.enrolled",2
+,,"no p:Professor| all c:Course | p->c in teaches and p->c in enrolled",1
+
+Pairs,2
+,,"all p : Professor | p not in p.teaches.(grades.Grade)",2
+
+Pairs,2
+,,"all c:Course | (teaches.c&Professor) not in enrolled.c",2
+
+Pairs,1
+,,"all p : Professor | p not in p.teaches.*(grades.Grade)",1
+
+Pairs,1
+,,"all p : Professor | p not in p.^(teaches.grades.Grade)",1
+
+Pairs,1
+,,"all p : Professor | p not in Grade.~(p.teaches.grades)",1
+
+Pairs,2
+,,"all p:Person|p->p not in teaches implies p in Professor",1
+,,"all x:Professor, c:Course | c in x.teaches implies c in x.enrolled",1
+
+Pairs,1
+,,"all p : Professor | p not in (Course-p.teaches).(grades.Grade)",1
+
+Pairs,3
+,,"all x:Professor, c:Course | c in x.teaches iff c in x.enrolled",1
+,,"all x:Professor, c:Course | x in teaches.c iff c not in x.enrolled",1
+,,"all p:Professor, c:Course | p->c in teaches implies p not in c.grades.Grade",1
+
+Pairs,3
+,,"all c:Course | (teaches.c&Professor) not in enrolled.c&Professor",2
+,,"all p : Professor , c : Course | p->c in enrolled implies p->c in teaches",1
+
+Pairs,1
+,,"all p:Professor | some p.enrolled implies p.enrolled != p.enrolled",1
+
+Pairs,1
+,,"all x:Professor, c:Course | x in teaches.x iff x not in enrolled.c",1
+
+Pairs,1
+,,"all x:Professor, c:Course | x in teaches.c iff x not in enrolled.c",1
+
+Pairs,3
+,,"all t : Professor | t not in t.^(teaches.projects.~(Person<:projects))",1
+,,"all x:Professor, c:Course | c in x.teaches iff c not in x.enrolled",2
+
+Pairs,2
+,,"all p : Professor | p not in p.^(teaches.projects.~(Person<:projects))",1
+,,"all p1 : Professor | some c : Course | p1 -> c in teaches implies p1 -> c not in enrolled",1
+
+Pairs,1
+,,"all c: Course | some p: Person | c in p.teaches => c not in p.enrolled",1
+
+Pairs,2
+,,"all p:Professor|all c:Course| p->c in teaches and p->c not in enrolled",2
+
+Pairs,2
+,,"all c: Course | some p: Person | c in p.enrolled => c not in p.teaches",1
+,,"all p1 , p2 : Professor | all c : Course | (p1->c in teaches and p2->c in teaches) implies p1=p2",1
+
+Pairs,1
+,,"all p:Professor|all c:Course| p->c in teaches and c->p not in enrolled",1
+
+Pairs,3
+,,"all p: Professor | p in teaches.Course implies p not in enrolled.Course",2
+,,"all p: Professor| some c : Course | p in teaches.c implies p not in enrolled.c",1
+
+Pairs,1
+,,"all p : Professor , c: Course | c not in p.teaches and c not in p.enrolled",1
+
+Pairs,1
+,,"all p : Professor | p.teaches not in p.enrolled and p.enrolled not in p.teaches",1
+
+Pairs,1
+,,"all c: Course | some p1, p2: Professor | p1!=p2 && c in p1.teaches && c in p2.teaches",1
+
+Pairs,1
+,,"all p : Person | p.enrolled not in p.teaches
+  	all p : Person | p.teaches not in p.enrolled",1
+
+Pairs,1
+,,"all p1,p2 : Professor | some c : Course | p1 -> c in teaches and p2->c in teaches implies p1=p2",1
+

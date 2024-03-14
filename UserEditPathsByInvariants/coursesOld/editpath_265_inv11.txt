@@ -1,0 +1,6 @@
+inv11 B: all s : Student | s in Course.grades.Grade implies s.enrolled in grades.s.Grade
+inv11 B: all s : Student | s in Course.grades.Grade implies s.enrolled in grades.Grade.s
+inv11 B: all s : Student | s in Course.grades.Grade iff s.enrolled in grades.Grade.s
+inv11 B: all s : Student | s in Course.grades.Grade iff grades.Grade.s in s.enrolled
+inv11 U: all s : Student | grades.Grade.s in s.enrolled
+

@@ -1,0 +1,9 @@
+NA H: THEME UPDATE
+inv7 U: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows
+inv7 S: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows			all u : User | s != u and s in f.follows and s not in u.follows => s in u.suggested
+inv7 S: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows			all u : User | all s : User | s != u and s in f.follows and s not in u.follows => s in u.suggested
+inv7 O: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows			all u : User | u.suggested = u.follows.follows
+inv7 O: all u : User | all s: u.suggested | some f: u.follows  | s != u and s in f.follows and s not in u.follows			all u : User | u.suggested = (u.follows.follows - u.follows )
+inv7 B: all u : User | u.suggested = (u.follows.follows - u.follows )
+inv7 C: all u : User | u.suggested = (u.follows.follows - u.follows - u )
+

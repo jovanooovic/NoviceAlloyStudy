@@ -1,0 +1,126 @@
+NA H: THEME UPDATE
+inv1 T: all p: Professor | no p.Course
+inv1 T: all p: Professor | no p in Course
+inv1 T: all p: Professor | no p in Course
+inv1 T: all c : Course, p : Professor | c -> p not in grades
+inv1 U: all c : Course, p : Professor | c -> p not in grades.Person
+inv1 U: all c : Course, p : Professor | c -> p not in Person.grades
+inv1 U: all c : Course, p : Person | p in c implies p in Person
+inv1 U: all c : Course, p : Person | p in c implies p in Student
+inv1 T: all c : Course, p : Person | p -> c implies p in Student
+inv1 C: all c : Course, p : Person | p -> c in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c) in enrolled implies p in Student
+inv1 T: all c : Course, p : Person | p -> (c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c) in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | p -> c in enrolled implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv2 U: all p : Professor, c : Course | p -> c in teaches implies p in Professor
+inv2 U: all p : Professor, c : Course | (p -> c in teaches) implies p in Professor
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv2 U: all p : Professor, c : Course | (p -> c in teaches) implies p in Professor
+inv2 C: all p : Person, c : Course | (p -> c in teaches) implies p in Professor
+inv2 C: all c : Course, p : Person | (p -> c in teaches) implies p in Professor
+inv3 T: all c : Course, p : Professor | some p -> c in teaches
+inv3 T: all c : Course, p : Professor | some p.teaches.c
+inv3 T: all c : Course, p : Professor | some c.~(Professor<:Course)
+inv3 T: all p : Professor | some p.~(Professor<:Course)
+inv3 T: all p : Person | p in Professor implies some p.~(Professor<:Course)
+inv3 T: all p : Person | p in Professor implies some p.~(Person<:Course)
+inv3 T: all p : Professor | some p.~(Professor<:Course)
+inv3 T: all p : Professor | some p in p.~(Professor<:Course)
+inv3 T: all c : Course, p : Person | (p -> c in teaches) implies some p in Professor
+inv3 T: all p : Professor | some p in p.~(Professor<:Course)
+inv3 T: all p : Professor | some p in p.~(Professor<:Course)
+inv3 T: all p : Professor | some p in p.~(Person<:Course)
+inv3 T: all p : Professor | some p in p.~(Person<:Course) implies p in Professor
+inv3 S: p.~(Person<:Course) implies some p in Professor
+inv3 T: all p : Person | p.~(Person<:Course) implies some p in Professor
+inv3 O: all c1 : Course | some p1 : Professor | p1->c1 in teaches
+NA H: THEME UPDATE
+inv4 S: all p : Projects | one c : Course | c->p in
+inv4 S: all p : Projects | one c : Course | c->p in
+inv4 S: all p : Projects | one c : Course | c->p in
+inv4 S: all p : Projects | one c : Course | c->p in
+inv1 C: all c : Course, p : Person | (p -> c in enrolled) implies p in Student
+inv2 C: all c : Course, p : Person | (p -> c in teaches) implies p in Professor
+inv3 O: all c1 : Course | some p1 : Professor | p1->c1 in teaches
+inv4 S: all p : Projects | one c : Course | c->p in projects
+inv4 C: all p : Project | one c : Course | c->p in projects
+inv4 T: all p : Project | one c : Course | p->c in projects
+inv4 C: all p : Project | one c : Course | c->p in projects
+inv5 T: some s : Student | all p : Project | p->s in projects
+inv5 B: some s : Student | all p : Project | s->p in projects
+inv5 S: some p : Person | all p : Project | p in Student implies s->p in projects
+inv5 B: some person : Person | all p : Project | person in Student implies person->p in projects
+inv5 B: some person : Person | all p : Project | person->p in projects implies person in Student
+inv5 T: some person : Person | all p : Project | person->p in projects implies some person in Student
+inv5 B: some person : Person | all p : Project | person->p in projects implies person in Student
+inv5 B: some person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 B: some s : Student | all p : Project | s->p in projects		some person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects &&		all person : Person | all p : Project | (person->p in projects) implies person in Student
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p2 : Project | (person->p2 in projects) implies person in Student
+inv5 O: (some s : Student | all p : Project | s->p in projects)		(all person : Person | all p2 : Project | (person->p2 in projects) implies person in Student)
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person | all p2 : Project | person->p2 in projects implies person in Student
+inv5 C: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	(all p2 : Project | all pr2 : Person   | pr2->p2 in projects implies pr2 in Student)
+inv5 O: some s : Student | all p : Project | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv5 U: all p : Project | some s : Student | s->p in projects		all person : Student, p2 : Project | person->p2 in projects implies person in Student
+inv5 C: all p : Project | some s : Student | s->p in projects		all person : Person, p2 : Project | person->p2 in projects implies person in Student
+inv6 S: all s : Students, p : Projects, c : Courses | s->p in projects implies s->c in enrolled
+inv6 B: all s : Student, p : Project, c : Course | s->p in projects implies s->c in enrolled && c->p in projects
+inv6 B: all s : Student, p : Project, c : Course | s->p in projects implies (s->c in enrolled && c->p in projects)
+inv6 B: all s : Student, p : Project, c : Course | s->p in projects implies (c->p in projects && s->c in enrolled)
+inv6 S: all s : Student, p : Project, c : Course | s->p in projects && c->p in projects implies s->c in enrolled)
+inv6 B: all s : Student, p : Project, c : Course | s->p in projects && c->p in projects implies s->c in enrolled
+inv6 B: all s : Student, p : Project, c : Course | s->p in projects && c->p in projects implies s->c in enrolled
+inv7 B: all s : Student | one  c : Course | lone p : Project | s->p in projects implies c->p in projects
+inv7 B: all s : Student | one  c : Course | lone p : Project | c->p in projects implies s->p in projects
+inv7 B: all s : Student | one  c : Course | lone p : Project | s->p in projects implies c->p in projects
+inv7 T: all s : Student | all  c : Course | all p : Project | lone s->p in projects implies one c->p in projects
+inv8 T: all p : Professor | no p->p in teaches
+inv8 T: all p : Professor , c : Course | p->c in enrolled implies no p->c in teaches
+inv8 T: all p : Professor , c : Course | p->c in enrolled implies no p->c in teaches
+inv8 T: all p : Professor , c : Course | p->c in enrolled implies no p->c in teaches
+inv8 B: all p : Professor , c : Course | p->c in enrolled implies p->c in teaches
+inv8 T: all p : Professor | no p->p in teaches
+inv7 T: all s : Student | all  c : Course | all p : Project | lone s->p in projects implies one c->p in projects
+inv7 T: all s : Student | all  c : Course | all p : Project | lone s->p in projects implies one c->p in projects
+inv7 T: all s : Student | all  c : Course | all p : Project | lone s->p in projects implies one c->p in projects
+inv8 T: all p : Professor, c : Course | p->c in enrolled implies no p.teaches.Course
+inv8 T: all p : Professor, c : Course | p->c in enrolled implies no p.teaches.c
+inv8 T: all p : Professor, c : Course | p->c in enrolled implies no p->c in teaches
+inv8 U: all p : Professor, c : Course | p->c in enrolled implies p->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | p1->c in enrolled implies p2->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course |  p2->c in teaches implies p1->c not in enrolled
+inv8 U: all p : Professor, c : Course | p->c in enrolled implies p->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | p1->c in enrolled && p1!=p2 implies p2->c in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | (p1->c in enrolled && p1!=p2) implies p2->c in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | (p1->c in enrolled) && (p1!=p2) implies p2->c in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | (p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches
+inv9 S: all p1 , p2 : Professor, c : Course | (p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches	  	(p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | (p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches &&	  	(p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | ((p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches) &&	  	(p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches
+inv9 S: all p1 , p2 : Professor, c : Course | 	    ((p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches) 	  	(p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches)
+inv9 S: all p1 , p2 : Professor, c : Course |(p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches 	  	all p1 , p2 : Professor, c : Course | p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches
+inv9 S: all p1 , p2 : Professor, c : Course |(p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches 	   | p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches
+inv9 S: all p1 , p2 : Professor, c : Course | ((p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches) && p2->c in enrolled) implies p1->c not in teaches
+inv9 B: all p1 , p2 : Professor, c : Course | ((p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches) && ((p2->c in enrolled) implies p1->c not in teaches)
+inv9 B: all p1 , p2 : Professor, c : Course | ((p1->c in enrolled) && (p1!=p2) implies p2->c not in teaches) && ((p2->c in enrolled) && (p1!=p2) implies p1->c not in teaches)
+inv9 B: all p1 , p2 : Professor, c : Course | ((p1->c in enrolled && p1!=p2) implies p2->c not in teaches) && ((p2->c in enrolled && p1!=p2) implies p1->c not in teaches)
+inv8 U: all p : Professor, c : Course | p->c in enrolled implies p->c not in teaches
+inv8 U: all p : Professor, c : Course | p->c in enrolled implies p->c not in teaches
+inv10 S: all p : Person, c : Course | c->o in grades implies p in Student
+inv10 T: all p : Person, c : Course | c->p in grades implies p in Student
+inv10 S: all p : Person, c : Course | c->p.Grades in grades implies p in Student
+inv10 T: all p : Person, c : Course | c->p.Grade in grades implies p in Student
+inv10 T: all p : Person, c : Course | c->Grade.p in grades implies p in Student
+NA H: THEME UPDATE
+inv8 U: all p : Professor, c : Course | p->c in enrolled implies p->c not in teaches
+inv11 T: all s : Student, g: Grade, c : Course | s->g in grades && c->g in grades implies s->c in enrolled
+inv11 T: all s : Student, g: Grade, c : Course | s->g in grades && c->g in grades implies s->c in enrolled
+inv11 T: all s : Student, g: Grade, c : Course | s->g in grades && c->s in grades implies s->c in enrolled
+

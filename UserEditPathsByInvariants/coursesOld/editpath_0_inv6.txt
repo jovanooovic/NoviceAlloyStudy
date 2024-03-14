@@ -1,0 +1,7 @@
+inv6 U: all s : Student | all c : Course | s in c.~enrolled implies c in s.enrolled
+inv6 U: all s : Student | all c : Course | c in s.enrolled implies s in c.~enrolled
+inv6 S: all s : Student | all c : Course | s in c.~enrolled implies c in s.projecst.~(Course<:projects)
+inv6 S: all s : Student | all c : Course | s in c.~enrolled implies c in s.projecrts.~(Course<:projects)
+inv6 B: all s : Student | all c : Course | s in c.~enrolled implies c in s.projects.~(Course<:projects)
+inv6 B: all s : Student | all c : Course | c in s.projects.~(Course<:projects) implies s in c.~enrolled
+

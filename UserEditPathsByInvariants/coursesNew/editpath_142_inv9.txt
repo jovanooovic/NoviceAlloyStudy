@@ -1,0 +1,9 @@
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies ( 	  	none k : Course | (x in teaches.k and y in enrolled.k)	    	and 	    	 k : Course | (y in teaches.k and x in enrolled.k)	  		  )
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k)	    		and 	    	(y in teaches.k and x in enrolled.k)	  		  )
+inv9 S: all x,y : Professor | all z : Course | (x,y in teaches.z) implies 	  ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)	  )
+inv9 S: all x,y : Professor | all z : Course | (x in teaches.z and y in teaches.z) implies 	  ( 	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)	  )
+inv9 S: all x,y : Professor | all z : Course | (x in teaches.z and y in teaches.z) implies 	  	  	none k : Course | 	    	(x in teaches.k and y in enrolled.k) and (y in teaches.k and x in enrolled.k)
+inv9 U: all p1,p2 : Professor | p1!=p2 and (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+inv9 B: all p1,p2 : Professor | (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+inv9 B: all p1,p2 : Professor | (some p1.teaches & p2.teaches) implies 		(no p1.enrolled & p2.teaches )
+

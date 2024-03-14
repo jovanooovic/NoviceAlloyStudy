@@ -1,0 +1,27 @@
+inv3 U: all c:Course |some p:Person | p in c implies p in Professor
+inv3 T: all c:Course |some p:Person | p->c implies p in Professor
+inv3 U: all c:Course, p:Person | some p->c
+inv3 T: all c:Course, p:Person | some p->c in teaches
+inv3 T: all c:Course, p:Professor | some (p->c in teaches)
+inv3 B: all c:Course, p:Professor | some p.teaches
+inv3 T: all c:Course, p:Professor |  p.teaches
+inv3 B: all c:Course, p:Professor |  p.teaches in c
+inv3 B: all c:Course, p:Person |  p.teaches in c implies p in Professor
+inv3 T: all c:Course, p:Person |  p.teaches->c implies p in Professor
+inv3 B: all c:Course, p:Person |  c in p.^teaches
+inv3 B: all c:Course, p:Person |  c in p.teaches
+inv3 B: all c:Course, p:Person |  c in p.*teaches
+inv3 T: all c:Course, p:Person |  teaches.Course
+inv3 U: all c:Course, p:Person | some teaches.Course
+inv3 T: all c:Course, p:Person | some teaches.Course in Professor
+inv3 B: all c:Course, p:Person | some teaches.Course->Professor
+inv3 U: all c:Course, p:Person | some teaches.Course->p
+inv3 U: all c:Course, p:Person | some p->teaches.Course
+inv3 B: all c:Course, p:Person | p->c in teaches
+inv3 O: all c:Course | one p:Person | p->c in teaches
+inv3 B: one c:Course | all p:Person | p->c in teaches
+inv3 B: one c:Course | some p:Person | p->c in teaches
+inv3 T: some teaches.Course in Professor
+inv3 B: teaches.Course in Professor
+inv3 C: all c:Course | some p:Person | p->c in teaches
+

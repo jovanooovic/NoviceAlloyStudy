@@ -1,0 +1,33 @@
+Pairs,3
+,,"(some f:File&Trash | always f in Trash)",1
+,,"always (some f:File&Trash | always f in Trash)",1
+,,"always (some f: File | eventually f in Trash and always f in Trash)",1
+
+Pairs,2
+,,"some f : File | always after f in Trash",1
+,,"some f: File | eventually f in Trash and after always f in Trash",1
+
+Pairs,8
+,,"some f: File |eventually always f in Trash",6
+,,"some f: File |always( eventually always f in Trash)",2
+
+Pairs,4
+,,"always(some f:File | eventually always f in Trash)",4
+
+Pairs,1
+,,"some f:File-Protected | eventually always f in Trash",1
+
+Pairs,1
+,,"eventually some f:File | f in Trash releases always f'=Trash",1
+
+Pairs,5
+,,"eventually some Trash and always (all t: Trash | always t in Trash)",1
+,,"eventually some Trash and (always all f: File | f in Trash implies always f in Trash)",4
+
+Pairs,2
+,,"always( some f: File | f not in Trash and eventually always f in Trash)",1
+,,"always( some f: File | f not in Trash and eventually f in Trash and after always f in Trash)",1
+
+Pairs,1
+,,"eventually (some Trash and (always all f: File | f in Trash implies always f in Trash))",1
+

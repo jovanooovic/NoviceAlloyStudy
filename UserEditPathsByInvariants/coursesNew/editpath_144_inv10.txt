@@ -1,0 +1,11 @@
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 T: all p:Person ,c:Course | p in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->* in c.grades implies p in Student
+inv10 S: all p:Person ,c:Course | p->_ in c.grades implies p in Student
+inv10 U: all p:Person ,c:Course | p->Grade in c.grades implies p in Student
+inv10 C: all p:Person ,c:Course | #p->Grade&c.grades>0 implies p in Student
+inv10 C: all p:Person ,c:Course | #p->Grade&c.grades>0 implies p in Student
+inv10 U: all p:Person ,c:Course | #c.grades.p>0 implies p in Student
+inv10 U: all p:Person ,c:Course | #c.grades.Person>0 implies p in Student
+inv10 T: all p:Person ,c:Course | c.grades.Person implies p in Student
+

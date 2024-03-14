@@ -1,0 +1,11 @@
+Pairs,36
+,,"all i:Influencer | follows.i = User-i",18
+,,"all x:Influencer| follows.x = User - x",2
+,,"all i: Influencer | i.~follows = User - i",1
+,,"all u:User | u.follows&Influencer = Influencer-u",8
+,,"all u: User | u in Influencer implies (follows.u = User - u)",1
+,,"all x : User, i : Influencer | x != i <=> i in x.follows",1
+,,"all i:Influencer, u:User | i!=u iff i in u.follows",2
+,,"all i: Influencer | all u: User | i in u.follows iff i != u",2
+,,"all u: User | all i: Influencer | u != i <=> u->i in follows",1
+

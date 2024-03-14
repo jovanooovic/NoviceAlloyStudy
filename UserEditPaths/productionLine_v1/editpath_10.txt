@@ -1,0 +1,21 @@
+NA H: THEME UPDATE
+inv1 C: parts in Component -> some Product
+inv2 U: all c:Component | c not in c.parts
+inv3 T: all c:Component | some ((c.position).Position)
+inv3 T: all c:Component | some ((c.position) && Robot.position)
+inv3 T: all c:Component | some (c.position && Robot.position)
+inv3 C: all c:Component | some (c.position & Robot.position)
+inv4 E: 
+inv2 U: all c:Product | c not in c.parts
+inv1 C: parts in Component -> some Product
+inv4 T: all c:Component | (c.parts.position) < c.position
+inv4 S: all c:Component | (c.parts.position) in  prevs(c.position)
+inv1 C: parts in Component -> some Product
+inv4 O: all c:Component | (c.parts.position) in  prevs[c.position]
+inv4 C: all c:Component | (c.parts.position) in  (prevs[c.position]+c.position)
+inv3 C: all c:Component | some (c.position & Robot.position)
+inv2 U: all c:Product | c not in c.parts
+inv1 C: parts in Component -> some Product
+inv1 C: parts in Component -> some Product
+inv2 C: all c:Product | c not in c.^parts
+

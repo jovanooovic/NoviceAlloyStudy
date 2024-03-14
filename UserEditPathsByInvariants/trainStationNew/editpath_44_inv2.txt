@@ -1,0 +1,8 @@
+inv2 U: all s : Signal | one s
+inv2 T: all s : Signal | one s in Track
+inv2 T: all s : Signal | all t : Track| one s in t.signals
+inv2 T: all s : Signal | all t : Track | one s in t.signals
+inv2 B: all t : Track | one s : Signal | s in t.signals
+inv2 T: all t : Track | all s : Signal | one s in t.signals
+inv2 C: all s : Signal | one t : Track | s in t.signals
+

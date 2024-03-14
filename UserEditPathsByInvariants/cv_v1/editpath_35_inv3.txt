@@ -1,0 +1,35 @@
+inv3 O: all w1, w2:Work, u:User | (w1 in u.profile and w2 in u.profile) implies w1.ids != w2.ids
+inv3 O: all w:Work, w1:Work | (w in User.profile && w1 in User.profile) implies no (w.ids & w1.ids)
+inv3 T: all w:Work, w1:Work | (w in User.profile && w1 in User.profile) implies no (w.ids = w1.ids)
+inv3 O: all w1, w2:Work, u:User | (w1 in u.profile and w2 in u.profile) implies w1.ids!=w2.ids
+inv3 T: all u:User, w1, w2:Work in u.profile | w1.ids!=w2.ids
+inv3 O: all u:User, w1, w2:Work | w1 in u.profile and w2 in u.profile implies w1.ids not in w2.ids
+inv3 O: all u:User, w1, w2:Work | w1 in u.profile and w2 in u.profile implies w1.ids not in w2.ids and w2.ids not in w1.ids
+inv3 S: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies no (w.ids & w1.ids)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies no (w1.ids & w2.ids)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 T: all w1, w2:Work, u:User, i:Id | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.i != w2.i)
+inv3 O: all w1, w2:Work, u:User, i:Id | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 O: all w1, w2:Work, u:User, i:Id | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies (w1.ids != w2.ids)
+inv3 B: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids)) implies w1=w2
+inv3 B: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.^ids = w2.^ids)) implies w1=w2
+inv3 B: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.^ids = w2.ids)) implies w1=w2
+inv3 B: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids)) implies w1=w2
+inv3 U: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies w1=w2
+inv3 U: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.*ids) and (w1.source = w2.source)) implies w1=w2
+inv3 U: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.*ids = w2.*ids) and (w1.source = w2.source)) implies w1=w2
+inv3 U: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies w1=w2
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies no (w1.ids & w2.ids)
+inv3 T: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies (w1.ids & w2.ids)
+inv3 T: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies (w1.ids & w2.ids)
+inv3 T: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids = w2.ids) and (w1.source = w2.source)) implies (w1.ids & w2.ids)
+inv3 T: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.ids & w2.ids) and (w1.source = w2.source)) implies (w1=w2)
+inv3 B: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and no (w1.ids & w2.ids) and (w1.source = w2.source)) implies (w1=w2)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies no (w1.ids & w2.ids)
+inv3 O: all w1, w2:Work, u:User | ((w1 in u.profile and w2 in u.profile) and (w1.source = w2.source)) implies  (w1.ids not in w2.ids and w2.ids not in w1.ids)
+inv3 O: all w1, w2:Work, u:User | (w1 in u.profile and w2 in u.profile) implies  (w1.ids not in w2.ids and w2.ids not in w1.ids)
+inv3 O: all w1, w2:Work, u:User | (w1 in u.profile and w2 in u.profile) implies no (w1.ids & w2.ids)
+inv3 O: all w1, w2:Work, u:User | (w1 in u.profile and w2 in u.profile) and (w1.source=w2.source) implies no (w1.ids & w2.ids)
+

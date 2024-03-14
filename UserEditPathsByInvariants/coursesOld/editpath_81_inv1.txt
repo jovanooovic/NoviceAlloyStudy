@@ -1,0 +1,6 @@
+inv1 B: all s:Student, c:Course | s -> c in enrolled
+inv1 S: all p:Person, c:Course | s -> c in enrolled implies ( s:Student | p = s)
+inv1 C: all p:Person, c:Course | p -> c in enrolled implies p in Student
+inv1 C: enrolled in Student set -> set Course
+inv1 C: enrolled in Student -> Course
+

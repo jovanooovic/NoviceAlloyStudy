@@ -1,0 +1,21 @@
+inv7 U: all x : User | x.suggested in x.follows.follows - x.follows
+inv7 U: all x, y : User | y in x.suggested implies y in x.follows.follows and y not in x.follows
+inv7 U: all x, y : User | y in x.suggested implies y in x.follows.follows and y not in x.follows and x != y
+inv7 U: all x, y : User | x.suggested in x.follows.follows - x.follows
+inv7 U: all x: User | x.suggested in x.follows.follows - x.follows
+inv7 U: all x: User | x.suggested in x.follows.follows - x.follows - x
+inv7 U: all x: User | x.suggested in x.follows.follows - x.follows
+inv7 U: all x: User | x.suggested in x.follows.follows
+inv7 U: all x, y: User | y in x.suggested implies y in x.follows.follows and y not in x.follows
+inv7 S: all x: User | x.suggested in x->y.follows - x.follows
+inv7 T: all x,y: User | x.suggested in x->y.follows - x.follows
+inv7 T: all x,y: User | x.suggested in x.follows->y.follows - x.follows
+inv7 T: all x,y: User | x.suggested in x.follows->y.follows
+inv7 S: all x,y: User | x.suggested in x^.follows.follows - x.follows
+inv7 U: all x,y: User | x.suggested in x.^follows.follows - x.follows
+inv7 U: all x: User | x.suggested in x.^follows.follows - x.follows
+inv7 U: all x: User | x.suggested in x.^follows.follows - x.follows - x
+inv7 U: all x: User | x.suggested in x.^follows.follows - x
+inv7 U: all x: User | x.suggested in x.^follows.follows - x.follows
+inv7 U: all x, y: User | x->y in suggested implies x != y
+

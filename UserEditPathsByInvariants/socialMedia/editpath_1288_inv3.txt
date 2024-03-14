@@ -1,0 +1,7 @@
+inv3 S: all disj u1,u2 : User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all disj u,u2 : User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all disj u,u2 : User | all p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u:User, u2:User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u:User, u2:User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u->u2 in follows
+inv3 B: all u:User, u2:User, p:Photo | (p not in Ad and u->p in sees and u2->p in posts) implies u2 in u.follows
+

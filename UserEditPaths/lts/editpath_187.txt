@@ -1,0 +1,45 @@
+NA H: THEME UPDATE
+inv1 C: all s:State | some s.trans
+inv2 C: one Init
+inv3 C: all e:Event, s:State | lone e.(s.trans)
+inv4 S: all i:Init | some e:Event | State in e.(i.*tras)
+inv4 S: all i:Init | some e:Event | State in e.(i.*tras)
+inv4 T: all i:Init | some e:Event | State in e.(i.*trans)
+inv4 B: all i:Init | some e:Event | State in e.*(i.trans)
+inv4 B: all i:Init | some e:Event | some Init implies State in e.*(i.trans)
+inv4 B: all i:Init | some e:Event | ( State in e.*(i.trans) ) or no Init
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+NA M: MOD BASE MODEL
+inv4 B: all i:Init | some e:Event | no  (State  - (e.*(i.trans) ))
+inv4 B: all i:Init | some e:Event | some  Init implies no  (State  - (e.*(i.trans) ))
+inv4 B: all i:Init | some e:Event | some  Init and no  (State  - (e.*(i.trans) ))
+inv5 S: all
+inv5 S: all s,s1:Stat|  s.trans in s1.trans
+inv5 O: all s,s1:State|  s.trans in s1.trans
+inv5 O: all s,s1:State|  s.trans in s1.trans and s1.trans in s.trans
+inv5 O: all s,s1:State|  no( s.trans  - s1.trans )
+inv5 C: all s,s1:State|  no( (s.trans).State  -  (s1.trans).State   )
+inv4 B: all i:Init | some e:Event | no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init| no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init|some Init implies  no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init| some Init implies   no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init| some State implies   no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init| some State implies some Init and    no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: all i:Init| some trans implies some Init and    no ((State-Init)  - (Event.^(i.trans)) )
+inv4 U: all i:Init| no trans implies one State or     no ((State-Init)  - (Event.^(i.trans)) )
+inv4 T: State in  Init.^trans
+inv4 S: State in Events. (Init.^trans)
+inv4 T: State in Event. (Init.^trans)
+inv4 B: some Init and all i:Init|  no ((State-Init)  - (Event.^(i.trans)) )
+inv4 B: some Init and  some (State-Init) and all i:Init|    no ((State-Init)  - (Event.^(i.trans)) )
+inv4 S: all  s : (State - Init)  | some e:Event |  some ( Init & trans^.(e->s) )
+inv4 S: all  s : (State - Init)  | some e:Event |  some ( Init & trans^.(e->s)
+inv4 S: all  s : (State - Init)  | some e:Event |  some ( Init & trans^.(e->s) )
+inv4 S: no ((States - Init)-(trans.~trans))
+inv4 T: no ((State - Init)-(trans.~trans))
+inv4 T: no ((State - Init)-(trans.~trans))
+

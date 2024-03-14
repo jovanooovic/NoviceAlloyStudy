@@ -1,0 +1,6 @@
+inv7 T: all u:User | u.suggested not in u.follows and u.follows.follows
+inv7 B: all u:User | (u.suggested not in u.follows) and ( u.suggested in u.follows.follows)
+inv7 B: all u:User | u.suggested = (u.follows.follows - u.follows)
+inv7 B: all u:User | u.suggested = (User-u.follows) + u.follows.follows
+inv7 C: all u:User | u.suggested =  u.follows.follows - u.follows - u
+

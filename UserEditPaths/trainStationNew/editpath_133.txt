@@ -1,0 +1,33 @@
+NA H: THEME UPDATE
+inv1 S: all t:Track | one e:Entry | one e:Exit
+inv1 S: all t:Track | one e:Entry, ex:Exit
+inv1 S: all t:Track | one e:Entry, ex:Exit
+inv1 E: 
+inv1 S: all t:Track
+inv1 S: one e:Entry, ex:Exit
+inv1 B: all t:Track, s:Signal | t->s in signals
+inv1 S: all t:Track | one e:Entry
+inv1 S: all t:Track | one e:Entry, ex:Exit
+inv2 S: all s:Signal | one t:Track
+inv2 C: all s:Signal | one t:Track | t->s in signals
+inv3 T: all t:Track | t in Exit implies none t.succs
+inv3 U: all t:Track | t in Exit implies no t.succs
+inv3 U: all e:Exit | no e.succs
+inv3 B: all e:Exit | one e.succs
+inv3 U: all e:Exit | lone e.succs
+inv4 U: all e:Entry | no succs.e
+inv5 S: all t:Track | some succs.t implies t in Junctions
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv6 C: all e:Entry | some s:Speed | e->s in signals
+inv4 U: all t:Track | no succs.t implies t in Entry
+inv4 C: all t:Track | no succs.t iff t in Entry
+inv5 B: all t:Track | some succs.t iff t in Junction
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv3 C: all t:Track | t in Exit iff no t.succs
+inv3 C: all t:Track | t in Exit iff no t.succs
+inv5 B: all t:Track | some succs.t implies t in Junction
+inv5 B: all t:Track | some succs.t iff t in Junction
+inv5 C: all t:Track | not lone succs.t iff t in Junction
+inv1 S: all t:Track | one e:Entry, ex:Exit
+

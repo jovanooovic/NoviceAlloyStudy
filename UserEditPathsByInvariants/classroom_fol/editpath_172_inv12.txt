@@ -1,0 +1,5 @@
+inv12 U: all t : Teacher | some c : Class | (some s : Person | some g : Group | c->s->g in Groups) => t->c in Teaches
+inv12 B: all t : Teacher | all c : Class | (some s : Person | some g : Group | c->s->g in Groups) => t->c in Teaches
+inv12 C: all t : Teacher | some c : Class | (some s : Person | some g : Group | c->s->g in Groups) and t->c in Teaches
+inv12 O: (all t : Teacher | some c : Class | (some s : Person | some g : Group | c->s->g in Groups) and t->c in Teaches)		and all c : Class | (some s : Person | some g : Group | c->s->g in Groups)
+

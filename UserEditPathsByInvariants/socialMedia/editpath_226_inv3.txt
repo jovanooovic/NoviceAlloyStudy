@@ -1,0 +1,12 @@
+inv3 S: all u,u1:Users | all p:Photo | p in u.posts and p in u1.sees	implies u in u1.follows
+inv3 S: all u,u1:Users | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows
+inv3 B: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows
+inv3 B: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User | a in u.sees
+inv3 S: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User implies a in u.sees
+inv3 S: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User|  implies a in u.sees
+inv3 S: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User  implies a in u.sees
+inv3 S: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User , implies a in u.sees
+inv3 S: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows	all a : Ad | all u : User | implies a in u.sees
+inv3 B: all u,u1:User | all p:Photo - Ad | p in u.posts and p in u1.sees implies u in u1.follows
+inv3 B: all u,u1:User | all p:Photo | p in u.posts and p in u1.sees implies u in u1.follows and p not in Ad
+

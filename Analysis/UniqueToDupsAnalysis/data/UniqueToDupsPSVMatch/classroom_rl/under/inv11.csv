@@ -1,0 +1,37 @@
+"no (~Teaches :> Teacher) implies no Groups",1
+"Groups.Person.Group in Teacher.Teaches",1
+"all c : Class | no Teaches.(c.Groups)",1
+"all c : Class | lone (c.Groups).(Teacher.Teaches)",1
+"all c : Class | no Teaches.c => no c.Groups",6
+"all c : Class | no (Teacher<:Teaches).(c.Groups)",1
+"all c : Class | some Groups  implies some (Teacher->c)",1
+"some Class.Groups implies some Class.~Teaches&Teacher",2
+"all c: Class | no c.Groups or some Teaches.c",1
+"all c:Class | some Groups.c implies some Teaches.c",2
+"all c : Class | no Student.(c.Groups) & Teaches.c",1
+"all c: Class | some c.Groups => some Teaches.c",8
+"all c : Class | some c.Groups => some Teacher->c",2
+"all c : Class | some (c.Groups) implies Teacher = Teacher",1
+"all c : Class | (c.Groups in Teacher.Teaches.Groups)",1
+"all c: Class | some c.Groups implies some c.~Teaches",2
+"all c: Class | some c.Groups implies some Teacher.Teaches",1
+"some Person.(Class.Groups) implies some Class.~Teaches&Teacher",1
+"all c : Class | no (~Teaches :> Teacher) implies no c.Groups",2
+"all c: Class | some Person.(c.Groups) implies some Teaches.c",3
+"all c : Class | some Student.(c.Groups) implies some Teaches.c",2
+"all c :Class | (some c.Groups) implies some (c.~Teaches + Teacher)",2
+"all c : Class | (#c.Groups > 0) => #(Teaches.c & Teacher) > 0",9
+"all c : Class | no Teaches.c => no (c->Person->Group & Groups)",1
+"all c : Class | no Teaches.c => no (c->Student->Group & Groups)",1
+"all c: Class, p:Person| some p.(c.Groups) implies some Teaches.c",2
+"all c: Class | no c.Groups or (some Teaches.c and some c.Groups)",1
+"all c : Class | (some Teaches.c & Teacher) implies c.Groups in Person -> Group",2
+"all c : Class | c.Groups in Class.Groups implies (Teaches.c in Teaches.Class)",1
+"all c : Class | no Teacher & Teaches.c => no (c->Student->Group & Groups)",2
+"all c : Class | no Teacher <: Teaches.c => no (c->Student->Group & Groups)",3
+"all c : Class | no (Teacher <: Teaches).c => no (c->Student->Group & Groups)",2
+"all c : Class | c.Groups in Class.Groups implies ((Teaches.c & Teacher) in Teaches.Class)",1
+"all c : Class | no (Teacher & (Teacher <: Teaches.c)) => no (c->Student->Group & Groups)",1
+"all c : Class | c.Groups in Class.Groups implies ((Teaches.c & Teacher) in (Teaches.Class & Teacher))",1
+"all c : Class | #c.Groups.Teacher > 0 => (some p : Person, g : Group | c->p->g in Groups)",2
+"all c:Class, s:Student, g:Group | c->s->g in Groups implies (some t:Teacher | t->c in Teaches)",1

@@ -1,0 +1,14 @@
+inv3 S: all u : User |
+inv3 S: all u : User | sees.
+inv3 S: all u : User | sees & ad in u.follows.post
+inv3 T: all u : User | sees & Ad in u.follows.post
+inv3 T: all u : User | sees & Ad in u.follows.post
+inv3 T: all u : User | u.sees in Ad in u.follows.post
+inv3 T: all u : User | (u.sees in Ad) in u.follows.post
+inv3 T: all u : User | all a : Ad | u.sees.a in u.follows.post
+inv3 S: all u : User u.sees.Ad in u.follows.post
+inv3 T: all u : User | u.sees.Ad in u.follows.post
+inv3 T: all u : User | u.sees.Ad in u.follows.posts
+inv3 T: all u : User | u.sees.~Ad in u.follows.posts
+inv3 C: all u : User | u.sees-Ad in u.follows.posts
+

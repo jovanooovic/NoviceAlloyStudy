@@ -1,0 +1,8 @@
+inv6 T: all c:Component | c not c.parts
+inv6 U: all c:Component | c not in c.parts
+inv6 T: all c:Component | c not in c.parts and c not c.parts.parts
+inv6 U: all c:Component | c not in c.parts and c not in c.parts.parts
+inv6 O: all c:Component | c not in c.*parts
+inv6 C: all c:Component | c not in c.^parts
+inv6 O: no iden & ^parts
+

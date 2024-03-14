@@ -1,0 +1,14 @@
+inv3 S: all x: User, y: Photo |  x -> y in sees implies y in Ad or | some z: User | x -> z in follows and z -> y in posts
+inv3 S: all x: User, y: Photo |  x -> y in sees implies y in Ad or | some z: User | x -> z in follows and z -> y in posts
+inv3 S: all x: User, y: Photo |  x -> y in sees implies y in Ad or | some z: User | x -> z in follows and z -> y in posts
+inv3 C: all x: User, y: Photo |  x -> y in sees implies y in Ad or some z: User | x -> z in follows and z -> y in posts
+inv3 S: all x, z: User, y: Photo | y.ad or z in x.follows and y in z.posts
+inv3 S: all x, z: User, y: Photo | y.ad or z in x.follows and y in z.posts
+inv3 T: all x, z: User, y: Photo | y.Ad or z in x.follows and y in z.posts
+inv3 T: all x, z: User, y: Photo | y.Ad or z in x.follows and y in z.posts
+inv3 O: all x, z: User, y: Photo | y in Ad or z in x.follows and y in z.posts
+inv3 O: all x, z: User, y: Photo | x -> y in sees implies y in Ad or z in x.follows and y in z.posts
+inv3 C: all x: User, y: Photo | x -> y in sees implies y in Ad or some z: User | z in x.follows and y in z.posts
+inv3 C: all x: User, y: Photo | y in x.sees implies y in Ad or some z: User | z in x.follows and y in z.posts
+inv3 C: all x: User, y: Photo | y in x.sees implies y in Ad or y in x.follows.posts
+

@@ -1,0 +1,8 @@
+inv8 B: all u: User | (all a: u.sees & Ad | (one f: User | a in f.posts implies (f in u.follows or f in u.suggested )))
+inv8 U: all u: User | (all a: u.sees & Ad | (some f: User | a in f.posts implies (f in u.follows or f in u.suggested )))
+inv8 S: all u: User | (all a: u.sees & Ad | (one f: User | f in u.sees or f in u.suggested)
+inv8 S: all u: User | (all a: u.sees & Ad | (one f: User | (f in u.sees) or (f in u.suggested)
+inv8 S: all u: User | (all a: u.sees & Ad | (one f: User | (f in u.sees) or (f in u.suggested))
+inv8 B: all u: User | (all a: u.sees & Ad | (one f: User | (f in u.sees) or (f in u.suggested)))
+inv8 B: all u: User | (all a: u.sees & Ad | (one f: User | (f in u.sees) or (f in u.suggested)))
+

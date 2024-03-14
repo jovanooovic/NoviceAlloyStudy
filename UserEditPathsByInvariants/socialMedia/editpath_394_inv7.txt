@@ -1,0 +1,6 @@
+inv7 U: all x, z: User | x in z.suggested => some y: User | x in y.follows && y in z.follows && x not in z.follows
+inv7 U: all x, z: User | x in z.suggested => some y: User | x in y.follows && y in z.follows
+inv7 U: all x, z: User| some y: User | x in z.suggested => x in y.follows && x not in z.follows  && y in z.follows
+inv7 U: all x, z: User| some y: User | x in z.suggested => x in y.follows && x not in z.follows && y in z.follows && x!=z
+inv7 U: all x, z: User | some y: User | x in z.suggested => y in z.follows && x in y.follows && x not in z.follows &&  x!=z
+

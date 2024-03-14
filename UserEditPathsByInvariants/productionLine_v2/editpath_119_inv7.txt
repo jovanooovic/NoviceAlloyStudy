@@ -1,0 +1,6 @@
+inv7 S: all p,d : univ | c in Component and d in Dangerous and c->d in parts implies c in Dangerous
+inv7 C: all c,d : univ | c in Component and d in Dangerous and c->d in parts implies c in Dangerous
+inv7 B: all c : Component | c.parts in Dangerous implies c in Dangerous
+inv7 B: all c : Component | c.^parts in Dangerous implies c in Dangerous
+inv7 C: all c : Component | some c.parts & Dangerous implies c in Dangerous
+

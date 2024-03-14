@@ -1,0 +1,64 @@
+"Class.Groups",1
+"Class.Teaches",1
+"Teaches.Class",1
+"Class.~Teaches",1
+"all c:Class | c.~Teaches",2
+"lone Teacher.Teaches.Class",1
+"one t: Teacher | t.Teaches",1
+"no Teacher in Teaches.Class",1
+"some t: Teacher | t.Teaches",1
+"all c:Class | one c.~Teacher",1
+"one Teacher in Teaches.Class",1
+"all c:Class | lone c.~Teacher",1
+"lone Teacher in Class.Teaches",1
+"lone Teacher in Teaches.Class",1
+"Class.~Teaches.Teaches in iden",1
+"one Teacher in Teacher.Teaches",1
+"all c : Class | lone Teacher.c",2
+"lone Teacher in Class->Teaches",1
+"lone Teacher in Teaches.Teaches",1
+"lone Teacher in Teacher.teaches",2
+"lone Teacher in Teacher.Teaches",1
+"Teacher.Teaches.~Teaches in iden",1
+"all c:Class,t:Teacher | t.Teaches",1
+"Teacher.Teaches -> lone Teacher",1
+"all c:Class,t:Teacher | Teaches.t",1
+"all c:Class,t:Teacher | ~Teaches.t",1
+"all p:Person | p.Teaches one Class",1
+"all c:Class,t:Teacher | t.Teaches.c",1
+"all c:Class,t:Teacher | c.~Teaches.t",1
+"all c : Teacher.Teacher | one Teacher",1
+"all c : Class | no Teacher in Teaches.c",1
+"all c:Class,t:Teacher | lone t.Teaches.c",1
+"all c : Class | lone Teacher in c.Groups",1
+"all c : Class | one Teacher in Teaches.c",3
+"all c:Class,t:Teacher| lone c->t ~Teaches",1
+"all c:Class,t:Teacher | lone c.~Teaches.t",2
+"all c : Class | lone Teacher in Teaches.c",4
+"some c : Class | lone Teacher in Teaches.c",1
+"all c : Class | lone (Teacher in Teaches.c)",1
+"all c : Class | #(Teaches->c & Teaches) < 2",2
+"all c : Class | #(Teaches->c & Teacher) < 2",1
+"all c : Class | #(Teacher->c & Teacher) < 2",2
+"all c:Class,t:Teacher | lone t->c in Teaches",1
+"all c : Class | lone c.Groups in Teacher.Teaches",1
+"all c:Class | some t:Teacher | lone t in Teaches.c",1
+"Teaches in Person one -> Class
+  Teacher in Teacher one -> Class",1
+"all t:Teacher,c:Class | (lone t.Teaches) and (lone c->t in Groups)",1
+"some t: Teacher | some c: Class | c.Groups in Teacher and lone t.Teaches",1
+"all c:Class,t1,t2:Teaches | t1->c in Teaches and t2->c in Teaches implies t1=t2",1
+"all c : Class | some t1, t2 : Teacher | t1 in Teaches.c and t2 in Teaches.c -> t1=t2",1
+"no c:Class | all p1,p2:Teacher | c in p1->Teaches and c in p2->Teaches implies p1=p2",1
+"all t1:Teacher,t2:Teacher,c:Class | (t1->c in Teacher and t2->c in Teacher) implies t1=t2",1
+"all c:Class, t1, t2:Teacher | (t1 -> c in Teaches) and (t2 -> c in Teacher) implies t1 = t2",1
+"Teaches in Person one -> Class
+  Teaches in Teacher one -> Class
+  Teacher in Student none -> Class",1
+"all t1,t2 : Teacher, c : Class | t1->c in Teaches and t2->c in Teaches implies t1=t2 not in Teaches",1
+"Teaches in Person one -> Class
+  Teaches in Teacher one -> Class
+  all s:Student, c:Class | s.c  none",1
+"Teaches in Person one -> Class
+  Teaches in Teacher one -> Class
+  all s:Student, c:Class | s -> c = none",1

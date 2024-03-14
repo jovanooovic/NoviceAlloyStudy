@@ -1,0 +1,7 @@
+inv3 B: all u:User | all uf : u.follows | u.sees in uf.posts
+inv3 B: all u:User | all uf : u.follows | u.sees in uf.posts	all pa: Photo-Ad | all us:User | pa in us.sees
+inv3 B: all u:User | all uf : u.follows | u.sees in uf.posts	all pa: Photo-Ad | all us:User | pa in us.sees
+inv3 B: all u:User | all uf : u.follows | u.sees in uf.posts	all pa: Photo-Ad | all us:User | pa in us.sees
+inv3 B: all u:User | all uf : u.follows | u.sees in (uf.posts+Ad)
+inv3 C: all u:User | u.sees in ( u.follows.posts+Ad)
+

@@ -1,0 +1,5 @@
+inv10 T: all c : Class | #Student.c.Groups > 0
+inv10 B: all c : Class | #Student.(c.Groups) > 0
+inv10 T: all c : Class | all p : c.Groups | #Group.(p.(c.Groups)) > 0
+inv10 T: all c : Class | all p : Person.(c.Groups) | #Group.(p.(c.Groups)) > 0
+

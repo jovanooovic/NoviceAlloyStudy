@@ -1,0 +1,12 @@
+inv2 T: all u : User | u not in follows
+inv2 T: all u : User | u in follows
+inv2 S: all u : User | u not in follows.^
+inv2 S: all u : User | u not in follows.
+inv2 T: all u : User | u.follows
+inv2 B: all u : User | one u.follows
+inv2 S: all u : User | all not u -> u in posts
+inv2 U: all u : User | not u -> u in posts
+inv2 U: all u : User | u -> u not in posts
+inv2 C: all u : User | u -> u not in follows
+inv2 C: all u : User | not u -> u in follows
+

@@ -1,0 +1,11 @@
+"no Human & Worker",1
+"some Human and some Robot",1
+"all w : Worker | no Human & Worker",1
+"all w:Worker | one (w&Human+Robot)",1
+"all r : Robot, h : Human | no (workers.r & workers.h)",2
+"all w:Workstation | w.workers in Human or w.workers in Robot",2
+"all w : Workstation | w.workers in Robot or w.workers in Human",2
+"all w : Workstation | Robot in w.workers implies Human not in w.workers",1
+"all h : Human, r : Robot, w : Workstation | r in w.workers implies h not in w.workers",1
+"all w : Workstation | (w.workers in Robot ) implies (no w.workers & Human) and (some w.workers)",1
+"all h : Human, r : Robot, w : Workstation | r in w.workers implies no Human&w.workers",1

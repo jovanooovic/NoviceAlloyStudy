@@ -1,0 +1,14 @@
+inv4 T: all p:Photo | posts.p
+inv4 S: all u:User, some p:Photo | p in u.posts & Ad implies none u.posts - Ad
+inv4 S: all u:User, some p:Photo | (p in u.posts & Ad) implies (none u.posts - Ad)
+inv4 S: all u:User, some p:Photo | (p in u.posts & Ad) implies u.posts - Ad
+inv4 S: all u:User, some p:Photo | p in u.posts & Ad
+inv4 B: all u:User | some p:Photo | p in u.posts & Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies u.posts - Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies none u.posts - Ad
+inv4 T: all u:User | some p:Photo | p in u.posts & Ad implies none (u.posts - Ad)
+inv4 T: all u:User | some p:Photo | none p in (u.posts - Ad)
+inv4 B: all u:User | some p:Photo | p in (u.posts - Ad)
+inv4 T: all u:User | some p:Photo | no p in (u.posts - Ad)
+inv4 B: all u:User | some p:Photo |  p not in (u.posts - Ad)
+

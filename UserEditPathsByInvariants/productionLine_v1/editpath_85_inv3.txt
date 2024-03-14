@@ -1,0 +1,6 @@
+inv3 O: all c:Component | c.position = Robot.position
+inv3 B: all c:Component, r:Robot | c.position = r.position
+inv3 C: all c:Component | some r:Robot | c.position = r.position
+inv3 O: some r:Robot | Component.position = r.position
+inv3 C: Component.position in Robot.position
+

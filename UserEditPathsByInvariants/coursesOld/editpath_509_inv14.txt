@@ -1,0 +1,11 @@
+inv14 T: all s : Student, disj p1,p2 : s.projects | p1.~projects != p2.~projects
+inv14 B: all s : Student, disj p1,p2 : s.projects | Person <: p1.~projects != Person <: p2.~projects
+inv14 B: all s : Student, disj p1,p2: s.projects | Person <: projects.p1 not in Person <: projects.p2
+inv14 T: all s : Student, disj p,p1,p2 : s.projects | projects.p1 in projects.p2 implies none projects.p & projcets.p1
+inv14 S: all s : Student, disj p,p1,p2 : s.projects | projects.p1 in projects.p2 implies no projects.p & projcets.p1
+inv14 T: all s : Student, disj p,p1,p2 : s.projects | projects.p1 in projects.p2 implies no projects.p & projects.p1
+inv14 B: all s : Student, disj p,p1,p2 : s.projects | Person <: projects.p1 in Person<: projects.p2 implies no Person <: projects.p & Person <: projects.p1
+inv14 B: all s : Student, disj p,p1,p2 : s.projects | some Person <: projects.p1 & Person<: projects.p2 implies no Person <: projects.p & Person <: projects.p1
+inv14 B: all s : Student, disj p,p1,p2 : s.projects | some Person <: projects.p1 & Person<: projects.p2 implies  Person <: projects.p1 & Person<: projects.p2 not in Person <: projects.p
+inv14 B: all s : Student, disj p,p1,p2 : s.projects |   Person <: projects.p1 & Person<: projects.p2 not in Person <: projects.p
+

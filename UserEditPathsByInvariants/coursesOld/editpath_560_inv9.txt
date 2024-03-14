@@ -1,0 +1,6 @@
+inv9 B: all p,j: Professor, c: Course | p->c in teaches implies j->c not in enrolled
+inv9 B: all p,j: Professor, c: Course | p->c in teaches and j->c in teaches implies j->c not in enrolled
+inv9 B: all p,j: Professor, c,h: Course | p->c in teaches and j->h in teaches implies j->c not in enrolled
+inv9 B: all p,j: Professor, c: Course | (p->c in teaches and j->c in teaches) implies j->c not in enrolled
+inv9 B: all p,t: Professor, c,j: Course | (p->c in teaches and t->j in teaches) implies t->c not in enrolled
+

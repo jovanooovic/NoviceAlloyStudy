@@ -1,0 +1,27 @@
+Pairs,6
+,,"State = trans.Event.State",1
+,,"always (State in Event.trans.State)",1
+,,"all x : State | some x.trans.Event",1
+,,"no s : State | s.trans.Event = none",1
+,,"always (all s: State | some s.trans.Event)",1
+,,"all s1, s2:State | some e:Event | (s1->e->s2 in trans and s1 != s2)",1
+
+Pairs,1
+,,"all s:State | one s . trans",1
+
+Pairs,9
+,,"always some State.trans.Event",1
+,,"iden in State.trans.~(trans.State)",1
+,,"let k = State.trans | iden in ~k.k",1
+,,"let r = State.trans | iden in ~r.r",1
+,,"let k = State.trans | iden in k.~k",1
+,,"let k = trans.State | iden in k.~k",1
+,,"let k = trans.State | iden in ~k.k",3
+
+Pairs,2
+,,"all s: State | #(s.trans) > 0",1
+,,"all s: State | #(s.trans) >= 1",1
+
+Pairs,2
+,,"all s1, s2:State | some e:Event | s1->e->s2 in trans",2
+

@@ -1,0 +1,5 @@
+inv14 C: all c: Class, s:Person| s in c.Groups.Group implies Teaches.c in Tutors.s
+inv14 U: all c: Class, s:Student| s in c.Groups.Group implies Teaches.c in Tutors.s
+inv14 U: all c: Class, s:Person| s in c.Groups.Group implies (Teaches.c & Teacher) in Tutors.s
+inv14 U: all c: Class, s:Student| s in c.Groups.Group implies (Teaches.c & Teacher) in Tutors.s
+

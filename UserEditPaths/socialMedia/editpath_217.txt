@@ -1,0 +1,18 @@
+NA H: THEME UPDATE
+inv1 T: all i:Photo | some u:User | u -> i
+inv1 T: all i:Photo | some u:User | i in u -> posts
+inv1 U: all i:Photo | some u:User | i in u.posts
+inv1 C: all i:Photo | one u:User | i in u.posts
+inv2 C: all u:User | u not in u.follows
+inv2 C: all u:User | u not in u.follows
+inv3 O: all u:User | all z:User |all p:Photo - Ad | p in u.sees implies p in z.posts and z in u.follows
+inv3 O: all u:User | all z:User |all p:Photo - Ad | p in u.sees implies p in z.posts and z in u.follows
+inv4 S: all u:User | some a:add | some p: Photo - Ad | a in u.posts implies p not in u.posts
+inv4 B: all u:User | some a:Ad | some p: Photo - Ad | a in u.posts implies p not in u.posts
+inv4 B: all u:User | some a:Ad | some p: Photo - Ad | a in u.posts implies p not in u.posts
+inv5 E: 
+inv5 E: 
+inv5 B: all u:User | all i: Influencer | i in u.follows
+inv2 C: all u:User | u not in u.follows
+inv3 O: all u:User | all z:User |all p:Photo - Ad | p in u.sees implies p in z.posts and z in u.follows
+

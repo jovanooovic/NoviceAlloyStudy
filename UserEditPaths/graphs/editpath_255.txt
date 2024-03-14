@@ -1,0 +1,37 @@
+na H: THEME UPDATE
+inv1 C: adj = ~adj
+inv2 C: no adj & ~adj
+inv3 C: all n : Node | n not in n.^adj
+inv3 C: all n : Node | n not in n.^adj
+inv4 U: all n : Node | (Node - n) in n.^adj
+inv4 U: all n : Node | Node in n.^adj
+inv4 B: all n : Node | n.adj = (Node - n)
+inv4 C: all n : Node | n.adj = Node
+inv4 U: all n : Node | (Node - n) in n.adj
+inv4 C: all n : Node | Node in n.adj
+inv4 C: all n : Node | Node in n.adj
+inv5 C: all n : Node | n not in n.adj
+inv6 O: all n : Node | Node in (n.^adj + n.^~adj)
+inv6 O: all n : Node | Node in n.^(adj + ~adj)
+inv6 C: all n : Node | Node - n in n.^(adj + ~adj)
+inv6 O: all n : Node | Node in n.^(adj + ~adj)
+inv6 C: all n : Node | Node - n in n.^(adj + ~adj)
+inv6 O: all n : Node | Node - n = n.^(adj + ~adj)
+inv6 O: all n : Node | Node = n.^(adj + ~adj)
+inv6 O: all n : Node | Node - n = n.^(adj + ~adj)
+inv6 C: all n : Node | Node - n in n.^(adj + ~adj)
+inv6 B: all x, y : Node | x->y in adj iff y->x in adj
+inv6 O: all x, y : Node | x->y in adj or y->x in adj
+inv6 O: all x, y : Node | (x->y in adj) or (y->x in adj)
+inv6 O: all n : Node | Node in n.^(adj + ~adj)
+inv6 C: all n : Node | (Node - n) in n.^(adj + ~adj)
+inv6 O: some adj	all n : Node | Node in n.^(adj + ~adj)
+inv6 C: all n : Node | Node - n in n.^(adj + ~adj)
+inv6 C: all n : Node | Node - n in n.^(adj + ~adj)
+inv7 O: all n : Node | Node in n.^adj
+inv7 C: all n : Node | Node - n in n.^adj
+inv4 U: all n : Node | Node - n in n.adj
+inv4 C: all n : Node | Node in n.adj
+inv8 C: adj.adj in adj
+na H: THEME UPDATE
+

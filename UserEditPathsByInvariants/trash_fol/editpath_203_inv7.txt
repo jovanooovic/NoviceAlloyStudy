@@ -1,0 +1,2 @@
+inv7 S: all f : File | is_linked[f] implies f not in Trash	}		pred is_linked[f : File]{	some f1 : File | f1->f in link	}			/* The set of files in the trash. */	sig Trash in File {}	/* The set of protected files. */	sig Protected in File {}		/* The trash is empty. */		pred is_link[f : File]{	some f1 : File | f->f1 in link
+

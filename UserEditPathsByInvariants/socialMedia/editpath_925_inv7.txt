@@ -1,0 +1,9 @@
+inv7 U: all u1, u2 : User | (u2 not in u1.follows and u2 in u1.suggested) implies u2 in u1.follows.follows
+inv7 U: all disj u1, u2 : User | (u2 not in u1.follows and u2 in u1.suggested) implies u2 in u1.follows.follows
+inv7 U: all disj u1, u2 : User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u1 != u2 and u2 not in u1.follows and u2 in u1.follows.follows
+inv7 U: all u1, u2 : User | u2 in u1.suggested implies u2 != u1 and u2 not in u1.follows and u2 in u1.follows.follows
+inv7 U: all u : User | u not in u.suggested	all disj u1, u2 : User | u2 in u1.suggested implies u2 not in u1.follows and u2 in u1.follows.follows
+inv7 U: all u : User | u not in u.suggested	all disj u1, u2 : User | u2 in u1.suggested implies (u2 not in u1.follows and u2 in u1.follows.follows)
+inv7 C: all u : User | u not in u.suggested	all disj u : User | u.suggested = u.follows.follows - u.follows - u
+

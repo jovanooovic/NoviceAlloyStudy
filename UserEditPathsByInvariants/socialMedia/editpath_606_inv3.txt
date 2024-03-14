@@ -1,0 +1,4 @@
+inv3 C: all x : User | x.sees in (x.follows.posts + Ad)
+inv3 S: all x : User ! x.sees in x.follows.posts or all x: User | x.sees in Ad
+inv3 O: all x : User | x.sees in x.follows.posts or all x: User | x.sees in Ad
+

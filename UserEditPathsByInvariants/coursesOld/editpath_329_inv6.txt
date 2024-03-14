@@ -1,0 +1,13 @@
+inv6 S: all s: Students| some p: Project | s->p in projects implies (some c: Course| p->c in projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in projects implies (some c: Course| p->c in projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in projects implies (some c: Course| p->c in Course <:projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in projects implies (some c: Course| p->c in (Course <:projects) and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in projects implies (some c: Course| p->c in (Course <: projects) and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in (Person <: projects) implies (some c: Course| p->c in (Course <: projects) and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in (Person <: projects) implies (some c: Course| p->c in (Course <: projects) and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in (Person <: projects) implies (some c: Course| p->c in Course <: projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in Person <: projects implies (some c: Course| p->c in Course <: projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in Course <: projects implies (some c: Course| p->c in Course <: projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in Person <: projects implies (some c: Course| Course <: p->c in  projects and s->c in enrolled)
+inv6 T: all s: Student| some p: Project | s->p in Person <: projects implies (some c: Course| p->c in Course <: projects and s->c in enrolled)
+

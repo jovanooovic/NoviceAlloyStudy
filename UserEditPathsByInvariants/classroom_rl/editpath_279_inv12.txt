@@ -1,0 +1,19 @@
+inv12 T: all t : Teacher | some t.Teaches & Groups.Person
+inv12 O: all t : Teacher | some t.Teaches & Groups.Person.Group
+inv12 T: all t : Teacher | some t.Teaches & Class.Groups
+inv12 O: all t : Teacher | some (t.Teaches) & Groups.Person.Group
+inv12 O: all t : Teacher | some (t.Teaches) & ((Groups.Person).Group)
+inv12 O: all t : Teacher | some ((t.Teaches) & ((Groups.Person).Group))
+inv12 S: all t : Teacher | some ((t.Teaches) & ((Groups.Person).Groups)
+inv12 S: all t : Teacher | some ((t.Teaches) & ((Groups.Person).Group)
+inv12 O: all t : Teacher | some ((t.Teaches) & ((Groups.Person).Group))
+inv12 O: all t : Teacher | some t.Teaches & (Groups.Person).Group
+inv12 T: all t : Teacher | some t.Teaches.Groups.Person.Group
+inv12 T: all t : Teacher | (t.Teaches).((Groups.Person).Group)
+inv12 O: all t : Teacher | some (t.Teaches) & ((Groups.Person).Group)
+inv12 S: all t : Teacher | some ((t.Teaches).Groups).Person)
+inv12 O: all t : Teacher | some (((t.Teaches).Groups).Person)
+inv12 C: all t : Teacher | some (t.Teaches).Groups
+inv12 O: ~iden.iden in ~((Teacher.Teaches).Groups).((Teacher.Teaches).Groups)
+inv12 C: all t : Teacher | some (t.Teaches).Groups
+

@@ -1,0 +1,11 @@
+inv1 T: all x: Track | some Entry in x && some Exit in x
+inv1 T: all x: Track | some Entry in x.succs && some Exit in x.succs
+inv1 T: all x: Track | some x.succs in Entry  && some x.succs in Exit
+inv1 B: all x: Track | x.succs in Entry  && x.succs in Exit
+inv1 B: all x: Track | some y : Entry, z: Exit | y in x.succs && z in x.succs
+inv1 B: all x: Track | some y : Entry, z : Exit | y in x.succs && z in x.succs
+inv1 T: all x: Track | one x in Entry && one x in Exit
+inv1 T: all x: Entry, y : Exit | one x in Track && one y in Track
+inv1 U: all x: Entry, y : Exit | x in Track && y in Track
+inv1 C: some x: Entry, y : Exit | x in Track && y in Track
+

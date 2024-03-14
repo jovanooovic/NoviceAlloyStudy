@@ -1,0 +1,26 @@
+inv2 T: all wb : Workstation | some Worker in wb
+inv2 O: all wb : Workstation | some w : Worker | w in wb
+inv2 U: all wb : Workstation | some w : Worker | w in wb.workers
+inv2 S: all wb : Workstation | some w : Worker | w in wb.workers	Worker in wb.workers
+inv2 B: all wb : Workstation | some w : Worker | w in wb.workers	all wb : Workstation | Worker in wb.workers
+inv2 S: all wb : Workstation | some w : Worker | w in wb.workers	all wb : Workstation, w : Worker | w in wb.workers
+inv2 T: all wb : Workstation | some w : Worker | w in wb.workers	all w : Worker | w in workers
+inv2 T: all wb : Workstation | some w : Worker | w in wb.workers	Worker in workers
+inv2 T: all wb : Workstation | some w : Worker | w in wb.workers	all w : Worker | w in workers
+inv2 T: all wb : Workstation | some w : Worker | w in wb.workers	all w : Worker | w in workers
+inv2 U: all wb : Workstation | some w : Worker | w in wb.workers	all w : Worker | w in Workstation.workers
+inv2 U: all wb : Workstation | some w : Worker | w in wb.workers
+inv2 B: all wb : Workstation | some w : Worker | w in wb.workers	some wb : Workstation | all w : Worker | w in wb.workers
+inv2 O: all wb : Workstation | one w : Worker | w in wb.workers	one wb : Workstation | all w : Worker | w in wb.workers
+inv2 O: all wb : Workstation | one w : Worker | Worker in wb.workers	one wb : Workstation | all w : Worker | w in wb.workers
+inv2 B: all wb : Workstation | Worker in wb.workers	some wb : Workstation | all w : Worker | w in wb.workers
+inv2 B: all wb : Workstation | Worker in wb.workers	one wb : Workstation | all w : Worker | w in wb.workers
+inv2 T: all wb : Workstation | wb.Worker	one wb : Workstation | all w : Worker | w in wb.workers
+inv2 O: all wb : Workstation | Worker in wb.workers	one wb : Workstation | one w : Worker | w in wb.workers
+inv2 B: all wb : Workstation | Worker in wb.workers	all wb : Workstation | one w : Worker | w in wb.workers
+inv2 T: all wb : Workstation | Worker in wb.workers	one w : Worker | w in workers
+inv2 T: all wb : Workstation | Worker in wb.workers	all w : Worker | w in workers
+inv2 B: all wb : Workstation | Worker in wb.workers	all wb : Workstation | one w : Worker | w in wb.workers
+inv2 B: all wb : Workstation | Worker in wb.workers	all w : Worker | one wb : Workstation | w in wb.workers
+inv2 C: all wb : Workstation | some wb.workers	all w : Worker | one wb : Workstation | w in wb.workers
+

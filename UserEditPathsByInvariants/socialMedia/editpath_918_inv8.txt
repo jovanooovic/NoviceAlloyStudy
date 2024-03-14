@@ -1,0 +1,4 @@
+inv8 S: all u : User | a : u.sees & Ad | posts.a in (u.follows + u.suggested)
+inv8 S: all u : User | a : u.sees & Ad | posts.a in u.follows or posts.a in u.suggested
+inv8 B: all u : User, a : u.sees & Ad | posts.a in (u.follows + u.suggested)
+

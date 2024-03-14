@@ -1,0 +1,18 @@
+inv5 U: all p1 : Project | some s1 : Student | s1->p1 in projects
+inv5 S: all p1 : Project | some p1 : Person | s1->p1 in projects and p1 in Student
+inv5 O: all p1 : Project | some pr1 : Person | pr1->p1 in projects and p1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects and pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects iff pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects 	    all p1 : Project | some pr1 : Person | pr1->p1 in projects iff pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects and pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Person | pr1->p1 in projects	  	all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student
+inv5 U: all p1 : Project | some pr1 : Student | pr1->p1 in projects	  	all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student
+inv5 U: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)		and	  	(all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student)
+inv5 U: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)		and	  	(all p1 : Project | some pr1 : Person | pr1->p1 in projects implies pr1 in Student)
+inv5 U: all p1 : Project |	  	(some pr1 : Student | pr1->p1 in projects)		and	  	(some pr2 : Person | pr2->p1 in projects implies pr2 in Student)
+inv5 U: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)		and	  	(all p2 : Project | some pr2 : Person | pr2->p2 in projects implies pr2 in Student)
+inv5 U: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	(all p2 : Project | some pr2 : Person | pr2->p2 in projects implies pr2 in Student)
+inv5 C: (all p1 : Project | some pr1 : Student | pr1->p1 in projects)	  	(all p2 : Project | all pr2 : Person  | pr2->p2 in projects implies pr2 in Student)
+

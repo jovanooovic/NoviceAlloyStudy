@@ -1,0 +1,6 @@
+inv1 U: all s:Student | s.enrolled in Course
+inv1 S: all p:Person| c:Course | p->c in enrolled implies p in Student
+inv1 C: all p:Person| all c:Course | p->c in enrolled implies p in Student
+inv1 B: Person-Professor in Course
+inv1 C: all p:Person| all c:Course | p->c in enrolled implies p in Student
+

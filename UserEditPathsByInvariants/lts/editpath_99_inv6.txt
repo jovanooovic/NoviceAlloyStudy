@@ -1,0 +1,23 @@
+inv6 S: s.trans in State
+inv6 T: State.trans in State
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 S: all e: Event |
+inv6 T: all e: Event | some trans.e in State.trans
+inv6 T: all e: Event | some trans.e in State.trans
+inv6 U: all e: Event | lone State.trans.e
+inv6 U: all e: Event | lone State.trans.e
+inv6 O: all e: Event | some State.trans.e
+inv6 T: all e: Event | some State.~trans.e
+inv6 U: all e: Event | some e->State
+inv6 T: all e: Event | some e->State in State.trans
+inv6 T: all e: Event | some e->State in trans
+inv6 U: all e: Event | some e->State
+inv6 C: State.trans.State = Event
+

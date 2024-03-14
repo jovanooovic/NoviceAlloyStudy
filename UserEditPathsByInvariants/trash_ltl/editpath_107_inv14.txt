@@ -1,0 +1,18 @@
+inv14 B: all f : Protected & Trash | after f not in Trash
+inv14 U: all f : Protected | f in Trash implies after f not in Protected
+inv14 B: Protected' = Protected - Trash
+inv14 B: no Protected' & Trash
+inv14 B: all f : File | f in Trash implies (after f not in Protected)
+inv14 S: all f : File | f in Trash' implies after f not in Protected
+inv14 S: all f : File | f in Trash' implies after f not in Protected
+inv14 B: all f : File | f in Trash' implies after f not in Protected
+inv14 B: all f : File | f in Trash' implies  f not in Protected'
+inv14 B: all f : Protected & Trash | f in Trash' implies (after f not in Protected')
+inv14 U: all f : Protected & Trash | f in Trash' implies (after f not in Protected)
+inv14 B: all f : Protected & Trash | always (after f not in Protected)
+inv14 B: all f : Trash | always (after f not in Protected)
+inv14 O: always (all f : Trash | always (after f not in Protected))
+inv14 B: always (all f : Trash' | always (after f not in Protected))
+inv14 S: always (f : Protected | f in Trash implies after f not in Protected)
+inv14 C: always (all f : Protected | f in Trash implies after f not in Protected)
+

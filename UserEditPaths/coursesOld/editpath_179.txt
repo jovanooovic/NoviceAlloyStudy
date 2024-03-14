@@ -1,0 +1,29 @@
+NA H: THEME UPDATE
+inv1 S: all P:person | p in Student or p not in enrolled
+inv1 S: all P:Person | p in Student or p not in enrolled
+inv1 T: all p:Person | p in Student or p not in enrolled
+inv1 B: all p:Person | p in Student or p->Course not in enrolled
+inv1 C: all p:Person, c:Course | p in Student or p->c not in enrolled
+inv1 C: enrolled.Course in Student
+inv1 C: all p:Person, c:Course | p in Student or p->c not in enrolled
+inv2 C: teaches.Course in Professor
+inv2 C: all p:Person, c:Course | p in Professor or p->c not in teaches
+inv3 O: all c: Course | some p: Professor | p->c in teaches
+inv4 T: one c:Course | projects.Project in c
+inv4 B: one c:Course | Project in c.projects
+inv4 B: one c:Course |all p: Project | p in c.projects
+inv4 B: one c:Course |all p: Project |c->p in projects
+inv4 B: one c:Course | all p: Project | c->p in projects
+inv4 C: all p: Project |one c:Course | c->p in projects
+inv4 C: all p: Project | one c:Course | p in c.projects
+inv5 C: all p: Person , pr : Project | p in Student or p->pr not in projects	  all pr: Project | some s:Student | s->pr in projects
+inv6 U: all s:Student, p: Project | s->p in projects implies  some c:Course | s-> c in enrolled and c->p in projects
+inv7 S: all s:Student , c:Course | lone(s.projects) & lone(c.projects)
+inv7 S: all s:Student , c:Course | lone(s.projects) & lone(c.projects)
+inv7 U: all s:Student , c:Course | lone(s.projects & c.projects)
+inv8 S: all p:person | no (p.teaches & p.enrolled)
+inv8 C: all p:Person | no (p.teaches & p.enrolled)
+NA H: THEME UPDATE
+inv4 S: all p: Project | one c:Course | p->c in proposes
+inv4 T: all p: Project | one c:Course | p->c in projects
+

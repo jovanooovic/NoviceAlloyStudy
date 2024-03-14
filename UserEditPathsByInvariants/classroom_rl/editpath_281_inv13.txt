@@ -1,0 +1,8 @@
+inv13 B: Teacher = Person.Tutors and Person.Tutors = Student
+inv13 S: all p : Person | all s: Student | student.tutors = empty and person.Tutors in Student
+inv13 S: all p : Person | all s: Student | s.tutors = empty and p.Tutors in Student
+inv13 S: all p : Person | all s: Student | s.Tutors = empty and p.Tutors in Student
+inv13 B: all p : Person | all s: Student | s.Tutors = none and p.Tutors in Student
+inv13 S: all p : Person | some p.Tutors implies p in Teachers  and p.Tutors in Student
+inv13 C: all p : Person | some p.Tutors implies p in Teacher  and p.Tutors in Student
+

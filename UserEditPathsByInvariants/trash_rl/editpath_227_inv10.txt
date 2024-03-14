@@ -1,0 +1,5 @@
+inv10 S: all f:File | f in Trash { f.link in Trash}
+inv10 S: all f:File | f in Trash | f.link in Trash
+inv10 T: all f:File | (no f in Trash) & (f.link in Protected)
+inv10 C: Trash.link in Trash
+

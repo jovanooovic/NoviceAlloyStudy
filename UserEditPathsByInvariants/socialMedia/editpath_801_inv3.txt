@@ -1,0 +1,14 @@
+inv3 S: all x: User, y: Photo| x->y in sees implies x->y in follows	all x: User, y: Add | x->y in sees
+inv3 O: all x: User, y: Photo| x->y in sees implies x->y in follows	all x: User, y: Ad | x->y in sees
+inv3 O: all x: User, y: Photo| x->y in sees implies (some z: User | z->y in posts and x->y in follows)	all x: User, y: Ad | x->y in sees
+inv3 O: all x: User, y: Photo| y not in Ad and x->y in sees implies (some z: User | z->y in posts and x->y in follows)	all x: User, y: Ad | x->y in sees
+inv3 S: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->p) implies (x->y in follows)
+inv3 S: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->p) implies (u->y in follows)
+inv3 T: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y) implies (u->y in follows)
+inv3 B: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->y in follows)
+inv3 B: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->u2 in follows)
+inv3 S: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->u2 in follows)	all u: User, y: Add | x->y in sees
+inv3 S: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->u2 in follows)	all u: User, y: Ad | x->y in sees
+inv3 B: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->u2 in follows)	all u: User, y: Ad | u->y in sees
+inv3 B: all u: User, u2: User, y: Photo | (y not in Ad and u->y in sees and u2->y in posts) implies (u->u2 in follows)
+

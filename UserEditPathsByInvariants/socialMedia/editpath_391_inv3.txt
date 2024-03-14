@@ -1,0 +1,31 @@
+inv3 S: all u : User | all p : Photos | u -> p in posts
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 S: all u : User | all p : Photos | u -> p in follows
+inv3 O: all u : User | all p : Photo | u -> p in follows
+inv3 O: all u : User | one p : Photo | u -> p in follows
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 S: all u : User | all p : Photo | u -> p in follows | u -> p in sees
+inv3 B: all u : User | all p : Photo | u -> p in sees
+inv3 B: one u : User | all p : Photo | u -> p in sees
+inv3 S: one u : User | all p : Photo | u -> p in sees | u -> p follows
+inv3 S: all u : User | not Ad in u.follow.post
+inv3 S: all u : User | not Ad in u.follows.post
+inv3 B: all u : User | not Ad in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 S: all u : User | no object.Ad in u.follows.posts
+inv3 T: all u : User | no Ad in u.follows.posts
+inv3 S: all u : User | not in Ad.sees in u.follows.posts
+inv3 S: all u : User | not in Ad in u.follows.posts
+inv3 S: all u : User | not in Ad in u.follows.posts
+inv3 T: all u : User | all p : Photo | u -> p not in Ad in u.follows.posts
+inv3 S: all u : User |p in Photos and p != Ad in u.follows.posts
+inv3 S: all u : User | Ad != Root in u.follows.posts
+inv3 B: all u : User | Ad in u.follows.posts
+inv3 B: all u : User | not Ad in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 O: all u : User | not Ad.sees in u.follows.posts
+inv3 T: all u : User | u.Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+inv3 C: all u : User | u.sees - Ad in u.follows.posts
+

@@ -1,0 +1,7 @@
+inv7 S: all st:Student, c:Course, lone pr:Project | c in st.enrolled implies p in c.projects
+inv7 S: all st:Student, c:Course, one pr:Project | c in st.enrolled implies p in c.projects
+inv7 U: all st:Student, c:st.enrolled | lone (st.projects & c.projects)
+inv7 T: all st:Student, c:st.enrolled, pr:st.projects | lone (pr in c.projects)
+inv7 U: all st:Student, c:st.enrolled, pr:st.projects | lone (st.projects & c.projects)
+inv7 U: all st:Student, c:st.enrolled | lone (st.projects & c.projects)
+

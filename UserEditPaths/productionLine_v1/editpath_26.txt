@@ -1,0 +1,13 @@
+NA H: THEME UPDATE
+inv1 C: all c: Component | some c.parts
+inv2 U: all c: Component | c not in c.parts
+inv2 C: all c: Component | c not in c.^parts
+inv3 T: all p : Position | some position.p implies some position.p
+inv3 C: all p : Position | some position.p & Component implies some position.p & Robot
+inv3 T: all c : Component | some position.(c.position)
+inv3 C: all c : Component | some position.(c.position) & Robot
+inv4 O: all c : Component | all x: c.parts | x.position not in c.position.nexts
+inv4 C: all c : Component | all x: c.parts & Component | x.position not in c.position.nexts
+inv4 O: all c : Component | all x: c.parts & Component | x.position in c.position.prevs
+NA H: THEME UPDATE
+

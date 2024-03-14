@@ -1,0 +1,5 @@
+inv5 T: all x: Person, t: Class | x->t implies x in Teacher
+inv5 B: all x: Person, t: Class | x->t in Teaches implies x in Teacher
+inv5 B: all x: Teacher | some c: Class | x->c in Teaches
+inv5 C: some x: Teacher | some c: Class | x->c in Teaches
+

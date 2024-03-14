@@ -1,0 +1,371 @@
+Pairs,12
+,,"some Teacher.^Tutors",1
+,,"some ^~Tutors.Teacher",1
+,,"some ^~Tutors :> Teacher",1
+,,"some Teacher & ^Tutors.Person",4
+,,"some ^Tutors.Person & Teacher",3
+,,"some Person->Teacher & ^~Tutors",1
+,,"some p : Teacher | some p <: ^ Tutors",1
+
+Pairs,8
+,,"some ^Tutors.Teacher",2
+,,"some Person.^Tutors & Teacher",4
+,,"some Person->Teacher & ^Tutors",1
+,,"some Teacher & ^~Tutors.Person",1
+
+Pairs,6
+,,"Person.^Tutors in Teacher",1
+,,"all p : Person | p.Tutors in Teacher",1
+,,"all p : Person | p.^Tutors in Teacher",4
+
+Pairs,12
+,,"^Tutors.Person in Teacher",1
+,,"all p : Person | p.^(~Tutors) in Teacher",10
+,,"all p : Person | p.~(^Tutors) in Teacher",1
+
+Pairs,3
+,,"Teacher in ^Tutors.Person",2
+,,"all p : Teacher | some p <: ^ Tutors",1
+
+Pairs,2
+,,"Teacher.^Tutors in Teacher",1
+,,"no( Teacher.^Tutors - Teacher)",1
+
+Pairs,2
+,,"Student.^Tutors in Teacher",1
+,,"all s : Student | s.^Tutors in Teacher",1
+
+Pairs,1
+,,"some Person.*Tutors & Teacher",1
+
+Pairs,5
+,,"some Student.^Tutors & Teacher",5
+
+Pairs,2
+,,"some (Person.(^Tutors)->Teacher)",2
+
+Pairs,1
+,,"some t : Teacher | some t.^Teaches",1
+
+Pairs,3
+,,"all p : Person | some p <: ^ Tutors",2
+,,"all p : Person | some (p.(^Tutors)->Person)",1
+
+Pairs,4
+,,"all p:Person | Teacher in p.^Tutors",3
+,,"all t:Teacher | all p:Person | t in p.^Tutors",1
+
+Pairs,1
+,,"all s:Student | Teacher in s.^Tutors",1
+
+Pairs,8
+,,"all p1, p2:Person |
+  	p1 in Teacher",1
+,,"all p : Person | (p.*Tutors) in Teacher",2
+,,"all p : Person | (*Tutors.p) in Teacher",3
+,,"all p : Person | p in Teacher or (p.*Tutors) in Teacher",1
+,,"all p : Person | (p -> p in Tutors and p in Teacher) or (p.*Tutors) in Teacher",1
+
+Pairs,4
+,,"all p : Person | Teacher in ^Tutors.p",3
+,,"all t:Teacher | all p:Person | t in p.^~Tutors",1
+
+Pairs,1
+,,"~((Groups.Group):>Teacher) in Teaches",1
+
+Pairs,1
+,,"all p1, p2:Person | 
+	p2->p1 in Tutors",1
+
+Pairs,10
+,,"all s:Student |some Teacher & s.^Tutors",5
+,,"all s : Student | some s.^Tutors & Teacher",4
+,,"all s : Student | some t : Teacher | t in s.^Tutors",1
+
+Pairs,1
+,,"all p : Person | one p.^Tutors & Teacher",1
+
+Pairs,2
+,,"all s:Student |some Teacher & s.^Teaches",1
+,,"all p1, p2:Person |
+  	p2 not in Student and
+    ((p2->p1 in Tutors and p2 in Student) implies some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,27
+,,"all p : Person | some p.^Tutors & Teacher",7
+,,"all s:Person | some(s.^Tutors & Teacher)",3
+,,"all s:Person | some Teacher & s.^Tutors",2
+,,"all p: Person | some Teacher & p.^Tutors",3
+,,"all p:Person | some Teacher <:(p.^Tutors)",2
+,,"all p:Person | some t:Teacher | t in (p.^Tutors)",3
+,,"all p : Person | some t : Teacher | p->t in ^Tutors",1
+,,"all p: Person | some t: Teacher | some p.Tutors && t in p.^Tutors",3
+,,"all p: Person | some t: Teacher | some p.^Tutors && t in p.^Tutors",1
+,,"all p : Person | some p.^Tutors & Teacher or (p -> p in Tutors and p in Teacher)",1
+,,"all p : Person | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors or p->t in Tutors.Tutors.Tutors",1
+
+Pairs,13
+,,"all p: Person | some (p.*Tutors & Teacher)",6
+,,"all p: Person | some Teacher & p.*Tutors",1
+,,"all s:Person | some Teacher & s.*Tutors",2
+,,"all p : Person | some p.^Tutors & Teacher or p in Teacher",1
+,,"all p : Person | some p.*Tutors implies some (p.*Tutors & Teacher)",2
+,,"all p : Person - Teacher | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors",1
+
+Pairs,1
+,,"all p : Person | lone (p.(^Tutors)->Teacher)",1
+
+Pairs,5
+,,"all p : Person | some (p.(^Tutors)->Teacher)",5
+
+Pairs,1
+,,"all s : Student | some (s.*Tutors & Teacher)",1
+
+Pairs,1
+,,"some t:Teacher |all p:Person | t in p.^Tutors",1
+
+Pairs,2
+,,"all p : Person | p in Teacher or (p.^Tutors) in Teacher",1
+,,"all p : Person | (p in Teacher) or (p.^(~Tutors) in Teacher)",1
+
+Pairs,3
+,,"all p:Person | some Tutors.p implies (Teacher in ^Tutors.p)",3
+
+Pairs,2
+,,"all p1, p2:Person |
+  (p1 in Teacher implies  p2->p1 not  in Tutors)",1
+,,"all p1:Person |
+  (p1 in Teacher implies (not some p2:Person| p2->p1 in Tutors))",1
+
+Pairs,1
+,,"all p1, p2:Person |
+  (p1 in Teacher implies  p1->p2 not  in Tutors)",1
+
+Pairs,5
+,,"all p1:Person | (some p2:Person | p2->p1 in Tutors and p2 not in Teacher)",2
+,,"all p1:Person | (some p2:Person | p2->p1 in Tutors and p2 not in Teacher and (some p3:Person | p3->p2 in Tutors))",1
+,,"all p1:Person |
+  (some p2:Person | (p2->p1 in Tutors and p2 not in Teacher))and (some p2:Person | p2->p1 in Tutors and p2 not in Teacher and (some p3:Person | p3->p2 in Tutors))",2
+
+Pairs,1
+,,"all p : Person | some t : Teacher | p->t in Tutors or p->t in Tutors.Tutors",1
+
+Pairs,1
+,,"all t1 : Teacher | some t : Teacher | t1->t in Tutors or t1->t in Tutors.Tutors",1
+
+Pairs,3
+,,"all p1, p2, p3:Person |
+  	
+  	((p2->p1 in Tutors and p3->p2 in Tutors ) implies p2 not in Teacher)",2
+,,"all p1, p2:Person |
+  	
+  	((p2->p1 in Tutors and some p3:Person | p3->p2 in Tutors ) implies p2 not in Teacher)",1
+
+Pairs,1
+,,"all p1, p2:Person | (p2->p1 in Tutors and p2 not in Teacher) implies (one p3:Person | p3->p2 in Tutors)",1
+
+Pairs,1
+,,"some p1, p2:Person |
+    ((p2->p1 in Tutors and p2 in Student) implies some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,3
+,,"all p1, p2:Person |
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors)",3
+
+Pairs,1
+,,"all p1, p2:Person | 
+    ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Teacher | p3->p2 in Tutors)",1
+
+Pairs,1
+,,"all p1, p2:Person | (p2->p1 in Tutors and p2 not in Teacher) implies (one p3:Person | p3->p2 in Tutors and p3!=p2)",1
+
+Pairs,1
+,,"all p1, p2:Person |
+  	p2 in Student and
+    ((p2->p1 in Tutors and p2 in Student) implies some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,1
+,,"all p1, p2:Person |
+    ((p2->p1 in Tutors and p2 in Student) implies some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)",1
+
+Pairs,2
+,,"all p1, p2:Person |
+    ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)",2
+
+Pairs,1
+,,"all p1, p2:Person |
+  	p2 not in Student and p2 not in Teacher and
+    ((p2->p1 in Tutors and p2 in Student) implies some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,3
+,,"all p1, p2:Person |
+  	(p1->p2 in Tutors implies p1 != p2) and
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors)",1
+,,"all p1, p2:Person |
+  	p1->p2 in Tutors implies p1 != p2 and
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors)",1
+,,"all p1, p2:Person |
+  	(p1->p2 in Tutors implies !(p1 = p2)) and
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors)",1
+
+Pairs,1
+,,"inv3
+	all p1, p2:Person |
+  	
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors)
+}
+
+pred inv3{
+	not some p:Person | p in Student and p in Teacher",1
+
+Pairs,1
+,,"all p1:Person |
+  (p1 in Teacher implies (not some p2:Person| p2->p1 in Tutors)) and
+  (some p2:Person | p2->p1 in Tutors and p2 not in Teacher and (some p3:Person | p3->p2 in Tutors))",1
+
+Pairs,4
+,,"all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 in Student implies some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)",3
+,,"all p1, p2, p3:Person | 
+		(p2->p1 in Tutors and p2 in Student implies some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,5
+,,"all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 not in Teacher implies some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)",3
+,,"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors) 
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors)",2
+
+Pairs,2
+,,"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors)
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies (no p3:Person | p3->p2 in Tutors))",1
+,,"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) and some p3:Person | p3->p2 in Tutors) 
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors)",1
+
+Pairs,1
+,,"all p1, p2:Person | (p2->p1 in Tutors and p2 not in Teacher) implies (one p3:Person | p3->p2 in Tutors)
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies (no p3:Person | p3->p2 in Tutors))",1
+
+Pairs,5
+,,"all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 not in Teacher implies some p3:Person | p3->p2 in Tutors and p2 != p3) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)",5
+
+Pairs,1
+,,"all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 not in Teacher implies some p3:Person | p3->p2 in Tutors and p2 != p3) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors and p2 != p3)",1
+
+Pairs,2
+,,"all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors) 
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)",2
+
+Pairs,1
+,,"all p1, p2:Person |
+    ((p1->p2 in Tutors and p2 not in Teacher) implies some p3:Person | p2->p3 in Tutors) 
+  	
+  	all p1, p2:Person |
+  	((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)",1
+
+Pairs,3
+,,"all p1, p2:Person |
+    ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1) 
+  		and
+  	((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)",3
+
+Pairs,1
+,,"inv3
+	all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 in Student implies some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)
+}
+
+pred inv3{
+	not some p:Person | p in Student and p in Teacher",1
+
+Pairs,1
+,,"all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 in Student implies some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors) 
+  		and
+  		(p1->p2 in Tutors implies p1 in Teacher and p2 in Student)",1
+
+Pairs,1
+,,"inv3
+	all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 not in Teacher implies some p3:Person | p3->p2 in Tutors and p2 != p3) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)
+}
+
+pred inv3{
+	not some p:Person | p in Student and p in Teacher",1
+
+Pairs,1
+,,"inv3
+  
+	all p1, p2:Person | ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors) 
+  	
+  	all p1, p2:Person | ((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors)
+}
+
+pred inv3{
+	not some p:Person | p in Student and p in Teacher",1
+
+Pairs,2
+,,"inv3
+	all p1, p2:Person |
+    ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1) 
+  		and
+  	((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)
+}
+
+pred inv3{
+	not some p:Person | p in Student and p in Teacher",2
+
+Pairs,1
+,,"inv13
+	all p1, p2:Person | 
+		(p2->p1 in Tutors and p2 not in Teacher implies some p3:Person | p3->p2 in Tutors and p2 != p3) 
+  		and
+  		(p2->p1 in Tutors and p2 in Teacher implies not some p3:Person | p3->p2 in Tutors)
+}
+
+pred inv13{
+  all p1, p2:Person | (p1->p2 in Tutors implies p1 in Teacher and p2 in Student)
+
+}
+
+pred inv1{
+	all p:Person | p in Student",1
+
+Pairs,1
+,,"inv13
+	all p1, p2:Person |
+    ((p2->p1 in Tutors and p2 not in Teacher) implies some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1) 
+  		and
+  	((p2->p1 in Tutors and p2 in Teacher) implies not some p3:Person | p3->p2 in Tutors and p3!=p2 and p3!=p1)
+}
+
+pred inv13{
+  all p1, p2:Person | (p1->p2 in Tutors implies p1 in Teacher and p2 in Student)
+
+}
+
+pred inv1{
+	all p:Person | p in Student",1
+

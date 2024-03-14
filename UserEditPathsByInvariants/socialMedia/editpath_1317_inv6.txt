@@ -1,0 +1,21 @@
+inv6 S: all d:Day | u:User | u in Influencer and p implies some  p:Photo | p->u.posts in d
+inv6 S: all d:Day | u:User | u in Influencer implies some  p:Photo | p->u.posts in d
+inv6 S: all d:Day | u:User | u in Influencer implies some  p:Photo | p.date = d and p in u.posts
+inv6 S: all d:Day | u:User | u in Influencer implies some  p:Photo | p.date = d and p in u.posts
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | p.date == d and p in u.posts
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | d in p.date and p in u.posts
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | d in p.date
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | d != p.date
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | d in p.date
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | p in u.posts
+inv6 S: all d:Day | u:User | u in Influencer implies some p:Photo | p in u.posts
+inv6 S: all d:Day | u:User | p:Photo | u in Influencer implies some p in u.posts
+inv6 S: all d:Day | u:User | p:Photo | u in Influencer implies some p in u.posts
+inv6 S: all d:Day | u:User | p:Photo | u in Influencer implies some p in u.posts
+inv6 S: all d:Day | u:User | p:Photo | u in Influencer implies some p in u.posts
+inv6 S: all d:Day | u:User | p:Photo | u in Influencer implies some p:Photo | p in u.posts and d in p.date
+inv6 U: all d:Day | all u:User | all p:Photo | u in Influencer implies some p:Photo | p in u.posts and d in p.date
+inv6 C: all d:Day | all u:User | u in Influencer implies some p:Photo | p in u.posts and d in p.date
+inv6 S: all d:Day | all i:Influencer | some p:Photo | p in u.posts and d in p.date
+inv6 C: all d:Day | all i:Influencer |some p:Photo | p in i.posts and d in p.date
+

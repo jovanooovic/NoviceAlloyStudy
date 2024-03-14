@@ -1,0 +1,24 @@
+NA H: THEME UPDATE
+inv1 C: enrolled.Course in Student
+inv2 C: teaches.Course in Professor
+inv3 C: Course = Person.teaches
+inv4 C: all p: Project | one (Course<:projects).p
+inv5 C: all p: Project | (Person<:projects).p in Student and some (Person<:projects).p
+inv6 U: all s: Student | s.projects in s.enrolled.projects
+inv7 U: all s: Student, c: Course | c in s.enrolled implies lone s.projects&c.projects
+inv8 U: all p: Professor | no p.teaches&p.enrolled
+inv9 E: 
+inv10 C: Course.grades.Grade in Student
+inv10 C: Course.grades.Grade in Student
+inv9 B: no Professor.teaches&Professor.enrolled
+inv9 B: all p: Professor | p.teaches not in (Person-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p-Student).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-p).enrolled
+inv9 B: all p: Professor | p.teaches not in (Professor-Student).enrolled
+inv9 B: all p: Professor | p.teaches not in (Person-p).enrolled
+inv9 B: all p: Person | p.teaches not in (Person-p).enrolled
+inv9 S: all p: Proofessor | p.teaches not in ((Professor&Student)-p).enrolled
+inv9 B: all p: Professor | p.teaches not in ((Professor&Student)-p).enrolled
+NA H: THEME UPDATE
+

@@ -1,0 +1,15 @@
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user in User and user->influencer in follows
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user in User and user->influencer in follows
+inv5 O: all influencer : univ | influencer in Influencer implies all user : univ | user->influencer in follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies user->influencer in follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies influencer in user.follows
+inv5 B: all influencer, user : univ | influencer in Influencer and user in User implies influencer in user.follows
+inv5 U: all x: User | all y : Influencer | x!= y implies x in follows.y
+inv5 U: all x: User | all y : Influencer | x!= y implies y in x.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies user in follows.influencer
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies user->influencer in follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+inv5 U: all influencer, user : univ | influencer in Influencer and user in User and influencer!=user implies influencer in user.follows
+

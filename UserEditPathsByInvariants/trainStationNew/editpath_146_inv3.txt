@@ -1,0 +1,10 @@
+inv3 B: all t: Track | t in Exit iff none in t.succs
+inv3 T: all t: Track | t in Exit iff none t.succs
+inv3 T: all t: Track | t in Exit iff t.succs = {}
+inv3 C: all t: Track | t in Exit iff  t.succs in none
+inv3 C: all t: Track | t in Exit iff  t.succs in none
+inv3 T: all t: Track | t in Exit iff t.succs none
+inv3 B: all t: Track | t in Exit iff t.succs in univ
+inv3 C: all t: Track | t in Exit iff t.succs in none
+inv3 C: all t: Track | t in Exit iff no t.succs
+

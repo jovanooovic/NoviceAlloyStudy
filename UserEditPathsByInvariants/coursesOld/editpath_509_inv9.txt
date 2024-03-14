@@ -1,0 +1,10 @@
+inv9 B: all p : Professor | p.teaches.~teaches  not in enrolled.(p.teaches)
+inv9 B: all p : Professor | p.teaches.~teaches-p  not in enrolled.(p.teaches)
+inv9 B: all p : Professor | p.teaches.~teaches  not in enrolled.(p.teaches)
+inv9 B: all p : Professor | (p.teaches.~teaches)+p  not in p.teaches.~enrolled
+inv9 B: all p : Professor | (p.teaches.~teaches) not in p.teaches.~enrolled
+inv9 B: all p : Professor, c : p.teaches | c.~teaches not in c.~enrolled
+inv9 B: all p : Professor | (p.teaches.~teaches) not in p.teaches.~enrolled
+inv9 B: all p : Professor | (p.teaches.~teaches) not in p.teaches.~enrolled
+inv9 B: all p : Professor | (p.teaches.~teaches) not in p.teaches.~enrolled
+

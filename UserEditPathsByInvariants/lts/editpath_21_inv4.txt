@@ -1,0 +1,12 @@
+inv4 T: all s: State | s.^Init
+inv4 S: all s: State |
+inv4 E:
+inv4 T: all s: State | Init.^function	}		/*	All the states have the same events available.	*/	fun function: State->State {	  {s1, s2: State | s1->Event->s2 in trans}
+inv4 S: all s: State | Init^.function
+inv4 T: all s: State | Init.^function	}		/*	All the states have the same events available.	*/	fun function: State->State {	  {s1, s2: State | s1->Event->s2 in trans}
+inv4 S: Init.^function in State
+inv4 S: State = Init.^function
+inv4 S: all s: State | Init.^function[s]	}		/*	All the states have the same events available.	*/	fun function[s: State]: State->State {	  {s1, s2: State | s1->Event->s2 in trans}
+inv4 S: all s: State | Init.^function(s)	}		/*	All the states have the same events available.	*/	fun function(s: State): State->State {	  {s1, s2: State | s1->Event->s2 in trans}
+inv4 S: State in Init.^function
+

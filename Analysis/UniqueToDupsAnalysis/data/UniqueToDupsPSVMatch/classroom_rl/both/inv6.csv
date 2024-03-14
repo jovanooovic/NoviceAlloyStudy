@@ -1,0 +1,30 @@
+"no (Teaches . Class)",1
+"some Teacher.Teaches",9
+"Teaches.Class = Class",1
+"some Teacher<:Teaches",1
+"Teacher.Teaches = Class",2
+"Teaches.Teacher = Class",2
+"Class in Teacher.Teaches",3
+"Teaches.Class in Teacher",2
+"~Teaches.Teaches in iden",2
+"Teaches.~Teaches in iden",1
+"Class in ~Teaches.Teacher",1
+"~((Groups.Group):>Teacher) in Teaches",1
+"all t : Teacher | no t.Teaches",1
+"some c : Class | some Teaches.c",1
+"all t : Teacher | lone t.Teaches",1
+"all t : Teacher | no t.^Teaches",1
+"all t : Person | Class in t.Teaches",1
+"all t : Teacher | Class in t.Teaches",6
+"all c : Class | c in Teacher.Teaches",1
+"iden & (Class->Class) in Teaches.~Teaches",1
+"all t : Teacher | t->Class in Teaches",1
+"some c : Class | Teacher.Teaches in c",1
+"some c : Class | c in Teacher.Teaches",2
+"all t : Teacher | Class in t.^Teaches",1
+"all t : Teacher, c : Class | c in t.Teaches",1
+"all t : Teacher, c : Class | t->c in Teaches",1
+"all c : Class, t : Teacher | t->c in Teaches",1
+"some c : Class, t : Teacher | t->c in Teaches",1
+"all t : Teacher | all c : Class | t->c in Teaches",1
+"all t: Teacher | some c: Class | some Groups[c][t]",2
