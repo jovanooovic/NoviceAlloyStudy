@@ -1,7 +1,0 @@
-NA H: THEME UPDATE
-inv1 C: all p: Photo | #p.~posts = 1
-inv1 C: all p: Photo | one u: User | p in u.posts
-inv2 C: all u: User | u not in u.follows
-inv3 B: all u: User, p: Photo | p in u.sees => p.~posts in u.follows
-inv3 B: all u: User, p: Photo | ((p not in Ad && p in u.sees) => p.~posts in u.follows)
-

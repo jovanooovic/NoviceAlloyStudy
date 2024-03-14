@@ -1,9 +1,0 @@
-NA H: THEME UPDATE
-inv1 C: all p : Person | (p not in Student) implies (p.enrolled=none)
-inv2 C: all p : Person | (p not in Professor) implies (p.teaches=none)
-inv3 C: no c : Course | c.~teaches=none
-inv4 C: all p : Project | one (p.~(Course <: projects))
-inv5 B: all p : Person | (p not in Student) implies (p.projects=none)	    no p : Person | p.~(Person <: projects)=none
-inv5 C: all p : Person | (p not in Student) implies (p.projects=none)	    no p : Project | p.~(Person <: projects)=none
-inv6 U: all s : Student | (s.projects - s.enrolled.projects)=none
-

@@ -1,8 +1,0 @@
-NA H: THEME UPDATE
-inv1 C: all p: Person|p in Student
-inv14 B: all s:Student,c:Class, g:Group  | (c->s->g in Groups implies some t:Teacher | t->c in Teaches and t->s in Tutors)
-inv14 B: all s:Student,c:Class, g:Group  | (c->s->g in Groups implies all t:Teacher | t->c in Teaches and t->s in Tutors)
-inv14 O: all s:Person,c:Class, g:Group  | (c->s->g in Groups implies all t:Person | t->c in Teaches and t->s in Tutors)
-inv14 C: all s:Person,c:Class, g:Group  | (c->s->g in Groups implies all t:Person | t->c in Teaches implies t->s in Tutors)
-inv14 C: all s:Person,c:Class, g:Group  | (c->s->g in Groups => all t:Person | t->c in Teaches => t->s in Tutors)
-

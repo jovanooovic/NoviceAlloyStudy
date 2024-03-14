@@ -1,9 +1,0 @@
-NA H: THEME UPDATE
-inv1 C: all p: Photo | one i: User | p in i.posts
-inv2 C: all u: User | u not in u.follows
-inv3 S: all u: user | u in (u - Influencer).sees
-inv2 C: all u: User | u not in u.follows
-inv3 O: all u: User | u in (u - Influencer).sees
-inv3 T: all u: User, p: Photo | u.sees in (u.posts in u.follows)
-inv3 O: all u: User, p: Photo | u.sees in (u.posts.follows)
-

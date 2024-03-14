@@ -1,9 +1,0 @@
-NA H: THEME UPDATE
-Inv1 U: all u:User | User.visible in User.profile
-Inv1 C: all u:User | u.visible in u.profile
-Inv2 C: all u:User |all w:Work | w in u.profile implies (w.source in u or w.source in Institution)
-Inv3 B: all disj w1,w2:Source.profile | w1.ids != w2.ids
-Inv3 B: all w1,w2:Source.profile | w1.ids = w2.ids implies w1=w2
-Inv3 B: all w1,w2:Source.profile | w1.ids = w2.ids implies w1=w2
-Inv4 O: all u:User | all w1,w2 : u.profile | (w1 in u.visible and w2 in u.visible) implies w1=w2
-

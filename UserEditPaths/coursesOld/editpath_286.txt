@@ -1,4 +1,0 @@
-NA H: THEME UPDATE
-inv13 B: all c : Course | some s : c . ~enrolled |	  (s in c . (this/Course <: projects) . ~(this/Person <: projects))	  and (all s2 : c . ~enrolled - s | gt[s . (c . grades), s2 . (c . grades)])
-inv15 O: all c : Course, p : c . projects, disj s1, s2 : p . ~(this/Person <: projects) |	  lte[s1 . (c . grades), s2 . (c . grades)] and s1 . (c . grades) in prevs[s2 . (c . grades)]
-

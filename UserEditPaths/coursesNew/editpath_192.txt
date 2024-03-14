@@ -1,9 +1,0 @@
-NA H: THEME UPDATE
-inv1 C: all c:Course,p:Person| p in enrolled.c => p in Student
-inv1 B: all c:Course| no ( enrolled.c & (Professor + (Professor & Student)) )
-inv3 B: all c:Course , p:Professor| some (teaches.c & p)
-inv3 U: all c:Course , p:Person| some(teaches.c)
-inv3 C: all c:Course | some teaches.c
-inv4 C: all p:Project | one projects.p & Course
-inv4 C: all p:Project | one (projects.p & Course)
-

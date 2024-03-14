@@ -1,9 +1,0 @@
-NA H: THEME UPDATE
-inv14 S: all s:Student, ss:Student-s | lone(s.project & ss.project)
-inv14 U: all s:Student, ss:Student-s | lone(s.projects & ss.projects)
-inv12 T: all s:Student, c:enrolled | one g:Grade | s->g in c.grades
-inv12 B: all s:Student, c:s.enrolled | one g:Grade | s->g in c.grades
-inv12 U: all s:Student, c:s.enrolled | lone g:Grade | s->g in c.grades
-inv11 T: all s:Student, g:Grade, c:Course | s->g in c => c in s.enrolled
-inv11 U: all s:Student, g:Grade, c:Course | s->g in c.grades => c in s.enrolled
-
